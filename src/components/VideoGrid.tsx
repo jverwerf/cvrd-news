@@ -36,36 +36,58 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
+  const [playing, setPlaying] = useState(false);
 
   if (items.length === 0) return null;
 
   const active = items[activeIdx];
-  const next = () => setActiveIdx(prev => (prev + 1) % items.length);
-  const prev = () => setActiveIdx(prev => (prev - 1 + items.length) % items.length);
+  const next = () => {
+    if (activeIdx < items.length - 1) {
+      setActiveIdx(prev => prev + 1);
+    } else {
+      setPlaying(false); // Stop at end of playlist
+    }
+  };
+  const prevItem = () => setActiveIdx(prev => (prev - 1 + items.length) % items.length);
 
   return (
     <div className="mb-6">
       {/* PLAYER */}
       <div className="rounded-md overflow-hidden border border-[#e5e5e5]">
-        {active.type === 'youtube' && (
-          <div className="aspect-video bg-[#111]">
-            <iframe key={active.embed_id} src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=0`}
-              className="w-full h-full" allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
-          </div>
-        )}
-        {active.type === 'tiktok' && (
-          <div className="aspect-video bg-[#111]">
-            <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-              className="w-full h-full" allowFullScreen allow="encrypted-media" />
-          </div>
-        )}
-        {active.type === 'reels' && (
-          <div className="aspect-video bg-[#111]">
-            <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
-              className="w-full h-full" allowFullScreen />
-          </div>
-        )}
+        <div className="aspect-video bg-[#111] relative">
+          {playing ? (
+            <>
+              {active.type === 'youtube' && (
+                <iframe key={`${active.embed_id}-${activeIdx}`}
+                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&enablejsapi=1`}
+                  className="w-full h-full" allowFullScreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+              )}
+              {active.type === 'tiktok' && (
+                <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
+                  className="w-full h-full" allowFullScreen allow="encrypted-media" />
+              )}
+              {active.type === 'reels' && (
+                <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
+                  className="w-full h-full" allowFullScreen />
+              )}
+            </>
+          ) : (
+            /* Thumbnail with play button when not playing */
+            <div className="w-full h-full cursor-pointer" onClick={() => setPlaying(true)}>
+              {active.thumbnail ? (
+                <img src={active.thumbnail} alt={active.label} className="w-full h-full object-cover" />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-[#111]" />
+              )}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[14px] border-l-white ml-1" />
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
 
         {/* CONTROLS BAR */}
         <div className="flex items-center px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
@@ -80,7 +102,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           {/* Prev / counter / Next */}
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
-              <button onClick={prev} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
+              <button onClick={prevItem} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="#555"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" transform="scale(-1,1) translate(-24,0)" /></svg>
               </button>
               <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
@@ -101,7 +123,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
       {items.length > 1 && (
         <div className="flex gap-1.5 mt-2 overflow-x-auto">
           {items.map((item, i) => (
-            <button key={i} onClick={() => setActiveIdx(i)}
+            <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
               className="shrink-0 rounded overflow-hidden transition-all group"
               style={{
                 width: '120px',
