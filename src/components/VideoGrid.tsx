@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 type VideoItem = {
-  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit';
-  embed_id?: string;
+  type: 'youtube' | 'tiktok' | 'reels';
+  embed_id: string;
   url: string;
   label: string;
   thumbnail?: string;
@@ -16,7 +15,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
   socialClips: { platform: string; url: string; embed_id?: string; title?: string }[];
   storyImage?: string;
 }) {
-  // Build unified list of all visual content
   const items: VideoItem[] = [];
 
   for (const v of youtubeVideos) {
@@ -34,10 +32,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
       items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok' });
     } else if (c.platform === 'reels' && c.embed_id) {
       items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels' });
-    } else if (c.platform === 'x' && c.embed_id) {
-      items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || 'X' });
-    } else if (c.url) {
-      items.push({ type: c.platform as any, url: c.url, label: c.title || c.platform });
     }
   }
 
@@ -46,83 +40,78 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
   if (items.length === 0) return null;
 
   const active = items[activeIdx];
-  const thumbs = items.filter((_, i) => i !== activeIdx);
-
-  // Platform colors
-  const platformColor: Record<string, string> = {
-    youtube: '#ff0000', tiktok: '#fe2c55', reels: '#c026d3', x: '#111', reddit: '#ff4500',
-  };
-  const platformName: Record<string, string> = {
-    youtube: 'YouTube', tiktok: 'TikTok', reels: 'Reels', x: 'X', reddit: 'Reddit',
-  };
+  const next = () => setActiveIdx(prev => (prev + 1) % items.length);
+  const prev = () => setActiveIdx(prev => (prev - 1 + items.length) % items.length);
 
   return (
-    <div className="mb-5">
-      {/* MAIN PLAYER */}
-      <div className="rounded-md overflow-hidden border border-[#e5e5e5] mb-2">
-        {active.type === 'youtube' && active.embed_id && (
+    <div className="mb-6">
+      {/* PLAYER */}
+      <div className="rounded-md overflow-hidden border border-[#e5e5e5]">
+        {active.type === 'youtube' && (
           <div className="aspect-video bg-[#111]">
-            <iframe key={active.embed_id} src={`https://www.youtube.com/embed/${active.embed_id}`}
+            <iframe key={active.embed_id} src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=0`}
               className="w-full h-full" allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           </div>
         )}
-        {active.type === 'tiktok' && active.embed_id && (
-          <div className="bg-[#111] aspect-video">
+        {active.type === 'tiktok' && (
+          <div className="aspect-video bg-[#111]">
             <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
               className="w-full h-full" allowFullScreen allow="encrypted-media" />
           </div>
         )}
-        {active.type === 'reels' && active.embed_id && (
-          <div className="bg-[#111] aspect-video">
+        {active.type === 'reels' && (
+          <div className="aspect-video bg-[#111]">
             <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
               className="w-full h-full" allowFullScreen />
           </div>
         )}
-        {(active.type === 'x' || active.type === 'reddit' || !active.embed_id) && (
-          <a href={active.url} target="_blank" rel="noreferrer"
-            className="flex items-center justify-center aspect-video bg-[#f5f5f5] hover:bg-[#eee] transition-colors">
-            <span className="text-[14px] text-[#666]">Open on {platformName[active.type] || active.type} →</span>
-          </a>
-        )}
-        <div className="flex items-center justify-between px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
-          <div className="flex items-center gap-1.5">
-            <span className="w-[6px] h-[6px] rounded-full" style={{ background: platformColor[active.type] || '#999' }} />
-            <span className="text-[11px] text-[#555] font-medium">{active.label}</span>
+
+        {/* CONTROLS BAR */}
+        <div className="flex items-center px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
+          {/* Source label */}
+          <div className="flex items-center gap-1.5 flex-1 min-w-0">
+            <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{
+              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3'
+            }} />
+            <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
           </div>
-          <a href={active.url} target="_blank" rel="noreferrer" className="text-[10px] text-[#b8860b] hover:underline">
+
+          {/* Prev / counter / Next */}
+          {items.length > 1 && (
+            <div className="flex items-center gap-2 shrink-0">
+              <button onClick={prev} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#555"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" transform="scale(-1,1) translate(-24,0)" /></svg>
+              </button>
+              <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
+              <button onClick={next} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#555"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" /></svg>
+              </button>
+            </div>
+          )}
+
+          {/* Open original */}
+          <a href={active.url} target="_blank" rel="noreferrer" className="text-[10px] text-[#b8860b] hover:underline ml-3 shrink-0">
             original
           </a>
         </div>
       </div>
 
-      {/* THUMBNAIL GRID */}
-      {thumbs.length > 0 && (
-        <div className="flex gap-1.5 overflow-x-auto">
-          {thumbs.map((item, i) => {
-            const realIdx = items.findIndex(v => v === item);
-            return (
-              <button key={i} onClick={() => setActiveIdx(realIdx)}
-                className="relative rounded-sm overflow-hidden border border-[#e5e5e5] hover:border-[#b8860b] transition-all group cursor-pointer shrink-0"
-                style={{ width: '240px' }}>
-                <div className="aspect-video bg-[#111] relative">
-                  {item.thumbnail ? (
-                    <img src={item.thumbnail} alt={item.label}
-                      className="w-full h-full object-cover group-hover:opacity-80 transition-opacity" />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-[12px]" style={{ color: platformColor[item.type] || '#999' }}>
-                        {item.type === 'tiktok' ? '♪' : item.type === 'reels' ? '◎' : item.type === 'x' ? '𝕏' : '▶'}
-                      </span>
-                    </div>
-                  )}
-                </div>
-                <div className="px-1 py-0.5 bg-[#fafafa]">
-                  <span className="text-[7px] text-[#999] truncate block">{item.label}</span>
-                </div>
-              </button>
-            );
-          })}
+      {/* TIMELINE — click to jump between videos */}
+      {items.length > 1 && (
+        <div className="flex gap-1 mt-2">
+          {items.map((item, i) => (
+            <button key={i} onClick={() => setActiveIdx(i)}
+              className="flex-1 group relative"
+              title={item.label}>
+              <div className="h-1.5 rounded-full transition-all" style={{
+                background: i === activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3') : '#e5e5e5',
+              }} />
+              <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[8px] text-[#999] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                {item.label}
+              </span>
+            </button>
+          ))}
         </div>
       )}
     </div>
