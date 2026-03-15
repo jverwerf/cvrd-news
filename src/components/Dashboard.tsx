@@ -5,12 +5,13 @@ import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
 
 type PlaylistItem = {
-  type: 'anchor' | 'youtube';
+  type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x';
   url?: string;
   embed_id?: string;
   channel?: string;
   storyTopic?: string;
   storyIndex?: number;
+  duration?: number;
 };
 
 type TileContent = {
@@ -38,12 +39,21 @@ export function Dashboard({
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Build playlist
+  // Build playlist — anchor first, then ALL videos from all stories
   const playlist: PlaylistItem[] = [];
   if (videoUrl) playlist.push({ type: 'anchor', url: videoUrl });
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
-      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1 });
+      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
+    }
+    for (const c of (story.social_clips || [])) {
+      if (c.platform === 'tiktok' && c.embed_id) {
+        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.title || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
+      } else if (c.platform === 'reels' && c.embed_id) {
+        playlist.push({ type: 'reels', embed_id: c.embed_id, channel: c.title || 'Reels', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
+      } else if (c.platform === 'x' && c.embed_id) {
+        playlist.push({ type: 'x', embed_id: c.embed_id, channel: c.title || c.author || 'X', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 30 });
+      }
     }
   }
 
@@ -132,6 +142,21 @@ export function Dashboard({
               className="w-full h-full" allowFullScreen id="yt-player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
+          {current?.type === 'tiktok' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
+              className="w-full h-full" allowFullScreen allow="encrypted-media" />
+          )}
+          {current?.type === 'reels' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
+              className="w-full h-full" allowFullScreen />
+          )}
+          {current?.type === 'x' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
+              className="w-full h-full" allowFullScreen />
+          )}
           {/* CONTROLS BAR — top of player */}
           <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/90 via-black/60 to-transparent pb-10 pt-2 px-3">
 
@@ -159,13 +184,13 @@ export function Dashboard({
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 <span className="w-[5px] h-[5px] rounded-full bg-[#4ade80] shadow-[0_0_8px_#4ade80] animate-pulse shrink-0" />
                 <span className="text-[11px] text-white font-medium truncate">
-                  {current?.type === 'anchor' ? 'Daily Briefing' : `${current?.channel || 'Video'}: ${current?.storyTopic || ''}`}
+                  {current?.type === 'anchor' ? 'Daily Briefing' : `${current?.channel || current?.type?.toUpperCase() || 'Video'}: ${current?.storyTopic || ''}`}
                 </span>
               </div>
 
               {/* Prev */}
               <button onClick={prevItem} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" transform="scale(-1,1) translate(-24,0)" /></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 6h2v12h-2zm-3.5 6L4 18V6z" /></svg>
               </button>
 
               {/* Counter */}
