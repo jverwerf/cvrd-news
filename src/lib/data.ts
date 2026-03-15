@@ -37,16 +37,32 @@ export interface DailyReport {
 }
 
 export async function getDailyGaps(): Promise<DailyReport | null> {
-  // Read from the real engine output
   const dateStr = new Date().toISOString().split('T')[0];
-  const mockPath = path.resolve(process.cwd(), `../intelligence-engine/output/daily_gaps_${dateStr}.json`);
-  
+
+  // Try engine output first (local dev), then public/data fallback (Vercel)
+  const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/daily_gaps_${dateStr}.json`);
+  const publicPath = path.resolve(process.cwd(), `public/data/daily_gaps_${dateStr}.json`);
+  // Also try latest file in public/data if today's doesn't exist
+  const publicDataDir = path.resolve(process.cwd(), 'public/data');
+
+  let dataPath: string | null = null;
+  if (fs.existsSync(enginePath)) {
+    dataPath = enginePath;
+  } else if (fs.existsSync(publicPath)) {
+    dataPath = publicPath;
+  } else if (fs.existsSync(publicDataDir)) {
+    // Find the most recent file
+    const files = fs.readdirSync(publicDataDir).filter(f => f.startsWith('daily_gaps_')).sort().reverse();
+    if (files.length > 0) dataPath = path.join(publicDataDir, files[0]);
+  }
+
+  if (!dataPath) {
+    console.error("No data file found");
+    return null;
+  }
+
   try {
-    if (!fs.existsSync(mockPath)) {
-      console.error("Mock V4 JSON file does not exist at:", mockPath);
-      return null;
-    }
-    const fileContents = fs.readFileSync(mockPath, 'utf8');
+    const fileContents = fs.readFileSync(dataPath, 'utf8');
     const report = JSON.parse(fileContents) as DailyReport;
 
     // Check if today's video exists (try produced version first, then raw)
