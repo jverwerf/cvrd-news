@@ -109,13 +109,13 @@ export function Dashboard({
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
-        <FadingTile pair={tilePairs[0]} delay={0} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[1]} delay={2} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[2]} delay={4} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[3]} delay={1} onPlayVideo={(idx) => setCurrentIdx(idx)} />
+        <FadingTile pair={tilePairs[0]} delay={0} />
+        <FadingTile pair={tilePairs[1]} delay={2} />
+        <FadingTile pair={tilePairs[2]} delay={4} />
+        <FadingTile pair={tilePairs[3]} delay={1} />
 
         {/* ROW 2 */}
-        <FadingTile pair={tilePairs[4]} delay={5} onPlayVideo={(idx) => setCurrentIdx(idx)} />
+        <FadingTile pair={tilePairs[4]} delay={5} />
 
         {/* CENTER PLAYER */}
         <div className="col-span-2 relative rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
@@ -220,13 +220,13 @@ export function Dashboard({
           </div>
         </div>
 
-        <FadingTile pair={tilePairs[5]} delay={3} onPlayVideo={(idx) => setCurrentIdx(idx)} />
+        <FadingTile pair={tilePairs[5]} delay={3} />
 
         {/* ROW 3 */}
-        <FadingTile pair={tilePairs[6]} delay={6} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[7]} delay={1.5} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[8]} delay={3.5} onPlayVideo={(idx) => setCurrentIdx(idx)} />
-        <FadingTile pair={tilePairs[9]} delay={5.5} onPlayVideo={(idx) => setCurrentIdx(idx)} />
+        <FadingTile pair={tilePairs[6]} delay={6} />
+        <FadingTile pair={tilePairs[7]} delay={1.5} />
+        <FadingTile pair={tilePairs[8]} delay={3.5} />
+        <FadingTile pair={tilePairs[9]} delay={5.5} />
       </div>
     </section>
   );
@@ -238,10 +238,9 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function FadingTile({ pair, delay, onPlayVideo }: {
+function FadingTile({ pair, delay }: {
   pair: [TileContent, TileContent];
   delay: number;
-  onPlayVideo: (playlistIdx: number) => void;
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -256,15 +255,8 @@ function FadingTile({ pair, delay, onPlayVideo }: {
   const current = pair[activeIdx];
   const isVideo = current.type === 'video';
 
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    if (current.playlistIdx !== undefined) {
-      onPlayVideo(current.playlistIdx);
-    }
-  };
-
   return (
-    <div onClick={handleClick}
+    <a href={`#story-${current.index}`}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
 
       {/* For video tiles — show YouTube embed playing muted */}
@@ -306,6 +298,6 @@ function FadingTile({ pair, delay, onPlayVideo }: {
           ))}
         </div>
       </div>
-    </div>
+    </a>
   );
 }
