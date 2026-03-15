@@ -3,12 +3,12 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
 type VideoItem = {
-  type: 'youtube' | 'tiktok' | 'reels';
+  type: 'youtube' | 'tiktok' | 'reels' | 'x';
   embed_id: string;
   url: string;
   label: string;
   thumbnail?: string;
-  duration?: number; // in seconds, from engine
+  duration?: number;
 };
 
 export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
@@ -33,6 +33,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
       items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
     } else if (c.platform === 'reels' && c.embed_id) {
       items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
+    } else if (c.platform === 'x' && c.embed_id) {
+      items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration || 30 });
     }
   }
 
@@ -174,6 +176,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
                 <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
                   className="w-full h-full" allowFullScreen />
               )}
+              {active.type === 'x' && (
+                <iframe key={active.embed_id}
+                  src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
+                  className="w-full h-full" allowFullScreen />
+              )}
             </>
           ) : (
             <div className="w-full h-full cursor-pointer" onClick={() => setPlaying(true)}>
@@ -195,7 +202,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
         <div className="flex items-center px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
           <div className="flex items-center gap-1.5 flex-1 min-w-0">
             <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{
-              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3'
+              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
             }} />
             <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
             {playing && duration > 0 && (
@@ -237,7 +244,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
             }}>
             <div className="h-full rounded-full transition-all duration-500 ease-linear" style={{
               width: `${progress * 100}%`,
-              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3',
+              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3',
             }} />
           </div>
 
@@ -247,7 +254,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
               <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); }}
                 className="rounded overflow-hidden transition-all group"
                 style={{
-                  border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'}` : '2px solid transparent',
+                  border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3'}` : '2px solid transparent',
                   opacity: i === activeIdx ? 1 : i < activeIdx ? 0.5 : 0.7,
                 }}>
                 <div className="aspect-video bg-[#111] relative">
@@ -255,8 +262,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
                     <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : '#c026d3' }}>
-                        {item.type === 'tiktok' ? '♪' : '◎'}
+                      <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3' }}>
+                        {item.type === 'tiktok' ? '♪' : item.type === 'x' ? '𝕏' : '◎'}
                       </span>
                     </div>
                   )}
