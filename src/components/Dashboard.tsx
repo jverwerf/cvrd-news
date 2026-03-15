@@ -160,21 +160,20 @@ export function Dashboard({
           {/* CONTROLS BAR — top of player */}
           <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/90 via-black/60 to-transparent pb-10 pt-2 px-3">
 
-            {/* Timeline */}
-            {current?.type === 'anchor' && duration > 0 && (
-              <div className="flex items-center gap-2 mt-2">
-                <span className="text-[10px] text-white/80 font-mono shrink-0 w-8 text-right">{formatTime(progress)}</span>
-                <div className="relative h-[5px] bg-white/20 rounded-full cursor-pointer overflow-hidden flex-1"
+            {/* Playlist timeline — shows progress across ALL videos */}
+            {playlist.length > 1 && (
+              <div className="flex items-center gap-2 mt-1 mb-2">
+                <div className="h-[5px] bg-white/20 rounded-full cursor-pointer overflow-hidden flex-1"
                   onClick={(e) => {
-                    if (videoRef.current) {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const pct = (e.clientX - rect.left) / rect.width;
-                      videoRef.current.currentTime = pct * duration;
-                    }
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const pct = (e.clientX - rect.left) / rect.width;
+                    const idx = Math.floor(pct * playlist.length);
+                    setCurrentIdx(Math.max(0, Math.min(idx, playlist.length - 1)));
                   }}>
-                  <div className="h-full bg-white rounded-full" style={{ width: `${(progress / duration) * 100}%` }} />
+                  <div className="h-full bg-white rounded-full transition-all duration-300" style={{
+                    width: `${((currentIdx + 1) / playlist.length) * 100}%`
+                  }} />
                 </div>
-                <span className="text-[10px] text-white/80 font-mono shrink-0 w-8">{formatTime(duration)}</span>
               </div>
             )}
 
@@ -190,7 +189,7 @@ export function Dashboard({
 
               {/* Prev */}
               <button onClick={prevItem} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 6h2v12h-2zm-3.5 6L4 18V6z" /></svg>
+                <span className="text-white text-[16px] leading-none">⏮</span>
               </button>
 
               {/* Counter */}
@@ -198,7 +197,7 @@ export function Dashboard({
 
               {/* Next */}
               <button onClick={next} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z" /></svg>
+                <span className="text-white text-[16px] leading-none">⏭</span>
               </button>
 
               {/* Divider */}
