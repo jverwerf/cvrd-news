@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 type VideoItem = {
   type: 'youtube' | 'tiktok' | 'reels';
@@ -37,6 +37,25 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [segmentProgress, setSegmentProgress] = useState(0);
+
+  // Gradually fill the current segment while playing
+  useEffect(() => {
+    if (!playing) return;
+    setSegmentProgress(0);
+    const interval = setInterval(() => {
+      setSegmentProgress(prev => {
+        if (prev >= 1) return 1;
+        return prev + 0.005; // ~200 ticks over ~30s at 150ms intervals
+      });
+    }, 150);
+    return () => clearInterval(interval);
+  }, [activeIdx, playing]);
+
+  // Reset segment progress when changing videos
+  useEffect(() => {
+    setSegmentProgress(0);
+  }, [activeIdx]);
 
   if (items.length === 0) return null;
 
@@ -131,8 +150,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
               setActiveIdx(Math.min(idx, items.length - 1));
               setPlaying(true);
             }}>
-            <div className="h-full rounded-full transition-all duration-300" style={{
-              width: `${((activeIdx + 1) / items.length) * 100}%`,
+            <div className="h-full rounded-full transition-all duration-150" style={{
+              width: `${((activeIdx + (playing ? segmentProgress : 0)) / items.length) * 100}%`,
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3',
             }} />
           </div>
