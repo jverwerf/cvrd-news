@@ -224,7 +224,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
               <button onClick={prevItem} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="#555"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z" transform="scale(-1,1) translate(-24,0)" /></svg>
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="#555"><path d="M16 6h2v12h-2zm-3.5 6L4 18V6z" /></svg>
               </button>
               <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
               <button onClick={next} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
@@ -245,13 +245,17 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           {/* Progress bar — gradually fills based on actual playback */}
           <div className="h-2 rounded-full overflow-hidden bg-[#e5e5e5] mb-2 cursor-pointer"
             onClick={(e) => {
+              e.stopPropagation();
               const rect = e.currentTarget.getBoundingClientRect();
               const pct = (e.clientX - rect.left) / rect.width;
               const idx = Math.floor(pct * items.length);
-              setActiveIdx(Math.min(idx, items.length - 1));
+              const newIdx = Math.max(0, Math.min(idx, items.length - 1));
+              setActiveIdx(newIdx);
               setCurrentTime(0);
               setDuration(0);
               setPlaying(true);
+              stopPolling();
+              stopTimer();
             }}>
             <div className="h-full rounded-full transition-all duration-500 ease-linear" style={{
               width: `${progress * 100}%`,
