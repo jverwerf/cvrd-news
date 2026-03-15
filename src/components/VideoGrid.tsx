@@ -121,7 +121,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
       {/* PROGRESS TIMELINE — spans across all videos */}
       {items.length > 1 && (
-        <div className="flex gap-0 mt-2 h-1 rounded-full overflow-hidden bg-[#e5e5e5]">
+        <div className="flex gap-0 mt-3 h-2 rounded-full overflow-hidden bg-[#e5e5e5]">
           {items.map((item, i) => (
             <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
               className="h-full transition-all"
