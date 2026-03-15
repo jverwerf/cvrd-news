@@ -189,7 +189,7 @@ export function Dashboard({
               </div>
 
               {/* Prev */}
-              <button onClick={prevItem} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
+              <button onClick={prevItem} className="flex items-center justify-center p-2 hover:opacity-60 transition-opacity shrink-0">
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[8px] border-r-white" />
               </button>
 
@@ -197,7 +197,7 @@ export function Dashboard({
               <span className="text-[11px] text-white font-mono shrink-0">{currentIdx + 1} / {playlist.length}</span>
 
               {/* Next */}
-              <button onClick={next} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
+              <button onClick={next} className="flex items-center justify-center p-2 hover:opacity-60 transition-opacity shrink-0">
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-white" />
               </button>
 

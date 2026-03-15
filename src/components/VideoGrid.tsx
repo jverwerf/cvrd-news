@@ -136,9 +136,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
   // Calculate overall progress
   useEffect(() => {
-    if (items.length === 0 || duration === 0) return;
+    if (items.length === 0) return;
+    const dur = duration || active?.duration || 120;
     const segmentSize = 1 / items.length;
-    const segmentProgress = duration > 0 ? currentTime / duration : 0;
+    const segmentProgress = dur > 0 ? Math.min(currentTime / dur, 1) : 0;
     setProgress(activeIdx * segmentSize + segmentProgress * segmentSize);
   }, [activeIdx, currentTime, duration, items.length]);
 
@@ -223,11 +224,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
-              <button onClick={prevItem} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
+              <button onClick={prevItem} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#555]" />
               </button>
               <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
-              <button onClick={next} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
+              <button onClick={next} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#555]" />
               </button>
             </div>
