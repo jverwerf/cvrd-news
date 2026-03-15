@@ -91,10 +91,19 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
   };
 
   // Start/stop timer or polling based on video type
+  // For YouTube: try API polling, but also run a fallback timer
   useEffect(() => {
     if (!playing) { stopPolling(); stopTimer(); return; }
     if (active?.type === 'youtube') {
       startPolling();
+      // Also start fallback timer in case YouTube API doesn't respond
+      // Will be overridden by real data if API works
+      if (!duration) {
+        setDuration(180); // assume 3 min for YouTube
+        timerRef.current = setInterval(() => {
+          setCurrentTime(prev => prev + 0.5);
+        }, 500);
+      }
     } else {
       startTimer();
     }
