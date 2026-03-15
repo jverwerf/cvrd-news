@@ -12,7 +12,7 @@ type VideoItem = {
 };
 
 export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
-  youtubeVideos: { url: string; embed_id: string; channel?: string }[];
+  youtubeVideos: { url: string; embed_id: string; channel?: string; duration?: number }[];
   socialClips: { platform: string; url: string; embed_id?: string; title?: string }[];
   storyImage?: string;
 }) {
@@ -25,6 +25,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
       url: v.url,
       label: v.channel || 'YouTube',
       thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
+      duration: v.duration,
     });
   }
 
@@ -96,14 +97,15 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
     if (!playing) { stopPolling(); stopTimer(); return; }
     if (active?.type === 'youtube') {
       startPolling();
-      // Also start fallback timer in case YouTube API doesn't respond
-      // Will be overridden by real data if API works
-      if (!duration) {
-        setDuration(180); // assume 3 min for YouTube
-        timerRef.current = setInterval(() => {
-          setCurrentTime(prev => prev + 0.5);
-        }, 500);
-      }
+      // Fallback timer using stored duration from engine
+      const dur = active.duration || 120;
+      setDuration(dur);
+      timerRef.current = setInterval(() => {
+        setCurrentTime(prev => {
+          if (prev >= dur) { next(); return 0; }
+          return prev + 0.5;
+        });
+      }, 500);
     } else {
       startTimer();
     }
