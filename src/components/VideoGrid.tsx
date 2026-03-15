@@ -8,6 +8,7 @@ type VideoItem = {
   url: string;
   label: string;
   thumbnail?: string;
+  duration?: number; // in seconds, from engine
 };
 
 export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
@@ -29,9 +30,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
   for (const c of socialClips) {
     if (c.platform === 'tiktok' && c.embed_id) {
-      items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok' });
+      items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
     } else if (c.platform === 'reels' && c.embed_id) {
-      items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels' });
+      items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
     }
   }
 
@@ -65,6 +66,39 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
     if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null; }
   };
 
+  // Timer for TikTok/Reels progress (uses stored duration)
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    const dur = active?.duration || 30; // fallback 30s
+    setDuration(dur);
+    timerRef.current = setInterval(() => {
+      setCurrentTime(prev => {
+        if (prev >= dur) {
+          next();
+          return 0;
+        }
+        return prev + 0.5;
+      });
+    }, 500);
+  }, [active]);
+
+  const stopTimer = () => {
+    if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
+  };
+
+  // Start/stop timer or polling based on video type
+  useEffect(() => {
+    if (!playing) { stopPolling(); stopTimer(); return; }
+    if (active?.type === 'youtube') {
+      startPolling();
+    } else {
+      startTimer();
+    }
+    return () => { stopPolling(); stopTimer(); };
+  }, [playing, activeIdx]);
+
   // Listen for YouTube API responses
   useEffect(() => {
     const handler = (e: MessageEvent) => {
@@ -77,25 +111,14 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           if (typeof data.info.duration === 'number' && data.info.duration > 0) {
             setDuration(data.info.duration);
           }
-          // Detect video ended
-          if (data.info.playerState === 0) { // 0 = ended
-            next();
-          }
-          // Detect paused
-          if (data.info.playerState === 2) { // 2 = paused
-            setPlaying(false);
-            stopPolling();
-          }
-          // Detect playing
-          if (data.info.playerState === 1) { // 1 = playing
-            setPlaying(true);
-            startPolling();
-          }
+          if (data.info.playerState === 0) next();
+          if (data.info.playerState === 2) { setPlaying(false); }
+          if (data.info.playerState === 1) { setPlaying(true); }
         }
       } catch {}
     };
     window.addEventListener('message', handler);
-    return () => { window.removeEventListener('message', handler); stopPolling(); };
+    return () => { window.removeEventListener('message', handler); };
   }, [activeIdx]);
 
   // Calculate overall progress
