@@ -190,7 +190,7 @@ export function Dashboard({
 
               {/* Prev */}
               <button onClick={prevItem} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <span className="text-white text-[16px] leading-none">⏪</span>
+                <span className="text-white text-[16px] leading-none">⏮</span>
               </button>
 
               {/* Counter */}
@@ -198,7 +198,7 @@ export function Dashboard({
 
               {/* Next */}
               <button onClick={next} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <span className="text-white text-[16px] leading-none">⏩</span>
+                <span className="text-white text-[16px] leading-none">⏭</span>
               </button>
 
               {/* Divider */}
