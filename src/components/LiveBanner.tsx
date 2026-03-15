@@ -92,14 +92,14 @@ export function LiveBanner({ stories, liveData: initialLiveData }: { stories: Na
 
   if (entries.length === 0) return null;
 
-  const doubled = [...entries, ...entries];
+  const tripled = [...entries, ...entries, ...entries];
 
   return (
     <div className="overflow-hidden h-12 flex items-center"
       style={{ background: '#ffffff', boxShadow: '0 1px 0 0 #e5e5e5' }}>
 
-      <div className="flex items-center gap-6 animate-[ticker_90s_linear_infinite] whitespace-nowrap pl-4">
-        {doubled.map((entry, i) => (
+      <div className="flex items-center gap-6 animate-[ticker_60s_linear_infinite] whitespace-nowrap pl-4">
+        {tripled.map((entry, i) => (
           <span key={i} className="flex items-center gap-1.5 shrink-0">
             {entry.url ? (
               <a href={entry.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
@@ -130,7 +130,7 @@ export function LiveBanner({ stories, liveData: initialLiveData }: { stories: Na
       <style>{`
         @keyframes ticker {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          100% { transform: translateX(-33.333%); }
         }
       `}</style>
     </div>
