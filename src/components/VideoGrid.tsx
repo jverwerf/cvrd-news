@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 type VideoItem = {
   type: 'youtube' | 'tiktok' | 'reels';
@@ -37,37 +37,98 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
-  const [segmentProgress, setSegmentProgress] = useState(0);
+  const [progress, setProgress] = useState(0); // 0-1 across entire playlist
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const pollRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Gradually fill the current segment while playing
-  useEffect(() => {
-    if (!playing) return;
-    setSegmentProgress(0);
-    const interval = setInterval(() => {
-      setSegmentProgress(prev => {
-        if (prev >= 1) return 1;
-        return prev + 0.005; // ~200 ticks over ~30s at 150ms intervals
-      });
-    }, 150);
-    return () => clearInterval(interval);
-  }, [activeIdx, playing]);
+  const active = items.length > 0 ? items[activeIdx] : null;
 
-  // Reset segment progress when changing videos
+  // Poll YouTube iframe for current time via postMessage
+  const startPolling = useCallback(() => {
+    if (pollRef.current) clearInterval(pollRef.current);
+    pollRef.current = setInterval(() => {
+      if (iframeRef.current?.contentWindow) {
+        // Request current time and duration from YouTube
+        iframeRef.current.contentWindow.postMessage(JSON.stringify({
+          event: 'command', func: 'getCurrentTime'
+        }), '*');
+        iframeRef.current.contentWindow.postMessage(JSON.stringify({
+          event: 'command', func: 'getDuration'
+        }), '*');
+      }
+    }, 500);
+  }, []);
+
+  const stopPolling = () => {
+    if (pollRef.current) { clearInterval(pollRef.current); pollRef.current = null; }
+  };
+
+  // Listen for YouTube API responses
   useEffect(() => {
-    setSegmentProgress(0);
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data.event === 'infoDelivery' && data.info) {
+          if (typeof data.info.currentTime === 'number') {
+            setCurrentTime(data.info.currentTime);
+          }
+          if (typeof data.info.duration === 'number' && data.info.duration > 0) {
+            setDuration(data.info.duration);
+          }
+          // Detect video ended
+          if (data.info.playerState === 0) { // 0 = ended
+            next();
+          }
+          // Detect paused
+          if (data.info.playerState === 2) { // 2 = paused
+            setPlaying(false);
+            stopPolling();
+          }
+          // Detect playing
+          if (data.info.playerState === 1) { // 1 = playing
+            setPlaying(true);
+            startPolling();
+          }
+        }
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => { window.removeEventListener('message', handler); stopPolling(); };
   }, [activeIdx]);
 
-  if (items.length === 0) return null;
+  // Calculate overall progress
+  useEffect(() => {
+    if (items.length === 0 || duration === 0) return;
+    const segmentSize = 1 / items.length;
+    const segmentProgress = duration > 0 ? currentTime / duration : 0;
+    setProgress(activeIdx * segmentSize + segmentProgress * segmentSize);
+  }, [activeIdx, currentTime, duration, items.length]);
 
-  const active = items[activeIdx];
+  if (items.length === 0 || !active) return null;
+
   const next = () => {
     if (activeIdx < items.length - 1) {
       setActiveIdx(prev => prev + 1);
+      setCurrentTime(0);
+      setDuration(0);
     } else {
-      setPlaying(false); // Stop at end of playlist
+      setPlaying(false);
+      stopPolling();
     }
   };
-  const prevItem = () => setActiveIdx(prev => (prev - 1 + items.length) % items.length);
+  const prevItem = () => {
+    setActiveIdx(prev => (prev - 1 + items.length) % items.length);
+    setCurrentTime(0);
+    setDuration(0);
+  };
+
+  const formatTime = (s: number) => {
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${sec.toString().padStart(2, '0')}`;
+  };
 
   return (
     <div className="mb-6">
@@ -77,8 +138,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           {playing ? (
             <>
               {active.type === 'youtube' && (
-                <iframe key={`${active.embed_id}-${activeIdx}`}
-                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&enablejsapi=1`}
+                <iframe ref={iframeRef} key={`${active.embed_id}-${activeIdx}`}
+                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                   className="w-full h-full" allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
@@ -92,12 +153,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
               )}
             </>
           ) : (
-            /* Thumbnail with play button when not playing */
             <div className="w-full h-full cursor-pointer" onClick={() => setPlaying(true)}>
               {active.thumbnail ? (
                 <img src={active.thumbnail} alt={active.label} className="w-full h-full object-cover" />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-[#111]" />
+                <div className="w-full h-full bg-[#111]" />
               )}
               <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                 <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
@@ -110,15 +170,16 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
         {/* CONTROLS BAR */}
         <div className="flex items-center px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
-          {/* Source label */}
           <div className="flex items-center gap-1.5 flex-1 min-w-0">
             <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3'
             }} />
             <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
+            {playing && duration > 0 && (
+              <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
+            )}
           </div>
 
-          {/* Prev / counter / Next */}
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
               <button onClick={prevItem} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
@@ -131,35 +192,36 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
             </div>
           )}
 
-          {/* Open original */}
           <a href={active.url} target="_blank" rel="noreferrer" className="text-[10px] text-[#b8860b] hover:underline ml-3 shrink-0">
             original
           </a>
         </div>
       </div>
 
-      {/* TIMELINE + THUMBNAILS — thumbnails span across, timeline fills gradually */}
+      {/* TIMELINE + THUMBNAILS */}
       {items.length > 1 && (
         <div className="mt-3">
-          {/* Progress bar — fills gradually from left */}
+          {/* Progress bar — gradually fills based on actual playback */}
           <div className="h-2 rounded-full overflow-hidden bg-[#e5e5e5] mb-2 cursor-pointer"
             onClick={(e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const pct = (e.clientX - rect.left) / rect.width;
               const idx = Math.floor(pct * items.length);
               setActiveIdx(Math.min(idx, items.length - 1));
+              setCurrentTime(0);
+              setDuration(0);
               setPlaying(true);
             }}>
-            <div className="h-full rounded-full transition-all duration-150" style={{
-              width: `${((activeIdx + (playing ? segmentProgress : 0)) / items.length) * 100}%`,
+            <div className="h-full rounded-full transition-all duration-500 ease-linear" style={{
+              width: `${progress * 100}%`,
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3',
             }} />
           </div>
 
-          {/* Thumbnails — equal width spanning full timeline width */}
+          {/* Thumbnails — equal width spanning full timeline */}
           <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}>
             {items.map((item, i) => (
-              <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
+              <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); }}
                 className="rounded overflow-hidden transition-all group"
                 style={{
                   border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'}` : '2px solid transparent',
