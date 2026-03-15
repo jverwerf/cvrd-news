@@ -119,64 +119,57 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
         </div>
       </div>
 
-      {/* PROGRESS TIMELINE — spans across all videos */}
+      {/* TIMELINE + THUMBNAILS — thumbnails span across, timeline fills gradually */}
       {items.length > 1 && (
-        <div className="flex gap-0 mt-3 h-2 rounded-full overflow-hidden bg-[#e5e5e5]">
-          {items.map((item, i) => (
-            <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
-              className="h-full transition-all"
-              style={{
-                flex: 1,
-                background: i < activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3')
-                  : i === activeIdx ? (playing ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3') : '#bbb')
-                  : '#e5e5e5',
-                borderRight: i < items.length - 1 ? '1px solid white' : 'none',
-              }}
-              title={item.label}
-            />
-          ))}
-        </div>
-      )}
+        <div className="mt-3">
+          {/* Progress bar — fills gradually from left */}
+          <div className="h-2 rounded-full overflow-hidden bg-[#e5e5e5] mb-2 cursor-pointer"
+            onClick={(e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const pct = (e.clientX - rect.left) / rect.width;
+              const idx = Math.floor(pct * items.length);
+              setActiveIdx(Math.min(idx, items.length - 1));
+              setPlaying(true);
+            }}>
+            <div className="h-full rounded-full transition-all duration-300" style={{
+              width: `${((activeIdx + 1) / items.length) * 100}%`,
+              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : '#c026d3',
+            }} />
+          </div>
 
-      {/* THUMBNAIL STRIP — click to jump between videos */}
-      {items.length > 1 && (
-        <div className="flex gap-1.5 mt-2 overflow-x-auto">
-          {items.map((item, i) => (
-            <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
-              className="shrink-0 rounded overflow-hidden transition-all group"
-              style={{
-                width: '120px',
-                border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'}` : '2px solid #e5e5e5',
-                opacity: i === activeIdx ? 1 : 0.7,
-              }}>
-              <div className="aspect-video bg-[#111] relative">
-                {item.thumbnail ? (
-                  <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center">
-                    <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : '#c026d3' }}>
-                      {item.type === 'tiktok' ? '♪' : '◎'}
-                    </span>
-                  </div>
-                )}
-                {i !== activeIdx && (
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-6 h-6 rounded-full bg-black/50 flex items-center justify-center">
-                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white ml-0.5" />
+          {/* Thumbnails — equal width spanning full timeline width */}
+          <div className="grid gap-1" style={{ gridTemplateColumns: `repeat(${items.length}, 1fr)` }}>
+            {items.map((item, i) => (
+              <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
+                className="rounded overflow-hidden transition-all group"
+                style={{
+                  border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'}` : '2px solid transparent',
+                  opacity: i === activeIdx ? 1 : i < activeIdx ? 0.5 : 0.7,
+                }}>
+                <div className="aspect-video bg-[#111] relative">
+                  {item.thumbnail ? (
+                    <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center">
+                      <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : '#c026d3' }}>
+                        {item.type === 'tiktok' ? '♪' : '◎'}
+                      </span>
                     </div>
-                  </div>
-                )}
-              </div>
-              <div className="px-1.5 py-1 bg-[#fafafa]">
-                <div className="flex items-center gap-1">
-                  <span className="w-[4px] h-[4px] rounded-full shrink-0" style={{
-                    background: item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'
-                  }} />
-                  <span className="text-[8px] text-[#777] truncate">{item.label}</span>
+                  )}
+                  {i !== activeIdx && (
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <div className="w-6 h-6 rounded-full bg-black/50 flex items-center justify-center">
+                        <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white ml-0.5" />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
-            </button>
-          ))}
+                <div className="px-1 py-0.5 bg-[#fafafa]">
+                  <span className="text-[7px] text-[#777] truncate block">{item.label}</span>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>
