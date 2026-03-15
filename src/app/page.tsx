@@ -76,7 +76,7 @@ export default async function Home() {
 
           {/* FOOTER */}
           <footer className="py-10 text-center border-t border-[#e5e5e5]">
-            <img src="/logo2.png" alt="CVRD" className="h-3 mx-auto mb-2 opacity-30" />
+            <img src="/logo2.png" alt="CVRD" className="h-12 mx-auto mb-3 opacity-30" />
             <span className="text-[11px] text-[#ccc]">Sourced from the social pulse</span>
           </footer>
         </>
