@@ -127,11 +127,12 @@ export function Dashboard({
         {/* ROW 2 */}
         <FadingTile pair={tilePairs[4]} delay={5} />
 
-        {/* CENTER PLAYER */}
-        <div className="col-span-2 relative rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+        {/* CENTER PLAYER — slightly smaller to make room for controls beneath */}
+        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+          <div className="flex-1 relative min-h-0">
           {current?.type === 'anchor' && current.url && (
             <video ref={videoRef} key="anchor" src={current.url}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover absolute inset-0"
               playsInline muted={!unmuted} onEnded={next}
               onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
               onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
@@ -157,8 +158,9 @@ export function Dashboard({
               src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
               className="w-full h-full" allowFullScreen />
           )}
-          {/* CONTROLS BAR — top of player */}
-          <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/90 via-black/60 to-transparent pb-10 pt-2 px-3">
+          </div>
+          {/* CONTROLS BAR — below video */}
+          <div className="px-3 py-2 bg-[#111] shrink-0">
 
             {/* Playlist timeline — gradually fills across ALL videos */}
             {playlist.length > 1 && (
