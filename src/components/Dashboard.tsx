@@ -160,9 +160,10 @@ export function Dashboard({
           {/* CONTROLS BAR — top of player */}
           <div className="absolute top-0 left-0 right-0 z-20 bg-gradient-to-b from-black/90 via-black/60 to-transparent pb-10 pt-2 px-3">
 
-            {/* Playlist timeline — shows progress across ALL videos */}
+            {/* Playlist timeline — gradually fills across ALL videos */}
             {playlist.length > 1 && (
               <div className="flex items-center gap-2 mt-1 mb-2">
+                <span className="text-[9px] text-white/60 font-mono shrink-0">{currentIdx + 1}/{playlist.length}</span>
                 <div className="h-[5px] bg-white/20 rounded-full cursor-pointer overflow-hidden flex-1"
                   onClick={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
@@ -170,8 +171,8 @@ export function Dashboard({
                     const idx = Math.floor(pct * playlist.length);
                     setCurrentIdx(Math.max(0, Math.min(idx, playlist.length - 1)));
                   }}>
-                  <div className="h-full bg-white rounded-full transition-all duration-300" style={{
-                    width: `${((currentIdx + 1) / playlist.length) * 100}%`
+                  <div className="h-full bg-white rounded-full transition-all duration-500 ease-linear" style={{
+                    width: `${((currentIdx + (duration > 0 ? progress / duration : 0)) / playlist.length) * 100}%`
                   }} />
                 </div>
               </div>
@@ -189,7 +190,7 @@ export function Dashboard({
 
               {/* Prev */}
               <button onClick={prevItem} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <span className="text-white text-[16px] leading-none">⏮</span>
+                <span className="text-white text-[16px] leading-none">⏪</span>
               </button>
 
               {/* Counter */}
@@ -197,7 +198,7 @@ export function Dashboard({
 
               {/* Next */}
               <button onClick={next} className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 flex items-center justify-center transition-colors shrink-0">
-                <span className="text-white text-[16px] leading-none">⏭</span>
+                <span className="text-white text-[16px] leading-none">⏩</span>
               </button>
 
               {/* Divider */}
