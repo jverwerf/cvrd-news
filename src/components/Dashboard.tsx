@@ -160,11 +160,11 @@ export function Dashboard({
           )}
           </div>
           {/* CONTROLS BAR — below video */}
-          <div className="px-3 py-2 bg-[#111] shrink-0">
+          <div className="px-2 py-1 bg-[#111] shrink-0">
 
             {/* Playlist timeline — gradually fills across ALL videos */}
             {playlist.length > 1 && (
-              <div className="flex items-center gap-2 mt-1 mb-2">
+              <div className="flex items-center gap-2 mb-1">
                 <span className="text-[9px] text-white/60 font-mono shrink-0">{currentIdx + 1}/{playlist.length}</span>
                 <div className="h-[5px] bg-white/20 rounded-full cursor-pointer overflow-hidden flex-1"
                   onClick={(e) => {
@@ -181,7 +181,7 @@ export function Dashboard({
             )}
 
             {/* Controls row — evenly spaced */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               {/* Now playing */}
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 <span className="w-[5px] h-[5px] rounded-full bg-[#4ade80] shadow-[0_0_8px_#4ade80] animate-pulse shrink-0" />
