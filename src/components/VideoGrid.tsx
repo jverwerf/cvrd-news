@@ -97,19 +97,43 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
         </div>
       </div>
 
-      {/* TIMELINE — click to jump between videos */}
+      {/* THUMBNAIL STRIP — click to jump between videos */}
       {items.length > 1 && (
-        <div className="flex gap-1 mt-2">
+        <div className="flex gap-1.5 mt-2 overflow-x-auto">
           {items.map((item, i) => (
             <button key={i} onClick={() => setActiveIdx(i)}
-              className="flex-1 group relative"
-              title={item.label}>
-              <div className="h-1.5 rounded-full transition-all" style={{
-                background: i === activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3') : '#e5e5e5',
-              }} />
-              <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[8px] text-[#999] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                {item.label}
-              </span>
+              className="shrink-0 rounded overflow-hidden transition-all group"
+              style={{
+                width: '120px',
+                border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'}` : '2px solid #e5e5e5',
+                opacity: i === activeIdx ? 1 : 0.7,
+              }}>
+              <div className="aspect-video bg-[#111] relative">
+                {item.thumbnail ? (
+                  <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : '#c026d3' }}>
+                      {item.type === 'tiktok' ? '♪' : '◎'}
+                    </span>
+                  </div>
+                )}
+                {i !== activeIdx && (
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="w-6 h-6 rounded-full bg-black/50 flex items-center justify-center">
+                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white ml-0.5" />
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="px-1.5 py-1 bg-[#fafafa]">
+                <div className="flex items-center gap-1">
+                  <span className="w-[4px] h-[4px] rounded-full shrink-0" style={{
+                    background: item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3'
+                  }} />
+                  <span className="text-[8px] text-[#777] truncate">{item.label}</span>
+                </div>
+              </div>
             </button>
           ))}
         </div>
