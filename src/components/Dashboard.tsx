@@ -257,35 +257,34 @@ function FadingTile({ pair, delay, onPlayVideo }: {
   const isVideo = current.type === 'video';
 
   const handleClick = (e: React.MouseEvent) => {
-    if (isVideo && current.playlistIdx !== undefined) {
-      e.preventDefault();
+    e.preventDefault();
+    if (current.playlistIdx !== undefined) {
       onPlayVideo(current.playlistIdx);
     }
   };
 
   return (
-    <a href={isVideo ? undefined : `#story-${current.index}`}
-      onClick={handleClick}
+    <div onClick={handleClick}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
 
-      {/* Crossfade between two items */}
+      {/* For video tiles — show YouTube embed playing muted */}
       {pair.map((item, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
-          <Image src={item.image} alt={item.topic} fill className="object-cover" />
+          {item.type === 'video' && item.playlistIdx !== undefined ? (
+            <iframe
+              src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1`}
+              className="w-full h-full"
+              style={{ border: 'none', pointerEvents: 'none' }}
+              allow="autoplay"
+            />
+          ) : (
+            <Image src={item.image} alt={item.topic} fill className="object-cover" />
+          )}
         </div>
       ))}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-      {/* Play icon for video tiles */}
-      {isVideo && (
-        <div className="absolute inset-0 flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
-          <div className="w-8 h-8 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center">
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-white ml-0.5" />
-          </div>
-        </div>
-      )}
 
       {/* Channel badge */}
       {isVideo && current.channel && (
@@ -307,6 +306,6 @@ function FadingTile({ pair, delay, onPlayVideo }: {
           ))}
         </div>
       </div>
-    </a>
+    </div>
   );
 }
