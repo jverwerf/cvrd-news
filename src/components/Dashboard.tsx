@@ -140,23 +140,23 @@ export function Dashboard({
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
-              className="w-full h-full" allowFullScreen id="yt-player"
+              className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {current?.type === 'tiktok' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
-              className="w-full h-full" allowFullScreen allow="encrypted-media" />
+              className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
           )}
           {current?.type === 'reels' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
-              className="w-full h-full" allowFullScreen />
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           {current?.type === 'x' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
-              className="w-full h-full" allowFullScreen />
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           </div>
           {/* CONTROLS BAR — below video */}
