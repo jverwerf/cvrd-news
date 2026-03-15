@@ -1,0 +1,68 @@
+{
+  "date": "2026-03-14",
+  "generated_at": "2026-03-14T08:00:00.000Z",
+  "top_narratives": [
+    {
+      "topic": "The OpenAI Regulatory Crackdown",
+      "summary": "Following a series of rapid AI advancements in early 2026, Congress has announced emergency hearings to determine whether frontier AI models should require state licenses to operate commercially. The hearings were triggered after a coalition of senators from both parties introduced the AI Accountability and Licensing Act. The bill proposes that any AI model exceeding a certain compute threshold must undergo a federal safety review before deployment. OpenAI, Google DeepMind, and Anthropic have all been subpoenaed to testify. Industry insiders say the bill's language was quietly shaped during months of closed-door meetings between congressional staffers and lobbyists from major tech companies. The hearings are expected to span two weeks and could reshape the entire AI industry's regulatory landscape in the United States.",
+      "left_narrative": "Left-leaning media are framing these hearings as a long-overdue reckoning with unrestrained corporate tech power. Outlets like The Guardian and CNN emphasize the risks of AI bias, job displacement, and the lack of transparency in how these models are trained. They highlight quotes from labor unions and civil rights organizations calling for strict oversight. The editorial angle consistently positions regulation as protection for vulnerable communities.",
+      "right_narrative": "Right-leaning media view the hearings as a textbook case of government overreach that will stifle American innovation. Fox Business and the Daily Wire argue that heavy-handed licensing requirements will create barriers to entry for startups while handing the global AI lead to China. Pundits frame the regulation as the Biden administration weaponizing bureaucracy. Several outlets draw parallels to failed attempts to regulate the early internet.",
+      "what_they_arent_telling_you": "Both sides are ignoring the actual leaked draft of the regulation, which reveals it was heavily lobbied by existing tech giants to create a 'moat' preventing open-source models from competing. A viral GitHub thread with over 10,000 stars has been dissecting the bill's language line by line, showing how the compute thresholds were designed to exempt incumbents while crushing smaller labs. This matters because it means the regulation isn't about safety at all — it's about market consolidation disguised as consumer protection. The biggest beneficiaries of this bill passing are the exact companies testifying against it in public. Watch for amendments in the second week of hearings that quietly raise the compute threshold even further.",
+      "image_file": "/images/story_2026-03-14_1.png",
+      "videos": [
+        {
+          "platform": "x",
+          "url": "https://x.com/elonmusk/status/1769850550085443909",
+          "embed_id": "1769850550085443909"
+        },
+        {
+          "platform": "x",
+          "url": "https://twitter.com/sama/status/1769838029274296766",
+          "embed_id": "1769838029274296766"
+        }
+      ],
+      "people": [
+        { "name": "Sam Altman", "role": "CEO of OpenAI" },
+        { "name": "Lina Khan", "role": "FTC Chair" },
+        { "name": "Chuck Schumer", "role": "Senate Majority Leader" }
+      ],
+      "sources": [
+        { "name": "NY Times", "url": "https://www.nytimes.com/2026/03/14/technology/ai-regulation-hearings.html", "lean": "left" },
+        { "name": "The Guardian", "url": "https://www.theguardian.com/technology/2026/mar/14/congress-ai-licensing-bill", "lean": "left" },
+        { "name": "Fox Business", "url": "https://www.foxbusiness.com/technology/ai-regulation-overreach-innovation", "lean": "right" },
+        { "name": "Daily Wire", "url": "https://www.dailywire.com/news/congress-ai-licensing-china", "lean": "right" }
+      ]
+    },
+    {
+      "topic": "The 'Phantom' Stock Market Rally",
+      "summary": "The S&P 500 hit a new all-time high today, but the rally was driven almost entirely by just three mega-cap tech conglomerates — Nvidia, Apple, and Microsoft — while the broader market remained essentially flat. The Dow Jones Industrial Average barely moved, and the Russell 2000, which tracks small-cap companies, actually declined 0.4%. Analysts note that market breadth has narrowed to levels not seen since the dot-com era. Trading volume data shows that institutional algorithmic trading accounted for over 70% of all transactions today. Retail investor participation has dropped to a 15-year low according to recent brokerage data. The divergence between headline index numbers and the actual health of the broader market has become one of the most discussed topics in financial circles this week.",
+      "left_narrative": "Left-leaning outlets like CNN Business are framing the rally as vindication of the administration's economic policies, particularly investments in tech infrastructure and semiconductor manufacturing. They highlight the job creation numbers in the tech sector and the record-breaking stock performance as signs of economic resilience. The editorial tone suggests that critics who predicted recession have been proven wrong by the market's strength.",
+      "right_narrative": "Right-leaning outlets like Fox Business and the Wall Street Journal editorial board argue the rally is entirely artificial and masks deep structural problems. They point to small businesses struggling under high interest rates and regulations, while tech elites accumulate unprecedented wealth. The Daily Caller ran a piece calling it 'the most fake market rally in American history' and blamed monetary policy for inflating a bubble that will devastate retirement accounts.",
+      "what_they_arent_telling_you": "If you look at the raw trading volume, retail investors have almost entirely exited the market — this 'rally' is exclusively algorithmic institutional trading swapping the same three stocks back and forth. A viral TikTok from a former Goldman Sachs trader explaining how dark pool trading is being used to manufacture the appearance of market strength has over 4 million views. This matters because millions of Americans with 401(k)s are being told the economy is booming while their actual portfolio diversity is collapsing. The primary beneficiaries are institutional investors and the executives of three companies whose stock buyback programs are fueling the rally. Watch for the next quarterly earnings reports — if revenue growth doesn't match stock price growth, the correction could be severe.",
+      "image_file": "/images/story_2026-03-14_3.png",
+      "videos": [
+        {
+          "platform": "x",
+          "url": "https://twitter.com/StockMKTNewz/status/1769131669469601831",
+          "embed_id": "1769131669469601831"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@wallstreetanalyst/video/7349812345678901234",
+          "embed_id": "7349812345678901234"
+        }
+      ],
+      "people": [
+        { "name": "Jerome Powell", "role": "Federal Reserve Chair" },
+        { "name": "Janet Yellen", "role": "Treasury Secretary" },
+        { "name": "Jensen Huang", "role": "CEO of Nvidia" }
+      ],
+      "sources": [
+        { "name": "CNN Business", "url": "https://www.cnn.com/2026/03/14/investing/sp500-record-high-tech", "lean": "left" },
+        { "name": "Wall Street Journal", "url": "https://www.wsj.com/finance/stocks/market-breadth-narrows-sp500", "lean": "right" },
+        { "name": "Reuters", "url": "https://www.reuters.com/markets/us-stocks-sp500-new-high-2026-03-14", "lean": "center" },
+        { "name": "Fox Business", "url": "https://www.foxbusiness.com/markets/fake-rally-three-stocks", "lean": "right" }
+      ]
+    }
+  ]
+}

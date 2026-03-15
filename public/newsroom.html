@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVRD — The Newsroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CVRD COLOR SYSTEM
+   Retro-futuristic warmth meets mission control
+   ============================================ */
+:root {
+  /* Warm gradient palette */
+  --cream: #faf3e8;
+  --amber: #d4a574;
+  --amber-bright: #e8b87a;
+  --amber-glow: #f0c890;
+  --dusty-rose: #c4827a;
+  --burnt-orange: #b8654a;
+  --deep-navy: #1a1e2e;
+  --midnight: #12151f;
+
+  /* CRT / Terminal colors */
+  --crt-green: #4ade80;
+  --crt-green-dim: #22c55e;
+  --crt-amber: #fbbf24;
+  --crt-red: #ef4444;
+  --crt-blue: #60a5fa;
+
+  /* Surface colors */
+  --surface-warm: #f5ece0;
+  --surface-card: rgba(250, 243, 232, 0.7);
+  --surface-card-hover: rgba(250, 243, 232, 0.9);
+  --surface-dark: rgba(26, 30, 46, 0.85);
+
+  /* Text */
+  --text-primary: #2a1f14;
+  --text-secondary: #6b5744;
+  --text-muted: #9a8672;
+  --text-on-dark: #e8ddd0;
+
+  /* Fonts */
+  --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+
+  /* Spacing */
+  --gap: 12px;
+  --radius: 6px;
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-serif);
+  color: var(--text-primary);
+  background: var(--deep-navy);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Main warm gradient background */
+.page-bg {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      180deg,
+      var(--cream) 0%,
+      #f0e0c8 15%,
+      var(--amber) 40%,
+      var(--dusty-rose) 65%,
+      var(--deep-navy) 90%,
+      var(--midnight) 100%
+    );
+  position: relative;
+}
+
+/* Scanline overlay */
+.page-bg::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Noise texture */
+.page-bg::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(42, 31, 20, 0.1);
+  background: rgba(250, 243, 232, 0.4);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+}
+
+.logo-sub {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--crt-green-dim);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--crt-green);
+  box-shadow: 0 0 8px var(--crt-green), 0 0 16px rgba(74, 222, 128, 0.3);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.clock {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--amber);
+  text-shadow: 0 0 10px rgba(212, 165, 116, 0.4);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PRIORITY WIRE (Ticker)
+   ============================================ */
+.wire {
+  background: rgba(42, 31, 20, 0.06);
+  border-bottom: 1px solid rgba(42, 31, 20, 0.08);
+  overflow: hidden;
+  position: relative;
+}
+
+.wire-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background: linear-gradient(90deg, var(--burnt-orange), var(--dusty-rose));
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+  z-index: 2;
+}
+
+.wire-track {
+  display: flex;
+  align-items: center;
+  animation: scroll-wire 60s linear infinite;
+  padding: 10px 0 10px 120px;
+  gap: 40px;
+  white-space: nowrap;
+}
+
+@keyframes scroll-wire {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wire-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.wire-item:hover { color: var(--burnt-orange); }
+
+.wire-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+.wire-time {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+.content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(42, 31, 20, 0.1);
+}
+
+/* ============================================
+   PULSE GRID — 5-column feed
+   ============================================ */
+.pulse-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap);
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1200px) { .pulse-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .pulse-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .pulse-grid { grid-template-columns: 1fr; } }
+
+.feed-column {
+  background: var(--surface-card);
+  border: 1px solid rgba(42, 31, 20, 0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-header {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(42, 31, 20, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250, 243, 232, 0.5);
+  position: sticky;
+  top: 0;
+}
+
+.feed-title {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.feed-count {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  background: rgba(42, 31, 20, 0.05);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.feed-scroll {
+  overflow-y: auto;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: var(--amber) transparent;
+}
+
+.feed-scroll::-webkit-scrollbar { width: 4px; }
+.feed-scroll::-webkit-scrollbar-track { background: transparent; }
+.feed-scroll::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 2px; }
+
+/* Feed items */
+.feed-item {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(42, 31, 20, 0.04);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.feed-item:hover {
+  background: var(--surface-card-hover);
+  box-shadow: inset 0 0 20px rgba(212, 165, 116, 0.05);
+}
+
+.feed-item-title {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.feed-item-meta {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feed-item-score {
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.feed-item-time {
+  color: var(--text-muted);
+}
+
+.feed-item-source {
+  color: var(--text-secondary);
+}
+
+/* Breaking item style */
+.feed-item.breaking {
+  border-left: 2px solid var(--crt-amber);
+  animation: pulse-border 3s ease-in-out infinite;
+}
+
+@keyframes pulse-border {
+  0%, 100% { border-left-color: var(--crt-amber); }
+  50% { border-left-color: rgba(251, 191, 36, 0.3); }
+}
+
+/* New item CRT flicker animation */
+.feed-item.new-item {
+  animation: crt-flicker 0.3s ease-out;
+}
+
+@keyframes crt-flicker {
+  0% { opacity: 0; transform: translateY(-4px); filter: brightness(2); }
+  50% { opacity: 0.7; filter: brightness(1.5); }
+  100% { opacity: 1; transform: translateY(0); filter: brightness(1); }
+}
+
+/* Status dots */
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 4px;
+}
+.status-dot.live { background: var(--crt-green); box-shadow: 0 0 4px var(--crt-green); }
+.status-dot.trending { background: var(--crt-amber); box-shadow: 0 0 4px var(--crt-amber); }
+.status-dot.breaking { background: var(--crt-red); box-shadow: 0 0 4px var(--crt-red); }
+
+/* ============================================
+   SIGNAL SECTION — Topic Bubbles
+   ============================================ */
+.signal-section {
+  margin: 32px 0;
+}
+
+.signal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  padding: 24px;
+  background: var(--surface-card);
+  border: 1px solid rgba(42, 31, 20, 0.08);
+  border-radius: var(--radius);
+}
+
+.signal-bubble {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 1px solid rgba(42, 31, 20, 0.1);
+}
+
+.signal-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.signal-bubble.geo { background: rgba(96, 165, 250, 0.1); color: #3b82f6; border-color: rgba(96, 165, 250, 0.2); }
+.signal-bubble.politics { background: rgba(239, 68, 68, 0.08); color: #dc2626; border-color: rgba(239, 68, 68, 0.15); }
+.signal-bubble.tech { background: rgba(74, 222, 128, 0.08); color: #16a34a; border-color: rgba(74, 222, 128, 0.15); }
+.signal-bubble.economy { background: rgba(251, 191, 36, 0.1); color: #d97706; border-color: rgba(251, 191, 36, 0.2); }
+.signal-bubble.social { background: rgba(196, 130, 122, 0.12); color: #b8654a; border-color: rgba(196, 130, 122, 0.2); }
+
+.signal-count {
+  font-size: 9px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 20px 24px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-on-dark);
+  opacity: 0.5;
+  letter-spacing: 0.05em;
+}
+
+.footer-refresh {
+  color: var(--amber-glow);
+  margin-left: 8px;
+}
+
+/* Transition for dark section */
+.dark-zone {
+  color: var(--text-on-dark);
+}
+.dark-zone .section-label { color: rgba(232, 221, 208, 0.4); }
+.dark-zone .section-label::after { background: rgba(232, 221, 208, 0.1); }
+</style>
+</head>
+<body>
+<div class="page-bg">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">CVRD</div>
+      <div class="logo-sub">The Newsroom</div>
+    </div>
+    <div class="header-right">
+      <div class="live-badge">
+        <span class="live-dot"></span>
+        Live
+      </div>
+      <div class="clock" id="clock">--:--:--</div>
+    </div>
+  </header>
+
+  <!-- PRIORITY WIRE -->
+  <div class="wire">
+    <div class="wire-label">Priority Wire</div>
+    <div class="wire-track" id="wire-track"></div>
+  </div>
+
+  <div class="content">
+
+    <!-- PULSE GRID -->
+    <div style="margin-top: 24px;">
+      <div class="section-label">Pulse Grid — Live Feeds</div>
+    </div>
+    <div class="pulse-grid" id="pulse-grid">
+      <div class="feed-column" id="feed-reddit">
+        <div class="feed-header">
+          <span class="feed-title">⬡ Reddit</span>
+          <span class="feed-count" id="reddit-count">—</span>
+        </div>
+        <div class="feed-scroll" id="reddit-scroll"></div>
+      </div>
+      <div class="feed-column" id="feed-twitter">
+        <div class="feed-header">
+          <span class="feed-title">𝕏 Twitter</span>
+          <span class="feed-count" id="twitter-count">—</span>
+        </div>
+        <div class="feed-scroll" id="twitter-scroll"></div>
+      </div>
+      <div class="feed-column" id="feed-youtube">
+        <div class="feed-header">
+          <span class="feed-title">▶ YouTube</span>
+          <span class="feed-count" id="youtube-count">—</span>
+        </div>
+        <div class="feed-scroll" id="youtube-scroll"></div>
+      </div>
+      <div class="feed-column" id="feed-trends">
+        <div class="feed-header">
+          <span class="feed-title">◆ Trends</span>
+          <span class="feed-count" id="trends-count">—</span>
+        </div>
+        <div class="feed-scroll" id="trends-scroll"></div>
+      </div>
+      <div class="feed-column" id="feed-hn">
+        <div class="feed-header">
+          <span class="feed-title">⌘ Hacker News</span>
+          <span class="feed-count" id="hn-count">—</span>
+        </div>
+        <div class="feed-scroll" id="hn-scroll"></div>
+      </div>
+    </div>
+
+    <!-- SIGNAL SECTION -->
+    <div class="signal-section">
+      <div class="section-label">Signal — Topic Clusters</div>
+      <div class="signal-grid" id="signal-grid"></div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer dark-zone">
+    Monitoring 6 platforms · <span id="source-count">0</span> sources indexed
+    <span class="footer-refresh">Last refresh: <span id="last-refresh">—</span></span>
+  </div>
+
+</div>
+
+<script>
+// ============================================
+// CLOCK
+// ============================================
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+function timeAgo(date) {
+  const seconds = Math.floor((Date.now() - new Date(date).getTime()) / 1000);
+  if (seconds < 60) return seconds + 's ago';
+  if (seconds < 3600) return Math.floor(seconds / 60) + 'm ago';
+  if (seconds < 86400) return Math.floor(seconds / 3600) + 'h ago';
+  return Math.floor(seconds / 86400) + 'd ago';
+}
+
+function createFeedItem(title, source, time, score, status, url) {
+  const div = document.createElement('div');
+  div.className = 'feed-item new-item' + (status === 'breaking' ? ' breaking' : '');
+  div.innerHTML = `
+    <div class="feed-item-title">${title}</div>
+    <div class="feed-item-meta">
+      ${status ? `<span class="status-dot ${status}"></span>` : ''}
+      <span class="feed-item-source">${source}</span>
+      ${score ? `<span class="feed-item-score">▲ ${score}</span>` : ''}
+      <span class="feed-item-time">${time}</span>
+    </div>
+  `;
+  if (url) div.onclick = () => window.open(url, '_blank');
+  return div;
+}
+
+let totalSources = 0;
+
+// ============================================
+// REDDIT — Real API
+// ============================================
+async function fetchReddit() {
+  const subs = ['news', 'worldnews', 'politics'];
+  const container = document.getElementById('reddit-scroll');
+  let count = 0;
+
+  for (const sub of subs) {
+    try {
+      const res = await fetch(`https://www.reddit.com/r/${sub}/hot.json?limit=5`, {
+        headers: { 'User-Agent': 'CVRD-Newsroom/1.0' }
+      });
+      const data = await res.json();
+      for (const child of data.data.children) {
+        const post = child.data;
+        if (post.stickied) continue;
+        const status = post.score > 10000 ? 'trending' : (post.score > 50000 ? 'breaking' : 'live');
+        container.appendChild(createFeedItem(
+          post.title, `r/${sub}`, timeAgo(post.created_utc * 1000),
+          post.score.toLocaleString(), status, `https://reddit.com${post.permalink}`
+        ));
+        count++;
+      }
+    } catch (e) { console.warn('Reddit fetch failed for r/' + sub); }
+  }
+  document.getElementById('reddit-count').textContent = count;
+  totalSources += count;
+  updateSourceCount();
+}
+
+// ============================================
+// HACKER NEWS — Real API
+// ============================================
+async function fetchHN() {
+  const container = document.getElementById('hn-scroll');
+  try {
+    const res = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
+    const ids = await res.json();
+
+    let count = 0;
+    for (const id of ids.slice(0, 15)) {
+      const item = await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(r => r.json());
+      if (!item || !item.title) continue;
+      const status = item.score > 300 ? 'trending' : 'live';
+      container.appendChild(createFeedItem(
+        item.title, item.by || 'hn', timeAgo(item.time * 1000),
+        item.score, status, item.url || `https://news.ycombinator.com/item?id=${id}`
+      ));
+      count++;
+    }
+    document.getElementById('hn-count').textContent = count;
+    totalSources += count;
+    updateSourceCount();
+  } catch (e) { console.warn('HN fetch failed'); }
+}
+
+// ============================================
+// X/TWITTER — Mock data (needs API key)
+// ============================================
+function loadTwitterMock() {
+  const container = document.getElementById('twitter-scroll');
+  const tweets = [
+    { text: "Breaking: Pentagon confirms additional troop movements in the Gulf region amid rising tensions", author: "@DefenseWatch", time: "3m ago", likes: "12.4K", status: "breaking" },
+    { text: "Gas prices up 40 cents this week alone. Nobody on TV is connecting this to the Kharg Island strikes.", author: "@EconPulse", time: "8m ago", likes: "45.2K", status: "trending" },
+    { text: "This TikTok from the Iranian coast has 6 million views and CNN hasn't mentioned it once", author: "@MediaCritic", time: "15m ago", likes: "89.1K", status: "trending" },
+    { text: "Thread: I worked in oil trading for 15 years. Here's what no one is telling you about the strait situation 🧵", author: "@OilTraderAnon", time: "22m ago", likes: "31.7K", status: "live" },
+    { text: "The settlement amount Fox agreed to is unprecedented. But watch what happens to their ratings next quarter.", author: "@MediaAnalyst", time: "34m ago", likes: "8.3K", status: "live" },
+    { text: "Reminder: every 'expert' on your TV screen tonight has a financial interest in what they're telling you", author: "@FollowTheMoney", time: "41m ago", likes: "67.8K", status: "trending" },
+    { text: "Raw footage from the synagogue aftermath. This is what real journalism looks like — no filter, no spin.", author: "@CitizenPress", time: "52m ago", likes: "15.2K", status: "live" },
+    { text: "Both CNN and Fox ran identical framing on the economic numbers today. Identical. Think about that.", author: "@NarrativeWatch", time: "1h ago", likes: "22.1K", status: "live" },
+  ];
+  tweets.forEach(t => {
+    container.appendChild(createFeedItem(t.text, t.author, t.time, t.likes, t.status));
+  });
+  document.getElementById('twitter-count').textContent = tweets.length;
+  totalSources += tweets.length;
+  updateSourceCount();
+}
+
+// ============================================
+// YOUTUBE — Mock data (needs API key)
+// ============================================
+function loadYouTubeMock() {
+  const container = document.getElementById('youtube-scroll');
+  const videos = [
+    { title: "US Strikes on Iran's Kharg Island — Full Coverage", channel: "BBC News", time: "1h ago", views: "2.1M", status: "breaking" },
+    { title: "What the Iran strikes mean for oil prices — explained", channel: "Vox", time: "2h ago", views: "890K", status: "trending" },
+    { title: "Fox News reaches historic settlement with Dominion", channel: "CNN", time: "3h ago", views: "1.4M", status: "trending" },
+    { title: "Michigan synagogue attack: community responds", channel: "PBS NewsHour", time: "4h ago", views: "340K", status: "live" },
+    { title: "Inside the Strait of Hormuz — Why it matters", channel: "Al Jazeera", time: "5h ago", views: "670K", status: "live" },
+    { title: "Trump's controversial comments on Iran — Full clip", channel: "MSNBC", time: "5h ago", views: "1.8M", status: "trending" },
+    { title: "Gas prices surge: What you need to know", channel: "Fox Business", time: "6h ago", views: "520K", status: "live" },
+    { title: "Cubans storm government buildings amid blackouts", channel: "Reuters", time: "7h ago", views: "290K", status: "live" },
+  ];
+  videos.forEach(v => {
+    container.appendChild(createFeedItem(v.title, v.channel, v.time, v.views + ' views', v.status));
+  });
+  document.getElementById('youtube-count').textContent = videos.length;
+  totalSources += videos.length;
+  updateSourceCount();
+}
+
+// ============================================
+// GOOGLE TRENDS — Mock (RSS needs proxy)
+// ============================================
+function loadTrendsMock() {
+  const container = document.getElementById('trends-scroll');
+  const trends = [
+    { topic: "Iran Kharg Island", volume: "500K+", status: "breaking" },
+    { topic: "Gas prices today", volume: "200K+", status: "trending" },
+    { topic: "Fox Dominion settlement", volume: "100K+", status: "trending" },
+    { topic: "Michigan synagogue", volume: "90K+", status: "live" },
+    { topic: "Strait of Hormuz", volume: "80K+", status: "live" },
+    { topic: "Oil prices", volume: "70K+", status: "trending" },
+    { topic: "Trump Iran comments", volume: "60K+", status: "live" },
+    { topic: "Cuba protests", volume: "50K+", status: "live" },
+    { topic: "Amsterdam explosion", volume: "45K+", status: "live" },
+    { topic: "Marine deployment", volume: "40K+", status: "live" },
+  ];
+  trends.forEach(t => {
+    container.appendChild(createFeedItem(t.topic, 'Google Trends', 'now', t.volume + ' searches', t.status));
+  });
+  document.getElementById('trends-count').textContent = trends.length;
+  totalSources += trends.length;
+  updateSourceCount();
+}
+
+// ============================================
+// SIGNAL BUBBLES
+// ============================================
+function loadSignals() {
+  const grid = document.getElementById('signal-grid');
+  const signals = [
+    { label: "Iran / Gulf", count: 47, cat: "geo" },
+    { label: "Oil Markets", count: 32, cat: "economy" },
+    { label: "Fox Settlement", count: 28, cat: "politics" },
+    { label: "Synagogue Attack", count: 24, cat: "social" },
+    { label: "AI Regulation", count: 21, cat: "tech" },
+    { label: "Trump", count: 19, cat: "politics" },
+    { label: "Gas Prices", count: 18, cat: "economy" },
+    { label: "Strait of Hormuz", count: 15, cat: "geo" },
+    { label: "Cuba Protests", count: 14, cat: "geo" },
+    { label: "Marine Deploy", count: 12, cat: "geo" },
+    { label: "Media Bias", count: 11, cat: "social" },
+    { label: "Amsterdam", count: 9, cat: "geo" },
+    { label: "Crypto", count: 8, cat: "economy" },
+    { label: "TikTok Ban", count: 7, cat: "tech" },
+  ];
+  signals.forEach(s => {
+    const bubble = document.createElement('div');
+    bubble.className = `signal-bubble ${s.cat}`;
+    bubble.innerHTML = `${s.label} <span class="signal-count">${s.count}</span>`;
+    // Size based on count
+    const scale = 0.85 + (s.count / 50) * 0.3;
+    bubble.style.fontSize = (11 * scale) + 'px';
+    bubble.style.padding = `${6 * scale}px ${14 * scale}px`;
+    grid.appendChild(bubble);
+  });
+}
+
+// ============================================
+// PRIORITY WIRE
+// ============================================
+function loadWire() {
+  const track = document.getElementById('wire-track');
+  const headlines = [
+    "U.S. strikes Iran's Kharg Island — military installations hit, oil facilities spared",
+    "Fox News settles with Dominion, acknowledges false claims aired on network",
+    "Michigan synagogue attack leaves community shaken — attacker's family ties to airstrike revealed",
+    "Gas prices surge 70 cents as Iran conflict rattles global oil markets",
+    "Pentagon deploys additional Marines to Middle East amid escalating tensions",
+    "Cuba protests intensify — citizens storm Communist Party headquarters",
+    "Trump's comments on Iran draw accusations of eugenic rhetoric",
+    "Amsterdam school explosion under investigation — far-right links probed",
+  ];
+  // Duplicate for seamless scroll
+  const all = [...headlines, ...headlines];
+  all.forEach(h => {
+    const item = document.createElement('div');
+    item.className = 'wire-item';
+    item.innerHTML = `<span class="wire-dot"></span>${h}<span class="wire-time">just now</span>`;
+    track.appendChild(item);
+  });
+}
+
+function updateSourceCount() {
+  document.getElementById('source-count').textContent = totalSources;
+  document.getElementById('last-refresh').textContent =
+    new Date().toLocaleTimeString('en-US', { hour12: false, hour: '2-digit', minute: '2-digit' });
+}
+
+// ============================================
+// INIT
+// ============================================
+loadWire();
+loadTwitterMock();
+loadYouTubeMock();
+loadTrendsMock();
+loadSignals();
+fetchReddit();
+fetchHN();
+</script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVRD — The Newsroom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #faf3e8;
+  --amber: #d4a574;
+  --amber-light: #e8c9a0;
+  --amber-glow: #f0c890;
+  --dusty-rose: #c4827a;
+  --burnt-orange: #b8654a;
+  --deep-navy: #1a1e2e;
+  --midnight: #12151f;
+  --crt-green: #4ade80;
+  --crt-amber: #fbbf24;
+  --crt-red: #ef4444;
+  --surface: rgba(255,252,245,0.6);
+  --surface-solid: #fefcf5;
+  --surface-hover: rgba(255,252,245,0.85);
+  --border: rgba(42,31,20,0.07);
+  --border-hover: rgba(42,31,20,0.15);
+  --text: #2a1f14;
+  --text-2: #6b5744;
+  --text-3: #9a8672;
+  --serif: 'Playfair Display', Georgia, serif;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --sidebar-w: 240px;
+  --right-w: 280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  overflow-x: hidden;
+  background: var(--cream);
+}
+
+/* Warm gradient bg */
+.page-wrap {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--cream) 0%, #f5e6d0 20%, var(--amber-light) 50%, var(--dusty-rose) 75%, var(--deep-navy) 95%);
+  position: relative;
+}
+
+/* Scanlines */
+.page-wrap::before {
+  content:'';position:fixed;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(0,0,0,0.015) 3px,rgba(0,0,0,0.015) 4px);
+  pointer-events:none;z-index:9999;
+}
+
+/* Noise */
+.page-wrap::after {
+  content:'';position:fixed;inset:0;opacity:0.025;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9998;
+}
+
+/* HEADER */
+.header {
+  position:sticky;top:0;z-index:200;
+  background:rgba(250,243,232,0.88);
+  backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border);
+  height:52px;display:flex;align-items:center;
+  padding:0 20px;
+}
+.header-inner { max-width:1600px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between; }
+.logo { font:700 22px/1 var(--serif);color:var(--text);letter-spacing:-0.02em;text-shadow:0 0 20px rgba(212,165,116,0.2); }
+.header-center { display:flex;align-items:center;gap:12px; }
+.search-box {
+  background:rgba(42,31,20,0.04);border:1px solid var(--border);border-radius:8px;
+  padding:6px 14px;font:400 13px var(--sans);color:var(--text);width:300px;outline:none;
+}
+.search-box:focus { border-color:var(--amber);box-shadow:0 0 0 3px rgba(212,165,116,0.15); }
+.search-box::placeholder { color:var(--text-3); }
+.header-right { display:flex;align-items:center;gap:14px; }
+.live-badge { display:flex;align-items:center;gap:5px;font:500 10px var(--mono);color:#16a34a;text-transform:uppercase;letter-spacing:0.12em; }
+.live-dot { width:6px;height:6px;border-radius:50%;background:var(--crt-green);box-shadow:0 0 8px var(--crt-green);animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.3} }
+.header-icon { width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;color:var(--text-2);background:rgba(42,31,20,0.04);border:1px solid var(--border); }
+.header-icon:hover { background:rgba(42,31,20,0.08); }
+
+/* LAYOUT */
+.layout { display:flex;max-width:1600px;margin:0 auto;min-height:calc(100vh - 52px); }
+
+/* LEFT SIDEBAR */
+.sidebar-left {
+  width:var(--sidebar-w);padding:20px 16px;position:sticky;top:52px;
+  height:calc(100vh - 52px);overflow-y:auto;flex-shrink:0;
+  scrollbar-width:none;
+}
+.sidebar-left::-webkit-scrollbar { display:none; }
+.nav-section { margin-bottom:24px; }
+.nav-label { font:600 9px var(--mono);text-transform:uppercase;letter-spacing:0.18em;color:var(--text-3);margin-bottom:8px;padding:0 8px; }
+.nav-item {
+  display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;
+  font:500 13px var(--sans);color:var(--text-2);cursor:pointer;transition:all 0.15s;
+}
+.nav-item:hover { background:rgba(42,31,20,0.05);color:var(--text); }
+.nav-item.active { background:rgba(212,165,116,0.12);color:var(--text);font-weight:600; }
+.nav-icon { font-size:16px;width:20px;text-align:center; }
+.nav-badge { margin-left:auto;font:600 10px var(--mono);color:var(--amber);background:rgba(212,165,116,0.12);padding:1px 6px;border-radius:4px; }
+.source-toggle {
+  display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;
+  font:400 12px var(--sans);color:var(--text-2);cursor:pointer;transition:all 0.15s;
+}
+.source-toggle:hover { background:rgba(42,31,20,0.04); }
+.source-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.source-toggle.on .source-dot { box-shadow:0 0 6px currentColor; }
+
+/* MAIN FEED */
+.feed { flex:1;padding:20px 24px;min-width:0; }
+
+/* RIGHT SIDEBAR */
+.sidebar-right {
+  width:var(--right-w);padding:20px 16px;position:sticky;top:52px;
+  height:calc(100vh - 52px);overflow-y:auto;flex-shrink:0;
+  scrollbar-width:none;
+}
+.sidebar-right::-webkit-scrollbar { display:none; }
+.trending-item {
+  display:flex;align-items:center;gap:10px;padding:8px;border-radius:8px;
+  cursor:pointer;transition:all 0.15s;
+}
+.trending-item:hover { background:rgba(42,31,20,0.05); }
+.trending-rank { font:600 11px var(--mono);color:var(--text-3);width:18px;text-align:right; }
+.trending-topic { font:500 13px var(--sans);color:var(--text);flex:1; }
+.trending-count { font:400 11px var(--mono);color:var(--text-3); }
+.trending-bar { height:2px;border-radius:1px;margin-top:2px; }
+
+/* STORY CARD */
+.story-card {
+  background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  margin-bottom:16px;overflow:hidden;transition:all 0.2s;
+  backdrop-filter:blur(12px);
+}
+.story-card:hover { border-color:var(--border-hover);box-shadow:0 2px 16px rgba(42,31,20,0.06); }
+.story-card.expanded { border-color:rgba(212,165,116,0.3);box-shadow:0 4px 32px rgba(42,31,20,0.1); }
+
+.story-header { padding:16px 20px;cursor:pointer; }
+.story-meta { display:flex;align-items:center;gap:8px;margin-bottom:6px; }
+.story-time { font:400 11px var(--mono);color:var(--text-3); }
+.story-status { display:flex;align-items:center;gap:4px;font:500 9px var(--mono);text-transform:uppercase;letter-spacing:0.1em; }
+.story-status.breaking { color:var(--crt-red); }
+.story-status.trending { color:var(--crt-amber); }
+.story-status.live { color:var(--crt-green); }
+.story-title { font:700 22px/1.25 var(--serif);color:var(--text);margin-bottom:8px; }
+.story-summary { font:400 14px/1.6 var(--sans);color:var(--text-2);margin-bottom:12px; }
+
+/* Evidence strip — horizontal scroll */
+.evidence-strip {
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:none;
+}
+.evidence-strip::-webkit-scrollbar { display:none; }
+.evidence-thumb {
+  flex-shrink:0;width:140px;height:90px;border-radius:8px;overflow:hidden;
+  position:relative;cursor:pointer;border:1px solid var(--border);
+  transition:all 0.15s;
+}
+.evidence-thumb:hover { border-color:var(--border-hover);transform:translateY(-1px); }
+.evidence-thumb img, .evidence-thumb iframe { width:100%;height:100%;object-fit:cover;pointer-events:none; }
+.evidence-thumb-badge {
+  position:absolute;bottom:4px;left:4px;font:600 8px var(--mono);text-transform:uppercase;
+  padding:2px 6px;border-radius:4px;letter-spacing:0.05em;
+}
+.badge-x { background:rgba(0,0,0,0.8);color:white; }
+.badge-tiktok { background:rgba(0,0,0,0.8);color:#fe2c55; }
+.badge-reddit { background:rgba(0,0,0,0.8);color:#ff4500; }
+.badge-youtube { background:rgba(0,0,0,0.8);color:#ff0000; }
+.badge-reels { background:rgba(0,0,0,0.8);color:#e1306c; }
+.badge-news { background:rgba(0,0,0,0.8);color:var(--amber); }
+
+/* Engagement bar */
+.engagement { display:flex;align-items:center;gap:16px;padding:10px 20px;border-top:1px solid var(--border); }
+.eng-item { display:flex;align-items:center;gap:5px;font:400 12px var(--sans);color:var(--text-3);cursor:pointer; }
+.eng-item:hover { color:var(--text); }
+.eng-icon { font-size:14px; }
+
+/* Expanded evidence */
+.story-evidence { padding:0 20px 20px; }
+.evidence-section { margin-bottom:20px; }
+.evidence-label { font:600 10px var(--mono);text-transform:uppercase;letter-spacing:0.15em;color:var(--text-3);margin-bottom:10px;display:flex;align-items:center;gap:6px; }
+.evidence-label-dot { width:6px;height:6px;border-radius:50%; }
+
+/* Left vs Right */
+.narrative-grid { display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px; }
+.narrative-card { padding:14px;border-radius:10px;background:rgba(42,31,20,0.03);border:1px solid var(--border); }
+.narrative-lean { font:600 9px var(--mono);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:6px;display:flex;align-items:center;gap:5px; }
+.narrative-lean .dot { width:5px;height:5px;border-radius:50%; }
+.narrative-text { font:400 13px/1.6 var(--sans);color:var(--text-2); }
+
+/* Unfiltered box */
+.unfiltered-box {
+  padding:16px;border-radius:10px;margin-bottom:20px;
+  background:rgba(74,222,128,0.04);border:1px solid rgba(74,222,128,0.12);
+}
+.unfiltered-title { font:600 10px var(--mono);text-transform:uppercase;letter-spacing:0.12em;color:#16a34a;margin-bottom:10px; }
+.unfiltered-item { display:flex;gap:8px;margin-bottom:6px;font:400 13px/1.5 var(--sans);color:var(--text); }
+.unfiltered-num { font:500 11px var(--mono);color:#16a34a;flex-shrink:0;margin-top:2px; }
+
+/* Embedded evidence items */
+.evidence-embed { margin-bottom:12px;border-radius:10px;overflow:hidden;border:1px solid var(--border); }
+.evidence-embed-video { width:100%;aspect-ratio:16/9;background:#000; }
+.evidence-embed-video iframe { width:100%;height:100%;border:none; }
+.evidence-embed-info { padding:8px 12px;background:var(--surface-solid);display:flex;align-items:center;justify-content:space-between; }
+.evidence-embed-source { display:flex;align-items:center;gap:6px;font:500 11px var(--sans);color:var(--text-2); }
+.evidence-embed-link { font:400 11px var(--mono);color:var(--text-3);text-decoration:none; }
+.evidence-embed-link:hover { color:var(--text); }
+
+/* Reddit/social links */
+.evidence-link {
+  display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;
+  border:1px solid var(--border);margin-bottom:6px;text-decoration:none;transition:all 0.15s;
+}
+.evidence-link:hover { background:rgba(42,31,20,0.04);border-color:var(--border-hover); }
+.evidence-link-icon { font-size:16px;flex-shrink:0; }
+.evidence-link-text { font:400 13px var(--sans);color:var(--text);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.evidence-link-meta { font:400 10px var(--mono);color:var(--text-3);flex-shrink:0; }
+
+/* Source pills */
+.sources-grid { display:flex;flex-wrap:wrap;gap:6px; }
+.source-pill {
+  display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:6px;
+  font:500 12px var(--sans);color:var(--text-2);text-decoration:none;
+  border:1px solid var(--border);transition:all 0.15s;
+}
+.source-pill:hover { background:rgba(42,31,20,0.05);border-color:var(--border-hover);color:var(--text); }
+.source-pill .dot { width:5px;height:5px;border-radius:50%;flex-shrink:0; }
+
+/* Responsive */
+@media(max-width:1200px) { .sidebar-right{display:none;} }
+@media(max-width:900px) { .sidebar-left{display:none;} .feed{padding:12px;} }
+@media(max-width:600px) { .story-title{font-size:18px;} .narrative-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">CVRD</div>
+    <div class="header-center">
+      <input class="search-box" type="text" placeholder="Search stories, sources, topics..." />
+    </div>
+    <div class="header-right">
+      <div class="live-badge"><span class="live-dot"></span> Live</div>
+      <div class="header-icon">🔔</div>
+      <div class="header-icon" style="background:rgba(212,165,116,0.15);color:var(--amber);font-weight:700;font-size:12px;">CV</div>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+
+<!-- LEFT SIDEBAR -->
+<aside class="sidebar-left">
+  <div class="nav-section">
+    <div class="nav-label">Feed</div>
+    <div class="nav-item active"><span class="nav-icon">◉</span> For You</div>
+    <div class="nav-item"><span class="nav-icon">⚡</span> Breaking <span class="nav-badge">3</span></div>
+    <div class="nav-item"><span class="nav-icon">📺</span> Daily Brief</div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Topics</div>
+    <div class="nav-item"><span class="nav-icon">🏛</span> Politics</div>
+    <div class="nav-item"><span class="nav-icon">💻</span> Tech</div>
+    <div class="nav-item"><span class="nav-icon">💰</span> Economy</div>
+    <div class="nav-item"><span class="nav-icon">🌍</span> World</div>
+    <div class="nav-item"><span class="nav-icon">🏀</span> Sports</div>
+    <div class="nav-item"><span class="nav-icon">🎬</span> Culture</div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Sources</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:#1da1f2;color:#1da1f2"></span> X / Twitter</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:#fe2c55;color:#fe2c55"></span> TikTok</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:#e1306c;color:#e1306c"></span> Reels</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:#ff4500;color:#ff4500"></span> Reddit</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:#ff0000;color:#ff0000"></span> YouTube</div>
+    <div class="source-toggle on"><span class="source-dot" style="background:var(--amber);color:var(--amber)"></span> News RSS</div>
+  </div>
+</aside>
+
+<!-- MAIN FEED -->
+<main class="feed" id="feed"></main>
+
+<!-- RIGHT SIDEBAR -->
+<aside class="sidebar-right">
+  <div class="nav-section">
+    <div class="nav-label">Trending Now</div>
+    <div id="trending-list"></div>
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Most Shared</div>
+    <div id="shared-list"></div>
+  </div>
+</aside>
+
+</div>
+</div>
+
+<script>
+// ============================================
+// MOCK DATA — realistic stories with evidence
+// ============================================
+const stories = [
+  {
+    topic: "US Strikes on Iran's Kharg Island",
+    time: "2h ago",
+    status: "breaking",
+    summary: "The United States launched a series of strikes on Iran's Kharg Island, targeting military installations while reportedly sparing oil facilities. The operation marks a significant escalation in the ongoing conflict.",
+    left: "Left media warns of humanitarian crisis and questions the long-term strategy. CNN frames it as 'reckless escalation' while the Guardian highlights civilian casualties in surrounding areas.",
+    right: "Right media celebrates decisive action. Fox News calls it 'long overdue' and the Daily Wire argues this proves strength deters aggression. Zero Hedge questions whether oil market manipulation is the real motive.",
+    unfiltered: [
+      "A TikTok from a fisherman 2 miles off Kharg Island shows massive smoke plumes — this footage hasn't appeared on any cable news network.",
+      "A thread on X by @OilTraderAnon with 80K likes breaks down how the 'precision strikes' actually hit infrastructure that will take decades to rebuild.",
+      "Reddit's r/worldnews has firsthand accounts from Iranian civilians describing the attack as far more devastating than official reports suggest.",
+      "Defense contractors' stock prices spiked 12% in after-hours trading — the people profiting from this are not the ones being asked about it on TV.",
+      "Watch for the Pentagon's revised casualty numbers in 48 hours — historically these get quietly updated upward after the news cycle moves on."
+    ],
+    evidence: {
+      youtube: [
+        { id: "dQw4w9WgXcQ", channel: "BBC News", title: "Iran strikes: Full coverage of Kharg Island operation" },
+        { id: "dQw4w9WgXcQ", channel: "Al Jazeera", title: "Strait of Hormuz — Why it matters for global oil" },
+      ],
+      x: [
+        { author: "@OilTraderAnon", text: "Thread: I worked in oil trading for 15 years. Here's what no one is telling you about the strait situation 🧵", likes: "80.2K", time: "3h" },
+        { author: "@DefenseWatch", text: "Breaking: Pentagon confirms additional troop movements in the Gulf region", likes: "12.4K", time: "1h" },
+      ],
+      tiktok: [
+        { author: "@coastfisherman", desc: "Footage from 2 miles off Kharg Island — this is NOT on the news", views: "6.2M" },
+      ],
+      reddit: [
+        { sub: "r/worldnews", title: "Drones attack one of the world's largest oil facilities", score: "24.5K", comments: "3.2K" },
+        { sub: "r/geopolitics", title: "Analysis: Why the Kharg Island strikes change everything", score: "8.1K", comments: "1.4K" },
+      ],
+      sources: [
+        { name: "CNN", lean: "left", url: "#" },
+        { name: "NY Times", lean: "left", url: "#" },
+        { name: "The Guardian", lean: "left", url: "#" },
+        { name: "Fox News", lean: "right", url: "#" },
+        { name: "Daily Wire", lean: "right", url: "#" },
+        { name: "Zero Hedge", lean: "right", url: "#" },
+        { name: "BBC", lean: "center", url: "#" },
+        { name: "Reuters", lean: "center", url: "#" },
+      ]
+    }
+  },
+  {
+    topic: "Fox News Settles with Dominion — But What They Agreed To Is Shocking",
+    time: "4h ago",
+    status: "trending",
+    summary: "Fox News has reached a settlement with Dominion Voting Systems, acknowledging certain on-air claims were false. The financial terms remain undisclosed but sources suggest it's the largest media settlement in US history.",
+    left: "Left media frames this as vindication of truth and accountability. MSNBC calls it 'a reckoning for disinformation' while the Washington Post highlights internal Fox communications revealed during discovery.",
+    right: "Right media downplays the settlement as a business decision, not an admission of guilt. The Daily Caller argues it sets a dangerous precedent for press freedom. Some conservative outlets barely covered it.",
+    unfiltered: [
+      "The actual settlement documents, leaked on Reddit, show Fox agreed to run a series of on-air corrections — but buried in the late-night schedule.",
+      "A viral X thread with 120K likes shows side-by-side comparisons of how Fox covered the settlement vs how they covered the original claims.",
+      "Dominion employees are sharing their personal stories on TikTok — the human cost of disinformation that no network is centering.",
+      "Fox's advertisers are quietly pulling spots from specific shows — follow the money to see who's really being held accountable.",
+      "Watch for the Smartmatic lawsuit — legal experts on Reddit say it could be even bigger than Dominion."
+    ],
+    evidence: {
+      youtube: [
+        { id: "dQw4w9WgXcQ", channel: "CNN", title: "Fox News settlement: What it means for media accountability" },
+      ],
+      x: [
+        { author: "@MediaCritic", text: "Side by side: How Fox covered the Dominion claims vs how they covered the settlement. The contrast is staggering.", likes: "120K", time: "5h" },
+        { author: "@PressFreedom", text: "Hot take: This settlement actually HELPS press freedom because it draws a clear line between reporting and defamation", likes: "34K", time: "4h" },
+      ],
+      tiktok: [
+        { author: "@dominionworker", desc: "I worked at Dominion during the 2020 claims. Here's what it was like.", views: "2.8M" },
+      ],
+      reddit: [
+        { sub: "r/politics", title: "Fox News settles with Dominion — megathread", score: "45.2K", comments: "8.7K" },
+        { sub: "r/law", title: "Legal analysis: What the Fox-Dominion settlement means", score: "12K", comments: "2.1K" },
+      ],
+      sources: [
+        { name: "Washington Post", lean: "left", url: "#" },
+        { name: "MSNBC", lean: "left", url: "#" },
+        { name: "Breitbart", lean: "right", url: "#" },
+        { name: "Daily Caller", lean: "right", url: "#" },
+        { name: "AP News", lean: "center", url: "#" },
+        { name: "Reuters", lean: "center", url: "#" },
+      ]
+    }
+  },
+  {
+    topic: "Gas Prices Surge 70 Cents — And Nobody's Connecting the Dots",
+    time: "5h ago",
+    status: "trending",
+    summary: "Gas prices across the US have surged 70 cents in a single week, the fastest increase since 2008. The spike directly follows the Iran strikes but media coverage treats these as separate stories.",
+    left: "Left media blames corporate greed and price gouging by oil companies. HuffPost runs 'Big Oil profits while Americans suffer' while ignoring the direct Iran connection.",
+    right: "Right media uses the price spike to attack the administration's energy policy, calling for more domestic drilling. They too avoid directly connecting it to the strikes they supported.",
+    unfiltered: [
+      "Neither side will say it: the gas price surge is a DIRECT consequence of the Kharg Island strikes, and both parties knew this would happen before approving the operation.",
+      "A Reddit post from a gas station owner shows wholesale prices jumped 48 hours BEFORE the strikes were publicly announced — someone knew in advance.",
+      "TikTok truckers are documenting real-time price changes at stations across the country — a grassroots price tracking network mainstream media can't match.",
+      "Oil futures traders are the biggest winners here — the same firms that lobby for military action profit from the market volatility it creates.",
+      "Watch for the next CPI report — this gas spike will ripple through food prices and shipping costs within 2-3 weeks."
+    ],
+    evidence: {
+      youtube: [
+        { id: "dQw4w9WgXcQ", channel: "Fox Business", title: "Gas prices surge: What's driving the spike" },
+        { id: "dQw4w9WgXcQ", channel: "Vox", title: "The Iran-oil-gas price connection explained" },
+      ],
+      x: [
+        { author: "@EconPulse", text: "Gas prices up 40 cents this week alone. Nobody on TV is connecting this to the Kharg Island strikes.", likes: "45.2K", time: "6h" },
+      ],
+      reddit: [
+        { sub: "r/economics", title: "Gas station owner here: wholesale prices jumped 48hrs BEFORE the strikes", score: "18.3K", comments: "2.8K" },
+        { sub: "r/personalfinance", title: "How to prepare for $5/gallon gas — it's coming", score: "9.4K", comments: "1.6K" },
+      ],
+      sources: [
+        { name: "HuffPost", lean: "left", url: "#" },
+        { name: "CNN Business", lean: "left", url: "#" },
+        { name: "Fox Business", lean: "right", url: "#" },
+        { name: "NY Post", lean: "right", url: "#" },
+        { name: "Reuters", lean: "center", url: "#" },
+      ]
+    }
+  }
+];
+
+const trendingTopics = [
+  { topic: "Iran / Kharg Island", count: "1.2M", pct: 100 },
+  { topic: "Gas Prices", count: "890K", pct: 74 },
+  { topic: "Fox-Dominion", count: "670K", pct: 56 },
+  { topic: "Strait of Hormuz", count: "450K", pct: 38 },
+  { topic: "Michigan Attack", count: "340K", pct: 28 },
+  { topic: "Cuba Protests", count: "220K", pct: 18 },
+  { topic: "Trump Comments", count: "180K", pct: 15 },
+  { topic: "Oil Futures", count: "120K", pct: 10 },
+];
+
+// ============================================
+// RENDER
+// ============================================
+
+function renderStory(story, index) {
+  const statusColor = story.status === 'breaking' ? 'var(--crt-red)' : story.status === 'trending' ? 'var(--crt-amber)' : 'var(--crt-green)';
+  const leanColor = l => l === 'left' ? '#3b82f6' : l === 'right' ? '#ef4444' : '#9a8672';
+
+  return `
+    <div class="story-card" id="story-${index}">
+      <div class="story-header" onclick="toggleStory(${index})">
+        <div class="story-meta">
+          <div class="story-status ${story.status}">
+            <span style="width:5px;height:5px;border-radius:50%;background:${statusColor};box-shadow:0 0 6px ${statusColor}"></span>
+            ${story.status}
+          </div>
+          <span class="story-time">${story.time}</span>
+        </div>
+        <div class="story-title">${story.topic}</div>
+        <div class="story-summary">${story.summary}</div>
+
+        <!-- Evidence strip -->
+        <div class="evidence-strip">
+          ${(story.evidence.youtube||[]).map(v => `
+            <div class="evidence-thumb">
+              <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="">
+              <span class="evidence-thumb-badge badge-youtube">▶ ${v.channel}</span>
+            </div>
+          `).join('')}
+          ${(story.evidence.x||[]).map(t => `
+            <div class="evidence-thumb" style="background:#0a0a0a;display:flex;align-items:center;justify-content:center;padding:8px;">
+              <div style="font:400 9px var(--sans);color:#ccc;line-height:1.3">${t.text.substring(0,60)}...</div>
+              <span class="evidence-thumb-badge badge-x">𝕏 ${t.author}</span>
+            </div>
+          `).join('')}
+          ${(story.evidence.tiktok||[]).map(t => `
+            <div class="evidence-thumb" style="background:#111;display:flex;align-items:center;justify-content:center">
+              <span style="font-size:28px">♪</span>
+              <span class="evidence-thumb-badge badge-tiktok">${t.views} views</span>
+            </div>
+          `).join('')}
+          ${(story.evidence.reddit||[]).map(r => `
+            <div class="evidence-thumb" style="background:#1a1100;display:flex;align-items:center;justify-content:center;padding:8px;">
+              <div style="font:400 9px var(--sans);color:#ff4500;line-height:1.3">${r.title.substring(0,50)}...</div>
+              <span class="evidence-thumb-badge badge-reddit">⬡ ${r.sub}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <!-- Engagement -->
+      <div class="engagement">
+        <div class="eng-item"><span class="eng-icon">📰</span> ${story.evidence.sources.length} sources</div>
+        <div class="eng-item"><span class="eng-icon">🎬</span> ${(story.evidence.youtube||[]).length + (story.evidence.tiktok||[]).length} videos</div>
+        <div class="eng-item"><span class="eng-icon">💬</span> ${(story.evidence.x||[]).length + (story.evidence.reddit||[]).length} social</div>
+        <div class="eng-item" style="margin-left:auto"><span class="eng-icon">🔖</span> Save</div>
+        <div class="eng-item"><span class="eng-icon">↗</span> Share</div>
+      </div>
+
+      <!-- Expanded evidence (hidden by default) -->
+      <div class="story-evidence" id="evidence-${index}" style="display:none;">
+
+        <!-- Left vs Right -->
+        <div class="narrative-grid">
+          <div class="narrative-card">
+            <div class="narrative-lean"><span class="dot" style="background:#3b82f6"></span> <span style="color:#3b82f6">Left Media</span></div>
+            <div class="narrative-text">${story.left}</div>
+          </div>
+          <div class="narrative-card">
+            <div class="narrative-lean"><span class="dot" style="background:#ef4444"></span> <span style="color:#ef4444">Right Media</span></div>
+            <div class="narrative-text">${story.right}</div>
+          </div>
+        </div>
+
+        <!-- Unfiltered -->
+        <div class="unfiltered-box">
+          <div class="unfiltered-title">⚡ The Unfiltered Story</div>
+          ${story.unfiltered.map((s,i) => `
+            <div class="unfiltered-item">
+              <span class="unfiltered-num">${i+1}</span>
+              <span>${s}</span>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- YouTube Videos -->
+        ${story.evidence.youtube.length ? `
+          <div class="evidence-section">
+            <div class="evidence-label"><span class="evidence-label-dot" style="background:#ff0000"></span> Video Coverage (${story.evidence.youtube.length})</div>
+            ${story.evidence.youtube.map(v => `
+              <div class="evidence-embed">
+                <div class="evidence-embed-video">
+                  <iframe src="https://www.youtube.com/embed/${v.id}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                </div>
+                <div class="evidence-embed-info">
+                  <div class="evidence-embed-source"><span style="color:#ff0000">▶</span> ${v.channel}</div>
+                  <a class="evidence-embed-link" href="#">Open ↗</a>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- X Posts -->
+        ${story.evidence.x.length ? `
+          <div class="evidence-section">
+            <div class="evidence-label"><span class="evidence-label-dot" style="background:#000"></span> X / Twitter (${story.evidence.x.length})</div>
+            ${story.evidence.x.map(t => `
+              <div class="evidence-link" href="#">
+                <span class="evidence-link-icon">𝕏</span>
+                <div style="flex:1;min-width:0">
+                  <div style="font:600 12px var(--sans);color:var(--text);margin-bottom:2px">${t.author}</div>
+                  <div style="font:400 13px var(--sans);color:var(--text-2);line-height:1.4">${t.text}</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <div style="font:500 11px var(--mono);color:var(--crt-red)">♥ ${t.likes}</div>
+                  <div style="font:400 10px var(--mono);color:var(--text-3)">${t.time}</div>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- TikTok -->
+        ${story.evidence.tiktok.length ? `
+          <div class="evidence-section">
+            <div class="evidence-label"><span class="evidence-label-dot" style="background:#fe2c55"></span> TikTok (${story.evidence.tiktok.length})</div>
+            ${story.evidence.tiktok.map(t => `
+              <div class="evidence-link" href="#">
+                <span class="evidence-link-icon" style="color:#fe2c55">♪</span>
+                <div style="flex:1">
+                  <div style="font:600 12px var(--sans);color:var(--text)">@${t.author}</div>
+                  <div style="font:400 13px var(--sans);color:var(--text-2)">${t.desc}</div>
+                </div>
+                <div style="font:500 11px var(--mono);color:var(--text-3)">${t.views} views</div>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Reddit -->
+        ${story.evidence.reddit.length ? `
+          <div class="evidence-section">
+            <div class="evidence-label"><span class="evidence-label-dot" style="background:#ff4500"></span> Reddit (${story.evidence.reddit.length})</div>
+            ${story.evidence.reddit.map(r => `
+              <a class="evidence-link" href="#">
+                <span class="evidence-link-icon" style="color:#ff4500">⬡</span>
+                <div style="flex:1;min-width:0">
+                  <div style="font:400 13px var(--sans);color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${r.title}</div>
+                  <div style="font:400 10px var(--mono);color:var(--text-3);margin-top:2px">${r.sub}</div>
+                </div>
+                <div style="text-align:right;flex-shrink:0">
+                  <div style="font:500 11px var(--mono);color:#ff4500">▲ ${r.score}</div>
+                  <div style="font:400 10px var(--mono);color:var(--text-3)">${r.comments} comments</div>
+                </div>
+              </a>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Sources -->
+        <div class="evidence-section">
+          <div class="evidence-label">📰 All Sources (${story.evidence.sources.length})</div>
+          <div class="sources-grid">
+            ${story.evidence.sources.map(s => `
+              <a class="source-pill" href="${s.url}">
+                <span class="dot" style="background:${leanColor(s.lean)}"></span>
+                ${s.name}
+              </a>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleStory(index) {
+  const el = document.getElementById('evidence-' + index);
+  const card = document.getElementById('story-' + index);
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    card.classList.add('expanded');
+  } else {
+    el.style.display = 'none';
+    card.classList.remove('expanded');
+  }
+}
+
+// Render stories
+document.getElementById('feed').innerHTML = stories.map((s, i) => renderStory(s, i)).join('');
+
+// Render trending
+document.getElementById('trending-list').innerHTML = trendingTopics.map((t, i) => `
+  <div class="trending-item">
+    <span class="trending-rank">${i + 1}</span>
+    <div style="flex:1">
+      <div class="trending-topic">${t.topic}</div>
+      <div class="trending-bar" style="width:${t.pct}%;background:linear-gradient(90deg,var(--amber),var(--dusty-rose))"></div>
+    </div>
+    <span class="trending-count">${t.count}</span>
+  </div>
+`).join('');
+
+// Render most shared (reuse trending data shuffled)
+document.getElementById('shared-list').innerHTML = [...trendingTopics].sort(() => Math.random() - 0.5).slice(0, 5).map((t, i) => `
+  <div class="trending-item">
+    <span class="trending-rank">${i + 1}</span>
+    <div style="flex:1">
+      <div class="trending-topic">${t.topic}</div>
+    </div>
+    <span class="trending-count" style="color:var(--crt-green)">↗ ${t.count}</span>
+  </div>
+`).join('');
+
+// Auto-expand first story
+setTimeout(() => toggleStory(0), 500);
+</script>
+</body>
+</html>
