@@ -224,11 +224,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
               <button onClick={prevItem} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
-                <span className="text-[#555] text-[12px] leading-none">⏮</span>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#555]" />
               </button>
               <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
               <button onClick={next} className="w-6 h-6 rounded-full bg-[#eee] hover:bg-[#ddd] flex items-center justify-center transition-colors">
-                <span className="text-[#555] text-[12px] leading-none">⏭</span>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#555]" />
               </button>
             </div>
           )}
