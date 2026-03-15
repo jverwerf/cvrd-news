@@ -119,6 +119,25 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
         </div>
       </div>
 
+      {/* PROGRESS TIMELINE — spans across all videos */}
+      {items.length > 1 && (
+        <div className="flex gap-0 mt-2 h-1 rounded-full overflow-hidden bg-[#e5e5e5]">
+          {items.map((item, i) => (
+            <button key={i} onClick={() => { setActiveIdx(i); setPlaying(true); }}
+              className="h-full transition-all"
+              style={{
+                flex: 1,
+                background: i < activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3')
+                  : i === activeIdx ? (playing ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : '#c026d3') : '#bbb')
+                  : '#e5e5e5',
+                borderRight: i < items.length - 1 ? '1px solid white' : 'none',
+              }}
+              title={item.label}
+            />
+          ))}
+        </div>
+      )}
+
       {/* THUMBNAIL STRIP — click to jump between videos */}
       {items.length > 1 && (
         <div className="flex gap-1.5 mt-2 overflow-x-auto">
