@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { Tweet } from 'react-tweet';
 
 type VideoItem = {
   type: 'youtube' | 'tiktok' | 'reels' | 'x';
@@ -190,9 +191,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
                   className="w-full h-full" allowFullScreen />
               )}
               {active.type === 'x' && (
-                <iframe key={active.embed_id}
-                  src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
-                  className="w-full h-full" allowFullScreen />
+                <div key={active.embed_id} className="w-full h-full overflow-y-auto bg-white flex items-start justify-center pt-2">
+                  <div className="light"><Tweet id={active.embed_id} /></div>
+                </div>
               )}
             </>
           ) : (
