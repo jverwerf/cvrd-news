@@ -15,13 +15,17 @@ type PlaylistItem = {
 };
 
 type TileContent = {
-  type: 'image' | 'video';
+  type: 'image' | 'video' | 'social';
   image: string;
   topic: string;
   index: number;
   sources: { name: string; lean?: string }[];
   playlistIdx?: number;
   channel?: string;
+  // Social clip info
+  platform?: 'x' | 'tiktok' | 'reels';
+  embedId?: string;
+  clipLabel?: string;
 };
 
 export function Dashboard({
@@ -121,15 +125,36 @@ export function Dashboard({
     }
   };
 
-  // Build tile content — mix of story images and video thumbnails
-  const allTileContent: TileContent[] = [];
+  // Build social clips per story (for context tiles)
+  const storySocialClips: Record<number, TileContent[]> = {};
+  for (const [i, story] of stories.entries()) {
+    const clips: TileContent[] = [];
+    for (const c of (story.social_clips || [])) {
+      if (c.embed_id && (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels')) {
+        clips.push({
+          type: 'social',
+          image: '', // no thumbnail for social
+          topic: story.topic,
+          index: i + 1,
+          sources: story.sources || [],
+          platform: c.platform as 'x' | 'tiktok' | 'reels',
+          embedId: c.embed_id,
+          clipLabel: c.title || (c as any).author || c.platform,
+        });
+      }
+    }
+    if (clips.length > 0) storySocialClips[i + 1] = clips;
+  }
+
+  // Build default tile content (story images + video thumbnails)
+  const defaultTiles: TileContent[] = [];
   for (const [i, story] of stories.entries()) {
     if (story.image_file) {
-      allTileContent.push({ type: 'image', image: story.image_file, topic: story.topic, index: i + 1, sources: story.sources || [] });
+      defaultTiles.push({ type: 'image', image: story.image_file, topic: story.topic, index: i + 1, sources: story.sources || [] });
     }
     for (const v of (story.youtube_videos || []).slice(0, 1)) {
       const pIdx = playlist.findIndex(p => p.embed_id === v.embed_id);
-      allTileContent.push({
+      defaultTiles.push({
         type: 'video',
         image: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`,
         topic: story.topic, index: i + 1, sources: story.sources || [],
@@ -137,12 +162,31 @@ export function Dashboard({
       });
     }
   }
-  while (allTileContent.length < 16) allTileContent.push(...allTileContent.slice(0, 16 - allTileContent.length));
+  while (defaultTiles.length < 16) defaultTiles.push(...defaultTiles.slice(0, 16 - defaultTiles.length));
+
+  // Get social tiles for the currently playing story
+  const currentStoryIdx = current?.storyIndex;
+  const contextClips = currentStoryIdx ? (storySocialClips[currentStoryIdx] || []) : [];
+
+  // Build 10 tile slots: fill with social clips for current story, then default tiles
+  const tileSlots: TileContent[] = [];
+  // First, add social clips from the current story (up to 8 — leave 2 for row 2 sides)
+  for (const clip of contextClips.slice(0, 8)) {
+    tileSlots.push(clip);
+  }
+  // Fill remaining with default tiles
+  let defaultIdx = 0;
+  while (tileSlots.length < 10) {
+    tileSlots.push(defaultTiles[defaultIdx % defaultTiles.length]);
+    defaultIdx++;
+  }
 
   // Each tile gets 2 items to crossfade between
   const tilePairs: [TileContent, TileContent][] = [];
   for (let i = 0; i < 10; i++) {
-    tilePairs.push([allTileContent[i % allTileContent.length], allTileContent[(i + 5) % allTileContent.length]]);
+    const primary = tileSlots[i];
+    const secondary = defaultTiles[(i + 5) % defaultTiles.length];
+    tilePairs.push([primary, secondary]);
   }
 
   return (
@@ -312,12 +356,14 @@ function FadingTile({ pair, delay }: {
 
   const current = pair[activeIdx];
   const isVideo = current.type === 'video';
+  const isSocial = current.type === 'social';
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3' };
+  const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
     <a href={`#story-${current.index}`}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
 
-      {/* For video tiles — show YouTube embed playing muted */}
       {pair.map((item, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
@@ -328,15 +374,37 @@ function FadingTile({ pair, delay }: {
               style={{ border: 'none', pointerEvents: 'none' }}
               allow="autoplay"
             />
-          ) : (
+          ) : item.type === 'social' ? (
+            <div className="w-full h-full flex flex-col items-center justify-center p-3"
+              style={{ background: `linear-gradient(135deg, ${platformColors[item.platform || 'x']}15, ${platformColors[item.platform || 'x']}30)` }}>
+              <span className="text-[28px] mb-2" style={{ color: platformColors[item.platform || 'x'] }}>
+                {platformIcons[item.platform || 'x']}
+              </span>
+              <span className="text-[10px] text-white/70 text-center leading-snug line-clamp-3 px-2">
+                {item.clipLabel}
+              </span>
+            </div>
+          ) : item.image ? (
             <Image src={item.image} alt={item.topic} fill className="object-cover" />
+          ) : (
+            <div className="w-full h-full bg-[#1a1a1a]" />
           )}
         </div>
       ))}
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-      {/* Channel badge */}
+      {/* Platform badge for social tiles */}
+      {isSocial && current.platform && (
+        <div className="absolute top-2 right-2">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
+            style={{ background: platformColors[current.platform] }}>
+            {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+          </span>
+        </div>
+      )}
+
+      {/* Channel badge for video tiles */}
       {isVideo && current.channel && (
         <div className="absolute top-2 right-2">
           <span className="text-[7px] font-bold text-white bg-red-600 px-1.5 py-0.5 rounded">{current.channel}</span>
@@ -347,14 +415,16 @@ function FadingTile({ pair, delay }: {
       <div className="absolute bottom-0 left-0 right-0 p-2.5">
         <div className="text-[10px] font-mono text-white/40 mb-0.5">{current.index}</div>
         <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">{current.topic}</h3>
-        <div className="flex items-center gap-1 mt-1 flex-wrap">
-          {current.sources.slice(0, 3).map((s, i) => (
-            <span key={i} className="text-[8px] font-medium text-white/50 px-1 py-0.5 rounded"
-              style={{ background: s.lean === 'left' ? 'rgba(59,130,246,0.3)' : s.lean === 'right' ? 'rgba(239,68,68,0.3)' : 'rgba(255,255,255,0.1)' }}>
-              {s.name}
-            </span>
-          ))}
-        </div>
+        {!isSocial && (
+          <div className="flex items-center gap-1 mt-1 flex-wrap">
+            {current.sources.slice(0, 3).map((s, i) => (
+              <span key={i} className="text-[8px] font-medium text-white/50 px-1 py-0.5 rounded"
+                style={{ background: s.lean === 'left' ? 'rgba(59,130,246,0.3)' : s.lean === 'right' ? 'rgba(239,68,68,0.3)' : 'rgba(255,255,255,0.1)' }}>
+                {s.name}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </a>
   );
