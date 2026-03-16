@@ -205,10 +205,12 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
                   className="w-full h-full" allowFullScreen />
               )}
               {active.type === 'reddit' && (
-                <iframe key={active.embed_id}
-                  src={`https://www.reddit.com/comments/${active.embed_id}/?embed=true&theme=light`}
-                  className="w-full h-full" allowFullScreen
-                  sandbox="allow-scripts allow-same-origin allow-popups" />
+                <a href={active.url} target="_blank" rel="noreferrer"
+                  className="w-full h-full flex flex-col items-center justify-center bg-[#1a1a1b] text-center px-8 gap-3 hover:bg-[#222] transition-colors">
+                  <span className="text-[#ff4500] text-[28px] font-bold">reddit</span>
+                  <span className="text-[14px] text-[#d7dadc] leading-[1.5] max-w-[500px]">{active.label}</span>
+                  <span className="text-[11px] text-[#818384] mt-2">Click to view on Reddit &rarr;</span>
+                </a>
               )}
             </>
           ) : (
