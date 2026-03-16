@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { Tweet } from 'react-tweet';
 import type { NarrativeGap } from "../lib/data";
 
 type PlaylistItem = {
@@ -43,7 +42,7 @@ export function Dashboard({
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Build YouTube-only playlist for center player
+  // Build playlist — anchor first, then ALL videos from all stories
   const playlist: PlaylistItem[] = [];
   if (videoUrl) {
     if (videoUrl.includes('youtube.com/embed/')) {
@@ -57,19 +56,13 @@ export function Dashboard({
     for (const v of (story.youtube_videos || [])) {
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
     }
-  }
-
-  // Collect social cards — X posts for left column, TikTok/Reels for right column
-  const xCards: { embed_id: string; topic: string }[] = [];
-  const socialCards: { platform: 'tiktok' | 'reels'; embed_id: string; topic: string }[] = [];
-  for (const [i, story] of stories.entries()) {
     for (const c of (story.social_clips || [])) {
-      if (c.platform === 'x' && c.embed_id) {
-        xCards.push({ embed_id: c.embed_id, topic: story.topic });
-      } else if (c.platform === 'tiktok' && c.embed_id) {
-        socialCards.push({ platform: 'tiktok', embed_id: c.embed_id, topic: story.topic });
+      if (c.platform === 'tiktok' && c.embed_id) {
+        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.title || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
       } else if (c.platform === 'reels' && c.embed_id) {
-        socialCards.push({ platform: 'reels', embed_id: c.embed_id, topic: story.topic });
+        playlist.push({ type: 'reels', embed_id: c.embed_id, channel: c.title || 'Reels', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
+      } else if (c.platform === 'x' && c.embed_id) {
+        playlist.push({ type: 'x', embed_id: c.embed_id, channel: c.title || c.author || 'X', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 30 });
       }
     }
   }
@@ -173,56 +166,37 @@ export function Dashboard({
         {/* ROW 2 */}
         <FadingTile pair={tilePairs[4]} delay={5} />
 
-        {/* CENTER PLAYER — YouTube + social side feeds */}
+        {/* CENTER PLAYER — slightly smaller to make room for controls beneath */}
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
-          <div className="flex-1 relative min-h-0 flex">
-
-            {/* LEFT STRIP: X tweets */}
-            {xCards.length > 0 && (
-              <div className="w-[200px] shrink-0 overflow-y-auto bg-white" style={{ scrollbarWidth: 'none' }}>
-                {xCards.slice(0, 8).map((card, i) => (
-                  <div key={i} className="light border-b border-[#eee] last:border-b-0" style={{ fontSize: '12px' }}>
-                    <Tweet id={card.embed_id} />
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* CENTER: YouTube player */}
-            <div className="flex-1 relative min-h-0">
-              {current?.type === 'anchor' && current.url && (
-                <video ref={videoRef} key="anchor" src={current.url}
-                  className="w-full h-full object-cover absolute inset-0"
-                  playsInline muted={!unmuted} onEnded={next}
-                  onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
-                  onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
-              )}
-              {current?.type === 'youtube' && current.embed_id && (
-                <iframe key={current.embed_id}
-                  src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
-                  className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
-              )}
-            </div>
-
-            {/* RIGHT STRIP: TikTok/Reels */}
-            {socialCards.length > 0 && (
-              <div className="w-[180px] shrink-0 overflow-y-auto bg-[#111]" style={{ scrollbarWidth: 'none' }}>
-                {socialCards.slice(0, 5).map((card, i) => (
-                  <div key={i} className="border-b border-[#333] last:border-b-0">
-                    {card.platform === 'tiktok' && (
-                      <iframe src={`https://www.tiktok.com/embed/v2/${card.embed_id}`}
-                        className="w-full h-[280px]" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
-                    )}
-                    {card.platform === 'reels' && (
-                      <iframe src={`https://www.instagram.com/reel/${card.embed_id}/embed`}
-                        className="w-full h-[280px]" allowFullScreen style={{ border: 'none' }} />
-                    )}
-                  </div>
-                ))}
-              </div>
-            )}
-
+          <div className="flex-1 relative min-h-0">
+          {current?.type === 'anchor' && current.url && (
+            <video ref={videoRef} key="anchor" src={current.url}
+              className="w-full h-full object-cover absolute inset-0"
+              playsInline muted={!unmuted} onEnded={next}
+              onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
+              onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
+          )}
+          {current?.type === 'youtube' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
+              className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+          )}
+          {current?.type === 'tiktok' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
+              className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+          )}
+          {current?.type === 'reels' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+          )}
+          {current?.type === 'x' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+          )}
           </div>
           {/* CONTROLS BAR — below video */}
           <div className="px-2 py-1 bg-[#111] shrink-0">
