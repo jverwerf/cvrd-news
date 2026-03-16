@@ -90,9 +90,9 @@ export function Dashboard({
         setCurrentTime(videoRef.current.currentTime);
         setDuration(videoRef.current.duration || dur);
       } else {
-        // For everything else, tick the timer
+        // For everything else, tick the timer (no auto-advance — user controls skip)
         setCurrentTime(prev => {
-          if (prev >= dur) { next(); return 0; }
+          if (prev >= dur) return dur;
           return prev + 0.5;
         });
       }
