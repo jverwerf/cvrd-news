@@ -28,8 +28,10 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
   const uniqueRight = [...new Set(rightSources.map(s => s.name))];
   const uniqueCenter = [...new Set(centerSources.map(s => s.name))];
 
+  // Split on sentence boundaries but not abbreviations like U.S., Dr., Mr., etc.
   const sentences = story.what_they_arent_telling_you
-    ?.split(/(?<=\.)\s+/).filter(s => s.trim().length > 0) || [];
+    ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
+    .filter(s => s.trim().length > 20) || []; // filter out junk fragments
 
   return (
     <section id="story-1">
@@ -57,28 +59,15 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#f8f7f4' }}>
 
-      {/* SOURCE ROW */}
-      <div className="flex items-center gap-2 mb-5 pb-5" style={{ borderBottom: '1px solid #e8e6e2' }}>
-        {leftSources.length > 0 && (
-          <div className="flex items-center gap-1">
-            <span className="w-[6px] h-[6px] rounded-full bg-[#1d4ed8]" />
-            <span className="text-[11px] text-[#1d4ed8] font-medium">{uniqueLeft.join(', ')}</span>
-          </div>
-        )}
-        {leftSources.length > 0 && rightSources.length > 0 && <span className="text-[11px] text-[#ccc]">|</span>}
-        {rightSources.length > 0 && (
-          <div className="flex items-center gap-1">
-            <span className="w-[6px] h-[6px] rounded-full bg-[#b91c1c]" />
-            <span className="text-[11px] text-[#b91c1c] font-medium">{uniqueRight.join(', ')}</span>
-          </div>
-        )}
-        {centerSources.length > 0 && (
-          <>
-            {(leftSources.length > 0 || rightSources.length > 0) && <span className="text-[11px] text-[#ccc]">|</span>}
-            <span className="text-[11px] text-[#777] font-medium">{uniqueCenter.join(', ')}</span>
-          </>
-        )}
-      </div>
+      {/* Compact source count */}
+      {sources.length > 0 && (
+        <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: '1px solid #e8e6e2' }}>
+          <span className="text-[11px] text-[#999]">{sources.length} sources</span>
+          {uniqueLeft.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{uniqueLeft.length} left</span></span>}
+          {uniqueRight.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{uniqueRight.length} right</span></span>}
+          {uniqueCenter.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{uniqueCenter.length} center</span></span>}
+        </div>
+      )}
 
       {/* 3. SUMMARY */}
       <div className="mb-6 p-5 rounded-md border-l-[3px] border-[#b8860b]" style={{ background: '#f2f0eb' }}>
@@ -188,7 +177,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 </div>
               )}
 
-              {/* ALL ARTICLES */}
+              {/* ALL ARTICLES — grouped by source */}
               <div className="pt-4" style={{ borderTop: '1px solid #eee' }}>
                 <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-3">All Articles</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -198,10 +187,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
                         <span className="text-[9px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
                       </div>
-                      {leftSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#1d4ed8] py-1 transition-colors">{s.name} →</a>
-                      ))}
+                      <SourceGroup sources={leftSources} hoverColor="#1d4ed8" />
                     </div>
                   )}
                   {centerSources.length > 0 && (
@@ -210,10 +196,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#777]" />
                         <span className="text-[9px] font-bold text-[#777] uppercase tracking-[0.12em]">Center</span>
                       </div>
-                      {centerSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#111] py-1 transition-colors">{s.name} →</a>
-                      ))}
+                      <SourceGroup sources={centerSources} hoverColor="#111" />
                     </div>
                   )}
                   {rightSources.length > 0 && (
@@ -222,10 +205,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" />
                         <span className="text-[9px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
                       </div>
-                      {rightSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#b91c1c] py-1 transition-colors">{s.name} →</a>
-                      ))}
+                      <SourceGroup sources={rightSources} hoverColor="#b91c1c" />
                     </div>
                   )}
                 </div>
@@ -247,6 +227,51 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
       </AnimatePresence>
       </div>
     </section>
+  );
+}
+
+function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: string; title?: string }[]; hoverColor: string }) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  // Group by source name
+  const grouped: Record<string, { name: string; url: string; title?: string }[]> = {};
+  for (const s of sources) {
+    if (!grouped[s.name]) grouped[s.name] = [];
+    grouped[s.name].push(s);
+  }
+
+  return (
+    <div className="space-y-0.5">
+      {Object.entries(grouped).map(([name, articles]) => (
+        <div key={name}>
+          {articles.length === 1 ? (
+            <a href={articles[0].url} target="_blank" rel="noreferrer"
+              className="block text-[12px] text-[#444] py-1 transition-colors hover:opacity-70"
+              style={{ ['--hover-color' as string]: hoverColor }}>
+              {name} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+            </a>
+          ) : (
+            <>
+              <button onClick={() => setExpanded(expanded === name ? null : name)}
+                className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center justify-between">
+                <span>{name} <span className="text-[10px] text-[#bbb]">({articles.length})</span></span>
+                <span className="text-[10px] text-[#bbb]">{expanded === name ? '−' : '+'}</span>
+              </button>
+              {expanded === name && (
+                <div className="pl-3 border-l border-[#e5e5e5] ml-1 mb-1">
+                  {articles.map((a, i) => (
+                    <a key={i} href={a.url} target="_blank" rel="noreferrer"
+                      className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
+                      {a.title || a.url.replace(/https?:\/\/(www\.)?/, '').slice(0, 60)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 

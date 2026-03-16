@@ -95,30 +95,30 @@ export function LiveBanner({ stories, liveData: initialLiveData }: { stories: Na
   const tripled = [...entries, ...entries, ...entries];
 
   return (
-    <div className="overflow-hidden h-12 flex items-center"
+    <div className="overflow-hidden h-14 flex items-center"
       style={{ background: '#ffffff', boxShadow: '0 1px 0 0 #e5e5e5' }}>
 
-      <div className="flex items-center gap-6 animate-[ticker_120s_linear_infinite] whitespace-nowrap pl-4">
+      <div className="flex items-center gap-6 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
         {tripled.map((entry, i) => (
           <span key={i} className="flex items-center gap-1.5 shrink-0">
             {entry.url ? (
-              <a href={entry.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
-                <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: entry.color }}>
+              <a href={entry.url} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 py-2 px-1 hover:opacity-70 transition-opacity">
+                <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: entry.color }}>
                   {entry.category}
                 </span>
-                <span className="text-[10px] text-[#555] max-w-[200px] truncate">{entry.text}</span>
+                <span className="text-[12px] text-[#555] max-w-[220px] truncate">{entry.text}</span>
                 {entry.detail && (
-                  <span className="text-[9px] font-medium" style={{ color: entry.detailColor }}>{entry.detail}</span>
+                  <span className="text-[11px] font-medium" style={{ color: entry.detailColor }}>{entry.detail}</span>
                 )}
               </a>
             ) : (
               <>
-                <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: entry.color }}>
+                <span className="text-[11px] font-bold uppercase tracking-wider" style={{ color: entry.color }}>
                   {entry.category}
                 </span>
-                <span className="text-[10px] text-[#555]">{entry.text}</span>
+                <span className="text-[12px] text-[#555]">{entry.text}</span>
                 {entry.detail && (
-                  <span className="text-[9px] font-medium" style={{ color: entry.detailColor }}>{entry.detail}</span>
+                  <span className="text-[11px] font-medium" style={{ color: entry.detailColor }}>{entry.detail}</span>
                 )}
               </>
             )}

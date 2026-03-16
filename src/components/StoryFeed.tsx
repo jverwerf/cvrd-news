@@ -14,14 +14,14 @@ export function StoryFeed({ stories, startIndex = 0 }: { stories: NarrativeGap[]
   const right = stories.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className="px-1 py-1">
-      <div className="flex gap-1" style={{ alignItems: 'flex-start' }}>
-        <div className="flex-1 space-y-1">
+    <div className="px-4 md:px-8 py-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ alignItems: 'start' }}>
+        <div className="space-y-4">
           {left.map((story, i) => (
             <StoryCard key={i} story={story} index={i * 2 + startIndex} />
           ))}
         </div>
-        <div className="flex-1 space-y-1">
+        <div className="space-y-4">
           {right.map((story, i) => (
             <StoryCard key={i} story={story} index={i * 2 + 1 + startIndex} />
           ))}
@@ -45,11 +45,13 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
   const rightSources = sources.filter(s => s.lean === 'right');
   const centerSources = sources.filter(s => !s.lean || s.lean === 'center');
 
+  // Split on sentence boundaries but not abbreviations like U.S., Dr., Mr., etc.
   const sentences = story.what_they_arent_telling_you
-    ?.split(/(?<=\.)\s+/).filter(s => s.trim().length > 0) || [];
+    ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
+    .filter(s => s.trim().length > 20) || []; // filter out junk fragments
 
   return (
-    <article id={`story-${index + 1}`} className="rounded-lg p-4" style={{ background: '#f8f7f4' }}>
+    <article id={`story-${index + 1}`} className="rounded-lg p-4 overflow-hidden" style={{ background: '#f8f7f4' }}>
 
       {/* 1. TITLE */}
       <h2 className="text-[28px] leading-[1.12] tracking-[-0.03em] text-[#111] mb-4" style={serif}>
@@ -179,7 +181,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                 </div>
               )}
 
-              {/* ALL ARTICLES */}
+              {/* ALL ARTICLES — grouped by source */}
               <div className="pt-4" style={{ borderTop: '1px solid #eee' }}>
                 <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-3">All Articles</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -189,12 +191,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
                         <span className="text-[9px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
                       </div>
-                      {leftSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#1d4ed8] py-1 transition-colors">
-                          {s.name} →
-                        </a>
-                      ))}
+                      <SourceGroup sources={leftSources} hoverColor="#1d4ed8" />
                     </div>
                   )}
                   {centerSources.length > 0 && (
@@ -203,12 +200,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#777]" />
                         <span className="text-[9px] font-bold text-[#777] uppercase tracking-[0.12em]">Center</span>
                       </div>
-                      {centerSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#111] py-1 transition-colors">
-                          {s.name} →
-                        </a>
-                      ))}
+                      <SourceGroup sources={centerSources} hoverColor="#111" />
                     </div>
                   )}
                   {rightSources.length > 0 && (
@@ -217,12 +209,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                         <span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" />
                         <span className="text-[9px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
                       </div>
-                      {rightSources.map((s, i) => (
-                        <a key={i} href={s.url} target="_blank" rel="noreferrer"
-                          className="block text-[12px] text-[#444] hover:text-[#b91c1c] py-1 transition-colors">
-                          {s.name} →
-                        </a>
-                      ))}
+                      <SourceGroup sources={rightSources} hoverColor="#b91c1c" />
                     </div>
                   )}
                 </div>
@@ -243,6 +230,49 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
         )}
       </AnimatePresence>
     </article>
+  );
+}
+
+function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: string; title?: string }[]; hoverColor: string }) {
+  const [expanded, setExpanded] = useState<string | null>(null);
+
+  const grouped: Record<string, { name: string; url: string; title?: string }[]> = {};
+  for (const s of sources) {
+    if (!grouped[s.name]) grouped[s.name] = [];
+    grouped[s.name].push(s);
+  }
+
+  return (
+    <div className="space-y-0.5">
+      {Object.entries(grouped).map(([name, articles]) => (
+        <div key={name}>
+          {articles.length === 1 ? (
+            <a href={articles[0].url} target="_blank" rel="noreferrer"
+              className="block text-[12px] text-[#444] py-1 transition-colors hover:opacity-70">
+              {name} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+            </a>
+          ) : (
+            <>
+              <button onClick={() => setExpanded(expanded === name ? null : name)}
+                className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center justify-between">
+                <span>{name} <span className="text-[10px] text-[#bbb]">({articles.length})</span></span>
+                <span className="text-[10px] text-[#bbb]">{expanded === name ? '−' : '+'}</span>
+              </button>
+              {expanded === name && (
+                <div className="pl-3 border-l border-[#e5e5e5] ml-1 mb-1">
+                  {articles.map((a, i) => (
+                    <a key={i} href={a.url} target="_blank" rel="noreferrer"
+                      className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
+                      {a.title || a.url.replace(/https?:\/\/(www\.)?/, '').slice(0, 60)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+                    </a>
+                  ))}
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 
