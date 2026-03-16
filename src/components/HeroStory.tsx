@@ -23,6 +23,11 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
   const rightSources = sources.filter(s => s.lean === 'right');
   const centerSources = sources.filter(s => !s.lean || s.lean === 'center');
 
+  // Unique source names for the visible row
+  const uniqueLeft = [...new Set(leftSources.map(s => s.name))];
+  const uniqueRight = [...new Set(rightSources.map(s => s.name))];
+  const uniqueCenter = [...new Set(centerSources.map(s => s.name))];
+
   const sentences = story.what_they_arent_telling_you
     ?.split(/(?<=\.)\s+/).filter(s => s.trim().length > 0) || [];
 
@@ -57,20 +62,20 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
         {leftSources.length > 0 && (
           <div className="flex items-center gap-1">
             <span className="w-[6px] h-[6px] rounded-full bg-[#1d4ed8]" />
-            <span className="text-[11px] text-[#1d4ed8] font-medium">{leftSources.map(s => s.name).join(', ')}</span>
+            <span className="text-[11px] text-[#1d4ed8] font-medium">{uniqueLeft.join(', ')}</span>
           </div>
         )}
         {leftSources.length > 0 && rightSources.length > 0 && <span className="text-[11px] text-[#ccc]">|</span>}
         {rightSources.length > 0 && (
           <div className="flex items-center gap-1">
             <span className="w-[6px] h-[6px] rounded-full bg-[#b91c1c]" />
-            <span className="text-[11px] text-[#b91c1c] font-medium">{rightSources.map(s => s.name).join(', ')}</span>
+            <span className="text-[11px] text-[#b91c1c] font-medium">{uniqueRight.join(', ')}</span>
           </div>
         )}
         {centerSources.length > 0 && (
           <>
             {(leftSources.length > 0 || rightSources.length > 0) && <span className="text-[11px] text-[#ccc]">|</span>}
-            <span className="text-[11px] text-[#777] font-medium">{centerSources.map(s => s.name).join(', ')}</span>
+            <span className="text-[11px] text-[#777] font-medium">{uniqueCenter.join(', ')}</span>
           </>
         )}
       </div>
