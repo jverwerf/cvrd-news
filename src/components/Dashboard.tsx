@@ -171,37 +171,58 @@ export function Dashboard({
         <FadingTile pair={tilePairs[3]} delay={1} />
 
         {/* ROW 2 */}
-        {/* LEFT: X posts feed */}
-        <div className="row-span-1 rounded-xl overflow-hidden bg-white" style={{ overflowY: 'auto', scrollbarWidth: 'none' }}>
-          {xCards.length > 0 ? (
-            <div className="space-y-0">
-              {xCards.slice(0, 5).map((card, i) => (
-                <div key={i} className="light border-b border-[#e5e5e5] last:border-b-0">
-                  <Tweet id={card.embed_id} />
-                </div>
-              ))}
-            </div>
-          ) : (
-            <FadingTile pair={tilePairs[4]} delay={5} />
-          )}
-        </div>
+        <FadingTile pair={tilePairs[4]} delay={5} />
 
-        {/* CENTER PLAYER — YouTube only, autoplay */}
+        {/* CENTER PLAYER — YouTube + social side feeds */}
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
-          <div className="flex-1 relative min-h-0">
-          {current?.type === 'anchor' && current.url && (
-            <video ref={videoRef} key="anchor" src={current.url}
-              className="w-full h-full object-cover absolute inset-0"
-              playsInline muted={!unmuted} onEnded={next}
-              onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
-              onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
-          )}
-          {current?.type === 'youtube' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
-              className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
-          )}
+          <div className="flex-1 relative min-h-0 flex">
+
+            {/* LEFT STRIP: X tweets */}
+            {xCards.length > 0 && (
+              <div className="w-[200px] shrink-0 overflow-y-auto bg-white" style={{ scrollbarWidth: 'none' }}>
+                {xCards.slice(0, 8).map((card, i) => (
+                  <div key={i} className="light border-b border-[#eee] last:border-b-0" style={{ fontSize: '12px' }}>
+                    <Tweet id={card.embed_id} />
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* CENTER: YouTube player */}
+            <div className="flex-1 relative min-h-0">
+              {current?.type === 'anchor' && current.url && (
+                <video ref={videoRef} key="anchor" src={current.url}
+                  className="w-full h-full object-cover absolute inset-0"
+                  playsInline muted={!unmuted} onEnded={next}
+                  onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
+                  onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
+              )}
+              {current?.type === 'youtube' && current.embed_id && (
+                <iframe key={current.embed_id}
+                  src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
+                  className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+              )}
+            </div>
+
+            {/* RIGHT STRIP: TikTok/Reels */}
+            {socialCards.length > 0 && (
+              <div className="w-[180px] shrink-0 overflow-y-auto bg-[#111]" style={{ scrollbarWidth: 'none' }}>
+                {socialCards.slice(0, 5).map((card, i) => (
+                  <div key={i} className="border-b border-[#333] last:border-b-0">
+                    {card.platform === 'tiktok' && (
+                      <iframe src={`https://www.tiktok.com/embed/v2/${card.embed_id}`}
+                        className="w-full h-[280px]" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+                    )}
+                    {card.platform === 'reels' && (
+                      <iframe src={`https://www.instagram.com/reel/${card.embed_id}/embed`}
+                        className="w-full h-[280px]" allowFullScreen style={{ border: 'none' }} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+
           </div>
           {/* CONTROLS BAR — below video */}
           <div className="px-2 py-1 bg-[#111] shrink-0">
@@ -291,27 +312,7 @@ export function Dashboard({
           </div>
         </div>
 
-        {/* RIGHT: TikTok/Reels feed */}
-        <div className="row-span-1 rounded-xl overflow-hidden bg-[#111]" style={{ overflowY: 'auto', scrollbarWidth: 'none' }}>
-          {socialCards.length > 0 ? (
-            <div className="space-y-1 p-1">
-              {socialCards.slice(0, 3).map((card, i) => (
-                <div key={i} className="rounded-lg overflow-hidden border border-[#333]">
-                  {card.platform === 'tiktok' && (
-                    <iframe src={`https://www.tiktok.com/embed/v2/${card.embed_id}`}
-                      className="w-full h-[250px]" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
-                  )}
-                  {card.platform === 'reels' && (
-                    <iframe src={`https://www.instagram.com/reel/${card.embed_id}/embed`}
-                      className="w-full h-[250px]" allowFullScreen style={{ border: 'none' }} />
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <FadingTile pair={tilePairs[5]} delay={3} />
-          )}
-        </div>
+        <FadingTile pair={tilePairs[5]} delay={3} />
 
         {/* ROW 3 */}
         <FadingTile pair={tilePairs[6]} delay={6} />
