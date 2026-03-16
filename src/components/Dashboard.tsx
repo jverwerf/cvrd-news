@@ -44,7 +44,14 @@ export function Dashboard({
 
   // Build playlist — anchor first, then ALL videos from all stories
   const playlist: PlaylistItem[] = [];
-  if (videoUrl) playlist.push({ type: 'anchor', url: videoUrl });
+  if (videoUrl) {
+    if (videoUrl.includes('youtube.com/embed/')) {
+      const ytId = videoUrl.split('/embed/')[1]?.split('?')[0];
+      playlist.push({ type: 'youtube', embed_id: ytId, channel: 'CVRD Daily Brief', storyTopic: 'Daily Briefing' });
+    } else {
+      playlist.push({ type: 'anchor', url: videoUrl });
+    }
+  }
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
