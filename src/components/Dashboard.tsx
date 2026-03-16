@@ -38,6 +38,9 @@ export function Dashboard({
   const [volume, setVolume] = useState(0.8);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Build playlist — anchor first, then ALL videos from all stories
   const playlist: PlaylistItem[] = [];
@@ -60,15 +63,44 @@ export function Dashboard({
   const [currentIdx, setCurrentIdx] = useState(0);
   const current = playlist[currentIdx];
 
+  // Track progress for ALL video types using timer
   useEffect(() => {
-    if (videoRef.current && current?.type === 'anchor') {
+    if (timerRef.current) clearInterval(timerRef.current);
+    setCurrentTime(0);
+    const dur = current?.duration || (current?.type === 'anchor' ? 300 : 120);
+    setDuration(dur);
+
+    if (current?.type === 'anchor' && videoRef.current) {
       videoRef.current.muted = !unmuted;
       videoRef.current.volume = volume;
       videoRef.current.play().catch(() => {});
     }
-    setProgress(0);
-    setDuration(0);
+
+    // Start timer
+    timerRef.current = setInterval(() => {
+      // For anchor, use real video time
+      if (current?.type === 'anchor' && videoRef.current) {
+        setCurrentTime(videoRef.current.currentTime);
+        setDuration(videoRef.current.duration || dur);
+      } else {
+        // For everything else, tick the timer
+        setCurrentTime(prev => {
+          if (prev >= dur) { next(); return 0; }
+          return prev + 0.5;
+        });
+      }
+    }, 500);
+
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [currentIdx]);
+
+  // Calculate overall playlist progress
+  useEffect(() => {
+    if (playlist.length === 0 || duration === 0) return;
+    const segmentSize = 1 / playlist.length;
+    const segmentProgress = Math.min(currentTime / duration, 1);
+    setProgress(currentIdx * segmentSize + segmentProgress * segmentSize);
+  }, [currentIdx, currentTime, duration, playlist.length]);
 
   const next = () => setCurrentIdx(prev => (prev + 1) % playlist.length);
   const prevItem = () => setCurrentIdx(prev => (prev - 1 + playlist.length) % playlist.length);
@@ -174,7 +206,7 @@ export function Dashboard({
                     setCurrentIdx(Math.max(0, Math.min(idx, playlist.length - 1)));
                   }}>
                   <div className="h-full bg-white rounded-full transition-all duration-500 ease-linear" style={{
-                    width: `${((currentIdx + (duration > 0 ? progress / duration : 0)) / playlist.length) * 100}%`
+                    width: `${progress * 100}%`
                   }} />
                 </div>
               </div>
