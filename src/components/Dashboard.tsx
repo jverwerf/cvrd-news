@@ -52,18 +52,10 @@ export function Dashboard({
       playlist.push({ type: 'anchor', url: videoUrl });
     }
   }
+  // Dashboard player: YouTube only
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
-    }
-    for (const c of (story.social_clips || [])) {
-      if (c.platform === 'tiktok' && c.embed_id) {
-        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.title || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
-      } else if (c.platform === 'reels' && c.embed_id) {
-        playlist.push({ type: 'reels', embed_id: c.embed_id, channel: c.title || 'Reels', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration });
-      } else if (c.platform === 'x' && c.embed_id) {
-        playlist.push({ type: 'x', embed_id: c.embed_id, channel: c.title || c.author || 'X', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 30 });
-      }
     }
   }
 
