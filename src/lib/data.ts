@@ -81,6 +81,15 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
       report.video_url = `/videos/news_${dateStr}.mp4`;
     }
 
+    // Fallback: use YouTube embed if local video doesn't exist
+    if (!report.video_url) {
+      const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
+      if (fs.existsSync(ytDailyPath)) {
+        const ytId = fs.readFileSync(ytDailyPath, 'utf8').trim();
+        if (ytId) report.video_url = `https://www.youtube.com/embed/${ytId}`;
+      }
+    }
+
     // Fetch live data (markets, crypto, earthquakes, wiki trending)
     try {
       const liveItems: LiveItem[] = [];
