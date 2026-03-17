@@ -412,9 +412,10 @@ function FadingTile({ pair, delay }: {
 
       {/* Info */}
       <div className="absolute bottom-0 left-0 right-0 p-2.5">
-        <div className="text-[10px] font-mono text-white/40 mb-0.5">{current.index}</div>
-        <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">{current.topic}</h3>
-        {!isSocial && (
+        <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">
+          {isSocial ? (current.clipLabel || current.topic) : (current.channel || current.topic)}
+        </h3>
+        {!isSocial && current.sources.length > 0 && (
           <div className="flex items-center gap-1 mt-1 flex-wrap">
             {current.sources.slice(0, 3).map((s, i) => (
               <span key={i} className="text-[8px] font-medium text-white/50 px-1 py-0.5 rounded"
