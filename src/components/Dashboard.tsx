@@ -125,60 +125,64 @@ export function Dashboard({
     }
   };
 
-  // Build social clips per story (for context tiles)
-  const storySocialClips: Record<number, TileContent[]> = {};
+  // Build ALL linked content per story (YouTube + social clips)
+  const storyLinked: Record<number, TileContent[]> = {};
   for (const [i, story] of stories.entries()) {
-    const clips: TileContent[] = [];
+    const linked: TileContent[] = [];
+    for (const v of (story.youtube_videos || [])) {
+      linked.push({
+        type: 'video',
+        image: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`,
+        topic: story.topic, index: i + 1, sources: story.sources || [],
+        channel: v.channel,
+      });
+    }
     for (const c of (story.social_clips || [])) {
       if (c.embed_id && (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels')) {
-        clips.push({
+        linked.push({
           type: 'social',
-          image: '', // no thumbnail for social
-          topic: story.topic,
-          index: i + 1,
-          sources: story.sources || [],
+          image: (c as any).thumbnail || '',
+          topic: story.topic, index: i + 1, sources: story.sources || [],
           platform: c.platform as 'x' | 'tiktok' | 'reels',
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
         });
       }
     }
-    if (clips.length > 0) storySocialClips[i + 1] = clips;
+    if (linked.length > 0) storyLinked[i + 1] = linked;
   }
 
-  // Build default tile content (story images + video thumbnails)
+  // Build default tiles from OTHER stories (not the current one)
   const defaultTiles: TileContent[] = [];
   for (const [i, story] of stories.entries()) {
     if (story.image_file) {
       defaultTiles.push({ type: 'image', image: story.image_file, topic: story.topic, index: i + 1, sources: story.sources || [] });
     }
-    for (const v of (story.youtube_videos || []).slice(0, 1)) {
-      const pIdx = playlist.findIndex(p => p.embed_id === v.embed_id);
-      defaultTiles.push({
-        type: 'video',
-        image: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`,
-        topic: story.topic, index: i + 1, sources: story.sources || [],
-        playlistIdx: pIdx >= 0 ? pIdx : undefined, channel: v.channel,
-      });
-    }
   }
   while (defaultTiles.length < 16) defaultTiles.push(...defaultTiles.slice(0, 16 - defaultTiles.length));
 
-  // Get social tiles for the currently playing story
+  // Get ALL linked content for current story
   const currentStoryIdx = current?.storyIndex;
-  const contextClips = currentStoryIdx ? (storySocialClips[currentStoryIdx] || []) : [];
+  const linkedContent = currentStoryIdx ? (storyLinked[currentStoryIdx] || []) : [];
 
-  // Mix social clips into the tile pool alongside default story tiles
-  // Every social clip is guaranteed to appear in at least one tile's rotation
-  const allContent: TileContent[] = [...contextClips, ...defaultTiles];
+  // Build tile pool: linked content first, then fill with other stories
+  // Every linked item appears in the rotation
+  const pool: TileContent[] = [...linkedContent];
+  // Fill to at least 20 items so tiles have variety
+  let dIdx = 0;
+  while (pool.length < 20) {
+    const dt = defaultTiles[dIdx % defaultTiles.length];
+    // Skip tiles from the same story (already covered by linked content)
+    if (dt.index !== currentStoryIdx) pool.push(dt);
+    dIdx++;
+    if (dIdx > defaultTiles.length * 2) break; // safety
+  }
 
-  // Build 10 tile pairs — each pair is 2 items that crossfade
-  // Distribute social clips across different tiles so they all get shown
+  // Build 10 tile pairs from the pool — spread linked content across tiles
   const tilePairs: [TileContent, TileContent][] = [];
   for (let i = 0; i < 10; i++) {
-    // Pick two items from the pool — spread social clips evenly
-    const a = allContent[i % allContent.length];
-    const b = allContent[(i + Math.max(5, contextClips.length)) % allContent.length];
+    const a = pool[i % pool.length];
+    const b = pool[(i + Math.ceil(pool.length / 2)) % pool.length];
     tilePairs.push([a, b]);
   }
 
