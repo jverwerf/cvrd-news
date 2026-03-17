@@ -141,7 +141,7 @@ export function Dashboard({
       if (c.embed_id && (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels')) {
         linked.push({
           type: 'social',
-          image: (c as any).thumbnail || '',
+          image: (c as any).thumbnail || story.image_file || '',
           topic: story.topic, index: i + 1, sources: story.sources || [],
           platform: c.platform as 'x' | 'tiktok' | 'reels',
           embedId: c.embed_id,
@@ -372,19 +372,25 @@ function FadingTile({ pair, delay }: {
               allow="autoplay"
             />
           ) : item.type === 'social' ? (
-            <div className="w-full h-full flex flex-col justify-between p-3"
-              style={{ background: `linear-gradient(160deg, ${platformColors[item.platform || 'x']}40 0%, #0a0a0a 100%)` }}>
-              <div className="flex items-center gap-1.5">
-                <span className="text-[14px]" style={{ color: platformColors[item.platform || 'x'] }}>
-                  {platformIcons[item.platform || 'x']}
-                </span>
-                <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: platformColors[item.platform || 'x'] }}>
-                  {item.platform === 'x' ? 'X Post' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+            <div className="w-full h-full relative">
+              {/* Use image if available (from story), otherwise dark gradient */}
+              {item.image ? (
+                <Image src={item.image} alt={item.topic} fill className="object-cover" />
+              ) : (
+                <div className="w-full h-full bg-[#111]" />
+              )}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+              <div className="absolute top-2 left-2">
+                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
+                  style={{ background: platformColors[item.platform || 'x'] }}>
+                  {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
                 </span>
               </div>
-              <p className="text-[11px] text-white/80 leading-snug line-clamp-4">
-                {item.clipLabel}
-              </p>
+              <div className="absolute bottom-0 left-0 right-0 p-2.5">
+                <p className="text-[10px] text-white/90 leading-snug line-clamp-3">
+                  {item.clipLabel}
+                </p>
+              </div>
             </div>
           ) : item.image ? (
             <Image src={item.image} alt={item.topic} fill className="object-cover" />
