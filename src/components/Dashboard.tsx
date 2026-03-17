@@ -26,6 +26,7 @@ type TileContent = {
   platform?: 'x' | 'tiktok' | 'reels';
   embedId?: string;
   clipLabel?: string;
+  videoTitle?: string;
 };
 
 export function Dashboard({
@@ -135,6 +136,7 @@ export function Dashboard({
         image: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`,
         topic: story.topic, index: i + 1, sources: story.sources || [],
         channel: v.channel,
+        videoTitle: (v as any).title || v.channel || '',
       });
     }
     for (const c of (story.social_clips || [])) {
@@ -413,7 +415,7 @@ function FadingTile({ pair, delay }: {
       {/* Info */}
       <div className="absolute bottom-0 left-0 right-0 p-2.5">
         <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">
-          {isSocial ? (current.clipLabel || current.topic) : (current.channel || current.topic)}
+          {isSocial ? (current.clipLabel || current.topic) : (current.videoTitle || current.channel || current.topic)}
         </h3>
         {!isSocial && current.sources.length > 0 && (
           <div className="flex items-center gap-1 mt-1 flex-wrap">
