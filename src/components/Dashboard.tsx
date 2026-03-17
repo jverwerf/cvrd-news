@@ -168,45 +168,24 @@ export function Dashboard({
   const currentStoryIdx = current?.storyIndex;
   const contextClips = currentStoryIdx ? (storySocialClips[currentStoryIdx] || []) : [];
 
-  // Layout: 10 tile positions
-  // Row 1: [0] [1] [2] [3]
-  // Row 2: [4] [PLAYER] [5]
-  // Row 3: [6] [7] [8] [9]
-  // Positions 4 and 5 are next to the player — put social clips there first
-  // Then fill remaining positions with social clips, then defaults
-
-  const tileSlots: (TileContent | null)[] = new Array(10).fill(null);
-
-  // Place social clips: positions next to player first (4, 5), then around player (1, 2, 7, 8), then corners
-  const priorityOrder = [4, 5, 1, 2, 7, 8, 0, 3, 6, 9];
-  let clipIdx = 0;
-  for (const pos of priorityOrder) {
-    if (clipIdx < contextClips.length) {
-      tileSlots[pos] = contextClips[clipIdx];
-      clipIdx++;
-    }
-  }
-
-  // Fill remaining with default tiles
-  let defaultIdx = 0;
-  for (let i = 0; i < 10; i++) {
-    if (!tileSlots[i]) {
-      tileSlots[i] = defaultTiles[defaultIdx % defaultTiles.length];
-      defaultIdx++;
-    }
-  }
-
-  // Each tile gets 2 items to crossfade between — social tiles don't crossfade (always visible)
+  // Build 10 tile pairs — linked social clips get dedicated tiles, rest filled with stories
+  // Social clips crossfade with each other or with story images — animation always running
   const tilePairs: [TileContent, TileContent][] = [];
-  for (let i = 0; i < 10; i++) {
-    const primary = tileSlots[i]!;
-    if (primary.type === 'social') {
-      // Social tiles stay static — always visible, no crossfade
-      tilePairs.push([primary, primary]);
-    } else {
-      const secondary = defaultTiles[(defaultIdx + i + 5) % defaultTiles.length];
-      tilePairs.push([primary, secondary]);
-    }
+
+  // First: assign social clips to tiles (1 clip = 1 tile, always visible in the rotation)
+  const socialTileCount = Math.min(contextClips.length, 10);
+  for (let i = 0; i < socialTileCount; i++) {
+    // Pair: social clip crossfades with a default story tile
+    tilePairs.push([contextClips[i], defaultTiles[i % defaultTiles.length]]);
+  }
+
+  // Fill remaining tiles with default story content (crossfading pairs)
+  let dIdx = socialTileCount;
+  while (tilePairs.length < 10) {
+    const a = defaultTiles[dIdx % defaultTiles.length];
+    const b = defaultTiles[(dIdx + 5) % defaultTiles.length];
+    tilePairs.push([a, b]);
+    dIdx++;
   }
 
   return (
