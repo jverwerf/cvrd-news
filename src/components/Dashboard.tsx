@@ -375,12 +375,9 @@ function FadingTile({ pair, delay }: {
               allow="autoplay"
             />
           ) : item.type === 'social' ? (
-            <div className="w-full h-full flex flex-col items-center justify-center p-3"
-              style={{ background: `linear-gradient(135deg, ${platformColors[item.platform || 'x']}15, ${platformColors[item.platform || 'x']}30)` }}>
-              <span className="text-[28px] mb-2" style={{ color: platformColors[item.platform || 'x'] }}>
-                {platformIcons[item.platform || 'x']}
-              </span>
-              <span className="text-[10px] text-white/70 text-center leading-snug line-clamp-3 px-2">
+            <div className="w-full h-full flex flex-col justify-end p-3"
+              style={{ background: `linear-gradient(160deg, ${platformColors[item.platform || 'x']}20 0%, #111 60%)` }}>
+              <span className="text-[13px] text-white/90 leading-snug line-clamp-4 font-medium">
                 {item.clipLabel}
               </span>
             </div>
