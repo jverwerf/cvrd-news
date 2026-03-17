@@ -165,24 +165,15 @@ export function Dashboard({
   const currentStoryIdx = current?.storyIndex;
   const linkedContent = currentStoryIdx ? (storyLinked[currentStoryIdx] || []) : [];
 
-  // Build tile pool: linked content first, then fill with other stories
-  // Every linked item appears in the rotation
-  const pool: TileContent[] = [...linkedContent];
-  // Fill to at least 20 items so tiles have variety
-  let dIdx = 0;
-  while (pool.length < 20) {
-    const dt = defaultTiles[dIdx % defaultTiles.length];
-    // Skip tiles from the same story (already covered by linked content)
-    if (dt.index !== currentStoryIdx) pool.push(dt);
-    dIdx++;
-    if (dIdx > defaultTiles.length * 2) break; // safety
-  }
+  // ONLY linked content in tiles — randomly distributed
+  // If no linked content, fall back to default tiles
+  const pool = linkedContent.length > 0 ? linkedContent : defaultTiles;
 
-  // Build 10 tile pairs from the pool — spread linked content across tiles
+  // Build 10 tile pairs — each tile gets 2 random items from the pool to crossfade between
   const tilePairs: [TileContent, TileContent][] = [];
   for (let i = 0; i < 10; i++) {
     const a = pool[i % pool.length];
-    const b = pool[(i + Math.ceil(pool.length / 2)) % pool.length];
+    const b = pool[(i + Math.max(1, Math.floor(pool.length / 2))) % pool.length];
     tilePairs.push([a, b]);
   }
 
