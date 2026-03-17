@@ -168,25 +168,45 @@ export function Dashboard({
   const currentStoryIdx = current?.storyIndex;
   const contextClips = currentStoryIdx ? (storySocialClips[currentStoryIdx] || []) : [];
 
-  // Build 10 tile slots: fill with social clips for current story, then default tiles
-  const tileSlots: TileContent[] = [];
-  // First, add social clips from the current story (up to 8 — leave 2 for row 2 sides)
-  for (const clip of contextClips.slice(0, 8)) {
-    tileSlots.push(clip);
-  }
-  // Fill remaining with default tiles
-  let defaultIdx = 0;
-  while (tileSlots.length < 10) {
-    tileSlots.push(defaultTiles[defaultIdx % defaultTiles.length]);
-    defaultIdx++;
+  // Layout: 10 tile positions
+  // Row 1: [0] [1] [2] [3]
+  // Row 2: [4] [PLAYER] [5]
+  // Row 3: [6] [7] [8] [9]
+  // Positions 4 and 5 are next to the player — put social clips there first
+  // Then fill remaining positions with social clips, then defaults
+
+  const tileSlots: (TileContent | null)[] = new Array(10).fill(null);
+
+  // Place social clips: positions next to player first (4, 5), then around player (1, 2, 7, 8), then corners
+  const priorityOrder = [4, 5, 1, 2, 7, 8, 0, 3, 6, 9];
+  let clipIdx = 0;
+  for (const pos of priorityOrder) {
+    if (clipIdx < contextClips.length) {
+      tileSlots[pos] = contextClips[clipIdx];
+      clipIdx++;
+    }
   }
 
-  // Each tile gets 2 items to crossfade between
+  // Fill remaining with default tiles
+  let defaultIdx = 0;
+  for (let i = 0; i < 10; i++) {
+    if (!tileSlots[i]) {
+      tileSlots[i] = defaultTiles[defaultIdx % defaultTiles.length];
+      defaultIdx++;
+    }
+  }
+
+  // Each tile gets 2 items to crossfade between — social tiles don't crossfade (always visible)
   const tilePairs: [TileContent, TileContent][] = [];
   for (let i = 0; i < 10; i++) {
-    const primary = tileSlots[i];
-    const secondary = defaultTiles[(i + 5) % defaultTiles.length];
-    tilePairs.push([primary, secondary]);
+    const primary = tileSlots[i]!;
+    if (primary.type === 'social') {
+      // Social tiles stay static — always visible, no crossfade
+      tilePairs.push([primary, primary]);
+    } else {
+      const secondary = defaultTiles[(defaultIdx + i + 5) % defaultTiles.length];
+      tilePairs.push([primary, secondary]);
+    }
   }
 
   return (
@@ -375,11 +395,19 @@ function FadingTile({ pair, delay }: {
               allow="autoplay"
             />
           ) : item.type === 'social' ? (
-            <div className="w-full h-full flex flex-col justify-end p-3"
-              style={{ background: `linear-gradient(160deg, ${platformColors[item.platform || 'x']}20 0%, #111 60%)` }}>
-              <span className="text-[13px] text-white/90 leading-snug line-clamp-4 font-medium">
+            <div className="w-full h-full flex flex-col justify-between p-3"
+              style={{ background: `linear-gradient(160deg, ${platformColors[item.platform || 'x']}40 0%, #0a0a0a 100%)` }}>
+              <div className="flex items-center gap-1.5">
+                <span className="text-[14px]" style={{ color: platformColors[item.platform || 'x'] }}>
+                  {platformIcons[item.platform || 'x']}
+                </span>
+                <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: platformColors[item.platform || 'x'] }}>
+                  {item.platform === 'x' ? 'X Post' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+                </span>
+              </div>
+              <p className="text-[11px] text-white/80 leading-snug line-clamp-4">
                 {item.clipLabel}
-              </span>
+              </p>
             </div>
           ) : item.image ? (
             <Image src={item.image} alt={item.topic} fill className="object-cover" />
