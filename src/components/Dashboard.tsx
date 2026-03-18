@@ -431,7 +431,13 @@ function FadingTile({ pair, delay }: {
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
           {item.type === 'video' ? (
             <div className="w-full h-full relative">
-              <Image src={item.image} alt={item.topic} fill className="object-cover" />
+              <iframe
+                src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+                allow="autoplay"
+                loading="lazy"
+              />
               <div className="absolute top-2 left-2 z-10">
                 <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
               </div>
