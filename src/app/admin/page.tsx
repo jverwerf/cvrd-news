@@ -22,13 +22,44 @@ type DashboardData = {
 export default function AdminDashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [authed, setAuthed] = useState(false);
+  const [pin, setPin] = useState("");
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('cvrd_admin') === '1') {
+      setAuthed(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!authed) return;
     fetch("/api/admin/stats")
       .then((r) => r.json())
       .then((d) => { setData(d); setLoading(false); })
       .catch(() => setLoading(false));
-  }, []);
+  }, [authed]);
+
+  if (!authed) return (
+    <div style={{ background: '#0a0a0a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div style={{ textAlign: 'center' }}>
+        <h1 style={{ color: '#fff', fontSize: 24, marginBottom: 16 }}>CVRD Admin</h1>
+        <input
+          type="password"
+          placeholder="Enter PIN"
+          value={pin}
+          onChange={(e) => setPin(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' && pin === '2026') {
+              setAuthed(true);
+              sessionStorage.setItem('cvrd_admin', '1');
+            }
+          }}
+          style={{ padding: '12px 20px', fontSize: 18, background: '#111', border: '1px solid #333', borderRadius: 8, color: '#fff', textAlign: 'center', width: 200 }}
+        />
+        <p style={{ color: '#555', fontSize: 12, marginTop: 8 }}>Press Enter</p>
+      </div>
+    </div>
+  );
 
   if (loading) return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

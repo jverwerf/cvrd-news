@@ -1,8 +1,29 @@
+import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
 import { Dashboard } from "@/components/Dashboard";
 import { LiveBanner } from "@/components/LiveBanner";
 import { HeroStory } from "@/components/HeroStory";
 import { StoryFeed } from "@/components/StoryFeed";
+
+const CATEGORY_META: Record<string, { title: string; description: string }> = {
+  'world': { title: 'World News', description: 'Unfiltered world news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
+  'politics': { title: 'Politics', description: 'Political news without the spin. Coverage from left, right, and international outlets so you get the full picture.' },
+  'markets-crypto': { title: 'Markets & Crypto', description: 'Financial markets, cryptocurrency, and economic news. Bitcoin, stocks, oil — analysis from every angle.' },
+  'tech-ai': { title: 'Tech & AI', description: 'Technology and artificial intelligence news. From startups to Big Tech, covered without bias.' },
+  'culture': { title: 'Culture', description: 'Entertainment, sports, and cultural news. The stories shaping society today.' },
+  'unfiltered': { title: 'Unfiltered', description: 'The stories mainstream media won\'t touch. Investigations, conspiracies debunked, and the news behind the news.' },
+};
+
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
+  const { category } = await params;
+  const meta = CATEGORY_META[category];
+  if (!meta) return {};
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: { title: `${meta.title} | CVRD News`, description: meta.description },
+  };
+}
 
 const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'world': { label: 'World', slug: 'world' },

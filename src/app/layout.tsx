@@ -6,8 +6,48 @@ import "./globals.css";
 const dm = DM_Sans({ variable: "--font-dm", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "CVRD",
-  description: "The unfiltered daily brief.",
+  title: {
+    default: "CVRD News — Unfiltered Daily News from Every Side",
+    template: "%s | CVRD News",
+  },
+  description: "The news, unfiltered. Daily video briefings covering world news, politics, markets, crypto, tech, and culture from 36+ sources across the political spectrum. Every side. Every source. You decide.",
+  keywords: ["news", "unfiltered news", "daily news", "breaking news", "world news", "politics", "media bias", "both sides", "video news", "news today", "covered news", "CVRD"],
+  authors: [{ name: "CVRD News" }],
+  creator: "CVRD News",
+  publisher: "CVRD News",
+  metadataBase: new URL("https://cvrdnews.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://cvrdnews.com",
+    siteName: "CVRD News",
+    title: "CVRD News — Unfiltered Daily News from Every Side",
+    description: "Daily video briefings covering world news, politics, markets, and tech from 36+ sources. No spin. No agenda. Every side of every story.",
+    images: [{ url: "/logo_new.jpg", width: 1024, height: 559, alt: "CVRD News" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CVRD News — Unfiltered Daily News",
+    description: "Daily video briefings from 36+ sources across the political spectrum. The news they won't cover.",
+    images: ["/logo_new.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "G-594H3DW6ZD",
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
