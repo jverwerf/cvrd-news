@@ -200,11 +200,19 @@ export function Dashboard({
   }
   while (defaultTiles.length < 16) defaultTiles.push(...defaultTiles.slice(0, 16 - defaultTiles.length));
 
-  // Get ALL linked content for current story
+  // Get linked content for current context
   const currentStoryIdx = current?.storyIndex;
-  const linkedContent = currentStoryIdx ? (storyLinked[currentStoryIdx] || []) : [];
+  let linkedContent: TileContent[] = [];
 
-  // ONLY linked content in tiles — randomly distributed
+  if (currentStoryIdx && currentStoryIdx > 0) {
+    // Playing a specific story's clip — show that story's videos
+    linkedContent = storyLinked[currentStoryIdx] || [];
+  } else if (currentStoryIdx === 0) {
+    // Playing the anchor/daily briefing — show ALL videos from ALL stories
+    // This shows the source material used in the briefing
+    linkedContent = Object.values(storyLinked).flat();
+  }
+
   // If no linked content, fall back to default tiles
   const pool = linkedContent.length > 0 ? linkedContent : defaultTiles;
 
