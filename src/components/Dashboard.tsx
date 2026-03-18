@@ -52,9 +52,9 @@ export function Dashboard({
   if (videoUrl) {
     if (videoUrl.includes('youtube.com/embed/')) {
       const ytId = videoUrl.split('/embed/')[1]?.split('?')[0];
-      playlist.push({ type: 'youtube', embed_id: ytId, channel: 'CVRD Daily Brief', storyTopic: 'Daily Briefing' });
+      playlist.push({ type: 'youtube', embed_id: ytId, channel: 'CVRD Daily Brief', storyTopic: 'Daily Briefing', storyIndex: 0 });
     } else {
-      playlist.push({ type: 'anchor', url: videoUrl });
+      playlist.push({ type: 'anchor', url: videoUrl, storyIndex: 0 });
     }
   }
   // Dashboard player: YouTube only
@@ -64,8 +64,29 @@ export function Dashboard({
     }
   }
 
+  // Build story boundaries: storyIndex → [firstPlaylistIdx, lastPlaylistIdx]
+  const storyBoundaries: { storyIndex: number; topic: string; start: number; end: number }[] = [];
+  {
+    let lastStoryIdx = -1;
+    for (let i = 0; i < playlist.length; i++) {
+      const si = playlist[i].storyIndex ?? -1;
+      if (si !== lastStoryIdx) {
+        if (storyBoundaries.length > 0) storyBoundaries[storyBoundaries.length - 1].end = i - 1;
+        storyBoundaries.push({ storyIndex: si, topic: playlist[i].storyTopic || '', start: i, end: i });
+        lastStoryIdx = si;
+      }
+    }
+    if (storyBoundaries.length > 0) storyBoundaries[storyBoundaries.length - 1].end = playlist.length - 1;
+  }
+
   const [currentIdx, setCurrentIdx] = useState(0);
   const current = playlist[currentIdx];
+
+  // Determine which story group we're in
+  const currentBoundary = storyBoundaries.find(b => currentIdx >= b.start && currentIdx <= b.end);
+  const currentBoundaryIdx = storyBoundaries.findIndex(b => currentIdx >= b.start && currentIdx <= b.end);
+  const clipInStory = currentBoundary ? currentIdx - currentBoundary.start + 1 : 1;
+  const clipsInStory = currentBoundary ? currentBoundary.end - currentBoundary.start + 1 : 1;
 
   // Track progress for ALL video types using timer
   useEffect(() => {
@@ -106,8 +127,24 @@ export function Dashboard({
     setProgress(currentIdx * segmentSize + segmentProgress * segmentSize);
   }, [currentIdx, currentTime, duration, playlist.length]);
 
+  // Within-story: next/prev clip
   const next = () => setCurrentIdx(prev => (prev + 1) % playlist.length);
   const prevItem = () => setCurrentIdx(prev => (prev - 1 + playlist.length) % playlist.length);
+
+  // Between stories: skip to first clip of next/prev story
+  const nextStory = () => {
+    const nextBIdx = (currentBoundaryIdx + 1) % storyBoundaries.length;
+    setCurrentIdx(storyBoundaries[nextBIdx].start);
+  };
+  const prevStory = () => {
+    // If we're past the first clip in this story, go back to first clip
+    if (currentBoundary && currentIdx > currentBoundary.start) {
+      setCurrentIdx(currentBoundary.start);
+    } else {
+      const prevBIdx = (currentBoundaryIdx - 1 + storyBoundaries.length) % storyBoundaries.length;
+      setCurrentIdx(storyBoundaries[prevBIdx].start);
+    }
+  };
 
   const toggleSound = () => {
     const newUnmuted = !unmuted;
@@ -227,45 +264,62 @@ export function Dashboard({
           {/* CONTROLS BAR — below video */}
           <div className="px-2 py-1 bg-[#111] shrink-0">
 
-            {/* Playlist timeline — gradually fills across ALL videos */}
-            {playlist.length > 1 && (
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-[9px] text-white/60 font-mono shrink-0">{currentIdx + 1}/{playlist.length}</span>
-                <div className="h-[5px] bg-white/20 rounded-full cursor-pointer overflow-hidden flex-1"
-                  onClick={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const pct = (e.clientX - rect.left) / rect.width;
-                    const idx = Math.floor(pct * playlist.length);
-                    setCurrentIdx(Math.max(0, Math.min(idx, playlist.length - 1)));
-                  }}>
-                  <div className="h-full bg-white rounded-full transition-all duration-500 ease-linear" style={{
-                    width: `${progress * 100}%`
-                  }} />
-                </div>
+            {/* Story progress — segmented by story */}
+            {storyBoundaries.length > 1 && (
+              <div className="flex items-center gap-1 mb-1">
+                {storyBoundaries.map((b, i) => {
+                  const isActive = i === currentBoundaryIdx;
+                  const isPast = currentBoundaryIdx > i;
+                  const storyClips = b.end - b.start + 1;
+                  const clipProgress = isActive ? (currentIdx - b.start) / storyClips : 0;
+                  return (
+                    <div key={i} className="h-[4px] rounded-full cursor-pointer overflow-hidden"
+                      style={{ flex: storyClips, background: 'rgba(255,255,255,0.15)' }}
+                      onClick={() => setCurrentIdx(b.start)}>
+                      <div className="h-full rounded-full transition-all duration-300"
+                        style={{
+                          width: isPast ? '100%' : isActive ? `${Math.max(clipProgress, 1 / storyClips) * 100}%` : '0%',
+                          background: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
+                        }} />
+                    </div>
+                  );
+                })}
               </div>
             )}
 
-            {/* Controls row — evenly spaced */}
-            <div className="flex items-center gap-3">
-              {/* Now playing */}
+            {/* Controls row */}
+            <div className="flex items-center gap-2">
+              {/* Now playing — story + clip info */}
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 <span className="w-[5px] h-[5px] rounded-full bg-[#4ade80] shadow-[0_0_8px_#4ade80] animate-pulse shrink-0" />
-                <span className="text-[11px] text-white font-medium truncate">
-                  {current?.type === 'anchor' ? 'Daily Briefing' : `${current?.channel || current?.type?.toUpperCase() || 'Video'}: ${current?.storyTopic || ''}`}
-                </span>
+                <div className="min-w-0 flex-1">
+                  <span className="text-[11px] text-white font-medium truncate block">
+                    {current?.type === 'anchor' ? 'Daily Briefing' : (current?.storyTopic || '')}
+                  </span>
+                  <span className="text-[9px] text-white/50 font-mono">
+                    Story {currentBoundaryIdx + 1}/{storyBoundaries.length} &middot; Clip {clipInStory}/{clipsInStory}
+                  </span>
+                </div>
               </div>
 
-              {/* Prev */}
-              <button onClick={prevItem} className="flex items-center justify-center p-2 hover:opacity-60 transition-opacity shrink-0">
+              {/* Story skip: |<< prev story */}
+              <button onClick={prevStory} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Previous story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="3" y="5" width="2" height="14" /><polygon points="19 5 9 12 19 19" /></svg>
+              </button>
+
+              {/* Clip skip: < prev clip */}
+              <button onClick={prevItem} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Previous clip">
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[8px] border-r-white" />
               </button>
 
-              {/* Counter */}
-              <span className="text-[11px] text-white font-mono shrink-0">{currentIdx + 1} / {playlist.length}</span>
-
-              {/* Next */}
-              <button onClick={next} className="flex items-center justify-center p-2 hover:opacity-60 transition-opacity shrink-0">
+              {/* Clip skip: next clip > */}
+              <button onClick={next} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Next clip">
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-white" />
+              </button>
+
+              {/* Story skip: next story >>| */}
+              <button onClick={nextStory} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Next story">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
               </button>
 
               {/* Divider */}
