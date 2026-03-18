@@ -10,6 +10,7 @@ type VideoItem = {
   label: string;
   thumbnail?: string;
   duration?: number;
+  relevance?: number;
 };
 
 export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }: {
@@ -29,21 +30,22 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       label: (v as any).title || v.channel || 'YouTube',
       thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
       duration: v.duration,
+      relevance: (v as any).relevance,
     });
   }
   for (const c of socialClips) {
     if (c.platform === 'tiktok' && c.embed_id) {
-      allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
+      allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'reels' && c.embed_id) {
-      allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
+      allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration, relevance: (c as any).relevance });
     }
   }
 
-  // Items are already ordered by relevance from the pipeline (most relevant first)
-  // Just use them as-is — no regrouping by platform
-  const items = allItems;
+  // Sort all items by relevance score (highest first), regardless of platform
+  // Items without a score keep their original position
+  const items = allItems.sort((a, b) => (b.relevance || 0) - (a.relevance || 0));
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
