@@ -71,8 +71,8 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
       )}
 
       {/* 3. SUMMARY */}
-      <div className="mb-5 p-4 rounded-md border-l-[3px] border-[#b8860b]" style={{ background: '#f2f0eb' }}>
-        <p className="text-[14px] text-[#333] leading-[1.75] italic">
+      <div className="mb-5 p-4 rounded-lg" style={{ background: '#1a1a2e', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+        <p className="text-[14px] text-[#e0e0e0] leading-[1.75] italic">
           {story.summary}
         </p>
       </div>
@@ -265,33 +265,32 @@ function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: st
     grouped[s.name].push(s);
   }
 
+  const getTitle = (a: { title?: string; url: string }) => {
+    if (a.title) return a.title;
+    const path = a.url.replace(/https?:\/\/[^/]+/, '').replace(/[-_]/g, ' ').replace(/\/$/, '');
+    const segments = path.split('/').filter(s => s.length > 3);
+    const last = segments[segments.length - 1] || '';
+    return last.replace(/^\w/, c => c.toUpperCase()).slice(0, 80) || a.url.replace(/https?:\/\/(www\.)?/, '').slice(0, 50);
+  };
+
   return (
-    <div className="space-y-0.5">
+    <div className="space-y-0">
       {Object.entries(grouped).map(([name, articles]) => (
         <div key={name}>
-          {articles.length === 1 ? (
-            <a href={articles[0].url} target="_blank" rel="noreferrer"
-              className="block text-[12px] text-[#444] py-1 transition-colors hover:opacity-70">
-              {name} <span className="text-[10px] text-[#bbb]">&rarr;</span>
-            </a>
-          ) : (
-            <>
-              <button onClick={() => setExpanded(expanded === name ? null : name)}
-                className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center justify-between">
-                <span>{name} <span className="text-[10px] text-[#bbb]">({articles.length})</span></span>
-                <span className="text-[10px] text-[#bbb]">{expanded === name ? '−' : '+'}</span>
-              </button>
-              {expanded === name && (
-                <div className="pl-3 border-l border-[#e5e5e5] ml-1 mb-1">
-                  {articles.map((a, i) => (
-                    <a key={i} href={a.url} target="_blank" rel="noreferrer"
-                      className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
-                      {a.title || a.url.replace(/https?:\/\/(www\.)?/, '').slice(0, 60)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </>
+          <button onClick={() => setExpanded(expanded === name ? null : name)}
+            className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center gap-1.5">
+            <span className="text-[10px] text-[#bbb] shrink-0">{expanded === name ? '−' : '+'}</span>
+            <span className="flex-1">{name} {articles.length > 1 && <span className="text-[10px] text-[#bbb]">({articles.length})</span>}</span>
+          </button>
+          {expanded === name && (
+            <div className="pl-5 mb-1 space-y-0.5">
+              {articles.map((a, i) => (
+                <a key={i} href={a.url} target="_blank" rel="noreferrer"
+                  className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
+                  {getTitle(a)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+                </a>
+              ))}
+            </div>
           )}
         </div>
       ))}
