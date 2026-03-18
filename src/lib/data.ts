@@ -65,29 +65,11 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
     const fileContents = fs.readFileSync(dataPath, 'utf8');
     const report = JSON.parse(fileContents) as DailyReport;
 
-    // Check if today's video exists (try produced version first, then raw)
-    const producedPath = path.resolve(process.cwd(), `../intelligence-engine/output/videos/news_produced_${dateStr}.mp4`);
-    const rawPath = path.resolve(process.cwd(), `../intelligence-engine/output/videos/news_${dateStr}.mp4`);
-    const videoPath = fs.existsSync(producedPath) ? producedPath : (fs.existsSync(rawPath) ? rawPath : null);
-
-    if (videoPath) {
-      const publicVideoDir = path.resolve(process.cwd(), 'public/videos');
-      if (!fs.existsSync(publicVideoDir)) {
-        fs.mkdirSync(publicVideoDir, { recursive: true });
-      }
-      const destPath = path.join(publicVideoDir, `news_${dateStr}.mp4`);
-      // Always copy latest version
-      fs.copyFileSync(videoPath, destPath);
-      report.video_url = `/videos/news_${dateStr}.mp4`;
-    }
-
-    // Fallback: use YouTube embed if local video doesn't exist
-    if (!report.video_url) {
-      const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
-      if (fs.existsSync(ytDailyPath)) {
-        const ytId = fs.readFileSync(ytDailyPath, 'utf8').trim();
-        if (ytId) report.video_url = `https://www.youtube.com/embed/${ytId}`;
-      }
+    // Use YouTube embed for the daily briefing (too large for Vercel static hosting)
+    const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
+    if (fs.existsSync(ytDailyPath)) {
+      const ytId = fs.readFileSync(ytDailyPath, 'utf8').trim();
+      if (ytId) report.video_url = `https://www.youtube.com/embed/${ytId}`;
     }
 
     // Fetch live data (markets, crypto, earthquakes, wiki trending)
