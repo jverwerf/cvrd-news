@@ -26,6 +26,12 @@
   ::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
 }
 
-/* Override react-tweet max-width for grid layout */
-[data-theme="light"] .react-tweet-theme { max-width: 100% !important; margin: 0 !important; }
+/* Override react-tweet max-width for column layout */
+[data-theme="light"] .react-tweet-theme,
+.react-tweet-theme,
+[data-theme] article {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
 
