@@ -165,19 +165,34 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   ) : <SocialLink key={`r-${i}`} clip={c} />
                 ))}
               </div>
-              {redditClips.length > 0 && (
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit</span>
-                  {redditClips.map((c, i) => (
-                    <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#f0efec] transition-colors group border border-transparent hover:border-[#e5e5e5]">
-                      <span className="w-[7px] h-[7px] rounded-full bg-[#ff4500] shrink-0" />
-                      <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{c.title || c.url}</span>
-                      <span className="text-[9px] text-[#ccc] uppercase tracking-wider">reddit</span>
-                    </a>
-                  ))}
-                </div>
-              )}
+              {redditClips.length > 0 && (() => {
+                // Deduplicate by URL and extract clean titles
+                const seen = new Set<string>();
+                const unique = redditClips.filter(c => {
+                  if (seen.has(c.url)) return false;
+                  seen.add(c.url);
+                  return true;
+                });
+                return (
+                  <div>
+                    <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-1.5">Reddit</span>
+                    <div className="space-y-0">
+                      {unique.map((c, i) => {
+                        // Extract readable title from URL if no title
+                        const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                        return (
+                          <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                            className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#f0efec] transition-colors group">
+                            <span className="w-[5px] h-[5px] rounded-full bg-[#ff4500] shrink-0" />
+                            <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{title}</span>
+                            <span className="text-[9px] text-[#ddd] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                          </a>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })()}
 
               {/* ALL ARTICLES — grouped by source */}
               <div className="pt-4" style={{ borderTop: '1px solid #eee' }}>
