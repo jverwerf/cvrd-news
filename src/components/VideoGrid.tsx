@@ -210,27 +210,37 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {active.type === 'tiktok' && (
-                <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-                  className="w-full h-full" allowFullScreen allow="encrypted-media" />
+                <div key={active.embed_id} className="w-full h-full flex items-center justify-center bg-black">
+                  <a href={active.url} target="_blank" rel="noreferrer" className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-[#fe2c55] flex items-center justify-center mb-3 mx-auto">
+                      <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white ml-1" />
+                    </div>
+                    <p className="text-white/80 text-[12px] px-6 line-clamp-3">{active.label}</p>
+                    <p className="text-[#fe2c55] text-[11px] mt-2">Watch on TikTok</p>
+                  </a>
+                </div>
               )}
               {active.type === 'reels' && (
-                <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
-                  className="w-full h-full" allowFullScreen />
-              )}
-              {active.type === 'reddit' && (
-                <iframe key={active.embed_id}
-                  src={`https://www.redditmedia.com${new URL(active.url).pathname}?ref_source=embed&embed=true&theme=dark`}
-                  className="w-full h-full"
-                  style={{ border: 'none' }}
-                  sandbox="allow-scripts allow-same-origin allow-popups"
-                  allowFullScreen />
+                <div key={active.embed_id} className="w-full h-full flex items-center justify-center bg-black">
+                  <a href={active.url} target="_blank" rel="noreferrer" className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-[#c026d3] flex items-center justify-center mb-3 mx-auto">
+                      <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white ml-1" />
+                    </div>
+                    <p className="text-white/80 text-[12px] px-6 line-clamp-3">{active.label}</p>
+                    <p className="text-[#c026d3] text-[11px] mt-2">Watch on Instagram</p>
+                  </a>
+                </div>
               )}
               {active.type === 'x' && (
-                <iframe key={active.embed_id}
-                  src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
-                  className="w-full h-full"
-                  style={{ border: 'none' }}
-                  allowFullScreen />
+                <div key={active.embed_id} className="w-full h-full flex items-center justify-center bg-black">
+                  <a href={active.url} target="_blank" rel="noreferrer" className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-[#1d9bf0] flex items-center justify-center mb-3 mx-auto">
+                      <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[16px] border-l-white ml-1" />
+                    </div>
+                    <p className="text-white/80 text-[12px] px-6 line-clamp-3">{active.label}</p>
+                    <p className="text-[#1d9bf0] text-[11px] mt-2">Watch on X</p>
+                  </a>
+                </div>
               )}
             </>
           ) : (
