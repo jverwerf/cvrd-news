@@ -41,21 +41,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     }
   }
 
-  // Sort by relevance: items earlier in their original arrays are more relevant
-  // Interleave by picking round-robin from each source type
-  const byType: Record<string, VideoItem[]> = {};
-  for (const item of allItems) {
-    if (!byType[item.type]) byType[item.type] = [];
-    byType[item.type].push(item);
-  }
-  const types = Object.keys(byType);
-  const items: VideoItem[] = [];
-  let maxLen = Math.max(...types.map(t => byType[t].length));
-  for (let i = 0; i < maxLen; i++) {
-    for (const t of types) {
-      if (i < byType[t].length) items.push(byType[t][i]);
-    }
-  }
+  // Items are already ordered by relevance from the pipeline (most relevant first)
+  // Just use them as-is — no regrouping by platform
+  const items = allItems;
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
