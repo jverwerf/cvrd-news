@@ -247,16 +247,6 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                 </div>
               </div>
 
-              {/* PEOPLE */}
-              {story.people && story.people.length > 0 && (
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {story.people.map((p, i) => (
-                    <span key={i} className="text-[10px] text-[#666] px-2.5 py-1 rounded-full bg-[#f5f5f5]">
-                      {p.name}{p.role ? <span className="text-[#bbb]"> · {p.role}</span> : ''}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
           </motion.div>
         )}
