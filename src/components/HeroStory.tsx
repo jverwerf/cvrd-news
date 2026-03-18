@@ -144,25 +144,25 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 )}
               </div>
 
-              {/* SOCIAL EVIDENCE — 2 column grid */}
-              <div className="grid grid-cols-2 gap-3" style={{ gridAutoRows: 'min-content' }}>
+              {/* SOCIAL EVIDENCE — masonry 2 columns */}
+              <div style={{ columnCount: 2, columnGap: '12px' }}>
                 {xClips.map((c, i) => (
-                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden" style={{ maxWidth: '100%' }}><div style={{ maxWidth: '100%', overflow: 'hidden' }}><Tweet id={c.embed_id} /></div></div>
-                  : <SocialLink key={`x-${i}`} clip={c} />
+                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden mb-3" style={{ breakInside: 'avoid', maxWidth: '100%' }}><div style={{ maxWidth: '100%', overflow: 'hidden' }}><Tweet id={c.embed_id} /></div></div>
+                  : <div key={`x-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
                 {tiktokClips.map((c, i) => (
                   c.embed_id ? (
-                    <div key={`tt-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5]">
+                    <div key={`tt-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5] mb-3" style={{ breakInside: 'avoid' }}>
                       <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#111]" allowFullScreen allow="encrypted-media" />
                     </div>
-                  ) : <SocialLink key={`tt-${i}`} clip={c} />
+                  ) : <div key={`tt-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
                 {reelsClips.map((c, i) => (
                   c.embed_id ? (
-                    <div key={`r-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5]">
+                    <div key={`r-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5] mb-3" style={{ breakInside: 'avoid' }}>
                       <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#111]" allowFullScreen />
                     </div>
-                  ) : <SocialLink key={`r-${i}`} clip={c} />
+                  ) : <div key={`r-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
               </div>
               {redditClips.length > 0 && (() => {
