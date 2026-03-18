@@ -15,7 +15,10 @@ function getVercelToken(): string | null {
   return process.env.VERCEL_TOKEN || null;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const debug = searchParams.get('debug') === '1';
+
   const YT_KEY = process.env.YOUTUBE_API_KEY;
   const IG_TOKEN = process.env.INSTAGRAM_PAGE_TOKEN;
   const IG_ID = process.env.INSTAGRAM_BUSINESS_ID;
@@ -167,5 +170,17 @@ export async function GET() {
     app: 0,        // App not built yet
   };
 
-  return NextResponse.json({ youtube, instagram, website, revenue });
+  const result: any = { youtube, instagram, website, revenue };
+  if (debug) {
+    result._debug = {
+      hasYTKey: !!YT_KEY,
+      ytKeyPrefix: YT_KEY?.substring(0, 10),
+      hasIGToken: !!IG_TOKEN,
+      igTokenPrefix: IG_TOKEN?.substring(0, 10),
+      hasIGId: !!IG_ID,
+      igId: IG_ID,
+      hasVercelToken: !!getVercelToken(),
+    };
+  }
+  return NextResponse.json(result);
 }
