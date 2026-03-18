@@ -249,7 +249,7 @@ export function Dashboard({
           )}
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=0&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -420,7 +420,12 @@ function FadingTile({ pair, delay }: {
         <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
           {item.type === 'video' ? (
-            <Image src={item.image} alt={item.topic} fill className="object-cover" />
+            <iframe
+              src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
+              className="w-full h-full"
+              style={{ border: 'none', pointerEvents: 'none' }}
+              allow="autoplay"
+            />
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative">
               {/* Use image if available (from story), otherwise dark gradient */}
