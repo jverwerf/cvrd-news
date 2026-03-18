@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const dm = DM_Sans({ variable: "--font-dm", subsets: ["latin"], display: "swap" });
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body className={`${dm.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
