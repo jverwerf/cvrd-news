@@ -78,7 +78,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
 
       {/* 4. VIDEO GRID — dashboard style */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} />
+        <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
       )}
 
       {/* 5. EXPAND */}
