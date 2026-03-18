@@ -441,6 +441,20 @@ function FadingTile({ pair, delay }: {
                 <p className="text-[10px] text-white/90 leading-snug line-clamp-2">{item.clipLabel}</p>
               </div>
             </div>
+          ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
+            <div className="w-full h-full relative">
+              <iframe
+                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=true&hideThread=true`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+              />
+              <div className="absolute top-2 left-2 z-10">
+                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-2.5 z-10 bg-gradient-to-t from-black/80 to-transparent">
+                <p className="text-[10px] text-white/90 leading-snug line-clamp-2">{item.clipLabel}</p>
+              </div>
+            </div>
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative">
               {item.image ? (
