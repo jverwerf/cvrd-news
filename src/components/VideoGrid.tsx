@@ -12,10 +12,11 @@ type VideoItem = {
   duration?: number;
 };
 
-export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
+export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }: {
   youtubeVideos: { url: string; embed_id: string; channel?: string; duration?: number }[];
   socialClips: { platform: string; url: string; embed_id?: string; title?: string }[];
   storyImage?: string;
+  storyIndex?: number;
 }) {
   const items: VideoItem[] = [];
 
@@ -44,6 +45,24 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
+
+  // Auto-select video from URL hash (when tile is clicked in dashboard)
+  useEffect(() => {
+    const checkHash = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash.includes('--') || !storyIndex) return;
+      const [storyPart, embedId] = hash.split('--');
+      if (storyPart !== `story-${storyIndex}` || !embedId) return;
+      const idx = items.findIndex(item => item.embed_id === embedId);
+      if (idx >= 0) {
+        setActiveIdx(idx);
+        setPlaying(false); // Ready to play, not auto-playing
+      }
+    };
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => window.removeEventListener('hashchange', checkHash);
+  }, [items, storyIndex]);
   const [progress, setProgress] = useState(0); // 0-1 across entire playlist
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);

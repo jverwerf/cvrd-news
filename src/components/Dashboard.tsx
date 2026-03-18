@@ -414,6 +414,16 @@ function FadingTile({ pair, delay }: {
 
   return (
     <a href={`#story-${current.index}`}
+      onClick={(e) => {
+        e.preventDefault();
+        // Build video identifier from current tile content
+        const embedId = current.type === 'video'
+          ? current.image.match(/\/vi\/([^/]+)/)?.[1] || ''
+          : current.embedId || '';
+        const hash = embedId ? `story-${current.index}--${embedId}` : `story-${current.index}`;
+        window.location.hash = hash;
+        document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
+      }}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
 
       {pair.map((item, i) => (

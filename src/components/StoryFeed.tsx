@@ -80,7 +80,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
       {/* 4. VIDEO SECTION — dashboard style grid with ALL visual content */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
         <div className="mb-5">
-          <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} />
+          <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={index + 1} />
         </div>
       )}
 
