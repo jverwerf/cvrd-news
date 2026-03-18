@@ -190,26 +190,31 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   seen.add(c.url);
                   return true;
                 });
+                // Filter out removed/deleted posts
+                const valid = unique.filter(c => {
+                  const t = (c.title || '').toLowerCase();
+                  return !t.includes('removed by') && !t.includes('[deleted]') && !t.includes('[removed]');
+                });
+                if (valid.length === 0) return null;
                 return (
                   <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
                     <div className="flex items-center gap-2 mb-3">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                       <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
                     </div>
-                    <div style={{ columnCount: 2, columnGap: '12px' }}>
-                      {unique.map((c, i) => {
-                        // Extract path for embed
-                        const urlPath = new URL(c.url).pathname;
+                    <div className="grid grid-cols-2 gap-2">
+                      {valid.map((c, i) => {
+                        const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                        const subreddit = c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit';
                         return (
-                          <div key={i} className="mb-3 rounded-md overflow-hidden" style={{ breakInside: 'avoid', height: 320 }}>
-                            <iframe
-                              src={`https://www.redditmedia.com${urlPath}?ref_source=embed&embed=true&theme=dark`}
-                              className="w-full h-full"
-                              style={{ border: 'none' }}
-                              sandbox="allow-scripts allow-same-origin allow-popups"
-                              loading="lazy"
-                            />
-                          </div>
+                          <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                            className="flex items-start gap-2.5 p-3 rounded-md transition-colors group" style={{ background: '#dddbd7' }}>
+                            <span className="w-[8px] h-[8px] rounded-full bg-[#ff4500] shrink-0 mt-1" />
+                            <div className="flex-1 min-w-0">
+                              <p className="text-[12px] text-[#333] group-hover:text-[#111] leading-[1.4] line-clamp-2 font-medium">{title}</p>
+                              <span className="text-[10px] text-[#888] mt-1 block">r/{subreddit}</span>
+                            </div>
+                          </a>
                         );
                       })}
                     </div>
