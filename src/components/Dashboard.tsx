@@ -446,24 +446,17 @@ function FadingTile({ pair, delay }: {
               </div>
             </div>
           ) : item.type === 'social' ? (
-            <div className="w-full h-full relative">
-              {item.image ? (
-                <Image src={item.image} alt={item.topic} fill className="object-cover" />
-              ) : (
-                <div className="w-full h-full bg-[#111]" />
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
-              <div className="absolute top-2 left-2">
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
+            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: item.platform === 'x' ? '#15202b' : item.platform === 'tiktok' ? '#121212' : '#1a1a2e' }}>
+              <div>
+                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
                   style={{ background: platformColors[item.platform || 'x'] }}>
                   {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
                 </span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-2.5">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-3">
+                <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">
                   {item.clipLabel}
                 </p>
               </div>
+              <p className="text-[9px] text-white/40 truncate">{item.topic}</p>
             </div>
           ) : item.image ? (
             <Image src={item.image} alt={item.topic} fill className="object-cover" />
