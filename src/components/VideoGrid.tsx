@@ -35,8 +35,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage }: {
       items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
     } else if (c.platform === 'reels' && c.embed_id) {
       items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
-    } else if (c.platform === 'x' && c.embed_id) {
-      items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration || 30 });
+    } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
+      // Only include X posts that have video (duration > 0 means video attached)
+      items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
     }
     // Reddit skipped — not embeddable, shown in expand section instead
   }
