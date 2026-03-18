@@ -188,21 +188,24 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 });
                 return (
                   <div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2 mb-3">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                       <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
                     </div>
-                    <div className="space-y-0">
+                    <div style={{ columnCount: 2, columnGap: '12px' }}>
                       {unique.map((c, i) => {
-                        // Extract readable title from URL if no title
-                        const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                        // Extract path for embed
+                        const urlPath = new URL(c.url).pathname;
                         return (
-                          <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                            className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#f0efec] transition-colors group">
-                            <span className="w-[5px] h-[5px] rounded-full bg-[#ff4500] shrink-0" />
-                            <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{title}</span>
-                            <span className="text-[9px] text-[#ddd] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
-                          </a>
+                          <div key={i} className="mb-3 rounded-md overflow-hidden" style={{ breakInside: 'avoid', height: 320 }}>
+                            <iframe
+                              src={`https://www.redditmedia.com${urlPath}?ref_source=embed&embed=true&theme=dark`}
+                              className="w-full h-full"
+                              style={{ border: 'none' }}
+                              sandbox="allow-scripts allow-same-origin allow-popups"
+                              loading="lazy"
+                            />
+                          </div>
                         );
                       })}
                     </div>
