@@ -483,41 +483,39 @@ function FadingTile({ pair, delay }: {
         </div>
       ))}
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+      {/* Only show overlays for non-embedded tiles (images). Embedded iframes (YouTube/TikTok/X) handle their own display */}
+      {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x'))) && (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
 
-      {/* Platform badge for social tiles */}
-      {isSocial && current.platform && (
-        <div className="absolute top-2 right-2">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
-            style={{ background: platformColors[current.platform] }}>
-            {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : 'Reels'}
-          </span>
-        </div>
-      )}
-
-      {/* Channel badge for video tiles */}
-      {isVideo && current.channel && (
-        <div className="absolute top-2 right-2">
-          <span className="text-[7px] font-bold text-white bg-red-600 px-1.5 py-0.5 rounded">{current.channel}</span>
-        </div>
-      )}
-
-      {/* Info */}
-      <div className="absolute bottom-0 left-0 right-0 p-2.5">
-        <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">
-          {isSocial ? (current.clipLabel || current.topic) : (current.videoTitle || current.channel || current.topic)}
-        </h3>
-        {!isSocial && current.sources.length > 0 && (
-          <div className="flex items-center gap-1 mt-1 flex-wrap">
-            {current.sources.slice(0, 3).map((s, i) => (
-              <span key={i} className="text-[8px] font-medium text-white/50 px-1 py-0.5 rounded"
-                style={{ background: s.lean === 'left' ? 'rgba(59,130,246,0.3)' : s.lean === 'right' ? 'rgba(239,68,68,0.3)' : 'rgba(255,255,255,0.1)' }}>
-                {s.name}
+          {/* Platform badge for social tiles */}
+          {isSocial && current.platform && (
+            <div className="absolute top-2 right-2">
+              <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
+                style={{ background: platformColors[current.platform] }}>
+                {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : 'Reels'}
               </span>
-            ))}
+            </div>
+          )}
+
+          {/* Info */}
+          <div className="absolute bottom-0 left-0 right-0 p-2.5">
+            <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">
+              {isSocial ? (current.clipLabel || current.topic) : (current.videoTitle || current.channel || current.topic)}
+            </h3>
+            {!isSocial && current.sources.length > 0 && (
+              <div className="flex items-center gap-1 mt-1 flex-wrap">
+                {current.sources.slice(0, 3).map((s, i) => (
+                  <span key={i} className="text-[8px] font-medium text-white/50 px-1 py-0.5 rounded"
+                    style={{ background: s.lean === 'left' ? 'rgba(59,130,246,0.3)' : s.lean === 'right' ? 'rgba(239,68,68,0.3)' : 'rgba(255,255,255,0.1)' }}>
+                    {s.name}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
-        )}
-      </div>
+        </>
+      )}
     </a>
   );
 }
