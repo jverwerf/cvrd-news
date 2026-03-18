@@ -145,9 +145,9 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               </div>
 
               {/* SOCIAL EVIDENCE — 2 column grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-3" style={{ gridAutoRows: 'min-content' }}>
                 {xClips.map((c, i) => (
-                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden"><Tweet id={c.embed_id} /></div>
+                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden" style={{ maxWidth: '100%' }}><div style={{ maxWidth: '100%', overflow: 'hidden' }}><Tweet id={c.embed_id} /></div></div>
                   : <SocialLink key={`x-${i}`} clip={c} />
                 ))}
                 {tiktokClips.map((c, i) => (
