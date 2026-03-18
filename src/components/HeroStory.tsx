@@ -70,8 +70,8 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
       )}
 
       {/* 3. SUMMARY */}
-      <div className="mb-6 p-5 rounded-lg" style={{ background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-        <p className="text-[15px] text-[#333] leading-[1.75] italic">
+      <div className="mb-6 p-5 rounded-lg" style={{ background: '#1a1a2e', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+        <p className="text-[15px] text-[#e0e0e0] leading-[1.75] italic">
           {story.summary}
         </p>
       </div>
@@ -122,24 +122,24 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               </div>
 
               {/* UNFILTERED */}
-              <div className="p-5 rounded-lg" style={{ background: '#f0fdf4', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
+              <div className="p-5 rounded-lg" style={{ background: '#0a2518', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-5 h-5 rounded-full bg-[#047857] flex items-center justify-center">
                     <span className="text-white text-[10px] font-bold">!</span>
                   </div>
-                  <span className="text-[11px] font-bold text-[#047857] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+                  <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
                 </div>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
                     {sentences.map((s, i) => (
                       <div key={i} className="flex gap-2.5">
-                        <span className="text-[12px] font-bold text-[#047857] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                        <p className="text-[13px] text-[#1a1a1a] leading-[1.6]">{s}</p>
+                        <span className="text-[12px] font-bold text-[#4ade80] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                        <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{s}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[13px] text-[#1a1a1a] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{story.what_they_arent_telling_you}</p>
                 )}
               </div>
 
