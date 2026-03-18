@@ -90,7 +90,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
           background: open ? '#f0efec' : '#fffbf0',
           border: `1px solid ${open ? '#e5e5e5' : 'rgba(184,134,11,0.2)'}`,
         }}>
-        {open ? 'Collapse ↑' : 'Left vs Right · Unfiltered · Social Evidence · All Articles ↓'}
+        {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
       </button>
 
       <AnimatePresence>
