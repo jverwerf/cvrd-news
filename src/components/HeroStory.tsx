@@ -106,15 +106,15 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
             <div className="space-y-6 pt-4">
 
               {/* LEFT vs RIGHT */}
-              <div className="grid grid-cols-2 gap-0">
-                <div className="pr-4 py-4" style={{ borderRight: '1px solid #eee' }}>
+              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#e8e6e2' }}>
+                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #d5d3cf' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-3 h-3 rounded-full bg-[#1d4ed8]" />
                     <span className="text-[11px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
                   </div>
                   <p className="text-[13px] text-[#444] leading-[1.65]">{story.left_narrative}</p>
                 </div>
-                <div className="pl-4 py-4">
+                <div className="pl-4 py-4 pr-4">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-3 h-3 rounded-full bg-[#b91c1c]" />
                     <span className="text-[11px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
@@ -146,8 +146,9 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               </div>
 
               {/* X POSTS */}
+              <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
               {xClips.filter(c => !(c as any).duration).length > 0 && (
-                <div className="flex items-center gap-2 mb-2">
+                <div className="flex items-center gap-2 mb-3">
                   <span className="text-[16px] font-bold">𝕏</span>
                   <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">What people are saying</span>
                 </div>
@@ -180,6 +181,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   ) : <div key={`r-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
               </div>
+              </div>
               {redditClips.length > 0 && (() => {
                 // Deduplicate by URL
                 const seen = new Set<string>();
@@ -189,7 +191,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   return true;
                 });
                 return (
-                  <div>
+                  <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
                     <div className="flex items-center gap-2 mb-3">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                       <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
