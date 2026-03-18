@@ -9,6 +9,7 @@ export type NarrativeGap = {
   left_narrative: string;
   right_narrative: string;
   what_they_arent_telling_you: string;
+  social_summary?: string;
   evidence_url?: string;
   image_prompt?: string;
   image_file?: string;

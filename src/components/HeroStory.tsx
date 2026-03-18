@@ -143,6 +143,16 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 ) : (
                   <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{story.what_they_arent_telling_you}</p>
                 )}
+                {/* SOCIAL SUMMARY — inside the green card */}
+                {story.social_summary && (
+                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[14px]">💬</span>
+                      <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">Social Summary</span>
+                    </div>
+                    <p className="text-[13px] text-[#c0c0c0] leading-[1.6] italic">{story.social_summary}</p>
+                  </div>
+                )}
               </div>
 
               {/* X POSTS */}
