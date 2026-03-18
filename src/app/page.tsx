@@ -1,5 +1,6 @@
 import { getDailyGaps } from "@/lib/data";
 import { Dashboard } from "@/components/Dashboard";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LiveBanner } from "@/components/LiveBanner";
 import { HeroStory } from "@/components/HeroStory";
 import { StoryFeed } from "@/components/StoryFeed";
@@ -66,7 +67,9 @@ export default async function Home() {
           </div>
 
           {/* 3. DASHBOARD */}
-          <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+          <ErrorBoundary>
+            <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+          </ErrorBoundary>
 
           {/* 4. HERO STORY */}
           {heroStory && <HeroStory story={heroStory} />}

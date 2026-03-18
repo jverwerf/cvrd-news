@@ -431,46 +431,12 @@ function FadingTile({ pair, delay }: {
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
           {item.type === 'video' ? (
             <div className="w-full h-full relative">
-              <iframe
-                src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-                allow="autoplay"
-              />
+              <Image src={item.image} alt={item.topic} fill className="object-cover" />
               <div className="absolute top-2 left-2 z-10">
                 <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.channel}</p>
-              </div>
-            </div>
-          ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
-            <div className="w-full h-full relative">
-              <iframe
-                src={`https://www.tiktok.com/embed/v2/${item.embedId}?autoplay=1&mute=1&controls=0`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-                allow="autoplay"
-              />
-              <div className="absolute top-2 left-2 z-10">
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#fe2c55' }}>TikTok</span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-2.5 z-10">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-2">{item.clipLabel}</p>
-              </div>
-            </div>
-          ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
-            <div className="w-full h-full relative">
-              <iframe
-                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=true&hideThread=true`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-              />
-              <div className="absolute top-2 left-2 z-10">
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-2.5 z-10 bg-gradient-to-t from-black/80 to-transparent">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-2">{item.clipLabel}</p>
+                <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
               </div>
             </div>
           ) : item.type === 'social' ? (
