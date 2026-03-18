@@ -223,7 +223,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               })()}
 
               {/* ALL ARTICLES — grouped by source */}
-              <div className="pt-4" style={{ borderTop: '1px solid #eee' }}>
+              <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
                 <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-3">All Articles</span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {leftSources.length > 0 && (
