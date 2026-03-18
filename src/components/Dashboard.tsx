@@ -426,9 +426,23 @@ function FadingTile({ pair, delay }: {
               style={{ border: 'none', pointerEvents: 'none' }}
               allow="autoplay"
             />
+          ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
+            <div className="w-full h-full relative">
+              <iframe
+                src={`https://www.tiktok.com/embed/v2/${item.embedId}?autoplay=1&mute=1&controls=0`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+                allow="autoplay"
+              />
+              <div className="absolute top-2 left-2 z-10">
+                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#fe2c55' }}>TikTok</span>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-2.5 z-10">
+                <p className="text-[10px] text-white/90 leading-snug line-clamp-2">{item.clipLabel}</p>
+              </div>
+            </div>
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative">
-              {/* Use image if available (from story), otherwise dark gradient */}
               {item.image ? (
                 <Image src={item.image} alt={item.topic} fill className="object-cover" />
               ) : (
