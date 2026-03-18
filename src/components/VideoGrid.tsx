@@ -18,29 +18,33 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   storyImage?: string;
   storyIndex?: number;
 }) {
-  const items: VideoItem[] = [];
+  // Build separate pools then interleave for maximum variety
+  const ytItems: VideoItem[] = youtubeVideos.map(v => ({
+    type: 'youtube' as const, embed_id: v.embed_id, url: v.url,
+    label: (v as any).title || v.channel || 'YouTube',
+    thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
+    duration: v.duration,
+  }));
 
-  for (const v of youtubeVideos) {
-    items.push({
-      type: 'youtube',
-      embed_id: v.embed_id,
-      url: v.url,
-      label: v.channel || 'YouTube',
-      thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
-      duration: v.duration,
-    });
-  }
-
+  const socialItems: VideoItem[] = [];
   for (const c of socialClips) {
     if (c.platform === 'tiktok' && c.embed_id) {
-      items.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
+      socialItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
     } else if (c.platform === 'reels' && c.embed_id) {
-      items.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
+      socialItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      // Only include X posts that have video (duration > 0 means video attached)
-      items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
-    // Reddit skipped from player — embeds are unreliable, shown in evidence section instead
+      socialItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
     }
+  }
+
+  // Interleave: social first (shock value), then YouTube, alternating
+  // Pattern: social, youtube, social, youtube, ... then remaining
+  const items: VideoItem[] = [];
+  let si = 0, yi = 0;
+  // Lead with a social clip if available (more engaging/raw)
+  while (si < socialItems.length || yi < ytItems.length) {
+    if (si < socialItems.length) items.push(socialItems[si++]);
+    if (yi < ytItems.length) items.push(ytItems[yi++]);
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
