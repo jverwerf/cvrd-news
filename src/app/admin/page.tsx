@@ -76,6 +76,41 @@ export default function AdminDashboard() {
   const totalVideoViews = data.youtube.totalViews + data.instagram.totalViews;
   const totalRevenue = data.revenue.youtube + data.revenue.instagram + data.revenue.website + data.revenue.app;
 
+  // Build combined views per story across all platforms
+  type CombinedStory = { topic: string; youtube: number; instagram: number; tiktok: number; total: number; ytLikes: number; igLikes: number };
+  const combinedMap: Record<string, CombinedStory> = {};
+
+  // Match YouTube videos to stories by keyword overlap
+  for (const v of data.youtube.videos) {
+    // Clean title: remove "— What they're not telling you #shorts" etc
+    const clean = v.title.replace(/\s*[—\-]\s*What they.*$/i, '').replace(/#\w+/g, '').trim();
+    const key = clean || v.title;
+    if (!combinedMap[key]) combinedMap[key] = { topic: key, youtube: 0, instagram: 0, tiktok: 0, total: 0, ytLikes: 0, igLikes: 0 };
+    combinedMap[key].youtube += v.views;
+    combinedMap[key].ytLikes += v.likes;
+    combinedMap[key].total += v.views;
+  }
+
+  // Match Instagram reels to closest story
+  for (const r of data.instagram.reels) {
+    const caption = r.title.split('\n')[0].trim(); // First line is the topic
+    // Find best match in existing keys
+    let bestKey = caption;
+    let bestScore = 0;
+    for (const key of Object.keys(combinedMap)) {
+      const words = key.toLowerCase().split(/\s+/);
+      const matchCount = words.filter(w => caption.toLowerCase().includes(w)).length;
+      if (matchCount > bestScore) { bestScore = matchCount; bestKey = key; }
+    }
+    if (bestScore < 2) bestKey = caption; // No good match, use caption as key
+    if (!combinedMap[bestKey]) combinedMap[bestKey] = { topic: bestKey, youtube: 0, instagram: 0, tiktok: 0, total: 0, ytLikes: 0, igLikes: 0 };
+    combinedMap[bestKey].instagram += r.views;
+    combinedMap[bestKey].igLikes += r.likes;
+    combinedMap[bestKey].total += r.views;
+  }
+
+  const combinedStories = Object.values(combinedMap).sort((a, b) => b.total - a.total);
+
   return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh', color: '#fff', fontFamily: '-apple-system, sans-serif' }}>
       {/* Header */}
@@ -114,6 +149,46 @@ export default function AdminDashboard() {
             <StatCard label="Website Visitors" value={data.website.visitors.toLocaleString()} sublabel={`${data.website.pageViews.toLocaleString()} page views`} color="#4ade80" />
           </div>
         </div>
+
+        {/* Combined Performance — views per story across all platforms */}
+        {combinedStories.length > 0 && (
+          <div style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: '#888', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>
+              Combined Performance — per story
+            </h2>
+            <div style={{ background: '#111', borderRadius: 12, overflow: 'hidden' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                  <tr style={{ borderBottom: '1px solid #222' }}>
+                    <th style={{ padding: '10px 16px', textAlign: 'left', fontSize: 12, color: '#888', fontWeight: 500 }}>Story</th>
+                    <th style={{ padding: '10px 16px', textAlign: 'right', fontSize: 12, color: '#f00', fontWeight: 500 }}>YouTube</th>
+                    <th style={{ padding: '10px 16px', textAlign: 'right', fontSize: 12, color: '#c026d3', fontWeight: 500 }}>Instagram</th>
+                    <th style={{ padding: '10px 16px', textAlign: 'right', fontSize: 12, color: '#fff', fontWeight: 500 }}>TikTok</th>
+                    <th style={{ padding: '10px 16px', textAlign: 'right', fontSize: 12, color: '#4ade80', fontWeight: 500 }}>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {combinedStories.map((s, i) => (
+                    <tr key={i} style={{ borderBottom: '1px solid #1a1a1a' }}>
+                      <td style={{ padding: '10px 16px', fontSize: 13, maxWidth: 350, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{s.topic}</td>
+                      <td style={{ padding: '10px 16px', textAlign: 'right', fontSize: 13, color: s.youtube > 0 ? '#fff' : '#333' }}>{s.youtube > 0 ? s.youtube.toLocaleString() : '—'}</td>
+                      <td style={{ padding: '10px 16px', textAlign: 'right', fontSize: 13, color: s.instagram > 0 ? '#fff' : '#333' }}>{s.instagram > 0 ? s.instagram.toLocaleString() : '—'}</td>
+                      <td style={{ padding: '10px 16px', textAlign: 'right', fontSize: 13, color: s.tiktok > 0 ? '#fff' : '#333' }}>{s.tiktok > 0 ? s.tiktok.toLocaleString() : '—'}</td>
+                      <td style={{ padding: '10px 16px', textAlign: 'right', fontSize: 14, fontWeight: 700, color: '#4ade80' }}>{s.total.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                  <tr style={{ borderTop: '2px solid #333' }}>
+                    <td style={{ padding: '12px 16px', fontSize: 14, fontWeight: 700 }}>TOTAL</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontSize: 14, fontWeight: 700, color: '#f00' }}>{combinedStories.reduce((a, s) => a + s.youtube, 0).toLocaleString()}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontSize: 14, fontWeight: 700, color: '#c026d3' }}>{combinedStories.reduce((a, s) => a + s.instagram, 0).toLocaleString()}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontSize: 14, fontWeight: 700, color: '#fff' }}>{combinedStories.reduce((a, s) => a + s.tiktok, 0).toLocaleString()}</td>
+                    <td style={{ padding: '12px 16px', textAlign: 'right', fontSize: 16, fontWeight: 700, color: '#4ade80' }}>{combinedStories.reduce((a, s) => a + s.total, 0).toLocaleString()}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
 
         {/* Website Traffic Chart */}
         {data.website.daily.length > 0 && (
