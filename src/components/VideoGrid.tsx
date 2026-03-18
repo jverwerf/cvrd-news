@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Tweet } from 'react-tweet';
 
 type VideoItem = {
-  type: 'youtube' | 'tiktok' | 'reels' | 'x';
+  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit';
   embed_id: string;
   url: string;
   label: string;
@@ -39,8 +39,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
       // Only include X posts that have video (duration > 0 means video attached)
       items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
+    } else if (c.platform === 'reddit' && c.url) {
+      items.push({ type: 'reddit', embed_id: c.url.match(/comments\/(\w+)/)?.[1] || '', url: c.url, label: c.title || 'Reddit' });
     }
-    // Reddit skipped — not embeddable, shown in expand section instead
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
@@ -117,8 +118,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   // For YouTube: try API polling, but also run a fallback timer
   useEffect(() => {
     if (!playing) { stopPolling(); stopTimer(); return; }
-    if (active?.type === 'x') {
-      // X posts are static embeds — no timer, no auto-advance
+    if (active?.type === 'x' || active?.type === 'reddit') {
+      // X/Reddit posts are static embeds — no timer, no auto-advance
       setDuration(0);
       setCurrentTime(0);
     } else if (active?.type === 'youtube') {
@@ -213,6 +214,14 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
                   className="w-full h-full" allowFullScreen />
               )}
+              {active.type === 'reddit' && (
+                <iframe key={active.embed_id}
+                  src={`https://www.redditmedia.com${new URL(active.url).pathname}?ref_source=embed&embed=true&theme=dark`}
+                  className="w-full h-full"
+                  style={{ border: 'none' }}
+                  sandbox="allow-scripts allow-same-origin allow-popups"
+                  allowFullScreen />
+              )}
               {active.type === 'x' && (
                 <iframe key={active.embed_id}
                   src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
@@ -244,7 +253,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
             }} />
             <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
-            {playing && duration > 0 && active.type !== 'x' && (
+            {playing && duration > 0 && active.type !== 'x' && active.type !== 'reddit' && (
               <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
             )}
           </div>
