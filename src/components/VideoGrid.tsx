@@ -40,6 +40,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       // Only include X posts that have video (duration > 0 means video attached)
       items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
     // Reddit skipped from player — embeds are unreliable, shown in evidence section instead
+    }
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
@@ -355,3 +356,4 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     </div>
   );
 }
+

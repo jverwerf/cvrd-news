@@ -37,9 +37,12 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
     <section id="story-1">
 
       {/* FULL WIDTH IMAGE HEADER */}
-      {story.image_file && (
-        <div className="relative w-full h-[55vh] min-h-[380px] overflow-hidden">
+      <div className="relative w-full h-[55vh] min-h-[380px] overflow-hidden">
+        {story.image_file ? (
           <Image src={story.image_file} alt={story.topic} fill className="object-cover" priority />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
+        )}
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(248,247,244,0.4) 60%, #f8f7f4 100%)' }} />
           <div className="absolute top-4 left-6">
             <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
@@ -55,7 +58,6 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
             </div>
           </div>
         </div>
-      )}
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#f8f7f4' }}>
 
