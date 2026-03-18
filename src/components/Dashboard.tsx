@@ -411,13 +411,8 @@ function FadingTile({ pair, delay }: {
       {pair.map((item, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
           style={{ opacity: activeIdx === i ? 1 : 0 }}>
-          {item.type === 'video' && item.playlistIdx !== undefined ? (
-            <iframe
-              src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1`}
-              className="w-full h-full"
-              style={{ border: 'none', pointerEvents: 'none' }}
-              allow="autoplay"
-            />
+          {item.type === 'video' ? (
+            <Image src={item.image} alt={item.topic} fill className="object-cover" />
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative">
               {/* Use image if available (from story), otherwise dark gradient */}
