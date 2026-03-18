@@ -70,7 +70,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
       )}
 
       {/* 3. SUMMARY */}
-      <div className="mb-6 p-5 rounded-md border-l-[3px] border-[#b8860b]" style={{ background: '#f2f0eb' }}>
+      <div className="mb-6 p-5 rounded-lg" style={{ background: '#fff', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
         <p className="text-[15px] text-[#333] leading-[1.75] italic">
           {story.summary}
         </p>
@@ -122,8 +122,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               </div>
 
               {/* UNFILTERED */}
-              <div className="p-5 bg-[#f0fdf4] rounded-md relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#047857]" />
+              <div className="p-5 rounded-lg" style={{ background: '#f0fdf4', boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-5 h-5 rounded-full bg-[#047857] flex items-center justify-center">
                     <span className="text-white text-[10px] font-bold">!</span>
@@ -144,7 +143,13 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 )}
               </div>
 
-              {/* SOCIAL EVIDENCE — masonry 2 columns */}
+              {/* X POSTS */}
+              {xClips.filter(c => !(c as any).duration).length > 0 && (
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[16px] font-bold">𝕏</span>
+                  <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">What people are saying</span>
+                </div>
+              )}
               <div style={{ columnCount: 2, columnGap: '12px' }}>
                 {xClips.filter(c => !(c as any).duration).map((c, i) => (
                   c.embed_id ? (
@@ -174,7 +179,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 ))}
               </div>
               {redditClips.length > 0 && (() => {
-                // Deduplicate by URL and extract clean titles
+                // Deduplicate by URL
                 const seen = new Set<string>();
                 const unique = redditClips.filter(c => {
                   if (seen.has(c.url)) return false;
@@ -183,7 +188,10 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 });
                 return (
                   <div>
-                    <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-1.5">Reddit</span>
+                    <div className="flex items-center gap-2 mb-2">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
+                      <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
+                    </div>
                     <div className="space-y-0">
                       {unique.map((c, i) => {
                         // Extract readable title from URL if no title
