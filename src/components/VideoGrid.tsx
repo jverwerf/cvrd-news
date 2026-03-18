@@ -39,9 +39,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
       // Only include X posts that have video (duration > 0 means video attached)
       items.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
-    } else if (c.platform === 'reddit' && c.url) {
-      items.push({ type: 'reddit', embed_id: c.url.match(/comments\/(\w+)/)?.[1] || '', url: c.url, label: c.title || 'Reddit' });
-    }
+    // Reddit skipped from player — embeds are unreliable, shown in evidence section instead
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
