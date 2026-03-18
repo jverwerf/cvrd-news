@@ -107,15 +107,15 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
             <div className="space-y-6 pt-4">
 
               {/* LEFT vs RIGHT */}
-              <div className="grid grid-cols-2 gap-0">
-                <div className="pr-4 py-4" style={{ borderRight: '1px solid #eee' }}>
+              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#e8e6e2' }}>
+                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #d5d3cf' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-3 h-3 rounded-full bg-[#1d4ed8]" />
                     <span className="text-[11px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
                   </div>
                   <p className="text-[13px] text-[#444] leading-[1.65]">{story.left_narrative}</p>
                 </div>
-                <div className="pl-4 py-4">
+                <div className="pl-4 py-4 pr-4">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="w-3 h-3 rounded-full bg-[#b91c1c]" />
                     <span className="text-[11px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
@@ -125,34 +125,45 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               </div>
 
               {/* UNFILTERED */}
-              <div className="p-5 bg-[#f0fdf4] rounded-md relative overflow-hidden">
-                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#047857]" />
+              <div className="p-5 rounded-lg" style={{ background: '#0a2518', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-5 h-5 rounded-full bg-[#047857] flex items-center justify-center">
                     <span className="text-white text-[10px] font-bold">!</span>
                   </div>
-                  <span className="text-[11px] font-bold text-[#047857] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+                  <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
                 </div>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
                     {sentences.map((s, i) => (
                       <div key={i} className="flex gap-2.5">
-                        <span className="text-[12px] font-bold text-[#047857] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                        <p className="text-[13px] text-[#1a1a1a] leading-[1.6]">{s}</p>
+                        <span className="text-[12px] font-bold text-[#4ade80] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                        <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{s}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[13px] text-[#1a1a1a] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{story.what_they_arent_telling_you}</p>
                 )}
               </div>
 
-              {/* SOCIAL EVIDENCE */}
-              {xClips.map((c, i) => (
-                c.embed_id
-                  ? <div key={i} className="light rounded-md overflow-hidden"><Tweet id={c.embed_id} /></div>
-                  : <SocialLink key={i} clip={c} />
-              ))}
+              {/* X POSTS */}
+              {xClips.filter(c => !(c as any).duration).length > 0 && (
+                <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[16px] font-bold">𝕏</span>
+                    <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">What people are saying</span>
+                  </div>
+                  <div className="space-y-3">
+                    {xClips.filter(c => !(c as any).duration).map((c, i) => (
+                      c.embed_id ? (
+                        <div key={i} className="rounded-md overflow-hidden">
+                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=light`} className="w-full" style={{ border: 'none', height: 280 }} loading="lazy" />
+                        </div>
+                      ) : <SocialLink key={i} clip={c} />
+                    ))}
+                  </div>
+                </div>
+              )}
               {tiktokClips.map((c, i) => (
                 c.embed_id ? (
                   <div key={i} className="rounded-md overflow-hidden border border-[#e5e5e5]">
@@ -167,19 +178,31 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                   </div>
                 ) : <SocialLink key={i} clip={c} />
               ))}
-              {redditClips.length > 0 && (
-                <div className="space-y-1.5">
-                  <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit</span>
-                  {redditClips.map((c, i) => (
+              {redditClips.length > 0 && (() => {
+                const seen = new Set<string>();
+                const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
+                return (
+                <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
+                    <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
+                  </div>
+                  <div className="space-y-0">
+                  {unique.map((c, i) => {
+                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                    return (
                     <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#fafafa] transition-colors group border border-transparent hover:border-[#eee]">
-                      <span className="w-[7px] h-[7px] rounded-full bg-[#ff4500] shrink-0" />
-                      <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{c.title || c.url}</span>
-                      <span className="text-[9px] text-[#ccc] uppercase tracking-wider">reddit</span>
+                      className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#d5d3cf] transition-colors group">
+                      <span className="w-[5px] h-[5px] rounded-full bg-[#ff4500] shrink-0" />
+                      <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{title}</span>
+                      <span className="text-[9px] text-[#aaa] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                     </a>
-                  ))}
+                    );
+                  })}
+                  </div>
                 </div>
-              )}
+                );
+              })()}
 
               {/* ALL ARTICLES — grouped by source */}
               <div className="pt-4" style={{ borderTop: '1px solid #eee' }}>
