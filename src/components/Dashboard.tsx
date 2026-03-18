@@ -445,16 +445,32 @@ function FadingTile({ pair, delay }: {
                 <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
               </div>
             </div>
+          ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
+            <div className="w-full h-full relative overflow-hidden">
+              <iframe
+                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.1)', transformOrigin: 'top left' }}
+                loading="lazy"
+              />
+            </div>
+          ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
+            <div className="w-full h-full relative overflow-hidden">
+              <iframe
+                src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+                loading="lazy"
+              />
+            </div>
           ) : item.type === 'social' ? (
-            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: item.platform === 'x' ? '#15202b' : item.platform === 'tiktok' ? '#121212' : '#1a1a2e' }}>
+            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#15202b' }}>
               <div>
                 <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
                   style={{ background: platformColors[item.platform || 'x'] }}>
                   {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
                 </span>
-                <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">
-                  {item.clipLabel}
-                </p>
+                <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
               </div>
               <p className="text-[9px] text-white/40 truncate">{item.topic}</p>
             </div>
