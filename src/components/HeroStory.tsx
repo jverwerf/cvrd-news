@@ -147,8 +147,16 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               {/* SOCIAL EVIDENCE — masonry 2 columns */}
               <div style={{ columnCount: 2, columnGap: '12px' }}>
                 {xClips.filter(c => !(c as any).duration).map((c, i) => (
-                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden mb-3" style={{ breakInside: 'avoid', maxWidth: '100%' }}><div style={{ maxWidth: '100%', overflow: 'hidden' }}><Tweet id={c.embed_id} /></div></div>
-                  : <div key={`x-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
+                  c.embed_id ? (
+                    <div key={`x-${i}`} className="rounded-md overflow-hidden mb-3" style={{ breakInside: 'avoid' }}>
+                      <iframe
+                        src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=light`}
+                        className="w-full"
+                        style={{ border: 'none', height: 300 }}
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : <div key={`x-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
                 {tiktokClips.map((c, i) => (
                   c.embed_id ? (
