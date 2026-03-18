@@ -18,33 +18,43 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   storyImage?: string;
   storyIndex?: number;
 }) {
-  // Build separate pools then interleave for maximum variety
-  const ytItems: VideoItem[] = youtubeVideos.map(v => ({
-    type: 'youtube' as const, embed_id: v.embed_id, url: v.url,
-    label: (v as any).title || v.channel || 'YouTube',
-    thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
-    duration: v.duration,
-  }));
+  // Merge all videos into one list, preserving relevance order from the pipeline
+  // Pipeline already sorted each array by relevance (highest first)
+  // We interleave by taking the most relevant from each source alternately
+  const allItems: VideoItem[] = [];
 
-  const socialItems: VideoItem[] = [];
+  for (const v of youtubeVideos) {
+    allItems.push({
+      type: 'youtube' as const, embed_id: v.embed_id, url: v.url,
+      label: (v as any).title || v.channel || 'YouTube',
+      thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
+      duration: v.duration,
+    });
+  }
   for (const c of socialClips) {
     if (c.platform === 'tiktok' && c.embed_id) {
-      socialItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
+      allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration });
     } else if (c.platform === 'reels' && c.embed_id) {
-      socialItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
+      allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      socialItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration });
     }
   }
 
-  // Interleave: social first (shock value), then YouTube, alternating
-  // Pattern: social, youtube, social, youtube, ... then remaining
+  // Sort by relevance: items earlier in their original arrays are more relevant
+  // Interleave by picking round-robin from each source type
+  const byType: Record<string, VideoItem[]> = {};
+  for (const item of allItems) {
+    if (!byType[item.type]) byType[item.type] = [];
+    byType[item.type].push(item);
+  }
+  const types = Object.keys(byType);
   const items: VideoItem[] = [];
-  let si = 0, yi = 0;
-  // Lead with a social clip if available (more engaging/raw)
-  while (si < socialItems.length || yi < ytItems.length) {
-    if (si < socialItems.length) items.push(socialItems[si++]);
-    if (yi < ytItems.length) items.push(ytItems[yi++]);
+  let maxLen = Math.max(...types.map(t => byType[t].length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const t of types) {
+      if (i < byType[t].length) items.push(byType[t][i]);
+    }
   }
 
   const [activeIdx, setActiveIdx] = useState(0);
