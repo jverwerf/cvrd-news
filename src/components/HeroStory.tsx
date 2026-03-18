@@ -144,25 +144,27 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 )}
               </div>
 
-              {/* SOCIAL EVIDENCE */}
-              {xClips.map((c, i) => (
-                c.embed_id ? <div key={i} className="light rounded-md overflow-hidden"><Tweet id={c.embed_id} /></div>
-                : <SocialLink key={i} clip={c} />
-              ))}
-              {tiktokClips.map((c, i) => (
-                c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#e5e5e5]">
-                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#111]" allowFullScreen allow="encrypted-media" />
-                  </div>
-                ) : <SocialLink key={i} clip={c} />
-              ))}
-              {reelsClips.map((c, i) => (
-                c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#e5e5e5]">
-                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#111]" allowFullScreen />
-                  </div>
-                ) : <SocialLink key={i} clip={c} />
-              ))}
+              {/* SOCIAL EVIDENCE — 2 column grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {xClips.map((c, i) => (
+                  c.embed_id ? <div key={`x-${i}`} className="light rounded-md overflow-hidden"><Tweet id={c.embed_id} /></div>
+                  : <SocialLink key={`x-${i}`} clip={c} />
+                ))}
+                {tiktokClips.map((c, i) => (
+                  c.embed_id ? (
+                    <div key={`tt-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5]">
+                      <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#111]" allowFullScreen allow="encrypted-media" />
+                    </div>
+                  ) : <SocialLink key={`tt-${i}`} clip={c} />
+                ))}
+                {reelsClips.map((c, i) => (
+                  c.embed_id ? (
+                    <div key={`r-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5]">
+                      <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#111]" allowFullScreen />
+                    </div>
+                  ) : <SocialLink key={`r-${i}`} clip={c} />
+                ))}
+              </div>
               {redditClips.length > 0 && (
                 <div className="space-y-1.5">
                   <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit</span>
