@@ -117,9 +117,12 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   // For YouTube: try API polling, but also run a fallback timer
   useEffect(() => {
     if (!playing) { stopPolling(); stopTimer(); return; }
-    if (active?.type === 'youtube') {
+    if (active?.type === 'x') {
+      // X posts are static embeds — no timer, no auto-advance
+      setDuration(0);
+      setCurrentTime(0);
+    } else if (active?.type === 'youtube') {
       startPolling();
-      // Fallback timer using stored duration from engine
       const dur = active.duration || 120;
       setDuration(dur);
       timerRef.current = setInterval(() => {
@@ -211,9 +214,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   className="w-full h-full" allowFullScreen />
               )}
               {active.type === 'x' && (
-                <div key={active.embed_id} className="w-full h-full overflow-y-auto bg-white flex items-start justify-center pt-2">
-                  <div className="light"><Tweet id={active.embed_id} /></div>
-                </div>
+                <iframe key={active.embed_id}
+                  src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
+                  className="w-full h-full"
+                  style={{ border: 'none' }}
+                  allowFullScreen />
               )}
             </>
           ) : (
@@ -239,7 +244,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
             }} />
             <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
-            {playing && duration > 0 && (
+            {playing && duration > 0 && active.type !== 'x' && (
               <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
             )}
           </div>
