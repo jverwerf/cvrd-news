@@ -37,7 +37,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
     <section id="story-1">
 
       {/* IMAGE HEADER with blue borders */}
-      <div className="relative h-[55vh] min-h-[380px] overflow-hidden rounded-t-lg mx-4 md:mx-8">
+      <div className="relative h-[55vh] min-h-[380px] overflow-hidden">
         {story.image_file ? (
           <Image src={story.image_file} alt={story.topic} fill className="object-cover" priority />
         ) : (
@@ -59,7 +59,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
           </div>
         </div>
 
-      <div className="rounded-b-lg px-6 md:px-12 pb-10 pt-5 mx-4 md:mx-8" style={{ background: '#1e2a3a' }}>
+      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
       {/* 3. SUMMARY */}
       <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
