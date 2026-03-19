@@ -244,12 +244,12 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
         </div>
 
         {/* CONTROLS BAR */}
-        <div className="flex items-center px-3 py-2 bg-[#fafafa] border-t border-[#f0f0f0]">
+        <div className="flex items-center px-3 py-2 border-t" style={{ background: '#1e2a3a', borderColor: '#2a3a4a' }}>
           <div className="flex items-center gap-1.5 flex-1 min-w-0">
             <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
             }} />
-            <span className="text-[11px] text-[#555] font-medium truncate">{active.label}</span>
+            <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
             {playing && duration > 0 && active.type !== 'x' && active.type !== 'reddit' && (
               <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
             )}
@@ -258,11 +258,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
               <button onClick={prevItem} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#555]" />
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#aaa]" />
               </button>
-              <span className="text-[10px] text-[#999] font-mono">{activeIdx + 1}/{items.length}</span>
+              <span className="text-[10px] text-[#888] font-mono">{activeIdx + 1}/{items.length}</span>
               <button onClick={next} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#555]" />
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#aaa]" />
               </button>
             </div>
           )}
@@ -277,7 +277,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       {items.length > 1 && (
         <div className="mt-3">
           {/* Progress bar — gradually fills based on actual playback */}
-          <div className="h-2 rounded-full overflow-hidden bg-[#e5e5e5] mb-2 cursor-pointer"
+          <div className="h-2 rounded-full overflow-hidden mb-2 cursor-pointer" style={{ background: '#2a3a4a' }}
             onClick={(e) => {
               e.stopPropagation();
               const rect = e.currentTarget.getBoundingClientRect();
@@ -304,13 +304,13 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 <button onClick={() => {
                   const el = document.getElementById(`thumbs-${items[0]?.embed_id}`);
                   el?.scrollBy({ left: -300, behavior: 'smooth' });
-                }} className="absolute left-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-r from-white to-transparent">
+                }} className="absolute left-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-r from-[#1e2a3a] to-transparent">
                   <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#999]" />
                 </button>
                 <button onClick={() => {
                   const el = document.getElementById(`thumbs-${items[0]?.embed_id}`);
                   el?.scrollBy({ left: 300, behavior: 'smooth' });
-                }} className="absolute right-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-l from-white to-transparent">
+                }} className="absolute right-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-l from-[#1e2a3a] to-transparent">
                   <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#999]" />
                 </button>
               </>
@@ -342,8 +342,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     </div>
                   )}
                 </div>
-                <div className="px-1 py-0.5 bg-[#fafafa]">
-                  <span className="text-[7px] text-[#777] truncate block">{item.label}</span>
+                <div className="px-1 py-0.5" style={{ background: '#1e2a3a' }}>
+                  <span className="text-[7px] text-[#aaa] truncate block">{item.label}</span>
                 </div>
               </button>
             ))}
