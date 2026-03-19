@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const rest = displayStories.slice(1);
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <div className="min-h-screen px-4 md:px-8" style={{ background: '#1e2a3a' }}>
 
       {/* NAV + BANNER — wrapped together, both sticky */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
