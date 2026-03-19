@@ -201,7 +201,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   return (
     <div className="mb-6">
       {/* PLAYER */}
-      <div className="rounded-md overflow-hidden border border-[#e5e5e5]">
+      <div className="rounded-md overflow-hidden border border-[#2a3a4a]">
         <div className="aspect-video bg-[#111] relative">
           {playing ? (
             <>
