@@ -212,9 +212,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {active.type === 'tiktok' && (
-                <div className="w-full h-full flex items-center justify-center overflow-hidden" style={{ background: '#1e2a3a' }}>
-                  <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-                    style={{ width: '360px', height: '120%', border: 'none', marginTop: '-5%' }} allowFullScreen allow="encrypted-media" />
+                <div className="w-full h-full overflow-hidden relative" style={{ background: '#1e2a3a' }}>
+                  <iframe key={active.embed_id} src={`https://www.tiktok.com/player/v1/${active.embed_id}?rel=0`}
+                    className="absolute inset-0 w-full h-full"
+                    style={{ border: 'none' }} allowFullScreen allow="encrypted-media" />
                 </div>
               )}
               {active.type === 'reels' && (
