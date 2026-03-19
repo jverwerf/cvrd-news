@@ -114,20 +114,30 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   // Timer for TikTok/Reels progress (uses stored duration)
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  const nextItem = useCallback(() => {
+    if (activeIdx < items.length - 1) {
+      setActiveIdx(prev => prev + 1);
+      setCurrentTime(0);
+      setDuration(0);
+    } else {
+      setPlaying(false);
+    }
+  }, [activeIdx, items.length]);
+
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
-    const dur = active?.duration || 30; // fallback 30s
+    const dur = active?.duration || 30;
     setDuration(dur);
     timerRef.current = setInterval(() => {
       setCurrentTime(prev => {
         if (prev >= dur) {
-          next();
+          nextItem();
           return 0;
         }
         return prev + 0.5;
       });
     }, 500);
-  }, [active]);
+  }, [active, nextItem]);
 
   const stopTimer = () => {
     if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
@@ -190,16 +200,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   if (items.length === 0 || !active) return null;
 
-  const next = () => {
-    if (activeIdx < items.length - 1) {
-      setActiveIdx(prev => prev + 1);
-      setCurrentTime(0);
-      setDuration(0);
-    } else {
-      setPlaying(false);
-      stopPolling();
-    }
-  };
+  const next = () => { nextItem(); stopPolling(); };
   const prevItem = () => {
     setActiveIdx(prev => (prev - 1 + items.length) % items.length);
     setCurrentTime(0);
