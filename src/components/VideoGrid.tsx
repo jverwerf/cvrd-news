@@ -28,7 +28,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     if ((v as any).download_failed) continue; // Skip clips that failed in the pipeline
     allItems.push({
       type: 'youtube' as const, embed_id: v.embed_id, url: v.url,
-      label: (v as any).title || v.channel || 'YouTube',
+      label: (v as any).title ? `${v.channel ? v.channel + ': ' : ''}${(v as any).title}` : v.channel || 'YouTube',
       thumbnail: `https://img.youtube.com/vi/${v.embed_id}/mqdefault.jpg`,
       duration: v.duration,
       relevance: (v as any).relevance,
@@ -37,11 +37,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   for (const c of socialClips) {
     if ((c as any).download_failed) continue; // Skip clips that failed in the pipeline
     if (c.platform === 'tiktok' && c.embed_id) {
-      allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || `TikTok @${(c as any).author || ''}`.trim(), duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'reels' && c.embed_id) {
-      allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || 'Reels', duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || (c as any).author || 'X', duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), duration: (c as any).duration, relevance: (c as any).relevance });
     }
   }
 
