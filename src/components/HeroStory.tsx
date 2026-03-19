@@ -166,6 +166,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   ) : <div key={`x-${i}`}><SocialLink clip={c} /></div>
                 ))}
               </div>
+              </div>
               {tiktokClips.filter(c => c.embed_id).length > 0 && (
                 <div className="rounded-lg p-4 mt-3" style={{ background: '#253545' }}>
                   <div className="flex items-center gap-2 mb-3">
@@ -196,8 +197,6 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   </div>
                 </div>
               )}
-              </div>
-              </div>
               {redditClips.length > 0 && (() => {
                 const seen = new Set<string>();
                 const unique = redditClips.filter(c => {
