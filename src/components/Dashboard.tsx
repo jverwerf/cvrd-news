@@ -399,25 +399,34 @@ function FadingTile({ pair, delay }: {
   delay: number;
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
+  const pairRef = useRef(pair);
+  pairRef.current = pair;
 
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: ReturnType<typeof setTimeout>;
+    let cancelled = false;
+
     const schedule = (idx: number) => {
-      const item = pair[idx];
+      const item = pairRef.current[idx];
       // YouTube tiles stay twice as long as social tiles
       const baseDuration = item.type === 'video' ? 16000 : 8000;
       timer = setTimeout(() => {
+        if (cancelled) return;
         const next = (idx + 1) % 2;
         setActiveIdx(next);
         schedule(next);
       }, baseDuration + delay * 600);
     };
-    const initial = setTimeout(() => {
+
+    timer = setTimeout(() => {
+      if (cancelled) return;
       setActiveIdx(1);
       schedule(1);
-    }, (pair[0].type === 'video' ? 8000 : 4000) + delay * 800);
-    return () => { clearTimeout(timer); clearTimeout(initial); };
-  }, [delay, pair]);
+    }, (pairRef.current[0].type === 'video' ? 8000 : 4000) + delay * 800);
+
+    return () => { cancelled = true; clearTimeout(timer); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [delay]);
 
   const current = pair[activeIdx];
   const isVideo = current.type === 'video';
