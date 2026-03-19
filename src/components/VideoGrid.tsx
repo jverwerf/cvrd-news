@@ -225,9 +225,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 </div>
               )}
               {active.type === 'x' && (
-                <div className="w-full h-full flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+                <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
                   <iframe key={active.embed_id}
-                    src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark`}
+                    src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
                     className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
                 </div>
               )}
