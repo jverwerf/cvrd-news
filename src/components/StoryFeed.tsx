@@ -52,7 +52,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
         minHeight: '280px',
         backgroundImage: story.image_file ? `url(${story.image_file})` : 'linear-gradient(to br, #1a1a2e, #16213e, #0f3460)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top center',
       }}>
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
         <div style={{ position: 'absolute', top: 16, left: 24 }}>
