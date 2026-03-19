@@ -14,7 +14,7 @@ export function StoryFeed({ stories, startIndex = 0 }: { stories: NarrativeGap[]
   const right = stories.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className="px-4 md:px-8 py-4">
+    <div className="px-1 py-1">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ alignItems: 'start' }}>
         <div className="space-y-4">
           {left.map((story, i) => (
