@@ -45,9 +45,22 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     }
   }
 
-  // Sort all items by relevance score (highest first), regardless of platform
-  // Items without a score keep their original position
-  const items = allItems.sort((a, b) => (b.relevance || 0) - (a.relevance || 0));
+  // Interleave by platform for variety — don't clump all YouTube then all TikTok
+  // Split by platform, then round-robin pick from each
+  const byPlatform: Record<string, VideoItem[]> = {};
+  for (const item of allItems) {
+    const key = item.type;
+    if (!byPlatform[key]) byPlatform[key] = [];
+    byPlatform[key].push(item);
+  }
+  const platforms = Object.keys(byPlatform);
+  const items: VideoItem[] = [];
+  let maxLen = Math.max(...platforms.map(p => byPlatform[p].length));
+  for (let i = 0; i < maxLen; i++) {
+    for (const p of platforms) {
+      if (i < byPlatform[p].length) items.push(byPlatform[p][i]);
+    }
+  }
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
