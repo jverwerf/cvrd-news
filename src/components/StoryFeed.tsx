@@ -106,20 +106,20 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
             <div className="space-y-6 pt-4">
 
               {/* LEFT vs RIGHT */}
-              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#e8e6e2' }}>
-                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #d5d3cf' }}>
+              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
+                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#1d4ed8]" />
-                    <span className="text-[11px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
+                    <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
+                    <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
                   </div>
-                  <p className="text-[13px] text-[#444] leading-[1.65]">{story.left_narrative}</p>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
                 </div>
                 <div className="pl-4 py-4 pr-4">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#b91c1c]" />
-                    <span className="text-[11px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
+                    <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
+                    <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
                   </div>
-                  <p className="text-[13px] text-[#444] leading-[1.65]">{story.right_narrative}</p>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
                 </div>
               </div>
 
@@ -156,16 +156,16 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
 
               {/* X POSTS */}
               {xClips.filter(c => !(c as any).duration).length > 0 && (
-                <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[16px] font-bold">𝕏</span>
-                    <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">What people are saying</span>
+                    <span className="text-[16px] font-bold text-white">𝕏</span>
+                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
                   </div>
                   <div className="space-y-3">
                     {xClips.filter(c => !(c as any).duration).map((c, i) => (
                       c.embed_id ? (
                         <div key={i} className="rounded-md overflow-hidden">
-                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=light`} className="w-full" style={{ border: 'none', height: 280 }} loading="lazy" />
+                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark`} className="w-full" style={{ border: 'none', height: 280 }} loading="lazy" />
                         </div>
                       ) : <SocialLink key={i} clip={c} />
                     ))}
@@ -174,15 +174,15 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               )}
               {tiktokClips.map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#e5e5e5]">
-                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#111]" allowFullScreen allow="encrypted-media" />
+                  <div key={i} className="rounded-md overflow-hidden border border-[#2a3a4a]">
+                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen allow="encrypted-media" />
                   </div>
                 ) : <SocialLink key={i} clip={c} />
               ))}
               {reelsClips.map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#e5e5e5]">
-                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#111]" allowFullScreen />
+                  <div key={i} className="rounded-md overflow-hidden border border-[#2a3a4a]">
+                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen />
                   </div>
                 ) : <SocialLink key={i} clip={c} />
               ))}
@@ -190,20 +190,20 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                 const seen = new Set<string>();
                 const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
                 return (
-                <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                    <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
+                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
                   </div>
                   <div className="space-y-0">
                   {unique.map((c, i) => {
                     const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
                     return (
                     <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#d5d3cf] transition-colors group">
+                      className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#2a3a4a] transition-colors group">
                       <span className="w-[5px] h-[5px] rounded-full bg-[#ff4500] shrink-0" />
-                      <span className="text-[12px] text-[#444] group-hover:text-[#111] truncate flex-1">{title}</span>
-                      <span className="text-[9px] text-[#aaa] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                      <span className="text-[12px] text-[#bbb] group-hover:text-white truncate flex-1">{title}</span>
+                      <span className="text-[9px] text-[#777] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                     </a>
                     );
                   })}
@@ -213,10 +213,10 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               })()}
 
               {/* ALL ARTICLES — grouped by source */}
-              <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
-                <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #d5d5d5' }}>
-                  <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">All Articles</span>
-                  <span className="text-[11px] text-[#999]">{sources.length} sources</span>
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                  <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
+                  <span className="text-[11px] text-[#777]">{sources.length} sources</span>
                   {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
                   {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
                   {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
@@ -226,27 +226,27 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
                         <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
-                        <span className="text-[9px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
+                        <span className="text-[9px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
                       </div>
-                      <SourceGroup sources={leftSources} hoverColor="#1d4ed8" />
+                      <SourceGroup sources={leftSources} hoverColor="#60a5fa" />
                     </div>
                   )}
                   {centerSources.length > 0 && (
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
-                        <span className="w-[5px] h-[5px] rounded-full bg-[#777]" />
-                        <span className="text-[9px] font-bold text-[#777] uppercase tracking-[0.12em]">Center</span>
+                        <span className="w-[5px] h-[5px] rounded-full bg-[#999]" />
+                        <span className="text-[9px] font-bold text-[#999] uppercase tracking-[0.12em]">Center</span>
                       </div>
-                      <SourceGroup sources={centerSources} hoverColor="#111" />
+                      <SourceGroup sources={centerSources} hoverColor="#ccc" />
                     </div>
                   )}
                   {rightSources.length > 0 && (
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
-                        <span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" />
-                        <span className="text-[9px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
+                        <span className="w-[5px] h-[5px] rounded-full bg-[#f87171]" />
+                        <span className="text-[9px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
                       </div>
-                      <SourceGroup sources={rightSources} hoverColor="#b91c1c" />
+                      <SourceGroup sources={rightSources} hoverColor="#f87171" />
                     </div>
                   )}
                 </div>
@@ -284,15 +284,15 @@ function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: st
         <div key={name}>
           <button onClick={() => setExpanded(expanded === name ? null : name)}
             className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center gap-1.5">
-            <span className="text-[10px] text-[#bbb] shrink-0">{expanded === name ? '−' : '+'}</span>
-            <span className="flex-1">{name} {articles.length > 1 && <span className="text-[10px] text-[#bbb]">({articles.length})</span>}</span>
+            <span className="text-[10px] text-[#777] shrink-0">{expanded === name ? '−' : '+'}</span>
+            <span className="flex-1 text-[#bbb]">{name} {articles.length > 1 && <span className="text-[10px] text-[#777]">({articles.length})</span>}</span>
           </button>
           {expanded === name && (
             <div className="pl-5 mb-1 space-y-0.5">
               {articles.map((a, i) => (
                 <a key={i} href={a.url} target="_blank" rel="noreferrer"
-                  className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
-                  {getTitle(a)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+                  className="block text-[11px] text-[#999] py-0.5 transition-colors truncate hover:text-white">
+                  {getTitle(a)} <span className="text-[10px] text-[#666]">&rarr;</span>
                 </a>
               ))}
             </div>
@@ -308,13 +308,13 @@ function SocialLink({ clip }: { clip: NonNullable<NarrativeGap['social_clips']>[
   const names: Record<string, string> = { x: 'X', tiktok: 'tiktok', reels: 'reels', reddit: 'reddit' };
   return (
     <a href={clip.url} target="_blank" rel="noreferrer"
-      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#fafafa] transition-colors group border border-transparent hover:border-[#eee]">
+      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#2a3a4a] transition-colors group border border-transparent hover:border-[#3a4a5a]">
       <span className="w-[7px] h-[7px] rounded-full shrink-0" style={{ background: colors[clip.platform] || '#999' }} />
       <div className="flex-1 min-w-0">
-        <p className="text-[12px] text-[#444] group-hover:text-[#111] truncate">{clip.title || clip.url}</p>
-        {clip.author && clip.author !== 'unknown' && <p className="text-[9px] text-[#ccc]">@{clip.author}</p>}
+        <p className="text-[12px] text-[#bbb] group-hover:text-white truncate">{clip.title || clip.url}</p>
+        {clip.author && clip.author !== 'unknown' && <p className="text-[9px] text-[#777]">@{clip.author}</p>}
       </div>
-      <span className="text-[9px] text-[#ccc] uppercase tracking-wider">{names[clip.platform] || ''}</span>
+      <span className="text-[9px] text-[#777] uppercase tracking-wider">{names[clip.platform] || ''}</span>
     </a>
   );
 }
