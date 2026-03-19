@@ -72,6 +72,7 @@ export default async function Home() {
           </ErrorBoundary>
 
           {/* 4. HERO STORY */}
+          <div className="h-3" />
           {heroStory && <HeroStory story={heroStory} />}
 
           {/* 5. REST OF STORIES */}
