@@ -51,10 +51,10 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
     .filter(s => s.trim().length > 20) || []; // filter out junk fragments
 
   return (
-    <article id={`story-${index + 1}`} className="rounded-lg p-4 overflow-hidden" style={{ background: '#f8f7f4' }}>
+    <article id={`story-${index + 1}`} className="rounded-lg p-4 overflow-hidden" style={{ background: '#253545' }}>
 
       {/* 1. TITLE */}
-      <h2 className="text-[28px] leading-[1.12] tracking-[-0.03em] text-[#111] mb-4" style={serif}>
+      <h2 className="text-[28px] leading-[1.12] tracking-[-0.03em] text-white mb-4" style={serif}>
         {story.topic}
       </h2>
 
@@ -90,8 +90,8 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
         className="w-full py-2.5 text-[12px] font-semibold rounded-md mb-2 transition-colors cursor-pointer"
         style={{
           color: open ? '#999' : '#b8860b',
-          background: open ? '#fafafa' : '#fffbf0',
-          border: `1px solid ${open ? '#eee' : 'rgba(184,134,11,0.2)'}`,
+          background: open ? '#2a3a4a' : '#253040',
+          border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
         }}>
         {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
       </button>
