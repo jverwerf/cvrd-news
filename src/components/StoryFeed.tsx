@@ -124,32 +124,32 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               </div>
 
               {/* UNFILTERED */}
-              <div className="p-5 rounded-lg" style={{ background: '#0a2518', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+              <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-5 h-5 rounded-full bg-[#047857] flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-[#b8860b] flex items-center justify-center">
                     <span className="text-white text-[10px] font-bold">!</span>
                   </div>
-                  <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
                 </div>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
                     {sentences.map((s, i) => (
                       <div key={i} className="flex gap-2.5">
-                        <span className="text-[12px] font-bold text-[#4ade80] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                        <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{s}</p>
+                        <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                        <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
                 )}
                 {story.social_summary && (
-                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-[14px]">💬</span>
-                      <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">Social Summary</span>
+                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                     </div>
-                    <p className="text-[13px] text-[#c0c0c0] leading-[1.6] italic">{story.social_summary}</p>
+                    <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
                   </div>
                 )}
               </div>
