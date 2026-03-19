@@ -25,6 +25,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   const allItems: VideoItem[] = [];
 
   for (const v of youtubeVideos) {
+    if ((v as any).download_failed) continue; // Skip clips that failed in the pipeline
     allItems.push({
       type: 'youtube' as const, embed_id: v.embed_id, url: v.url,
       label: (v as any).title || v.channel || 'YouTube',
@@ -34,6 +35,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     });
   }
   for (const c of socialClips) {
+    if ((c as any).download_failed) continue; // Skip clips that failed in the pipeline
     if (c.platform === 'tiktok' && c.embed_id) {
       allItems.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, label: c.title || 'TikTok', duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'reels' && c.embed_id) {

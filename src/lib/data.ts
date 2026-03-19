@@ -66,6 +66,16 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
     const fileContents = fs.readFileSync(dataPath, 'utf8');
     const report = JSON.parse(fileContents) as DailyReport;
 
+    // Filter out clips that failed to download in the video pipeline
+    for (const story of report.top_narratives) {
+      if (story.youtube_videos) {
+        story.youtube_videos = story.youtube_videos.filter(v => !(v as any).download_failed);
+      }
+      if (story.social_clips) {
+        story.social_clips = story.social_clips.filter(c => !(c as any).download_failed);
+      }
+    }
+
     // Use YouTube embed for the daily briefing (too large for Vercel static hosting)
     const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
     if (fs.existsSync(ytDailyPath)) {
