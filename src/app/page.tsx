@@ -28,7 +28,7 @@ export default async function Home() {
   const rest = stories.slice(1);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       {!data || !data.top_narratives ? (
         <div className="flex items-center justify-center min-h-screen">

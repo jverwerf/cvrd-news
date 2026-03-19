@@ -58,7 +58,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const rest = displayStories.slice(1);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       {/* NAV + BANNER — wrapped together, both sticky */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
@@ -90,8 +90,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </div>
       </div>
 
-      {/* Fade from banner into dashboard */}
-      <div className="h-4 -mt-1" style={{ background: 'linear-gradient(to bottom, #e5e5e5, white)' }} />
+      {/* Fade from banner into content */}
+      <div className="h-4 -mt-1" style={{ background: 'linear-gradient(to bottom, #e5e5e5, #1e2a3a)' }} />
 
       {/* 3. DASHBOARD — category stories only, NO anchor video */}
       {displayStories.length > 0 && (
