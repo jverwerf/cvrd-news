@@ -53,7 +53,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     if (!byPlatform[key]) byPlatform[key] = [];
     byPlatform[key].push(item);
   }
-  const platforms = Object.keys(byPlatform);
+  // YouTube first, then interleave the rest
+  const platforms = Object.keys(byPlatform).sort((a, b) => a === 'youtube' ? -1 : b === 'youtube' ? 1 : 0);
   const items: VideoItem[] = [];
   let maxLen = Math.max(...platforms.map(p => byPlatform[p].length));
   for (let i = 0; i < maxLen; i++) {
