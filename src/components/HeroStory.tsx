@@ -43,7 +43,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
         ) : (
           <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
         )}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(255,255,255,0.4) 60%, #ffffff 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(30,42,58,0.4) 60%, #1e2a3a 100%)' }} />
           <div className="absolute top-4 left-6">
             <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
               Top Story
@@ -52,18 +52,18 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
           {/* Title overlaid on the image bottom */}
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-6">
             <div>
-              <h1 className="text-[38px] md:text-[48px] text-[#111] leading-[1.05] tracking-[-0.03em]" style={serif}>
+              <h1 className="text-[38px] md:text-[48px] text-white leading-[1.05] tracking-[-0.03em]" style={serif}>
                 {story.topic}
               </h1>
             </div>
           </div>
         </div>
 
-      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#ffffff' }}>
+      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
       {/* Compact source count */}
       {sources.length > 0 && (
-        <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: '1px solid #e8e6e2' }}>
+        <div className="flex items-center gap-3 mb-5 pb-5" style={{ borderBottom: '1px solid #2a3a4a' }}>
           <span className="text-[11px] text-[#999]">{sources.length} sources</span>
           {uniqueLeft.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{uniqueLeft.length} left</span></span>}
           {uniqueRight.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{uniqueRight.length} right</span></span>}
@@ -89,8 +89,8 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
         className="w-full py-2.5 text-[12px] font-semibold rounded-md mb-2 transition-colors cursor-pointer"
         style={{
           color: open ? '#999' : '#b8860b',
-          background: open ? '#f0efec' : '#fffbf0',
-          border: `1px solid ${open ? '#e5e5e5' : 'rgba(184,134,11,0.2)'}`,
+          background: open ? '#253545' : '#253040',
+          border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
         }}>
         {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
       </button>
