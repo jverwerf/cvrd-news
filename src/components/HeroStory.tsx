@@ -96,69 +96,68 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
             <div className="space-y-6 pt-4">
 
               {/* LEFT vs RIGHT */}
-              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#e8e6e2' }}>
-                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #d5d3cf' }}>
+              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
+                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#1d4ed8]" />
-                    <span className="text-[11px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
+                    <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
+                    <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
                   </div>
-                  <p className="text-[13px] text-[#444] leading-[1.65]">{story.left_narrative}</p>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
                 </div>
                 <div className="pl-4 py-4 pr-4">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#b91c1c]" />
-                    <span className="text-[11px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
+                    <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
+                    <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
                   </div>
-                  <p className="text-[13px] text-[#444] leading-[1.65]">{story.right_narrative}</p>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
                 </div>
               </div>
 
               {/* UNFILTERED */}
-              <div className="p-5 rounded-lg" style={{ background: '#0a2518', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
+              <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-5 h-5 rounded-full bg-[#047857] flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-[#b8860b] flex items-center justify-center">
                     <span className="text-white text-[10px] font-bold">!</span>
                   </div>
-                  <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
                 </div>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
                     {sentences.map((s, i) => (
                       <div key={i} className="flex gap-2.5">
-                        <span className="text-[12px] font-bold text-[#4ade80] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                        <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{s}</p>
+                        <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                        <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[13px] text-[#d0d0d0] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
                 )}
-                {/* SOCIAL SUMMARY — inside the green card */}
                 {story.social_summary && (
-                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-[14px]">💬</span>
-                      <span className="text-[11px] font-bold text-[#4ade80] uppercase tracking-[0.12em]">Social Summary</span>
+                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                     </div>
-                    <p className="text-[13px] text-[#c0c0c0] leading-[1.6] italic">{story.social_summary}</p>
+                    <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
                   </div>
                 )}
               </div>
 
-              {/* X POSTS */}
-              <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+              {/* X POSTS + SOCIAL */}
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
               {xClips.filter(c => !(c as any).duration).length > 0 && (
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[16px] font-bold">𝕏</span>
-                  <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">What people are saying</span>
+                  <span className="text-[16px] font-bold text-white">𝕏</span>
+                  <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
                 </div>
               )}
-              <div style={{ columnCount: 2, columnGap: '12px' }}>
+              <div style={{ columnCount: 3, columnGap: '12px' }}>
                 {xClips.filter(c => !(c as any).duration).map((c, i) => (
                   c.embed_id ? (
                     <div key={`x-${i}`} className="rounded-md overflow-hidden mb-3" style={{ breakInside: 'avoid' }}>
                       <iframe
-                        src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=light`}
+                        src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark`}
                         className="w-full"
                         style={{ border: 'none', height: 300 }}
                         loading="lazy"
@@ -168,51 +167,49 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                 ))}
                 {tiktokClips.map((c, i) => (
                   c.embed_id ? (
-                    <div key={`tt-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5] mb-3" style={{ breakInside: 'avoid' }}>
-                      <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#111]" allowFullScreen allow="encrypted-media" />
+                    <div key={`tt-${i}`} className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3" style={{ breakInside: 'avoid' }}>
+                      <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen allow="encrypted-media" />
                     </div>
                   ) : <div key={`tt-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
                 {reelsClips.map((c, i) => (
                   c.embed_id ? (
-                    <div key={`r-${i}`} className="rounded-md overflow-hidden border border-[#e5e5e5] mb-3" style={{ breakInside: 'avoid' }}>
-                      <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#111]" allowFullScreen />
+                    <div key={`r-${i}`} className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3" style={{ breakInside: 'avoid' }}>
+                      <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen />
                     </div>
                   ) : <div key={`r-${i}`} style={{ breakInside: 'avoid' }} className="mb-3"><SocialLink clip={c} /></div>
                 ))}
               </div>
               </div>
               {redditClips.length > 0 && (() => {
-                // Deduplicate by URL
                 const seen = new Set<string>();
                 const unique = redditClips.filter(c => {
                   if (seen.has(c.url)) return false;
                   seen.add(c.url);
                   return true;
                 });
-                // Filter out removed/deleted posts
                 const valid = unique.filter(c => {
                   const t = (c.title || '').toLowerCase();
                   return !t.includes('removed by') && !t.includes('[deleted]') && !t.includes('[removed]');
                 });
                 if (valid.length === 0) return null;
                 return (
-                  <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
+                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
                     <div className="flex items-center gap-2 mb-3">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                      <span className="text-[11px] font-bold text-[#555] uppercase tracking-[0.12em]">Reddit discussions</span>
+                      <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-3 gap-2">
                       {valid.map((c, i) => {
                         const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
                         const subreddit = c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit';
                         return (
                           <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                            className="flex items-start gap-2.5 p-3 rounded-md transition-colors group" style={{ background: '#dddbd7' }}>
+                            className="flex items-start gap-2.5 p-3 rounded-md hover:bg-[#2a3a4a] transition-colors group" style={{ background: '#1e2a3a' }}>
                             <span className="w-[8px] h-[8px] rounded-full bg-[#ff4500] shrink-0 mt-1" />
                             <div className="flex-1 min-w-0">
-                              <p className="text-[12px] text-[#333] group-hover:text-[#111] leading-[1.4] line-clamp-2 font-medium">{title}</p>
-                              <span className="text-[10px] text-[#888] mt-1 block">r/{subreddit}</span>
+                              <p className="text-[12px] text-[#bbb] group-hover:text-white leading-[1.4] line-clamp-2 font-medium">{title}</p>
+                              <span className="text-[10px] text-[#777] mt-1 block">r/{subreddit}</span>
                             </div>
                           </a>
                         );
@@ -223,40 +220,40 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
               })()}
 
               {/* ALL ARTICLES — grouped by source */}
-              <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
-                <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #d5d5d5' }}>
-                  <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">All Articles</span>
-                  <span className="text-[11px] text-[#999]">{sources.length} sources</span>
-                  {uniqueLeft.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{uniqueLeft.length} left</span></span>}
-                  {uniqueRight.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{uniqueRight.length} right</span></span>}
-                  {uniqueCenter.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{uniqueCenter.length} center</span></span>}
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                  <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
+                  <span className="text-[11px] text-[#777]">{sources.length} sources</span>
+                  {uniqueLeft.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#3b82f6]" /><span className="text-[10px] text-[#60a5fa]">{uniqueLeft.length} left</span></span>}
+                  {uniqueRight.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#ef4444]" /><span className="text-[10px] text-[#f87171]">{uniqueRight.length} right</span></span>}
+                  {uniqueCenter.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#999]" /><span className="text-[10px] text-[#999]">{uniqueCenter.length} center</span></span>}
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {leftSources.length > 0 && (
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
-                        <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
-                        <span className="text-[9px] font-bold text-[#1d4ed8] uppercase tracking-[0.12em]">Left</span>
+                        <span className="w-[5px] h-[5px] rounded-full bg-[#3b82f6]" />
+                        <span className="text-[9px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
                       </div>
-                      <SourceGroup sources={leftSources} hoverColor="#1d4ed8" />
+                      <SourceGroup sources={leftSources} hoverColor="#60a5fa" />
                     </div>
                   )}
                   {centerSources.length > 0 && (
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
-                        <span className="w-[5px] h-[5px] rounded-full bg-[#777]" />
-                        <span className="text-[9px] font-bold text-[#777] uppercase tracking-[0.12em]">Center</span>
+                        <span className="w-[5px] h-[5px] rounded-full bg-[#999]" />
+                        <span className="text-[9px] font-bold text-[#999] uppercase tracking-[0.12em]">Center</span>
                       </div>
-                      <SourceGroup sources={centerSources} hoverColor="#111" />
+                      <SourceGroup sources={centerSources} hoverColor="#ccc" />
                     </div>
                   )}
                   {rightSources.length > 0 && (
                     <div>
                       <div className="flex items-center gap-1.5 mb-2">
-                        <span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" />
-                        <span className="text-[9px] font-bold text-[#b91c1c] uppercase tracking-[0.12em]">Right</span>
+                        <span className="w-[5px] h-[5px] rounded-full bg-[#ef4444]" />
+                        <span className="text-[9px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
                       </div>
-                      <SourceGroup sources={rightSources} hoverColor="#b91c1c" />
+                      <SourceGroup sources={rightSources} hoverColor="#f87171" />
                     </div>
                   )}
                 </div>
@@ -296,15 +293,15 @@ function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: st
         <div key={name}>
           <button onClick={() => setExpanded(expanded === name ? null : name)}
             className="w-full text-left text-[12px] text-[#444] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center gap-1.5">
-            <span className="text-[10px] text-[#bbb] shrink-0">{expanded === name ? '−' : '+'}</span>
-            <span className="flex-1">{name} {articles.length > 1 && <span className="text-[10px] text-[#bbb]">({articles.length})</span>}</span>
+            <span className="text-[10px] text-[#777] shrink-0">{expanded === name ? '−' : '+'}</span>
+            <span className="flex-1 text-[#bbb]">{name} {articles.length > 1 && <span className="text-[10px] text-[#777]">({articles.length})</span>}</span>
           </button>
           {expanded === name && (
             <div className="pl-5 mb-1 space-y-0.5">
               {articles.map((a, i) => (
                 <a key={i} href={a.url} target="_blank" rel="noreferrer"
-                  className="block text-[11px] text-[#666] py-0.5 transition-colors truncate hover:opacity-70">
-                  {getTitle(a)} <span className="text-[10px] text-[#bbb]">&rarr;</span>
+                  className="block text-[11px] text-[#999] py-0.5 transition-colors truncate hover:text-white">
+                  {getTitle(a)} <span className="text-[10px] text-[#666]">&rarr;</span>
                 </a>
               ))}
             </div>
@@ -320,13 +317,13 @@ function SocialLink({ clip }: { clip: NonNullable<NarrativeGap['social_clips']>[
   const names: Record<string, string> = { x: 'X', tiktok: 'tiktok', reels: 'reels', reddit: 'reddit' };
   return (
     <a href={clip.url} target="_blank" rel="noreferrer"
-      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#f0efec] transition-colors group border border-transparent hover:border-[#e5e5e5]">
+      className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#2a3a4a] transition-colors group border border-transparent hover:border-[#3a4a5a]">
       <span className="w-[7px] h-[7px] rounded-full shrink-0" style={{ background: colors[clip.platform] || '#999' }} />
       <div className="flex-1 min-w-0">
-        <p className="text-[12px] text-[#444] group-hover:text-[#111] truncate">{clip.title || clip.url}</p>
-        {clip.author && clip.author !== 'unknown' && <p className="text-[9px] text-[#ccc]">@{clip.author}</p>}
+        <p className="text-[12px] text-[#bbb] group-hover:text-white truncate">{clip.title || clip.url}</p>
+        {clip.author && clip.author !== 'unknown' && <p className="text-[9px] text-[#777]">@{clip.author}</p>}
       </div>
-      <span className="text-[9px] text-[#ccc] uppercase tracking-wider">{names[clip.platform] || ''}</span>
+      <span className="text-[9px] text-[#777] uppercase tracking-wider">{names[clip.platform] || ''}</span>
     </a>
   );
 }
