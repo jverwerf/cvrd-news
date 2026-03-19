@@ -212,12 +212,16 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {active.type === 'tiktok' && (
-                <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-                  className="w-full h-full" allowFullScreen allow="encrypted-media" />
+                <div className="w-full h-full flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+                  <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
+                    style={{ width: '330px', height: '100%', border: 'none', borderRadius: '12px' }} allowFullScreen allow="encrypted-media" />
+                </div>
               )}
               {active.type === 'reels' && (
-                <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
-                  className="w-full h-full" allowFullScreen />
+                <div className="w-full h-full flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+                  <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
+                    style={{ width: '330px', height: '100%', border: 'none', borderRadius: '12px' }} allowFullScreen />
+                </div>
               )}
               {active.type === 'x' && (
                 <div className="w-full h-full flex items-center justify-center" style={{ background: '#1e2a3a' }}>
