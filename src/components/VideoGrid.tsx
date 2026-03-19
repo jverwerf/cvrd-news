@@ -220,9 +220,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   className="w-full h-full" allowFullScreen />
               )}
               {active.type === 'x' && (
-                <iframe key={active.embed_id}
-                  src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
-                  className="w-full h-full" style={{ border: 'none' }} allowFullScreen />
+                <div className="w-full h-full flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+                  <iframe key={active.embed_id}
+                    src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark`}
+                    className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
+                </div>
               )}
             </>
           ) : (
