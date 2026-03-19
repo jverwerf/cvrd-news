@@ -14,18 +14,11 @@ export function StoryFeed({ stories, startIndex = 0 }: { stories: NarrativeGap[]
   const right = stories.filter((_, i) => i % 2 === 1);
 
   return (
-    <div className="py-2 px-4 md:px-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ alignItems: 'start' }}>
-        <div className="space-y-4">
-          {left.map((story, i) => (
-            <StoryCard key={i} story={story} index={i * 2 + startIndex} />
-          ))}
-        </div>
-        <div className="space-y-4">
-          {right.map((story, i) => (
-            <StoryCard key={i} story={story} index={i * 2 + 1 + startIndex} />
-          ))}
-        </div>
+    <div className="py-2">
+      <div className="space-y-4">
+        {stories.map((story, i) => (
+          <StoryCard key={i} story={story} index={i + startIndex} />
+        ))}
       </div>
     </div>
   );
