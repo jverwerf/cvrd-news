@@ -96,7 +96,7 @@ export function LiveBanner({ stories, liveData: initialLiveData }: { stories: Na
 
   return (
     <div className="overflow-hidden h-14 flex items-center"
-      style={{ background: '#ffffff', boxShadow: '0 1px 0 0 #e5e5e5' }}>
+      style={{ background: '#ffffff' }}>
 
       <div className="flex items-center gap-6 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
         {tripled.map((entry, i) => (
