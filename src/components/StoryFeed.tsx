@@ -47,19 +47,20 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
     <article id={`story-${index + 1}`} className="overflow-hidden">
 
       {/* IMAGE HEADER — same as hero */}
-      <div className="relative h-[40vh] min-h-[280px] overflow-hidden">
-        {story.image_file ? (
-          <img src={story.image_file} alt={story.topic} className="absolute inset-0 w-full h-full object-cover" />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
-        )}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
-        <div className="absolute top-4 left-6">
+      <div className="relative overflow-hidden" style={{
+        height: '40vh',
+        minHeight: '280px',
+        backgroundImage: story.image_file ? `url(${story.image_file})` : 'linear-gradient(to br, #1a1a2e, #16213e, #0f3460)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
+        <div style={{ position: 'absolute', top: 16, left: 24 }}>
           <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
             Story {index + 1}
           </span>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-6">
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0 24px 24px' }}>
           <h2 className="text-[32px] md:text-[40px] text-white leading-[1.05] tracking-[-0.03em]" style={serif}>
             {story.topic}
           </h2>
