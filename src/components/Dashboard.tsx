@@ -470,9 +470,9 @@ function FadingTile({ pair, delay }: {
           ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
             <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
               <iframe
-                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.55)', transformOrigin: 'top left', width: '182%', height: '182%' }}
+                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
+                className="absolute"
+                style={{ border: 'none', pointerEvents: 'none', top: '-8px', left: '-8px', right: '-8px', bottom: '-8px', width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }}
                 loading="lazy"
               />
             </div>
