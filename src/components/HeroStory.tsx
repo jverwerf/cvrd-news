@@ -59,11 +59,11 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
           </div>
         </div>
 
-      <div className="rounded-b-lg px-6 md:px-12 pb-10 pt-5 mx-4 md:mx-8" style={{ background: '#ffffff' }}>
+      <div className="rounded-b-lg px-6 md:px-12 pb-10 pt-5 mx-4 md:mx-8" style={{ background: '#1e2a3a' }}>
 
       {/* 3. SUMMARY */}
-      <div className="mb-6 p-5 rounded-lg" style={{ background: '#e8e8e8', border: '1px solid #d5d5d5' }}>
-        <p className="text-[15px] text-[#333] leading-[1.75] italic">
+      <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+        <p className="text-[15px] text-[#ccc] leading-[1.75] italic">
           {story.summary}
         </p>
       </div>
@@ -79,8 +79,8 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
         className="w-full py-2.5 text-[12px] font-semibold rounded-md mb-2 transition-colors cursor-pointer"
         style={{
           color: open ? '#999' : '#b8860b',
-          background: open ? '#f0efec' : '#fffbf0',
-          border: `1px solid ${open ? '#e5e5e5' : 'rgba(184,134,11,0.2)'}`,
+          background: open ? '#253545' : '#253040',
+          border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
         }}>
         {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
       </button>
