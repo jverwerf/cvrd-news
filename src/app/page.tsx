@@ -79,9 +79,16 @@ export default async function Home() {
           {rest.length > 0 && <StoryFeed stories={rest} startIndex={1} />}
 
           {/* FOOTER */}
-          <footer className="py-10 text-center border-t border-[#e5e5e5]">
-            <img src="/logo2.png" alt="CVRD" className="h-36 mx-auto mb-4 opacity-30" />
-            <span className="text-[11px] text-[#ccc]">Sourced from the social pulse</span>
+          <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
+            <img src="/logo2.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
+            <span className="text-[11px] text-[#666] block mb-3">Sourced from the social pulse</span>
+            <div className="flex items-center justify-center gap-4">
+              <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
+              <span className="text-[#555]">·</span>
+              <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
+              <span className="text-[#555]">·</span>
+              <span className="text-[11px] text-[#666]">info@cvrdnews.com</span>
+            </div>
           </footer>
         </>
       )}
