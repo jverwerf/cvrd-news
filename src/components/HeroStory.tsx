@@ -72,7 +72,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
       )}
 
       {/* 3. SUMMARY */}
-      <div className="mb-6 p-5 rounded-lg" style={{ background: '#f5f5f0', border: '1px solid #e8e6e2' }}>
+      <div className="mb-6 p-5 rounded-lg" style={{ background: '#f0f0f0', border: '1px solid #e0e0e0' }}>
         <p className="text-[15px] text-[#333] leading-[1.75] italic">
           {story.summary}
         </p>
