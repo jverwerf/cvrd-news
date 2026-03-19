@@ -51,47 +51,52 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
     .filter(s => s.trim().length > 20) || []; // filter out junk fragments
 
   return (
-    <article id={`story-${index + 1}`} className="rounded-lg p-4 overflow-hidden" style={{ background: '#ffffff' }}>
+    <article id={`story-${index + 1}`} className="overflow-hidden">
 
-      {/* 1. TITLE */}
-      <h2 className="text-[28px] leading-[1.12] tracking-[-0.03em] text-[#111] mb-4" style={serif}>
-        {story.topic}
-      </h2>
-
-      {/* 2. IMAGE HEADER */}
-      {story.image_file && (
-        <div className="relative w-full aspect-[3/1] rounded-sm overflow-hidden mb-5 group">
-          <Image src={story.image_file} alt={story.topic} fill
-            className="object-cover group-hover:scale-[1.02] transition-transform duration-700" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute bottom-3 left-4">
-            <span className="text-[48px] font-black text-white/20 leading-none" style={serif}>{index + 1}</span>
-          </div>
+      {/* IMAGE HEADER — same as hero */}
+      <div className="relative h-[40vh] min-h-[280px] overflow-hidden">
+        {story.image_file ? (
+          <Image src={story.image_file} alt={story.topic} fill className="object-cover" />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
+        )}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
+        <div className="absolute top-4 left-6">
+          <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
+            Story {index + 1}
+          </span>
         </div>
-      )}
+        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-6">
+          <h2 className="text-[32px] md:text-[40px] text-white leading-[1.05] tracking-[-0.03em]" style={serif}>
+            {story.topic}
+          </h2>
+        </div>
+      </div>
 
-      {/* 3. SUMMARY */}
-      <div className="mb-5 p-4 rounded-lg" style={{ background: '#1a1a2e', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}>
-        <p className="text-[14px] text-[#e0e0e0] leading-[1.75] italic">
+      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
+
+      {/* SUMMARY */}
+      <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+        <p className="text-[15px] text-[#ccc] leading-[1.75] italic">
           {story.summary}
         </p>
       </div>
 
-      {/* 4. VIDEO SECTION — dashboard style grid with ALL visual content */}
+      {/* VIDEO GRID */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
         <div className="mb-5">
           <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={index + 1} />
         </div>
       )}
 
-      {/* 5. EXPAND */}
+      {/* EXPAND */}
       <button
         onClick={() => setOpen(!open)}
         className="w-full py-2.5 text-[12px] font-semibold rounded-md mb-2 transition-colors cursor-pointer"
         style={{
           color: open ? '#999' : '#b8860b',
-          background: open ? '#f0efec' : '#fffbf0',
-          border: `1px solid ${open ? '#e5e5e5' : 'rgba(184,134,11,0.2)'}`,
+          background: open ? '#253545' : '#253040',
+          border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
         }}>
         {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
       </button>
@@ -257,6 +262,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </article>
   );
 }
