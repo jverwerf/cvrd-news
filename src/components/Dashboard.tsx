@@ -57,9 +57,10 @@ export function Dashboard({
       playlist.push({ type: 'anchor', url: videoUrl, storyIndex: 0 });
     }
   }
-  // Dashboard player: YouTube only
+  // Dashboard player: YouTube only (skip clips flagged as broken)
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
+      if ((v as any).download_failed) continue;
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
     }
   }
@@ -177,6 +178,7 @@ export function Dashboard({
       });
     }
     for (const c of (story.social_clips || [])) {
+      if ((c as any).download_failed) continue;
       if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || (c.platform === 'x' && (c as any).duration))) {
         linked.push({
           type: 'social',
