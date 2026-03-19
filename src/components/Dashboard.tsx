@@ -227,7 +227,7 @@ export function Dashboard({
   }
 
   return (
-    <section style={{ background: '#fff', height: '85vh', overflow: 'hidden', padding: '4px' }}>
+    <section style={{ background: '#1e2a3a', height: '85vh', overflow: 'hidden', padding: '4px' }}>
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
