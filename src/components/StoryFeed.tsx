@@ -161,11 +161,12 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                     <span className="text-[16px] font-bold text-white">𝕏</span>
                     <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
                   </div>
-                  <div className="space-y-3">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {xClips.filter(c => !(c as any).duration).map((c, i) => (
                       c.embed_id ? (
-                        <div key={i} className="rounded-md overflow-hidden">
-                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark`} className="w-full" style={{ border: 'none', height: 280 }} loading="lazy" />
+                        <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 320 }}>
+                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                            className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
                         </div>
                       ) : <SocialLink key={i} clip={c} />
                     ))}
@@ -174,15 +175,15 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               )}
               {tiktokClips.map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#2a3a4a]">
-                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen allow="encrypted-media" />
+                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                    <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0`} className="h-[520px]" style={{ border: 'none', width: 330 }} allowFullScreen allow="encrypted-media" />
                   </div>
                 ) : <SocialLink key={i} clip={c} />
               ))}
               {reelsClips.map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden border border-[#2a3a4a]">
-                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="w-full h-[520px] bg-[#1e2a3a]" allowFullScreen />
+                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="h-[520px]" style={{ border: 'none', width: 330 }} allowFullScreen />
                   </div>
                 ) : <SocialLink key={i} clip={c} />
               ))}
