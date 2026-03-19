@@ -215,7 +215,13 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
 
               {/* ALL ARTICLES — grouped by source */}
               <div className="rounded-lg p-4" style={{ background: '#e8e6e2' }}>
-                <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em] block mb-3">All Articles</span>
+                <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #d5d5d5' }}>
+                  <span className="text-[10px] font-bold text-[#555] uppercase tracking-[0.12em]">All Articles</span>
+                  <span className="text-[11px] text-[#999]">{sources.length} sources</span>
+                  {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
+                  {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
+                  {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
+                </div>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {leftSources.length > 0 && (
                     <div>
