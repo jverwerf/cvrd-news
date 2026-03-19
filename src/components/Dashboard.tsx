@@ -452,7 +452,7 @@ function FadingTile({ pair, delay }: {
               <iframe
                 src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true`}
                 className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.75)', transformOrigin: 'top left', width: '133%', height: '133%' }}
+                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.55)', transformOrigin: 'top left', width: '182%', height: '182%' }}
                 loading="lazy"
               />
             </div>
@@ -461,7 +461,7 @@ function FadingTile({ pair, delay }: {
               <iframe
                 src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
                 className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.75)', transformOrigin: 'top left', width: '133%', height: '133%' }}
+                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.55)', transformOrigin: 'top left', width: '182%', height: '182%' }}
                 loading="lazy"
               />
             </div>
