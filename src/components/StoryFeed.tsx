@@ -173,20 +173,36 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                   </div>
                 </div>
               )}
-              {tiktokClips.map((c, i) => (
-                c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                    <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0`} className="h-[520px]" style={{ border: 'none', width: 330 }} allowFullScreen allow="encrypted-media" />
+              {tiktokClips.filter(c => c.embed_id).length > 0 && (
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[16px]">♪</span>
+                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
                   </div>
-                ) : <SocialLink key={i} clip={c} />
-              ))}
-              {reelsClips.map((c, i) => (
-                c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                    <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="h-[520px]" style={{ border: 'none', width: 330 }} allowFullScreen />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {tiktokClips.filter(c => c.embed_id).map((c, i) => (
+                      <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                        <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0`} className="h-[480px]" style={{ border: 'none', width: '100%' }} allowFullScreen allow="encrypted-media" />
+                      </div>
+                    ))}
                   </div>
-                ) : <SocialLink key={i} clip={c} />
-              ))}
+                </div>
+              )}
+              {reelsClips.filter(c => c.embed_id).length > 0 && (
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[16px]">◎</span>
+                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reels</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {reelsClips.filter(c => c.embed_id).map((c, i) => (
+                      <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                        <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="h-[480px]" style={{ border: 'none', width: '100%' }} allowFullScreen />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
               {redditClips.length > 0 && (() => {
                 const seen = new Set<string>();
                 const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
