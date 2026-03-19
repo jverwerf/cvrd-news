@@ -448,7 +448,7 @@ function FadingTile({ pair, delay }: {
               </div>
             </div>
           ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
-            <div className="w-full h-full relative overflow-hidden">
+            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
               <iframe
                 src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true`}
                 className="w-full h-full"
@@ -457,7 +457,7 @@ function FadingTile({ pair, delay }: {
               />
             </div>
           ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
-            <div className="w-full h-full relative overflow-hidden">
+            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
               <iframe
                 src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
                 className="w-full h-full"
@@ -466,7 +466,7 @@ function FadingTile({ pair, delay }: {
               />
             </div>
           ) : item.type === 'social' ? (
-            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#15202b' }}>
+            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
               <div>
                 <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
                   style={{ background: platformColors[item.platform || 'x'] }}>
