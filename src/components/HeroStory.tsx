@@ -176,7 +176,7 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {tiktokClips.filter(c => c.embed_id).map((c, i) => (
                       <div key={`tt-${i}`} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a' }}>
-                        <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0`} className="h-[480px] w-full" style={{ border: 'none' }} allowFullScreen allow="encrypted-media" />
+                        <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0&mute=1`} className="h-[480px] w-full" style={{ border: 'none' }} allowFullScreen allow="encrypted-media" />
                       </div>
                     ))}
                   </div>
