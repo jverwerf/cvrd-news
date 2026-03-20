@@ -28,6 +28,7 @@ type TileContent = {
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
+  isFresh?: boolean; // < 15 min old — tile should freeze
 };
 
 export function Dashboard({
@@ -232,10 +233,16 @@ export function Dashboard({
 
   // Build 10 tile pairs — each tile gets 2 random items from the pool to crossfade between
   const tilePairs: [TileContent, TileContent][] = [];
+  const tileIsFrozen: boolean[] = [];
+  const freshCount = pool.filter(t => t.isFresh).length;
+  // Freeze tiles for fresh content: 1 new = freeze 1, 2 new = freeze 2, ..., >10 = no freeze
+  const shouldFreeze = freshCount > 0 && freshCount <= 10;
+
   for (let i = 0; i < 10; i++) {
     const a = pool[i % pool.length];
     const b = pool[(i + Math.max(1, Math.floor(pool.length / 2))) % pool.length];
     tilePairs.push([a, b]);
+    tileIsFrozen.push(shouldFreeze && (a.isFresh || false));
   }
 
   return (
@@ -243,13 +250,13 @@ export function Dashboard({
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
-        <FadingTile pair={tilePairs[0]} delay={0} />
-        <FadingTile pair={tilePairs[1]} delay={2} />
-        <FadingTile pair={tilePairs[2]} delay={4} />
-        <FadingTile pair={tilePairs[3]} delay={1} />
+        <FadingTile pair={tilePairs[0]} delay={0} frozen={tileIsFrozen[0]} />
+        <FadingTile pair={tilePairs[1]} delay={2} frozen={tileIsFrozen[1]} />
+        <FadingTile pair={tilePairs[2]} delay={4} frozen={tileIsFrozen[2]} />
+        <FadingTile pair={tilePairs[3]} delay={1} frozen={tileIsFrozen[3]} />
 
         {/* ROW 2 */}
-        <FadingTile pair={tilePairs[4]} delay={5} />
+        <FadingTile pair={tilePairs[4]} delay={5} frozen={tileIsFrozen[4]} />
 
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
@@ -404,13 +411,13 @@ export function Dashboard({
           </div>
         </div>
 
-        <FadingTile pair={tilePairs[5]} delay={3} />
+        <FadingTile pair={tilePairs[5]} delay={3} frozen={tileIsFrozen[5]} />
 
         {/* ROW 3 */}
-        <FadingTile pair={tilePairs[6]} delay={6} />
-        <FadingTile pair={tilePairs[7]} delay={1.5} />
-        <FadingTile pair={tilePairs[8]} delay={3.5} />
-        <FadingTile pair={tilePairs[9]} delay={5.5} />
+        <FadingTile pair={tilePairs[6]} delay={6} frozen={tileIsFrozen[6]} />
+        <FadingTile pair={tilePairs[7]} delay={1.5} frozen={tileIsFrozen[7]} />
+        <FadingTile pair={tilePairs[8]} delay={3.5} frozen={tileIsFrozen[8]} />
+        <FadingTile pair={tilePairs[9]} delay={5.5} frozen={tileIsFrozen[9]} />
       </div>
     </section>
   );
@@ -422,15 +429,19 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function FadingTile({ pair, delay }: {
+function FadingTile({ pair, delay, frozen }: {
   pair: [TileContent, TileContent];
   delay: number;
+  frozen?: boolean;
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const pairRef = useRef(pair);
   pairRef.current = pair;
 
   useEffect(() => {
+    // Frozen tiles don't cycle
+    if (frozen) return;
+
     let timer: ReturnType<typeof setTimeout>;
     let cancelled = false;
 
@@ -464,6 +475,7 @@ function FadingTile({ pair, delay }: {
 
   return (
     <a href={`#story-${current.index}`}
+      style={frozen ? { boxShadow: '0 0 12px 2px rgba(239,68,68,0.6), inset 0 0 12px rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.4)' } : {}}
       onClick={(e) => {
         e.preventDefault();
         // Build video identifier from current tile content
@@ -475,6 +487,15 @@ function FadingTile({ pair, delay }: {
         document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
       }}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
+
+      {frozen && (
+        <div className="absolute top-2 right-2 z-20">
+          <span className="text-[8px] font-bold text-white px-2 py-0.5 rounded animate-pulse"
+            style={{ background: '#dc2626', boxShadow: '0 0 8px rgba(239,68,68,0.5)' }}>
+            NEW
+          </span>
+        </div>
+      )}
 
       {pair.map((item, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
