@@ -349,33 +349,19 @@ export function Dashboard({
                 </button>
               </div>
 
-              {/* Story skip: |<< prev story */}
-              <button onClick={prevStory} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Previous story">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><rect x="3" y="5" width="2" height="14" /><polygon points="19 5 9 12 19 19" /></svg>
+              <button onClick={prevStory} className="p-0.5 hover:opacity-60 shrink-0" title="Previous story">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><rect x="3" y="5" width="2" height="14" /><polygon points="19 5 9 12 19 19" /></svg>
               </button>
-
-              {/* Clip skip: < prev clip */}
-              <button onClick={prevItem} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Previous clip">
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[8px] border-r-white" />
+              <button onClick={prevItem} className="p-0.5 hover:opacity-60 shrink-0" title="Previous clip">
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
-
-              {/* Counter */}
-              <span className="text-[8px] text-white/50 font-mono shrink-0">
-                {currentBoundaryIdx + 1}/{storyBoundaries.length} · {clipInStory}/{clipsInStory}
-              </span>
-
-              {/* Clip skip: next clip > */}
-              <button onClick={next} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Next clip">
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[8px] border-l-white" />
+              <span className="text-[7px] text-white/40 font-mono shrink-0">{currentBoundaryIdx + 1}/{storyBoundaries.length}·{clipInStory}/{clipsInStory}</span>
+              <button onClick={next} className="p-0.5 hover:opacity-60 shrink-0" title="Next clip">
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
               </button>
-
-              {/* Story skip: next story >>| */}
-              <button onClick={nextStory} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Next story">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
+              <button onClick={nextStory} className="p-0.5 hover:opacity-60 shrink-0" title="Next story">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
               </button>
-
-              {/* Divider */}
-              <div className="w-px h-5 bg-white/20 shrink-0" />
 
               {/* Volume */}
               <div className="flex items-center gap-2 shrink-0">
