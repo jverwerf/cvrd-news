@@ -353,13 +353,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                       style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.45)', transformOrigin: 'top left', width: '222%', height: '222%' }}
                       loading="lazy" tabIndex={-1}
                     />
-                  ) : item.type === 'tiktok' && item.embed_id ? (
-                    <iframe
-                      src={`https://www.tiktok.com/player/v1/${item.embed_id}?rel=0&mute=1`}
-                      className="w-full h-full"
-                      style={{ border: 'none', pointerEvents: 'none' }}
-                      loading="lazy" tabIndex={-1}
-                    />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center">
                       <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3' }}>
