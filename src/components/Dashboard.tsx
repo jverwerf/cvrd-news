@@ -276,24 +276,41 @@ export function Dashboard({
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
-              <div className="flex items-center gap-1 mb-1">
-                {storyBoundaries.map((b, i) => {
-                  const isActive = i === currentBoundaryIdx;
-                  const isPast = currentBoundaryIdx > i;
-                  const storyClips = b.end - b.start + 1;
-                  const clipProgress = isActive ? (currentIdx - b.start) / storyClips : 0;
-                  return (
-                    <div key={i} className="h-[4px] rounded-full cursor-pointer overflow-hidden"
-                      style={{ flex: storyClips, background: 'rgba(255,255,255,0.15)' }}
-                      onClick={() => setCurrentIdx(b.start)}>
-                      <div className="h-full rounded-full transition-all duration-300"
-                        style={{
-                          width: isPast ? '100%' : isActive ? `${Math.max(clipProgress, 1 / storyClips) * 100}%` : '0%',
-                          background: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
-                        }} />
-                    </div>
-                  );
-                })}
+              <div className="mb-1">
+                <div className="flex items-center gap-1 mb-1">
+                  {storyBoundaries.map((b, i) => {
+                    const isActive = i === currentBoundaryIdx;
+                    const isPast = currentBoundaryIdx > i;
+                    const storyClips = b.end - b.start + 1;
+                    const clipProgress = isActive ? (currentIdx - b.start) / storyClips : 0;
+                    return (
+                      <div key={i} className="h-[4px] rounded-full cursor-pointer overflow-hidden"
+                        style={{ flex: storyClips, background: 'rgba(255,255,255,0.15)' }}
+                        onClick={() => setCurrentIdx(b.start)}>
+                        <div className="h-full rounded-full transition-all duration-300"
+                          style={{
+                            width: isPast ? '100%' : isActive ? `${Math.max(clipProgress, 1 / storyClips) * 100}%` : '0%',
+                            background: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
+                          }} />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="flex gap-1">
+                  {storyBoundaries.map((b, i) => {
+                    const isActive = i === currentBoundaryIdx;
+                    const storyClips = b.end - b.start + 1;
+                    return (
+                      <div key={i} className="cursor-pointer overflow-hidden" style={{ flex: storyClips }}
+                        onClick={() => setCurrentIdx(b.start)}>
+                        <p className="text-[7px] leading-tight truncate transition-colors"
+                          style={{ color: isActive ? '#fff' : 'rgba(255,255,255,0.4)' }}>
+                          {b.topic || `Story ${i + 1}`}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             )}
 
@@ -454,7 +471,7 @@ function FadingTile({ pair, delay }: {
           {item.type === 'video' ? (
             <div className="w-full h-full relative">
               <iframe
-                src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
+                src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
                 className="w-full h-full"
                 style={{ border: 'none', pointerEvents: 'none' }}
                 allow="autoplay"
