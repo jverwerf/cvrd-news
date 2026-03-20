@@ -355,7 +355,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     />
                   ) : item.type === 'tiktok' && item.embed_id ? (
                     <iframe
-                      src={`https://www.tiktok.com/player/v1/${item.embed_id}?rel=0`}
+                      src={`https://www.tiktok.com/player/v1/${item.embed_id}?rel=0&mute=1`}
                       className="w-full h-full"
                       style={{ border: 'none', pointerEvents: 'none' }}
                       loading="lazy" tabIndex={-1}
