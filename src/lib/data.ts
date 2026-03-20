@@ -76,6 +76,13 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
       }
     }
 
+    // Only show stories that have at least 1 video clip (YouTube or social with embed)
+    report.top_narratives = report.top_narratives.filter(story => {
+      const ytCount = (story.youtube_videos || []).length;
+      const socialCount = (story.social_clips || []).filter(c => c.platform !== 'reddit' && c.embed_id).length;
+      return ytCount + socialCount > 0;
+    });
+
     // Use YouTube embed for the daily briefing (too large for Vercel static hosting)
     const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
     if (fs.existsSync(ytDailyPath)) {
