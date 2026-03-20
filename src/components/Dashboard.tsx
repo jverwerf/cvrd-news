@@ -92,26 +92,30 @@ export function Dashboard({
 
   // Auto-scroll timebars to keep active segment visible
   useEffect(() => {
-    // Blue story bar
-    const storyBar = document.getElementById('story-timebar');
-    if (storyBar && currentBoundaryIdx >= 0) {
-      const seg = storyBar.children[currentBoundaryIdx] as HTMLElement;
-      if (seg) {
-        const left = seg.offsetLeft - storyBar.offsetWidth / 2 + seg.offsetWidth / 2;
-        storyBar.scrollTo({ left, behavior: 'smooth' });
+    setTimeout(() => {
+      const storyBar = document.getElementById('story-timebar');
+      if (storyBar) {
+        const active = storyBar.querySelector('[data-active="true"]') as HTMLElement;
+        if (active) {
+          const scrollLeft = active.offsetLeft - storyBar.clientWidth / 2 + active.clientWidth / 2;
+          storyBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+        }
       }
-    }
-    // Green clip bar
-    const clipBar = document.getElementById('clip-timebar');
-    if (clipBar && currentBoundary) {
-      const clipIdx = currentIdx - currentBoundary.start;
-      const seg = clipBar.children[clipIdx] as HTMLElement;
-      if (seg) {
-        const left = seg.offsetLeft - clipBar.offsetWidth / 2 + seg.offsetWidth / 2;
-        clipBar.scrollTo({ left, behavior: 'smooth' });
+    }, 100);
+  }, [currentBoundaryIdx]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      const clipBar = document.getElementById('clip-timebar');
+      if (clipBar) {
+        const active = clipBar.querySelector('[data-active="true"]') as HTMLElement;
+        if (active) {
+          const scrollLeft = active.offsetLeft - clipBar.clientWidth / 2 + active.clientWidth / 2;
+          clipBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
+        }
       }
-    }
-  }, [currentIdx, currentBoundaryIdx]);
+    }, 100);
+  }, [currentIdx]);
 
   // Track progress for ALL video types using timer
   useEffect(() => {
@@ -311,7 +315,7 @@ export function Dashboard({
                   const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
                   const bg = isActive ? '#2563eb' : blues[i % blues.length];
                   return (
-                    <div key={i} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
+                    <div key={i} data-active={isActive ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
                       style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minWidth: 90 }}
                       onClick={() => setCurrentIdx(b.start)}>
                       <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.8 }}>
@@ -345,7 +349,7 @@ export function Dashboard({
                     const greens = ['#0f2b1a', '#123320', '#153b26', '#18432c', '#1b4b32', '#1e5338', '#215b3e', '#0f2d1e', '#133524', '#173d2a'];
                     const bg = isActiveClip ? '#22c55e' : greens[ci % greens.length];
                     return (
-                      <div key={ci} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
+                      <div key={ci} data-active={isActiveClip ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
                         style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
                         onClick={() => setCurrentIdx(clipIdx)}>
                         <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
