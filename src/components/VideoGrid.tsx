@@ -143,6 +143,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
   };
 
+  // Keep next() in a ref so timers always use the latest version
+  const nextRef = useRef(() => {});
+
   // Start/stop timer or polling based on video type
   // For YouTube: try API polling, but also run a fallback timer
   useEffect(() => {
@@ -157,7 +160,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       setDuration(dur);
       timerRef.current = setInterval(() => {
         setCurrentTime(prev => {
-          if (prev >= dur) { next(); return 0; }
+          if (prev >= dur) { nextRef.current(); return 0; }
           return prev + 0.5;
         });
       }, 500);
@@ -200,7 +203,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   if (items.length === 0 || !active) return null;
 
-  const next = () => {
+  const next = nextRef.current = () => {
     setActiveIdx(prev => {
       if (prev < items.length - 1) return prev + 1;
       setPlaying(false);
