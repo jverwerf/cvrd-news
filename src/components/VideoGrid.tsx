@@ -189,7 +189,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           if (typeof data.info.duration === 'number' && data.info.duration > 0) {
             setDuration(data.info.duration);
           }
-          if (data.info.playerState === 0) next();
+          if (data.info.playerState === 0) nextRef.current();
           if (data.info.playerState === 2) { setPlaying(false); }
           if (data.info.playerState === 1) { setPlaying(true); }
         }
