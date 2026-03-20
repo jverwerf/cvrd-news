@@ -154,19 +154,13 @@ export function Dashboard({
     if (videoRef.current) {
       videoRef.current.muted = !newUnmuted;
     }
-    // YouTube center player ONLY — use specific origin
+    // YouTube center player ONLY
     const ytFrame = document.getElementById('yt-player') as HTMLIFrameElement;
     if (ytFrame?.contentWindow) {
       ytFrame.contentWindow.postMessage(JSON.stringify({
         event: 'command',
         func: newUnmuted ? 'unMute' : 'mute',
-      }), 'https://www.youtube.com');
-      // Also set volume
-      ytFrame.contentWindow.postMessage(JSON.stringify({
-        event: 'command',
-        func: 'setVolume',
-        args: [newUnmuted ? 80 : 0],
-      }), 'https://www.youtube.com');
+      }), '*');
     }
   };
 
@@ -257,7 +251,7 @@ export function Dashboard({
           )}
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=1&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
