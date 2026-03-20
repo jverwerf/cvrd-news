@@ -483,12 +483,14 @@ function FadingTile({ pair, delay }: {
               />
             </div>
           ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
-            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#111' }}>
-              <div>
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2" style={{ background: '#fe2c55' }}>TikTok</span>
-                <p className="text-[10px] text-white/80 leading-[1.4] line-clamp-5">{item.clipLabel}</p>
-              </div>
-              <p className="text-[8px] text-white/40 truncate">{item.topic}</p>
+            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
+              <iframe
+                src={`https://www.tiktok.com/player/v1/${item.embedId}?rel=0&mute=1`}
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+                allow=""
+                loading="lazy"
+              />
             </div>
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
