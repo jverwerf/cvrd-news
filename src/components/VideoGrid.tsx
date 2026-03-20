@@ -241,8 +241,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           {playing ? (
             <>
               {active.type === 'youtube' && (
-                <iframe ref={iframeRef} key={`${active.embed_id}-${activeIdx}`}
-                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&mute=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                <iframe ref={iframeRef} key={active.embed_id}
+                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                   className="w-full h-full" allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
