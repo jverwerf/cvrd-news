@@ -275,12 +275,12 @@ export function Dashboard({
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
-              <div className="relative mb-1">
-              <button className="absolute left-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to right, #1e2a3a, transparent)' }}
+              <div className="flex items-center gap-0.5 mb-1">
+              <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
                 onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: -200, behavior: 'smooth' }); }}>
-                <span className="text-white/60 text-[10px]">◀</span>
+                <span className="text-[10px]" style={{ color: '#3b82f6' }}>◀</span>
               </button>
-              <div id="story-timebar" className="flex gap-0.5 overflow-x-auto px-5" style={{ scrollbarWidth: 'none' }}>
+              <div id="story-timebar" className="flex gap-0.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
                 {storyBoundaries.map((b, i) => {
                   const isActive = i === currentBoundaryIdx;
                   const isPast = currentBoundaryIdx > i;
@@ -297,22 +297,22 @@ export function Dashboard({
                   );
                 })}
               </div>
-              <button className="absolute right-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to left, #1e2a3a, transparent)' }}
+              <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
                 onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: 200, behavior: 'smooth' }); }}>
-                <span className="text-white/60 text-[10px]">▶</span>
+                <span className="text-[10px]" style={{ color: '#3b82f6' }}>▶</span>
               </button>
               </div>
             )}
 
             {/* Controls row */}
             <div className="flex items-center gap-2">
-              {/* Clip bar — same style as story bar, scrollable */}
-              <div className="relative flex-1 min-w-0">
-                <button className="absolute left-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to right, #1e2a3a, transparent)' }}
+              {/* Clip bar — same style as story bar, green, scrollable */}
+              <div className="flex items-center gap-0.5 flex-1 min-w-0">
+                <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
                   onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: -150, behavior: 'smooth' }); }}>
-                  <span className="text-white/60 text-[10px]">◀</span>
+                  <span className="text-[10px]" style={{ color: '#22c55e' }}>◀</span>
                 </button>
-                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto px-5" style={{ scrollbarWidth: 'none' }}>
+                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
                   {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
                     const clipIdx = currentBoundary.start + ci;
                     const clip = playlist[clipIdx];
@@ -325,15 +325,15 @@ export function Dashboard({
                         style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
                         onClick={() => setCurrentIdx(clipIdx)}>
                         <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
-                          {clip?.channel || clip?.storyTopic?.substring(0, 20) || `Clip ${ci + 1}`}
+                          {clip?.storyTopic?.substring(0, 25) || clip?.channel || `Clip ${ci + 1}`}
                         </p>
                       </div>
                     );
                   })}
                 </div>
-                <button className="absolute right-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to left, #1e2a3a, transparent)' }}
+                <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
                   onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: 150, behavior: 'smooth' }); }}>
-                  <span className="text-white/60 text-[10px]">▶</span>
+                  <span className="text-[10px]" style={{ color: '#22c55e' }}>▶</span>
                 </button>
               </div>
 
