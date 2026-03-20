@@ -199,14 +199,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     return () => { window.removeEventListener('message', handler); };
   }, [activeIdx]);
 
-  // Calculate overall progress
+  // Calculate overall progress — based on which video we're on
   useEffect(() => {
     if (items.length === 0) return;
-    const dur = duration || active?.duration || 120;
-    const segmentSize = 1 / items.length;
-    const segmentProgress = dur > 0 ? Math.min(currentTime / dur, 1) : 0;
-    setProgress(activeIdx * segmentSize + segmentProgress * segmentSize);
-  }, [activeIdx, currentTime, duration, items.length]);
+    setProgress((activeIdx + 0.5) / items.length);
+  }, [activeIdx, items.length]);
 
   if (items.length === 0 || !active) return null;
 
