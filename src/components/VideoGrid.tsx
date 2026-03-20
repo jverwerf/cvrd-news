@@ -329,25 +329,19 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       {/* TIMELINE + THUMBNAILS */}
       {items.length > 1 && (
         <div className="mt-3">
-          {/* Progress bar — gradually fills based on actual playback */}
-          <div className="h-2 rounded-full overflow-hidden mb-2 cursor-pointer" style={{ background: '#2a3a4a' }}
-            onClick={(e) => {
-              e.stopPropagation();
-              const rect = e.currentTarget.getBoundingClientRect();
-              const pct = (e.clientX - rect.left) / rect.width;
-              const idx = Math.floor(pct * items.length);
-              const newIdx = Math.max(0, Math.min(idx, items.length - 1));
-              setActiveIdx(newIdx);
-              setCurrentTime(0);
-              setDuration(0);
-              setPlaying(true);
-              stopPolling();
-              stopTimer();
-            }}>
-            <div className="h-full rounded-full transition-all duration-500 ease-linear" style={{
-              width: `${progress * 100}%`,
-              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3',
-            }} />
+          {/* Progress bar — discrete segments matching thumbnails */}
+          <div className="flex gap-0.5 mb-2">
+            {items.map((item, i) => (
+              <div key={i} className="h-1.5 rounded-full flex-1 cursor-pointer transition-all"
+                style={{
+                  background: i < activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3')
+                    : i === activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3')
+                    : '#2a3a4a',
+                  opacity: i < activeIdx ? 0.5 : i === activeIdx ? 1 : 0.3,
+                }}
+                onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
+              />
+            ))}
           </div>
 
           {/* Thumbnails — scrollable with arrows */}
