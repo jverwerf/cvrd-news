@@ -142,21 +142,31 @@ export function Dashboard({
   }, [currentIdx, currentTime, duration, playlist.length]);
 
   // Within-story: next/prev clip
-  const next = () => setCurrentIdx(prev => (prev + 1) % playlist.length);
-  const prevItem = () => setCurrentIdx(prev => (prev - 1 + playlist.length) % playlist.length);
+  const next = () => { if (playlist.length > 0) setCurrentIdx(prev => (prev + 1) % playlist.length); };
+  const prevItem = () => { if (playlist.length > 0) setCurrentIdx(prev => (prev - 1 + playlist.length) % playlist.length); };
 
   // Between stories: skip to first clip of next/prev story
   const nextStory = () => {
+    if (storyBoundaries.length === 0) return;
     const nextBIdx = (currentBoundaryIdx + 1) % storyBoundaries.length;
     setCurrentIdx(storyBoundaries[nextBIdx].start);
   };
   const prevStory = () => {
+    if (storyBoundaries.length === 0) return;
     // If we're past the first clip in this story, go back to first clip
     if (currentBoundary && currentIdx > currentBoundary.start) {
       setCurrentIdx(currentBoundary.start);
     } else {
       const prevBIdx = (currentBoundaryIdx - 1 + storyBoundaries.length) % storyBoundaries.length;
       setCurrentIdx(storyBoundaries[prevBIdx].start);
+    }
+  };
+
+  // Tile click → play that video in center player
+  const handleTileClick = (embedId: string) => {
+    const idx = playlist.findIndex(p => p.embed_id === embedId);
+    if (idx >= 0) {
+      setCurrentIdx(idx);
     }
   };
 
@@ -188,11 +198,12 @@ export function Dashboard({
         topic: story.topic, index: i + 1, sources: story.sources || [],
         channel: v.channel,
         videoTitle: (v as any).title || v.channel || '',
+        isFresh: !!(v as any)._breaking,
       });
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed) continue;
-      if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || (c.platform === 'x' && (c as any).duration))) {
+      if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || (c.platform === 'x' && ((c as any).duration || (c as any)._breaking)))) {
         linked.push({
           type: 'social',
           image: (c as any).thumbnail || story.image_file || '',
@@ -200,6 +211,7 @@ export function Dashboard({
           platform: c.platform as 'x' | 'tiktok' | 'reels',
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
+          isFresh: !!(c as any)._breaking,
         });
       }
     }
@@ -212,6 +224,10 @@ export function Dashboard({
     if (story.image_file) {
       defaultTiles.push({ type: 'image', image: story.image_file, topic: story.topic, index: i + 1, sources: story.sources || [] });
     }
+  }
+  // Ensure we have at least one tile (fallback for breaking/single-story pages)
+  if (defaultTiles.length === 0) {
+    defaultTiles.push({ type: 'image', image: '', topic: stories[0]?.topic || 'Breaking', index: 1, sources: stories[0]?.sources || [] });
   }
   while (defaultTiles.length < 16) defaultTiles.push(...defaultTiles.slice(0, 16 - defaultTiles.length));
 
@@ -250,13 +266,13 @@ export function Dashboard({
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
-        <FadingTile pair={tilePairs[0]} delay={0} frozen={tileIsFrozen[0]} />
-        <FadingTile pair={tilePairs[1]} delay={2} frozen={tileIsFrozen[1]} />
-        <FadingTile pair={tilePairs[2]} delay={4} frozen={tileIsFrozen[2]} />
-        <FadingTile pair={tilePairs[3]} delay={1} frozen={tileIsFrozen[3]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[0]} delay={0} frozen={tileIsFrozen[0]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[1]} delay={2} frozen={tileIsFrozen[1]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[2]} delay={4} frozen={tileIsFrozen[2]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[3]} delay={1} frozen={tileIsFrozen[3]} />
 
         {/* ROW 2 */}
-        <FadingTile pair={tilePairs[4]} delay={5} frozen={tileIsFrozen[4]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[4]} delay={5} frozen={tileIsFrozen[4]} />
 
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
@@ -411,13 +427,13 @@ export function Dashboard({
           </div>
         </div>
 
-        <FadingTile pair={tilePairs[5]} delay={3} frozen={tileIsFrozen[5]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[5]} delay={3} frozen={tileIsFrozen[5]} />
 
         {/* ROW 3 */}
-        <FadingTile pair={tilePairs[6]} delay={6} frozen={tileIsFrozen[6]} />
-        <FadingTile pair={tilePairs[7]} delay={1.5} frozen={tileIsFrozen[7]} />
-        <FadingTile pair={tilePairs[8]} delay={3.5} frozen={tileIsFrozen[8]} />
-        <FadingTile pair={tilePairs[9]} delay={5.5} frozen={tileIsFrozen[9]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[6]} delay={6} frozen={tileIsFrozen[6]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[7]} delay={1.5} frozen={tileIsFrozen[7]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[8]} delay={3.5} frozen={tileIsFrozen[8]} />
+        <FadingTile onTileClick={handleTileClick} pair={tilePairs[9]} delay={5.5} frozen={tileIsFrozen[9]} />
       </div>
     </section>
   );
@@ -429,10 +445,11 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function FadingTile({ pair, delay, frozen }: {
+function FadingTile({ pair, delay, frozen, onTileClick }: {
   pair: [TileContent, TileContent];
   delay: number;
   frozen?: boolean;
+  onTileClick?: (embedId: string) => void;
 }) {
   const [activeIdx, setActiveIdx] = useState(0);
   const pairRef = useRef(pair);
@@ -474,17 +491,18 @@ function FadingTile({ pair, delay, frozen }: {
   const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
-    <a href={`#story-${current.index}`}
+    <div
       style={frozen ? { boxShadow: '0 0 12px 2px rgba(239,68,68,0.6), inset 0 0 12px rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.4)' } : {}}
-      onClick={(e) => {
-        e.preventDefault();
-        // Build video identifier from current tile content
+      onClick={() => {
         const embedId = current.type === 'video'
           ? current.image.match(/\/vi\/([^/]+)/)?.[1] || ''
           : current.embedId || '';
-        const hash = embedId ? `story-${current.index}--${embedId}` : `story-${current.index}`;
-        window.location.hash = hash;
-        document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
+        if (onTileClick && embedId) {
+          onTileClick(embedId);
+        } else {
+          // Fallback: scroll to story
+          document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
+        }
       }}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
 
@@ -587,6 +605,6 @@ function FadingTile({ pair, delay, frozen }: {
           </div>
         </>
       )}
-    </a>
+    </div>
   );
 }

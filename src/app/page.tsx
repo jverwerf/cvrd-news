@@ -5,9 +5,6 @@ import { LiveBanner } from "@/components/LiveBanner";
 import { HeroStory } from "@/components/HeroStory";
 import { StoryFeed } from "@/components/StoryFeed";
 
-import fs from 'fs';
-import path from 'path';
-
 const ALL_CATS = [
   { label: 'Daily Pick', slug: '/' },
   { label: 'World', slug: '/world' },
@@ -18,21 +15,23 @@ const ALL_CATS = [
   { label: 'Unfiltered', slug: '/unfiltered' },
 ];
 
-function hasBreakingNews(): boolean {
+async function hasBreakingNews(): Promise<boolean> {
   try {
+    const fs = await import('fs');
+    const path = await import('path');
     const breakingPath = path.resolve(process.cwd(), 'public/data/breaking.json');
     if (!fs.existsSync(breakingPath)) return false;
-    const data = JSON.parse(fs.readFileSync(breakingPath, 'utf8'));
-    // Expire after 12 hours
-    const lastUpdate = new Date(data.last_updated).getTime();
-    return Date.now() - lastUpdate < 12 * 60 * 60 * 1000;
+    const raw = JSON.parse(fs.readFileSync(breakingPath, 'utf8'));
+    // Support both array and single object
+    const items = Array.isArray(raw) ? raw : [raw];
+    return items.some(s => Date.now() - new Date(s.last_updated).getTime() < 12 * 60 * 60 * 1000);
   } catch { return false; }
 }
 
 export default async function Home() {
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
-  const isBreaking = hasBreakingNews();
+  const isBreaking = await hasBreakingNews();
 
   const top10 = allStories.filter(s => s.is_top_story).length >= 10
     ? allStories.filter(s => s.is_top_story)
@@ -58,9 +57,10 @@ export default async function Home() {
               <div className="h-12 flex items-center justify-center gap-6 px-8">
                 {isBreaking && (
                   <a href="/breaking"
-                    className="shrink-0 px-5 py-2 text-[14px] font-bold rounded-full animate-pulse"
-                    style={{ background: '#dc2626', color: '#fff' }}>
-                    🔴 BREAKING
+                    className="shrink-0 px-5 py-2 text-[14px] font-semibold rounded-full transition-colors"
+                    style={{ background: 'rgba(220,38,38,0.15)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)' }}>
+                    <span className="inline-block w-1.5 h-1.5 rounded-full mr-2 animate-pulse" style={{ background: '#ef4444' }} />
+                    Breaking
                   </a>
                 )}
                 {ALL_CATS.map((cat) => (
