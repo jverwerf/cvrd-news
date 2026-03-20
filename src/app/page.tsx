@@ -5,6 +5,9 @@ import { LiveBanner } from "@/components/LiveBanner";
 import { HeroStory } from "@/components/HeroStory";
 import { StoryFeed } from "@/components/StoryFeed";
 
+import fs from 'fs';
+import path from 'path';
+
 const ALL_CATS = [
   { label: 'Daily Pick', slug: '/' },
   { label: 'World', slug: '/world' },
@@ -15,9 +18,21 @@ const ALL_CATS = [
   { label: 'Unfiltered', slug: '/unfiltered' },
 ];
 
+function hasBreakingNews(): boolean {
+  try {
+    const breakingPath = path.resolve(process.cwd(), 'public/data/breaking.json');
+    if (!fs.existsSync(breakingPath)) return false;
+    const data = JSON.parse(fs.readFileSync(breakingPath, 'utf8'));
+    // Expire after 12 hours
+    const lastUpdate = new Date(data.last_updated).getTime();
+    return Date.now() - lastUpdate < 12 * 60 * 60 * 1000;
+  } catch { return false; }
+}
+
 export default async function Home() {
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
+  const isBreaking = hasBreakingNews();
 
   const top10 = allStories.filter(s => s.is_top_story).length >= 10
     ? allStories.filter(s => s.is_top_story)
@@ -41,6 +56,13 @@ export default async function Home() {
             {/* 1. CATEGORY NAV */}
             <div className="overflow-x-auto" style={{ background: '#1e2a3a' }}>
               <div className="h-12 flex items-center justify-center gap-6 px-8">
+                {isBreaking && (
+                  <a href="/breaking"
+                    className="shrink-0 px-5 py-2 text-[14px] font-bold rounded-full animate-pulse"
+                    style={{ background: '#dc2626', color: '#fff' }}>
+                    🔴 BREAKING
+                  </a>
+                )}
                 {ALL_CATS.map((cat) => (
                   <a key={cat.slug} href={cat.slug}
                     className="shrink-0 px-5 py-2 text-[14px] font-semibold rounded-full transition-colors"
