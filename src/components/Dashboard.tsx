@@ -276,7 +276,12 @@ export function Dashboard({
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
-              <div className="flex gap-0.5 mb-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+              <div className="relative mb-1">
+              <button className="absolute left-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to right, #1e2a3a, transparent)' }}
+                onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: -200, behavior: 'smooth' }); }}>
+                <span className="text-white/60 text-[10px]">◀</span>
+              </button>
+              <div id="story-timebar" className="flex gap-0.5 overflow-x-auto px-5" style={{ scrollbarWidth: 'none' }}>
                 {storyBoundaries.map((b, i) => {
                   const isActive = i === currentBoundaryIdx;
                   const isPast = currentBoundaryIdx > i;
@@ -292,6 +297,11 @@ export function Dashboard({
                     </div>
                   );
                 })}
+              </div>
+              <button className="absolute right-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to left, #1e2a3a, transparent)' }}
+                onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: 200, behavior: 'smooth' }); }}>
+                <span className="text-white/60 text-[10px]">▶</span>
+              </button>
               </div>
             )}
 
