@@ -86,6 +86,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   const [progress, setProgress] = useState(0); // 0-1 across entire playlist
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
+  const [muted, setMuted] = useState(true); // persists across video changes
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const pollRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -160,8 +161,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       setCurrentTime(0);
     } else if (active?.type === 'youtube') {
       startPolling();
-      const dur = active.duration || 120;
-      setDuration(dur);
+      // Use stored duration + 10s buffer, or 600s (10min) fallback
+      // Don't skip early — better to wait too long than cut short
+      const dur = active.duration ? active.duration + 10 : 600;
+      setDuration(active.duration || 600);
       timerRef.current = setInterval(() => {
         setCurrentTime(prev => {
           if (prev >= dur) { nextRef.current(); return 0; }
@@ -242,7 +245,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             <>
               {active.type === 'youtube' && (
                 <iframe ref={iframeRef} key={active.embed_id}
-                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+                  src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=1&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                   className="w-full h-full" allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
@@ -293,6 +296,20 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
             )}
           </div>
+
+          <button onClick={() => {
+            const newMuted = !muted;
+            setMuted(newMuted);
+            // Send mute/unmute to YouTube iframe only
+            if (iframeRef.current?.contentWindow && active.type === 'youtube') {
+              iframeRef.current.contentWindow.postMessage(JSON.stringify({
+                event: 'command', func: newMuted ? 'mute' : 'unMute',
+              }), '*');
+            }
+          }} className="text-[11px] px-2 py-0.5 rounded hover:opacity-70 transition-opacity shrink-0 mr-2"
+            style={{ color: muted ? '#777' : '#fff', background: muted ? 'transparent' : '#333' }}>
+            {muted ? '🔇' : '🔊'}
+          </button>
 
           {items.length > 1 && (
             <div className="flex items-center gap-2 shrink-0">
