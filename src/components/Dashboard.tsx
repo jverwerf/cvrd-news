@@ -90,32 +90,6 @@ export function Dashboard({
   const clipInStory = currentBoundary ? currentIdx - currentBoundary.start + 1 : 1;
   const clipsInStory = currentBoundary ? currentBoundary.end - currentBoundary.start + 1 : 1;
 
-  // Auto-scroll timebars to keep active segment visible
-  useEffect(() => {
-    setTimeout(() => {
-      const storyBar = document.getElementById('story-timebar');
-      if (storyBar) {
-        const active = storyBar.querySelector('[data-active="true"]') as HTMLElement;
-        if (active) {
-          const scrollLeft = active.offsetLeft - storyBar.clientWidth / 2 + active.clientWidth / 2;
-          storyBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
-        }
-      }
-    }, 100);
-  }, [currentBoundaryIdx]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const clipBar = document.getElementById('clip-timebar');
-      if (clipBar) {
-        const active = clipBar.querySelector('[data-active="true"]') as HTMLElement;
-        if (active) {
-          const scrollLeft = active.offsetLeft - clipBar.clientWidth / 2 + active.clientWidth / 2;
-          clipBar.scrollTo({ left: Math.max(0, scrollLeft), behavior: 'smooth' });
-        }
-      }
-    }, 100);
-  }, [currentIdx]);
 
   // Track progress for ALL video types using timer
   useEffect(() => {
