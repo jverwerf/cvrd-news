@@ -182,7 +182,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {tiktokClips.filter(c => c.embed_id).map((c, i) => (
                       <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                        <iframe src={`https://www.tiktok.com/player/v1/${c.embed_id}?rel=0&mute=1`} className="h-[480px]" style={{ border: 'none', width: '100%' }} allowFullScreen allow="encrypted-media" />
+                        <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px]" style={{ border: 'none', width: '100%' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
                       </div>
                     ))}
                   </div>
