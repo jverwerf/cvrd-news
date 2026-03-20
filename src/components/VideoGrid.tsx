@@ -131,13 +131,13 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     timerRef.current = setInterval(() => {
       setCurrentTime(prev => {
         if (prev >= dur) {
-          nextItem();
+          nextRef.current();
           return 0;
         }
         return prev + 0.5;
       });
     }, 500);
-  }, [active, nextItem]);
+  }, [active]);
 
   const stopTimer = () => {
     if (timerRef.current) { clearInterval(timerRef.current); timerRef.current = null; }
@@ -150,8 +150,12 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   // For YouTube: try API polling, but also run a fallback timer
   useEffect(() => {
     if (!playing) { stopPolling(); stopTimer(); return; }
-    if (active?.type === 'x' || active?.type === 'reddit') {
-      // X/Reddit posts are static embeds — no timer, no auto-advance
+    if (active?.type === 'reddit') {
+      // Reddit posts are static — no auto-advance
+      setDuration(0);
+      setCurrentTime(0);
+    } else if (active?.type === 'x' && !active.duration) {
+      // X text posts (no video) — no auto-advance
       setDuration(0);
       setCurrentTime(0);
     } else if (active?.type === 'youtube') {
