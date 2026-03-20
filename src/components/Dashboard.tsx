@@ -276,15 +276,15 @@ export function Dashboard({
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
-              <div className="flex gap-0.5 mb-1">
+              <div className="flex gap-0.5 mb-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
                 {storyBoundaries.map((b, i) => {
                   const isActive = i === currentBoundaryIdx;
                   const isPast = currentBoundaryIdx > i;
                   const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
                   const bg = isActive ? '#2563eb' : blues[i % blues.length];
                   return (
-                    <div key={i} className="flex-1 rounded cursor-pointer overflow-hidden px-1.5 py-1 flex items-center transition-all"
-                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minHeight: 24 }}
+                    <div key={i} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
+                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minWidth: 90 }}
                       onClick={() => setCurrentIdx(b.start)}>
                       <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.8 }}>
                         {b.topic || `Story ${i + 1}`}
