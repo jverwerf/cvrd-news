@@ -41,7 +41,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     } else if (c.platform === 'reels' && c.embed_id) {
       allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail, duration: (c as any).duration, relevance: (c as any).relevance });
     }
   }
 
