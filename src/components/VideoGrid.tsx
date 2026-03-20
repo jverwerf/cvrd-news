@@ -358,20 +358,28 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             {items.length > 4 && (
               <>
                 <button onClick={() => {
-                  const el = document.getElementById(`thumbs-${items[0]?.embed_id}`);
+                  const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
                   el?.scrollBy({ left: -300, behavior: 'smooth' });
                 }} className="absolute left-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-r from-[#1e2a3a] to-transparent">
                   <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#999]" />
                 </button>
                 <button onClick={() => {
-                  const el = document.getElementById(`thumbs-${items[0]?.embed_id}`);
+                  const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
                   el?.scrollBy({ left: 300, behavior: 'smooth' });
                 }} className="absolute right-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-l from-[#1e2a3a] to-transparent">
                   <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#999]" />
                 </button>
               </>
             )}
-          <div id={`thumbs-${items[0]?.embed_id}`} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} ref={(el) => {
+            // Auto-scroll to active thumbnail
+            if (el) {
+              const activeThumb = el.children[activeIdx] as HTMLElement;
+              if (activeThumb) {
+                activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+              }
+            }
+          }} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             {items.map((item, i) => (
               <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
                 className="rounded overflow-hidden transition-all group shrink-0"
