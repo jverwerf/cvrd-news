@@ -200,11 +200,24 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   if (items.length === 0 || !active) return null;
 
-  const next = () => { nextItem(); stopPolling(); };
+  const next = () => {
+    setActiveIdx(prev => {
+      if (prev < items.length - 1) return prev + 1;
+      setPlaying(false);
+      return prev;
+    });
+    setCurrentTime(0);
+    setDuration(0);
+    stopPolling();
+    stopTimer();
+  };
   const prevItem = () => {
     setActiveIdx(prev => (prev - 1 + items.length) % items.length);
     setCurrentTime(0);
     setDuration(0);
+    setPlaying(true);
+    stopPolling();
+    stopTimer();
   };
 
   const formatTime = (s: number) => {
@@ -336,7 +349,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             )}
           <div id={`thumbs-${items[0]?.embed_id}`} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             {items.map((item, i) => (
-              <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); }}
+              <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
                 className="rounded overflow-hidden transition-all group shrink-0"
                 style={{
                   width: '100px',
