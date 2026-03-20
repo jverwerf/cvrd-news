@@ -280,11 +280,11 @@ export function Dashboard({
                 {storyBoundaries.map((b, i) => {
                   const isActive = i === currentBoundaryIdx;
                   const isPast = currentBoundaryIdx > i;
-                  const blues = ['#1e3a5f', '#1a4a6e', '#16587d', '#12668c', '#0e749b', '#0a82aa', '#0690b9', '#029ec8', '#1e2a3a', '#253545'];
-                  const bg = isActive ? '#3b82f6' : isPast ? blues[i % blues.length] : blues[i % blues.length];
+                  const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
+                  const bg = isActive ? '#2563eb' : blues[i % blues.length];
                   return (
-                    <div key={i} className="flex-1 rounded cursor-pointer overflow-hidden px-1 py-0.5 flex items-center transition-all"
-                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.7 : 0.5, minHeight: 18 }}
+                    <div key={i} className="flex-1 rounded cursor-pointer overflow-hidden px-1.5 py-1 flex items-center transition-all"
+                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minHeight: 24 }}
                       onClick={() => setCurrentIdx(b.start)}>
                       <p className="text-[7px] leading-tight truncate text-white" style={{ opacity: isActive ? 1 : 0.8 }}>
                         {b.topic || `Story ${i + 1}`}
