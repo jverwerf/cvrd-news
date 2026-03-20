@@ -476,16 +476,6 @@ function FadingTile({ pair, delay }: {
                 loading="lazy"
               />
             </div>
-          ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
-            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-              <iframe
-                src={`https://www.tiktok.com/player/v1/${item.embedId}?rel=0&mute=1`}
-                className="absolute inset-0 w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-                allow=""
-                loading="lazy"
-              />
-            </div>
           ) : item.type === 'social' ? (
             <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
               <div>
