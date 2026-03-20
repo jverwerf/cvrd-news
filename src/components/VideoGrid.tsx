@@ -329,20 +329,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       {/* TIMELINE + THUMBNAILS */}
       {items.length > 1 && (
         <div className="mt-3">
-          {/* Progress bar — discrete segments matching thumbnails */}
-          <div className="flex gap-0.5 mb-2">
-            {items.map((item, i) => (
-              <div key={i} className="h-1.5 rounded-full flex-1 cursor-pointer transition-all"
-                style={{
-                  background: i < activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3')
-                    : i === activeIdx ? (item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3')
-                    : '#2a3a4a',
-                  opacity: i < activeIdx ? 0.5 : i === activeIdx ? 1 : 0.3,
-                }}
-                onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
-              />
-            ))}
-          </div>
 
           {/* Thumbnails — scrollable with arrows */}
           <div className="relative">
