@@ -307,17 +307,25 @@ export function Dashboard({
 
             {/* Controls row */}
             <div className="flex items-center gap-2">
-              {/* Now playing — story + clip info */}
-              <div className="flex items-center gap-2 min-w-0 flex-1">
-                <span className="w-[5px] h-[5px] rounded-full bg-[#4ade80] shadow-[0_0_8px_#4ade80] animate-pulse shrink-0" />
-                <div className="min-w-0 flex-1">
-                  <span className="text-[11px] text-white font-medium truncate block">
-                    {current?.type === 'anchor' ? 'Daily Briefing' : (current?.storyTopic || '')}
-                  </span>
-                  <span className="text-[9px] text-white/50 font-mono">
-                    Story {currentBoundaryIdx + 1}/{storyBoundaries.length} &middot; Clip {clipInStory}/{clipsInStory}
-                  </span>
-                </div>
+              {/* Clip bar — shows clips within current story */}
+              <div className="flex items-center gap-0.5 min-w-0 flex-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+                {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
+                  const clipIdx = currentBoundary.start + ci;
+                  const clip = playlist[clipIdx];
+                  const isActiveClip = clipIdx === currentIdx;
+                  return (
+                    <div key={ci} className="rounded px-1.5 py-0.5 cursor-pointer shrink-0 transition-all"
+                      style={{
+                        background: isActiveClip ? '#4ade80' : 'rgba(255,255,255,0.1)',
+                        minWidth: 60,
+                      }}
+                      onClick={() => setCurrentIdx(clipIdx)}>
+                      <p className="text-[8px] truncate" style={{ color: isActiveClip ? '#000' : 'rgba(255,255,255,0.5)' }}>
+                        {clip?.channel || clip?.storyTopic?.substring(0, 15) || `Clip ${ci + 1}`}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Story skip: |<< prev story */}
