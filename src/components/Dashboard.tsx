@@ -276,41 +276,22 @@ export function Dashboard({
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
-              <div className="mb-1">
-                <div className="flex items-center gap-1 mb-1">
-                  {storyBoundaries.map((b, i) => {
-                    const isActive = i === currentBoundaryIdx;
-                    const isPast = currentBoundaryIdx > i;
-                    const storyClips = b.end - b.start + 1;
-                    const clipProgress = isActive ? (currentIdx - b.start) / storyClips : 0;
-                    return (
-                      <div key={i} className="h-[4px] rounded-full cursor-pointer overflow-hidden"
-                        style={{ flex: storyClips, background: 'rgba(255,255,255,0.15)' }}
-                        onClick={() => setCurrentIdx(b.start)}>
-                        <div className="h-full rounded-full transition-all duration-300"
-                          style={{
-                            width: isPast ? '100%' : isActive ? `${Math.max(clipProgress, 1 / storyClips) * 100}%` : '0%',
-                            background: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
-                          }} />
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="flex gap-1">
-                  {storyBoundaries.map((b, i) => {
-                    const isActive = i === currentBoundaryIdx;
-                    const storyClips = b.end - b.start + 1;
-                    return (
-                      <div key={i} className="cursor-pointer overflow-hidden" style={{ flex: storyClips }}
-                        onClick={() => setCurrentIdx(b.start)}>
-                        <p className="text-[7px] leading-tight truncate transition-colors"
-                          style={{ color: isActive ? '#fff' : 'rgba(255,255,255,0.4)' }}>
-                          {b.topic || `Story ${i + 1}`}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
+              <div className="flex gap-0.5 mb-1">
+                {storyBoundaries.map((b, i) => {
+                  const isActive = i === currentBoundaryIdx;
+                  const isPast = currentBoundaryIdx > i;
+                  const blues = ['#1e3a5f', '#1a4a6e', '#16587d', '#12668c', '#0e749b', '#0a82aa', '#0690b9', '#029ec8', '#1e2a3a', '#253545'];
+                  const bg = isActive ? '#3b82f6' : isPast ? blues[i % blues.length] : blues[i % blues.length];
+                  return (
+                    <div key={i} className="flex-1 rounded cursor-pointer overflow-hidden px-1 py-0.5 flex items-center transition-all"
+                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.7 : 0.5, minHeight: 18 }}
+                      onClick={() => setCurrentIdx(b.start)}>
+                      <p className="text-[7px] leading-tight truncate text-white" style={{ opacity: isActive ? 1 : 0.8 }}>
+                        {b.topic || `Story ${i + 1}`}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             )}
 
