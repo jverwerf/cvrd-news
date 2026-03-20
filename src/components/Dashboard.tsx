@@ -12,6 +12,7 @@ type PlaylistItem = {
   storyTopic?: string;
   storyIndex?: number;
   duration?: number;
+  videoTitle?: string;
 };
 
 type TileContent = {
@@ -61,7 +62,7 @@ export function Dashboard({
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       if ((v as any).download_failed) continue;
-      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration });
+      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
     }
   }
 
@@ -236,10 +237,10 @@ export function Dashboard({
         <FadingTile pair={tilePairs[2]} delay={4} />
         <FadingTile pair={tilePairs[3]} delay={1} />
 
-        {/* ROW 2+3 CENTER — spans 2 cols and 2 rows */}
+        {/* ROW 2 */}
         <FadingTile pair={tilePairs[4]} delay={5} />
 
-        <div className="col-span-2 row-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
           {current?.type === 'anchor' && current.url && (
             <video ref={videoRef} key="anchor" src={current.url}
@@ -325,7 +326,7 @@ export function Dashboard({
                         style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
                         onClick={() => setCurrentIdx(clipIdx)}>
                         <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
-                          {clip?.storyTopic?.substring(0, 25) || clip?.channel || `Clip ${ci + 1}`}
+                          {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
                         </p>
                       </div>
                     );
@@ -346,6 +347,11 @@ export function Dashboard({
               <button onClick={prevItem} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Previous clip">
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[8px] border-r-white" />
               </button>
+
+              {/* Counter */}
+              <span className="text-[8px] text-white/50 font-mono shrink-0">
+                {currentBoundaryIdx + 1}/{storyBoundaries.length} · {clipInStory}/{clipsInStory}
+              </span>
 
               {/* Clip skip: next clip > */}
               <button onClick={next} className="flex items-center justify-center p-1.5 hover:opacity-60 transition-opacity shrink-0" title="Next clip">
@@ -403,9 +409,11 @@ export function Dashboard({
 
         <FadingTile pair={tilePairs[5]} delay={3} />
 
-        {/* ROW 3 — left and right tiles next to the row-spanning center */}
+        {/* ROW 3 */}
         <FadingTile pair={tilePairs[6]} delay={6} />
         <FadingTile pair={tilePairs[7]} delay={1.5} />
+        <FadingTile pair={tilePairs[8]} delay={3.5} />
+        <FadingTile pair={tilePairs[9]} delay={5.5} />
       </div>
     </section>
   );
