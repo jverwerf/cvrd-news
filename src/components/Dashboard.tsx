@@ -91,6 +91,16 @@ export function Dashboard({
   const clipsInStory = currentBoundary ? currentBoundary.end - currentBoundary.start + 1 : 1;
 
 
+  // Scroll timebars to active segment
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('story-timebar')?.querySelector('[data-active="true"]')
+        ?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      document.getElementById('clip-timebar')?.querySelector('[data-active="true"]')
+        ?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+  }, [currentIdx]);
+
   // Track progress for ALL video types using timer
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -291,7 +301,7 @@ export function Dashboard({
                   return (
                     <div key={i} data-active={isActive ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
                       style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minWidth: 90 }}
-                      onClick={() => setCurrentIdx(b.start)}>
+                      onClick={(e) => { setCurrentIdx(b.start); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
                       <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.8 }}>
                         {b.topic || `Story ${i + 1}`}
                       </p>
@@ -325,7 +335,7 @@ export function Dashboard({
                     return (
                       <div key={ci} data-active={isActiveClip ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
                         style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
-                        onClick={() => setCurrentIdx(clipIdx)}>
+                        onClick={(e) => { setCurrentIdx(clipIdx); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
                         <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
                           {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
                         </p>
