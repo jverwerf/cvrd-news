@@ -1132,8 +1132,55 @@
       "social_summary": "Reddit users are sharing personal stories of military families affected by similar errors. X users are discussing the broader implications for military accountability. TikTok videos are highlighting the emotional reunion and its impact on the soldier's community.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a soldier's emotional reunion with family.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@the_kyiv_independent/video/7618332981924580628",
+          "embed_id": "7618332981924580628",
+          "title": "Ukrainian soldier Nazar Daletskyi has returned to his home village of Velykyi Doroshiv after being officially declared dead for nearly three years.\n\nD",
+          "author": "the_kyiv_independent",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cnn/video/7603973738417212685",
+          "embed_id": "7603973738417212685",
+          "title": "The mother of an Ukrainian soldier who was presumed dead hears her son's voice for the first time since his release from captivity.",
+          "author": "cnn",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@saffy6757/video/7603821269812808982",
+          "embed_id": "7603821269812808982",
+          "title": "Український солдат, офіційно оголошений загиблим у 2022 році, повернувся додому живим після майже трьох років перебування у російському полоні. Назар ",
+          "author": "saffy6757",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=0ab8cxbSA2s",
+          "embed_id": "0ab8cxbSA2s",
+          "channel": "DW News",
+          "title": "Ukrainian soldier returns to the front after more than two years of torture and isolation | DW News",
+          "duration": 531
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=UH8ouQh0e6Q",
+          "embed_id": "UH8ouQh0e6Q",
+          "channel": "The Guardian",
+          "title": "​'Daddy, I missed you': The Ukrainian soldiers returning from Russian captivity | The View From",
+          "duration": 301
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=JujjqV_-9OY",
+          "embed_id": "JujjqV_-9OY",
+          "channel": "APT",
+          "title": "Moscow Sends 1,000 Fallen Ukrainian Soldiers’ Bodies to Kyiv, Receives 30 Russians | APT",
+          "duration": 220
+        }
+      ],
       "sources": [
         {
           "name": "New York Times",
@@ -1170,8 +1217,55 @@
       "social_summary": "Reddit users are discussing the historical context of Denmark's sovereignty over Greenland. X users are sharing maps and analyses of the Arctic region's strategic importance. TikTok videos are highlighting the cultural and environmental significance of Greenland to its indigenous population.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of Greenland's icy landscape with military presence.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@info_nugget_/video/7619049911648128278",
+          "embed_id": "7619049911648128278",
+          "title": "Denmark Nearly Blew Up Own Runways Because America's Gone Full Supervillain\nDenmark has reportedly considered destroying runways in Greenland amid gro",
+          "author": "info_nugget_",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cbsnews/video/7597141036141514039",
+          "embed_id": "7597141036141514039",
+          "title": "A Danish lawmaker pushed back against President Trump's tariff threats to countries that wouldn't support its plan to acquire Greenland.\n\nDenmark MP R",
+          "author": "cbsnews",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@sbsnews_au/video/7596503459264810257",
+          "embed_id": "7596503459264810257",
+          "title": "Greenlanders and Danes have protested against US President Donald Trump’s plans to take over the Danish autonomous territory in the Arctic.\nThousands ",
+          "author": "sbsnews_au",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=itr1xNNH8Hc",
+          "embed_id": "itr1xNNH8Hc",
+          "channel": "Times Now World",
+          "title": "DENMARK CALLS SNAP Election Amid U.S. Aggression, Angry Danes Defy Trump’s Threat | Times Now World",
+          "duration": 507
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=610G0Qq8ZWg",
+          "embed_id": "610G0Qq8ZWg",
+          "channel": "NewsX Live",
+          "title": "Denmark’s Election Gamble: Denmark Goes To Polls As Greenland Standoff Sparks Political Surge",
+          "duration": 68
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=2p_Q7uQaDI0",
+          "embed_id": "2p_Q7uQaDI0",
+          "channel": "B.C. Begley",
+          "title": "After tense US-Greenland standoff, Denmark calls an early election",
+          "duration": 72
+        }
+      ],
       "sources": [
         {
           "name": "AP News",
@@ -1215,8 +1309,55 @@
       "social_summary": "Reddit users are sharing personal stories of migrants in Argentina, highlighting both challenges and successes. X users are debating the economic impact of immigration. TikTok videos are showcasing cultural events celebrating immigrant communities.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a crowded immigration office in Argentina.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@zacradio/video/7594073658180652300",
+          "embed_id": "7594073658180652300",
+          "title": "¿POR QUÉ EL EXTRANJERO SIEMPRE CONSIGUE LABURO Y EL ARGENTINO NO?\n🎙️ Invitado: Axel, fotógrafo inmigrante venezolano 📸🇻🇪\nEn la mesa surge una preg",
+          "author": "zacradio",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@larealidadqueteocultan/video/7556567021551488268",
+          "embed_id": "7556567021551488268",
+          "title": "",
+          "author": "larealidadqueteocultan",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@larealidadqueteocultan/video/7542464080804646200",
+          "embed_id": "7542464080804646200",
+          "title": "La controversia sobre el futuro de Argentina se debate intensamente en este análisis contundente sobre la necesidad de una inmigración masiva y las re",
+          "author": "larealidadqueteocultan",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=88ZSbDEyMTo",
+          "embed_id": "88ZSbDEyMTo",
+          "channel": "Al Jazeera English",
+          "title": "Fear in Argentina over immigration law changes",
+          "duration": 138
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=DvBpsbLVm30",
+          "embed_id": "DvBpsbLVm30",
+          "channel": "TeleSUR English",
+          "title": "Anti-Immigrant Sentiment Strong in Argentina",
+          "duration": 157
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=Bdtq8aeqEmo",
+          "embed_id": "Bdtq8aeqEmo",
+          "channel": "NewsBOT Politics",
+          "title": "Argentina's President Javier Milei Tightens Immigration Rules Amid Controversy",
+          "duration": 222
+        }
+      ],
       "sources": [
         {
           "name": "New York Times",
@@ -1253,8 +1394,55 @@
       "social_summary": "Reddit users are debating the ethics of the decision, with many expressing concern over the U.S.'s inconsistent foreign policy. X users are discussing the economic impact on global agriculture. TikTok videos are highlighting protests by Belarusian activists against the decision.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a fertilizer plant with a backdrop of political tension.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@dimor_news/video/7619279279788002582",
+          "embed_id": "7619279279788002582",
+          "title": "The US is easing sanctions on Belarus after major developments. What’s really behind this move, and how could it impact global politics and ongoing te",
+          "author": "dimor_news",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@joeycontino2/video/7583822803086920991",
+          "embed_id": "7583822803086920991",
+          "title": "US LIFTS POTASH SANCTIONS ON BELARUS",
+          "author": "joeycontino2",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@abcnewslive/video/7619024529398041870",
+          "embed_id": "7619024529398041870",
+          "title": "In the latest effort to ease spiking oil prices, Treasury Secretary Scott Bessent said that the U.S. might lift sanctions on Iranian oil that's alread",
+          "author": "abcnewslive",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=ADrNSohTFt4",
+          "embed_id": "ADrNSohTFt4",
+          "channel": "PBS NewsHour",
+          "title": "The international implications of new U.S. sanctions on Iran",
+          "duration": 406
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=txkgfuWMcDY",
+          "embed_id": "txkgfuWMcDY",
+          "channel": "WION",
+          "title": "U.S. Eases Russian Oil Sanctions as Iran Conflict Hits Oil Prices | WION",
+          "duration": 211
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=kyJv-vtKCk4",
+          "embed_id": "kyJv-vtKCk4",
+          "channel": "DRM News",
+          "title": "BREAKING: US May Lift Sanctions on More Russian Oil as Iran War Escalates, Says Treasury Chief |AC1B",
+          "duration": 105
+        }
+      ],
       "sources": [
         {
           "name": "New York Times",
@@ -1297,8 +1485,55 @@
       "social_summary": "Reddit users are sharing personal stories of communities affected by the AfD's policies. X users are debating the party's impact on Germany's international reputation. TikTok videos are highlighting protests against the AfD and its controversial rhetoric.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a political rally with AfD flags and banners.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@dwnews/video/7578521347471510817",
+          "embed_id": "7578521347471510817",
+          "title": "Tens of thousands of people in Germany are protesting against the far-right AfD launching its new youth wing. Police, water cannon, blocked highways —",
+          "author": "dwnews",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@c4news/video/7499834121401961750",
+          "embed_id": "7499834121401961750",
+          "title": "Germany's domestic intelligence agency has classified the Alternative for Germany as a \"right-wing extremist\" entity, allowing it to increase surveill",
+          "author": "c4news",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@theeconomist/video/7561881218694843670",
+          "embed_id": "7561881218694843670",
+          "title": "Germany’s hard-right Alternative for Germany, or AfD, is more popular than ever. One in four Germans now support it. Yet despite its rise, the party r",
+          "author": "theeconomist",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=m46go_RpUuU",
+          "embed_id": "m46go_RpUuU",
+          "channel": "CNBC International Live",
+          "title": "German coalition parties suffer losses in regional elections, AfD gains ground | Squawk Box Europe",
+          "duration": 171
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=W_6Xqkhn7Og",
+          "embed_id": "W_6Xqkhn7Og",
+          "channel": "FRANCE 24 English",
+          "title": "Far-right AfD fail to win east German state elections despite strong gains",
+          "duration": 202
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=YJFnn3qsdrc",
+          "embed_id": "YJFnn3qsdrc",
+          "channel": "DRM News",
+          "title": "Rising Divide in Germany: Far-Right AfD and Leftist BSW Gain Ground in East | DRM News | AC11",
+          "duration": 339
+        }
+      ],
       "sources": [
         {
           "name": "New York Times",
@@ -1329,8 +1564,55 @@
       "social_summary": "Reddit users are discussing the broader implications for UK-Iran relations, with many expressing concern over the potential for increased surveillance. X users are debating the effectiveness of the UK's security measures. TikTok videos are highlighting community reactions and calls for increased protection of minority groups.",
       "evidence_url": "https://reddit.com/r/worldnews/comments/1ry1etn/joint_statement_from_the_leaders_of_the_united/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a UK government building with a focus on security.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@metrouk/video/7608547811885354262",
+          "embed_id": "7608547811885354262",
+          "title": "A British couple who were on the trip of a lifetime have been jailed in Iran for ten years after being accused of spying.\n\nLindsay and Craig Foreman w",
+          "author": "metrouk",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@iaasresearchnews1/video/7505423127283797270",
+          "embed_id": "7505423127283797270",
+          "title": "Iranian Spies Charged UK\n\n#iran🇮🇷 #spy #spies #asylum#UK #england",
+          "author": "iaasresearchnews1",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@bbcnews/video/7472747900565523734",
+          "embed_id": "7472747900565523734",
+          "title": "Craig and Lindsay Foreman - who had been on a motorbike trip around the world - have been charged in Iran with espionage, the country's judiciary news",
+          "author": "bbcnews",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=MVMySvuII3I",
+          "embed_id": "MVMySvuII3I",
+          "channel": "Al Jazeera English",
+          "title": "Iran hangs former defence ministry official for spying for UK",
+          "duration": 268
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=nKpwSxHwy64",
+          "embed_id": "nKpwSxHwy64",
+          "channel": "Channel 4 News",
+          "title": "British couple charged with espionage on motorcycle trip in Iran",
+          "duration": 200
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=8ymgW2QsBTk",
+          "embed_id": "8ymgW2QsBTk",
+          "channel": "Channel 4 News",
+          "title": "UK condemns plans to execute British-Iranian accused of spying",
+          "duration": 228
+        }
+      ],
       "sources": [
         {
           "name": "New York Times",
@@ -3226,9 +3508,55 @@
           "platform": "x",
           "url": "https://x.com/elonmusk/status/2034773787749884177",
           "embed_id": "2034773787749884177"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@roboworks/video/7619120111869316370",
+          "embed_id": "7619120111869316370",
+          "title": "OpenAI、Astralを買収 Python開発支援ツール「Ruff」「uv」を「Codex」へ統合\n\n#クリニック経営 #医療DX #シフト管理 #AI活用 #業務効率化 \n\n@日本マイクロソフト株式会社 @Microsoft Copilot @Microsoft @ソフトバンク公式 @Open",
+          "author": "roboworks",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@neeloytellsjokes/video/7619030474987506974",
+          "embed_id": "7619030474987506974",
+          "title": "Ruff times ahead #openai #astral #ruff #comedy #brownjohnoliver",
+          "author": "neeloytellsjokes",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@anastasiaartemiou/video/7469054722322812191",
+          "embed_id": "7469054722322812191",
+          "title": "#openai #astra #astrology ",
+          "author": "anastasiaartemiou",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=PY47zGG9dC0",
+          "embed_id": "PY47zGG9dC0",
+          "channel": "The Read AI",
+          "title": "Half the Internet Isn't Human Anymore",
+          "duration": 1004
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=AfHuj2G4Cq8",
+          "embed_id": "AfHuj2G4Cq8",
+          "channel": "AI Daily",
+          "title": "OpenAI’s Astral Move Changes Python Forever",
+          "duration": 998
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=DsG1RqFbVV0",
+          "embed_id": "DsG1RqFbVV0",
+          "channel": "AutoContent API",
+          "title": "OpenAI Acquires Astral, Integrates UV, RUF and TIE to Power Autonomous Codex",
+          "duration": 155
+        }
+      ],
       "sources": [
         {
           "name": "The Verge",
@@ -3277,9 +3605,55 @@
           "platform": "reddit",
           "url": "https://arstechnica.com/gadgets/2026/03/google-details-new-24-hour-process-to-sideload-unverified-android-apps/",
           "embed_id": "705"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@gogadgetnews/video/7619053481046969622",
+          "embed_id": "7619053481046969622",
+          "title": "Google’s new sideloading plan: still open, just… with speed bumps. https://gogadget.news/S02645\n\n#tech #news",
+          "author": "gogadgetnews",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@digitaledgetips/video/7554819378307534135",
+          "embed_id": "7554819378307534135",
+          "title": "In today's tech landscape, security is taking center stage, especially for Android users. With a new mandate from Google, all apps—yes, even those you",
+          "author": "digitaledgetips",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@vitalimachine0/video/7546624124064402696",
+          "embed_id": "7546624124064402696",
+          "title": "#foss #aosp #privacy #android #google #vitali ",
+          "author": "vitalimachine0",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=-WF34Sgq76c",
+          "embed_id": "-WF34Sgq76c",
+          "channel": "Android Authority",
+          "title": "The NEW rules for Android sideloading are here!",
+          "duration": 823
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=zz6fmaM43Mk",
+          "embed_id": "zz6fmaM43Mk",
+          "channel": "9to5Google",
+          "title": "Android Sideloading is SAVED!",
+          "duration": 505
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=sGGZU_Fgx9Y",
+          "embed_id": "sGGZU_Fgx9Y",
+          "channel": "SAMTIME",
+          "title": "Google is Ruining Android",
+          "duration": 191
+        }
+      ],
       "sources": [
         {
           "name": "Ars Technica",
@@ -3327,9 +3701,55 @@
           "platform": "reddit",
           "url": "https://nypost.com/2026/03/19/business/ai-firms-fuel-rebound-in-manhattan-office-leases-strongest-year-in-over-a-decade/",
           "embed_id": "1ry0co9"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cnbc/video/7592332127199448334",
+          "embed_id": "7592332127199448334",
+          "title": "Office leasing in #Manhattan surged substantially higher in the fourth quarter of 2025, driven by continued return-to-office and increased tech hiring",
+          "author": "cnbc",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cnbc/video/7545521199179156749",
+          "embed_id": "7545521199179156749",
+          "title": "#Manhattan office leasing increased more than 20% in August compared with July to 3.7 million square feet and was well above the 10-year monthly avera",
+          "author": "cnbc",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@theurbanbroker/video/7533367974514707726",
+          "embed_id": "7533367974514707726",
+          "title": "If you’re building in AI, tech, or anything creative, this might be your best shot in a decade to land a Manhattan office.\n\nWhy now? — Rents in Flatir",
+          "author": "theurbanbroker",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=amQMNDMIDY4",
+          "embed_id": "amQMNDMIDY4",
+          "channel": "GowerCrowd",
+          "title": "How AI is shaping office leasing trends in San Francisco with Colliers Research Expert",
+          "duration": 1749
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=UQ3pI-g4fMg",
+          "embed_id": "UQ3pI-g4fMg",
+          "channel": "Tyler Cauble",
+          "title": "Typical Commercial Lease Terms That Everyone Should Know",
+          "duration": 414
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=fH0No8qr9D0",
+          "embed_id": "fH0No8qr9D0",
+          "channel": "CNBC Events",
+          "title": "The Reality of AI in Real Estate with Ryan Serhant",
+          "duration": 730
+        }
+      ],
       "sources": [
         {
           "name": "New York Post",
@@ -3377,9 +3797,48 @@
           "url": "https://reddit.com/r/geopolitics/comments/1rynrzc/super_micro_cofounder_charged_with_diverting_25/",
           "embed_id": "1rynrzc",
           "title": "Super Micro Co-founder charged with diverting $2.5 billion in Nvidia AI chips to China in violation of export laws"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cnbc/video/7590021014550039822",
+          "embed_id": "7590021014550039822",
+          "title": "On Dec. 8, federal prosecutors in Texas unsealed documents that revealed an investigation into a massive #smuggling network that stretched across the ",
+          "author": "cnbc",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@fox26houston/video/7581931283467488567",
+          "embed_id": "7581931283467488567",
+          "title": "Feds say Houston-linked ‘Operation Gatekeeper’ broke $160M A.I. chip smuggling pipeline to China\nFederal prosecutors with the Southern District of Tex",
+          "author": "fox26houston",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@tradertv_live/video/7582012469028064532",
+          "embed_id": "7582012469028064532",
+          "title": "The DOJ is raiding H200 smugglers while legally selling the same chip to China for a 25% cut #techtok #ai #trump #china #nvidia ",
+          "author": "tradertv_live",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=SV_MtLgF4S0",
+          "embed_id": "SV_MtLgF4S0",
+          "channel": "Forbes",
+          "title": "DOJ Alleges AI Founder Illegally Shipped Nvidia Chips To China",
+          "duration": 301
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=W2e2cxEkxrM",
+          "embed_id": "W2e2cxEkxrM",
+          "channel": "KPRC 2 Click2Houston",
+          "title": "Sugar Land man pleads guilty to smuggling AI computer chips to China, first case of its kind",
+          "duration": 125
+        }
+      ],
       "sources": [
         {
           "name": "NYT Technology",
@@ -3517,9 +3976,48 @@
           "platform": "reddit",
           "url": "https://github.com/KittenML/KittenTTS",
           "embed_id": "396"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@marshalldarling/video/7617264336230223134",
+          "embed_id": "7617264336230223134",
+          "title": "AI will eliminate some cybersecurity jobs, change most of them, and create new ones. If your job is repetitive and linear, AI is already doing it. If ",
+          "author": "marshalldarling",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@aither.ai/video/7594360728354704672",
+          "embed_id": "7594360728354704672",
+          "title": "The ChatGPT they don't want you to know about. 🌐 \n\nNo filters, no rules, just pure digital power. \n\nFrom breaching servers to automated attacks this ",
+          "author": "aither.ai",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@hackingtutorialsdaily/video/7551727332826909974",
+          "embed_id": "7551727332826909974",
+          "title": "The Most Dangerous Ai Hacking Tools Explained & How They Impact Modern Cyber Security\n\n#aitools #hackers ",
+          "author": "hackingtutorialsdaily",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=xdUR8-_P3DU",
+          "embed_id": "xdUR8-_P3DU",
+          "channel": "IBM Technology",
+          "title": "AI Agents for Cybersecurity: Enhancing Automation & Threat Detection",
+          "duration": 710
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4QzBdeUQ0Dc",
+          "embed_id": "4QzBdeUQ0Dc",
+          "channel": "IBM Technology",
+          "title": "AI in Cybersecurity",
+          "duration": 378
+        }
+      ],
       "sources": [
         {
           "name": "Hacker News",
@@ -3609,9 +4107,48 @@
           "platform": "reddit",
           "url": "https://reddit.com/r/privacy/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
           "embed_id": "1ry0co9"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@techinherstep/video/7619050960307997983",
+          "embed_id": "7619050960307997983",
+          "title": "This is the AI privacy threat not many people are talking about. It’s not hackers, it could be coming from the people closest to you. #digitalprivacy ",
+          "author": "techinherstep",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@twomasx/video/7617970001252781325",
+          "embed_id": "7617970001252781325",
+          "title": "#AI is building a version of you that acts without you #aiclone #dataprivacy ",
+          "author": "twomasx",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@aibanget/video/7604916190460562695",
+          "embed_id": "7604916190460562695",
+          "title": "Jujur, awalnya agak parno sama AI, tapi pas tau fitur ini… langsung tenang banget!Ternyata ini cara baru AI jagain data privasi kita tanpa ribet. Kali",
+          "author": "aibanget",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=Z71DBzHrd-Q",
+          "embed_id": "Z71DBzHrd-Q",
+          "channel": "Security Journey",
+          "title": "What NOT to Share with AI: 5 Things to Keep Private When Using LLMs",
+          "duration": 134
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=N82TgjKU9yE",
+          "embed_id": "N82TgjKU9yE",
+          "channel": "365 Data Science",
+          "title": "How Safe Is Your Data? (AI and Privacy Explained)",
+          "duration": 301
+        }
+      ],
       "sources": [
         {
           "name": "Wired",
@@ -3654,9 +4191,55 @@
           "platform": "reddit",
           "url": "https://reddit.com/r/space/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
           "embed_id": "1ry0co9"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@oliviavlogsinspace/video/7594159153417948438",
+          "embed_id": "7594159153417948438",
+          "title": "First feld mission — you won’t believe the end.👀🦖 -- EP3 \n.\nFictional AI adult in a Sci-fi Story. #scifi #spacexplorer #storytime #startrek #spaceex",
+          "author": "oliviavlogsinspace",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@astrovibe40/video/7554701804055956743",
+          "embed_id": "7554701804055956743",
+          "title": "Exploring Earth's most powerful phenomena from orbit 🌎⚡\n\nThese AI-generated scenes imagine astronauts conducting critical research 250 miles above mo",
+          "author": "astrovibe40",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@astrovibe40/video/7545820601680727304",
+          "embed_id": "7545820601680727304",
+          "title": "Witness astronauts conducting maintenance outside the ISS—tethered safely as they work 250 km above Earth! This AI-generated scene draws inspiration f",
+          "author": "astrovibe40",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=97p4TM1h3R8",
+          "embed_id": "97p4TM1h3R8",
+          "channel": "Astrum",
+          "title": "What the USA's Most Powerful AI Can See from Space Is Troubling",
+          "duration": 1159
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=L4GvgLDNDFY",
+          "embed_id": "L4GvgLDNDFY",
+          "channel": "AI Munch",
+          "title": "Use of AI in Space Exploration",
+          "duration": 217
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=iJQdny3-T2Q",
+          "embed_id": "iJQdny3-T2Q",
+          "channel": "Bloomberg Originals",
+          "title": "Neil deGrasse Tyson on Artificial Intelligence and Deep Space Exploration | AI IRL",
+          "duration": 1441
+        }
+      ],
       "sources": [
         {
           "name": "Ars Technica",
@@ -3693,9 +4276,41 @@
           "platform": "tiktok",
           "url": "https://www.tiktok.com/@dailymail/video/7619037708198939917",
           "embed_id": "7619037708198939917"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@karnabita7/video/7616401198655999263",
+          "embed_id": "7616401198655999263",
+          "title": "This Robot Woman Looks Almost Human at a Tech Expo\n\n#HumanoidRobotTech \n#AndroidInteraction \n#FutureRobotics \n#TechInnovation \n#AI ",
+          "author": "karnabita7",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@ai.cyberbabes/video/7533551429668097302",
+          "embed_id": "7533551429668097302",
+          "title": "IRC 2025: AI Robot S1000 Observes Like a Human #ai #humanoid #robot #2025 ",
+          "author": "ai.cyberbabes",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@ai_robot_story/video/7502980425145470209",
+          "embed_id": "7502980425145470209",
+          "title": "Various facial expressions of the robot\n#robot #robotics #humanoid #futuretech #ai #airobot ",
+          "author": "ai_robot_story",
+          "thumbnail": ""
         }
       ],
-      "youtube_videos": [],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=SbEqMkxEzvA",
+          "embed_id": "SbEqMkxEzvA",
+          "channel": "InsideAI",
+          "title": "Unrestricted AI in a robot does exactly what experts warned",
+          "duration": 1013
+        }
+      ],
       "sources": [
         {
           "name": "Daily Mail",
@@ -3732,8 +4347,55 @@
       "social_summary": "Reddit users are debating the environmental impact of semiconductor manufacturing. X users are calling for more investment in green technologies, while TikTok creators are making videos about the future of AI chips.",
       "evidence_url": "https://reddit.com/r/technology/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a semiconductor wafer with AI circuits.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@davidcao01/video/7618706039571008781",
+          "embed_id": "7618706039571008781",
+          "title": "AMD's Sunil Pal and David Cao discuss Physical AI. It's not just text – it's real-time robotics demands. Intense! #PhyscialAI #AMD #Semiconductors #AI",
+          "author": "davidcao01",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@zoeyftx2cb/video/7618772513497107730",
+          "embed_id": "7618772513497107730",
+          "title": "The global bonding wire market is projected to grow steadily as semiconductor demand rises across automotive, AI, and consumer electronics industries.",
+          "author": "zoeyftx2cb",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@gmanews/video/7618714975980358933",
+          "embed_id": "7618714975980358933",
+          "title": "WATCH: Noble Machines showcased a humanoid robot designed for physically demanding and hazardous industrial jobs at the Nvidia GTC 2026 conference.\nTh",
+          "author": "gmanews",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=AshUWZ729F8",
+          "embed_id": "AshUWZ729F8",
+          "channel": "Everyday Cyber Defense",
+          "title": "The AI That’s Revolutionizing Semiconductor Sales & Marketing",
+          "duration": 174
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=jL2A5LcInoI",
+          "embed_id": "jL2A5LcInoI",
+          "channel": "Bloomberg News",
+          "title": "How Will AI Reshape the Semiconductor Industry? | Presented by CME Group",
+          "duration": 93
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=RBmOgQi4Fr0",
+          "embed_id": "RBmOgQi4Fr0",
+          "channel": "CNBC",
+          "title": "How Nvidia GPUs Compare To Google’s And Amazon’s AI Chips",
+          "duration": 958
+        }
+      ],
       "sources": [],
       "people": [
         {
@@ -3758,8 +4420,55 @@
       "social_summary": "Reddit users are sharing tips on avoiding AI surveillance. X users are debating the ethics of AI-driven security measures, while TikTok creators are making videos about the future of surveillance technology.",
       "evidence_url": "https://reddit.com/r/privacy/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
       "image_prompt": "Cinematic, gritty, serious thumbnail of a CCTV camera with AI interface.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@theglobalorderab/video/7618543328681856274",
+          "embed_id": "7618543328681856274",
+          "title": "Ted Lieu raises serious concerns about the growing use of AI in mass domestic surveillance. From Pentagon-level discussions to questions about voter d",
+          "author": "theglobalorderab",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@nubetia_tech_talks/video/7548910771275697414",
+          "embed_id": "7548910771275697414",
+          "title": "In China, AI systems are now actively monitoring workplace movements, detecting and logging when employees leave their desks in real-time. This raises",
+          "author": "nubetia_tech_talks",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@ai.monitor.security/video/7457059658902097157",
+          "embed_id": "7457059658902097157",
+          "title": "We are a leading provider of offsite CCTV surveillance & security solutions, utilizing advanced technology and Artificial Intelligence to protect your",
+          "author": "ai.monitor.security",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=TAbkfIf--70",
+          "embed_id": "TAbkfIf--70",
+          "channel": "Fox Business",
+          "title": "Surveillance fears ERUPT after OpenAI signs classified contract with Pentagon",
+          "duration": 885
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=UYWjgceclS4",
+          "embed_id": "UYWjgceclS4",
+          "channel": "Sabine Hossenfelder",
+          "title": "Surveillance Tech Is Shockingly Advanced",
+          "duration": 427
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4RM09nKczVs",
+          "embed_id": "4RM09nKczVs",
+          "channel": "Louis Rossmann",
+          "title": "Taxpayer funded AI surveillance: why Flock's 30000 cameras have to go",
+          "duration": 1010
+        }
+      ],
       "sources": [],
       "people": [
         {
@@ -4295,6 +5004,22 @@
           "embed_id": "7577918733696470303",
           "title": "Ryan talks about losing a D1 scholarship, going the JUCO route and letting college pay for his education and on his way to earning a master’s degree. ",
           "author": "peddricgathings"
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@the.kings.of.judo/video/7590339914382757142",
+          "embed_id": "7590339914382757142",
+          "title": "After Ryan’s serious knee injury in 2024, 2025 was mostly spent sat on the sidelines after having surgery. 2026 will be comeback year, with the follow",
+          "author": "the.kings.of.judo",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@throwersnation/video/7414503539499601185",
+          "embed_id": "7414503539499601185",
+          "title": "Ryan is truly the goat #trackandfield #shotput #throwersnation ",
+          "author": "throwersnation",
+          "thumbnail": ""
         }
       ],
       "youtube_videos": [],
@@ -4805,8 +5530,55 @@
       "social_summary": "Reddit users are expressing outrage over the cover-up, sharing personal stories of affected patients. X users are calling for boycotts of Boston Scientific products. TikTok videos are dramatizing the potential dangers of faulty pacemakers, gaining widespread attention.",
       "evidence_url": "https://reddit.com/r/news/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
       "image_prompt": "A close-up of a pacemaker device with ominous shadows and a cracked battery symbol.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@funeralbabe/video/7485850880676334891",
+          "embed_id": "7485850880676334891",
+          "title": "Some pacemakers (and ICDs) are programmed to beep or vibrate if the battery is low, a lead is disconnected, or the device senses an issue. Even after ",
+          "author": "funeralbabe",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@dianne_371/video/7542916508591312146",
+          "embed_id": "7542916508591312146",
+          "title": "Solusyon para sa nawawala g parts ng camera #camera #photography #fyp ",
+          "author": "dianne_371",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@polygram_eve/video/7601318379101752589",
+          "embed_id": "7601318379101752589",
+          "title": "Battery cover\n#Injection molding",
+          "author": "polygram_eve",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=SuH_yqTONDg",
+          "embed_id": "SuH_yqTONDg",
+          "channel": "Michigan Foot Doctors",
+          "title": "Spinal Cord Stimulator for Chronic Pain? [Neuropathy & Back Pain]",
+          "duration": 407
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=wY9CfVJ9nh8",
+          "embed_id": "wY9CfVJ9nh8",
+          "channel": "Dr. Yee kok meng",
+          "title": "Dos and Don'ts After A Pacemaker Implant",
+          "duration": 168
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=FQsoHaAc5Hg",
+          "embed_id": "FQsoHaAc5Hg",
+          "channel": "Cardiology Community",
+          "title": "How Long Is Recovery After Pacemaker Battery Replacement? - Cardiology Community",
+          "duration": 154
+        }
+      ],
       "sources": [],
       "people": [
         {
@@ -5061,8 +5833,55 @@
       "social_summary": "Reddit users are expressing outrage over the smuggling scheme, calling for accountability from tech companies. X users are sharing memes criticizing corporate practices. TikTok videos are dramatizing the whistleblower's revelations, gaining widespread attention.",
       "evidence_url": "https://reddit.com/r/news/comments/1ry0co9/pentagon_seeks_200_billion_in_additional_funds/",
       "image_prompt": "A dimly lit server room with shadowy figures and glowing computer screens.",
-      "social_clips": [],
-      "youtube_videos": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@sustainablemedia/video/7491442490030066990",
+          "embed_id": "7491442490030066990",
+          "title": "Meta's China Secrets EXPOSED: Whistleblower Reveals SHOCKING Truth!\nUncover the shocking truth! We expose Meta's deceitful dealings with China during ",
+          "author": "sustainablemedia",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@fox26houston/video/7581931283467488567",
+          "embed_id": "7581931283467488567",
+          "title": "Feds say Houston-linked ‘Operation Gatekeeper’ broke $160M A.I. chip smuggling pipeline to China\nFederal prosecutors with the Southern District of Tex",
+          "author": "fox26houston",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@cbsnews/video/7491748726206221610",
+          "embed_id": "7491748726206221610",
+          "title": "Meta whistleblower Sarah Wynn-Williams told senators in testimony Wednesday on Capitol Hill that the social media company worked \"hand in glove\" with ",
+          "author": "cbsnews",
+          "thumbnail": ""
+        }
+      ],
+      "youtube_videos": [
+        {
+          "url": "https://www.youtube.com/watch?v=bklxmjrWMG4",
+          "embed_id": "bklxmjrWMG4",
+          "channel": "TaiwanPlus News",
+          "title": "US Charges Four With Conspiring To Export Nvidia AI Chips to China｜TaiwanPlus News",
+          "duration": 36
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=TAbkfIf--70",
+          "embed_id": "TAbkfIf--70",
+          "channel": "Fox Business",
+          "title": "Surveillance fears ERUPT after OpenAI signs classified contract with Pentagon",
+          "duration": 885
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=GAhuvj2awz4",
+          "embed_id": "GAhuvj2awz4",
+          "channel": "Asia Tech Macro",
+          "title": "China Rejected the Chips It Begged For | US-China AI War's Strangest Plot Twist",
+          "duration": 1051
+        }
+      ],
       "sources": [],
       "people": [
         {
@@ -5544,7 +6363,32 @@
       "social_summary": "Social media users are both amused and concerned about the security lapse, with many joking about the potential consequences of such an oversight. Some Redditors are questioning the competence of military personnel in handling digital tools, sparking debates about modern warfare's reliance on technology.",
       "evidence_url": "https://reddit.com/r/interestingasfuck/comments/1ryjl6y/according_to_the_french_newspaper_le_monde_the/",
       "image_prompt": "A digital map overlay with military icons and a fitness app interface.",
-      "social_clips": [],
+      "social_clips": [
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@dwnews/video/7615478769842769185",
+          "embed_id": "7615478769842769185",
+          "title": "President Emmanuel Macron flew to a French aircraft carrier dispatched to the Mediterranean Sea as he prepares a mission that could help reopen the cr",
+          "author": "dwnews",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@politica48h/video/7616352175756709138",
+          "embed_id": "7616352175756709138",
+          "title": "🚨 MOVIMENTAÇÃO MILITAR NA EUROPA\n\nO porta-aviões francês French aircraft carrier Charles de Gaulle chegou à Suécia, reforçando a cooperação militar e",
+          "author": "politica48h",
+          "thumbnail": ""
+        },
+        {
+          "platform": "tiktok",
+          "url": "https://www.tiktok.com/@shujaa.humphrey/video/7617198908892106005",
+          "embed_id": "7617198908892106005",
+          "title": "3 French warships dock at the port of Mombasa with over 800 French military officers 👀🙆‍♂️\n#shujaahumphrey ",
+          "author": "shujaa.humphrey",
+          "thumbnail": ""
+        }
+      ],
       "youtube_videos": [],
       "sources": [],
       "people": [
