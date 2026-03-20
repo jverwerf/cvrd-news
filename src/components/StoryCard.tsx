@@ -182,7 +182,7 @@ export function StoryCard({ story, index }: { story: NarrativeGap; index: number
                         {tiktokClips.map((c, i) => (
                           c.embed_id ? (
                             <div key={i} className="rounded-lg overflow-hidden bg-black">
-                              <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[500px]" allowFullScreen allow="encrypted-media" />
+                              <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="w-full h-[500px]" sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
                             </div>
                           ) : (
                             <EvidenceLink key={i} platform="♪" title={c.title || `@${c.author}`} url={c.url} author={c.author} />
