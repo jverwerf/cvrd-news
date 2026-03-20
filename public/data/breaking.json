@@ -1,0 +1,48 @@
+{
+  "topic": "Iran Launches Missile Strike on Saudi Oil Fields",
+  "summary": "Iran has launched a major ballistic missile attack targeting Saudi Arabia's eastern oil infrastructure, including the Abqaiq processing facility. Multiple explosions reported across the Eastern Province. Oil futures surging 15% in pre-market trading. The UN Security Council has called an emergency session.",
+  "severity": "critical",
+  "detected_at": "2026-03-20T17:06:32.000Z",
+  "last_updated": "2026-03-20T18:30:00.000Z",
+  "left_narrative": "Left-leaning outlets emphasize the civilian toll and call for immediate de-escalation. They frame this as a consequence of the Trump administration's withdrawal from the Iran nuclear deal, arguing diplomatic channels were abandoned. CNN and MSNBC highlight refugee displacement and humanitarian corridors.",
+  "right_narrative": "Right-leaning media frames the strike as proof that Obama-era appeasement emboldened Iran. Fox News and Daily Wire call for a decisive military response and criticize Biden-era diplomacy as weakness. They emphasize the threat to US energy independence and national security.",
+  "what_they_arent_telling_you": "Neither side is discussing Saudi Arabia's quiet military buildup along the Yemeni border in the weeks prior, or the $12B arms deal signed with a US defense contractor just 10 days ago. The timing suggests this escalation may have been anticipated — and possibly welcomed — by defense industry stakeholders on both sides.",
+  "social_summary": "Twitter is flooded with unverified footage. #IranAttack and #WWIII are trending. Crypto markets spiking as a 'safe haven' narrative takes hold. Conspiracy theories about false flag operations are already circulating on Telegram and TikTok.",
+  "image_prompt": "A dramatic night sky over an industrial oil facility with distant orange explosions on the horizon, smoke billowing against a dark blue sky, cinematic wide shot",
+  "image_file": null,
+  "sources": [
+    { "name": "Reuters", "url": "https://reuters.com", "lean": "center", "title": "BREAKING: Iran fires ballistic missiles at Saudi oil infrastructure" },
+    { "name": "BBC", "url": "https://bbc.com", "lean": "center", "title": "Multiple explosions reported in Saudi Arabia's Eastern Province" },
+    { "name": "Al Jazeera", "url": "https://aljazeera.com", "lean": "center", "title": "Iran confirms strike on Saudi oil facilities" },
+    { "name": "CNN", "url": "https://cnn.com", "lean": "left", "title": "Humanitarian concerns mount as Iran strikes Saudi Arabia" },
+    { "name": "Fox News", "url": "https://foxnews.com", "lean": "right", "title": "Iran launches brazen attack — calls grow for military response" },
+    { "name": "The Guardian", "url": "https://theguardian.com", "lean": "left", "title": "Oil prices surge as Iran-Saudi tensions explode" },
+    { "name": "NY Post", "url": "https://nypost.com", "lean": "right", "title": "Iran's missile barrage rocks global markets" }
+  ],
+  "clips": [
+    { "platform": "youtube", "url": "https://www.youtube.com/watch?v=dbT7hIN19Dw", "embed_id": "dbT7hIN19Dw", "title": "Fox News: Iran Strikes Saudi Oil — Live Coverage" },
+    { "platform": "youtube", "url": "https://www.youtube.com/watch?v=3OfqVmdK1Kc", "embed_id": "3OfqVmdK1Kc", "title": "CNN: Middle East Crisis Deepens — Breaking Analysis" },
+    { "platform": "youtube", "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "embed_id": "dQw4w9WgXcQ", "title": "BBC World Service: Emergency UN Session Called" },
+    { "platform": "x", "url": "https://x.com/AJEnglish/status/2034512580463489451", "embed_id": "2034512580463489451", "title": "Al Jazeera reports explosions across Saudi Eastern Province", "author": "AJEnglish", "duration": 60 },
+    { "platform": "x", "url": "https://x.com/Reuters/status/2034430904517394778", "embed_id": "2034430904517394778", "title": "BREAKING: Oil futures surge 15% on Iran strike news", "author": "Reuters", "duration": 60 },
+    { "platform": "x", "url": "https://x.com/BBCBreaking/status/2034512580463489999", "embed_id": "2034512580463489999", "title": "UN Security Council calls emergency session on Iran-Saudi crisis", "author": "BBCBreaking", "duration": 60 },
+    { "platform": "tiktok", "url": "https://www.tiktok.com/@worldnews/video/7345678901234567890", "embed_id": "7345678901234567890", "title": "Footage of explosions near Abqaiq facility", "duration": 45 },
+    { "platform": "tiktok", "url": "https://www.tiktok.com/@geopolitics/video/7345678901234567891", "embed_id": "7345678901234567891", "title": "What you need to know about the Iran-Saudi conflict", "duration": 60 }
+  ],
+  "youtube_videos": [
+    { "url": "https://www.youtube.com/watch?v=dbT7hIN19Dw", "embed_id": "dbT7hIN19Dw", "title": "Fox News: Iran Strikes Saudi Oil — Live Coverage", "channel": "Fox News", "duration": 300 },
+    { "url": "https://www.youtube.com/watch?v=3OfqVmdK1Kc", "embed_id": "3OfqVmdK1Kc", "title": "CNN: Middle East Crisis Deepens — Breaking Analysis", "channel": "CNN", "duration": 240 },
+    { "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ", "embed_id": "dQw4w9WgXcQ", "title": "BBC World Service: Emergency UN Session Called", "channel": "BBC", "duration": 180 }
+  ],
+  "social_clips": [
+    { "platform": "x", "url": "https://x.com/AJEnglish/status/2034512580463489451", "embed_id": "2034512580463489451", "title": "Al Jazeera reports explosions across Saudi Eastern Province — live footage from correspondent in Dhahran", "author": "AJEnglish", "duration": 60 },
+    { "platform": "x", "url": "https://x.com/Reuters/status/2034430904517394778", "embed_id": "2034430904517394778", "title": "BREAKING: Oil futures surge 15% on Iran strike news. Brent crude hits $142/barrel, highest since 2008.", "author": "Reuters" },
+    { "platform": "x", "url": "https://x.com/BBCBreaking/status/2034512580463489999", "embed_id": "2034512580463489999", "title": "UN Security Council calls emergency session on Iran-Saudi crisis. Secretary-General urges immediate ceasefire.", "author": "BBCBreaking" },
+    { "platform": "x", "url": "https://x.com/spectatorindex/status/2034512580463490001", "embed_id": "2034512580463490001", "title": "JUST IN: Pentagon confirms US forces in the region placed on highest alert level", "author": "spectatorindex" },
+    { "platform": "x", "url": "https://x.com/ElintNews/status/2034512580463490002", "embed_id": "2034512580463490002", "title": "Flight radar shows all commercial flights rerouting away from Persian Gulf airspace", "author": "ElintNews" },
+    { "platform": "tiktok", "url": "https://www.tiktok.com/@worldnews/video/7345678901234567890", "embed_id": "7345678901234567890", "title": "Footage of explosions near Abqaiq facility", "author": "worldnews", "thumbnail": "", "duration": 45 },
+    { "platform": "tiktok", "url": "https://www.tiktok.com/@geopolitics/video/7345678901234567891", "embed_id": "7345678901234567891", "title": "What you need to know about the Iran-Saudi conflict", "author": "geopolitics", "thumbnail": "", "duration": 60 },
+    { "platform": "reddit", "url": "https://reddit.com/r/worldnews/comments/abc123/iran_launches_missiles", "embed_id": "abc123", "title": "Iran launches missiles at Saudi Arabia — megathread" },
+    { "platform": "reddit", "url": "https://reddit.com/r/geopolitics/comments/def456/analysis_iran_saudi_escalation", "embed_id": "def456", "title": "Analysis: What the Iran-Saudi escalation means for global energy markets" }
+  ]
+}
