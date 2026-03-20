@@ -286,7 +286,7 @@ export function Dashboard({
                     <div key={i} className="flex-1 rounded cursor-pointer overflow-hidden px-1.5 py-1 flex items-center transition-all"
                       style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minHeight: 24 }}
                       onClick={() => setCurrentIdx(b.start)}>
-                      <p className="text-[7px] leading-tight truncate text-white" style={{ opacity: isActive ? 1 : 0.8 }}>
+                      <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.8 }}>
                         {b.topic || `Story ${i + 1}`}
                       </p>
                     </div>
