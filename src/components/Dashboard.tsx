@@ -90,6 +90,29 @@ export function Dashboard({
   const clipInStory = currentBoundary ? currentIdx - currentBoundary.start + 1 : 1;
   const clipsInStory = currentBoundary ? currentBoundary.end - currentBoundary.start + 1 : 1;
 
+  // Auto-scroll timebars to keep active segment visible
+  useEffect(() => {
+    // Blue story bar
+    const storyBar = document.getElementById('story-timebar');
+    if (storyBar && currentBoundaryIdx >= 0) {
+      const seg = storyBar.children[currentBoundaryIdx] as HTMLElement;
+      if (seg) {
+        const left = seg.offsetLeft - storyBar.offsetWidth / 2 + seg.offsetWidth / 2;
+        storyBar.scrollTo({ left, behavior: 'smooth' });
+      }
+    }
+    // Green clip bar
+    const clipBar = document.getElementById('clip-timebar');
+    if (clipBar && currentBoundary) {
+      const clipIdx = currentIdx - currentBoundary.start;
+      const seg = clipBar.children[clipIdx] as HTMLElement;
+      if (seg) {
+        const left = seg.offsetLeft - clipBar.offsetWidth / 2 + seg.offsetWidth / 2;
+        clipBar.scrollTo({ left, behavior: 'smooth' });
+      }
+    }
+  }, [currentIdx, currentBoundaryIdx]);
+
   // Track progress for ALL video types using timer
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current);
