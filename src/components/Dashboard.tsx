@@ -306,25 +306,35 @@ export function Dashboard({
 
             {/* Controls row */}
             <div className="flex items-center gap-2">
-              {/* Clip bar — shows clips within current story */}
-              <div className="flex items-center gap-0.5 min-w-0 flex-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-                {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
-                  const clipIdx = currentBoundary.start + ci;
-                  const clip = playlist[clipIdx];
-                  const isActiveClip = clipIdx === currentIdx;
-                  return (
-                    <div key={ci} className="rounded px-1.5 py-0.5 cursor-pointer shrink-0 transition-all"
-                      style={{
-                        background: isActiveClip ? '#4ade80' : 'rgba(255,255,255,0.1)',
-                        minWidth: 60,
-                      }}
-                      onClick={() => setCurrentIdx(clipIdx)}>
-                      <p className="text-[8px] truncate" style={{ color: isActiveClip ? '#000' : 'rgba(255,255,255,0.5)' }}>
-                        {clip?.channel || clip?.storyTopic?.substring(0, 15) || `Clip ${ci + 1}`}
-                      </p>
-                    </div>
-                  );
-                })}
+              {/* Clip bar — same style as story bar, scrollable */}
+              <div className="relative flex-1 min-w-0">
+                <button className="absolute left-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to right, #1e2a3a, transparent)' }}
+                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: -150, behavior: 'smooth' }); }}>
+                  <span className="text-white/60 text-[10px]">◀</span>
+                </button>
+                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto px-5" style={{ scrollbarWidth: 'none' }}>
+                  {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
+                    const clipIdx = currentBoundary.start + ci;
+                    const clip = playlist[clipIdx];
+                    const isActiveClip = clipIdx === currentIdx;
+                    const isPastClip = clipIdx < currentIdx;
+                    const greens = ['#0f2b1a', '#123320', '#153b26', '#18432c', '#1b4b32', '#1e5338', '#215b3e', '#0f2d1e', '#133524', '#173d2a'];
+                    const bg = isActiveClip ? '#22c55e' : greens[ci % greens.length];
+                    return (
+                      <div key={ci} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
+                        style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
+                        onClick={() => setCurrentIdx(clipIdx)}>
+                        <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
+                          {clip?.channel || clip?.storyTopic?.substring(0, 20) || `Clip ${ci + 1}`}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+                <button className="absolute right-0 top-0 bottom-0 z-10 px-1 flex items-center" style={{ background: 'linear-gradient(to left, #1e2a3a, transparent)' }}
+                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: 150, behavior: 'smooth' }); }}>
+                  <span className="text-white/60 text-[10px]">▶</span>
+                </button>
               </div>
 
               {/* Story skip: |<< prev story */}
