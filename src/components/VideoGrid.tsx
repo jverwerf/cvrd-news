@@ -208,6 +208,18 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     setProgress(activeIdx * segmentSize + segmentProgress * segmentSize);
   }, [activeIdx, currentTime, duration, items.length]);
 
+  // Auto-scroll thumbnail strip to active video (without scrolling the page)
+  useEffect(() => {
+    const container = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
+    if (container) {
+      const thumb = container.children[activeIdx] as HTMLElement;
+      if (thumb) {
+        const left = thumb.offsetLeft - container.offsetWidth / 2 + thumb.offsetWidth / 2;
+        container.scrollTo({ left, behavior: 'smooth' });
+      }
+    }
+  }, [activeIdx]);
+
   if (items.length === 0 || !active) return null;
 
   const next = nextRef.current = () => {
@@ -371,15 +383,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 </button>
               </>
             )}
-          <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} ref={(el) => {
-            // Auto-scroll to active thumbnail
-            if (el) {
-              const activeThumb = el.children[activeIdx] as HTMLElement;
-              if (activeThumb) {
-                activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-              }
-            }
-          }} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             {items.map((item, i) => (
               <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
                 className="rounded overflow-hidden transition-all group shrink-0"
