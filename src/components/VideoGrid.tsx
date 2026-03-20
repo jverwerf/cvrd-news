@@ -208,18 +208,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     setProgress(activeIdx * segmentSize + segmentProgress * segmentSize);
   }, [activeIdx, currentTime, duration, items.length]);
 
-  // Auto-scroll thumbnail strip to active video (without scrolling the page)
-  useEffect(() => {
-    const container = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
-    if (container) {
-      const thumb = container.children[activeIdx] as HTMLElement;
-      if (thumb) {
-        const left = thumb.offsetLeft - container.offsetWidth / 2 + thumb.offsetWidth / 2;
-        container.scrollTo({ left, behavior: 'smooth' });
-      }
-    }
-  }, [activeIdx]);
-
   if (items.length === 0 || !active) return null;
 
   const next = nextRef.current = () => {
