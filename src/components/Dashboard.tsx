@@ -460,7 +460,7 @@ function FadingTile({ pair, delay }: {
           {item.type === 'video' ? (
             <div className="w-full h-full relative">
               <iframe
-                src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
+                src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0`}
                 className="w-full h-full"
                 style={{ border: 'none', pointerEvents: 'none' }}
                 allow="autoplay"
