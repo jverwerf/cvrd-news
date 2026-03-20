@@ -228,19 +228,20 @@ export function Dashboard({
 
   return (
     <section className="px-4 md:px-8" style={{ background: '#1e2a3a', height: 'calc(100vh - 104px)', overflow: 'hidden' }}>
-      <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
+      <div className="h-full grid grid-rows-3 grid-cols-5 gap-1">
 
         {/* ROW 1 */}
         <FadingTile pair={tilePairs[0]} delay={0} />
         <FadingTile pair={tilePairs[1]} delay={2} />
         <FadingTile pair={tilePairs[2]} delay={4} />
         <FadingTile pair={tilePairs[3]} delay={1} />
-
-        {/* ROW 2 */}
         <FadingTile pair={tilePairs[4]} delay={5} />
 
-        {/* CENTER PLAYER — slightly smaller to make room for controls beneath */}
-        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
+        {/* ROW 2 */}
+        <FadingTile pair={tilePairs[5]} delay={3} />
+
+        {/* CENTER PLAYER — large, spans 3 columns */}
+        <div className="col-span-3 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
           {current?.type === 'anchor' && current.url && (
             <video ref={videoRef} key="anchor" src={current.url}
@@ -392,13 +393,14 @@ export function Dashboard({
           </div>
         </div>
 
-        <FadingTile pair={tilePairs[5]} delay={3} />
+        <FadingTile pair={tilePairs[6]} delay={6} />
 
         {/* ROW 3 */}
-        <FadingTile pair={tilePairs[6]} delay={6} />
         <FadingTile pair={tilePairs[7]} delay={1.5} />
         <FadingTile pair={tilePairs[8]} delay={3.5} />
         <FadingTile pair={tilePairs[9]} delay={5.5} />
+        <FadingTile pair={tilePairs[3]} delay={2.5} />
+        <FadingTile pair={tilePairs[0]} delay={4.5} />
       </div>
     </section>
   );
