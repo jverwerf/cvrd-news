@@ -247,32 +247,28 @@ export function Dashboard({
   // If no linked content, fall back to default tiles
   const pool = linkedContent.length > 0 ? linkedContent : defaultTiles;
 
-  // Build 10 tile pairs — each tile gets 2 random items from the pool to crossfade between
-  const tilePairs: [TileContent, TileContent][] = [];
-  const tileIsFrozen: boolean[] = [];
+  // Freezing logic for fresh/breaking content
   const freshCount = pool.filter(t => t.isFresh).length;
-  // Freeze tiles for fresh content: 1 new = freeze 1, 2 new = freeze 2, ..., >10 = no freeze
   const shouldFreeze = freshCount > 0 && freshCount <= 10;
 
-  for (let i = 0; i < 10; i++) {
-    const a = pool[i % pool.length];
-    const b = pool[(i + Math.max(1, Math.floor(pool.length / 2))) % pool.length];
-    tilePairs.push([a, b]);
-    tileIsFrozen.push(shouldFreeze && (a.isFresh || false));
-  }
+  // Each tile gets a starting offset into the pool — cycles through ALL items
+  const tileOffsets = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
+    pool.length > 0 ? Math.floor((i / 10) * pool.length) % pool.length : 0
+  );
+  const tileIsFrozen = tileOffsets.map(offset => shouldFreeze && (pool[offset]?.isFresh || false));
 
   return (
     <section className="px-4 md:px-8" style={{ background: '#1e2a3a', height: 'calc(100vh - 104px)', overflow: 'hidden' }}>
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[0]} delay={0} frozen={tileIsFrozen[0]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[1]} delay={2} frozen={tileIsFrozen[1]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[2]} delay={4} frozen={tileIsFrozen[2]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[3]} delay={1} frozen={tileIsFrozen[3]} />
+        <PoolTile pool={pool} startOffset={tileOffsets[0]} delay={0} frozen={tileIsFrozen[0]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[1]} delay={2} frozen={tileIsFrozen[1]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[2]} delay={4} frozen={tileIsFrozen[2]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[3]} delay={1} frozen={tileIsFrozen[3]} onTileClick={handleTileClick} />
 
         {/* ROW 2 */}
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[4]} delay={5} frozen={tileIsFrozen[4]} />
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} />
 
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
@@ -427,13 +423,13 @@ export function Dashboard({
           </div>
         </div>
 
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[5]} delay={3} frozen={tileIsFrozen[5]} />
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} />
 
         {/* ROW 3 */}
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[6]} delay={6} frozen={tileIsFrozen[6]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[7]} delay={1.5} frozen={tileIsFrozen[7]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[8]} delay={3.5} frozen={tileIsFrozen[8]} />
-        <AdTile contentPair={tilePairs[9]} delay={5.5} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[6]} delay={6} frozen={tileIsFrozen[6]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[7]} delay={1.5} frozen={tileIsFrozen[7]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[8]} delay={3.5} frozen={tileIsFrozen[8]} onTileClick={handleTileClick} />
+        <AdTile pool={pool} startOffset={tileOffsets[9]} delay={5.5} onTileClick={handleTileClick} />
       </div>
     </section>
   );
@@ -445,46 +441,52 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function FadingTile({ pair, delay, frozen, onTileClick }: {
-  pair: [TileContent, TileContent];
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick }: {
+  pool: TileContent[];
+  startOffset: number;
   delay: number;
   frozen?: boolean;
   onTileClick?: (embedId: string) => void;
 }) {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const pairRef = useRef(pair);
-  pairRef.current = pair;
+  const [currentIdx, setCurrentIdx] = useState(startOffset);
+  const [prevIdx, setPrevIdx] = useState(-1);
+  const poolRef = useRef(pool);
+  poolRef.current = pool;
 
   useEffect(() => {
-    // Frozen tiles don't cycle
-    if (frozen) return;
+    if (frozen || pool.length <= 1) return;
 
-    let timer: ReturnType<typeof setTimeout>;
     let cancelled = false;
+    let timer: ReturnType<typeof setTimeout>;
 
     const schedule = (idx: number) => {
-      const item = pairRef.current[idx];
-      // YouTube tiles stay twice as long as social tiles
+      const item = poolRef.current[idx % poolRef.current.length];
       const baseDuration = item.type === 'video' ? 16000 : 8000;
       timer = setTimeout(() => {
         if (cancelled) return;
-        const next = (idx + 1) % 2;
-        setActiveIdx(next);
-        schedule(next);
+        const nextIdx = (idx + 1) % poolRef.current.length;
+        setPrevIdx(idx);
+        setCurrentIdx(nextIdx);
+        schedule(nextIdx);
       }, baseDuration + delay * 600);
     };
 
+    // Initial delay before first rotation
+    const firstItem = poolRef.current[startOffset % poolRef.current.length];
     timer = setTimeout(() => {
       if (cancelled) return;
-      setActiveIdx(1);
-      schedule(1);
-    }, (pairRef.current[0].type === 'video' ? 8000 : 4000) + delay * 800);
+      const nextIdx = (startOffset + 1) % poolRef.current.length;
+      setPrevIdx(startOffset);
+      setCurrentIdx(nextIdx);
+      schedule(nextIdx);
+    }, (firstItem.type === 'video' ? 8000 : 4000) + delay * 800);
 
     return () => { cancelled = true; clearTimeout(timer); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [delay]);
+  }, [delay, frozen, pool.length]);
 
-  const current = pair[activeIdx];
+  const current = pool[currentIdx % pool.length];
+  const prev = prevIdx >= 0 ? pool[prevIdx % pool.length] : null;
   const isVideo = current.type === 'video';
   const isSocial = current.type === 'social';
   const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3' };
@@ -500,7 +502,6 @@ function FadingTile({ pair, delay, frozen, onTileClick }: {
         if (onTileClick && embedId) {
           onTileClick(embedId);
         } else {
-          // Fallback: scroll to story
           document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
         }
       }}
@@ -515,69 +516,15 @@ function FadingTile({ pair, delay, frozen, onTileClick }: {
         </div>
       )}
 
-      {pair.map((item, i) => (
-        <div key={i} className="absolute inset-0 transition-opacity duration-[2000ms] ease-in-out"
-          style={{ opacity: activeIdx === i ? 1 : 0 }}>
-          {item.type === 'video' ? (
-            <div className="w-full h-full relative">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-                allow="autoplay"
-                loading="lazy"
-              />
-              <div className="absolute top-2 left-2 z-10">
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
-              </div>
-            </div>
-          ) : item.type === 'social' && item.platform === 'x' && item.embedId ? (
-            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-              <iframe
-                src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
-                className="absolute"
-                style={{ border: 'none', pointerEvents: 'none', top: '-8px', left: '-8px', right: '-8px', bottom: '-8px', width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }}
-                loading="lazy"
-              />
-            </div>
-          ) : item.type === 'social' && item.platform === 'tiktok' && item.embedId ? (
-            <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-              <iframe
-                src={`https://www.tiktok.com/player/v1/${item.embedId}?rel=0&mute=1&autoplay=1`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.3)', transformOrigin: 'center center' }}
-                sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
-                loading="lazy"
-              />
-            </div>
-          ) : item.type === 'social' ? (
-            <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
-              <div>
-                <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
-                  style={{ background: platformColors[item.platform || 'x'] }}>
-                  {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
-                </span>
-                <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
-              </div>
-              <p className="text-[9px] text-white/40 truncate">{item.topic}</p>
-            </div>
-          ) : item.image ? (
-            <Image src={item.image} alt={item.topic} fill className="object-cover" />
-          ) : (
-            <div className="w-full h-full bg-[#1a1a1a]" />
-          )}
-        </div>
-      ))}
+      {/* Current item */}
+      <div className="absolute inset-0">
+        <TileContentRenderer item={current} />
+      </div>
 
-      {/* Only show overlays for non-embedded tiles (images). Embedded iframes (YouTube/TikTok/X) handle their own display */}
+      {/* Overlays for image/text tiles */}
       {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x'))) && (
         <>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-
-          {/* Platform badge for social tiles */}
           {isSocial && current.platform && (
             <div className="absolute top-2 right-2">
               <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
@@ -586,8 +533,6 @@ function FadingTile({ pair, delay, frozen, onTileClick }: {
               </span>
             </div>
           )}
-
-          {/* Info */}
           <div className="absolute bottom-0 left-0 right-0 p-2.5">
             <h3 className="text-[11px] md:text-[12px] font-bold text-white leading-snug line-clamp-2">
               {isSocial ? (current.clipLabel || current.topic) : (current.videoTitle || current.channel || current.topic)}
@@ -609,102 +554,105 @@ function FadingTile({ pair, delay, frozen, onTileClick }: {
   );
 }
 
-function AdTile({ contentPair, delay, onTileClick }: {
-  contentPair: [TileContent, TileContent];
+/** Renders tile content — shared between PoolTile and AdTile */
+function TileContentRenderer({ item }: { item: TileContent }) {
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3' };
+
+  if (item.type === 'video') {
+    return (
+      <div className="w-full h-full relative">
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
+          className="w-full h-full"
+          style={{ border: 'none', pointerEvents: 'none' }}
+          allow="autoplay"
+          loading="lazy"
+        />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
+        </div>
+      </div>
+    );
+  }
+  if (item.type === 'social' && item.platform === 'x' && item.embedId) {
+    return (
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
+        <iframe
+          src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
+          className="absolute"
+          style={{ border: 'none', pointerEvents: 'none', top: '-8px', left: '-8px', right: '-8px', bottom: '-8px', width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }}
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+  if (item.type === 'social' && item.platform === 'tiktok' && item.embedId) {
+    return (
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
+        <iframe
+          src={`https://www.tiktok.com/player/v1/${item.embedId}?rel=0&mute=1&autoplay=1`}
+          className="w-full h-full"
+          style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.3)', transformOrigin: 'center center' }}
+          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
+          loading="lazy"
+        />
+      </div>
+    );
+  }
+  if (item.type === 'social') {
+    return (
+      <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
+        <div>
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
+            style={{ background: platformColors[item.platform || 'x'] }}>
+            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+          </span>
+          <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
+        </div>
+        <p className="text-[9px] text-white/40 truncate">{item.topic}</p>
+      </div>
+    );
+  }
+  if (item.image) {
+    return <Image src={item.image} alt={item.topic} fill className="object-cover" />;
+  }
+  return <div className="w-full h-full bg-[#1a1a1a]" />;
+}
+
+function AdTile({ pool, startOffset, delay, onTileClick }: {
+  pool: TileContent[];
+  startOffset: number;
   delay: number;
   onTileClick?: (embedId: string) => void;
 }) {
-  const [showAd, setShowAd] = useState(false);
   const adRef = useRef<HTMLDivElement>(null);
+  const [adLoaded, setAdLoaded] = useState(false);
 
-  // Cycle: content → ad → content → ad
+  // Load AdSense ad once on mount
   useEffect(() => {
-    let cancelled = false;
-
-    // Start with content, then rotate
-    const cycle = () => {
-      // Show content for 12s
-      setTimeout(() => {
-        if (cancelled) return;
-        setShowAd(true);
-        // Show ad for 15s (enough for impression)
-        setTimeout(() => {
-          if (cancelled) return;
-          setShowAd(false);
-          // Then loop
-          setTimeout(() => { if (!cancelled) cycle(); }, 12000);
-        }, 15000);
-      }, 12000 + delay * 800);
-    };
-
-    cycle();
-    return () => { cancelled = true; };
-  }, [delay]);
-
-  // Load AdSense ad when ad slot becomes visible
-  useEffect(() => {
-    if (showAd && adRef.current) {
+    if (adRef.current && !adLoaded) {
       try {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+        setAdLoaded(true);
       } catch {}
     }
-  }, [showAd]);
-
-  const current = contentPair[0];
+  }, [adLoaded]);
 
   return (
-    <div className="relative rounded-xl overflow-hidden block">
-      {/* Content layer */}
-      <div className="absolute inset-0 transition-opacity duration-[2000ms]"
-        style={{ opacity: showAd ? 0 : 1 }}>
-        <div className="w-full h-full cursor-pointer"
-          onClick={() => {
-            const embedId = current.type === 'video'
-              ? current.image.match(/\/vi\/([^/]+)/)?.[1] || ''
-              : current.embedId || '';
-            if (onTileClick && embedId) onTileClick(embedId);
-          }}>
-          {current.type === 'video' ? (
-            <div className="w-full h-full relative">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${current.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${current.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
-                className="w-full h-full"
-                style={{ border: 'none', pointerEvents: 'none' }}
-                allow="autoplay"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{current.videoTitle || current.channel}</p>
-              </div>
-            </div>
-          ) : current.image ? (
-            <Image src={current.image} alt={current.topic} fill className="object-cover" />
-          ) : (
-            <div className="w-full h-full" style={{ background: '#1e2a3a' }} />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 p-2.5">
-            <h3 className="text-[11px] font-bold text-white leading-snug line-clamp-2">{current.topic}</h3>
-          </div>
-        </div>
+    <div className="relative rounded-xl overflow-hidden block" style={{ background: '#1a2535' }}>
+      <div className="absolute top-1.5 right-2 z-10">
+        <span className="text-[7px] font-medium text-white/30 uppercase tracking-wider">Sponsored</span>
       </div>
-
-      {/* Ad layer */}
-      <div className="absolute inset-0 transition-opacity duration-[2000ms] flex flex-col"
-        style={{ opacity: showAd ? 1 : 0, background: '#1a2535' }}>
-        <div className="absolute top-1.5 right-2 z-10">
-          <span className="text-[7px] font-medium text-white/30 uppercase tracking-wider">Ad</span>
-        </div>
-        <div ref={adRef} className="flex-1 flex items-center justify-center p-2 min-h-0">
-          {showAd && (
-            <ins className="adsbygoogle"
-              style={{ display: 'block', width: '100%', height: '100%' }}
-              data-ad-client="ca-pub-2572735826517528"
-              data-ad-slot="8292849831"
-              data-ad-format="fluid"
-              data-full-width-responsive="false" />
-          )}
-        </div>
+      <div ref={adRef} className="w-full h-full flex items-center justify-center p-1">
+        <ins className="adsbygoogle"
+          style={{ display: 'block', width: '100%', height: '100%' }}
+          data-ad-client="ca-pub-2572735826517528"
+          data-ad-slot="8292849831"
+          data-ad-format="fluid"
+          data-full-width-responsive="false" />
       </div>
     </div>
   );
