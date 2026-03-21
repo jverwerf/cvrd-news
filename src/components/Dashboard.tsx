@@ -688,8 +688,8 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       <div className="w-full h-full relative overflow-hidden">
         <iframe
           src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
-          className="absolute inset-0 w-full h-full"
-          style={{ border: 'none', pointerEvents: 'none' }}
+          className="absolute"
+          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
           allow="autoplay"
           loading="lazy"
         />
@@ -708,9 +708,20 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         <iframe
           src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
           className="absolute"
-          style={{ border: 'none', pointerEvents: 'none', top: '-8px', left: '-8px', right: '-8px', bottom: '-8px', width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }}
+          style={{
+            border: 'none', pointerEvents: 'none',
+            left: '-8px', width: 'calc(100% + 16px)',
+            height: '200%', top: '0',
+            animation: 'xScrollDown 25s ease-in-out infinite alternate',
+          }}
           loading="lazy"
         />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
       </div>
     );
   }
@@ -724,6 +735,12 @@ function TileContentRenderer({ item }: { item: TileContent }) {
           sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
           loading="lazy"
         />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#fe2c55' }}>TikTok</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
       </div>
     );
   }

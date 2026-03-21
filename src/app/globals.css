@@ -36,6 +36,11 @@
   100% { transform: scale(1.15) translate(-3%, -2%); }
 }
 
+@keyframes xScrollDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
 /* Override react-tweet max-width for column layout */
 [data-theme="light"] .react-tweet-theme,
 .react-tweet-theme,

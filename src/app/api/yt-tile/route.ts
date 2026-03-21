@@ -11,7 +11,7 @@ export async function GET(req: NextRequest) {
 <style>
 *{margin:0;padding:0}
 body,html{width:100%;height:100%;overflow:hidden}
-iframe{position:absolute;top:-30%;left:-30%;width:160%;height:160%;border:none}
+iframe{position:absolute;top:-50%;left:-50%;width:200%;height:200%;border:none}
 </style>
 <script>
 try {
