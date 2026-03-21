@@ -683,6 +683,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
           className="w-full h-full"
           style={{ border: 'none', pointerEvents: 'none' }}
           allow="autoplay"
+          sandbox="allow-scripts allow-same-origin allow-presentation"
           loading="lazy"
         />
         <div className="absolute top-2 left-2 z-10">
