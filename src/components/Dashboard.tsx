@@ -433,7 +433,7 @@ export function Dashboard({
         <FadingTile onTileClick={handleTileClick} pair={tilePairs[6]} delay={6} frozen={tileIsFrozen[6]} />
         <FadingTile onTileClick={handleTileClick} pair={tilePairs[7]} delay={1.5} frozen={tileIsFrozen[7]} />
         <FadingTile onTileClick={handleTileClick} pair={tilePairs[8]} delay={3.5} frozen={tileIsFrozen[8]} />
-        <FadingTile onTileClick={handleTileClick} pair={tilePairs[9]} delay={5.5} frozen={tileIsFrozen[9]} />
+        <AdTile contentPair={tilePairs[9]} delay={5.5} onTileClick={handleTileClick} />
       </div>
     </section>
   );
@@ -605,6 +605,107 @@ function FadingTile({ pair, delay, frozen, onTileClick }: {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+function AdTile({ contentPair, delay, onTileClick }: {
+  contentPair: [TileContent, TileContent];
+  delay: number;
+  onTileClick?: (embedId: string) => void;
+}) {
+  const [showAd, setShowAd] = useState(false);
+  const adRef = useRef<HTMLDivElement>(null);
+
+  // Cycle: content → ad → content → ad
+  useEffect(() => {
+    let cancelled = false;
+
+    // Start with content, then rotate
+    const cycle = () => {
+      // Show content for 12s
+      setTimeout(() => {
+        if (cancelled) return;
+        setShowAd(true);
+        // Show ad for 15s (enough for impression)
+        setTimeout(() => {
+          if (cancelled) return;
+          setShowAd(false);
+          // Then loop
+          setTimeout(() => { if (!cancelled) cycle(); }, 12000);
+        }, 15000);
+      }, 12000 + delay * 800);
+    };
+
+    cycle();
+    return () => { cancelled = true; };
+  }, [delay]);
+
+  // Load AdSense ad when ad slot becomes visible
+  useEffect(() => {
+    if (showAd && adRef.current) {
+      try {
+        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+      } catch {}
+    }
+  }, [showAd]);
+
+  const current = contentPair[0];
+
+  return (
+    <div className="relative rounded-xl overflow-hidden block">
+      {/* Content layer */}
+      <div className="absolute inset-0 transition-opacity duration-[2000ms]"
+        style={{ opacity: showAd ? 0 : 1 }}>
+        <div className="w-full h-full cursor-pointer"
+          onClick={() => {
+            const embedId = current.type === 'video'
+              ? current.image.match(/\/vi\/([^/]+)/)?.[1] || ''
+              : current.embedId || '';
+            if (onTileClick && embedId) onTileClick(embedId);
+          }}>
+          {current.type === 'video' ? (
+            <div className="w-full h-full relative">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${current.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${current.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
+                className="w-full h-full"
+                style={{ border: 'none', pointerEvents: 'none' }}
+                allow="autoplay"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+                <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{current.videoTitle || current.channel}</p>
+              </div>
+            </div>
+          ) : current.image ? (
+            <Image src={current.image} alt={current.topic} fill className="object-cover" />
+          ) : (
+            <div className="w-full h-full" style={{ background: '#1e2a3a' }} />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-2.5">
+            <h3 className="text-[11px] font-bold text-white leading-snug line-clamp-2">{current.topic}</h3>
+          </div>
+        </div>
+      </div>
+
+      {/* Ad layer */}
+      <div className="absolute inset-0 transition-opacity duration-[2000ms] flex flex-col"
+        style={{ opacity: showAd ? 1 : 0, background: '#1a2535' }}>
+        <div className="absolute top-1.5 right-2 z-10">
+          <span className="text-[7px] font-medium text-white/30 uppercase tracking-wider">Ad</span>
+        </div>
+        <div ref={adRef} className="flex-1 flex items-center justify-center p-2 min-h-0">
+          {showAd && (
+            <ins className="adsbygoogle"
+              style={{ display: 'block', width: '100%', height: '100%' }}
+              data-ad-client="ca-pub-2572735826517528"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="fluid"
+              data-full-width-responsive="false" />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
