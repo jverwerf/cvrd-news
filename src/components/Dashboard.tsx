@@ -140,16 +140,17 @@ export function Dashboard({
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [currentIdx]);
 
-  // Listen for YouTube center player end event ONLY — ignore tile iframes
+  // Listen for YouTube center player end event ONLY
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
-        // Only accept messages from the center player (youtube.com, not youtube-nocookie.com tiles)
-        if (!e.origin.includes('youtube.com') || e.origin.includes('nocookie')) return;
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
-          // playerState 0 = ended
-          setCurrentIdx(p => (p + 1) % playlist.length);
+          // Verify this came from the center player iframe, not a tile
+          const centerPlayer = document.getElementById('yt-player') as HTMLIFrameElement;
+          if (centerPlayer && e.source === centerPlayer.contentWindow) {
+            setCurrentIdx(p => (p + 1) % playlist.length);
+          }
         }
       } catch {}
     };
