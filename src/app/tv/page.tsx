@@ -42,7 +42,7 @@ export default async function TVPage() {
       {/* Dashboard — full screen */}
       <div style={{ paddingTop: '40px', height: '100vh' }}>
         <ErrorBoundary>
-          <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+          <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} tvMode />
         </ErrorBoundary>
       </div>
 

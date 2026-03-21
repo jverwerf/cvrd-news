@@ -35,10 +35,12 @@ export function Dashboard({
   stories,
   videoUrl,
   videoDate,
+  tvMode,
 }: {
   stories: NarrativeGap[];
   videoUrl?: string;
   videoDate?: string;
+  tvMode?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [unmuted, setUnmuted] = useState(false);
@@ -368,8 +370,8 @@ export function Dashboard({
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           </div>
-          {/* CONTROLS BAR — below video */}
-          <div className="px-2 py-1 bg-[#111] shrink-0">
+          {/* CONTROLS BAR — below video (hidden in TV mode) */}
+          <div className="px-2 py-1 bg-[#111] shrink-0" style={tvMode ? { display: 'none' } : {}}>
 
             {/* Story progress — segmented by story */}
             {storyBoundaries.length > 1 && (
