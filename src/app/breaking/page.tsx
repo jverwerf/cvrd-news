@@ -148,7 +148,7 @@ export default function BreakingPage() {
       <div className="h-3" />
       <HeroStory story={firstStory} />
 
-      {/* OLDER BREAKING STORIES: each with its own red banner + HeroStory */}
+      {/* OLDER BREAKING STORIES: each with its own red banner + Dashboard + HeroStory */}
       {breakingItems.slice(1).map((b, i) => {
         const story = allStories[i + 1];
         return (
@@ -159,6 +159,9 @@ export default function BreakingPage() {
               <span className="text-[13px] text-white font-bold flex-1 truncate">{b.topic}</span>
               <span className="text-[10px] text-white/60 shrink-0">{timeAgo(b.detected_at)}</span>
             </div>
+            <ErrorBoundary>
+              <Dashboard stories={[story]} />
+            </ErrorBoundary>
             <div className="h-3" />
             <HeroStory story={story} />
           </div>
