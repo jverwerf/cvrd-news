@@ -712,7 +712,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
             border: 'none', pointerEvents: 'none',
             left: '-8px', width: 'calc(100% + 16px)',
             height: '200%', top: '0',
-            animation: 'xScrollDown 25s ease-in-out infinite alternate',
+            animation: 'xScrollDown 50s ease-in-out infinite alternate',
           }}
           loading="lazy"
         />
