@@ -686,12 +686,10 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   if (item.type === 'video') {
     return (
       <div className="w-full h-full relative overflow-hidden">
-        {/* Blurred thumbnail fills background behind video */}
-        <img src={item.image} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ filter: 'blur(20px) brightness(0.5)', transform: 'scale(1.3)' }} />
         <iframe
           src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
           className="absolute inset-0 w-full h-full"
-          style={{ border: 'none', pointerEvents: 'none' }}
+          style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.15)', transformOrigin: 'center center' }}
           allow="autoplay"
           loading="lazy"
         />
