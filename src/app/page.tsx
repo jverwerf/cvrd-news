@@ -81,7 +81,7 @@ export default async function Home() {
             </ErrorBoundary>
             {/* Logo centered, overlapping top of dashboard */}
             <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
-              style={{ top: '-2px', transform: 'translateX(-50%)', height: '180px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
+              style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
           </div>
 
           {/* 4. HERO STORY */}
