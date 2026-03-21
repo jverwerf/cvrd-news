@@ -686,7 +686,6 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       <div className="w-full h-full relative overflow-hidden">
         <iframe
           src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
-          sandbox="allow-scripts allow-presentation"
           className="w-full h-full"
           style={{ border: 'none', pointerEvents: 'none' }}
           allow="autoplay"
