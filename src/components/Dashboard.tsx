@@ -348,7 +348,7 @@ export function Dashboard({
           )}
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1&rel=0&disablekb=1`}
+              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=0&mute=${unmuted ? 0 : 1}&enablejsapi=1&rel=0&disablekb=1`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
