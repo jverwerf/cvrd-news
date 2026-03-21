@@ -233,9 +233,9 @@ export function TVClient({
             opacity: entered ? 1 : 0,
             transition: 'opacity 0.8s ease 0.8s',
           }}>
-            <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.12)', letterSpacing: '0.1em' }}>
-              CVRD NEWS &middot; 36+ SOURCES &middot; EVERY SIDE
-            </span>
+            <a href="/" style={{ fontSize: 10, color: 'rgba(255,255,255,0.2)', letterSpacing: '0.1em', textDecoration: 'none' }}>
+              ← Back to cvrdnews.com
+            </a>
             <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.12)', letterSpacing: '0.05em' }}>
               ← → Navigate &middot; Enter to select
             </span>
