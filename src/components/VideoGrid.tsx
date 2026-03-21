@@ -326,9 +326,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
             }} />
             <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
-            {playing && duration > 0 && active.type !== 'x' && active.type !== 'reddit' && (
-{/* timer removed */}
-            )}
           </div>
 
           <button onClick={() => {
