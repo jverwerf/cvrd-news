@@ -327,7 +327,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             }} />
             <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
             {playing && duration > 0 && active.type !== 'x' && active.type !== 'reddit' && (
-              <span className="text-[9px] text-[#999] font-mono ml-1">{formatTime(currentTime)} / {formatTime(duration)}</span>
+{/* timer removed */}
             )}
           </div>
 
