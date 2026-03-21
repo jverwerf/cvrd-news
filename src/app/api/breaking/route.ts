@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import OpenAI from 'openai';
+import { getBreakingData, saveBreakingData, deleteBreakingData } from '@/lib/breaking-store';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
@@ -24,8 +23,7 @@ type BreakingStory = {
   social_clips: { platform: string; url: string; embed_id?: string; title?: string; author?: string; duration?: number; thumbnail?: string }[];
 };
 
-const BREAKING_PATH = path.resolve(process.cwd(), 'public/data/breaking.json');
-const IMAGES_DIR = path.resolve(process.cwd(), 'public/images');
+import { put as blobPut } from '@vercel/blob';
 
 // ── DETECTION ──
 
@@ -235,10 +233,6 @@ async function generateImage(story: BreakingStory): Promise<void> {
   if (!replicateToken) return;
 
   try {
-    if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR, { recursive: true });
-    const filename = `breaking_${Date.now()}.png`;
-    const destPath = path.join(IMAGES_DIR, filename);
-
     const Replicate = (await import('replicate')).default;
     const replicate = new Replicate({ auth: replicateToken });
     const output = await replicate.run('black-forest-labs/flux-schnell', {
@@ -248,10 +242,18 @@ async function generateImage(story: BreakingStory): Promise<void> {
       }
     });
     const item = (output as any)[0];
-    const url = item.url ? item.url() : String(item);
-    const res = await fetch(String(url));
-    fs.writeFileSync(destPath, Buffer.from(await res.arrayBuffer()));
-    story.image_file = `/images/${filename}`;
+    const replicateUrl = item.url ? item.url() : String(item);
+    const res = await fetch(String(replicateUrl));
+    const imageBuffer = Buffer.from(await res.arrayBuffer());
+
+    // Store image in Vercel Blob
+    const filename = `breaking_${Date.now()}.png`;
+    const blob = await blobPut(filename, imageBuffer, {
+      access: 'public',
+      addRandomSuffix: false,
+      contentType: 'image/png',
+    });
+    story.image_file = blob.url;
   } catch {}
 }
 
@@ -356,13 +358,8 @@ export async function GET() {
   const safeTimeLeft = () => 55000 - (Date.now() - startTime); // 55s safety margin
 
   try {
-    // Load current breaking stories
-    let allStories: BreakingStory[] = [];
-    if (fs.existsSync(BREAKING_PATH)) {
-      const raw = JSON.parse(fs.readFileSync(BREAKING_PATH, 'utf8'));
-      allStories = (Array.isArray(raw) ? raw : [raw])
-        .filter(s => Date.now() - new Date(s.last_updated).getTime() < 12 * 60 * 60 * 1000);
-    }
+    // Load current breaking stories from Vercel Blob
+    let allStories: BreakingStory[] = (await withTimeout(getBreakingData(), 5000, null)) || [];
 
     const existingTopics = allStories.map(s => s.topic);
     const candidates = await withTimeout(fetchBreakingCandidates(), 10000, []);
@@ -438,7 +435,7 @@ If NOT breaking: { "is_breaking": false }` },
 
         allStories.unshift(story);
         allStories = allStories.slice(0, 5);
-        fs.writeFileSync(BREAKING_PATH, JSON.stringify(allStories, null, 2));
+        await saveBreakingData(allStories);
 
         return NextResponse.json({
           status: 'BREAKING',
@@ -462,7 +459,7 @@ If NOT breaking: { "is_breaking": false }` },
       );
 
       const anyUpdated = collectSettled(updateResults).some(Boolean);
-      fs.writeFileSync(BREAKING_PATH, JSON.stringify(allStories, null, 2));
+      await saveBreakingData(allStories);
 
       return NextResponse.json({
         status: 'tracking',
@@ -473,15 +470,15 @@ If NOT breaking: { "is_breaking": false }` },
     }
 
     // Clean up if no stories left
-    if (allStories.length === 0 && fs.existsSync(BREAKING_PATH)) {
-      try { fs.unlinkSync(BREAKING_PATH); } catch {}
+    if (allStories.length === 0) {
+      await deleteBreakingData();
     }
 
     return NextResponse.json({ status: 'none', candidates: candidates.length, ms: Date.now() - startTime });
   } catch (e: any) {
     // Save whatever we have even on crash
     if (allStories.length > 0) {
-      try { fs.writeFileSync(BREAKING_PATH, JSON.stringify(allStories, null, 2)); } catch {}
+      try { await saveBreakingData(allStories); } catch {}
     }
     return NextResponse.json({ status: 'error', message: e.message?.substring(0, 80), ms: Date.now() - startTime });
   }
