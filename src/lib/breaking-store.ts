@@ -34,6 +34,7 @@ export async function saveBreakingData(stories: any[]): Promise<void> {
   await put(BLOB_KEY, JSON.stringify(sorted), {
     access: 'public',
     addRandomSuffix: false,
+    allowOverwrite: true,
     contentType: 'application/json',
   });
 }

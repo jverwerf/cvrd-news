@@ -252,6 +252,7 @@ async function generateImage(story: BreakingStory): Promise<void> {
     const blob = await blobPut(filename, imageBuffer, {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'image/png',
     });
     story.image_file = blob.url;
@@ -317,6 +318,7 @@ async function appendBreakingLog(entry: {
     await blobPut('breaking-log.json', JSON.stringify(log), {
       access: 'public',
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: 'application/json',
     });
   } catch {}
