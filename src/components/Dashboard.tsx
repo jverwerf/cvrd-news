@@ -700,7 +700,7 @@ function AdTile({ contentPair, delay, onTileClick }: {
             <ins className="adsbygoogle"
               style={{ display: 'block', width: '100%', height: '100%' }}
               data-ad-client="ca-pub-2572735826517528"
-              data-ad-slot="XXXXXXXXXX"
+              data-ad-slot="8292849831"
               data-ad-format="fluid"
               data-full-width-responsive="false" />
           )}
