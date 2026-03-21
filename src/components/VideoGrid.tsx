@@ -159,8 +159,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       // Reddit posts are static — no auto-advance
       setDuration(0);
       setCurrentTime(0);
-    } else if (active?.type === 'x' && !active.duration) {
-      // X text posts (no video) — no auto-advance
+    } else if (active?.type === 'x') {
+      // X posts (video or text) — no auto-advance, user controls skip
       setDuration(0);
       setCurrentTime(0);
     } else if (active?.type === 'youtube') {
