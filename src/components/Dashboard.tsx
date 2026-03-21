@@ -689,7 +689,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         <iframe
           src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
           className="w-full h-full"
-          style={{ border: 'none', pointerEvents: 'none' }}
+          style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.3)', transformOrigin: 'center center' }}
           allow="autoplay"
           loading="lazy"
         />
