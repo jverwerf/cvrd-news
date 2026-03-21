@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
 
   const html = `<!DOCTYPE html>
 <html><head><meta name="viewport" content="width=device-width,initial-scale=1">
-<style>*{margin:0;padding:0;overflow:hidden}body,html{width:100%;height:100%;background:#000}</style>
+<style>*{margin:0;padding:0;overflow:hidden}body,html{width:100%;height:100%;background:transparent}</style>
 <script>
 // Trap YouTube's desktoff redirect — block any navigation of parent/top
 try {
