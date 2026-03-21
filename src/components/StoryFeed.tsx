@@ -92,7 +92,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
           background: open ? '#253545' : '#253040',
           border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
         }}>
-        {open ? 'Collapse ↑' : 'Cover the news: Left vs Right · Evidence · The People · The Articles ↓'}
+        {open ? 'Collapse ↑' : 'Cover the news ↓'}
       </button>
 
       <AnimatePresence>

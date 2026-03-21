@@ -287,6 +287,41 @@ function mergeClips(story: BreakingStory): void {
   }
 }
 
+// ── LOGGING ──
+
+async function appendBreakingLog(entry: {
+  timestamp: string;
+  candidates: number;
+  headlines: string[];
+  result: 'BREAKING' | 'none' | 'tracking' | 'error';
+  topic?: string;
+  gptReason?: string;
+  ms: number;
+}) {
+  try {
+    // Load existing log
+    let log: typeof entry[] = [];
+    try {
+      const { list } = await import('@vercel/blob');
+      const blobs = await list({ prefix: 'breaking-log.json' });
+      if (blobs.blobs.length > 0) {
+        const resp = await fetch(blobs.blobs[0].url, { signal: AbortSignal.timeout(3000) });
+        log = await resp.json();
+      }
+    } catch {}
+
+    log.unshift(entry);
+    // Keep last 7 days (672 entries at 15-min intervals)
+    log = log.slice(0, 672);
+
+    await blobPut('breaking-log.json', JSON.stringify(log), {
+      access: 'public',
+      addRandomSuffix: false,
+      contentType: 'application/json',
+    });
+  } catch {}
+}
+
 // ── HELPERS ──
 
 // Wrap any promise with a hard timeout — returns fallback on timeout instead of crashing
@@ -439,6 +474,15 @@ If NOT breaking: { "is_breaking": false }` },
         allStories = allStories.slice(0, 5);
         await saveBreakingData(allStories);
 
+        await appendBreakingLog({
+          timestamp: new Date().toISOString(),
+          candidates: candidates.length,
+          headlines: candidates.slice(0, 10).map(c => `[${c.source}] ${c.title}`),
+          result: 'BREAKING',
+          topic: story.topic,
+          ms: Date.now() - startTime,
+        });
+
         return NextResponse.json({
           status: 'BREAKING',
           stories: allStories.length,
@@ -475,6 +519,14 @@ If NOT breaking: { "is_breaking": false }` },
     if (allStories.length === 0) {
       await deleteBreakingData();
     }
+
+    await appendBreakingLog({
+      timestamp: new Date().toISOString(),
+      candidates: candidates.length,
+      headlines: candidates.slice(0, 10).map(c => `[${c.source}] ${c.title}`),
+      result: 'none',
+      ms: Date.now() - startTime,
+    });
 
     return NextResponse.json({ status: 'none', candidates: candidates.length, ms: Date.now() - startTime });
   } catch (e: any) {
