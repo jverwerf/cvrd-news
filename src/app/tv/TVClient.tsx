@@ -6,13 +6,13 @@ import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const CHANNELS = [
-  { id: 'daily', label: 'Daily Pick', sub: 'Today\'s top stories', color: '#2563eb' },
-  { id: 'world', label: 'World', sub: 'Global affairs', color: '#0ea5e9' },
-  { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#7c3aed' },
-  { id: 'markets-crypto', label: 'Markets', sub: 'Crypto & finance', color: '#10b981' },
-  { id: 'tech-ai', label: 'Tech & AI', sub: 'The frontier', color: '#f59e0b' },
-  { id: 'culture', label: 'Culture', sub: 'Society & stories', color: '#ec4899' },
-  { id: 'unfiltered', label: 'Unfiltered', sub: 'What they won\'t cover', color: '#ef4444' },
+  { id: 'daily', label: 'Daily Pick', sub: 'Today\'s top stories', color: '#3b82f6' },
+  { id: 'world', label: 'World', sub: 'Global affairs', color: '#60a5fa' },
+  { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#818cf8' },
+  { id: 'markets-crypto', label: 'Markets', sub: 'Crypto & finance', color: '#38bdf8' },
+  { id: 'tech-ai', label: 'Tech & AI', sub: 'The frontier', color: '#93c5fd' },
+  { id: 'culture', label: 'Culture', sub: 'Society & stories', color: '#a5b4fc' },
+  { id: 'unfiltered', label: 'Unfiltered', sub: 'What they won\'t cover', color: '#7dd3fc' },
 ] as const;
 
 export function TVClient({
@@ -70,23 +70,7 @@ export function TVClient({
         fontFamily: 'var(--font-dm), -apple-system, sans-serif',
       }}>
 
-        {/* Ambient background: subtle radial from center */}
-        <div style={{
-          position: 'absolute', inset: 0,
-          background: 'radial-gradient(ellipse 80% 60% at 50% 40%, rgba(30,42,58,0.6) 0%, transparent 70%)',
-        }} />
-
-        {/* Scanline texture */}
-        <div style={{
-          position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.03,
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px)',
-        }} />
-
-        {/* Noise grain overlay */}
-        <div style={{
-          position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', opacity: 0.04,
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E")`,
-        }} />
+        {/* Clean dark background — no gradients, no overlays */}
 
         <div style={{ position: 'relative', zIndex: 2, height: '100%', display: 'flex', flexDirection: 'column' }}>
 
@@ -123,7 +107,7 @@ export function TVClient({
             }}>
               <img src="/logo3.png" alt="CVRD" style={{
                 height: '80px',
-                filter: 'drop-shadow(0 0 40px rgba(37,99,235,0.15))',
+                filter: 'none',
               }} />
             </div>
 
