@@ -67,21 +67,27 @@ export default function BreakingPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/breaking/data')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data || (Array.isArray(data) && data.length === 0)) {
-          window.location.href = '/';
-          return;
-        }
-        const items = Array.isArray(data) ? data : [data];
-        // Sort by detected_at (most recent first)
-        items.sort((a: any, b: any) => new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime());
-        setBreakingItems(items);
-        setLoading(false);
-      })
-      .catch(() => { window.location.href = '/'; });
-  }, []);
+    const fetchBreaking = () => {
+      fetch('/api/breaking/data')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data || (Array.isArray(data) && data.length === 0)) {
+            if (loading) window.location.href = '/';
+            return;
+          }
+          const items = Array.isArray(data) ? data : [data];
+          items.sort((a: any, b: any) => new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime());
+          setBreakingItems(items);
+          setLoading(false);
+        })
+        .catch(() => { if (loading) window.location.href = '/'; });
+    };
+
+    fetchBreaking();
+    // Re-fetch every 2 minutes for new clips/stories
+    const interval = setInterval(fetchBreaking, 120000);
+    return () => clearInterval(interval);
+  }, [loading]);
 
   if (loading) return <div className="min-h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}><p className="text-white/50 animate-pulse">Loading...</p></div>;
   if (breakingItems.length === 0) return null;
