@@ -498,13 +498,15 @@ If NOT breaking: { "is_breaking": false }` },
       }
     }
 
-    // ── UPDATE EXISTING STORIES (all in parallel) ──
+    // ── UPDATE EXISTING STORIES (one at a time to give each enough time for Apify) ──
     if (allStories.length > 0 && safeTimeLeft() > 10000) {
-      const timePerStory = Math.floor(safeTimeLeft() / allStories.length);
-
-      const updateResults = await Promise.allSettled(
-        allStories.map(story => enrichStory(story, { includeTikTok: false, timeoutMs: timePerStory }))
-      );
+      // Update stories sequentially — each gets full remaining time for YouTube/Apify
+      const updateResults: PromiseSettledResult<boolean>[] = [];
+      for (const story of allStories) {
+        if (safeTimeLeft() < 10000) break;
+        const result = await Promise.allSettled([enrichStory(story, { includeTikTok: false, timeoutMs: Math.min(safeTimeLeft() - 2000, 45000) })]);
+        updateResults.push(...result);
+      }
 
       const anyUpdated = collectSettled(updateResults).some(Boolean);
       await saveBreakingData(allStories);
