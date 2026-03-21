@@ -257,18 +257,60 @@ export function Dashboard({
   );
   const tileIsFrozen = tileOffsets.map(offset => shouldFreeze && (pool[offset]?.isFresh || false));
 
+  // Roaming ad: randomly picks a tile position, shows ad for 30s, hides for 90s, moves to new position
+  const TILE_POSITIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // all tile indices
+  const [adPosition, setAdPosition] = useState(-1); // -1 = no ad showing
+  const [adKey, setAdKey] = useState(0); // force fresh ad mount
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const cycle = () => {
+      // Wait 90s before showing ad
+      setTimeout(() => {
+        if (cancelled) return;
+        // Pick random tile position
+        const pos = TILE_POSITIONS[Math.floor(Math.random() * TILE_POSITIONS.length)];
+        setAdPosition(pos);
+        setAdKey(k => k + 1);
+
+        // Show ad for 30s, then hide
+        setTimeout(() => {
+          if (cancelled) return;
+          setAdPosition(-1);
+          cycle();
+        }, 30000);
+      }, 90000);
+    };
+
+    // First ad after 60s
+    const initial = setTimeout(() => {
+      if (cancelled) return;
+      const pos = TILE_POSITIONS[Math.floor(Math.random() * TILE_POSITIONS.length)];
+      setAdPosition(pos);
+      setAdKey(k => k + 1);
+
+      setTimeout(() => {
+        if (cancelled) return;
+        setAdPosition(-1);
+        cycle();
+      }, 30000);
+    }, 60000);
+
+    return () => { cancelled = true; clearTimeout(initial); };
+  }, []);
+
   return (
     <section className="px-4 md:px-8" style={{ background: '#1e2a3a', height: 'calc(100vh - 104px)', overflow: 'hidden' }}>
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[0]} delay={0} frozen={tileIsFrozen[0]} onTileClick={handleTileClick} />
-        <PoolTile pool={pool} startOffset={tileOffsets[1]} delay={2} frozen={tileIsFrozen[1]} onTileClick={handleTileClick} />
-        <PoolTile pool={pool} startOffset={tileOffsets[2]} delay={4} frozen={tileIsFrozen[2]} onTileClick={handleTileClick} />
-        <PoolTile pool={pool} startOffset={tileOffsets[3]} delay={1} frozen={tileIsFrozen[3]} onTileClick={handleTileClick} />
+        {[0, 1, 2, 3].map(i => (
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} showAd={adPosition === i} adKey={adKey} />
+        ))}
 
         {/* ROW 2 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} showAd={adPosition === 4} adKey={adKey} />
 
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
@@ -423,13 +465,12 @@ export function Dashboard({
           </div>
         </div>
 
-        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} />
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} showAd={adPosition === 5} adKey={adKey} />
 
         {/* ROW 3 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[6]} delay={6} frozen={tileIsFrozen[6]} onTileClick={handleTileClick} />
-        <PoolTile pool={pool} startOffset={tileOffsets[7]} delay={1.5} frozen={tileIsFrozen[7]} onTileClick={handleTileClick} />
-        <PoolTile pool={pool} startOffset={tileOffsets[8]} delay={3.5} frozen={tileIsFrozen[8]} onTileClick={handleTileClick} />
-        <AdTile pool={pool} startOffset={tileOffsets[9]} delay={5.5} onTileClick={handleTileClick} />
+        {[6, 7, 8, 9].map(i => (
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} showAd={adPosition === i} adKey={adKey} />
+        ))}
       </div>
     </section>
   );
@@ -441,12 +482,14 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function PoolTile({ pool, startOffset, delay, frozen, onTileClick }: {
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey }: {
   pool: TileContent[];
   startOffset: number;
   delay: number;
   frozen?: boolean;
   onTileClick?: (embedId: string) => void;
+  showAd?: boolean;
+  adKey?: number;
 }) {
   const [currentIdx, setCurrentIdx] = useState(startOffset);
   const [prevIdx, setPrevIdx] = useState(-1);
@@ -550,6 +593,41 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick }: {
           </div>
         </>
       )}
+
+      {/* Ad overlay — fades in/out over this tile when selected */}
+      {showAd && (
+        <div className="absolute inset-0 z-30 rounded-xl overflow-hidden animate-[fadeIn_1s_ease-in-out]"
+          style={{ background: '#1a2535' }}>
+          <div className="absolute top-1.5 right-2 z-10">
+            <span className="text-[7px] font-medium text-white/20 uppercase tracking-wider">Sponsored</span>
+          </div>
+          <div className="w-full h-full flex items-center justify-center p-1">
+            <AdSlot key={adKey} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Mounts a fresh AdSense ad — unmounts cleanly when removed */
+function AdSlot() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    try {
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    } catch {}
+  }, []);
+
+  return (
+    <div ref={ref} className="w-full h-full">
+      <ins className="adsbygoogle"
+        style={{ display: 'block', width: '100%', height: '100%' }}
+        data-ad-client="ca-pub-2572735826517528"
+        data-ad-slot="8292849831"
+        data-ad-format="fluid"
+        data-full-width-responsive="false" />
     </div>
   );
 }
@@ -622,38 +700,3 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   return <div className="w-full h-full bg-[#1a1a1a]" />;
 }
 
-function AdTile({ pool, startOffset, delay, onTileClick }: {
-  pool: TileContent[];
-  startOffset: number;
-  delay: number;
-  onTileClick?: (embedId: string) => void;
-}) {
-  const adRef = useRef<HTMLDivElement>(null);
-  const [adLoaded, setAdLoaded] = useState(false);
-
-  // Load AdSense ad once on mount
-  useEffect(() => {
-    if (adRef.current && !adLoaded) {
-      try {
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-        setAdLoaded(true);
-      } catch {}
-    }
-  }, [adLoaded]);
-
-  return (
-    <div className="relative rounded-xl overflow-hidden block" style={{ background: '#1a2535' }}>
-      <div className="absolute top-1.5 right-2 z-10">
-        <span className="text-[7px] font-medium text-white/30 uppercase tracking-wider">Sponsored</span>
-      </div>
-      <div ref={adRef} className="w-full h-full flex items-center justify-center p-1">
-        <ins className="adsbygoogle"
-          style={{ display: 'block', width: '100%', height: '100%' }}
-          data-ad-client="ca-pub-2572735826517528"
-          data-ad-slot="8292849831"
-          data-ad-format="fluid"
-          data-full-width-responsive="false" />
-      </div>
-    </div>
-  );
-}
