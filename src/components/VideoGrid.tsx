@@ -65,6 +65,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
+  const [videosSinceAd, setVideosSinceAd] = useState(0);
+  const [showingAd, setShowingAd] = useState(false);
+  const adTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const AD_INTERVAL = 5; // show ad every 5 videos
 
   // Auto-select video from URL hash (when tile is clicked in dashboard)
   useEffect(() => {
@@ -207,7 +211,26 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   if (items.length === 0 || !active) return null;
 
-  const next = nextRef.current = () => {
+  const triggerAdIfDue = (afterAd: () => void) => {
+    setVideosSinceAd(prev => {
+      const newCount = prev + 1;
+      if (newCount >= AD_INTERVAL) {
+        // Show ad for 5 seconds
+        setShowingAd(true);
+        stopPolling();
+        stopTimer();
+        adTimerRef.current = setTimeout(() => {
+          setShowingAd(false);
+          afterAd();
+        }, 5000);
+        return 0; // reset counter
+      }
+      afterAd();
+      return newCount;
+    });
+  };
+
+  const advanceToNext = () => {
     setActiveIdx(prev => {
       if (prev < items.length - 1) return prev + 1;
       setPlaying(false);
@@ -218,13 +241,20 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     stopPolling();
     stopTimer();
   };
+
+  const next = nextRef.current = () => {
+    triggerAdIfDue(advanceToNext);
+  };
+
   const prevItem = () => {
-    setActiveIdx(prev => (prev - 1 + items.length) % items.length);
-    setCurrentTime(0);
-    setDuration(0);
-    setPlaying(true);
-    stopPolling();
-    stopTimer();
+    triggerAdIfDue(() => {
+      setActiveIdx(prev => (prev - 1 + items.length) % items.length);
+      setCurrentTime(0);
+      setDuration(0);
+      setPlaying(true);
+      stopPolling();
+      stopTimer();
+    });
   };
 
   const formatTime = (s: number) => {
@@ -238,7 +268,14 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       {/* PLAYER */}
       <div className="rounded-md overflow-hidden border border-[#2a3a4a]">
         <div className="aspect-video bg-[#111] relative">
-          {playing ? (
+          {showingAd ? (
+            <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
+              <div className="absolute top-2 right-3 z-10">
+                <span className="text-[9px] text-white/30 font-medium">Ad · Resuming in 5s</span>
+              </div>
+              <VideoAdSlot />
+            </div>
+          ) : playing ? (
             <>
               {active.type === 'youtube' && (
                 <iframe ref={iframeRef} key={active.embed_id}
@@ -391,6 +428,25 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+function VideoAdSlot() {
+  useEffect(() => {
+    try {
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    } catch {}
+  }, []);
+
+  return (
+    <div className="w-full h-full flex items-center justify-center p-4">
+      <ins className="adsbygoogle"
+        style={{ display: 'block', width: '100%', height: '100%' }}
+        data-ad-client="ca-pub-2572735826517528"
+        data-ad-slot="8292849831"
+        data-ad-format="fluid"
+        data-full-width-responsive="false" />
     </div>
   );
 }
