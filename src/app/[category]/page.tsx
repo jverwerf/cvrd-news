@@ -124,7 +124,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
       <footer className="py-10 text-center border-t border-[#e5e5e5]">
         <img src="/logo3.png" alt="CVRD" className="h-36 mx-auto mb-4 opacity-30" />
-        <span className="text-[11px] text-[#ccc]">Sourced from the social pulse</span>
+        <span className="text-[11px] text-[#ccc]">Your news streaming platform to cover the news</span>
       </footer>
     </div>
   );

@@ -134,7 +134,7 @@ export function TVClient({
               opacity: entered ? 1 : 0,
               transition: 'opacity 1s ease 0.5s',
             }}>
-              Sourced from the social pulse
+              Your news streaming platform to cover the news
             </p>
 
             {/* Channel strip — horizontal, editorial */}
