@@ -14,14 +14,14 @@ export default async function TVPage() {
 
   if (!data || stories.length === 0) {
     return (
-      <div className="h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+      <div className="h-screen flex items-center justify-center" style={{ background: '#000000' }}>
         <p className="text-[#999]">No stories available.</p>
       </div>
     );
   }
 
   return (
-    <div style={{ background: '#1e2a3a', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
+    <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
       {/* Logo */}
       <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
         style={{ top: '8px', transform: 'translateX(-50%)', height: '50px', zIndex: 101, opacity: 0.6, filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))' }} />
