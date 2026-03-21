@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
 body,html{width:100%;height:100%;position:relative}
 .bg{position:absolute;inset:0;background:url('${thumb}') center/cover no-repeat;filter:blur(25px) brightness(0.4);transform:scale(1.3)}
 .yt{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.yt iframe{width:100%;height:100%;border:none}
+.yt iframe{width:100%;height:100%;border:none;transform:scale(1.6);transform-origin:center center}
 </style>
 <script>
 try {
