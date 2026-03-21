@@ -236,7 +236,7 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed) continue;
-      if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || (c.platform === 'x' && ((c as any).duration || (c as any)._breaking)))) {
+      if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || c.platform === 'x')) {
         linked.push({
           type: 'social',
           image: (c as any).thumbnail || story.image_file || '',
