@@ -32,7 +32,7 @@ try {
   return new NextResponse(html, {
     headers: {
       'Content-Type': 'text/html',
-      'Cache-Control': 'public, max-age=3600',
+      'Cache-Control': 'no-cache, no-store',
     },
   });
 }
