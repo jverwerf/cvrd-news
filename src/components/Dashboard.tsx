@@ -61,11 +61,17 @@ export function Dashboard({
       playlist.push({ type: 'anchor', url: videoUrl, storyIndex: 0 });
     }
   }
-  // Dashboard player: YouTube only (skip clips flagged as broken)
+  // Dashboard player: YouTube + social clips with video (X, TikTok, Reels)
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       if ((v as any).download_failed) continue;
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
+    }
+    for (const c of (story.social_clips || [])) {
+      if ((c as any).download_failed || !c.embed_id) continue;
+      if (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels') {
+        playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
+      }
     }
   }
 
