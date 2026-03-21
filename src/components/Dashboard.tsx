@@ -121,11 +121,14 @@ export function Dashboard({
       if (current?.type === 'anchor' && videoRef.current) {
         setCurrentTime(videoRef.current.currentTime);
         setDuration(videoRef.current.duration || dur);
+      } else if (current?.type === 'youtube') {
+        // YouTube — just tick for progress display, DON'T auto-advance
+        // The YouTube iframe end event listener handles advancing
+        setCurrentTime(prev => prev + 0.5);
       } else {
-        // For YouTube/TikTok/X — tick timer and auto-advance when done
+        // TikTok/X — tick timer and auto-advance when done (no end event available)
         setCurrentTime(prev => {
           if (prev >= dur) {
-            // Auto-advance to next clip
             setCurrentIdx(p => (p + 1) % playlist.length);
             return 0;
           }
@@ -342,7 +345,7 @@ export function Dashboard({
           )}
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1`}
+              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&rel=0`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -679,7 +682,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
     return (
       <div className="w-full h-full relative overflow-hidden">
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
+          src={`https://www.youtube.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
           className="w-full h-full"
           style={{ border: 'none', pointerEvents: 'none' }}
           allow="autoplay"
