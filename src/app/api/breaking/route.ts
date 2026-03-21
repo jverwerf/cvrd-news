@@ -334,8 +334,8 @@ async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean;
   );
 
   for (const result of collectSettled(settled)) {
-    story.youtube_videos.push(...result.yt);
-    story.social_clips.push(...result.social);
+    story.youtube_videos.unshift(...result.yt);
+    story.social_clips.unshift(...result.social);
   }
 
   // Image — only if missing, with tight timeout
