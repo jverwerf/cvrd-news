@@ -63,11 +63,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       {/* NAV + BANNER — wrapped together, both sticky */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         {/* 1. CATEGORY NAV */}
-        <div className="overflow-x-auto" style={{ background: '#1e2a3a' }}>
-          <div className="h-12 flex items-center justify-center gap-6 px-8">
+        <div className="overflow-x-auto" style={{ background: '#1e2a3a', scrollbarWidth: 'none' }}>
+          <div className="h-12 flex items-center justify-center gap-3 px-4">
             {[{ label: 'Daily Pick', slug: '/' }, ...Object.values(CATEGORIES)].map((c) => (
               <a key={c.slug} href={c.slug === '/' ? '/' : `/${c.slug}`}
-                className="shrink-0 px-5 py-2 text-[14px] font-semibold rounded-full transition-colors"
+                className="shrink-0 px-3 py-1.5 text-[13px] font-semibold rounded-full transition-colors"
                 style={{
                   background: c.slug === category ? 'rgba(255,255,255,0.2)' : 'transparent',
                   color: c.slug === category ? '#fff' : 'rgba(255,255,255,0.85)',
@@ -75,13 +75,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 {c.label}
               </a>
             ))}
-            <span className="w-px h-5 bg-white/10 shrink-0" />
-            <a href="/tv" className="shrink-0 px-4 py-2 text-[12px] font-semibold rounded-full transition-colors flex items-center gap-1.5"
-              style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)', border: '1px solid rgba(255,255,255,0.08)' }}>
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <a href="/tv" className="shrink-0 p-1.5 rounded-full transition-colors flex items-center"
+              style={{ color: 'rgba(255,255,255,0.35)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
               </svg>
-              TV
             </a>
           </div>
         </div>
