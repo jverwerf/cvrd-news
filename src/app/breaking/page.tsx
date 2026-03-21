@@ -126,23 +126,19 @@ export default function BreakingPage() {
           </div>
         </div>
 
-        {/* 2. LIVE BANNER with logo */}
-        <div className="relative">
-          <LiveBanner stories={allStories} />
-          <div className="absolute inset-0 pointer-events-none z-10" style={{
-            background: 'radial-gradient(ellipse 10% 100% at 50% 50%, white 0%, white 70%, transparent 100%)'
-          }} />
-          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <img src="/logo3.png" alt="CVRD" style={{ height: '44px' }} />
-          </div>
-        </div>
+        {/* 2. LIVE BANNER */}
+        <LiveBanner stories={allStories} />
+      </div>
 
-        {/* 3. RED BREAKING BANNER for most recent story */}
-        <div className="px-4 py-2 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
-          <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse">LIVE</span>
-          <span className="text-[13px] text-white font-bold flex-1 truncate">{breakingItems[0].topic}</span>
-          <span className="text-[10px] text-white/60 shrink-0">{timeAgo(breakingItems[0].detected_at)} · {breakingItems.length > 1 ? `${breakingItems.length} stories` : 'Updated every 30 min'}</span>
-        </div>
+      {/* LOGO — fixed, overlapping banner/dashboard boundary (same as homepage) */}
+      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
+        style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
+
+      {/* RED BREAKING BANNER for most recent story */}
+      <div className="px-4 py-2 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
+        <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse">LIVE</span>
+        <span className="text-[13px] text-white font-bold flex-1 truncate">{breakingItems[0].topic}</span>
+        <span className="text-[10px] text-white/60 shrink-0">{timeAgo(breakingItems[0].detected_at)} · {breakingItems.length > 1 ? `${breakingItems.length} stories` : 'Updated every 30 min'}</span>
       </div>
 
       {/* MOST RECENT: Dashboard + HeroStory */}
