@@ -679,10 +679,10 @@ function TileContentRenderer({ item }: { item: TileContent }) {
     return (
       <div className="w-full h-full relative overflow-hidden">
         <iframe
-          srcDoc={`<!DOCTYPE html><html><body style="margin:0;overflow:hidden"><iframe src="https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3" style="width:100%;height:100%;border:none" allow="autoplay"></iframe></body></html>`}
+          src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
           className="w-full h-full"
           style={{ border: 'none', pointerEvents: 'none' }}
-          sandbox="allow-scripts allow-presentation"
+          allow="autoplay"
           loading="lazy"
         />
         <div className="absolute top-2 left-2 z-10">
