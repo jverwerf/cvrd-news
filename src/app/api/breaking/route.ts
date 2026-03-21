@@ -65,15 +65,19 @@ async function fetchRecentHeadlines(): Promise<{ title: string; url: string; sou
 
 // ── ENRICHMENT ──
 
-async function searchYouTube(topic: string, existingUrls: Set<string>): Promise<BreakingStory['youtube_videos']> {
+async function searchYouTube(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['youtube_videos']> {
   const videos: BreakingStory['youtube_videos'] = [];
+  // Only get videos from 2 hours before detection to now
+  const publishedAfter = detectedAt
+    ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000).toISOString()
+    : new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString();
 
   // Try YouTube Data API first
   try {
     const ytKey = process.env.YOUTUBE_SEARCH_API_KEY || process.env.YOUTUBE_API_KEY;
     if (ytKey) {
       const resp = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?key=${ytKey}&q=${encodeURIComponent(topic)}&part=snippet&type=video&maxResults=8&order=relevance&publishedAfter=${new Date(Date.now() - 24 * 86400000).toISOString()}`,
+        `https://www.googleapis.com/youtube/v3/search?key=${ytKey}&q=${encodeURIComponent(topic)}&part=snippet&type=video&maxResults=8&order=date&publishedAfter=${publishedAfter}`,
         { signal: AbortSignal.timeout(8000) }
       );
       const data = await resp.json();
@@ -132,19 +136,29 @@ async function searchYouTube(topic: string, existingUrls: Set<string>): Promise<
   return videos;
 }
 
-async function searchX(topic: string, existingUrls: Set<string>): Promise<BreakingStory['social_clips']> {
+async function searchX(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
   const clips: BreakingStory['social_clips'] = [];
   const xKey = process.env.TWITTERAPI_IO_KEY;
   if (!xKey) return clips;
 
+  // Filter: only tweets from 2h before detection onwards
+  const sinceDate = detectedAt
+    ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000)
+    : new Date(Date.now() - 6 * 60 * 60 * 1000);
+  const sinceStr = sinceDate.toISOString().split('T')[0]; // YYYY-MM-DD for X search
+  const sinceFilter = ` since:${sinceStr}`;
+
   try {
     // Video tweets
     const videoResp = await fetch(
-      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:100 has:video -is:retweet lang:en')}&queryType=Latest`,
+      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:100 has:video -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
       { headers: { 'x-api-key': xKey }, signal: AbortSignal.timeout(8000) }
     );
     const videoData = await videoResp.json();
     for (const tweet of (videoData?.tweets || []).slice(0, 5)) {
+      // Filter by exact timestamp
+      const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
+      if (tweetDate.getTime() < sinceDate.getTime()) continue;
       const hasVideo = (tweet.extendedEntities?.media || []).some((m: any) => m.type === 'video');
       if (!hasVideo) continue;
       const author = tweet.author?.userName || 'unknown';
@@ -156,13 +170,15 @@ async function searchX(topic: string, existingUrls: Set<string>): Promise<Breaki
   } catch {}
 
   try {
-    // Text tweets (no duration — shows as embedded tweets in expanded section)
+    // Text tweets
     const textResp = await fetch(
-      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:200 -is:retweet lang:en')}&queryType=Latest`,
+      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:200 -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
       { headers: { 'x-api-key': xKey }, signal: AbortSignal.timeout(8000) }
     );
     const textData = await textResp.json();
     for (const tweet of (textData?.tweets || []).slice(0, 8)) {
+      const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
+      if (tweetDate.getTime() < sinceDate.getTime()) continue;
       const author = tweet.author?.userName || 'unknown';
       const url = `https://x.com/${author}/status/${tweet.id}`;
       if (existingUrls.has(url)) continue;
@@ -194,10 +210,15 @@ async function searchReddit(topic: string, existingUrls: Set<string>): Promise<B
   return clips;
 }
 
-async function searchTikTok(topic: string, existingUrls: Set<string>): Promise<BreakingStory['social_clips']> {
+async function searchTikTok(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
   const clips: BreakingStory['social_clips'] = [];
   const apifyToken = process.env.APIFY_API_TOKEN;
   if (!apifyToken) return clips;
+
+  // Only TikToks from 2h before detection
+  const sinceTime = detectedAt
+    ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000).getTime() / 1000
+    : (Date.now() - 6 * 60 * 60 * 1000) / 1000;
 
   try {
     const resp = await fetch(
@@ -206,12 +227,15 @@ async function searchTikTok(topic: string, existingUrls: Set<string>): Promise<B
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ searchQueries: [topic], resultsPerPage: 5, searchSection: '/video', shouldDownloadVideos: false }),
-        signal: AbortSignal.timeout(30000), // 30s — tight but doable
+        signal: AbortSignal.timeout(30000),
       }
     );
     const data = await resp.json();
     for (const item of (Array.isArray(data) ? data : []).slice(0, 5)) {
       if (!item.id) continue;
+      // Filter by createTime
+      const createTime = item.createTime || item.createTimeISO ? new Date(item.createTimeISO || item.createTime * 1000).getTime() / 1000 : 0;
+      if (createTime > 0 && createTime < sinceTime) continue;
       const url = item.webVideoUrl || `https://www.tiktok.com/@${item.authorMeta?.name || 'unknown'}/video/${item.id}`;
       if (existingUrls.has(url)) continue;
       clips.push({
@@ -351,16 +375,17 @@ async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean;
 
   const searches: Promise<{ yt: BreakingStory['youtube_videos']; social: BreakingStory['social_clips'] }>[] = [];
 
-  // All searches run in parallel with individual timeouts
+  // All searches run in parallel with individual timeouts — pass detected_at for time filtering
+  const detectedAt = story.detected_at;
   searches.push(
-    withTimeout(searchYouTube(story.topic, existingUrls), 40000, []).then(yt => ({ yt, social: [] as BreakingStory['social_clips'] })),
-    withTimeout(searchX(story.topic, existingUrls), 12000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
+    withTimeout(searchYouTube(story.topic, existingUrls, detectedAt), 40000, []).then(yt => ({ yt, social: [] as BreakingStory['social_clips'] })),
+    withTimeout(searchX(story.topic, existingUrls, detectedAt), 12000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
     withTimeout(searchReddit(story.topic, existingUrls), 8000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
   );
 
   if (opts.includeTikTok) {
     searches.push(
-      withTimeout(searchTikTok(story.topic, existingUrls), 35000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
+      withTimeout(searchTikTok(story.topic, existingUrls, detectedAt), 35000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
     );
   }
 
