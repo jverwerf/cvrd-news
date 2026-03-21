@@ -23,8 +23,8 @@ export default async function TVPage() {
   return (
     <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
       {/* Logo */}
-      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
-        style={{ top: '8px', transform: 'translateX(-50%)', height: '50px', zIndex: 101, opacity: 0.6, filter: 'drop-shadow(0 0 10px rgba(0,0,0,0.5))' }} />
+      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 top-1/2 pointer-events-none"
+        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.3))' }} />
 
       {/* Ticker bar */}
       <div className="fixed top-0 left-0 right-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100 }}>
