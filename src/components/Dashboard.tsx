@@ -348,7 +348,7 @@ export function Dashboard({
           )}
           {current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}&rel=0&widget_referrer=${typeof window !== 'undefined' ? encodeURIComponent(window.location.origin) : ''}&disablekb=1`}
+              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=${unmuted ? 0 : 1}&enablejsapi=1&rel=0&disablekb=1`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -685,7 +685,8 @@ function TileContentRenderer({ item }: { item: TileContent }) {
     return (
       <div className="w-full h-full relative overflow-hidden">
         <iframe
-          src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3&disablekb=1&fs=0&widget_referrer=${typeof window !== 'undefined' ? encodeURIComponent(window.location.origin) : ''}`}
+          src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
+          sandbox="allow-scripts allow-presentation"
           className="w-full h-full"
           style={{ border: 'none', pointerEvents: 'none' }}
           allow="autoplay"
