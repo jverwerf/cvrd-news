@@ -353,7 +353,7 @@ async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean;
 
   // All searches run in parallel with individual timeouts
   searches.push(
-    withTimeout(searchYouTube(story.topic, existingUrls), 10000, []).then(yt => ({ yt, social: [] as BreakingStory['social_clips'] })),
+    withTimeout(searchYouTube(story.topic, existingUrls), 40000, []).then(yt => ({ yt, social: [] as BreakingStory['social_clips'] })),
     withTimeout(searchX(story.topic, existingUrls), 12000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
     withTimeout(searchReddit(story.topic, existingUrls), 8000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
   );
