@@ -325,11 +325,11 @@ export function Dashboard({
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} showAd={adPosition === i} adKey={adKey} />
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === i} adKey={adKey} />
         ))}
 
         {/* ROW 2 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} showAd={adPosition === 4} adKey={adKey} />
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === 4} adKey={adKey} />
 
         <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
           <div className="flex-1 relative min-h-0">
@@ -484,11 +484,11 @@ export function Dashboard({
           </div>
         </div>
 
-        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} showAd={adPosition === 5} adKey={adKey} />
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === 5} adKey={adKey} />
 
         {/* ROW 3 */}
         {[6, 7, 8, 9].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} showAd={adPosition === i} adKey={adKey} />
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === i} adKey={adKey} />
         ))}
       </div>
     </section>
@@ -501,7 +501,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey }: {
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId }: {
   pool: TileContent[];
   startOffset: number;
   delay: number;
@@ -509,11 +509,31 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   onTileClick?: (embedId: string) => void;
   showAd?: boolean;
   adKey?: number;
+  skipEmbedId?: string;
 }) {
   const [currentIdx, setCurrentIdx] = useState(startOffset);
   const [prevIdx, setPrevIdx] = useState(-1);
   const poolRef = useRef(pool);
+  const skipRef = useRef(skipEmbedId);
   poolRef.current = pool;
+  skipRef.current = skipEmbedId;
+
+  // Helper: find next index that isn't the currently playing center video
+  const getNextIdx = (fromIdx: number) => {
+    const len = poolRef.current.length;
+    let next = (fromIdx + 1) % len;
+    // Skip items matching the center player's video (max 1 skip to avoid infinite loop)
+    if (skipRef.current && len > 2) {
+      const item = poolRef.current[next];
+      const embedId = item.type === 'video'
+        ? item.image.match(/\/vi\/([^/]+)/)?.[1] || ''
+        : item.embedId || '';
+      if (embedId === skipRef.current) {
+        next = (next + 1) % len;
+      }
+    }
+    return next;
+  };
 
   useEffect(() => {
     if (frozen || pool.length <= 1) return;
@@ -526,7 +546,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
       const baseDuration = item.type === 'video' ? 16000 : 8000;
       timer = setTimeout(() => {
         if (cancelled) return;
-        const nextIdx = (idx + 1) % poolRef.current.length;
+        const nextIdx = getNextIdx(idx);
         setPrevIdx(idx);
         setCurrentIdx(nextIdx);
         schedule(nextIdx);
