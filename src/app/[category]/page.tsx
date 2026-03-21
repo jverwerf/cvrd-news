@@ -75,6 +75,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 {c.label}
               </a>
             ))}
+            <span className="w-px h-5 bg-white/10 shrink-0" />
+            <a href="/tv" className="shrink-0 px-4 py-2 text-[12px] font-semibold rounded-full transition-colors flex items-center gap-1.5"
+              style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.5)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+              </svg>
+              TV
+            </a>
           </div>
         </div>
 
