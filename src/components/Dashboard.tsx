@@ -122,9 +122,13 @@ export function Dashboard({
         setCurrentTime(videoRef.current.currentTime);
         setDuration(videoRef.current.duration || dur);
       } else {
-        // For everything else, tick the timer (no auto-advance — user controls skip)
+        // For YouTube/TikTok/X — tick timer and auto-advance when done
         setCurrentTime(prev => {
-          if (prev >= dur) return dur;
+          if (prev >= dur) {
+            // Auto-advance to next clip
+            setCurrentIdx(p => (p + 1) % playlist.length);
+            return 0;
+          }
           return prev + 0.5;
         });
       }
@@ -132,6 +136,21 @@ export function Dashboard({
 
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [currentIdx]);
+
+  // Listen for YouTube iframe end event — auto-advance immediately
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
+          // playerState 0 = ended
+          setCurrentIdx(p => (p + 1) % playlist.length);
+        }
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [playlist.length]);
 
   // Calculate overall playlist progress
   useEffect(() => {
