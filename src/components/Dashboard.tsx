@@ -320,7 +320,7 @@ export function Dashboard({
   }, []);
 
   return (
-    <section className="px-4 md:px-8" style={{ background: '#1e2a3a', height: 'calc(100vh - 104px)', overflow: 'hidden' }}>
+    <section style={{ background: '#1e2a3a', height: 'calc(100vh - 104px)', overflow: 'hidden' }}>
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
@@ -677,17 +677,14 @@ function TileContentRenderer({ item }: { item: TileContent }) {
 
   if (item.type === 'video') {
     return (
-      <div className="w-full h-full relative">
+      <div className="w-full h-full relative overflow-hidden">
         <iframe
           src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
           className="w-full h-full"
-          style={{ border: 'none' }}
+          style={{ border: 'none', pointerEvents: 'none' }}
           allow="autoplay"
-          sandbox="allow-scripts allow-same-origin allow-presentation"
           loading="lazy"
         />
-        {/* Invisible overlay blocks iframe from navigating the page */}
-        <div className="absolute inset-0" style={{ pointerEvents: 'auto' }} onClick={(e) => e.preventDefault()} />
         <div className="absolute top-2 left-2 z-10">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
         </div>
