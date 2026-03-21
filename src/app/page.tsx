@@ -17,14 +17,8 @@ const ALL_CATS = [
 
 async function hasBreakingNews(): Promise<boolean> {
   try {
-    const fs = await import('fs');
-    const path = await import('path');
-    const breakingPath = path.resolve(process.cwd(), 'public/data/breaking.json');
-    if (!fs.existsSync(breakingPath)) return false;
-    const raw = JSON.parse(fs.readFileSync(breakingPath, 'utf8'));
-    // Support both array and single object
-    const items = Array.isArray(raw) ? raw : [raw];
-    return items.some(s => Date.now() - new Date(s.last_updated).getTime() < 12 * 60 * 60 * 1000);
+    const { hasBreakingData } = await import('@/lib/breaking-store');
+    return await hasBreakingData();
   } catch { return false; }
 }
 

@@ -67,24 +67,17 @@ export default function BreakingPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/breaking.json')
+    fetch('/api/breaking/data')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
-        if (!data) { window.location.href = '/'; return; }
-
-        // Support both single object and array format
-        const items = Array.isArray(data) ? data : [data];
-
-        // Filter out expired (>12h) and sort by detected_at (most recent first)
-        const valid = items
-          .filter((b: any) => Date.now() - new Date(b.last_updated).getTime() < 12 * 60 * 60 * 1000)
-          .sort((a: any, b: any) => new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime());
-
-        if (valid.length === 0) {
+        if (!data || (Array.isArray(data) && data.length === 0)) {
           window.location.href = '/';
           return;
         }
-        setBreakingItems(valid);
+        const items = Array.isArray(data) ? data : [data];
+        // Sort by detected_at (most recent first)
+        items.sort((a: any, b: any) => new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime());
+        setBreakingItems(items);
         setLoading(false);
       })
       .catch(() => { window.location.href = '/'; });
