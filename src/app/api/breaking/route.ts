@@ -355,11 +355,12 @@ async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean;
 
 export async function GET() {
   const startTime = Date.now();
-  const safeTimeLeft = () => 55000 - (Date.now() - startTime); // 55s safety margin
+  const safeTimeLeft = () => 55000 - (Date.now() - startTime);
+  let allStories: BreakingStory[] = [];
 
   try {
     // Load current breaking stories from Vercel Blob
-    let allStories: BreakingStory[] = (await withTimeout(getBreakingData(), 5000, null)) || [];
+    allStories = (await withTimeout(getBreakingData(), 5000, null)) || [];
 
     const existingTopics = allStories.map(s => s.topic);
     const candidates = await withTimeout(fetchBreakingCandidates(), 10000, []);
