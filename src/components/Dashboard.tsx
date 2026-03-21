@@ -678,12 +678,10 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   if (item.type === 'video') {
     return (
       <div className="w-full h-full relative">
-        <iframe
-          src={`https://www.youtube-nocookie.com/embed/${item.image.match(/\/vi\/([^/]+)/)?.[1]}?autoplay=1&mute=1&controls=0&loop=1&playlist=${item.image.match(/\/vi\/([^/]+)/)?.[1]}&showinfo=0&modestbranding=1&playsinline=1&enablejsapi=0&rel=0&iv_load_policy=3`}
-          className="w-full h-full"
-          style={{ border: 'none', pointerEvents: 'none' }}
-          allow="autoplay"
-          sandbox="allow-scripts allow-same-origin allow-presentation"
+        <img
+          src={item.image}
+          alt={item.videoTitle || item.channel || ''}
+          className="w-full h-full object-cover"
           loading="lazy"
         />
         <div className="absolute top-2 left-2 z-10">
