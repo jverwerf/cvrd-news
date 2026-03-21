@@ -140,10 +140,12 @@ export function Dashboard({
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [currentIdx]);
 
-  // Listen for YouTube iframe end event — auto-advance immediately
+  // Listen for YouTube center player end event ONLY — ignore tile iframes
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
+        // Only accept messages from the center player (youtube.com, not youtube-nocookie.com tiles)
+        if (!e.origin.includes('youtube.com') || e.origin.includes('nocookie')) return;
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
           // playerState 0 = ended
