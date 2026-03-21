@@ -70,22 +70,19 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* 2. LIVE BANNER with logo */}
-            <div className="relative">
+            {/* 2. LIVE BANNER */}
             <LiveBanner stories={stories} liveData={data.live_data} />
-            <div className="absolute inset-0 pointer-events-none z-10" style={{
-              background: 'radial-gradient(ellipse 10% 100% at 50% 50%, white 0%, white 70%, transparent 100%)'
-            }} />
-            <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-              <img src="/logo2.png" alt="CVRD" style={{ height: '44px' }} />
-            </div>
-            </div>
           </div>
 
-          {/* 3. DASHBOARD */}
-          <ErrorBoundary>
-            <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
-          </ErrorBoundary>
+          {/* 3. DASHBOARD + LOGO */}
+          <div className="relative">
+            <ErrorBoundary>
+              <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+            </ErrorBoundary>
+            {/* Logo centered, overlapping top of dashboard */}
+            <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
+              style={{ top: '-2px', transform: 'translateX(-50%)', height: '180px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
+          </div>
 
           {/* 4. HERO STORY */}
           <div className="h-3" />
@@ -96,7 +93,7 @@ export default async function Home() {
 
           {/* FOOTER */}
           <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
-            <img src="/logo2.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
+            <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
             <span className="text-[11px] text-[#666] block mb-3">Sourced from the social pulse</span>
             <div className="flex items-center justify-center gap-4">
               <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
