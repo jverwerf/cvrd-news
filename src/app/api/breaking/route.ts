@@ -27,8 +27,7 @@ import { put as blobPut } from '@vercel/blob';
 
 // ── DETECTION ──
 
-async function fetchBreakingCandidates(): Promise<{ title: string; url: string; source: string }[]> {
-  const breakingKeywords = /\b(BREAKING|JUST IN|ALERT|DEVELOPING|URGENT|FLASH)\b/i;
+async function fetchRecentHeadlines(): Promise<{ title: string; url: string; source: string }[]> {
   const feeds = [
     { name: 'BBC', url: 'https://feeds.bbci.co.uk/news/rss.xml' },
     { name: 'CNN', url: 'http://rss.cnn.com/rss/edition.rss' },
@@ -36,30 +35,32 @@ async function fetchBreakingCandidates(): Promise<{ title: string; url: string; 
     { name: 'Reuters', url: 'https://www.yahoo.com/news/rss' },
     { name: 'Fox News', url: 'https://moxie.foxnews.com/google-publisher/latest.xml' },
     { name: 'NPR', url: 'https://feeds.npr.org/1001/rss.xml' },
+    { name: 'The Guardian', url: 'https://www.theguardian.com/world/rss' },
+    { name: 'AP News', url: 'https://news.google.com/rss/search?q=world+news&hl=en-US&gl=US&ceid=US:en' },
   ];
 
-  const candidates: { title: string; url: string; source: string }[] = [];
-  const oneHourAgo = Date.now() - 60 * 60 * 1000;
+  const headlines: { title: string; url: string; source: string }[] = [];
+  const threeHoursAgo = Date.now() - 3 * 60 * 60 * 1000;
 
   await Promise.all(feeds.map(async (feed) => {
     try {
       const resp = await fetch(feed.url, { signal: AbortSignal.timeout(6000) });
       const text = await resp.text();
       const items = text.match(/<item>([\s\S]*?)<\/item>/g) || [];
-      for (const item of items.slice(0, 10)) {
+      for (const item of items.slice(0, 15)) {
         const title = item.match(/<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>/)?.[1] || '';
         const link = item.match(/<link>(.*?)<\/link>/)?.[1] || '';
         const pubDate = item.match(/<pubDate>(.*?)<\/pubDate>/)?.[1] || '';
         const date = new Date(pubDate);
-        if (date.getTime() < oneHourAgo) continue;
-        if (breakingKeywords.test(title)) {
-          candidates.push({ title, url: link, source: feed.name });
+        if (date.getTime() < threeHoursAgo) continue;
+        if (title && link) {
+          headlines.push({ title, url: link, source: feed.name });
         }
       }
     } catch {}
   }));
 
-  return candidates;
+  return headlines;
 }
 
 // ── ENRICHMENT ──
@@ -363,7 +364,7 @@ export async function GET() {
     allStories = (await withTimeout(getBreakingData(), 5000, null)) || [];
 
     const existingTopics = allStories.map(s => s.topic);
-    const candidates = await withTimeout(fetchBreakingCandidates(), 10000, []);
+    const candidates = await withTimeout(fetchRecentHeadlines(), 10000, []);
 
     // ── DETECT NEW BREAKING ──
     if (candidates.length > 0 && safeTimeLeft() > 20000) {
