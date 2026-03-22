@@ -15,11 +15,56 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
   videoUrl?: string;
   videoDate?: string;
 }) {
-  const [currentIdx, setCurrentIdx] = useState(0);
-  const story = stories[currentIdx];
+  // -1 = Daily Brief, 0+ = individual story
+  const [currentIdx, setCurrentIdx] = useState(-1);
+  const totalPages = stories.length + 1; // brief + stories
 
-  const prev = () => setCurrentIdx(p => (p - 1 + stories.length) % stories.length);
-  const next = () => setCurrentIdx(p => (p + 1) % stories.length);
+  const prev = () => setCurrentIdx(p => {
+    const n = p - 1;
+    return n < -1 ? stories.length - 1 : n;
+  });
+  const next = () => setCurrentIdx(p => {
+    const n = p + 1;
+    return n >= stories.length ? -1 : n;
+  });
+
+  // Build curated Daily Brief story — best picks from all stories
+  const briefStory: NarrativeGap = (() => {
+    const bestYT: NarrativeGap['youtube_videos'] = [];
+    const bestSocial: NarrativeGap['social_clips'] = [];
+
+    for (const s of stories) {
+      // Best YouTube video per story (first one, already sorted by relevance)
+      const yt = (s.youtube_videos || []).find(v => !(v as any).download_failed);
+      if (yt) bestYT.push(yt);
+
+      // Best 2 social clips per story (prefer TikTok/X with video)
+      const social = (s.social_clips || []).filter(c => !(c as any).download_failed && c.embed_id);
+      const videoClips = social.filter(c => c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
+      const picked = videoClips.slice(0, 2);
+      // If less than 2 video clips, fill with any social
+      if (picked.length < 2) {
+        const remaining = social.filter(c => !picked.includes(c));
+        picked.push(...remaining.slice(0, 2 - picked.length));
+      }
+      bestSocial.push(...picked);
+    }
+
+    return {
+      topic: 'Daily Brief',
+      summary: `Today's top ${stories.length} stories — the most important clips from every angle.`,
+      left_narrative: '',
+      right_narrative: '',
+      what_they_arent_telling_you: '',
+      image_prompt: '',
+      youtube_videos: bestYT,
+      social_clips: bestSocial,
+      sources: [],
+    };
+  })();
+
+  const isBrief = currentIdx === -1;
+  const story = isBrief ? briefStory : stories[currentIdx];
 
   const clips = story.social_clips || [];
   const ytVids = story.youtube_videos || [];
@@ -39,31 +84,57 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
     <div>
       {/* DASHBOARD with arrows + timeline */}
       <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
-        {/* STORY TIMELINE — top of dashboard view */}
-        <div className="flex gap-0.5 px-1 py-1" style={{ background: '#0a0f18' }}>
-          {stories.map((s, i) => {
-            const isActive = i === currentIdx;
-            const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
-            return (
-              <button key={i} onClick={() => setCurrentIdx(i)}
-                className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center transition-all flex-1 min-w-0"
-                style={{
-                  background: isActive ? '#2563eb' : blues[i % blues.length],
-                  opacity: isActive ? 1 : 0.6,
-                  border: 'none',
-                }}>
-                <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.7 }}>
-                  {s.topic}
-                </p>
-              </button>
-            );
-          })}
+        {/* STORY TIMELINE — top of dashboard view, scrollable */}
+        <div className="flex items-center gap-0" style={{ background: '#0a0f18' }}>
+          <button onClick={() => {
+            document.getElementById('story-timeline')?.scrollBy({ left: -200, behavior: 'smooth' });
+          }} className="shrink-0 px-1.5 py-2 hover:opacity-70" style={{ background: '#0a0f18', border: 'none', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-[#666]" />
+          </button>
+          <div id="story-timeline" className="flex gap-0.5 py-1 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
+            {/* Daily Brief tab */}
+            <button onClick={() => setCurrentIdx(-1)}
+              className="rounded cursor-pointer overflow-hidden px-3 py-1.5 flex items-center transition-all shrink-0"
+              style={{
+                background: isBrief ? '#b8860b' : '#1a1a2e',
+                opacity: isBrief ? 1 : 0.6,
+                border: 'none',
+              }}>
+              <p className="text-[9px] leading-tight text-white font-bold whitespace-nowrap" style={{ opacity: isBrief ? 1 : 0.7 }}>
+                ▶ Daily Brief
+              </p>
+            </button>
+            {/* Story tabs */}
+            {stories.map((s, i) => {
+              const isActive = i === currentIdx;
+              const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
+              return (
+                <button key={i} onClick={() => setCurrentIdx(i)}
+                  className="rounded cursor-pointer overflow-hidden px-3 py-1.5 flex items-center transition-all shrink-0"
+                  style={{
+                    background: isActive ? '#2563eb' : blues[i % blues.length],
+                    opacity: isActive ? 1 : 0.6,
+                    border: 'none',
+                    minWidth: 120,
+                  }}>
+                  <p className="text-[9px] leading-tight text-white font-medium whitespace-nowrap" style={{ opacity: isActive ? 1 : 0.7 }}>
+                    {s.topic}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+          <button onClick={() => {
+            document.getElementById('story-timeline')?.scrollBy({ left: 200, behavior: 'smooth' });
+          }} className="shrink-0 px-1.5 py-2 hover:opacity-70" style={{ background: '#0a0f18', border: 'none', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-[#666]" />
+          </button>
         </div>
 
         <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0 }}>
             <ErrorBoundary>
-              <Dashboard stories={[story]} videoUrl={currentIdx === 0 ? videoUrl : undefined} videoDate={currentIdx === 0 ? videoDate : undefined} />
+              <Dashboard stories={[story]} videoUrl={isBrief ? videoUrl : undefined} videoDate={isBrief ? videoDate : undefined} />
             </ErrorBoundary>
           </div>
         </div>
@@ -99,30 +170,67 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         </div>
       </div>
 
-      {/* WHITE BANNER with navigation */}
-      <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-        <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+      {/* BANNER with navigation */}
+      <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: isBrief ? '#1a1a2e' : '#f5f5f5' }}>
+        <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+          style={{ border: `1px solid ${isBrief ? '#333' : '#ddd'}`, cursor: 'pointer', background: isBrief ? '#253545' : 'white' }}>
+          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px]" style={{ borderRightColor: isBrief ? '#fff' : '#1e2a3a' }} />
         </button>
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0">
-              {currentIdx + 1}/{stories.length}
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0"
+              style={{ color: isBrief ? '#b8860b' : '#1e2a3a', background: isBrief ? 'rgba(184,134,11,0.15)' : 'rgba(30,42,58,0.1)' }}>
+              {isBrief ? 'Daily Brief' : `${currentIdx + 1}/${stories.length}`}
             </span>
-            <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] truncate" style={serif}>
-              {story.topic}
+            <h1 className="text-[18px] md:text-[22px] leading-tight tracking-[-0.02em] truncate" style={{ ...serif, color: isBrief ? '#fff' : '#1e2a3a' }}>
+              {isBrief ? "Today's Top Stories" : story.topic}
             </h1>
           </div>
         </div>
-        <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+        <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+          style={{ border: `1px solid ${isBrief ? '#333' : '#ddd'}`, cursor: 'pointer', background: isBrief ? '#253545' : 'white' }}>
+          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px]" style={{ borderLeftColor: isBrief ? '#fff' : '#1e2a3a' }} />
         </button>
       </div>
 
-      {/* IMAGE */}
-      {story.image_file && (
+      {/* DAILY BRIEF CONTENT */}
+      {isBrief && (
+        <div className="px-6 md:px-12 py-6" style={{ background: '#1e2a3a' }}>
+          {/* Story headlines grid */}
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            {stories.map((s, i) => (
+              <button key={i} onClick={() => setCurrentIdx(i)}
+                className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+                style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {s.image_file && (
+                  <div className="h-24 overflow-hidden" style={{
+                    backgroundImage: `url(${s.image_file})`,
+                    backgroundSize: 'cover', backgroundPosition: 'center',
+                  }}>
+                    <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                  </div>
+                )}
+                <div className="p-2.5">
+                  <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
+                  <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                    {s.topic}
+                  </p>
+                </div>
+              </button>
+            ))}
+          </div>
+
+          {/* Video thumbnails */}
+          {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+            <div className="mt-6">
+              <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={undefined} storyIndex={0} />
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* IMAGE (story mode only) */}
+      {!isBrief && story.image_file && (
         <div className="relative overflow-hidden" style={{
           height: '45vh', minHeight: '320px',
           backgroundImage: `url(${story.image_file})`,
@@ -132,8 +240,8 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         </div>
       )}
 
-      {/* FULL STORY CONTENT — always expanded */}
-      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
+      {/* FULL STORY CONTENT — only in story mode */}
+      {!isBrief && <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
         {/* SUMMARY */}
         <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -298,7 +406,7 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
             )}
           </div>
         </div>
-      </div>
+      </div>}
     </div>
   );
 }
