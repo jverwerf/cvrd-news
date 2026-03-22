@@ -39,15 +39,7 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
     <div>
       {/* DASHBOARD with arrows + timeline */}
       <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
-        <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', inset: 0 }}>
-            <ErrorBoundary>
-              <Dashboard stories={[story]} videoUrl={currentIdx === 0 ? videoUrl : undefined} videoDate={currentIdx === 0 ? videoDate : undefined} tvMode />
-            </ErrorBoundary>
-          </div>
-        </div>
-
-        {/* STORY TIMELINE — inside dashboard view */}
+        {/* STORY TIMELINE — top of dashboard view */}
         <div className="flex gap-0.5 px-1 py-1" style={{ background: '#0a0f18' }}>
           {stories.map((s, i) => {
             const isActive = i === currentIdx;
@@ -66,6 +58,14 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
               </button>
             );
           })}
+        </div>
+
+        <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', inset: 0 }}>
+            <ErrorBoundary>
+              <Dashboard stories={[story]} videoUrl={currentIdx === 0 ? videoUrl : undefined} videoDate={currentIdx === 0 ? videoDate : undefined} />
+            </ErrorBoundary>
+          </div>
         </div>
 
         {/* Left arrow */}
