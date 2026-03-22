@@ -81,9 +81,13 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
               </svg>
             </a>
-            <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="shrink-0 p-1 transition-opacity hover:opacity-80 flex items-center"
-              title="Watch the daily show">
-              <img src="/logo3.png" alt="CVRD" style={{ height: '16px', opacity: 0.4, filter: 'brightness(0) invert(1)' }} />
+            <span className="w-px h-5 bg-white/10 shrink-0" />
+            <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="shrink-0 p-1.5 rounded-full transition-colors flex items-center hover:opacity-70"
+              style={{ color: 'rgba(255,255,255,0.35)' }} title="Watch the daily show">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 1C7.5 1 4 5.5 4 9c0 1.5 0 3 0 4l-1 8h18l-1-8c0-1 0-2.5 0-4 0-3.5-3.5-8-8-8z" />
+                <ellipse cx="12" cy="12" rx="3" ry="3.5" />
+              </svg>
             </a>
           </div>
         </div>
