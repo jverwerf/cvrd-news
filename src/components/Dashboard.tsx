@@ -149,26 +149,20 @@ export function Dashboard({
     return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [currentIdx]);
 
-  // Listen for YouTube center player end event ONLY
-  // Debounce to prevent rapid-fire from tile iframes
-  const lastAdvanceRef = useRef(0);
+  // Listen for YouTube center player end event
+  // Track current video start time to ignore premature end events
+  const videoStartRef = useRef(Date.now());
+  useEffect(() => {
+    videoStartRef.current = Date.now();
+  }, [currentIdx]);
+
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
-          // Only advance if center player iframe matches, or if no ref yet just debounce
-          const now = Date.now();
-          if (now - lastAdvanceRef.current < 3000) return; // debounce 3s
-
-          // Check if from center player
-          if (ytPlayerRef.current) {
-            try {
-              if (e.source !== ytPlayerRef.current.contentWindow) return;
-            } catch { /* cross-origin, allow it */ }
-          }
-
-          lastAdvanceRef.current = now;
+          // Ignore end events within first 5s of a new video (from tiles or stale events)
+          if (Date.now() - videoStartRef.current < 5000) return;
           setCurrentIdx(p => (p + 1) % playlist.length);
         }
       } catch {}
