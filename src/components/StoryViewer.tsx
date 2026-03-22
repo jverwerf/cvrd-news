@@ -203,42 +203,6 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         </button>
       </div>
 
-      {/* DAILY BRIEF CONTENT */}
-      {isBrief && (
-        <div className="px-6 md:px-12 py-6" style={{ background: '#1e2a3a' }}>
-          {/* Story headlines grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            {stories.map((s, i) => (
-              <button key={i} onClick={() => setCurrentIdx(i)}
-                className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
-                style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                {s.image_file && (
-                  <div className="h-24 overflow-hidden" style={{
-                    backgroundImage: `url(${s.image_file})`,
-                    backgroundSize: 'cover', backgroundPosition: 'center',
-                  }}>
-                    <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                  </div>
-                )}
-                <div className="p-2.5">
-                  <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                  <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                    {s.topic}
-                  </p>
-                </div>
-              </button>
-            ))}
-          </div>
-
-          {/* Video thumbnails */}
-          {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-            <div className="mt-6">
-              <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={undefined} storyIndex={0} />
-            </div>
-          )}
-        </div>
-      )}
-
       {/* IMAGE (story mode only) */}
       {!isBrief && story.image_file && (
         <div className="relative overflow-hidden" style={{
@@ -250,8 +214,8 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         </div>
       )}
 
-      {/* FULL STORY CONTENT — only in story mode */}
-      {!isBrief && <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
+      {/* FULL CONTENT */}
+      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
         {/* SUMMARY */}
         <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -416,7 +380,7 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
             )}
           </div>
         </div>
-      </div>}
+      </div>
     </div>
   );
 }
