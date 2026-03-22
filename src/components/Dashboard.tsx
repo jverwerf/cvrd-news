@@ -150,11 +150,25 @@ export function Dashboard({
   }, [currentIdx]);
 
   // Listen for YouTube center player end event ONLY
+  // Debounce to prevent rapid-fire from tile iframes
+  const lastAdvanceRef = useRef(0);
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
+          // Only advance if center player iframe matches, or if no ref yet just debounce
+          const now = Date.now();
+          if (now - lastAdvanceRef.current < 3000) return; // debounce 3s
+
+          // Check if from center player
+          if (ytPlayerRef.current) {
+            try {
+              if (e.source !== ytPlayerRef.current.contentWindow) return;
+            } catch { /* cross-origin, allow it */ }
+          }
+
+          lastAdvanceRef.current = now;
           setCurrentIdx(p => (p + 1) % playlist.length);
         }
       } catch {}
@@ -356,10 +370,13 @@ export function Dashboard({
               src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               onLoad={() => {
                 if (unmuted && ytPlayerRef.current?.contentWindow) {
-                  setTimeout(() => {
+                  // YouTube API needs time to initialize after iframe load
+                  const unmuteFn = () => {
                     ytPlayerRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
                     ytPlayerRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [Math.round(volume * 100)] }), '*');
-                  }, 500);
+                  };
+                  setTimeout(unmuteFn, 1000);
+                  setTimeout(unmuteFn, 2000); // retry in case first was too early
                 }
               }}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
