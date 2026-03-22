@@ -228,7 +228,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 opacity: isBrief ? 1 : 0.5,
                 transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
-              <div className="story-thumb-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease' }} style={{ background: '#1a1a2e' }}>
+              <div className="story-thumb-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
                 <img src="/logo3.png" alt="CVRD" style={{ height: '28px', opacity: 0.4 }} />
                 <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
                   <span className="story-thumb-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Daily Brief</span>
