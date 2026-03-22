@@ -8,6 +8,7 @@ import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
+import { LazyDashboard } from "./LazyDashboard";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -48,22 +49,21 @@ export function HeroStory({ story, hideBanner }: { story: NarrativeGap; hideBann
         </div>
       )}
 
-      {/* 2. MINI DASHBOARD — this story's clips only */}
+      {/* 2. MINI DASHBOARD — lazy loaded when scrolled into view */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <ErrorBoundary>
-          <Dashboard stories={[story]} />
-        </ErrorBoundary>
+        <LazyDashboard stories={[story]} />
       )}
 
       {/* 3. IMAGE HEADER */}
-      <div className="relative h-[45vh] min-h-[320px] overflow-hidden">
-        {story.image_file ? (
-          <Image src={story.image_file} alt={story.topic} fill className="object-cover" priority />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
-        )}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
-      </div>
+      {story.image_file && (
+        <div className="relative overflow-hidden" style={{
+          height: '45vh', minHeight: '320px',
+          backgroundImage: `url(${story.image_file})`,
+          backgroundSize: 'cover', backgroundPosition: 'center',
+        }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
+        </div>
+      )}
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
