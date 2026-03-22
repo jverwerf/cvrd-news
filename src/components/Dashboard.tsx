@@ -43,6 +43,7 @@ export function Dashboard({
   tvMode?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const ytPlayerRef = useRef<HTMLIFrameElement>(null);
   const [unmuted, setUnmuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [progress, setProgress] = useState(0);
@@ -155,8 +156,7 @@ export function Dashboard({
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
           // Verify this came from the center player iframe, not a tile
-          const centerPlayer = document.getElementById('yt-player') as HTMLIFrameElement;
-          if (centerPlayer && e.source === centerPlayer.contentWindow) {
+          if (ytPlayerRef.current && e.source === ytPlayerRef.current.contentWindow) {
             setCurrentIdx(p => (p + 1) % playlist.length);
           }
         }
@@ -211,7 +211,7 @@ export function Dashboard({
       videoRef.current.muted = !newUnmuted;
     }
     // YouTube center player ONLY
-    const ytFrame = document.getElementById('yt-player') as HTMLIFrameElement;
+    const ytFrame = ytPlayerRef.current;
     if (ytFrame?.contentWindow) {
       ytFrame.contentWindow.postMessage(JSON.stringify({
         event: 'command',
@@ -355,8 +355,8 @@ export function Dashboard({
               onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
           )}
           {current?.type === 'youtube' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=0&mute=${unmuted ? 0 : 1}&enablejsapi=1&rel=0&disablekb=1`}
+            <iframe key={current.embed_id} ref={ytPlayerRef}
+              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=0&mute=${unmuted ? 0 : 1}&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -480,7 +480,7 @@ export function Dashboard({
                       videoRef.current.muted = vol === 0;
                     }
                     // Control YouTube iframe
-                    const ytFrame = document.getElementById('yt-player') as HTMLIFrameElement;
+                    const ytFrame = ytPlayerRef.current;
                     if (ytFrame?.contentWindow) {
                       ytFrame.contentWindow.postMessage(JSON.stringify({
                         event: 'command',
