@@ -75,17 +75,19 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 {c.label}
               </a>
             ))}
-            <a href="/tv" className="shrink-0 p-1.5 rounded-full transition-colors flex items-center"
-              style={{ color: 'rgba(255,255,255,0.35)' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-              </svg>
-            </a>
-            <span className="w-px h-4 bg-white/10 shrink-0 mx-0.5" />
-            <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="shrink-0 transition-opacity hover:opacity-80 flex items-center"
-              title="Watch the daily show">
-              <img src="/logo3.png" alt="CVRD" style={{ height: '16px', opacity: 0.35, filter: 'brightness(0) invert(1)' }} />
-            </a>
+            <div className="shrink-0 flex items-center gap-0">
+              <a href="/tv" className="p-1 transition-colors flex items-center"
+                style={{ color: 'rgba(255,255,255,0.35)' }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+                </svg>
+              </a>
+              <span className="w-px h-4 shrink-0" style={{ background: 'rgba(255,255,255,0.25)' }} />
+              <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="p-1 transition-opacity hover:opacity-80 flex items-center"
+                title="Watch the daily show">
+                <img src="/logo3.png" alt="CVRD" style={{ height: '14px', opacity: 0.35, filter: 'brightness(0) invert(1)' }} />
+              </a>
+            </div>
           </div>
         </div>
 
