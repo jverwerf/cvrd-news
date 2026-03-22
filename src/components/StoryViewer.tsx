@@ -60,6 +60,18 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
     sources: [],
   };
 
+  // Curated stories for Daily Brief dashboard — 1 YT + 2 social per story
+  const briefStories: NarrativeGap[] = stories.map(s => ({
+    ...s,
+    youtube_videos: (s.youtube_videos || []).slice(0, 1),
+    social_clips: (() => {
+      const sc = (s.social_clips || []).filter(c => c.embed_id);
+      const vids = sc.filter(c => c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
+      const rest = sc.filter(c => !vids.includes(c));
+      return [...vids.slice(0, 2), ...rest.slice(0, Math.max(0, 2 - vids.length))];
+    })(),
+  }));
+
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
 
@@ -132,7 +144,7 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0 }}>
             <ErrorBoundary>
-              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? stories : [story]} videoUrl={isBrief ? videoUrl : undefined} videoDate={isBrief ? videoDate : undefined} />
+              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? briefStories : [story]} videoUrl={isBrief ? videoUrl : undefined} videoDate={isBrief ? videoDate : undefined} />
             </ErrorBoundary>
           </div>
         </div>
