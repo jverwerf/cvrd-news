@@ -202,7 +202,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               {isBrief ? 'Daily Brief' : `${currentIdx + 1}/${stories.length}`}
             </span>
             <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] truncate" style={serif}>
-              {isBrief ? "Today's Top Stories" : story.topic}
+              {isBrief ? "Daily Brief" : story.topic}
             </h1>
           </div>
         </div>
