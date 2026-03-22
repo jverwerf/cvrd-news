@@ -122,6 +122,10 @@ export default function BreakingPage() {
                 <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
               </svg>
             </a>
+            <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="shrink-0 p-1 transition-opacity hover:opacity-80 flex items-center"
+              title="Watch the daily show">
+              <img src="/logo3.png" alt="CVRD" style={{ height: '22px', opacity: 0.5, filter: 'grayscale(1) brightness(10)' }} />
+            </a>
           </div>
         </div>
 
