@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
-import { Dashboard } from "@/components/Dashboard";
 import { LiveBanner } from "@/components/LiveBanner";
-import { HeroStory } from "@/components/HeroStory";
-import { StoryFeed } from "@/components/StoryFeed";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { StoryViewer } from "@/components/StoryViewer";
 
 const CATEGORY_META: Record<string, { title: string; description: string }> = {
   'world': { title: 'World News', description: 'Unfiltered world news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
@@ -54,9 +53,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const untagged = allStories.filter(s => !s.category);
   const displayStories = filtered.length > 0 ? filtered : untagged;
 
-  const heroStory = displayStories[0];
-  const rest = displayStories.slice(1);
-
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
@@ -75,7 +71,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 {c.label}
               </a>
             ))}
-            <div className="shrink-0 flex items-center gap-0">
+            <div className="shrink-0 flex items-center gap-1.5">
               <a href="/tv" className="p-1 transition-colors flex items-center"
                 style={{ color: 'rgba(255,255,255,0.35)' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -91,45 +87,35 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
           </div>
         </div>
 
-        {/* 2. LIVE BANNER with logo */}
-        <div className="relative">
-          {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
-          <div className="absolute inset-0 pointer-events-none z-10" style={{
-            background: 'radial-gradient(ellipse 10% 100% at 50% 50%, white 0%, white 70%, transparent 100%)'
-          }} />
-          <div className="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <img src="/logo3.png" alt="CVRD" style={{ height: '44px' }} />
-          </div>
-        </div>
+        {/* 2. LIVE BANNER */}
+        {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
       </div>
 
-      {/* Fade from banner into content */}
-      <div className="h-4 -mt-1" style={{ background: 'linear-gradient(to bottom, #e5e5e5, #1e2a3a)' }} />
+      {/* LOGO */}
+      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
+        style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
 
-      {/* 3. DASHBOARD — category stories only, NO anchor video */}
-      {displayStories.length > 0 && (
-        <Dashboard
-          stories={displayStories}
-          videoUrl={undefined}
-          videoDate={undefined}
-        />
-      )}
-
-      {/* 4. HERO STORY */}
-      {heroStory && <HeroStory story={heroStory} />}
-
-      {/* 5. REST */}
-      {rest.length > 0 && <StoryFeed stories={rest} startIndex={1} />}
-
-      {!displayStories.length && (
+      {/* STORY VIEWER */}
+      {displayStories.length > 0 ? (
+        <ErrorBoundary>
+          <StoryViewer stories={displayStories} />
+        </ErrorBoundary>
+      ) : (
         <div className="max-w-[1280px] mx-auto px-6 py-20 text-center">
           <p className="text-[#999]">No {cat.label.toLowerCase()} stories today.</p>
         </div>
       )}
 
-      <footer className="py-10 text-center border-t border-[#e5e5e5]">
-        <img src="/logo3.png" alt="CVRD" className="h-36 mx-auto mb-4 opacity-30" />
-        <span className="text-[11px] text-[#ccc]">Your news streaming platform to cover the news</span>
+      <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
+        <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
+        <span className="text-[11px] text-[#666] block mb-3">Your news streaming platform to cover the news</span>
+        <div className="flex items-center justify-center gap-4">
+          <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
+          <span className="text-[#555]">·</span>
+          <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
+          <span className="text-[#555]">·</span>
+          <span className="text-[11px] text-[#666]">info@cvrdnews.com</span>
+        </div>
       </footer>
     </div>
   );
