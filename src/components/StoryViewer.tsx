@@ -107,50 +107,58 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     <div>
       {/* DASHBOARD with arrows + timeline */}
       <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
-        {/* STORY TIMELINE — top of dashboard view, scrollable */}
-        <div className="flex items-center gap-0" style={{ background: '#0a0f18' }}>
+        {/* MINI THUMBNAIL TIMELINE — top of dashboard */}
+        <div className="flex items-center gap-0 px-0.5 py-0.5" style={{ background: '#0a0f18' }}>
           <button onClick={() => {
-            document.getElementById('story-timeline')?.scrollBy({ left: -200, behavior: 'smooth' });
-          }} className="shrink-0 px-1.5 py-2 hover:opacity-70" style={{ background: '#0a0f18', border: 'none', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-[#666]" />
+            document.getElementById('story-timeline')?.scrollBy({ left: -150, behavior: 'smooth' });
+          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-r-[4px] border-r-[#666]" />
           </button>
-          <div id="story-timeline" className="flex gap-0.5 py-1 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
-            {/* Daily Brief tab */}
+          <div id="story-timeline" className="flex gap-0.5 overflow-x-auto flex-1 items-center" style={{ scrollbarWidth: 'none' }}>
+            {/* Daily Brief */}
             <button onClick={() => setCurrentIdx(-1)}
-              className="rounded cursor-pointer overflow-hidden px-3 py-1.5 flex items-center transition-all shrink-0"
+              className="shrink-0 rounded overflow-hidden cursor-pointer"
               style={{
-                background: isBrief ? '#b8860b' : '#1a1a2e',
-                opacity: isBrief ? 1 : 0.6,
-                border: 'none',
+                width: '60px',
+                border: isBrief ? '1.5px solid #b8860b' : '1.5px solid transparent',
+                opacity: isBrief ? 1 : 0.4,
+                transition: 'opacity 0.2s ease',
               }}>
-              <p className="text-[9px] leading-tight text-white font-bold whitespace-nowrap" style={{ opacity: isBrief ? 1 : 0.7 }}>
-                ▶ Daily Brief
-              </p>
+              <div className="h-8 relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                <img src="/logo3.png" alt="" style={{ height: '16px', opacity: 0.4 }} />
+                <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.7) 100%)' }}>
+                  <span className="text-[5px] text-white font-bold leading-tight truncate">Brief</span>
+                </div>
+              </div>
             </button>
-            {/* Story tabs */}
+            {/* Stories */}
             {stories.map((s, i) => {
               const isActive = i === currentIdx;
-              const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
               return (
                 <button key={i} onClick={() => setCurrentIdx(i)}
-                  className="rounded cursor-pointer overflow-hidden px-3 py-1.5 flex items-center transition-all shrink-0"
+                  className="shrink-0 rounded overflow-hidden cursor-pointer"
                   style={{
-                    background: isActive ? '#2563eb' : blues[i % blues.length],
-                    opacity: isActive ? 1 : 0.6,
-                    border: 'none',
-                    minWidth: 120,
+                    width: '60px',
+                    border: isActive ? '1.5px solid #2563eb' : '1.5px solid transparent',
+                    opacity: isActive ? 1 : 0.4,
+                    transition: 'opacity 0.2s ease',
                   }}>
-                  <p className="text-[9px] leading-tight text-white font-medium whitespace-nowrap" style={{ opacity: isActive ? 1 : 0.7 }}>
-                    {s.topic}
-                  </p>
+                  <div className="h-8 relative overflow-hidden" style={{
+                    backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
+                    backgroundSize: 'cover', backgroundPosition: 'center',
+                  }}>
+                    <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.7) 100%)' }}>
+                      <span className="text-[5px] text-white font-medium leading-tight truncate">{s.topic}</span>
+                    </div>
+                  </div>
                 </button>
               );
             })}
           </div>
           <button onClick={() => {
-            document.getElementById('story-timeline')?.scrollBy({ left: 200, behavior: 'smooth' });
-          }} className="shrink-0 px-1.5 py-2 hover:opacity-70" style={{ background: '#0a0f18', border: 'none', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-[#666]" />
+            document.getElementById('story-timeline')?.scrollBy({ left: 150, behavior: 'smooth' });
+          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-l-[4px] border-l-[#666]" />
           </button>
         </div>
 
