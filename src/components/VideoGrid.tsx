@@ -63,7 +63,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     }
   }
 
-  const [activeIdx, setActiveIdx] = useState(0);
+  const [activeIdx, setActiveIdx] = useState(-1); // -1 = no video selected, thumbnails only
   const [playing, setPlaying] = useState(false);
   const [videosSinceAd, setVideosSinceAd] = useState(0);
   const [showingAd, setShowingAd] = useState(false);
@@ -94,7 +94,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const pollRef = useRef<NodeJS.Timeout | null>(null);
 
-  const active = items.length > 0 ? items[activeIdx] : null;
+  const active = activeIdx >= 0 && items.length > 0 ? items[activeIdx] : null;
 
   // Poll YouTube iframe for current time via postMessage
   const startPolling = useCallback(() => {
@@ -209,7 +209,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     setProgress((activeIdx + 0.5) / items.length);
   }, [activeIdx, items.length]);
 
-  if (items.length === 0 || !active) return null;
+  if (items.length === 0) return null;
 
   const triggerAdIfDue = (afterAd: () => void) => {
     setVideosSinceAd(prev => {
@@ -263,168 +263,178 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     return `${m}:${sec.toString().padStart(2, '0')}`;
   };
 
+  const platformColor = (type: string) =>
+    type === 'youtube' ? '#ff0000' : type === 'tiktok' ? '#fe2c55' : type === 'x' ? '#1d9bf0' : '#c026d3';
+
+  const closePlayer = () => { setActiveIdx(-1); setPlaying(false); setCurrentTime(0); setDuration(0); stopPolling(); stopTimer(); };
+
   return (
     <div className="mb-6">
-      {/* PLAYER */}
-      <div className="rounded-md overflow-hidden border border-[#2a3a4a]">
-        <div className="aspect-video bg-[#111] relative">
-          {showingAd ? (
-            <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
-              <div className="absolute top-2 right-3 z-10">
-                <span className="text-[9px] text-white/30 font-medium">Ad · Resuming in 5s</span>
+      {/* PLAYER — only visible when a thumbnail is clicked */}
+      {active && (
+        <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3">
+          <div className="aspect-video bg-[#111] relative">
+            {showingAd ? (
+              <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
+                <div className="absolute top-2 right-3 z-10">
+                  <span className="text-[9px] text-white/30 font-medium">Ad · Resuming in 5s</span>
+                </div>
+                <VideoAdSlot />
               </div>
-              <VideoAdSlot />
-            </div>
-          ) : playing ? (
-            <>
-              {active.type === 'youtube' && (
-                <iframe ref={iframeRef} key={active.embed_id}
-                  src={`https://www.youtube-nocookie.com/embed/${active.embed_id}?autoplay=0&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
-                  className="w-full h-full" allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
-              )}
-              {active.type === 'tiktok' && (
-                <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
-                  <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-                    style={{ border: 'none', width: '330px', height: '100%' }} allowFullScreen allow="encrypted-media" />
-                </div>
-              )}
-              {active.type === 'reels' && (
-                <div className="w-full h-full flex items-center justify-center overflow-hidden" style={{ background: '#1e2a3a' }}>
-                  <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
-                    style={{ width: '360px', height: '120%', border: 'none', marginTop: '-5%' }} allowFullScreen />
-                </div>
-              )}
-              {active.type === 'x' && (
-                <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
-                  <iframe key={active.embed_id}
-                    src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
-                    className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="w-full h-full cursor-pointer" onClick={() => setPlaying(true)}>
-              {active.thumbnail ? (
-                <img src={active.thumbnail} alt={active.label} className="w-full h-full object-cover" />
-              ) : (
-                <div className="w-full h-full bg-[#111]" />
-              )}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
-                  <div className="w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[14px] border-l-white ml-1" />
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* CONTROLS BAR */}
-        <div className="flex items-center px-3 py-2 border-t" style={{ background: '#1e2a3a', borderColor: '#2a3a4a' }}>
-          <div className="flex items-center gap-1.5 flex-1 min-w-0">
-            <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{
-              background: active.type === 'youtube' ? '#ff0000' : active.type === 'tiktok' ? '#fe2c55' : active.type === 'x' ? '#1d9bf0' : '#c026d3'
-            }} />
-            <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
-          </div>
-
-          <button onClick={() => {
-            const newMuted = !muted;
-            setMuted(newMuted);
-            // Send mute/unmute to YouTube iframe only
-            if (iframeRef.current?.contentWindow && active.type === 'youtube') {
-              iframeRef.current.contentWindow.postMessage(JSON.stringify({
-                event: 'command', func: newMuted ? 'mute' : 'unMute',
-              }), '*');
-            }
-          }} className="text-[11px] px-2 py-0.5 rounded hover:opacity-70 transition-opacity shrink-0 mr-2"
-            style={{ color: muted ? '#777' : '#fff', background: muted ? 'transparent' : '#333' }}>
-            {muted ? '🔇' : '🔊'}
-          </button>
-
-          {items.length > 1 && (
-            <div className="flex items-center gap-2 shrink-0">
-              <button onClick={prevItem} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#aaa]" />
-              </button>
-              <span className="text-[10px] text-[#888] font-mono">{activeIdx + 1}/{items.length}</span>
-              <button onClick={next} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#aaa]" />
-              </button>
-            </div>
-          )}
-
-          <a href={active.url} target="_blank" rel="noreferrer" className="text-[10px] text-[#b8860b] hover:underline ml-3 shrink-0">
-            original
-          </a>
-        </div>
-      </div>
-
-      {/* TIMELINE + THUMBNAILS */}
-      {items.length > 1 && (
-        <div className="mt-3">
-
-          {/* Thumbnails — scrollable with arrows */}
-          <div className="relative">
-            {items.length > 4 && (
+            ) : playing ? (
               <>
-                <button onClick={() => {
-                  const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
-                  el?.scrollBy({ left: -300, behavior: 'smooth' });
-                }} className="absolute left-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-r from-[#1e2a3a] to-transparent">
-                  <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#999]" />
-                </button>
-                <button onClick={() => {
-                  const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
-                  el?.scrollBy({ left: 300, behavior: 'smooth' });
-                }} className="absolute right-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-l from-[#1e2a3a] to-transparent">
-                  <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#999]" />
-                </button>
+                {active.type === 'youtube' && (
+                  <iframe ref={iframeRef} key={active.embed_id}
+                    src={`https://www.youtube-nocookie.com/embed/${active.embed_id}?autoplay=0&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
+                    className="w-full h-full" allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+                )}
+                {active.type === 'tiktok' && (
+                  <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
+                    <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
+                      style={{ border: 'none', width: '330px', height: '100%' }} allowFullScreen allow="encrypted-media" />
+                  </div>
+                )}
+                {active.type === 'reels' && (
+                  <div className="w-full h-full flex items-center justify-center overflow-hidden" style={{ background: '#1e2a3a' }}>
+                    <iframe key={active.embed_id} src={`https://www.instagram.com/reel/${active.embed_id}/embed`}
+                      style={{ width: '360px', height: '120%', border: 'none', marginTop: '-5%' }} allowFullScreen />
+                  </div>
+                )}
+                {active.type === 'x' && (
+                  <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
+                    <iframe key={active.embed_id}
+                      src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
+                      className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
+                  </div>
+                )}
               </>
+            ) : (
+              <div className="w-full h-full cursor-pointer" onClick={() => setPlaying(true)}>
+                {active.thumbnail ? (
+                  <img src={active.thumbnail} alt={active.label} className="w-full h-full object-cover" />
+                ) : (
+                  <div className="w-full h-full bg-[#111]" />
+                )}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                  <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-sm border border-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                    <div className="w-0 h-0 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent border-l-[14px] border-l-white ml-1" />
+                  </div>
+                </div>
+              </div>
             )}
-          <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-            {items.map((item, i) => (
-              <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
-                className="rounded overflow-hidden transition-all group shrink-0"
-                style={{
-                  width: '100px',
-                  border: i === activeIdx ? `2px solid ${item.type === 'youtube' ? '#ff0000' : item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3'}` : '2px solid transparent',
-                  opacity: i === activeIdx ? 1 : i < activeIdx ? 0.5 : 0.7,
-                }}>
-                <div className="aspect-video bg-[#111] relative overflow-hidden">
-                  {item.thumbnail ? (
-                    <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
-                  ) : item.type === 'x' && item.embed_id ? (
-                    <iframe
-                      src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embed_id}&theme=dark&hideCard=true&hideThread=true`}
-                      className="w-full h-full"
-                      style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.45)', transformOrigin: 'top left', width: '222%', height: '222%' }}
-                      loading="lazy" tabIndex={-1}
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <span className="text-[14px]" style={{ color: item.type === 'tiktok' ? '#fe2c55' : item.type === 'x' ? '#1d9bf0' : '#c026d3' }}>
-                        {item.type === 'tiktok' ? '♪' : item.type === 'x' ? '𝕏' : '◎'}
-                      </span>
-                    </div>
-                  )}
-                  {i !== activeIdx && (
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-6 h-6 rounded-full bg-black/50 flex items-center justify-center">
-                        <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white ml-0.5" />
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <div className="px-1 py-0.5" style={{ background: '#1e2a3a' }}>
-                  <span className="text-[7px] text-[#aaa] truncate block">{item.label}</span>
-                </div>
-              </button>
-            ))}
+
+            {/* Close button */}
+            <button onClick={closePlayer}
+              className="absolute top-2 right-2 z-10 w-7 h-7 rounded-full bg-black/50 flex items-center justify-center hover:bg-black/70 transition-colors"
+              style={{ border: 'none', cursor: 'pointer' }}>
+              <span className="text-white/70 text-[14px] leading-none">×</span>
+            </button>
           </div>
+
+          {/* CONTROLS BAR */}
+          <div className="flex items-center px-3 py-2 border-t" style={{ background: '#1e2a3a', borderColor: '#2a3a4a' }}>
+            <div className="flex items-center gap-1.5 flex-1 min-w-0">
+              <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{ background: platformColor(active.type) }} />
+              <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
+            </div>
+
+            <button onClick={() => {
+              const newMuted = !muted;
+              setMuted(newMuted);
+              if (iframeRef.current?.contentWindow && active.type === 'youtube') {
+                iframeRef.current.contentWindow.postMessage(JSON.stringify({
+                  event: 'command', func: newMuted ? 'mute' : 'unMute',
+                }), '*');
+              }
+            }} className="text-[11px] px-2 py-0.5 rounded hover:opacity-70 transition-opacity shrink-0 mr-2"
+              style={{ color: muted ? '#777' : '#fff', background: muted ? 'transparent' : '#333' }}>
+              {muted ? '🔇' : '🔊'}
+            </button>
+
+            {items.length > 1 && (
+              <div className="flex items-center gap-2 shrink-0">
+                <button onClick={prevItem} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#aaa]" />
+                </button>
+                <span className="text-[10px] text-[#888] font-mono">{activeIdx + 1}/{items.length}</span>
+                <button onClick={next} className="flex items-center justify-center p-1 hover:opacity-60 transition-opacity">
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#aaa]" />
+                </button>
+              </div>
+            )}
+
+            <a href={active.url} target="_blank" rel="noreferrer" className="text-[10px] text-[#b8860b] hover:underline ml-3 shrink-0">
+              original
+            </a>
           </div>
         </div>
       )}
+
+      {/* THUMBNAILS — always visible */}
+      <div className="relative">
+        {items.length > 6 && (
+          <>
+            <button onClick={() => {
+              const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
+              el?.scrollBy({ left: -300, behavior: 'smooth' });
+            }} className="absolute left-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-r from-[#1e2a3a] to-transparent">
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#999]" />
+            </button>
+            <button onClick={() => {
+              const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
+              el?.scrollBy({ left: 300, behavior: 'smooth' });
+            }} className="absolute right-0 top-0 bottom-0 z-10 w-8 flex items-center justify-center bg-gradient-to-l from-[#1e2a3a] to-transparent">
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#999]" />
+            </button>
+          </>
+        )}
+        <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1.5 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+          {items.map((item, i) => (
+            <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(false); stopPolling(); stopTimer(); }}
+              className="rounded overflow-hidden transition-all group shrink-0 cursor-pointer"
+              style={{
+                width: '120px',
+                border: i === activeIdx ? `2px solid ${platformColor(item.type)}` : '2px solid transparent',
+                opacity: i === activeIdx ? 1 : 0.7,
+              }}>
+              <div className="aspect-video bg-[#111] relative overflow-hidden">
+                {item.thumbnail ? (
+                  <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
+                ) : item.type === 'x' && item.embed_id ? (
+                  <iframe
+                    src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embed_id}&theme=dark&hideCard=true&hideThread=true`}
+                    className="w-full h-full"
+                    style={{ border: 'none', pointerEvents: 'none', transform: 'scale(0.45)', transformOrigin: 'top left', width: '222%', height: '222%' }}
+                    loading="lazy" tabIndex={-1}
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center">
+                    <span className="text-[14px]" style={{ color: platformColor(item.type) }}>
+                      {item.type === 'tiktok' ? '♪' : item.type === 'x' ? '𝕏' : '◎'}
+                    </span>
+                  </div>
+                )}
+                {/* Platform badge */}
+                <div className="absolute top-1 left-1">
+                  <span className="text-[7px] font-bold text-white px-1 py-0.5 rounded" style={{ background: platformColor(item.type) }}>
+                    {item.type === 'youtube' ? 'YT' : item.type === 'tiktok' ? 'TT' : item.type === 'x' ? '𝕏' : 'IG'}
+                  </span>
+                </div>
+                {/* Play icon on hover */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+                  <div className="w-7 h-7 rounded-full bg-black/50 flex items-center justify-center">
+                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white ml-0.5" />
+                  </div>
+                </div>
+              </div>
+              <div className="px-1.5 py-1" style={{ background: '#1e2a3a' }}>
+                <span className="text-[8px] text-[#aaa] truncate block leading-tight">{item.label}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
