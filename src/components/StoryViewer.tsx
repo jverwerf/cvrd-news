@@ -5,15 +5,16 @@ import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { VideoGrid } from "./VideoGrid";
 import { Tweet } from 'react-tweet';
-import type { NarrativeGap } from "../lib/data";
+import type { NarrativeGap, DailyBrief } from "../lib/data";
 import { motion, AnimatePresence } from "framer-motion";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
-export function StoryViewer({ stories, videoUrl, videoDate }: {
+export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   stories: NarrativeGap[];
   videoUrl?: string;
   videoDate?: string;
+  dailyBrief?: DailyBrief;
 }) {
   // -1 = Daily Brief, 0+ = individual story
   const [currentIdx, setCurrentIdx] = useState(-1);
@@ -48,16 +49,25 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
     bestSocial.push(...picked);
   }
 
+  // Merge all sources from all stories for the brief
+  const allSources = stories.flatMap(s => s.sources || []);
+  const uniqueSources: typeof allSources = [];
+  const seenUrls = new Set<string>();
+  for (const src of allSources) {
+    if (!seenUrls.has(src.url)) { seenUrls.add(src.url); uniqueSources.push(src); }
+  }
+
   const briefStory: NarrativeGap = {
     topic: 'Daily Brief',
-    summary: `Today's top ${stories.length} stories — the most important clips from every angle.`,
-    left_narrative: '',
-    right_narrative: '',
-    what_they_arent_telling_you: '',
+    summary: dailyBrief?.summary || `Today's top ${stories.length} stories — the most important clips from every angle.`,
+    left_narrative: dailyBrief?.left_narrative || '',
+    right_narrative: dailyBrief?.right_narrative || '',
+    what_they_arent_telling_you: dailyBrief?.what_they_arent_telling_you || '',
+    social_summary: dailyBrief?.social_summary || '',
     image_prompt: '',
     youtube_videos: bestYT,
     social_clips: bestSocial,
-    sources: [],
+    sources: uniqueSources,
   };
 
   // Curated stories for Daily Brief dashboard — 1 YT + 2 social per story

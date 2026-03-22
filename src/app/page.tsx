@@ -82,7 +82,7 @@ export default async function Home() {
 
           {/* 4. STORY VIEWER — Dashboard with arrows + full story content */}
           <ErrorBoundary>
-            <StoryViewer stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+            <StoryViewer stories={stories} videoUrl={data.video_url} videoDate={data.date} dailyBrief={data.daily_brief} />
           </ErrorBoundary>
 
           {/* FOOTER */}
