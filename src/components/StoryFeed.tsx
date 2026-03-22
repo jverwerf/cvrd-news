@@ -48,33 +48,31 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
   return (
     <article id={`story-${index + 1}`} className="overflow-hidden">
 
-      {/* IMAGE HEADER — same as hero */}
-      <div className="relative overflow-hidden" style={{
-        height: '40vh',
-        minHeight: '280px',
-        backgroundImage: story.image_file ? `url(${story.image_file})` : 'linear-gradient(to br, #1a1a2e, #16213e, #0f3460)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-      }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
-        <div style={{ position: 'absolute', top: 16, left: 24 }}>
-          <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
-            Story {index + 1}
-          </span>
-        </div>
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '0 24px 24px' }}>
-          <h2 className="text-[32px] md:text-[40px] text-white leading-[1.05] tracking-[-0.03em]" style={serif}>
-            {story.topic}
-          </h2>
-        </div>
+      {/* 1. WHITE BANNER — story title */}
+      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+        <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Story {index + 1}</span>
+        <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
+          {story.topic}
+        </h2>
       </div>
 
-      {/* MINI DASHBOARD — this story's clips only */}
+      {/* 2. MINI DASHBOARD — this story's clips only */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
         <ErrorBoundary>
           <Dashboard stories={[story]} />
         </ErrorBoundary>
       )}
+
+      {/* 3. IMAGE */}
+      <div className="relative overflow-hidden" style={{
+        height: '35vh',
+        minHeight: '250px',
+        backgroundImage: story.image_file ? `url(${story.image_file})` : 'linear-gradient(to br, #1a1a2e, #16213e, #0f3460)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+      }}>
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
+      </div>
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
