@@ -126,7 +126,7 @@ export default function BreakingPage() {
               <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
               <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="p-1 transition-opacity hover:opacity-80 flex items-center"
                 title="Watch the daily show">
-                <img src="/logo3.png" alt="CVRD" style={{ height: '14px', opacity: 0.35, filter: 'brightness(0) invert(1)' }} />
+                <img src="/logo-outline.png" alt="CVRD" style={{ height: '16px', opacity: 0.4 }} />
               </a>
             </div>
           </div>

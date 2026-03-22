@@ -18,7 +18,10 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 }) {
   // -1 = Daily Brief, 0+ = individual story
   const [currentIdx, setCurrentIdx] = useState(-1);
-  const totalPages = stories.length + 1; // brief + stories
+
+  if (!stories || stories.length === 0) {
+    return <div className="py-20 text-center"><p className="text-[#999]">No stories available.</p></div>;
+  }
 
   const prev = () => setCurrentIdx(p => {
     const n = p - 1;
