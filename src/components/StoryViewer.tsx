@@ -208,6 +208,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       {/* STORY THUMBNAIL STRIP — only on individual stories */}
       {!isBrief && (
         <div className="flex items-center gap-0 px-1 py-1.5" style={{ background: '#111' }}>
+        <style>{`
+          .story-thumb:hover { width: 280px !important; opacity: 1 !important; }
+          .story-thumb:hover .story-thumb-img { height: 100px !important; }
+          .story-thumb:hover .story-thumb-label { font-size: 11px !important; line-height: 1.3 !important; }
+        `}</style>
           <button onClick={() => {
             document.getElementById('story-thumbstrip')?.scrollBy({ left: -200, behavior: 'smooth' });
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
@@ -216,35 +221,35 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief thumbnail */}
             <button onClick={() => setCurrentIdx(-1)}
-              className="shrink-0 rounded overflow-hidden cursor-pointer group hover:w-[200px] hover:opacity-100"
+              className="story-thumb shrink-0 rounded overflow-hidden cursor-pointer"
               style={{
                 width: '100px',
                 border: isBrief ? '2px solid #b8860b' : '2px solid transparent',
                 opacity: isBrief ? 1 : 0.5,
                 transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
-              <div className="h-14 group-hover:h-24 transition-all relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+              <div className="story-thumb-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease' }} style={{ background: '#1a1a2e' }}>
                 <img src="/logo3.png" alt="CVRD" style={{ height: '28px', opacity: 0.4 }} />
                 <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
-                  <span className="text-[7px] text-white font-bold leading-tight">Daily Brief</span>
+                  <span className="story-thumb-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Daily Brief</span>
                 </div>
               </div>
             </button>
             {stories.map((s, i) => (
               <button key={i} onClick={() => setCurrentIdx(i)}
-                className="shrink-0 rounded overflow-hidden cursor-pointer group hover:w-[200px] hover:opacity-100"
+                className="story-thumb shrink-0 rounded overflow-hidden cursor-pointer"
                 style={{
                   width: '100px',
                   border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
                   opacity: i === currentIdx ? 1 : 0.5,
                   transition: 'width 0.3s ease, opacity 0.2s ease',
                 }}>
-                <div className="h-14 group-hover:h-24 transition-all relative overflow-hidden" style={{
+                <div className="story-thumb-img relative overflow-hidden" style={{ height: '56px', transition: 'height 0.3s ease',
                   backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
                   <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
-                    <span className="text-[7px] text-white font-medium leading-tight line-clamp-2">{s.topic}</span>
+                    <span className="story-thumb-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
                   </div>
                 </div>
               </button>
