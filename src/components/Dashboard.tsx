@@ -382,34 +382,48 @@ export function Dashboard({
 
             {/* Controls row */}
             <div className="flex items-center gap-2">
-              {/* Clip bar — same style as story bar, green, scrollable */}
+              {/* Clip thumbnails */}
               <div className="flex items-center gap-0.5 flex-1 min-w-0">
-                <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
-                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: -150, behavior: 'smooth' }); }}>
-                  <span className="text-[10px]" style={{ color: '#22c55e' }}>◀</span>
+                <button className="shrink-0 px-1 hover:opacity-70"
+                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: -150, behavior: 'smooth' }); }}
+                  style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
                 </button>
-                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
+                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
                   {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
                     const clipIdx = currentBoundary.start + ci;
                     const clip = playlist[clipIdx];
                     const isActiveClip = clipIdx === currentIdx;
-                    const isPastClip = clipIdx < currentIdx;
-                    const greens = ['#0f2b1a', '#123320', '#153b26', '#18432c', '#1b4b32', '#1e5338', '#215b3e', '#0f2d1e', '#133524', '#173d2a'];
-                    const bg = isActiveClip ? '#22c55e' : greens[ci % greens.length];
+                    const thumb = clip?.type === 'youtube' && clip?.embed_id
+                      ? `https://img.youtube.com/vi/${clip.embed_id}/default.jpg`
+                      : null;
                     return (
-                      <div key={ci} data-active={isActiveClip ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
-                        style={{ background: bg, opacity: isActiveClip ? 1 : isPastClip ? 0.8 : 0.5, minWidth: 90 }}
+                      <div key={ci} data-active={isActiveClip ? 'true' : undefined}
+                        className="rounded cursor-pointer overflow-hidden shrink-0 transition-all"
+                        style={{
+                          width: '80px',
+                          border: isActiveClip ? '1.5px solid #22c55e' : '1.5px solid transparent',
+                          opacity: isActiveClip ? 1 : 0.75,
+                        }}
                         onClick={(e) => { setCurrentIdx(clipIdx); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
-                        <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActiveClip ? 1 : 0.8 }}>
-                          {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
-                        </p>
+                        <div className="h-7 relative overflow-hidden" style={{
+                          backgroundImage: thumb ? `url(${thumb})` : 'linear-gradient(135deg, #0f2b1a, #1b4b32)',
+                          backgroundSize: 'cover', backgroundPosition: 'center',
+                        }}>
+                          <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
+                            <span className="text-[5px] text-white font-medium leading-tight truncate">
+                              {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
+                            </span>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}
                 </div>
-                <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
-                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: 150, behavior: 'smooth' }); }}>
-                  <span className="text-[10px]" style={{ color: '#22c55e' }}>▶</span>
+                <button className="shrink-0 px-1 hover:opacity-70"
+                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: 150, behavior: 'smooth' }); }}
+                  style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
                 </button>
               </div>
 
@@ -427,42 +441,40 @@ export function Dashboard({
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
               </button>
 
-              {/* Volume */}
-              <div className="flex items-center gap-2 shrink-0">
-                <button onClick={toggleSound}>
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {/* Volume — hover to show vertical slider */}
+              <div className="relative shrink-0 group/vol">
+                <button onClick={toggleSound} className="p-0.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
                     {unmuted && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
                     {!unmuted && <><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></>}
                   </svg>
                 </button>
-                <input type="range" min="0" max="1" step="0.05"
-                  value={unmuted ? volume : 0}
-                  className="w-20 h-1 shrink-0"
-                  style={{ accentColor: 'white' }}
-                  onChange={(e) => {
-                    const vol = parseFloat(e.target.value);
-                    setVolume(vol > 0 ? vol : volume);
-                    setUnmuted(vol > 0);
-                    // Control anchor video
-                    if (videoRef.current) {
-                      videoRef.current.volume = vol;
-                      videoRef.current.muted = vol === 0;
-                    }
-                    // Control YouTube iframe
-                    const ytFrame = ytPlayerRef.current;
-                    if (ytFrame?.contentWindow) {
-                      ytFrame.contentWindow.postMessage(JSON.stringify({
-                        event: 'command',
-                        func: vol === 0 ? 'mute' : 'unMute',
-                      }), '*');
-                      ytFrame.contentWindow.postMessage(JSON.stringify({
-                        event: 'command',
-                        func: 'setVolume',
-                        args: [Math.round(vol * 100)],
-                      }), '*');
-                    }
-                  }} />
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/vol:flex flex-col items-center px-2 py-3 rounded-lg"
+                  style={{ background: 'rgba(0,0,0,0.9)' }}>
+                  <input type="range" min="0" max="1" step="0.05"
+                    value={unmuted ? volume : 0}
+                    className="h-20 shrink-0"
+                    style={{ accentColor: 'white', writingMode: 'vertical-lr', direction: 'rtl', width: '4px' }}
+                    onChange={(e) => {
+                      const vol = parseFloat(e.target.value);
+                      setVolume(vol > 0 ? vol : volume);
+                      setUnmuted(vol > 0);
+                      if (videoRef.current) {
+                        videoRef.current.volume = vol;
+                        videoRef.current.muted = vol === 0;
+                      }
+                      const ytFrame = ytPlayerRef.current;
+                      if (ytFrame?.contentWindow) {
+                        ytFrame.contentWindow.postMessage(JSON.stringify({
+                          event: 'command', func: vol === 0 ? 'mute' : 'unMute',
+                        }), '*');
+                        ytFrame.contentWindow.postMessage(JSON.stringify({
+                          event: 'command', func: 'setVolume', args: [Math.round(vol * 100)],
+                        }), '*');
+                      }
+                    }} />
+                </div>
               </div>
             </div>
           </div>
