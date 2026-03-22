@@ -385,9 +385,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           <button onClick={() => {
             const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
             el?.scrollBy({ left: -300, behavior: 'smooth' });
-          }} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/5 transition-colors"
-            style={{ border: '1px solid #2a3a4a' }}>
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#999]" />
+          }} className="shrink-0 w-6 flex items-center justify-center hover:opacity-60 transition-opacity">
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#666]" />
           </button>
         )}
         <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
@@ -440,9 +439,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           <button onClick={() => {
             const el = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
             el?.scrollBy({ left: 300, behavior: 'smooth' });
-          }} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/5 transition-colors"
-            style={{ border: '1px solid #2a3a4a' }}>
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#999]" />
+          }} className="shrink-0 w-6 flex items-center justify-center hover:opacity-60 transition-opacity">
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#666]" />
           </button>
         )}
       </div>
