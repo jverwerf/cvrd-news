@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { HeroStory } from "@/components/HeroStory";
+import { Dashboard } from "@/components/Dashboard";
 import { LiveBanner } from "@/components/LiveBanner";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import type { NarrativeGap } from "@/lib/data";
@@ -140,14 +141,7 @@ export default function BreakingPage() {
       <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
         style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
 
-      {/* RED BREAKING BANNER for most recent story */}
-      <div className="px-4 py-2 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
-        <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse">LIVE</span>
-        <span className="text-[13px] text-white font-bold flex-1 truncate">{breakingItems[0].topic}</span>
-        <span className="text-[10px] text-white/60 shrink-0">{timeAgo(breakingItems[0].detected_at)} · {breakingItems.length > 1 ? `${breakingItems.length} stories` : 'Updated every 30 min'}</span>
-      </div>
-
-      {/* ALL BREAKING STORIES: red banner → HeroStory (which includes dashboard + image) */}
+      {/* ALL BREAKING STORIES: red banner → Dashboard → HeroStory */}
       {breakingItems.map((b, i) => {
         const story = allStories[i];
         return (
@@ -161,6 +155,9 @@ export default function BreakingPage() {
               </span>
               <span className="text-[10px] text-white/60 shrink-0">{timeAgo(b.detected_at)}</span>
             </div>
+            <ErrorBoundary>
+              <Dashboard stories={[story]} />
+            </ErrorBoundary>
             <HeroStory story={story} hideBanner />
           </div>
         );
