@@ -150,19 +150,11 @@ export function Dashboard({
   }, [currentIdx]);
 
   // Listen for YouTube center player end event
-  // Track current video start time to ignore premature end events
-  const videoStartRef = useRef(Date.now());
-  useEffect(() => {
-    videoStartRef.current = Date.now();
-  }, [currentIdx]);
-
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
-          // Ignore end events within first 5s of a new video (from tiles or stale events)
-          if (Date.now() - videoStartRef.current < 5000) return;
           setCurrentIdx(p => (p + 1) % playlist.length);
         }
       } catch {}
@@ -363,14 +355,20 @@ export function Dashboard({
             <iframe key={current.embed_id} ref={ytPlayerRef}
               src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               onLoad={() => {
-                if (unmuted && ytPlayerRef.current?.contentWindow) {
-                  // YouTube API needs time to initialize after iframe load
+                const win = ytPlayerRef.current?.contentWindow;
+                if (!win) return;
+                // Re-register for API events — required after each iframe load
+                const listenCmd = JSON.stringify({ event: 'listening', id: 'yt-player' });
+                setTimeout(() => { win.postMessage(listenCmd, '*'); }, 500);
+                setTimeout(() => { win.postMessage(listenCmd, '*'); }, 1500);
+                // Unmute if needed
+                if (unmuted) {
                   const unmuteFn = () => {
-                    ytPlayerRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
-                    ytPlayerRef.current?.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [Math.round(volume * 100)] }), '*');
+                    win.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
+                    win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [Math.round(volume * 100)] }), '*');
                   };
                   setTimeout(unmuteFn, 1000);
-                  setTimeout(unmuteFn, 2000); // retry in case first was too early
+                  setTimeout(unmuteFn, 2000);
                 }
               }}
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
