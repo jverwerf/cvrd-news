@@ -28,6 +28,15 @@ export type LiveItem = {
   url?: string;
 };
 
+export type DailyBrief = {
+  summary: string;
+  left_narrative: string;
+  right_narrative: string;
+  what_they_arent_telling_you: string;
+  social_summary: string;
+  image_prompt?: string;
+};
+
 export interface DailyReport {
   date: string;
   generated_at: string;
@@ -35,6 +44,7 @@ export interface DailyReport {
   top_10_topics?: string[];
   video_url?: string;
   live_data?: LiveItem[];
+  daily_brief?: DailyBrief;
 }
 
 export async function getDailyGaps(): Promise<DailyReport | null> {
