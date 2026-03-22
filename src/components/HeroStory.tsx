@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Tweet } from 'react-tweet';
 import Image from 'next/image';
@@ -11,8 +11,17 @@ import { ErrorBoundary } from "./ErrorBoundary";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
-export function HeroStory({ story, hideBanner }: { story: NarrativeGap; hideBanner?: boolean }) {
+export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: NarrativeGap; hideBanner?: boolean; storyIndex?: number }) {
   const [open, setOpen] = useState(false);
+
+  // Listen for expand-story events from StoryNav
+  useEffect(() => {
+    const handler = (e: Event) => {
+      if ((e as CustomEvent).detail === storyIndex) setOpen(true);
+    };
+    window.addEventListener('expand-story', handler);
+    return () => window.removeEventListener('expand-story', handler);
+  }, [storyIndex]);
 
   const clips = story.social_clips || [];
   const ytVids = story.youtube_videos || [];

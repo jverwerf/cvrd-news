@@ -4,6 +4,7 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LiveBanner } from "@/components/LiveBanner";
 import { HeroStory } from "@/components/HeroStory";
 import { StoryFeed } from "@/components/StoryFeed";
+import { StoryNav } from "@/components/StoryNav";
 
 const ALL_CATS = [
   { label: 'Daily Pick', slug: '/' },
@@ -80,7 +81,7 @@ export default async function Home() {
             <LiveBanner stories={stories} liveData={data.live_data} />
           </div>
 
-          {/* 3. DASHBOARD + LOGO */}
+          {/* 3. DASHBOARD + LOGO + STORY NAV ARROWS */}
           <div className="relative">
             <ErrorBoundary>
               <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
@@ -88,6 +89,8 @@ export default async function Home() {
             {/* Logo centered, overlapping top of dashboard */}
             <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
               style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
+            {/* Story navigation arrows */}
+            <StoryNav storyCount={stories.length} />
           </div>
 
           {/* 4. HERO STORY */}
