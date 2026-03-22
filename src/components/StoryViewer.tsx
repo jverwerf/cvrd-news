@@ -216,11 +216,13 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
             {stories.map((s, i) => (
               <button key={i} onClick={() => setCurrentIdx(i)}
-                className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group"
+                className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group hover:scale-[1.4] hover:z-10 hover:opacity-100"
                 style={{
                   width: '100px',
                   border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
                   opacity: i === currentIdx ? 1 : 0.5,
+                  transformOrigin: 'center bottom',
+                  position: 'relative',
                 }}>
                 <div className="h-14 relative overflow-hidden" style={{
                   backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
