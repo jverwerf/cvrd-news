@@ -71,7 +71,7 @@ export default async function Home() {
                     </svg>
                   </a>
                   <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
-                  <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="p-1 transition-opacity hover:opacity-80 flex items-center"
+                  <a href="/show" className="p-1 transition-opacity hover:opacity-80 flex items-center"
                     title="Watch the daily show">
                     <img src="/logo-outline.png" alt="CVRD" style={{ height: '16px', opacity: 0.7, filter: 'brightness(0) invert(1)' }} />
                   </a>
