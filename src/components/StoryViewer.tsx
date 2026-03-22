@@ -177,15 +177,15 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
         {/* Right arrow with label */}
         <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2 group">
+          <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
+            style={{ background: 'rgba(0,0,0,0.8)' }}>
+            {currentIdx === stories.length - 1 ? 'Daily Brief' : stories[currentIdx + 1]?.topic || stories[0]?.topic}
+          </span>
           <button onClick={next}
             className="w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform shrink-0"
             style={{ background: 'rgba(0,0,0,0.85)', border: '2px solid rgba(255,255,255,0.5)', cursor: 'pointer' }}>
             <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[14px] border-l-white" />
           </button>
-          <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
-            style={{ background: 'rgba(0,0,0,0.8)' }}>
-            {currentIdx === stories.length - 1 ? 'Daily Brief' : stories[currentIdx + 1]?.topic || stories[0]?.topic}
-          </span>
         </div>
 
         {/* Story indicator dots */}
