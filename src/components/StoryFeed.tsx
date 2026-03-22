@@ -6,8 +6,7 @@ import { Tweet } from 'react-tweet';
 import Image from 'next/image';
 import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
-import { Dashboard } from "./Dashboard";
-import { ErrorBoundary } from "./ErrorBoundary";
+import { LazyDashboard } from "./LazyDashboard";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -56,11 +55,9 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
         </h2>
       </div>
 
-      {/* 2. MINI DASHBOARD — this story's clips only */}
+      {/* 2. MINI DASHBOARD — lazy loaded when scrolled into view */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <ErrorBoundary>
-          <Dashboard stories={[story]} />
-        </ErrorBoundary>
+        <LazyDashboard stories={[story]} />
       )}
 
       {/* 3. IMAGE */}
