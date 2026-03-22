@@ -213,7 +213,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
             <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
           </button>
-          <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
+          <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1 py-4 -my-4" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief thumbnail */}
             <button onClick={() => setCurrentIdx(-1)}
               className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group hover:scale-[1.4] hover:z-10 hover:opacity-100"
