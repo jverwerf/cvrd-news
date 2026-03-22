@@ -205,6 +205,42 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
       </div>
 
+      {/* STORY THUMBNAIL STRIP — only on individual stories */}
+      {!isBrief && (
+        <div className="flex items-center gap-0 px-1 py-1.5" style={{ background: '#111' }}>
+          <button onClick={() => {
+            document.getElementById('story-thumbstrip')?.scrollBy({ left: -200, behavior: 'smooth' });
+          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
+          </button>
+          <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
+            {stories.map((s, i) => (
+              <button key={i} onClick={() => setCurrentIdx(i)}
+                className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group"
+                style={{
+                  width: '100px',
+                  border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
+                  opacity: i === currentIdx ? 1 : 0.5,
+                }}>
+                <div className="h-14 relative overflow-hidden" style={{
+                  backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
+                  backgroundSize: 'cover', backgroundPosition: 'center',
+                }}>
+                  <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                    <span className="text-[7px] text-white font-medium leading-tight line-clamp-2">{s.topic}</span>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+          <button onClick={() => {
+            document.getElementById('story-thumbstrip')?.scrollBy({ left: 200, behavior: 'smooth' });
+          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
+          </button>
+        </div>
+      )}
+
       {/* BANNER with navigation — same white style for all */}
       <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
         {!isBrief && (
