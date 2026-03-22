@@ -38,35 +38,30 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
   return (
     <section id="story-1">
 
-      {/* IMAGE HEADER with blue borders */}
-      <div className="relative h-[55vh] min-h-[380px] overflow-hidden">
-        {story.image_file ? (
-          <Image src={story.image_file} alt={story.topic} fill className="object-cover" priority />
-        ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
-        )}
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.7) 100%)' }} />
-          <div className="absolute top-4 left-6">
-            <span className="text-[10px] font-semibold text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-sm uppercase tracking-[0.1em]">
-              Top Story
-            </span>
-          </div>
-          {/* Title overlaid on the image bottom */}
-          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-6">
-            <div>
-              <h1 className="text-[38px] md:text-[48px] text-white leading-[1.05] tracking-[-0.03em]" style={serif}>
-                {story.topic}
-              </h1>
-            </div>
-          </div>
-        </div>
+      {/* 1. WHITE BANNER — story title */}
+      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+        <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Top Story</span>
+        <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
+          {story.topic}
+        </h1>
+      </div>
 
-      {/* MINI DASHBOARD — this story's clips only */}
+      {/* 2. MINI DASHBOARD — this story's clips only */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
         <ErrorBoundary>
           <Dashboard stories={[story]} />
         </ErrorBoundary>
       )}
+
+      {/* 3. IMAGE HEADER */}
+      <div className="relative h-[45vh] min-h-[320px] overflow-hidden">
+        {story.image_file ? (
+          <Image src={story.image_file} alt={story.topic} fill className="object-cover" priority />
+        ) : (
+          <div className="w-full h-full bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f3460]" />
+        )}
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
+      </div>
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
