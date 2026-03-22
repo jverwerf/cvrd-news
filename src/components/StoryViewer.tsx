@@ -114,21 +114,17 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
             <div className="w-0 h-0 border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-r-[4px] border-r-[#666]" />
           </button>
-          <div id="story-timeline" className="flex gap-0.5 overflow-x-auto flex-1 items-center" style={{ scrollbarWidth: 'none' }}>
+          <div id="story-timeline" className="flex gap-0.5 flex-1 items-center" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief */}
             <button onClick={() => setCurrentIdx(-1)}
-              className="shrink-0 rounded overflow-hidden cursor-pointer"
+              className="rounded overflow-hidden cursor-pointer flex-1 min-w-0"
               style={{
-                width: '60px',
                 border: isBrief ? '1.5px solid #b8860b' : '1.5px solid transparent',
                 opacity: isBrief ? 1 : 0.4,
                 transition: 'opacity 0.2s ease',
               }}>
-              <div className="h-8 relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                <img src="/logo3.png" alt="" style={{ height: '16px', opacity: 0.4 }} />
-                <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.7) 100%)' }}>
-                  <span className="text-[5px] text-white font-bold leading-tight truncate">Brief</span>
-                </div>
+              <div className="h-6 relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                <span className="text-[6px] text-white font-bold truncate px-1">Brief</span>
               </div>
             </button>
             {/* Stories */}
@@ -136,19 +132,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               const isActive = i === currentIdx;
               return (
                 <button key={i} onClick={() => setCurrentIdx(i)}
-                  className="shrink-0 rounded overflow-hidden cursor-pointer"
+                  className="rounded overflow-hidden cursor-pointer flex-1 min-w-0"
                   style={{
-                    width: '60px',
                     border: isActive ? '1.5px solid #2563eb' : '1.5px solid transparent',
                     opacity: isActive ? 1 : 0.4,
                     transition: 'opacity 0.2s ease',
                   }}>
-                  <div className="h-8 relative overflow-hidden" style={{
+                  <div className="h-6 relative overflow-hidden" style={{
                     backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
                     backgroundSize: 'cover', backgroundPosition: 'center',
                   }}>
-                    <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 20%, rgba(0,0,0,0.7) 100%)' }}>
-                      <span className="text-[5px] text-white font-medium leading-tight truncate">{s.topic}</span>
+                    <div className="absolute inset-0 flex items-center px-1" style={{ background: 'rgba(0,0,0,0.4)' }}>
+                      <span className="text-[6px] text-white font-medium truncate">{s.topic}</span>
                     </div>
                   </div>
                 </button>
