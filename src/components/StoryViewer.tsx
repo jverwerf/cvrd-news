@@ -131,7 +131,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               }}>
               <div className="story-thumb-mini-img relative overflow-hidden flex items-center justify-center" style={{ height: '36px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
                 <img src="/logo3.png" alt="" style={{ height: '20px', opacity: 0.4 }} />
-                <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
                   <span className="story-thumb-mini-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Daily Brief</span>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
-                  <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                  <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
                     <span className="story-thumb-mini-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
                   </div>
                 </div>
@@ -240,7 +240,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               }}>
               <div className="story-thumb-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
                 <img src="/logo3.png" alt="CVRD" style={{ height: '28px', opacity: 0.4 }} />
-                <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
                   <span className="story-thumb-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Daily Brief</span>
                 </div>
               </div>
@@ -258,7 +258,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
-                  <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                  <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
                     <span className="story-thumb-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
                   </div>
                 </div>
