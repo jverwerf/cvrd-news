@@ -59,7 +59,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   const briefStory: NarrativeGap = {
     topic: 'Daily Brief',
-    summary: dailyBrief?.summary || `Today's top ${stories.length} stories — the most important clips from every angle.`,
+    summary: dailyBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
     left_narrative: dailyBrief?.left_narrative || '',
     right_narrative: dailyBrief?.right_narrative || '',
     what_they_arent_telling_you: dailyBrief?.what_they_arent_telling_you || '',
