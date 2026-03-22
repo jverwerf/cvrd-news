@@ -166,7 +166,7 @@ export default function BreakingPage() {
       {/* FOOTER */}
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
-        <span className="text-[11px] text-[#666] block mb-3">Your news streaming platform to cover the news</span>
+        <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
         <div className="flex items-center justify-center gap-4">
           <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
           <span className="text-[#555]">·</span>

@@ -7,7 +7,7 @@ const dm = DM_Sans({ variable: "--font-dm", subsets: ["latin"], display: "swap" 
 
 export const metadata: Metadata = {
   title: {
-    default: "CVRD News — Your News Streaming Platform to Cover the News",
+    default: "CVRD News — Your Streaming Platform to Cover the News",
     template: "%s | CVRD News",
   },
   description: "The news, unfiltered. Daily video briefings covering world news, politics, markets, crypto, tech, and culture from 36+ sources across the political spectrum. Every side. Every source. You decide.",

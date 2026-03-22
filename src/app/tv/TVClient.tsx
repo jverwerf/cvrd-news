@@ -118,7 +118,7 @@ export function TVClient({
               opacity: entered ? 1 : 0,
               transition: 'opacity 1s ease 0.5s',
             }}>
-              Your news streaming platform to cover the news
+              Your streaming platform to cover the news
             </p>
 
             {/* Channel strip — horizontal, editorial */}
@@ -261,8 +261,6 @@ export function TVClient({
   // ── Dashboard view ──
   const stories = getStories(activeChannel);
   const channel = CHANNELS.find(c => c.id === activeChannel)!;
-  const showAnchor = activeChannel === 'daily';
-
   return (
     <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
       {/* Ghost logo */}
@@ -299,8 +297,6 @@ export function TVClient({
         <ErrorBoundary>
           <Dashboard
             stories={stories}
-            videoUrl={showAnchor ? videoUrl : undefined}
-            videoDate={showAnchor ? videoDate : undefined}
             tvMode
           />
         </ErrorBoundary>
@@ -346,13 +342,6 @@ function HeadlinePreview({ stories, channelId, color, entered }: {
       opacity: entered ? 1 : 0,
       transition: 'opacity 0.8s ease 0.7s',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '6px' }}>
-        <div style={{ width: 20, height: 1, background: `${color}40` }} />
-        <span style={{ fontSize: 9, color: `${color}90`, letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 600 }}>
-          Now showing
-        </span>
-        <div style={{ width: 20, height: 1, background: `${color}40` }} />
-      </div>
       <p key={`${channelId}-${headlineIdx}`} style={{
         fontSize: 15,
         fontFamily: "'Instrument Serif', Georgia, serif",
