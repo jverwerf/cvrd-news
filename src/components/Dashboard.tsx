@@ -440,7 +440,7 @@ export function Dashboard({
               <button onClick={prevItem} className="p-0.5 hover:opacity-60 shrink-0" title="Previous clip">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
-              <span className="text-[7px] text-white/40 font-mono shrink-0">{currentBoundaryIdx + 1}/{storyBoundaries.length}·{clipInStory}/{clipsInStory}</span>
+              <span className="text-[7px] text-white/40 font-mono shrink-0">{clipInStory}/{clipsInStory}</span>
               <button onClick={next} className="p-0.5 hover:opacity-60 shrink-0" title="Next clip">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
               </button>
