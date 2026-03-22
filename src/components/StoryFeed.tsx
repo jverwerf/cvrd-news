@@ -6,7 +6,6 @@ import { Tweet } from 'react-tweet';
 import Image from 'next/image';
 import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
-import { LazyDashboard } from "./LazyDashboard";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -55,22 +54,20 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
         </h2>
       </div>
 
-      {/* 2. MINI DASHBOARD — lazy loaded when scrolled into view */}
-      {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <LazyDashboard stories={[story]} />
+      {/* 2. IMAGE */}
+      {story.image_file && (
+        <div className="relative overflow-hidden" style={{
+          height: '35vh',
+          minHeight: '250px',
+          backgroundImage: `url(${story.image_file})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+        }}>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
+        </div>
       )}
 
-      {/* 3. IMAGE */}
-      <div className="relative overflow-hidden" style={{
-        height: '35vh',
-        minHeight: '250px',
-        backgroundImage: story.image_file ? `url(${story.image_file})` : 'linear-gradient(to br, #1a1a2e, #16213e, #0f3460)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-      }}>
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
-      </div>
-
+      {/* 3. REST */}
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
       {/* SUMMARY */}
