@@ -107,48 +107,55 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     <div>
       {/* DASHBOARD with arrows + timeline */}
       <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
-        {/* MINI THUMBNAIL TIMELINE — top of dashboard */}
-        <div className="flex items-center gap-0 px-0.5 py-0.5" style={{ background: '#0a0f18' }}>
+        {/* MINI THUMBNAIL TIMELINE — same as strip below but smaller */}
+        <div className="flex items-center gap-0 px-1 py-0.5" style={{ background: '#0a0f18' }}>
+        <style>{`
+          .story-thumb-mini:hover { width: 180px !important; opacity: 1 !important; }
+          .story-thumb-mini:hover .story-thumb-mini-img { height: 60px !important; }
+          .story-thumb-mini:hover .story-thumb-mini-label { font-size: 9px !important; line-height: 1.3 !important; }
+        `}</style>
           <button onClick={() => {
             document.getElementById('story-timeline')?.scrollBy({ left: -150, behavior: 'smooth' });
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
             <div className="w-0 h-0 border-t-[3px] border-t-transparent border-b-[3px] border-b-transparent border-r-[4px] border-r-[#666]" />
           </button>
-          <div id="story-timeline" className="flex gap-0.5 flex-1 items-center" style={{ scrollbarWidth: 'none' }}>
+          <div id="story-timeline" className="flex gap-0.5 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief */}
             <button onClick={() => setCurrentIdx(-1)}
-              className="rounded overflow-hidden cursor-pointer flex-1 min-w-0"
+              className="story-thumb-mini shrink-0 rounded overflow-hidden cursor-pointer"
               style={{
+                width: '60px',
                 border: isBrief ? '1.5px solid #b8860b' : '1.5px solid transparent',
-                opacity: isBrief ? 1 : 0.4,
-                transition: 'opacity 0.2s ease',
+                opacity: isBrief ? 1 : 0.5,
+                transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
-              <div className="h-6 relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                <span className="text-[6px] text-white font-bold truncate px-1">Brief</span>
+              <div className="story-thumb-mini-img relative overflow-hidden flex items-center justify-center" style={{ height: '32px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
+                <img src="/logo3.png" alt="" style={{ height: '16px', opacity: 0.4 }} />
+                <div className="absolute inset-0 flex items-end p-0.5" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                  <span className="story-thumb-mini-label text-[5px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Brief</span>
+                </div>
               </div>
             </button>
             {/* Stories */}
-            {stories.map((s, i) => {
-              const isActive = i === currentIdx;
-              return (
-                <button key={i} onClick={() => setCurrentIdx(i)}
-                  className="rounded overflow-hidden cursor-pointer flex-1 min-w-0"
-                  style={{
-                    border: isActive ? '1.5px solid #2563eb' : '1.5px solid transparent',
-                    opacity: isActive ? 1 : 0.4,
-                    transition: 'opacity 0.2s ease',
-                  }}>
-                  <div className="h-6 relative overflow-hidden" style={{
-                    backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
-                    backgroundSize: 'cover', backgroundPosition: 'center',
-                  }}>
-                    <div className="absolute inset-0 flex items-center px-1" style={{ background: 'rgba(0,0,0,0.4)' }}>
-                      <span className="text-[6px] text-white font-medium truncate">{s.topic}</span>
-                    </div>
+            {stories.map((s, i) => (
+              <button key={i} onClick={() => setCurrentIdx(i)}
+                className="story-thumb-mini shrink-0 rounded overflow-hidden cursor-pointer"
+                style={{
+                  width: '60px',
+                  border: i === currentIdx ? '1.5px solid #2563eb' : '1.5px solid transparent',
+                  opacity: i === currentIdx ? 1 : 0.5,
+                  transition: 'width 0.3s ease, opacity 0.2s ease',
+                }}>
+                <div className="story-thumb-mini-img relative overflow-hidden" style={{ height: '32px', transition: 'height 0.3s ease',
+                  backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
+                  backgroundSize: 'cover', backgroundPosition: 'center',
+                }}>
+                  <div className="absolute inset-0 flex items-end p-0.5" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
+                    <span className="story-thumb-mini-label text-[5px] text-white font-medium leading-tight line-clamp-1" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
                   </div>
-                </button>
-              );
-            })}
+                </div>
+              </button>
+            ))}
           </div>
           <button onClick={() => {
             document.getElementById('story-timeline')?.scrollBy({ left: 150, behavior: 'smooth' });
