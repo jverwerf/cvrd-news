@@ -126,7 +126,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               style={{
                 width: '100px',
                 border: isBrief ? '2px solid #b8860b' : '2px solid transparent',
-                opacity: isBrief ? 1 : 0.5,
+                opacity: isBrief ? 1 : 0.75,
                 transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
               <div className="story-thumb-mini-img relative overflow-hidden flex items-center justify-center" style={{ height: '36px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
@@ -143,7 +143,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 style={{
                   width: '100px',
                   border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
-                  opacity: i === currentIdx ? 1 : 0.5,
+                  opacity: i === currentIdx ? 1 : 0.75,
                   transition: 'width 0.3s ease, opacity 0.2s ease',
                 }}>
                 <div className="story-thumb-mini-img relative overflow-hidden" style={{ height: '36px', transition: 'height 0.3s ease',
@@ -235,7 +235,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               style={{
                 width: '100px',
                 border: isBrief ? '2px solid #b8860b' : '2px solid transparent',
-                opacity: isBrief ? 1 : 0.5,
+                opacity: isBrief ? 1 : 0.75,
                 transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
               <div className="story-thumb-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
@@ -251,7 +251,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 style={{
                   width: '100px',
                   border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
-                  opacity: i === currentIdx ? 1 : 0.5,
+                  opacity: i === currentIdx ? 1 : 0.75,
                   transition: 'width 0.3s ease, opacity 0.2s ease',
                 }}>
                 <div className="story-thumb-img relative overflow-hidden" style={{ height: '56px', transition: 'height 0.3s ease',
