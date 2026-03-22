@@ -389,6 +389,11 @@ export function Dashboard({
                   style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
                   <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
                 </button>
+                <style>{`
+                  .clip-thumb:hover { width: 200px !important; opacity: 1 !important; }
+                  .clip-thumb:hover .clip-thumb-img { height: 50px !important; }
+                  .clip-thumb:hover .clip-thumb-label { font-size: 9px !important; }
+                `}</style>
                 <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
                   {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
                     const clipIdx = currentBoundary.start + ci;
@@ -399,19 +404,21 @@ export function Dashboard({
                       : null;
                     return (
                       <div key={ci} data-active={isActiveClip ? 'true' : undefined}
-                        className="rounded cursor-pointer overflow-hidden shrink-0 transition-all"
+                        className="clip-thumb rounded cursor-pointer overflow-hidden shrink-0"
                         style={{
                           width: '80px',
                           border: isActiveClip ? '1.5px solid #22c55e' : '1.5px solid transparent',
                           opacity: isActiveClip ? 1 : 0.75,
+                          transition: 'width 0.3s ease, opacity 0.2s ease',
                         }}
                         onClick={(e) => { setCurrentIdx(clipIdx); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
-                        <div className="h-7 relative overflow-hidden" style={{
+                        <div className="clip-thumb-img relative overflow-hidden" style={{
+                          height: '28px', transition: 'height 0.3s ease',
                           backgroundImage: thumb ? `url(${thumb})` : 'linear-gradient(135deg, #0f2b1a, #1b4b32)',
                           backgroundSize: 'cover', backgroundPosition: 'center',
                         }}>
                           <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
-                            <span className="text-[5px] text-white font-medium leading-tight truncate">
+                            <span className="clip-thumb-label text-[6px] text-white font-medium leading-tight truncate" style={{ transition: 'font-size 0.3s ease' }}>
                               {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
                             </span>
                           </div>
