@@ -372,13 +372,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       )}
 
       {/* THUMBNAILS — always visible */}
-      {activeIdx < 0 && (
-        <div className="flex items-center gap-1.5 mb-2">
-          <span className="text-[10px] text-[#888]">▶ Click to play</span>
-          <span className="text-[10px] text-[#555]">·</span>
-          <span className="text-[10px] text-[#666]">{items.length} clips</span>
-        </div>
-      )}
       <div className="flex items-center gap-2">
         {/* Left arrow */}
         {items.length > 6 && (
@@ -394,7 +387,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(false); stopPolling(); stopTimer(); }}
               className="rounded overflow-hidden transition-all group shrink-0 cursor-pointer"
               style={{
-                width: '120px',
+                width: '240px',
                 border: i === activeIdx ? `2px solid ${platformColor(item.type)}` : '2px solid transparent',
                 opacity: i === activeIdx ? 1 : 0.7,
               }}>
@@ -444,6 +437,13 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           </button>
         )}
       </div>
+      {activeIdx < 0 && (
+        <div className="flex items-center gap-1.5 mt-2">
+          <span className="text-[10px] text-[#888]">▶ Click to play</span>
+          <span className="text-[10px] text-[#555]">·</span>
+          <span className="text-[10px] text-[#666]">{items.length} clips</span>
+        </div>
+      )}
     </div>
   );
 }
