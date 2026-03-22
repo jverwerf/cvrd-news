@@ -102,7 +102,7 @@ export default function BreakingPage() {
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         {/* 1. CATEGORY NAV */}
         <div className="overflow-x-auto" style={{ background: '#1e2a3a', scrollbarWidth: 'none' }}>
-          <div className="h-12 flex items-center justify-center gap-3 px-4">
+          <div className="h-12 flex items-center justify-center gap-3 px-4 relative">
             <a href="/breaking"
               className="shrink-0 px-3 py-1.5 text-[13px] font-semibold rounded-full transition-colors"
               style={{ background: 'rgba(220,38,38,0.25)', color: '#fff', border: '1px solid rgba(220,38,38,0.5)' }}>
@@ -116,7 +116,7 @@ export default function BreakingPage() {
                 {cat.label}
               </a>
             ))}
-            <div className="shrink-0 flex items-center gap-1.5">
+            <div className="absolute right-4 flex items-center gap-1.5">
               <a href="/tv" className="p-1 transition-colors flex items-center"
                 style={{ color: 'rgba(255,255,255,0.35)' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

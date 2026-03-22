@@ -60,7 +60,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         {/* 1. CATEGORY NAV */}
         <div className="overflow-x-auto" style={{ background: '#1e2a3a', scrollbarWidth: 'none' }}>
-          <div className="h-12 flex items-center justify-center gap-3 px-4">
+          <div className="h-12 flex items-center justify-center gap-3 px-4 relative">
             {[{ label: 'Daily Pick', slug: '/' }, ...Object.values(CATEGORIES)].map((c) => (
               <a key={c.slug} href={c.slug === '/' ? '/' : `/${c.slug}`}
                 className="shrink-0 px-3 py-1.5 text-[13px] font-semibold rounded-full transition-colors"
@@ -71,7 +71,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 {c.label}
               </a>
             ))}
-            <div className="shrink-0 flex items-center gap-1.5">
+            <div className="absolute right-4 flex items-center gap-1.5">
               <a href="/tv" className="p-1 transition-colors flex items-center"
                 style={{ color: 'rgba(255,255,255,0.35)' }}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
