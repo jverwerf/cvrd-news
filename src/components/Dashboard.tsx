@@ -155,10 +155,7 @@ export function Dashboard({
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
-          // Verify this came from the center player iframe, not a tile
-          if (ytPlayerRef.current && e.source === ytPlayerRef.current.contentWindow) {
-            setCurrentIdx(p => (p + 1) % playlist.length);
-          }
+          setCurrentIdx(p => (p + 1) % playlist.length);
         }
       } catch {}
     };
