@@ -6,6 +6,7 @@ import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 const CHANNELS = [
+  { id: 'breaking', label: 'Breaking', sub: 'Live updates', color: '#ef4444' },
   { id: 'daily', label: 'Daily Pick', sub: 'Today\'s top stories', color: '#3b82f6' },
   { id: 'world', label: 'World', sub: 'Global affairs', color: '#60a5fa' },
   { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#818cf8' },
@@ -130,7 +131,9 @@ export function TVClient({
               transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s',
             }}>
               {CHANNELS.map((ch, i) => {
-                const count = ch.id === 'daily'
+                const count = ch.id === 'breaking'
+                  ? 0 // live count, not from daily data
+                  : ch.id === 'daily'
                   ? (allStories.filter(s => s.is_top_story).length >= 10 ? allStories.filter(s => s.is_top_story).length : Math.min(allStories.length, 10))
                   : allStories.filter(s => s.category === ch.id).length;
                 const isFocused = focusedIdx === i;
@@ -258,6 +261,11 @@ export function TVClient({
     );
   }
 
+  // ── Breaking TV ──
+  if (activeChannel === 'breaking') {
+    return <BreakingTV onBack={() => setActiveChannel(null)} />;
+  }
+
   // ── Dashboard view ──
   const stories = getStories(activeChannel);
   const channel = CHANNELS.find(c => c.id === activeChannel)!;
@@ -353,6 +361,183 @@ function HeadlinePreview({ stories, channelId, color, entered }: {
       }}>
         {story.topic}
       </p>
+    </div>
+  );
+}
+
+/** Breaking TV — auto-cycles through breaking stories, polls for new ones */
+function BreakingTV({ onBack }: { onBack: () => void }) {
+  const [breakingStories, setBreakingStories] = useState<NarrativeGap[]>([]);
+  const [currentStoryIdx, setCurrentStoryIdx] = useState(0);
+  const [playedIds, setPlayedIds] = useState<Set<string>>(new Set());
+  const [nowPlaying, setNowPlaying] = useState('');
+  const [lastStoryCount, setLastStoryCount] = useState(0);
+
+  // Convert breaking data to NarrativeGap
+  const toNarrativeGap = (b: any): NarrativeGap => {
+    const ytVideos = (b.youtube_videos || []).length > 0
+      ? b.youtube_videos
+      : (b.clips || []).filter((c: any) => c.platform === 'youtube' && c.embed_id)
+          .map((c: any) => ({ url: c.url || '', embed_id: c.embed_id, channel: c.title || 'Breaking', duration: c.duration, title: c.title }));
+    const socialClips = (b.social_clips || []).length > 0
+      ? b.social_clips
+      : (b.clips || []).filter((c: any) => c.platform !== 'youtube' && c.embed_id)
+          .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, duration: c.duration }));
+    return {
+      topic: b.topic, summary: b.summary || '', left_narrative: b.left_narrative || '',
+      right_narrative: b.right_narrative || '', what_they_arent_telling_you: b.what_they_arent_telling_you || '',
+      image_prompt: '', image_file: b.image_file, youtube_videos: ytVideos, social_clips: socialClips,
+      sources: b.sources || [],
+    };
+  };
+
+  // Fetch breaking data
+  const fetchBreaking = () => {
+    fetch('/api/breaking/data')
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return;
+        const items = Array.isArray(data) ? data : [data];
+        const stories = items.map(toNarrativeGap);
+        setBreakingStories(stories);
+
+        // If new story appeared, jump to it
+        if (items.length > lastStoryCount && lastStoryCount > 0) {
+          setCurrentStoryIdx(0); // newest is first
+        }
+        setLastStoryCount(items.length);
+
+        // Update now playing
+        if (stories.length > 0) {
+          setNowPlaying(stories[0].topic);
+        }
+      })
+      .catch(() => {});
+  };
+
+  // Initial fetch + poll every 2 min
+  useEffect(() => {
+    fetchBreaking();
+    const interval = setInterval(fetchBreaking, 120000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Auto-rotate stories every 3 min
+  useEffect(() => {
+    if (breakingStories.length <= 1) return;
+    const t = setInterval(() => {
+      setCurrentStoryIdx(p => (p + 1) % breakingStories.length);
+    }, 180000);
+    return () => clearInterval(t);
+  }, [breakingStories.length]);
+
+  // Update now playing label
+  useEffect(() => {
+    if (breakingStories[currentStoryIdx]) {
+      setNowPlaying(breakingStories[currentStoryIdx].topic);
+    }
+  }, [currentStoryIdx, breakingStories]);
+
+  // Build curated story — prioritize unplayed clips
+  const currentBreaking = breakingStories[currentStoryIdx];
+  const curatedStory: NarrativeGap | null = currentBreaking ? (() => {
+    const allYT = currentBreaking.youtube_videos || [];
+    const allSocial = currentBreaking.social_clips || [];
+    // Sort: unplayed first
+    const sortByPlayed = <T extends { embed_id?: string }>(arr: T[]) =>
+      [...arr].sort((a, b) => {
+        const aPlayed = playedIds.has(a.embed_id || '');
+        const bPlayed = playedIds.has(b.embed_id || '');
+        if (aPlayed === bPlayed) return 0;
+        return aPlayed ? 1 : -1;
+      });
+    return {
+      ...currentBreaking,
+      youtube_videos: sortByPlayed(allYT),
+      social_clips: sortByPlayed(allSocial),
+    };
+  })() : null;
+
+  if (breakingStories.length === 0) {
+    return (
+      <div style={{ background: '#000', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ color: '#666', fontSize: 16 }}>No breaking news right now.</p>
+        <button onClick={onBack} style={{ color: '#ef4444', fontSize: 13, marginTop: 16, background: 'none', border: 'none', cursor: 'pointer' }}>
+          ← Back to channels
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
+      {/* Ghost logo */}
+      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 top-1/2 pointer-events-none"
+        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08 }} />
+
+      {/* Top bar — red breaking style */}
+      <div className="fixed top-0 left-0 right-0 h-10 flex items-center overflow-hidden" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)', zIndex: 100 }}>
+        <button onClick={onBack}
+          className="shrink-0 px-4 h-full flex items-center gap-2 hover:bg-white/5 transition-colors"
+          style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}>
+          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>←</span>
+          <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse">LIVE</span>
+        </button>
+        <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.15)' }} />
+
+        {/* Now Playing */}
+        <div className="shrink-0 px-3 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-[11px] text-white font-semibold">{nowPlaying}</span>
+        </div>
+
+        <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.15)' }} />
+
+        {/* Ticker */}
+        <div className="flex-1 overflow-hidden">
+          <div className="flex items-center gap-8 animate-[ticker_120s_linear_infinite] whitespace-nowrap pl-4">
+            {[...breakingStories, ...breakingStories, ...breakingStories].map((s, i) => (
+              <span key={i} className="flex items-center gap-2 shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                <span className="text-[12px] text-white/70 font-medium">{s.topic}</span>
+                <span className="text-white/20 ml-2">&middot;</span>
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Story indicator */}
+        <div className="shrink-0 px-3 flex items-center gap-1">
+          {breakingStories.map((_, i) => (
+            <button key={i} onClick={() => setCurrentStoryIdx(i)}
+              style={{
+                width: i === currentStoryIdx ? 14 : 6, height: 6, borderRadius: 3,
+                background: i === currentStoryIdx ? '#ef4444' : 'rgba(255,255,255,0.3)',
+                border: 'none', cursor: 'pointer', transition: 'all 0.3s ease',
+              }} />
+          ))}
+        </div>
+      </div>
+
+      {/* Dashboard */}
+      {curatedStory && (
+        <div style={{ paddingTop: '40px', height: '100vh' }}>
+          <ErrorBoundary>
+            <Dashboard
+              key={`breaking-${currentStoryIdx}`}
+              stories={[curatedStory]}
+              tvMode
+            />
+          </ErrorBoundary>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes ticker {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.333%); }
+        }
+      `}</style>
     </div>
   );
 }
