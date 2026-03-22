@@ -215,9 +215,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         )}
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0">
-              {isBrief ? 'Daily Brief' : `${currentIdx + 1}/${stories.length}`}
-            </span>
+            {!isBrief && (
+              <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0">
+                {currentIdx + 1}/{stories.length}
+              </span>
+            )}
             <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] truncate" style={serif}>
               {isBrief ? "Daily Brief" : story.topic}
             </h1>

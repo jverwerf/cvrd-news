@@ -26,15 +26,15 @@ export function ShowClient({ episodes }: { episodes: Episode[] }) {
       {/* HEADER */}
       <div className="px-6 md:px-12 py-8 text-center">
         <h1 className="text-[36px] md:text-[48px] text-white tracking-[-0.03em] mb-2" style={serif}>
-          The Daily Show
+          The Daily Covered
         </h1>
-        <p className="text-[14px] text-white/40">Every day, the stories they won&apos;t cover — in one briefing.</p>
+        <p className="text-[14px] text-white/40">Every day, the stories they won&apos;t cover — in one show.</p>
       </div>
 
       {episodes.length === 0 ? (
         <div className="px-6 md:px-12 py-20 text-center">
           <p className="text-[16px] text-white/30 mb-4">No episodes yet.</p>
-          <p className="text-[13px] text-white/20">Daily briefings will appear here once published.</p>
+          <p className="text-[13px] text-white/20">Episodes will appear here once published.</p>
           <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer"
             className="inline-block mt-6 px-5 py-2.5 rounded-full text-[13px] font-semibold text-white transition-colors"
             style={{ background: '#ff0000' }}>
@@ -61,7 +61,7 @@ export function ShowClient({ episodes }: { episodes: Episode[] }) {
                   <div>
                     <span className="text-[11px] text-white/40 font-medium">{active.date}</span>
                     <h2 className="text-[16px] text-white font-medium mt-0.5" style={serif}>
-                      Daily Briefing — {active.date}
+                      The Daily Covered — {active.date}
                     </h2>
                   </div>
                   <a href={`https://www.youtube.com/watch?v=${active.embedId}`} target="_blank" rel="noreferrer"
@@ -96,7 +96,7 @@ export function ShowClient({ episodes }: { episodes: Episode[] }) {
                   <img src={`https://img.youtube.com/vi/${ep.embedId}/mqdefault.jpg`} alt="" className="w-24 h-14 rounded object-cover shrink-0" />
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] text-white/40">{ep.date}</span>
-                    <p className="text-[13px] text-white/80 truncate">Daily Briefing — {ep.date}</p>
+                    <p className="text-[13px] text-white/80 truncate">The Daily Covered — {ep.date}</p>
                   </div>
                   {i === activeIdx && <span className="text-[10px] text-[#b8860b] shrink-0">Now playing</span>}
                 </button>
