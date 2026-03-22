@@ -29,42 +29,40 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
   });
 
   // Build curated Daily Brief story — best picks from all stories
-  const briefStory: NarrativeGap = (() => {
-    const bestYT: NarrativeGap['youtube_videos'] = [];
-    const bestSocial: NarrativeGap['social_clips'] = [];
+  const bestYT: { url: string; embed_id: string; channel?: string; duration?: number }[] = [];
+  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'reddit'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
 
-    for (const s of stories) {
-      // Best YouTube video per story (first one, already sorted by relevance)
-      const yt = (s.youtube_videos || []).find(v => !(v as any).download_failed);
-      if (yt) bestYT.push(yt);
+  for (const s of stories) {
+    // Best YouTube video per story (first one, already sorted by relevance)
+    const ytList = s.youtube_videos || [];
+    if (ytList.length > 0) bestYT.push(ytList[0]);
 
-      // Best 2 social clips per story (prefer TikTok/X with video)
-      const social = (s.social_clips || []).filter(c => !(c as any).download_failed && c.embed_id);
-      const videoClips = social.filter(c => c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
-      const picked = videoClips.slice(0, 2);
-      // If less than 2 video clips, fill with any social
-      if (picked.length < 2) {
-        const remaining = social.filter(c => !picked.includes(c));
-        picked.push(...remaining.slice(0, 2 - picked.length));
-      }
-      bestSocial.push(...picked);
+    // Best 2 social clips per story (prefer TikTok/X with video)
+    const social = (s.social_clips || []).filter(c => c.embed_id);
+    const videoClips = social.filter(c => c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
+    const picked = videoClips.slice(0, 2);
+    if (picked.length < 2) {
+      const remaining = social.filter(c => !picked.includes(c));
+      picked.push(...remaining.slice(0, 2 - picked.length));
     }
+    bestSocial.push(...picked);
+  }
 
-    return {
-      topic: 'Daily Brief',
-      summary: `Today's top ${stories.length} stories — the most important clips from every angle.`,
-      left_narrative: '',
-      right_narrative: '',
-      what_they_arent_telling_you: '',
-      image_prompt: '',
-      youtube_videos: bestYT,
-      social_clips: bestSocial,
-      sources: [],
-    };
-  })();
+  const briefStory: NarrativeGap = {
+    topic: 'Daily Brief',
+    summary: `Today's top ${stories.length} stories — the most important clips from every angle.`,
+    left_narrative: '',
+    right_narrative: '',
+    what_they_arent_telling_you: '',
+    image_prompt: '',
+    youtube_videos: bestYT,
+    social_clips: bestSocial,
+    sources: [],
+  };
 
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
+
 
   const clips = story.social_clips || [];
   const ytVids = story.youtube_videos || [];
