@@ -123,7 +123,7 @@ export default function BreakingPage() {
                   <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
                 </svg>
               </a>
-              <span className="w-px h-4 shrink-0" style={{ background: 'rgba(255,255,255,0.25)' }} />
+              <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
               <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="p-1 transition-opacity hover:opacity-80 flex items-center"
                 title="Watch the daily show">
                 <img src="/logo3.png" alt="CVRD" style={{ height: '14px', opacity: 0.35, filter: 'brightness(0) invert(1)' }} />
