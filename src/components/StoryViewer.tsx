@@ -132,7 +132,7 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
         <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0 }}>
             <ErrorBoundary>
-              <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={isBrief ? videoUrl : undefined} videoDate={isBrief ? videoDate : undefined} />
+              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? stories : [story]} videoUrl={isBrief ? videoUrl : undefined} videoDate={isBrief ? videoDate : undefined} />
             </ErrorBoundary>
           </div>
         </div>
