@@ -361,8 +361,9 @@ export function Dashboard({
                 const listenCmd = JSON.stringify({ event: 'listening', id: 'yt-player' });
                 setTimeout(() => { win.postMessage(listenCmd, '*'); }, 500);
                 setTimeout(() => { win.postMessage(listenCmd, '*'); }, 1500);
-                // Unmute if needed
-                if (unmuted) {
+                // Unmute if user has unmuted, or always on TV mode (user clicked channel = interaction)
+                if (unmuted || tvMode) {
+                  if (tvMode && !unmuted) setUnmuted(true);
                   const unmuteFn = () => {
                     win.postMessage(JSON.stringify({ event: 'command', func: 'unMute' }), '*');
                     win.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [Math.round(volume * 100)] }), '*');
