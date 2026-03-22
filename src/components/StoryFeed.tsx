@@ -6,6 +6,8 @@ import { Tweet } from 'react-tweet';
 import Image from 'next/image';
 import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
+import { Dashboard } from "./Dashboard";
+import { ErrorBoundary } from "./ErrorBoundary";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -66,6 +68,13 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
           </h2>
         </div>
       </div>
+
+      {/* MINI DASHBOARD — this story's clips only */}
+      {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+        <ErrorBoundary>
+          <Dashboard stories={[story]} />
+        </ErrorBoundary>
+      )}
 
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
