@@ -1,10 +1,7 @@
 import { getDailyGaps } from "@/lib/data";
-import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LiveBanner } from "@/components/LiveBanner";
-import { HeroStory } from "@/components/HeroStory";
-import { StoryFeed } from "@/components/StoryFeed";
-import { StoryNav } from "@/components/StoryNav";
+import { StoryViewer } from "@/components/StoryViewer";
 
 const ALL_CATS = [
   { label: 'Daily Pick', slug: '/' },
@@ -33,8 +30,6 @@ export default async function Home() {
     : allStories.slice(0, 10);
 
   const stories = top10;
-  const heroStory = stories[0];
-  const rest = stories.slice(1);
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
@@ -81,24 +76,14 @@ export default async function Home() {
             <LiveBanner stories={stories} liveData={data.live_data} />
           </div>
 
-          {/* 3. DASHBOARD + LOGO + STORY NAV ARROWS */}
-          <div className="relative">
-            <ErrorBoundary>
-              <Dashboard stories={stories} videoUrl={data.video_url} videoDate={data.date} />
-            </ErrorBoundary>
-            {/* Logo centered, overlapping top of dashboard */}
-            <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
-              style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
-            {/* Story navigation arrows */}
-            <StoryNav storyCount={stories.length} />
-          </div>
+          {/* 3. LOGO */}
+          <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
+            style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
 
-          {/* 4. HERO STORY */}
-          <div className="h-3" />
-          {heroStory && <HeroStory story={heroStory} />}
-
-          {/* 5. REST OF STORIES */}
-          {rest.length > 0 && <StoryFeed stories={rest} startIndex={1} />}
+          {/* 4. STORY VIEWER — Dashboard with arrows + full story content */}
+          <ErrorBoundary>
+            <StoryViewer stories={stories} videoUrl={data.video_url} videoDate={data.date} />
+          </ErrorBoundary>
 
           {/* FOOTER */}
           <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
