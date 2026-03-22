@@ -71,7 +71,7 @@ export default async function Home() {
                 </a>
                 <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer" className="shrink-0 p-1 transition-opacity hover:opacity-80 flex items-center"
                   title="Watch the daily show">
-                  <img src="/logo3.png" alt="CVRD" style={{ height: '22px', opacity: 0.5, filter: 'grayscale(1) brightness(10)' }} />
+                  <img src="/logo3.png" alt="CVRD" style={{ height: '16px', opacity: 0.4, filter: 'brightness(0) invert(1)' }} />
                 </a>
               </div>
             </div>
