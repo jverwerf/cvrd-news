@@ -8,7 +8,6 @@ import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
-import { LazyDashboard } from "./LazyDashboard";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -49,12 +48,7 @@ export function HeroStory({ story, hideBanner }: { story: NarrativeGap; hideBann
         </div>
       )}
 
-      {/* 2. MINI DASHBOARD — lazy loaded when scrolled into view */}
-      {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <LazyDashboard stories={[story]} />
-      )}
-
-      {/* 3. IMAGE HEADER */}
+      {/* 2. IMAGE */}
       {story.image_file && (
         <div className="relative overflow-hidden" style={{
           height: '45vh', minHeight: '320px',
@@ -65,9 +59,10 @@ export function HeroStory({ story, hideBanner }: { story: NarrativeGap; hideBann
         </div>
       )}
 
+      {/* 3. REST — dashboard, summary, video grid, etc */}
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
-      {/* 3. SUMMARY */}
+      {/* SUMMARY */}
       <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
         <p className="text-[15px] text-[#ccc] leading-[1.75] italic">
           {story.summary}
