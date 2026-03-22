@@ -37,11 +37,36 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
 
   return (
     <div>
-      {/* DASHBOARD with arrows */}
-      <div className="relative">
-        <ErrorBoundary>
-          <Dashboard stories={[story]} videoUrl={currentIdx === 0 ? videoUrl : undefined} videoDate={currentIdx === 0 ? videoDate : undefined} />
-        </ErrorBoundary>
+      {/* DASHBOARD with arrows + timeline */}
+      <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
+        <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', inset: 0 }}>
+            <ErrorBoundary>
+              <Dashboard stories={[story]} videoUrl={currentIdx === 0 ? videoUrl : undefined} videoDate={currentIdx === 0 ? videoDate : undefined} />
+            </ErrorBoundary>
+          </div>
+        </div>
+
+        {/* STORY TIMELINE — inside dashboard view */}
+        <div className="flex gap-0.5 px-1 py-1" style={{ background: '#0a0f18' }}>
+          {stories.map((s, i) => {
+            const isActive = i === currentIdx;
+            const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
+            return (
+              <button key={i} onClick={() => setCurrentIdx(i)}
+                className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center transition-all flex-1 min-w-0"
+                style={{
+                  background: isActive ? '#2563eb' : blues[i % blues.length],
+                  opacity: isActive ? 1 : 0.6,
+                  border: 'none',
+                }}>
+                <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.7 }}>
+                  {s.topic}
+                </p>
+              </button>
+            );
+          })}
+        </div>
 
         {/* Left arrow */}
         <button onClick={prev}
@@ -72,27 +97,6 @@ export function StoryViewer({ stories, videoUrl, videoDate }: {
               }} />
           ))}
         </div>
-      </div>
-
-      {/* STORY TIMELINE — clickable segments */}
-      <div className="flex gap-0.5 px-2 py-1.5" style={{ background: '#111' }}>
-        {stories.map((s, i) => {
-          const isActive = i === currentIdx;
-          const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
-          return (
-            <button key={i} onClick={() => setCurrentIdx(i)}
-              className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all flex-1 min-w-0"
-              style={{
-                background: isActive ? '#2563eb' : blues[i % blues.length],
-                opacity: isActive ? 1 : 0.6,
-                border: 'none',
-              }}>
-              <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.7 }}>
-                {s.topic}
-              </p>
-            </button>
-          );
-        })}
       </div>
 
       {/* WHITE BANNER with navigation */}
