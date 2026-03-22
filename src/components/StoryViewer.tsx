@@ -213,18 +213,17 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
             <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
           </button>
-          <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1 py-4 -my-4" style={{ scrollbarWidth: 'none' }}>
+          <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief thumbnail */}
             <button onClick={() => setCurrentIdx(-1)}
-              className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group hover:scale-[1.4] hover:z-10 hover:opacity-100"
+              className="shrink-0 rounded overflow-hidden cursor-pointer group hover:w-[200px] hover:opacity-100"
               style={{
                 width: '100px',
                 border: isBrief ? '2px solid #b8860b' : '2px solid transparent',
                 opacity: isBrief ? 1 : 0.5,
-                transformOrigin: 'center bottom',
-                position: 'relative',
+                transition: 'width 0.3s ease, opacity 0.2s ease',
               }}>
-              <div className="h-14 relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+              <div className="h-14 group-hover:h-24 transition-all relative overflow-hidden flex items-center justify-center" style={{ background: '#1a1a2e' }}>
                 <img src="/logo3.png" alt="CVRD" style={{ height: '28px', opacity: 0.4 }} />
                 <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.7) 100%)' }}>
                   <span className="text-[7px] text-white font-bold leading-tight">Daily Brief</span>
@@ -233,15 +232,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </button>
             {stories.map((s, i) => (
               <button key={i} onClick={() => setCurrentIdx(i)}
-                className="shrink-0 rounded overflow-hidden transition-all cursor-pointer group hover:scale-[1.4] hover:z-10 hover:opacity-100"
+                className="shrink-0 rounded overflow-hidden cursor-pointer group hover:w-[200px] hover:opacity-100"
                 style={{
                   width: '100px',
                   border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
                   opacity: i === currentIdx ? 1 : 0.5,
-                  transformOrigin: 'center bottom',
-                  position: 'relative',
+                  transition: 'width 0.3s ease, opacity 0.2s ease',
                 }}>
-                <div className="h-14 relative overflow-hidden" style={{
+                <div className="h-14 group-hover:h-24 transition-all relative overflow-hidden" style={{
                   backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
