@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Dashboard } from "@/components/Dashboard";
 import { HeroStory } from "@/components/HeroStory";
 import { LiveBanner } from "@/components/LiveBanner";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -141,29 +140,21 @@ export default function BreakingPage() {
         <span className="text-[10px] text-white/60 shrink-0">{timeAgo(breakingItems[0].detected_at)} · {breakingItems.length > 1 ? `${breakingItems.length} stories` : 'Updated every 30 min'}</span>
       </div>
 
-      {/* MOST RECENT: Dashboard + HeroStory */}
-      <ErrorBoundary>
-        <Dashboard stories={[firstStory]} />
-      </ErrorBoundary>
-      <div className="h-3" />
-      <HeroStory story={firstStory} />
-
-      {/* OLDER BREAKING STORIES: each with its own red banner + Dashboard + HeroStory */}
-      {breakingItems.slice(1).map((b, i) => {
-        const story = allStories[i + 1];
+      {/* ALL BREAKING STORIES: red banner → HeroStory (which includes dashboard + image) */}
+      {breakingItems.map((b, i) => {
+        const story = allStories[i];
         return (
           <div key={i}>
-            {/* Red banner for this story */}
-            <div className="px-4 py-2 flex items-center gap-3 mt-4" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
-              <span className="text-[10px] font-bold text-white bg-red-600/70 px-2 py-0.5 rounded">BREAKING</span>
-              <span className="text-[13px] text-white font-bold flex-1 truncate">{b.topic}</span>
+            <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
+              <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse uppercase tracking-[0.05em]">
+                {i === 0 ? 'LIVE' : 'BREAKING'}
+              </span>
+              <span className="text-[15px] text-white font-bold flex-1 truncate" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+                {b.topic}
+              </span>
               <span className="text-[10px] text-white/60 shrink-0">{timeAgo(b.detected_at)}</span>
             </div>
-            <ErrorBoundary>
-              <Dashboard stories={[story]} />
-            </ErrorBoundary>
-            <div className="h-3" />
-            <HeroStory story={story} />
+            <HeroStory story={story} hideBanner />
           </div>
         );
       })}

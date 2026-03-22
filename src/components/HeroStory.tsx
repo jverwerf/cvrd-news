@@ -11,7 +11,7 @@ import { ErrorBoundary } from "./ErrorBoundary";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
-export function HeroStory({ story }: { story: NarrativeGap }) {
+export function HeroStory({ story, hideBanner }: { story: NarrativeGap; hideBanner?: boolean }) {
   const [open, setOpen] = useState(false);
 
   const clips = story.social_clips || [];
@@ -38,13 +38,15 @@ export function HeroStory({ story }: { story: NarrativeGap }) {
   return (
     <section id="story-1">
 
-      {/* 1. WHITE BANNER — story title */}
-      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-        <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Top Story</span>
-        <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
-          {story.topic}
-        </h1>
-      </div>
+      {/* 1. WHITE BANNER — story title (hidden when parent provides its own banner) */}
+      {!hideBanner && (
+        <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+          <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Top Story</span>
+          <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
+            {story.topic}
+          </h1>
+        </div>
+      )}
 
       {/* 2. MINI DASHBOARD — this story's clips only */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
