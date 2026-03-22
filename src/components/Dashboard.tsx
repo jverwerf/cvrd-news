@@ -379,36 +379,6 @@ export function Dashboard({
           {/* CONTROLS BAR — below video (hidden in TV mode) */}
           <div className="px-2 py-1 bg-[#111] shrink-0" style={tvMode ? { display: 'none' } : {}}>
 
-            {/* Story progress — segmented by story */}
-            {storyBoundaries.length > 1 && (
-              <div className="flex items-center gap-0.5 mb-1">
-              <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
-                onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: -200, behavior: 'smooth' }); }}>
-                <span className="text-[10px]" style={{ color: '#3b82f6' }}>◀</span>
-              </button>
-              <div id="story-timebar" className="flex gap-0.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
-                {storyBoundaries.map((b, i) => {
-                  const isActive = i === currentBoundaryIdx;
-                  const isPast = currentBoundaryIdx > i;
-                  const blues = ['#0f1f33', '#132740', '#172f4d', '#1b375a', '#1f3f67', '#234774', '#274f81', '#0f2540', '#14304f', '#19385c'];
-                  const bg = isActive ? '#2563eb' : blues[i % blues.length];
-                  return (
-                    <div key={i} data-active={isActive ? 'true' : undefined} className="rounded cursor-pointer overflow-hidden px-2 py-1.5 flex items-center shrink-0 transition-all"
-                      style={{ background: bg, opacity: isActive ? 1 : isPast ? 0.8 : 0.5, minWidth: 90 }}
-                      onClick={(e) => { setCurrentIdx(b.start); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
-                      <p className="text-[9px] leading-tight truncate text-white font-medium" style={{ opacity: isActive ? 1 : 0.8 }}>
-                        {b.topic || `Story ${i + 1}`}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-              <button className="shrink-0 px-1 py-1 flex items-center hover:opacity-70"
-                onClick={() => { const el = document.getElementById('story-timebar'); if (el) el.scrollBy({ left: 200, behavior: 'smooth' }); }}>
-                <span className="text-[10px]" style={{ color: '#3b82f6' }}>▶</span>
-              </button>
-              </div>
-            )}
 
             {/* Controls row */}
             <div className="flex items-center gap-2">
