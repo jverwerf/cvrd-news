@@ -210,42 +210,76 @@ async function searchReddit(topic: string, existingUrls: Set<string>): Promise<B
   return clips;
 }
 
-async function searchTikTok(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
+async function searchTelegram(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
   const clips: BreakingStory['social_clips'] = [];
-  const apifyToken = process.env.APIFY_API_TOKEN;
-  if (!apifyToken) return clips;
+  const hoursBack = detectedAt
+    ? Math.max(2, (Date.now() - new Date(detectedAt).getTime()) / (60 * 60 * 1000) + 2)
+    : 6;
 
-  // Only TikToks from 2h before detection
-  const sinceTime = detectedAt
-    ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000).getTime() / 1000
-    : (Date.now() - 6 * 60 * 60 * 1000) / 1000;
+  const NEWS_CHANNELS = [
+    'bbcworld', 'france24_en', 'guardian', 'nytimes', 'washingtonpost',
+    'foxnews', 'skynews', 'euronews', 'cbsnews', 'nbcnews', 'abcnews',
+    'politico', 'pbs_news', 'breakingmash', 'bbcbreaking', 'independent',
+    'dw_world', 'propublica', 'vox_com', 'scmp_news', 'timesofisrael',
+  ];
+
+  const keywords = topic.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+  const cutoffTime = Date.now() - hoursBack * 60 * 60 * 1000;
 
   try {
-    const resp = await fetch(
-      'https://api.apify.com/v2/acts/clockworks~tiktok-scraper/run-sync-get-dataset-items?token=' + apifyToken,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ searchQueries: [topic], resultsPerPage: 5, searchSection: '/video', shouldDownloadVideos: false }),
-        signal: AbortSignal.timeout(30000),
-      }
+    // Scrape channels in parallel
+    const results = await Promise.allSettled(
+      NEWS_CHANNELS.map(async (ch) => {
+        const resp = await fetch(`https://t.me/s/${ch}`, {
+          signal: AbortSignal.timeout(6000),
+          headers: { 'User-Agent': 'Mozilla/5.0 (compatible; CVRD/1.0)' },
+        });
+        const html = await resp.text();
+        const texts = html.match(/class="tgme_widget_message_text[^"]*"[^>]*>([\s\S]*?)<\/div>/g) || [];
+        const views = html.match(/class="tgme_widget_message_views">([^<]+)</g) || [];
+        const dates = html.match(/datetime="([^"]+)"/g) || [];
+        const links = html.match(/data-post="([^"]+)"/g) || [];
+
+        const posts: { text: string; views: number; date: string; url: string; channel: string }[] = [];
+        for (let i = 0; i < texts.length; i++) {
+          let text = texts[i].replace(/class="tgme_widget_message_text[^"]*"[^>]*>/, '').replace(/<\/div>$/, '');
+          text = text.replace(/<br\s*\/?>/g, ' ').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim();
+          const viewStr = views[i]?.match(/>([^<]+)/)?.[1]?.trim() || '0';
+          let v = 0;
+          if (viewStr.endsWith('K')) v = parseFloat(viewStr) * 1000;
+          else if (viewStr.endsWith('M')) v = parseFloat(viewStr) * 1000000;
+          else v = parseInt(viewStr) || 0;
+          const date = dates[i]?.match(/datetime="([^"]+)"/)?.[1] || '';
+          const postId = links[i]?.match(/data-post="([^"]+)"/)?.[1] || '';
+          posts.push({ text, views: v, date, url: postId ? `https://t.me/${postId}` : `https://t.me/${ch}`, channel: ch });
+        }
+        return posts;
+      })
     );
-    const data = await resp.json();
-    for (const item of (Array.isArray(data) ? data : []).slice(0, 5)) {
-      if (!item.id) continue;
-      // Filter by createTime
-      const createTime = item.createTime || item.createTimeISO ? new Date(item.createTimeISO || item.createTime * 1000).getTime() / 1000 : 0;
-      if (createTime > 0 && createTime < sinceTime) continue;
-      const url = item.webVideoUrl || `https://www.tiktok.com/@${item.authorMeta?.name || 'unknown'}/video/${item.id}`;
-      if (existingUrls.has(url)) continue;
+
+    const allPosts = results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+
+    // Filter by relevance + recency
+    const relevant = allPosts.filter(post => {
+      if (post.date) {
+        const postTime = new Date(post.date).getTime();
+        if (postTime < cutoffTime) return false;
+      }
+      const textLower = post.text.toLowerCase();
+      return keywords.filter(k => textLower.includes(k)).length >= 1;
+    });
+
+    relevant.sort((a, b) => b.views - a.views);
+
+    for (const post of relevant.slice(0, 8)) {
+      if (existingUrls.has(post.url)) continue;
       clips.push({
-        platform: 'tiktok', url, embed_id: item.id,
-        title: (item.text || item.desc || '').substring(0, 150),
-        author: item.authorMeta?.name || 'unknown',
-        thumbnail: item.covers?.default || item.videoMeta?.coverUrl || '',
-        duration: item.videoMeta?.duration || item.duration || undefined,
+        platform: 'telegram' as any, url: post.url,
+        embed_id: post.url.split('/').pop() || '',
+        title: post.text.substring(0, 150),
+        author: post.channel,
       });
-      existingUrls.add(url);
+      existingUrls.add(post.url);
     }
   } catch {}
   return clips;
@@ -366,7 +400,7 @@ function collectSettled<T>(results: PromiseSettledResult<T>[]): T[] {
 }
 
 // Enrich a single story with all platforms in parallel — never throws
-async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean; timeoutMs: number }): Promise<boolean> {
+async function enrichStory(story: BreakingStory, opts: { includeTelegram: boolean; timeoutMs: number }): Promise<boolean> {
   const existingUrls = new Set([
     ...story.youtube_videos.map(v => v.url),
     ...story.social_clips.map(c => c.url),
@@ -383,9 +417,9 @@ async function enrichStory(story: BreakingStory, opts: { includeTikTok: boolean;
     withTimeout(searchReddit(story.topic, existingUrls), 8000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
   );
 
-  if (opts.includeTikTok) {
+  if (opts.includeTelegram) {
     searches.push(
-      withTimeout(searchTikTok(story.topic, existingUrls, detectedAt), 35000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
+      withTimeout(searchTelegram(story.topic, existingUrls, detectedAt), 15000, []).then(social => ({ yt: [] as BreakingStory['youtube_videos'], social })),
     );
   }
 
@@ -495,7 +529,7 @@ If NOT breaking: { "is_breaking": false }` },
         enrichSources(story, candidates);
 
         // Full enrichment with TikTok — use remaining time
-        await enrichStory(story, { includeTikTok: true, timeoutMs: safeTimeLeft() });
+        await enrichStory(story, { includeTelegram: true, timeoutMs: safeTimeLeft() });
 
         allStories.unshift(story);
         allStories = allStories.slice(0, 5);
@@ -529,7 +563,7 @@ If NOT breaking: { "is_breaking": false }` },
       const updateResults: PromiseSettledResult<boolean>[] = [];
       for (const story of allStories) {
         if (safeTimeLeft() < 10000) break;
-        const result = await Promise.allSettled([enrichStory(story, { includeTikTok: false, timeoutMs: Math.min(safeTimeLeft() - 2000, 45000) })]);
+        const result = await Promise.allSettled([enrichStory(story, { includeTelegram: false, timeoutMs: Math.min(safeTimeLeft() - 2000, 45000) })]);
         updateResults.push(...result);
       }
 
