@@ -41,9 +41,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     const ytList = s.youtube_videos || [];
     if (ytList.length > 0) bestYT.push(ytList[0]);
 
-    // Best 2 social clips per story (prefer Telegram/X)
-    const social = (s.social_clips || []).filter(c => c.embed_id);
-    const videoClips = social.filter(c => c.platform === 'telegram' || c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
+    // Best 2 social clips per story (prefer Telegram/X — no TikTok in daily brief)
+    const social = (s.social_clips || []).filter(c => c.embed_id && c.platform !== 'tiktok');
+    const videoClips = social.filter(c => c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration));
     const picked = videoClips.slice(0, 2);
     if (picked.length < 2) {
       const remaining = social.filter(c => !picked.includes(c));
