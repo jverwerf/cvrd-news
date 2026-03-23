@@ -160,8 +160,8 @@ export default function BreakingPage() {
         style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
 
       {/* ALL BREAKING STORIES: red banner → Dashboard → HeroStory */}
-      {breakingItems.map((b, i) => {
-        const story = allStories[i];
+      {allStories.map((story, i) => {
+        const b = breakingItems.find((bi: any) => bi.topic === story.topic) || breakingItems[i];
         return (
           <div key={i}>
             <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
