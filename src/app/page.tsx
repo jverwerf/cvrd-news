@@ -83,7 +83,6 @@ export default async function Home() {
                   </a>
                 </div>
               </div>
-            </div>
 
             {/* 2. LIVE BANNER */}
             <LiveBanner stories={stories} liveData={data.live_data} />
