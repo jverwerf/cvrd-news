@@ -101,9 +101,15 @@ export default function BreakingPage() {
   });
 
   if (allStories.length === 0) {
-    // Breaking exists but not enough videos yet — redirect home
-    if (typeof window !== 'undefined') window.location.href = '/';
-    return null;
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+        <div className="text-center">
+          <p className="text-white/50 mb-2">Breaking news is being verified...</p>
+          <p className="text-white/30 text-[12px]">Stories appear once we have enough video sources.</p>
+          <a href="/" className="text-[13px] text-[#3b82f6] mt-4 inline-block">← Back to Daily Pick</a>
+        </div>
+      </div>
+    );
   }
 
   const firstStory = allStories[0];
