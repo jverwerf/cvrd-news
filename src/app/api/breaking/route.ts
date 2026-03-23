@@ -217,10 +217,15 @@ async function searchTelegram(topic: string, existingUrls: Set<string>, detected
     : 6;
 
   const NEWS_CHANNELS = [
-    'bbcworld', 'france24_en', 'guardian', 'nytimes', 'washingtonpost',
-    'foxnews', 'skynews', 'euronews', 'cbsnews', 'nbcnews', 'abcnews',
-    'politico', 'pbs_news', 'breakingmash', 'bbcbreaking', 'independent',
-    'dw_world', 'propublica', 'vox_com', 'scmp_news', 'timesofisrael',
+    'bbcworld', 'france24_en', 'france24english', 'guardian', 'nytimes',
+    'washingtonpost', 'foxnews', 'skynews', 'euronews', 'euronews_en',
+    'aljazeera', 'aljazeera_eng', 'apnews', 'bloomberg',
+    'cbsnews', 'nbcnews', 'abcnews', 'politico', 'pbs_news', 'cnbcnews',
+    'newsmax', 'usatoday', 'breakingmash', 'bbcbreaking', 'breakingnews_global',
+    'spectatorindex', 'independent', 'dw_world', 'theintercept', 'bellingcat',
+    'insider', 'businessinsider', 'scmp_news', 'timesofisrael',
+    'kyivindependent', 'pravda_eng', 'geopolitics_news',
+    'news24_sa', 'indianexpress',
   ];
 
   const keywords = topic.toLowerCase().split(/\s+/).filter(w => w.length > 3);
@@ -528,7 +533,7 @@ If NOT breaking: { "is_breaking": false }` },
 
         enrichSources(story, candidates);
 
-        // Full enrichment with TikTok — use remaining time
+        // Full enrichment with Telegram — use remaining time
         await enrichStory(story, { includeTelegram: true, timeoutMs: safeTimeLeft() });
 
         allStories.unshift(story);

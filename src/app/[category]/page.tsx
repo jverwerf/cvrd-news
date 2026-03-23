@@ -98,7 +98,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       {/* STORY VIEWER */}
       {displayStories.length > 0 ? (
         <ErrorBoundary>
-          <StoryViewer stories={displayStories} />
+          <StoryViewer stories={displayStories} dailyBrief={data?.category_briefs?.[category]} />
         </ErrorBoundary>
       ) : (
         <div className="max-w-[1280px] mx-auto px-6 py-20 text-center">
