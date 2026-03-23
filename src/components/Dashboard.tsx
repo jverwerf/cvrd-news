@@ -29,6 +29,7 @@ type TileContent = {
   clipLabel?: string;
   videoTitle?: string;
   isFresh?: boolean; // < 15 min old — tile should freeze
+  duration?: number; // has video if set
 };
 
 export function Dashboard({
@@ -52,6 +53,10 @@ export function Dashboard({
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Drag-to-center: override video from tile drag
+  const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string } | null>(null);
+  const [dropHighlight, setDropHighlight] = useState(false);
+
   // Build playlist — anchor first, then ALL videos from all stories
   const playlist: PlaylistItem[] = [];
   if (videoUrl) {
@@ -62,7 +67,7 @@ export function Dashboard({
       playlist.push({ type: 'anchor', url: videoUrl, storyIndex: 0 });
     }
   }
-  // Dashboard player: YouTube + social clips with video (X, TikTok, Reels)
+  // Dashboard player: YouTube + social clips with video (X, Telegram, TikTok)
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       if ((v as any).download_failed) continue;
@@ -70,7 +75,8 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      if (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels' || c.platform === 'telegram') {
+      // Telegram + X videos (with duration) in center player
+      if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
       }
     }
@@ -203,11 +209,15 @@ export function Dashboard({
   const toggleSound = () => {
     const newUnmuted = !unmuted;
     setUnmuted(newUnmuted);
-    // Anchor video
-    if (videoRef.current) {
-      videoRef.current.muted = !newUnmuted;
+    // Control ALL video elements in center player
+    const centerPlayer = document.querySelector('.col-span-2');
+    if (centerPlayer) {
+      centerPlayer.querySelectorAll('video').forEach(v => {
+        v.muted = !newUnmuted;
+        if (newUnmuted) v.volume = volume;
+      });
     }
-    // YouTube center player ONLY
+    // YouTube center player
     const ytFrame = ytPlayerRef.current;
     if (ytFrame?.contentWindow) {
       ytFrame.contentWindow.postMessage(JSON.stringify({
@@ -233,7 +243,9 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed) continue;
-      if (c.embed_id && (c.platform === 'tiktok' || c.platform === 'reels' || c.platform === 'x')) {
+      // Only video clips in tiles — X and Telegram need duration (= has video), TikTok/Reels always have video
+      const isVideo = c.platform === 'tiktok' || c.platform === 'reels' || ((c.platform === 'x' || c.platform === 'telegram') && c.duration);
+      if (c.embed_id && isVideo) {
         linked.push({
           type: 'social',
           image: (c as any).thumbnail || story.image_file || '',
@@ -242,6 +254,7 @@ export function Dashboard({
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
+          duration: c.duration,
         });
       }
     }
@@ -274,8 +287,59 @@ export function Dashboard({
     linkedContent = Object.values(storyLinked).flat();
   }
 
+  // Build text tweet pool for tweet takeover mode
+  const textTweets: TileContent[] = [];
+  if (currentStoryIdx !== undefined && currentStoryIdx > 0) {
+    const story = stories[currentStoryIdx - 1];
+    for (const c of (story?.social_clips || [])) {
+      if (c.platform === 'x' && c.embed_id && !c.duration) {
+        textTweets.push({
+          type: 'social', image: '', topic: story.topic, index: currentStoryIdx,
+          sources: story.sources || [], platform: 'x', embedId: c.embed_id,
+          clipLabel: c.title || (c as any).author || 'X',
+        });
+      }
+    }
+  }
+
+  // Tweet takeover: after 60s, if 10+ text tweets, show them in tiles
+  const [tweetTakeover, setTweetTakeover] = useState(false);
+  const mountTimeRef = useRef(Date.now());
+
+  useEffect(() => {
+    mountTimeRef.current = Date.now();
+    setTweetTakeover(false);
+  }, [currentIdx]);
+
+  useEffect(() => {
+    if (textTweets.length < 10) return;
+    let cancelled = false;
+
+    // After 60s show tweets
+    const showTimer = setTimeout(() => {
+      if (cancelled) return;
+      setTweetTakeover(true);
+      // After 30s switch back to videos, then cycle again
+      const hideTimer = setTimeout(() => {
+        if (cancelled) return;
+        setTweetTakeover(false);
+        // Repeat the cycle
+        const cycleInterval = setInterval(() => {
+          if (cancelled) return;
+          setTweetTakeover(true);
+          setTimeout(() => { if (!cancelled) setTweetTakeover(false); }, 30000);
+        }, 90000); // 60s videos + 30s tweets = 90s cycle
+        return () => clearInterval(cycleInterval);
+      }, 30000);
+      return () => clearTimeout(hideTimer);
+    }, 60000);
+
+    return () => { cancelled = true; clearTimeout(showTimer); };
+  }, [currentIdx, textTweets.length]);
+
   // If no linked content, fall back to default tiles
-  const pool = linkedContent.length > 0 ? linkedContent : defaultTiles;
+  const videoPool = linkedContent.length > 0 ? linkedContent : defaultTiles;
+  const pool = (tweetTakeover && textTweets.length >= 10) ? textTweets : videoPool;
 
   // Freezing logic for fresh/breaking content
   const freshCount = pool.filter(t => t.isFresh).length;
@@ -313,7 +377,7 @@ export function Dashboard({
       }, 90000);
     };
 
-    // First ad after 60s
+    // First ad immediately (5s delay for page load)
     const initial = setTimeout(() => {
       if (cancelled) return;
       const pos = TILE_POSITIONS[Math.floor(Math.random() * TILE_POSITIONS.length)];
@@ -325,7 +389,7 @@ export function Dashboard({
         setAdPosition(-1);
         cycle();
       }, 30000);
-    }, 60000);
+    }, 5000);
 
     return () => { cancelled = true; clearTimeout(initial); };
   }, []);
@@ -336,22 +400,73 @@ export function Dashboard({
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === i} adKey={adKey} />
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} />
         ))}
 
         {/* ROW 2 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === 4} adKey={adKey} />
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} />
 
-        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}>
-          <div className="flex-1 relative min-h-0">
-          {current?.type === 'anchor' && current.url && (
+        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}
+          onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
+          onDragLeave={() => setDropHighlight(false)}
+          onDrop={(e) => {
+            e.preventDefault();
+            setDropHighlight(false);
+            try {
+              const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+              if (data.embed_id) setOverrideVideo(data);
+            } catch {}
+          }}>
+          <div className="flex-1 relative min-h-0" style={dropHighlight ? { outline: '2px solid #3b82f6', outlineOffset: '-2px' } : {}}>
+
+          {/* Override video from drag */}
+          {overrideVideo && (
+            <>
+              {overrideVideo.type === 'youtube' && (
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://www.youtube-nocookie.com/embed/${overrideVideo.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0`}
+                  className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+              )}
+              {overrideVideo.type === 'x' && (
+                <video key={`override-${overrideVideo.embed_id}`}
+                  src={`/api/x-video?id=${overrideVideo.embed_id}`}
+                  className="w-full h-full absolute inset-0 object-contain"
+                  autoPlay muted playsInline style={{ background: '#000' }} />
+              )}
+              {overrideVideo.type === 'telegram' && (
+                <video key={`override-${overrideVideo.embed_id}`}
+                  src={`/api/tg-video?post=${overrideVideo.embed_id}`}
+                  className="w-full h-full absolute inset-0 object-contain"
+                  autoPlay muted playsInline style={{ background: '#000' }} />
+              )}
+              {overrideVideo.type === 'tiktok' && (
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://www.tiktok.com/embed/v2/${overrideVideo.embed_id}`}
+                  className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+              )}
+              {/* X button to exit override */}
+              <button onClick={() => setOverrideVideo(null)}
+                className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+                style={{ background: 'rgba(0,0,0,0.7)', border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer' }}>
+                <span className="text-white text-[16px] leading-none">×</span>
+              </button>
+              {/* Title bar */}
+              <div className="absolute bottom-0 left-0 right-0 px-3 py-1.5 z-10" style={{ background: 'rgba(0,0,0,0.6)' }}>
+                <span className="text-[10px] text-white/80">{overrideVideo.title}</span>
+              </div>
+            </>
+          )}
+
+          {/* Normal playlist video (hidden when override active) */}
+          {!overrideVideo && current?.type === 'anchor' && current.url && (
             <video ref={videoRef} key="anchor" src={current.url}
               className="w-full h-full object-cover absolute inset-0"
               playsInline muted={!unmuted} onEnded={next}
               onTimeUpdate={() => { if (videoRef.current) setProgress(videoRef.current.currentTime); }}
               onLoadedMetadata={() => { if (videoRef.current) setDuration(videoRef.current.duration); }} />
           )}
-          {current?.type === 'youtube' && current.embed_id && (
+          {!overrideVideo && current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id} ref={ytPlayerRef}
               src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               onLoad={() => {
@@ -375,25 +490,36 @@ export function Dashboard({
               className="w-full h-full absolute inset-0" allowFullScreen id="yt-player" style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
-          {current?.type === 'tiktok' && current.embed_id && (
+          {!overrideVideo && current?.type === 'tiktok' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
               className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
           )}
-          {current?.type === 'reels' && current.embed_id && (
+          {!overrideVideo && current?.type === 'reels' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
-          {current?.type === 'x' && current.embed_id && (
+          {!overrideVideo && current?.type === 'x' && current.embed_id && current.duration && (
+            <video key={current.embed_id}
+              src={`/api/x-video?id=${current.embed_id}`}
+              className="w-full h-full absolute inset-0 object-contain"
+              autoPlay muted={!unmuted} playsInline
+              onEnded={next}
+              style={{ background: '#000' }} />
+          )}
+          {!overrideVideo && current?.type === 'x' && current.embed_id && !current.duration && (
             <iframe key={current.embed_id}
               src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
-          {current?.type === 'telegram' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://t.me/${current.embed_id}?embed=1&userpic=false`}
-              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+          {!overrideVideo && current?.type === 'telegram' && current.embed_id && (
+            <video key={current.embed_id}
+              src={`/api/tg-video?post=${current.embed_id}`}
+              className="w-full h-full absolute inset-0 object-contain"
+              autoPlay muted={!unmuted} playsInline
+              onEnded={next}
+              style={{ background: '#000' }} />
           )}
           </div>
           {/* CONTROLS BAR — below video (hidden in TV mode) */}
@@ -421,6 +547,10 @@ export function Dashboard({
                     const isActiveClip = clipIdx === currentIdx;
                     const thumb = clip?.type === 'youtube' && clip?.embed_id
                       ? `https://img.youtube.com/vi/${clip.embed_id}/default.jpg`
+                      : clip?.type === 'telegram' && clip?.embed_id
+                      ? `/api/tg-video?post=${clip.embed_id}&thumb=1`
+                      : clip?.type === 'x' && clip?.embed_id
+                      ? `/api/x-video?id=${clip.embed_id}&thumb=1`
                       : null;
                     return (
                       <div key={ci} data-active={isActiveClip ? 'true' : undefined}
@@ -468,29 +598,34 @@ export function Dashboard({
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
               </button>
 
-              {/* Volume — hover to show vertical slider */}
-              <div className="relative shrink-0 group/vol">
-                <button onClick={toggleSound} className="p-0.5">
+              {/* Volume — click to toggle, hover to show slider */}
+              <div className="relative shrink-0 group/vol" style={{ zIndex: 50 }}>
+                <button onClick={toggleSound} className="p-1">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
                     {unmuted && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
                     {!unmuted && <><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></>}
                   </svg>
                 </button>
-                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover/vol:flex flex-col items-center px-2 py-3 rounded-lg"
-                  style={{ background: 'rgba(0,0,0,0.9)' }}>
+                <div className="absolute left-1/2 -translate-x-1/2 hidden group-hover/vol:flex flex-col items-center px-3 pt-3 pb-1 rounded-lg"
+                  style={{ background: 'rgba(0,0,0,0.9)', bottom: '100%' }}>
                   <input type="range" min="0" max="1" step="0.05"
                     value={unmuted ? volume : 0}
-                    className="h-20 shrink-0"
-                    style={{ accentColor: 'white', writingMode: 'vertical-lr', direction: 'rtl', width: '4px' }}
+                    className="h-24 shrink-0"
+                    style={{ accentColor: 'white', writingMode: 'vertical-lr', direction: 'rtl', width: '10px', cursor: 'pointer' }}
                     onChange={(e) => {
                       const vol = parseFloat(e.target.value);
                       setVolume(vol > 0 ? vol : volume);
                       setUnmuted(vol > 0);
-                      if (videoRef.current) {
-                        videoRef.current.volume = vol;
-                        videoRef.current.muted = vol === 0;
+                      // Control ALL video elements in center player
+                      const centerPlayer = document.querySelector('.col-span-2');
+                      if (centerPlayer) {
+                        centerPlayer.querySelectorAll('video').forEach(v => {
+                          v.volume = vol;
+                          v.muted = vol === 0;
+                        });
                       }
+                      // Control YouTube iframe
                       const ytFrame = ytPlayerRef.current;
                       if (ytFrame?.contentWindow) {
                         ytFrame.contentWindow.postMessage(JSON.stringify({
@@ -507,11 +642,11 @@ export function Dashboard({
           </div>
         </div>
 
-        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === 5} adKey={adKey} />
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} />
 
         {/* ROW 3 */}
         {[6, 7, 8, 9].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} showAd={adPosition === i} adKey={adKey} />
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} />
         ))}
       </div>
     </section>
@@ -524,7 +659,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId }: {
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId, onPlayInCenter }: {
   pool: TileContent[];
   startOffset: number;
   delay: number;
@@ -533,6 +668,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   showAd?: boolean;
   adKey?: number;
   skipEmbedId?: string;
+  onPlayInCenter?: (video: { type: string; embed_id: string; title: string }) => void;
 }) {
   const [currentIdx, setCurrentIdx] = useState(startOffset);
   const [prevIdx, setPrevIdx] = useState(-1);
@@ -600,14 +736,21 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   return (
     <div
       style={frozen ? { boxShadow: '0 0 12px 2px rgba(239,68,68,0.6), inset 0 0 12px rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.4)' } : {}}
-      onClick={() => {
+      onDoubleClick={() => {
         const embedId = current.type === 'video'
           ? current.image.match(/\/vi\/([^/]+)/)?.[1] || ''
           : current.embedId || '';
-        if (onTileClick && embedId) {
-          onTileClick(embedId);
-        } else {
-          document.getElementById(`story-${current.index}`)?.scrollIntoView({ behavior: 'smooth' });
+
+        if (current.type === 'video' || (current.type === 'social' && current.duration)) {
+          const videoGrid = document.querySelector('[data-section="videogrid"]');
+          if (videoGrid) {
+            videoGrid.scrollIntoView({ behavior: 'smooth' });
+            window.dispatchEvent(new CustomEvent('play-in-grid', { detail: embedId }));
+          }
+        } else if (current.type === 'social' && current.platform === 'x') {
+          document.querySelector('[data-section="x-posts"]')?.scrollIntoView({ behavior: 'smooth' });
+        } else if (current.type === 'social' && current.platform === 'telegram') {
+          document.querySelector('[data-section="telegram"]')?.scrollIntoView({ behavior: 'smooth' });
         }
       }}
       className="relative rounded-xl overflow-hidden group cursor-pointer block">
@@ -626,15 +769,52 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
         <TileContentRenderer item={current} />
       </div>
 
+      {/* Hover overlay with actions */}
+      <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2"
+        style={{ background: 'rgba(0,0,0,0.5)' }}>
+        {(current.type === 'video' || (current.type === 'social' && current.duration)) && (
+          <>
+            <button onClick={(e) => {
+              e.stopPropagation();
+              const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
+              const type = current.type === 'video' ? 'youtube' : current.platform || 'youtube';
+              onPlayInCenter?.({ type, embed_id: embedId, title: current.clipLabel || current.videoTitle || current.topic });
+            }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(37,99,235,0.8)', border: 'none', cursor: 'pointer' }}>
+              ▶ Play here
+            </button>
+            <button onClick={(e) => {
+              e.stopPropagation();
+              const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
+              const videoGrid = document.querySelector('[data-section="videogrid"]');
+              if (videoGrid) {
+                videoGrid.scrollIntoView({ behavior: 'smooth' });
+                window.dispatchEvent(new CustomEvent('play-in-grid', { detail: embedId }));
+              }
+            }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer' }}>
+              ↓ Open below
+            </button>
+          </>
+        )}
+        {current.type === 'social' && !current.duration && (
+          <button onClick={(e) => {
+            e.stopPropagation();
+            if (current.platform === 'x') document.querySelector('[data-section="x-posts"]')?.scrollIntoView({ behavior: 'smooth' });
+            else if (current.platform === 'telegram') document.querySelector('[data-section="telegram"]')?.scrollIntoView({ behavior: 'smooth' });
+          }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer' }}>
+            ↓ Open below
+          </button>
+        )}
+      </div>
+
       {/* Overlays for image/text tiles */}
-      {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x'))) && (
+      {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x' || current.platform === 'telegram'))) && (
         <>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
           {isSocial && current.platform && (
             <div className="absolute top-2 right-2">
               <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
                 style={{ background: platformColors[current.platform] }}>
-                {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+                {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : current.platform === 'telegram' ? 'Telegram' : 'Reels'}
               </span>
             </div>
           )}
@@ -717,7 +897,26 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       </div>
     );
   }
+  if (item.type === 'social' && item.platform === 'x' && item.embedId && item.duration) {
+    // X video tweet — play as native video
+    return (
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
+        <video
+          src={`/api/x-video?id=${item.embedId}`}
+          className="w-full h-full object-cover"
+          autoPlay muted playsInline loop
+        />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
+      </div>
+    );
+  }
   if (item.type === 'social' && item.platform === 'x' && item.embedId) {
+    // X text tweet — iframe with scroll animation
     return (
       <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
         <iframe
@@ -759,19 +958,14 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       </div>
     );
   }
-  if (item.type === 'social' && item.platform === 'telegram' && item.embedId) {
+  if (item.type === 'social' && item.platform === 'telegram' && item.embedId && item.duration) {
+    // Telegram video post — native video
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-        <iframe
-          src={`https://t.me/${item.embedId}?embed=1&userpic=false`}
-          className="absolute"
-          style={{
-            border: 'none', pointerEvents: 'none',
-            left: '-8px', width: 'calc(100% + 16px)',
-            height: '200%', top: '0',
-            animation: 'xScrollDown 50s ease-in-out infinite alternate',
-          }}
-          loading="lazy"
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
+        <video
+          src={`/api/tg-video?post=${item.embedId}`}
+          className="w-full h-full object-cover"
+          autoPlay muted playsInline loop
         />
         <div className="absolute top-2 left-2 z-10">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#0088cc' }}>Telegram</span>

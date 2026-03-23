@@ -72,23 +72,42 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   const adTimerRef = useRef<NodeJS.Timeout | null>(null);
   const AD_INTERVAL = 5; // show ad every 5 videos
 
-  // Auto-select video from URL hash (when tile is clicked in dashboard)
+  // Listen for play-in-grid events from Dashboard tiles
   useEffect(() => {
-    const checkHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (!hash.includes('--') || !storyIndex) return;
-      const [storyPart, embedId] = hash.split('--');
-      if (storyPart !== `story-${storyIndex}` || !embedId) return;
+    const handler = (e: Event) => {
+      const embedId = (e as CustomEvent).detail;
+      if (!embedId) return;
       const idx = items.findIndex(item => item.embed_id === embedId);
       if (idx >= 0) {
         setActiveIdx(idx);
-        setPlaying(false); // Ready to play, not auto-playing
+        setPlaying(true);
+        scrollThumbToCenter(idx);
       }
     };
-    checkHash();
-    window.addEventListener('hashchange', checkHash);
-    return () => window.removeEventListener('hashchange', checkHash);
+    window.addEventListener('play-in-grid', handler);
+    return () => window.removeEventListener('play-in-grid', handler);
   }, [items, storyIndex]);
+
+  // Always center the active thumbnail
+  const scrollThumbToCenter = (idx: number) => {
+    setTimeout(() => {
+      const container = document.getElementById(`thumbs-${storyIndex}-${items[0]?.embed_id}`);
+      if (!container || idx < 0) return;
+      const thumb = container.children[idx] as HTMLElement;
+      if (thumb) {
+        const containerWidth = container.clientWidth;
+        const thumbLeft = thumb.offsetLeft;
+        const thumbWidth = thumb.clientWidth;
+        container.scrollTo({ left: thumbLeft - containerWidth / 2 + thumbWidth / 2, behavior: 'smooth' });
+      }
+    }, 50);
+  };
+
+  // Scroll to center whenever active video changes
+  useEffect(() => {
+    if (activeIdx >= 0) scrollThumbToCenter(activeIdx);
+  }, [activeIdx]);
+
   const [progress, setProgress] = useState(0); // 0-1 across entire playlist
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -304,18 +323,17 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   </div>
                 )}
                 {active.type === 'x' && (
-                  <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
-                    <iframe key={active.embed_id}
-                      src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
-                      className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
-                  </div>
+                  <video key={active.embed_id}
+                    src={`/api/x-video?id=${active.embed_id}`}
+                    className="w-full h-full object-contain"
+                    autoPlay muted playsInline controls
+                    style={{ background: '#000' }} />
                 )}
                 {active.type === 'telegram' && (
-                  <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
-                    <iframe key={active.embed_id}
-                      src={`https://t.me/${active.embed_id}?embed=1&userpic=false`}
-                      className="w-full h-full" style={{ border: 'none' }} allowFullScreen />
-                  </div>
+                  <video key={active.embed_id}
+                    src={`/api/tg-video?post=${active.embed_id}`}
+                    className="w-full h-full object-cover"
+                    autoPlay muted playsInline controls />
                 )}
               </>
             ) : (

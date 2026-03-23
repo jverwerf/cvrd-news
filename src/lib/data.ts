@@ -45,6 +45,7 @@ export interface DailyReport {
   video_url?: string;
   live_data?: LiveItem[];
   daily_brief?: DailyBrief;
+  category_briefs?: Record<string, DailyBrief>;
 }
 
 export async function getDailyGaps(): Promise<DailyReport | null> {

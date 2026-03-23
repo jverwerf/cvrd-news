@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { VideoGrid } from "./VideoGrid";
@@ -41,9 +41,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     const ytList = s.youtube_videos || [];
     if (ytList.length > 0) bestYT.push(ytList[0]);
 
-    // Best 2 social clips per story (prefer TikTok/X with video)
+    // Best 2 social clips per story (prefer Telegram/X)
     const social = (s.social_clips || []).filter(c => c.embed_id);
-    const videoClips = social.filter(c => c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
+    const videoClips = social.filter(c => c.platform === 'telegram' || c.platform === 'tiktok' || (c.platform === 'x' && (c as any).duration));
     const picked = videoClips.slice(0, 2);
     if (picked.length < 2) {
       const remaining = social.filter(c => !picked.includes(c));
@@ -63,10 +63,10 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const briefStory: NarrativeGap = {
     topic: 'Daily Brief',
     summary: dailyBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
-    left_narrative: dailyBrief?.left_narrative || '',
-    right_narrative: dailyBrief?.right_narrative || '',
-    what_they_arent_telling_you: dailyBrief?.what_they_arent_telling_you || '',
-    social_summary: dailyBrief?.social_summary || '',
+    left_narrative: dailyBrief?.left_narrative || stories.slice(0, 3).map(s => s.left_narrative).filter(Boolean).join(' '),
+    right_narrative: dailyBrief?.right_narrative || stories.slice(0, 3).map(s => s.right_narrative).filter(Boolean).join(' '),
+    what_they_arent_telling_you: dailyBrief?.what_they_arent_telling_you || stories.slice(0, 3).map(s => s.what_they_arent_telling_you).filter(Boolean).join(' '),
+    social_summary: dailyBrief?.social_summary || stories.slice(0, 3).map(s => s.social_summary).filter(Boolean).join(' '),
     image_prompt: '',
     youtube_videos: bestYT,
     social_clips: bestSocial,
@@ -174,11 +174,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
 
         {/* Left arrow with label */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2 group">
+        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 group">
           <button onClick={prev}
             className="w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform shrink-0"
             style={{ background: 'rgba(0,0,0,0.85)', border: '2px solid rgba(255,255,255,0.5)', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[14px] border-r-white" />
+            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[14px] border-r-white" style={{ marginRight: '2px' }} />
           </button>
           <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
             style={{ background: 'rgba(0,0,0,0.8)' }}>
@@ -187,7 +187,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
 
         {/* Right arrow with label */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex items-center gap-2 group">
+        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 group">
           <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
             style={{ background: 'rgba(0,0,0,0.8)' }}>
             {currentIdx === stories.length - 1 ? 'Daily Brief' : stories[currentIdx + 1]?.topic || stories[0]?.topic}
@@ -195,29 +195,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <button onClick={next}
             className="w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform shrink-0"
             style={{ background: 'rgba(0,0,0,0.85)', border: '2px solid rgba(255,255,255,0.5)', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[14px] border-l-white" />
+            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[14px] border-l-white" style={{ marginLeft: '2px' }} />
           </button>
         </div>
 
-        {/* Story indicator dots */}
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
-          {stories.map((_, i) => (
-            <button key={i} onClick={() => setCurrentIdx(i)}
-              className="transition-all"
-              style={{
-                width: i === currentIdx ? 16 : 6,
-                height: 6,
-                borderRadius: 3,
-                background: i === currentIdx ? '#fff' : 'rgba(255,255,255,0.3)',
-                border: 'none',
-                cursor: 'pointer',
-              }} />
-          ))}
-        </div>
       </div>
 
-      {/* STORY THUMBNAIL STRIP — only on individual stories */}
-      {!isBrief && (
+      {/* STORY THUMBNAIL STRIP */}
+      {(
         <div className="flex items-center gap-0 px-1 py-1.5" style={{ background: '#111' }}>
         <style>{`
           .story-thumb:hover { width: 280px !important; opacity: 1 !important; }
@@ -350,7 +335,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
         {/* VIDEO GRID */}
         {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-          <div className="mb-5">
+          <div className="mb-5" data-section="videogrid">
             <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={currentIdx + 1} />
           </div>
         )}
@@ -406,7 +391,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
         {/* X POSTS */}
         {xClips.filter(c => !(c as any).duration).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+          <div data-section="x-posts" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[16px] font-bold text-white">𝕏</span>
               <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
@@ -419,6 +404,57 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
                   </div>
                 ) : null
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TELEGRAM VIDEOS */}
+        {telegramClips.filter(c => c.embed_id && c.duration).length > 0 && (
+          <div data-section="telegram" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+              <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram Videos</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {telegramClips.filter(c => c.embed_id && c.duration).map((c, i) => (
+                <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1a2535', border: '1px solid #2a3a4a' }}>
+                  <div className="aspect-video overflow-hidden bg-black">
+                    <video
+                      src={`/api/tg-video?post=${c.embed_id}`}
+                      className="w-full h-full object-cover"
+                      controls muted playsInline
+                    />
+                  </div>
+                  <div className="px-3 py-2 flex items-center justify-between" style={{ background: '#0f1a25', borderTop: '1px solid #2a3a4a' }}>
+                    <div className="flex items-center gap-2 min-w-0">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                      <span className="text-[10px] text-[#0088cc] font-medium truncate">@{c.author}</span>
+                    </div>
+                    <a href={c.url} target="_blank" rel="noreferrer" className="text-[9px] text-[#666] hover:text-white shrink-0">Open →</a>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* TELEGRAM POSTS (text only) */}
+        {telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
+          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+              <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
+              <span className="text-[10px] text-[#666]">{telegramClips.filter(c => c.embed_id && !c.duration).length} posts</span>
+            </div>
+            <div className="space-y-0">
+              {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
+                <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                  className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#2a3a4a] transition-colors group">
+                  <svg width="8" height="8" viewBox="0 0 24 24" fill="#0088cc" className="shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                  <span className="text-[12px] text-[#bbb] group-hover:text-white truncate flex-1">{c.title}</span>
+                  <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                </a>
               ))}
             </div>
           </div>
@@ -485,24 +521,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           );
         })()}
 
-        {/* TELEGRAM */}
-        {telegramClips.filter(c => c.embed_id).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[16px]">✈</span>
-              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Telegram</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {telegramClips.filter(c => c.embed_id).map((c, i) => (
-                <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', height: 320 }}>
-                  <iframe src={`https://t.me/${c.embed_id}?embed=1&userpic=false`}
-                    className="w-full h-full" style={{ border: 'none' }} loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* ALL ARTICLES */}
         <div className="rounded-lg p-4" style={{ background: '#253545' }}>
           <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
@@ -524,7 +542,34 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             )}
           </div>
         </div>
+
+        {/* AD — below all articles */}
+        <div className="mt-6 rounded-lg overflow-hidden" style={{ background: '#1a2535', border: '1px solid #2a3a4a' }}>
+          <div className="flex items-center justify-between px-3 py-1.5">
+            <span className="text-[7px] text-white/20 uppercase tracking-wider">Sponsored</span>
+          </div>
+          <div className="w-full flex items-center justify-center p-2" style={{ minHeight: '90px' }}>
+            <StoryAdSlot />
+          </div>
+        </div>
       </div>
+    </div>
+  );
+}
+
+function StoryAdSlot() {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    try { ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({}); } catch {}
+  }, []);
+  return (
+    <div ref={ref} className="w-full">
+      <ins className="adsbygoogle"
+        style={{ display: 'block', width: '100%' }}
+        data-ad-client="ca-pub-2572735826517528"
+        data-ad-slot="8292849831"
+        data-ad-format="horizontal"
+        data-full-width-responsive="true" />
     </div>
   );
 }
