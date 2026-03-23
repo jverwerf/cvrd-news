@@ -120,34 +120,37 @@ export default function BreakingPage() {
       {/* NAV + BANNER — same as homepage */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         {/* 1. CATEGORY NAV */}
-        <div className="overflow-x-auto" style={{ background: '#1e2a3a', scrollbarWidth: 'none' }}>
-          <div className="h-12 flex items-center justify-center gap-3 px-4 relative">
-            <a href="/breaking"
-              className="shrink-0 px-3 py-1.5 text-[13px] font-semibold rounded-full transition-colors"
-              style={{ background: 'rgba(220,38,38,0.25)', color: '#fff', border: '1px solid rgba(220,38,38,0.5)' }}>
-              <span className="inline-block w-1.5 h-1.5 rounded-full mr-1.5 animate-pulse" style={{ background: '#ef4444' }} />
-              Breaking
-            </a>
-            {ALL_CATS.map((cat) => (
-              <a key={cat.slug} href={cat.slug}
-                className="shrink-0 px-3 py-1.5 text-[13px] font-semibold rounded-full transition-colors"
-                style={{ color: 'rgba(255,255,255,0.55)' }}>
-                {cat.label}
+        <div className="relative" style={{ background: '#1e2a3a' }}>
+          <div className="h-12 flex items-center overflow-x-auto pr-20" style={{ scrollbarWidth: 'none' }}>
+            <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
+              <a href="/breaking"
+                className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors"
+                style={{ background: 'rgba(220,38,38,0.25)', color: '#fff', border: '1px solid rgba(220,38,38,0.5)' }}>
+                <span className="inline-block w-1.5 h-1.5 rounded-full mr-1 animate-pulse" style={{ background: '#ef4444' }} />
+                Breaking
               </a>
-            ))}
-            <div className="absolute right-4 flex items-center gap-1.5">
-              <a href="/tv" className="p-1 transition-colors flex items-center"
-                style={{ color: 'rgba(255,255,255,0.35)' }}>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-                </svg>
-              </a>
-              <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
-              <a href="/show" className="p-1 transition-opacity hover:opacity-80 flex items-center"
-                title="Watch the daily show">
-                <img src="/logo-outline.png" alt="CVRD" style={{ height: '16px', opacity: 0.7, filter: 'brightness(0) invert(1)' }} />
-              </a>
+              {ALL_CATS.map((cat) => (
+                <a key={cat.slug} href={cat.slug}
+                  className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
+                  style={{ color: 'rgba(255,255,255,0.55)' }}>
+                  {cat.label}
+                </a>
+              ))}
             </div>
+          </div>
+          <div className="absolute right-0 top-0 h-12 flex items-center gap-1.5 pl-8 pr-3"
+            style={{ background: 'linear-gradient(to right, transparent, #1e2a3a 30%)' }}>
+            <a href="/tv" className="p-1 transition-colors flex items-center"
+              style={{ color: 'rgba(255,255,255,0.35)' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+              </svg>
+            </a>
+            <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
+            <a href="/show" className="p-1 transition-opacity hover:opacity-80 flex items-center"
+              title="Watch the daily show">
+              <img src="/logo-outline.png" alt="CVRD" style={{ height: '16px', opacity: 0.7, filter: 'brightness(0) invert(1)' }} />
+            </a>
           </div>
         </div>
 
