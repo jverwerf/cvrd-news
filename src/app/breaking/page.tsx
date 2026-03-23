@@ -31,8 +31,8 @@ function toNarrativeGap(b: any): NarrativeGap {
         .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, thumbnail: c.thumbnail, duration: c.duration, _breaking: true }));
 
   const story: NarrativeGap = {
-    topic: b.topic,
-    summary: b.summary,
+    topic: b.topic || 'Breaking News',
+    summary: b.summary || '',
     left_narrative: b.left_narrative || '',
     right_narrative: b.right_narrative || '',
     what_they_arent_telling_you: b.what_they_arent_telling_you || '',
