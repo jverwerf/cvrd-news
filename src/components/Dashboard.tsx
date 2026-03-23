@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
 
 type PlaylistItem = {
-  type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x';
+  type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x' | 'telegram';
   url?: string;
   embed_id?: string;
   channel?: string;
@@ -24,7 +24,7 @@ type TileContent = {
   playlistIdx?: number;
   channel?: string;
   // Social clip info
-  platform?: 'x' | 'tiktok' | 'reels';
+  platform?: 'x' | 'tiktok' | 'reels' | 'telegram';
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
@@ -70,7 +70,7 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      if (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels') {
+      if (c.platform === 'x' || c.platform === 'tiktok' || c.platform === 'reels' || c.platform === 'telegram') {
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
       }
     }
@@ -238,7 +238,7 @@ export function Dashboard({
           type: 'social',
           image: (c as any).thumbnail || story.image_file || '',
           topic: story.topic, index: i + 1, sources: story.sources || [],
-          platform: c.platform as 'x' | 'tiktok' | 'reels',
+          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram',
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
@@ -388,6 +388,11 @@ export function Dashboard({
           {current?.type === 'x' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+          )}
+          {current?.type === 'telegram' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://t.me/${current.embed_id}?embed=1&userpic=false`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           </div>
@@ -589,7 +594,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   const prev = prevIdx >= 0 ? pool[prevIdx % pool.length] : null;
   const isVideo = current.type === 'video';
   const isSocial = current.type === 'social';
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
   const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
@@ -691,7 +696,7 @@ function AdSlot() {
 
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item }: { item: TileContent }) {
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
 
   if (item.type === 'video') {
     return (
@@ -754,13 +759,36 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       </div>
     );
   }
+  if (item.type === 'social' && item.platform === 'telegram' && item.embedId) {
+    return (
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
+        <iframe
+          src={`https://t.me/${item.embedId}?embed=1&userpic=false`}
+          className="absolute"
+          style={{
+            border: 'none', pointerEvents: 'none',
+            left: '-8px', width: 'calc(100% + 16px)',
+            height: '200%', top: '0',
+            animation: 'xScrollDown 50s ease-in-out infinite alternate',
+          }}
+          loading="lazy"
+        />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#0088cc' }}>Telegram</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
+      </div>
+    );
+  }
   if (item.type === 'social') {
     return (
       <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
         <div>
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
             style={{ background: platformColors[item.platform || 'x'] }}>
-            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : 'Reels'}
+            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : 'Reels'}
           </span>
           <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
         </div>

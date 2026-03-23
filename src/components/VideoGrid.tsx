@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Tweet } from 'react-tweet';
 
 type VideoItem = {
-  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit';
+  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit' | 'telegram';
   embed_id: string;
   url: string;
   label: string;
@@ -42,6 +42,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
       allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail, duration: (c as any).duration, relevance: (c as any).relevance });
+    } else if (c.platform === 'telegram' && c.embed_id) {
+      allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail, duration: (c as any).duration || 30, relevance: (c as any).relevance });
     }
   }
 
@@ -306,6 +308,13 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     <iframe key={active.embed_id}
                       src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=light`}
                       className="h-full" style={{ border: 'none', width: '550px', maxWidth: '100%' }} allowFullScreen />
+                  </div>
+                )}
+                {active.type === 'telegram' && (
+                  <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
+                    <iframe key={active.embed_id}
+                      src={`https://t.me/${active.embed_id}?embed=1&userpic=false`}
+                      className="w-full h-full" style={{ border: 'none' }} allowFullScreen />
                   </div>
                 )}
               </>

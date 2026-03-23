@@ -275,7 +275,7 @@ async function searchTelegram(topic: string, existingUrls: Set<string>, detected
       if (existingUrls.has(post.url)) continue;
       clips.push({
         platform: 'telegram' as any, url: post.url,
-        embed_id: post.url.split('/').pop() || '',
+        embed_id: post.url.replace('https://t.me/', '') || '',
         title: post.text.substring(0, 150),
         author: post.channel,
       });
