@@ -34,7 +34,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   // Build curated Daily Brief story — best picks from all stories
   const bestYT: { url: string; embed_id: string; channel?: string; duration?: number }[] = [];
-  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'reddit'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
+  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'reddit' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
 
   for (const s of stories) {
     // Best YouTube video per story (first one, already sorted by relevance)
@@ -96,6 +96,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const tiktokClips = clips.filter(c => c.platform === 'tiktok');
   const reelsClips = clips.filter(c => c.platform === 'reels');
   const redditClips = clips.filter(c => c.platform === 'reddit');
+  const telegramClips = clips.filter(c => c.platform === 'telegram');
   const leftSources = sources.filter(s => s.lean === 'left');
   const rightSources = sources.filter(s => s.lean === 'right');
   const centerSources = sources.filter(s => !s.lean || s.lean === 'center');
@@ -483,6 +484,24 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
           );
         })()}
+
+        {/* TELEGRAM */}
+        {telegramClips.filter(c => c.embed_id).length > 0 && (
+          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[16px]">✈</span>
+              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Telegram</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {telegramClips.filter(c => c.embed_id).map((c, i) => (
+                <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', height: 320 }}>
+                  <iframe src={`https://t.me/${c.embed_id}?embed=1&userpic=false`}
+                    className="w-full h-full" style={{ border: 'none' }} loading="lazy" />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* ALL ARTICLES */}
         <div className="rounded-lg p-4" style={{ background: '#253545' }}>
