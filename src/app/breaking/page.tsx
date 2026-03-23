@@ -93,7 +93,19 @@ export default function BreakingPage() {
   if (breakingItems.length === 0) return null;
 
   // Convert all breaking items to NarrativeGap format
-  const allStories = breakingItems.map(toNarrativeGap);
+  // Only show stories with at least 3 video clips (YouTube + video social clips)
+  const allStories = breakingItems.map(toNarrativeGap).filter(s => {
+    const ytCount = (s.youtube_videos || []).length;
+    const videoClips = (s.social_clips || []).filter(c => c.duration).length;
+    return ytCount + videoClips >= 3;
+  });
+
+  if (allStories.length === 0) {
+    // Breaking exists but not enough videos yet — redirect home
+    if (typeof window !== 'undefined') window.location.href = '/';
+    return null;
+  }
+
   const firstStory = allStories[0];
 
   return (
