@@ -65,6 +65,43 @@ async function fetchRecentHeadlines(): Promise<{ title: string; url: string; sou
 
 // ── ENRICHMENT ──
 
+// Trusted YouTube channels for breaking news
+const TRUSTED_CHANNELS = new Set([
+  'bbc news', 'cnn', 'sky news', 'al jazeera english', 'reuters', 'associated press',
+  'abc news', 'cbs news', 'nbc news', 'msnbc', 'fox news', 'cnbc',
+  'pbs newshour', 'france 24 english', 'dw news', 'euronews', 'channel 4 news',
+  'the guardian', 'the telegraph', 'the independent', 'the times',
+  'washington post', 'new york times', 'bloomberg', 'financial times',
+  'politico', 'axios', 'vox', 'vice news', 'the intercept', 'propublica',
+  'ap archive', 'afp news agency', 'global news', 'ctv news', 'abc news (australia)',
+  'itv news', 'times radio', 'lbc', 'talk', 'gb news',
+  'cnn-news18', 'tlc', 'c-span', 'the hill',
+  'bellingcat', 'the economist', 'foreign affairs',
+  'wall street journal', 'insider', 'business insider',
+  'cnbc television', 'bloomberg television', 'yahoo finance',
+  'crypto news', 'coindesk', 'decrypt',
+  'spacex', 'nasa', 'nature', 'wired', 'the verge',
+  'variety', 'billboard', 'complex',
+]);
+
+const AI_JUNK_PATTERNS = /breaking news 24|world news update|news hub|ai news|global news network|news factory|daily digest|trending now|news compilation|live stream 24|news live|update news/i;
+
+function isJunkChannel(channel: string): boolean {
+  const lower = channel.toLowerCase().trim();
+  // Allow if it's a trusted channel
+  if (TRUSTED_CHANNELS.has(lower)) return false;
+  // Block known AI junk patterns
+  if (AI_JUNK_PATTERNS.test(channel)) return true;
+  // Block non-Latin channel names
+  const nonLatin = (channel.match(/[^\x00-\x7F]/g) || []).length;
+  if (nonLatin / Math.max(channel.length, 1) > 0.3) return true;
+  // Block Indian outlets
+  const indianPatterns = /hindustan|ndtv|times of india|india today|zee news|republic|wion|firstpost|news18|aaj tak|abp|tv9|sakshi|ntv telugu|etv|manorama|asianet/i;
+  if (indianPatterns.test(channel)) return true;
+  // Allow everything else — not on blocklist
+  return false;
+}
+
 async function searchYouTube(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['youtube_videos']> {
   const videos: BreakingStory['youtube_videos'] = [];
   // Only get videos from 2 hours before detection to now
@@ -84,10 +121,12 @@ async function searchYouTube(topic: string, existingUrls: Set<string>, detectedA
       if (data?.items?.length > 0) {
         for (const item of data.items) {
           const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
+          const channel = item.snippet?.channelTitle || '';
           if (existingUrls.has(url)) continue;
+          if (isJunkChannel(channel)) continue;
           videos.push({
             url, embed_id: item.id.videoId,
-            title: item.snippet?.title || '', channel: item.snippet?.channelTitle || '',
+            title: item.snippet?.title || '', channel,
           });
           existingUrls.add(url);
         }
