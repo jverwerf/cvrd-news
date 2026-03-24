@@ -4,10 +4,20 @@ import { StoryPage } from "@/components/StoryPage";
 
 export const dynamic = 'force-dynamic';
 
+async function getStory(slug: string) {
+  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+  try {
+    const resp = await fetch(`${baseUrl}/api/story/${slug}`, { cache: 'no-store' });
+    if (!resp.ok) return null;
+    return await resp.json();
+  } catch {
+    return null;
+  }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const { findStoryBySlug } = await import("@/lib/stories");
-  const result = findStoryBySlug(slug);
+  const result = await getStory(slug);
   if (!result) return {};
 
   const { story } = result;
@@ -29,9 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description,
       images: story.image_file ? [story.image_file] : ['/logo3.png'],
     },
-    alternates: {
-      canonical: `/story/${slug}`,
-    },
+    alternates: { canonical: `/story/${slug}` },
   };
 }
 
@@ -47,23 +55,13 @@ const ALL_CATS = [
 
 export default async function StoryRoute({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const { findStoryBySlug } = await import("@/lib/stories");
-  const result = findStoryBySlug(slug);
+  const result = await getStory(slug);
   if (!result) notFound();
 
-  const { story, date } = result;
-
-  // Get other stories from the same date for "More stories"
-  const { getAllDailyReports, topicToSlug } = await import("@/lib/stories");
-  const reports = getAllDailyReports();
-  const sameDay = reports.find(r => r.date === date);
-  const otherStories = (sameDay?.report.top_narratives || [])
-    .filter(s => topicToSlug(s.topic) !== slug)
-    .slice(0, 5);
+  const { story, date, otherStories } = result;
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
-      {/* NAV */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         <div className="relative" style={{ background: '#1e2a3a' }}>
           <div className="h-12 flex items-center overflow-x-auto pr-20" style={{ scrollbarWidth: 'none' }}>
@@ -95,14 +93,11 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
         </div>
       </div>
 
-      {/* LOGO */}
       <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
         style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
 
-      {/* STORY */}
       <StoryPage story={story} date={date} otherStories={otherStories} />
 
-      {/* FOOTER */}
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
         <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
