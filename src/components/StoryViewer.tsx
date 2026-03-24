@@ -399,7 +399,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div data-section="x-posts" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[16px] font-bold text-white">𝕏</span>
-              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
+              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]"></span>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {xClips.filter(c => !(c as any).duration).map((c, i) => (
@@ -422,12 +422,12 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
               <span className="text-[10px] text-[#666]">{telegramClips.filter(c => c.embed_id && !c.duration).length} posts</span>
             </div>
-            <div className="space-y-0">
+            <div className="flex flex-wrap gap-2">
               {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
                 <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                  className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#2a3a4a] transition-colors group">
-                  <svg width="8" height="8" viewBox="0 0 24 24" fill="#0088cc" className="shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                  <span className="text-[12px] text-[#bbb] group-hover:text-white truncate flex-1">{c.title}</span>
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                  style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
+                  <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
                   <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
                 </a>
               ))}
@@ -479,15 +479,15 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                 <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
               </div>
-              <div className="space-y-0">
+              <div className="flex flex-wrap gap-2">
                 {unique.map((c, i) => {
                   const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
                   return (
                     <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-[#2a3a4a] transition-colors group">
-                      <span className="w-[5px] h-[5px] rounded-full bg-[#ff4500] shrink-0" />
-                      <span className="text-[12px] text-[#bbb] group-hover:text-white truncate flex-1">{title}</span>
-                      <span className="text-[9px] text-[#777] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                      style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
+                      <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{title}</span>
+                      <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                     </a>
                   );
                 })}
