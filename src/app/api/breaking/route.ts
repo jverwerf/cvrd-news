@@ -498,6 +498,14 @@ async function enrichStory(story: BreakingStory, opts: { includeTelegram: boolea
   return updated;
 }
 
+// ── DELETE — clear all breaking data ──
+export async function DELETE(req: Request) {
+  const pin = new URL(req.url).searchParams.get('pin');
+  if (pin !== '2026') return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
+  await deleteBreakingData();
+  return NextResponse.json({ ok: true, message: 'Breaking data cleared' });
+}
+
 // ── MAIN ──
 
 export async function GET() {
