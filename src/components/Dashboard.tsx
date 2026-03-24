@@ -786,7 +786,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
       {/* Hover overlay with actions (hidden in TV mode) */}
       {!tvMode && <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
         style={{ background: 'rgba(0,0,0,0.5)' }}>
-        <div className="flex flex-col items-center gap-1.5">
+        <div className="flex flex-col items-stretch gap-1.5 w-24">
         {(current.type === 'video' || (current.type === 'social' && current.duration)) && (
           <>
             <button onClick={(e) => {
