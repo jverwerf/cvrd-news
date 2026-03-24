@@ -795,7 +795,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
               const type = current.type === 'video' ? 'youtube' : current.platform || 'youtube';
               onPlayInCenter?.({ type, embed_id: embedId, title: current.clipLabel || current.videoTitle || current.topic });
             }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(37,99,235,0.8)', border: 'none', cursor: 'pointer' }}>
-              ▶ Play here
+              ▶ Play in center
             </button>
             <button onClick={(e) => {
               e.stopPropagation();
