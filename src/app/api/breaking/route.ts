@@ -96,8 +96,10 @@ function isJunkChannel(channel: string): boolean {
   const nonLatin = (channel.match(/[^\x00-\x7F]/g) || []).length;
   if (nonLatin / Math.max(channel.length, 1) > 0.3) return true;
   // Block Indian outlets
-  const indianPatterns = /hindustan|ndtv|times of india|india today|zee news|republic|wion|firstpost|news18|aaj tak|abp|tv9|sakshi|ntv telugu|etv|manorama|asianet/i;
+  const indianPatterns = /hindustan|ndtv|times of india|india today|zee news|republic|wion|firstpost|news18|aaj tak|abp|tv9|sakshi|ntv telugu|etv|manorama|asianet|india tv|indian express|oneindia|samaa|dawn news|geo news|ary news|study with|true fact|politic news\d|bworld|iwere news|daily brief|forex academy/i;
   if (indianPatterns.test(channel)) return true;
+  // Block Hindi/Urdu titles
+  if (/[\u0900-\u097F\u0600-\u06FF]/.test(channel)) return true;
   // Allow everything else — not on blocklist
   return false;
 }
@@ -124,9 +126,13 @@ async function searchYouTube(topic: string, existingUrls: Set<string>, detectedA
           const channel = item.snippet?.channelTitle || '';
           if (existingUrls.has(url)) continue;
           if (isJunkChannel(channel)) continue;
+          const title = item.snippet?.title || '';
+          // Block Hindi/Urdu/non-Latin titles
+          if (/[\u0900-\u097F\u0600-\u06FF]/.test(title)) continue;
+          if (isJunkChannel(title)) continue;
           videos.push({
             url, embed_id: item.id.videoId,
-            title: item.snippet?.title || '', channel,
+            title, channel,
           });
           existingUrls.add(url);
         }
@@ -264,7 +270,7 @@ async function searchTelegram(topic: string, existingUrls: Set<string>, detected
     'spectatorindex', 'independent', 'dw_world', 'theintercept', 'bellingcat',
     'insider', 'businessinsider', 'scmp_news', 'timesofisrael',
     'kyivindependent', 'pravda_eng', 'geopolitics_news',
-    'news24_sa', 'indianexpress',
+    'news24_sa',
   ];
 
   const keywords = topic.toLowerCase().split(/\s+/).filter(w => w.length > 3);
