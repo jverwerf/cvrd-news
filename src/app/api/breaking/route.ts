@@ -498,13 +498,17 @@ async function enrichStory(story: BreakingStory, opts: { includeTelegram: boolea
   return updated;
 }
 
-// ── DELETE — clear all breaking data and pause detection for 1 hour ──
+// ── DELETE — clear all breaking data (detection continues fresh) ──
 export async function DELETE(req: Request) {
   const pin = new URL(req.url).searchParams.get('pin');
   if (pin !== '2026') return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  // Save pause timestamp — detection will skip for 1 hour
-  await saveBreakingData([{ _paused_until: new Date(Date.now() + 60 * 60 * 1000).toISOString() } as any]);
-  return NextResponse.json({ ok: true, message: 'Breaking data cleared, detection paused for 1 hour' });
+  const pause = new URL(req.url).searchParams.get('pause') === '1';
+  if (pause) {
+    await saveBreakingData([{ _paused_until: new Date(Date.now() + 60 * 60 * 1000).toISOString() } as any]);
+    return NextResponse.json({ ok: true, message: 'Breaking data cleared, detection paused for 1 hour' });
+  }
+  await deleteBreakingData();
+  return NextResponse.json({ ok: true, message: 'Breaking data cleared, detection will restart fresh' });
 }
 
 // ── MAIN ──
