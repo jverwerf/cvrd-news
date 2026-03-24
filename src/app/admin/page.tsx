@@ -17,6 +17,7 @@ type DashboardData = {
   instagram: { reels: VideoStat[]; totalViews: number; followers: number };
   website: { pageViews: number; visitors: number; daily: { date: string; views: number; devices: number }[] };
   revenue: { youtube: number; instagram: number; website: number; app: number };
+  costs?: { openai: number; apify: number; twitterApi: number; vercel: number; domain: number; total: number };
 };
 
 export default function AdminDashboard() {
@@ -138,6 +139,30 @@ export default function AdminDashboard() {
             <span style={{ fontSize: 24, fontWeight: 700, color: '#4ade80' }}>${totalRevenue.toFixed(2)}</span>
           </div>
         </div>
+
+        {/* Daily Costs */}
+        {data.costs && (
+          <div style={{ marginBottom: 32 }}>
+            <h2 style={{ fontSize: 18, fontWeight: 600, color: '#888', marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1 }}>Daily Costs</h2>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+              <CostCard label="OpenAI" value={data.costs.openai} sublabel="GPT-4o + TTS" />
+              <CostCard label="Apify" value={data.costs.apify} sublabel="YouTube/TikTok fallback" />
+              <CostCard label="Twitter API" value={data.costs.twitterApi} sublabel="X search" />
+              <CostCard label="Vercel Pro" value={data.costs.vercel} sublabel="Hosting ($20/mo)" />
+              <CostCard label="Domain" value={data.costs.domain} sublabel="~$12/year" />
+            </div>
+            <div style={{ marginTop: 12, padding: '16px 20px', background: '#111', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ fontSize: 16, fontWeight: 600 }}>Total Daily Cost</span>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontSize: 24, fontWeight: 700, color: '#f87171' }}>${data.costs.total.toFixed(2)}/day</span>
+                <span style={{ fontSize: 13, color: '#888', marginLeft: 12 }}>(~${(data.costs.total * 30).toFixed(0)}/mo)</span>
+              </div>
+            </div>
+            <div style={{ marginTop: 8, padding: '12px 20px', background: '#0a1a0a', borderRadius: 12, border: '1px solid #1a3a1a' }}>
+              <span style={{ fontSize: 13, color: '#4ade80' }}>Break-even: ~{Math.ceil(data.costs.total / 0.004).toLocaleString()} daily visitors (at $4 RPM)</span>
+            </div>
+          </div>
+        )}
 
         {/* Platform Overview */}
         <div style={{ marginBottom: 32 }}>
@@ -283,6 +308,16 @@ function StatCard({ label, value, sublabel, color }: { label: string; value: str
       <p style={{ fontSize: 12, color: '#888', margin: 0, marginBottom: 8 }}>{label}</p>
       <p style={{ fontSize: 28, fontWeight: 700, margin: 0 }}>{value}</p>
       {sublabel && <p style={{ fontSize: 12, color: '#555', margin: '4px 0 0' }}>{sublabel}</p>}
+    </div>
+  );
+}
+
+function CostCard({ label, value, sublabel }: { label: string; value: number; sublabel: string }) {
+  return (
+    <div style={{ background: '#111', borderRadius: 12, padding: '20px', borderLeft: '3px solid #f87171' }}>
+      <p style={{ fontSize: 12, color: '#888', margin: 0, marginBottom: 8 }}>{label}</p>
+      <p style={{ fontSize: 24, fontWeight: 700, margin: 0, color: '#f87171' }}>${value.toFixed(2)}</p>
+      <p style={{ fontSize: 11, color: '#555', margin: '4px 0 0' }}>{sublabel}</p>
     </div>
   );
 }
