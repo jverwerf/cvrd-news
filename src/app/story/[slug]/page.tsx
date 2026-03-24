@@ -3,11 +3,7 @@ import { notFound } from "next/navigation";
 import { findStoryBySlug, getAllStorySlugs } from "@/lib/stories";
 import { StoryPage } from "@/components/StoryPage";
 
-export const dynamicParams = true;
-
-export async function generateStaticParams() {
-  return getAllStorySlugs().map(s => ({ slug: s.slug }));
-}
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;

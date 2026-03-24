@@ -1,11 +1,16 @@
 import { MetadataRoute } from 'next';
 import { getAllStorySlugs } from '@/lib/stories';
 
+export const dynamic = 'force-dynamic';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const categories = ['world', 'politics', 'markets-crypto', 'tech-ai', 'culture', 'unfiltered'];
   const baseUrl = 'https://cvrdnews.com';
 
-  const storySlugs = getAllStorySlugs();
+  let storySlugs: { slug: string; date: string }[] = [];
+  try {
+    storySlugs = getAllStorySlugs();
+  } catch {}
 
   return [
     {
