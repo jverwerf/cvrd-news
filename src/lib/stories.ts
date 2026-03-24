@@ -29,9 +29,12 @@ export function getAllDailyReports(): { date: string; report: DailyReport }[] {
     path.resolve(process.cwd(), '../intelligence-engine/output'),
   ];
 
+  // Only load last 7 days to keep serverless function size manageable
+  const cutoff = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
+
   for (const dir of dirs) {
     if (!fs.existsSync(dir)) continue;
-    const files = fs.readdirSync(dir).filter(f => f.startsWith('daily_gaps_') && f.endsWith('.json'));
+    const files = fs.readdirSync(dir).filter(f => f.startsWith('daily_gaps_') && f.endsWith('.json') && f.replace('daily_gaps_', '').replace('.json', '') >= cutoff);
     for (const f of files) {
       const date = f.replace('daily_gaps_', '').replace('.json', '');
       if (seen.has(date)) continue;
