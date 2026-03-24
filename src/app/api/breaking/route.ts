@@ -498,12 +498,13 @@ async function enrichStory(story: BreakingStory, opts: { includeTelegram: boolea
   return updated;
 }
 
-// ── DELETE — clear all breaking data ──
+// ── DELETE — clear all breaking data and pause detection for 1 hour ──
 export async function DELETE(req: Request) {
   const pin = new URL(req.url).searchParams.get('pin');
   if (pin !== '2026') return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-  await deleteBreakingData();
-  return NextResponse.json({ ok: true, message: 'Breaking data cleared' });
+  // Save pause timestamp — detection will skip for 1 hour
+  await saveBreakingData([{ _paused_until: new Date(Date.now() + 60 * 60 * 1000).toISOString() } as any]);
+  return NextResponse.json({ ok: true, message: 'Breaking data cleared, detection paused for 1 hour' });
 }
 
 // ── MAIN ──
@@ -515,7 +516,21 @@ export async function GET() {
 
   try {
     // Load current breaking stories from Vercel Blob
-    allStories = (await withTimeout(getBreakingData(), 5000, null)) || [];
+    const rawData = (await withTimeout(getBreakingData(), 5000, null)) || [];
+
+    // Check if detection is paused
+    const pauseEntry = rawData.find((s: any) => s._paused_until);
+    if (pauseEntry) {
+      const pausedUntil = new Date((pauseEntry as any)._paused_until).getTime();
+      if (Date.now() < pausedUntil) {
+        // Still paused — return empty
+        return NextResponse.json([]);
+      }
+      // Pause expired — clear it and continue
+      await deleteBreakingData();
+    }
+
+    allStories = rawData.filter((s: any) => !s._paused_until);
 
     const existingTopics = allStories.map(s => s.topic);
     const candidates = await withTimeout(fetchRecentHeadlines(), 10000, []);
