@@ -346,15 +346,15 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         )}
 
         {/* LEFT vs RIGHT */}
-        <div className="grid grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
-          <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
+          <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
             <div className="flex items-center gap-2 mb-3">
               <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
               <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
             </div>
             <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
           </div>
-          <div className="pl-4 py-4 pr-4">
+          <div className="py-4 px-4">
             <div className="flex items-center gap-2 mb-3">
               <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
               <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
