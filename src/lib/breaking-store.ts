@@ -50,5 +50,11 @@ export async function deleteBreakingData(): Promise<void> {
 
 export async function hasBreakingData(): Promise<boolean> {
   const data = await getBreakingData();
-  return data !== null && data.length > 0;
+  if (!data || data.length === 0) return false;
+  // Only show breaking nav if at least one story has 3+ video clips
+  return data.some((s: any) => {
+    const videoCount = (s.youtube_videos || []).length +
+      (s.social_clips || []).filter((c: any) => c.platform !== 'reddit' && c.duration).length;
+    return videoCount >= 3;
+  });
 }
