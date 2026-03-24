@@ -40,6 +40,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
 
+  let isBreaking = false;
+  try {
+    const { hasBreakingData } = await import('@/lib/breaking-store');
+    isBreaking = await hasBreakingData();
+  } catch {}
+
   const cat = CATEGORIES[category];
   if (!cat) {
     return (
@@ -62,6 +68,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <div className="relative" style={{ background: '#1e2a3a' }}>
           <div className="h-12 flex items-center overflow-x-auto pr-20" style={{ scrollbarWidth: 'none' }}>
             <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
+              {isBreaking && (
+                <a href="/breaking"
+                  className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors"
+                  style={{ background: 'rgba(220,38,38,0.15)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)' }}>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full mr-1 animate-pulse" style={{ background: '#ef4444' }} />
+                  Breaking
+                </a>
+              )}
               {[{ label: 'Daily Pick', slug: '/' }, ...Object.values(CATEGORIES)].map((c) => (
                 <a key={c.slug} href={c.slug === '/' ? '/' : `/${c.slug}`}
                   className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
