@@ -67,21 +67,24 @@ export default async function Home() {
                   ))}
                 </div>
               </div>
-              {/* Gradient fade + icons pinned right */}
-              <div className="absolute right-0 top-0 h-12 flex items-center gap-1.5 pl-8 pr-3"
+              {/* Gradient fade + icons pinned right in pill */}
+              <div className="absolute right-0 top-0 h-12 flex items-center pl-8 pr-2"
                 style={{ background: 'linear-gradient(to right, transparent, #1e2a3a 30%)' }}>
-                <a href="/tv" className="p-1 transition-colors flex items-center"
-                  style={{ color: 'rgba(255,255,255,0.35)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-                  </svg>
-                </a>
-                <span style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.4)', display: 'block' }} />
-                <a href="/show" className="p-1 transition-opacity hover:opacity-80 flex items-center"
-                  title="Watch the daily show">
-                    <img src="/logo-outline.png" alt="CVRD" style={{ height: '16px', opacity: 0.7, filter: 'brightness(0) invert(1)' }} />
+                <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
+                  style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                  <a href="/tv" className="flex items-center"
+                    style={{ color: 'rgba(255,255,255,0.5)' }}>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+                    </svg>
+                  </a>
+                  <span style={{ width: '1px', height: '12px', background: 'rgba(255,255,255,0.25)', display: 'block' }} />
+                  <a href="/show" className="flex items-center transition-opacity hover:opacity-80"
+                    title="Watch the daily show">
+                    <img src="/logo-outline.png" alt="CVRD" style={{ height: '13px', opacity: 0.5, filter: 'brightness(0) invert(1)' }} />
                   </a>
                 </div>
+              </div>
               </div>
 
             {/* 2. LIVE BANNER */}

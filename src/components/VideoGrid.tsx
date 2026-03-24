@@ -41,7 +41,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     } else if (c.platform === 'reels' && c.embed_id) {
       allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail, duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: `/api/x-video?id=${c.embed_id}&thumb=1`, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'telegram' && c.embed_id) {
       allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: c.embed_id ? `/api/tg-video?post=${c.embed_id}&thumb=1` : storyImage, duration: (c as any).duration || 30, relevance: (c as any).relevance });
     }
@@ -285,7 +285,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   };
 
   const platformColor = (type: string) =>
-    type === 'youtube' ? '#ff0000' : type === 'tiktok' ? '#fe2c55' : type === 'x' ? '#1d9bf0' : '#c026d3';
+    type === 'youtube' ? '#ff0000' : type === 'tiktok' ? '#fe2c55' : type === 'x' ? '#1d9bf0' : type === 'telegram' ? '#0088cc' : '#c026d3';
 
   const closePlayer = () => { setActiveIdx(-1); setPlaying(false); setCurrentTime(0); setDuration(0); stopPolling(); stopTimer(); };
 
@@ -325,15 +325,19 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 {active.type === 'x' && (
                   <video key={active.embed_id}
                     src={`/api/x-video?id=${active.embed_id}`}
+                    poster={`/api/x-video?id=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-contain"
                     autoPlay muted playsInline controls
+                    onEnded={() => nextRef.current()}
                     style={{ background: '#000' }} />
                 )}
                 {active.type === 'telegram' && (
                   <video key={active.embed_id}
                     src={`/api/tg-video?post=${active.embed_id}`}
+                    poster={`/api/tg-video?post=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-cover"
-                    autoPlay muted playsInline controls />
+                    autoPlay muted playsInline controls
+                    onEnded={() => nextRef.current()} />
                 )}
               </>
             ) : (
@@ -421,6 +425,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               <div className="aspect-video bg-[#111] relative overflow-hidden">
                 {item.thumbnail ? (
                   <img src={item.thumbnail} alt={item.label} className="w-full h-full object-cover" />
+                ) : item.type === 'telegram' && item.embed_id ? (
+                  <img src={`/api/tg-video?post=${item.embed_id}&thumb=1`} alt={item.label} className="w-full h-full object-cover" />
                 ) : item.type === 'x' && item.embed_id ? (
                   <iframe
                     src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embed_id}&theme=dark&hideCard=true&hideThread=true`}
@@ -438,7 +444,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 {/* Platform badge */}
                 <div className="absolute top-1 left-1">
                   <span className="text-[7px] font-bold text-white px-1 py-0.5 rounded" style={{ background: platformColor(item.type) }}>
-                    {item.type === 'youtube' ? 'YT' : item.type === 'tiktok' ? 'TT' : item.type === 'x' ? '𝕏' : 'IG'}
+                    {item.type === 'youtube' ? 'YT' : item.type === 'tiktok' ? 'TT' : item.type === 'x' ? '𝕏' : item.type === 'telegram' ? 'TG' : 'IG'}
                   </span>
                 </div>
                 {/* Play icon on hover */}

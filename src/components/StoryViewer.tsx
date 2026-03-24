@@ -60,13 +60,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     if (!seenUrls.has(src.url)) { seenUrls.add(src.url); uniqueSources.push(src); }
   }
 
+  // Handle GPT returning brief as { daily_brief: [...] } or { summary: "..." }
+  const resolvedBrief = dailyBrief?.summary ? dailyBrief
+    : (dailyBrief as any)?.daily_brief?.[0] ? (dailyBrief as any).daily_brief[0]
+    : dailyBrief;
+
   const briefStory: NarrativeGap = {
     topic: 'Daily Brief',
-    summary: dailyBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
-    left_narrative: dailyBrief?.left_narrative || stories.slice(0, 3).map(s => s.left_narrative).filter(Boolean).join(' '),
-    right_narrative: dailyBrief?.right_narrative || stories.slice(0, 3).map(s => s.right_narrative).filter(Boolean).join(' '),
-    what_they_arent_telling_you: dailyBrief?.what_they_arent_telling_you || stories.slice(0, 3).map(s => s.what_they_arent_telling_you).filter(Boolean).join(' '),
-    social_summary: dailyBrief?.social_summary || stories.slice(0, 3).map(s => s.social_summary).filter(Boolean).join(' '),
+    summary: resolvedBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
+    left_narrative: resolvedBrief?.left_narrative || stories.slice(0, 3).map(s => s.left_narrative).filter(Boolean).join(' '),
+    right_narrative: resolvedBrief?.right_narrative || stories.slice(0, 3).map(s => s.right_narrative).filter(Boolean).join(' '),
+    what_they_arent_telling_you: resolvedBrief?.what_they_arent_telling_you || stories.slice(0, 3).map(s => s.what_they_arent_telling_you).filter(Boolean).join(' '),
+    social_summary: resolvedBrief?.social_summary || stories.slice(0, 3).map(s => s.social_summary).filter(Boolean).join(' '),
     image_prompt: '',
     youtube_videos: bestYT,
     social_clips: bestSocial,
@@ -168,7 +173,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0 }}>
             <ErrorBoundary>
-              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? [{ ...briefStory, social_clips: [] }] : [story]} videoUrl={undefined} videoDate={undefined} />
+              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? [{ ...briefStory, social_clips: [] }] : [story]} videoUrl={undefined} videoDate={undefined} noAutoPlay />
             </ErrorBoundary>
           </div>
         </div>
@@ -409,39 +414,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         )}
 
-        {/* TELEGRAM VIDEOS */}
-        {telegramClips.filter(c => c.embed_id && c.duration).length > 0 && (
-          <div data-section="telegram" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-            <div className="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-              <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram Videos</span>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {telegramClips.filter(c => c.embed_id && c.duration).map((c, i) => (
-                <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1a2535', border: '1px solid #2a3a4a' }}>
-                  <div className="aspect-video overflow-hidden bg-black">
-                    <video
-                      src={`/api/tg-video?post=${c.embed_id}`}
-                      className="w-full h-full object-cover"
-                      controls muted playsInline
-                    />
-                  </div>
-                  <div className="px-3 py-2 flex items-center justify-between" style={{ background: '#0f1a25', borderTop: '1px solid #2a3a4a' }}>
-                    <div className="flex items-center gap-2 min-w-0">
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                      <span className="text-[10px] text-[#0088cc] font-medium truncate">@{c.author}</span>
-                    </div>
-                    <a href={c.url} target="_blank" rel="noreferrer" className="text-[9px] text-[#666] hover:text-white shrink-0">Open →</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* TELEGRAM POSTS (text only) */}
+        {/* TELEGRAM TEXT POSTS (non-video only — videos are in VideoGrid) */}
         {telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+          <div data-section="telegram" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
             <div className="flex items-center gap-2 mb-3">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
               <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
