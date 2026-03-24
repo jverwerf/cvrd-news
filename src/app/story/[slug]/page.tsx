@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { findStoryBySlug, getAllStorySlugs } from "@/lib/stories";
 import { StoryPage } from "@/components/StoryPage";
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
+  const { findStoryBySlug } = await import("@/lib/stories");
   const result = findStoryBySlug(slug);
   if (!result) return {};
 
@@ -47,6 +47,7 @@ const ALL_CATS = [
 
 export default async function StoryRoute({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const { findStoryBySlug } = await import("@/lib/stories");
   const result = findStoryBySlug(slug);
   if (!result) notFound();
 
