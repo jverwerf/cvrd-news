@@ -27,13 +27,7 @@ export async function GET(request: Request) {
   let youtube = { videos: [] as any[], totalViews: 0, subscribers: 0 };
   try {
     if (YT_KEY) {
-      // Get channel from our known video
-      const channelResp = await fetch(
-        `https://www.googleapis.com/youtube/v3/videos?key=${YT_KEY}&id=5QaAAr5TxKA&part=snippet`,
-        { signal: AbortSignal.timeout(10000) }
-      );
-      const channelData = await channelResp.json();
-      const channelId = channelData.items?.[0]?.snippet?.channelId;
+      const channelId = 'UCVC76fWloXGO85HJCgcNYFA'; // CVRD News
 
       if (channelId) {
         // Channel stats
@@ -128,49 +122,74 @@ export async function GET(request: Request) {
     console.error('Instagram stats error:', e.message?.substring(0, 60));
   }
 
-  // === Website (Vercel Analytics) ===
+  // === Website (Vercel Web Analytics — Pro) ===
   let website = { pageViews: 0, visitors: 0, daily: [] as any[] };
   try {
     const vercelToken = getVercelToken() || process.env.VERCEL_ANALYTICS_TOKEN;
     if (vercelToken) {
       const teamId = 'team_waN5IFxiVeUZaRIVuxeVxdxH';
       const projectId = 'prj_DqiYabkDWKn0ij0U97j2oHVK6bbt';
-      const from = new Date(Date.now() - 7 * 86400000).toISOString().slice(0, 10);
-      const to = new Date().toISOString().slice(0, 10);
+      const from = new Date(Date.now() - 7 * 86400000).toISOString();
+      const to = new Date().toISOString();
 
+      // Try the Pro analytics endpoint
       const resp = await fetch(
-        `https://vercel.com/api/web-analytics/timeseries?projectId=${projectId}&teamId=${teamId}&from=${from}&to=${to}&environment=production`,
+        `https://vercel.com/api/web/insights/stats?projectId=${projectId}&teamId=${teamId}&from=${from}&to=${to}&environment=production`,
         { headers: { Authorization: `Bearer ${vercelToken}` }, signal: AbortSignal.timeout(10000) }
       );
       const data = await resp.json();
-      const dailyMap: Record<string, { views: number; devices: number }> = {};
 
-      for (const entry of (data.data?.groups?.all || [])) {
-        const date = entry.key?.slice(0, 10);
-        if (!dailyMap[date]) dailyMap[date] = { views: 0, devices: 0 };
-        dailyMap[date].views += entry.total || 0;
-        dailyMap[date].devices = Math.max(dailyMap[date].devices, entry.devices || 0);
+      if (data.pageViews !== undefined) {
+        website.pageViews = data.pageViews || 0;
+        website.visitors = data.visitors || data.uniques || 0;
       }
 
-      for (const [date, vals] of Object.entries(dailyMap).sort()) {
-        website.pageViews += vals.views;
-        website.visitors += vals.devices;
-        website.daily.push({ date, views: vals.views, devices: vals.devices });
+      // Daily timeseries
+      const tsResp = await fetch(
+        `https://vercel.com/api/web/insights/timeseries?projectId=${projectId}&teamId=${teamId}&from=${from}&to=${to}&environment=production`,
+        { headers: { Authorization: `Bearer ${vercelToken}` }, signal: AbortSignal.timeout(10000) }
+      );
+      const tsData = await tsResp.json();
+
+      for (const entry of (tsData.data || tsData || [])) {
+        const date = (entry.key || entry.date || entry.timestamp || '').slice(0, 10);
+        if (date) {
+          website.daily.push({ date, views: entry.pageViews || entry.total || entry.views || 0, devices: entry.visitors || entry.uniques || entry.devices || 0 });
+        }
+      }
+
+      // If timeseries didn't populate totals, sum from daily
+      if (website.pageViews === 0 && website.daily.length > 0) {
+        website.pageViews = website.daily.reduce((a: number, d: any) => a + d.views, 0);
+        website.visitors = website.daily.reduce((a: number, d: any) => a + d.devices, 0);
       }
     }
   } catch (e: any) {
     console.error('Vercel stats error:', e.message?.substring(0, 60));
   }
 
-  // === Revenue (placeholders — needs AdSense/YPP integration) ===
+  // === Revenue ===
+  // AdSense: requires Google AdSense Management API + service account
+  // YouTube Partner: not eligible yet (need 1000 subs + 4000 watch hours)
+  // Instagram Reels: bonus program not active
   const revenue = {
-    youtube: 0,    // YouTube Partner Program not active yet
-    instagram: 0,  // Reels bonus not active yet
-    website: 0,    // AdSense just added, no data yet
-    app: 0,        // App not built yet
+    youtube: 0,
+    instagram: 0,
+    website: 0,    // Will be populated when AdSense API is connected
+    app: 0,
   };
 
-  const result: any = { youtube, instagram, website, revenue };
+  // === Costs (estimated daily) ===
+  const costs = {
+    openai: 4.50,    // GPT-4o verification + GPT-4o-mini + TTS
+    apify: 0.50,     // YouTube/TikTok fallback
+    twitterApi: 0.75, // X search
+    vercel: 0.67,    // Pro plan ($20/month)
+    domain: 0.03,    // ~$12/year
+    total: 6.45,
+  };
+
+  const result: any = { youtube, instagram, website, revenue, costs };
   if (debug) {
     result._debug = {
       hasYTKey: !!YT_KEY,
