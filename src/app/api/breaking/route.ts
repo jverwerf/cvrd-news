@@ -66,42 +66,76 @@ async function fetchRecentHeadlines(): Promise<{ title: string; url: string; sou
 // ── ENRICHMENT ──
 
 // Trusted YouTube channels for breaking news
+// Whitelist-only — only these channels are allowed in breaking news videos
 const TRUSTED_CHANNELS = new Set([
-  'bbc news', 'cnn', 'sky news', 'al jazeera english', 'reuters', 'associated press',
-  'abc news', 'cbs news', 'nbc news', 'msnbc', 'fox news', 'cnbc',
-  'pbs newshour', 'france 24 english', 'dw news', 'euronews', 'channel 4 news',
-  'the guardian', 'the telegraph', 'the independent', 'the times',
-  'washington post', 'new york times', 'bloomberg', 'financial times',
-  'politico', 'axios', 'vox', 'vice news', 'the intercept', 'propublica',
-  'ap archive', 'afp news agency', 'global news', 'ctv news', 'abc news (australia)',
-  'itv news', 'times radio', 'lbc', 'talk', 'gb news',
-  'cnn-news18', 'tlc', 'c-span', 'the hill',
-  'bellingcat', 'the economist', 'foreign affairs',
-  'wall street journal', 'insider', 'business insider',
-  'cnbc television', 'bloomberg television', 'yahoo finance',
-  'crypto news', 'coindesk', 'decrypt',
-  'spacex', 'nasa', 'nature', 'wired', 'the verge',
-  'variety', 'billboard', 'complex',
-]);
+  // ── US BROADCAST NETWORKS ──
+  'cnn', 'msnbc', 'fox news', 'abc news', 'cbs news', 'nbc news',
+  'pbs newshour', 'pbs', 'c-span', 'newsnation',
+  'livenow from fox', 'fox news live',
 
-const AI_JUNK_PATTERNS = /breaking news 24|world news update|news hub|ai news|global news network|news factory|daily digest|trending now|news compilation|live stream 24|news live|update news/i;
+  // ── US PRINT / DIGITAL ──
+  'the guardian', 'washington post', 'new york times', 'wall street journal',
+  'new york post', 'usa today', 'la times', 'chicago tribune',
+  'politico', 'the hill', 'axios', 'huffpost', 'vox', 'vice news',
+  'the atlantic', 'the new yorker', 'time', 'newsweek', 'slate',
+  'the intercept', 'propublica', 'insider', 'business insider',
+
+  // ── US RIGHT-LEANING ──
+  'daily wire', 'prageru', 'the blaze', 'national review',
+  'daily caller', 'breitbart', 'washington times', 'nowthis',
+  'real clear politics', 'free beacon', 'townhall',
+
+  // ── US LEFT-LEANING ──
+  'mother jones', 'the nation', 'salon', 'democracy now', 'jacobin',
+
+  // ── WIRE SERVICES ──
+  'reuters', 'associated press', 'ap news', 'ap archive', 'afp news agency',
+
+  // ── INTERNATIONAL — UK ──
+  'bbc news', 'bbc world', 'sky news', 'channel 4 news', 'itv news',
+  'the telegraph', 'the independent', 'the times', 'times radio',
+  'lbc', 'talk', 'gb news',
+
+  // ── INTERNATIONAL — EUROPE ──
+  'france 24 english', 'france 24', 'dw news', 'euronews',
+
+  // ── INTERNATIONAL — MIDDLE EAST ──
+  'al jazeera english', 'al jazeera', 'i24 news',
+  'times of israel', 'jerusalem post', 'haaretz',
+
+  // ── INTERNATIONAL — OTHER ──
+  'abc news (australia)', 'sky news australia', 'abc australia',
+  'global news', 'ctv news', 'cbc news', 'globe and mail',
+
+  // ── BUSINESS / FINANCE ──
+  'cnbc', 'cnbc television', 'bloomberg', 'bloomberg television',
+  'fox business', 'yahoo finance', 'financial times',
+  'forbes', 'forbes breaking news', 'marketwatch',
+  'the economist', 'foreign affairs',
+
+  // ── CRYPTO ──
+  'coindesk', 'cointelegraph', 'the block', 'decrypt', 'coin bureau',
+
+  // ── TECH ──
+  'wired', 'the verge', 'techcrunch', 'ars technica',
+
+  // ── SCIENCE / SPACE ──
+  'spacex', 'nasa', 'nature', 'national geographic', 'science news',
+
+  // ── INVESTIGATIVE / INDEPENDENT ──
+  'bellingcat', 'breaking points', 'philip defranco',
+  'joe rogan clips', 'disclose.tv', 'bno news',
+
+  // ── CULTURE / ENTERTAINMENT ──
+  'variety', 'billboard', 'complex', 'espn',
+  'hollywood reporter', 'deadline', 'rolling stone',
+  'entertainment weekly', 'tmz', 'page six',
+]);
 
 function isJunkChannel(channel: string): boolean {
   const lower = channel.toLowerCase().trim();
-  // Allow if it's a trusted channel
-  if (TRUSTED_CHANNELS.has(lower)) return false;
-  // Block known AI junk patterns
-  if (AI_JUNK_PATTERNS.test(channel)) return true;
-  // Block non-Latin channel names
-  const nonLatin = (channel.match(/[^\x00-\x7F]/g) || []).length;
-  if (nonLatin / Math.max(channel.length, 1) > 0.3) return true;
-  // Block Indian outlets
-  const indianPatterns = /hindustan|ndtv|times of india|india today|zee news|republic|wion|firstpost|news18|aaj tak|abp|tv9|sakshi|ntv telugu|etv|manorama|asianet|india tv|indian express|oneindia|samaa|dawn news|geo news|ary news|study with|true fact|politic news\d|bworld|iwere news|daily brief|forex academy/i;
-  if (indianPatterns.test(channel)) return true;
-  // Block Hindi/Urdu titles
-  if (/[\u0900-\u097F\u0600-\u06FF]/.test(channel)) return true;
-  // Allow everything else — not on blocklist
-  return false;
+  // Whitelist-only: if not on the list, it's junk
+  return !TRUSTED_CHANNELS.has(lower);
 }
 
 async function searchYouTube(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['youtube_videos']> {
@@ -168,9 +202,14 @@ async function searchYouTube(topic: string, existingUrls: Set<string>, detectedA
         if (dur > 1800) continue;
         const url = `https://www.youtube.com/watch?v=${item.id}`;
         if (existingUrls.has(url)) continue;
+        const channel = item.channelName || item.channelTitle || '';
+        if (isJunkChannel(channel)) continue;
+        const title = item.title || '';
+        if (/[\u0900-\u097F\u0600-\u06FF]/.test(title)) continue;
+        if (isJunkChannel(title)) continue;
         videos.push({
           url, embed_id: item.id,
-          title: item.title || '', channel: item.channelName || item.channelTitle || '',
+          title, channel,
           duration: dur || undefined,
         });
         existingUrls.add(url);
@@ -181,6 +220,48 @@ async function searchYouTube(topic: string, existingUrls: Set<string>, detectedA
   return videos;
 }
 
+// Trusted X accounts — same as main pipeline (x-whitelist.ts)
+const TRUSTED_X_HANDLES = new Set([
+  // Wire services
+  'ap', 'reuters', 'afp',
+  // US Broadcast
+  'cnn', 'msnbc', 'foxnews', 'abc', 'cbsnews', 'nbcnews', 'pbs', 'npr', 'newsnation',
+  // US Print / Digital
+  'nytimes', 'washingtonpost', 'wsj', 'usatoday', 'nypost', 'latimes',
+  'politico', 'thehill', 'axios', 'huffpost', 'vox', 'theatlantic', 'time', 'newsweek',
+  'theintercept', 'slate', 'newyorker', 'buzzfeednews',
+  // US Right
+  'dailywire', 'breitbartnews', 'dailycaller', 'theblaze', 'nro', 'washtimes',
+  'realclearnews', 'freebeacon', 'epochtimes', 'townhallcom',
+  // US Left
+  'motherjones', 'thenation', 'salon', 'democracynow', 'jacobin',
+  // International
+  'bbcworld', 'bbcbreaking', 'skynews', 'skynewsbreak', 'guardian', 'telegraph',
+  'independent', 'ajenglish', 'ajbreaking', 'france24_en', 'dwnews', 'euronews',
+  'cbcnews', 'theeconomist', 'ft',
+  // Business
+  'cnbc', 'bloomberg', 'foxbusiness', 'marketwatch', 'forbes', 'yahoofinance',
+  // Crypto
+  'coindesk', 'cointelegraph', 'theblock__', 'decryptmedia',
+  // Tech
+  'wired', 'theverge', 'techcrunch', 'arstechnica',
+  // Aggregators / Breaking
+  'disclosetv', 'bnonews', 'spectatorindex', 'unusual_whales', 'watcherguru',
+  'collinrugg', 'rawsalerts', 'endwokeness', 'dropsitenews', 'marionawfal', 'breaking911',
+  // Journalists
+  'tuckercarlson', 'benshapiro', 'realcandaceo', 'mattwalshblog',
+  'rachel_maddow', 'chrislhayes', 'maggienyt',
+  // Politicians / Institutions
+  'potus', 'realdonaldtrump', 'vp', 'aoc', 'berniesanders', 'tedcruz', 'randpaul',
+  'elonmusk', 'joerogan',
+  'zelenskyyua', 'emmanuelmacron', 'netanyahu', 'israelipm', 'idf', 'nato', 'un', 'who',
+  'secblinken', 'secdef', 'statedept', 'pentagonpressec',
+  // OSINT
+  'intelcrab', 'liveuamap', 'sentdefender', 'elintnews', 'war_mapper', 'warmonitors',
+  // Science
+  'nasa', 'spacex', 'natgeo',
+]);
+
 async function searchX(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
   const clips: BreakingStory['social_clips'] = [];
   const xKey = process.env.TWITTERAPI_IO_KEY;
@@ -190,69 +271,95 @@ async function searchX(topic: string, existingUrls: Set<string>, detectedAt?: st
   const sinceDate = detectedAt
     ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000)
     : new Date(Date.now() - 6 * 60 * 60 * 1000);
-  const sinceStr = sinceDate.toISOString().split('T')[0]; // YYYY-MM-DD for X search
+  const sinceStr = sinceDate.toISOString().split('T')[0];
   const sinceFilter = ` since:${sinceStr}`;
 
+  function parseTweet(tweet: any, requireVideo: boolean): void {
+    const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
+    if (tweetDate.getTime() < sinceDate.getTime()) return;
+    const author = tweet.author?.userName || 'unknown';
+    // Only allow trusted accounts
+    if (!TRUSTED_X_HANDLES.has(author.toLowerCase())) return;
+    if (requireVideo) {
+      const hasVideo = (tweet.extendedEntities?.media || []).some((m: any) => m.type === 'video');
+      if (!hasVideo) return;
+    }
+    const url = `https://x.com/${author}/status/${tweet.id}`;
+    if (existingUrls.has(url)) return;
+    clips.push({
+      platform: 'x', url, embed_id: tweet.id,
+      title: (tweet.text || '').substring(0, 150), author,
+      ...(requireVideo ? { duration: 60 } : {}),
+    });
+    existingUrls.add(url);
+  }
+
   try {
-    // Video tweets
+    // Video tweets — high engagement from trusted accounts
     const videoResp = await fetch(
-      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:100 has:video -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
+      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:500 has:video -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
       { headers: { 'x-api-key': xKey }, signal: AbortSignal.timeout(8000) }
     );
     const videoData = await videoResp.json();
-    for (const tweet of (videoData?.tweets || []).slice(0, 5)) {
-      // Filter by exact timestamp
-      const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
-      if (tweetDate.getTime() < sinceDate.getTime()) continue;
-      const hasVideo = (tweet.extendedEntities?.media || []).some((m: any) => m.type === 'video');
-      if (!hasVideo) continue;
-      const author = tweet.author?.userName || 'unknown';
-      const url = `https://x.com/${author}/status/${tweet.id}`;
-      if (existingUrls.has(url)) continue;
-      clips.push({ platform: 'x', url, embed_id: tweet.id, title: (tweet.text || '').substring(0, 150), author, duration: 60 });
-      existingUrls.add(url);
-    }
+    for (const tweet of (videoData?.tweets || []).slice(0, 10)) parseTweet(tweet, true);
   } catch {}
 
   try {
-    // Text tweets
+    // Text tweets — institutional + journalist takes
     const textResp = await fetch(
-      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:200 -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
+      `https://api.twitterapi.io/twitter/tweet/advanced_search?query=${encodeURIComponent(topic + ' min_faves:500 -is:retweet lang:en' + sinceFilter)}&queryType=Latest`,
       { headers: { 'x-api-key': xKey }, signal: AbortSignal.timeout(8000) }
     );
     const textData = await textResp.json();
-    for (const tweet of (textData?.tweets || []).slice(0, 8)) {
-      const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
-      if (tweetDate.getTime() < sinceDate.getTime()) continue;
-      const author = tweet.author?.userName || 'unknown';
-      const url = `https://x.com/${author}/status/${tweet.id}`;
-      if (existingUrls.has(url)) continue;
-      clips.push({ platform: 'x', url, embed_id: tweet.id, title: (tweet.text || '').substring(0, 150), author });
-      existingUrls.add(url);
-    }
+    for (const tweet of (textData?.tweets || []).slice(0, 10)) parseTweet(tweet, false);
   } catch {}
 
   return clips;
 }
 
+// Whitelisted subreddits — same as main pipeline (social.ts)
+const TRUSTED_SUBREDDITS = [
+  'news', 'worldnews', 'politics', 'geopolitics',
+  'wallstreetbets', 'stocks', 'economics',
+  'cryptocurrency', 'Bitcoin', 'technology',
+  'PublicFreakout', 'videos', 'interestingasfuck',
+];
+
 async function searchReddit(topic: string, existingUrls: Set<string>): Promise<BreakingStory['social_clips']> {
   const clips: BreakingStory['social_clips'] = [];
-  try {
-    const resp = await fetch(
-      `https://www.reddit.com/search.json?q=${encodeURIComponent(topic)}&sort=relevance&t=day&limit=8`,
-      { headers: { 'User-Agent': 'CVRD/1.0' }, signal: AbortSignal.timeout(6000) }
-    );
-    const data = await resp.json();
-    for (const post of (data?.data?.children || [])) {
-      const d = post.data;
-      if (!d || d.score < 20) continue;
-      const url = `https://reddit.com${d.permalink}`;
-      if (existingUrls.has(url)) continue;
-      clips.push({ platform: 'reddit', url, embed_id: d.id || d.name?.replace('t3_', ''), title: (d.title || '').substring(0, 150) });
-      existingUrls.add(url);
-    }
-  } catch {}
-  return clips;
+  const keywords = topic.toLowerCase().split(/\s+/).filter(w => w.length > 3);
+
+  // Search within whitelisted subreddits only
+  const results = await Promise.allSettled(
+    TRUSTED_SUBREDDITS.map(async (sub) => {
+      const resp = await fetch(
+        `https://www.reddit.com/r/${sub}/hot.json?limit=10`,
+        { headers: { 'User-Agent': 'Node:CVRD:1.0 (by /u/gap-engine)' }, signal: AbortSignal.timeout(6000) }
+      );
+      const data = await resp.json();
+      return (data?.data?.children || []).map((c: any) => ({ ...c.data, subreddit: sub }));
+    })
+  );
+
+  const allPosts = results
+    .filter((r): r is PromiseFulfilledResult<any[]> => r.status === 'fulfilled')
+    .flatMap(r => r.value);
+
+  // Filter by topic relevance + engagement
+  for (const d of allPosts) {
+    if (!d || d.stickied || d.score < 50) continue;
+    const titleLower = (d.title || '').toLowerCase();
+    const matches = keywords.filter(k => titleLower.includes(k)).length;
+    if (matches < 1) continue;
+    const url = `https://reddit.com${d.permalink}`;
+    if (existingUrls.has(url)) continue;
+    clips.push({ platform: 'reddit', url, embed_id: d.id || d.name?.replace('t3_', ''), title: (d.title || '').substring(0, 150) });
+    existingUrls.add(url);
+  }
+
+  // Sort by score, take top 8
+  clips.sort((a: any, b: any) => (b.score || 0) - (a.score || 0));
+  return clips.slice(0, 8);
 }
 
 async function searchTelegram(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {

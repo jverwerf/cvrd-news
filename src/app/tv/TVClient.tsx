@@ -398,7 +398,12 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
       .then(data => {
         if (!data) return;
         const items = Array.isArray(data) ? data : [data];
-        const stories = items.map(toNarrativeGap);
+        // Only show stories with 3+ video clips (same rule as /breaking page)
+        const stories = items.map(toNarrativeGap).filter(s => {
+          const ytCount = (s.youtube_videos || []).length;
+          const videoClips = (s.social_clips || []).filter(c => c.duration).length;
+          return ytCount + videoClips >= 3;
+        });
         setBreakingStories(stories);
 
         // If new story appeared, jump to it

@@ -177,7 +177,7 @@ export default function BreakingPage() {
               <span className="text-[10px] text-white/60 shrink-0">{timeAgo(b.detected_at)}</span>
             </div>
             <ErrorBoundary>
-              <Dashboard stories={[story]} />
+              <Dashboard stories={[story]} videoUrl={b.breaking_short_url || undefined} />
             </ErrorBoundary>
             <HeroStory story={story} hideBanner />
           </div>
