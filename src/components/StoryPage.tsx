@@ -109,9 +109,7 @@ export function StoryPage({ story, date, otherStories }: {
         {/* UNFILTERED */}
         <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <div className="flex items-center gap-2 mb-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-            </svg>
+            <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
             <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
           </div>
           {sentences.length > 1 ? (

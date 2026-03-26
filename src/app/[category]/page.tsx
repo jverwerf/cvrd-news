@@ -74,7 +74,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   Breaking
                 </a>
               )}
-              {[{ label: 'Daily Pick', slug: '/' }, { label: 'On Record', slug: 'onrecord' }, ...Object.values(CATEGORIES)].map((c) => (
+              {[{ label: 'On Record', slug: 'onrecord' }, { label: 'Daily Pick', slug: '/' }, ...Object.values(CATEGORIES)].map((c) => (
                 <a key={c.slug} href={c.slug === '/' ? '/' : `/${c.slug}`}
                   className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
                   style={{

@@ -13,6 +13,7 @@ type PlaylistItem = {
   storyIndex?: number;
   duration?: number;
   videoTitle?: string;
+  thumbnail?: string;
 };
 
 type TileContent = {
@@ -77,9 +78,12 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      // Telegram + X videos (with duration) in center player
+      // Telegram + X videos (with duration) + TikTok for sports/trending in center player
+      const isFanCat = story.category === 'sports' || story.category === 'trending';
       if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
+      } else if (c.platform === 'tiktok' && isFanCat && c.embed_id && /^\d+$/.test(c.embed_id)) {
+        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 90, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
       }
     }
   }
@@ -257,6 +261,8 @@ export function Dashboard({
           ? `/api/tg-video?post=${c.embed_id}&thumb=1`
           : c.platform === 'x'
           ? `/api/x-video?id=${c.embed_id}&thumb=1`
+          : c.platform === 'tiktok' && /^\d+$/.test(c.embed_id)
+          ? `/api/tt-video?id=${c.embed_id}&thumb=1`
           : (c as any).thumbnail || story.image_file || '';
         linked.push({
           type: 'social',
@@ -503,9 +509,14 @@ export function Dashboard({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {!overrideVideo && current?.type === 'tiktok' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
-              className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+            <video key={current.embed_id}
+              src={`/api/tt-video?id=${current.embed_id}`}
+              poster={current.thumbnail || `/api/tt-video?id=${current.embed_id}&thumb=1`}
+              className="w-full h-full absolute inset-0 object-contain"
+              autoPlay muted={!unmuted} playsInline
+              onEnded={() => setCurrentIdx(p => (p + 1) % playlist.length)}
+              onLoadedMetadata={(e) => setDuration((e.target as HTMLVideoElement).duration)}
+              style={{ background: '#000' }} />
           )}
           {!overrideVideo && current?.type === 'reels' && current.embed_id && (
             <iframe key={current.embed_id}
@@ -962,14 +973,13 @@ function TileContentRenderer({ item }: { item: TileContent }) {
       </div>
     );
   }
-  if (item.type === 'social' && item.platform === 'tiktok' && item.embedId) {
+  if (item.type === 'social' && item.platform === 'tiktok' && item.embedId && /^\d+$/.test(item.embedId)) {
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-        <iframe
-          src={`https://www.tiktok.com/player/v1/${item.embedId}?rel=0&mute=1&autoplay=1`}
-          className="w-full h-full"
-          style={{ border: 'none', pointerEvents: 'none', transform: 'scale(1.3)', transformOrigin: 'center center' }}
-          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
+      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
+        <img
+          src={item.image || `/api/tt-video?id=${item.embedId}&thumb=1`}
+          alt={item.clipLabel || 'TikTok'}
+          className="w-full h-full object-cover"
           loading="lazy"
         />
         <div className="absolute top-2 left-2 z-10">

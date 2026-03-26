@@ -306,7 +306,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               <>
                 {active.type === 'youtube' && (
                   <iframe ref={iframeRef} key={active.embed_id}
-                    src={`https://www.youtube-nocookie.com/embed/${active.embed_id}?autoplay=1&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
+                    src={`https://www.youtube-nocookie.com/embed/${active.embed_id}?autoplay=0&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
                     className="w-full h-full" allowFullScreen
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
                 )}

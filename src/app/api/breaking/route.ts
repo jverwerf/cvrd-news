@@ -585,6 +585,52 @@ function collectSettled<T>(results: PromiseSettledResult<T>[]): T[] {
     .map(r => r.value);
 }
 
+// Full story refresh — re-fetch headlines, regenerate narratives, update sources
+async function refreshStoryFull(story: BreakingStory, timeoutMs: number): Promise<boolean> {
+  try {
+    // Fetch fresh headlines
+    const headlines = await withTimeout(fetchRecentHeadlines(), 8000, []);
+    const relevant = headlines.filter(h => {
+      const keywords = story.topic.toLowerCase().split(/\s+/).filter(w => w.length > 4);
+      const text = h.title.toLowerCase();
+      return keywords.filter(k => text.includes(k)).length >= 2;
+    });
+
+    // Update sources with new articles
+    enrichSources(story, relevant);
+
+    // Regenerate narratives with GPT using fresh headlines + existing clips
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+    const clipSummary = story.social_clips.slice(0, 10).map(c => `[${c.platform}] ${c.title || ''} by ${c.author || '?'}`).join('\n');
+    const sourceSummary = story.sources.slice(0, 15).map(s => `[${s.lean || 'center'}] ${s.name}: ${s.title || ''}`).join('\n');
+
+    const refreshResult = await withTimeout(
+      openai.chat.completions.create({
+        model: 'gpt-4o-mini',
+        messages: [
+          { role: 'system', content: `You are updating a breaking news story for CVRD News. The story has been developing. Based on the LATEST sources and social reactions, rewrite the narratives to reflect the CURRENT state of the story. Be definitive — summarize what IS being said, not what might be said.` },
+          { role: 'user', content: `Topic: ${story.topic}\n\nOriginal summary: ${story.summary}\n\nLATEST SOURCES:\n${sourceSummary}\n\nSOCIAL REACTIONS:\n${clipSummary}\n\nRewrite these fields based on the latest information:\n1. summary: Updated 3-5 sentence overview of where the story stands NOW\n2. left_narrative: How left-leaning media is covering this NOW (2-3 sentences, no outlet names)\n3. right_narrative: How right-leaning media is covering this NOW (2-3 sentences, no outlet names)\n4. what_they_arent_telling_you: What's being missed or underreported NOW (2-3 sentences, cite social posts)\n5. social_summary: How social media is reacting NOW (2-3 sentences)\n\nOutput JSON with these 5 fields.` }
+        ],
+        response_format: { type: 'json_object' },
+        temperature: 0.3,
+      }).then(r => JSON.parse(r.choices[0].message.content || '{}')),
+      15000,
+      null
+    );
+
+    if (refreshResult) {
+      if (refreshResult.summary) story.summary = refreshResult.summary;
+      if (refreshResult.left_narrative) story.left_narrative = refreshResult.left_narrative;
+      if (refreshResult.right_narrative) story.right_narrative = refreshResult.right_narrative;
+      if (refreshResult.what_they_arent_telling_you) story.what_they_arent_telling_you = refreshResult.what_they_arent_telling_you;
+      if (refreshResult.social_summary) story.social_summary = refreshResult.social_summary;
+      story.last_updated = new Date().toISOString();
+      return true;
+    }
+  } catch {}
+  return false;
+}
+
 // Enrich a single story with all platforms in parallel — never throws
 async function enrichStory(story: BreakingStory, opts: { includeTelegram: boolean; timeoutMs: number }): Promise<boolean> {
   const existingUrls = new Set([
@@ -771,17 +817,37 @@ If NOT breaking: { "is_breaking": false }` },
       }
     }
 
-    // ── UPDATE EXISTING STORIES (one at a time to give each enough time for Apify) ──
+    // ── UPDATE EXISTING STORIES ──
     if (allStories.length > 0 && safeTimeLeft() > 10000) {
-      // Update stories sequentially — each gets full remaining time for YouTube/Apify
-      const updateResults: PromiseSettledResult<boolean>[] = [];
+      let anyUpdated = false;
+
       for (const story of allStories) {
         if (safeTimeLeft() < 10000) break;
-        const result = await Promise.allSettled([enrichStory(story, { includeTelegram: false, timeoutMs: Math.min(safeTimeLeft() - 2000, 45000) })]);
-        updateResults.push(...result);
+
+        // Check if story needs a full refresh (every 2 hours)
+        const hoursSinceUpdate = (Date.now() - new Date(story.last_updated).getTime()) / (1000 * 60 * 60);
+        const needsFullRefresh = hoursSinceUpdate >= 2;
+
+        if (needsFullRefresh && safeTimeLeft() > 25000) {
+          // Full refresh: new narratives + sources + all clips including Telegram
+          const refreshed = await refreshStoryFull(story, Math.min(safeTimeLeft() - 5000, 20000));
+          const enriched = await withTimeout(
+            enrichStory(story, { includeTelegram: true, timeoutMs: Math.min(safeTimeLeft() - 2000, 30000) }),
+            Math.min(safeTimeLeft() - 2000, 30000),
+            false
+          );
+          if (refreshed || enriched) anyUpdated = true;
+        } else {
+          // Light update: just add new clips (YouTube, X, Reddit, Telegram)
+          const result = await withTimeout(
+            enrichStory(story, { includeTelegram: true, timeoutMs: Math.min(safeTimeLeft() - 2000, 45000) }),
+            Math.min(safeTimeLeft() - 2000, 45000),
+            false
+          );
+          if (result) anyUpdated = true;
+        }
       }
 
-      const anyUpdated = collectSettled(updateResults).some(Boolean);
       await saveBreakingData(allStories);
 
       return NextResponse.json({
