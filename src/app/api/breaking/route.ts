@@ -138,80 +138,109 @@ function isJunkChannel(channel: string): boolean {
   return !TRUSTED_CHANNELS.has(lower);
 }
 
+// YouTube RSS channels for breaking news (free, no API key needed)
+const YT_RSS_CHANNELS = [
+  { name: 'CNN', id: 'UCupvZG-5ko_eiXAupbDfxWw' },
+  { name: 'Fox News', id: 'UCXIJgqnII2ZOINSValj1DRg' },
+  { name: 'MSNBC', id: 'UCaXkIU1QidjPwiAYu6GcHjg' },
+  { name: 'CBS News', id: 'UC8p1vwvWtl6T73JiExfWs1g' },
+  { name: 'NBC News', id: 'UCeY0bbntWzzVIaj2z3QigXg' },
+  { name: 'ABC News', id: 'UCBi2mrWuNuyYy4gbM6fU18Q' },
+  { name: 'PBS NewsHour', id: 'UC6ZFN9Tx6xh-skXCuRHCDpQ' },
+  { name: 'BBC News', id: 'UC16niRr50-MSBwiO3YDb3RA' },
+  { name: 'Sky News', id: 'UCoMdktPbSTixAyNGwb-UYkQ' },
+  { name: 'Al Jazeera English', id: 'UCNye-wNBqNL5ZzHSJj3l8Bg' },
+  { name: 'Reuters', id: 'UCSrZ3UV4jOidv8RnTTNSNSw' },
+  { name: 'Associated Press', id: 'UC52X5wxOL_s5yw0dQk7NtgA' },
+  { name: 'DW News', id: 'UCknLrEdhRCp1aegoMqRaCZg' },
+  { name: 'France 24 English', id: 'UCQfwfsi5VrQ8yKZ-UWmAEFg' },
+  { name: 'CNBC Television', id: 'UCrp_UI8XtuYfpBXq9HIoMbg' },
+  { name: 'Bloomberg Television', id: 'UCIALMKvObZNtJ68-rmLjb5A' },
+  { name: 'Financial Times', id: 'UCoUxsWakJucWg46KW5RsvPw' },
+  { name: 'The Economist', id: 'UC0p5jTq6Xx_DosDFxVXnWaQ' },
+  { name: 'The Guardian', id: 'UCIRYBXDze5krPDzAEOxFGVA' },
+  { name: 'The Hill', id: 'UCPsfnMOoVKPmbCIOsxb3qlA' },
+];
+
+async function fetchYouTubeRSS(hoursBack = 6): Promise<{ id: string; title: string; channel: string; url: string }[]> {
+  const cutoff = Date.now() - hoursBack * 60 * 60 * 1000;
+  const results = await Promise.allSettled(
+    YT_RSS_CHANNELS.map(async (ch) => {
+      const resp = await fetch(
+        `https://www.youtube.com/feeds/videos.xml?channel_id=${ch.id}`,
+        { signal: AbortSignal.timeout(6000) }
+      );
+      const xml = await resp.text();
+      const entries = xml.match(/<entry>([\s\S]*?)<\/entry>/g) || [];
+      const videos: { id: string; title: string; channel: string; url: string }[] = [];
+      for (const entry of entries) {
+        const id = entry.match(/<yt:videoId>([^<]+)/)?.[1] || '';
+        const title = entry.match(/<title>([^<]+)/)?.[1] || '';
+        const published = entry.match(/<published>([^<]+)/)?.[1] || '';
+        if (!id || !title) continue;
+        if (new Date(published).getTime() < cutoff) continue;
+        videos.push({
+          id, url: `https://www.youtube.com/watch?v=${id}`,
+          title: title.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&#39;/g, "'").replace(/&quot;/g, '"'),
+          channel: ch.name,
+        });
+      }
+      return videos;
+    })
+  );
+  return results.flatMap(r => r.status === 'fulfilled' ? r.value : []);
+}
+
+function searchRSSForTopic(videos: { id: string; title: string; channel: string; url: string }[], topic: string, maxResults = 8) {
+  const stopWords = new Set(['this', 'that', 'with', 'from', 'they', 'their', 'have', 'been', 'will', 'about', 'after', 'before', 'under', 'over', 'faces', 'amid', 'says', 'news', 'just', 'more', 'than']);
+  const keywords = topic.toLowerCase().split(/\s+/).filter(w => w.length > 4 && !stopWords.has(w));
+  return videos.filter(v => {
+    const text = v.title.toLowerCase();
+    const matchCount = keywords.filter(k => text.includes(k)).length;
+    return matchCount >= Math.min(2, keywords.length);
+  }).slice(0, maxResults);
+}
+
+// Cached RSS videos — fetched once per request, shared across stories
+let cachedRSSVideos: { id: string; title: string; channel: string; url: string }[] | null = null;
+
 async function searchYouTube(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['youtube_videos']> {
   const videos: BreakingStory['youtube_videos'] = [];
-  // Only get videos from 2 hours before detection to now
-  const publishedAfter = detectedAt
-    ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000).toISOString()
-    : new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString();
 
-  // Try YouTube Data API first
+  // 1. YouTube RSS first (free, fast, no API key)
+  try {
+    if (!cachedRSSVideos) {
+      cachedRSSVideos = await fetchYouTubeRSS(6);
+    }
+    const matches = searchRSSForTopic(cachedRSSVideos, topic);
+    for (const m of matches) {
+      if (existingUrls.has(m.url)) continue;
+      videos.push({ url: m.url, embed_id: m.id, title: m.title, channel: m.channel });
+      existingUrls.add(m.url);
+    }
+    if (videos.length >= 5) return videos; // RSS found enough
+  } catch {}
+
+  // 2. YouTube Data API fallback (if RSS didn't find enough)
   try {
     const ytKey = process.env.YOUTUBE_SEARCH_API_KEY || process.env.YOUTUBE_API_KEY;
     if (ytKey) {
+      const publishedAfter = detectedAt
+        ? new Date(new Date(detectedAt).getTime() - 2 * 60 * 60 * 1000).toISOString()
+        : new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString();
       const resp = await fetch(
         `https://www.googleapis.com/youtube/v3/search?key=${ytKey}&q=${encodeURIComponent(topic)}&part=snippet&type=video&maxResults=8&order=date&publishedAfter=${publishedAfter}`,
         { signal: AbortSignal.timeout(8000) }
       );
       const data = await resp.json();
-      if (data?.items?.length > 0) {
-        for (const item of data.items) {
-          const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
-          const channel = item.snippet?.channelTitle || '';
-          if (existingUrls.has(url)) continue;
-          if (isJunkChannel(channel)) continue;
-          const title = item.snippet?.title || '';
-          // Block Hindi/Urdu/non-Latin titles
-          if (/[\u0900-\u097F\u0600-\u06FF]/.test(title)) continue;
-          if (isJunkChannel(title)) continue;
-          videos.push({
-            url, embed_id: item.id.videoId,
-            title, channel,
-          });
-          existingUrls.add(url);
-        }
-        return videos; // API worked, skip fallback
-      }
-    }
-  } catch {}
-
-  // Apify YouTube fallback
-  try {
-    const apifyToken = process.env.APIFY_API_TOKEN;
-    if (apifyToken) {
-      const resp = await fetch(
-        'https://api.apify.com/v2/acts/streamers~youtube-scraper/run-sync-get-dataset-items?token=' + apifyToken,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ searchKeywords: topic, maxResults: 8, uploadDateFilter: 'today' }),
-          signal: AbortSignal.timeout(30000),
-        }
-      );
-      const data = await resp.json();
-      for (const item of (Array.isArray(data) ? data : []).slice(0, 8)) {
-        if (!item.id) continue;
-        // Parse duration — skip videos > 30 min
-        let dur = 0;
-        if (typeof item.duration === 'number') dur = item.duration;
-        else if (typeof item.duration === 'string') {
-          const parts = item.duration.split(':').map(Number);
-          if (parts.length === 3) dur = parts[0] * 3600 + parts[1] * 60 + parts[2];
-          else if (parts.length === 2) dur = parts[0] * 60 + parts[1];
-        }
-        if (dur > 1800) continue;
-        const url = `https://www.youtube.com/watch?v=${item.id}`;
+      for (const item of (data?.items || [])) {
+        const url = `https://www.youtube.com/watch?v=${item.id.videoId}`;
+        const channel = item.snippet?.channelTitle || '';
         if (existingUrls.has(url)) continue;
-        const channel = item.channelName || item.channelTitle || '';
         if (isJunkChannel(channel)) continue;
-        const title = item.title || '';
+        const title = item.snippet?.title || '';
         if (/[\u0900-\u097F\u0600-\u06FF]/.test(title)) continue;
-        if (isJunkChannel(title)) continue;
-        videos.push({
-          url, embed_id: item.id,
-          title, channel,
-          duration: dur || undefined,
-        });
+        videos.push({ url, embed_id: item.id.videoId, title, channel });
         existingUrls.add(url);
       }
     }
@@ -624,6 +653,7 @@ export async function GET() {
   const startTime = Date.now();
   const safeTimeLeft = () => 55000 - (Date.now() - startTime);
   let allStories: BreakingStory[] = [];
+  cachedRSSVideos = null; // Reset RSS cache each request
 
   try {
     // Load current breaking stories from Vercel Blob

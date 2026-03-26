@@ -14,7 +14,7 @@ const ALL_CATS = [
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },
   { label: 'Sports', slug: '/sports' },
-  { label: 'Trending', slug: '/culture' },
+  { label: 'Trending', slug: '/trending' },
 ];
 
 function toNarrativeGap(b: any): NarrativeGap {

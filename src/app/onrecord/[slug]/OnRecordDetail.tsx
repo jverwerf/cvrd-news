@@ -135,7 +135,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
               { label: 'On Record', slug: '/onrecord' },
               { label: 'World', slug: '/world' }, { label: 'Politics', slug: '/politics' },
               { label: 'Markets', slug: '/markets' }, { label: 'Sports', slug: '/sports' },
-              { label: 'Trending', slug: '/culture' },
+              { label: 'Trending', slug: '/trending' },
             ].map((cat) => (
               <a key={cat.slug} href={cat.slug}
                 className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"

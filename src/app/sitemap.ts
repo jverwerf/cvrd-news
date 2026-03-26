@@ -39,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   } catch {}
 
-  const categories = ['world', 'politics', 'markets', 'sports', 'culture'];
+  const categories = ['world', 'politics', 'markets', 'sports', 'trending'];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },

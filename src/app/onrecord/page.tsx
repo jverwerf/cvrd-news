@@ -143,7 +143,7 @@ const ALL_CATS = [
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },
-  { label: 'Trending', slug: '/culture' },
+  { label: 'Trending', slug: '/trending' },
   { label: 'Sports', slug: '/sports' },
 ];
 

@@ -9,7 +9,7 @@ const CATEGORY_META: Record<string, { title: string; description: string }> = {
   'politics': { title: 'Politics', description: 'Political news without the spin. Coverage from left, right, and international outlets so you get the full picture.' },
   'markets': { title: 'Markets', description: 'Financial markets and economic news. Stocks, oil, jobs, inflation — analysis from every angle.' },
   'sports': { title: 'Sports', description: 'Sports news from every angle. Football, basketball, soccer, F1, UFC, transfers, results, and the stories behind the game.' },
-  'culture': { title: 'Trending', description: 'What everyone is talking about. Viral moments, entertainment, sports, and the stories shaping the conversation right now.' },
+  'trending': { title: 'Trending', description: 'What everyone is talking about. Viral moments, entertainment, sports, and the stories shaping the conversation right now.' },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
@@ -28,7 +28,7 @@ const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'politics': { label: 'Politics', slug: 'politics' },
   'markets': { label: 'Markets', slug: 'markets' },
   'sports': { label: 'Sports', slug: 'sports' },
-  'culture': { label: 'Trending', slug: 'culture' },
+  'trending': { label: 'Trending', slug: 'trending' },
 };
 
 const ALL_CATS = Object.values(CATEGORIES);

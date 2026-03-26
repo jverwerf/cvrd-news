@@ -115,19 +115,23 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
           >
             <div className="space-y-6 pt-4">
 
-              {/* LEFT vs RIGHT */}
+              {/* LEFT vs RIGHT (or Media vs Fans for sports/trending) */}
               <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
                 <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
-                    <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
+                    <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#f59e0b]' : 'bg-[#3b82f6]'}`} />
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
+                      {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
+                    </span>
                   </div>
                   <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
                 </div>
                 <div className="pl-4 py-4 pr-4">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
-                    <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
+                    <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#34d399]' : 'bg-[#ef4444]'}`} />
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171' }}>
+                      {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
+                    </span>
                   </div>
                   <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
                 </div>
