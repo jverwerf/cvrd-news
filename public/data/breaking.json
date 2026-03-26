@@ -1,1 +1,230 @@
-[]
+[
+  {
+    "topic": "Israel Kills Iran's Navy Chief",
+    "summary": "Israel has confirmed the assassination of Iran's navy chief, who was responsible for overseeing operations in the strategically critical Strait of Hormuz. This move marks a significant escalation in the ongoing hostilities between Israel and Iran, with potential repercussions for international maritime security and regional stability. The incident has heightened tensions in the Middle East, drawing international attention to the fragile geopolitical landscape.",
+    "severity": "critical",
+    "detected_at": "2026-03-26T18:24:27.286Z",
+    "last_updated": "2026-03-26T18:24:27.286Z",
+    "left_narrative": "Left-leaning media are likely to emphasize the risks of escalating military actions and the potential for further destabilization in the Middle East. They may highlight the importance of diplomatic solutions and criticize the use of targeted assassinations as a means of conflict resolution. Additionally, they might stress the potential humanitarian impact on civilians in the region.",
+    "right_narrative": "Right-leaning media might frame this as a necessary action by Israel to protect its national security against a hostile Iranian regime. They may argue that strong measures are required to deter Iran's aggressive military activities and to maintain stability in the region. Furthermore, they could portray this as a justified response to Iran's threats and actions in the Strait of Hormuz.",
+    "what_they_arent_telling_you": "Neither side is likely to delve deeply into the economic implications of this assassination, particularly regarding oil prices and global trade routes. The Strait of Hormuz is a critical chokepoint for global oil shipments, and any disruption could have significant economic consequences worldwide. Additionally, the broader geopolitical implications, such as the potential for drawing in other regional powers and the impact on ongoing nuclear negotiations, are often underexplored.",
+    "social_summary": "Social media is abuzz with polarized reactions, ranging from support for Israel's decisive action to fears of a looming war in the Middle East. Memes and conspiracy theories are circulating, with some users speculating about the involvement of other countries or secret alliances. Others are calling for peace and urging international intervention to prevent further escalation.",
+    "image_prompt": "A dramatic, symbolic image of a narrow, turbulent sea passage at dusk, with shadowy figures representing geopolitical tensions looming over the horizon, and a distant, solitary ship navigating the waters, symbolizing the precarious balance of power.",
+    "sources": [
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNS1R1UmkwSUZWcWNJS1A4VmQ2QlRQek14TVRGUFJULU50cUotOGhyMWU0UENqaDlUdDA5SXp4RV9vTTFiLUVmdmcxcUc5X1ZWV0doSGYtdWI2SktaM0pjQ2FWTUVsVGhGZGFBTG1zSldvQU52bzN6UGE2RkZRdmFtVlZIZEo1bWdnZ2pjYWd4c0l6a05waVJRR0phUUhBcG0tbW1vREJyb1k2bndsZXFCSTlyc1BvTDBlYTRNVQ?oc=5",
+        "title": "Costa Rica to accept 25 'third country' deportees from US every week - ClickOnDetroit | WDIV Local 4"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZXRabG5SMEhzc0VtTVJqZERWRE5jZUlCMmJwZFVreTFqMnhLVTJ1R1BpTjgtMjRPY25NbFhxUXNRX1pxWlRHV1dzM3ozQUJZMFpOVFNVcW1aSi1TbUFTTTVZU1pmVHVSR0xlekRRcWVwbzFXV2xGMGo1WHBfMnZVUjdPT2F4ZWNQMEVuVUtMbk5BR0l1em5TUHU5Yk9kanZxcFVqR2syNXRtOVZTTGpZTTQyRmg?oc=5",
+        "title": "Iran Hardliners Ramp up Calls for a Nuclear Bomb, Sources Say - U.S. News &amp; World Report"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeldJcHVJd19qRmxuZnJDeWg5aHhibTI2anItUFREWXlYOEdyQmoxa2hELUlSV3lYd2VyRTR4S2ZFQ05NNTQ5SmlEbGotbDBxbTNqS04xbV9uWmtRMjc5NW9nWG9MWW90WFdYdGZDMmxTR2NZUzcxNjdzUHk1bTVCMWJ2UXFfa2d5SzNMSGNHNA?oc=5",
+        "title": "Video. Latest news bulletin | March 26th, 2026 – Evening - Euronews.com"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbFVQRWVyYmFzQ1BIUWZjdkkyYzFDaWJ4ZElaa1lrcmVOVHpRQnVZNjh3cEtHaUxKQ2JDX0x3WnlWbEctMjM0WERXMzVzZ3hPYnItdUwwazBacDFUQjVKdVNmbWRuR1hvX290QmwyY21xNmZ2TUctV3hpaGdXeG9GN3N4OVdMVExwajRvajJUMEZwNlMwQTNLam1VdkgtVzRpWGszeTJJemtFbjExR3hJeFFWT1dybmpxTFE1SlRNQ1hMUThQYWlj?oc=5",
+        "title": "Middle East crisis live: Trump claims Iran ‘begging to make a deal’ and has let some tankers through strait as a ‘present’ - The Guardian"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NZFNZQUw3NGJ0Yk5DT3FuTXU4VGJLTFFDZkVGYlY4elhFdkwtdWNzYWRnVzlRV2ZHWUtNcjh3YzVKLWFIblY2M3AwaEw0eEJsYnRadDlBY1c0eVVTbmhOR2lLUUVnSDlyQ1o5NkRUXzBQUk9zcWppR3RUZw?oc=5",
+        "title": "Live updates: Iran war; Trump casts doubt on prospect of an Iran deal - CNN"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOV0ctbmYzbnhRV213YnZUaXByNFdOZUdBVGxDbFlRdmJqWkg5VUZJOWQxaEV1dVduWXBrTk9ZTEROVm1aWHU0MWlydlhfeDhscEI2dTdMSDZzU2dLNHp5MDZwME15RC1HYlpnY1czTll5ZXhJRUFLM0ZYaVBlMUl4c004ZGxmQ3h4cEh5ZmdKOTYxWVZTOFBsR3VkTC01bTIyZTFYcjVYZnVmNWExbVNTTTdtanRwdVQ1MFpTSmdB?oc=5",
+        "title": "Live updates: Israel says it killed Iran navy chief; Trump warns Tehran to 'get serious' in talks 'before it is too late' - NBC News"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE01bWluNWNBR0lrRnNueUpLLTkzSXhOXzdZdWxDNkJHQzd1WDNMaDNTR1FRbVFoZFY5WThrZFlwMnN6QVNRaU5TTGtObEFWTTlsZ0RvNUhGbw?oc=5",
+        "title": "World News in Brief, Cuba blockade hits healthcare, Haiti’s ‘vortex of violence’, deadly Djibouti shipwreck - UN News"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w3eg4n9zwo?at_medium=RSS&amp;at_campaign=rss",
+        "title": "NS&I boss replaced as savers left waiting for millions of pounds"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c4g8wxyq7v5o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Judge told Maduro 'plundered' Venezuelan wealth in court battle over legal fees "
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w38qvz195o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "More than 13 million living in poverty, new figures show"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c9d45y66g78o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Nottingham victims' families 'tortured' by authorities, inquiry told"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c17veqk90nno?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Police force reopens investigation into Andrew Tate abuse claims"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cpwjxx5eyn1o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Church attendance report pulled after YouGov finds 'fraudulent' responses"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c36r0068xp2o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Orban's Hungarian government accused of mass voter intimidation ahead of election"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cgrlnw70xyko?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Air Canada CEO 'deeply saddened' his English-only message distracted from victims of crash"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cy81p99x07no?at_medium=RSS&amp;at_campaign=rss",
+        "lean": "center",
+        "title": "Israel says it has killed Iran's navy chief overseeing Strait of Hormuz blockade"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/iranian-naval-chief-killed-in-attack-israel-says?traffic_source=rss",
+        "lean": "center",
+        "title": "Iranian naval chief killed in attack, Israel says"
+      },
+      {
+        "name": "NY Post",
+        "url": "https://nypost.com/2026/03/26/world-news/uganda-willing-to-fight-in-war-alongside-israel-military-chief-says/",
+        "lean": "right",
+        "title": "Uganda willing to fight in war alongside Israel, military chief says"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=h6kRNXWbaEg",
+        "embed_id": "h6kRNXWbaEg",
+        "title": "Israel’s defence minister says Iranian naval commander Alireza Tangsiri killed",
+        "duration": 147
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ZT47rkFHL2Q",
+        "embed_id": "ZT47rkFHL2Q",
+        "title": "Israel says it killed Iranian navy chief responsible for closing Strait of Hormuz",
+        "duration": 89
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=XCU5KcLjDho",
+        "embed_id": "XCU5KcLjDho",
+        "title": "Israel kills head of Iranian Revolutionary Guard's navy",
+        "duration": 34
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s4dpkj/israel_says_it_has_killed_irans_navy_chief/",
+        "embed_id": "1s4dpkj",
+        "title": "Israel says it has killed Iran's navy chief overseeing Strait of Hormuz blockade"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1s3nnc1/israel_drops_a_bomb_on_displaced_palestinians/",
+        "embed_id": "1s3nnc1",
+        "title": "Israel drops a bomb on displaced Palestinians living in tents in Gaza. 1 killed and 7 wounded"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s3ols0/israel_fears_donald_trump_could_announce_iran/",
+        "embed_id": "1s3ols0",
+        "title": "Israel fears Donald Trump could announce Iran ceasefire despite low deal odds"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s43olh/uganda_will_join_iran_war_on_the_side_of_israel/",
+        "embed_id": "1s43olh",
+        "title": "Uganda will join Iran war 'on the side of Israel,' military chief warns | The Jerusalem Post"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s498x1/israel_says_killed_irgc_navy_chief_alireza/",
+        "embed_id": "1s498x1",
+        "title": "Israel says killed IRGC Navy Chief Alireza Tangsiri, man behind Hormuz Strait closure"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s4ak52/irgc_navy_commander_alireza_tangsiri_was_killed/",
+        "embed_id": "1s4ak52",
+        "title": "IRGC Navy commander Alireza Tangsiri was killed in an Israeli airstrike in Bandar Abbas after a building collapsed on him and his men."
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=h6kRNXWbaEg",
+        "embed_id": "h6kRNXWbaEg",
+        "title": "Israel’s defence minister says Iranian naval commander Alireza Tangsiri killed",
+        "channel": "Al Jazeera English",
+        "duration": 147
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ZT47rkFHL2Q",
+        "embed_id": "ZT47rkFHL2Q",
+        "title": "Israel says it killed Iranian navy chief responsible for closing Strait of Hormuz",
+        "channel": "The Washington Examiner",
+        "duration": 89
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=XCU5KcLjDho",
+        "embed_id": "XCU5KcLjDho",
+        "title": "Israel kills head of Iranian Revolutionary Guard's navy",
+        "channel": "Associated Press",
+        "duration": 34
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s4dpkj/israel_says_it_has_killed_irans_navy_chief/",
+        "embed_id": "1s4dpkj",
+        "title": "Israel says it has killed Iran's navy chief overseeing Strait of Hormuz blockade"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1s3nnc1/israel_drops_a_bomb_on_displaced_palestinians/",
+        "embed_id": "1s3nnc1",
+        "title": "Israel drops a bomb on displaced Palestinians living in tents in Gaza. 1 killed and 7 wounded"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s3ols0/israel_fears_donald_trump_could_announce_iran/",
+        "embed_id": "1s3ols0",
+        "title": "Israel fears Donald Trump could announce Iran ceasefire despite low deal odds"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s43olh/uganda_will_join_iran_war_on_the_side_of_israel/",
+        "embed_id": "1s43olh",
+        "title": "Uganda will join Iran war 'on the side of Israel,' military chief warns | The Jerusalem Post"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s498x1/israel_says_killed_irgc_navy_chief_alireza/",
+        "embed_id": "1s498x1",
+        "title": "Israel says killed IRGC Navy Chief Alireza Tangsiri, man behind Hormuz Strait closure"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s4ak52/irgc_navy_commander_alireza_tangsiri_was_killed/",
+        "embed_id": "1s4ak52",
+        "title": "IRGC Navy commander Alireza Tangsiri was killed in an Israeli airstrike in Bandar Abbas after a building collapsed on him and his men."
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-26.png"
+  }
+]
