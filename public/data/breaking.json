@@ -1,10 +1,213 @@
 [
   {
+    "topic": "Iran Mobilises Over 1 Million Fighters",
+    "summary": "Iran has reportedly mobilized over 1 million fighters in anticipation of a potential ground war with the United States. This military buildup is causing alarm over the possibility of escalating tensions and a large-scale conflict in the region.",
+    "severity": "critical",
+    "detected_at": "2026-03-26T19:26:46.535Z",
+    "last_updated": "2026-03-26T19:26:46.535Z",
+    "left_narrative": "Left-leaning media highlights the aggressive military posture of Iran as a response to U.S. provocations and sanctions. They emphasize the need for diplomatic solutions to avoid a catastrophic conflict, criticizing the U.S. administration's hardline stance that they argue exacerbates tensions.",
+    "right_narrative": "Right-leaning media portrays Iran's mobilization as a direct threat to U.S. interests and allies in the region. They argue that this move justifies a strong military response from the U.S. to deter Iranian aggression and protect regional stability.",
+    "what_they_arent_telling_you": "Neither side is discussing the economic implications of such a conflict, particularly how it would affect global oil markets and economies dependent on Middle Eastern oil. The potential for a war could lead to significant disruptions in oil supply, impacting global prices and economies worldwide.",
+    "social_summary": "Social media is abuzz with speculation and fear-mongering about an impending World War III. Memes and viral posts compare the situation to historical conflicts, while conspiracy theories suggest ulterior motives behind the U.S. and Iran's actions, including control over oil resources.",
+    "image_prompt": "A dramatic scene of a vast desert landscape with a line of silhouetted soldiers stretching into the horizon, under a sky filled with ominous storm clouds, symbolizing the looming threat of conflict.",
+    "sources": [
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQVJoc2hNTTAzZlljZjRxbkw5bFJKMlhMc2Y4bC1YTE1IUUlsU0FBVGhTQlpSdUZsZVF5c2hJUHJEeXQ5SGw4UVVQd21pR3p3MzczRGR6XzRRdE1hZUxKbkhHdnJoYzlHVE1jMV9jVlV1Mk9jTTRaWElJMUN5cER4WThxa0Rxd2p3VWdxNHFfaGdpSlhxVENvdUNVVVpPNEYyQ1dMRnViSWdDQy1wSG8zWnlUbWFjb0U?oc=5",
+        "title": "Iran’s 'Tehran toll' booth forces some tankers to pay millions to leave Strait of Hormuz - NBC News"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNS1R1UmkwSUZWcWNJS1A4VmQ2QlRQek14TVRGUFJULU50cUotOGhyMWU0UENqaDlUdDA5SXp4RV9vTTFiLUVmdmcxcUc5X1ZWV0doSGYtdWI2SktaM0pjQ2FWTUVsVGhGZGFBTG1zSldvQU52bzN6UGE2RkZRdmFtVlZIZEo1bWdnZ2pjYWd4c0l6a05waVJRR0phUUhBcG0tbW1vREJyb1k2bndsZXFCSTlyc1BvTDBlYTRNVQ?oc=5",
+        "title": "Costa Rica to accept 25 'third country' deportees from US every week - ClickOnDetroit | WDIV Local 4"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQeHFibk1lWDhLTHEzX1kwcV9lX2Y4bU5od3FUSjRVNTJkZVJiOE1kS0N0amRscWNsYTNwU3A2Mm11dUpSWGZHZ1R1TV9LaHJZcnhkc1prbDJBWEV0dXdFRkV0dWRfdC1qajhYbDREaUtRTkFod21QX2s0SDNtempXZDJTOFZVZ1YwdnNBRHhkQjdSQmtuYlltUWxqczZWdHZYQlJ4R1NWV3JfTFBiUEs0UVh6TF9vSjFrbWhyRV9xMmlaWV9QVWF0RldzYlRVQXZDeExCMXRHM2FSUdIB4gFBVV95cUxNSmZ0ZTZhYXVmcC1lUzNXWFk3SWpkeWlNNGZIY0JZZkVySUZ5RS1HZWJQV1ltbHE4Z29iQlFfZVU4UThMSUpXME1raFJreFREZ3hrclhHcDdKTXZlb3VCSGluX1dOd0c5dUZqMEJGTXl2Wk1KaWZhcVdlbjhmZV8tRkJqR0ltam5lTVNmbUFBa1o5REFoWnloa0JMalZDUVg4SmpwSVFzSHQycHdTNjRLQXd3VnhMZ0tiQkt6c0VyM0UyZ1dfWE9CVEFKbEp6TFdQVDhRbGl4OUxDZ29yNXNCOV9R?oc=5",
+        "title": "Iran Mobilises Over 1 Million Fighters For Possible Ground War With US: Report - NDTV"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NZFNZQUw3NGJ0Yk5DT3FuTXU4VGJLTFFDZkVGYlY4elhFdkwtdWNzYWRnVzlRV2ZHWUtNcjh3YzVKLWFIblY2M3AwaEw0eEJsYnRadDlBY1c0eVVTbmhOR2lLUUVnSDlyQ1o5NkRUXzBQUk9zcWppR3RUZw?oc=5",
+        "title": "Live updates: Iran war; Trump casts doubt on prospect of an Iran deal - CNN"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbFVQRWVyYmFzQ1BIUWZjdkkyYzFDaWJ4ZElaa1lrcmVOVHpRQnVZNjh3cEtHaUxKQ2JDX0x3WnlWbEctMjM0WERXMzVzZ3hPYnItdUwwazBacDFUQjVKdVNmbWRuR1hvX290QmwyY21xNmZ2TUctV3hpaGdXeG9GN3N4OVdMVExwajRvajJUMEZwNlMwQTNLam1VdkgtVzRpWGszeTJJemtFbjExR3hJeFFWT1dybmpxTFE1SlRNQ1hMUThQYWlj?oc=5",
+        "title": "Middle East crisis live: Trump claims Iran ‘begging to make a deal’ and has let some tankers through strait as a ‘present’ - The Guardian"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE01bWluNWNBR0lrRnNueUpLLTkzSXhOXzdZdWxDNkJHQzd1WDNMaDNTR1FRbVFoZFY5WThrZFlwMnN6QVNRaU5TTGtObEFWTTlsZ0RvNUhGbw?oc=5",
+        "title": "World News in Brief, Cuba blockade hits healthcare, Haiti’s ‘vortex of violence’, deadly Djibouti shipwreck - UN News"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c4g8wxyq7v5o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "US prosecutors argue Maduro 'plundered' Venezuelan wealth in court battle over legal fees"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cx2r4wxdw3no?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Zelensky visits Saudi Arabia after offering Ukraine's drone expertise"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w3ez3xp92o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Sarah Ferguson stripped of Freedom of City of York title"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c9d45y66g78o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Nottingham victims' families 'tortured' by authorities, inquiry told"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w38qvz195o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "More than 13 million living in poverty, new figures show"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c9d45ejxz5qo?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Man who confronted Al Jazeera journalists was Met Police special constable"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cq8wkq1n9epo?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Rationing power and diluting petrol - how African countries are coping with effects of Iran war"
+      },
+      {
+        "name": "CNN",
+        "url": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html",
+        "title": "Trump pleads not guilty to 34 felony counts"
+      },
+      {
+        "name": "CNN",
+        "url": "https://cnn.it/411KYN7",
+        "title": "READ: Trump indictment related to hush money payment"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cy81p99x07no?at_medium=RSS&amp;at_campaign=rss",
+        "lean": "center",
+        "title": "Israel says it has killed Iran's navy chief overseeing Strait of Hormuz blockade"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/trump-says-iran-lousy-fighters-but-great?traffic_source=rss",
+        "lean": "center",
+        "title": "Trump says Iran ‘lousy fighters but great negotiators’"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CombatIndia/comments/1s40nm5/annual_revenue_of_wnba_is_around_300_million_usd/",
+        "embed_id": "1s40nm5",
+        "title": "Annual revenue of wnba is around 300 million usd and has around 270 atheletes under contract and ufc's annual revenue is 1.4 billion usd and has aroun"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/offmychest/comments/1s4bl08/the_us_is_preparing_for_a_draft_and_i_am/",
+        "embed_id": "1s4bl08",
+        "title": "the US is preparing for a draft and I am devastated"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/australian/comments/1s3onyq/implications_of_the_iran_war_on_australias_fuel/",
+        "embed_id": "1s3onyq",
+        "title": "Implications of the Iran war on Australia's fuel supplies. Three scenarios [mod approved]"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ufc/comments/1s3psz8/im_glad_this_is_happening_ufc_fighters_are_to/",
+        "embed_id": "1s3psz8",
+        "title": "I'm glad this is happening ufc fighters are to dumb and scared to unionize"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BhartiyaStockMarket/comments/1s3w3i6/iran_says_it_could_shut_the_vital_bab_elmandeb/",
+        "embed_id": "1s3w3i6",
+        "title": "Iran says it could shut the vital Bab el-Mandeb Strait if attacks are carried out on its territory or islands!"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskConservatives/comments/1s3pgl7/do_you_think_accepting_irans_control_of_the/",
+        "embed_id": "1s3pgl7",
+        "title": "Do you think accepting Iran's control of the Strait of Hormuz in exchange for peace terms can be a victory for the US?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/oil/comments/1s3vki9/40_of_russias_oil_export_capacity_is_halted_2m/",
+        "embed_id": "1s3vki9",
+        "title": "40% of Russia's oil export capacity is halted (2M bpd) due to attacks on infrastructure"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProjectZeroPoint/comments/1s3myt1/the_arithmetic_of_attrition_why_this_war_is/",
+        "embed_id": "1s3myt1",
+        "title": "The Arithmetic of Attrition: Why This War Is Becoming More Expensive Than It Looks"
+      }
+    ],
+    "youtube_videos": [],
+    "social_clips": [
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CombatIndia/comments/1s40nm5/annual_revenue_of_wnba_is_around_300_million_usd/",
+        "embed_id": "1s40nm5",
+        "title": "Annual revenue of wnba is around 300 million usd and has around 270 atheletes under contract and ufc's annual revenue is 1.4 billion usd and has aroun"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/offmychest/comments/1s4bl08/the_us_is_preparing_for_a_draft_and_i_am/",
+        "embed_id": "1s4bl08",
+        "title": "the US is preparing for a draft and I am devastated"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/australian/comments/1s3onyq/implications_of_the_iran_war_on_australias_fuel/",
+        "embed_id": "1s3onyq",
+        "title": "Implications of the Iran war on Australia's fuel supplies. Three scenarios [mod approved]"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ufc/comments/1s3psz8/im_glad_this_is_happening_ufc_fighters_are_to/",
+        "embed_id": "1s3psz8",
+        "title": "I'm glad this is happening ufc fighters are to dumb and scared to unionize"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BhartiyaStockMarket/comments/1s3w3i6/iran_says_it_could_shut_the_vital_bab_elmandeb/",
+        "embed_id": "1s3w3i6",
+        "title": "Iran says it could shut the vital Bab el-Mandeb Strait if attacks are carried out on its territory or islands!"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskConservatives/comments/1s3pgl7/do_you_think_accepting_irans_control_of_the/",
+        "embed_id": "1s3pgl7",
+        "title": "Do you think accepting Iran's control of the Strait of Hormuz in exchange for peace terms can be a victory for the US?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/oil/comments/1s3vki9/40_of_russias_oil_export_capacity_is_halted_2m/",
+        "embed_id": "1s3vki9",
+        "title": "40% of Russia's oil export capacity is halted (2M bpd) due to attacks on infrastructure"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProjectZeroPoint/comments/1s3myt1/the_arithmetic_of_attrition_why_this_war_is/",
+        "embed_id": "1s3myt1",
+        "title": "The Arithmetic of Attrition: Why This War Is Becoming More Expensive Than It Looks"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-26.png"
+  },
+  {
     "topic": "Iranian Missiles Strike Israel",
     "summary": "Iran has launched missiles into Israel, causing significant damage and escalating tensions in the Middle East. This military action represents a serious development in the ongoing conflict between the two nations, with potential consequences for regional stability and international relations.",
     "severity": "critical",
     "detected_at": "2026-03-26T19:15:29.639Z",
-    "last_updated": "2026-03-26T19:15:29.639Z",
+    "last_updated": "2026-03-26T10:00:00.000Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
     "what_they_arent_telling_you": "The broader geopolitical implications of this attack are not being fully explored. This missile strike could be a strategic move by Iran to assert dominance in the region and challenge U.S. influence. Additionally, the economic ramifications, such as potential disruptions to oil markets and global trade routes, are not being addressed.",
@@ -158,69 +361,6 @@
         "duration": 30
       },
       {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@abcnews/video/7621554392428268831",
-        "embed_id": "7621554392428268831",
-        "title": "Iran launched fives waves of ballistic missiles toward Israel within two hours on Thursday morning. Missiles were intercepted in Bahrain, Saudia Arabi",
-        "author": "abcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUSZNKBpEiAmIYB4RAiKAMBAi3pXfK1F0S1DAo~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=yhmlc5NBJbCN0yiUHnjplC9L5E8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 38
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@cbsnews/video/7621567376563211533",
-        "embed_id": "7621567376563211533",
-        "title": "Surveillance footage captured the moment an Iranian strike sent a car flying into the air in Israel just seconds after two people narrowly escaped the",
-        "author": "cbsnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/owAzIi89zc4YBPBg8UpaFGEDQAiUzRDqjIiPz~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/owAATIAaF0pAYKUPwoiiCixERDzB1geS9EfDqH.image?dr=9634&x-expires=1774724400&x-signature=nPDToRiLbiBW8ERpXbhEPMD%2FX%2Bc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 14
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@bbcnews/video/7621477260171693334",
-        "embed_id": "7621477260171693334",
-        "title": "Six people were injured after a missile attack on central Israel, the country's emergency service said. The military said the missiles were launched f",
-        "author": "bbcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEhKTq7YcQBIAiWtocCWlKvip7gDB9aAAEAEA~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=id3eYVJj%2BxVJSfbbRNLc3%2F8wFOw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 17
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@nbcnews/video/7621523980381408525",
-        "embed_id": "7621523980381408525",
-        "title": "Remnants of an Iranian missile hit a neighborhood near Tel Aviv in #Israel.",
-        "author": "nbcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o4GImLKxIlfEkfiExKnGeHUr8ZALAAiAAZmTQP~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=kXVrORANpnwEsTwhis5wn3HySDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 18
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@c4news/video/7621150054388108566",
-        "embed_id": "7621150054388108566",
-        "title": "‘We just want to wake up in the morning and not be afraid for our lives.\n\nIn the wreckage caused by an Iranian missile, Israelis speak to Channel 4 Ne",
-        "author": "c4news",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEPpDBDwDY1A8poiAEDBwtBPiaAGAc06IJEwE~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=9iqNJ3AkD6trJXSX0B4lNorrCGg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 71
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@cnn/video/7620753517510151438",
-        "embed_id": "7620753517510151438",
-        "title": "According to Israel’s emergency response service, Iranian missile attacks overnight hit at least four sites across Tel Aviv, with six people reported ",
-        "author": "cnn",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUTJkWEtlCjBLJXDXHQAAueUfhgrAo8edbtMQB~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=Hn78KlN4wMmQcN7sDIG3QI1oMbo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 20
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@news.com.au/video/7620994441511243015",
-        "embed_id": "7620994441511243015",
-        "title": "Surfers in Tel Aviv were enjoying a wind swell when incoming Iranian missiles started landing in the ocean nearby. #israel #iran🇮🇷 #telaviv ",
-        "author": "news.com.au",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oA5RfwEDKAItpDchEsYaNJgEDfAjFBAIKCApzI~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=BOGP9IhgCm2Q6oPxmyxy0B72kN4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 49
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/anime_titties/comments/1s42rby/israel_races_to_hit_iran_hard_while_it_still_can/",
         "embed_id": "1s42rby",
@@ -310,69 +450,6 @@
         "author": "intelslava",
         "thumbnail": "https://cdn5.telesco.pe/file/klr-O9zDBjGJfsmhBMWi9asMEL2yzdiHI5uYBpn7kPNf3stBx3eIKLOe0a76INqvHPn2v99m2nED1vUSBvF8pB_gkkqcgh_glt0IPnZrv11rTk5REeVboYeEySqnPF-xvPwlBfiPHC5zd4MdI6StNxES1_WgkyHK36dfF2pk8WukdT56BX0k_DV3lKJ2UA8E5Mtnzz39YQ3go52Z5h5kny9BggitNeDeq0gDX-hYBdNDvdwdWrT9QnfxC6X3eS5eA_Juqmy97cSiy88ZztTbwTBYdCjUaSnl1S6SGfmP_s55oMJaMYsvODKdyj_TlCE64bm8LlA8u3f95P9GBZeCVw'",
         "duration": 30
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@abcnews/video/7621554392428268831",
-        "embed_id": "7621554392428268831",
-        "title": "Iran launched fives waves of ballistic missiles toward Israel within two hours on Thursday morning. Missiles were intercepted in Bahrain, Saudia Arabi",
-        "author": "abcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUSZNKBpEiAmIYB4RAiKAMBAi3pXfK1F0S1DAo~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=yhmlc5NBJbCN0yiUHnjplC9L5E8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 38
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@cbsnews/video/7621567376563211533",
-        "embed_id": "7621567376563211533",
-        "title": "Surveillance footage captured the moment an Iranian strike sent a car flying into the air in Israel just seconds after two people narrowly escaped the",
-        "author": "cbsnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/owAzIi89zc4YBPBg8UpaFGEDQAiUzRDqjIiPz~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/owAATIAaF0pAYKUPwoiiCixERDzB1geS9EfDqH.image?dr=9634&x-expires=1774724400&x-signature=nPDToRiLbiBW8ERpXbhEPMD%2FX%2Bc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 14
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@bbcnews/video/7621477260171693334",
-        "embed_id": "7621477260171693334",
-        "title": "Six people were injured after a missile attack on central Israel, the country's emergency service said. The military said the missiles were launched f",
-        "author": "bbcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEhKTq7YcQBIAiWtocCWlKvip7gDB9aAAEAEA~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=id3eYVJj%2BxVJSfbbRNLc3%2F8wFOw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 17
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@nbcnews/video/7621523980381408525",
-        "embed_id": "7621523980381408525",
-        "title": "Remnants of an Iranian missile hit a neighborhood near Tel Aviv in #Israel.",
-        "author": "nbcnews",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o4GImLKxIlfEkfiExKnGeHUr8ZALAAiAAZmTQP~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=kXVrORANpnwEsTwhis5wn3HySDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 18
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@c4news/video/7621150054388108566",
-        "embed_id": "7621150054388108566",
-        "title": "‘We just want to wake up in the morning and not be afraid for our lives.\n\nIn the wreckage caused by an Iranian missile, Israelis speak to Channel 4 Ne",
-        "author": "c4news",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEPpDBDwDY1A8poiAEDBwtBPiaAGAc06IJEwE~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=9iqNJ3AkD6trJXSX0B4lNorrCGg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 71
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@cnn/video/7620753517510151438",
-        "embed_id": "7620753517510151438",
-        "title": "According to Israel’s emergency response service, Iranian missile attacks overnight hit at least four sites across Tel Aviv, with six people reported ",
-        "author": "cnn",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUTJkWEtlCjBLJXDXHQAAueUfhgrAo8edbtMQB~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=Hn78KlN4wMmQcN7sDIG3QI1oMbo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 20
-      },
-      {
-        "platform": "tiktok",
-        "url": "https://www.tiktok.com/@news.com.au/video/7620994441511243015",
-        "embed_id": "7620994441511243015",
-        "title": "Surfers in Tel Aviv were enjoying a wind swell when incoming Iranian missiles started landing in the ocean nearby. #israel #iran🇮🇷 #telaviv ",
-        "author": "news.com.au",
-        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oA5RfwEDKAItpDchEsYaNJgEDfAjFBAIKCApzI~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=BOGP9IhgCm2Q6oPxmyxy0B72kN4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-        "duration": 49
       },
       {
         "platform": "reddit",
