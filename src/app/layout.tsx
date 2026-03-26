@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     default: "CVRD News — Your Streaming Platform to Cover the News",
     template: "%s | CVRD News",
   },
-  description: "The news, unfiltered. Daily video briefings covering world news, politics, markets, crypto, tech, and culture from 36+ sources across the political spectrum. Every side. Every source. You decide.",
+  description: "The news, unfiltered. Daily video briefings covering world news, politics, markets, and trending stories from 36+ sources across the political spectrum. Every side. Every source. You decide.",
   keywords: ["news", "unfiltered news", "daily news", "breaking news", "world news", "politics", "media bias", "both sides", "video news", "news today", "covered news", "CVRD"],
   authors: [{ name: "CVRD News" }],
   creator: "CVRD News",

@@ -10,10 +10,9 @@ const CHANNELS = [
   { id: 'daily', label: 'Daily Pick', sub: 'Today\'s top stories', color: '#3b82f6' },
   { id: 'world', label: 'World', sub: 'Global affairs', color: '#60a5fa' },
   { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#818cf8' },
-  { id: 'markets-crypto', label: 'Markets', sub: 'Crypto & finance', color: '#38bdf8' },
-  { id: 'tech-ai', label: 'Tech & AI', sub: 'The frontier', color: '#93c5fd' },
-  { id: 'culture', label: 'Culture', sub: 'Society & stories', color: '#a5b4fc' },
-  { id: 'unfiltered', label: 'Unfiltered', sub: 'What they won\'t cover', color: '#7dd3fc' },
+  { id: 'markets', label: 'Markets', sub: 'Economy & finance', color: '#38bdf8' },
+  { id: 'sports', label: 'Sports', sub: 'The game behind the game', color: '#34d399' },
+  { id: 'culture', label: 'Trending', sub: 'What everyone is talking about', color: '#a5b4fc' },
 ] as const;
 
 export function TVClient({
@@ -289,7 +288,7 @@ export function TVClient({
         </button>
         <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.08)' }} />
         <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-8 animate-[ticker_180s_linear_infinite] whitespace-nowrap pl-4">
+          <div className="flex items-center gap-8 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
             {[...stories, ...stories, ...stories].map((s, i) => (
               <span key={i} className="flex items-center gap-2 shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: channel.color }} />
@@ -500,7 +499,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
 
         {/* Ticker */}
         <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-8 animate-[ticker_120s_linear_infinite] whitespace-nowrap pl-4">
+          <div className="flex items-center gap-8 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
             {[...breakingStories, ...breakingStories, ...breakingStories].map((s, i) => (
               <span key={i} className="flex items-center gap-2 shrink-0">
                 <span className="w-1.5 h-1.5 rounded-full bg-red-500" />

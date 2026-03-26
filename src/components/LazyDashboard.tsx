@@ -31,7 +31,7 @@ export function LazyDashboard({ stories }: { stories: NarrativeGap[] }) {
           <Dashboard stories={stories} />
         </ErrorBoundary>
       ) : (
-        <div style={{ height: 'calc(100vh - 104px)', background: '#1e2a3a' }} />
+        <div style={{ height: 'calc(100vh - 76px)', background: '#1e2a3a' }} />
       )}
     </div>
   );

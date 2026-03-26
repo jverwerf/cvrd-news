@@ -112,9 +112,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   return (
     <div>
       {/* DASHBOARD with arrows + timeline */}
-      <div className="relative" style={{ height: 'calc(100vh - 104px)', display: 'flex', flexDirection: 'column' }}>
+      <div className="relative" style={{ height: 'calc(100vh - 76px)', display: 'flex', flexDirection: 'column' }}>
         {/* MINI THUMBNAIL TIMELINE — same width as below, shorter height */}
-        <div className="flex items-center gap-0 px-1 py-0.5" style={{ background: '#0a0f18' }}>
+        <div className="flex items-center gap-0 px-1 py-0.5" style={{ background: '#000000' }}>
         <style>{`
           .story-thumb-mini:hover { width: 280px !important; opacity: 1 !important; }
           .story-thumb-mini:hover .story-thumb-mini-img { height: 60px !important; }
@@ -366,10 +366,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         {/* UNFILTERED */}
         <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <div className="flex items-center gap-2 mb-3">
-            <div className="w-5 h-5 rounded-full bg-[#b8860b] flex items-center justify-center">
-              <span className="text-white text-[10px] font-bold">!</span>
-            </div>
-            <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
           </div>
           {sentences.length > 1 ? (
             <div className="space-y-2.5">
@@ -386,7 +384,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           {story.social_summary && (
             <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-[14px]">💬</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                 <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
               </div>
               <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>

@@ -407,7 +407,7 @@ export function Dashboard({
   }, []);
 
   return (
-    <section style={{ background: '#1e2a3a', height: tvMode ? '100%' : 'calc(100vh - 104px)', overflow: 'hidden' }}>
+    <section style={{ background: '#1e2a3a', height: tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
       <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
 
         {/* ROW 1 */}
@@ -782,6 +782,12 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
       <div className="absolute inset-0">
         <TileContentRenderer item={current} />
       </div>
+
+      {/* Glass emboss overlay */}
+      <div className="absolute inset-0 pointer-events-none rounded-xl" style={{
+        background: 'linear-gradient(145deg, rgba(120,160,220,0.15) 0%, rgba(30,42,58,0.05) 40%, rgba(0,0,0,0.2) 100%)',
+        boxShadow: 'inset 1px 1px 1px rgba(255,255,255,0.08), inset -1px -1px 2px rgba(0,0,0,0.3)',
+      }} />
 
       {/* Hover overlay with actions (hidden in TV mode) */}
       {!tvMode && <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"

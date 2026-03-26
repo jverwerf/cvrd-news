@@ -3,7 +3,6 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-dynamic';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const categories = ['world', 'politics', 'markets-crypto', 'tech-ai', 'culture', 'unfiltered'];
   const baseUrl = 'https://cvrdnews.com';
 
   // Generate story slugs from today's data without importing filesystem-heavy stories.ts
@@ -39,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
   } catch {}
+
+  const categories = ['world', 'politics', 'markets', 'sports', 'culture'];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'daily', priority: 1 },
