@@ -1,0 +1,138 @@
+{
+  "handle": "marcorubio",
+  "name": "Marco Rubio",
+  "role": "Senator",
+  "party": "Republican",
+  "country": "US",
+  "state": "Florida",
+  "tags": [
+    "Christian",
+    "Father",
+    "American",
+    "GatorNation",
+    "FinsUp",
+    "US Politics",
+    "Trump Administration",
+    "Ukraine",
+    "Foreign Policy"
+  ],
+  "photo_prompt": "Marco Rubio, middle-aged Hispanic man with short dark hair and a friendly smile, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "authored",
+    "peace",
+    "proposal",
+    "negotiations",
+    "based",
+    "input",
+    "russia",
+    "ukraine.",
+    "military",
+    "conducted",
+    "lethal",
+    "strike",
+    "southern",
+    "caribbean",
+    "against",
+    "vessel",
+    "operated",
+    "designated",
+    "narco-terrorist",
+    "organization.",
+    "ended",
+    "direct",
+    "involvement",
+    "president",
+    "united",
+    "states.",
+    "heavily",
+    "involved",
+    "discussions",
+    "israel,"
+  ],
+  "prominence": 34,
+  "followers": 5048016,
+  "overall_score": 68.7,
+  "confidence_interval": 7.9,
+  "verified_claims": 134,
+  "true_count": 43,
+  "somewhat_misleading_count": 63,
+  "misleading_count": 23,
+  "false_count": 5,
+  "pending_count": 45,
+  "dropped_count": 4,
+  "domains": {
+    "foreign_policy": {
+      "score": 73.6,
+      "count": 58,
+      "true": 24,
+      "somewhat_misleading": 25,
+      "misleading": 7,
+      "false": 2
+    },
+    "military": {
+      "score": 76.7,
+      "count": 3,
+      "true": 1,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 76.7,
+      "count": 3,
+      "true": 1,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 62.4,
+      "count": 43,
+      "true": 9,
+      "somewhat_misleading": 21,
+      "misleading": 12,
+      "false": 1
+    },
+    "economics": {
+      "score": 62.2,
+      "count": 9,
+      "true": 3,
+      "somewhat_misleading": 4,
+      "misleading": 0,
+      "false": 2
+    },
+    "other": {
+      "score": 72.7,
+      "count": 15,
+      "true": 5,
+      "somewhat_misleading": 8,
+      "misleading": 2,
+      "false": 0
+    },
+    "legal": {
+      "score": 35,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    },
+    "politics": {
+      "score": 35,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    },
+    "education": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:22:47.754Z"
+}

@@ -5,12 +5,11 @@ import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { StoryViewer } from "@/components/StoryViewer";
 
 const CATEGORY_META: Record<string, { title: string; description: string }> = {
-  'world': { title: 'World News', description: 'Unfiltered world news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
+  'world': { title: 'World News', description: 'World news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
   'politics': { title: 'Politics', description: 'Political news without the spin. Coverage from left, right, and international outlets so you get the full picture.' },
-  'markets-crypto': { title: 'Markets & Crypto', description: 'Financial markets, cryptocurrency, and economic news. Bitcoin, stocks, oil — analysis from every angle.' },
-  'tech-ai': { title: 'Tech & AI', description: 'Technology and artificial intelligence news. From startups to Big Tech, covered without bias.' },
-  'culture': { title: 'Culture', description: 'Entertainment, sports, and cultural news. The stories shaping society today.' },
-  'unfiltered': { title: 'Unfiltered', description: 'The stories mainstream media won\'t touch. Investigations, conspiracies debunked, and the news behind the news.' },
+  'markets': { title: 'Markets', description: 'Financial markets and economic news. Stocks, oil, jobs, inflation — analysis from every angle.' },
+  'sports': { title: 'Sports', description: 'Sports news from every angle. Football, basketball, soccer, F1, UFC, transfers, results, and the stories behind the game.' },
+  'culture': { title: 'Trending', description: 'What everyone is talking about. Viral moments, entertainment, sports, and the stories shaping the conversation right now.' },
 };
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
@@ -27,10 +26,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'world': { label: 'World', slug: 'world' },
   'politics': { label: 'Politics', slug: 'politics' },
-  'markets-crypto': { label: 'Markets & Crypto', slug: 'markets-crypto' },
-  'tech-ai': { label: 'Tech & AI', slug: 'tech-ai' },
-  'culture': { label: 'Culture', slug: 'culture' },
-  'unfiltered': { label: 'Unfiltered', slug: 'unfiltered' },
+  'markets': { label: 'Markets', slug: 'markets' },
+  'sports': { label: 'Sports', slug: 'sports' },
+  'culture': { label: 'Trending', slug: 'culture' },
 };
 
 const ALL_CATS = Object.values(CATEGORIES);
@@ -66,7 +64,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         {/* 1. CATEGORY NAV */}
         <div className="relative" style={{ background: '#1e2a3a' }}>
-          <div className="h-12 flex items-center overflow-x-auto pr-20" style={{ scrollbarWidth: 'none' }}>
+          <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
               {isBreaking && (
                 <a href="/breaking"
@@ -76,7 +74,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   Breaking
                 </a>
               )}
-              {[{ label: 'Daily Pick', slug: '/' }, ...Object.values(CATEGORIES)].map((c) => (
+              {[{ label: 'Daily Pick', slug: '/' }, { label: 'On Record', slug: 'onrecord' }, ...Object.values(CATEGORIES)].map((c) => (
                 <a key={c.slug} href={c.slug === '/' ? '/' : `/${c.slug}`}
                   className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
                   style={{
@@ -86,23 +84,20 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   {c.label}
                 </a>
               ))}
-            </div>
-          </div>
-          <div className="absolute right-0 top-0 h-12 flex items-center pl-8 pr-2"
-            style={{ background: 'linear-gradient(to right, transparent, #1e2a3a 30%)' }}>
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
-              style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
-              <a href="/tv" className="flex items-center"
-                style={{ color: 'rgba(255,255,255,0.5)' }}>
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-                </svg>
-              </a>
-              <span style={{ width: '1px', height: '12px', background: 'rgba(255,255,255,0.25)', display: 'block' }} />
-              <a href="/show" className="flex items-center transition-opacity hover:opacity-80"
-                title="Watch the daily show">
-                <img src="/logo-outline.png" alt="CVRD" style={{ height: '13px', opacity: 0.5, filter: 'brightness(0) invert(1)' }} />
-              </a>
+              {/* Icons pill — inline after categories */}
+              <div className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
+                style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                <a href="/tv" className="flex items-center" style={{ color: 'rgba(255,255,255,0.5)', transform: 'translateY(-1px)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+                  </svg>
+                </a>
+                <span style={{ width: '1px', height: '12px', background: 'rgba(255,255,255,0.25)', display: 'block' }} />
+                <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer" className="flex items-center transition-opacity hover:opacity-80"
+                  title="CVRD on YouTube" style={{ color: 'rgba(255,255,255,0.5)' }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -111,9 +106,26 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
       </div>
 
-      {/* LOGO */}
-      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 pointer-events-none"
-        style={{ top: '36px', transform: 'translateX(-50%)', height: '68px', zIndex: 101, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.5))' }} />
+      {/* CVRD puzzle logo */}
+      <div className="fixed left-1/2 pointer-events-none" style={{ top: '51px', transform: 'translateX(-50%)', zIndex: 101, filter: 'drop-shadow(0 0 15px rgba(0,0,0,0.4))' }}>
+        <div className="flex gap-[1px]">
+          {['C','V','R','D'].map((letter, i) => (
+            <div key={letter} style={{
+              width: 26, height: 26,
+              background: i % 2 === 0 ? '#1a2a3a' : '#253545',
+              borderRadius: 2,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: 'Georgia, serif', fontSize: 13, fontWeight: 700,
+              color: '#e0e0e0',
+              clipPath: i === 0
+                ? 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%)'
+                : i === 3
+                ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)'
+                : 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)',
+            }}>{letter}</div>
+          ))}
+        </div>
+      </div>
 
       {/* STORY VIEWER */}
       {displayStories.length > 0 ? (

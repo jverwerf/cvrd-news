@@ -1,0 +1,138 @@
+{
+  "handle": "JDVance",
+  "name": "JD Vance",
+  "role": "Vice President of the United States",
+  "party": "Republican",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "Christian",
+    "family",
+    "fraud prevention",
+    "election security",
+    "Trump administration",
+    "military support",
+    "Ohio",
+    "Turning Point",
+    "American values"
+  ],
+  "photo_prompt": "JD Vance, middle-aged man with short brown hair and a friendly smile, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "illegal",
+    "alien",
+    "fraudsters",
+    "criminals",
+    "scamming",
+    "americans",
+    "dollars.",
+    "appropriate",
+    "number",
+    "immigrants",
+    "voting",
+    "elections",
+    "zero.",
+    "biden",
+    "caused",
+    "inflation",
+    "crisis",
+    "donald",
+    "trump",
+    "fixing",
+    "taking",
+    "advantage",
+    "programs",
+    "medicaid.",
+    "president",
+    "administration",
+    "prioritize",
+    "needs",
+    "american",
+    "citizens"
+  ],
+  "prominence": 42,
+  "followers": 5328671,
+  "overall_score": 60.2,
+  "confidence_interval": 9.8,
+  "verified_claims": 95,
+  "true_count": 24,
+  "somewhat_misleading_count": 37,
+  "misleading_count": 26,
+  "false_count": 8,
+  "pending_count": 51,
+  "dropped_count": 2,
+  "domains": {
+    "economics": {
+      "score": 61.7,
+      "count": 23,
+      "true": 4,
+      "somewhat_misleading": 13,
+      "misleading": 5,
+      "false": 1
+    },
+    "domestic": {
+      "score": 58.8,
+      "count": 43,
+      "true": 12,
+      "somewhat_misleading": 14,
+      "misleading": 12,
+      "false": 5
+    },
+    "other": {
+      "score": 66.7,
+      "count": 6,
+      "true": 2,
+      "somewhat_misleading": 2,
+      "misleading": 2,
+      "false": 0
+    },
+    "legislation": {
+      "score": 53,
+      "count": 5,
+      "true": 1,
+      "somewhat_misleading": 2,
+      "misleading": 1,
+      "false": 1
+    },
+    "foreign_policy": {
+      "score": 63.6,
+      "count": 11,
+      "true": 4,
+      "somewhat_misleading": 3,
+      "misleading": 3,
+      "false": 1
+    },
+    "demographics": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 45,
+      "count": 3,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 2,
+      "false": 0
+    },
+    "politics": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "legal": {
+      "score": 50,
+      "count": 2,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:22:47.505Z"
+}

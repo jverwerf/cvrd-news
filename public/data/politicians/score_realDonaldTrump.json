@@ -1,0 +1,145 @@
+{
+  "handle": "realDonaldTrump",
+  "name": "Donald J. Trump",
+  "role": "Former President of the United States",
+  "party": "Republican",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "Trump",
+    "MAGA",
+    "Melania",
+    "America First",
+    "2024 Election",
+    "Politics",
+    "Businessman",
+    "Reality TV"
+  ],
+  "photo_prompt": "Donald J. Trump, a Caucasian male with distinctive hair, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "4.3%,",
+    "which",
+    "points",
+    "better",
+    "expected.",
+    "airspace",
+    "above",
+    "surrounding",
+    "venezuela",
+    "closed",
+    "entirety.",
+    "united",
+    "states",
+    "attend",
+    "south",
+    "africa",
+    "african",
+    "government's",
+    "refusal",
+    "address",
+    "human",
+    "rights",
+    "abuses",
+    "against",
+    "afrikaners",
+    "other",
+    "descendants",
+    "european",
+    "settlers.",
+    "asfura"
+  ],
+  "prominence": 39,
+  "followers": 0,
+  "overall_score": 44.7,
+  "confidence_interval": 12.3,
+  "verified_claims": 63,
+  "true_count": 10,
+  "somewhat_misleading_count": 15,
+  "misleading_count": 24,
+  "false_count": 14,
+  "pending_count": 43,
+  "dropped_count": 0,
+  "domains": {
+    "economics": {
+      "score": 45,
+      "count": 9,
+      "true": 0,
+      "somewhat_misleading": 3,
+      "misleading": 6,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 50.8,
+      "count": 6,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 4,
+      "false": 0
+    },
+    "domestic": {
+      "score": 37.8,
+      "count": 32,
+      "true": 4,
+      "somewhat_misleading": 6,
+      "misleading": 12,
+      "false": 10
+    },
+    "demographics": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "other": {
+      "score": 52.1,
+      "count": 7,
+      "true": 2,
+      "somewhat_misleading": 2,
+      "misleading": 1,
+      "false": 2
+    },
+    "legislation": {
+      "score": 50,
+      "count": 4,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 1
+    },
+    "military": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "politics": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "health": {
+      "score": 0,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 1
+    },
+    "healthcare": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:22:46.964Z"
+}

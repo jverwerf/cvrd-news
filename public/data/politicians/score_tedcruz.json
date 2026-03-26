@@ -1,0 +1,131 @@
+{
+  "handle": "tedcruz",
+  "name": "Ted Cruz",
+  "role": "U.S. Senator",
+  "party": "Republican",
+  "country": "US",
+  "state": "Texas",
+  "tags": [
+    "liberty",
+    "Texas",
+    "Republican",
+    "Senate",
+    "politics",
+    "shutdown",
+    "homeland security",
+    "foreign policy",
+    "radical left",
+    "Tucker Carlson"
+  ],
+  "photo_prompt": "Ted Cruz, middle-aged man with dark hair and a beard, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "smith",
+    "claimed",
+    "would",
+    "destroy",
+    "evidence",
+    "about",
+    "subpoena,",
+    "judge",
+    "signed",
+    "order.",
+    "department",
+    "homeland",
+    "security",
+    "weeks",
+    "crisis",
+    "man-made.",
+    "illegal",
+    "aliens",
+    "consistently",
+    "democrat.",
+    "senate",
+    "america",
+    "51-47.",
+    "americans",
+    "support",
+    "requiring",
+    "photo",
+    "vote.",
+    "naturalized",
+    "citizen"
+  ],
+  "prominence": 31,
+  "followers": 7089595,
+  "overall_score": 73.3,
+  "confidence_interval": 12.6,
+  "verified_claims": 47,
+  "true_count": 19,
+  "somewhat_misleading_count": 20,
+  "misleading_count": 7,
+  "false_count": 1,
+  "pending_count": 17,
+  "dropped_count": 1,
+  "domains": {
+    "other": {
+      "score": 93,
+      "count": 5,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 71.7,
+      "count": 18,
+      "true": 7,
+      "somewhat_misleading": 8,
+      "misleading": 2,
+      "false": 1
+    },
+    "legislation": {
+      "score": 82.5,
+      "count": 4,
+      "true": 2,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 66.4,
+      "count": 14,
+      "true": 4,
+      "somewhat_misleading": 6,
+      "misleading": 4,
+      "false": 0
+    },
+    "military": {
+      "score": 67.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    },
+    "economics": {
+      "score": 65,
+      "count": 2,
+      "true": 0,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "history": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "demographics": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:23:24.182Z"
+}

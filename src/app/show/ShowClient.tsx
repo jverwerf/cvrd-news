@@ -35,7 +35,7 @@ export function ShowClient({ episodes }: { episodes: Episode[] }) {
         <div className="px-6 md:px-12 py-20 text-center">
           <p className="text-[16px] text-white/30 mb-4">No episodes yet.</p>
           <p className="text-[13px] text-white/20">Episodes will appear here once published.</p>
-          <a href="https://www.youtube.com/@CoveredNews" target="_blank" rel="noreferrer"
+          <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer"
             className="inline-block mt-6 px-5 py-2.5 rounded-full text-[13px] font-semibold text-white transition-colors"
             style={{ background: '#ff0000' }}>
             Watch on YouTube →

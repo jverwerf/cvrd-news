@@ -1,0 +1,16 @@
+{
+  "headline": "Donald Trump on iran: 50% Truthful",
+  "person": {
+    "handle": "realDonaldTrump",
+    "name": "Donald J. Trump",
+    "role": "Former President of the United States",
+    "photo": "/data/politicians/photo_realDonaldTrump.png"
+  },
+  "story_topic": "US Troops Deployed to Middle East Amid Rising Tensions with Iran",
+  "search_keyword": "iran",
+  "topic_score": 50,
+  "overall_score": 42.7,
+  "matching_claims": 2,
+  "editorial": "Donald Trump is back in the spotlight as the U.S. deploys 2,000 troops to the Middle East in response to rising tensions with Iran. But a quick glance at Trump's record on Iran-related claims suggests a pattern of stretching the truth. Take his recent assertion that \"Iran-backed Houthi Terrorists have been decimated by relentless strikes over the past two weeks.\" Our verdict? Misleading. The airstrikes did cause damage, but claiming decimation is an overstatement.\n\nTrump's track record on Middle East peace is equally shaky. He boasts of achieving peace during his tenure, citing the Abraham Accords, yet glosses over the complexity and ongoing conflicts in the region. Our verdict on his claim of Middle East peace? Again, misleading. While he brokered key deals, true peace remained elusive.\n\nOverall, Trump’s truthfulness score stands at a lowly 42.7 out of 100, with a staggering 33 of his 62 fact-checked claims on various topics being misleading. This pattern highlights a tendency to embellish achievements and understate ongoing challenges, especially concerning Iran and the Middle East.\n\nFor readers, the lesson is clear: when it comes to Trump's claims on Iran, a healthy dose of skepticism is warranted.",
+  "generated_at": "2026-03-25T15:18:45.398Z"
+}

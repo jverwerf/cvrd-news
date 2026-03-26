@@ -1,0 +1,131 @@
+{
+  "handle": "SpeakerJohnson",
+  "name": "Mike Johnson",
+  "role": "Speaker of the House",
+  "party": "Republican",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "Speaker of the House",
+    "Republican",
+    "Constitutional law",
+    "small business",
+    "border security",
+    "law enforcement",
+    "American safety",
+    "SAVE America Act",
+    "AI policy",
+    "religious liberty"
+  ],
+  "photo_prompt": "Mike Johnson, middle-aged man with short brown hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "agents",
+    "worked",
+    "without",
+    "days,",
+    "straining",
+    "resources",
+    "causing",
+    "record",
+    "issues.",
+    "democrats",
+    "blocking",
+    "paychecks",
+    "creating",
+    "chaos",
+    "american",
+    "travelers.",
+    "prioritizing",
+    "criminal",
+    "illegal",
+    "aliens",
+    "safety",
+    "security",
+    "people.",
+    "blocked",
+    "fema,",
+    "other",
+    "enforcement",
+    "reopen",
+    "border.",
+    "republicans"
+  ],
+  "prominence": 40,
+  "followers": 1192527,
+  "overall_score": 62,
+  "confidence_interval": 5.7,
+  "verified_claims": 280,
+  "true_count": 52,
+  "somewhat_misleading_count": 152,
+  "misleading_count": 65,
+  "false_count": 11,
+  "pending_count": 109,
+  "dropped_count": 4,
+  "domains": {
+    "domestic": {
+      "score": 58.1,
+      "count": 121,
+      "true": 17,
+      "somewhat_misleading": 62,
+      "misleading": 37,
+      "false": 5
+    },
+    "legislation": {
+      "score": 70.7,
+      "count": 63,
+      "true": 19,
+      "somewhat_misleading": 35,
+      "misleading": 8,
+      "false": 1
+    },
+    "economics": {
+      "score": 55.2,
+      "count": 62,
+      "true": 3,
+      "somewhat_misleading": 40,
+      "misleading": 15,
+      "false": 4
+    },
+    "foreign_policy": {
+      "score": 80,
+      "count": 12,
+      "true": 6,
+      "somewhat_misleading": 5,
+      "misleading": 1,
+      "false": 0
+    },
+    "other": {
+      "score": 76.4,
+      "count": 7,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 2,
+      "false": 0
+    },
+    "military": {
+      "score": 65.9,
+      "count": 11,
+      "true": 3,
+      "somewhat_misleading": 6,
+      "misleading": 1,
+      "false": 1
+    },
+    "healthcare": {
+      "score": 55,
+      "count": 3,
+      "true": 0,
+      "somewhat_misleading": 2,
+      "misleading": 1,
+      "false": 0
+    },
+    "crime": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:24:08.581Z"
+}

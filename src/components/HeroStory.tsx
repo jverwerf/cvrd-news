@@ -8,6 +8,7 @@ import type { NarrativeGap } from "../lib/data";
 import { VideoGrid } from "./VideoGrid";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
+import { OnRecordWidget } from "./OnRecordWidget";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -105,31 +106,45 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
           >
             <div className="space-y-6 pt-4">
 
-              {/* LEFT vs RIGHT */}
-              <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
-                <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
-                    <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
-                  </div>
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+              {/* LEFT vs RIGHT (or Media vs Fans for sports) */}
+              {(story.left_narrative || story.right_narrative) && (
+                <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
+                  {story.left_narrative && (
+                    <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'culture') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'culture') ? '#f59e0b' : '#60a5fa' }}>
+                          {((story as any).category === 'sports' || (story as any).category === 'culture') ? 'Media' : 'Left'}
+                        </span>
+                      </div>
+                      <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+                    </div>
+                  )}
+                  {story.right_narrative && (
+                    <div className="pl-4 py-4 pr-4">
+                      <div className="flex items-center gap-2 mb-3">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'culture') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="9 18 15 12 9 6"/>
+                        </svg>
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'culture') ? '#34d399' : '#f87171' }}>
+                          {((story as any).category === 'sports' || (story as any).category === 'culture') ? 'Fans' : 'Right'}
+                        </span>
+                      </div>
+                      <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+                    </div>
+                  )}
                 </div>
-                <div className="pl-4 py-4 pr-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
-                    <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
-                  </div>
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
-                </div>
-              </div>
+              )}
 
               {/* UNFILTERED */}
               <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-5 h-5 rounded-full bg-[#b8860b] flex items-center justify-center">
-                    <span className="text-white text-[10px] font-bold">!</span>
-                  </div>
-                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">What They Aren&apos;t Telling You</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                  </svg>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
                 </div>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
@@ -146,13 +161,20 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                 {story.social_summary && (
                   <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[14px]">💬</span>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                      </svg>
                       <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                     </div>
                     <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
                   </div>
                 )}
               </div>
+
+              {/* ON RECORD */}
+              {(story as any).onrecord_matches?.length > 0 && (
+                <OnRecordWidget matches={(story as any).onrecord_matches} />
+              )}
 
               {/* X POSTS + SOCIAL */}
               <div className="rounded-lg p-4" style={{ background: '#253545' }}>

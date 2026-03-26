@@ -1,0 +1,162 @@
+{
+  "handle": "GovRonDeSantis",
+  "name": "Ron DeSantis",
+  "role": "Governor of Florida",
+  "party": "Republican",
+  "country": "US",
+  "state": "Florida",
+  "tags": [
+    "Florida",
+    "Governor",
+    "Agriculture",
+    "Coastal Resiliency",
+    "Law Enforcement",
+    "AI Policy",
+    "Infrastructure",
+    "Economic Growth",
+    "Family Farms"
+  ],
+  "photo_prompt": "Ron DeSantis, a middle-aged man with short brown hair and a confident demeanor, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "florida",
+    "reinforces",
+    "commitment",
+    "success",
+    "agriculture",
+    "protects",
+    "health,",
+    "security,",
+    "freedom",
+    "floridians.",
+    "florida's",
+    "agricultural",
+    "industry",
+    "system",
+    "supports",
+    "billion",
+    "economic",
+    "impact",
+    "million",
+    "jobs.",
+    "administration",
+    "delivered",
+    "historic",
+    "investments",
+    "protect",
+    "florida’s",
+    "1,300",
+    "miles",
+    "coastline.",
+    "terra"
+  ],
+  "prominence": 33,
+  "followers": 6032850,
+  "overall_score": 88.6,
+  "confidence_interval": 3.9,
+  "verified_claims": 251,
+  "true_count": 179,
+  "somewhat_misleading_count": 64,
+  "misleading_count": 5,
+  "false_count": 3,
+  "pending_count": 65,
+  "dropped_count": 9,
+  "domains": {
+    "legislation": {
+      "score": 90.5,
+      "count": 40,
+      "true": 31,
+      "somewhat_misleading": 8,
+      "misleading": 0,
+      "false": 1
+    },
+    "economics": {
+      "score": 81.9,
+      "count": 42,
+      "true": 22,
+      "somewhat_misleading": 18,
+      "misleading": 2,
+      "false": 0
+    },
+    "domestic": {
+      "score": 90.7,
+      "count": 119,
+      "true": 91,
+      "somewhat_misleading": 25,
+      "misleading": 2,
+      "false": 1
+    },
+    "other": {
+      "score": 93.8,
+      "count": 17,
+      "true": 14,
+      "somewhat_misleading": 3,
+      "misleading": 0,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 88.3,
+      "count": 3,
+      "true": 2,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "education": {
+      "score": 80.8,
+      "count": 18,
+      "true": 10,
+      "somewhat_misleading": 7,
+      "misleading": 0,
+      "false": 1
+    },
+    "health": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "healthcare": {
+      "score": 100,
+      "count": 2,
+      "true": 2,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "environmental": {
+      "score": 83.3,
+      "count": 6,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 0
+    },
+    "legal": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "infrastructure": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:22:48.287Z"
+}

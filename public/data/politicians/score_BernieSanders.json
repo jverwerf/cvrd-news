@@ -1,0 +1,147 @@
+{
+  "handle": "BernieSanders",
+  "name": "Bernie Sanders",
+  "role": "U.S. Senator",
+  "party": "Independent",
+  "country": "US",
+  "state": "Vermont",
+  "tags": [
+    "Progressive",
+    "Socialism",
+    "Wealth Inequality",
+    "Healthcare for All",
+    "Climate Change",
+    "Voting Rights",
+    "Anti-War",
+    "Corporate Greed",
+    "Billionaire Tax",
+    "Labor Rights"
+  ],
+  "photo_prompt": "Bernie Sanders, older man with white hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "72,000",
+    "killed",
+    "genocide",
+    "gaza,",
+    "million+",
+    "displaced",
+    "lebanon,",
+    "1,700",
+    "settler",
+    "attacks",
+    "bank,",
+    "introduction",
+    "legislation",
+    "sending",
+    "bombs",
+    "netanyahu.",
+    "year,",
+    "36,000",
+    "palestinians",
+    "forcibly",
+    "killed.",
+    "there",
+    "israeli",
+    "settlers.",
+    "posed",
+    "imminent",
+    "threat",
+    "nation,",
+    "started",
+    "pressure"
+  ],
+  "prominence": 39,
+  "followers": 14828519,
+  "overall_score": 76,
+  "confidence_interval": 5.2,
+  "verified_claims": 255,
+  "true_count": 100,
+  "somewhat_misleading_count": 138,
+  "misleading_count": 12,
+  "false_count": 5,
+  "pending_count": 134,
+  "dropped_count": 5,
+  "domains": {
+    "foreign_policy": {
+      "score": 70.5,
+      "count": 43,
+      "true": 12,
+      "somewhat_misleading": 26,
+      "misleading": 4,
+      "false": 1
+    },
+    "domestic": {
+      "score": 81.2,
+      "count": 96,
+      "true": 47,
+      "somewhat_misleading": 46,
+      "misleading": 3,
+      "false": 0
+    },
+    "politics": {
+      "score": 66.3,
+      "count": 4,
+      "true": 2,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 1
+    },
+    "economics": {
+      "score": 71.2,
+      "count": 60,
+      "true": 15,
+      "somewhat_misleading": 41,
+      "misleading": 3,
+      "false": 1
+    },
+    "military": {
+      "score": 82.5,
+      "count": 4,
+      "true": 2,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 71.4,
+      "count": 7,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 1
+    },
+    "other": {
+      "score": 79.2,
+      "count": 30,
+      "true": 14,
+      "somewhat_misleading": 15,
+      "misleading": 0,
+      "false": 1
+    },
+    "healthcare": {
+      "score": 74.4,
+      "count": 8,
+      "true": 3,
+      "somewhat_misleading": 4,
+      "misleading": 1,
+      "false": 0
+    },
+    "health": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "education": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T08:22:47.999Z"
+}
