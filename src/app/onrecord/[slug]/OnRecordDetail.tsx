@@ -112,13 +112,13 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
     ? Math.round((searchFiltered.reduce((sum, c) => sum + c.score, 0) / searchFiltered.length) * 1000) / 10
     : null;
 
-  const domainEntries: [string, { score: number; count: number; true: number; misleading: number; false: number }][] = [
+  const domainEntries: [string, { score: number; count: number; true: number; somewhat_misleading: number; misleading: number; false: number }][] = [
     ['all', { score: score.overall_score, count: score.verified_claims, true: score.true_count, somewhat_misleading: score.somewhat_misleading_count || 0, misleading: score.misleading_count, false: score.false_count }],
     ...Object.entries(score.domains || {}).sort((a, b) => {
       if (a[0] === 'other') return 1;
       if (b[0] === 'other') return -1;
       return a[0].localeCompare(b[0]);
-    }) as [string, { score: number; count: number; true: number; misleading: number; false: number }][],
+    }) as [string, { score: number; count: number; true: number; somewhat_misleading: number; misleading: number; false: number }][],
   ];
 
   const shareUrl = `https://cvrdnews.com/onrecord/${slug}`;
