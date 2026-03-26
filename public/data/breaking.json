@@ -1,15 +1,423 @@
 [
   {
+    "topic": "Iranian Missiles Strike Israel",
+    "summary": "Iran has launched missiles into Israel, causing significant damage and escalating tensions in the Middle East. This military action represents a serious development in the ongoing conflict between the two nations, with potential consequences for regional stability and international relations.",
+    "severity": "critical",
+    "detected_at": "2026-03-26T19:15:29.639Z",
+    "last_updated": "2026-03-26T19:15:29.639Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "The broader geopolitical implications of this attack are not being fully explored. This missile strike could be a strategic move by Iran to assert dominance in the region and challenge U.S. influence. Additionally, the economic ramifications, such as potential disruptions to oil markets and global trade routes, are not being addressed.",
+    "social_summary": "Social media is ablaze with reactions to the Iranian missile strike on Israel. Users are sharing footage of the damage, with hashtags like #IranIsraelConflict trending. Conspiracy theories are circulating, suggesting foreign powers are manipulating the conflict for their own gain. Memes and viral posts are highlighting the potential for a larger regional war.",
+    "image_prompt": "A dramatic image of a missile streaking across a twilight sky over a cityscape, symbolizing the tension and impending conflict in the Middle East.",
+    "sources": [
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOQVJoc2hNTTAzZlljZjRxbkw5bFJKMlhMc2Y4bC1YTE1IUUlsU0FBVGhTQlpSdUZsZVF5c2hJUHJEeXQ5SGw4UVVQd21pR3p3MzczRGR6XzRRdE1hZUxKbkhHdnJoYzlHVE1jMV9jVlV1Mk9jTTRaWElJMUN5cER4WThxa0Rxd2p3VWdxNHFfaGdpSlhxVENvdUNVVVpPNEYyQ1dMRnViSWdDQy1wSG8zWnlUbWFjb0U?oc=5",
+        "title": "Iran’s 'Tehran toll' booth forces some tankers to pay millions to leave Strait of Hormuz - NBC News"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNS1R1UmkwSUZWcWNJS1A4VmQ2QlRQek14TVRGUFJULU50cUotOGhyMWU0UENqaDlUdDA5SXp4RV9vTTFiLUVmdmcxcUc5X1ZWV0doSGYtdWI2SktaM0pjQ2FWTUVsVGhGZGFBTG1zSldvQU52bzN6UGE2RkZRdmFtVlZIZEo1bWdnZ2pjYWd4c0l6a05waVJRR0phUUhBcG0tbW1vREJyb1k2bndsZXFCSTlyc1BvTDBlYTRNVQ?oc=5",
+        "title": "Costa Rica to accept 25 'third country' deportees from US every week - ClickOnDetroit | WDIV Local 4"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeldJcHVJd19qRmxuZnJDeWg5aHhibTI2anItUFREWXlYOEdyQmoxa2hELUlSV3lYd2VyRTR4S2ZFQ05NNTQ5SmlEbGotbDBxbTNqS04xbV9uWmtRMjc5NW9nWG9MWW90WFdYdGZDMmxTR2NZUzcxNjdzUHk1bTVCMWJ2UXFfa2d5SzNMSGNHNA?oc=5",
+        "title": "Video. Latest news bulletin | March 26th, 2026 – Evening - Euronews.com"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5NZFNZQUw3NGJ0Yk5DT3FuTXU4VGJLTFFDZkVGYlY4elhFdkwtdWNzYWRnVzlRV2ZHWUtNcjh3YzVKLWFIblY2M3AwaEw0eEJsYnRadDlBY1c0eVVTbmhOR2lLUUVnSDlyQ1o5NkRUXzBQUk9zcWppR3RUZw?oc=5",
+        "title": "Live updates: Iran war; Trump casts doubt on prospect of an Iran deal - CNN"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNbFVQRWVyYmFzQ1BIUWZjdkkyYzFDaWJ4ZElaa1lrcmVOVHpRQnVZNjh3cEtHaUxKQ2JDX0x3WnlWbEctMjM0WERXMzVzZ3hPYnItdUwwazBacDFUQjVKdVNmbWRuR1hvX290QmwyY21xNmZ2TUctV3hpaGdXeG9GN3N4OVdMVExwajRvajJUMEZwNlMwQTNLam1VdkgtVzRpWGszeTJJemtFbjExR3hJeFFWT1dybmpxTFE1SlRNQ1hMUThQYWlj?oc=5",
+        "title": "Middle East crisis live: Trump claims Iran ‘begging to make a deal’ and has let some tankers through strait as a ‘present’ - The Guardian"
+      },
+      {
+        "name": "AP News",
+        "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE01bWluNWNBR0lrRnNueUpLLTkzSXhOXzdZdWxDNkJHQzd1WDNMaDNTR1FRbVFoZFY5WThrZFlwMnN6QVNRaU5TTGtObEFWTTlsZ0RvNUhGbw?oc=5",
+        "title": "World News in Brief, Cuba blockade hits healthcare, Haiti’s ‘vortex of violence’, deadly Djibouti shipwreck - UN News"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c4g8wxyq7v5o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "US prosecutors argue Maduro 'plundered' Venezuelan wealth in court battle over legal fees"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cx2r4wxdw3no?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Zelensky visits Saudi Arabia after offering Ukraine's drone expertise"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w3ez3xp92o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Sarah Ferguson stripped of Freedom of City of York title"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c9d45y66g78o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Nottingham victims' families 'tortured' by authorities, inquiry told"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c3w38qvz195o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "More than 13 million living in poverty, new figures show"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c9d45ejxz5qo?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Man who confronted Al Jazeera journalists was Met Police special constable"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cq8wkq1n9epo?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Rationing power and diluting petrol - how African countries are coping with effects of Iran war"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c86e3q5j992o?at_medium=RSS&amp;at_campaign=rss",
+        "title": "Don't panic - five ways to stop your kids' endless scrolling"
+      },
+      {
+        "name": "CNN",
+        "url": "https://edition.cnn.com/webview/politics/live-news/trump-indictment-stormy-daniels-news-04-03-23/index.html",
+        "title": "Trump pleads not guilty to 34 felony counts"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/iranian-missiles-cause-widespread-damage-across-israel-in-latest-wave?traffic_source=rss",
+        "lean": "center",
+        "title": "Iranian missiles cause widespread damage across Israel in latest wave"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/26/iranian-naval-chief-killed-in-attack-israel-says?traffic_source=rss",
+        "lean": "center",
+        "title": "Iranian naval chief killed in attack, Israel says"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=VGeJjKaxLdE",
+        "embed_id": "VGeJjKaxLdE",
+        "title": "Iranian missiles cause widespread damage across Israel in latest wave | AJ#shorts"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/jacksonhinklle/status/2036618631564366218",
+        "embed_id": "2036618631564366218",
+        "title": "🚨🇮🇱🇮🇷 BREAKING: Over a dozen casualties reported after Iranian missiles strike Israel.\n\nhttps://t.co/VSg5jl1dqb",
+        "author": "jacksonhinklle"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BRICSinfo/status/2036617215991070750",
+        "embed_id": "2036617215991070750",
+        "title": "JUST IN: 🇮🇱🇮🇷 Over a dozen casualties reported after Iranian missiles strike Israel.\n\n https://t.co/KkSwETCq9p",
+        "author": "BRICSinfo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2036530515684237648",
+        "embed_id": "2036530515684237648",
+        "title": "Iranian missiles continue to strike multiple Israeli regions, including the upper, central, and lower Galilee, as well as the occupied Syrian Golan He",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/VividProwess/status/2036349133280137306",
+        "embed_id": "2036349133280137306",
+        "title": "Heavy damage in central Israel following an Iranian ballistic missile strike on a civilian area in Tel Aviv. At least seven people were injured, and s",
+        "author": "VividProwess"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/incontextmedia/status/2035844128559317136",
+        "embed_id": "2035844128559317136",
+        "title": "⭕️BREAKING: Iranian Missiles Strike Dozens Of Israeli Targeted Areas\n\nBoth Tel Aviv &amp; near the Gaza border struck. https://t.co/ZLhtsbkaLd",
+        "author": "incontextmedia"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/42955",
+        "embed_id": "warmonitors/42955",
+        "title": "⚡️Missiles launched towards Israel now",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85529",
+        "embed_id": "intelslava/85529",
+        "title": "🇮🇷🇮🇱The incoming submunition of an Iranian missile lifted and flipped a car parked on the side of the road in the Israeli town of Kafr Qasim.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/klr-O9zDBjGJfsmhBMWi9asMEL2yzdiHI5uYBpn7kPNf3stBx3eIKLOe0a76INqvHPn2v99m2nED1vUSBvF8pB_gkkqcgh_glt0IPnZrv11rTk5REeVboYeEySqnPF-xvPwlBfiPHC5zd4MdI6StNxES1_WgkyHK36dfF2pk8WukdT56BX0k_DV3lKJ2UA8E5Mtnzz39YQ3go52Z5h5kny9BggitNeDeq0gDX-hYBdNDvdwdWrT9QnfxC6X3eS5eA_Juqmy97cSiy88ZztTbwTBYdCjUaSnl1S6SGfmP_s55oMJaMYsvODKdyj_TlCE64bm8LlA8u3f95P9GBZeCVw'",
+        "duration": 30
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@abcnews/video/7621554392428268831",
+        "embed_id": "7621554392428268831",
+        "title": "Iran launched fives waves of ballistic missiles toward Israel within two hours on Thursday morning. Missiles were intercepted in Bahrain, Saudia Arabi",
+        "author": "abcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUSZNKBpEiAmIYB4RAiKAMBAi3pXfK1F0S1DAo~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=yhmlc5NBJbCN0yiUHnjplC9L5E8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 38
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@cbsnews/video/7621567376563211533",
+        "embed_id": "7621567376563211533",
+        "title": "Surveillance footage captured the moment an Iranian strike sent a car flying into the air in Israel just seconds after two people narrowly escaped the",
+        "author": "cbsnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/owAzIi89zc4YBPBg8UpaFGEDQAiUzRDqjIiPz~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/owAATIAaF0pAYKUPwoiiCixERDzB1geS9EfDqH.image?dr=9634&x-expires=1774724400&x-signature=nPDToRiLbiBW8ERpXbhEPMD%2FX%2Bc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 14
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@bbcnews/video/7621477260171693334",
+        "embed_id": "7621477260171693334",
+        "title": "Six people were injured after a missile attack on central Israel, the country's emergency service said. The military said the missiles were launched f",
+        "author": "bbcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEhKTq7YcQBIAiWtocCWlKvip7gDB9aAAEAEA~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=id3eYVJj%2BxVJSfbbRNLc3%2F8wFOw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 17
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@nbcnews/video/7621523980381408525",
+        "embed_id": "7621523980381408525",
+        "title": "Remnants of an Iranian missile hit a neighborhood near Tel Aviv in #Israel.",
+        "author": "nbcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o4GImLKxIlfEkfiExKnGeHUr8ZALAAiAAZmTQP~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=kXVrORANpnwEsTwhis5wn3HySDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 18
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@c4news/video/7621150054388108566",
+        "embed_id": "7621150054388108566",
+        "title": "‘We just want to wake up in the morning and not be afraid for our lives.\n\nIn the wreckage caused by an Iranian missile, Israelis speak to Channel 4 Ne",
+        "author": "c4news",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEPpDBDwDY1A8poiAEDBwtBPiaAGAc06IJEwE~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=9iqNJ3AkD6trJXSX0B4lNorrCGg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 71
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@cnn/video/7620753517510151438",
+        "embed_id": "7620753517510151438",
+        "title": "According to Israel’s emergency response service, Iranian missile attacks overnight hit at least four sites across Tel Aviv, with six people reported ",
+        "author": "cnn",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUTJkWEtlCjBLJXDXHQAAueUfhgrAo8edbtMQB~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=Hn78KlN4wMmQcN7sDIG3QI1oMbo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 20
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@news.com.au/video/7620994441511243015",
+        "embed_id": "7620994441511243015",
+        "title": "Surfers in Tel Aviv were enjoying a wind swell when incoming Iranian missiles started landing in the ocean nearby. #israel #iran🇮🇷 #telaviv ",
+        "author": "news.com.au",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oA5RfwEDKAItpDchEsYaNJgEDfAjFBAIKCApzI~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=BOGP9IhgCm2Q6oPxmyxy0B72kN4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 49
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/anime_titties/comments/1s42rby/israel_races_to_hit_iran_hard_while_it_still_can/",
+        "embed_id": "1s42rby",
+        "title": "Israel Races to Hit Iran Hard While It Still Can, Officials Say"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProjectZeroPoint/comments/1s3myt1/the_arithmetic_of_attrition_why_this_war_is/",
+        "embed_id": "1s3myt1",
+        "title": "The Arithmetic of Attrition: Why This War Is Becoming More Expensive Than It Looks"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s41n7m/scenes_in_israels_kfar_qasim_following_iranian/",
+        "embed_id": "1s41n7m",
+        "title": "Scenes in Israel's Kfar Qasim following Iranian strike."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s3rh73/irans_strikes_on_gulf_countires_strikes_on_israel/",
+        "embed_id": "1s3rh73",
+        "title": "Iran's strikes on Gulf Countires 📉, Strikes on Israel increase 📈"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CriticalThinkingIndia/comments/1s3y903/irans_bushehr_nuclear_power_plant_hit_by_us/",
+        "embed_id": "1s3y903",
+        "title": "Iran's Bushehr nuclear power plant hit by US Israel missile strike. Kuwait warns it's citizens for a nuclear radiation leak. It would be catastrophic "
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=VGeJjKaxLdE",
+        "embed_id": "VGeJjKaxLdE",
+        "title": "Iranian missiles cause widespread damage across Israel in latest wave | AJ#shorts",
+        "channel": "Al Jazeera English"
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/jacksonhinklle/status/2036618631564366218",
+        "embed_id": "2036618631564366218",
+        "title": "🚨🇮🇱🇮🇷 BREAKING: Over a dozen casualties reported after Iranian missiles strike Israel.\n\nhttps://t.co/VSg5jl1dqb",
+        "author": "jacksonhinklle"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BRICSinfo/status/2036617215991070750",
+        "embed_id": "2036617215991070750",
+        "title": "JUST IN: 🇮🇱🇮🇷 Over a dozen casualties reported after Iranian missiles strike Israel.\n\n https://t.co/KkSwETCq9p",
+        "author": "BRICSinfo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2036530515684237648",
+        "embed_id": "2036530515684237648",
+        "title": "Iranian missiles continue to strike multiple Israeli regions, including the upper, central, and lower Galilee, as well as the occupied Syrian Golan He",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/VividProwess/status/2036349133280137306",
+        "embed_id": "2036349133280137306",
+        "title": "Heavy damage in central Israel following an Iranian ballistic missile strike on a civilian area in Tel Aviv. At least seven people were injured, and s",
+        "author": "VividProwess"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/incontextmedia/status/2035844128559317136",
+        "embed_id": "2035844128559317136",
+        "title": "⭕️BREAKING: Iranian Missiles Strike Dozens Of Israeli Targeted Areas\n\nBoth Tel Aviv &amp; near the Gaza border struck. https://t.co/ZLhtsbkaLd",
+        "author": "incontextmedia"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/42955",
+        "embed_id": "warmonitors/42955",
+        "title": "⚡️Missiles launched towards Israel now",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85529",
+        "embed_id": "intelslava/85529",
+        "title": "🇮🇷🇮🇱The incoming submunition of an Iranian missile lifted and flipped a car parked on the side of the road in the Israeli town of Kafr Qasim.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/klr-O9zDBjGJfsmhBMWi9asMEL2yzdiHI5uYBpn7kPNf3stBx3eIKLOe0a76INqvHPn2v99m2nED1vUSBvF8pB_gkkqcgh_glt0IPnZrv11rTk5REeVboYeEySqnPF-xvPwlBfiPHC5zd4MdI6StNxES1_WgkyHK36dfF2pk8WukdT56BX0k_DV3lKJ2UA8E5Mtnzz39YQ3go52Z5h5kny9BggitNeDeq0gDX-hYBdNDvdwdWrT9QnfxC6X3eS5eA_Juqmy97cSiy88ZztTbwTBYdCjUaSnl1S6SGfmP_s55oMJaMYsvODKdyj_TlCE64bm8LlA8u3f95P9GBZeCVw'",
+        "duration": 30
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@abcnews/video/7621554392428268831",
+        "embed_id": "7621554392428268831",
+        "title": "Iran launched fives waves of ballistic missiles toward Israel within two hours on Thursday morning. Missiles were intercepted in Bahrain, Saudia Arabi",
+        "author": "abcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oUSZNKBpEiAmIYB4RAiKAMBAi3pXfK1F0S1DAo~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=yhmlc5NBJbCN0yiUHnjplC9L5E8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 38
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@cbsnews/video/7621567376563211533",
+        "embed_id": "7621567376563211533",
+        "title": "Surveillance footage captured the moment an Iranian strike sent a car flying into the air in Israel just seconds after two people narrowly escaped the",
+        "author": "cbsnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/owAzIi89zc4YBPBg8UpaFGEDQAiUzRDqjIiPz~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/owAATIAaF0pAYKUPwoiiCixERDzB1geS9EfDqH.image?dr=9634&x-expires=1774724400&x-signature=nPDToRiLbiBW8ERpXbhEPMD%2FX%2Bc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 14
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@bbcnews/video/7621477260171693334",
+        "embed_id": "7621477260171693334",
+        "title": "Six people were injured after a missile attack on central Israel, the country's emergency service said. The military said the missiles were launched f",
+        "author": "bbcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEhKTq7YcQBIAiWtocCWlKvip7gDB9aAAEAEA~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=id3eYVJj%2BxVJSfbbRNLc3%2F8wFOw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 17
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@nbcnews/video/7621523980381408525",
+        "embed_id": "7621523980381408525",
+        "title": "Remnants of an Iranian missile hit a neighborhood near Tel Aviv in #Israel.",
+        "author": "nbcnews",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o4GImLKxIlfEkfiExKnGeHUr8ZALAAiAAZmTQP~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=kXVrORANpnwEsTwhis5wn3HySDc%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 18
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@c4news/video/7621150054388108566",
+        "embed_id": "7621150054388108566",
+        "title": "‘We just want to wake up in the morning and not be afraid for our lives.\n\nIn the wreckage caused by an Iranian missile, Israelis speak to Channel 4 Ne",
+        "author": "c4news",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oEPpDBDwDY1A8poiAEDBwtBPiaAGAc06IJEwE~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=9iqNJ3AkD6trJXSX0B4lNorrCGg%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 71
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@cnn/video/7620753517510151438",
+        "embed_id": "7620753517510151438",
+        "title": "According to Israel’s emergency response service, Iranian missile attacks overnight hit at least four sites across Tel Aviv, with six people reported ",
+        "author": "cnn",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oUTJkWEtlCjBLJXDXHQAAueUfhgrAo8edbtMQB~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=Hn78KlN4wMmQcN7sDIG3QI1oMbo%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 20
+      },
+      {
+        "platform": "tiktok",
+        "url": "https://www.tiktok.com/@news.com.au/video/7620994441511243015",
+        "embed_id": "7620994441511243015",
+        "title": "Surfers in Tel Aviv were enjoying a wind swell when incoming Iranian missiles started landing in the ocean nearby. #israel #iran🇮🇷 #telaviv ",
+        "author": "news.com.au",
+        "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oA5RfwEDKAItpDchEsYaNJgEDfAjFBAIKCApzI~tplv-tiktokx-origin.image?dr=9636&x-expires=1774724400&x-signature=BOGP9IhgCm2Q6oPxmyxy0B72kN4%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+        "duration": 49
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/anime_titties/comments/1s42rby/israel_races_to_hit_iran_hard_while_it_still_can/",
+        "embed_id": "1s42rby",
+        "title": "Israel Races to Hit Iran Hard While It Still Can, Officials Say"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProjectZeroPoint/comments/1s3myt1/the_arithmetic_of_attrition_why_this_war_is/",
+        "embed_id": "1s3myt1",
+        "title": "The Arithmetic of Attrition: Why This War Is Becoming More Expensive Than It Looks"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s41n7m/scenes_in_israels_kfar_qasim_following_iranian/",
+        "embed_id": "1s41n7m",
+        "title": "Scenes in Israel's Kfar Qasim following Iranian strike."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s3rh73/irans_strikes_on_gulf_countires_strikes_on_israel/",
+        "embed_id": "1s3rh73",
+        "title": "Iran's strikes on Gulf Countires 📉, Strikes on Israel increase 📈"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CriticalThinkingIndia/comments/1s3y903/irans_bushehr_nuclear_power_plant_hit_by_us/",
+        "embed_id": "1s3y903",
+        "title": "Iran's Bushehr nuclear power plant hit by US Israel missile strike. Kuwait warns it's citizens for a nuclear radiation leak. It would be catastrophic "
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-26.png"
+  },
+  {
     "topic": "Israel Kills Iran's Navy Chief",
-    "summary": "Israel has confirmed the assassination of Iran's navy chief, who was responsible for overseeing operations in the strategically critical Strait of Hormuz. This move marks a significant escalation in the ongoing hostilities between Israel and Iran, with potential repercussions for international maritime security and regional stability. The incident has heightened tensions in the Middle East, drawing international attention to the fragile geopolitical landscape.",
+    "summary": "Israel has confirmed the assassination of Iran's navy chief, who was responsible for overseeing operations in the Strait of Hormuz. This act marks a significant escalation in the ongoing hostilities between Israel and Iran, with potential implications for international maritime security and regional stability. The incident has intensified tensions in the Middle East, drawing global attention to the already fragile geopolitical landscape.",
     "severity": "critical",
     "detected_at": "2026-03-26T18:24:27.286Z",
-    "last_updated": "2026-03-26T18:24:27.286Z",
-    "left_narrative": "Left-leaning media are likely to emphasize the risks of escalating military actions and the potential for further destabilization in the Middle East. They may highlight the importance of diplomatic solutions and criticize the use of targeted assassinations as a means of conflict resolution. Additionally, they might stress the potential humanitarian impact on civilians in the region.",
-    "right_narrative": "Right-leaning media might frame this as a necessary action by Israel to protect its national security against a hostile Iranian regime. They may argue that strong measures are required to deter Iran's aggressive military activities and to maintain stability in the region. Furthermore, they could portray this as a justified response to Iran's threats and actions in the Strait of Hormuz.",
-    "what_they_arent_telling_you": "Neither side is likely to delve deeply into the economic implications of this assassination, particularly regarding oil prices and global trade routes. The Strait of Hormuz is a critical chokepoint for global oil shipments, and any disruption could have significant economic consequences worldwide. Additionally, the broader geopolitical implications, such as the potential for drawing in other regional powers and the impact on ongoing nuclear negotiations, are often underexplored.",
-    "social_summary": "Social media is abuzz with polarized reactions, ranging from support for Israel's decisive action to fears of a looming war in the Middle East. Memes and conspiracy theories are circulating, with some users speculating about the involvement of other countries or secret alliances. Others are calling for peace and urging international intervention to prevent further escalation.",
-    "image_prompt": "A dramatic, symbolic image of a narrow, turbulent sea passage at dusk, with shadowy figures representing geopolitical tensions looming over the horizon, and a distant, solitary ship navigating the waters, symbolizing the precarious balance of power.",
+    "last_updated": "2026-03-26T10:00:00.000Z",
+    "left_narrative": "Left-leaning media describes this assassination as a reckless escalation by Israel that risks further destabilizing the Middle East. They emphasize the potential for increased violence and the threat to international maritime security, criticizing Israel for taking unilateral military action without broader international support or dialogue.",
+    "right_narrative": "Right-leaning media frames the assassination as a necessary and strategic move by Israel to counter Iranian aggression and protect its national security interests. They highlight Iran's ongoing threats and destabilizing activities in the region, portraying the action as a justified response to Iran's provocations and a deterrent against future threats.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this assassination on global oil markets, given the strategic importance of the Strait of Hormuz for global energy supplies. Additionally, the potential for this incident to trigger a larger conflict involving multiple regional and global powers is not being thoroughly examined. The financial interests of defense contractors and their influence on escalating military actions in the region are also overlooked.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising Israel's decisive action against a perceived threat, while others condemn it as an act of war. Conspiracy theories are circulating about potential U.S. involvement or support, and memes mocking the geopolitical chess game between Israel and Iran are going viral. Hashtags like #MiddleEastTensions and #StraitOfHormuz are trending.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of the Strait of Hormuz, with pieces representing Israel and Iran in a tense standoff. The sky is ominous, symbolizing the looming threat of conflict, while ships are visible in the distance, highlighting the strategic importance of the location.",
     "sources": [
       {
         "name": "AP News",
