@@ -87,18 +87,22 @@ export function StoryCard({ story, index }: { story: NarrativeGap; index: number
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-10">
                 <div className="p-4 rounded-lg bg-[#0a0a0a]">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`w-2 h-2 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-amber-500' : 'bg-blue-500'}`} />
-                    <span className={`text-[11px] font-semibold uppercase tracking-wider ${(story.category === 'sports' || story.category === 'trending') ? 'text-amber-400' : 'text-blue-400'}`}>
-                      {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left Media'}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                    <span className={`text-[11px] font-semibold uppercase tracking-wider`} style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
+                      {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
                     </span>
                   </div>
                   <p className="text-sm text-[#a3a3a3] leading-relaxed">{story.left_narrative}</p>
                 </div>
                 <div className="p-4 rounded-lg bg-[#0a0a0a]">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`w-2 h-2 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-emerald-500' : 'bg-red-500'}`} />
-                    <span className={`text-[11px] font-semibold uppercase tracking-wider ${(story.category === 'sports' || story.category === 'trending') ? 'text-emerald-400' : 'text-red-400'}`}>
-                      {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right Media'}
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                    <span className={`text-[11px] font-semibold uppercase tracking-wider`} style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171' }}>
+                      {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
                     </span>
                   </div>
                   <p className="text-sm text-[#a3a3a3] leading-relaxed">{story.right_narrative}</p>

@@ -131,8 +131,8 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
             {[
-              { label: 'Daily Pick', slug: '/' },
               { label: 'On Record', slug: '/onrecord' },
+              { label: 'Daily Pick', slug: '/' },
               { label: 'World', slug: '/world' }, { label: 'Politics', slug: '/politics' },
               { label: 'Markets', slug: '/markets' }, { label: 'Sports', slug: '/sports' },
               { label: 'Trending', slug: '/trending' },

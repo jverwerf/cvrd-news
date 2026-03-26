@@ -44,8 +44,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 const ALL_CATS = [
-  { label: 'Daily Pick', slug: '/' },
   { label: 'On Record', slug: '/onrecord' },
+  { label: 'Daily Pick', slug: '/' },
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },

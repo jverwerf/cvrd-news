@@ -182,7 +182,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0 }}>
             <ErrorBoundary>
-              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? [{ ...briefStory, social_clips: [] }] : [story]} videoUrl={undefined} videoDate={undefined} noAutoPlay />
+              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? [{ ...briefStory, social_clips: [] }] : [story]} videoUrl={undefined} videoDate={undefined} />
             </ErrorBoundary>
           </div>
         </div>
@@ -358,7 +358,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
           <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
             <div className="flex items-center gap-2 mb-3">
-              <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#f59e0b]' : 'bg-[#3b82f6]'}`} />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
               <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
                 {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
               </span>
@@ -367,7 +369,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
           <div className="py-4 px-4">
             <div className="flex items-center gap-2 mb-3">
-              <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#34d399]' : 'bg-[#ef4444]'}`} />
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
               <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171' }}>
                 {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
               </span>
@@ -379,7 +383,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         {/* UNFILTERED */}
         <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <div className="flex items-center gap-2 mb-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
             <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
           </div>
           {sentences.length > 1 ? (
