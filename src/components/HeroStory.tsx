@@ -112,11 +112,11 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                   {story.left_narrative && (
                     <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
                       <div className="flex items-center gap-2 mb-3">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'culture') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="15 18 9 12 15 6"/>
                         </svg>
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'culture') ? '#f59e0b' : '#60a5fa' }}>
-                          {((story as any).category === 'sports' || (story as any).category === 'culture') ? 'Media' : 'Left'}
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
+                          {((story as any).category === 'sports' || (story as any).category === 'trending') ? 'Media' : 'Left'}
                         </span>
                       </div>
                       <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
@@ -125,11 +125,11 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                   {story.right_narrative && (
                     <div className="pl-4 py-4 pr-4">
                       <div className="flex items-center gap-2 mb-3">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'culture') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="9 18 15 12 9 6"/>
                         </svg>
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'culture') ? '#34d399' : '#f87171' }}>
-                          {((story as any).category === 'sports' || (story as any).category === 'culture') ? 'Fans' : 'Right'}
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'trending') ? '#34d399' : '#f87171' }}>
+                          {((story as any).category === 'sports' || (story as any).category === 'trending') ? 'Fans' : 'Right'}
                         </span>
                       </div>
                       <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>

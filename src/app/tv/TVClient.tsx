@@ -12,7 +12,7 @@ const CHANNELS = [
   { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#818cf8' },
   { id: 'markets', label: 'Markets', sub: 'Economy & finance', color: '#38bdf8' },
   { id: 'sports', label: 'Sports', sub: 'The game behind the game', color: '#34d399' },
-  { id: 'culture', label: 'Trending', sub: 'What everyone is talking about', color: '#a5b4fc' },
+  { id: 'trending', label: 'Trending', sub: 'What everyone is talking about', color: '#a5b4fc' },
 ] as const;
 
 export function TVClient({

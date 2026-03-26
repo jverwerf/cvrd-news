@@ -3,7 +3,7 @@ import path from 'path';
 
 export type NarrativeGap = {
   topic: string;
-  category?: 'world' | 'politics' | 'markets' | 'sports' | 'culture';
+  category?: 'world' | 'politics' | 'markets' | 'sports' | 'trending';
   is_top_story?: boolean;
   summary: string;
   left_narrative: string;

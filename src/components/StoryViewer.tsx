@@ -36,14 +36,19 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const bestYT: { url: string; embed_id: string; channel?: string; duration?: number }[] = [];
   const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'reddit' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
 
+  // For sports/trending: include TikTok and prioritize it. For other categories: exclude TikTok.
+  const isFanCategory = stories.some(s => s.category === 'sports' || s.category === 'trending');
+
   for (const s of stories) {
     // Best YouTube video per story (first one, already sorted by relevance)
     const ytList = s.youtube_videos || [];
     if (ytList.length > 0) bestYT.push(ytList[0]);
 
-    // Best 2 social clips per story (prefer Telegram/X — no TikTok in daily brief)
-    const social = (s.social_clips || []).filter(c => c.embed_id && c.platform !== 'tiktok');
-    const videoClips = social.filter(c => c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration));
+    // Best 2 social clips per story
+    const social = (s.social_clips || []).filter(c => c.embed_id && (isFanCategory || c.platform !== 'tiktok'));
+    const videoClips = isFanCategory
+      ? social.filter(c => c.platform === 'tiktok' || c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration))
+      : social.filter(c => c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration));
     const picked = videoClips.slice(0, 2);
     if (picked.length < 2) {
       const remaining = social.filter(c => !picked.includes(c));
@@ -65,8 +70,12 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     : (dailyBrief as any)?.daily_brief?.[0] ? (dailyBrief as any).daily_brief[0]
     : dailyBrief;
 
+  // If all stories share the same category, inherit it for the brief (so Media/Fans labels work)
+  const sharedCategory = stories.every(s => s.category === stories[0]?.category) ? stories[0]?.category : undefined;
+
   const briefStory: NarrativeGap = {
     topic: 'Daily Brief',
+    category: sharedCategory,
     summary: resolvedBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
     left_narrative: resolvedBrief?.left_narrative || stories.slice(0, 3).map(s => s.left_narrative).filter(Boolean).join(' '),
     right_narrative: resolvedBrief?.right_narrative || stories.slice(0, 3).map(s => s.right_narrative).filter(Boolean).join(' '),
@@ -345,19 +354,23 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         )}
 
-        {/* LEFT vs RIGHT */}
+        {/* LEFT vs RIGHT (or Media vs Fans for sports/trending) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
           <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-3 h-3 rounded-full bg-[#3b82f6]" />
-              <span className="text-[11px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
+              <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#f59e0b]' : 'bg-[#3b82f6]'}`} />
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
+                {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
+              </span>
             </div>
             <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
           </div>
           <div className="py-4 px-4">
             <div className="flex items-center gap-2 mb-3">
-              <div className="w-3 h-3 rounded-full bg-[#ef4444]" />
-              <span className="text-[11px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
+              <div className={`w-3 h-3 rounded-full ${(story.category === 'sports' || story.category === 'trending') ? 'bg-[#34d399]' : 'bg-[#ef4444]'}`} />
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171' }}>
+                {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
+              </span>
             </div>
             <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
           </div>
@@ -499,19 +512,19 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
             <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
             <span className="text-[11px] text-[#777]">{sources.length} sources</span>
-            {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
-            {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
-            {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
+            {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} {(story.category === 'sports' || story.category === 'trending') ? 'media' : 'left'}</span></span>}
+            {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} {(story.category === 'sports' || story.category === 'trending') ? 'media' : 'right'}</span></span>}
+            {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} {(story.category === 'sports' || story.category === 'trending') ? 'media' : 'center'}</span></span>}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {leftSources.length > 0 && (
-              <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />
+              <SourceColumn label={(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'} sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />
             )}
             {centerSources.length > 0 && (
-              <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />
+              <SourceColumn label={(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Center'} sources={centerSources} color="#999" dotColor="#999" />
             )}
             {rightSources.length > 0 && (
-              <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />
+              <SourceColumn label={(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Right'} sources={rightSources} color="#f87171" dotColor="#f87171" />
             )}
           </div>
         </div>
