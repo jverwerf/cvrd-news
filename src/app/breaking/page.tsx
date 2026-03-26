@@ -93,11 +93,10 @@ export default function BreakingPage() {
   if (breakingItems.length === 0) return null;
 
   // Convert all breaking items to NarrativeGap format
-  // Only show stories with at least 3 video clips (YouTube + video social clips)
+  // Show stories with at least 3 clips (YouTube + social)
   const allStories = breakingItems.map(toNarrativeGap).filter(s => {
-    const ytCount = (s.youtube_videos || []).length;
-    const videoClips = (s.social_clips || []).filter(c => c.duration).length;
-    return ytCount + videoClips >= 3;
+    const totalClips = (s.youtube_videos || []).length + (s.social_clips || []).length;
+    return totalClips >= 3;
   });
 
   if (allStories.length === 0) {
