@@ -250,45 +250,30 @@ async function searchYouTube(topic: string, existingUrls: Set<string>, detectedA
 }
 
 // Trusted X accounts — same as main pipeline (x-whitelist.ts)
+// Outlets & institutions only — individuals pass through verified + 50K followers filter
 const TRUSTED_X_HANDLES = new Set([
-  // Wire services
   'ap', 'reuters', 'afp',
-  // US Broadcast
-  'cnn', 'msnbc', 'foxnews', 'abc', 'cbsnews', 'nbcnews', 'pbs', 'npr', 'newsnation',
-  // US Print / Digital
+  'cnn', 'cnnpolitics', 'msnbc', 'foxnews', 'abc', 'cbsnews', 'nbcnews', 'pbs', 'npr', 'cspan', 'newsnation',
   'nytimes', 'washingtonpost', 'wsj', 'usatoday', 'nypost', 'latimes',
   'politico', 'thehill', 'axios', 'huffpost', 'vox', 'theatlantic', 'time', 'newsweek',
-  'theintercept', 'slate', 'newyorker', 'buzzfeednews',
-  // US Right
+  'theintercept', 'slate', 'newyorker', 'propublica',
   'dailywire', 'breitbartnews', 'dailycaller', 'theblaze', 'nro', 'washtimes',
-  'realclearnews', 'freebeacon', 'epochtimes', 'townhallcom',
-  // US Left
+  'realclearnews', 'freebeacon', 'epochtimes', 'townhallcom', 'zerohedge',
   'motherjones', 'thenation', 'salon', 'democracynow', 'jacobin',
-  // International
-  'bbcworld', 'bbcbreaking', 'skynews', 'skynewsbreak', 'guardian', 'telegraph',
+  'bbcworld', 'bbcbreaking', 'bbc', 'skynews', 'skynewsbreak', 'guardian', 'guardianus', 'telegraph',
   'independent', 'ajenglish', 'ajbreaking', 'france24_en', 'dwnews', 'euronews',
-  'cbcnews', 'theeconomist', 'ft',
-  // Business
-  'cnbc', 'bloomberg', 'foxbusiness', 'marketwatch', 'forbes', 'yahoofinance',
-  // Crypto
+  'cbcnews', 'theeconomist', 'ft', 'scmp_news', 'kyivindependent',
+  'cnbc', 'bloomberg', 'bloombergtv', 'foxbusiness', 'marketwatch', 'forbes', 'yahoofinance', 'barrons',
   'coindesk', 'cointelegraph', 'theblock__', 'decryptmedia',
-  // Tech
-  'wired', 'theverge', 'techcrunch', 'arstechnica',
-  // Aggregators / Breaking
-  'disclosetv', 'bnonews', 'spectatorindex', 'unusual_whales', 'watcherguru',
-  'collinrugg', 'rawsalerts', 'endwokeness', 'dropsitenews', 'marionawfal', 'breaking911',
-  // Journalists
-  'tuckercarlson', 'benshapiro', 'realcandaceo', 'mattwalshblog',
-  'rachel_maddow', 'chrislhayes', 'maggienyt',
-  // Politicians / Institutions
-  'potus', 'realdonaldtrump', 'vp', 'aoc', 'berniesanders', 'tedcruz', 'randpaul',
-  'elonmusk', 'joerogan',
-  'zelenskyyua', 'emmanuelmacron', 'netanyahu', 'israelipm', 'idf', 'nato', 'un', 'who',
-  'secblinken', 'secdef', 'statedept', 'pentagonpressec',
-  // OSINT
-  'intelcrab', 'liveuamap', 'sentdefender', 'elintnews', 'war_mapper', 'warmonitors',
-  // Science
-  'nasa', 'spacex', 'natgeo',
+  'wired', 'verge', 'techcrunch', 'arstechnica',
+  'disclosetv', 'bnonews', 'spectatorindex', 'breaking911', 'popcrave', 'popbase',
+  'thejusticedept', 'fbi', 'dhsgov', 'icegov', 'scotusblog', 'ftc', 'secgov', 'federalreserve', 'ustreasury',
+  'nasa', 'cdcgov', 'who', 'nato', 'un', 'idf', 'statedept',
+  'aclu', 'hrw', 'amnesty', 'brookingsinst', 'cfr_org',
+  'liveuamap', 'sentdefender', 'elintnews', 'warmonitors',
+  'espn', 'sportscenter', 'espnnba', 'espnnfl', 'theathletic', 'bbcsport', 'bleacherreport',
+  'nba', 'nfl', 'nhl', 'mlb', 'ufc', 'f1', 'premierleague', 'uefa', 'fifa',
+  'variety', 'thr', 'deadline', 'rollingstone', 'billboard', 'tmz', 'rottentomatoes', 'ign',
 ]);
 
 async function searchX(topic: string, existingUrls: Set<string>, detectedAt?: string): Promise<BreakingStory['social_clips']> {
@@ -307,8 +292,18 @@ async function searchX(topic: string, existingUrls: Set<string>, detectedAt?: st
     const tweetDate = new Date(tweet.createdAt || tweet.created_at || 0);
     if (tweetDate.getTime() < sinceDate.getTime()) return;
     const author = tweet.author?.userName || 'unknown';
-    // Only allow trusted accounts
-    if (!TRUSTED_X_HANDLES.has(author.toLowerCase())) return;
+    const authorLower = author.toLowerCase();
+    const textLower = (tweet.text || '').toLowerCase();
+
+    // Block non-English / regional outlets
+    const BLOCKED = ['ndtv', 'timesofindia', 'hindustantimes', 'indiatoday', 'indianexpress', 'zeenews', 'republic', 'wion', 'ani', 'thehindu', 'firstpost', 'dawn_news', 'geo_english'];
+    if (BLOCKED.some(p => authorLower.includes(p))) return;
+
+    // Quality filter: whitelisted outlet OR (verified + 50K followers)
+    const isWhitelisted = TRUSTED_X_HANDLES.has(authorLower);
+    const isVerified = tweet.author?.isBlueVerified || tweet.author?.verified || false;
+    const followers = tweet.author?.followers || tweet.author?.followersCount || 0;
+    if (!isWhitelisted && !(isVerified && followers >= 50000)) return;
     if (requireVideo) {
       const hasVideo = (tweet.extendedEntities?.media || []).some((m: any) => m.type === 'video');
       if (!hasVideo) return;
