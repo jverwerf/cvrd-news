@@ -13,8 +13,8 @@ const ALL_CATS = [
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },
-  { label: 'Sports', slug: '/sports' },
   { label: 'Trending', slug: '/trending' },
+  { label: 'Sports', slug: '/sports' },
 ];
 
 function toNarrativeGap(b: any): NarrativeGap {
