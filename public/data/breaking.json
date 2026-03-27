@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has announced the closure of the Strait of Hormuz, a critical chokepoint for global oil shipments, in response to heightened tensions with the United States. This move comes after reports that the US launched 850 Tomahawk missiles at Iranian targets, significantly escalating military hostilities. The situation has raised concerns over potential disruptions in global oil supply and the broader implications for regional stability.",
+    "summary": "Iran has closed the Strait of Hormuz, a vital passage for global oil transport, in retaliation to the United States launching 850 Tomahawk missiles at Iranian targets. This escalation in military conflict has sparked fears of significant disruptions in the global oil supply and heightened tensions in the Middle East. The closure of the strait, through which a substantial portion of the world's oil passes, poses a threat to international energy markets and regional stability.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-27T16:00:07.075Z",
+    "last_updated": "2026-03-27T18:00:53.033Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these actions. The closure of the Strait of Hormuz could drastically impact global oil prices, benefiting certain economic players. Additionally, the military escalation may serve as a distraction from domestic issues within both countries, such as economic struggles or political dissent. The geopolitical implications extend beyond the US and Iran, affecting alliances and rivalries in the Middle East and beyond.",
-    "social_summary": "Social media is ablaze with reactions, ranging from fear of a full-scale war to skepticism about the accuracy of the missile reports. Memes mocking the situation as a 'real-life game of Risk' are circulating, while conspiracy theories suggest ulterior motives behind the US's aggressive stance. Hashtags like #StraitOfHormuz and #Tomahawk850 are trending, with users debating the potential global fallout.",
-    "image_prompt": "A dramatic image of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, shadowy figures representing global powers stand on opposite shores, each holding a chess piece, poised for a strategic move.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these actions. The US's aggressive military response may be influenced by domestic pressures to maintain control over oil prices and assert dominance in the region. Iran's closure of the Strait of Hormuz serves as a strategic move to leverage its geographical advantage, potentially forcing global powers to negotiate on its terms. The geopolitical chess game extends beyond immediate military actions, involving long-term strategic interests in energy control and regional influence.",
+    "social_summary": "Social media is ablaze with debates over the legitimacy and consequences of the US's military actions, with some users accusing the US of imperialism and others defending it as a necessary measure against Iranian aggression. Memes and viral posts highlight the potential for a new oil crisis, drawing parallels to past conflicts in the region. Conspiracy theories suggest ulterior motives behind the US's missile strike, including economic gain and political distraction.",
+    "image_prompt": "A dramatic sunset over the Strait of Hormuz, with silhouetted oil tankers halted in the water, symbolizing the tension and uncertainty of the situation.",
     "sources": [],
     "clips": [
       {
@@ -34,18 +34,18 @@
         "duration": 836
       },
       {
-        "platform": "x",
-        "url": "https://x.com/snarwani/status/2037379186701062330",
-        "embed_id": "2037379186701062330",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
-        "author": "snarwani"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=y5WBmILSgUc",
+        "embed_id": "y5WBmILSgUc",
+        "title": "US–Israel war on Iran has become a region‑wide conflict with controlled escalation: Analysis",
+        "duration": 394
       },
       {
         "platform": "x",
-        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
-        "embed_id": "2037181391041925513",
-        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
-        "author": "MiddleEastEye"
+        "url": "https://x.com/DeItaone/status/2037520956336324642",
+        "embed_id": "2037520956336324642",
+        "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
+        "author": "DeItaone"
       },
       {
         "platform": "reddit",
@@ -64,6 +64,18 @@
         "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
         "embed_id": "1s4ji7r",
         "title": "MIDDLE EAST UPDATE"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LateStageCapitalism/comments/1s55j1n/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55j1n",
+        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55iyj",
+        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
       }
     ],
     "youtube_videos": [
@@ -87,22 +99,22 @@
         "title": "Trump “Ahead of Schedule”? Experts question US strategy in Iran war",
         "channel": "Al Jazeera English",
         "duration": 836
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=y5WBmILSgUc",
+        "embed_id": "y5WBmILSgUc",
+        "title": "US–Israel war on Iran has become a region‑wide conflict with controlled escalation: Analysis",
+        "channel": "Al Jazeera English",
+        "duration": 394
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/snarwani/status/2037379186701062330",
-        "embed_id": "2037379186701062330",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
-        "author": "snarwani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
-        "embed_id": "2037181391041925513",
-        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
-        "author": "MiddleEastEye"
+        "url": "https://x.com/DeItaone/status/2037520956336324642",
+        "embed_id": "2037520956336324642",
+        "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
+        "author": "DeItaone"
       },
       {
         "platform": "reddit",
@@ -121,6 +133,18 @@
         "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
         "embed_id": "1s4ji7r",
         "title": "MIDDLE EAST UPDATE"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LateStageCapitalism/comments/1s55j1n/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55j1n",
+        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55iyj",
+        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
       }
     ],
     "image_file": "/images/breaking_2026-03-27.png"
