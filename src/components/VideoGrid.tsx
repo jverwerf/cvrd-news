@@ -482,21 +482,21 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 }
 
 function VideoAdSlot() {
+  const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    } catch {}
+    if (!ref.current) return;
+    ref.current.innerHTML = '';
+    const container = document.createElement('div');
+    container.id = 'container-f39b9ec27944aea9c833e401d3a2da8b';
+    ref.current.appendChild(container);
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = 'https://pl28990207.profitablecpmratenetwork.com/f39b9ec27944aea9c833e401d3a2da8b/invoke.js';
+    ref.current.appendChild(script);
   }, []);
 
-  return (
-    <div className="w-full h-full flex items-center justify-center p-4">
-      <ins className="adsbygoogle"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client="ca-pub-2572735826517528"
-        data-ad-slot="8292849831"
-        data-ad-format="fluid"
-        data-full-width-responsive="false" />
-    </div>
-  );
+  return <div ref={ref} className="w-full h-full flex items-center justify-center p-4" />;
 }
 
