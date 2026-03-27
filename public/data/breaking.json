@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz in response to the United States launching 850 Tomahawk missiles at Iranian targets. This military escalation threatens global oil supply, as the strait is a crucial passage for oil transport. The situation has intensified tensions in the Middle East and poses risks to international energy markets and regional stability.",
+    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. This move threatens the global oil supply, as the strait is a vital passage for oil transport. The escalation has heightened tensions in the Middle East, posing risks to international energy markets and regional stability.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-27T20:01:16.625Z",
+    "last_updated": "2026-03-27T22:01:18.066Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies driving this conflict. The U.S. military action and Iran's response are deeply rooted in a struggle for regional dominance and control over energy resources. Additionally, the role of other global powers, such as China and Russia, in either supporting or opposing these actions is not being fully explored, despite their vested interests in the region's stability and energy supply.",
-    "social_summary": "Social media is ablaze with discussions about the potential for a larger war, with hashtags like #WWIII trending. Memes comparing the situation to historical conflicts are circulating widely. Conspiracy theories suggesting ulterior motives behind the U.S. missile strikes, such as influencing oil prices or distracting from domestic issues, are gaining traction.",
-    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage symbolizing the Strait of Hormuz, with looming shadows of military ships on the horizon and oil barrels floating in the foreground, under a stormy sky.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these actions. The U.S. military response may be influenced by defense contractors and geopolitical strategies to maintain dominance in the region. Iran's closure of the Strait of Hormuz could be a strategic move to leverage its control over a critical oil chokepoint, potentially forcing negotiations or concessions from global powers.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the U.S. military aggression, while others support the show of force against Iran. Memes and conspiracy theories are circulating, suggesting ulterior motives such as control over oil resources or a distraction from domestic issues in both countries. Hashtags like #StraitOfHormuz and #OilWar are trending.",
+    "image_prompt": "A dramatic image of a narrow, turbulent sea passage with looming shadows of warships on the horizon, symbolizing the tension and strategic importance of the Strait of Hormuz.",
     "sources": [],
     "clips": [
       {
@@ -49,13 +49,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/BohuslavskaKate/status/2037565816296595747",
-        "embed_id": "2037565816296595747",
-        "title": "STUBB: Russia provides Iran with intelligence used to kill American soldiers and destroy Gulf infrastructure. Silver lining of Russia’s aggression is ",
-        "author": "BohuslavskaKate"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/BTnewsroom/status/2037263229269778456",
         "embed_id": "2037263229269778456",
         "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
@@ -90,6 +83,18 @@
         "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
         "embed_id": "1s55iyj",
         "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1s5eafl/do_we_realise_how_serious_this_is/",
+        "embed_id": "1s5eafl",
+        "title": "Do we realise how serious this is?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s56siu/a_contrarian_take/",
+        "embed_id": "1s56siu",
+        "title": "A contrarian take."
       }
     ],
     "youtube_videos": [
@@ -132,13 +137,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/BohuslavskaKate/status/2037565816296595747",
-        "embed_id": "2037565816296595747",
-        "title": "STUBB: Russia provides Iran with intelligence used to kill American soldiers and destroy Gulf infrastructure. Silver lining of Russia’s aggression is ",
-        "author": "BohuslavskaKate"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/BTnewsroom/status/2037263229269778456",
         "embed_id": "2037263229269778456",
         "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
@@ -173,6 +171,18 @@
         "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
         "embed_id": "1s55iyj",
         "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1s5eafl/do_we_realise_how_serious_this_is/",
+        "embed_id": "1s5eafl",
+        "title": "Do we realise how serious this is?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s56siu/a_contrarian_take/",
+        "embed_id": "1s56siu",
+        "title": "A contrarian take."
       }
     ],
     "image_file": "/images/breaking_2026-03-27.png"
