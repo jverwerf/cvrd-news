@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz, a vital passage for global oil transport, in retaliation to the United States launching 850 Tomahawk missiles at Iranian targets. This escalation in military conflict has sparked fears of significant disruptions in the global oil supply and heightened tensions in the Middle East. The closure of the strait, through which a substantial portion of the world's oil passes, poses a threat to international energy markets and regional stability.",
+    "summary": "Iran has closed the Strait of Hormuz in response to the United States launching 850 Tomahawk missiles at Iranian targets. This military escalation threatens global oil supply, as the strait is a crucial passage for oil transport. The situation has intensified tensions in the Middle East and poses risks to international energy markets and regional stability.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-27T18:00:53.033Z",
+    "last_updated": "2026-03-27T20:01:16.625Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these actions. The US's aggressive military response may be influenced by domestic pressures to maintain control over oil prices and assert dominance in the region. Iran's closure of the Strait of Hormuz serves as a strategic move to leverage its geographical advantage, potentially forcing global powers to negotiate on its terms. The geopolitical chess game extends beyond immediate military actions, involving long-term strategic interests in energy control and regional influence.",
-    "social_summary": "Social media is ablaze with debates over the legitimacy and consequences of the US's military actions, with some users accusing the US of imperialism and others defending it as a necessary measure against Iranian aggression. Memes and viral posts highlight the potential for a new oil crisis, drawing parallels to past conflicts in the region. Conspiracy theories suggest ulterior motives behind the US's missile strike, including economic gain and political distraction.",
-    "image_prompt": "A dramatic sunset over the Strait of Hormuz, with silhouetted oil tankers halted in the water, symbolizing the tension and uncertainty of the situation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies driving this conflict. The U.S. military action and Iran's response are deeply rooted in a struggle for regional dominance and control over energy resources. Additionally, the role of other global powers, such as China and Russia, in either supporting or opposing these actions is not being fully explored, despite their vested interests in the region's stability and energy supply.",
+    "social_summary": "Social media is ablaze with discussions about the potential for a larger war, with hashtags like #WWIII trending. Memes comparing the situation to historical conflicts are circulating widely. Conspiracy theories suggesting ulterior motives behind the U.S. missile strikes, such as influencing oil prices or distracting from domestic issues, are gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage symbolizing the Strait of Hormuz, with looming shadows of military ships on the horizon and oil barrels floating in the foreground, under a stormy sky.",
     "sources": [],
     "clips": [
       {
@@ -46,6 +46,20 @@
         "embed_id": "2037520956336324642",
         "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
         "author": "DeItaone"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BohuslavskaKate/status/2037565816296595747",
+        "embed_id": "2037565816296595747",
+        "title": "STUBB: Russia provides Iran with intelligence used to kill American soldiers and destroy Gulf infrastructure. Silver lining of Russia’s aggression is ",
+        "author": "BohuslavskaKate"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
+        "embed_id": "2037263229269778456",
+        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
+        "author": "BTnewsroom"
       },
       {
         "platform": "reddit",
@@ -115,6 +129,20 @@
         "embed_id": "2037520956336324642",
         "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
         "author": "DeItaone"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BohuslavskaKate/status/2037565816296595747",
+        "embed_id": "2037565816296595747",
+        "title": "STUBB: Russia provides Iran with intelligence used to kill American soldiers and destroy Gulf infrastructure. Silver lining of Russia’s aggression is ",
+        "author": "BohuslavskaKate"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
+        "embed_id": "2037263229269778456",
+        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
+        "author": "BTnewsroom"
       },
       {
         "platform": "reddit",
