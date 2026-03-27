@@ -49,8 +49,8 @@ const ALL_CATS = [
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },
-  { label: 'Sports', slug: '/sports' },
   { label: 'Trending', slug: '/trending' },
+  { label: 'Sports', slug: '/sports' },
 ];
 
 export default async function StoryRoute({ params }: { params: Promise<{ slug: string }> }) {

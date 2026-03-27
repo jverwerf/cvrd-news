@@ -27,8 +27,8 @@ const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'world': { label: 'World', slug: 'world' },
   'politics': { label: 'Politics', slug: 'politics' },
   'markets': { label: 'Markets', slug: 'markets' },
-  'sports': { label: 'Sports', slug: 'sports' },
   'trending': { label: 'Trending', slug: 'trending' },
+  'sports': { label: 'Sports', slug: 'sports' },
 };
 
 const ALL_CATS = Object.values(CATEGORIES);
