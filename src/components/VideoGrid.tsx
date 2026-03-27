@@ -293,7 +293,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     <div className="mb-6">
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
-        <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3">
+        <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px]">
           <div className="aspect-video bg-[#111] relative">
             {showingAd ? (
               <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
@@ -327,7 +327,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     src={`/api/x-video?id=${active.embed_id}`}
                     poster={`/api/x-video?id=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-contain"
-                    autoPlay muted playsInline controls
+                    muted playsInline controls
                     onEnded={() => nextRef.current()}
                     style={{ background: '#000' }} />
                 )}
@@ -336,7 +336,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     src={`/api/tg-video?post=${active.embed_id}`}
                     poster={`/api/tg-video?post=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-cover"
-                    autoPlay muted playsInline controls
+                    muted playsInline controls
                     onEnded={() => nextRef.current()} />
                 )}
               </>

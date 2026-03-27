@@ -1,0 +1,154 @@
+{
+  "handle": "AnnCoulter",
+  "name": "Ann Coulter",
+  "role": "Author and Political Commentator",
+  "party": "Republican",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "Author",
+    "Political Commentary",
+    "Republican",
+    "Trump Supporter",
+    "Immigration",
+    "Substack",
+    "MAGA",
+    "Census Reform",
+    "TSA Abolition"
+  ],
+  "photo_prompt": "Ann Coulter, tall with long blonde hair and sharp features, wearing a professional outfit, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "trump",
+    "administration",
+    "corrected",
+    "known",
+    "mistakes",
+    "census,",
+    "which",
+    "would",
+    "republicans",
+    "about",
+    "dozen",
+    "seats",
+    "house.",
+    "florida",
+    "congressional",
+    "compared",
+    "another",
+    "state",
+    "average",
+    "representation.",
+    "americans",
+    "spend",
+    "million",
+    "hours",
+    "lines",
+    "normal",
+    "year,",
+    "during",
+    "government",
+    "shutdowns,"
+  ],
+  "prominence": 21,
+  "followers": 2125645,
+  "overall_score": 64.5,
+  "confidence_interval": 13.7,
+  "verified_claims": 47,
+  "true_count": 18,
+  "somewhat_misleading_count": 13,
+  "misleading_count": 11,
+  "false_count": 5,
+  "pending_count": 5,
+  "dropped_count": 1,
+  "domains": {
+    "legislation": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 48.8,
+      "count": 17,
+      "true": 2,
+      "somewhat_misleading": 7,
+      "misleading": 5,
+      "false": 3
+    },
+    "healthcare": {
+      "score": 35,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    },
+    "other": {
+      "score": 66.4,
+      "count": 7,
+      "true": 3,
+      "somewhat_misleading": 2,
+      "misleading": 1,
+      "false": 1
+    },
+    "foreign_policy": {
+      "score": 83.7,
+      "count": 8,
+      "true": 6,
+      "somewhat_misleading": 0,
+      "misleading": 2,
+      "false": 0
+    },
+    "military": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "economics": {
+      "score": 66,
+      "count": 5,
+      "true": 1,
+      "somewhat_misleading": 3,
+      "misleading": 1,
+      "false": 0
+    },
+    "legal": {
+      "score": 100,
+      "count": 3,
+      "true": 3,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "demographics": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "education": {
+      "score": 0,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 1
+    },
+    "immigration": {
+      "score": 35,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T23:07:36.347Z"
+}

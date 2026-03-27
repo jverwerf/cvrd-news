@@ -1,0 +1,147 @@
+{
+  "handle": "SenSchumer",
+  "name": "Chuck Schumer",
+  "role": "Senator",
+  "party": "Democratic Party",
+  "country": "US",
+  "state": "New York",
+  "tags": [
+    "Senate Democratic Leader",
+    "TSA funding",
+    "voter suppression",
+    "Affordable Care Act",
+    "Trump",
+    "ICE",
+    "airport safety",
+    "healthcare",
+    "Middle East policy",
+    "Democrats"
+  ],
+  "photo_prompt": "Chuck Schumer, a middle-aged man with gray hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "senate",
+    "republicans",
+    "blocked",
+    "funding",
+    "times,",
+    "causing",
+    "chaos",
+    "travelers.",
+    "trump",
+    "vote-by-mail",
+    "despite",
+    "calling",
+    "cheating",
+    "others.",
+    "national",
+    "price",
+    "gasoline",
+    "increased",
+    "$2.93",
+    "$3.94",
+    "gallon",
+    "month.",
+    "detaining",
+    "passengers",
+    "airports",
+    "making",
+    "things",
+    "worse.",
+    "slashed",
+    "trillion"
+  ],
+  "prominence": 35,
+  "followers": 3467935,
+  "overall_score": 82.3,
+  "confidence_interval": 4.6,
+  "verified_claims": 266,
+  "true_count": 146,
+  "somewhat_misleading_count": 107,
+  "misleading_count": 10,
+  "false_count": 3,
+  "pending_count": 144,
+  "dropped_count": 5,
+  "domains": {
+    "domestic": {
+      "score": 79,
+      "count": 94,
+      "true": 44,
+      "somewhat_misleading": 45,
+      "misleading": 3,
+      "false": 2
+    },
+    "economics": {
+      "score": 80.4,
+      "count": 69,
+      "true": 33,
+      "somewhat_misleading": 33,
+      "misleading": 3,
+      "false": 0
+    },
+    "other": {
+      "score": 92.3,
+      "count": 31,
+      "true": 25,
+      "somewhat_misleading": 5,
+      "misleading": 1,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 80.5,
+      "count": 28,
+      "true": 16,
+      "somewhat_misleading": 9,
+      "misleading": 2,
+      "false": 1
+    },
+    "health": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 91.2,
+      "count": 32,
+      "true": 24,
+      "somewhat_misleading": 8,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 75.7,
+      "count": 7,
+      "true": 3,
+      "somewhat_misleading": 3,
+      "misleading": 1,
+      "false": 0
+    },
+    "environmental": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "politics": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "healthcare": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-26T23:48:20.521Z"
+}

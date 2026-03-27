@@ -1,0 +1,40 @@
+{
+  "handle": "AliVelshi",
+  "verified_count": 2,
+  "dropped_unsure": 0,
+  "pending_count": 0,
+  "scored_claims": [
+    {
+      "tweet_id": "1990869688486621597",
+      "tweet_text": "BREAKING: The US House voted almost unanimously - only one single Republican held out - to pass the Epstein Files Transparency Act.",
+      "tweet_date": "Tue Nov 18 19:48:16 +0000 2025",
+      "tweet_url": "https://twitter.com/AliVelshi/status/1990869688486621597",
+      "tweet_likes": 174,
+      "claim": "The US House voted almost unanimously to pass the Epstein Files Transparency Act, with only one Republican opposing it.",
+      "claim_type": "factual",
+      "domain": "legislation",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The U.S. House of Representatives voted 427–1 to pass the Epstein Files Transparency Act on November 18, 2025. The lone dissenting vote was cast by Republican Representative Clay Higgins of Louisiana. This aligns with the claim that the House voted almost unanimously, with only one Republican opposing the bill.",
+      "used_web_search": true,
+      "verified_at": "2026-03-26T21:48:00.776Z"
+    },
+    {
+      "tweet_id": "1985898776586838352",
+      "tweet_text": "BIG BREAKING: Democrat Zohran Mamdani is elected Mayor of New York City, in the largest turnout vote since 1969. He becomes the first Muslim and immigrant mayor of New York City, and the first Muslim to be elected mayor of a major U.S. city.",
+      "tweet_date": "Wed Nov 05 02:35:39 +0000 2025",
+      "tweet_url": "https://twitter.com/AliVelshi/status/1985898776586838352",
+      "tweet_likes": 350,
+      "claim": "Zohran Mamdani is elected Mayor of New York City, in the largest turnout vote since 1969, and he is the first Muslim and immigrant mayor of New York City.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "Zohran Mamdani was elected Mayor of New York City on November 4, 2025, becoming the city's first Muslim and first South Asian mayor. However, the claim that this election had the largest voter turnout since 1969 is inaccurate. The 2025 mayoral election saw the highest turnout since 1993, not 1969. Therefore, while the claim is mostly accurate, the specific detail about voter turnout is incorrect.",
+      "used_web_search": true,
+      "verified_at": "2026-03-26T21:48:08.303Z"
+    }
+  ],
+  "dropped_claims": [],
+  "pending_claims": []
+}

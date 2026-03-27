@@ -1,4 +1,12 @@
 <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="6" fill="#1a2a3a"/>
-  <text x="16" y="22" fill="#e0e0e0" font-family="Georgia,serif" font-size="20" font-weight="bold" text-anchor="middle">C</text>
+  <rect width="15" height="15" x="1" y="1" rx="2" fill="#2a4060"/>
+  <rect width="15" height="15" x="17" y="1" rx="2" fill="#1e3550"/>
+  <rect width="15" height="15" x="1" y="17" rx="2" fill="#1e3550"/>
+  <rect width="15" height="15" x="17" y="17" rx="2" fill="#2a4060"/>
+  <text x="8.5" y="12" fill="#fff" font-family="Georgia,serif" font-size="9" font-weight="bold" text-anchor="middle">C</text>
+  <text x="24.5" y="12" fill="#fff" font-family="Georgia,serif" font-size="9" font-weight="bold" text-anchor="middle">V</text>
+  <text x="8.5" y="28" fill="#fff" font-family="Georgia,serif" font-size="9" font-weight="bold" text-anchor="middle">R</text>
+  <text x="24.5" y="28" fill="#fff" font-family="Georgia,serif" font-size="9" font-weight="bold" text-anchor="middle">D</text>
+  <line x1="16" y1="1" x2="16" y2="31" stroke="#c4a44a" stroke-width="0.8"/>
+  <line x1="1" y1="16" x2="31" y2="16" stroke="#c4a44a" stroke-width="0.8"/>
 </svg>
