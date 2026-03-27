@@ -1,6 +1,6 @@
 {
   "date": "2026-03-27",
-  "generated_at": "2026-03-27T16:01:00.153Z",
+  "generated_at": "2026-03-27T16:01:00.998Z",
   "top_narratives": [
     {
       "topic": "Iran War and Strait of Hormuz Tensions",
@@ -2968,22 +2968,7 @@
       ],
       "is_top_story": true,
       "image_file": "/images/story_2026-03-27_25.png",
-      "onrecord_matches": [
-        {
-          "handle": "realDonaldTrump",
-          "name": "Donald J. Trump",
-          "search_keyword": "iran",
-          "matching_claims": 2,
-          "topic_score": 65
-        },
-        {
-          "handle": "marcorubio",
-          "name": "Marco Rubio",
-          "search_keyword": "iran",
-          "matching_claims": 11,
-          "topic_score": 75
-        }
-      ]
+      "onrecord_matches": []
     },
     {
       "topic": "Helium Shortage Threatens Chip Industry",
@@ -5836,8 +5821,8 @@
     "Senate DHS Funding Deal",
     "Netflix Raises Subscription Prices Again",
     "Iran War and Strait of Hormuz Tensions",
-    "Oil Prices See First Weekly Decline Amid Iran War",
     "TSA Funding Breakthrough",
+    "Savannah Guthrie's Return to 'Today' Show",
     "WTO Chief Declares World Order Irrevocably Changed",
     "Helium Shortage Threatens Chip Industry",
     "Ovechkin's 34th Career Hat Trick",
