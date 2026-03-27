@@ -18,19 +18,20 @@ const ALL_CATS = [
 ];
 
 function toNarrativeGap(b: any): NarrativeGap {
+  // Prefer youtube_videos/social_clips arrays; fall back to legacy clips array
   const ytVideos = (b.youtube_videos || []).length > 0
-    ? b.youtube_videos.map((v: any) => ({ ...v, _breaking: true }))
+    ? b.youtube_videos
     : (b.clips || [])
         .filter((c: any) => c.platform === 'youtube' && c.embed_id)
-        .map((c: any) => ({ url: c.url || '', embed_id: c.embed_id, channel: c.title || 'Breaking', duration: c.duration, title: c.title, _breaking: true }));
+        .map((c: any) => ({ url: c.url || '', embed_id: c.embed_id, channel: c.title || 'Breaking', duration: c.duration, title: c.title }));
 
   const socialClips = (b.social_clips || []).length > 0
-    ? b.social_clips.map((c: any) => ({ ...c, _breaking: true }))
+    ? b.social_clips
     : (b.clips || [])
         .filter((c: any) => c.platform !== 'youtube' && c.embed_id)
-        .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, thumbnail: c.thumbnail, duration: c.duration, _breaking: true }));
+        .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, thumbnail: c.thumbnail, duration: c.duration }));
 
-  const story: NarrativeGap = {
+  return {
     topic: b.topic || 'Breaking News',
     summary: b.summary || '',
     left_narrative: b.left_narrative || '',
@@ -45,16 +46,6 @@ function toNarrativeGap(b: any): NarrativeGap {
     youtube_videos: ytVideos,
     social_clips: socialClips,
   };
-
-  // If no YouTube clips, promote first social clip so center player has something
-  if (story.youtube_videos!.length === 0) {
-    const first = socialClips.find((c: any) => c.embed_id);
-    if (first) {
-      story.youtube_videos = [{ url: first.url || '', embed_id: first.embed_id, channel: first.title || 'Breaking', duration: first.duration }];
-    }
-  }
-
-  return story;
 }
 
 function timeAgo(dateStr: string): string {
@@ -95,8 +86,8 @@ export default function BreakingPage() {
   // Convert all breaking items to NarrativeGap format
   // Show stories with at least 3 clips (YouTube + social)
   const allStories = breakingItems.map(toNarrativeGap).filter(s => {
-    const totalClips = (s.youtube_videos || []).length + (s.social_clips || []).length;
-    return totalClips >= 3;
+    const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter(c => c.duration).length;
+    return videoClips >= 3;
   });
 
   if (allStories.length === 0) {

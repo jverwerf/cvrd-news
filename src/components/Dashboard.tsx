@@ -25,7 +25,7 @@ type TileContent = {
   playlistIdx?: number;
   channel?: string;
   // Social clip info
-  platform?: 'x' | 'tiktok' | 'reels' | 'telegram';
+  platform?: 'x' | 'tiktok' | 'reels' | 'telegram' | 'reddit';
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
@@ -268,7 +268,7 @@ export function Dashboard({
           type: 'social',
           image: thumbImg,
           topic: story.topic, index: i + 1, sources: story.sources || [],
-          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram',
+          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram' | 'reddit',
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
@@ -755,7 +755,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   const prev = prevIdx >= 0 ? pool[prevIdx % pool.length] : null;
   const isVideo = current.type === 'video';
   const isSocial = current.type === 'social';
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
   const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
@@ -890,26 +890,25 @@ function AdSlot() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    } catch {}
+    if (!ref.current) return;
+    // Adsterra native banner
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = 'https://pl28990207.profitablecpmratenetwork.com/f39b9ec27944aea9c833e401d3a2da8b/invoke.js';
+    ref.current.appendChild(script);
   }, []);
 
   return (
     <div ref={ref} className="w-full h-full">
-      <ins className="adsbygoogle"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client="ca-pub-2572735826517528"
-        data-ad-slot="8292849831"
-        data-ad-format="fluid"
-        data-full-width-responsive="false" />
+      <div id="container-f39b9ec27944aea9c833e401d3a2da8b" />
     </div>
   );
 }
 
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item }: { item: TileContent }) {
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
 
   if (item.type === 'video') {
     return (
@@ -1016,7 +1015,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         <div>
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
             style={{ background: platformColors[item.platform || 'x'] }}>
-            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : 'Reels'}
+            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : item.platform === 'reddit' ? 'Reddit' : 'Reels'}
           </span>
           <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
         </div>

@@ -153,7 +153,7 @@ export default function PoliticiansPage() {
   const [stories, setStories] = useState<any[]>([]);
   const [liveData, setLiveData] = useState<any[]>();
   const [search, setSearch] = useState('');
-  const [isBreaking, setIsBreaking] = useState(false);
+  const [isBreaking, setIsBreaking] = useState(true);
   const [editorial, setEditorial] = useState<any>(null);
   const [editorialHandle, setEditorialHandle] = useState<string | null>(null);
 
@@ -200,9 +200,11 @@ export default function PoliticiansPage() {
             (s.social_clips || []).filter((c: any) => c.platform !== 'reddit' && c.duration).length;
           return videoCount >= 3;
         });
-        if (hasEnoughClips) setIsBreaking(true);
+        setIsBreaking(hasEnoughClips);
+      } else {
+        setIsBreaking(false);
       }
-    }).catch(() => {});
+    }).catch(() => setIsBreaking(false));
   }, []);
 
   // Tile animation — each tile cycles through politicians at different speeds
