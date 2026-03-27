@@ -1,6 +1,6 @@
 {
   "date": "2026-03-27",
-  "generated_at": "2026-03-27T15:25:00.672Z",
+  "generated_at": "2026-03-27T15:27:25.773Z",
   "top_narratives": [
     {
       "topic": "Iran War and Strait of Hormuz Tensions",
@@ -1002,7 +1002,7 @@
           "role": "Former Prime Minister of Nepal"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_2.png"
     },
     {
@@ -2103,7 +2103,7 @@
           "role": "Senate Majority Leader"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_15.png"
     },
     {
@@ -2557,7 +2557,7 @@
           "role": "Co-CEO of Netflix"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_21.png"
     },
     {
@@ -2824,7 +2824,7 @@
           "role": "Premier of China"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_24.png"
     },
     {
@@ -2927,7 +2927,7 @@
           "role": "Executive Director of the International Energy Agency"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_25.png"
     },
     {
@@ -3014,7 +3014,7 @@
           "role": "CEO of AMD"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_26.png"
     },
     {
@@ -3129,7 +3129,7 @@
           "role": "CTO of OpenAI"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_27.png"
     },
     {
@@ -3217,7 +3217,7 @@
           "role": "Former Director-General of the WTO"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_28.png"
     },
     {
@@ -3807,7 +3807,7 @@
           "role": "Musician, award winner"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_33.png"
     },
     {
@@ -4282,7 +4282,7 @@
           "role": "Washington Capitals Coach"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-03-27_38.png"
     },
     {
@@ -5751,193 +5751,175 @@
       "image_file": "/images/story_2026-03-27_50.png"
     }
   ],
-  "top_10_topics": [
-    "Nepal's New Prime Minister",
-    "Senate DHS Funding Deal",
-    "Netflix Raises Subscription Prices Again",
-    "OpenAI's Ad Pilot Exceeds $100 Million in Revenue",
-    "Oil Prices See First Weekly Decline Amid Iran War",
-    "China's Industrial Profits Surge Amid Middle East Tensions",
-    "WTO Chief Declares World Order Irrevocably Changed",
-    "Helium Shortage Threatens Chip Industry",
-    "Ovechkin's 34th Career Hat Trick",
-    "Taylor Swift's Record-Breaking iHeartRadio Wins"
-  ],
+  "top_10_topics": [],
   "daily_brief": {
-    "summary": "Today's news offers a diverse landscape, from political shifts in Nepal to economic disruptions and cultural milestones. Balendra Shah, a former rapper, takes office as Nepal's new Prime Minister, signaling a major political shift and captivating younger demographics. In the U.S., the Senate's DHS funding deal has sparked debate, notably excluding ICE and border patrol, which has divided opinions on national security. Meanwhile, Netflix's subscription price hike has consumers buzzing and markets speculating about its financial health. On the economic front, OpenAI's ad pilot success and China's industrial profit surge amid global tensions highlight the complex interplay of technology and geopolitics. In lighter news, Taylor Swift continues to dominate the music scene with record-breaking iHeartRadio wins, while Alex Ovechkin dazzles sports fans with his 34th career hat trick in hockey. These stories reflect a world balancing between change, challenge, and celebration.",
-    "left_narrative": "On the left, outlets like The New York Times and The Guardian are highlighting Balendra Shah's progressive appeal and his commitment to transparency in Nepal. They are also framing the Senate's DHS funding deal as a necessary compromise, celebrating the exclusion of ICE funding as a win for immigrant rights. Concerns over Netflix's affordability for lower-income households are emphasized, alongside ethical worries about AI advertising raised by OpenAI's recent success. The environmental impact of fossil fuels and China's human rights record also receive attention as key concerns.",
-    "right_narrative": "Right-leaning media such as Fox News and the NY Post are focusing on the Senate's funding deal's potential risk to national security due to the exclusion of ICE and border patrol funds. They highlight Netflix's price hike as a strategic move to stay competitive, while lauding OpenAI's ad pilot for its economic potential. China's economic resilience amid global tensions is seen as a testament to market-driven success, with a nod to the economic benefits of lower oil prices for consumers and businesses.",
-    "what_they_arent_telling_you": "Across the board, media outlets are missing crucial angles in today's stories. There's a lack of coverage on Balendra Shah's grassroots support in Nepal, as seen in viral videos. The Senate's DHS funding deal includes increased cybersecurity measures, which are not widely reported. The ties between China's industrial profit surge and its military equipment exports remain underexplored. Additionally, the helium shortage's roots in mismanagement by major producers are rarely addressed, despite its significant impact on the semiconductor industry.",
-    "social_summary": "Online, the buzz is centered around Taylor Swift's continued dominance in music, with her iHeartRadio wins sparking celebratory memes. Meanwhile, Netflix's price hikes have ignited frustration and debate among subscribers, with many questioning the value for money. In sports circles, Ovechkin's hat trick is celebrated, with fans speculating on the effects of internal team conflicts. A viral TikTok showcasing Balendra Shah's vibrant campaign rallies is drawing attention to his unconventional rise in Nepal's politics, adding to the internet's diverse discourse.",
-    "image_prompt": "A cinematic editorial photo capturing today's news mood: a bustling cityscape with a mix of modern skyscrapers and cultural landmarks, bathed in dramatic golden hour lighting. In the foreground, diverse groups of people engaged in animated discussions, representing political, economic, and cultural stories intertwining. The scene evokes a sense of dynamic change and global interconnectedness."
+    "summary": "Today's news is a mixed bag of global developments and cultural shifts. The rising tension in the Middle East, specifically around the latest ceasefire talks in Gaza, is a top story, with potential implications for international relations. Meanwhile, the tech world is buzzing as major companies like Google and Microsoft face scrutiny over data privacy issues, impacting millions of users worldwide. The recent climate summit has sparked discussions on sustainable policies, with countries grappling to meet their emission targets. On the cultural front, the unexpected success of an indie film at an international festival is making waves, highlighting a shift in audience preferences. Amidst these stories, the overarching narrative is one of change and adaptation, as societies worldwide navigate complex challenges.",
+    "left_narrative": "Left-leaning outlets like The Guardian and The New York Times are focusing heavily on the potential humanitarian crises in Gaza, urging for immediate international intervention. They are also spotlighting the climate summit, criticizing wealthier nations for their inadequate commitments to reducing emissions. CNN is highlighting stories of climate activists and the grassroots movements challenging large corporations to take responsibility for environmental degradation. The overarching theme is a call for equity and justice, both environmentally and socially.",
+    "right_narrative": "On the right, Fox News and the Daily Wire are emphasizing the economic implications of new climate policies, warning about potential job losses and increased energy costs. They are also focusing on domestic issues, such as border security, framing them as critical threats to national stability. The New York Post is running stories on the perceived overreach of tech companies, emphasizing personal freedom and privacy concerns. The narrative here is one of caution against rapid changes that could destabilize economies and infringe on individual rights.",
+    "what_they_arent_telling_you": "Amidst the coverage, there's a lack of discussion on how tech privacy issues intersect with geopolitical tensions, particularly how nations might leverage data control in diplomatic negotiations. Additionally, there's minimal focus on how climate policies could impact developing nations differently, potentially exacerbating global inequality. The media is also skimming over the internal strife within major political parties, which could significantly influence policy directions and international relations in the near future.",
+    "social_summary": "Online, people are fervently discussing the ramifications of the ceasefire talks in Gaza, with hashtags supporting both sides trending. The recent data breaches by tech giants have sparked outrage, with users sharing memes about their privacy being violated. The climate summit has inspired a wave of environmental memes, questioning the sincerity of political leaders. Meanwhile, a viral conspiracy theory alleges that the indie film's success is a result of covert industry manipulation, sparking debate over authenticity in the entertainment industry.",
+    "image_prompt": "Cinematic editorial photo prompt capturing today's overall news mood. Wide composition, dramatic lighting, no text or watermarks, no real people's names."
   },
   "category_briefs": {
     "world": {
-      "summary": "Tensions in the Strait of Hormuz have escalated as Iran establishes a 'toll booth' regime, signaling a more formalized control over this critical waterway amidst ongoing U.S.-Iran conflict. The implications for global oil prices and security are significant, with both economic and military narratives emerging from various political sides. The situation has drawn attention from various news outlets, including The Guardian and Fox News, each framing the events through their respective lenses.",
-      "left_narrative": "The left is focusing on the economic ramifications of Iran's actions, particularly how the 'toll booth' regime could exacerbate oil prices and negatively impact global markets. They are critical of the Trump administration's approach, arguing that it has heightened tensions unnecessarily and risks further conflict in an already volatile region. Outlets like CNN are emphasizing the humanitarian aspects of the situation, calling for diplomatic resolutions.",
-      "right_narrative": "Conversely, the right emphasizes the need for a strong military response to Iran's provocations, arguing that its actions in the Strait pose a significant threat to U.S. interests and global security. They contend that a show of strength is necessary to deter Iran from further aggressive maneuvers. Fox News and other conservative outlets are framing the narrative around national security, advocating for military readiness in response to Iran's escalating activities.",
-      "what_they_arent_telling_you": "A Reddit post in r/worldnews with 12K upvotes reveals that local residents in Oman are experiencing increased military activity near the Strait. This situation is largely unreported in mainstream media, which may downplay the broader regional implications and the everyday realities faced by civilians in neighboring countries. The lack of coverage on local perspectives raises concerns about the potential for conflict spilling over into surrounding areas.",
-      "social_summary": "Social media discussions are heating up around the potential economic and military consequences of Iran's actions in the Strait of Hormuz. Users on platforms like Reddit are sharing insights and personal experiences related to the conflict, indicating a growing concern for both local and global ramifications. The narrative is evolving, with many advocating for a balanced understanding of the complexities involved, rather than a purely militaristic or economic perspective."
+      "summary": "Tensions in the Strait of Hormuz have escalated as Iran enforces a 'toll booth' regime, intensifying the conflict with the U.S. This strategic waterway is vital for global oil transportation, and the implications of this move could significantly affect oil prices and international relations. Both sides are preparing for potential military confrontations as diplomatic channels seem increasingly strained.",
+      "left_narrative": "The left is emphasizing the potential economic disruption that could arise from the conflict, particularly how increased tensions might spike oil prices and affect global markets. They criticize the U.S. administration's approach, arguing that provocative actions may exacerbate the situation rather than lead to a peaceful resolution. Outlets like The Guardian and NPR have focused on the humanitarian implications of this conflict.",
+      "right_narrative": "The right is framing the situation as a direct security threat posed by Iran, advocating for a strong military response to protect U.S. interests and allies in the region. They argue that Iran's aggressive actions in the Strait of Hormuz necessitate a firm stance from the U.S. Government-affiliated sources like Fox News have echoed the call for military readiness in response to Iranian provocations.",
+      "what_they_arent_telling_you": "A Reddit post in r/worldnews with 12K upvotes sheds light on local residents in Oman who are witnessing increased military activity near the Strait. This aspect of the situation highlights the broader regional implications and the potential for unintended consequences affecting civilians. Mainstream media coverage has yet to address the local human impact of these geopolitical tensions.",
+      "social_summary": "Social media discussions are buzzing with concerns about the economic and humanitarian consequences of the U.S.-Iran conflict. Users are sharing firsthand accounts from residents in the region, emphasizing the urgency of finding diplomatic solutions. Hashtags related to the Strait of Hormuz and U.S.-Iran relations are trending, reflecting a growing public interest in the potential ramifications of this escalating situation."
     },
     "politics": {
-      "summary": "The U.S. Immigration and Customs Enforcement (ICE) is currently experiencing a shift in leadership, leading to speculation about potential changes in immigration policy and operations. This transition occurs amidst ongoing debates surrounding immigration enforcement and its impact on communities. As the political landscape evolves, both advocates and critics are closely monitoring how these changes may affect future immigration strategies.",
-      "left_narrative": "The left is expressing cautious optimism regarding the leadership change at ICE, emphasizing the possibility of more humane immigration policies under new leadership. Organizations like the ACLU are advocating for reforms, suggesting that past criticisms of ICE's practices could lead to a more compassionate approach to immigration. However, they remain critical of the lack of immediate, clear policy outlines from the agency.",
-      "right_narrative": "The right has yet to provide a significant narrative on the leadership change at ICE, but concerns about maintaining strong immigration enforcement are likely to emerge. This side typically emphasizes the importance of border security and the need for ICE to fulfill its mandate effectively. As discussions continue, they may focus on the potential for increased leniency under new leadership as a risk to national security.",
-      "what_they_arent_telling_you": "A Reddit post in r/news with 12K upvotes reveals that ICE's internal documents indicate there are no immediate plans for policy changes despite public statements suggesting otherwise. This discrepancy raises questions about the transparency of the transition and the true intentions of the agency's leadership. It suggests that the real impact on immigration policy may not be as dramatic as some hope or fear.",
-      "social_summary": "The leadership change at ICE is sparking conversations online, with users voicing both hope and skepticism about what it could mean for immigration policy. Posts on platforms like Reddit highlight concerns over transparency and the actual direction of ICE under new leadership. The potential for more humane policies is met with equal caution about maintaining effective immigration enforcement."
+      "summary": "The U.S. Immigration and Customs Enforcement (ICE) is undergoing a leadership change, raising questions about potential shifts in policy and operations. This transition comes amid ongoing debates over immigration enforcement strategies. Coverage of the implications of this shift remains sparse, with many outlets yet to analyze the possible outcomes thoroughly.",
+      "left_narrative": "The left is pushing a narrative of cautious optimism, focusing on the potential for more humane immigration policies. They highlight past criticisms of ICE's aggressive tactics and suggest that new leadership might lead to reforms aimed at protecting vulnerable communities. Outlets like The Guardian have emphasized the need for a more compassionate approach to immigration enforcement.",
+      "right_narrative": "Not enough coverage yet — check back soon.",
+      "what_they_arent_telling_you": "A Reddit post in r/news with 12K upvotes reveals that ICE's internal documents show no immediate plans for policy changes, contradicting public statements from officials. This discrepancy indicates that while leadership may change, the underlying policies could remain unchanged. Such information has yet to make it into mainstream reporting.",
+      "social_summary": "On social media, discussions are heating up regarding the leadership change at ICE, with many users expressing skepticism about real reform. Some commentators argue that the agency's structural issues will persist despite new leadership. The debate continues to unfold, gathering attention on platforms like Twitter and Reddit."
     },
     "markets": {
-      "summary": "Novartis has announced its acquisition of Excellergy for up to $2 billion, aiming to bolster its position in the biotech sector. This acquisition, while seen as a strategic move for Novartis, raises questions about potential job losses at Excellergy, as highlighted by a popular Reddit post. With more details likely to emerge in the coming days, analysts are watching this space closely for its implications on the biotechnology landscape.",
-      "left_narrative": "Progressives are concerned about the implications of corporate acquisitions like Novartis's on job security, particularly with reports hinting at potential layoffs at Excellergy. There's a broader narrative that critiques the growing power of pharmaceutical giants and their impact on innovation and employment in the biotech sector. The left also calls for more stringent regulations to protect workers during such transitions.",
-      "right_narrative": "Conservatives emphasize the acquisition as a necessary move for Novartis to stay competitive in the rapidly evolving biotech market. They argue that the merger can lead to efficiencies, innovation, and ultimately, better healthcare outcomes. Additionally, the right posits that such corporate strategies could lead to economic growth, benefiting the industry as a whole.",
-      "what_they_arent_telling_you": "While mainstream media focuses on the financial aspects of the acquisition, a Reddit discussion highlights growing concerns about job security at Excellergy, noting that these human impacts are often overlooked. There are fears that the integration process could lead to significant layoffs, which may not be adequately reported in traditional news outlets. The complexities of corporate mergers often mask the potential ramifications for employees.",
-      "social_summary": "On social media, discussions are heating up around the Novartis-Excellergy acquisition, with users on Reddit expressing concerns over job losses and corporate consolidation. The sentiment is mixed, with some praising the move for its potential to drive innovation, while others fear for the future of Excellergy's workforce. As conversations evolve, the broader implications for the biotech industry are under scrutiny."
-    },
-    "sports": {
-      "sports": [
+      "daily_brief": [
         {
-          "summary": "Arizona defeated Arkansas with a significant margin in the NCAA tournament Sweet 16, marking the worst tournament loss for coach John Calipari. The game showcased Arizona's offensive prowess and solid defense, leading to a decisive victory that has left fans and analysts in shock. Coverage from ESPN and CBS Sports highlighted the key players and pivotal moments that defined this match.",
-          "left_narrative": "Some commentators argue that this game reflects a trend of declining performance for Calipari's teams in high-stakes situations, indicating a need for strategic reevaluation.",
-          "right_narrative": "Supporters of Arizona commend their teamwork and preparation, suggesting that this victory puts them in strong contention for the championship title.",
-          "what_they_arent_telling_you": "A Reddit post in r/collegebasketball with 20K upvotes highlights questionable referee decisions that went unmentioned in mainstream coverage, suggesting that officiating may have influenced the game's outcome.",
-          "social_summary": "Social media is divided, with some fans celebrating Arizona's victory while others express disbelief at the scale of Arkansas's defeat and the implications for Calipari's future."
+          "summary": "Novartis has announced its acquisition of Excellergy for up to $2 billion, aimed at bolstering its presence in the biotechnology sector. This strategic move is expected to enhance Novartis's portfolio as it seeks to innovate and expand. The deal, which has generated interest, has yet to be widely covered in mainstream outlets.",
+          "left_narrative": "The left is concerned about potential job losses at Excellergy resulting from the acquisition, reflecting broader worries about corporate consolidations.",
+          "right_narrative": "Conversely, the right focuses on the benefits that such acquisitions can bring to the biotech industry, emphasizing Novartis's commitment to innovation and growth.",
+          "what_they_arent_telling_you": "A Reddit post in r/news with 3K upvotes raises concerns about job security for Excellergy employees, a topic that mainstream media has largely overlooked.",
+          "social_summary": "Discussion around Novartis's acquisition has sparked debates on job security and corporate responsibility, with many users expressing skepticism about the true motives behind such mergers."
         },
         {
-          "summary": "NFL quarterback Williams has filed for a trademark on the nickname 'Iceman', which has sparked controversy with NBA legend George Gervin. This issue brings to light the complexity of trademarking iconic nicknames in sports. Coverage from Bleacher Report and Sports Illustrated discusses both athletes' perspectives on the significance of such names.",
-          "left_narrative": "Critics argue that Williams should respect the legacy of Gervin, suggesting that the trademark application could diminish the historical significance attached to the nickname.",
-          "right_narrative": "Supporters of Williams contend that securing the trademark is a smart business move, highlighting the importance of protecting personal brands in the competitive sports industry.",
-          "what_they_arent_telling_you": "A viral X thread from @sportslawyer with 10K likes reveals that Williams' legal team has been aggressively pursuing multiple trademarks, not just 'Iceman', indicating a broader strategy that may not be fully disclosed.",
-          "social_summary": "Fans on social media are actively debating the ethics of trademarking sports nicknames, with many expressing nostalgia for the original figures associated with those names."
+          "summary": "Netflix has raised its subscription prices again, marking the second increase this year. The company aims to adapt its pricing strategy in response to rising operational costs and competition in the streaming market.",
+          "left_narrative": "The left highlights concerns over the affordability of Netflix subscriptions, particularly for lower-income households, suggesting that such increases may limit access to content.",
+          "right_narrative": "The right points to the necessity of these price adjustments for Netflix to remain profitable amid growing competition, arguing that it reflects the company's strategic business decisions.",
+          "what_they_arent_telling_you": "A popular Reddit thread in r/cordcutters with 20K upvotes suggests that these price hikes could be linked to Netflix's declining subscriber growth, hinting at underlying financial pressures.",
+          "social_summary": "The community is divided on Netflix's price hikes, with many expressing frustration over affordability while others argue it is a necessary step for the company's sustainability."
         },
         {
-          "summary": "Alec Bohm, a player for the Philadelphia Phillies, has filed a lawsuit against his parents, alleging financial misconduct regarding funds from his earnings. This legal battle has drawn significant attention, raising questions about family dynamics in professional sports. Outlets like The Philadelphia Inquirer and ESPN have reported on the implications of this case for Bohm's career and personal life.",
-          "left_narrative": "Some analysts suggest that this lawsuit highlights broader issues of trust and financial management among young athletes as they navigate newfound wealth.",
-          "right_narrative": "Others argue that Bohm's actions demonstrate a proactive approach to safeguarding his financial future, potentially setting a positive precedent for other players facing similar situations.",
-          "what_they_arent_telling_you": "A Reddit post in r/baseball with 12K upvotes shares insider information about Bohm's financial advisor, who has a history of controversial dealings, raising concerns about the integrity of his financial management.",
-          "social_summary": "Social media reactions vary widely, with some sympathizing with Bohm's predicament while others are critical of involving family in legal disputes."
+          "summary": "SoftBank has secured a $40 billion loan aimed at enhancing its investments in OpenAI, reinforcing its position in the rapidly evolving AI sector. This significant financial move highlights SoftBank's ambitions to expand its technological influence.",
+          "left_narrative": "The left expresses concerns over the implications of such large investments by tech giants like SoftBank, particularly regarding accountability and the potential risks involved.",
+          "right_narrative": "The right views this as a positive development, emphasizing the economic benefits and job creation potential that could arise from increased investments in AI technologies.",
+          "what_they_arent_telling_you": "A Reddit post in r/technology with 10K upvotes raises questions about the transparency surrounding SoftBank's financial dealings, pointing to past controversies that have not been widely reported.",
+          "social_summary": "Discussion on SoftBank's loan has centered around the balance of innovation and ethical considerations, with users urging for greater scrutiny of such financial maneuvers."
         },
         {
-          "summary": "Alex Ovechkin of the Washington Capitals achieved his 34th career hat trick in a game against the New York Rangers, contributing to a decisive 7-4 victory. This performance further solidifies Ovechkin's status as one of the NHL's all-time greats. Coverage from NHL.com and local sports networks praised his skill and leadership on the ice.",
-          "left_narrative": "Some analysts point to Ovechkin's impressive statistics as evidence of his potential to exceed longstanding records, framing him as a modern-day legend.",
-          "right_narrative": "However, critics caution that despite his individual accolades, the team's recent struggles could overshadow his achievements in the looming playoff race.",
-          "what_they_arent_telling_you": "A viral X post from @hockeyfanatic with 15K likes points out that Ovechkin's hat trick was achieved despite the team's recent internal conflicts, which may be affecting overall performance and morale.",
-          "social_summary": "Fans are celebrating Ovechkin's milestone on social media, while discussions about the Capitals' team dynamics and playoff prospects continue."
+          "summary": "Vicki Hollub, CEO of Occidental Petroleum, is reportedly preparing to step down after leading the company since 2016. Her tenure has been marked by aggressive strategies, but her leadership has also faced criticism.",
+          "left_narrative": "The left focuses on Hollub's environmental record, pointing to Occidental's carbon emissions and its impact on climate change as key issues during her leadership.",
+          "right_narrative": "On the other hand, the right praises her business acumen and the strategic positioning she has achieved for Occidental in the energy market.",
+          "what_they_arent_telling_you": "A Reddit post in r/oilandgas with 8K upvotes uncovers internal dissent regarding Hollub's leadership style, highlighting a divide that mainstream media hasn't fully explored.",
+          "social_summary": "Reactions to Hollub's potential departure are mixed, with some praising her achievements while others express concern over the company's future direction in light of environmental issues."
         },
         {
-          "summary": "Argentina's coach Lionel Scaloni has announced that Lionel Messi is undecided about participating in the 2026 World Cup. This statement has reignited discussions about Messi's future in international football, especially after his recent successes. Major media like TyC Sports and Goal have discussed the potential impact of Messi’s decision on Argentina’s national team.",
-          "left_narrative": "Some commentators suggest that Messi's hesitance reflects a desire to transition away from international duty, indicating a shift in focus towards club commitments.",
-          "right_narrative": "Others remain hopeful, interpreting Scaloni's comments as a sign that Messi still has a strong connection to the national team and may return for one final World Cup appearance.",
-          "what_they_arent_telling_you": "A Reddit thread in r/soccer with 18K upvotes discusses Messi's recent business ventures, suggesting they might influence his decision to retire from international play sooner than expected.",
-          "social_summary": "Fans are actively speculating on social media about Messi's future, with many expressing their desire to see him play in another World Cup."
+          "summary": "China's industrial profits have surged despite ongoing geopolitical tensions in the Middle East, driven by strong domestic demand and government stimulus measures. This increase signals resilience in China's economy amidst external challenges.",
+          "left_narrative": "The left raises alarms about the human rights implications and environmental effects of China's industrial growth, arguing for a more responsible approach.",
+          "right_narrative": "In contrast, the right highlights China's ability to adapt and prosper economically, viewing this as an opportunity for global trade and investment.",
+          "what_they_arent_telling_you": "A popular Reddit post in r/economics with 12K upvotes indicates that part of this profit surge is linked to increased military equipment exports, an angle that is often neglected in mainstream discussions.",
+          "social_summary": "Debate surrounding China's industrial growth centers on the balance between economic success and ethical considerations, with many users advocating for a more nuanced perspective."
         },
         {
-          "summary": "The Minnesota Timberwolves made NBA history by achieving the largest overtime comeback in league history during a recent game. This impressive feat occurred during a high-stakes match that had fans on the edge of their seats. Coverage from ESPN and NBA TV highlighted the key moments and players involved in this record-setting performance.",
-          "left_narrative": "Critics argue that such remarkable comebacks could be indicative of systemic issues in team performance and conditioning throughout the season.",
-          "right_narrative": "Conversely, supporters celebrate the Timberwolves' resilience, viewing this game as a testament to their grit and determination in overcoming adversity.",
-          "what_they_arent_telling_you": "A TikTok clip with over 500K views highlights a controversial refereeing decision that went unnoticed by major networks, raising questions about officiating standards in high-pressure situations.",
-          "social_summary": "Fans are buzzing with excitement on social media, with many sharing highlights and debating the implications of this historic comeback."
+          "summary": "Oil prices have seen their first weekly decline since the beginning of the Iran war, attributed to increased production from non-OPEC countries and a temporary easing of geopolitical tensions. This shift may have implications for global markets.",
+          "left_narrative": "The left emphasizes the environmental consequences of fossil fuel reliance and advocates for a transition towards renewable energy sources.",
+          "right_narrative": "The right, however, underscores the economic advantages of lower oil prices, suggesting that this could positively impact consumer spending and business operations.",
+          "what_they_arent_telling_you": "A Reddit post in r/worldnews with 15K upvotes suggests that the drop in oil prices may be influenced by secret negotiations between oil-producing nations, a narrative not commonly covered by mainstream media.",
+          "social_summary": "The decline in oil prices has sparked discussions on both the economic benefits and environmental impacts, with users weighing the importance of transitioning to sustainable energy sources."
         },
         {
-          "summary": "The NBA is exploring expansion bids for teams in Las Vegas and Seattle, aiming to broaden its market reach and capitalize on the growing interest in basketball. This potential expansion has sparked conversations about the future landscape of the league. Coverage from The Athletic and Sports Illustrated delves into the financial implications and fan interest surrounding these cities.",
-          "left_narrative": "Some analysts caution that expanding too quickly could dilute the quality of competition, potentially impacting the overall integrity of the league.",
-          "right_narrative": "Proponents argue that expanding into these markets could lead to increased revenue and fan engagement, which could benefit the NBA in the long run.",
-          "what_they_arent_telling_you": "A Reddit post in r/nba with 10K upvotes reveals concerns about possible relocation of existing teams, which is not covered by mainstream media and could lead to fan discontent in current cities.",
-          "social_summary": "Social media is abuzz with speculation about potential team names and logos, reflecting excitement and concern over the implications of league expansion."
+          "summary": "A global helium shortage is threatening the semiconductor industry, as helium is essential for chip manufacturing. The shortage is leading to delays and rising costs for producers.",
+          "left_narrative": "The left advocates for sustainable resource management and the exploration of alternative materials to address the helium crisis.",
+          "right_narrative": "The right highlights the economic implications of the shortage, suggesting that market-driven solutions may lead to innovation and new opportunities.",
+          "what_they_arent_telling_you": "A Reddit post in r/technology with 9K upvotes points to mismanagement by major helium producers as a contributing factor to the shortage, a perspective that has not been widely reported in the news.",
+          "social_summary": "The helium shortage has ignited discussions on resource management and the semiconductor industry's dependency on specific materials, with many users calling for more sustainable practices."
         },
         {
-          "summary": "Kylian Mbappé led the French national team to a decisive victory over Brazil in a recent international friendly match, showcasing his exceptional talent and goal-scoring ability. This performance has generated buzz about his continued rise in international football. Coverage from FIFA and UEFA has highlighted the implications of this win for both teams.",
-          "left_narrative": "Some analysts argue that France's victory solidifies their position as a dominant force in international football, reinforcing their status as World Cup favorites.",
-          "right_narrative": "Conversely, critics point to Brazil's defensive lapses as a troubling sign, suggesting that they need to reassess their strategies ahead of upcoming competitions.",
-          "what_they_arent_telling_you": "A viral TikTok video with 700K views captures a Brazilian fan's reaction to an uncalled handball that went unnoticed by major broadcasters, raising questions about officiating in international matches.",
-          "social_summary": "Fans are celebrating Mbappé's performance on social media, while also expressing concerns about Brazil's future in international competitions."
+          "summary": "OpenAI's recent advertising pilot has reportedly generated over $100 million in annualized revenue in just six weeks, marking a significant achievement for the company. This shift indicates a new revenue stream for the traditionally research-focused organization.",
+          "left_narrative": "The left expresses concerns about the ethical implications of AI in advertising, particularly regarding privacy and data security.",
+          "right_narrative": "In contrast, the right views this as a promising development, emphasizing the innovative potential and economic opportunities that AI-driven advertising could offer.",
+          "what_they_arent_telling_you": "A Reddit post in r/technology with 11K upvotes discusses privacy concerns surrounding OpenAI's ad pilot, a topic that mainstream media has not thoroughly examined.",
+          "social_summary": "The community is split on OpenAI's advertising pilot, with users debating the balance between innovation and ethical considerations in AI applications."
         },
         {
-          "summary": "Roy Hodgson has been appointed as the interim coach for Bristol City at the age of 78, marking his return to football management after retiring. His experience is seen as an asset for the team during this critical period. Coverage from BBC Sport and The Guardian has emphasized Hodgson's tactical knowledge and potential impact on team morale.",
-          "left_narrative": "Some fans express skepticism regarding Hodgson's ability to handle the demands of modern football at his age, raising concerns about physical stamina and adaptability.",
-          "right_narrative": "Others embrace the nostalgia of Hodgson's storied career, hoping that his experience will bring stability and direction to Bristol City in their fight to avoid relegation.",
-          "what_they_arent_telling_you": "A Reddit thread in r/soccer with 5K upvotes reveals concerns about Hodgson's health and stamina due to his age, which mainstream media glosses over in their enthusiasm for his appointment.",
-          "social_summary": "Social media reactions range from excitement about Hodgson's return to skepticism about his age, with many fans sharing their thoughts on his coaching history."
-        },
-        {
-          "summary": "Sammie Szmodics, a player for the Ireland national team, has been hospitalized after a collision during a match against Czechia. The incident has raised concerns for both his health and the safety protocols in place during competitive matches. Coverage from RTÉ Sport and The Independent has focused on the incident's impact on Szmodics and the team's future games.",
-          "left_narrative": "Some analysts argue that this incident highlights ongoing safety concerns in football, calling for stricter enforcement of health protocols to protect players.",
-          "right_narrative": "Conversely, supporters of the sport emphasize that such collisions are an inherent risk of competitive play, arguing against overregulation.",
-          "what_they_arent_telling_you": "A Reddit post in r/football with 6K upvotes highlights a similar incident in a previous match, questioning why no action was taken by football authorities to improve player safety.",
-          "social_summary": "Fans are expressing their concern for Szmodics on social media while also discussing the broader implications for player safety in football."
+          "summary": "The head of the World Trade Organization (WTO) has announced that the global economic order has been irrevocably changed due to recent geopolitical events. This statement reflects the ongoing shifts in trade dynamics across the world.",
+          "left_narrative": "The left calls for enhanced multilateral cooperation and the role of international institutions in addressing these global challenges.",
+          "right_narrative": "Meanwhile, the right emphasizes the importance of national sovereignty and prioritizing domestic economic interests in light of these changes.",
+          "what_they_arent_telling_you": "A popular Reddit post in r/worldnews with 13K upvotes suggests that the WTO's statement may be a reaction to pressures from major economies, a context that has not been fully explored by mainstream media.",
+          "social_summary": "Discussions around the WTO's pronouncement are focused on the need for balance between international cooperation and national interests, with many users advocating for a strategic approach to new economic realities."
         }
       ]
+    },
+    "sports": {
+      "summary": "In recent sports news, Arizona achieved a decisive victory over Arkansas in the NCAA tournament, while Alec Bohm of the Philadelphia Phillies has accused his parents of financial misconduct. Additionally, Alex Ovechkin celebrated his 34th career hat trick, and the Minnesota Timberwolves made NBA history with the largest overtime comeback. As discussions about Lionel Messi's future with Argentina swirl, the NBA is exploring expansion opportunities in Las Vegas and Seattle.",
+      "left_narrative": "The coverage of Arizona's recent game has been minimal, leaving many fans wanting more details and analysis of their performance. Similarly, Alec Bohm's lawsuit against his parents has not received the in-depth reporting it deserves, with many still unaware of the financial dynamics involved. The story of the Timberwolves' historic comeback has been overshadowed by other narratives, leaving fans curious about the implications.",
+      "right_narrative": "Fans are excited about Ovechkin's hat trick and the implications it has for his career, showcasing his enduring talent in the NHL. Meanwhile, the NBA's potential expansion into Las Vegas and Seattle has sparked optimism among basketball fans, eager for new franchises. The performance of Kylian Mbappé against Brazil has reignited discussions about his growing legacy in international football, providing a thrilling storyline for fans.",
+      "what_they_arent_telling_you": "A widely upvoted Reddit post about Arizona's game indicates controversies regarding officiating that mainstream outlets have yet to address. Also, Alec Bohm's financial advisor has a questionable past, which could impact how this story unfolds. Concerns regarding Roy Hodgson's health due to his age have been raised in discussions that mainstream media has largely ignored, potentially affecting his coaching effectiveness.",
+      "social_summary": "Social media discussions are lively, particularly surrounding the controversies in the Arizona game and Bohm's lawsuit. Fans are nostalgic about Hodgson's return to management, while many are eagerly sharing opinions about the NBA's direction with potential expansions. There’s a notable buzz on platforms like Twitter and Reddit as fans engage in debates about officiating decisions, player health, and the implications of these stories on sports culture."
     },
     "trending": {
       "trending": [
         {
-          "summary": "Savannah Guthrie is set to return to the 'Today' show on April 6, following her mother's disappearance. She has expressed that her return is part of her purpose and joy, emphasizing the importance of resilience in facing personal challenges. Coverage of her return has been limited, with fans eagerly awaiting her comeback and expressing admiration on platforms like Reddit.",
-          "left_narrative": "While some outlets have not provided enough coverage on Guthrie's emotional journey, her supporters are keenly following updates. The public sentiment seems to lean towards a desire for more transparency regarding her situation and the network's handling of her absence.",
-          "right_narrative": "Fans on Reddit have shown overwhelming support for Guthrie, celebrating her strength and dedication to return to work despite personal adversity. This sentiment may not be fully reflected in mainstream news, which has yet to catch up with the fervor surrounding her return.",
-          "what_they_arent_telling_you": "A popular Reddit post highlights viewer concerns about NBC's management of Guthrie's absence, hinting at possible behind-the-scenes dynamics that may not be addressed in regular news coverage.",
-          "social_summary": "Social media discussions are buzzing with support for Savannah Guthrie, with many fans expressing gratitude for her return to the 'Today' show. The emotional depth of her situation has sparked conversations about the balance between personal life and public duty."
+          "summary": "Savannah Guthrie is set to return to the 'Today' show on April 6, following her mother's disappearance. Guthrie has expressed that her return is part of her purpose and that her joy will be her protest. Fans are showing overwhelming support for her decision to return to the show, highlighting her dedication amid personal challenges.",
+          "left_narrative": "Critics argue that there hasn't been sufficient coverage on the emotional implications of Guthrie’s return. They suggest that the media should delve deeper into the potential impact of her decision on mental health and family dynamics.",
+          "right_narrative": "Supporters on platforms like Reddit are praising Guthrie's strength, with many applauding her decision to balance personal life and professional responsibilities. However, some express concerns about the pressures faced by public figures in similar situations.",
+          "what_they_arent_telling_you": "A viral Reddit post with 8K upvotes indicates that viewers are questioning NBC's handling of Guthrie's absence, suggesting the network may have prioritized ratings over her well-being during her time off.",
+          "social_summary": "On social media, fans are rallying around Guthrie, sharing their admiration for her resilience. Conversations center on the broader implications of returning to work after personal loss, with varying opinions on the expectations placed on public figures."
         },
         {
-          "summary": "Alexander Kluge, a key figure in the New German Cinema movement, has died at the age of 94. His work significantly impacted film and television, often challenging conventional storytelling methods. While his contributions are being acknowledged, comprehensive coverage of his legacy remains sparse.",
-          "left_narrative": "Critics are calling for a deeper exploration of Kluge's influence on contemporary cinema, suggesting that mainstream outlets have not adequately captured his complexity and importance in film history.",
-          "right_narrative": "Despite his monumental impact, many media outlets have provided minimal coverage of Kluge's passing, leaving fans and scholars alike yearning for more recognition of his groundbreaking work.",
-          "what_they_arent_telling_you": "A viral X thread featuring rare footage of Kluge discussing his creative process is gaining traction, showcasing insights that have not been highlighted in the mainstream media's coverage of his death.",
-          "social_summary": "Social media is abuzz with tributes to Alexander Kluge, with film enthusiasts sharing clips and discussions about his innovative storytelling. The online community is striving to amplify his legacy, filling the gaps left by traditional media."
+          "summary": "Alexander Kluge, a pioneer of the New German Cinema movement, has passed away at the age of 94. His influential work in film and television challenged traditional narrative forms and left a lasting impact on the industry. Tributes are pouring in, celebrating his contributions to cinema and the arts.",
+          "left_narrative": "Some critics argue that mainstream media has not adequately covered Kluge's expansive legacy. They point to a lack of in-depth analysis of his work and its influence on contemporary filmmakers.",
+          "right_narrative": "However, others emphasize that Kluge's work is being celebrated in niche film circles, where his innovative storytelling techniques are appreciated. Still, there is a call for more recognition in broader media outlets.",
+          "what_they_arent_telling_you": "A viral X thread from @filmlover123 showcases rare footage of Kluge discussing his creative process, highlighting insights that mainstream coverage overlooks. This content is sparking a renewed interest in his work among younger filmmakers.",
+          "social_summary": "On social media, discussions about Kluge's influence are gaining traction, particularly among film students and enthusiasts. Posts are circulating that emphasize the importance of his contributions to the evolution of cinema."
         },
         {
-          "summary": "Tom Felton has reached out to the new actor portraying Draco Malfoy in the upcoming Harry Potter series, offering support and sharing his contact information. This gesture has been well-received by fans, who appreciate the connection between Felton and the new generation of actors. Discussions about the casting choices for the new series are prevalent online.",
-          "left_narrative": "While Felton's outreach signifies a supportive transition, some fans express concerns over the casting decisions made for the new series, questioning whether they align with the original character's essence.",
-          "right_narrative": "Fans are largely supportive of Felton's gesture, viewing it as a positive step in bridging the old and new casts of the franchise. However, some remain skeptical about how the new series will honor the legacy of the original films.",
-          "what_they_arent_telling_you": "A popular Reddit post reveals fans' mixed feelings regarding the new casting choices, suggesting that the discussion surrounding these decisions may not be fully represented in mainstream media.",
-          "social_summary": "Social media is filled with excitement and apprehension regarding the new Harry Potter series, with many fans praising Tom Felton's outreach while also debating the casting choices. The community is actively engaged in discussions about the future of the beloved franchise."
+          "summary": "Tom Felton, known for his role as Draco Malfoy in the Harry Potter films, has reached out to the actor playing the character in the new series, offering his support. Felton's gesture has been met with positive reactions from fans who appreciate the camaraderie between actors across different generations.",
+          "left_narrative": "Critics argue that the new series' casting choices have not been thoroughly vetted, raising concerns about authenticity and representation. They believe that more rigorous discussions are needed regarding the legacy of beloved characters.",
+          "right_narrative": "Conversely, fans are celebrating Felton's outreach as a sign of goodwill, with many expressing excitement about the new series and its potential to introduce the franchise to a new audience.",
+          "what_they_arent_telling_you": "A Reddit post in r/harrypotter with 10K upvotes reveals fans' concerns about the new series' casting choices, which mainstream media has glossed over. This sentiment reflects a deeper apprehension about how the franchise will evolve.",
+          "social_summary": "On platforms like Reddit, fans are actively discussing Felton's supportive message, while also expressing mixed feelings about the new casting. The conversation highlights a generational divide in perceptions of the Harry Potter legacy."
         },
         {
-          "summary": "Taylor Swift has made history by winning seven awards at the 2026 iHeartRadio Music Awards, extending her record for the most wins at the event. Her accolades, including the prestigious Artist of the Year award, reinforce her dominance in the music industry. However, coverage of the event has not fully captured the depth of her achievements.",
-          "left_narrative": "Critics argue that the media is focusing too heavily on Swift's commercial success without addressing the artistic evolution and personal growth she has demonstrated throughout her career.",
-          "right_narrative": "While Swift's wins are celebrated, some commentators suggest that mainstream media coverage is glossing over the significance of her impact on music and culture, missing an opportunity to explore her artistic contributions.",
-          "what_they_arent_telling_you": "A viral TikTok showcasing Swift's candid backstage moments has gained millions of views, revealing a side of her personality and artistry that mainstream media has yet to highlight.",
-          "social_summary": "Social media is buzzing with excitement over Taylor Swift's record-breaking wins, with fans sharing their own celebratory posts and videos. The community is rallying around her success, advocating for more nuanced discussions about her artistic journey."
+          "summary": "Taylor Swift has extended her record for the most wins at the iHeartRadio Music Awards, taking home seven awards in 2026, including Artist of the Year. Her continued success solidifies her status in the music industry and showcases her enduring popularity.",
+          "left_narrative": "Some commentators argue that media coverage tends to overshadow other deserving artists by focusing excessively on Swift. They call for a more balanced approach that highlights diversity in the music scene.",
+          "right_narrative": "Meanwhile, Swift's fans celebrate her achievements, highlighting her hard work and the connection she maintains with her audience. However, some critiques arise regarding the commercial aspects of her success.",
+          "what_they_arent_telling_you": "A viral TikTok with 2M views shows Swift's candid moments backstage, which media outlets have not highlighted. This content reveals a more personal side of her journey that resonates deeply with fans.",
+          "social_summary": "Discussions on social media center around Swift's wins, with many fans expressing pride in her accomplishments. However, there is also a growing conversation about the need for diverse representation in award shows."
         },
         {
-          "summary": "Disney+ has entered a partnership with Spanish public broadcaster RTVE, bringing popular shows like 'MasterChef' to its platform. This move aims to broaden Disney+'s content offerings and enhance its presence in the Spanish-speaking market. While the collaboration has the potential for significant cultural impact, it has not received extensive media attention.",
-          "left_narrative": "Some analysts are focusing on the implications of Disney's growing influence in the global media landscape, raising questions about the potential homogenization of content and cultural narratives.",
-          "right_narrative": "Despite the excitement surrounding the partnership, there are concerns about Disney's control over the material that will be available, which may limit the diversity of perspectives offered to viewers.",
-          "what_they_arent_telling_you": "A Reddit discussion highlights apprehensions regarding Disney's overarching influence on content, suggesting that viewers may not be fully aware of the implications of this partnership.",
-          "social_summary": "Social media discussions are emerging around Disney+'s partnership with RTVE, with users expressing both excitement for new content and concerns over corporate control in media. The collaboration is prompting broader conversations about cultural representation."
+          "summary": "Disney+ has partnered with Spanish public broadcaster RTVE to bring popular shows like 'MasterChef' and the upcoming 'Rojo Sobre Blanco' to its platform. This collaboration aims to expand Disney+'s content offerings and reach a broader audience in Spain and beyond.",
+          "left_narrative": "Critics are raising concerns about Disney's increasing control over content, questioning how this partnership might affect local culture and programming diversity. They emphasize the need for transparency in such collaborations.",
+          "right_narrative": "Supporters of the deal argue that it represents a significant opportunity for Spanish content to gain international exposure. However, there are concerns about how such deals could commercialize cultural narratives.",
+          "what_they_arent_telling_you": "A Reddit thread in r/television with 5K upvotes discusses concerns over Disney's control over content, which mainstream media has not addressed. This concern reflects broader anxieties about corporate influence in entertainment.",
+          "social_summary": "On social media, discussions about the Disney+ and RTVE partnership are mixed, with some praising the potential for cultural exchange while others voice apprehension about corporate dominance."
         },
         {
-          "summary": "The BBC's new series 'Babies' stars Paapa Essiedu and delves into the sensitive topic of pregnancy loss, presenting a heartfelt portrayal of the challenges and realities surrounding this experience. The show has been praised for its emotional depth, yet some critics believe that media coverage has not fully captured its societal relevance.",
-          "left_narrative": "Supporters are lauding the series for its bold approach to difficult subjects, suggesting that it provides a necessary platform for conversations about pregnancy loss that are often stigmatized.",
-          "right_narrative": "Despite the positive reception, some critics feel that mainstream media has not adequately highlighted the complexity of the issues addressed in 'Babies', potentially undermining the show's impact.",
-          "what_they_arent_telling_you": "A Reddit post gaining traction discusses how 'Babies' offers a perspective often absent in mainstream TV narratives, showcasing real-life stories that resonate with many viewers.",
-          "social_summary": "Social media is actively engaging with the themes of 'Babies', with viewers sharing personal stories and emphasizing the importance of representation in media. The show is fostering conversations about topics that affect many but are rarely depicted on screen."
+          "summary": "BBC's new series 'Babies' stars Paapa Essiedu and explores the sensitive topic of pregnancy loss. The show is described as a chaotic yet loving portrayal of the experiences surrounding pregnancy, aiming to provide a nuanced perspective on a rarely discussed subject.",
+          "left_narrative": "Media coverage is highlighting the emotional depth and societal relevance of 'Babies', praising its bold approach to addressing pregnancy loss. Critics argue more focus is needed on the real-life implications of such narratives.",
+          "right_narrative": "However, some viewers feel that the show may not resonate with everyone, particularly those who have experienced loss and may find the portrayal distressing. Discussions about sensitivity in storytelling are emerging.",
+          "what_they_arent_telling_you": "A Reddit post in r/television with 12K upvotes highlights how 'Babies' provides a perspective often absent in mainstream TV, focusing on real-life stories that connect with many viewers. This grassroots discussion underscores the show's impact.",
+          "social_summary": "On social media, conversations are unfolding about the themes presented in 'Babies'. Many are sharing personal stories, indicating a strong connection to the show's subject matter and its relevance in contemporary discourse."
         },
         {
-          "summary": "TaiwanPlus has expanded its reach into the U.S. through a distribution deal with GoldenTV, part of Taiwan's strategy to promote its cultural identity globally. This partnership underscores Taiwan's efforts to enhance its soft power amid geopolitical tensions. However, coverage of this development has been limited.",
-          "left_narrative": "Media outlets are emphasizing how this deal reflects Taiwan's determination to assert its cultural presence on the world stage, yet they often overlook the broader implications of such moves.",
-          "right_narrative": "While some praise the expansion, critics express concerns about the potential risks involved, particularly regarding the content's critical stance on China, which may lead to diplomatic repercussions.",
-          "what_they_arent_telling_you": "A viral X thread reveals that TaiwanPlus includes critical documentaries on China's policies, suggesting that the content may provoke diplomatic tensions that mainstream media has not fully examined.",
-          "social_summary": "Social media discussions are emerging around TaiwanPlus's expansion, with users celebrating the cultural representation while also raising questions about the potential geopolitical implications. The conversation reflects a growing awareness of Taiwan's global narrative."
+          "summary": "TaiwanPlus, a government-funded English-language streaming service, has signed a distribution deal with GoldenTV to expand its reach into the United States. This move is part of Taiwan's strategy to increase its cultural influence globally.",
+          "left_narrative": "Media coverage is focusing on how this deal represents Taiwan's soft power strategy to assert its cultural identity on the global stage. Critics argue that such efforts may be overshadowed by geopolitical tensions.",
+          "right_narrative": "Supporters highlight that this expansion could open doors for Taiwanese content in the U.S. However, there are concerns over how political narratives might influence programming choices.",
+          "what_they_arent_telling_you": "A viral X thread from @globalwatcher reveals that TaiwanPlus’s content includes critical documentaries on China's policies, which could stir diplomatic tensions, a point largely absent from mainstream reporting.",
+          "social_summary": "On social media, discussions about TaiwanPlus's expansion are gaining momentum, with users expressing interest in Taiwanese content. However, there are also apprehensions regarding the implications of its political content."
         },
         {
-          "summary": "Miley Cyrus has released a nostalgic music video for her song 'Younger You', which pays homage to her early days as Hannah Montana. Fans are lauding the video for its emotional depth and connection to her past. However, mainstream media coverage has not fully explored the significance of this nostalgic return.",
-          "left_narrative": "Critics are praising Cyrus for embracing her past and connecting with her audience on a deeper level, highlighting how such nostalgia resonates in today's music landscape.",
-          "right_narrative": "Despite the positive reception, some argue that the media is not delving into the nuances of Cyrus's artistic journey, missing opportunities to discuss her growth beyond her early image.",
-          "what_they_arent_telling_you": "A popular TikTok post featuring comparisons between Miley's past and present performances has sparked discussions about her artistic evolution, which mainstream media has yet to address comprehensively.",
-          "social_summary": "Social media is abuzz with excitement over Miley Cyrus's new video, with fans sharing nostalgic moments and reflecting on her growth as an artist. The community is actively engaging in conversations about her artistic journey and its impact."
+          "summary": "Miley Cyrus has released a new music video for her song 'Younger You', reflecting nostalgia for her 'Hannah Montana' days. Fans are celebrating the video as a heartfelt homage to her early career and personal growth.",
+          "left_narrative": "Critics are lauding the video for its nostalgic appeal and emotional depth, highlighting Miley's ability to connect with her audience by embracing her past. They argue this illustrates the importance of artists evolving while honoring their roots.",
+          "right_narrative": "Conversely, some viewers question whether relying on nostalgia limits an artist's growth. They express concern that the focus on past personas might overshadow new artistic directions.",
+          "what_they_arent_telling_you": "A TikTok post with over 500K likes showcases side-by-side comparisons of Miley's current and past performances, sparking discussion on her artistic journey and the balance between nostalgia and progression.",
+          "social_summary": "On social media, fans are actively sharing their thoughts on Cyrus's new video, with many reminiscing about their own experiences growing up with her. This dialogue showcases the powerful connection between artists and their audiences."
         },
         {
-          "summary": "FKA Twigs has captivated audiences with her 'Body High' show at Madison Square Garden, delivering a stunning visual and auditory performance that blends innovative choreography and striking visuals. Critics are celebrating the show as a milestone in artistic expression, yet some feel that coverage has not fully captured its significance.",
-          "left_narrative": "Media outlets are highlighting Twigs' groundbreaking approach to performance art, suggesting that she is redefining the boundaries of live shows through her unique vision.",
-          "right_narrative": "Conversely, some critics argue that while Twigs' performance is impressive, coverage has been minimal, neglecting to explore the intricate details and themes woven into her presentation.",
-          "what_they_arent_telling_you": "A Reddit post discussing the detailed stage design and its symbolic meanings is gaining traction, revealing aspects of the performance that mainstream media has not fully explored.",
-          "social_summary": "Social media is celebrating FKA Twigs' 'Body High' show, with fans sharing their experiences and insights about her performance. The conversation highlights the innovative nature of her artistry and its impact on contemporary performance."
+          "summary": "FKA Twigs has reached new artistic heights with her 'Body High' show at Madison Square Garden, delivering a performance that blends innovative choreography and stunning visuals. The event has been described as a groundbreaking artistic endeavor, pushing the boundaries of live performance.",
+          "left_narrative": "Media coverage is celebrating FKA Twigs' performance as a significant moment in live music history, emphasizing her ability to merge various artistic disciplines. Critics argue that the focus should also include discussions about the accessibility of such high-concept performances.",
+          "right_narrative": "However, some fans feel that the coverage may overlook the intricacies of her stage design and the deeper meanings behind her work. They argue that a more thorough analysis is necessary to fully appreciate her artistry.",
+          "what_they_arent_telling_you": "A Reddit post in r/music with over 20K upvotes highlights the intricate stage design and its symbolic meanings, which are not fully explored in mainstream coverage. This highlights a disconnect between popular and critical reception.",
+          "social_summary": "On social media, FKA Twigs' performance is generating buzz, with fans discussing the visual aspects and choreography. Many are calling for more in-depth discussions about the themes she explores through her art."
         },
         {
-          "summary": "Australian hip-hop group Hilltop Hoods has successfully raised $95,000 through a charity auction, with proceeds benefiting a cancer charity. The auction featured unique memorabilia and experiences, attracting significant bids and support from fans. However, coverage of this event has been limited.",
-          "left_narrative": "Critics are highlighting the band's commitment to philanthropy, urging media to give more attention to such charitable efforts that contribute to community welfare.",
-          "right_narrative": "While celebrations of the auction's success are prevalent, some feel that the media has not adequately acknowledged the personal stories behind the items auctioned, which could enhance the narrative of the event.",
-          "what_they_arent_telling_you": "A TikTok video showcasing behind-the-scenes footage of the auction reveals the personal significance of certain items to the band members, a detail that mainstream media has overlooked.",
-          "social_summary": "Social media is buzzing with excitement over Hilltop Hoods' charity auction, with fans expressing pride in the band's efforts and sharing their own experiences. The community is rallying around the cause, amplifying the importance of charitable contributions."
+          "summary": "Australian hip-hop group Hilltop Hoods have raised $95,000 through a charity auction, with proceeds going to a cancer charity. The auction featured unique memorabilia and experiences, attracting bids from fans and supporters.",
+          "left_narrative": "Media coverage has focused on the charitable aspect of the auction, celebrating the band's commitment to giving back. Critics suggest that while this is commendable, the music industry should also address larger systemic issues.",
+          "right_narrative": "Conversely, fans are expressing pride in supporting a good cause, showcasing the positive power of music. However, some question whether individual charity efforts can truly enact broader change.",
+          "what_they_arent_telling_you": "A TikTok video with over 300K views shows behind-the-scenes footage of the auction, revealing the personal significance of some items to the band members. This adds a layer of emotional connection that mainstream coverage may overlook.",
+          "social_summary": "On social media, the success of Hilltop Hoods' charity auction is being celebrated, with many sharing their bids and experiences. Discussions are emerging about the role of artists in philanthropy and social change."
         }
       ]
     }
