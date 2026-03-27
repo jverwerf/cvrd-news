@@ -891,7 +891,13 @@ function AdSlot() {
 
   useEffect(() => {
     if (!ref.current) return;
-    // Adsterra native banner
+    // Clear previous content (remount)
+    ref.current.innerHTML = '';
+    // Create container div that Adsterra looks for
+    const container = document.createElement('div');
+    container.id = 'container-f39b9ec27944aea9c833e401d3a2da8b';
+    ref.current.appendChild(container);
+    // Load Adsterra script after container exists
     const script = document.createElement('script');
     script.async = true;
     script.setAttribute('data-cfasync', 'false');
@@ -899,11 +905,7 @@ function AdSlot() {
     ref.current.appendChild(script);
   }, []);
 
-  return (
-    <div ref={ref} className="w-full h-full">
-      <div id="container-f39b9ec27944aea9c833e401d3a2da8b" />
-    </div>
-  );
+  return <div ref={ref} className="w-full h-full" />;
 }
 
 /** Renders tile content — shared between PoolTile and AdTile */
