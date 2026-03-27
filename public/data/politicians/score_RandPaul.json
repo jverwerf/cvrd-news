@@ -1,0 +1,139 @@
+{
+  "handle": "RandPaul",
+  "name": "Rand Paul",
+  "role": "U.S. Senator",
+  "party": "Republican",
+  "country": "US",
+  "state": "Kentucky",
+  "tags": [
+    "Constitution",
+    "Individual Liberty",
+    "Fiscal Responsibility",
+    "Government Accountability",
+    "Voter ID",
+    "Healthcare Reform",
+    "National Debt",
+    "SNAP",
+    "Anti-Fauci",
+    "Education Reform"
+  ],
+  "photo_prompt": "Rand Paul, middle-aged man with short brown hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "providing",
+    "american",
+    "ranchers",
+    "farmers",
+    "'product",
+    "label",
+    "transparency.",
+    "americans",
+    "support",
+    "requiring",
+    "vote.",
+    "borrows",
+    "money",
+    "interest",
+    "existing",
+    "debt,",
+    "exceeds",
+    "entire",
+    "defense",
+    "budget.",
+    "costs",
+    "billion",
+    "nearly",
+    "benefits",
+    "toward",
+    "soda,",
+    "chips,",
+    "snack",
+    "cakes.",
+    "forward"
+  ],
+  "prominence": 36,
+  "followers": 5957294,
+  "overall_score": 72.7,
+  "confidence_interval": 5.4,
+  "verified_claims": 263,
+  "true_count": 96,
+  "somewhat_misleading_count": 132,
+  "misleading_count": 27,
+  "false_count": 8,
+  "pending_count": 109,
+  "dropped_count": 12,
+  "domains": {
+    "domestic": {
+      "score": 75.7,
+      "count": 69,
+      "true": 27,
+      "somewhat_misleading": 35,
+      "misleading": 7,
+      "false": 0
+    },
+    "economics": {
+      "score": 72.4,
+      "count": 91,
+      "true": 30,
+      "somewhat_misleading": 52,
+      "misleading": 6,
+      "false": 3
+    },
+    "military": {
+      "score": 75.7,
+      "count": 7,
+      "true": 3,
+      "somewhat_misleading": 3,
+      "misleading": 1,
+      "false": 0
+    },
+    "legislation": {
+      "score": 78.1,
+      "count": 42,
+      "true": 21,
+      "somewhat_misleading": 16,
+      "misleading": 4,
+      "false": 1
+    },
+    "foreign_policy": {
+      "score": 76.2,
+      "count": 26,
+      "true": 10,
+      "somewhat_misleading": 14,
+      "misleading": 2,
+      "false": 0
+    },
+    "other": {
+      "score": 61.4,
+      "count": 14,
+      "true": 4,
+      "somewhat_misleading": 6,
+      "misleading": 2,
+      "false": 2
+    },
+    "healthcare": {
+      "score": 55,
+      "count": 6,
+      "true": 0,
+      "somewhat_misleading": 4,
+      "misleading": 2,
+      "false": 0
+    },
+    "education": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "health": {
+      "score": 33.6,
+      "count": 7,
+      "true": 0,
+      "somewhat_misleading": 2,
+      "misleading": 3,
+      "false": 2
+    }
+  },
+  "scored_at": "2026-03-27T10:32:13.651Z"
+}

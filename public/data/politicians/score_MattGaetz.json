@@ -1,0 +1,122 @@
+{
+  "handle": "MattGaetz",
+  "name": "Matt Gaetz",
+  "role": "U.S. Representative",
+  "party": "Republican",
+  "country": "US",
+  "state": "Florida",
+  "tags": [
+    "Florida Man",
+    "Republican",
+    "Trump supporter",
+    "fertility medications",
+    "immigration",
+    "Iran",
+    "Syria",
+    "political commentary",
+    "conservative"
+  ],
+  "photo_prompt": "Matt Gaetz, a middle-aged man with short dark hair and a confident expression, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "involvement",
+    "syrian",
+    "civil",
+    "started",
+    "personnel.",
+    "increasing.",
+    "tennessee's",
+    "sb2040",
+    "against",
+    "promoting",
+    "competition",
+    "transparency",
+    "healthcare.",
+    "paxton",
+    "never",
+    "texas",
+    "runoff",
+    "election,",
+    "record",
+    "losses.",
+    "california,",
+    "york,",
+    "illinois",
+    "mismanaged",
+    "their",
+    "medicaid",
+    "programs",
+    "compared",
+    "florida.",
+    "impunity"
+  ],
+  "prominence": 23,
+  "followers": 3515490,
+  "overall_score": 55.3,
+  "confidence_interval": 23,
+  "verified_claims": 18,
+  "true_count": 5,
+  "somewhat_misleading_count": 6,
+  "misleading_count": 3,
+  "false_count": 4,
+  "pending_count": 19,
+  "dropped_count": 3,
+  "domains": {
+    "foreign_policy": {
+      "score": 21.7,
+      "count": 3,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 2
+    },
+    "military": {
+      "score": 77.5,
+      "count": 6,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 1
+    },
+    "domestic": {
+      "score": 55,
+      "count": 3,
+      "true": 0,
+      "somewhat_misleading": 2,
+      "misleading": 1,
+      "false": 0
+    },
+    "other": {
+      "score": 66.7,
+      "count": 3,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 0
+    },
+    "health": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "economics": {
+      "score": 0,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 1
+    },
+    "politics": {
+      "score": 35,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 0,
+      "misleading": 1,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-27T12:43:38.602Z"
+}
