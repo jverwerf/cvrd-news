@@ -1,0 +1,128 @@
+[
+  {
+    "topic": "Iran-US War Escalation",
+    "summary": "Iran has announced the closure of the Strait of Hormuz, a critical chokepoint for global oil shipments, in response to heightened tensions with the United States. This move comes after reports that the US launched 850 Tomahawk missiles at Iranian targets, significantly escalating military hostilities. The situation has raised concerns over potential disruptions in global oil supply and the broader implications for regional stability.",
+    "severity": "critical",
+    "detected_at": "2026-03-27T16:00:07.075Z",
+    "last_updated": "2026-03-27T16:00:07.075Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these actions. The closure of the Strait of Hormuz could drastically impact global oil prices, benefiting certain economic players. Additionally, the military escalation may serve as a distraction from domestic issues within both countries, such as economic struggles or political dissent. The geopolitical implications extend beyond the US and Iran, affecting alliances and rivalries in the Middle East and beyond.",
+    "social_summary": "Social media is ablaze with reactions, ranging from fear of a full-scale war to skepticism about the accuracy of the missile reports. Memes mocking the situation as a 'real-life game of Risk' are circulating, while conspiracy theories suggest ulterior motives behind the US's aggressive stance. Hashtags like #StraitOfHormuz and #Tomahawk850 are trending, with users debating the potential global fallout.",
+    "image_prompt": "A dramatic image of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, shadowy figures representing global powers stand on opposite shores, each holding a chess piece, poised for a strategic move.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
+        "embed_id": "FE_U72r9nqk",
+        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
+        "duration": 508
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
+        "embed_id": "Jd8CM_qZv1o",
+        "title": "Trump escalates Iran war threats | Civilian sites hit, no end in sight",
+        "duration": 1436
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=cP10NQjC034",
+        "embed_id": "cP10NQjC034",
+        "title": "Trump “Ahead of Schedule”? Experts question US strategy in Iran war",
+        "duration": 836
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2037379186701062330",
+        "embed_id": "2037379186701062330",
+        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
+        "author": "snarwani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
+        "embed_id": "2037181391041925513",
+        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
+        "author": "MiddleEastEye"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s55nil/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55nil",
+        "title": "Loss of control in the Gulf | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable, catastrophic esc"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/europeanunion/comments/1s4oyn3/why_are_europeans_paying_for_a_us_israeli_war_we/",
+        "embed_id": "1s4oyn3",
+        "title": "Why are Europeans paying for a U.S - Israeli war we did not choose?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
+        "embed_id": "1s4ji7r",
+        "title": "MIDDLE EAST UPDATE"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
+        "embed_id": "FE_U72r9nqk",
+        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
+        "channel": "ABC News (Australia)",
+        "duration": 508
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
+        "embed_id": "Jd8CM_qZv1o",
+        "title": "Trump escalates Iran war threats | Civilian sites hit, no end in sight",
+        "channel": "Al Jazeera English",
+        "duration": 1436
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=cP10NQjC034",
+        "embed_id": "cP10NQjC034",
+        "title": "Trump “Ahead of Schedule”? Experts question US strategy in Iran war",
+        "channel": "Al Jazeera English",
+        "duration": 836
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2037379186701062330",
+        "embed_id": "2037379186701062330",
+        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
+        "author": "snarwani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
+        "embed_id": "2037181391041925513",
+        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
+        "author": "MiddleEastEye"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s55nil/loss_of_control_in_the_gulf_the_us_can_only_end/",
+        "embed_id": "1s55nil",
+        "title": "Loss of control in the Gulf | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable, catastrophic esc"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/europeanunion/comments/1s4oyn3/why_are_europeans_paying_for_a_us_israeli_war_we/",
+        "embed_id": "1s4oyn3",
+        "title": "Why are Europeans paying for a U.S - Israeli war we did not choose?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
+        "embed_id": "1s4ji7r",
+        "title": "MIDDLE EAST UPDATE"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-27.png"
+  }
+]
