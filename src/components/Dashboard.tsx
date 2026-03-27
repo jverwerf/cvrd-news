@@ -890,22 +890,21 @@ function AdSlot() {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
-    // Clear previous content (remount)
-    ref.current.innerHTML = '';
-    // Create container div that Adsterra looks for
-    const container = document.createElement('div');
-    container.id = 'container-f39b9ec27944aea9c833e401d3a2da8b';
-    ref.current.appendChild(container);
-    // Load Adsterra script after container exists
-    const script = document.createElement('script');
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    script.src = 'https://pl28990207.profitablecpmratenetwork.com/f39b9ec27944aea9c833e401d3a2da8b/invoke.js';
-    ref.current.appendChild(script);
+    try {
+      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    } catch {}
   }, []);
 
-  return <div ref={ref} className="w-full h-full" />;
+  return (
+    <div ref={ref} className="w-full h-full">
+      <ins className="adsbygoogle"
+        style={{ display: 'block', width: '100%', height: '100%' }}
+        data-ad-client="ca-pub-2572735826517528"
+        data-ad-slot="8292849831"
+        data-ad-format="fluid"
+        data-full-width-responsive="false" />
+    </div>
+  );
 }
 
 /** Renders tile content — shared between PoolTile and AdTile */
