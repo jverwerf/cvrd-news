@@ -185,9 +185,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {dashExpanded && (
                   <div className="absolute top-3 right-3 z-40">
                     <button onClick={() => setDashExpanded(false)}
-                      className="px-3 py-1.5 rounded-full text-[10px] font-semibold text-white/80 transition-all hover:text-white"
-                      style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer' }}>
-                      Collapse
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Collapse Dashboard
                     </button>
                   </div>
                 )}
@@ -442,9 +442,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {dashExpanded && (
                   <div className="absolute top-3 right-3 z-40">
                     <button onClick={() => setDashExpanded(false)}
-                      className="px-3 py-1.5 rounded-full text-[10px] font-semibold text-white/80 transition-all hover:text-white"
-                      style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer' }}>
-                      Collapse
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Collapse Dashboard
                     </button>
                   </div>
                 )}
