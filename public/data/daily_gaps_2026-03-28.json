@@ -6388,5 +6388,123 @@
     "Tiger Woods Arrested After Car Crash",
     "WNBA's Connecticut Sun Sold and Relocated",
     "Britney Spears Speaks Out After DUI Arrest"
-  ]
+  ],
+  "daily_brief": {
+    "summary": "Today's news highlights significant events involving Iran, including a breach of FBI Director's email by Iranian hackers and a strike on a U.S. base in Saudi Arabia. The Iranian-backed Houthis have launched attacks against Israel, escalating tensions in the region. On the domestic front, House Republicans passed a Department of Homeland Security funding bill amidst impending government shutdowns. Meanwhile, Britney Spears addresses her recent DUI arrest, and Tiger Woods finds himself in legal trouble following a car crash. In sports, the WNBA's Connecticut Sun has been sold and relocated, changing the landscape of women's basketball.",
+    "left_narrative": "The Iranian attacks on U.S. interests and allies signal an alarming escalation in aggression that could destabilize the Middle East. The breach of the FBI Director's email underscores the vulnerability of U.S. cybersecurity efforts. The House GOP's funding bill aims to maintain government operations, yet it reveals ongoing partisan divides that hamper effective governance. Britney Spears' DUI situation shines a light on the pressures faced by celebrities, while the relocation of the Connecticut Sun highlights the challenges in women's sports. Overall, these events illustrate a tumultuous political and social landscape.",
+    "right_narrative": "Iran's aggressive actions against the U.S. and its allies reaffirm the need for a strong national defense and robust cybersecurity measures. The breach of the FBI Director's email emphasizes the threat posed by foreign hackers, necessitating a crackdown on cyber vulnerabilities. The passage of the DHS funding bill by House Republicans showcases their commitment to preventing a government shutdown, reflecting responsible governance. Britney Spears' DUI arrest serves as a reminder of the consequences of reckless behavior, while the sale of the Connecticut Sun is seen as an opportunity for growth in women's sports. These developments highlight the importance of maintaining order and accountability.",
+    "what_they_arent_telling_you": "While the focus is on Iranian aggression, the long-term impact on global oil prices due to the Iran War may be underestimated, affecting economies worldwide. The implications of the cybersecurity breach could reveal deeper systemic issues within U.S. intelligence agencies that are not being fully addressed. The protests against Trump may represent a larger dissatisfaction with political leadership that is not widely reported. Additionally, the relocation of the Connecticut Sun could disrupt local fan engagement and community support, raising questions about the future of women's sports in those areas.",
+    "social_summary": "In the realm of social media, Britney Spears' DUI arrest has sparked widespread discussion about celebrity culture and the pressures of fame. Tiger Woods' car crash and subsequent arrest has reignited conversations about accountability among athletes. The relocation of the Connecticut Sun is generating mixed reactions among fans, with some expressing disappointment while others view it as a fresh start. Political protests against Trump are gaining traction online, indicating a growing movement of dissent. Overall, social media platforms are buzzing with commentary on these diverse and impactful stories.",
+    "curated_social": [
+      {
+        "platform": "reddit",
+        "title": "",
+        "url": "https://reddit.com/r/worldnews/comments/1s56i0f/fbi_director_kash_patels_personal_inbox_breached/",
+        "story": "Iranian Hackers Breach FBI Director's Email"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037557207143735765",
+        "title": "Iran-linked hackers have breached FBI Director Kash Patel's personal emails. https://t.co/4vPS2s8vFL https://t.co/JhE3CVJz6n",
+        "author": "CNN",
+        "url": "https://x.com/CNN/status/2037557207143735765",
+        "story": "Iranian Hackers Breach FBI Director's Email"
+      },
+      {
+        "platform": "telegram",
+        "embed_id": "intelslava/85560",
+        "title": "🇮🇷🇺🇸A hacker group hacked into the personal email of FBI Director Kash Patel, a US Department of Justice representative confirmed to Reuters.\n\nPho",
+        "author": "intelslava",
+        "url": "https://t.me/intelslava/85560",
+        "story": "Iranian Hackers Breach FBI Director's Email"
+      },
+      {
+        "platform": "reddit",
+        "title": "",
+        "url": "https://reddit.com/r/worldnews/comments/1s5p1dy/us_may_deploy_up_to_17000_troops_near_iran_as_war/",
+        "story": "Iranian Strike on U.S. Base in Saudi Arabia"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037719897636041054",
+        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN. https://t.co/lG0vC",
+        "author": "CNN",
+        "url": "https://x.com/CNN/status/2037719897636041054",
+        "story": "Iranian Strike on U.S. Base in Saudi Arabia"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037797575122907521",
+        "title": "Yemen's Iranian-backed Houthi rebels have claimed responsibility for a missile attack on Israel, the",
+        "author": "AJEnglish",
+        "url": "https://x.com/AJEnglish/status/2037797575122907521",
+        "story": "Iranian-Backed Houthis Attack Israel"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037835912374092240",
+        "title": "One month into Iran war, only hard choices for Trump https://t.co/zaqIk3tnzn https://t.co/zaqIk3tnzn",
+        "author": "Reuters",
+        "url": "https://x.com/Reuters/status/2037835912374092240",
+        "story": "Iran War's Impact on Global Oil Prices"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037517673404191109",
+        "title": "More than 3,100 \"No Kings\" demonstrations – about as many events as there are counties in the US – are expected in all fifty states, including an Alas",
+        "author": "CNN",
+        "url": "https://x.com/CNN/status/2037517673404191109",
+        "story": "No Kings Protests Challenge Trump's Leadership"
+      },
+      {
+        "platform": "reddit",
+        "title": "Britney Spears breaks silence after DUI arrest in new Instagram videos with son Jayden",
+        "url": "https://reddit.com/r/influencersfeed/comments/1s5l9u1/britney_spears_breaks_silence_after_dui_arrest_in/",
+        "story": "Britney Spears Speaks Out After DUI Arrest"
+      },
+      {
+        "platform": "reddit",
+        "title": "[Vorkunov] The Connecticut Sun are being bought by the Fertitta family, the owners of the Rockets, for $300 million and the franchise will be moved to",
+        "url": "https://reddit.com/r/nba/comments/1s5hyc8/vorkunov_the_connecticut_sun_are_being_bought_by/",
+        "story": "WNBA's Connecticut Sun Sold and Relocated"
+      }
+    ]
+  },
+  "category_briefs": {
+    "world": {
+      "summary": "Iranian hackers have breached the email account of the FBI Director, signaling a significant cybersecurity threat. Concurrently, Iranian-backed forces have increased military actions, including a strike on a U.S. base in Saudi Arabia and attacks against Israel by Houthi militants. In Nepal, Balendra Shah, a former rapper, has assumed the role of Prime Minister, while political tensions related to an energy crisis are escalating in Cuba.",
+      "left_narrative": "The breach of the FBI Director's email by Iranian hackers illustrates the growing cyber warfare capabilities of Iran, while the attacks on U.S. military bases highlight increasing regional tensions. The appointment of Balendra Shah in Nepal signifies a shift in political dynamics, potentially reflecting a broader trend of non-traditional leaders emerging in global politics. Meanwhile, the ongoing violence in Syria and sectarian strife, as highlighted by a U.N. report, underscores the dire humanitarian situation in the region.",
+      "right_narrative": "The hacking of the FBI Director's email raises alarms about national security and the threat posed by Iran, especially in light of their recent military actions against U.S. forces. The U.S. response to these provocations will be closely monitored as tensions escalate. Additionally, the energy crisis in Cuba and the implications of the Iran War on global oil prices further complicate the geopolitical landscape.",
+      "what_they_arent_telling_you": "The scale of Iranian cyber operations and their potential ties to broader state-sponsored activities remain underreported. Additionally, the ramifications of the recent military actions on U.S. foreign policy and energy markets are complex and may lead to further escalations. The internal political shifts in countries like Nepal and Cuba are also crucial in understanding how local governance is affected by global pressures.",
+      "social_summary": "Discussions about cybersecurity risks have intensified following the Iranian breach of the FBI Director's email. Public concern is also rising regarding military actions in the Middle East, particularly regarding U.S. military presence and safety. The political changes in Nepal and Cuba resonate with citizens globally, as they seek effective leadership amidst crises."
+    },
+    "politics": {
+      "summary": "House Republicans passed a Department of Homeland Security funding bill as the threat of a government shutdown looms. In Virginia, gerrymandering allegations continue to shape the political landscape, while Pramila Jayapal advocates for reparations for immigrants. Trump's leadership remains unchallenged by the recent No Kings protests, despite court rulings slowing his agenda. Additionally, Trump issued an executive order to ensure TSA workers receive pay, while farmers receive aid amid ongoing tariff and war issues.",
+      "left_narrative": "Progressive leaders like Pramila Jayapal highlight the need for reparations for immigrants, aiming to address systemic injustices. The gerrymandering claims in Virginia reflect ongoing efforts to ensure fair representation, while the court rulings against Trump suggest a resistance to his agenda. The No Kings protests signify growing discontent with Trump's leadership, indicating a potential shift in public sentiment.",
+      "right_narrative": "House Republicans' passage of the DHS funding bill demonstrates their commitment to border security amid a potential shutdown. Trump's executive order for TSA workers underscores his administration's support for federal employees, while his aid to farmers shows dedication to those affected by tariffs and international conflicts. Cruz's warning about radical Democrats portrays a stark contrast to Republican priorities, framing the political landscape as a battle for American values.",
+      "what_they_arent_telling_you": "Despite the apparent challenges to Trump's agenda from court rulings and protests, there remains a strong base of support for his policies among Republicans. The implications of gerrymandering in Virginia suggest that electoral outcomes may be more influenced by party alignment than by public opinion on specific issues. The focus on reparations for immigrants raises questions about broader immigration reform and the political implications of such proposals.",
+      "social_summary": "The recent political developments reflect deep divisions in American politics, with House Republicans pushing forward funding measures amidst potential government shutdowns. As calls for reparations and gerrymandering claims surface, public discourse increasingly centers on equity and representation. Meanwhile, Trump's support for TSA workers and farmers highlights ongoing economic concerns, illustrating the intersection of politics and everyday life."
+    },
+    "markets": {
+      "summary": "US consumer sentiment has declined due to ongoing inflation concerns, while oil prices have surged as tensions in the Middle East escalate. Despite this, US equity funds have experienced significant inflows, indicating strong investor interest. In corporate news, BlackRock's CEO compensation has increased despite facing criticism, and Meta's stock has dropped following recent court losses. Meanwhile, Bank of America has settled a lawsuit related to Epstein, and the housing market shows signs of cooling as mortgage rates rise.",
+      "left_narrative": "The decline in consumer sentiment reflects growing worries about inflation impacting household budgets. Rising oil prices add to these concerns, potentially straining consumers further. The cooling housing market and rising mortgage rates suggest a tightening economic environment, even as the job market remains resilient.",
+      "right_narrative": "Despite inflation and geopolitical tensions, investor confidence appears robust, as seen by the influx into equity funds. BlackRock's CEO compensation increase highlights a disconnect between executive pay and public sentiment. The resilience in the job market provides a counterpoint to the cooling housing sector, suggesting underlying economic strength.",
+      "what_they_arent_telling_you": "The impact of rising oil prices on everyday consumer expenses is significant, yet not all analysts agree on the long-term effects on the economy. Additionally, the strong inflows into equity funds may reflect opportunistic buying amidst volatility, rather than a fundamental bullish outlook. The implications of the Meta court decisions on tech stocks overall remain unclear.",
+      "social_summary": "Recent economic indicators show a complex picture for consumers, with sentiment dropping amid inflation fears and a surge in oil prices. While some sectors like equities attract investment, others like housing face challenges. The mixed signals from the job market and corporate governance raise questions about future economic stability."
+    },
+    "sports": {
+      "summary": "In a dramatic week in sports, Tiger Woods was arrested following a car crash, raising concerns about his future in golf. Luka Doncic faces a possible suspension after a controversial incident in the NBA, while the Connecticut Sun of the WNBA has been sold and relocated, reshaping the league's landscape. On the soccer front, Lionel Messi's future with the World Cup remains uncertain amidst speculation, and Raphinha's injury setback poses challenges for Barcelona. In college basketball, UConn and Tennessee advanced to the Elite Eight, showcasing their defensive prowess, while injuries continue to plague the USMNT ahead of crucial friendlies.",
+      "left_narrative": "The arrest of Tiger Woods after a car crash sparks serious questions about his career and personal life, with media outlets emphasizing the impact on the golf world. Luka Doncic's potential suspension is seen as a pivotal moment for the NBA as scrutiny over player conduct intensifies. The sale and relocation of the Connecticut Sun raises eyebrows about the direction of women's basketball, and Messi's uncertain World Cup future fuels speculation and debate among pundits. As injuries mount for teams like Barcelona and the USMNT, analysts highlight the pressing need for better player management.",
+      "right_narrative": "Fans express mixed emotions over Tiger Woods' arrest, fearing it could mark the end of an era in golf. Luka Doncic's suspension possibility has fans rallying behind him, emphasizing the need for fair treatment in the league. The relocation of the Connecticut Sun is met with disappointment, as loyal supporters worry about losing their team. With Messi's World Cup future in jeopardy, fans remain hopeful he'll continue to perform at the highest level, while the injuries in basketball and soccer prompt concern about the depth of their favorite teams.",
+      "what_they_arent_telling_you": "Media coverage of Woods' arrest often downplays the personal struggles he has faced, focusing instead on the ramifications for golf. The narrative around Doncic's suspension could overlook the broader context of player behavior and accountability in sports. The sale of the Connecticut Sun might be more about financial stability than fan loyalty. Messi's uncertain World Cup future may hide the fact that age and injuries are becoming more significant factors in his career. Fans are not fully aware of the long-term impact injuries could have on their teams' performances in upcoming games.",
+      "social_summary": "This week, sports fans are abuzz with news of Tiger Woods' arrest, Luka Doncic's potential suspension, and the Connecticut Sun's relocation. With college basketball heating up, UConn and Tennessee advance, while injuries to superstars like Stephen Curry and Raphinha raise concerns among supporters. Messi's uncertain World Cup future adds to the intrigue, as fans express hope for their teams amid a wave of injuries and player controversies."
+    },
+    "trending": {
+      "summary": "In a week filled with notable events, the animated feature 'Animal Friends' has been postponed to next year, much to the disappointment of fans eagerly awaiting its release. The entertainment industry mourns the passing of James Tolkan, a beloved actor known for his roles in iconic films, who died at 94. Britney Spears has spoken out following her DUI arrest, shedding light on her struggles, while Jack White criticized Trump's signature on currency, stirring political conversations. Meanwhile, the cancellation of 'Talamasca: The Secret Order' after just one season leaves viewers frustrated, and stars from 'Laguna Beach' reunite for a nostalgic TikTok trend, capturing the attention of social media.",
+      "left_narrative": "Media outlets focus on the implications of Britney Spears' DUI arrest, framing it as a continuation of her tumultuous public life and raising questions about her well-being. The cancellation of 'Talamasca: The Secret Order' reflects the industry's tendency to drop shows without sufficient audience engagement, a trend that frustrates critics. The tribute to James Tolkan highlights the impact of veteran actors on Hollywood, while the TikTok reunion of 'Laguna Beach' stars showcases the power of nostalgia in pop culture narratives.",
+      "right_narrative": "Fans express disappointment over the delay of 'Animal Friends', with many sharing their anticipation on social media. The quick cancellation of 'Talamasca: The Secret Order' is viewed as a missed opportunity for a promising storyline, igniting debates among loyal viewers. Supporters rally behind Britney Spears, emphasizing her resilience and encouraging her to seek help, while Jack White's comments about Trump's currency signature resonate with those opposed to the former president's influence.",
+      "what_they_arent_telling_you": "The postponement of 'Animal Friends' might be linked to broader industry shifts prioritizing market trends over fan expectations. James Tolkan’s passing not only marks the loss of a talented actor but also signifies the end of an era in Hollywood. While the media focuses on Britney Spears' legal troubles, they often overlook the systemic issues surrounding mental health and celebrity culture. The abrupt cancellation of shows like 'Talamasca' reveals deeper issues in how networks evaluate success beyond viewership numbers.",
+      "social_summary": "Social media buzzes with discussions about Britney Spears' DUI arrest and the reunion of 'Laguna Beach' stars, showcasing how fandoms engage with their favorite celebrities. Fans express outrage over the cancellation of 'Talamasca: The Secret Order', while others celebrate the legacy of James Tolkan. Trending hashtags capture the excitement around 'Animal Friends' and the anniversary concert series for 'World of Warcraft', highlighting the interconnectedness of gaming and entertainment cultures."
+    }
+  }
 }
