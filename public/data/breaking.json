@@ -1,14 +1,14 @@
 [
   {
     "topic": "Israeli Strike Kills Journalists in Lebanon",
-    "summary": "An Israeli military strike in Lebanon has killed three journalists who were traveling in a clearly marked press vehicle. This incident has heightened tensions in the region and provoked international condemnation regarding the safety of journalists in conflict zones. The attack highlights the ongoing volatility in the conflict between Israel and its neighboring countries.",
+    "summary": "An Israeli military strike in Lebanon resulted in the deaths of three journalists traveling in a clearly marked press vehicle. This incident has intensified regional tensions and drawn international criticism concerning the safety of journalists operating in conflict zones. The attack underscores the persistent instability in the conflict between Israel and its neighboring countries.",
     "severity": "major",
     "detected_at": "2026-03-28T18:00:06.152Z",
-    "last_updated": "2026-03-28T20:00:46.309Z",
+    "last_updated": "2026-03-28T22:00:28.148Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader implications of military actions on press freedom and the potential chilling effect on journalism in conflict zones. The focus remains on immediate blame rather than examining the systemic issues that allow such incidents to occur. Additionally, the geopolitical motivations behind Israel's military actions in Lebanon are not being scrutinized in depth, leaving a gap in understanding the strategic objectives at play.",
-    "social_summary": "Social media is ablaze with outrage over the attack, with hashtags like #PressFreedom and #JournalistsUnderFire trending. Memes and viral posts are criticizing both the Israeli military's actions and the perceived lack of accountability from international bodies. Conspiracy theories are circulating, suggesting ulterior motives behind the strike, with some users questioning the transparency of military operations in the region.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader implications of military operations in civilian areas and the potential for such actions to escalate into wider regional conflicts. The focus remains on the immediate incident without delving into the strategic objectives behind Israel's military actions in Lebanon or the potential repercussions on international diplomatic relations.",
+    "social_summary": "Social media is ablaze with outrage over the attack, with hashtags like #JournalistsUnderFire and #PressFreedom trending. Users are sharing graphic images and videos purportedly from the scene, while conspiracy theories suggest intentional targeting of media to suppress coverage. Memes criticizing both the Israeli military and international responses are circulating widely.",
     "image_prompt": "A symbolic image of a shattered camera lens lying on a dusty road, with a blurred background of a conflict zone, capturing the fragility of press freedom in war-torn areas.",
     "sources": [
       {
@@ -16,6 +16,12 @@
         "url": "https://www.aljazeera.com/news/2026/3/28/three-journalists-killed-in-israeli-strike-on-marked-press-car-in-lebanon?traffic_source=rss",
         "lean": "center",
         "title": "Three journalists killed in Israeli strike on marked press car in Lebanon"
+      },
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cgme1j70294o?at_medium=RSS&amp;at_campaign=rss",
+        "lean": "center",
+        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters"
       }
     ],
     "clips": [
@@ -40,6 +46,12 @@
         "duration": 334
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=rE79lQUJ82c",
+        "embed_id": "rE79lQUJ82c",
+        "title": "Israel kills three Lebanese journalists: Media syndicate calls targeted attack 'a crime’"
+      },
+      {
         "platform": "telegram",
         "url": "https://t.me/warmonitors/43011",
         "embed_id": "warmonitors/43011",
@@ -47,6 +59,20 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
         "duration": 30
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2037875603144110117",
+        "embed_id": "2037875603144110117",
+        "title": "🇮🇱🇱🇧 Israeli strike kills 2 journalists in southern Lebanon\n\nAli Shoeib, who works for Al-Manar, and Fatima Ftouni, a reporter with Al-Mayadeen, w",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
+        "embed_id": "2037854148377358466",
+        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
+        "author": "IbrahimMajed"
       },
       {
         "platform": "reddit",
@@ -111,6 +137,12 @@
         "title": "Israeli air strike that killed journalists in Lebanon most likely a ‘deliberate attack’: HRW",
         "channel": "Al Jazeera English",
         "duration": 334
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=rE79lQUJ82c",
+        "embed_id": "rE79lQUJ82c",
+        "title": "Israel kills three Lebanese journalists: Media syndicate calls targeted attack 'a crime’",
+        "channel": "Al Jazeera English"
       }
     ],
     "social_clips": [
@@ -122,6 +154,20 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
         "duration": 30
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2037875603144110117",
+        "embed_id": "2037875603144110117",
+        "title": "🇮🇱🇱🇧 Israeli strike kills 2 journalists in southern Lebanon\n\nAli Shoeib, who works for Al-Manar, and Fatima Ftouni, a reporter with Al-Mayadeen, w",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
+        "embed_id": "2037854148377358466",
+        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
+        "author": "IbrahimMajed"
       },
       {
         "platform": "reddit",
@@ -170,15 +216,15 @@
   },
   {
     "topic": "Houthis Missile Attack on Israel",
-    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the nation. This development escalates tensions in the Middle East, as the Houthis, backed by Iran, become more involved in the regional conflict involving Israel. The attack has the potential to alter regional dynamics and affect existing geopolitical alliances.",
+    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the nation. This action escalates tensions in the Middle East, as the Houthis, who are backed by Iran, become more involved in the regional conflict involving Israel. The attack has the potential to alter regional dynamics and affect existing geopolitical alliances.",
     "severity": "major",
     "detected_at": "2026-03-28T10:00:07.197Z",
-    "last_updated": "2026-03-28T20:01:05.998Z",
+    "last_updated": "2026-03-28T22:00:52.332Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a significant escalation orchestrated by Iran, using the Houthis as a proxy to open a new front against Israel. They emphasize Iran's role in destabilizing the region and suggest that this attack is part of a broader strategy by Tehran to gain leverage in upcoming negotiations. The narrative underscores the threat posed by Iran-backed groups to Israel's security.",
-    "what_they_arent_telling_you": "Neither side is delving into the economic motivations behind Iran's support for the Houthis, which include securing strategic maritime routes and countering Saudi influence in the region. Additionally, the impact of this attack on the civilian populations in Yemen and Israel is underreported, as is the potential for this conflict to disrupt global oil markets, given the region's significance in energy production.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users condemning Iran's influence in the region and others criticizing Israel's military actions. Memes and conspiracy theories are circulating, suggesting that this attack is a pretext for larger military interventions. Hashtags related to Middle Eastern geopolitics and calls for peace are trending, reflecting the global concern over escalating tensions.",
-    "image_prompt": "A dramatic editorial photo of a missile launch silhouetted against a twilight sky, symbolizing the tension and uncertainty in the Middle East. In the foreground, a map of the region with strategic points highlighted, representing the geopolitical stakes involved.",
+    "right_narrative": "Right-leaning media is framing this as a significant escalation orchestrated by Iran, using the Houthis as a proxy to open a third front against Israel. They emphasize Iran's role in destabilizing the region and suggest that this attack is part of a broader strategy by Tehran to gain leverage in upcoming international negotiations. The narrative underscores the threat posed by Iran-backed groups to Israel's security.",
+    "what_they_arent_telling_you": "Neither side is delving into the economic motivations behind Iran's support for the Houthis, which includes securing strategic maritime routes and countering Saudi influence in Yemen. Additionally, the impact of this attack on the global oil market and its potential to disrupt supply chains is not being thoroughly examined. The focus remains on immediate military and political implications rather than long-term economic consequences.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing support for the Houthis as resistance against Israeli actions, while others condemn the attack as an act of terrorism. Conspiracy theories are circulating about Iran's ultimate goals in the region, with some suggesting that this is a prelude to a larger conflict. Memes and viral posts are highlighting the complexity of Middle Eastern alliances and the unpredictability of the situation.",
+    "image_prompt": "A dramatic editorial photo of a missile launch silhouetted against a twilight sky, symbolizing the escalating tensions in the Middle East. In the foreground, a map of the region with strategic points highlighted, representing the geopolitical chessboard at play.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -262,12 +308,6 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Ec7zR6mtzZY",
-        "embed_id": "Ec7zR6mtzZY",
-        "title": "Les Houthis confirment avoir tiré des missiles balistiques sur Israël"
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=kyAUs8XJaVI",
         "embed_id": "kyAUs8XJaVI",
         "title": "Houthis join the war: Yemeni group attacks Israel in support of ally Iran"
@@ -277,6 +317,12 @@
         "url": "https://www.youtube.com/watch?v=T32b1g8pSnc",
         "embed_id": "T32b1g8pSnc",
         "title": "Houthis open third front: Yemen threat to Israel from air and sea"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=g-QepsSdySM",
+        "embed_id": "g-QepsSdySM",
+        "title": "Houthis launch first attack on Israel as war enters second month | BBC News"
       },
       {
         "platform": "x",
@@ -343,17 +389,38 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/vtchakarova/status/2037807463668355303",
-        "embed_id": "2037807463668355303",
-        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
-        "author": "vtchakarova"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/MiddleEastEye/status/2037892153158889859",
         "embed_id": "2037892153158889859",
         "title": "Yemen's Houthis claimed responsibility for a missile attack on Israel, their first since the broader Middle East conflict began, according to a statem",
         "author": "MiddleEastEye"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TheStudyofWar/status/2037939847101329811",
+        "embed_id": "2037939847101329811",
+        "title": "NEW | The Houthis conducted a ballistic missile attack targeting southern Israel on March 27, marking the group’s first involvement in the war. Israel",
+        "author": "TheStudyofWar"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20543",
+        "embed_id": "disclosetv/20543",
+        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first  attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_fr/20158",
+        "embed_id": "France24_fr/20158",
+        "title": "Les Houthis du Yémen ciblent Israël, les frappes contre l'Iran continuent\nPour la première fois depuis le début de la ⁠guerre en Iran, les Houthis ⁠du",
+        "author": "france24_fr"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16236",
+        "embed_id": "France24_en/16236",
+        "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
+        "author": "france24_en"
       },
       {
         "platform": "reddit",
@@ -442,12 +509,6 @@
         "channel": "BBC News"
       },
       {
-        "url": "https://www.youtube.com/watch?v=Ec7zR6mtzZY",
-        "embed_id": "Ec7zR6mtzZY",
-        "title": "Les Houthis confirment avoir tiré des missiles balistiques sur Israël",
-        "channel": "euronews"
-      },
-      {
         "url": "https://www.youtube.com/watch?v=kyAUs8XJaVI",
         "embed_id": "kyAUs8XJaVI",
         "title": "Houthis join the war: Yemeni group attacks Israel in support of ally Iran",
@@ -458,6 +519,12 @@
         "embed_id": "T32b1g8pSnc",
         "title": "Houthis open third front: Yemen threat to Israel from air and sea",
         "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=g-QepsSdySM",
+        "embed_id": "g-QepsSdySM",
+        "title": "Houthis launch first attack on Israel as war enters second month | BBC News",
+        "channel": "BBC News"
       }
     ],
     "social_clips": [
@@ -526,17 +593,38 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/vtchakarova/status/2037807463668355303",
-        "embed_id": "2037807463668355303",
-        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
-        "author": "vtchakarova"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/MiddleEastEye/status/2037892153158889859",
         "embed_id": "2037892153158889859",
         "title": "Yemen's Houthis claimed responsibility for a missile attack on Israel, their first since the broader Middle East conflict began, according to a statem",
         "author": "MiddleEastEye"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TheStudyofWar/status/2037939847101329811",
+        "embed_id": "2037939847101329811",
+        "title": "NEW | The Houthis conducted a ballistic missile attack targeting southern Israel on March 27, marking the group’s first involvement in the war. Israel",
+        "author": "TheStudyofWar"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20543",
+        "embed_id": "disclosetv/20543",
+        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first  attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_fr/20158",
+        "embed_id": "France24_fr/20158",
+        "title": "Les Houthis du Yémen ciblent Israël, les frappes contre l'Iran continuent\nPour la première fois depuis le début de la ⁠guerre en Iran, les Houthis ⁠du",
+        "author": "france24_fr"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16236",
+        "embed_id": "France24_en/16236",
+        "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
+        "author": "france24_en"
       },
       {
         "platform": "reddit",
@@ -573,15 +661,15 @@
   },
   {
     "topic": "Iranian Attack on US Service Members",
-    "summary": "An Iranian attack on a Saudi air base has resulted in injuries to at least 10 US service members, escalating tensions between the United States and Iran. This incident highlights the ongoing volatility in US-Iran relations and raises fears of further military escalations in the Middle East. The attack reflects the broader geopolitical instability in the region.",
+    "summary": "An Iranian attack on a Saudi air base has injured at least 10 US service members, intensifying tensions between the United States and Iran. This incident underscores the persistent volatility in US-Iran relations and raises concerns about potential military escalations in the Middle East. The attack is indicative of the broader geopolitical instability in the region.",
     "severity": "major",
     "detected_at": "2026-03-28T04:00:07.235Z",
-    "last_updated": "2026-03-28T20:01:59.445Z",
+    "last_updated": "2026-03-28T22:01:22.001Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong US military response to deter further attacks. They highlight Iran's role as a destabilizing force in the Middle East and criticize the current US administration for perceived weakness in handling Iranian provocations.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind Iran's actions, such as the impact of US sanctions on Iran's economy and its strategic interests in the region. Additionally, the role of Saudi Arabia's involvement in regional conflicts and its relationship with the US is not being scrutinized, which provide a deeper understanding of the complexities at play.",
-    "social_summary": "Social media is reacting with a mix of outrage and conspiracy theories, with some users blaming US foreign policy for provoking the attack, while others spread unverified claims about the involvement of other regional powers. Memes and viral posts are circulating, depicting the incident as a prelude to a larger conflict.",
-    "image_prompt": "A dramatic editorial photo of a military base under a dark, stormy sky, with silhouettes of soldiers in the foreground, symbolizing tension and uncertainty in the Middle East.",
+    "what_they_arent_telling_you": "Neither side is delving into the economic motivations behind Iran's actions, such as the impact of sanctions on its economy and the potential benefits of escalating tensions to rally domestic support. Additionally, the strategic importance of the Saudi air base in US military operations in the region is not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users calling for immediate retaliation against Iran, while others warn against further military involvement in the Middle East. Conspiracy theories are circulating about the timing of the attack, suggesting it is a distraction from domestic issues in both the US and Iran.",
+    "image_prompt": "A dramatic editorial photo of a military base under a dark, stormy sky, with silhouettes of soldiers in the foreground, symbolizing tension and uncertainty.",
     "sources": [
       {
         "name": "Daily Wire",
@@ -654,6 +742,13 @@
         "duration": 210
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=YX9kiuKIuVM",
+        "embed_id": "YX9kiuKIuVM",
+        "title": "Iranian attack on Saudi air base wounds at least 10 US troops",
+        "duration": 27
+      },
+      {
         "platform": "x",
         "url": "https://x.com/cnnbrk/status/2037720943749935488",
         "embed_id": "2037720943749935488",
@@ -701,6 +796,13 @@
         "embed_id": "intelslava/85572",
         "title": "🇮🇷🇺🇸🇸🇦During the attack on Prince Sultan Air Base in Saudi Arabia, the Iranians destroyed at least three American KC-135 refueling aircraft.",
         "author": "intelslava"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ByChrisGordon/status/2037662227440775669",
+        "embed_id": "2037662227440775669",
+        "title": "Multiple American service members were wounded and some aircraft were damaged in an Iranian attack on Prince Sultan Air Base, Saudi Arabia, people fam",
+        "author": "ByChrisGordon"
       },
       {
         "platform": "reddit",
@@ -813,6 +915,13 @@
         "title": "Iranian attack on Saudi base wounds at least 10 U.S. troops",
         "channel": "KTLA 5",
         "duration": 210
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=YX9kiuKIuVM",
+        "embed_id": "YX9kiuKIuVM",
+        "title": "Iranian attack on Saudi air base wounds at least 10 US troops",
+        "channel": "WKYC Channel 3",
+        "duration": 27
       }
     ],
     "social_clips": [
@@ -864,6 +973,13 @@
         "embed_id": "intelslava/85572",
         "title": "🇮🇷🇺🇸🇸🇦During the attack on Prince Sultan Air Base in Saudi Arabia, the Iranians destroyed at least three American KC-135 refueling aircraft.",
         "author": "intelslava"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ByChrisGordon/status/2037662227440775669",
+        "embed_id": "2037662227440775669",
+        "title": "Multiple American service members were wounded and some aircraft were damaged in an Iranian attack on Prince Sultan Air Base, Saudi Arabia, people fam",
+        "author": "ByChrisGordon"
       },
       {
         "platform": "reddit",
@@ -918,15 +1034,15 @@
   },
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles targeting Iranian sites. The Strait of Hormuz is a crucial channel for global oil transport, and its closure threatens to disrupt international oil markets. This escalation has heightened tensions in the Middle East, raising concerns about regional stability and the security of global energy supplies.",
+    "summary": "Iran has closed the Strait of Hormuz in response to a major military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. The Strait of Hormuz is a vital passage for global oil transport, and its closure poses a significant threat to international oil markets. This development has intensified tensions in the Middle East, sparking fears over regional stability and the security of global energy supplies.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-28T20:02:57.307Z",
+    "last_updated": "2026-03-28T22:02:34.627Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these actions. The U.S. military response is not just about immediate security concerns but also about maintaining control over global oil routes and asserting dominance in the region. Iran's closure of the Strait is a strategic move to leverage its geographical advantage in the face of overwhelming military pressure, highlighting the geopolitical chess game over energy resources.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the U.S. military aggression, while others support the show of force as necessary for national security. Memes and conspiracy theories abound, suggesting ulterior motives such as oil control or political distraction tactics. Hashtags like #StraitOfHormuz and #OilWar are trending, reflecting the global anxiety over potential economic fallout.",
-    "image_prompt": "A dramatic image of a narrow, turbulent sea passage under a stormy sky, with silhouetted warships on the horizon and oil tankers stranded, symbolizing the geopolitical tension and economic stakes.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations driving this conflict. The U.S. has strategic interests in maintaining control over oil routes, while Iran seeks to assert its regional influence and counter U.S. dominance. Additionally, the role of other global powers, such as China and Russia, in either supporting or opposing these actions is not being fully explored, despite their vested interests in Middle Eastern stability and energy resources.",
+    "social_summary": "Social media is ablaze with reactions, ranging from memes mocking the geopolitical chess game to conspiracy theories suggesting a coordinated effort by global elites to manipulate oil prices. Hashtags like #OilWar and #StraitOfHormuz are trending, with users expressing both outrage and skepticism over the true motives behind the escalation.",
+    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, shadowy figures representing global powers stand on opposite shores, each holding a symbolic object of power, like an oil barrel or a missile, highlighting the geopolitical tension.",
     "sources": [],
     "clips": [
       {
@@ -959,13 +1075,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2037724416692433223",
-        "embed_id": "2037724416692433223",
-        "title": "US Secretary of State Marco Rubio says the Iran war could end within weeks after meeting G7 leaders in France, though tensions remain high over escala",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/DeItaone/status/2037520956336324642",
         "embed_id": "2037520956336324642",
         "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
@@ -973,17 +1082,31 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/peterbakernyt/status/2037921356956725428",
-        "embed_id": "2037921356956725428",
-        "title": "\"Trump’s wild swings — from optimism to frustration and anger, from de-escalation to escalation — have combined to give his management of the war an e",
-        "author": "peterbakernyt"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/swilkinsonbc/status/2037649896627421406",
         "embed_id": "2037649896627421406",
         "title": "The ‘war of aggression’ on Iran launched by America &amp; the israelis is going badly, &amp; the White House is scrambling to control the narrative ht",
         "author": "swilkinsonbc"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Gaurav_7887/status/2037887872586719654",
+        "embed_id": "2037887872586719654",
+        "title": "🚨 #BREAKING 💥\n\nWORLD WAR ALERT 🤯\n\n🇺🇸🇮🇷IRAN ATTACKED US VESSEL NEAR OMAN 🚨\n\nIRAN HAS LAUNCHED A DIRECT ATTACK ON AN AMERICAN SHIP NEAR OMAN, MA",
+        "author": "Gaurav_7887"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/karlykingsley/status/2037804103426875566",
+        "embed_id": "2037804103426875566",
+        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
+        "author": "karlykingsley"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2037799081230447019",
+        "embed_id": "2037799081230447019",
+        "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "reddit",
@@ -1109,13 +1232,6 @@
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2037724416692433223",
-        "embed_id": "2037724416692433223",
-        "title": "US Secretary of State Marco Rubio says the Iran war could end within weeks after meeting G7 leaders in France, though tensions remain high over escala",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/DeItaone/status/2037520956336324642",
         "embed_id": "2037520956336324642",
         "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
@@ -1123,17 +1239,31 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/peterbakernyt/status/2037921356956725428",
-        "embed_id": "2037921356956725428",
-        "title": "\"Trump’s wild swings — from optimism to frustration and anger, from de-escalation to escalation — have combined to give his management of the war an e",
-        "author": "peterbakernyt"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/swilkinsonbc/status/2037649896627421406",
         "embed_id": "2037649896627421406",
         "title": "The ‘war of aggression’ on Iran launched by America &amp; the israelis is going badly, &amp; the White House is scrambling to control the narrative ht",
         "author": "swilkinsonbc"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Gaurav_7887/status/2037887872586719654",
+        "embed_id": "2037887872586719654",
+        "title": "🚨 #BREAKING 💥\n\nWORLD WAR ALERT 🤯\n\n🇺🇸🇮🇷IRAN ATTACKED US VESSEL NEAR OMAN 🚨\n\nIRAN HAS LAUNCHED A DIRECT ATTACK ON AN AMERICAN SHIP NEAR OMAN, MA",
+        "author": "Gaurav_7887"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/karlykingsley/status/2037804103426875566",
+        "embed_id": "2037804103426875566",
+        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
+        "author": "karlykingsley"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2037799081230447019",
+        "embed_id": "2037799081230447019",
+        "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "reddit",
