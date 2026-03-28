@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. This move threatens the global oil supply, as the strait is a vital passage for oil transport. The escalation has heightened tensions in the Middle East, posing risks to international energy markets and regional stability.",
+    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles targeting Iranian sites. This closure threatens the global oil supply, as the strait is a vital channel for oil transportation. The escalation has heightened tensions in the Middle East, jeopardizing both international energy markets and regional stability.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-27T22:01:18.066Z",
+    "last_updated": "2026-03-28T02:00:30.066Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these actions. The U.S. military response may be influenced by defense contractors and geopolitical strategies to maintain dominance in the region. Iran's closure of the Strait of Hormuz could be a strategic move to leverage its control over a critical oil chokepoint, potentially forcing negotiations or concessions from global powers.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the U.S. military aggression, while others support the show of force against Iran. Memes and conspiracy theories are circulating, suggesting ulterior motives such as control over oil resources or a distraction from domestic issues in both countries. Hashtags like #StraitOfHormuz and #OilWar are trending.",
-    "image_prompt": "A dramatic image of a narrow, turbulent sea passage with looming shadows of warships on the horizon, symbolizing the tension and strategic importance of the Strait of Hormuz.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations driving this conflict. The U.S. military action coincides with domestic pressures to control oil prices and assert dominance in the region. Iran's closure of the Strait of Hormuz is a strategic move to leverage its geopolitical position, forcing global powers to reconsider their alliances and economic dependencies.",
+    "social_summary": "Social media is ablaze with polarized reactions. Some users are sharing memes depicting the Strait of Hormuz as a 'chokehold' on the world's oil supply, while others circulate conspiracy theories about the U.S. seeking to control Middle Eastern oil reserves. Hashtags like #OilWar and #HormuzCrisis are trending, with users expressing both outrage and fear over potential global economic repercussions.",
+    "image_prompt": "A dramatic image of a narrow, winding waterway symbolizing the Strait of Hormuz, with looming shadows of warships and oil tankers, under a sky filled with ominous storm clouds, capturing the tension and uncertainty of the situation.",
     "sources": [],
     "clips": [
       {
@@ -41,6 +41,34 @@
         "duration": 394
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
+        "embed_id": "O8eoscTyjio",
+        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
+        "duration": 1567
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
+        "embed_id": "GiNqawXBaF8",
+        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
+        "duration": 404
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
+        "embed_id": "2037263229269778456",
+        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
+        "author": "BTnewsroom"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2037379186701062330",
+        "embed_id": "2037379186701062330",
+        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
+        "author": "snarwani"
+      },
+      {
         "platform": "x",
         "url": "https://x.com/DeItaone/status/2037520956336324642",
         "embed_id": "2037520956336324642",
@@ -49,10 +77,10 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
-        "embed_id": "2037263229269778456",
-        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
-        "author": "BTnewsroom"
+        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
+        "embed_id": "2037181391041925513",
+        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
+        "author": "MiddleEastEye"
       },
       {
         "platform": "reddit",
@@ -125,9 +153,37 @@
         "title": "US–Israel war on Iran has become a region‑wide conflict with controlled escalation: Analysis",
         "channel": "Al Jazeera English",
         "duration": 394
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
+        "embed_id": "O8eoscTyjio",
+        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
+        "channel": "DW News",
+        "duration": 1567
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
+        "embed_id": "GiNqawXBaF8",
+        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
+        "channel": "Fox News",
+        "duration": 404
       }
     ],
     "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
+        "embed_id": "2037263229269778456",
+        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
+        "author": "BTnewsroom"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2037379186701062330",
+        "embed_id": "2037379186701062330",
+        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
+        "author": "snarwani"
+      },
       {
         "platform": "x",
         "url": "https://x.com/DeItaone/status/2037520956336324642",
@@ -137,10 +193,10 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/BTnewsroom/status/2037263229269778456",
-        "embed_id": "2037263229269778456",
-        "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
-        "author": "BTnewsroom"
+        "url": "https://x.com/MiddleEastEye/status/2037181391041925513",
+        "embed_id": "2037181391041925513",
+        "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
+        "author": "MiddleEastEye"
       },
       {
         "platform": "reddit",
