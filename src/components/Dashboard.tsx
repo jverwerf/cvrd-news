@@ -976,11 +976,10 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   if (item.type === 'social' && item.platform === 'tiktok' && item.embedId && /^\d+$/.test(item.embedId)) {
     return (
       <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
-        <img
-          src={item.image || `/api/tt-video?id=${item.embedId}&thumb=1`}
-          alt={item.clipLabel || 'TikTok'}
+        <video
+          src={`/api/tt-video?id=${item.embedId}`}
           className="w-full h-full object-cover"
-          loading="lazy"
+          autoPlay muted playsInline loop
         />
         <div className="absolute top-2 left-2 z-10">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#fe2c55' }}>TikTok</span>

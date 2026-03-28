@@ -184,7 +184,8 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
               )}
 
               {/* X POSTS + SOCIAL */}
-              {xClips.filter(c => !(c as any).duration).length > 0 && (
+              {xClips.filter(c => !(c as any).duration).length > 0 && (<>
+              <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Social Wire</h2>
               <div className="rounded-lg p-4" style={{ background: '#253545' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[16px] font-bold text-white">𝕏</span>
@@ -193,7 +194,7 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {xClips.filter(c => !(c as any).duration).map((c, i) => (
                     c.embed_id ? (
-                      <div key={`x-${i}`} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 320 }}>
+                      <div key={`x-${i}`} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 160 }}>
                         <iframe
                           src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
                           className="absolute"
@@ -205,7 +206,7 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                   ))}
                 </div>
               </div>
-              )}
+              </>)}
               {tiktokClips.filter(c => c.embed_id).length > 0 && (
                 <div className="rounded-lg p-4 mt-3" style={{ background: '#253545' }}>
                   <div className="flex items-center gap-2 mb-3">
