@@ -36,6 +36,7 @@ const ALL_CATS = [
 const HANDLES = [
   'realDonaldTrump', 'AOC', 'JDVance', 'marcorubio', 'BernieSanders',
   'GovRonDeSantis', 'tedcruz', 'VivekGRamaswamy', 'SpeakerJohnson',
+  'AliVelshi', 'AnnCoulter', 'HakeemJeffries', 'MattGaetz', 'RandPaul', 'SenSchumer',
 ];
 
 const FILTERS = [
