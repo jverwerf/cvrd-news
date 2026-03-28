@@ -1,5 +1,220 @@
 [
   {
+    "topic": "Iranian Attack on US Service Members",
+    "summary": "An Iranian attack on a Saudi air base has resulted in injuries to at least 10 US service members. This incident represents a significant escalation in the ongoing tensions between the United States and Iran, raising concerns about the potential for further military confrontations in the region.",
+    "severity": "major",
+    "detected_at": "2026-03-28T04:00:07.235Z",
+    "last_updated": "2026-03-28T04:00:07.235Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong military response to deter further attacks. They highlight Iran's history of hostility towards the US and its allies, arguing that this attack is a clear provocation that cannot go unanswered.",
+    "what_they_arent_telling_you": "Neither side is delving deeply into the geopolitical implications of this attack, particularly how it affects the balance of power in the Middle East. The economic interests tied to the region, including oil markets and arms sales, are also not being thoroughly examined. Additionally, the role of proxy groups and regional alliances in escalating tensions is largely overlooked.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users calling for immediate retaliation and others warning against further escalation. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the attack, such as influencing oil prices or distracting from domestic issues in the US.",
+    "image_prompt": "A dramatic editorial photo of a military base under a dark, stormy sky, with silhouettes of soldiers and drones in the foreground, symbolizing tension and uncertainty.",
+    "sources": [
+      {
+        "name": "Daily Wire",
+        "url": "https://www.dailywire.com/news/live-updates-iranian-protests-intensify-as-citizens-demand-end-to-ayatollah-rule",
+        "lean": "right",
+        "title": "LIVE UPDATES: U.S. Troops Injured After Iranian Missile And Drone Attack Hits Base Overseas"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=AHc6DeRyEP8",
+        "embed_id": "AHc6DeRyEP8",
+        "title": "BREAKING: Iran reportedly wounds US troops in attack on American base",
+        "duration": 155
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=elqD8fHiZl0",
+        "embed_id": "elqD8fHiZl0",
+        "title": "Iran strike hits Saudi base, US troops injured, AP reports | FOX 13 Seattle",
+        "duration": 129
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=pGtj9U85bzw",
+        "embed_id": "pGtj9U85bzw",
+        "title": "Iranian strike wounds US troops and damages planes at Saudi air base, official says",
+        "duration": 26
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=CLEESCSg2QA",
+        "embed_id": "CLEESCSg2QA",
+        "title": "U.S. troops injured by Iranian strike in Saudi Arabia: Report",
+        "duration": 645
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/cnnbrk/status/2037720943749935488",
+        "embed_id": "2037720943749935488",
+        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN https://t.co/Z0tpt4",
+        "author": "cnnbrk"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/CNN/status/2037719897636041054",
+        "embed_id": "2037719897636041054",
+        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN. https://t.co/lG0vC",
+        "author": "CNN"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Currentreport1/status/2037676726827065358",
+        "embed_id": "2037676726827065358",
+        "title": "BREAKING:\n\nAn Iranian missile and drone attack on Prince Sultan air base in Saudi Arabia injured 10 US service members.\n\nAmong the injured 2 are in cr",
+        "author": "Currentreport1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JenniferJJacobs/status/2037660745475760209",
+        "embed_id": "2037660745475760209",
+        "title": "The attack on US service members in Saudi Arabia consisted of Iranian missiles and drones. Two of the Americans were very seriously injured, eight wer",
+        "author": "JenniferJJacobs"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitor3/status/2037659229096448401",
+        "embed_id": "2037659229096448401",
+        "title": "10 US service members were injured in the Iranian missile and drone attack on Prince Sultan Air Base Saudi Arabia today.",
+        "author": "WarMonitor3"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osinttechnical/status/2037654404766081155",
+        "embed_id": "2037654404766081155",
+        "title": "Ten American service members were wounded in an Iranian drone and missile attack on Prince Sultan Airbase earlier today-Multiple US and Arab officials",
+        "author": "Osinttechnical"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1s4vpdv/march_26_2026/",
+        "embed_id": "1s4vpdv",
+        "title": "March 26, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TopCharacterTropes/comments/1s55zup/controversial_trope_story_is_a_hate_letter_at_its/",
+        "embed_id": "1s55zup",
+        "title": "[Controversial trope] Story is a hate letter at its core"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ForUnitedStates/comments/1s5iopv/us_service_members_injured_in_iranian_strike/",
+        "embed_id": "1s5iopv",
+        "title": "US service members injured in Iranian strike while Trump makes joke on stage"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
+        "embed_id": "1s5kyv3",
+        "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=AHc6DeRyEP8",
+        "embed_id": "AHc6DeRyEP8",
+        "title": "BREAKING: Iran reportedly wounds US troops in attack on American base",
+        "channel": "Fox News",
+        "duration": 155
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=elqD8fHiZl0",
+        "embed_id": "elqD8fHiZl0",
+        "title": "Iran strike hits Saudi base, US troops injured, AP reports | FOX 13 Seattle",
+        "channel": "FOX 13 Seattle",
+        "duration": 129
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=pGtj9U85bzw",
+        "embed_id": "pGtj9U85bzw",
+        "title": "Iranian strike wounds US troops and damages planes at Saudi air base, official says",
+        "channel": "Denver7",
+        "duration": 26
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=CLEESCSg2QA",
+        "embed_id": "CLEESCSg2QA",
+        "title": "U.S. troops injured by Iranian strike in Saudi Arabia: Report",
+        "channel": "LiveNOW from FOX",
+        "duration": 645
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/cnnbrk/status/2037720943749935488",
+        "embed_id": "2037720943749935488",
+        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN https://t.co/Z0tpt4",
+        "author": "cnnbrk"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/CNN/status/2037719897636041054",
+        "embed_id": "2037719897636041054",
+        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN. https://t.co/lG0vC",
+        "author": "CNN"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Currentreport1/status/2037676726827065358",
+        "embed_id": "2037676726827065358",
+        "title": "BREAKING:\n\nAn Iranian missile and drone attack on Prince Sultan air base in Saudi Arabia injured 10 US service members.\n\nAmong the injured 2 are in cr",
+        "author": "Currentreport1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JenniferJJacobs/status/2037660745475760209",
+        "embed_id": "2037660745475760209",
+        "title": "The attack on US service members in Saudi Arabia consisted of Iranian missiles and drones. Two of the Americans were very seriously injured, eight wer",
+        "author": "JenniferJJacobs"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitor3/status/2037659229096448401",
+        "embed_id": "2037659229096448401",
+        "title": "10 US service members were injured in the Iranian missile and drone attack on Prince Sultan Air Base Saudi Arabia today.",
+        "author": "WarMonitor3"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osinttechnical/status/2037654404766081155",
+        "embed_id": "2037654404766081155",
+        "title": "Ten American service members were wounded in an Iranian drone and missile attack on Prince Sultan Airbase earlier today-Multiple US and Arab officials",
+        "author": "Osinttechnical"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1s4vpdv/march_26_2026/",
+        "embed_id": "1s4vpdv",
+        "title": "March 26, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TopCharacterTropes/comments/1s55zup/controversial_trope_story_is_a_hate_letter_at_its/",
+        "embed_id": "1s55zup",
+        "title": "[Controversial trope] Story is a hate letter at its core"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ForUnitedStates/comments/1s5iopv/us_service_members_injured_in_iranian_strike/",
+        "embed_id": "1s5iopv",
+        "title": "US service members injured in Iranian strike while Trump makes joke on stage"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
+        "embed_id": "1s5kyv3",
+        "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-28.png"
+  },
+  {
     "topic": "Iran-US War Escalation",
     "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles targeting Iranian sites. This closure threatens the global oil supply, as the strait is a vital channel for oil transportation. The escalation has heightened tensions in the Middle East, jeopardizing both international energy markets and regional stability.",
     "severity": "critical",
