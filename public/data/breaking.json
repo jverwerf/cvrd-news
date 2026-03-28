@@ -1,5 +1,176 @@
 [
   {
+    "topic": "Israeli Strike Kills Journalists in Lebanon",
+    "summary": "An Israeli military strike in Lebanon resulted in the deaths of three journalists traveling in a clearly marked press vehicle. This incident has intensified the already high tensions in the region and has sparked international outcry over the safety of journalists operating in conflict zones. The attack underscores the volatile nature of the ongoing conflict between Israel and its neighboring countries.",
+    "severity": "major",
+    "detected_at": "2026-03-28T18:00:06.152Z",
+    "last_updated": "2026-03-28T18:00:06.152Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader implications of targeting media personnel in conflict zones, which set a dangerous precedent for future military engagements. The geopolitical ramifications extend beyond the immediate conflict, potentially affecting international relations and press freedom globally. Additionally, the financial and political interests of countries supplying arms to the region remain unexamined, despite their role in perpetuating the conflict.",
+    "social_summary": "Social media is ablaze with outrage, with hashtags like #PressFreedom and #WarCrimes trending. Users are sharing graphic images and videos purportedly from the scene, fueling debates about the ethics of such content. Conspiracy theories are circulating, suggesting ulterior motives behind the strike, with some claiming it was a deliberate attack on press freedom.",
+    "image_prompt": "A dramatic editorial photo of a shattered camera lens lying on a dusty road, with a blurred background of a conflict zone, symbolizing the fragility of press freedom in war-torn areas.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/3/28/three-journalists-killed-in-israeli-strike-on-marked-press-car-in-lebanon?traffic_source=rss",
+        "lean": "center",
+        "title": "Three journalists killed in Israeli strike on marked press car in Lebanon"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=dHxVJ9sedfA",
+        "embed_id": "dHxVJ9sedfA",
+        "title": "Israel strike in southern Lebanon kills 3 journalists covering the war"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=PVsYNQhrZ7A",
+        "embed_id": "PVsYNQhrZ7A",
+        "title": "Israeli Strike in South Lebanon Kills 3 Journalists Amid Ongoing Border Clashes | APT",
+        "duration": 183
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=dlAQi0fgk3Q",
+        "embed_id": "dlAQi0fgk3Q",
+        "title": "Israeli air strike that killed journalists in Lebanon most likely a ‘deliberate attack’: HRW",
+        "duration": 334
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
+        "embed_id": "2037854148377358466",
+        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
+        "author": "IbrahimMajed"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43011",
+        "embed_id": "warmonitors/43011",
+        "title": "⚡️ The last message of journalist Fatima Fatouni from southern Lebanon before she was killed in an Israeli airstrike while covering events.",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Fauxmoi/comments/1s5zw30/israeli_drones_have_killed_journalist_ali_shoeib/",
+        "embed_id": "1s5zw30",
+        "title": "Israeli drones have killed journalist Ali Shoeib and Al Mayadeen correspondent Fatima Ftouni alongside Ftouni's brother, a cameraman in the Jezzine ar"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62i5l/israeli_air_strike_kills_2_journalists_ali_shoeib/",
+        "embed_id": "1s62i5l",
+        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62jon/a_man_reports_at_the_scene_of_his_coworkers/",
+        "embed_id": "1s62jon",
+        "title": "A man reports at the scene of his coworkers assassination from Israeli quadruple tap in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1s62k7q/israels_military_has_confirmed_it_killed_ali/",
+        "embed_id": "1s62k7q",
+        "title": "Israel's military has confirmed it killed Ali Shoeib in a strike, but accuses him of being a *Hezbollah-operative posing as a journalist*"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/International/comments/1s6448y/israeli_air_strike_kills_2_journalists_ali_shoeib/",
+        "embed_id": "1s6448y",
+        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UnderReportedNews/comments/1s65tdo/israeli_airstrike_kills_three_journalists/",
+        "embed_id": "1s65tdo",
+        "title": "Israeli airstrike kills three journalists covering the war in Lebanon"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=dHxVJ9sedfA",
+        "embed_id": "dHxVJ9sedfA",
+        "title": "Israel strike in southern Lebanon kills 3 journalists covering the war",
+        "channel": "Associated Press"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=PVsYNQhrZ7A",
+        "embed_id": "PVsYNQhrZ7A",
+        "title": "Israeli Strike in South Lebanon Kills 3 Journalists Amid Ongoing Border Clashes | APT",
+        "channel": "APT",
+        "duration": 183
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=dlAQi0fgk3Q",
+        "embed_id": "dlAQi0fgk3Q",
+        "title": "Israeli air strike that killed journalists in Lebanon most likely a ‘deliberate attack’: HRW",
+        "channel": "Al Jazeera English",
+        "duration": 334
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
+        "embed_id": "2037854148377358466",
+        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
+        "author": "IbrahimMajed"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43011",
+        "embed_id": "warmonitors/43011",
+        "title": "⚡️ The last message of journalist Fatima Fatouni from southern Lebanon before she was killed in an Israeli airstrike while covering events.",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Fauxmoi/comments/1s5zw30/israeli_drones_have_killed_journalist_ali_shoeib/",
+        "embed_id": "1s5zw30",
+        "title": "Israeli drones have killed journalist Ali Shoeib and Al Mayadeen correspondent Fatima Ftouni alongside Ftouni's brother, a cameraman in the Jezzine ar"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62i5l/israeli_air_strike_kills_2_journalists_ali_shoeib/",
+        "embed_id": "1s62i5l",
+        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62jon/a_man_reports_at_the_scene_of_his_coworkers/",
+        "embed_id": "1s62jon",
+        "title": "A man reports at the scene of his coworkers assassination from Israeli quadruple tap in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1s62k7q/israels_military_has_confirmed_it_killed_ali/",
+        "embed_id": "1s62k7q",
+        "title": "Israel's military has confirmed it killed Ali Shoeib in a strike, but accuses him of being a *Hezbollah-operative posing as a journalist*"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/International/comments/1s6448y/israeli_air_strike_kills_2_journalists_ali_shoeib/",
+        "embed_id": "1s6448y",
+        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UnderReportedNews/comments/1s65tdo/israeli_airstrike_kills_three_journalists/",
+        "embed_id": "1s65tdo",
+        "title": "Israeli airstrike kills three journalists covering the war in Lebanon"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-28.png"
+  },
+  {
     "topic": "Houthis Missile Attack on Israel",
     "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the nation. This escalation comes amid heightened tensions in the Middle East, with the Houthis, who are supported by Iran, becoming more involved in the regional conflict that includes Israel. The attack alter regional dynamics and affect existing geopolitical alliances.",
     "severity": "major",
