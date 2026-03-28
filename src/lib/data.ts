@@ -35,6 +35,7 @@ export type DailyBrief = {
   what_they_arent_telling_you: string;
   social_summary: string;
   image_prompt?: string;
+  curated_social?: { platform: string; embed_id?: string; title?: string; author?: string; url: string; story?: string }[];
 };
 
 export interface DailyReport {

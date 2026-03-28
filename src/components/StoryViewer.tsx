@@ -99,6 +99,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     })(),
   }));
 
+  const [dashExpanded, setDashExpanded] = useState(false);
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
 
@@ -120,103 +121,358 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   return (
     <div>
-      {/* DASHBOARD with arrows + timeline */}
-      <div className="relative" style={{ height: 'calc(100vh - 76px)', display: 'flex', flexDirection: 'column' }}>
-        {/* MINI THUMBNAIL TIMELINE — same width as below, shorter height */}
-        <div className="flex items-center gap-0 px-1 py-0.5" style={{ background: '#000000' }}>
-        <style>{`
-          .story-thumb-mini:hover { width: 280px !important; opacity: 1 !important; }
-          .story-thumb-mini:hover .story-thumb-mini-img { height: 60px !important; }
-          .story-thumb-mini:hover .story-thumb-mini-label { font-size: 11px !important; line-height: 1.3 !important; }
-        `}</style>
-          <button onClick={() => {
-            document.getElementById('story-timeline')?.scrollBy({ left: -200, behavior: 'smooth' });
-          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
-          </button>
-          <div id="story-timeline" className="flex gap-1 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
-            {/* Daily Brief */}
-            <button onClick={() => setCurrentIdx(-1)}
-              className="story-thumb-mini shrink-0 rounded overflow-hidden cursor-pointer"
-              style={{
-                width: '100px',
-                border: isBrief ? '2px solid #b8860b' : '2px solid transparent',
-                opacity: isBrief ? 1 : 0.75,
-                transition: 'width 0.3s ease, opacity 0.2s ease',
-              }}>
-              <div className="story-thumb-mini-img relative overflow-hidden flex items-center justify-center" style={{ height: '36px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
-                <img src="/logo3.png" alt="" style={{ height: '20px', opacity: 0.4 }} />
-                <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
-                  <span className="story-thumb-mini-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Daily Brief</span>
-                </div>
-              </div>
+      {/* BRIEF MODE: cards → brief banner → summary → dashboard → video picks */}
+      {isBrief ? (
+        <>
+          {/* 1. TODAY'S TOP STORIES — cards grid */}
+          <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Today&apos;s Top Stories</h2>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {stories.map((s, i) => (
+                <button key={i} onClick={() => setCurrentIdx(i)}
+                  className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+                  style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  {s.image_file && (
+                    <div className="h-28 overflow-hidden" style={{
+                      backgroundImage: `url(${s.image_file})`,
+                      backgroundSize: 'cover', backgroundPosition: 'center',
+                    }}>
+                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    </div>
+                  )}
+                  <div className="p-2.5">
+                    <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
+                    <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                      {s.topic}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 2. ON AIR BANNER */}
+          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+            <div className="flex-1 min-w-0">
+              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+                {sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} — On Air` : 'On Air'}
+              </h1>
+            </div>
+            <button onClick={() => setCurrentIdx(0)}
+              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
             </button>
-            {/* Stories */}
-            {stories.map((s, i) => (
-              <button key={i} onClick={() => setCurrentIdx(i)}
-                className="story-thumb-mini shrink-0 rounded overflow-hidden cursor-pointer"
-                style={{
-                  width: '100px',
-                  border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
-                  opacity: i === currentIdx ? 1 : 0.75,
-                  transition: 'width 0.3s ease, opacity 0.2s ease',
-                }}>
-                <div className="story-thumb-mini-img relative overflow-hidden" style={{ height: '36px', transition: 'height 0.3s ease',
-                  backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
-                  backgroundSize: 'cover', backgroundPosition: 'center',
-                }}>
+          </div>
+
+          {/* 3. ON AIR — COMPACT DASHBOARD */}
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+                <ErrorBoundary>
+                  <Dashboard key="dash-brief" stories={[briefStory]} videoUrl={undefined} videoDate={undefined} />
+                </ErrorBoundary>
+                {!dashExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                    <button onClick={() => setDashExpanded(true)}
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Expand Dashboard
+                    </button>
+                  </div>
+                )}
+                {dashExpanded && (
+                  <div className="absolute top-3 right-3 z-40">
+                    <button onClick={() => setDashExpanded(false)}
+                      className="px-3 py-1.5 rounded-full text-[10px] font-semibold text-white/80 transition-all hover:text-white"
+                      style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer' }}>
+                      Collapse
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* 4. DAILY BRIEF BANNER */}
+          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+            <div className="flex-1 min-w-0">
+              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+                {sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Brief'}
+              </h1>
+            </div>
+            <button onClick={() => setCurrentIdx(0)}
+              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+            </button>
+          </div>
+
+          {/* 5. SUMMARY + LEFT/RIGHT + MISSING + SOCIAL PULSE */}
+          <div className="px-6 md:px-12 pt-5 pb-4" style={{ background: '#1e2a3a' }}>
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
+            <div className="mb-5 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <p className="text-[15px] text-[#ccc] leading-[1.75] italic">{story.summary}</p>
+            </div>
+
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Our Pick of Videos</h2>
+            <div className="mb-5">
+              <VideoGrid youtubeVideos={bestYT} socialClips={bestSocial} storyImage={undefined} storyIndex={0} />
+            </div>
+
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative Gap</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-5" style={{ background: '#253545' }}>
+              <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                  </svg>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#60a5fa' }}>Left</span>
+                </div>
+                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+              </div>
+              <div className="py-4 px-4">
+                <div className="flex items-center gap-2 mb-3">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#f87171" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#f87171' }}>Right</span>
+                </div>
+                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+              </div>
+            </div>
+
+            {story.what_they_arent_telling_you && (
+              <div className="p-5 rounded-lg mb-5" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
+                </div>
+                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+              </div>
+            )}
+
+            {story.social_summary && (
+              <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+                </div>
+                <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
+              </div>
+            )}
+          </div>
+
+          {/* CURATED SOCIAL — GPT-picked best tweets/reddit/telegram */}
+          {resolvedBrief?.curated_social && resolvedBrief.curated_social.length > 0 && (
+            <div className="px-6 md:px-12 pb-3" style={{ background: '#1e2a3a' }}>
+              <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Social Wire</h2>
+
+              {/* Tweets */}
+              {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).length > 0 && (
+                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[16px] font-bold text-white">𝕏</span>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).map((c: any, i: number) => (
+                      <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 160 }}>
+                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                          className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Telegram */}
+              {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').length > 0 && (
+                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                    <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').map((c: any, i: number) => (
+                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity min-w-0"
+                        style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
+                        <span className="text-[11px] text-[#bbb] truncate">{c.title}</span>
+                        <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Reddit */}
+              {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').length > 0 && (
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
+                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').map((c: any, i: number) => (
+                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity min-w-0"
+                        style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
+                        <span className="text-[11px] text-[#bbb] truncate">{c.title}</span>
+                        <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+        </>
+      ) : (
+        /* STORY MODE: Picture → On Air → Dashboard → Topic Banner → Content */
+        <>
+          {/* 1. PICTURE HEADER */}
+          {story.image_file && (
+            <div className="relative overflow-hidden" style={{
+              height: '35vh', minHeight: '250px',
+              backgroundImage: `url(${story.image_file})`,
+              backgroundSize: 'cover', backgroundPosition: 'center',
+            }}>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%, rgba(0,0,0,0.3) 100%)' }} />
+              <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+                {story.category && (
+                  <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
+                    {story.category}
+                  </span>
+                )}
+                <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+                  {story.topic}
+                </h1>
+              </div>
+            </div>
+          )}
+
+          {/* 2. STORY THUMBNAIL STRIP */}
+          <div className="flex items-center gap-0 px-1 py-1.5" style={{ background: '#111' }}>
+          <style>{`
+            .story-thumb-nav:hover { width: 280px !important; opacity: 1 !important; }
+            .story-thumb-nav:hover .story-thumb-nav-img { height: 100px !important; }
+            .story-thumb-nav:hover .story-thumb-nav-label { font-size: 11px !important; line-height: 1.3 !important; }
+          `}</style>
+            <button onClick={() => {
+              document.getElementById('story-nav-strip')?.scrollBy({ left: -200, behavior: 'smooth' });
+            }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
+            </button>
+            <div id="story-nav-strip" className="flex gap-1 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
+              <button onClick={() => setCurrentIdx(-1)}
+                className="story-thumb-nav shrink-0 rounded overflow-hidden cursor-pointer"
+                style={{ width: '100px', border: '2px solid transparent', opacity: 0.75, transition: 'width 0.3s ease, opacity 0.2s ease' }}>
+                <div className="story-thumb-nav-img relative overflow-hidden flex items-center justify-center" style={{ height: '56px', transition: 'height 0.3s ease', background: '#1a1a2e' }}>
+                  <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.4 }} />
                   <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
-                    <span className="story-thumb-mini-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
+                    <span className="story-thumb-nav-label text-[7px] text-white font-bold leading-tight" style={{ transition: 'font-size 0.3s ease' }}>Home</span>
                   </div>
                 </div>
               </button>
-            ))}
+              {stories.map((s, i) => (
+                <button key={i} onClick={() => setCurrentIdx(i)}
+                  className="story-thumb-nav shrink-0 rounded overflow-hidden cursor-pointer"
+                  style={{
+                    width: '100px',
+                    border: i === currentIdx ? '2px solid #2563eb' : '2px solid transparent',
+                    opacity: i === currentIdx ? 1 : 0.75,
+                    transition: 'width 0.3s ease, opacity 0.2s ease',
+                  }}>
+                  <div className="story-thumb-nav-img relative overflow-hidden" style={{ height: '56px', transition: 'height 0.3s ease',
+                    backgroundImage: s.image_file ? `url(${s.image_file})` : 'linear-gradient(135deg, #1a1a2e, #0f3460)',
+                    backgroundSize: 'cover', backgroundPosition: 'center',
+                  }}>
+                    <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
+                      <span className="story-thumb-nav-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+            <button onClick={() => {
+              document.getElementById('story-nav-strip')?.scrollBy({ left: 200, behavior: 'smooth' });
+            }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
+            </button>
           </div>
-          <button onClick={() => {
-            document.getElementById('story-timeline')?.scrollBy({ left: 200, behavior: 'smooth' });
-          }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
-          </button>
-        </div>
 
-        <div className="flex-1 min-h-0 overflow-hidden" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', inset: 0 }}>
-            <ErrorBoundary>
-              <Dashboard key={`dash-${currentIdx}`} stories={isBrief ? [{ ...briefStory, social_clips: [] }] : [story]} videoUrl={undefined} videoDate={undefined} />
-            </ErrorBoundary>
+          {/* 3. ON AIR BANNER */}
+          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+            <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+            </button>
+            <div className="flex-1 min-w-0">
+              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+                On Air
+              </h1>
+            </div>
+            <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+            </button>
           </div>
-        </div>
 
-        {/* Left arrow with label */}
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 group">
-          <button onClick={prev}
-            className="w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform shrink-0"
-            style={{ background: 'rgba(0,0,0,0.85)', border: '2px solid rgba(255,255,255,0.5)', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-r-[14px] border-r-white" style={{ marginRight: '2px' }} />
-          </button>
-          <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
-            style={{ background: 'rgba(0,0,0,0.8)' }}>
-            {currentIdx === -1 ? stories[stories.length - 1]?.topic : currentIdx === 0 ? 'Daily Brief' : stories[currentIdx - 1]?.topic}
-          </span>
-        </div>
+          {/* 3. COMPACT DASHBOARD */}
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+                <ErrorBoundary>
+                  <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={undefined} videoDate={undefined} />
+                </ErrorBoundary>
+                {!dashExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                    <button onClick={() => setDashExpanded(true)}
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Expand Dashboard
+                    </button>
+                  </div>
+                )}
+                {dashExpanded && (
+                  <div className="absolute top-3 right-3 z-40">
+                    <button onClick={() => setDashExpanded(false)}
+                      className="px-3 py-1.5 rounded-full text-[10px] font-semibold text-white/80 transition-all hover:text-white"
+                      style={{ background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.2)', cursor: 'pointer' }}>
+                      Collapse
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
 
-        {/* Right arrow with label */}
-        <div className="absolute right-4 top-1/2 -translate-y-1/2 z-40 flex items-center gap-2 group">
-          <span className="text-[10px] text-white font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 rounded max-w-[150px] truncate"
-            style={{ background: 'rgba(0,0,0,0.8)' }}>
-            {currentIdx === stories.length - 1 ? 'Daily Brief' : stories[currentIdx + 1]?.topic || stories[0]?.topic}
-          </span>
-          <button onClick={next}
-            className="w-14 h-14 rounded-full flex items-center justify-center hover:scale-110 transition-transform shrink-0"
-            style={{ background: 'rgba(0,0,0,0.85)', border: '2px solid rgba(255,255,255,0.5)', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent border-l-[14px] border-l-white" style={{ marginLeft: '2px' }} />
-          </button>
-        </div>
+          {/* 4. TOPIC BANNER */}
+          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+            <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+            </button>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2">
+                <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0">
+                  {currentIdx + 1}/{stories.length}
+                </span>
+                <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] truncate" style={serif}>
+                  {story.topic}
+                </h1>
+              </div>
+            </div>
+            <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+            </button>
+          </div>
+        </>
+      )}
 
-      </div>
-
-      {/* STORY THUMBNAIL STRIP */}
-      {(
+      {/* STORY THUMBNAIL STRIP — hide (navigation is in banners now) */}
+      {false && (
         <div className="flex items-center gap-0 px-1 py-1.5" style={{ background: '#111' }}>
         <style>{`
           .story-thumb:hover { width: 280px !important; opacity: 1 !important; }
@@ -273,8 +529,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
       )}
 
-      {/* BANNER with navigation — same white style for all */}
-      <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+      {/* BANNER with navigation — hide (now in story mode section above) */}
+      {false && <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
         {!isBrief && (
           <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
             style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
@@ -297,65 +553,27 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
           <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
         </button>
-      </div>
+      </div>}
 
-      {/* IMAGE (story mode only) */}
-      {!isBrief && story.image_file && (
-        <div className="relative overflow-hidden" style={{
-          height: '45vh', minHeight: '320px',
-          backgroundImage: `url(${story.image_file})`,
-          backgroundSize: 'cover', backgroundPosition: 'center',
-        }}>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
-        </div>
-      )}
+      {/* IMAGE — now handled in story mode section above */}
 
       {/* FULL CONTENT */}
-      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
+      <div className={`px-6 md:px-12 pb-10 ${isBrief ? 'pt-0' : 'pt-5'}`} style={{ background: '#1e2a3a' }}>
 
-        {/* STORY CARDS — Daily Brief only */}
-        {isBrief && (
-          <div className="mb-6">
-            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Today&apos;s Top Stories</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {stories.map((s, i) => (
-                <button key={i} onClick={() => setCurrentIdx(i)}
-                  className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
-                  style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                  {s.image_file && (
-                    <div className="h-24 overflow-hidden" style={{
-                      backgroundImage: `url(${s.image_file})`,
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                    }}>
-                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                    </div>
-                  )}
-                  <div className="p-2.5">
-                    <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                    <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                      {s.topic}
-                    </p>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* SUMMARY */}
-        <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+        {/* SUMMARY — hide in brief mode */}
+        {!isBrief && <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <p className="text-[15px] text-[#ccc] leading-[1.75] italic">{story.summary}</p>
-        </div>
+        </div>}
 
-        {/* VIDEO GRID */}
-        {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+        {/* VIDEO GRID — hide in brief mode (Our Pick of Videos shown above) */}
+        {!isBrief && (ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
           <div className="mb-5" data-section="videogrid">
             <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={currentIdx + 1} />
           </div>
         )}
 
-        {/* LEFT vs RIGHT (or Media vs Fans for sports/trending) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
+        {/* LEFT vs RIGHT + UNFILTERED + SOCIAL PULSE — hide in brief mode */}
+        {!isBrief && <><div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
           <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
             <div className="flex items-center gap-2 mb-3">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -407,10 +625,10 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
             </div>
           )}
-        </div>
+        </div></>}
 
-        {/* X POSTS */}
-        {xClips.filter(c => !(c as any).duration).length > 0 && (
+        {/* X POSTS — hide in brief mode (The Social Wire shown above) */}
+        {!isBrief && xClips.filter(c => !(c as any).duration).length > 0 && (
           <div data-section="x-posts" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
             <div className="flex items-center gap-2 mb-3">
               <span className="text-[16px] font-bold text-white">𝕏</span>
@@ -419,7 +637,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
               {xClips.filter(c => !(c as any).duration).map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 320 }}>
+                  <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 160 }}>
                     <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
                       className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
                   </div>
@@ -429,8 +647,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         )}
 
-        {/* TELEGRAM TEXT POSTS (non-video only — videos are in VideoGrid) */}
-        {telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
+        {/* TELEGRAM TEXT POSTS — hide in brief mode */}
+        {!isBrief && telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
           <div data-section="telegram" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
             <div className="flex items-center gap-2 mb-3">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
@@ -484,12 +702,12 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         )}
 
-        {/* REDDIT */}
-        {redditClips.length > 0 && (() => {
+        {/* REDDIT — hide in brief mode */}
+        {!isBrief && redditClips.length > 0 && (() => {
           const seen = new Set<string>();
           const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
           return (
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                 <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
@@ -511,7 +729,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           );
         })()}
 
-        {/* ALL ARTICLES */}
+        {/* DIVE DEEPER */}
+        <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3 mt-1">Dive Deeper</h2>
         <div className="rounded-lg p-4" style={{ background: '#253545' }}>
           <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
             <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>

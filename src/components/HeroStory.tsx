@@ -73,15 +73,19 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
       {/* SUMMARY */}
+      <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
       <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
         <p className="text-[15px] text-[#ccc] leading-[1.75] italic">
           {story.summary}
         </p>
       </div>
 
-      {/* 4. VIDEO GRID — dashboard style */}
+      {/* 4. VIDEO GRID */}
       {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-        <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+        <>
+          <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3 mt-2">Our Pick of Videos</h2>
+          <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+        </>
       )}
 
       {/* 5. EXPAND */}
@@ -106,8 +110,9 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
           >
             <div className="space-y-6 pt-4">
 
-              {/* LEFT vs RIGHT (or Media vs Fans for sports) */}
-              {(story.left_narrative || story.right_narrative) && (
+              {/* THE NARRATIVE GAP */}
+              {(story.left_narrative || story.right_narrative) && (<>
+                <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative Gap</h2>
                 <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
                   {story.left_narrative && (
                     <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
@@ -136,38 +141,42 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                     </div>
                   )}
                 </div>
+              </>)}
+
+              {/* MISSING IN THE MEDIA */}
+              {story.what_they_arent_telling_you && (
+                <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
+                    <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
+                  </div>
+                  {sentences.length > 1 ? (
+                    <div className="space-y-2.5">
+                      {sentences.map((s, i) => (
+                        <div key={i} className="flex gap-2.5">
+                          <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                          <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  )}
+                </div>
               )}
 
-              {/* UNFILTERED */}
-              {story.what_they_arent_telling_you && <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
-                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
+              {/* SOCIAL PULSE */}
+              {story.social_summary && (
+                <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+                  </div>
+                  <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
                 </div>
-                {sentences.length > 1 ? (
-                  <div className="space-y-2.5">
-                    {sentences.map((s, i) => (
-                      <div key={i} className="flex gap-2.5">
-                        <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                        <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
-                )}
-                {story.social_summary && (
-                  <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
-                    <div className="flex items-center gap-2 mb-2">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                      </svg>
-                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
-                    </div>
-                    <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
-                  </div>
-                )}
-              </div>}
+              )}
 
               {/* ON RECORD */}
               {(story as any).onrecord_matches?.length > 0 && (

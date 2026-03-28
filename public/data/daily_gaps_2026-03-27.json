@@ -5649,6 +5649,82 @@
     "left_narrative": "The left is criticizing the U.S. blockade on Cuba for its severe humanitarian effects, arguing it violates human rights and disproportionately impacts ordinary citizens. They are also highlighting Balendra Shah's progressive policies in Nepal, viewing his election as a hopeful sign for transparency and anti-corruption. In the Faroe Islands, left-leaning supporters are celebrating the new government's focus on sustainability, interpreting the election results as a rejection of the previous administration's policies.",
     "right_narrative": "The right is emphasizing the need for a strong military response to Iran's actions in the Strait of Hormuz, framing it as a security threat that must be addressed decisively. They express concern over the potential for increased violence and instability in Brazil if gangs are labeled as terrorist organizations, arguing for the necessity of law and order. Additionally, there is a focus on the implications of social media guidelines in the German military, highlighting the importance of operational security.",
     "what_they_arent_telling_you": "Media outlets are not extensively covering the implications of the U.S. labeling Brazilian gangs as terrorist organizations, which could lead to increased militarization and human rights abuses. Similarly, discussions surrounding the consequences of Iran's toll booth regime in the Strait of Hormuz remain limited, despite its potential to disrupt global oil markets. The economic impacts of Novartis's acquisition of Excellergy have also been overshadowed by other headlines, despite its significance in the biotech sector.",
-    "social_summary": "The news cycle is buzzing with mixed reactions to the political changes in Nepal and the Faroe Islands, with social media users expressing hope for reform and sustainability. Discussions about the humanitarian impact of the U.S. blockade on Cuba are gaining traction, with hashtags advocating for change. Meanwhile, the tensions in the Strait of Hormuz continue to spark debates on military engagement and security policy, reflecting a polarized view on how nations should respond."
+    "social_summary": "The news cycle is buzzing with mixed reactions to the political changes in Nepal and the Faroe Islands, with social media users expressing hope for reform and sustainability. Discussions about the humanitarian impact of the U.S. blockade on Cuba are gaining traction, with hashtags advocating for change. Meanwhile, the tensions in the Strait of Hormuz continue to spark debates on military engagement and security policy, reflecting a polarized view on how nations should respond.",
+    "curated_social": [
+      {
+        "platform": "x",
+        "embed_id": "2037438014218010964",
+        "title": "BREAKING: Iran’s military has warned that hotels housing US soldiers across the region will be targe",
+        "author": "AJEnglish",
+        "url": "https://x.com/AJEnglish/status/2037438014218010964",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037470948341801025",
+        "title": "BREAKING: Iran’s IRGC says it prohibits shipping “to ⁠and from ports of allies and ⁠supporters of th",
+        "author": "AJEnglish",
+        "url": "https://x.com/AJEnglish/status/2037470948341801025",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2037118953407799486",
+        "title": "Breaking News: The Israeli military said it killed Alireza Tangsiri, an Iranian naval commander who played a pivotal role in blocking the Strait of Ho",
+        "author": "nytimes",
+        "url": "https://x.com/nytimes/status/2037118953407799486",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2034287323987214478",
+        "title": "Breaking News: Israel killed Iran’s intelligence chief and oil prices spiked as Iran said airstrikes had hit South Pars, a major gas field. Follow liv",
+        "author": "nytimes",
+        "url": "https://x.com/nytimes/status/2034287323987214478",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "x",
+        "embed_id": "2033857224804630689",
+        "title": "BREAKING: Iran blames US, Israel for Hormuz tensions, calls for global condemnation of 'military aggression'\n\n🔴 LIVE updates: https://t.co/7ltwPe38NL",
+        "author": "AJENews",
+        "url": "https://x.com/AJENews/status/2033857224804630689",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "reddit",
+        "title": "",
+        "url": "https://reddit.com/r/politics/comments/1s4i7kr/donald_trump_says_high_costs_during_iran_war_dont/",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "reddit",
+        "title": "'Friendly nations' only: Iran allows India, Russia, China and 2 other countries to use Strait of Hormuz amid war.",
+        "url": "https://reddit.com/r/worldnews/comments/1s4tl91/friendly_nations_only_iran_allows_india_russia/",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "reddit",
+        "title": "Saudi Arabia urging US to keep up Iran attacks, intelligence source confirms",
+        "url": "https://reddit.com/r/worldnews/comments/1s4z2vq/saudi_arabia_urging_us_to_keep_up_iran_attacks/",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "telegram",
+        "embed_id": "warmonitors/42965",
+        "title": "⚡️ Trump says Iran is allowing some oil tankers through Strait of Hormuz as a sign of good faith for talks",
+        "author": "warmonitors",
+        "url": "https://t.me/warmonitors/42965",
+        "story": "Iran War and Strait of Hormuz Tensions"
+      },
+      {
+        "platform": "telegram",
+        "embed_id": "France24_en/16208",
+        "title": "Russian oil tanker nears Cuba in test of US resolve on blockade\nRussian officials confirmed&nbsp;Wednesday that Moscow is sending fuel to Cuba as huma",
+        "author": "france24_en",
+        "url": "https://t.me/France24_en/16208",
+        "story": "Cuban Health Crisis Due to U.S. Blockade"
+      }
+    ]
   }
 }
