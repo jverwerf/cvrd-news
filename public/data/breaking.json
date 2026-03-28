@@ -1,5 +1,180 @@
 [
   {
+    "topic": "Houthis Missile Attack on Israel",
+    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the country. This escalation comes amid heightened tensions in the Middle East, as the Houthis, backed by Iran, enter the broader conflict involving Israel. The attack signifies a potential shift in regional dynamics, with implications for ongoing geopolitical alliances and conflicts.",
+    "severity": "major",
+    "detected_at": "2026-03-28T10:00:07.197Z",
+    "last_updated": "2026-03-28T10:00:07.197Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Right-leaning media is framing this as a clear act of aggression by Iran-backed Houthis, emphasizing the threat posed by Iran's influence in the region. They highlight the need for a strong response to deter further attacks and protect Israel's sovereignty. The narrative underscores the danger of Iran's expanding proxy network and the necessity for international support for Israel.",
+    "what_they_arent_telling_you": "Neither side is delving deeply into the economic motivations behind the Houthis' actions, such as the potential for increased Iranian financial support or arms supplies in exchange for their involvement. Additionally, the broader geopolitical implications, including how this affect oil markets or international shipping routes, are not being thoroughly explored.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing solidarity with Israel and others condemning the attack as a consequence of broader geopolitical tensions. Memes and conspiracy theories are circulating, suggesting this is part of a larger Iranian strategy to destabilize the region, while others speculate about potential retaliatory actions by Israel.",
+    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, symbolizing the escalation of conflict, with silhouetted figures watching from a distance, capturing the tension and uncertainty of the moment.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/3/28/yemens-houthis-claim-responsibility-for-a-missile-attack-on-israel-2?traffic_source=rss",
+        "lean": "center",
+        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
+      },
+      {
+        "name": "NY Post",
+        "url": "https://nypost.com/2026/03/28/world-news/yemens-houthis-claim-responsibility-for-missile-attack-on-israel/",
+        "lean": "right",
+        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=H7XiiKz6VbU",
+        "embed_id": "H7XiiKz6VbU",
+        "title": "Escalation in the Middle East: Houthis Open a New Front on Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Z96_87z0lpo",
+        "embed_id": "Z96_87z0lpo",
+        "title": "Yemen’s Houthis claim responsibility for a missile attack on Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=nIsE0xFkuD8",
+        "embed_id": "nIsE0xFkuD8",
+        "title": "Israel says missile fired from Yemen: On Friday Houthi warned they could join the war"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=6oDSC4_Z8IM",
+        "embed_id": "6oDSC4_Z8IM",
+        "title": "Joining the war, Yemen's Houthis launch a ballistic missile attack."
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=e3V8wzCZcW0",
+        "embed_id": "e3V8wzCZcW0",
+        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/iihtishamm/status/2037805082927112617",
+        "embed_id": "2037805082927112617",
+        "title": "🚨 BREAKING: Iran-backed Houthis in Yemen launch their first missile attack on Israel since the war began, marking a major escalation and opening a ne",
+        "author": "iihtishamm"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/nypost/status/2037803625234256020",
+        "embed_id": "2037803625234256020",
+        "title": "Yemen's Houthis claim responsibility for missile attack on Israel, their first since war started https://t.co/vUElg8IrVW https://t.co/xxMyJKOH8n",
+        "author": "nypost"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AP/status/2037794986704458101",
+        "embed_id": "2037794986704458101",
+        "title": "BREAKING: Yemen’s Houthis claim responsibility for a missile attack on Israel, their first since the war in the Mideast started. https://t.co/qRAiXjDf",
+        "author": "AP"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2037794306648363368",
+        "embed_id": "2037794306648363368",
+        "title": "BREAKING: Yemen's Houthis claim responsibility for a missile attack on Israel\n\n🔴 LIVE updates: https://t.co/RB76Z35BnP https://t.co/I40g676zwL",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/manniefabian/status/2037740515555168350",
+        "embed_id": "2037740515555168350",
+        "title": "Sirens sound in Beersheba and surrounding towns in southern Israel due to a ballistic missile attack from Yemen.\n\nIt marks the first attack by the Ira",
+        "author": "manniefabian"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
+        "embed_id": "1s5qjih",
+        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=H7XiiKz6VbU",
+        "embed_id": "H7XiiKz6VbU",
+        "title": "Escalation in the Middle East: Houthis Open a New Front on Israel",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Z96_87z0lpo",
+        "embed_id": "Z96_87z0lpo",
+        "title": "Yemen’s Houthis claim responsibility for a missile attack on Israel",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=nIsE0xFkuD8",
+        "embed_id": "nIsE0xFkuD8",
+        "title": "Israel says missile fired from Yemen: On Friday Houthi warned they could join the war",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=6oDSC4_Z8IM",
+        "embed_id": "6oDSC4_Z8IM",
+        "title": "Joining the war, Yemen's Houthis launch a ballistic missile attack.",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=e3V8wzCZcW0",
+        "embed_id": "e3V8wzCZcW0",
+        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel",
+        "channel": "Associated Press"
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/iihtishamm/status/2037805082927112617",
+        "embed_id": "2037805082927112617",
+        "title": "🚨 BREAKING: Iran-backed Houthis in Yemen launch their first missile attack on Israel since the war began, marking a major escalation and opening a ne",
+        "author": "iihtishamm"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/nypost/status/2037803625234256020",
+        "embed_id": "2037803625234256020",
+        "title": "Yemen's Houthis claim responsibility for missile attack on Israel, their first since war started https://t.co/vUElg8IrVW https://t.co/xxMyJKOH8n",
+        "author": "nypost"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AP/status/2037794986704458101",
+        "embed_id": "2037794986704458101",
+        "title": "BREAKING: Yemen’s Houthis claim responsibility for a missile attack on Israel, their first since the war in the Mideast started. https://t.co/qRAiXjDf",
+        "author": "AP"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2037794306648363368",
+        "embed_id": "2037794306648363368",
+        "title": "BREAKING: Yemen's Houthis claim responsibility for a missile attack on Israel\n\n🔴 LIVE updates: https://t.co/RB76Z35BnP https://t.co/I40g676zwL",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/manniefabian/status/2037740515555168350",
+        "embed_id": "2037740515555168350",
+        "title": "Sirens sound in Beersheba and surrounding towns in southern Israel due to a ballistic missile attack from Yemen.\n\nIt marks the first attack by the Ira",
+        "author": "manniefabian"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
+        "embed_id": "1s5qjih",
+        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-28.png"
+  },
+  {
     "topic": "Iranian Attack on US Service Members",
     "summary": "An Iranian attack on a Saudi air base has resulted in injuries to at least 10 US service members. This incident represents a significant escalation in the ongoing tensions between the United States and Iran. The attack has heightened concerns about the potential for further military confrontations in the region.",
     "severity": "major",
