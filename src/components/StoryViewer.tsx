@@ -101,6 +101,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   const [dashExpanded, setDashExpanded] = useState(false);
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
+  const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
 
@@ -182,17 +183,15 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </button>
                   </div>
                 )}
-                {dashExpanded && (
-                  <div className="absolute top-3 right-3 z-40">
-                    <button onClick={() => setDashExpanded(false)}
-                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                      style={{ background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                      Collapse Dashboard
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
+            {dashExpanded && (
+              <button onClick={() => setDashExpanded(false)}
+                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                Collapse Dashboard
+              </button>
+            )}
           </div>
 
           {/* 4. DAILY BRIEF BANNER */}
@@ -439,17 +438,15 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </button>
                   </div>
                 )}
-                {dashExpanded && (
-                  <div className="absolute top-3 right-3 z-40">
-                    <button onClick={() => setDashExpanded(false)}
-                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                      style={{ background: 'rgba(0,0,0,0.8)', border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                      Collapse Dashboard
-                    </button>
-                  </div>
-                )}
               </div>
             </div>
+            {dashExpanded && (
+              <button onClick={() => setDashExpanded(false)}
+                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                Collapse Dashboard
+              </button>
+            )}
           </div>
 
           {/* 4. TOPIC BANNER */}
@@ -657,26 +654,52 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   Show {textTweets.length - 6} more tweets
                 </button>
               )}
+              {tweetsExpanded && textTweets.length > 6 && (
+                <button onClick={() => setTweetsExpanded(false)}
+                  className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                  Show less
+                </button>
+              )}
             </div>
           );
         })()}
 
         {/* TIKTOK — before Telegram */}
-        {tiktokClips.filter(c => c.embed_id).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[16px]">♪</span>
-              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
+        {(() => {
+          const allTiktoks = tiktokClips.filter(c => c.embed_id);
+          if (allTiktoks.length === 0) return null;
+          const visibleTiktoks = tiktoksExpanded ? allTiktoks : allTiktoks.slice(0, 6);
+          return (
+            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[16px]">♪</span>
+                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {visibleTiktoks.map((c, i) => (
+                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px]" style={{ border: 'none', width: '100%' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+              {allTiktoks.length > 6 && !tiktoksExpanded && (
+                <button onClick={() => setTiktoksExpanded(true)}
+                  className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                  Show {allTiktoks.length - 6} more TikToks
+                </button>
+              )}
+              {tiktoksExpanded && allTiktoks.length > 6 && (
+                <button onClick={() => setTiktoksExpanded(false)}
+                  className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                  Show less
+                </button>
+              )}
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {tiktokClips.filter(c => c.embed_id).map((c, i) => (
-                <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                  <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px]" style={{ border: 'none', width: '100%' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* TELEGRAM TEXT POSTS — hide in brief mode */}
         {!isBrief && telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
