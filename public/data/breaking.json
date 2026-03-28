@@ -1,15 +1,15 @@
 [
   {
     "topic": "Houthis Missile Attack on Israel",
-    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the country. This incident occurs amid rising tensions in the Middle East, with the Houthis, backed by Iran, increasingly engaging in the broader regional conflict involving Israel. The attack has the potential to shift regional dynamics and impact existing geopolitical alliances.",
+    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the nation. This escalation comes amid heightened tensions in the Middle East, with the Houthis, who are supported by Iran, becoming more involved in the regional conflict that includes Israel. The attack alter regional dynamics and affect existing geopolitical alliances.",
     "severity": "major",
     "detected_at": "2026-03-28T10:00:07.197Z",
-    "last_updated": "2026-03-28T14:00:25.249Z",
+    "last_updated": "2026-03-28T16:00:32.644Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a clear escalation by Iran-backed Houthis, emphasizing Iran's role in destabilizing the region and threatening Israel's security. They highlight the need for a strong response to deter further aggression and protect Israel, a key ally in the Middle East. The narrative underscores the danger of Iran's influence spreading through proxy groups like the Houthis.",
-    "what_they_arent_telling_you": "Neither side is delving deeply into the economic motivations behind the Houthis' actions, such as the potential for increased Iranian support in exchange for military engagement. Additionally, the broader implications for global oil markets and the economic interests of major powers in the region are not being thoroughly examined. The focus remains on immediate military and political consequences rather than long-term strategic shifts.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users condemning the attack as an act of terrorism and others framing it as a justified response to Israeli actions in the region. Conspiracy theories are circulating about the timing of the attack, suggesting it is a distraction from other geopolitical issues. Memes and viral posts are highlighting the complex web of alliances and enmities in the Middle East.",
-    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, symbolizing the tension and conflict in the Middle East, with silhouetted figures watching from a distance, representing the global audience witnessing these events unfold.",
+    "right_narrative": "Right-leaning media is framing this as a clear example of Iran's influence in the region, using the Houthis as a proxy to attack Israel. They emphasize the threat posed by Iran's expanding reach and the need for a strong response to deter further aggression. The narrative underscores the danger of Iran's involvement in regional conflicts and the necessity for Israel and its allies to take decisive action.",
+    "what_they_arent_telling_you": "Neither side is addressing the internal dynamics within Yemen that drive the Houthis' actions, including local grievances and the humanitarian crisis. The focus remains on the Iran-Israel axis, ignoring the complex socio-political landscape in Yemen that fuels the Houthis' motivations. Additionally, the economic interests of arms suppliers in the region remain unexamined, despite their role in perpetuating conflict.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users condemning the attack as an act of Iranian aggression, while others view it as a justified response to Israeli actions in the region. Memes and conspiracy theories abound, with some suggesting a larger plot involving global powers, while others focus on the humanitarian impact of the conflict.",
+    "image_prompt": "A dramatic editorial photo of a missile silhouetted against a twilight sky, symbolizing the tension and uncertainty in the Middle East, with a backdrop of desert landscape and distant city lights.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -149,6 +149,27 @@
         "author": "spectatorindex"
       },
       {
+        "platform": "x",
+        "url": "https://x.com/YourAnonOne/status/2037820044265017627",
+        "embed_id": "2037820044265017627",
+        "title": "BREAKING: Yemen's Houthis join the war, following missile attack on Israel.",
+        "author": "YourAnonOne"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/YourAnonTV/status/2037807923481473046",
+        "embed_id": "2037807923481473046",
+        "title": "🚨⚡️BREAKING: Yemen's Houthis join the war, following missile attack on Israel",
+        "author": "YourAnonTV"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/vtchakarova/status/2037807463668355303",
+        "embed_id": "2037807463668355303",
+        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
+        "author": "vtchakarova"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
         "embed_id": "1s5qjih",
@@ -159,6 +180,18 @@
         "url": "https://reddit.com/r/TFE/comments/1s5w5qk/yemens_houthis_launch_missile_attack_on_israel_as/",
         "embed_id": "1s5w5qk",
         "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1s5w3vq/yemens_houthis_launch_missile_attack_on_israel_as/",
+        "embed_id": "1s5w3vq",
+        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies. Who else do you think will join"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/USNEWS/comments/1s5unge/yemens_houthis_claim_responsibility_for_missile/",
+        "embed_id": "1s5unge",
+        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
       }
     ],
     "youtube_videos": [
@@ -288,6 +321,27 @@
         "author": "spectatorindex"
       },
       {
+        "platform": "x",
+        "url": "https://x.com/YourAnonOne/status/2037820044265017627",
+        "embed_id": "2037820044265017627",
+        "title": "BREAKING: Yemen's Houthis join the war, following missile attack on Israel.",
+        "author": "YourAnonOne"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/YourAnonTV/status/2037807923481473046",
+        "embed_id": "2037807923481473046",
+        "title": "🚨⚡️BREAKING: Yemen's Houthis join the war, following missile attack on Israel",
+        "author": "YourAnonTV"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/vtchakarova/status/2037807463668355303",
+        "embed_id": "2037807463668355303",
+        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
+        "author": "vtchakarova"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
         "embed_id": "1s5qjih",
@@ -298,21 +352,33 @@
         "url": "https://reddit.com/r/TFE/comments/1s5w5qk/yemens_houthis_launch_missile_attack_on_israel_as/",
         "embed_id": "1s5w5qk",
         "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1s5w3vq/yemens_houthis_launch_missile_attack_on_israel_as/",
+        "embed_id": "1s5w3vq",
+        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies. Who else do you think will join"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/USNEWS/comments/1s5unge/yemens_houthis_claim_responsibility_for_missile/",
+        "embed_id": "1s5unge",
+        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
       }
     ],
     "image_file": "/images/breaking_2026-03-28.png"
   },
   {
     "topic": "Iranian Attack on US Service Members",
-    "summary": "An Iranian attack on a Saudi air base has resulted in injuries to at least 10 US service members, escalating tensions between the US and Iran. This incident highlights the ongoing volatility in US-Iran relations and raises concerns about potential further military confrontations in the Middle East. The attack reflects the broader geopolitical instability in the region.",
+    "summary": "An Iranian attack on a Saudi air base has injured at least 10 US service members, intensifying tensions between the US and Iran. This incident underscores the persistent volatility in US-Iran relations and raises concerns about potential military escalations in the Middle East. The attack is indicative of the broader geopolitical instability in the region.",
     "severity": "major",
     "detected_at": "2026-03-28T04:00:07.235Z",
-    "last_updated": "2026-03-28T14:00:59.392Z",
+    "last_updated": "2026-03-28T16:01:10.816Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong US military response to deter further attacks. They highlight Iran's role as a destabilizing force in the Middle East and criticize the current US administration for perceived weakness in handling Iranian provocations.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind Iran's actions, such as the impact of US sanctions on Iran's economy and its strategic interests in the region. Additionally, the role of Saudi Arabia's military involvement in regional conflicts and its implications for US-Iran relations is often overlooked.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users calling for immediate military retaliation against Iran, while others criticize US foreign policy in the Middle East. Conspiracy theories about the timing of the attack and its potential links to domestic political agendas are also circulating.",
-    "image_prompt": "A dramatic editorial photo of a desert air base at dusk, with smoke rising in the distance and silhouetted figures of soldiers in the foreground, capturing the tension and uncertainty of the moment.",
+    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong US response to deter further attacks. They highlight the perceived weakness of current US foreign policy, suggesting it emboldens adversaries like Iran. The narrative stresses the importance of military readiness and a robust defense posture in the face of Iranian hostility.",
+    "what_they_arent_telling_you": "Neither side is delving into the economic motivations behind Iran's actions, such as the impact of sanctions and internal pressures. The geopolitical chess game involving Saudi Arabia's regional ambitions and its relationship with the US is also overlooked. Additionally, the role of proxy conflicts and how they exacerbate tensions in the Middle East is not being fully explored.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users calling for immediate retaliation against Iran, while others criticize US military presence in the Middle East. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the attack, including oil interests and arms deals. The incident has sparked debates about US foreign policy and military strategy.",
+    "image_prompt": "A dramatic editorial photo of a lone soldier silhouetted against a fiery sunset, symbolizing the tension and uncertainty of military conflict in the Middle East.",
     "sources": [
       {
         "name": "Daily Wire",
@@ -385,13 +451,6 @@
         "duration": 210
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=H_6gXopNgpM",
-        "embed_id": "H_6gXopNgpM",
-        "title": "UPDATE: 12 US service members injured in Iranian attack",
-        "duration": 520
-      },
-      {
         "platform": "x",
         "url": "https://x.com/cnnbrk/status/2037720943749935488",
         "embed_id": "2037720943749935488",
@@ -469,6 +528,18 @@
         "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
         "embed_id": "1s5r6mv",
         "title": "guys, are the Saudis cooked"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbets/comments/1s63vis/built_a_taco_tracker_inside_my_trading_dashboard/",
+        "embed_id": "1s63vis",
+        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TroChuyenLinhTinh/comments/1s5odv9/thêm_10_lính_mỹ_bị_thương_trong_cuộc_tấn_công_của/",
+        "embed_id": "1s5odv9",
+        "title": "Thêm 10 Lính mỹ bị thương trong cuộc tấn công của Iran vào căn cứ không quân ở Saudi..."
       }
     ],
     "youtube_videos": [
@@ -533,13 +604,6 @@
         "title": "Iranian attack on Saudi base wounds at least 10 U.S. troops",
         "channel": "KTLA 5",
         "duration": 210
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=H_6gXopNgpM",
-        "embed_id": "H_6gXopNgpM",
-        "title": "UPDATE: 12 US service members injured in Iranian attack",
-        "channel": "Fox News",
-        "duration": 520
       }
     ],
     "social_clips": [
@@ -621,21 +685,33 @@
         "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
         "embed_id": "1s5r6mv",
         "title": "guys, are the Saudis cooked"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbets/comments/1s63vis/built_a_taco_tracker_inside_my_trading_dashboard/",
+        "embed_id": "1s63vis",
+        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TroChuyenLinhTinh/comments/1s5odv9/thêm_10_lính_mỹ_bị_thương_trong_cuộc_tấn_công_của/",
+        "embed_id": "1s5odv9",
+        "title": "Thêm 10 Lính mỹ bị thương trong cuộc tấn công của Iran vào căn cứ không quân ở Saudi..."
       }
     ],
     "image_file": "/images/breaking_2026-03-28.png"
   },
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. This strategic waterway is crucial for global oil transportation, and its closure threatens to disrupt international oil markets. The situation has heightened tensions in the Middle East, raising concerns about regional stability and the security of global energy supplies.",
+    "summary": "Iran has closed the Strait of Hormuz in response to a major military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. The Strait of Hormuz is a vital passage for global oil transportation, and its closure poses a significant threat to international oil markets. This development has intensified tensions in the Middle East, sparking fears over regional stability and the security of global energy supplies.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-28T14:01:35.329Z",
+    "last_updated": "2026-03-28T16:02:05.461Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these actions. The U.S. military escalation be driven by interests in controlling oil prices and maintaining dominance in the region. Iran's closure of the Strait of Hormuz is a strategic move to leverage its geographical advantage and pressure the international community to intervene diplomatically. Both countries are using military actions to mask deeper economic and geopolitical strategies.",
-    "social_summary": "Social media is ablaze with reactions, ranging from memes about the 'oil apocalypse' to conspiracy theories suggesting this is a pretext for a larger war. Hashtags like #OilWar and #StraitOfHormuz are trending, with users debating the ethics of military intervention and the potential for a global economic crisis. Some users are sharing historical parallels to past conflicts in the region, fueling discussions about the cyclical nature of Middle Eastern tensions.",
-    "image_prompt": "A dramatic sunset over the Strait of Hormuz, with silhouetted oil tankers halted in the water, symbolizing the tension and uncertainty of the situation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict. The U.S. has vested interests in maintaining control over oil routes and prices, while Iran seeks to assert its regional influence and economic independence. The geopolitical chess game involves not just military but also economic leverage, with both nations using the Strait of Hormuz as a bargaining chip in a larger power struggle.",
+    "social_summary": "Social media is ablaze with reactions, ranging from calls for peace to fervent nationalistic support for military actions. Memes and viral posts highlight the potential impact on gas prices, with some users humorously predicting a return to bicycle commuting. Conspiracy theories are circulating, suggesting ulterior motives behind the U.S. military action, including control over oil resources and political distractions from domestic issues.",
+    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, silhouetted oil tankers are halted, representing the global oil market disruption. The scene conveys tension and uncertainty, with dark clouds looming overhead.",
     "sources": [],
     "clips": [
       {
@@ -660,11 +736,11 @@
         "duration": 596
       },
       {
-        "platform": "x",
-        "url": "https://x.com/karlykingsley/status/2037804103426875566",
-        "embed_id": "2037804103426875566",
-        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
-        "author": "karlykingsley"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
+        "embed_id": "FE_U72r9nqk",
+        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
+        "duration": 508
       },
       {
         "platform": "x",
@@ -672,6 +748,20 @@
         "embed_id": "2037799081230447019",
         "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
         "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2037724416692433223",
+        "embed_id": "2037724416692433223",
+        "title": "US Secretary of State Marco Rubio says the Iran war could end within weeks after meeting G7 leaders in France, though tensions remain high over escala",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/DeItaone/status/2037520956336324642",
+        "embed_id": "2037520956336324642",
+        "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
+        "author": "DeItaone"
       },
       {
         "platform": "reddit",
@@ -732,6 +822,18 @@
         "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
         "embed_id": "1s5rdsx",
         "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s5h1ed/statement_from_yemeni_armed_forces_looks_like/",
+        "embed_id": "1s5h1ed",
+        "title": "Statement from Yemeni Armed Forces: looks like they are continuing to standby for now, but signaling readiness to join in if the situation escalates."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/singaporefi/comments/1s5w4sz/2026_iran_war_oil_shock_how_im_thinking_about/",
+        "embed_id": "1s5w4sz",
+        "title": "2026 Iran War &amp; Oil Shock: How I'm thinking about this uncertainty"
       }
     ],
     "youtube_videos": [
@@ -755,22 +857,36 @@
         "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
         "channel": "NewsNation",
         "duration": 596
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
+        "embed_id": "FE_U72r9nqk",
+        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
+        "channel": "ABC News (Australia)",
+        "duration": 508
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/karlykingsley/status/2037804103426875566",
-        "embed_id": "2037804103426875566",
-        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
-        "author": "karlykingsley"
-      },
       {
         "platform": "x",
         "url": "https://x.com/FalconUpdatesHQ/status/2037799081230447019",
         "embed_id": "2037799081230447019",
         "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
         "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2037724416692433223",
+        "embed_id": "2037724416692433223",
+        "title": "US Secretary of State Marco Rubio says the Iran war could end within weeks after meeting G7 leaders in France, though tensions remain high over escala",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/DeItaone/status/2037520956336324642",
+        "embed_id": "2037520956336324642",
+        "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
+        "author": "DeItaone"
       },
       {
         "platform": "reddit",
@@ -831,6 +947,18 @@
         "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
         "embed_id": "1s5rdsx",
         "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s5h1ed/statement_from_yemeni_armed_forces_looks_like/",
+        "embed_id": "1s5h1ed",
+        "title": "Statement from Yemeni Armed Forces: looks like they are continuing to standby for now, but signaling readiness to join in if the situation escalates."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/singaporefi/comments/1s5w4sz/2026_iran_war_oil_shock_how_im_thinking_about/",
+        "embed_id": "1s5w4sz",
+        "title": "2026 Iran War &amp; Oil Shock: How I'm thinking about this uncertainty"
       }
     ],
     "image_file": "/images/breaking_2026-03-27.png"
