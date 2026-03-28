@@ -293,7 +293,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     <div className="mb-6">
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
-        <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px]">
+        <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px] mx-auto">
           <div className="aspect-video bg-[#111] relative">
             {showingAd ? (
               <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
@@ -370,18 +370,23 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
               <span className="text-[11px] text-[#ccc] font-medium truncate">{active.label}</span>
             </div>
 
-            <button onClick={() => {
-              const newMuted = !muted;
-              setMuted(newMuted);
-              if (iframeRef.current?.contentWindow && active.type === 'youtube') {
-                iframeRef.current.contentWindow.postMessage(JSON.stringify({
-                  event: 'command', func: newMuted ? 'mute' : 'unMute',
-                }), '*');
-              }
-            }} className="text-[11px] px-2 py-0.5 rounded hover:opacity-70 transition-opacity shrink-0 mr-2"
-              style={{ color: muted ? '#777' : '#fff', background: muted ? 'transparent' : '#333' }}>
-              {muted ? '🔇' : '🔊'}
-            </button>
+            <div className="relative shrink-0 group/vol mr-2" style={{ zIndex: 50 }}>
+              <button onClick={() => {
+                const newMuted = !muted;
+                setMuted(newMuted);
+                if (iframeRef.current?.contentWindow && active.type === 'youtube') {
+                  iframeRef.current.contentWindow.postMessage(JSON.stringify({
+                    event: 'command', func: newMuted ? 'mute' : 'unMute',
+                  }), '*');
+                }
+              }} className="p-1">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                  {!muted && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
+                  {muted && <><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></>}
+                </svg>
+              </button>
+            </div>
 
             {items.length > 1 && (
               <div className="flex items-center gap-2 shrink-0">
