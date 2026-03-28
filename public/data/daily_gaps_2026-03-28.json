@@ -1,6 +1,6 @@
 {
   "date": "2026-03-28",
-  "generated_at": "2026-03-28T12:10:01.388Z",
+  "generated_at": "2026-03-28T13:43:25.908Z",
   "top_narratives": [
     {
       "topic": "Iranian Hackers Breach FBI Director's Email",
@@ -266,7 +266,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_1.png"
+      "image_file": "/images/story_2026-03-28_1.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Iranian Strike on U.S. Base in Saudi Arabia",
@@ -521,7 +537,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_2.png"
+      "image_file": "/images/story_2026-03-28_2.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Nepal's New Prime Minister: Former Rapper Balendra Shah",
@@ -682,7 +714,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_3.png"
+      "image_file": "/images/story_2026-03-28_3.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iranian-Backed Houthis Attack Israel",
@@ -948,7 +981,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_4.png"
+      "image_file": "/images/story_2026-03-28_4.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "UAE and Qatar Arrests Over Iranian Attack Videos",
@@ -1006,7 +1055,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_5.png"
+      "image_file": "/images/story_2026-03-28_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kurdish Fighters on Iran's Frontier",
@@ -1058,7 +1108,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_6.png"
+      "image_file": "/images/story_2026-03-28_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Cuba's Political Scene Amid Energy Crisis",
@@ -1131,7 +1182,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_7.png"
+      "image_file": "/images/story_2026-03-28_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.N. Report on Sectarian Violence in Syria",
@@ -1180,7 +1232,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_8.png"
+      "image_file": "/images/story_2026-03-28_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iran's Toll Plan in Strait of Hormuz",
@@ -1343,7 +1396,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_9.png"
+      "image_file": "/images/story_2026-03-28_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iran War's Impact on Global Oil Prices",
@@ -1648,7 +1702,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_10.png"
+      "image_file": "/images/story_2026-03-28_10.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Iran's Information War Tactics",
@@ -1718,7 +1788,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_11.png"
+      "image_file": "/images/story_2026-03-28_11.png",
+      "onrecord_matches": []
     },
     {
       "topic": "House Republicans Pass DHS Funding Bill Amidst Shutdown",
@@ -2023,7 +2094,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_12.png"
+      "image_file": "/images/story_2026-03-28_12.png",
+      "onrecord_matches": []
     },
     {
       "topic": "No Kings Protests Challenge Trump's Leadership",
@@ -2244,7 +2316,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_13.png"
+      "image_file": "/images/story_2026-03-28_13.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Gerrymandering Claims in Virginia's Political Landscape",
@@ -2324,7 +2397,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_14.png"
+      "image_file": "/images/story_2026-03-28_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pramila Jayapal Calls for Reparations for Immigrants",
@@ -2420,7 +2494,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_15.png"
+      "image_file": "/images/story_2026-03-28_15.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Executive Order to Pay TSA Workers",
@@ -2653,7 +2728,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_16.png"
+      "image_file": "/images/story_2026-03-28_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "DC Court Rulings Stall Trump's Agenda",
@@ -2679,7 +2755,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_17.png"
+      "image_file": "/images/story_2026-03-28_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Hegseth's Controversial Removal of Officers from Promotion List",
@@ -2752,7 +2829,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_18.png"
+      "image_file": "/images/story_2026-03-28_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Aid to Farmers Amid Tariff and War Challenges",
@@ -2886,7 +2964,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_19.png"
+      "image_file": "/images/story_2026-03-28_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kaela Berg's Congressional Campaign",
@@ -2912,7 +2991,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_20.png"
+      "image_file": "/images/story_2026-03-28_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Cruz Warns of Radical Democrats' Plans",
@@ -2952,7 +3032,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_21.png"
+      "image_file": "/images/story_2026-03-28_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "US Consumer Sentiment Drops Amid Inflation Fears",
@@ -3046,7 +3127,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_22.png"
+      "image_file": "/images/story_2026-03-28_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Oil Prices Surge Amid Middle East Tensions",
@@ -3139,7 +3221,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_23.png"
+      "image_file": "/images/story_2026-03-28_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "US Equity Funds See Strong Inflows",
@@ -3182,7 +3265,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_24.png"
+      "image_file": "/images/story_2026-03-28_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "BlackRock CEO's Compensation Rises Amid Criticism",
@@ -3224,7 +3308,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_25.png"
+      "image_file": "/images/story_2026-03-28_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Bank of America Settles Epstein Lawsuit",
@@ -3350,7 +3435,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_26.png"
+      "image_file": "/images/story_2026-03-28_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Meta Stock Plummets After Court Losses",
@@ -3454,7 +3540,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_27.png"
+      "image_file": "/images/story_2026-03-28_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Interest Rates Steady Amid Inflation Concerns",
@@ -3526,7 +3613,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_28.png"
+      "image_file": "/images/story_2026-03-28_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Housing Market Cools as Mortgage Rates Rise",
@@ -3565,7 +3653,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_29.png"
+      "image_file": "/images/story_2026-03-28_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Job Market Resilient Despite Economic Challenges",
@@ -3597,7 +3686,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_30.png"
+      "image_file": "/images/story_2026-03-28_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trade Tensions Rise Amid Global Uncertainty",
@@ -3629,7 +3719,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_31.png"
+      "image_file": "/images/story_2026-03-28_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Corporate Earnings Season Kicks Off",
@@ -3661,7 +3752,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_32.png"
+      "image_file": "/images/story_2026-03-28_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "‘Animal Friends’ Postponed to Next Year",
@@ -3739,7 +3831,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_33.png"
+      "image_file": "/images/story_2026-03-28_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "James Tolkan Passes Away at 94",
@@ -3960,7 +4053,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_34.png"
+      "image_file": "/images/story_2026-03-28_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Britney Spears Speaks Out After DUI Arrest",
@@ -4276,7 +4370,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_35.png"
+      "image_file": "/images/story_2026-03-28_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jack White Criticizes Trump's Currency Signature",
@@ -4409,7 +4504,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_36.png"
+      "image_file": "/images/story_2026-03-28_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "‘Talamasca: The Secret Order’ Canceled After One Season",
@@ -4522,7 +4618,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_37.png"
+      "image_file": "/images/story_2026-03-28_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Laguna Beach Stars Reunite for Viral TikTok Trend",
@@ -4610,7 +4707,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_38.png"
+      "image_file": "/images/story_2026-03-28_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tiger Woods Arrested After Car Crash",
@@ -5153,7 +5251,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_39.png"
+      "image_file": "/images/story_2026-03-28_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Luka Doncic Faces Suspension",
@@ -5232,7 +5331,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_40.png"
+      "image_file": "/images/story_2026-03-28_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "WNBA's Connecticut Sun Sold and Relocated",
@@ -5345,7 +5445,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-28_41.png"
+      "image_file": "/images/story_2026-03-28_41.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Lionel Messi's World Cup Future Uncertain",
@@ -5397,7 +5498,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_42.png"
+      "image_file": "/images/story_2026-03-28_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Raphinha's Injury Setback for Barcelona",
@@ -5515,7 +5617,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_43.png"
+      "image_file": "/images/story_2026-03-28_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "World of Warcraft's Anniversary Concert Series",
@@ -5554,7 +5657,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_44.png"
+      "image_file": "/images/story_2026-03-28_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jo Nesbø's Detective Hole Series' Shocking Deaths",
@@ -5631,7 +5735,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_45.png"
+      "image_file": "/images/story_2026-03-28_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Scott Pilgrim's Future and Vince Vaughn's New Project",
@@ -5676,7 +5781,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_46.png"
+      "image_file": "/images/story_2026-03-28_46.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Inkabee's 'Like A Version' Debut",
@@ -5736,7 +5842,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_47.png"
+      "image_file": "/images/story_2026-03-28_47.png",
+      "onrecord_matches": []
     },
     {
       "topic": "UConn Advances to Elite Eight with Pressure Defense",
@@ -5840,7 +5947,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_48.png"
+      "image_file": "/images/story_2026-03-28_48.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Stephen Curry's Knee Injury Keeps Him Out",
@@ -5990,7 +6098,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_49.png"
+      "image_file": "/images/story_2026-03-28_49.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tennessee Upsets Iowa State, Makes Elite Eight",
@@ -6109,7 +6218,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_50.png"
+      "image_file": "/images/story_2026-03-28_50.png",
+      "onrecord_matches": []
     },
     {
       "topic": "USMNT Faces Injuries Ahead of Key Friendlies",
@@ -6183,7 +6293,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_51.png"
+      "image_file": "/images/story_2026-03-28_51.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Florida AG Challenges NFL Rooney Rule",
@@ -6262,7 +6373,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-28_52.png"
+      "image_file": "/images/story_2026-03-28_52.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [
@@ -6270,56 +6382,11 @@
     "Iran War's Impact on Global Oil Prices",
     "Iranian Strike on U.S. Base in Saudi Arabia",
     "Iranian-Backed Houthis Attack Israel",
-    "House Republicans Pass DHS Funding Bill Amidst Shutdown",
+    "James Tolkan Passes Away at 94",
     "No Kings Protests Challenge Trump's Leadership",
     "Trump's Executive Order to Pay TSA Workers",
     "Tiger Woods Arrested After Car Crash",
     "WNBA's Connecticut Sun Sold and Relocated",
     "Britney Spears Speaks Out After DUI Arrest"
-  ],
-  "daily_brief": {
-    "summary": "Today's news is heavily dominated by escalating tensions in the Middle East, with Iranian-linked hackers breaching the FBI Director's email and Iranian missile strikes threatening U.S.-Saudi relations. The impact of the ongoing conflict in Iran is also felt in the global oil markets, causing price fluctuations that has long-term economic repercussions. In U.S. politics, House Republicans are facing off against the Senate over DHS funding, while President Trump's executive order to pay TSA workers amidst the government shutdown is stirring debate. Celebrity news is buzzing with Tiger Woods' arrest following a car crash and Britney Spears addressing her fans post-DUI arrest. In sports, the relocation of the WNBA's Connecticut Sun to Houston signals a significant shift in the league's landscape. Watch closely as geopolitical and domestic tensions intertwine, influencing economic and political arenas globally.",
-    "left_narrative": "Left-leaning outlets like The New York Times and CNN are stressing the importance of diplomatic solutions to de-escalate the recent military actions by Iran, emphasizing the need for sustainable energy sources to reduce dependency on oil. They're also focusing on the social impacts of the government shutdown, particularly on federal workers, and criticizing President Trump's executive order as a short-term fix. The media is also highlighting grassroots movements like the 'No Kings' protests as signs of widespread discontent with current leadership.",
-    "right_narrative": "Fox News and the New York Post are criticizing the current administration's handling of cybersecurity following the Iranian hackers' breach of the FBI Director's email. They're pushing for a strong military response against Iran's recent actions and advocating for increased domestic oil production to achieve energy independence. Additionally, right-leaning media is praising Trump's decisive executive order during the shutdown, framing it as a necessary step to ensure essential workers are paid.",
-    "what_they_arent_telling_you": "Across the board, mainstream media is missing critical details about the Iranian hackers' breach, such as the leaked sensitive discussions about Iran, which are circulating on Reddit. There's also little coverage of how oil companies be exploiting the Iran crisis for profit, as discussed online. Meanwhile, the 'No Kings' protests are portrayed as grassroots, but leaked documents suggest organized leadership, a nuance missing from most reports. Local economic impacts of the WNBA team relocation are also underreported, despite concerns from Connecticut businesses.",
-    "social_summary": "Online chatter is intense, with Reddit users dissecting the implications of the Iranian hackers' breach and Tiger Woods' latest legal troubles, which include reports of him being at a bar before his crash. Britney Spears' DUI arrest is stirring sympathy and criticism online, with fans rallying in her support on TikTok. Discussions on Reddit also highlight concerns about oil companies capitalizing on the Middle East crisis, a narrative not picked up by mainstream outlets. Memes and conspiracy theories about the 'No Kings' protests' alleged leadership structure are gaining traction, further fueling public interest.",
-    "image_prompt": "A dramatic wide-shot editorial photo capturing the tense and uncertain mood of today's news, featuring a dimly lit room with a globe centered on a table, surrounded by scattered newspapers, a laptop displaying news headlines, and an empty coffee cup, symbolizing the interconnectedness of global events."
-  },
-  "category_briefs": {
-    "world": {
-      "summary": "Today's world news highlights significant geopolitical tensions, particularly in the Middle East. Iranian-backed militants have escalated their attacks, including a missile strike on a U.S. base in Saudi Arabia injuring 12 troops and a missile attack on Israel by Houthi rebels. Concurrently, Iranian hackers have breached the personal email of FBI Director Kash Patel, raising concerns about cybersecurity. In Nepal, the election of former rapper Balendra Shah as Prime Minister signifies a shift in political dynamics as he vows to tackle corruption. Additionally, a U.N. report reveals ongoing sectarian violence in Syria, resulting in over 1,700 deaths, emphasizing the humanitarian crisis in the region.",
-      "left_narrative": "Left-leaning outlets like CNN and The Guardian are framing the Iranian attacks as a direct consequence of escalating military tensions and are calling for diplomatic resolutions to prevent further conflict. They emphasize the significant cybersecurity risks highlighted by the breach of FBI Director Kash Patel's email and stress the need for international intervention in Syria to address the humanitarian crisis. The election of Balendra Shah in Nepal is viewed as a progressive victory against traditional political norms.",
-      "right_narrative": "Right-leaning media, including Fox News and the Daily Wire, are focusing on the perceived failures of the Biden administration in protecting American interests abroad, particularly in response to Iranian aggression. They advocate for a strong military response to deter further attacks and highlight the security breaches as indicative of broader incompetence in handling national cybersecurity. Coverage of Nepal's political shift has been minimal, reflecting a lack of engagement with the story.",
-      "what_they_arent_telling_you": "Media outlets are not adequately covering the fact that the Iranian missile attacks were anticipated due to recent U.S. military movements, nor are they addressing that the arrests in the UAE and Qatar are targeting activists and journalists, suggesting a broader crackdown on dissent rather than solely on misinformation. Additionally, the economic implications of Iran's toll plan in the Strait of Hormuz are not being fully explored, particularly regarding its potential impact on global oil prices amid the ongoing conflict.",
-      "social_summary": "Social media is buzzing about the implications of the Iranian missile strikes, particularly the injury of American troops, which has ignited discussions on military engagement versus diplomacy. The election of Balendra Shah is also gaining traction, with viral TikTok videos showcasing his campaign and grassroots support. Reddit threads discussing the cybersecurity breach of the FBI Director's email are also popular, bringing attention to the severity of national security issues."
-    },
-    "politics": {
-      "summary": "Today's political landscape is dominated by the ongoing challenges of a potential government shutdown, as House Republicans passed a stopgap funding bill for the Department of Homeland Security, setting up a confrontation with the Senate. Protests against President Trump's leadership, dubbed 'No Kings,' are gaining momentum across the country, with participants claiming a grassroots approach. Meanwhile, allegations of gerrymandering in Virginia are surfacing, particularly involving Representative Abigail Spanberger. Additionally, Trump signed an executive order to ensure TSA workers receive pay amid the shutdown, which has sparked criticism from the left. These stories illustrate the heightened tensions and divisions within U.S. politics as key issues remain unresolved.",
-      "left_narrative": "Left-leaning outlets like CNN and the Guardian are emphasizing the negative impacts of the potential government shutdown on federal workers and public services, criticizing the stopgap funding bill passed by House Republicans. They also highlight the 'No Kings' protests as a significant grassroots movement challenging Trump's leadership, underscoring the diverse coalition of groups involved. Regarding immigration, Representative Pramila Jayapal's call for reparations for immigrants affected by ICE actions is being framed as a necessary response to systemic injustices. Overall, the left critiques the administration's handling of pressing social issues.",
-      "right_narrative": "Right-leaning media such as Fox News and the Daily Wire are framing House Republicans' passage of the DHS funding bill as a necessary step to uphold fiscal responsibility amidst a government shutdown. They view the 'No Kings' protests with skepticism, suggesting that there is more organization behind the scenes than the participants claim. Further, they support Trump’s executive order for TSA workers as a decisive action to support essential personnel during the crisis. The right also defends the districting process in Virginia against gerrymandering allegations, asserting that accusations are politically motivated.",
-      "what_they_arent_telling_you": "Across media coverage today, there is a lack of discussion about the implications of the DHS funding bill on immigration enforcement, which a popular Reddit post highlights. Additionally, leaked documents regarding the 'No Kings' protests suggesting organized leadership are not being sufficiently addressed in mainstream narratives. The executive order signed by Trump also raises concerns about bypassing legislative processes, which is being overlooked in the broader conversation. Finally, the financial details surrounding Trump's aid to farmers, which disproportionately benefit large agribusinesses, are not being adequately scrutinized.",
-      "social_summary": "Online discussions today are buzzing around the 'No Kings' protests, with viral posts highlighting the tension between claims of grassroots organization and evidence suggesting otherwise. Trump's executive order for TSA workers is also generating significant conversation, with mixed reactions across social platforms. Memes about the potential government shutdown are proliferating, reflecting public concern over its impact on everyday life. Additionally, debates about reparations for immigrants and the implications of gerrymandering in Virginia are trending in political forums, with many users sharing personal opinions and insights."
-    },
-    "markets": {
-      "summary": "Today's markets reflect a mix of concerns and resilience as consumer sentiment drops to a three-month low due to inflation worries, primarily driven by ongoing tensions in the Middle East. Oil prices have surged, further complicating the economic landscape as Brent crude prices increase. Despite these challenges, US equity funds are experiencing strong inflows, signaling some investor confidence. Meanwhile, BlackRock's CEO compensation has sparked debate over income inequality amid the company's financial success. The Federal Reserve has opted to keep interest rates steady despite inflation pressures, while the housing market shows signs of cooling as mortgage rates rise.",
-      "left_narrative": "Left-leaning outlets like CNN and The Guardian are focusing on the implications of rising oil prices and the need for renewable energy investments to mitigate dependency on volatile markets. They emphasize that consumer sentiment's decline reflects broader economic anxieties exacerbated by geopolitical instability. Additionally, they criticize BlackRock's CEO compensation as indicative of growing income inequality and call for greater regulatory measures on corporations. The New York Times highlights the challenges in the housing market, urging attention to the need for affordable housing solutions.",
-      "right_narrative": "Right-leaning media such as Fox News and the Daily Wire are framing the strong inflows into US equity funds as a sign of a recovering economy, attributing investor confidence to a business-friendly environment. They defend the rise in BlackRock's CEO compensation as a necessary recognition of effective leadership in managing significant assets. The NY Post emphasizes the resilience of the job market despite economic challenges, arguing for the importance of accountability in corporate actions. They suggest that the Federal Reserve's decision to keep interest rates steady reflects a cautious yet necessary approach to economic growth.",
-      "what_they_arent_telling_you": "Across media coverage, there is a notable lack of discussion regarding the significant role institutional investors play in the recent strong inflows into equity funds. Additionally, while the cooling housing market is reported, the impact of institutional investors purchasing single-family homes on supply and affordability is not adequately addressed. The implications of low-wage job growth in the resilient job market are also frequently downplayed, failing to capture the broader economic realities faced by many workers.",
-      "social_summary": "On social media, discussions are buzzing around the implications of BlackRock's CEO compensation, with many users on Reddit expressing outrage about income inequality. The surge in oil prices and its impact on consumer sentiment is also a hot topic, as users share insights on the necessity for renewable energy. Additionally, posts about the housing market's cooling trend and the role of institutional investors in home purchases are gaining traction, highlighting public concern over affordability and accessibility in real estate."
-    },
-    "sports": {
-      "summary": "Today's sports landscape is dominated by significant developments across various leagues. Tiger Woods was arrested on DUI charges following a car crash, raising concerns about his future in the sport. In the NBA, Luka Doncic faces a one-game suspension after accumulating his 16th technical foul, which jeopardize the Mavericks' playoff ambitions. Meanwhile, the WNBA's Connecticut Sun has been sold and will relocate to Houston, a move that reshapes the league's dynamics. Additionally, the UConn Huskies advanced to the Elite Eight in the NCAA Tournament after a close win, while Stephen Curry's ongoing knee issues continue to sideline him, putting pressure on the Warriors' playoff hopes.",
-      "left_narrative": "Media coverage highlights the alarming situation with Tiger Woods, focusing on his troubled history and the potential impact on his legacy. Outlets are covering Doncic's technical foul suspension, emphasizing the strict enforcement of the rules and its implications for the Mavericks. The sale of the Connecticut Sun receives attention regarding economic impacts in Connecticut and the WNBA's growth potential in Houston. Additionally, Curry's injury is reported as a significant blow to the Warriors' chances in the playoffs, with discussions on team resilience and depth.",
-      "right_narrative": "Fans are reacting with disappointment over Tiger Woods' arrest, expressing concern for his future and legacy. On Reddit, users debate Doncic's treatment by referees, with many arguing that he is unfairly targeted. The relocation of the Connecticut Sun has sparked mixed feelings, as some fans lament the loss for Connecticut while others are excited about the prospects in Houston. Regarding UConn, fans are celebrating their advancement, while discussions about Curry's injuries show concern for the Warriors' reliance on him.",
-      "what_they_arent_telling_you": "A Reddit post reveals that Tiger Woods was seen at a bar shortly before the crash, suggesting a more complex narrative around his arrest. Additionally, a viral X thread shows that other players have received lighter penalties for similar fouls as Doncic, indicating inconsistencies in officiating. In the case of Raphinha's injury, it's noted that he had been playing through pain for weeks, a detail not widely reported. Furthermore, insider reports indicate that Chris Richards' injury sideline him longer than officially stated, raising questions about team transparency.",
-      "social_summary": "Across social media, memes about Tiger Woods' arrest are trending, with fans sharing their disbelief and concern. There's a growing debate about the fairness of the technical foul system in the NBA, with many fans posting comparisons of calls against Doncic. Excitement over UConn's win has led to celebratory posts, while discussions surrounding Curry's injuries have sparked concerns about the Warriors' future. The ongoing debate about the Rooney Rule has also ignited discussions on Twitter, with hot takes on its effectiveness."
-    },
-    "trending": {
-      "summary": "Today's trending stories reflect a mix of nostalgia, loss, and anticipation in the entertainment world. The highly anticipated film 'Animal Friends,' starring Ryan Reynolds and Jason Momoa, has been postponed to next year, causing frustration among fans eager for its release. Meanwhile, the passing of James Tolkan at 94 has prompted tributes celebrating his extensive career in iconic films like 'Top Gun' and 'Back to the Future.' In a different realm, Britney Spears has addressed her fans following a DUI arrest, garnering mixed reactions on social media. Additionally, the cancellation of AMC's 'Talamasca: The Secret Order' has disappointed its dedicated fanbase, while a reunion of 'Laguna Beach' stars is bringing back fond memories for early 2000s fans.",
-      "left_narrative": "Media coverage highlights the anticipation and disappointment surrounding the delay of 'Animal Friends,' with outlets discussing the film's high-profile cast and the potential production issues. Journalists are celebrating James Tolkan's impact on the film industry, particularly during the 1980s, while also detailing his legacy through tributes. Coverage of Britney Spears focuses on the legal implications of her DUI arrest, with many outlets discussing how this incident affect her career. Reports on the cancellation of 'Talamasca' emphasize the struggles of adapting literary works for television.",
-      "right_narrative": "Fans on Reddit are expressing their disappointment over the delay of 'Animal Friends,' with some speculating on production issues. On social media, users are reminiscing about James Tolkan's memorable roles, sharing clips and personal anecdotes. Britney Spears' supporters are rallying around her, showing sympathy and criticizing media sensationalism. Meanwhile, fans of 'Laguna Beach' are celebrating the reunion on TikTok, sharing excitement over the nostalgia it brings, while others on platforms like Reddit voice their frustration about the cancellation of 'Talamasca.'",
-      "what_they_arent_telling_you": "Despite the focus on James Tolkan's more famous roles, a viral X thread highlights his lesser-known performances that have impacted the industry, which mainstream obituaries overlook. Additionally, the media has not fully addressed that Spears' DUI arrest happened following a private gathering, a detail that contextualizes the incident. Regarding 'Talamasca,' internal AMC documents indicate budget overruns played a significant role in its cancellation, a factor not widely reported. Lastly, the reunion of 'Laguna Beach' stars was part of a promotional campaign for a new reality series, which was not disclosed in initial reports.",
-      "social_summary": "On social media, nostalgia is a major theme, with clips and tributes for James Tolkan going viral, as well as excitement around the 'Laguna Beach' reunion. Hot takes on Britney Spears' situation spark debates over media portrayal versus fan support. Memes related to the delay of 'Animal Friends' are circulating, while discussions about the shocking character deaths in Jo Nesbø's series have led to graphic content warnings trending on Reddit."
-    }
-  }
+  ]
 }
