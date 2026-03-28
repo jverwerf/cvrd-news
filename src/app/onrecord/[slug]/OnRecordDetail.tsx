@@ -72,12 +72,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   const [stories, setStories] = useState<any[]>([]);
   const [liveData, setLiveData] = useState<any[]>();
 
-  // Pre-fill search from URL ?q= parameter
-  useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const q = params.get('q');
-    if (q) setClaimSearch(q);
-  }, []);
+  // URL ?q= parameter ignored — let users filter themselves
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -336,6 +331,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           {/* Search results summary */}
           {claimSearch && searchFiltered.length > 0 && (() => {
             const trueC = searchFiltered.filter(c => c.verdict === 'TRUE').length;
+            const somewhatC = searchFiltered.filter(c => c.verdict === 'SOMEWHAT MISLEADING').length;
             const misleadC = searchFiltered.filter(c => c.verdict === 'MISLEADING').length;
             const falseC = searchFiltered.filter(c => c.verdict === 'FALSE').length;
             return (
@@ -344,10 +340,14 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                   <span className="text-[12px] text-white/70">&ldquo;{claimSearch}&rdquo; — <span style={{ color: '#daa520' }}>{searchScore}% truthful</span> across {searchFiltered.length} claims</span>
                 </div>
                 <div className="max-w-[300px] mx-auto mb-3"><ScoreMeter score={searchScore!} /></div>
-                <div className="grid grid-cols-3 gap-0 rounded-md overflow-hidden" style={{ background: '#253545' }}>
+                <div className="grid grid-cols-4 gap-0 rounded-md overflow-hidden" style={{ background: '#253545' }}>
                   <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
                     <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#60a5fa' }}>True</span>
                     <p className="text-[18px] text-white font-bold" style={serif}>{trueC}</p>
+                  </div>
+                  <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
+                    <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#f59e0b' }}>Somewhat</span>
+                    <p className="text-[18px] text-white font-bold" style={serif}>{somewhatC}</p>
                   </div>
                   <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
                     <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#daa520' }}>Misleading</span>
