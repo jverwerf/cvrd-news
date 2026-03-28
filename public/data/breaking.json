@@ -1,14 +1,14 @@
 [
   {
     "topic": "Iranian Attack on US Service Members",
-    "summary": "An Iranian attack on a Saudi air base has injured at least 10 US service members. This incident marks a significant escalation in the ongoing tensions between the United States and Iran. The attack has raised concerns about the potential for further military confrontations in the region.",
+    "summary": "An Iranian attack on a Saudi air base has resulted in injuries to at least 10 US service members. This incident represents a significant escalation in the ongoing tensions between the United States and Iran. The attack has heightened concerns about the potential for further military confrontations in the region.",
     "severity": "major",
     "detected_at": "2026-03-28T04:00:07.235Z",
-    "last_updated": "2026-03-28T06:00:40.230Z",
+    "last_updated": "2026-03-28T08:00:25.186Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong military response to deter further attacks. They highlight Iran's history of hostility towards the US and its allies, arguing that this attack is a continuation of Iran's destabilizing activities in the Middle East.",
-    "what_they_arent_telling_you": "Neither side is discussing the broader geopolitical implications, such as the impact on global oil markets or the potential for this incident to influence US-Saudi relations. Additionally, there is little focus on the internal pressures within Iran that may be driving such aggressive actions, including economic struggles and political dissent.",
-    "social_summary": "Social media is reacting with a mix of outrage and conspiracy theories. Some users are calling for immediate retaliation, while others speculate about the timing of the attack, suggesting it could be a distraction from domestic issues in the US or Iran. Memes and viral posts are circulating, comparing the situation to past conflicts in the region.",
+    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong military response to deter further attacks. They highlight Iran's history of hostility towards the US and its allies, arguing that this attack is a clear provocation that cannot go unanswered. The narrative suggests that the current US administration's policies have emboldened Iran.",
+    "what_they_arent_telling_you": "Neither side is delving into the broader geopolitical implications of this attack, particularly how it affects the balance of power in the Middle East. The focus is not on how this incident might influence US-Saudi relations or the strategic interests of other regional players like Russia and China. Additionally, there is little discussion on the economic ramifications, such as potential impacts on global oil markets.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users calling for immediate military retaliation while others warn against escalating into a full-scale war. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the attack, including claims of it being a false flag operation to justify increased military presence in the region.",
     "image_prompt": "A dramatic editorial photo of a military base under a night sky, with distant explosions illuminating the horizon, symbolizing the tension and uncertainty of the situation.",
     "sources": [
       {
@@ -126,6 +126,12 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
         "embed_id": "1s5kyv3",
         "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
+        "embed_id": "1s5r6mv",
+        "title": "guys, are the Saudis cooked"
       }
     ],
     "youtube_videos": [
@@ -238,30 +244,29 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
         "embed_id": "1s5kyv3",
         "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
+        "embed_id": "1s5r6mv",
+        "title": "guys, are the Saudis cooked"
       }
     ],
     "image_file": "/images/breaking_2026-03-28.png"
   },
   {
     "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz in response to a major military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. This strategic waterway is crucial for global oil transportation, and its closure poses a significant threat to the international oil supply. The situation has intensified tensions in the Middle East, risking further destabilization of the region and impacting global energy markets.",
+    "summary": "Iran has closed the Strait of Hormuz following a significant military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. The Strait of Hormuz is a critical chokepoint for global oil transportation, and its closure threatens the international oil supply. This development has heightened tensions in the Middle East, risking further regional destabilization and affecting global energy markets.",
     "severity": "critical",
     "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-28T06:01:35.839Z",
+    "last_updated": "2026-03-28T08:00:40.136Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the escalation. The U.S. has vested interests in maintaining control over oil routes, while Iran's actions are partly driven by economic sanctions that have crippled its economy. The geopolitical chess game involves not just military might but also economic leverage and alliances, with both sides seeking to assert dominance in the region.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users condemning the U.S. for aggressive imperialism and others supporting the military action as a necessary stance against Iranian threats. Memes and conspiracy theories abound, suggesting ulterior motives such as control over oil prices or a distraction from domestic issues in both countries. Hashtags like #StraitOfHormuz and #OilWar are trending, reflecting widespread concern and speculation.",
-    "image_prompt": "A dramatic sunset over a narrow, strategic waterway, with silhouetted warships and oil tankers, symbolizing the tension and stakes of the geopolitical conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict, particularly how control over oil routes and resources influences military decisions. The geopolitical implications extend beyond the immediate region, with global powers potentially leveraging the situation to shift energy dependencies and alliances. The focus remains on military actions rather than the broader strategic interests at play.",
+    "social_summary": "Social media is ablaze with reactions, ranging from memes about the potential for World War III to conspiracy theories suggesting ulterior motives behind the US's aggressive stance. Hashtags like #StraitOfHormuz and #OilWar are trending, with users debating the environmental and economic impacts of the conflict. Some users are calling for diplomatic solutions, while others express concern over the potential for a larger-scale war.",
+    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, silhouetted oil tankers are halted, representing the blockade. The background features distant, shadowy figures of military ships, hinting at the tension and conflict.",
     "sources": [],
     "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
-        "embed_id": "FE_U72r9nqk",
-        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
-        "duration": 508
-      },
       {
         "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
@@ -278,24 +283,17 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=y5WBmILSgUc",
-        "embed_id": "y5WBmILSgUc",
-        "title": "US–Israel war on Iran has become a region‑wide conflict with controlled escalation: Analysis",
-        "duration": 394
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
-        "embed_id": "O8eoscTyjio",
-        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
-        "duration": 1567
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
         "embed_id": "GiNqawXBaF8",
         "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
         "duration": 404
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
+        "embed_id": "zvkngF-o5p8",
+        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
+        "duration": 596
       },
       {
         "platform": "x",
@@ -303,13 +301,6 @@
         "embed_id": "2037263229269778456",
         "title": "“This is a fight for our survival,” says Mohammad Marandi (@s_m_marandi). “And this is a war of choice for the Americans.”\n\nThe US and Israel are push",
         "author": "BTnewsroom"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/snarwani/status/2037379186701062330",
-        "embed_id": "2037379186701062330",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
-        "author": "snarwani"
       },
       {
         "platform": "x",
@@ -324,13 +315,6 @@
         "embed_id": "2037181391041925513",
         "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
         "author": "MiddleEastEye"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2037127771579699689",
-        "embed_id": "2037127771579699689",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war \nhttps://t.co/1kQX0uUorR",
-        "author": "TheCradleMedia"
       },
       {
         "platform": "reddit",
@@ -385,16 +369,15 @@
         "url": "https://reddit.com/r/AskReddit/comments/1s5exnm/what_would_happen_if_the_us_found_out_members_of/",
         "embed_id": "1s5exnm",
         "title": "What would happen if the US found out members of the Trump administration/family bought stock market puts prior to the Iran war?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
+        "embed_id": "1s5rdsx",
+        "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
       }
     ],
     "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
-        "embed_id": "FE_U72r9nqk",
-        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
-        "channel": "ABC News (Australia)",
-        "duration": 508
-      },
       {
         "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
         "embed_id": "Jd8CM_qZv1o",
@@ -410,25 +393,18 @@
         "duration": 836
       },
       {
-        "url": "https://www.youtube.com/watch?v=y5WBmILSgUc",
-        "embed_id": "y5WBmILSgUc",
-        "title": "US–Israel war on Iran has become a region‑wide conflict with controlled escalation: Analysis",
-        "channel": "Al Jazeera English",
-        "duration": 394
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
-        "embed_id": "O8eoscTyjio",
-        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
-        "channel": "DW News",
-        "duration": 1567
-      },
-      {
         "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
         "embed_id": "GiNqawXBaF8",
         "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
         "channel": "Fox News",
         "duration": 404
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
+        "embed_id": "zvkngF-o5p8",
+        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
+        "channel": "NewsNation",
+        "duration": 596
       }
     ],
     "social_clips": [
@@ -441,13 +417,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/snarwani/status/2037379186701062330",
-        "embed_id": "2037379186701062330",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war.\n\nA senior Iranian official tells The Cradle that Abu Dhabi has give",
-        "author": "snarwani"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/DeItaone/status/2037520956336324642",
         "embed_id": "2037520956336324642",
         "title": "ROUBINI: US MORE LIKELY TO ESCALATE IRAN WAR\n\nNouriel Roubini says there’s over a 50% chance the US escalates in Iran, as backing down risks greater e",
@@ -459,13 +428,6 @@
         "embed_id": "2037181391041925513",
         "title": "UAE envoy to US says ‘ceasefire not enough’ and calls for escalation in Iran war.\n\nUAE's posture may win points with Washington's hardliners but risks",
         "author": "MiddleEastEye"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2037127771579699689",
-        "embed_id": "2037127771579699689",
-        "title": "EXCLUSIVE: Iran plans escalation against UAE over ‘active role’ in US-Israeli war \nhttps://t.co/1kQX0uUorR",
-        "author": "TheCradleMedia"
       },
       {
         "platform": "reddit",
@@ -520,6 +482,12 @@
         "url": "https://reddit.com/r/AskReddit/comments/1s5exnm/what_would_happen_if_the_us_found_out_members_of/",
         "embed_id": "1s5exnm",
         "title": "What would happen if the US found out members of the Trump administration/family bought stock market puts prior to the Iran war?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
+        "embed_id": "1s5rdsx",
+        "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
       }
     ],
     "image_file": "/images/breaking_2026-03-27.png"
