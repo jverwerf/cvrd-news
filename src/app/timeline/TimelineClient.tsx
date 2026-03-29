@@ -47,10 +47,8 @@ function categoryColor(cat: string): string {
 }
 
 const TIMELINE_SCROLL_CSS = `
-.timeline-scroll { overflow-x: scroll !important; }
-.timeline-scroll::-webkit-scrollbar { height: 4px; }
-.timeline-scroll::-webkit-scrollbar-track { background: transparent; }
-.timeline-scroll::-webkit-scrollbar-thumb { background: #daa520; border-radius: 2px; }
+.timeline-scroll { overflow-x: scroll !important; scrollbar-width: none !important; -ms-overflow-style: none !important; }
+.timeline-scroll::-webkit-scrollbar { display: none !important; }
 `;
 
 export function TimelineContent({ threads, generatedAt, lastYear }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null }) {
@@ -588,10 +586,27 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [selectedDate]);
 
-  // Collapsed = wide enough that total always overflows container
   const YEAR_W_COLLAPSED = 200;
-  // Expanded = always 600px regardless of entry count — feels dramatic
   const YEAR_W_EXPANDED = 600;
+
+  // Custom scrollbar state
+  const [scrollRatio, setScrollRatio] = useState(0);
+  const [canScroll, setCanScroll] = useState(false);
+
+  useEffect(() => {
+    const container = scrollRef.current?.closest('.timeline-scroll') as HTMLElement | null;
+    if (!container) return;
+    const update = () => {
+      const max = container.scrollWidth - container.clientWidth;
+      setCanScroll(max > 10);
+      setScrollRatio(max > 0 ? container.scrollLeft / max : 0);
+    };
+    update();
+    container.addEventListener('scroll', update);
+    const mo = new MutationObserver(update);
+    mo.observe(container, { childList: true, subtree: true, attributes: true });
+    return () => { container.removeEventListener('scroll', update); mo.disconnect(); };
+  }, [openYears]);
   let globalIdx = 0;
 
   return (
@@ -691,6 +706,49 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
         })}
       </div>
     </div>
+
+    {/* Custom scrollbar with year segments */}
+    {canScroll && (
+      <div className="mt-2 mx-1 relative" style={{ height: 16 }}>
+        {/* Track — year segments */}
+        <div className="flex w-full h-full items-center" style={{ gap: 2 }}>
+          {yearGroups.map((yg) => {
+            const isOpen = openYears.has(yg.year);
+            const w = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
+            return (
+              <div key={yg.year} className="relative rounded-full overflow-hidden cursor-pointer"
+                style={{ flex: `${w} 0 0`, height: 3, background: 'rgba(218,165,32,0.15)' }}
+                onClick={() => {
+                  toggleYear(yg.year);
+                  const el = scrollRef.current?.querySelector(`[data-year="${yg.year}"]`);
+                  const container = scrollRef.current?.closest('.timeline-scroll');
+                  if (el && container) {
+                    const r = el.getBoundingClientRect();
+                    const c = container.getBoundingClientRect();
+                    container.scrollTo({ left: container.scrollLeft + r.left - c.left - (c.width - r.width) / 2, behavior: 'smooth' });
+                  }
+                }}>
+                <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[7px] text-[#daa520] font-bold pointer-events-none" style={{ opacity: 0.6 }}>{yg.year}</span>
+              </div>
+            );
+          })}
+        </div>
+        {/* Gold indicator — tiny, grows when over a year boundary */}
+        <div className="absolute top-0 h-full pointer-events-none" style={{
+          left: `${scrollRatio * 100}%`,
+          width: 8,
+          transition: 'left 0.05s linear',
+        }}>
+          <div className="mx-auto rounded-full" style={{
+            width: 6,
+            height: '100%',
+            background: '#daa520',
+            boxShadow: '0 0 6px rgba(218,165,32,0.5)',
+          }} />
+        </div>
+      </div>
+    )}
+
     </div>
   );
 }
