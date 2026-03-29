@@ -6346,5 +6346,587 @@
     "BlackRock CEO's Compensation",
     "Braves' Smith Hits Walk-Off Home Run",
     "Weezer's Acoustic Rooftop Set in Venice Beach"
-  ]
+  ],
+  "daily_brief": {
+    "summary": "Recent developments in global conflicts have drawn significant media attention. Iranian missile strikes in the Middle East have led to a U.S. military deployment, with the left emphasizing Iran's resilience and the right advocating for a strong response. Yemen's Houthis have attacked Israel, escalating tensions, with the left focusing on humanitarian concerns and the right on security threats. An Israeli airstrike in Lebanon killed journalists, sparking international condemnation. In politics, a GOP rift over budget allocations threatens a U.S. government shutdown, with left and right media presenting divergent narratives. In markets, Bank of America's settlement with Epstein's victims highlights accountability issues, while BlackRock's CEO's compensation raises questions about corporate influence. In cultural news, Weezer's rooftop concert in Venice Beach generated social media buzz as fans shared videos of the surprise performance.",
+    "left_narrative": "Left-leaning media such as the New York Times and Washington Post are highlighting the resilience of Iran in the face of international pressure, noting its continued missile capabilities. They also stress the humanitarian implications of the Houthi attacks on Israel, calling for diplomatic solutions to prevent further escalation. Regarding the GOP rift, the left blames internal conflicts within the Republican Party for the impending government shutdown, pointing to a lack of leadership and cohesion. In financial news, left-wing outlets emphasize the accountability of financial institutions, like Bank of America, in enabling Epstein's crimes.",
+    "right_narrative": "Right-leaning outlets like Fox News and the Daily Wire are focusing on the need for a strong U.S. military response to Iranian aggression, framing it as a direct challenge to American and allied interests. They also underscore the security threat posed by the Houthi attacks on Israel, advocating for a robust military deterrence. In U.S. politics, the right emphasizes the necessity of fiscal responsibility and the importance of addressing government spending, arguing that the GOP's internal rift reflects a necessary debate on budget priorities. The settlement by Bank of America is seen as a step towards justice for Epstein's victims.",
+    "what_they_arent_telling_you": "On Reddit, users are discussing aspects of these stories not widely covered by mainstream media. For instance, footage of missile strikes in the Middle East showing extensive damage is circulating online, as is user-generated content highlighting the discrepancies in narratives about the Israeli airstrike in Lebanon. Additionally, discussions reveal leaked documents showing GOP infighting and BlackRock's lobbying efforts, which are underreported. The involvement of the military-industrial complex in fueling Middle Eastern conflicts is also a topic of discussion, pointing to underlying economic interests not addressed by mainstream coverage.",
+    "social_summary": "Social media platforms are buzzing with discussions and shared content on these topics. On Reddit, users are sharing videos of missile impacts in Israel and the aftermath of strikes in the Middle East, which are not prominently featured in traditional media. The GOP rift is also a hot topic, with leaked documents of internal conflicts being discussed. Meanwhile, Weezer's rooftop performance in Venice Beach has taken social media by storm, with fans posting videos and expressing excitement for their upcoming tour. There's also significant discourse on platforms like X regarding the personal triumph overshadowed in sports media by team dynamics in Will Smith's recent performance for the Braves.",
+    "curated_social": [
+      {
+        "platform": "x",
+        "url": "https://x.com/WhiteHouse/status/2037654201304572123",
+        "embed_id": "2037654201304572123",
+        "title": "Over the past 27 days, the U.S. armed forces, most powerful in the world, have been annihilating Ira",
+        "author": "WhiteHouse",
+        "duration": 60,
+        "video_transcript": "As president of the United States, I would never allow the world's number one state sponsor of terror to obtain a nuclear weapon. I said that for a long time. And I didn't. To defend America and our allies over the past 27 days, the U.S. armed forces, most powerful in the world, have been annihilating Iran's military capacity with force, precision, and skill like the world has never seen. It was violence, actually, really violence. We're crushing Iran. Currently, as we speak, I just looked. We h",
+        "relevance": 9,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038058843330969666",
+        "embed_id": "2038058843330969666",
+        "title": "BREAKING: Some 3,500 US Marines and sailors from the 31st Marine Expeditionary Unit have arrived in ",
+        "author": "AJEnglish",
+        "relevance": 9,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Reuters/status/2037989379214385331",
+        "embed_id": "2037989379214385331",
+        "title": "🔊 A US official confirms 12 American troops were wounded, two seriously, in an Iranian strike on Pr",
+        "author": "Reuters",
+        "relevance": 9,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038020424873726129",
+        "embed_id": "2038020424873726129",
+        "title": "BREAKING: The IRGC says Israeli and US universities in the region are “legitimate targets” after acc",
+        "author": "AJEnglish",
+        "relevance": 8,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038147289642942858",
+        "embed_id": "2038147289642942858",
+        "title": "Iran’s retaliatory attacks cause damage and injuries in the Gulf, with Aluminium Bahrain (Alba) and ",
+        "author": "AJEnglish",
+        "duration": 225,
+        "video_transcript": "Iranian attacks across the Gulf have continued. In Bahrain, two people have been injured in strikes on an aluminium plant. An Iranian attack damaged a radar system at Kuwait International Airport on Saturday. Here in Doha, the Qatari Defense Ministry says a number of drones launched by Iran were intercepted on Saturday. And the UAE and Ukraine have denied earlier Iranian claims that it had destroyed a facility housing Ukrainian anti-drone systems in the United Arab Emirates. That is correct. The",
+        "relevance": 8,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2037990610364408273",
+        "embed_id": "2037990610364408273",
+        "title": "Iranian politicians are pushing to exit the country from the Treaty on the Non-Proliferation of Nucl",
+        "author": "AJEnglish",
+        "relevance": 8,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038083724039135510",
+        "embed_id": "2038083724039135510",
+        "title": "Demonstrations have been held across the world against the US and Israel’s war on Iran and the rise ",
+        "author": "AJEnglish",
+        "duration": 110,
+        "video_transcript": "No kings, no queens, no fascists in the U.S.A. We are protesting the unjust and unnecessary war that was started by Israel and the United States. This war has killed thousands of civilians and has injured tens of thousands, if not hundreds of thousands. Since the start of the war, the violence in the West Bank has expedited substantially. It has gone exponentially worse. They have started shooting innocent civilians. Not just the army has started doing that, but even settlers. They were given gu",
+        "relevance": 8,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038062217275298252",
+        "embed_id": "2038062217275298252",
+        "title": "BREAKING: The Pentagon is preparing for weeks of US ground operations in Iran, though it’s unclear i",
+        "author": "AJEnglish",
+        "relevance": 8,
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20543",
+        "embed_id": "disclosetv/20543",
+        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo8",
+        "author": "disclosetv",
+        "story": "Yemen's Houthis Attack Israel"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85591",
+        "embed_id": "intelslava/85591",
+        "title": "🇾🇪🇮🇷🇮🇱🇺🇸⚡The Houthis have officially joined the war, as they launched ballistic missiles against Southern Israel.",
+        "author": "intelslava",
+        "story": "Yemen's Houthis Attack Israel"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16236",
+        "embed_id": "France24_en/16236",
+        "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
+        "author": "france24_en",
+        "story": "Yemen's Houthis Attack Israel"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16239",
+        "embed_id": "France24_en/16239",
+        "title": "Houthi attacks on Israel open new front in Mideast war, threaten Red Sea shipping\nYemen's Iran-backed Houthi rebels have entered the escalating war in",
+        "author": "france24_en",
+        "story": "Yemen's Houthis Attack Israel"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1s6h6dp/pentagon_preparing_for_weeks_of_ground_operations/",
+        "embed_id": "1s6h6dp",
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s6kayx/pentagon_prepares_for_weeks_of_ground_operations/",
+        "embed_id": "1s6kayx",
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s65of4/naval_group_with_3500_marines_enters_centcom/",
+        "embed_id": "1s65of4",
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s6meaj/key_usaf_e3_awacs_aircraft_damaged_in_iranian/",
+        "embed_id": "1s6meaj",
+        "title": "Key USAF E-3 AWACS Aircraft Damaged in Iranian Attack",
+        "story": "Iranian Missile Strikes and U.S. Military Response"
+      }
+    ]
+  },
+  "category_briefs": {
+    "world": {
+      "summary": "The world is witnessing a series of critical geopolitical tensions and natural disruptions, ranging from military confrontations in the Middle East to environmental challenges in Australia and policy debates in Europe. Key events include missile strikes by Iran and Yemen's Houthis, Israeli strikes in Lebanon, Ukraine's defense deals, and Iran's influence in Iraq. Additionally, Pakistan is engaging in diplomatic efforts, while Gaza grapples with energy shortages, Australia faces LNG disruptions post-cyclone, and Europe debates migrant deportation policies.",
+      "left_narrative": "The left narrative emphasizes the humanitarian impacts and the need for diplomatic solutions to conflicts. There is concern over military escalations in the Middle East, particularly the role of U.S. and Israeli actions in perpetuating violence. The focus is also on the urgent need for humanitarian aid and support for affected civilians, such as those in Gaza facing electricity shortages. In Europe, the left criticizes harsh deportation policies and calls for more compassionate approaches to immigration.",
+      "right_narrative": "The right narrative underscores the importance of national security and the threat posed by actors like Iran and the Houthis. There is support for decisive military responses to protect allies and deter aggression. The right also highlights the need for strict immigration controls in Europe to maintain order and security. Additionally, there is a focus on the economic implications of disruptions like those in Australia's LNG sector, stressing the need for robust infrastructure and energy independence.",
+      "what_they_arent_telling_you": "What often goes unreported is the extent to which international arms deals, such as Ukraine's with Gulf nations, are fueling regional arms races and contributing to long-term instability. Also underreported is the impact of climate change on exacerbating natural disasters like Cyclone Narelle, and how this intersects with geopolitical tensions. Furthermore, the complex behind-the-scenes negotiations involving regional players like Pakistan often lack transparency, leaving the public in the dark about potential diplomatic breakthroughs or failures.",
+      "social_summary": "Global tensions are escalating with significant military actions in the Middle East, while Europe faces tough debates on deportation policies. Meanwhile, natural disasters like Cyclone Narelle highlight vulnerabilities in energy infrastructure. These events underscore the interconnectedness of security, diplomacy, and environmental challenges worldwide.",
+      "curated_social": [
+        {
+          "platform": "x",
+          "url": "https://x.com/WhiteHouse/status/2037654201304572123",
+          "embed_id": "2037654201304572123",
+          "title": "Over the past 27 days, the U.S. armed forces, most powerful in the world, have been annihilating Ira",
+          "author": "WhiteHouse",
+          "duration": 60,
+          "video_transcript": "As president of the United States, I would never allow the world's number one state sponsor of terror to obtain a nuclear weapon. I said that for a long time. And I didn't. To defend America and our allies over the past 27 days, the U.S. armed forces, most powerful in the world, have been annihilating Iran's military capacity with force, precision, and skill like the world has never seen. It was violence, actually, really violence. We're crushing Iran. Currently, as we speak, I just looked. We h",
+          "relevance": 9,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/AJEnglish/status/2038058843330969666",
+          "embed_id": "2038058843330969666",
+          "title": "BREAKING: Some 3,500 US Marines and sailors from the 31st Marine Expeditionary Unit have arrived in ",
+          "author": "AJEnglish",
+          "relevance": 9,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Reuters/status/2037989379214385331",
+          "embed_id": "2037989379214385331",
+          "title": "🔊 A US official confirms 12 American troops were wounded, two seriously, in an Iranian strike on Pr",
+          "author": "Reuters",
+          "relevance": 9,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/AJEnglish/status/2038020424873726129",
+          "embed_id": "2038020424873726129",
+          "title": "BREAKING: The IRGC says Israeli and US universities in the region are “legitimate targets” after acc",
+          "author": "AJEnglish",
+          "relevance": 8,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/AJEnglish/status/2038147289642942858",
+          "embed_id": "2038147289642942858",
+          "title": "Iran’s retaliatory attacks cause damage and injuries in the Gulf, with Aluminium Bahrain (Alba) and ",
+          "author": "AJEnglish",
+          "duration": 225,
+          "video_transcript": "Iranian attacks across the Gulf have continued. In Bahrain, two people have been injured in strikes on an aluminium plant. An Iranian attack damaged a radar system at Kuwait International Airport on Saturday. Here in Doha, the Qatari Defense Ministry says a number of drones launched by Iran were intercepted on Saturday. And the UAE and Ukraine have denied earlier Iranian claims that it had destroyed a facility housing Ukrainian anti-drone systems in the United Arab Emirates. That is correct. The",
+          "relevance": 8,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/AJEnglish/status/2037990610364408273",
+          "embed_id": "2037990610364408273",
+          "title": "Iranian politicians are pushing to exit the country from the Treaty on the Non-Proliferation of Nucl",
+          "author": "AJEnglish",
+          "relevance": 8,
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/disclosetv/20543",
+          "embed_id": "disclosetv/20543",
+          "title": "NEW - Yemen's Houthis launched missiles at Israel in their first attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo8",
+          "author": "disclosetv",
+          "story": "Yemen's Houthis Attack Israel"
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/intelslava/85591",
+          "embed_id": "intelslava/85591",
+          "title": "🇾🇪🇮🇷🇮🇱🇺🇸⚡The Houthis have officially joined the war, as they launched ballistic missiles against Southern Israel.",
+          "author": "intelslava",
+          "story": "Yemen's Houthis Attack Israel"
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/France24_en/16236",
+          "embed_id": "France24_en/16236",
+          "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
+          "author": "france24_en",
+          "story": "Yemen's Houthis Attack Israel"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/news/comments/1s6h6dp/pentagon_preparing_for_weeks_of_ground_operations/",
+          "embed_id": "1s6h6dp",
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/worldnews/comments/1s6kayx/pentagon_prepares_for_weeks_of_ground_operations/",
+          "embed_id": "1s6kayx",
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/worldnews/comments/1s65of4/naval_group_with_3500_marines_enters_centcom/",
+          "embed_id": "1s65of4",
+          "story": "Iranian Missile Strikes and U.S. Military Response"
+        }
+      ]
+    },
+    "politics": {
+      "summary": "The U.S. Congress is currently facing a government shutdown due to a rift within the Republican Party. The disagreement centers around budget allocations, particularly concerning defense and social programs. Hardline conservatives are pushing for deeper cuts to federal spending, while moderates and some GOP members are advocating for a more balanced approach to avoid a shutdown.",
+      "left_narrative": "The rift within the GOP is a symptom of a larger problem within the party, where extreme right factions are unwilling to compromise, even at the cost of a government shutdown that will negatively impact millions of Americans. The inability to pass a budget reflects a lack of leadership and prioritization of partisan politics over the needs of the American people.",
+      "right_narrative": "The current budget conflict represents a necessary fight to rein in excessive government spending. Hardline conservatives are standing firm on the principles of fiscal responsibility, advocating for cuts that align with long-term economic stability. The shutdown, though unfortunate, is a wake-up call to address the country's unsustainable financial trajectory.",
+      "what_they_arent_telling_you": "While the media focuses on the internal GOP conflict, there is less coverage on the Democrats' role in the deadlock. By not engaging in meaningful negotiations, Democrats may also be contributing to the stalemate. Additionally, the potential impacts on federal employees and the broader economy are being underreported, overshadowing the political drama.",
+      "social_summary": "A GOP rift over budget allocations is pushing the U.S. government towards a shutdown. Hardline conservatives demand deeper spending cuts, while moderates seek compromise. As the deadline looms, the debate highlights broader issues of fiscal responsibility and political division. #GovernmentShutdown #GOPDispute #USPolitics",
+      "curated_social": [
+        {
+          "platform": "x",
+          "url": "https://x.com/elonmusk/status/2037839193054036218",
+          "embed_id": "2037839193054036218",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/AOC/status/2038002944826561010",
+          "embed_id": "2038002944826561010",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/WhiteHouse/status/2038018034669920533",
+          "embed_id": "2038018034669920533",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/SpeakerMcCarthy/status/1734205896224276535",
+          "embed_id": "1734205896224276535",
+          "title": "When I made the decision to pay our troops and not shut the government down, I knew a motion to vacate was coming.\n\nI would do it all again. https://t",
+          "author": "SpeakerMcCarthy",
+          "duration": 88,
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/SpeakerMcCarthy/status/1709186766006071489",
+          "embed_id": "1709186766006071489",
+          "title": "I kept government open so the families of our troops and border agents could get paid.\n\nIf a handful of Republicans side with Democrats to remove me f",
+          "author": "SpeakerMcCarthy",
+          "duration": 51,
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/SpeakerMcCarthy/status/1708196532351348963",
+          "embed_id": "1708196532351348963",
+          "title": "The House just passed a short-term stop-gap measure that will keep the government open, pay our troops, and fully fund disaster relief. Now, the Senat",
+          "author": "SpeakerMcCarthy",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/France24_en/16227",
+          "embed_id": "France24_en/16227",
+          "title": "Millions expected to fill American streets in third 'No Kings' protest against Trump\nMore than 3,000 protests are planned across US cities on Saturday",
+          "author": "france24_en",
+          "story": "No Kings Protests Across the U.S."
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/Newsmax/30405",
+          "embed_id": "Newsmax/30405",
+          "title": "Rallies are expected across the U.S. on Saturday in the latest \"No Kings\" protest against the policies of President Donald Trump and his administratio",
+          "author": "newsmax",
+          "story": "No Kings Protests Across the U.S."
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/politics/comments/1s69zno/nationwide_general_strike_planned_for_may_1_no/",
+          "embed_id": "1s69zno",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/news/comments/1s6d0yv/thousands_gather_for_no_kings_rally_in_minnesota/",
+          "embed_id": "1s6d0yv",
+          "story": "GOP Rift and Government Shutdown"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/PublicFreakout/comments/1s6819q/no_kings_no_war_fuck_magatrumpice/",
+          "embed_id": "1s6819q",
+          "story": "No Kings Protests Across the U.S."
+        }
+      ]
+    },
+    "markets": {
+      "summary": "The markets have been rife with significant developments, from high-profile corporate settlements and stock market volatility to strategic mergers and regulatory shifts. Each event is shaping the economic landscape in distinct ways with widespread implications for investors, businesses, and consumers.",
+      "left_narrative": "Critics on the left are likely to view the Bank of America's Epstein settlement as yet another example of systemic issues within large financial institutions, highlighting the need for stricter regulations and accountability. The Meta stock plunge could be interpreted as a consequence of unchecked corporate power and the need for tighter legal frameworks to protect shareholder interests. Similarly, the rising compensation of executives like BlackRock's Larry Fink may be seen as indicative of income inequality and the prioritization of corporate profits over fair wages for employees.",
+      "right_narrative": "From a right perspective, the focus might be on the resilience of the free market to correct itself, as seen in Meta's stock adjusting after legal challenges. The right could view Costco's automated checkout as a testament to innovation and private sector efficiency in enhancing consumer experience. The acquisition of BBVA's Romania unit by Raiffeisen could be seen as a strategic move to strengthen market position and foster economic growth, showcasing the benefits of a competitive market environment.",
+      "what_they_arent_telling_you": "Amidst these developments, less attention is given to the broader implications of these events on everyday consumers. For instance, while Sony's PS5 price increase is attributed to rising production costs, the impact on consumer access to technology is downplayed. Similarly, the focus on high executive payouts often overlooks the potential internal pressures and decisions that drive such compensations, such as shareholder expectations and corporate performance metrics.",
+      "social_summary": "The market landscape is being reshaped by key financial events, from settlements and stock fluctuations to mergers and regulatory changes. These developments highlight ongoing debates around corporate accountability, market efficiency, and economic equity. Stay informed on how these changes might affect you.",
+      "curated_social": [
+        {
+          "platform": "x",
+          "url": "https://x.com/nytimes/status/2037718831167086638",
+          "embed_id": "2037718831167086638",
+          "title": "Breaking News: Bank of America has agreed to pay $72.5 million to settle a lawsuit from hundreds of Jeffrey Epstein’s sexual abuse victims. https://t.",
+          "author": "nytimes",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/epsteinsearchin/status/2038050654028275882",
+          "embed_id": "2038050654028275882",
+          "title": "Bank of America settled for $72.5 million days before Leon Black was scheduled for an 8-hour deposition under oath.\n\nBlack paid $170 million to Epstei",
+          "author": "epsteinsearchin",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/channelstv/status/2037815081132495209",
+          "embed_id": "2037815081132495209",
+          "title": "Bank Of America To Pay $72.5m In Settlement For Epstein Sex-Trafficking Suit\n\nhttps://t.co/orWnsrLP64 https://t.co/9zrUBEqivJ",
+          "author": "channelstv",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/LearningEleven/status/2037791327661019169",
+          "embed_id": "2037791327661019169",
+          "title": "Bank of America becomes the third bank to agree to a multi-million-dollar settlement in the Epstein sex-trafficking case, following JPMorgan ($365m) a",
+          "author": "LearningEleven",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/MarioNawfal/status/2037774184265249209",
+          "embed_id": "2037774184265249209",
+          "title": "🇺🇸 Bank of America agreed to a $72.5M payout over its alleged ties to Epstein.\n\nNo trial, no drawn-out fight… just a settlement.\n\nWhat do we think a",
+          "author": "MarioNawfal",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/FirstSquawk/status/2037738898131206488",
+          "embed_id": "2037738898131206488",
+          "title": "Epstein victims to get $72.5 million from Bank of America in lawsuit settlement",
+          "author": "FirstSquawk",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/goodnews/comments/1s60brz/epstein_victims_to_get_725m_from_bank_of_america/",
+          "embed_id": "1s60brz",
+          "title": "Epstein victims to get $72.5M from Bank of America settlement",
+          "author": "",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/law/comments/1s5pfwb/bank_of_america_agrees_to_pay_725_million_to/",
+          "embed_id": "1s5pfwb",
+          "title": "Bank of America agrees to pay $72.5 million to settle Epstein accusers' lawsuit",
+          "author": "",
+          "story": "Bank of America Epstein Settlement"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/news/comments/1s65sg4/massive_dust_clouds_cause_the_sky_in_australia_to/",
+          "embed_id": "1s65sg4",
+          "story": "Costco's Automated Checkout"
+        }
+      ]
+    },
+    "sports": {
+      "summary": "Sports highlights this week include Arizona Wildcats reaching their first Final Four since 2001, Adesanya's defeat by Pyfer in UFC Fight Night, and a historic NBA game with LeBron and Bronny James. Meanwhile, Denver Summit sets an NWSL attendance record, and Luka Doncic faces a suspension after his 16th technical foul.",
+      "left_narrative": "The Arizona Wildcats' success is a testament to the strength of college basketball programs that focus on teamwork and strategic gameplay. In the UFC, Adesanya's loss is seen as a natural part of the fight game, where even champions face setbacks. Meanwhile, the historic moment between LeBron and Bronny James is celebrated as a family triumph and an example of basketball's deep-rooted legacy.",
+      "right_narrative": "Critics argue that the focus on individual achievements in sports, such as LeBron and Bronny's assist, overshadows the importance of team dynamics. The UFC fight further highlights the unpredictable nature of combat sports, with Pyfer's victory seen by some as a sign of shifting power dynamics within the league. The emphasis on Denver's NWSL attendance record showcases the growing interest in women's sports, yet some argue that there should be more attention on the quality of play rather than just numbers.",
+      "what_they_arent_telling_you": "While the Arizona Wildcats' Final Four appearance is celebrated, little is mentioned about the resources and support needed to maintain such success in college athletics. In the NBA, LeBron and Bronny's historic moment is highlighted, but the narrative often overlooks the pressures and expectations placed on young athletes like Bronny. Additionally, while Denver's NWSL attendance record is a milestone, there is less discussion about the financial sustainability and long-term growth strategies for women's soccer.",
+      "social_summary": "This week in sports: Arizona Wildcats make Final Four history, Adesanya faces a tough UFC loss, and LeBron & Bronny James shine in the NBA. Plus, Denver Summit's record-breaking NWSL game and Luka Doncic's suspension bring attention to both triumphs and challenges on and off the field.",
+      "curated_social": [
+        {
+          "platform": "x",
+          "url": "https://x.com/espn/status/2038091019997135065",
+          "embed_id": "2038091019997135065",
+          "title": "ARIZONA IS FINAL FOUR BOUND FOR THE FIRST TIME SINCE ’01 🔥\n\nTHE WILDCATS HAVE WON 13 STRAIGHT‼️ https://t.co/OQChoWaeaW",
+          "author": "espn",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/JonRothstein/status/2038089986075930742",
+          "embed_id": "2038089986075930742",
+          "title": "What a second half by Arizona.\n\nAs dominant as you can get against a quality opponent.\n\nWildcats are going back to the Final Four for the first time s",
+          "author": "JonRothstein",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/JonRothstein/status/2037902082133397938",
+          "embed_id": "2037902082133397938",
+          "title": "TODAY’S GAMES TO WATCH:\n\nArizona/Purdue\n\nCC: @FDSportsBook. https://t.co/ufhzTjHPkO",
+          "author": "JonRothstein",
+          "duration": 19,
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/JonRothstein/status/2037834582498922735",
+          "embed_id": "2037834582498922735",
+          "title": "TODAY'S ELITE EIGHT GAMES:\n\nIllinois/Iowa\nArizona/Purdue",
+          "author": "JonRothstein",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/JonRothstein/status/2037385768784597292",
+          "embed_id": "2037385768784597292",
+          "title": "Arizona.\n\nPurdue.\n\nAn epic Elite 8 showdown in Saturday in San Jose.\n\nThis is March.",
+          "author": "JonRothstein",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/SportsCenter/status/2038092802127454475",
+          "embed_id": "2038092802127454475",
+          "title": "The Wildcats' winningest season keeps rolling 😤 \n\nArizona racked up 36 wins on the way to the Final Four, breaking a tie for the most in program hist",
+          "author": "SportsCenter",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/CollegeBasketball/comments/48326621/arizona_final_four/",
+          "embed_id": "48326621",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/CollegeBasketball/comments/1s6k0s6/for_the_1st_time_in_25_years_1_arizona_has_made/",
+          "embed_id": "1s6k0s6",
+          "title": "For the 1st Time in 25 Years, #1 Arizona Has Made the Final Four After Defeating #2 Purdue",
+          "author": "",
+          "story": "Arizona Reaches First Final Four Since 2001"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/MMA/comments/48336336/pyfer_adesanya_fight/",
+          "embed_id": "48336336",
+          "story": "Adesanya Defeated by Pyfer in UFC Fight Night"
+        }
+      ]
+    },
+    "trending": {
+      "summary": "The trending topics include a variety of entertainment and social issues, from Rob and Michele Reiner's recognition for their LGBTQ+ advocacy at the Human Rights Campaign Gala, to Nick Cannon's controversial political comments. Shinya Tsukamoto's poignant Vietnam War drama, Jamie Dornan's humorous 'SNL U.K.' monologue, and Weezer's acoustic rooftop set also capture attention. Additionally, Disneyland Paris's debut of a 'Frozen' attraction, Fred again.. & Thomas Bangalter's epic performance, Pussy Riot's protest against Ubiquiti, and Kanye West's new music video release round out the diverse list of current trends.",
+      "left_narrative": "Rob and Michele Reiner's honoring at the Human Rights Campaign Gala is seen as a positive acknowledgment of their long-standing commitment to LGBTQ+ rights. Meanwhile, critics of Nick Cannon's remarks focus on the need for historically informed political discourse. Cultural enthusiasts celebrate Shinya Tsukamoto's artistic exploration of Vietnam War themes, alongside praise for Jamie Dornan's lighthearted comedy on 'SNL U.K.' Progressive audiences also highlight Pussy Riot's bold stance against tech companies perceived as complicit in global injustices.",
+      "right_narrative": "Nick Cannon's comments resonate with certain conservative circles who view the Democratic Party critically. Meanwhile, the honoring of Rob and Michele Reiner is noted but met with skepticism by those questioning the impact of celebrity activism. Fred again.. & Thomas Bangalter's performance is celebrated as a testament to the enduring appeal of electronic music, while Kanye West's latest release is seen as another provocative entry in his controversial career. The 'Frozen' attraction at Disneyland Paris is welcomed as a positive family-friendly addition.",
+      "what_they_arent_telling_you": "While the headlines focus on the glitz and glamour of entertainment and celebrity activism, there is less emphasis on the broader implications of these actions. The impact of celebrity endorsements on political causes can be overestimated, and the commercial interests behind events like Disneyland's 'Frozen' attraction are often overlooked. Additionally, the controversial statements by figures like Nick Cannon may overshadow deeper, systemic political discussions that need to be addressed.",
+      "social_summary": "Social media is abuzz with reactions to Rob and Michele Reiner's award for LGBTQ+ advocacy, sparking discussions on celebrity influence in social causes. Nick Cannon's remarks have ignited debates across political lines, while fans celebrate Weezer's surprise rooftop performance. Shinya Tsukamoto's film and the new 'Frozen' attraction at Disneyland Paris are trending for their cultural impact. Fred again.. & Thomas Bangalter's performance is hailed among music communities, and Kanye West's new video is a hot topic among fans and critics alike.",
+      "curated_social": [
+        {
+          "platform": "x",
+          "url": "https://x.com/elonmusk/status/2037840379467432095",
+          "embed_id": "2037840379467432095",
+          "story": "Nick Cannon's Controversial Comments on Democrats"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Variety/status/2038008322436255843",
+          "embed_id": "2038008322436255843",
+          "title": "Nick Cannon let his politics be known on a recent episode of his web talk show “Big Drive,\" during which he called the Democratic Party “the party of ",
+          "author": "Variety",
+          "story": "Nick Cannon's Controversial Comments on Democrats"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Variety/status/2038006822225801648",
+          "embed_id": "2038006822225801648",
+          "title": "Nick Cannon Calls the Democratic Party the 'Party of the KKK' and Says 'I F--- With Trump' https://t.co/iKFTvqSmWR",
+          "author": "Variety",
+          "story": "Nick Cannon's Controversial Comments on Democrats"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Variety/status/2038043464168784378",
+          "embed_id": "2038043464168784378",
+          "title": "Shinya Tsukamoto Vietnam Veteran Drama 'Mr. Nelson, Did You Kill People?' Sets Japan Release https://t.co/NmvFtQb9d3",
+          "author": "Variety",
+          "story": "Shinya Tsukamoto's Vietnam War Drama Release"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Variety/status/1933494247744847944",
+          "embed_id": "1933494247744847944",
+          "title": "Geoffrey Rush Talks Stalled Groucho Marx Project, Shinya Tsukamoto’s Vietnam War Film https://t.co/6j8dzHA5A3",
+          "author": "Variety",
+          "story": "Shinya Tsukamoto's Vietnam War Drama Release"
+        },
+        {
+          "platform": "x",
+          "url": "https://x.com/Variety/status/2038031427657191610",
+          "embed_id": "2038031427657191610",
+          "title": "During his #SNLUK monologue, Jamie Dornan revealed a peculiar — and apparently entirely true — fact about himself.\n\n“I’m not just a sex symbol who loo",
+          "author": "Variety",
+          "story": "Jamie Dornan's Quirky 'SNL U.K.' Monologue"
+        },
+        {
+          "platform": "telegram",
+          "url": "https://t.me/pitchfork/28577",
+          "embed_id": "pitchfork/28577",
+          "title": "Watch Thomas Bangalter and Fred again..’s Full Alexandra Palace DJ Set\n\nIt’s the Daft Punk co-founder second live performance in 17 years https://ift.",
+          "author": "pitchfork",
+          "story": "Fred again.. & Thomas Bangalter's Epic London Performance"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/LGBTQ/comments/2037839193054036218",
+          "embed_id": "2037839193054036218",
+          "story": "Rob and Michele Reiner Honored at Human Rights Campaign Gala"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://www.reddit.com/r/movies/comments/2037838804363694091",
+          "embed_id": "2037838804363694091",
+          "story": "Shinya Tsukamoto's Vietnam War Drama Release"
+        },
+        {
+          "platform": "reddit",
+          "url": "https://reddit.com/r/movies/comments/1s6jqc8/shinya_tsukamoto_unveils_rodney_hicks_geoffrey/",
+          "embed_id": "1s6jqc8",
+          "title": "Shinya Tsukamoto Unveils Rodney Hicks, Geoffrey Rush Vietnam War Drama ‘Mr. Nelson, Did You Kill People?’",
+          "author": "",
+          "story": "Shinya Tsukamoto's Vietnam War Drama Release"
+        }
+      ]
+    }
+  }
 }
