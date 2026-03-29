@@ -1,5 +1,314 @@
 [
   {
+    "topic": "Iran Missile Strike on Israel",
+    "summary": "Iran has launched a missile strike targeting an industrial facility in southern Israel, resulting in significant damage. This act represents a serious escalation in the ongoing conflict between the two nations. The incident raises the possibility of further military responses from Israel and its allies, potentially intensifying regional tensions.",
+    "severity": "critical",
+    "detected_at": "2026-03-29T19:00:07.423Z",
+    "last_updated": "2026-03-29T19:00:07.423Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind the strike, such as Iran's strategic interests in demonstrating military capability or Israel's potential vulnerabilities in its defense systems. Additionally, the economic implications of targeting industrial zones, which disrupt supply chains and impact global markets, are not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression while others criticize Israel's military policies. Memes and conspiracy theories are circulating, suggesting hidden alliances and questioning the timing of the strike in relation to recent diplomatic developments in the region.",
+    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the sudden disruption and looming threat of conflict.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/29/iran-hits-industrial-zone-in-southern-israel?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran hits industrial zone in southern Israel"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=rjN8KAgk-1Q",
+        "embed_id": "rjN8KAgk-1Q",
+        "title": "Conflict in the Middle East widens as Houthis attempt to strike Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=xTeRAuOSGKw",
+        "embed_id": "xTeRAuOSGKw",
+        "title": "Israeli airstrike kills three journalists in southern Lebanon"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Hz2psE-IeNU",
+        "embed_id": "Hz2psE-IeNU",
+        "title": "US Carrier Gerald R. Ford Arrives In Croatia's Red Sea As Part Of Ongoing US-Israeli Strikes On Iran"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=QjZ7tiCvpvs",
+        "embed_id": "QjZ7tiCvpvs",
+        "title": "First Responders Arrive At Scene After Airstrike Lights A Fire In Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
+        "embed_id": "-nJg9MWM0IU",
+        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=qZH2QatoZOU",
+        "embed_id": "qZH2QatoZOU",
+        "title": "Brief: Houthis launch missile attacks on Israel Israeli soldiers accused of torturing toddler"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=lfAQNDo83lM",
+        "embed_id": "lfAQNDo83lM",
+        "title": "Funeral held for Lebanese journalists killed in Israeli strike | AJ#shorts"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
+        "embed_id": "TK8x1dHrkP8",
+        "title": "Israeli strike kills three journalists in Lebanon | DW News"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
+        "embed_id": "RhZYAjEIoOQ",
+        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Wj5pal0VI4M",
+        "embed_id": "Wj5pal0VI4M",
+        "title": "Lebanon mourns three journalists killed in Israeli strikes • FRANCE 24 English"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BRICSinfo/status/2038285744859500640",
+        "embed_id": "2038285744859500640",
+        "title": "JUST IN: 🇮🇱🇮🇷 Another video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/v4c",
+        "author": "BRICSinfo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/afshinrattansi/status/2038247875747229725",
+        "embed_id": "2038247875747229725",
+        "title": "Israel’s Beersheba steel complex is on fire after the latest Iranian missile arrivals \n\nOver a month into the war, Iran is still able to announce what",
+        "author": "afshinrattansi"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ashoswai/status/2038245597979857039",
+        "embed_id": "2038245597979857039",
+        "title": "Be'er Sheva, Israel - A direct Iranian missile strike on an area with many chemical factories . https://t.co/0a77fgLkNb",
+        "author": "ashoswai"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2037980665384235198",
+        "embed_id": "2037980665384235198",
+        "title": "BREAKING: Medics say 11 wounded in Iranian missile strike on Israeli village\n\n🔴 LIVE updates: https://t.co/YIdZTbxgJH https://t.co/7opsXAL1Xs",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
+        "embed_id": "2037872167870959841",
+        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
+        "author": "AMK_Mapping_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2037440584080556508",
+        "embed_id": "2037440584080556508",
+        "title": "UPDATE 🔴 \n\nNo injuries were reported after Iran’s latest ballistic missile attack on southern Israel, the second strike since midnight, and the missi",
+        "author": "Osint613"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85608",
+        "embed_id": "intelslava/85608",
+        "title": "🇮🇷🇮🇱Iran launched an attack on a chemical plant in Beersheba, Israel.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/T2c1_Sxdllj_TZeSwj-93oejvVljmSlCsBrvNIt_4NXnufy55VFcSXPKnVP0oUCq-5v1ksI20gbH157JkzO9PRAZipzspaZYYPF8ehohAM7VhbC5U6X07IXfws4_u0oW0HzNpJtczw-uUOt10tX3ixxO9igkmpNjP8JKZuWncISgr9KRp4cPt8md_YOg0rr8CqbcjXybO2RkslcHEJe_9lOxtitPsTXGEuLmHfI-t4uPobMljuKGblwmvFrkpeJ8iJh3LWYSRk6PtPfifPctnDDQPiLpdhIavIbgxPOmJ1Zdbkl4jjCIdQqX5quftIprqtBhbtO5WHUd22TMIV4mAA'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Sino/comments/1s6sm4h/israeli_media_report_images_of_damaged_e3_awacs/",
+        "embed_id": "1s6sm4h",
+        "title": "Israeli media report images of damaged E-3 AWACS from Iranian attack (hit was extremely accurate, right on the rotodome...in definitely unrelated news"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/malaysia/comments/1s6foa9/houthis_just_entered_the_iran_war_heres_what_a/",
+        "embed_id": "1s6foa9",
+        "title": "Houthis just entered the Iran war. Here's what a second strait under threat means for Malaysia's oil supply and fuel subsidies."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/emirates/comments/1s6sack/iran_says_its_forces_are_waiting_for_us_ground/",
+        "embed_id": "1s6sack",
+        "title": "Iran says its forces are 'waiting' for US ground troops, as more American marines arrive in region...."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
+        "embed_id": "1s6s9bo",
+        "title": "Last Week in Collapse: March 22-28, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
+        "embed_id": "1s72is6",
+        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=rjN8KAgk-1Q",
+        "embed_id": "rjN8KAgk-1Q",
+        "title": "Conflict in the Middle East widens as Houthis attempt to strike Israel",
+        "channel": "CBS News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=xTeRAuOSGKw",
+        "embed_id": "xTeRAuOSGKw",
+        "title": "Israeli airstrike kills three journalists in southern Lebanon",
+        "channel": "CNN"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Hz2psE-IeNU",
+        "embed_id": "Hz2psE-IeNU",
+        "title": "US Carrier Gerald R. Ford Arrives In Croatia's Red Sea As Part Of Ongoing US-Israeli Strikes On Iran",
+        "channel": "Forbes Breaking News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=QjZ7tiCvpvs",
+        "embed_id": "QjZ7tiCvpvs",
+        "title": "First Responders Arrive At Scene After Airstrike Lights A Fire In Israel",
+        "channel": "Forbes Breaking News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
+        "embed_id": "-nJg9MWM0IU",
+        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News",
+        "channel": "BBC News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=qZH2QatoZOU",
+        "embed_id": "qZH2QatoZOU",
+        "title": "Brief: Houthis launch missile attacks on Israel Israeli soldiers accused of torturing toddler",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=lfAQNDo83lM",
+        "embed_id": "lfAQNDo83lM",
+        "title": "Funeral held for Lebanese journalists killed in Israeli strike | AJ#shorts",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
+        "embed_id": "TK8x1dHrkP8",
+        "title": "Israeli strike kills three journalists in Lebanon | DW News",
+        "channel": "DW News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
+        "embed_id": "RhZYAjEIoOQ",
+        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News",
+        "channel": "DW News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Wj5pal0VI4M",
+        "embed_id": "Wj5pal0VI4M",
+        "title": "Lebanon mourns three journalists killed in Israeli strikes • FRANCE 24 English",
+        "channel": "France 24 English"
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/BRICSinfo/status/2038285744859500640",
+        "embed_id": "2038285744859500640",
+        "title": "JUST IN: 🇮🇱🇮🇷 Another video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/v4c",
+        "author": "BRICSinfo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/afshinrattansi/status/2038247875747229725",
+        "embed_id": "2038247875747229725",
+        "title": "Israel’s Beersheba steel complex is on fire after the latest Iranian missile arrivals \n\nOver a month into the war, Iran is still able to announce what",
+        "author": "afshinrattansi"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ashoswai/status/2038245597979857039",
+        "embed_id": "2038245597979857039",
+        "title": "Be'er Sheva, Israel - A direct Iranian missile strike on an area with many chemical factories . https://t.co/0a77fgLkNb",
+        "author": "ashoswai"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2037980665384235198",
+        "embed_id": "2037980665384235198",
+        "title": "BREAKING: Medics say 11 wounded in Iranian missile strike on Israeli village\n\n🔴 LIVE updates: https://t.co/YIdZTbxgJH https://t.co/7opsXAL1Xs",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
+        "embed_id": "2037872167870959841",
+        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
+        "author": "AMK_Mapping_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2037440584080556508",
+        "embed_id": "2037440584080556508",
+        "title": "UPDATE 🔴 \n\nNo injuries were reported after Iran’s latest ballistic missile attack on southern Israel, the second strike since midnight, and the missi",
+        "author": "Osint613"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85608",
+        "embed_id": "intelslava/85608",
+        "title": "🇮🇷🇮🇱Iran launched an attack on a chemical plant in Beersheba, Israel.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/T2c1_Sxdllj_TZeSwj-93oejvVljmSlCsBrvNIt_4NXnufy55VFcSXPKnVP0oUCq-5v1ksI20gbH157JkzO9PRAZipzspaZYYPF8ehohAM7VhbC5U6X07IXfws4_u0oW0HzNpJtczw-uUOt10tX3ixxO9igkmpNjP8JKZuWncISgr9KRp4cPt8md_YOg0rr8CqbcjXybO2RkslcHEJe_9lOxtitPsTXGEuLmHfI-t4uPobMljuKGblwmvFrkpeJ8iJh3LWYSRk6PtPfifPctnDDQPiLpdhIavIbgxPOmJ1Zdbkl4jjCIdQqX5quftIprqtBhbtO5WHUd22TMIV4mAA'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Sino/comments/1s6sm4h/israeli_media_report_images_of_damaged_e3_awacs/",
+        "embed_id": "1s6sm4h",
+        "title": "Israeli media report images of damaged E-3 AWACS from Iranian attack (hit was extremely accurate, right on the rotodome...in definitely unrelated news"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/malaysia/comments/1s6foa9/houthis_just_entered_the_iran_war_heres_what_a/",
+        "embed_id": "1s6foa9",
+        "title": "Houthis just entered the Iran war. Here's what a second strait under threat means for Malaysia's oil supply and fuel subsidies."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/emirates/comments/1s6sack/iran_says_its_forces_are_waiting_for_us_ground/",
+        "embed_id": "1s6sack",
+        "title": "Iran says its forces are 'waiting' for US ground troops, as more American marines arrive in region...."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
+        "embed_id": "1s6s9bo",
+        "title": "Last Week in Collapse: March 22-28, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
+        "embed_id": "1s72is6",
+        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-29.png"
+  },
+  {
     "topic": "Iran War Escalation",
     "summary": "Iran has issued a threat against the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the Middle East continue to rise. This development follows a significant death toll in Tehran, which has exceeded 2,000, leading the United States to increase its military presence in the region. The U.S. has deployed additional troops to address potential threats and attempt to stabilize the situation.",
     "severity": "critical",
