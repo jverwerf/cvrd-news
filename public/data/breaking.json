@@ -1,1450 +1,51 @@
 [
   {
-    "topic": "Israeli Strike Kills Journalists in Lebanon",
-    "summary": "An Israeli military strike in Lebanon has resulted in the deaths of three journalists traveling in a clearly marked press vehicle. This incident has intensified regional tensions and drawn international criticism over the safety of journalists in conflict zones. The attack underscores the persistent instability in the conflict between Israel and its neighboring countries.",
-    "severity": "major",
-    "detected_at": "2026-03-28T18:00:06.152Z",
-    "last_updated": "2026-03-29T11:00:24.285Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader implications of military actions on press freedom and the potential chilling effect on journalism in conflict zones. The focus remains on the immediate incident without delving into the systemic issues of accountability and the role of international bodies in protecting journalists. Additionally, the geopolitical motivations behind the strike and its timing in relation to other regional developments are not being scrutinized.",
-    "social_summary": "Social media is ablaze with outrage over the attack, with hashtags like #PressFreedom and #JournalistsUnderFire trending. Memes and viral posts are criticizing the lack of accountability and questioning the effectiveness of international protections for journalists. Conspiracy theories are circulating, suggesting ulterior motives behind the strike, including attempts to suppress media coverage of the conflict.",
-    "image_prompt": "A symbolic image of a shattered camera lens lying on a dusty road, with a blurred background of a conflict zone, capturing the fragility of press freedom in war-torn areas.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/28/three-journalists-killed-in-israeli-strike-on-marked-press-car-in-lebanon?traffic_source=rss",
-        "lean": "center",
-        "title": "Three journalists killed in Israeli strike on marked press car in Lebanon"
-      },
-      {
-        "name": "BBC",
-        "url": "https://www.bbc.com/news/articles/cgme1j70294o?at_medium=RSS&amp;at_campaign=rss",
-        "lean": "center",
-        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=dHxVJ9sedfA",
-        "embed_id": "dHxVJ9sedfA",
-        "title": "Israel strike in southern Lebanon kills 3 journalists covering the war"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=PVsYNQhrZ7A",
-        "embed_id": "PVsYNQhrZ7A",
-        "title": "Israeli Strike in South Lebanon Kills 3 Journalists Amid Ongoing Border Clashes | APT",
-        "duration": 183
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=dlAQi0fgk3Q",
-        "embed_id": "dlAQi0fgk3Q",
-        "title": "Israeli air strike that killed journalists in Lebanon most likely a ‘deliberate attack’: HRW",
-        "duration": 334
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=rE79lQUJ82c",
-        "embed_id": "rE79lQUJ82c",
-        "title": "Israel kills three Lebanese journalists: Media syndicate calls targeted attack 'a crime’"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Mee64FKu3JI",
-        "embed_id": "Mee64FKu3JI",
-        "title": "Israeli strike kills three journalists in south Lebanon",
-        "duration": 39
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=pgFa6pm2rT0",
-        "embed_id": "pgFa6pm2rT0",
-        "title": "Journalists Killed in Lebanon Strike | “Double-Tap” Attack Sparks Outrage"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=XSRkhXF41O4",
-        "embed_id": "XSRkhXF41O4",
-        "title": "Journalists in Lebanon mourn colleagues killed by Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
-        "embed_id": "TK8x1dHrkP8",
-        "title": "Israeli strike kills three journalists in Lebanon | DW News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Kt4thvGtOZU",
-        "embed_id": "Kt4thvGtOZU",
-        "title": "Israeli strike kills three Lebanese journalists"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=MSxc6swdwGA",
-        "embed_id": "MSxc6swdwGA",
-        "title": "Three Lebanese journalists killed in strikes • FRANCE 24 English"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
-        "embed_id": "-nJg9MWM0IU",
-        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
-        "embed_id": "2037854148377358466",
-        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
-        "author": "IbrahimMajed"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43011",
-        "embed_id": "warmonitors/43011",
-        "title": "⚡️ The last message of journalist Fatima Fatouni from southern Lebanon before she was killed in an Israeli airstrike while covering events.",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Fauxmoi/comments/1s5zw30/israeli_drones_have_killed_journalist_ali_shoeib/",
-        "embed_id": "1s5zw30",
-        "title": "Israeli drones have killed journalist Ali Shoeib and Al Mayadeen correspondent Fatima Ftouni alongside Ftouni's brother, a cameraman in the Jezzine ar"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62i5l/israeli_air_strike_kills_2_journalists_ali_shoeib/",
-        "embed_id": "1s62i5l",
-        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62jon/a_man_reports_at_the_scene_of_his_coworkers/",
-        "embed_id": "1s62jon",
-        "title": "A man reports at the scene of his coworkers assassination from Israeli quadruple tap in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/whennews/comments/1s62k7q/israels_military_has_confirmed_it_killed_ali/",
-        "embed_id": "1s62k7q",
-        "title": "Israel's military has confirmed it killed Ali Shoeib in a strike, but accuses him of being a *Hezbollah-operative posing as a journalist*"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/International/comments/1s6448y/israeli_air_strike_kills_2_journalists_ali_shoeib/",
-        "embed_id": "1s6448y",
-        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UnderReportedNews/comments/1s65tdo/israeli_airstrike_kills_three_journalists/",
-        "embed_id": "1s65tdo",
-        "title": "Israeli airstrike kills three journalists covering the war in Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1s680uf/israeli_strike_on_media_car_targets_kills_3/",
-        "embed_id": "1s680uf",
-        "title": "Israeli strike on media car targets, kills 3 journalists in south Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Panarab/comments/1s6pjq1/lebanese_journalists_have_gathered_in_beirut_to/",
-        "embed_id": "1s6pjq1",
-        "title": "Lebanese journalists have gathered in Beirut to mourn three colleagues killed in a deliberate Israeli strike on a press vehicle near Jezzine in southe"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=dHxVJ9sedfA",
-        "embed_id": "dHxVJ9sedfA",
-        "title": "Israel strike in southern Lebanon kills 3 journalists covering the war",
-        "channel": "Associated Press"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=PVsYNQhrZ7A",
-        "embed_id": "PVsYNQhrZ7A",
-        "title": "Israeli Strike in South Lebanon Kills 3 Journalists Amid Ongoing Border Clashes | APT",
-        "channel": "APT",
-        "duration": 183
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=dlAQi0fgk3Q",
-        "embed_id": "dlAQi0fgk3Q",
-        "title": "Israeli air strike that killed journalists in Lebanon most likely a ‘deliberate attack’: HRW",
-        "channel": "Al Jazeera English",
-        "duration": 334
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=rE79lQUJ82c",
-        "embed_id": "rE79lQUJ82c",
-        "title": "Israel kills three Lebanese journalists: Media syndicate calls targeted attack 'a crime’",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Mee64FKu3JI",
-        "embed_id": "Mee64FKu3JI",
-        "title": "Israeli strike kills three journalists in south Lebanon",
-        "channel": "Sky News Australia",
-        "duration": 39
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=pgFa6pm2rT0",
-        "embed_id": "pgFa6pm2rT0",
-        "title": "Journalists Killed in Lebanon Strike | “Double-Tap” Attack Sparks Outrage",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=XSRkhXF41O4",
-        "embed_id": "XSRkhXF41O4",
-        "title": "Journalists in Lebanon mourn colleagues killed by Israel",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
-        "embed_id": "TK8x1dHrkP8",
-        "title": "Israeli strike kills three journalists in Lebanon | DW News",
-        "channel": "DW News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Kt4thvGtOZU",
-        "embed_id": "Kt4thvGtOZU",
-        "title": "Israeli strike kills three Lebanese journalists",
-        "channel": "Sky News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=MSxc6swdwGA",
-        "embed_id": "MSxc6swdwGA",
-        "title": "Three Lebanese journalists killed in strikes • FRANCE 24 English",
-        "channel": "France 24 English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
-        "embed_id": "-nJg9MWM0IU",
-        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News",
-        "channel": "BBC News"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/IbrahimMajed/status/2037854148377358466",
-        "embed_id": "2037854148377358466",
-        "title": "𝗜𝗦𝗥𝗔𝗘𝗟 𝗞𝗜𝗟𝗟𝗦 𝗧𝗪𝗢 𝗝𝗢𝗨𝗥𝗡𝗔𝗟𝗜𝗦𝗧𝗦 𝗢𝗡 𝗗𝗨𝗧𝗬 𝗜𝗡 𝗦𝗢𝗨𝗧𝗛 𝗟𝗘𝗕𝗔𝗡𝗢𝗡\n\nAn Israeli strike in the Jezzine area of southern ",
-        "author": "IbrahimMajed"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43011",
-        "embed_id": "warmonitors/43011",
-        "title": "⚡️ The last message of journalist Fatima Fatouni from southern Lebanon before she was killed in an Israeli airstrike while covering events.",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/BC8yZLsHlGoAVpZ5Qrk1ZHuFOc5WLTNyxaa31HIRDeySGEF10mlrnrrbhGhaG8uXdBfyCE6DBqWdglTvex1vSRS6ai5nf_SXmaf8xEN5mKtl7-Wv6AGP23pJ8YZeVCwUxQggze8TkJUvK0f-VYnfD8XH_bV2xxWSTvH7Z8DXAC4P4lRzNrXIUWFc4XzKiagEFlcJ5CWBbWXwS2DRV0NUl91AxXj97244f7hxD7qxCX2ipdvItyZtCDO2-xH40odGUUIYZ38EHySPlBwRn0FtpCQOzbTFLT8MJ_5arYLbk-UyA6XbRj7SpUTKjyWIL-92cPouLiQHZ9sX1apgO_KUuQ'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Fauxmoi/comments/1s5zw30/israeli_drones_have_killed_journalist_ali_shoeib/",
-        "embed_id": "1s5zw30",
-        "title": "Israeli drones have killed journalist Ali Shoeib and Al Mayadeen correspondent Fatima Ftouni alongside Ftouni's brother, a cameraman in the Jezzine ar"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62i5l/israeli_air_strike_kills_2_journalists_ali_shoeib/",
-        "embed_id": "1s62i5l",
-        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62jon/a_man_reports_at_the_scene_of_his_coworkers/",
-        "embed_id": "1s62jon",
-        "title": "A man reports at the scene of his coworkers assassination from Israeli quadruple tap in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/whennews/comments/1s62k7q/israels_military_has_confirmed_it_killed_ali/",
-        "embed_id": "1s62k7q",
-        "title": "Israel's military has confirmed it killed Ali Shoeib in a strike, but accuses him of being a *Hezbollah-operative posing as a journalist*"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/International/comments/1s6448y/israeli_air_strike_kills_2_journalists_ali_shoeib/",
-        "embed_id": "1s6448y",
-        "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UnderReportedNews/comments/1s65tdo/israeli_airstrike_kills_three_journalists/",
-        "embed_id": "1s65tdo",
-        "title": "Israeli airstrike kills three journalists covering the war in Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1s680uf/israeli_strike_on_media_car_targets_kills_3/",
-        "embed_id": "1s680uf",
-        "title": "Israeli strike on media car targets, kills 3 journalists in south Lebanon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Panarab/comments/1s6pjq1/lebanese_journalists_have_gathered_in_beirut_to/",
-        "embed_id": "1s6pjq1",
-        "title": "Lebanese journalists have gathered in Beirut to mourn three colleagues killed in a deliberate Israeli strike on a press vehicle near Jezzine in southe"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-28.png"
-  },
-  {
-    "topic": "Houthis Missile Attack on Israel",
-    "summary": "Yemen's Houthi rebels have launched a missile at Israel, marking their first direct attack on the nation. This development introduces a new dimension to the ongoing Middle Eastern conflict, involving the Iran-backed Houthis and Israel. The attack potentially shift regional dynamics and influence existing geopolitical alliances.",
-    "severity": "major",
-    "detected_at": "2026-03-28T10:00:07.197Z",
-    "last_updated": "2026-03-29T11:00:41.030Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a significant escalation orchestrated by Iran, using the Houthis as a proxy to open a third front against Israel. They emphasize Iran's strategic maneuvering to gain leverage in the region, particularly ahead of any potential diplomatic talks. The narrative underscores the threat posed by Iran's influence over regional militias and the need for a strong response to deter further aggression.",
-    "what_they_arent_telling_you": "Neither side is delving deeply into the economic motivations behind the Houthis' actions, such as the potential for increased Iranian financial support or arms supplies in exchange for their involvement. Additionally, the broader implications for Yemen's internal conflict and humanitarian crisis are largely ignored, as the focus remains on the geopolitical chess game between Iran and Israel.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing concern over the escalation and others dismissing it as a distraction from domestic issues. Conspiracy theories are circulating about the timing of the attack, suggesting it is a coordinated effort to influence international negotiations. Memes and viral posts are highlighting the irony of a new front opening in an already complex conflict.",
-    "image_prompt": "A dramatic editorial photo of a missile launch silhouetted against a twilight sky, symbolizing the escalation of conflict in the Middle East. The scene is set with a distant city skyline, representing the looming threat to urban centers.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/28/yemens-houthis-claim-responsibility-for-a-missile-attack-on-israel-2?traffic_source=rss",
-        "lean": "center",
-        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
-      },
-      {
-        "name": "NY Post",
-        "url": "https://nypost.com/2026/03/28/world-news/yemens-houthis-claim-responsibility-for-missile-attack-on-israel/",
-        "lean": "right",
-        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
-      },
-      {
-        "name": "BBC",
-        "url": "https://www.bbc.com/news/articles/cd6l5n8jv4yo?at_medium=RSS&amp;at_campaign=rss",
-        "lean": "center",
-        "title": "Iran-backed Houthis join war with attack against Israel"
-      },
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/world/iran-backed-houthis-open-third-front-against-israel-tehran-seeks-leverage-ahead-talks",
-        "lean": "right",
-        "title": "Iran-backed Houthis open third front against Israel as Tehran seeks leverage ahead of talks"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=H7XiiKz6VbU",
-        "embed_id": "H7XiiKz6VbU",
-        "title": "Escalation in the Middle East: Houthis Open a New Front on Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Z96_87z0lpo",
-        "embed_id": "Z96_87z0lpo",
-        "title": "Yemen’s Houthis claim responsibility for a missile attack on Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=nIsE0xFkuD8",
-        "embed_id": "nIsE0xFkuD8",
-        "title": "Israel says missile fired from Yemen: On Friday Houthi warned they could join the war"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=6oDSC4_Z8IM",
-        "embed_id": "6oDSC4_Z8IM",
-        "title": "Joining the war, Yemen's Houthis launch a ballistic missile attack."
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=e3V8wzCZcW0",
-        "embed_id": "e3V8wzCZcW0",
-        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=0fA3sZyB37s",
-        "embed_id": "0fA3sZyB37s",
-        "title": "Houthi Escalation: Missiles on Israel and Threats to Shipping Lanes"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=uqLrJoNCI1o",
-        "embed_id": "uqLrJoNCI1o",
-        "title": "Iranian-backed Houthi rebels say launched missile attack on Israel • FRANCE 24 English"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=_HAnwf-JzlI",
-        "embed_id": "_HAnwf-JzlI",
-        "title": "Yemen's Houthis claim missile attack on Israel in expanding conflict • FRANCE 24 English"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=YZ1GoP8Yy8o",
-        "embed_id": "YZ1GoP8Yy8o",
-        "title": "Yemen's Iran-backed Houthis launch missile at Israel for first time since war began | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=kyAUs8XJaVI",
-        "embed_id": "kyAUs8XJaVI",
-        "title": "Houthis join the war: Yemeni group attacks Israel in support of ally Iran"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=T32b1g8pSnc",
-        "embed_id": "T32b1g8pSnc",
-        "title": "Houthis open third front: Yemen threat to Israel from air and sea"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=g-QepsSdySM",
-        "embed_id": "g-QepsSdySM",
-        "title": "Houthis launch first attack on Israel as war enters second month | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=UztPrVTRp6o",
-        "embed_id": "UztPrVTRp6o",
-        "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=epFEguZW0RE",
-        "embed_id": "epFEguZW0RE",
-        "title": "Yemen’s Houthis launch first missile attack on Israel since Iran war began",
-        "duration": 107
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=rjN8KAgk-1Q",
-        "embed_id": "rjN8KAgk-1Q",
-        "title": "Conflict in the Middle East widens as Houthis attempt to strike Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
-        "embed_id": "RhZYAjEIoOQ",
-        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=eV81jrWGiXQ",
-        "embed_id": "eV81jrWGiXQ",
-        "title": "Yemen's Houthis launch second missile, drone assault on Israel as war with Iran intensifies"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Ec7zR6mtzZY",
-        "embed_id": "Ec7zR6mtzZY",
-        "title": "Les Houthis confirment avoir tiré des missiles balistiques sur Israël"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/iihtishamm/status/2037805082927112617",
-        "embed_id": "2037805082927112617",
-        "title": "🚨 BREAKING: Iran-backed Houthis in Yemen launch their first missile attack on Israel since the war began, marking a major escalation and opening a ne",
-        "author": "iihtishamm"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/nypost/status/2037803625234256020",
-        "embed_id": "2037803625234256020",
-        "title": "Yemen's Houthis claim responsibility for missile attack on Israel, their first since war started https://t.co/vUElg8IrVW https://t.co/xxMyJKOH8n",
-        "author": "nypost"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AP/status/2037794986704458101",
-        "embed_id": "2037794986704458101",
-        "title": "BREAKING: Yemen’s Houthis claim responsibility for a missile attack on Israel, their first since the war in the Mideast started. https://t.co/qRAiXjDf",
-        "author": "AP"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2037794306648363368",
-        "embed_id": "2037794306648363368",
-        "title": "BREAKING: Yemen's Houthis claim responsibility for a missile attack on Israel\n\n🔴 LIVE updates: https://t.co/RB76Z35BnP https://t.co/I40g676zwL",
-        "author": "AJENews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/manniefabian/status/2037740515555168350",
-        "embed_id": "2037740515555168350",
-        "title": "Sirens sound in Beersheba and surrounding towns in southern Israel due to a ballistic missile attack from Yemen.\n\nIt marks the first attack by the Ira",
-        "author": "manniefabian"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/World_At_War_6/status/2037816971245625500",
-        "embed_id": "2037816971245625500",
-        "title": "🇾🇪💥Houthis Join Iran War, Launch Missile Strike on Israel:\n\nYemen’s Iran-backed Houthi rebels officially entered the war on Iran’s side on Saturday",
-        "author": "World_At_War_6"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/coinbureau/status/2037806618570891368",
-        "embed_id": "2037806618570891368",
-        "title": "🚨BREAKING:  Yemen’s Houthis confirmed that they have entered the war on Iran's side, launching their first missile attack on Israel.",
-        "author": "coinbureau"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BBCBreaking/status/2037804819658752272",
-        "embed_id": "2037804819658752272",
-        "title": "Yemen's Iran-backed Houthis launch missile attack on Israel for first time since war began - follow live https://t.co/FTxJVIelDA",
-        "author": "BBCBreaking"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/spectatorindex/status/2037802772809285950",
-        "embed_id": "2037802772809285950",
-        "title": "BREAKING: Yemen's Houthis join the war, following missile attack on Israel.",
-        "author": "spectatorindex"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MiddleEastEye/status/2037892153158889859",
-        "embed_id": "2037892153158889859",
-        "title": "Yemen's Houthis claimed responsibility for a missile attack on Israel, their first since the broader Middle East conflict began, according to a statem",
-        "author": "MiddleEastEye"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheStudyofWar/status/2037939847101329811",
-        "embed_id": "2037939847101329811",
-        "title": "NEW | The Houthis conducted a ballistic missile attack targeting southern Israel on March 27, marking the group’s first involvement in the war. Israel",
-        "author": "TheStudyofWar"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20543",
-        "embed_id": "disclosetv/20543",
-        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first  attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16236",
-        "embed_id": "France24_en/16236",
-        "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
-        "author": "france24_en"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/vtchakarova/status/2037807463668355303",
-        "embed_id": "2037807463668355303",
-        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
-        "author": "vtchakarova"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85591",
-        "embed_id": "intelslava/85591",
-        "title": "🇾🇪🇮🇷🇮🇱🇺🇸⚡The Houthis have officially joined the war, as they launched ballistic missiles against Southern Israel.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheStudyofWar/status/2038087329378713700",
-        "embed_id": "2038087329378713700",
-        "title": "NEW:  The Houthis conducted a ballistic missile attack and a drone and cruise missile attack targeting southern Israel on March 27 and 28, marking the",
-        "author": "TheStudyofWar"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/CBSEveningNews/status/2038058481152876899",
-        "embed_id": "2038058481152876899",
-        "title": "The Houthis, an Iranian-backed militant group in Yemen, entered the widening conflict in the Middle East Saturday, launching an unsuccessful missile a",
-        "author": "CBSEveningNews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16239",
-        "embed_id": "France24_en/16239",
-        "title": "Houthi attacks on Israel open new front in Mideast war, threaten Red Sea shipping\nYemen's Iran-backed Houthi rebels have entered the escalating war in",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_fr/20158",
-        "embed_id": "France24_fr/20158",
-        "title": "Les Houthis du Yémen ciblent Israël, les frappes contre l'Iran continuent\nPour la première fois depuis le début de la ⁠guerre en Iran, les Houthis ⁠du",
-        "author": "france24_fr"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
-        "embed_id": "1s5qjih",
-        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TFE/comments/1s5w5qk/yemens_houthis_launch_missile_attack_on_israel_as/",
-        "embed_id": "1s5w5qk",
-        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1s5w3vq/yemens_houthis_launch_missile_attack_on_israel_as/",
-        "embed_id": "1s5w3vq",
-        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies. Who else do you think will join"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/USNEWS/comments/1s5unge/yemens_houthis_claim_responsibility_for_missile/",
-        "embed_id": "1s5unge",
-        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s66oe0/iranianbacked_houthi_rebels_claim_responsibility/",
-        "embed_id": "1s66oe0",
-        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6dp3f/a_houthi_missile_attack_on_israel_stokes_fears_of/",
-        "embed_id": "1s6dp3f",
-        "title": "A Houthi missile attack on Israel stokes fears of renewed Red Sea shipping strikes"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1s5ztdm/yemens_houthi_rebels_claim_responsibility_for/",
-        "embed_id": "1s5ztdm",
-        "title": "Yemen's Houthi rebels claim responsibility for missile attack on Israel - Mar 28, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s61bkl/joining_war_yemens_iranbacked_houthis_launch/",
-        "embed_id": "1s61bkl",
-        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=H7XiiKz6VbU",
-        "embed_id": "H7XiiKz6VbU",
-        "title": "Escalation in the Middle East: Houthis Open a New Front on Israel",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Z96_87z0lpo",
-        "embed_id": "Z96_87z0lpo",
-        "title": "Yemen’s Houthis claim responsibility for a missile attack on Israel",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=nIsE0xFkuD8",
-        "embed_id": "nIsE0xFkuD8",
-        "title": "Israel says missile fired from Yemen: On Friday Houthi warned they could join the war",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=6oDSC4_Z8IM",
-        "embed_id": "6oDSC4_Z8IM",
-        "title": "Joining the war, Yemen's Houthis launch a ballistic missile attack.",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=e3V8wzCZcW0",
-        "embed_id": "e3V8wzCZcW0",
-        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel",
-        "channel": "Associated Press"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=0fA3sZyB37s",
-        "embed_id": "0fA3sZyB37s",
-        "title": "Houthi Escalation: Missiles on Israel and Threats to Shipping Lanes",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=uqLrJoNCI1o",
-        "embed_id": "uqLrJoNCI1o",
-        "title": "Iranian-backed Houthi rebels say launched missile attack on Israel • FRANCE 24 English",
-        "channel": "France 24 English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=_HAnwf-JzlI",
-        "embed_id": "_HAnwf-JzlI",
-        "title": "Yemen's Houthis claim missile attack on Israel in expanding conflict • FRANCE 24 English",
-        "channel": "France 24 English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=YZ1GoP8Yy8o",
-        "embed_id": "YZ1GoP8Yy8o",
-        "title": "Yemen's Iran-backed Houthis launch missile at Israel for first time since war began | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=kyAUs8XJaVI",
-        "embed_id": "kyAUs8XJaVI",
-        "title": "Houthis join the war: Yemeni group attacks Israel in support of ally Iran",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=T32b1g8pSnc",
-        "embed_id": "T32b1g8pSnc",
-        "title": "Houthis open third front: Yemen threat to Israel from air and sea",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=g-QepsSdySM",
-        "embed_id": "g-QepsSdySM",
-        "title": "Houthis launch first attack on Israel as war enters second month | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=UztPrVTRp6o",
-        "embed_id": "UztPrVTRp6o",
-        "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=epFEguZW0RE",
-        "embed_id": "epFEguZW0RE",
-        "title": "Yemen’s Houthis launch first missile attack on Israel since Iran war began",
-        "channel": "Sky News Australia",
-        "duration": 107
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=rjN8KAgk-1Q",
-        "embed_id": "rjN8KAgk-1Q",
-        "title": "Conflict in the Middle East widens as Houthis attempt to strike Israel",
-        "channel": "CBS News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
-        "embed_id": "RhZYAjEIoOQ",
-        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News",
-        "channel": "DW News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=eV81jrWGiXQ",
-        "embed_id": "eV81jrWGiXQ",
-        "title": "Yemen's Houthis launch second missile, drone assault on Israel as war with Iran intensifies",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Ec7zR6mtzZY",
-        "embed_id": "Ec7zR6mtzZY",
-        "title": "Les Houthis confirment avoir tiré des missiles balistiques sur Israël",
-        "channel": "euronews"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/iihtishamm/status/2037805082927112617",
-        "embed_id": "2037805082927112617",
-        "title": "🚨 BREAKING: Iran-backed Houthis in Yemen launch their first missile attack on Israel since the war began, marking a major escalation and opening a ne",
-        "author": "iihtishamm"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/nypost/status/2037803625234256020",
-        "embed_id": "2037803625234256020",
-        "title": "Yemen's Houthis claim responsibility for missile attack on Israel, their first since war started https://t.co/vUElg8IrVW https://t.co/xxMyJKOH8n",
-        "author": "nypost"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AP/status/2037794986704458101",
-        "embed_id": "2037794986704458101",
-        "title": "BREAKING: Yemen’s Houthis claim responsibility for a missile attack on Israel, their first since the war in the Mideast started. https://t.co/qRAiXjDf",
-        "author": "AP"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2037794306648363368",
-        "embed_id": "2037794306648363368",
-        "title": "BREAKING: Yemen's Houthis claim responsibility for a missile attack on Israel\n\n🔴 LIVE updates: https://t.co/RB76Z35BnP https://t.co/I40g676zwL",
-        "author": "AJENews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/manniefabian/status/2037740515555168350",
-        "embed_id": "2037740515555168350",
-        "title": "Sirens sound in Beersheba and surrounding towns in southern Israel due to a ballistic missile attack from Yemen.\n\nIt marks the first attack by the Ira",
-        "author": "manniefabian"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/World_At_War_6/status/2037816971245625500",
-        "embed_id": "2037816971245625500",
-        "title": "🇾🇪💥Houthis Join Iran War, Launch Missile Strike on Israel:\n\nYemen’s Iran-backed Houthi rebels officially entered the war on Iran’s side on Saturday",
-        "author": "World_At_War_6"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/coinbureau/status/2037806618570891368",
-        "embed_id": "2037806618570891368",
-        "title": "🚨BREAKING:  Yemen’s Houthis confirmed that they have entered the war on Iran's side, launching their first missile attack on Israel.",
-        "author": "coinbureau"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BBCBreaking/status/2037804819658752272",
-        "embed_id": "2037804819658752272",
-        "title": "Yemen's Iran-backed Houthis launch missile attack on Israel for first time since war began - follow live https://t.co/FTxJVIelDA",
-        "author": "BBCBreaking"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/spectatorindex/status/2037802772809285950",
-        "embed_id": "2037802772809285950",
-        "title": "BREAKING: Yemen's Houthis join the war, following missile attack on Israel.",
-        "author": "spectatorindex"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MiddleEastEye/status/2037892153158889859",
-        "embed_id": "2037892153158889859",
-        "title": "Yemen's Houthis claimed responsibility for a missile attack on Israel, their first since the broader Middle East conflict began, according to a statem",
-        "author": "MiddleEastEye"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheStudyofWar/status/2037939847101329811",
-        "embed_id": "2037939847101329811",
-        "title": "NEW | The Houthis conducted a ballistic missile attack targeting southern Israel on March 27, marking the group’s first involvement in the war. Israel",
-        "author": "TheStudyofWar"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20543",
-        "embed_id": "disclosetv/20543",
-        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first  attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16236",
-        "embed_id": "France24_en/16236",
-        "title": "Yemen’s Houthis launch ballistic missile at Israel as Middle East conflict escalates\nYemen’s Houthi rebels fired a ballistic missile towards Israel on",
-        "author": "france24_en"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/vtchakarova/status/2037807463668355303",
-        "embed_id": "2037807463668355303",
-        "title": "The Houthis joined the war on 28 March, conducting a ballistic missile attack toward Israel and triggering air raid sirens in Beersheba. This is not a",
-        "author": "vtchakarova"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85591",
-        "embed_id": "intelslava/85591",
-        "title": "🇾🇪🇮🇷🇮🇱🇺🇸⚡The Houthis have officially joined the war, as they launched ballistic missiles against Southern Israel.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheStudyofWar/status/2038087329378713700",
-        "embed_id": "2038087329378713700",
-        "title": "NEW:  The Houthis conducted a ballistic missile attack and a drone and cruise missile attack targeting southern Israel on March 27 and 28, marking the",
-        "author": "TheStudyofWar"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/CBSEveningNews/status/2038058481152876899",
-        "embed_id": "2038058481152876899",
-        "title": "The Houthis, an Iranian-backed militant group in Yemen, entered the widening conflict in the Middle East Saturday, launching an unsuccessful missile a",
-        "author": "CBSEveningNews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16239",
-        "embed_id": "France24_en/16239",
-        "title": "Houthi attacks on Israel open new front in Mideast war, threaten Red Sea shipping\nYemen's Iran-backed Houthi rebels have entered the escalating war in",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_fr/20158",
-        "embed_id": "France24_fr/20158",
-        "title": "Les Houthis du Yémen ciblent Israël, les frappes contre l'Iran continuent\nPour la première fois depuis le début de la ⁠guerre en Iran, les Houthis ⁠du",
-        "author": "france24_fr"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Israel/comments/1s5qjih/joining_war_yemens_iranbacked_houthis_launch/",
-        "embed_id": "1s5qjih",
-        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TFE/comments/1s5w5qk/yemens_houthis_launch_missile_attack_on_israel_as/",
-        "embed_id": "1s5w5qk",
-        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1s5w3vq/yemens_houthis_launch_missile_attack_on_israel_as/",
-        "embed_id": "1s5w3vq",
-        "title": "Yemen’s Houthis launch missile attack on Israel as war on Iran intensifies. Who else do you think will join"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/USNEWS/comments/1s5unge/yemens_houthis_claim_responsibility_for_missile/",
-        "embed_id": "1s5unge",
-        "title": "Yemen’s Houthis claim responsibility for missile attack on Israel, their first since war started"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s66oe0/iranianbacked_houthi_rebels_claim_responsibility/",
-        "embed_id": "1s66oe0",
-        "title": "Iranian-backed Houthi rebels claim responsibility for missile attack on Israel"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6dp3f/a_houthi_missile_attack_on_israel_stokes_fears_of/",
-        "embed_id": "1s6dp3f",
-        "title": "A Houthi missile attack on Israel stokes fears of renewed Red Sea shipping strikes"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1s5ztdm/yemens_houthi_rebels_claim_responsibility_for/",
-        "embed_id": "1s5ztdm",
-        "title": "Yemen's Houthi rebels claim responsibility for missile attack on Israel - Mar 28, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s61bkl/joining_war_yemens_iranbacked_houthis_launch/",
-        "embed_id": "1s61bkl",
-        "title": "Joining war, Yemen’s Iran-backed Houthis launch missile attack on southern Israel"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-28.png"
-  },
-  {
-    "topic": "Iranian Attack on US Service Members",
-    "summary": "An Iranian attack on a Saudi air base has injured at least 10 US service members, intensifying tensions between the United States and Iran. This incident underscores the persistent volatility in US-Iran relations and raises fears of further military escalations in the Middle East. The attack is indicative of the broader geopolitical instability in the region.",
-    "severity": "major",
-    "detected_at": "2026-03-28T04:00:07.235Z",
-    "last_updated": "2026-03-29T11:01:12.213Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, emphasizing the need for a strong US response to deter further attacks. They highlight the perceived weakness of current US foreign policy, suggesting it emboldens adversaries like Iran. The narrative stresses the importance of military readiness and a robust defense posture in the face of Iranian hostility.",
-    "what_they_arent_telling_you": "Neither side is delving deeply into the economic motivations behind Iran's actions, such as the impact of sanctions and internal pressures. Additionally, the role of Saudi Arabia's regional ambitions and its complex relationship with both the US and Iran is not being thoroughly examined. The broader implications for global oil markets and the potential for economic fallout are also underreported.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users calling for immediate military retaliation while others warn against escalating into a full-scale conflict. Memes and conspiracy theories abound, with some suggesting ulterior motives behind the attack, such as distracting from domestic issues in the US or Iran. Hashtags related to war and peace are trending, reflecting the divided public sentiment.",
-    "image_prompt": "A dramatic editorial photo of a desert air base at dusk, with silhouettes of military personnel and aircraft against a fiery sky, symbolizing tension and uncertainty.",
-    "sources": [
-      {
-        "name": "Daily Wire",
-        "url": "https://www.dailywire.com/news/live-updates-iranian-protests-intensify-as-citizens-demand-end-to-ayatollah-rule",
-        "lean": "right",
-        "title": "LIVE UPDATES: U.S. Troops Injured After Iranian Missile And Drone Attack Hits Base Overseas"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=AHc6DeRyEP8",
-        "embed_id": "AHc6DeRyEP8",
-        "title": "BREAKING: Iran reportedly wounds US troops in attack on American base",
-        "duration": 155
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=elqD8fHiZl0",
-        "embed_id": "elqD8fHiZl0",
-        "title": "Iran strike hits Saudi base, US troops injured, AP reports | FOX 13 Seattle",
-        "duration": 129
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=pGtj9U85bzw",
-        "embed_id": "pGtj9U85bzw",
-        "title": "Iranian strike wounds US troops and damages planes at Saudi air base, official says",
-        "duration": 26
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=CLEESCSg2QA",
-        "embed_id": "CLEESCSg2QA",
-        "title": "U.S. troops injured by Iranian strike in Saudi Arabia: Report",
-        "duration": 645
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=1TMdjrrrmws",
-        "embed_id": "1TMdjrrrmws",
-        "title": "Ten U.S. service members hurt in Iranian strike on Saudi air base",
-        "duration": 42
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=oRZKpFFLrfw",
-        "embed_id": "oRZKpFFLrfw",
-        "title": "Iranian missile attack injures 10 U.S. service members in Saudi Arabia | KTVU",
-        "duration": 131
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=63Zt0cJzjj8",
-        "embed_id": "63Zt0cJzjj8",
-        "title": "Iranian missile strikes wound roughly a dozen U.S. service members"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=mofYJ9GsY5k",
-        "embed_id": "mofYJ9GsY5k",
-        "title": "10 US servicemembers wounded after Iranian missile attack",
-        "duration": 28
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=e9z9vNqdC4Y",
-        "embed_id": "e9z9vNqdC4Y",
-        "title": "Iranian attack on Saudi base wounds at least 10 U.S. troops",
-        "duration": 210
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=YX9kiuKIuVM",
-        "embed_id": "YX9kiuKIuVM",
-        "title": "Iranian attack on Saudi air base wounds at least 10 US troops",
-        "duration": 27
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/cnnbrk/status/2037720943749935488",
-        "embed_id": "2037720943749935488",
-        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN https://t.co/Z0tpt4",
-        "author": "cnnbrk"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/CNN/status/2037719897636041054",
-        "embed_id": "2037719897636041054",
-        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN. https://t.co/lG0vC",
-        "author": "CNN"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Currentreport1/status/2037676726827065358",
-        "embed_id": "2037676726827065358",
-        "title": "BREAKING:\n\nAn Iranian missile and drone attack on Prince Sultan air base in Saudi Arabia injured 10 US service members.\n\nAmong the injured 2 are in cr",
-        "author": "Currentreport1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/JenniferJJacobs/status/2037660745475760209",
-        "embed_id": "2037660745475760209",
-        "title": "The attack on US service members in Saudi Arabia consisted of Iranian missiles and drones. Two of the Americans were very seriously injured, eight wer",
-        "author": "JenniferJJacobs"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2037659229096448401",
-        "embed_id": "2037659229096448401",
-        "title": "10 US service members were injured in the Iranian missile and drone attack on Prince Sultan Air Base Saudi Arabia today.",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osinttechnical/status/2037654404766081155",
-        "embed_id": "2037654404766081155",
-        "title": "Ten American service members were wounded in an Iranian drone and missile attack on Prince Sultan Airbase earlier today-Multiple US and Arab officials",
-        "author": "Osinttechnical"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85572",
-        "embed_id": "intelslava/85572",
-        "title": "🇮🇷🇺🇸🇸🇦During the attack on Prince Sultan Air Base in Saudi Arabia, the Iranians destroyed at least three American KC-135 refueling aircraft.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ByChrisGordon/status/2037662227440775669",
-        "embed_id": "2037662227440775669",
-        "title": "Multiple American service members were wounded and some aircraft were damaged in an Iranian attack on Prince Sultan Air Base, Saudi Arabia, people fam",
-        "author": "ByChrisGordon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1s4vpdv/march_26_2026/",
-        "embed_id": "1s4vpdv",
-        "title": "March 26, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TopCharacterTropes/comments/1s55zup/controversial_trope_story_is_a_hate_letter_at_its/",
-        "embed_id": "1s55zup",
-        "title": "[Controversial trope] Story is a hate letter at its core"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ForUnitedStates/comments/1s5iopv/us_service_members_injured_in_iranian_strike/",
-        "embed_id": "1s5iopv",
-        "title": "US service members injured in Iranian strike while Trump makes joke on stage"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
-        "embed_id": "1s5kyv3",
-        "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
-        "embed_id": "1s5r6mv",
-        "title": "guys, are the Saudis cooked"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/wallstreetbets/comments/1s63vis/built_a_taco_tracker_inside_my_trading_dashboard/",
-        "embed_id": "1s63vis",
-        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TroChuyenLinhTinh/comments/1s5odv9/thêm_10_lính_mỹ_bị_thương_trong_cuộc_tấn_công_của/",
-        "embed_id": "1s5odv9",
-        "title": "Thêm 10 Lính mỹ bị thương trong cuộc tấn công của Iran vào căn cứ không quân ở Saudi..."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/algotrading/comments/1s63tsh/built_a_taco_tracker_inside_my_trading_dashboard/",
-        "embed_id": "1s63tsh",
-        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s6bhmg/the_left_has_not_given_iranians_outside_of_niac_a/",
-        "embed_id": "1s6bhmg",
-        "title": "The \"left\" has not given Iranians outside of NIAC a platform because dogmatic opposition to Trump/Israel takes precedence over Iranian experiences or "
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MilitaryPorn/comments/1s6j769/usaf_boeing_e3_sentry_awacs_reportedly_damaged_by/",
-        "embed_id": "1s6j769",
-        "title": "USAF Boeing E-3 Sentry AWACS Reportedly Damaged by Iranian Attack on Prince Sultan Air Base in Saudi Arabia [1500 × 1089]"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/islamichistory/comments/1s5vzh7/breaking_at_least_120_museums_and_historical/",
-        "embed_id": "1s5vzh7",
-        "title": "BREAKING: At least 120 museums and historical monuments have been damaged in recent US-Israeli attacks on Tehran, according to the Cultural Heritage C"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1s64ra6/i_22f_picked_up_my_progressing_down_syndrome/",
-        "embed_id": "1s64ra6",
-        "title": "I (22F) picked up my progressing down syndrome daughter (4F) from my ex-boyfriend's (23M) house distressed, aggressive and bald"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1s6fx0w/us_forces_at_saudi_air_base_suffer_iranian_attack/",
-        "embed_id": "1s6fx0w",
-        "title": "US Forces at Saudi Air Base Suffer Iranian Attack"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=AHc6DeRyEP8",
-        "embed_id": "AHc6DeRyEP8",
-        "title": "BREAKING: Iran reportedly wounds US troops in attack on American base",
-        "channel": "Fox News",
-        "duration": 155
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=elqD8fHiZl0",
-        "embed_id": "elqD8fHiZl0",
-        "title": "Iran strike hits Saudi base, US troops injured, AP reports | FOX 13 Seattle",
-        "channel": "FOX 13 Seattle",
-        "duration": 129
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=pGtj9U85bzw",
-        "embed_id": "pGtj9U85bzw",
-        "title": "Iranian strike wounds US troops and damages planes at Saudi air base, official says",
-        "channel": "Denver7",
-        "duration": 26
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=CLEESCSg2QA",
-        "embed_id": "CLEESCSg2QA",
-        "title": "U.S. troops injured by Iranian strike in Saudi Arabia: Report",
-        "channel": "LiveNOW from FOX",
-        "duration": 645
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=1TMdjrrrmws",
-        "embed_id": "1TMdjrrrmws",
-        "title": "Ten U.S. service members hurt in Iranian strike on Saudi air base",
-        "channel": "CBS TEXAS",
-        "duration": 42
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=oRZKpFFLrfw",
-        "embed_id": "oRZKpFFLrfw",
-        "title": "Iranian missile attack injures 10 U.S. service members in Saudi Arabia | KTVU",
-        "channel": "KTVU FOX 2 San Francisco",
-        "duration": 131
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=63Zt0cJzjj8",
-        "embed_id": "63Zt0cJzjj8",
-        "title": "Iranian missile strikes wound roughly a dozen U.S. service members",
-        "channel": "MSNBC"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=mofYJ9GsY5k",
-        "embed_id": "mofYJ9GsY5k",
-        "title": "10 US servicemembers wounded after Iranian missile attack",
-        "channel": "KGW News",
-        "duration": 28
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=e9z9vNqdC4Y",
-        "embed_id": "e9z9vNqdC4Y",
-        "title": "Iranian attack on Saudi base wounds at least 10 U.S. troops",
-        "channel": "KTLA 5",
-        "duration": 210
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=YX9kiuKIuVM",
-        "embed_id": "YX9kiuKIuVM",
-        "title": "Iranian attack on Saudi air base wounds at least 10 US troops",
-        "channel": "WKYC Channel 3",
-        "duration": 27
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/cnnbrk/status/2037720943749935488",
-        "embed_id": "2037720943749935488",
-        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN https://t.co/Z0tpt4",
-        "author": "cnnbrk"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/CNN/status/2037719897636041054",
-        "embed_id": "2037719897636041054",
-        "title": "At least 10 US service members were injured in an Iranian attack on Prince Sultan Air Base in Saudi Arabia, a US official told CNN. https://t.co/lG0vC",
-        "author": "CNN"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Currentreport1/status/2037676726827065358",
-        "embed_id": "2037676726827065358",
-        "title": "BREAKING:\n\nAn Iranian missile and drone attack on Prince Sultan air base in Saudi Arabia injured 10 US service members.\n\nAmong the injured 2 are in cr",
-        "author": "Currentreport1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/JenniferJJacobs/status/2037660745475760209",
-        "embed_id": "2037660745475760209",
-        "title": "The attack on US service members in Saudi Arabia consisted of Iranian missiles and drones. Two of the Americans were very seriously injured, eight wer",
-        "author": "JenniferJJacobs"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2037659229096448401",
-        "embed_id": "2037659229096448401",
-        "title": "10 US service members were injured in the Iranian missile and drone attack on Prince Sultan Air Base Saudi Arabia today.",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osinttechnical/status/2037654404766081155",
-        "embed_id": "2037654404766081155",
-        "title": "Ten American service members were wounded in an Iranian drone and missile attack on Prince Sultan Airbase earlier today-Multiple US and Arab officials",
-        "author": "Osinttechnical"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85572",
-        "embed_id": "intelslava/85572",
-        "title": "🇮🇷🇺🇸🇸🇦During the attack on Prince Sultan Air Base in Saudi Arabia, the Iranians destroyed at least three American KC-135 refueling aircraft.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ByChrisGordon/status/2037662227440775669",
-        "embed_id": "2037662227440775669",
-        "title": "Multiple American service members were wounded and some aircraft were damaged in an Iranian attack on Prince Sultan Air Base, Saudi Arabia, people fam",
-        "author": "ByChrisGordon"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1s4vpdv/march_26_2026/",
-        "embed_id": "1s4vpdv",
-        "title": "March 26, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TopCharacterTropes/comments/1s55zup/controversial_trope_story_is_a_hate_letter_at_its/",
-        "embed_id": "1s55zup",
-        "title": "[Controversial trope] Story is a hate letter at its core"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ForUnitedStates/comments/1s5iopv/us_service_members_injured_in_iranian_strike/",
-        "embed_id": "1s5iopv",
-        "title": "US service members injured in Iranian strike while Trump makes joke on stage"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s5kyv3/iranian_missile_strike_injures_10_us_service/",
-        "embed_id": "1s5kyv3",
-        "title": "Iranian missile strike injures 10 US service members, and destroys atleast 1 KC-135 refuelling, while damaging several others at Prince Sultan Airbase"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1s5r6mv/guys_are_the_saudis_cooked/",
-        "embed_id": "1s5r6mv",
-        "title": "guys, are the Saudis cooked"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/wallstreetbets/comments/1s63vis/built_a_taco_tracker_inside_my_trading_dashboard/",
-        "embed_id": "1s63vis",
-        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TroChuyenLinhTinh/comments/1s5odv9/thêm_10_lính_mỹ_bị_thương_trong_cuộc_tấn_công_của/",
-        "embed_id": "1s5odv9",
-        "title": "Thêm 10 Lính mỹ bị thương trong cuộc tấn công của Iran vào căn cứ không quân ở Saudi..."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/algotrading/comments/1s63tsh/built_a_taco_tracker_inside_my_trading_dashboard/",
-        "embed_id": "1s63tsh",
-        "title": "Built a TACO tracker inside my trading dashboard because TA is useless when the president is live-posting about bombing Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s6bhmg/the_left_has_not_given_iranians_outside_of_niac_a/",
-        "embed_id": "1s6bhmg",
-        "title": "The \"left\" has not given Iranians outside of NIAC a platform because dogmatic opposition to Trump/Israel takes precedence over Iranian experiences or "
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MilitaryPorn/comments/1s6j769/usaf_boeing_e3_sentry_awacs_reportedly_damaged_by/",
-        "embed_id": "1s6j769",
-        "title": "USAF Boeing E-3 Sentry AWACS Reportedly Damaged by Iranian Attack on Prince Sultan Air Base in Saudi Arabia [1500 × 1089]"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/islamichistory/comments/1s5vzh7/breaking_at_least_120_museums_and_historical/",
-        "embed_id": "1s5vzh7",
-        "title": "BREAKING: At least 120 museums and historical monuments have been damaged in recent US-Israeli attacks on Tehran, according to the Cultural Heritage C"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1s64ra6/i_22f_picked_up_my_progressing_down_syndrome/",
-        "embed_id": "1s64ra6",
-        "title": "I (22F) picked up my progressing down syndrome daughter (4F) from my ex-boyfriend's (23M) house distressed, aggressive and bald"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1s6fx0w/us_forces_at_saudi_air_base_suffer_iranian_attack/",
-        "embed_id": "1s6fx0w",
-        "title": "US Forces at Saudi Air Base Suffer Iranian Attack"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-28.png"
-  },
-  {
-    "topic": "Iran-US War Escalation",
-    "summary": "Iran has closed the Strait of Hormuz in response to a major military escalation by the United States, which launched 850 Tomahawk missiles at Iranian targets. This strategic waterway is vital for global oil transportation, and its closure poses a significant threat to international oil markets. The situation has intensified tensions in the Middle East, raising concerns about regional stability and the security of global energy supplies.",
+    "topic": "Iran War Escalation",
+    "summary": "Iran has issued a warning of a potential attack on the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the region continue to rise. The death toll in Tehran has exceeded 2,000, contributing to the heightened state of alert. In response, the United States has increased its military presence in the Middle East, deploying additional troops to counter potential threats and stabilize the situation.",
     "severity": "critical",
-    "detected_at": "2026-03-27T16:00:07.075Z",
-    "last_updated": "2026-03-29T11:01:51.441Z",
+    "detected_at": "2026-03-29T13:00:14.955Z",
+    "last_updated": "2026-03-29T13:00:14.955Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the escalation. The U.S. has vested interests in maintaining control over oil routes, while Iran's actions are partly driven by economic sanctions that have crippled its economy. The geopolitical chess game involves not just military but also economic leverage and influence over global energy markets.",
-    "social_summary": "Social media is ablaze with polarized reactions. Some users are sharing memes depicting the Strait of Hormuz as a 'chokehold' on the world's oil supply, while others are spreading conspiracy theories about the true motives behind the U.S. missile strikes. Hashtags like #OilWar and #MiddleEastCrisis are trending, with users debating the potential for a broader conflict.",
-    "image_prompt": "A dramatic editorial photo of a narrow, turbulent sea passage under a stormy sky, symbolizing the Strait of Hormuz. In the foreground, silhouetted oil tankers are halted, representing the global oil supply disruption.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. The U.S. military presence in the Middle East is often linked to securing energy resources and maintaining regional influence, while Iran's actions are partly driven by internal pressures and the need to assert its sovereignty against perceived Western aggression. The broader implications for global oil markets and international alliances are being overlooked in the immediate focus on military maneuvers.",
+    "social_summary": "Social media is ablaze with speculation and fear-mongering, with hashtags like #IranWar and #WWIII trending. Memes depicting the USS Abraham Lincoln as a sitting duck are circulating, alongside conspiracy theories suggesting ulterior motives behind the U.S. troop deployment. Some users are calling for peace and diplomacy, while others are stoking nationalist sentiments on both sides.",
+    "image_prompt": "A dramatic sunset over a tense Middle Eastern landscape, with silhouettes of military ships on the horizon and a looming storm in the sky, symbolizing the brewing conflict and uncertainty.",
     "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
-        "embed_id": "Jd8CM_qZv1o",
-        "title": "Trump escalates Iran war threats | Civilian sites hit, no end in sight",
-        "duration": 1436
+        "url": "https://www.youtube.com/watch?v=lYxuUduMN70",
+        "embed_id": "lYxuUduMN70",
+        "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
+        "duration": 173
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
-        "embed_id": "GiNqawXBaF8",
-        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
-        "duration": 404
+        "url": "https://www.youtube.com/watch?v=5zSdm10QpNI",
+        "embed_id": "5zSdm10QpNI",
+        "title": "Iran War Escalation: Houthis Join And Threaten To Close The Strait Of Mandeb | Richard Spencer",
+        "duration": 539
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "duration": 1114
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
+        "embed_id": "zufp_HAIL-M",
+        "title": "Iran war: Israel warns attacks will 'escalate'",
+        "duration": 172
       },
       {
         "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
         "embed_id": "zvkngF-o5p8",
         "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
-        "duration": 596
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
-        "embed_id": "FE_U72r9nqk",
-        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
-        "duration": 508
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
-        "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining & attack on US troops means",
-        "duration": 1426
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "duration": 1470
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
-        "embed_id": "O8eoscTyjio",
-        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
-        "duration": 1567
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/swilkinsonbc/status/2037649896627421406",
-        "embed_id": "2037649896627421406",
-        "title": "The ‘war of aggression’ on Iran launched by America &amp; the israelis is going badly, &amp; the White House is scrambling to control the narrative ht",
-        "author": "swilkinsonbc"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/karlykingsley/status/2037804103426875566",
-        "embed_id": "2037804103426875566",
-        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
-        "author": "karlykingsley"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2037799081230447019",
-        "embed_id": "2037799081230447019",
-        "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
-        "author": "FalconUpdatesHQ"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
-        "embed_id": "2038023683092976041",
-        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
-        "author": "FurkanGozukara"
+        "duration": 595
       },
       {
         "platform": "x",
@@ -1454,94 +55,18 @@
         "author": "DailyMail"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s55nil/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55nil",
-        "title": "Loss of control in the Gulf | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable, catastrophic esc"
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2038054353739624731",
+        "embed_id": "2038054353739624731",
+        "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
+        "author": "MOSSADil"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/europeanunion/comments/1s4oyn3/why_are_europeans_paying_for_a_us_israeli_war_we/",
-        "embed_id": "1s4oyn3",
-        "title": "Why are Europeans paying for a U.S - Israeli war we did not choose?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
-        "embed_id": "1s4ji7r",
-        "title": "MIDDLE EAST UPDATE"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LateStageCapitalism/comments/1s55j1n/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55j1n",
-        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55iyj",
-        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s5eafl/do_we_realise_how_serious_this_is/",
-        "embed_id": "1s5eafl",
-        "title": "Do we realise how serious this is?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s56siu/a_contrarian_take/",
-        "embed_id": "1s56siu",
-        "title": "A contrarian take."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s5p1dy/us_may_deploy_up_to_17000_troops_near_iran_as_war/",
-        "embed_id": "1s5p1dy",
-        "title": "US may deploy up to 17,000 troops near Iran as war enters new phase — WSJ"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskReddit/comments/1s5exnm/what_would_happen_if_the_us_found_out_members_of/",
-        "embed_id": "1s5exnm",
-        "title": "What would happen if the US found out members of the Trump administration/family bought stock market puts prior to the Iran war?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
-        "embed_id": "1s5rdsx",
-        "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1s5h1ed/statement_from_yemeni_armed_forces_looks_like/",
-        "embed_id": "1s5h1ed",
-        "title": "Statement from Yemeni Armed Forces: looks like they are continuing to standby for now, but signaling readiness to join in if the situation escalates."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/singaporefi/comments/1s5w4sz/2026_iran_war_oil_shock_how_im_thinking_about/",
-        "embed_id": "1s5w4sz",
-        "title": "2026 Iran War &amp; Oil Shock: How I'm thinking about this uncertainty"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s67xqs",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
-        "embed_id": "1s5zzqo",
-        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/oil/comments/1s67q0o/goldman_sachs_scenarios/",
-        "embed_id": "1s67q0o",
-        "title": "Goldman Sachs scenarios."
+        "platform": "x",
+        "url": "https://x.com/War_Radar2/status/2037942226173780093",
+        "embed_id": "2037942226173780093",
+        "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
+        "author": "War_Radar2"
       },
       {
         "platform": "reddit",
@@ -1551,91 +76,85 @@
       },
       {
         "platform": "reddit",
+        "url": "https://reddit.com/r/energy/comments/1s64187/the_iran_war_could_drag_into_2027_analyst_warns/",
+        "embed_id": "1s64187",
+        "title": "The Iran war could drag into 2027, analyst warns. The economic fallout is just getting started. As the conflict reaches the four-week mark, more escal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
+        "embed_id": "1s67xqs",
+        "title": "US recession odds rise as Iran war escalates"
+      },
+      {
+        "platform": "reddit",
         "url": "https://reddit.com/r/stupidpol/comments/1s6l12y/pentagon_prepares_for_major_escalation_in_iran/",
         "embed_id": "1s6l12y",
         "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
+        "embed_id": "1s5zzqo",
+        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/brisbane/comments/1s6h5b7/should_qld_cancel_the_olympics/",
+        "embed_id": "1s6h5b7",
+        "title": "Should QLD cancel the Olympics"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NoSpinMedia/comments/1s61i1l/iran_strike_hits_us_base_in_saudi_arabia_12/",
+        "embed_id": "1s61i1l",
+        "title": "🪖 Iran Strike Hits U.S. Base in Saudi Arabia: 12 troops wounded as war enters second month 👇"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
+        "embed_id": "1s60ao7",
+        "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=Jd8CM_qZv1o",
-        "embed_id": "Jd8CM_qZv1o",
-        "title": "Trump escalates Iran war threats | Civilian sites hit, no end in sight",
+        "url": "https://www.youtube.com/watch?v=lYxuUduMN70",
+        "embed_id": "lYxuUduMN70",
+        "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
         "channel": "Al Jazeera English",
-        "duration": 1436
+        "duration": 173
       },
       {
-        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
-        "embed_id": "GiNqawXBaF8",
-        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
-        "channel": "Fox News",
-        "duration": 404
+        "url": "https://www.youtube.com/watch?v=5zSdm10QpNI",
+        "embed_id": "5zSdm10QpNI",
+        "title": "Iran War Escalation: Houthis Join And Threaten To Close The Strait Of Mandeb | Richard Spencer",
+        "channel": "Times News",
+        "duration": 539
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "channel": "Amanpour and Company",
+        "duration": 1114
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
+        "embed_id": "zufp_HAIL-M",
+        "title": "Iran war: Israel warns attacks will 'escalate'",
+        "channel": "FOX 9 Minneapolis-St. Paul",
+        "duration": 172
       },
       {
         "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
         "embed_id": "zvkngF-o5p8",
         "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
         "channel": "NewsNation",
-        "duration": 596
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=FE_U72r9nqk",
-        "embed_id": "FE_U72r9nqk",
-        "title": "Iran wants to 'horizontally escalate' war at great cost to Trump: Turnbull | ABC NEWS",
-        "channel": "ABC News (Australia)",
-        "duration": 508
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
-        "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining & attack on US troops means",
-        "channel": "CNN",
-        "duration": 1426
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "channel": "Al Jazeera English",
-        "duration": 1470
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=O8eoscTyjio",
-        "embed_id": "O8eoscTyjio",
-        "title": "Iran–USA–Israel: Escalation in the Middle East – what comes after the bombs? | To the Point",
-        "channel": "DW News",
-        "duration": 1567
+        "duration": 595
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/swilkinsonbc/status/2037649896627421406",
-        "embed_id": "2037649896627421406",
-        "title": "The ‘war of aggression’ on Iran launched by America &amp; the israelis is going badly, &amp; the White House is scrambling to control the narrative ht",
-        "author": "swilkinsonbc"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/karlykingsley/status/2037804103426875566",
-        "embed_id": "2037804103426875566",
-        "title": "The US/Israel struck nuclear power plants, water plants, and steel factories in Iran breaking their 10 day deadline, the Houthis have checked into the",
-        "author": "karlykingsley"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2037799081230447019",
-        "embed_id": "2037799081230447019",
-        "title": "BREAKING 🚨\n\n🇺🇸 🇮🇱 🇮🇷 🇾🇪 Houthis in Yemen have officially entered the war on Iran’s side against Israel and the US.\n\n🚀 They’ve launched missi",
-        "author": "FalconUpdatesHQ"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
-        "embed_id": "2038023683092976041",
-        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
-        "author": "FurkanGozukara"
-      },
       {
         "platform": "x",
         "url": "https://x.com/DailyMail/status/2038091162762854781",
@@ -1644,94 +163,18 @@
         "author": "DailyMail"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s55nil/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55nil",
-        "title": "Loss of control in the Gulf | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable, catastrophic esc"
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2038054353739624731",
+        "embed_id": "2038054353739624731",
+        "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
+        "author": "MOSSADil"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/europeanunion/comments/1s4oyn3/why_are_europeans_paying_for_a_us_israeli_war_we/",
-        "embed_id": "1s4oyn3",
-        "title": "Why are Europeans paying for a U.S - Israeli war we did not choose?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Edexcel/comments/1s4ji7r/middle_east_update/",
-        "embed_id": "1s4ji7r",
-        "title": "MIDDLE EAST UPDATE"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LateStageCapitalism/comments/1s55j1n/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55j1n",
-        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/lostgeneration/comments/1s55iyj/loss_of_control_in_the_gulf_the_us_can_only_end/",
-        "embed_id": "1s55iyj",
-        "title": "Loss of control in the Gulf? | The US can only end the war against Iran at the cost of a strategic defeat – therefore, uncontrollable escalation is lo"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s5eafl/do_we_realise_how_serious_this_is/",
-        "embed_id": "1s5eafl",
-        "title": "Do we realise how serious this is?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s56siu/a_contrarian_take/",
-        "embed_id": "1s56siu",
-        "title": "A contrarian take."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s5p1dy/us_may_deploy_up_to_17000_troops_near_iran_as_war/",
-        "embed_id": "1s5p1dy",
-        "title": "US may deploy up to 17,000 troops near Iran as war enters new phase — WSJ"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskReddit/comments/1s5exnm/what_would_happen_if_the_us_found_out_members_of/",
-        "embed_id": "1s5exnm",
-        "title": "What would happen if the US found out members of the Trump administration/family bought stock market puts prior to the Iran war?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1s5rdsx/iran_vs_usisrael_war_escalates_1900_dead_us/",
-        "embed_id": "1s5rdsx",
-        "title": "Iran vs US-Israel War Escalates: 1900+ Dead, US Troops Hit, Oil Crisis Looming — Is This Turning Into a Full-Scale Middle East War?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1s5h1ed/statement_from_yemeni_armed_forces_looks_like/",
-        "embed_id": "1s5h1ed",
-        "title": "Statement from Yemeni Armed Forces: looks like they are continuing to standby for now, but signaling readiness to join in if the situation escalates."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/singaporefi/comments/1s5w4sz/2026_iran_war_oil_shock_how_im_thinking_about/",
-        "embed_id": "1s5w4sz",
-        "title": "2026 Iran War &amp; Oil Shock: How I'm thinking about this uncertainty"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s67xqs",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
-        "embed_id": "1s5zzqo",
-        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/oil/comments/1s67q0o/goldman_sachs_scenarios/",
-        "embed_id": "1s67q0o",
-        "title": "Goldman Sachs scenarios."
+        "platform": "x",
+        "url": "https://x.com/War_Radar2/status/2037942226173780093",
+        "embed_id": "2037942226173780093",
+        "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
+        "author": "War_Radar2"
       },
       {
         "platform": "reddit",
@@ -1741,11 +184,47 @@
       },
       {
         "platform": "reddit",
+        "url": "https://reddit.com/r/energy/comments/1s64187/the_iran_war_could_drag_into_2027_analyst_warns/",
+        "embed_id": "1s64187",
+        "title": "The Iran war could drag into 2027, analyst warns. The economic fallout is just getting started. As the conflict reaches the four-week mark, more escal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
+        "embed_id": "1s67xqs",
+        "title": "US recession odds rise as Iran war escalates"
+      },
+      {
+        "platform": "reddit",
         "url": "https://reddit.com/r/stupidpol/comments/1s6l12y/pentagon_prepares_for_major_escalation_in_iran/",
         "embed_id": "1s6l12y",
         "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
+        "embed_id": "1s5zzqo",
+        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/brisbane/comments/1s6h5b7/should_qld_cancel_the_olympics/",
+        "embed_id": "1s6h5b7",
+        "title": "Should QLD cancel the Olympics"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NoSpinMedia/comments/1s61i1l/iran_strike_hits_us_base_in_saudi_arabia_12/",
+        "embed_id": "1s61i1l",
+        "title": "🪖 Iran Strike Hits U.S. Base in Saudi Arabia: 12 troops wounded as war enters second month 👇"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
+        "embed_id": "1s60ao7",
+        "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
       }
     ],
-    "image_file": "/images/breaking_2026-03-27.png"
+    "image_file": "/images/breaking_2026-03-29.png"
   }
 ]
