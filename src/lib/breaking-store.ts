@@ -14,9 +14,9 @@ export async function getBreakingData(): Promise<any[] | null> {
     const data = await resp.json();
     const items = Array.isArray(data) ? data : [data];
 
-    // Filter out expired (>12h)
+    // Filter out expired (>12h from detection)
     const valid = items.filter(
-      (s: any) => Date.now() - new Date(s.last_updated).getTime() < 12 * 60 * 60 * 1000
+      (s: any) => Date.now() - new Date(s.detected_at).getTime() < 12 * 60 * 60 * 1000
     );
 
     return valid.length > 0 ? valid : null;
