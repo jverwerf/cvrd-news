@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran War Escalation",
-    "summary": "Iran has threatened to attack the USS Abraham Lincoln, a U.S. aircraft carrier, amidst escalating tensions in the Middle East. The situation has intensified following a death toll in Tehran surpassing 2,000, prompting the United States to bolster its military presence in the region. Additional U.S. troops have been deployed to counter potential threats and stabilize the volatile situation.",
+    "summary": "Iran has issued a threat against the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the Middle East continue to rise. This development follows a significant death toll in Tehran, which has exceeded 2,000, leading the United States to increase its military presence in the region. The U.S. has deployed additional troops to address potential threats and attempt to stabilize the situation.",
     "severity": "critical",
     "detected_at": "2026-03-29T13:00:14.955Z",
-    "last_updated": "2026-03-29T15:00:54.020Z",
+    "last_updated": "2026-03-29T17:01:02.885Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations driving these tensions. Iran's economy is under severe strain due to sanctions, which be influencing its aggressive posturing. Meanwhile, the U.S. military-industrial complex benefits from increased military deployments, which are often justified by regional instability.",
-    "social_summary": "Social media is ablaze with polarized opinions, with some users expressing support for U.S. military actions as necessary for global security, while others criticize it as imperialistic aggression. Memes mocking the situation as a 'game of battleships' are circulating, alongside conspiracy theories suggesting ulterior motives behind the U.S. troop deployment.",
-    "image_prompt": "A dramatic sunset over a vast ocean, with a lone aircraft carrier silhouetted against the horizon, symbolizing tension and uncertainty in international waters.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. Iran's threats be a strategic move to rally domestic support amidst internal unrest, while the U.S. military buildup is influenced by defense contractors and geopolitical interests in maintaining influence over Middle Eastern oil routes. The broader implications of these actions on global oil prices and international relations are largely ignored.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for a strong U.S. military response, while others criticize the potential for another prolonged conflict in the Middle East. Memes and conspiracy theories abound, suggesting ulterior motives behind the U.S. troop deployment, including accusations of warmongering for economic gain. Hashtags like #NoMoreWars and #DefendTheCarrier are trending, reflecting the divided public sentiment.",
+    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing looming conflict and tension on the high seas.",
     "sources": [],
     "clips": [
       {
@@ -18,13 +18,6 @@
         "embed_id": "lYxuUduMN70",
         "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
         "duration": 173
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=5zSdm10QpNI",
-        "embed_id": "5zSdm10QpNI",
-        "title": "Iran War Escalation: Houthis Join And Threaten To Close The Strait Of Mandeb | Richard Spencer",
-        "duration": 539
       },
       {
         "platform": "youtube",
@@ -48,6 +41,19 @@
         "duration": 1470
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=IZwlgroN7-s",
+        "embed_id": "IZwlgroN7-s",
+        "title": "The Options US And Iran Each Have 'Creates A Lot Of Room' For More Escalation In The War: Expert"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
+        "embed_id": "zufp_HAIL-M",
+        "title": "Iran war: Israel warns attacks will 'escalate'",
+        "duration": 172
+      },
+      {
         "platform": "x",
         "url": "https://x.com/DailyMail/status/2038091162762854781",
         "embed_id": "2038091162762854781",
@@ -60,13 +66,6 @@
         "embed_id": "2038054353739624731",
         "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
         "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/War_Radar2/status/2037942226173780093",
-        "embed_id": "2037942226173780093",
-        "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
-        "author": "War_Radar2"
       },
       {
         "platform": "x",
@@ -129,6 +128,12 @@
         "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
         "embed_id": "1s60ao7",
         "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
+        "embed_id": "1s6kv0i",
+        "title": "US recession odds rise as Iran war escalates"
       }
     ],
     "youtube_videos": [
@@ -138,13 +143,6 @@
         "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
         "channel": "Al Jazeera English",
         "duration": 173
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=5zSdm10QpNI",
-        "embed_id": "5zSdm10QpNI",
-        "title": "Iran War Escalation: Houthis Join And Threaten To Close The Strait Of Mandeb | Richard Spencer",
-        "channel": "Times News",
-        "duration": 539
       },
       {
         "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
@@ -166,6 +164,19 @@
         "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
         "channel": "Al Jazeera English",
         "duration": 1470
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IZwlgroN7-s",
+        "embed_id": "IZwlgroN7-s",
+        "title": "The Options US And Iran Each Have 'Creates A Lot Of Room' For More Escalation In The War: Expert",
+        "channel": "Forbes Breaking News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
+        "embed_id": "zufp_HAIL-M",
+        "title": "Iran war: Israel warns attacks will 'escalate'",
+        "channel": "FOX 9 Minneapolis-St. Paul",
+        "duration": 172
       }
     ],
     "social_clips": [
@@ -182,13 +193,6 @@
         "embed_id": "2038054353739624731",
         "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
         "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/War_Radar2/status/2037942226173780093",
-        "embed_id": "2037942226173780093",
-        "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
-        "author": "War_Radar2"
       },
       {
         "platform": "x",
@@ -251,6 +255,12 @@
         "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
         "embed_id": "1s60ao7",
         "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
+        "embed_id": "1s6kv0i",
+        "title": "US recession odds rise as Iran war escalates"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
