@@ -149,12 +149,14 @@ export function StoryPage({ story, date, otherStories }: {
               <span className="text-[16px] font-bold text-white">𝕏</span>
               <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]"></span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div className="grid grid-cols-4 gap-2">
               {xClips.filter(c => !(c as any).duration).map((c, i) => (
                 c.embed_id ? (
-                  <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 320 }}>
-                    <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                      className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
+                  <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
+                    <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                        style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                    </div>
                   </div>
                 ) : null
               ))}

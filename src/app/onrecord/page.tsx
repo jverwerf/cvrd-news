@@ -139,6 +139,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
 
 const ALL_CATS = [
   { label: 'On Record', slug: '/onrecord' },
+  { label: 'Timeline', slug: '/timeline' },
   { label: 'Daily Pick', slug: '/' },
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },

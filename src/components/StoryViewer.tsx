@@ -278,11 +278,13 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-[16px] font-bold text-white">𝕏</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  <div className="grid grid-cols-4 gap-2">
                     {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).map((c: any, i: number) => (
-                      <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 160 }}>
-                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                          className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
+                      <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
+                        <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                            style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -639,11 +641,13 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[16px] font-bold text-white">𝕏</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="grid grid-cols-4 gap-2">
                 {visibleTweets.map((c, i) => (
-                  <div key={i} className="rounded-md overflow-hidden relative" style={{ background: '#1e2a3a', height: 160 }}>
-                    <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                      className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
+                  <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
+                    <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                        style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                    </div>
                   </div>
                 ))}
               </div>
