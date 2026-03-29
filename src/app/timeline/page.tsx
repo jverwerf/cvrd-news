@@ -1,47 +1,12 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { StoryPage } from "@/components/StoryPage";
+import { getDailyGaps } from "@/lib/data";
+import { getTimelineThreads } from "@/lib/timeline-data";
+import { LiveBanner } from "@/components/LiveBanner";
+import { TimelineContent } from "./TimelineClient";
 
-export const dynamic = 'force-dynamic';
-
-async function getStory(slug: string) {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  try {
-    const resp = await fetch(`${baseUrl}/api/story/${slug}`, { cache: 'no-store' });
-    if (!resp.ok) return null;
-    return await resp.json();
-  } catch {
-    return null;
-  }
-}
-
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const result = await getStory(slug);
-  if (!result) return {};
-
-  const { story } = result;
-  const description = (story.summary || '').slice(0, 160);
-
-  return {
-    title: story.topic,
-    description,
-    openGraph: {
-      title: `${story.topic} | CVRD News`,
-      description: (story.summary || '').slice(0, 200),
-      type: 'article',
-      images: story.image_file ? [{ url: story.image_file }] : ['/logo3.png'],
-      url: `https://cvrdnews.com/story/${slug}`,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: story.topic,
-      description,
-      images: story.image_file ? [story.image_file] : ['/logo3.png'],
-    },
-    alternates: { canonical: `/story/${slug}` },
-  };
-}
+export const metadata = {
+  title: "Timeline — Catch Me Up",
+  description: "Track ongoing stories across days. See how narratives evolve over time with video evidence.",
+};
 
 const ALL_CATS = [
   { label: 'On Record', slug: '/onrecord' },
@@ -54,27 +19,52 @@ const ALL_CATS = [
   { label: 'Sports', slug: '/sports' },
 ];
 
-export default async function StoryRoute({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const result = await getStory(slug);
-  if (!result) notFound();
+async function hasBreakingNews(): Promise<boolean> {
+  try {
+    const { hasBreakingData } = await import('@/lib/breaking-store');
+    return await hasBreakingData();
+  } catch { return false; }
+}
 
-  const { story, date, otherStories } = result;
+export default async function TimelinePage() {
+  const [data, threadData, isBreaking] = await Promise.all([
+    getDailyGaps(),
+    getTimelineThreads(),
+    hasBreakingNews(),
+  ]);
+
+  const allStories = data?.top_narratives || [];
+  const top10 = allStories.filter(s => s.is_top_story).length >= 10
+    ? allStories.filter(s => s.is_top_story)
+    : allStories.slice(0, 10);
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+
+      {/* NAV + BANNER */}
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         <div className="relative" style={{ background: '#1e2a3a' }}>
           <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
             <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
+              {isBreaking && (
+                <a href="/breaking"
+                  className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors"
+                  style={{ background: 'rgba(220,38,38,0.15)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)' }}>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full mr-1 animate-pulse" style={{ background: '#ef4444' }} />
+                  Breaking
+                </a>
+              )}
               {ALL_CATS.map((cat) => (
                 <a key={cat.slug} href={cat.slug}
                   className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
-                  style={{ background: 'transparent', color: 'rgba(255,255,255,0.85)' }}>
+                  style={{
+                    background: cat.slug === '/timeline' ? 'rgba(255,255,255,0.2)' : 'transparent',
+                    color: cat.slug === '/timeline' ? '#fff' : 'rgba(255,255,255,0.85)',
+                  }}>
                   {cat.label}
                 </a>
               ))}
-              {/* Icons pill — inline after categories */}
+              {/* Icons pill */}
               <div className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
                 style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
                 <a href="/tv" className="flex items-center" style={{ color: 'rgba(255,255,255,0.5)', transform: 'translateY(-1px)' }}>
@@ -91,6 +81,8 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
             </div>
           </div>
         </div>
+
+        {data && <LiveBanner stories={top10} liveData={data.live_data} />}
       </div>
 
       {/* CVRD puzzle logo */}
@@ -114,8 +106,23 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
         </div>
       </div>
 
-      <StoryPage story={story} date={date} otherStories={otherStories} />
+      {/* CONTENT */}
+      {!threadData || threadData.threads.length === 0 ? (
+        <div className="flex items-center justify-center py-32">
+          <div className="text-center">
+            <p className="text-[#999] text-[15px] mb-2">No active threads yet.</p>
+            <p className="text-[#666] text-[12px]">Threads appear when stories span multiple days.</p>
+            <a href="/" className="inline-block mt-6 px-4 py-2 text-[12px] font-semibold rounded-md"
+              style={{ background: '#253545', color: '#daa520', border: '1px solid rgba(184,134,11,0.3)' }}>
+              Back to today's stories
+            </a>
+          </div>
+        </div>
+      ) : (
+        <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} />
+      )}
 
+      {/* FOOTER */}
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
         <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
