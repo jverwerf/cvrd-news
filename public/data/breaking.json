@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran War Escalation",
-    "summary": "Iran has issued a warning of a potential attack on the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the region continue to rise. The death toll in Tehran has exceeded 2,000, contributing to the heightened state of alert. In response, the United States has increased its military presence in the Middle East, deploying additional troops to counter potential threats and stabilize the situation.",
+    "summary": "Iran has threatened to attack the USS Abraham Lincoln, a U.S. aircraft carrier, amidst escalating tensions in the Middle East. The situation has intensified following a death toll in Tehran surpassing 2,000, prompting the United States to bolster its military presence in the region. Additional U.S. troops have been deployed to counter potential threats and stabilize the volatile situation.",
     "severity": "critical",
     "detected_at": "2026-03-29T13:00:14.955Z",
-    "last_updated": "2026-03-29T13:00:14.955Z",
+    "last_updated": "2026-03-29T15:00:54.020Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. The U.S. military presence in the Middle East is often linked to securing energy resources and maintaining regional influence, while Iran's actions are partly driven by internal pressures and the need to assert its sovereignty against perceived Western aggression. The broader implications for global oil markets and international alliances are being overlooked in the immediate focus on military maneuvers.",
-    "social_summary": "Social media is ablaze with speculation and fear-mongering, with hashtags like #IranWar and #WWIII trending. Memes depicting the USS Abraham Lincoln as a sitting duck are circulating, alongside conspiracy theories suggesting ulterior motives behind the U.S. troop deployment. Some users are calling for peace and diplomacy, while others are stoking nationalist sentiments on both sides.",
-    "image_prompt": "A dramatic sunset over a tense Middle Eastern landscape, with silhouettes of military ships on the horizon and a looming storm in the sky, symbolizing the brewing conflict and uncertainty.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations driving these tensions. Iran's economy is under severe strain due to sanctions, which be influencing its aggressive posturing. Meanwhile, the U.S. military-industrial complex benefits from increased military deployments, which are often justified by regional instability.",
+    "social_summary": "Social media is ablaze with polarized opinions, with some users expressing support for U.S. military actions as necessary for global security, while others criticize it as imperialistic aggression. Memes mocking the situation as a 'game of battleships' are circulating, alongside conspiracy theories suggesting ulterior motives behind the U.S. troop deployment.",
+    "image_prompt": "A dramatic sunset over a vast ocean, with a lone aircraft carrier silhouetted against the horizon, symbolizing tension and uncertainty in international waters.",
     "sources": [],
     "clips": [
       {
@@ -35,17 +35,17 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
-        "embed_id": "zufp_HAIL-M",
-        "title": "Iran war: Israel warns attacks will 'escalate'",
-        "duration": 172
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
         "embed_id": "zvkngF-o5p8",
         "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
         "duration": 595
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
+        "embed_id": "ZUwSExAdw34",
+        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+        "duration": 1470
       },
       {
         "platform": "x",
@@ -67,6 +67,20 @@
         "embed_id": "2037942226173780093",
         "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
         "author": "War_Radar2"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
+        "embed_id": "2038240220894605543",
+        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
+        "author": "Tiju0Prakash"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
+        "embed_id": "2038023683092976041",
+        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
+        "author": "FurkanGozukara"
       },
       {
         "platform": "reddit",
@@ -140,18 +154,18 @@
         "duration": 1114
       },
       {
-        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
-        "embed_id": "zufp_HAIL-M",
-        "title": "Iran war: Israel warns attacks will 'escalate'",
-        "channel": "FOX 9 Minneapolis-St. Paul",
-        "duration": 172
-      },
-      {
         "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
         "embed_id": "zvkngF-o5p8",
         "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
         "channel": "NewsNation",
         "duration": 595
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
+        "embed_id": "ZUwSExAdw34",
+        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+        "channel": "Al Jazeera English",
+        "duration": 1470
       }
     ],
     "social_clips": [
@@ -175,6 +189,20 @@
         "embed_id": "2037942226173780093",
         "title": "BREAKING: 🇺🇸🇮🇷 The U.S. Central Command confirms an amphibious warship carrying troops has entered its area of responsibility, signaling a potenti",
         "author": "War_Radar2"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
+        "embed_id": "2038240220894605543",
+        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
+        "author": "Tiju0Prakash"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
+        "embed_id": "2038023683092976041",
+        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
+        "author": "FurkanGozukara"
       },
       {
         "platform": "reddit",
