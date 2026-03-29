@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { TimelineThread, ThreadEntry } from "@/lib/timeline-data";
+import type { TimelineThread, ThreadEntry, TodayLastYearData } from "@/lib/timeline-data";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -23,7 +23,11 @@ function formatDate(dateStr: string): string {
 
 function formatDateDay(dateStr: string): string {
   const d = new Date(dateStr + 'T12:00:00');
-  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+}
+
+function getYear(dateStr: string): string {
+  return dateStr.substring(0, 4);
 }
 
 function formatDateFull(dateStr: string): string {
@@ -42,7 +46,14 @@ function categoryColor(cat: string): string {
   }
 }
 
-export function TimelineContent({ threads, generatedAt }: { threads: TimelineThread[]; generatedAt: string }) {
+const TIMELINE_SCROLL_CSS = `
+.timeline-scroll { overflow-x: scroll !important; }
+.timeline-scroll::-webkit-scrollbar { height: 4px; }
+.timeline-scroll::-webkit-scrollbar-track { background: transparent; }
+.timeline-scroll::-webkit-scrollbar-thumb { background: #daa520; border-radius: 2px; }
+`;
+
+export function TimelineContent({ threads, generatedAt, lastYear }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null }) {
   const [filter, setFilter] = useState('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -53,6 +64,8 @@ export function TimelineContent({ threads, generatedAt }: { threads: TimelineThr
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{ __html: TIMELINE_SCROLL_CSS }} />
+
       {/* MOST RECENT STORIES — exact same layout as main page "Today's Top Stories" */}
       <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
@@ -110,6 +123,8 @@ export function TimelineContent({ threads, generatedAt }: { threads: TimelineThr
           )}
         </div>
 
+        {/* TODAY LAST YEAR — rendered outside this container */}
+
         <div className="space-y-4">
 
         {/* CATEGORY FILTER — only show categories that have threads */}
@@ -140,6 +155,7 @@ export function TimelineContent({ threads, generatedAt }: { threads: TimelineThr
             thread={thread}
             isExpanded={expandedId === thread.id}
             onToggle={() => setExpandedId(expandedId === thread.id ? null : thread.id)}
+            onHover={() => setExpandedId(thread.id)}
           />
         ))}
 
@@ -151,16 +167,75 @@ export function TimelineContent({ threads, generatedAt }: { threads: TimelineThr
         </div>
       </div>
 
+      {/* LAST YEAR TODAY */}
+      {lastYear && lastYear.summary && (() => {
+        const lastYearDate = new Date(lastYear.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        const shareUrl = 'https://cvrdnews.com/timeline';
+        const shareText = `Last Year Today — ${lastYearDate}\n\n${lastYear.summary.substring(0, 120)}...`;
+        return (
+          <>
+            {/* White banner */}
+            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-8" style={{ background: '#f5f5f5' }}>
+              <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Last Year Today</span>
+              <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+                {lastYearDate}
+              </h2>
+            </div>
+
+            {/* Content in card */}
+            <div className="px-6 md:px-12 pt-5 pb-8">
+              <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {/* Summary */}
+                <div className="p-5 pb-4">
+                  <p className="text-[14px] text-[#ccc] leading-[1.8]">{lastYear.summary}</p>
+                </div>
+
+                {/* Videos — inside card */}
+                {lastYear.videos.length > 0 && (
+                  <div className="px-5 pb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {lastYear.videos.map((v, i) => (
+                        <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <div style={{ aspectRatio: '16/9' }}>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${v.id}`}
+                              className="w-full h-full"
+                              style={{ border: 'none' }}
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="p-2.5">
+                            <p className="text-[11px] text-white font-medium leading-snug line-clamp-2">{v.title}</p>
+                            <span className="text-[9px] text-[#555] mt-0.5 block">{v.channel}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Share row */}
+                <div className="px-5 pb-4">
+                  <ShareBar text={shareText} url={shareUrl} />
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })()}
+
     </>
   );
 }
 
 // ── Thread Card ──
 
-function ThreadCard({ thread, isExpanded, onToggle }: {
+function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   thread: TimelineThread;
   isExpanded: boolean;
   onToggle: () => void;
+  onHover: () => void;
 }) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
 
@@ -193,9 +268,6 @@ function ThreadCard({ thread, isExpanded, onToggle }: {
   const mainYtVideo = bestVideoId && bestVideoPlatform === 'youtube'
     ? (allYtVids.find(v => v.embed_id === bestVideoId) || allYtVids[0] || null)
     : allYtVids[0] || null;
-  const mainSocialClip = bestVideoId && bestVideoPlatform !== 'youtube'
-    ? (allSocialClips.find(c => c.embed_id === bestVideoId) || null)
-    : allSocialClips.find(c => c.embed_id && (c.duration || c.platform === 'tiktok' || c.platform === 'telegram')) || null;
 
   const xClips = allSocialClips.filter(c => c.platform === 'x' && c.embed_id);
   const allSources = selectedEntries.flatMap(e => e.sources || []);
@@ -204,7 +276,7 @@ function ThreadCard({ thread, isExpanded, onToggle }: {
   const sources = allSources.filter(s => { if (seenUrls.has(s.url)) return false; seenUrls.add(s.url); return true; });
 
   return (
-    <article className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+    <article className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
 
       {/* COLLAPSED — image left, content right */}
       <button onClick={onToggle} className="w-full text-left cursor-pointer group">
@@ -265,36 +337,39 @@ function ThreadCard({ thread, isExpanded, onToggle }: {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="px-5 pt-2 pb-5">
+            <div className="pt-2 pb-5">
 
               {/* HOW DID WE GET HERE */}
-              <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">How Did We Get Here</span>
-              <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                <p className="text-[13px] text-[#ccc] leading-[1.7] italic">{thread.summary}</p>
+              <div className="px-5">
+                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">How Did We Get Here</span>
+                <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                  <p className="text-[13px] text-[#ccc] leading-[1.7] italic">{thread.summary}</p>
+                </div>
+                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
               </div>
 
-              {/* ═══ HORIZONTAL TIMELINE ═══ */}
-              <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
-              <div className="rounded-lg p-4 mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+              {/* ═══ HORIZONTAL TIMELINE — scrollable independently ═══ */}
+              <div className="mx-5 rounded-lg p-4 mb-5 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <HorizontalTimeline
                   grouped={grouped}
                   dates={dates}
                   selectedDate={selectedDate}
                   onSelect={setSelectedDate}
                 />
+              </div>
 
-                {/* Summary + video below thumbnails */}
+              {/* Summary + video — outside scroll container */}
+              <div className="px-5">
                 {selectedEntries.length > 0 && (
                   <>
-                    <div className="mt-3 pt-3" style={{ borderTop: '1px solid #2a3a4a' }}>
+                    <div className="mb-4">
                       {[...new Set(selectedEntries.map(e => e.summary))].map((s, i) => (
                         <p key={i} className="text-[13px] text-[#bbb] leading-[1.7] mb-2 last:mb-0">{s}</p>
                       ))}
                     </div>
 
-                    {/* Video centered below summary */}
                     {mainYtVideo && (
-                      <div className="mt-3 pt-3 flex justify-center" style={{ borderTop: '1px solid #2a3a4a' }}>
+                      <div className="flex justify-center mb-4">
                         <div className="w-full max-w-[560px] rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
                           <iframe
                             key={mainYtVideo.embed_id}
@@ -302,18 +377,6 @@ function ThreadCard({ thread, isExpanded, onToggle }: {
                             className="w-full h-full"
                             style={{ border: 'none' }}
                             allowFullScreen
-                          />
-                        </div>
-                      </div>
-                    )}
-                    {!mainYtVideo && mainSocialClip?.platform === 'tiktok' && mainSocialClip.embed_id && (
-                      <div className="mt-3 pt-3 flex justify-center" style={{ borderTop: '1px solid #2a3a4a' }}>
-                        <div className="rounded-lg overflow-hidden" style={{ background: '#253545' }}>
-                          <iframe
-                            src={`https://www.tiktok.com/embed/v2/${mainSocialClip.embed_id}`}
-                            className="h-[400px] w-[320px]"
-                            style={{ border: 'none' }}
-                            sandbox="allow-scripts allow-same-origin allow-popups allow-presentation"
                           />
                         </div>
                       </div>
@@ -416,6 +479,12 @@ function ThreadCard({ thread, isExpanded, onToggle }: {
                         </div>
                       );
                     })()}
+
+                    {/* Share */}
+                    <ShareBar
+                      text={`${thread.title} — tracked by CVRD\n\n${thread.summary.substring(0, 120)}...`}
+                      url={`https://cvrdnews.com/timeline`}
+                    />
                   </motion.div>
                 )}
 
@@ -439,76 +508,189 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Group dates by year
+  const yearGroups: { year: string; dates: string[] }[] = [];
+  for (const date of dates) {
+    const y = getYear(date);
+    if (yearGroups.length === 0 || yearGroups[yearGroups.length - 1].year !== y) {
+      yearGroups.push({ year: y, dates: [date] });
+    } else {
+      yearGroups[yearGroups.length - 1].dates.push(date);
+    }
+  }
+
+  // ALL collapsed by default — scroll or click to open
+  const [openYears, setOpenYears] = useState<Set<string>>(new Set<string>());
+
+  // Only one year open at a time — with click lock to prevent scroll override
+  const clickLock = useRef(false);
+  const toggleYear = (year: string) => {
+    clickLock.current = true;
+    setTimeout(() => { clickLock.current = false; }, 2000);
+    setOpenYears(prev => {
+      if (prev.has(year)) return new Set<string>();
+      return new Set([year]);
+    });
+    // Auto-scroll to center the opened year after animation
+    setTimeout(() => {
+      const el = scrollRef.current?.querySelector(`[data-year="${year}"]`);
+      const container = scrollRef.current?.closest('.timeline-scroll');
+      if (el && container) {
+        const elRect = el.getBoundingClientRect();
+        const contRect = container.getBoundingClientRect();
+        const targetScroll = container.scrollLeft + (elRect.left - contRect.left) - (contRect.width - elRect.width) / 2;
+        container.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+      }
+    }, 450);
+  };
+
+  // Auto-open years when user scrolls the timeline
+  useEffect(() => {
+    // Find the .timeline-scroll ancestor (the actual scroll container)
+    const scrollContainer = scrollRef.current?.closest('.timeline-scroll');
+    if (!scrollContainer || !scrollRef.current) return;
+
+    // Ignore scroll events in the first second (layout/mount causes initial scrolls)
+    const mountTime = Date.now();
+    const onScroll = () => {
+      if (Date.now() - mountTime < 1000) return;
+      if (clickLock.current) return;
+
+      const containerRect = scrollContainer.getBoundingClientRect();
+      const centerX = containerRect.left + containerRect.width / 2;
+      const yearEls = scrollRef.current!.querySelectorAll('[data-year]');
+
+      let closest: { year: string; dist: number } | null = null;
+      for (const el of yearEls) {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.left + rect.width / 2;
+        const dist = Math.abs(elCenter - centerX);
+        if (!closest || dist < closest.dist) {
+          closest = { year: (el as HTMLElement).dataset.year || '', dist };
+        }
+      }
+
+      if (closest && closest.dist < containerRect.width * 0.25) {
+        setOpenYears(prev => {
+          if (prev.has(closest!.year)) return prev;
+          return new Set([closest!.year]);
+        });
+      }
+    };
+
+    scrollContainer.addEventListener('scroll', onScroll);
+    return () => scrollContainer.removeEventListener('scroll', onScroll);
+  }, [dates.length]);
+
   useEffect(() => {
     if (!scrollRef.current || !selectedDate) return;
     const el = scrollRef.current.querySelector(`[data-date="${selectedDate}"]`);
     if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [selectedDate]);
 
+  // Collapsed = wide enough that total always overflows container
+  const YEAR_W_COLLAPSED = 200;
+  // Expanded = always 600px regardless of entry count — feels dramatic
+  const YEAR_W_EXPANDED = 600;
+  let globalIdx = 0;
+
   return (
-    <div className="relative">
-      <div ref={scrollRef} className="overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-        <div className="flex items-center min-w-max px-4">
-          {dates.map((date, i) => {
-            const dayEntries = grouped[date];
-            const isSelected = date === selectedDate;
-            const isEven = i % 2 === 0;
-            const topic = dayEntries[0]?.topic || '';
+    <div>
+      <div ref={scrollRef}>
+        <div className="flex min-w-max" style={{ gap: 20 }}>
+        {yearGroups.map((yg) => {
+          const isOpen = openYears.has(yg.year);
+          const startIdx = globalIdx;
+          const count = yg.dates.length;
+          const gap = 4;
+          const activeW = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
+          const thumbW = Math.floor((activeW - (count - 1) * gap) / count);
+          globalIdx += count;
 
-            return (
-              <div key={date} className="flex items-center" data-date={date}>
-                <div className="flex flex-col items-center" style={{ width: 150 }}>
-                  {/* TOP: even=title, odd=dot+date */}
-                  <div className="flex flex-col items-center justify-end text-center px-1 mb-2" style={{ minHeight: 28 }}>
-                    {isEven ? (
-                      <p className="text-[9px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
-                    ) : (
-                      <>
-                        <span className="text-[10px] whitespace-nowrap font-semibold" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
-                        <div className="mt-1" style={{
-                          width: 8, height: 8, borderRadius: '50%',
-                          background: isSelected ? '#daa520' : '#e0e0e0',
-                          boxShadow: isSelected ? '0 0 10px rgba(218,165,32,0.6)' : 'none',
-                        }} />
-                      </>
-                    )}
-                  </div>
+          return (
+            <div key={yg.year} data-year={yg.year}
+              className="shrink-0 cursor-pointer"
+              style={{ width: activeW, transition: 'width 0.4s ease' }}
+              onClick={() => toggleYear(yg.year)}>
 
-                  {/* THUMBNAIL */}
-                  <TimelineThumb date={date} entries={dayEntries} isSelected={isSelected} onSelect={onSelect} />
-
-                  {/* BOTTOM: even=dot+date, odd=title */}
-                  <div className="flex flex-col items-center justify-start text-center px-1 mt-2" style={{ minHeight: 28 }}>
-                    {isEven ? (
-                      <>
-                        <div className="mb-1" style={{
-                          width: 8, height: 8, borderRadius: '50%',
-                          background: isSelected ? '#daa520' : '#e0e0e0',
-                          boxShadow: isSelected ? '0 0 10px rgba(218,165,32,0.6)' : 'none',
-                        }} />
-                        <span className="text-[10px] whitespace-nowrap font-semibold" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
-                      </>
-                    ) : (
-                      <p className="text-[9px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
-                    )}
-                  </div>
-                </div>
-
-                {/* Simple gold bar between thumbnails */}
-                {i < dates.length - 1 && (
-                  <div style={{ width: 28, height: 2, background: '#daa520', opacity: 0.4, flexShrink: 0 }} />
-                )}
+              {/* Year + bracket */}
+              <div className="text-center mb-1.5">
+                <span className="font-bold text-[#daa520]" style={{ fontSize: isOpen ? 14 : 11, transition: 'font-size 0.3s' }}>{yg.year}</span>
               </div>
-            );
-          })}
-        </div>
-      </div>
+              <div className="flex items-start mb-1.5 mx-1">
+                <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
+                <div className="flex-1" style={{ height: 2, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'opacity 0.3s' }} />
+                <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
+              </div>
 
-      {/* Fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-6 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, #1e2a3a, transparent)' }} />
-      <div className="absolute right-0 top-0 bottom-0 w-6 pointer-events-none"
-        style={{ background: 'linear-gradient(to left, #1e2a3a, transparent)' }} />
+              {/* Collapsed: cropped thumbnails row — fixed width based on collapsed size */}
+              <div className="flex overflow-hidden rounded" style={{ gap, height: isOpen ? 0 : 70, opacity: isOpen ? 0 : 0.75, transition: 'all 0.3s ease' }}>
+                {yg.dates.map((date, di) => {
+                  const thumb = grouped[date]?.[0]?.image_file;
+                  const collapsedThumbW = Math.floor((YEAR_W_COLLAPSED - (count - 1) * gap) / count);
+                  return (
+                    <div key={di} className="overflow-hidden rounded" style={{ width: collapsedThumbW, height: 70, flexShrink: 0 }}>
+                      {thumb ? <img src={thumb} alt="" className="w-full h-full object-cover" /> : <div className="w-full h-full" style={{ background: '#2a3a4a' }} />}
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Expanded: full thumbnails with labels */}
+              <div style={{ maxHeight: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0, overflow: 'hidden', transition: 'all 0.4s ease' }}>
+                <div className="flex" style={{ gap }}>
+                  {yg.dates.map((date, di) => {
+                    const dayEntries = grouped[date];
+                    const isSelected = date === selectedDate;
+                    const isEven = (startIdx + di) % 2 === 0;
+                    const topic = dayEntries[0]?.topic || '';
+
+                    return (
+                      <div key={date} data-date={date} className="flex flex-col items-center" style={{ width: thumbW }}>
+                        {/* Top: even=topic, odd=date+dot */}
+                        <div className="text-center overflow-hidden" style={{ height: 22, marginBottom: 2 }}>
+                          {isEven ? (
+                            <p className="text-[7px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
+                          ) : (
+                            <>
+                              <span className="text-[7px] whitespace-nowrap font-semibold block" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
+                              <div className="mx-auto" style={{ width: 5, height: 5, borderRadius: '50%', background: isSelected ? '#daa520' : '#e0e0e0', marginTop: 1 }} />
+                            </>
+                          )}
+                        </div>
+
+                        {/* Thumbnail */}
+                        <button onClick={(e) => { e.stopPropagation(); onSelect(date); }}
+                          className="w-full rounded overflow-hidden cursor-pointer"
+                          style={{ height: 70, border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)', opacity: isSelected ? 1 : 0.75, transition: 'all 0.2s' }}>
+                          {dayEntries[0]?.image_file ? (
+                            <img src={dayEntries[0].image_file} alt="" className="w-full h-full object-cover" />
+                          ) : (
+                            <div className="w-full h-full" style={{ background: '#2a3a4a' }} />
+                          )}
+                        </button>
+
+                        {/* Bottom: even=dot+date, odd=topic */}
+                        <div className="text-center overflow-hidden" style={{ height: 22, marginTop: 2 }}>
+                          {isEven ? (
+                            <>
+                              <div className="mx-auto" style={{ width: 5, height: 5, borderRadius: '50%', background: isSelected ? '#daa520' : '#e0e0e0', marginBottom: 1 }} />
+                              <span className="text-[7px] whitespace-nowrap font-semibold block" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
+                            </>
+                          ) : (
+                            <p className="text-[7px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
     </div>
   );
 }
@@ -576,6 +758,33 @@ function TimelineLabel({ date, topic, isSelected }: { date: string; topic: strin
       <p className="text-[9px] leading-tight line-clamp-1" style={{
         color: isSelected ? '#ccc' : '#555',
       }}>{topic}</p>
+    </div>
+  );
+}
+
+// ── Share Bar ──
+
+function ShareBar({ text, url }: { text: string; url: string }) {
+  const encoded = encodeURIComponent(text);
+  const encodedUrl = encodeURIComponent(url);
+  return (
+    <div className="flex items-center gap-1.5 pt-3" style={{ borderTop: '1px solid #2a3a4a' }}>
+      <span className="text-[8px] uppercase tracking-[0.12em] text-[#555] shrink-0 mr-1">Share</span>
+      {[
+        { svg: <span className="text-[11px] font-bold text-white/50">&#x1D54F;</span>, href: `https://twitter.com/intent/tweet?text=${encoded}&url=${encodedUrl}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff4500" opacity={0.5}><circle cx="12" cy="12" r="12"/></svg>, href: `https://www.reddit.com/submit?title=${encoded}&url=${encodedUrl}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366" opacity={0.5}><path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.13 1.6 5.93L0 24l6.26-1.64A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>, href: `https://wa.me/?text=${encodeURIComponent(text + '\n\n' + url)}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#E60023" opacity={0.5}><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>, href: `https://pinterest.com/pin/create/button/?url=${encodedUrl}&description=${encoded}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#1877F2" opacity={0.5}><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>, href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" opacity={0.5}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}` },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#999" opacity={0.5}><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>, href: '#', onClick: () => { navigator.clipboard.writeText(url); } },
+        { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0085ff" opacity={0.5}><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/></svg>, href: `https://bsky.app/intent/compose?text=${encodeURIComponent(text + '\n\n' + url)}` },
+      ].map((s, j) => (
+        <a key={j} href={s.href} target="_blank" rel="noreferrer" className="p-1.5 rounded transition-opacity hover:opacity-100 opacity-70"
+          onClick={(s as any).onClick ? (e: any) => { e.preventDefault(); (s as any).onClick(); } : undefined}>
+          {s.svg}
+        </a>
+      ))}
     </div>
   );
 }

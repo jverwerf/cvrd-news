@@ -45,6 +45,22 @@ export type TimelineThreadsOutput = {
   threads: TimelineThread[];
 };
 
+// ── Today Last Year types ──
+
+export type LastYearVideo = {
+  id: string;
+  title: string;
+  channel: string;
+  thumbnail: string;
+};
+
+export type TodayLastYearData = {
+  date_last_year: string;
+  date_generated: string;
+  summary: string;
+  videos: LastYearVideo[];
+};
+
 // ── Data Loading ──
 
 export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null> {
@@ -73,4 +89,19 @@ export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null
     console.error('Error reading timeline data:', error);
     return null;
   }
+}
+
+export async function getTodayLastYear(): Promise<TodayLastYearData | null> {
+  const enginePath = path.resolve(process.cwd(), '../intelligence-engine/output/today_last_year.json');
+  const publicPath = path.resolve(process.cwd(), 'public/data/today_last_year.json');
+
+  let dataPath: string | null = null;
+  if (fs.existsSync(enginePath)) dataPath = enginePath;
+  else if (fs.existsSync(publicPath)) dataPath = publicPath;
+
+  if (!dataPath) return null;
+
+  try {
+    return JSON.parse(fs.readFileSync(dataPath, 'utf8')) as TodayLastYearData;
+  } catch { return null; }
 }
