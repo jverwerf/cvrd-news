@@ -1,6 +1,6 @@
 {
   "date": "2026-03-29",
-  "generated_at": "2026-03-29T11:19:46.068Z",
+  "generated_at": "2026-03-29T11:59:21.748Z",
   "top_narratives": [
     {
       "topic": "Iranian Missile Strikes and U.S. Military Response",
@@ -497,7 +497,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_1.png"
+      "image_file": "/images/story_2026-03-29_1.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Yemen's Houthis Attack Israel",
@@ -935,7 +936,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_2.png"
+      "image_file": "/images/story_2026-03-29_2.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Israeli Strike in Lebanon Kills Journalists",
@@ -1141,7 +1158,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_3.png"
+      "image_file": "/images/story_2026-03-29_3.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ukraine's Defense Deals with Gulf Nations",
@@ -1259,7 +1277,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_4.png"
+      "image_file": "/images/story_2026-03-29_4.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iranian-Backed Militias Escalate in Iraq",
@@ -1319,7 +1338,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_5.png"
+      "image_file": "/images/story_2026-03-29_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pakistan Hosts Regional Diplomats for Iran War Talks",
@@ -1413,7 +1433,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_6.png"
+      "image_file": "/images/story_2026-03-29_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Gaza's Struggle for Electricity",
@@ -1484,7 +1505,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_7.png"
+      "image_file": "/images/story_2026-03-29_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Australia's LNG Disruptions After Cyclone Narelle",
@@ -1577,7 +1599,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_8.png"
+      "image_file": "/images/story_2026-03-29_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "France Opens Terror Probe After Paris Attack Attempt",
@@ -1674,7 +1697,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_9.png"
+      "image_file": "/images/story_2026-03-29_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Europe's Deportation Policies Under Scrutiny",
@@ -1749,7 +1773,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_10.png"
+      "image_file": "/images/story_2026-03-29_10.png",
+      "onrecord_matches": []
     },
     {
       "topic": "China's Energy Offer to Taiwan",
@@ -1799,7 +1824,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_11.png"
+      "image_file": "/images/story_2026-03-29_11.png",
+      "onrecord_matches": []
     },
     {
       "topic": "GOP Rift and Government Shutdown",
@@ -2088,7 +2114,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_12.png"
+      "image_file": "/images/story_2026-03-29_12.png",
+      "onrecord_matches": []
     },
     {
       "topic": "No Kings Protests Across the U.S.",
@@ -2491,7 +2518,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_13.png"
+      "image_file": "/images/story_2026-03-29_13.png",
+      "onrecord_matches": []
     },
     {
       "topic": "FBI Investigation into Democratic Lawmaker",
@@ -2586,7 +2614,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_14.png"
+      "image_file": "/images/story_2026-03-29_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "TSA Employee Shortages Amid Shutdown",
@@ -2715,7 +2744,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_15.png"
+      "image_file": "/images/story_2026-03-29_15.png",
+      "onrecord_matches": []
     },
     {
       "topic": "CPAC Straw Poll Results",
@@ -2821,7 +2851,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_16.png"
+      "image_file": "/images/story_2026-03-29_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Aid Package for Farmers",
@@ -2926,7 +2957,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_17.png"
+      "image_file": "/images/story_2026-03-29_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Georgia GOP Seeks to Remove Party Labels",
@@ -2970,7 +3002,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_18.png"
+      "image_file": "/images/story_2026-03-29_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Call with Modi and Musk",
@@ -3077,7 +3110,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_19.png"
+      "image_file": "/images/story_2026-03-29_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Wisconsin Elections and Political Shifts",
@@ -3107,7 +3141,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_20.png"
+      "image_file": "/images/story_2026-03-29_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Bank of America Epstein Settlement",
@@ -3252,7 +3287,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_21.png"
+      "image_file": "/images/story_2026-03-29_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Meta Stock Plunge",
@@ -3333,7 +3369,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_22.png"
+      "image_file": "/images/story_2026-03-29_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Costco's Automated Checkout",
@@ -3394,7 +3431,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_23.png"
+      "image_file": "/images/story_2026-03-29_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "BlackRock CEO's Compensation",
@@ -3435,7 +3473,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_24.png"
+      "image_file": "/images/story_2026-03-29_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "NYC Bond Market Turmoil",
@@ -3498,7 +3537,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_25.png"
+      "image_file": "/images/story_2026-03-29_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Sony PS5 Price Increase",
@@ -3586,7 +3626,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_26.png"
+      "image_file": "/images/story_2026-03-29_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Warner Bros. Discovery-Paramount Deal Probe",
@@ -3640,7 +3681,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_27.png"
+      "image_file": "/images/story_2026-03-29_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "FCC and NFL Antitrust Protections",
@@ -3672,7 +3714,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_28.png"
+      "image_file": "/images/story_2026-03-29_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Raiffeisen's Acquisition of BBVA's Romania Unit",
@@ -3719,7 +3762,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_29.png"
+      "image_file": "/images/story_2026-03-29_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Thieves Steal 12 Tons of KitKat Bars",
@@ -3811,7 +3855,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_30.png"
+      "image_file": "/images/story_2026-03-29_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Rob and Michele Reiner Honored at Human Rights Campaign Gala",
@@ -3849,7 +3894,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_31.png"
+      "image_file": "/images/story_2026-03-29_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Nick Cannon's Controversial Comments on Democrats",
@@ -3924,7 +3970,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_32.png"
+      "image_file": "/images/story_2026-03-29_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Shinya Tsukamoto's Vietnam War Drama Release",
@@ -3985,7 +4032,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_33.png"
+      "image_file": "/images/story_2026-03-29_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jamie Dornan's Quirky 'SNL U.K.' Monologue",
@@ -4078,7 +4126,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_34.png"
+      "image_file": "/images/story_2026-03-29_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Weezer's Acoustic Rooftop Set in Venice Beach",
@@ -4225,7 +4274,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_35.png"
+      "image_file": "/images/story_2026-03-29_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Arizona Reaches First Final Four Since 2001",
@@ -4389,7 +4439,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_36.png"
+      "image_file": "/images/story_2026-03-29_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Adesanya Defeated by Pyfer in UFC Fight Night",
@@ -4541,7 +4592,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_37.png"
+      "image_file": "/images/story_2026-03-29_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "USMNT Routed by Belgium in World Cup Prep",
@@ -4745,7 +4797,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_38.png"
+      "image_file": "/images/story_2026-03-29_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "LeBron and Bronny James Make NBA History",
@@ -4923,7 +4976,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_39.png"
+      "image_file": "/images/story_2026-03-29_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "UFC Fighter Called Back After Scorecard Flub",
@@ -4961,7 +5015,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_40.png"
+      "image_file": "/images/story_2026-03-29_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "California Governor Bans State Officials from Betting with Insider Info",
@@ -5023,7 +5078,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_41.png"
+      "image_file": "/images/story_2026-03-29_41.png",
+      "onrecord_matches": []
     },
     {
       "topic": "WTO's New Digital Trade Rules",
@@ -5083,7 +5139,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_42.png"
+      "image_file": "/images/story_2026-03-29_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Debut of 'Frozen' World at Disneyland Paris",
@@ -5165,7 +5222,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_43.png"
+      "image_file": "/images/story_2026-03-29_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Fred again.. & Thomas Bangalter's Epic London Performance",
@@ -5298,7 +5356,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_44.png"
+      "image_file": "/images/story_2026-03-29_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pussy Riot's Protest Against Tech Company",
@@ -5372,7 +5431,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_45.png"
+      "image_file": "/images/story_2026-03-29_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kanye West Drops 'Father' Video Featuring Travis Scott",
@@ -5487,7 +5547,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_46.png"
+      "image_file": "/images/story_2026-03-29_46.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Fred again.. & Thomas Bangalter's Epic London Performance",
@@ -5523,7 +5584,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_47.png"
+      "image_file": "/images/story_2026-03-29_47.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Braves' Smith Hits Walk-Off Home Run",
@@ -5604,7 +5666,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-29_48.png"
+      "image_file": "/images/story_2026-03-29_48.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Mayweather Halts Pacquiao Rematch Plans",
@@ -5691,7 +5754,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_49.png"
+      "image_file": "/images/story_2026-03-29_49.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Denver Sets NWSL Attendance Record",
@@ -5909,7 +5973,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_50.png"
+      "image_file": "/images/story_2026-03-29_50.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Doncic Suspended After 16th Technical Foul",
@@ -6082,7 +6147,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_51.png"
+      "image_file": "/images/story_2026-03-29_51.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Russo Scores Hat Trick as Arsenal Dominates Spurs",
@@ -6265,7 +6331,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-29_52.png"
+      "image_file": "/images/story_2026-03-29_52.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [
@@ -6279,509 +6346,5 @@
     "BlackRock CEO's Compensation",
     "Braves' Smith Hits Walk-Off Home Run",
     "Weezer's Acoustic Rooftop Set in Venice Beach"
-  ],
-  "daily_brief": {
-    "summary": "Today's news landscape is marked by escalating tensions in the Middle East and political friction in the U.S. Iran's recent missile strikes and the subsequent U.S. military response are drawing international scrutiny as regional conflicts intensify. Meanwhile, Yemen's Houthis are targeting Israel, further complicating the situation. In U.S. politics, a Republican Party rift is leading to a government shutdown, highlighting internal conflicts over budget issues. The CPAC straw poll shows J.D. Vance and Marco Rubio gaining traction, demonstrating shifting dynamics within the GOP. On a lighter note, Weezer's surprise rooftop performance in Venice Beach has fans buzzing, offering a break from the heavy geopolitical and domestic news.",
-    "left_narrative": "Left-leaning outlets like the New York Times and the Guardian are focusing on the humanitarian and diplomatic facets of the Middle Eastern conflicts, particularly highlighting the need for restraint and dialogue to prevent further escalation. They emphasize the complex human rights issues arising from the Israeli strike in Lebanon, calling for independent investigations. Additionally, the left attributes the U.S. government shutdown to internal Republican conflicts, questioning the party's leadership effectiveness.",
-    "right_narrative": "Right-leaning media such as Fox News and the New York Post are emphasizing the necessity of a strong military stance against perceived threats like Iran's missile strikes and the Houthi attacks on Israel. They argue that these are direct challenges to both U.S. and allied interests and stress the importance of a robust response. Meanwhile, they frame the GOP's budget conflict as a necessary confrontation to address government fiscal responsibility.",
-    "what_they_arent_telling_you": "A significant blind spot across media today is the role of defense contractors in the escalating Middle Eastern conflicts, as users on Reddit highlight potential connections between military actions and arms manufacturing interests. Additionally, leaked documents revealing GOP infighting over budget allocations are not widely discussed in mainstream media. The financial industry's lobbying efforts, particularly by firms like BlackRock, remain underreported despite their influence on regulatory landscapes.",
-    "social_summary": "Online, the mood is a mix of outrage and awe. Reddit users are buzzing about leaked GOP documents, while footage of missile strikes in the Middle East circulates, stirring anger over media coverage gaps. Meanwhile, Weezer's rooftop set is going viral, with fans sharing clips and expressing excitement for their upcoming tour. There's also a somber yet inspiring thread discussing Braves' player Will Smith's walk-off home run, which resonates deeply with fans in light of his recent personal loss.",
-    "image_prompt": "Cinematic editorial photo capturing today's news mood: a wide shot of a tense Middle Eastern cityscape under dramatic skies, with military presence subtly visible; juxtaposed with a vibrant urban rooftop concert scene, capturing the contrasting global atmosphere.",
-    "curated_social": [
-      {
-        "platform": "x",
-        "embed_id": "2038058843330969666",
-        "title": "BREAKING: Some 3,500 US Marines and sailors from the 31st Marine Expeditionary Unit have arrived in ",
-        "author": "AJEnglish",
-        "story": "Iranian Missile Strikes and U.S. Military Response",
-        "url": "https://x.com/AJEnglish/status/2038058843330969666"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2037989379214385331",
-        "title": "🔊 A US official confirms 12 American troops were wounded, two seriously, in an Iranian strike on Pr",
-        "author": "Reuters",
-        "story": "Iranian Missile Strikes and U.S. Military Response",
-        "url": "https://x.com/Reuters/status/2037989379214385331"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2038062217275298252",
-        "title": "BREAKING: The Pentagon is preparing for weeks of US ground operations in Iran, though it’s unclear i",
-        "author": "AJEnglish",
-        "story": "Iranian Missile Strikes and U.S. Military Response",
-        "url": "https://x.com/AJEnglish/status/2038062217275298252"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2037999069063200858",
-        "title": "BREAKING: Iran’s Foreign Ministry spokesperson Esmaeil Baghaei has accused the US and Israel of “del",
-        "author": "AJEnglish",
-        "story": "Iranian Missile Strikes and U.S. Military Response",
-        "url": "https://x.com/AJEnglish/status/2037999069063200858"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2038050045480624466",
-        "title": "Yemen’s Houthis have launched a second missile and drone assault on Israel, promising to continue un",
-        "author": "AJEnglish",
-        "story": "Yemen's Houthis Attack Israel",
-        "url": "https://x.com/AJEnglish/status/2038050045480624466"
-      },
-      {
-        "platform": "x",
-        "embed_id": "1923878335500689853",
-        "title": "BREAKING: The Yemeni Houthis have launched yet another ballistic missile at Israel.\n\nCan you imagine if any other country had daily ballistic missile ",
-        "author": "EYakoby",
-        "story": "Yemen's Houthis Attack Israel",
-        "url": "https://x.com/EYakoby/status/1923878335500689853"
-      },
-      {
-        "platform": "telegram",
-        "embed_id": "disclosetv/20543",
-        "title": "NEW - Yemen's Houthis launched missiles at Israel in their first attack since the start of the Iran war.\n\nRead here: https://www.disclose.tv/id/06nuo8",
-        "author": "disclosetv",
-        "story": "Yemen's Houthis Attack Israel",
-        "url": "https://t.me/disclosetv/20543"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2037944092676468748",
-        "title": "Israeli airstrike kills three Lebanese journalists, Israel says it targeted one https://t.co/dNi8UgfWCg https://t.co/dNi8UgfWCg",
-        "author": "Reuters",
-        "story": "Israeli Strike in Lebanon Kills Journalists",
-        "url": "https://x.com/Reuters/status/2037944092676468748"
-      },
-      {
-        "platform": "x",
-        "embed_id": "2037718831167086638",
-        "title": "Breaking News: Bank of America has agreed to pay $72.5 million to settle a lawsuit from hundreds of Jeffrey Epstein’s sexual abuse victims. https://t.",
-        "author": "nytimes",
-        "story": "Bank of America Epstein Settlement",
-        "url": "https://x.com/nytimes/status/2037718831167086638"
-      },
-      {
-        "platform": "reddit",
-        "title": "Epstein victims to get $72.5M from Bank of America settlement",
-        "url": "https://reddit.com/r/goodnews/comments/1s60brz/epstein_victims_to_get_725m_from_bank_of_america/",
-        "story": "Bank of America Epstein Settlement"
-      }
-    ]
-  },
-  "category_briefs": {
-    "world": {
-      "summary": "Today's world news is dominated by escalating conflicts and geopolitical tensions. Iran's missile strikes have prompted a U.S. military response, with Marines deployed to the region, highlighting rising tensions in the Middle East. Concurrently, Yemen's Houthi rebels have launched missile attacks on Israel, further complicating the situation. An Israeli airstrike in Lebanon has tragically killed three journalists, stirring international condemnation. Meanwhile, Ukraine has secured air defense deals with Gulf nations, reflecting its ongoing military efforts amid these escalating conflicts.",
-      "left_narrative": "Left-leaning outlets like CNN and The Guardian are focusing on the humanitarian ramifications of the ongoing conflicts. They emphasize the need for diplomatic solutions, particularly regarding the Houthi attacks on Israel and the deaths of journalists in Lebanon. The New York Times highlights the resilience of the Iranian response to international pressures, advocating for a more nuanced approach rather than military escalation.",
-      "right_narrative": "Right-leaning media, such as Fox News and the Daily Wire, are framing Iran's missile strikes and the Houthi attacks as direct threats that necessitate a strong military response. They emphasize Israel's right to defend itself against aggressive actions and call for robust military support for allies in the region. The NY Post focuses on the potential implications of the situation for U.S. foreign policy, advocating for a decisive response to deter further aggression.",
-      "what_they_arent_telling_you": "Mainstream media has not adequately reported on the extensive damage caused by the missile strikes in both Iran and Israel, as shared on platforms like Reddit. Furthermore, the increasing activities of Iranian-backed militias in Iraq and their implications for regional stability are also underreported, as are the dire conditions in Gaza related to electricity shortages and their humanitarian impact.",
-      "social_summary": "Online discussions are buzzing around the footage of missile strikes shared on Reddit, with many users expressing concern over the humanitarian implications and the media's portrayal of these events. The death of journalists in Lebanon has sparked debates about press freedom and the ethics of military engagement. Additionally, the potential escalation of tensions due to Ukraine's military deals with Gulf nations is also a trending topic, as users analyze the broader geopolitical ramifications.",
-      "curated_social": [
-        {
-          "platform": "reddit",
-          "title": "Key USAF E-3 AWACS Aircraft Damaged in Iranian Attack",
-          "url": "https://reddit.com/r/worldnews/comments/1s6meaj/key_usaf_e3_awacs_aircraft_damaged_in_iranian/",
-          "story": "Iranian Missile Strikes and U.S. Military Response"
-        },
-        {
-          "platform": "reddit",
-          "title": "Most Valuable U.S. Support Aircraft (E3 Sentry) Destroyed in Iranian Strike",
-          "url": "https://reddit.com/r/geopolitics/comments/1s6mrum/most_valuable_us_support_aircraft_e3_sentry/",
-          "story": "Iranian Missile Strikes and U.S. Military Response"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038020424873726129",
-          "title": "BREAKING: The IRGC says Israeli and US universities in the region are “legitimate targets” after acc",
-          "author": "AJEnglish",
-          "story": "Iranian Missile Strikes and U.S. Military Response",
-          "url": "https://x.com/AJEnglish/status/2038020424873726129"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038062217275298252",
-          "title": "BREAKING: The Pentagon is preparing for weeks of US ground operations in Iran, though it’s unclear i",
-          "author": "AJEnglish",
-          "story": "Iranian Missile Strikes and U.S. Military Response",
-          "url": "https://x.com/AJEnglish/status/2038062217275298252"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037999069063200858",
-          "title": "BREAKING: Iran’s Foreign Ministry spokesperson Esmaeil Baghaei has accused the US and Israel of “del",
-          "author": "AJEnglish",
-          "story": "Iranian Missile Strikes and U.S. Military Response",
-          "url": "https://x.com/AJEnglish/status/2037999069063200858"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037944092676468748",
-          "title": "Israeli airstrike kills three Lebanese journalists, Israel says it targeted one https://t.co/dNi8UgfWCg https://t.co/dNi8UgfWCg",
-          "author": "Reuters",
-          "story": "Israeli Strike in Lebanon Kills Journalists",
-          "url": "https://x.com/Reuters/status/2037944092676468748"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037915477716897909",
-          "title": "Israeli airstrike in southern Lebanon kills 3 journalists covering the war\nhttps://t.co/fHDSZILY3D",
-          "author": "TorontoStar",
-          "story": "Israeli Strike in Lebanon Kills Journalists",
-          "url": "https://x.com/TorontoStar/status/2037915477716897909"
-        },
-        {
-          "platform": "reddit",
-          "title": "Israeli air strike kills 2 journalists, Ali Shoeib &amp; Fatima Ftouni in southern Lebanon",
-          "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s62i5l/israeli_air_strike_kills_2_journalists_ali_shoeib/",
-          "story": "Israeli Strike in Lebanon Kills Journalists"
-        },
-        {
-          "platform": "reddit",
-          "title": "French police thwart a suspected bombing outside a Bank of America building in Paris",
-          "url": "https://reddit.com/r/news/comments/1s64icz/french_police_thwart_a_suspected_bombing_outside/",
-          "story": "France Opens Terror Probe After Paris Attack Attem"
-        },
-        {
-          "platform": "reddit",
-          "title": "People Seeking Asylum In Europe Can Now Be Detained For Up To 2 Years And Sent To Offshore Deportation Centers Under What Critics Call An Inhumane Pol",
-          "url": "https://reddit.com/r/BlackPeopleofReddit/comments/1s50kub/people_seeking_asylum_in_europe_can_now_be/",
-          "story": "Europe's Deportation Policies Under Scrutiny"
-        }
-      ]
-    },
-    "politics": {
-      "summary": "Today's political landscape is marked by a notable rift within the Republican Party, contributing to a looming government shutdown as budget disagreements persist. Protests labeled 'No Kings' are erupting nationwide, criticizing former President Trump's policies, while the FBI's renewed investigation into a Democratic lawmaker raises questions about political motivations. Additionally, a record number of TSA employees are calling out sick due to the shutdown, exacerbating airport wait times. At the Conservative Political Action Conference, J.D. Vance emerged victorious in the straw poll, showcasing ongoing support for Trump's policies among conservatives.",
-      "left_narrative": "CNN and The Guardian are emphasizing the internal strife within the GOP as a primary cause of the government shutdown. They are framing the 'No Kings' protests as a necessary pushback against authoritarianism and highlighting the struggles of TSA workers as a human impact of the shutdown. The left is also suggesting that the FBI investigation into the Democratic lawmaker is politically motivated, aimed at silencing dissent against the administration.",
-      "right_narrative": "Fox News and the Daily Wire are focusing on the need for fiscal responsibility, arguing that the government shutdown is a necessary move to address spending issues. They frame the 'No Kings' protests as chaotic and violent, while celebrating the diversity of candidates at CPAC as a sign of grassroots support. The right has not yet provided substantial coverage on the FBI investigation, but they remain alert to its implications.",
-      "what_they_arent_telling_you": "Leaked documents discussed on Reddit indicate significant GOP infighting over budget cuts, which mainstream media avoids emphasizing. Additionally, videos of police using tear gas on protestors are circulating, showcasing the violence at the 'No Kings' protests, yet media coverage tends to downplay these incidents. There are also concerns raised about whether Trump's aid package for farmers disproportionately favors large agribusinesses, a fact that many outlets overlook.",
-      "social_summary": "Internet discussions are buzzing about the chaotic scenes at airports due to TSA employee shortages, with many sharing videos that highlight the impact of the government shutdown. The 'No Kings' protests are gaining traction on social media, with clips of police actions going viral. Additionally, discussions about the implications of the CPAC straw poll results are prominent, as users analyze the future of the GOP's direction.",
-      "curated_social": [
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://reddit.com/r/politics/comments/1s69zno/nationwide_general_strike_planned_for_may_1_no/",
-          "story": "GOP Rift and Government Shutdown"
-        },
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://reddit.com/r/news/comments/1s6d0yv/thousands_gather_for_no_kings_rally_in_minnesota/",
-          "story": "GOP Rift and Government Shutdown"
-        },
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://reddit.com/r/PublicFreakout/comments/1s6819q/no_kings_no_war_fuck_magatrumpice/",
-          "story": "No Kings Protests Across the U.S."
-        },
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://reddit.com/r/politics/comments/1s6czh0/millions_rally_against_trump_as_no_kings_protests/",
-          "story": "No Kings Protests Across the U.S."
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037900094305870248",
-          "title": "Rallies planned in thousands of US cities for 'No Kings' protest against Trump https://t.co/i0fmwYY9eP https://t.co/i0fmwYY9eP",
-          "author": "Reuters",
-          "story": "No Kings Protests Across the U.S.",
-          "url": "https://x.com/Reuters/status/2037900094305870248"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038152502982725929",
-          "title": "🚨 BREAKING: Mass protests erupt across the U.S. and globally against Trump policies under “No Kings” movement, with millions expected to join. https:",
-          "author": "_GlobeObserver",
-          "story": "No Kings Protests Across the U.S.",
-          "url": "https://x.com/_GlobeObserver/status/2038152502982725929"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038096817317961907",
-          "title": "Around 8 million people in the United States participated in \"#NoKings\" protests against President Donald Trump on Saturday, organizers said, as Ameri",
-          "author": "MayadeenEnglish",
-          "story": "No Kings Protests Across the U.S.",
-          "url": "https://x.com/MayadeenEnglish/status/2038096817317961907"
-        },
-        {
-          "platform": "reddit",
-          "title": "Trump and Modi Had a Call About the Iran War. Elon Musk Joined Them. Two U.S. officials confirmed, but neither government mentioned the inclusion of M",
-          "url": "https://reddit.com/r/Fauxmoi/comments/1s5ylqn/trump_and_modi_had_a_call_about_the_iran_war_elon/",
-          "story": "Trump's Call with Modi and Musk"
-        },
-        {
-          "platform": "reddit",
-          "title": "JUST IN: Trump and India's Modi had a call regarding Iran, with Elon Musk joining them, per NYT",
-          "url": "https://reddit.com/r/DeepMarketScan/comments/1s5f6z9/just_in_trump_and_indias_modi_had_a_call/",
-          "story": "Trump's Call with Modi and Musk"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037555351240036539",
-          "title": "California state officials are now banned from using insider information to place bets.\n\nWhile Donald Trump continues to enrich himself in office, Cal",
-          "author": "GavinNewsom",
-          "story": "California Governor Bans State Officials from Bett",
-          "url": "https://x.com/GavinNewsom/status/2037555351240036539"
-        }
-      ]
-    },
-    "markets": {
-      "summary": "Today's markets saw a mix of significant developments across various sectors. Bank of America has settled for $72.5 million with victims of Jeffrey Epstein, emphasizing the role of financial institutions in enabling high-profile crimes. Meanwhile, Meta's stock plummeted by $20 billion amid legal challenges, reflecting ongoing concerns about corporate accountability in the tech sector. In retail, Costco has introduced automated checkout stations, aiming to streamline customer experience, while Sony has increased PS5 prices again due to rising production costs. Additionally, New York City's bond market is facing turmoil linked to budget mismanagement, raising concerns about fiscal stability.",
-      "left_narrative": "Left-leaning media outlets like CNN and the Guardian are focusing on the accountability of financial institutions in the Bank of America settlement, suggesting a need for stricter regulations to prevent such enabling of crime. They also highlight the legal issues faced by Meta, pointing to the necessity for corporate responsibility in tech. Coverage on inflation's impact on consumer electronics, specifically in Sony's price increases, further emphasizes the challenges consumers face today.",
-      "right_narrative": "Right-leaning outlets such as Fox News and the Daily Wire are framing the Bank of America settlement as a necessary step towards justice for Epstein's victims, arguing that financial institutions should be held accountable. The focus on Meta's stock drop is presented as a consequence of overregulation rather than corporate failures. Regarding Costco's innovation, they praise the efficiency benefits, while also portraying Sony's price hike as a justified response to economic challenges.",
-      "what_they_arent_telling_you": "Media is overlooking the extensive discussions on Reddit regarding leaked internal communications from several companies, including Meta and Sony, which reveal deeper operational issues and potential layoffs. Furthermore, the financial implications of New York City's budget mismanagement are not fully explored, particularly the internal disagreements within the city council that shed light on the root causes of the turmoil.",
-      "social_summary": "The internet is buzzing about Meta's massive stock drop, with memes and discussions focusing on Mark Zuckerberg's financial losses. The community is also reacting strongly to Sony's price increase, sharing their frustrations and speculating on further hikes. Additionally, leaked documents related to Bank of America’s internal discussions about Epstein are gaining traction, raising questions about corporate ethics and accountability.",
-      "curated_social": [
-        {
-          "platform": "x",
-          "embed_id": "2037718831167086638",
-          "title": "Breaking News: Bank of America has agreed to pay $72.5 million to settle a lawsuit from hundreds of Jeffrey Epstein’s sexual abuse victims. https://t.",
-          "author": "nytimes",
-          "story": "Bank of America Epstein Settlement",
-          "url": "https://x.com/nytimes/status/2037718831167086638"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038050654028275882",
-          "title": "Bank of America settled for $72.5 million days before Leon Black was scheduled for an 8-hour deposition under oath.\n\nBlack paid $170 million to Epstei",
-          "author": "epsteinsearchin",
-          "story": "Bank of America Epstein Settlement",
-          "url": "https://x.com/epsteinsearchin/status/2038050654028275882"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037791327661019169",
-          "title": "Bank of America becomes the third bank to agree to a multi-million-dollar settlement in the Epstein sex-trafficking case, following JPMorgan ($365m) a",
-          "author": "LearningEleven",
-          "story": "Bank of America Epstein Settlement",
-          "url": "https://x.com/LearningEleven/status/2037791327661019169"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037774184265249209",
-          "title": "🇺🇸 Bank of America agreed to a $72.5M payout over its alleged ties to Epstein.\n\nNo trial, no drawn-out fight… just a settlement.\n\nWhat do we think a",
-          "author": "MarioNawfal",
-          "story": "Bank of America Epstein Settlement",
-          "url": "https://x.com/MarioNawfal/status/2037774184265249209"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037143729341964295",
-          "title": "Meta's court defeats add to Zuckerberg's recent woes, represent 'watershed event' for social media https://t.co/B3F5eSAoam",
-          "author": "CNBC",
-          "story": "Meta Stock Plunge",
-          "url": "https://x.com/CNBC/status/2037143729341964295"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037512457355145290",
-          "title": "Sony has announced price rises for PS5, PS5 Pro, and PlayStation Portal, blaming “continued pressures in the global economic landscape.” https://t.co/",
-          "author": "IGN",
-          "story": "Sony PS5 Price Increase",
-          "url": "https://x.com/IGN/status/2037512457355145290"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037522173997294043",
-          "title": "The Internet Reacts To PlayStation 5 Getting Way More Expensive https://t.co/mkghVfOfpn https://t.co/mkghVfOfpn",
-          "author": "Kotaku",
-          "story": "Sony PS5 Price Increase",
-          "url": "https://x.com/Kotaku/status/2037522173997294043"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037570352440623174",
-          "title": "Sony has announced the Playstation 5's retail price will now rise from its original $549.99 to $649.99.\n\nThe price hike will take effect on April 2nd,",
-          "author": "HQNewsNow",
-          "story": "Sony PS5 Price Increase",
-          "url": "https://x.com/HQNewsNow/status/2037570352440623174"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037687139488444490",
-          "title": "The U.S. Department of Justice has sent subpoenas to Paramount in its investigation of the acquisition of Warner Bros. Discovery.\n\nThe D.O.J. is conce",
-          "author": "ToonHive",
-          "story": "Warner Bros. Discovery-Paramount Deal Probe",
-          "url": "https://x.com/ToonHive/status/2037687139488444490"
-        },
-        {
-          "platform": "reddit",
-          "title": "WTO members bypass opposition to introduce world's first baseline digital trade rules",
-          "url": "https://reddit.com/r/technology/comments/1s6aptm/wto_members_bypass_opposition_to_introduce_worlds/",
-          "story": "WTO's New Digital Trade Rules"
-        }
-      ]
-    },
-    "sports": {
-      "summary": "Today in sports, the Arizona Wildcats made headlines by reaching their first Final Four since 2001 after a thrilling victory over Purdue. In the UFC, Israel Adesanya faced a setback, losing to Joe Pyfer in a stunning matchup that left fans divided. Meanwhile, the US Men's National Team suffered a heavy defeat to Belgium in a World Cup prep game, raising concerns about their readiness. In a historic moment, LeBron and Bronny James became the first father-son duo to record an assist in an NBA game, captivating fans with their milestone. Additionally, Will Smith's emotional walk-off home run for the Braves resonated deeply following the passing of his mother.",
-      "left_narrative": "Media coverage highlights Arizona's strategic gameplay and the emotional significance of Will Smith's walk-off home run, emphasizing individual resilience. Sports outlets analyze Adesanya's loss, focusing on Pyfer's performance as a turning point in UFC dynamics. The USMNT's struggles are covered extensively, with an emphasis on tactical improvements needed before the World Cup. Meanwhile, the historic achievement of LeBron and Bronny is framed as a pivotal moment in NBA history.",
-      "right_narrative": "Fans are reacting with joy to Arizona's victory, praising their determination and resilience on Reddit. Social media buzzes with mixed feelings about Adesanya's performance, with many expressing disappointment but also recognizing Pyfer's talent. The USMNT is under fire from fans questioning their preparedness for future challenges. The James family's historic moment is celebrated widely, with many fans highlighting LeBron's longevity and Bronny's potential for greatness.",
-      "what_they_arent_telling_you": "On Reddit, users are discussing controversial referee calls during the Arizona game that mainstream media overlooked, while UFC fans are sharing training clips of Pyfer that hinted at his strategy. Discussions on the USMNT's defensive lapses reveal more significant tactical issues than what was emphasized in reports. Additionally, behind-the-scenes footage of Luka Doncic's frustration offers a more nuanced view of his suspension, which has financial implications for the Mavericks.",
-      "social_summary": "Across social media today, LeBron and Bronny's historic assist is trending, with clips and memes celebrating their achievement. Fans are debating Adesanya's performance, while Will Smith's emotional home run has inspired countless posts praising his resilience. The USMNT's defeat to Belgium has sparked discussions about their future, and Russo's hat trick for Arsenal is generating excitement among women's soccer supporters.",
-      "curated_social": [
-        {
-          "platform": "x",
-          "embed_id": "2038091019997135065",
-          "title": "ARIZONA IS FINAL FOUR BOUND FOR THE FIRST TIME SINCE ’01 🔥\n\nTHE WILDCATS HAVE WON 13 STRAIGHT‼️ https://t.co/OQChoWaeaW",
-          "author": "espn",
-          "story": "Arizona Reaches First Final Four Since 2001",
-          "url": "https://x.com/espn/status/2038091019997135065"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038007061653422261",
-          "title": "The USMNT were dominated by Belgium in the final international break before a home World Cup 😬 https://t.co/45QhfncGHv",
-          "author": "ESPNFC",
-          "story": "USMNT Routed by Belgium in World Cup Prep",
-          "url": "https://x.com/ESPNFC/status/2038007061653422261"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037969018133631412",
-          "title": "From last night: Bronny hit the shot. LeBron picked up the assist. And the James family made NBA history on Friday. \"It was a special moment with us t",
-          "author": "mcten",
-          "story": "LeBron and Bronny James Make NBA History",
-          "url": "https://x.com/mcten/status/2037969018133631412"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037910355263844765",
-          "title": "LeBron James literally passed it on to the next generation. The top scorer in NBA history recorded the league's first father-son assist when he passed",
-          "author": "ABC7",
-          "story": "LeBron and Bronny James Make NBA History",
-          "url": "https://x.com/ABC7/status/2037910355263844765"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038092802127454475",
-          "title": "The Wildcats' winningest season keeps rolling 😤 \n\nArizona racked up 36 wins on the way to the Final Four, breaking a tie for the most in program hist",
-          "author": "SportsCenter",
-          "story": "Arizona Reaches First Final Four Since 2001",
-          "url": "https://x.com/SportsCenter/status/2038092802127454475"
-        },
-        {
-          "platform": "reddit",
-          "title": "LeBron James TO Bronny James. THE FIRST FATHER-SON ASSIST IN NBA HISTORY!",
-          "url": "https://reddit.com/r/NBAGossips/comments/1s5ptai/lebron_james_to_bronny_james_the_first_fatherson/",
-          "story": "LeBron and Bronny James Make NBA History"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037976716807983111",
-          "title": "A record-setting inaugural home match for Denver Summit: 63,004 fans 🏟️\n\nThe largest attendance in NWSL history! https://t.co/JCWdKnQrPT",
-          "author": "NWSL",
-          "story": "Denver Sets NWSL Attendance Record",
-          "url": "https://x.com/NWSL/status/2037976716807983111"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037745226459337041",
-          "title": "BREAKING: Luka Doncic will be suspended next game vs Wizards after receiving his 16th technical foul https://t.co/ltJ4aoqNzJ",
-          "author": "LakeShowYo",
-          "story": "Doncic Suspended After 16th Technical Foul",
-          "url": "https://x.com/LakeShowYo/status/2037745226459337041"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038090755604971610",
-          "title": "ARIZONA IS HEADED TO THE FINAL FOUR 👏 \n\nOver 50% of the ESPN Tournament Challenge brackets had the Wildcats making it this far 😤 https://t.co/odJbDC",
-          "author": "SportsCenter",
-          "story": "Arizona Reaches First Final Four Since 2001",
-          "url": "https://x.com/SportsCenter/status/2038090755604971610"
-        },
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://www.reddit.com/r/soccer/comments/48332813/usmnt_belgium_friendly/",
-          "story": "USMNT Routed by Belgium in World Cup Prep"
-        }
-      ]
-    },
-    "trending": {
-      "summary": "Today's trending stories highlight a diverse range of cultural events and controversies. Rob and Michele Reiner received accolades at the Human Rights Campaign Gala, celebrating their contributions to LGBTQ+ rights, which sparked discussions on celebrity activism. In a more controversial vein, Nick Cannon's provocative remarks about the Democratic Party have ignited heated debates across social media. Meanwhile, Shinya Tsukamoto's new Vietnam War drama is generating excitement for its release in Japan, while Jamie Dornan's humorous appearance on 'SNL U.K.' showcases his unexpected comedic talents. Additionally, Weezer's surprise acoustic performance in Venice Beach has thrilled fans ahead of their upcoming tour.",
-      "left_narrative": "Media coverage highlights the Reiners' significant impact on LGBTQ+ rights, emphasizing their role in advancing same-sex marriage legislation. Cannon's comments are framed as divisive and inflammatory, with a focus on the backlash from various political circles. Tsukamoto's film is praised for its complex themes and cinematic style, while Dornan's comedic talent is celebrated as a refreshing addition to the late-night format. Meanwhile, coverage of Weezer's rooftop performance emphasizes their innovative approach to engaging fans and promoting their upcoming tour.",
-      "right_narrative": "Fans are reacting to the Reiners' honor by discussing their broader influence in Hollywood, with some questioning the effectiveness of celebrity activism. On Reddit, Cannon's comments have divided opinions, with some users defending his right to speak out while others label his statements as misguided. Tsukamoto's film has fans buzzing with anticipation, with many discussing his impact on the genre. Dornan's quirky hobby has prompted fans to share their own unusual collections, while Weezer's impromptu performance has generated excitement and enthusiasm for their upcoming tour.",
-      "what_they_arent_telling_you": "Both media and fans are missing the significance of the broader discussions around celebrity involvement in activism, as seen in the Reiners' honor. Clips from Cannon's interview reveal more nuance in his statements that mainstream outlets do not cover. Behind-the-scenes photos from Tsukamoto's film set are circulating on Reddit, offering insights into the production process not captured in media reports. Additionally, the sound quality issues during Fred again.. and Thomas Bangalter's performance at Alexandra Palace have gone unreported, affecting the overall experience.",
-      "social_summary": "Across social media, clips from Jamie Dornan's 'SNL U.K.' monologue are going viral for their humor, while videos from Weezer's rooftop set are being shared, capturing the excitement of fans. The debate around Nick Cannon's comments has sparked hot takes and memes, creating a lively discussion on platforms like X and Reddit. Fans are also sharing behind-the-scenes footage from Kanye West's 'Father' video, focusing on the lavish production that adds a layer of interest to the music release.",
-      "curated_social": [
-        {
-          "platform": "x",
-          "embed_id": "2037840379467432095",
-          "title": "",
-          "story": "Nick Cannon's Controversial Comments on Democrats",
-          "url": "https://x.com/elonmusk/status/2037840379467432095"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038008322436255843",
-          "title": "Nick Cannon let his politics be known on a recent episode of his web talk show “Big Drive,\" during which he called the Democratic Party “the party of ",
-          "author": "Variety",
-          "story": "Nick Cannon's Controversial Comments on Democrats",
-          "url": "https://x.com/Variety/status/2038008322436255843"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038006822225801648",
-          "title": "Nick Cannon Calls the Democratic Party the 'Party of the KKK' and Says 'I F--- With Trump' https://t.co/iKFTvqSmWR",
-          "author": "Variety",
-          "story": "Nick Cannon's Controversial Comments on Democrats",
-          "url": "https://x.com/Variety/status/2038006822225801648"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037920728423752128",
-          "title": "Pussy Riot occupied the Manhattan offices of Ubiquiti Friday to protest the tech company’s \"role in Russia’s military aggression against Ukraine\" http",
-          "author": "RollingStone",
-          "story": "Pussy Riot's Protest Against Tech Company",
-          "url": "https://x.com/RollingStone/status/2037920728423752128"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037887157264887909",
-          "title": "Weezer staged an acoustic rooftop concert in Venice Beach on Friday, the latest in a series of pop-ups to mark The Gathering Tour and their upcoming n",
-          "author": "RollingStone",
-          "story": "Weezer's Acoustic Rooftop Set in Venice Beach",
-          "url": "https://x.com/RollingStone/status/2037887157264887909"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037986555587960853",
-          "title": "Some BTS of Ye and Travis Scott on the set of the “Father” music video shoot.\n\n(📸: IG/princess_nevaeh.__, ordinary_kay._) https://t.co/4ZGp6bj5UH",
-          "author": "Complex",
-          "story": "Kanye West Drops 'Father' Video Featuring Travis S",
-          "url": "https://x.com/Complex/status/2037986555587960853"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037962658670936328",
-          "title": "Michael Jackson impersonator Fabio features in Kanye West's latest video \"Father.\" Check it out: https://t.co/WALaGJhHYW https://t.co/zpryvR5rtz",
-          "author": "Complex",
-          "story": "Kanye West Drops 'Father' Video Featuring Travis S",
-          "url": "https://x.com/Complex/status/2037962658670936328"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2037861798871806268",
-          "title": "Kanye West unveils 'Bully' album with a Bianca Censori-directed video for \"Father\" featuring Travis Scott. Learn more: https://t.co/UXqQtm9q0P https:/",
-          "author": "Complex",
-          "story": "Kanye West Drops 'Father' Video Featuring Travis S",
-          "url": "https://x.com/Complex/status/2037861798871806268"
-        },
-        {
-          "platform": "x",
-          "embed_id": "2038031427657191610",
-          "title": "During his #SNLUK monologue, Jamie Dornan revealed a peculiar — and apparently entirely true — fact about himself.\n\n“I’m not just a sex symbol who loo",
-          "author": "Variety",
-          "story": "Jamie Dornan's Quirky 'SNL U.K.' Monologue",
-          "url": "https://x.com/Variety/status/2038031427657191610"
-        },
-        {
-          "platform": "reddit",
-          "title": "",
-          "url": "https://www.reddit.com/r/music/comments/2037843744255521238",
-          "story": "Weezer's Acoustic Rooftop Set in Venice Beach"
-        }
-      ]
-    }
-  }
+  ]
 }
