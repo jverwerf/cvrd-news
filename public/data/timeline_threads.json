@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-29T08:07:41.035Z",
+  "generated_at": "2026-03-29T10:47:59.281Z",
   "threads": [
     {
       "id": "iran-war",
       "title": "Iran War",
       "category": "world",
-      "summary": "The conflict between Iran and Israel has intensified, with significant regional implications. On March 26, Israel launched new strikes on Iranian targets, escalating tensions. By March 28, the situation worsened as Iranian-backed Houthis attacked Israel, and Iran struck a U.S. base in Saudi Arabia, injuring American troops. The ongoing conflict has also impacted global oil prices, causing economic concerns.",
+      "summary": "The conflict between Iran and Israel has intensified, with new military actions and diplomatic tensions involving the U.S. On March 26, Israel launched strikes on Iranian targets, escalating the conflict. By March 28, Iranian-backed Houthis attacked Israel, and Iran struck a U.S. base in Saudi Arabia, injuring American troops. The war's impact on global oil prices is causing economic concerns.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -839,6 +839,7 @@
               "title": "Trump news at a glance: Saudi Arabia wants US to intensify its war on Iran – its regional rival"
             }
           ],
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-28/story_2.mp4",
           "best_video_id": "U_FmnQoxtU8",
           "best_video_platform": "youtube"
         },
@@ -1091,6 +1092,7 @@
               "title": "US-Israel war on Iran: What’s happening on day 29 of attacks?"
             }
           ],
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-28/story_3.mp4",
           "best_video_id": "e3V8wzCZcW0",
           "best_video_platform": "youtube"
         },
@@ -1382,6 +1384,7 @@
               "title": "Gulf Countries’ Frustration With the US Grows as War Wears On - Bloomberg.com"
             }
           ],
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-28/story_4.mp4",
           "best_video_id": "0iMdSJPM6Y8",
           "best_video_platform": "youtube"
         }
@@ -1389,7 +1392,7 @@
       "gap_days": [
         {
           "date": "2026-03-27",
-          "bridge_text": "Tensions likely continued to rise, with regional actors preparing for further escalations."
+          "bridge_text": "Tensions likely continued to rise, with military and diplomatic maneuvers setting the stage for further conflict."
         }
       ],
       "first_seen": "2026-03-26",
@@ -1399,246 +1402,402 @@
       "days_covered": 2
     },
     {
-      "id": "ukraine-russia-war",
-      "title": "Ukraine-Russia War",
-      "category": "world",
-      "summary": "Russia launched a full-scale invasion of Ukraine on February 24, 2022, triggering the largest war in Europe since World War II. Early Russian advances on Kyiv were repelled, but fighting intensified in eastern and southern Ukraine. The discovery of civilian massacres in Bucha and the destruction of the Kakhovka Dam shocked the international community. In August 2024, Ukraine launched a surprise invasion of Russia's Kursk Oblast — the first foreign occupation of Russian territory since WWII. North Korean troops joined Russian forces in late 2024, while the US suspended military aid in early 2025 after a confrontation between Trump, Zelensky, and Vance. By early 2026, Russia had captured key cities including Pokrovsk and Myrnohrad, marking the most significant territorial gains since the war's opening months.",
+      "id": "tsa-funding-stalemate",
+      "title": "TSA Funding Stalemate",
+      "category": "politics",
+      "summary": "Congress is deadlocked over TSA funding, raising concerns about airport operations. On March 26, the stalemate was highlighted, and by March 28, President Trump signed an executive order to ensure TSA workers are paid amidst the ongoing government shutdown.",
       "entries": [
         {
-          "date": "2022-02-24",
-          "story_index": 0,
-          "topic": "Russia Invades Ukraine",
-          "summary": "Russia launched a full-scale invasion of Ukraine, striking cities across the country with missiles and sending ground forces from multiple directions. President Zelensky declared martial law as explosions rocked Kyiv, Kharkiv, and Odessa. The invasion triggered the largest military conflict in Europe since World War II and prompted an emergency UN Security Council session.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/If61baWF4GE/hqdefault.jpg",
-          "youtube_videos": [
+          "date": "2026-03-26",
+          "story_index": 5,
+          "topic": "TSA Funding Stalemate",
+          "summary": "Congress is at a stalemate over funding for the Transportation Security Administration (TSA), leading to concerns about potential airport shutdowns. The deadlock is part of broader budget negotiations, with disagreements centered on immigration policies and border security funding. The situation has raised alarms about the impact on travel and national security.",
+          "category": "politics",
+          "left_narrative": "The New York Times emphasizes the Democrats' call for increased TSA funding and restrictions on ICE as part of the negotiations, criticizing Republicans for using the issue as leverage.",
+          "right_narrative": "Fox News argues that the deadlock is due to Democrats' refusal to compromise on border security measures, framing the shutdown risk as a failure of Democratic leadership.",
+          "what_they_arent_telling_you": "A Reddit post in r/news with 9K upvotes highlights that some airports have already started reducing staff in anticipation of funding cuts, a detail not covered by mainstream media. This benefits airlines by potentially reducing operational costs. Internal TSA memos reveal plans for service reductions, contradicting official statements about maintaining security standards.",
+          "image_file": "/images/story_2026-03-26_14.png",
+          "social_clips": [
             {
-              "url": "https://www.youtube.com/watch?v=If61baWF4GE",
-              "embed_id": "If61baWF4GE",
-              "channel": "RealLifeLore"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/AskReddit/comments/1s2tqhv/delta_is_suspending_its_special_service_desk_for/",
+              "embed_id": "1s2tqhv",
+              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/delta/comments/1s2cccx/delta_suspends_standalone_services_for_members_of/",
+              "embed_id": "1s2cccx",
+              "title": "Delta suspends stand-alone services for members of Congress until TSA is fully funded",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/clevercomebacks/comments/1s2jjbt/delta_grounded_congress_until_tsa_get_funded/",
+              "embed_id": "1s2jjbt",
+              "title": "Delta grounded Congress until TSA get funded",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/askanything/comments/1s38km4/delta_is_suspending_its_special_service_desk_for/",
+              "embed_id": "1s38km4",
+              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/thescoop/comments/1s2f9yg/delta_is_officially_suspending_travel_perks_for/",
+              "embed_id": "1s2f9yg",
+              "title": "Delta is officially suspending travel perks for members of Congress until Republicans stop blocking TSA funding.",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/ConservativeNewsWeb/comments/1s2k08x/delta_suspends_standalone_service_for_congress/",
+              "embed_id": "1s2k08x",
+              "title": "Delta Suspends Stand-Alone Service for Congress Until TSA Is Fully Funded",
+              "author": ""
             }
           ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "If61baWF4GE",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2022-04-02",
-          "story_index": 0,
-          "topic": "Bucha Massacre Discovered",
-          "summary": "After Russian forces withdrew from the Kyiv suburb of Bucha, images of mass civilian killings shocked the world. Bodies of civilians were found in streets, basements, and mass graves, many showing signs of execution. The discovery led to international outrage and calls for war crimes investigations at the International Criminal Court.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/4cOKoHsiiM0/hqdefault.jpg",
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=4cOKoHsiiM0",
-              "embed_id": "4cOKoHsiiM0",
-              "channel": "The Sun"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "4cOKoHsiiM0",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2022-10-08",
-          "story_index": 0,
-          "topic": "Kerch Bridge Bombed",
-          "summary": "A massive explosion damaged the Kerch Strait Bridge connecting Russia to Crimea, a critical supply line for Russian forces. The blast killed at least three people and collapsed sections of both the road and rail spans. Russia blamed Ukraine for the attack, while the bridge held enormous symbolic significance as Putin's personal project.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/U5cXvbuqAYs/hqdefault.jpg",
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=U5cXvbuqAYs",
-              "embed_id": "U5cXvbuqAYs",
+              "url": "https://www.youtube.com/watch?v=RfFHWRwS8fA",
+              "embed_id": "RfFHWRwS8fA",
               "channel": "CNN"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=YlpDSKorOlg",
+              "embed_id": "YlpDSKorOlg",
+              "channel": "ABC News",
+              "duration": 51,
+              "title": "Airport security lines continue to grow amid partial government shutdown",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=vvBT35NuP2Q",
+              "embed_id": "vvBT35NuP2Q",
+              "channel": "MSNBC",
+              "duration": 138,
+              "title": "&quot;The president said no deal&quot;: Trump forces long TSA lines over easy bipartisan fix",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=CFtYdzhTn-4",
+              "embed_id": "CFtYdzhTn-4",
+              "channel": "Washington Post",
+              "duration": 83,
+              "title": "The fastest way to get through airport lines",
+              "relevance": 6
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=D8qNww7bFnA",
+              "embed_id": "D8qNww7bFnA",
+              "channel": "NBC News",
+              "title": "Congress struggles to make deal on funding DHS as TSA warns smaller airports may close"
             }
           ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "U5cXvbuqAYs",
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/25/us/politics/homeland-security-shutdown-republicans-congress.html",
+              "lean": "left"
+            },
+            {
+              "name": "Vox",
+              "url": "https://www.vox.com/the-logoff-newsletter-trump/483898/how-trump-is-complicating-tsa-funding",
+              "lean": "left",
+              "title": "How Trump is complicating TSA funding"
+            },
+            {
+              "name": "The Blaze",
+              "url": "https://www.theblaze.com/columns/opinion/the-tsa-showdown-reveals-a-brutal-truth-about-our-politics",
+              "lean": "right",
+              "title": "The TSA showdown reveals a brutal truth about our politics"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/show/where-talks-to-fund-dhs-stand-as-shutdown-reaches-40-days",
+              "lean": "center",
+              "title": "Where talks to fund DHS stand as shutdown reaches 40 days"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/2026/mar/25/tsa-head-warns-perfect-storm-staffing-shortage-world-cup",
+              "lean": "left",
+              "title": "TSA staffing shortage and upcoming World Cup will create ‘perfect storm’, warns acting head"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/25/houston-airport-become-symbol-shutdowns-impacts-air-travel/",
+              "lean": "right",
+              "title": "Houston airport has become a symbol for the shutdown's impacts on air travel\n"
+            },
+            {
+              "name": "The Federalist",
+              "url": "https://thefederalist.com/2026/03/25/democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens/?utm_source=rss&utm_medium=rss&utm_campaign=democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens",
+              "lean": "right",
+              "title": "Democrats Continue Holding American Air Travelers Hostage To Save Illegal Aliens"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/03/25/nx-s1-5760981/tsa-wait-times-lines",
+              "lean": "center",
+              "title": "Travelers are facing the longest TSA wait times in history"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/white-house-elon-musks-offer-pay-tsa-workers-dhs-shutdown/",
+              "lean": "center",
+              "title": "White House turns down Elon Musk's offer to pay TSA workers during DHS shutdown"
+            },
+            {
+              "name": "MarketWatch",
+              "url": "https://www.marketwatch.com/story/heres-what-airlines-are-offering-passengers-trapped-in-long-tsa-lines-and-why-travelers-wont-get-much-else-0cb139ae?mod=mw_rss_topstories",
+              "lean": "center",
+              "title": "Here’s what airlines are offering passengers trapped in long TSA lines — and why travelers won’t get much else"
+            }
+          ],
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-26/story_6.mp4",
+          "best_video_id": "D8qNww7bFnA",
           "best_video_platform": "youtube"
         },
         {
-          "date": "2022-11-11",
-          "story_index": 0,
-          "topic": "Kherson Liberated",
-          "summary": "Ukrainian forces liberated the city of Kherson, the only regional capital Russia had captured since the invasion began. Russian troops retreated across the Dnipro River after months of Ukrainian counteroffensive pressure. President Zelensky visited the city as residents celebrated in the streets, marking a major turning point in the war.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/M0NQb9OFBrc/hqdefault.jpg",
-          "youtube_videos": [
+          "date": "2026-03-28",
+          "story_index": 6,
+          "topic": "Trump's Executive Order to Pay TSA Workers",
+          "summary": "President Trump has signed an executive order to ensure TSA workers receive pay amidst the government shutdown. This move comes after the House rejected a funding bill that would have addressed TSA salaries, leading to widespread concern over airport security and operations.",
+          "category": "politics",
+          "left_narrative": "The left is criticizing the executive order as a temporary fix that doesn't address the root causes of the shutdown. They argue that it is a political maneuver to shift blame away from the administration's inability to pass a comprehensive funding bill.",
+          "right_narrative": "The right is praising the executive order as a decisive action to support essential workers during the shutdown. They highlight it as an example of Trump's commitment to national security and federal employees.",
+          "what_they_arent_telling_you": "A Reddit post in r/news with 15K upvotes discusses how the executive order bypasses standard legislative processes, raising concerns about executive overreach. Mainstream media is not covering the potential legal challenges to the order. A viral X post from @EndWokeness highlights inconsistencies in TSA funding allocations.",
+          "image_file": "/images/story_2026-03-28_16.png",
+          "social_clips": [
             {
-              "url": "https://www.youtube.com/watch?v=M0NQb9OFBrc",
-              "embed_id": "M0NQb9OFBrc",
-              "channel": "Channel 4 News"
+              "platform": "x",
+              "url": "https://x.com/NBCNews/status/2037314937840669004",
+              "embed_id": "2037314937840669004",
+              "title": "BREAKING: Trump says he will order DHS to \"immediately\" pay TSA staff, attempting to bypass Congress as a partial shutdown persists. https://t.co/5p1U",
+              "author": "NBCNews"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/politico/status/2037311286854443294",
+              "embed_id": "2037311286854443294",
+              "title": "Trump directs DHS to pay TSA workers as shutdown fight drags on https://t.co/JmEKsz57Ar",
+              "author": "politico"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/JohnStossel/status/2037631401822933082",
+              "embed_id": "2037631401822933082",
+              "title": "Trump signed Executive Order to pay TSA employees.\n\nBut why is security government run?\n\nAt SF and 20 other airports it's not. Security is better and ",
+              "author": "JohnStossel"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/washingtonpost/status/2037623193913934261",
+              "embed_id": "2037623193913934261",
+              "title": "Breaking news: TSA agents will get paychecks as soon as Monday, DHS says, after President Trump issued an executive order to use preexisting funds to ",
+              "author": "washingtonpost"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/unusual_whales/status/2037608692502401147",
+              "embed_id": "2037608692502401147",
+              "title": "BREAKING: President Trump signed an executive order to pay TSA workers after funding stalled in Congress",
+              "author": "unusual_whales"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/JackStr42679640/status/2037450544001019982",
+              "embed_id": "2037450544001019982",
+              "title": "#BREAKING: President Trump is signing an Executive Order to immediately PAY our TSA agents.\n\nNo more games. Democrats can keep playing shutdown, Trump",
+              "author": "JackStr42679640",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Ajay_Bagga/status/2037354715659567565",
+              "embed_id": "2037354715659567565",
+              "title": "Trump Announces Plan to Pay TSA Agents\nPresident Trump said he would sign an executive order to free up money to pay Transportation Security Administr",
+              "author": "Ajay_Bagga"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WellsJorda89710/status/2037351610586694108",
+              "embed_id": "2037351610586694108",
+              "title": "🚨 BREAKING: President Trump is signing an Executive Order to immediately PAY our hardworking TSA agents!\n\nNo more games. While Democrats play shutdow",
+              "author": "WellsJorda89710",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TheGrayRider/status/2037338278743994575",
+              "embed_id": "2037338278743994575",
+              "title": "President Trump is stepping in with an Executive Order to pay TSA workers.\n\nThwarting Schumer's destructive attempt to overturn the will of the people",
+              "author": "TheGrayRider"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/FordJohnathan5/status/2037324147953401927",
+              "embed_id": "2037324147953401927",
+              "title": "🚨 #BREAKINGNEWS Trump finally uses existing funds from \"Big Beautiful Bill\" to pay TSA workers. An option many Democrats and Republicans claim he had",
+              "author": "FordJohnathan5"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/EricLDaugh/status/2037323392349515815",
+              "embed_id": "2037323392349515815",
+              "title": "🚨 BREAKING: In another betrayal, Senate Democrats just BLOCKED funding for DHS and paying TSA workers, 54-46\n\nThankfully for America, PRESIDENT TRUMP",
+              "author": "EricLDaugh",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TrumpGirlOnFire/status/2037318515909390430",
+              "embed_id": "2037318515909390430",
+              "title": "⚡️BREAKING:  Trump is signing an Executive Order to immediately PAY our TSA Agents!  Enough of the Democrat shutdown chaos hurting American workers an",
+              "author": "TrumpGirlOnFire",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/ABC/status/2037309786459435338",
+              "embed_id": "2037309786459435338",
+              "title": "BREAKING: President Trump announced on social media that he will sign an executive order instructing newly sworn-in DHS Secretary Markwayne Mullin to ",
+              "author": "ABC"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WSJ/status/2037306322375278684",
+              "embed_id": "2037306322375278684",
+              "title": "Breaking: Trump said he will sign an executive order to pay TSA workers, citing an \"emergency situation\" in bypassing Congress https://t.co/1kwrwhtXeE",
+              "author": "WSJ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/overton_news/status/2037306158348693943",
+              "embed_id": "2037306158348693943",
+              "title": "Deer in the headlights moment for CNN.\n\nAfter weeks of nonstop coverage blaming President Trump and Republicans for TSA workers going unpaid during th",
+              "author": "overton_news",
+              "duration": 60
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/France24_en/16213",
+              "embed_id": "France24_en/16213",
+              "title": "Trump to order immediate pay for TSA as 41-day shutdown continues\nPresident Donald Trump said Thursday he would order the immediate payment of TSA age",
+              "author": "france24_en"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/Newsmax/30387",
+              "embed_id": "Newsmax/30387",
+              "title": "BREAKING: President Donald Trump has directed his administration to take emergency steps to ensure Transportation Security Administration workers rece",
+              "author": "newsmax"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/scotus/comments/1s5k0in/trump_signs_executive_order_to_pay_tsa_workers/",
+              "embed_id": "1s5k0in",
+              "title": "Trump signs executive order to pay TSA workers after House rejects funding bill - thereby formally breaking the separation of powers and usurping the ",
+              "author": ""
             }
           ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "M0NQb9OFBrc",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2023-06-06",
-          "story_index": 0,
-          "topic": "Kakhovka Dam Destroyed",
-          "summary": "The Kakhovka Dam on the Dnipro River was destroyed, unleashing catastrophic flooding across southern Ukraine. Tens of thousands were evacuated as entire villages were submerged. Ukraine and Russia blamed each other for the destruction, which also threatened the cooling water supply for the Zaporizhzhia nuclear power plant.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/LVRGh-iEpOU/hqdefault.jpg",
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=LVRGh-iEpOU",
-              "embed_id": "LVRGh-iEpOU",
-              "channel": "Defense Digest"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "LVRGh-iEpOU",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2024-08-06",
-          "story_index": 0,
-          "topic": "Ukraine Invades Kursk, Russia",
-          "summary": "Ukraine launched a surprise cross-border offensive into Russia's Kursk Oblast, the first foreign occupation of Russian territory since World War II. Ukrainian forces captured 1,250 square kilometers and the town of Sudzha. The bold operation aimed to divert Russian forces from eastern Ukraine and boost Ukrainian morale.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/8EGjOOlhbVg/hqdefault.jpg",
-          "youtube_videos": [
+              "url": "https://www.youtube.com/watch?v=jgMzIiKlXwA",
+              "embed_id": "jgMzIiKlXwA",
+              "channel": "NBC News",
+              "duration": 160,
+              "title": "Trump signs emergency order to pay TSA",
+              "relevance": 9
+            },
             {
-              "url": "https://www.youtube.com/watch?v=8EGjOOlhbVg",
-              "embed_id": "8EGjOOlhbVg",
-              "channel": "CGTN Europe"
+              "url": "https://www.youtube.com/watch?v=tw_5FMPWkf8",
+              "embed_id": "tw_5FMPWkf8",
+              "channel": "NBC News",
+              "duration": 121,
+              "title": "Fight over TSA funding continues in Congress",
+              "relevance": 7
             }
           ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "8EGjOOlhbVg",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2024-10-01",
-          "story_index": 0,
-          "topic": "Vuhledar Falls After Two-Year Siege",
-          "summary": "The Ukrainian city of Vuhledar fell to Russian forces after withstanding repeated assaults since the start of the invasion. The city of 14,000 was reduced to a sprawling ruin. Its capture gave Russia control of a strategic position in Donetsk Oblast that Ukraine had defended for over two years.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/Svq7G70pNlM/hqdefault.jpg",
-          "youtube_videos": [
+          "sources": [
             {
-              "url": "https://www.youtube.com/watch?v=Svq7G70pNlM",
-              "embed_id": "Svq7G70pNlM",
-              "channel": "The Telegraph"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "Svq7G70pNlM",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2024-11-10",
-          "story_index": 0,
-          "topic": "North Korean Troops Deploy to Ukraine Front",
-          "summary": "Over 10,000 North Korean soldiers deployed to Russia's Kursk Oblast to fight alongside Russian forces against Ukraine. The deployment marked a dramatic escalation and internationalization of the conflict. North Korean troops suffered heavy casualties in initial engagements with Ukrainian forces.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/kSPls3oCFoU/hqdefault.jpg",
-          "youtube_videos": [
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/27/us/politics/trump-farmers.html",
+              "lean": "left"
+            },
             {
-              "url": "https://www.youtube.com/watch?v=kSPls3oCFoU",
-              "embed_id": "kSPls3oCFoU",
-              "channel": "The Military Show"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "kSPls3oCFoU",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2025-02-28",
-          "story_index": 0,
-          "topic": "Trump Suspends Military Aid to Ukraine",
-          "summary": "Following a heated televised meeting between Zelensky, Trump, and Vice President Vance, the United States suspended all military aid and intelligence sharing with Kyiv within a week. The suspension dramatically shifted the battlefield dynamics. When Trump proposed a 30-day ceasefire in March, Zelensky accepted but Putin refused, eager to exploit the pause in American support.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/vff5nfBUjck/hqdefault.jpg",
-          "youtube_videos": [
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/politics/watch-travelers-reveal-who-blame-miles-long-houston-airport-lines-trump-rescues-tsa-pay",
+              "lean": "right"
+            },
             {
-              "url": "https://www.youtube.com/watch?v=vff5nfBUjck",
-              "embed_id": "vff5nfBUjck",
-              "channel": "Times Of India"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "vff5nfBUjck",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2025-04-15",
-          "story_index": 0,
-          "topic": "Russia Retakes Kursk From Ukraine",
-          "summary": "Russian and North Korean forces drove Ukrainian troops out of Kursk Oblast entirely, ending Ukraine's eight-month occupation of Russian territory. The recapture came after the suspension of US military aid left Ukrainian forces stretched thin. North Korean troops were subsequently withdrawn after suffering significant losses.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/GDPM70n4kqE/hqdefault.jpg",
-          "youtube_videos": [
+              "name": "New York Post",
+              "url": "https://nypost.com/2026/03/28/us-news/tyler-perry-finds-250k-workaround-to-help-unpaid-tsa-workers-at-atlanta-airport/",
+              "lean": "right"
+            },
             {
-              "url": "https://www.youtube.com/watch?v=GDPM70n4kqE",
-              "embed_id": "GDPM70n4kqE",
-              "channel": "HistoryLegends"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "GDPM70n4kqE",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2025-10-30",
-          "story_index": 0,
-          "topic": "Battle of Pokrovsk Intensifies",
-          "summary": "Russian forces pushed into Pokrovsk city proper after months of sustained pressure on the strategic Donetsk hub. Fighting reached the city streets as Ukrainian defenders struggled to hold positions without adequate Western support. Russia had advanced hundreds of square miles through sustained offensive operations.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/nxuNrIvCtVQ/hqdefault.jpg",
-          "youtube_videos": [
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/28/trump-signs-order-to-pay-tsa-employees-after-congress-disagreement.html",
+              "lean": "center",
+              "title": "Trump signs order to pay TSA employees after Congress fails to agree on DHS funding"
+            },
             {
-              "url": "https://www.youtube.com/watch?v=nxuNrIvCtVQ",
-              "embed_id": "nxuNrIvCtVQ",
-              "channel": "ROSS NAME"
-            }
-          ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "nxuNrIvCtVQ",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-01-15",
-          "story_index": 0,
-          "topic": "Russia Captures Pokrovsk and Myrnohrad",
-          "summary": "Russian forces fully captured Pokrovsk, Myrnohrad, and Huliaipole in a series of decisive operations in early 2026. The fall of these cities represented the most significant Russian territorial gains since the early months of the invasion. The losses intensified pressure on Ukraine and sparked renewed calls for negotiations.",
-          "category": "world",
-          "image_file": "https://i.ytimg.com/vi/oDg6yFtZji8/hqdefault.jpg",
-          "youtube_videos": [
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/27/tsa-dhs-paychecks-shutdown.html",
+              "lean": "center",
+              "title": "TSA officers will start getting paychecks as early as Monday, DHS says"
+            },
             {
-              "url": "https://www.youtube.com/watch?v=oDg6yFtZji8",
-              "embed_id": "oDg6yFtZji8",
-              "channel": "MapFront"
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQRHc2RFg2VWgtSEItMUM0NUdSM1VQNWRSRnh1LVNpNDJtaEFHTmIxdXhjUGZFQlFHTVN1QmpFQVBwTHk1LV8teGRHYTNpOEtmU2NUWHE5ZlRVdVlXLXZfZkw4bmRISkk0N3hZTGNrQkI2TzRPUjlVOFdHOFZjdnh4Rzc0cmZNT2lrZ3dQb3hDdUxrTFhqM3ZxUXFGZG9tRFJ2ZjdhRlJfV1d2STBkYjRpNG8tYzRadw?oc=5",
+              "lean": "center",
+              "title": "Trump Signs Memo Directing TSA Agents to Be Paid During Shutdown - Bloomberg.com"
+            },
+            {
+              "name": "Barron's",
+              "url": "https://news.google.com/rss/articles/CBMikwNBVV95cUxObWJneWdSaHBYTE9YSVA2NUVVS0I5Q0FLLUEzRFVZVzU4Q284X3FqTDFhNXhKUVFjWEl6QnVGdG5iaGlFbC0yRFVhOGNhbzV0dWpJX2tTdUZjZjRBVlp3NUZtOVprZVFUa2wwZTBBX3o3a3RmRURHdE1NOUNQUWRteFRBYkEtZDB2UjhqdThneGpiczBNaDBnNTZ5YlJ1Sk0tRjI1cVBGTzdzVDlCQ0VJSElzS2x3Y1dVbHlhdHBJZUx5U0wtTlV1QXRpWW9YaEZfeGxIWi1LdmFJZHk2REJzSXgyc2x3Nzk0bWpTVnJWaVowNVhDQVVfRldwR2JsQXJDNEdPazZEaFRJaUNPNU5IcXNVZERqckJpYXp5QlFTZjQyb3dKRDR5R2s3bWkyaXRGZmgyY1FMNVJzTEdxUjdRZmpkQXpnNTlTczFGUDNBc3VQUEkyQk8wQmZCYUNOWFFrUVA4MDUtQUlkYTNkOXo0d3gtNVRvcEFLcUVqaEdlU2h3Y2U4R1daVXEwVXh1UW5mSEtj?oc=5",
+              "lean": "center",
+              "title": "Trump Signs Order to Pay TSA Agents. What It Means for Airport Wait Times. - Barron's"
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/trump-just-funded-tsa-heres-when-you-can-expect-shorter-lines-at-airports",
+              "lean": "right",
+              "title": "Trump Just Funded TSA. Here’s When You Can Expect Shorter Lines At Airports."
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/trump-kills-senate-bill-to-re-open-dhs-without-ice-funding",
+              "lean": "right",
+              "title": "Trump Kills Senate Bill To Re-Open DHS Without ICE Funding"
+            },
+            {
+              "name": "Slate",
+              "url": "https://slate.com/news-and-politics/2026/03/deal-tsa-funding-airport-disaster-mike-johnson-blame.html?via=rss",
+              "lean": "left",
+              "title": "There Was a Deal to Fund the TSA! Then Mike Johnson Got Involved."
             }
           ],
-          "social_clips": [],
-          "sources": [],
-          "best_video_id": "oDg6yFtZji8",
+          "best_video_id": "jgMzIiKlXwA",
           "best_video_platform": "youtube"
         }
       ],
-      "gap_days": [],
-      "first_seen": "2022-02-24",
-      "last_seen": "2026-01-15",
+      "gap_days": [
+        {
+          "date": "2026-03-27",
+          "bridge_text": "Negotiations likely continued without resolution, increasing pressure on the government to address TSA funding."
+        }
+      ],
+      "first_seen": "2026-03-26",
+      "last_seen": "2026-03-28",
       "is_active": true,
-      "total_days_span": 1422,
-      "days_covered": 12
+      "total_days_span": 3,
+      "days_covered": 2
     }
   ]
 }
