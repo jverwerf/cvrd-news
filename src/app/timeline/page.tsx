@@ -1,5 +1,5 @@
 import { getDailyGaps } from "@/lib/data";
-import { getTimelineThreads } from "@/lib/timeline-data";
+import { getTimelineThreads, getTodayLastYear } from "@/lib/timeline-data";
 import { LiveBanner } from "@/components/LiveBanner";
 import { TimelineContent } from "./TimelineClient";
 
@@ -27,9 +27,10 @@ async function hasBreakingNews(): Promise<boolean> {
 }
 
 export default async function TimelinePage() {
-  const [data, threadData, isBreaking] = await Promise.all([
+  const [data, threadData, lastYearData, isBreaking] = await Promise.all([
     getDailyGaps(),
     getTimelineThreads(),
+    getTodayLastYear(),
     hasBreakingNews(),
   ]);
 
@@ -119,7 +120,7 @@ export default async function TimelinePage() {
           </div>
         </div>
       ) : (
-        <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} />
+        <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} />
       )}
 
       {/* FOOTER */}

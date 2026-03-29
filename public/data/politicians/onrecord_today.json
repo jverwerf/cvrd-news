@@ -1,16 +1,108 @@
 {
-  "headline": "Donald Trump on iran: 65% Truthful",
+  "headline": "Mike Johnson on homeland security: 57.6% Truthful",
   "person": {
-    "handle": "realDonaldTrump",
-    "name": "Donald J. Trump",
-    "role": "Former President of the United States",
-    "photo": "/data/politicians/photo_realDonaldTrump.png"
+    "handle": "SpeakerJohnson",
+    "name": "Mike Johnson",
+    "role": "Speaker of the House",
+    "photo": "/data/politicians/photo_SpeakerJohnson.png"
   },
-  "story_topic": "Iranian Hackers Breach FBI Director's Email",
-  "search_keyword": "iran",
-  "topic_score": 65,
-  "overall_score": 44.7,
-  "matching_claims": 2,
-  "editorial": "In the wake of Iranian hackers breaching FBI Director Kash Patel's email, leaking sensitive discussions about Iran, Donald Trump's track record on Iran-related claims deserves scrutiny. His assertion that \"Iran-backed Houthi Terrorists have been decimated by relentless strikes\" was deemed \"Somewhat Misleading.\" The strikes did occur, but labeling the Houthis as decimated exaggerates their current state.\n\nTrump's broader narrative on Middle Eastern peace is equally suspect. His boast of achieving peace during his tenure overlooks persistent conflicts, earning another \"Somewhat Misleading\" verdict. While the Abraham Accords were a diplomatic highlight, regional tensions and hostilities endured.\n\nTrump's overall truthfulness score sits at a low 44.7, with 24 out of 63 claims misleading and 14 false. His pattern of stretching the facts, particularly regarding Iran, raises alarms, especially as foreign cyber threats spotlight the need for factual precision.\n\nFor readers, the lesson is clear: scrutinize claims, especially when national security and international relations are at stake.",
-  "generated_at": "2026-03-28T15:36:37.838Z"
+  "story_topic": "House Republicans Pass DHS Funding Bill Amidst Shutdown",
+  "search_keyword": "homeland security",
+  "topic_score": 57.6,
+  "overall_score": 61.4,
+  "matching_claims": 112,
+  "editorial": "Speaker Mike Johnson is making headlines with his bold claims about the House Republicans' recent passage of the DHS funding bill amidst the looming government shutdown. In a statement, Johnson declared, \"It takes 60 votes to end the Schumer Shutdown,\" a claim rated TRUE. Indeed, Senate rules require 60 votes to overcome a filibuster, but Johnson's rhetoric paints a more complicated picture of partisan gridlock.\n\nJohnson's track record on homeland security reveals a pattern of skewed narratives. He asserts that Republicans twice passed a bill to fund the DHS and pay TSA agents, with nearly every Democrat voting against it — a claim deemed MISLEADING. The portrayal oversimplifies a complex legislative process, ignoring the broader context and bipartisan negotiations. Similarly, his narrative that Democrats caused the longest shutdown in U.S. history last year is another MISLEADING claim that obscures the multifaceted nature of congressional budget battles.\n\nWith an overall truthfulness score of 61.4, Johnson's statements often carry a shade of distortion. Nearly 26% of his claims are misleading, and while 19% are true, the rest either miss the mark or lack full context. This pattern signals a tendency to stretch the truth, especially in high-stakes political showdowns.\n\nFor the reader, it’s clear: always dig deeper than the headline when assessing Speaker Johnson’s claims.",
+  "matched_tweets": [
+    {
+      "claim": "It takes 60 votes to end the Schumer Shutdown.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": ".@SenSchumer is incapable of telling the truth. After 44 YEARS in Congress, he pretends not to understand the Senate’s rules. As every 8th grade Civics student knows, it takes 60 votes to end the Schumer Shutdown. Since we only have 53 Republicans, we must have a handful of",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1977421200499331264",
+      "domain": "legislation",
+      "reasoning": "The claim that 'it takes 60 votes to end the Schumer Shutdown' is accurate. In the U.S. Senate, ending a filibuster on legislation, such as a continuing resolution to fund the government, requires a cloture vote with a three-fifths majority, which is 60 out of 100 senators. Therefore, with 53 Republ"
+    },
+    {
+      "claim": "Republicans passed a bill twice to pay TSA agents and fund DHS, and nearly every Democrat voted against it both times.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "FACT CHECK: Republicans PASSED a bill TWICE to pay TSA agents and fund DHS. Nearly every Democrat voted against it both times. The truth is Democrats want us to REOPEN our border in exchange for funding Homeland Security, and it’s NOT going to happen!",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2034699507707863386",
+      "domain": "legislation",
+      "reasoning": "The claim states that Republicans passed a bill twice to pay TSA agents and fund DHS, and that nearly every Democrat voted against it both times. However, the legislative history indicates a more complex situation. While House Republicans did pass a short-term DHS funding bill on March 27, 2026, thi"
+    },
+    {
+      "claim": "House Republicans funded 11 of 12 appropriations bills and restored regular order",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Today, House Republicans once again delivered real, positive results. While Democrats pushed for yet another prolonged government shutdown, our Republican majority worked together and got the job done — funding 11 of 12 appropriations bills and restoring regular order for the",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2018821928090239387",
+      "domain": "legislation",
+      "reasoning": "The claim that House Republicans funded 11 of 12 appropriations bills and restored regular order is mostly accurate. By February 3, 2026, the House had passed 11 of the 12 appropriations bills, with President Trump signing them into law, thereby funding over 95% of the federal government. This effor"
+    },
+    {
+      "claim": "Democrats caused the longest shutdown in U.S. history last year and Republicans are funding the government through regular order.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "After Democrats caused the longest shutdown in U.S. history last year, Republicans are not going to let them put the American people through that chaos again. We’re funding the government the right way — through regular order. Committees have done the work, 11 of 12",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2018082765829210573",
+      "domain": "domestic",
+      "reasoning": "The claim that 'Democrats caused the longest shutdown in U.S. history last year' is misleading. The 2025 government shutdown, lasting 43 days from October 1 to November 12, was indeed the longest in U.S. history. However, attributing the shutdown solely to Democrats oversimplifies the situation. The"
+    },
+    {
+      "claim": "Congress is passing annual funding bills instead of massive omnibus bills.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "What you are seeing now - is how a strong Congress with America First principles is SUPPOSED to work. No more governing by massive, bloated omnibus bills. We are passing annual funding bills - which strengthens Congress, and lets Republicans deliver policies that improve the",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2011558850604757414",
+      "domain": "legislation",
+      "reasoning": "The claim that Congress is passing annual funding bills instead of massive omnibus bills is partially accurate. Recent legislative actions indicate a shift towards passing individual appropriations bills. For instance, in January 2026, the House passed a bipartisan package of three spending bills to"
+    },
+    {
+      "claim": "Republicans passed a clean continuing resolution (CR) funding bill in September, which Democrats supported 13 times under Biden.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Republicans know this shutdown isn’t a game — there are no “winners.” That’s why we passed a clean, CR funding bill back in September — something Democrats supported 13 TIMES under Biden. Now Schumer and Jeffries are demanding we “negotiate” with them to open the government,",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1986228088837918801",
+      "domain": "legislation",
+      "reasoning": "The claim that Republicans passed a clean continuing resolution (CR) in September 2025 is accurate, as the House passed such a measure on September 19, 2025, with a vote of 217-212. However, the assertion that Democrats supported similar clean CRs 13 times under President Biden is misleading. While "
+    },
+    {
+      "claim": "House Republicans voted to open the government on September 19 with a clean continuing resolution funding bill.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "It’s Day 34 of the Democrat Shutdown — and here’s the simple truth ⤵️ Democrats are LYING when they say Republicans shut down the government. ✅ House Republicans voted to OPEN the government on September 19 with a CLEAN CR funding bill. ❌ Democrats voted to CLOSE it — and",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1985409429672509692",
+      "domain": "legislation",
+      "reasoning": "The claim that House Republicans voted to open the government on September 19 with a clean continuing resolution funding bill is accurate. On that date, the House passed H.R. 5371, the Continuing Appropriations and Extensions Act, 2026, by a vote of 217 to 212. However, the assertion that Democrats "
+    },
+    {
+      "claim": "Democrats have voted NO more than a dozen times on funding the government.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "It’s almost comical how Democrats are STILL trying to blame Republicans for their own shutdown. Republicans have DONE OUR JOB and voted to fund the government. Democrats have voted NO more than a dozen times—because they fear the radical left in their base more than they care",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1983636612551733698",
+      "domain": "domestic",
+      "reasoning": "During the 2025 government shutdown, Senate Democrats blocked Republican-sponsored funding bills multiple times. Reports indicate that Senate Democrats rejected such bills at least 10 times, with some sources noting up to 14 rejections before a revised bill was passed. This supports the claim that D"
+    },
+    {
+      "claim": "Every Republican in Congress wants to stop the government shutdown and they have voted 13 times to keep it open.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "EVERY Republican in Congress wants to stop this pointless Democrat-caused shutdown — but we can’t do it alone. We’ve voted 13 TIMES to keep the government open and get the American people the relief they deserve. It takes 60 votes in the Senate, and Democrats have voted again",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1982859176666710155",
+      "domain": "domestic",
+      "reasoning": "The claim that 'Every Republican in Congress wants to stop this pointless Democrat-caused shutdown' and that they have 'voted 13 TIMES to keep the government open' is partially accurate. While House Republicans did pass a clean funding extension and full-year appropriations bills to reopen the gover"
+    },
+    {
+      "claim": "House Republicans sent Chuck Schumer a clean continuing resolution funding bill that is the same as one he voted for in March.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Let me be clear: House Republicans sent Chuck Schumer a totally CLEAN CR funding bill — the EXACT SAME one he voted for in March. What’s changed? Schumer took heat for doing the right thing from his RADICAL MARXIST base and now is TERRIFIED of them — and of losing the Senate",
+      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1980635539960172887",
+      "domain": "legislation",
+      "reasoning": "In March 2025, Senate Minority Leader Chuck Schumer voted for a Republican-led continuing resolution (CR) to avert a government shutdown, despite expressing concerns about its partisan nature. In October 2025, House Republicans sent the Senate a CR they described as 'clean' and identical to the Marc"
+    }
+  ],
+  "generated_at": "2026-03-28T21:36:44.119Z"
 }

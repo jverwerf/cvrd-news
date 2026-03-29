@@ -51,46 +51,46 @@
     "republicans"
   ],
   "prominence": 40,
-  "followers": 1192527,
-  "overall_score": 62,
-  "confidence_interval": 5.7,
-  "verified_claims": 280,
-  "true_count": 52,
-  "somewhat_misleading_count": 152,
-  "misleading_count": 65,
-  "false_count": 11,
-  "pending_count": 109,
+  "followers": 1194204,
+  "overall_score": 61.4,
+  "confidence_interval": 5.5,
+  "verified_claims": 297,
+  "true_count": 58,
+  "somewhat_misleading_count": 150,
+  "misleading_count": 77,
+  "false_count": 12,
+  "pending_count": 115,
   "dropped_count": 4,
   "domains": {
     "domestic": {
-      "score": 58.1,
-      "count": 121,
-      "true": 17,
-      "somewhat_misleading": 62,
-      "misleading": 37,
-      "false": 5
+      "score": 54.2,
+      "count": 130,
+      "true": 15,
+      "somewhat_misleading": 61,
+      "misleading": 45,
+      "false": 9
     },
     "legislation": {
-      "score": 70.7,
-      "count": 63,
-      "true": 19,
-      "somewhat_misleading": 35,
-      "misleading": 8,
-      "false": 1
+      "score": 70.6,
+      "count": 67,
+      "true": 21,
+      "somewhat_misleading": 34,
+      "misleading": 12,
+      "false": 0
     },
     "economics": {
-      "score": 55.2,
-      "count": 62,
-      "true": 3,
+      "score": 60.8,
+      "count": 65,
+      "true": 9,
       "somewhat_misleading": 40,
-      "misleading": 15,
-      "false": 4
+      "misleading": 13,
+      "false": 3
     },
     "foreign_policy": {
-      "score": 80,
-      "count": 12,
-      "true": 6,
-      "somewhat_misleading": 5,
+      "score": 76.2,
+      "count": 13,
+      "true": 5,
+      "somewhat_misleading": 7,
       "misleading": 1,
       "false": 0
     },
@@ -103,12 +103,12 @@
       "false": 0
     },
     "military": {
-      "score": 65.9,
+      "score": 69.5,
       "count": 11,
-      "true": 3,
-      "somewhat_misleading": 6,
-      "misleading": 1,
-      "false": 1
+      "true": 4,
+      "somewhat_misleading": 4,
+      "misleading": 3,
+      "false": 0
     },
     "healthcare": {
       "score": 55,
@@ -127,5 +127,5 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-26T08:24:08.581Z"
+  "scored_at": "2026-03-28T20:11:16.453Z"
 }
