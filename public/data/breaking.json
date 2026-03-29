@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Missile Strike on Israel",
-    "summary": "Iran has launched a missile strike targeting an industrial facility in southern Israel, resulting in significant damage. This act represents a serious escalation in the ongoing conflict between the two nations. The incident raises the possibility of further military responses from Israel and its allies, potentially intensifying regional tensions.",
+    "summary": "Iran has launched a missile strike on an industrial facility in southern Israel, causing significant damage. This marks a serious escalation in the ongoing conflict between Iran and Israel. The attack has heightened tensions in the region, with potential for further military responses from Israel and its allies.",
     "severity": "critical",
     "detected_at": "2026-03-29T19:00:07.423Z",
-    "last_updated": "2026-03-29T19:00:07.423Z",
+    "last_updated": "2026-03-29T21:00:25.171Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind the strike, such as Iran's strategic interests in demonstrating military capability or Israel's potential vulnerabilities in its defense systems. Additionally, the economic implications of targeting industrial zones, which disrupt supply chains and impact global markets, are not being thoroughly examined.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression while others criticize Israel's military policies. Memes and conspiracy theories are circulating, suggesting hidden alliances and questioning the timing of the strike in relation to recent diplomatic developments in the region.",
-    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the sudden disruption and looming threat of conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict. The industrial facility targeted have strategic importance in terms of resources or technology that Iran perceives as a threat. Additionally, the geopolitical implications involving global powers with vested interests in the region's stability are not being fully explored.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression, while others criticize Israel's past actions in the region. Memes and conspiracy theories are circulating, suggesting hidden agendas and questioning the timing of the strike in relation to international diplomatic events.",
+    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the looming threat and tension in the region.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -27,57 +27,9 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=xTeRAuOSGKw",
-        "embed_id": "xTeRAuOSGKw",
-        "title": "Israeli airstrike kills three journalists in southern Lebanon"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Hz2psE-IeNU",
-        "embed_id": "Hz2psE-IeNU",
-        "title": "US Carrier Gerald R. Ford Arrives In Croatia's Red Sea As Part Of Ongoing US-Israeli Strikes On Iran"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=QjZ7tiCvpvs",
-        "embed_id": "QjZ7tiCvpvs",
-        "title": "First Responders Arrive At Scene After Airstrike Lights A Fire In Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
-        "embed_id": "-nJg9MWM0IU",
-        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=qZH2QatoZOU",
-        "embed_id": "qZH2QatoZOU",
-        "title": "Brief: Houthis launch missile attacks on Israel Israeli soldiers accused of torturing toddler"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lfAQNDo83lM",
-        "embed_id": "lfAQNDo83lM",
-        "title": "Funeral held for Lebanese journalists killed in Israeli strike | AJ#shorts"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
-        "embed_id": "TK8x1dHrkP8",
-        "title": "Israeli strike kills three journalists in Lebanon | DW News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
-        "embed_id": "RhZYAjEIoOQ",
-        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Wj5pal0VI4M",
-        "embed_id": "Wj5pal0VI4M",
-        "title": "Lebanon mourns three journalists killed in Israeli strikes • FRANCE 24 English"
+        "url": "https://www.youtube.com/watch?v=HpSonUXY6wo",
+        "embed_id": "HpSonUXY6wo",
+        "title": "Black smoke rises from factory hit by Iran missile fragment in Israel"
       },
       {
         "platform": "x",
@@ -106,13 +58,6 @@
         "embed_id": "2037980665384235198",
         "title": "BREAKING: Medics say 11 wounded in Iranian missile strike on Israeli village\n\n🔴 LIVE updates: https://t.co/YIdZTbxgJH https://t.co/7opsXAL1Xs",
         "author": "AJENews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
-        "embed_id": "2037872167870959841",
-        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
-        "author": "AMK_Mapping_"
       },
       {
         "platform": "x",
@@ -159,6 +104,12 @@
         "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
         "embed_id": "1s72is6",
         "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Cleveland/comments/1s72hq0/trump_putin_netanyahu_the_new_axis_of_evil/",
+        "embed_id": "1s72hq0",
+        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland No Kings III yesterday"
       }
     ],
     "youtube_videos": [
@@ -169,58 +120,10 @@
         "channel": "CBS News"
       },
       {
-        "url": "https://www.youtube.com/watch?v=xTeRAuOSGKw",
-        "embed_id": "xTeRAuOSGKw",
-        "title": "Israeli airstrike kills three journalists in southern Lebanon",
-        "channel": "CNN"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Hz2psE-IeNU",
-        "embed_id": "Hz2psE-IeNU",
-        "title": "US Carrier Gerald R. Ford Arrives In Croatia's Red Sea As Part Of Ongoing US-Israeli Strikes On Iran",
-        "channel": "Forbes Breaking News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=QjZ7tiCvpvs",
-        "embed_id": "QjZ7tiCvpvs",
-        "title": "First Responders Arrive At Scene After Airstrike Lights A Fire In Israel",
-        "channel": "Forbes Breaking News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=-nJg9MWM0IU",
-        "embed_id": "-nJg9MWM0IU",
-        "title": "Three Lebanese journalists killed in Israeli strike, say broadcasters | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=qZH2QatoZOU",
-        "embed_id": "qZH2QatoZOU",
-        "title": "Brief: Houthis launch missile attacks on Israel Israeli soldiers accused of torturing toddler",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=lfAQNDo83lM",
-        "embed_id": "lfAQNDo83lM",
-        "title": "Funeral held for Lebanese journalists killed in Israeli strike | AJ#shorts",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=TK8x1dHrkP8",
-        "embed_id": "TK8x1dHrkP8",
-        "title": "Israeli strike kills three journalists in Lebanon | DW News",
-        "channel": "DW News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=RhZYAjEIoOQ",
-        "embed_id": "RhZYAjEIoOQ",
-        "title": "Iran war escalates as Houthis launch first strikes on Israel | DW News",
-        "channel": "DW News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Wj5pal0VI4M",
-        "embed_id": "Wj5pal0VI4M",
-        "title": "Lebanon mourns three journalists killed in Israeli strikes • FRANCE 24 English",
-        "channel": "France 24 English"
+        "url": "https://www.youtube.com/watch?v=HpSonUXY6wo",
+        "embed_id": "HpSonUXY6wo",
+        "title": "Black smoke rises from factory hit by Iran missile fragment in Israel",
+        "channel": "Associated Press"
       }
     ],
     "social_clips": [
@@ -254,13 +157,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
-        "embed_id": "2037872167870959841",
-        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
-        "author": "AMK_Mapping_"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/Osint613/status/2037440584080556508",
         "embed_id": "2037440584080556508",
         "title": "UPDATE 🔴 \n\nNo injuries were reported after Iran’s latest ballistic missile attack on southern Israel, the second strike since midnight, and the missi",
@@ -304,21 +200,27 @@
         "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
         "embed_id": "1s72is6",
         "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Cleveland/comments/1s72hq0/trump_putin_netanyahu_the_new_axis_of_evil/",
+        "embed_id": "1s72hq0",
+        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland No Kings III yesterday"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
   },
   {
     "topic": "Iran War Escalation",
-    "summary": "Iran has issued a threat against the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the Middle East continue to rise. This development follows a significant death toll in Tehran, which has exceeded 2,000, leading the United States to increase its military presence in the region. The U.S. has deployed additional troops to address potential threats and attempt to stabilize the situation.",
+    "summary": "Iran has threatened the USS Abraham Lincoln, a U.S. aircraft carrier, amidst escalating tensions in the Middle East. This comes after a reported death toll in Tehran surpassing 2,000, prompting the United States to bolster its military presence in the region. The U.S. has deployed additional troops to counter potential threats and stabilize the situation.",
     "severity": "critical",
     "detected_at": "2026-03-29T13:00:14.955Z",
-    "last_updated": "2026-03-29T17:01:02.885Z",
+    "last_updated": "2026-03-29T21:01:04.559Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. Iran's threats be a strategic move to rally domestic support amidst internal unrest, while the U.S. military buildup is influenced by defense contractors and geopolitical interests in maintaining influence over Middle Eastern oil routes. The broader implications of these actions on global oil prices and international relations are largely ignored.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for a strong U.S. military response, while others criticize the potential for another prolonged conflict in the Middle East. Memes and conspiracy theories abound, suggesting ulterior motives behind the U.S. troop deployment, including accusations of warmongering for economic gain. Hashtags like #NoMoreWars and #DefendTheCarrier are trending, reflecting the divided public sentiment.",
-    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing looming conflict and tension on the high seas.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. The U.S. military presence in the Middle East is often linked to securing oil routes and maintaining regional influence, while Iran's threats can be seen as a response to economic sanctions and international isolation. The focus on military actions overshadows the broader context of economic pressures and strategic alliances shaping these tensions.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for U.S. military actions as necessary for global security, while others criticize it as imperialistic aggression. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the U.S. troop deployment, such as control over oil resources or distracting from domestic issues.",
+    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing tension and power, with shadowy figures in the foreground representing geopolitical players.",
     "sources": [],
     "clips": [
       {
@@ -363,6 +265,13 @@
         "duration": 172
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=v6Tr1_NEUPM",
+        "embed_id": "v6Tr1_NEUPM",
+        "title": "War With Iran: Escalation, Diplomacy, and What Comes Next | Robert Wexler on 13th and Park",
+        "duration": 1444
+      },
+      {
         "platform": "x",
         "url": "https://x.com/DailyMail/status/2038091162762854781",
         "embed_id": "2038091162762854781",
@@ -378,17 +287,17 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
-        "embed_id": "2038240220894605543",
-        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
-        "author": "Tiju0Prakash"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
         "embed_id": "2038023683092976041",
         "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
         "author": "FurkanGozukara"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/LenaPetrovaOnX/status/2038273876010967391",
+        "embed_id": "2038273876010967391",
+        "title": "🚨 \"If this war goes on for much longer, then there is a possibility that there will be nothing left in the Persian Gulf to produce oil or LNG. Escala",
+        "author": "LenaPetrovaOnX"
       },
       {
         "platform": "reddit",
@@ -443,6 +352,24 @@
         "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
         "embed_id": "1s6kv0i",
         "title": "US recession odds rise as Iran war escalates"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
+        "embed_id": "1s75olt",
+        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1s6xroh/the_iran_war_has_a_new_front_in_yemen_heres_how/",
+        "embed_id": "1s6xroh",
+        "title": "The Iran war has a new front in Yemen. Here’s how it could escalate"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
+        "embed_id": "1s6g4c0",
+        "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
       }
     ],
     "youtube_videos": [
@@ -486,6 +413,13 @@
         "title": "Iran war: Israel warns attacks will 'escalate'",
         "channel": "FOX 9 Minneapolis-St. Paul",
         "duration": 172
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=v6Tr1_NEUPM",
+        "embed_id": "v6Tr1_NEUPM",
+        "title": "War With Iran: Escalation, Diplomacy, and What Comes Next | Robert Wexler on 13th and Park",
+        "channel": "13th & Park",
+        "duration": 1444
       }
     ],
     "social_clips": [
@@ -505,17 +439,17 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
-        "embed_id": "2038240220894605543",
-        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
-        "author": "Tiju0Prakash"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
         "embed_id": "2038023683092976041",
         "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
         "author": "FurkanGozukara"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/LenaPetrovaOnX/status/2038273876010967391",
+        "embed_id": "2038273876010967391",
+        "title": "🚨 \"If this war goes on for much longer, then there is a possibility that there will be nothing left in the Persian Gulf to produce oil or LNG. Escala",
+        "author": "LenaPetrovaOnX"
       },
       {
         "platform": "reddit",
@@ -570,6 +504,24 @@
         "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
         "embed_id": "1s6kv0i",
         "title": "US recession odds rise as Iran war escalates"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
+        "embed_id": "1s75olt",
+        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1s6xroh/the_iran_war_has_a_new_front_in_yemen_heres_how/",
+        "embed_id": "1s6xroh",
+        "title": "The Iran war has a new front in Yemen. Here’s how it could escalate"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
+        "embed_id": "1s6g4c0",
+        "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
