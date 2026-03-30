@@ -1,7 +1,7 @@
 {
   "handle": "SenSchumer",
   "name": "Chuck Schumer",
-  "role": "Senator",
+  "role": "U.S. Senator",
   "party": "Democratic Party",
   "country": "US",
   "state": "New York",
@@ -20,8 +20,11 @@
   "photo_prompt": "Chuck Schumer, a middle-aged man with gray hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
   "claim_keywords": [
     "senate",
-    "republicans",
     "blocked",
+    "attempts",
+    "fully",
+    "times.",
+    "republicans",
     "funding",
     "times,",
     "causing",
@@ -45,77 +48,74 @@
     "passengers",
     "airports",
     "making",
-    "things",
-    "worse.",
-    "slashed",
-    "trillion"
+    "things"
   ],
-  "prominence": 35,
-  "followers": 3467935,
-  "overall_score": 82.3,
-  "confidence_interval": 4.6,
-  "verified_claims": 266,
-  "true_count": 146,
-  "somewhat_misleading_count": 107,
-  "misleading_count": 10,
+  "prominence": 34,
+  "followers": 3471756,
+  "overall_score": 84.3,
+  "confidence_interval": 4.3,
+  "verified_claims": 281,
+  "true_count": 165,
+  "somewhat_misleading_count": 108,
+  "misleading_count": 5,
   "false_count": 3,
-  "pending_count": 144,
-  "dropped_count": 5,
+  "pending_count": 151,
+  "dropped_count": 3,
   "domains": {
-    "domestic": {
-      "score": 79,
-      "count": 94,
-      "true": 44,
-      "somewhat_misleading": 45,
-      "misleading": 3,
-      "false": 2
-    },
-    "economics": {
-      "score": 80.4,
-      "count": 69,
-      "true": 33,
-      "somewhat_misleading": 33,
-      "misleading": 3,
-      "false": 0
-    },
-    "other": {
-      "score": 92.3,
-      "count": 31,
+    "legislation": {
+      "score": 90.7,
+      "count": 34,
       "true": 25,
-      "somewhat_misleading": 5,
-      "misleading": 1,
-      "false": 0
-    },
-    "foreign_policy": {
-      "score": 80.5,
-      "count": 28,
-      "true": 16,
       "somewhat_misleading": 9,
-      "misleading": 2,
-      "false": 1
-    },
-    "health": {
-      "score": 82.5,
-      "count": 2,
-      "true": 1,
-      "somewhat_misleading": 1,
       "misleading": 0,
       "false": 0
     },
-    "legislation": {
-      "score": 91.2,
-      "count": 32,
-      "true": 24,
-      "somewhat_misleading": 8,
+    "domestic": {
+      "score": 81.2,
+      "count": 101,
+      "true": 51,
+      "somewhat_misleading": 45,
+      "misleading": 5,
+      "false": 0
+    },
+    "economics": {
+      "score": 83.5,
+      "count": 72,
+      "true": 40,
+      "somewhat_misleading": 31,
+      "misleading": 0,
+      "false": 1
+    },
+    "other": {
+      "score": 89.5,
+      "count": 33,
+      "true": 25,
+      "somewhat_misleading": 7,
+      "misleading": 0,
+      "false": 1
+    },
+    "foreign_policy": {
+      "score": 85.2,
+      "count": 28,
+      "true": 18,
+      "somewhat_misleading": 9,
+      "misleading": 0,
+      "false": 1
+    },
+    "health": {
+      "score": 100,
+      "count": 3,
+      "true": 3,
+      "somewhat_misleading": 0,
       "misleading": 0,
       "false": 0
     },
     "military": {
-      "score": 75.7,
+      "score": 80,
       "count": 7,
       "true": 3,
-      "somewhat_misleading": 3,
-      "misleading": 1,
+      "somewhat_misleading": 4,
+      "misleading": 0,
       "false": 0
     },
     "environmental": {
@@ -143,5 +143,5 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-26T23:48:20.521Z"
+  "scored_at": "2026-03-30T14:01:46.700Z"
 }
