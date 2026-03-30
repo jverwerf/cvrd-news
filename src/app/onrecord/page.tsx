@@ -568,7 +568,7 @@ export default function PoliticiansPage() {
                             <span className="text-[8px] text-[#555] uppercase tracking-[0.08em]">{t.domain?.replace(/_/g, ' ')}</span>
                           </div>
                           {t.reasoning && (
-                            <p className="text-[10px] text-[#888] leading-[1.5] line-clamp-3">{t.reasoning}</p>
+                            <p className="text-[10px] text-[#888] leading-[1.5]">{t.reasoning}</p>
                           )}
                         </div>
                       );
