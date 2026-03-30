@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran War Escalation",
-    "summary": "Two projectiles reportedly landed near a vessel off the coast of Saudi Arabia, intensifying regional tensions. This incident comes amid increasing threats from the United States towards Iran, with the U.S. warning of possible military action if a ceasefire agreement is not achieved promptly. The situation adds to the already volatile dynamics in the Middle East, with potential implications for global oil markets and international relations.",
+    "summary": "Two projectiles have reportedly landed near a vessel off the coast of Saudi Arabia, escalating tensions in the Middle East. This incident occurs as the United States issues warnings to Iran, suggesting possible military action if a ceasefire is not reached soon. The situation exacerbates the already fragile geopolitical climate in the region, with potential repercussions for global oil markets and international diplomatic relations.",
     "severity": "critical",
     "detected_at": "2026-03-30T17:00:07.723Z",
-    "last_updated": "2026-03-30T17:00:07.723Z",
+    "last_updated": "2026-03-30T19:01:02.839Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly the impact on global oil prices and the interests of major oil corporations. Additionally, the geopolitical chess game involving U.S. alliances with Saudi Arabia and Israel, and Iran's ties with Russia and China, is a critical factor that is being downplayed. These alliances influence the strategic decisions and rhetoric of the involved nations.",
-    "social_summary": "Social media is buzzing with speculation about a potential new war in the Middle East, with hashtags like #IranConflict and #MiddleEastWar trending. Memes and viral posts are drawing parallels to past conflicts, while conspiracy theories suggest ulterior motives related to oil control and military-industrial complex interests. Users are divided, with some calling for peace and others advocating for decisive military action.",
-    "image_prompt": "A dramatic editorial photo of a stormy sea with a lone vessel silhouetted against the horizon, symbolizing the tension and uncertainty in the Middle East. The sky is dark and foreboding, with flashes of lightning illuminating the scene, capturing the volatile atmosphere of the current geopolitical situation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic interests at play, particularly the influence of global oil markets on the actions of both the U.S. and Iran. The strategic importance of the region's oil reserves is a significant factor driving international involvement and rhetoric. Additionally, the role of other regional powers, such as Russia and China, in either supporting or opposing U.S. actions is not being fully explored.",
+    "social_summary": "Social media is buzzing with speculation about the potential for a larger conflict, with hashtags like #IranWar and #MiddleEastCrisis trending. Memes and viral posts are drawing parallels to past conflicts in the region, while conspiracy theories suggest ulterior motives behind the U.S.'s aggressive stance. Some users are calling for diplomatic solutions, while others express concern over the impact on global oil prices.",
+    "image_prompt": "A dramatic sunset over a tense Middle Eastern coastline, with silhouetted oil rigs and military vessels on the horizon, symbolizing the intersection of economic interests and geopolitical tensions.",
     "sources": [],
     "clips": [
       {
@@ -48,11 +48,11 @@
         "duration": 338
       },
       {
-        "platform": "x",
-        "url": "https://x.com/Mohsin_o2/status/2038624737925234906",
-        "embed_id": "2038624737925234906",
-        "title": "This Iran-US War wasn’t started by Pakistan, and its outcome or end won’t be decided by Pakistan either. \n\nThe best Pakistan can do is look for de-esc",
-        "author": "Mohsin_o2"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "duration": 1114
       },
       {
         "platform": "x",
@@ -77,10 +77,10 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/SoSoValueCrypto/status/2038479831130935450",
-        "embed_id": "2038479831130935450",
-        "title": "SoSoValue Macro Trading Desk | Weekly Brief ⚠️\n\nIran uncertainty hits peak. \nOnly 4 trading days before the Apr 6 Trump deadline.\n▸ Houthis enter war ",
-        "author": "SoSoValueCrypto"
+        "url": "https://x.com/joni_askola/status/2038594720142618988",
+        "embed_id": "2038594720142618988",
+        "title": "Trump’s war on Iran is the perfect example of an escalation trap. \n\nWashington now has to choose between a catastrophic, long war and a humiliating re",
+        "author": "joni_askola"
       },
       {
         "platform": "reddit",
@@ -166,16 +166,16 @@
         "title": "Oil rises, stocks fall as Iran war enters fifth week and further escalation looms • FRANCE 24",
         "channel": "FRANCE 24 English",
         "duration": 338
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "channel": "Amanpour and Company",
+        "duration": 1114
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/Mohsin_o2/status/2038624737925234906",
-        "embed_id": "2038624737925234906",
-        "title": "This Iran-US War wasn’t started by Pakistan, and its outcome or end won’t be decided by Pakistan either. \n\nThe best Pakistan can do is look for de-esc",
-        "author": "Mohsin_o2"
-      },
       {
         "platform": "x",
         "url": "https://x.com/AJEnglish/status/2038537967040692256",
@@ -199,10 +199,10 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/SoSoValueCrypto/status/2038479831130935450",
-        "embed_id": "2038479831130935450",
-        "title": "SoSoValue Macro Trading Desk | Weekly Brief ⚠️\n\nIran uncertainty hits peak. \nOnly 4 trading days before the Apr 6 Trump deadline.\n▸ Houthis enter war ",
-        "author": "SoSoValueCrypto"
+        "url": "https://x.com/joni_askola/status/2038594720142618988",
+        "embed_id": "2038594720142618988",
+        "title": "Trump’s war on Iran is the perfect example of an escalation trap. \n\nWashington now has to choose between a catastrophic, long war and a humiliating re",
+        "author": "joni_askola"
       },
       {
         "platform": "reddit",
