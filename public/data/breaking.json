@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident represents a notable escalation in regional tensions, with potential implications for international relations and energy security in the Gulf region.",
+    "summary": "An Iranian military strike has targeted a power and water desalination plant in Kuwait, leading to significant damage and the death of an Indian worker. This attack marks a serious escalation in regional tensions, with potential repercussions for international relations and energy security in the Gulf. The incident has drawn widespread condemnation and raised concerns about the stability of critical infrastructure in the region.",
     "severity": "major",
     "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T03:00:07.008Z",
+    "last_updated": "2026-03-30T05:01:15.702Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as the impact of international sanctions on its economy and the strategic importance of disrupting energy supplies in the Gulf. Additionally, the geopolitical implications of this attack on global oil markets and the potential for increased military presence by foreign powers in the region are being overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users condemning Iran's aggression and others questioning the legitimacy of the reports, suggesting false flag operations. Memes and hashtags are circulating, with some users drawing parallels to past Gulf conflicts and others focusing on the human cost of geopolitical tensions.",
-    "image_prompt": "A dramatic editorial photo of a shattered desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human impact of geopolitical conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as the impact of international sanctions on its economy and the potential strategic advantage of disrupting Gulf energy supplies. Additionally, the geopolitical chess game involving major powers like the US, China, and Russia, who have vested interests in the region, is not being fully explored.",
+    "social_summary": "Social media is ablaze with outrage and fear, with hashtags like #IranKuwaitConflict trending. Memes depicting the Gulf as a powder keg ready to explode are circulating widely. Conspiracy theories suggest this attack is a false flag operation to justify increased military presence in the region by Western powers.",
+    "image_prompt": "A dramatic editorial photo of a cracked hourglass filled with oil and water, set against a backdrop of a desert landscape with distant smoke plumes, symbolizing the fragile balance of power and resources in the Gulf region.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -27,11 +27,11 @@
         "duration": 201
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43025",
-        "embed_id": "warmonitors/43025",
-        "title": "⚡Kuwaiti army announces that at least ten of its soldiers were injured in an Iranian attack",
-        "author": "warmonitors"
+        "platform": "x",
+        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
+        "embed_id": "2038415564457042141",
+        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
+        "author": "TheCradleMedia"
       },
       {
         "platform": "reddit",
@@ -56,6 +56,18 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
         "embed_id": "1s7bwn0",
         "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1s7h52y/israel_announces_wave_of_attacks_on_tehraniranian/",
+        "embed_id": "1s7h52y",
+        "title": "Israel announces wave of attacks on Tehran.Iranian attack hits power, water distillation facility, kuwait."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
+        "embed_id": "1s7en15",
+        "title": "Iran Attacks on Kuwait's Desalination Plant"
       }
     ],
     "youtube_videos": [
@@ -69,11 +81,11 @@
     ],
     "social_clips": [
       {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43025",
-        "embed_id": "warmonitors/43025",
-        "title": "⚡Kuwaiti army announces that at least ten of its soldiers were injured in an Iranian attack",
-        "author": "warmonitors"
+        "platform": "x",
+        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
+        "embed_id": "2038415564457042141",
+        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
+        "author": "TheCradleMedia"
       },
       {
         "platform": "reddit",
@@ -98,21 +110,33 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
         "embed_id": "1s7bwn0",
         "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1s7h52y/israel_announces_wave_of_attacks_on_tehraniranian/",
+        "embed_id": "1s7h52y",
+        "title": "Israel announces wave of attacks on Tehran.Iranian attack hits power, water distillation facility, kuwait."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
+        "embed_id": "1s7en15",
+        "title": "Iran Attacks on Kuwait's Desalination Plant"
       }
     ],
     "image_file": "/images/breaking_2026-03-30.png"
   },
   {
     "topic": "Iran Missile Strike on Israel",
-    "summary": "Iran has launched a missile strike on an industrial facility in southern Israel, causing significant damage and escalating the ongoing conflict between the two countries. This attack has heightened regional tensions and raised the possibility of military retaliation from Israel and its allies. The international community is closely monitoring the situation, as further escalation has broader implications for Middle Eastern stability.",
+    "summary": "Iran has launched a missile strike targeting an industrial facility in southern Israel, resulting in significant damage. This act has intensified the existing conflict between Iran and Israel, with potential for military retaliation from Israel and its allies. The situation is being closely watched by the international community due to its potential impact on regional stability in the Middle East.",
     "severity": "critical",
     "detected_at": "2026-03-29T19:00:07.423Z",
-    "last_updated": "2026-03-30T01:00:19.458Z",
+    "last_updated": "2026-03-30T05:02:12.431Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict, such as control over regional trade routes and energy resources. Additionally, the role of external powers, particularly the influence of the United States and Russia in the region, is not being fully explored. These geopolitical dynamics are crucial to understanding the broader context of the conflict.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Israel's right to defend itself, while others criticize Iran's actions as a necessary response to perceived Israeli aggression. Conspiracy theories are circulating about foreign powers orchestrating the conflict for their own gain, and memes depicting the conflict as a chess game between global superpowers are going viral.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing different countries and flags, under a stormy sky symbolizing geopolitical tension.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict, such as control over regional trade routes and energy resources. Additionally, the role of external powers, particularly the influence of the United States and Russia in the region, is not being fully explored. These geopolitical dynamics are crucial in understanding the broader implications of the conflict.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Israel's right to defend itself, while others criticize the attack as a provocation by Iran. Conspiracy theories are circulating, suggesting that the strike is a false flag operation to justify further military action. Memes and viral posts are highlighting the historical tensions between the two nations, often oversimplifying the complex geopolitical landscape.",
+    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the sudden disruption and looming threat of conflict.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -135,6 +159,34 @@
         "title": "Iran missile strike hits israeli chemical plant | Beersheba panic and rising war fears"
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=3ywbDl67FbE",
+        "embed_id": "3ywbDl67FbE",
+        "title": "Multiple injured after Iran launches missile attack in central Israel",
+        "duration": 61
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=xX0ls4b0uz4",
+        "embed_id": "xX0ls4b0uz4",
+        "title": "Iranian missile strikes strain Israel's Iron Dome | DW News",
+        "duration": 1127
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=sqHuwVuuXis",
+        "embed_id": "sqHuwVuuXis",
+        "title": "Drone Footage: Israeli Apartments Devastated Following Iranian Missile Attack",
+        "duration": 177
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ZIW8Y99yFgg",
+        "embed_id": "ZIW8Y99yFgg",
+        "title": "WATCH: Iran strikes Israel, video shows missile impact",
+        "duration": 186
+      },
+      {
         "platform": "x",
         "url": "https://x.com/BRICSinfo/status/2038285744859500640",
         "embed_id": "2038285744859500640",
@@ -177,6 +229,13 @@
         "embed_id": "2038382946856403360",
         "title": "🚨🇮🇷🇮🇱 BREAKING: Video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/F80RdJBN",
         "author": "jacksonhinklle"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
+        "embed_id": "2037872167870959841",
+        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
+        "author": "AMK_Mapping_"
       },
       {
         "platform": "reddit",
@@ -225,6 +284,12 @@
         "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
         "embed_id": "1s7bdek",
         "title": "Iran trolls trumps ceasefire plan"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NoSpinMedia/comments/1s6yk32/uss_tripoli_arrives_with_3500_marines_pentagon/",
+        "embed_id": "1s6yk32",
+        "title": "🪖 USS Tripoli Arrives With 3,500 Marines: Pentagon weighs Hormuz and Kharg Island options 👇"
       }
     ],
     "youtube_videos": [
@@ -239,6 +304,34 @@
         "embed_id": "nLydVjP4mDc",
         "title": "Iran missile strike hits israeli chemical plant | Beersheba panic and rising war fears",
         "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=3ywbDl67FbE",
+        "embed_id": "3ywbDl67FbE",
+        "title": "Multiple injured after Iran launches missile attack in central Israel",
+        "channel": "Associated Press",
+        "duration": 61
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=xX0ls4b0uz4",
+        "embed_id": "xX0ls4b0uz4",
+        "title": "Iranian missile strikes strain Israel's Iron Dome | DW News",
+        "channel": "DW News",
+        "duration": 1127
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sqHuwVuuXis",
+        "embed_id": "sqHuwVuuXis",
+        "title": "Drone Footage: Israeli Apartments Devastated Following Iranian Missile Attack",
+        "channel": "New York Post",
+        "duration": 177
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ZIW8Y99yFgg",
+        "embed_id": "ZIW8Y99yFgg",
+        "title": "WATCH: Iran strikes Israel, video shows missile impact",
+        "channel": "LiveNOW from FOX",
+        "duration": 186
       }
     ],
     "social_clips": [
@@ -287,6 +380,13 @@
         "author": "jacksonhinklle"
       },
       {
+        "platform": "x",
+        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
+        "embed_id": "2037872167870959841",
+        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
+        "author": "AMK_Mapping_"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Sino/comments/1s6sm4h/israeli_media_report_images_of_damaged_e3_awacs/",
         "embed_id": "1s6sm4h",
@@ -333,6 +433,12 @@
         "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
         "embed_id": "1s7bdek",
         "title": "Iran trolls trumps ceasefire plan"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NoSpinMedia/comments/1s6yk32/uss_tripoli_arrives_with_3500_marines_pentagon/",
+        "embed_id": "1s6yk32",
+        "title": "🪖 USS Tripoli Arrives With 3,500 Marines: Pentagon weighs Hormuz and Kharg Island options 👇"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
