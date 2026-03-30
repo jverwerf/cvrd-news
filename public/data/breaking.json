@@ -1,14 +1,14 @@
 [
   {
     "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident represents a serious escalation in regional tensions, with potential implications for international relations and energy security in the Gulf. The attack has been widely condemned and has heightened concerns about the stability of critical infrastructure in the region.",
+    "summary": "An Iranian military strike has targeted a power and water desalination plant in Kuwait, leading to significant damage and the death of an Indian worker. This act has escalated regional tensions and raised concerns about the security of critical infrastructure in the Gulf. The international community has widely condemned the attack, which poses potential risks to energy security and international relations in the region.",
     "severity": "major",
     "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T07:00:22.668Z",
+    "last_updated": "2026-03-30T09:00:38.737Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. The attack is a strategic move to disrupt alliances or signal discontent with recent diplomatic developments involving Kuwait and other Gulf states. Additionally, the economic impact on global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
-    "social_summary": "Social media is ablaze with reactions, ranging from outrage over the loss of life to conspiracy theories about a larger plot involving global powers. Memes and viral posts are highlighting the vulnerability of critical infrastructure in the Gulf, while some users speculate about the potential for a broader conflict. Hashtags related to the incident are trending, with calls for international intervention and peace.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. This attack be a strategic move in response to Kuwait's alliances and its role in regional politics, particularly its relationships with Western powers. Additionally, the economic implications for global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
+    "social_summary": "Social media is ablaze with outrage and fear, with users sharing images of the damaged facility and expressing concern over the safety of foreign workers in the region. Conspiracy theories are circulating, suggesting deeper plots involving global superpowers manipulating Middle Eastern conflicts for their own gain. Memes are emerging, depicting the Gulf as a powder keg ready to explode.",
     "image_prompt": "A dramatic editorial photo of a shattered water desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human cost and vulnerability of critical infrastructure.",
     "sources": [
       {
@@ -28,16 +28,9 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
-        "embed_id": "f20WG4pvHME",
-        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=O1Vf8gXd4y4",
-        "embed_id": "O1Vf8gXd4y4",
-        "title": "Kuwait airport hit by Iranian drone strikes | #ajshorts",
-        "duration": 27
+        "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
+        "embed_id": "9vfTT9uX64Q",
+        "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant"
       },
       {
         "platform": "x",
@@ -59,6 +52,13 @@
         "embed_id": "2038402706793013666",
         "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
         "author": "ETERNALPHYSICS"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2038506025905491987",
+        "embed_id": "2038506025905491987",
+        "title": "🇮🇷🇰🇼 Satellite imagery shows massive damage at a desalination facility in Kuwait, likely the Doha West complex, after an Iranian attack\n\nIt suppli",
+        "author": "MarioNawfal"
       },
       {
         "platform": "reddit",
@@ -106,17 +106,10 @@
         "duration": 201
       },
       {
-        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
-        "embed_id": "f20WG4pvHME",
-        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
+        "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
+        "embed_id": "9vfTT9uX64Q",
+        "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant",
         "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=O1Vf8gXd4y4",
-        "embed_id": "O1Vf8gXd4y4",
-        "title": "Kuwait airport hit by Iranian drone strikes | #ajshorts",
-        "channel": "Al Jazeera English",
-        "duration": 27
       }
     ],
     "social_clips": [
@@ -140,6 +133,13 @@
         "embed_id": "2038402706793013666",
         "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
         "author": "ETERNALPHYSICS"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2038506025905491987",
+        "embed_id": "2038506025905491987",
+        "title": "🇮🇷🇰🇼 Satellite imagery shows massive damage at a desalination facility in Kuwait, likely the Doha West complex, after an Iranian attack\n\nIt suppli",
+        "author": "MarioNawfal"
       },
       {
         "platform": "reddit",
@@ -179,322 +179,5 @@
       }
     ],
     "image_file": "/images/breaking_2026-03-30.png"
-  },
-  {
-    "topic": "Iran Missile Strike on Israel",
-    "summary": "Iran has executed a missile strike on an industrial facility in southern Israel, causing substantial damage. This escalation has heightened tensions between the two nations, with Israel and its allies contemplating military responses. The international community is monitoring the situation closely due to concerns over regional stability in the Middle East.",
-    "severity": "critical",
-    "detected_at": "2026-03-29T19:00:07.423Z",
-    "last_updated": "2026-03-30T07:00:38.029Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies that drive these conflicts. The focus remains on immediate military actions rather than the long-term implications of resource control and regional dominance. Additionally, the role of external powers in either exacerbating or mitigating these tensions is often downplayed.",
-    "social_summary": "Social media is ablaze with polarized reactions, ranging from calls for peace to demands for retaliation. Memes and hashtags are circulating, with some users drawing historical parallels to past conflicts in the region. Conspiracy theories about foreign involvement and hidden agendas are also gaining traction.",
-    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the looming threat of conflict amidst everyday life.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/29/iran-hits-industrial-zone-in-southern-israel?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran hits industrial zone in southern Israel"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=HpSonUXY6wo",
-        "embed_id": "HpSonUXY6wo",
-        "title": "Black smoke rises from factory hit by Iran missile fragment in Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=nLydVjP4mDc",
-        "embed_id": "nLydVjP4mDc",
-        "title": "Iran missile strike hits israeli chemical plant | Beersheba panic and rising war fears"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=3ywbDl67FbE",
-        "embed_id": "3ywbDl67FbE",
-        "title": "Multiple injured after Iran launches missile attack in central Israel",
-        "duration": 61
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=xX0ls4b0uz4",
-        "embed_id": "xX0ls4b0uz4",
-        "title": "Iranian missile strikes strain Israel's Iron Dome | DW News",
-        "duration": 1127
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=sqHuwVuuXis",
-        "embed_id": "sqHuwVuuXis",
-        "title": "Drone Footage: Israeli Apartments Devastated Following Iranian Missile Attack",
-        "duration": 177
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZIW8Y99yFgg",
-        "embed_id": "ZIW8Y99yFgg",
-        "title": "WATCH: Iran strikes Israel, video shows missile impact",
-        "duration": 186
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2038285744859500640",
-        "embed_id": "2038285744859500640",
-        "title": "JUST IN: 🇮🇱🇮🇷 Another video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/v4c",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/afshinrattansi/status/2038247875747229725",
-        "embed_id": "2038247875747229725",
-        "title": "Israel’s Beersheba steel complex is on fire after the latest Iranian missile arrivals \n\nOver a month into the war, Iran is still able to announce what",
-        "author": "afshinrattansi"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ashoswai/status/2038245597979857039",
-        "embed_id": "2038245597979857039",
-        "title": "Be'er Sheva, Israel - A direct Iranian missile strike on an area with many chemical factories . https://t.co/0a77fgLkNb",
-        "author": "ashoswai"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2037980665384235198",
-        "embed_id": "2037980665384235198",
-        "title": "BREAKING: Medics say 11 wounded in Iranian missile strike on Israeli village\n\n🔴 LIVE updates: https://t.co/YIdZTbxgJH https://t.co/7opsXAL1Xs",
-        "author": "AJENews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85608",
-        "embed_id": "intelslava/85608",
-        "title": "🇮🇷🇮🇱Iran launched an attack on a chemical plant in Beersheba, Israel.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/T2c1_Sxdllj_TZeSwj-93oejvVljmSlCsBrvNIt_4NXnufy55VFcSXPKnVP0oUCq-5v1ksI20gbH157JkzO9PRAZipzspaZYYPF8ehohAM7VhbC5U6X07IXfws4_u0oW0HzNpJtczw-uUOt10tX3ixxO9igkmpNjP8JKZuWncISgr9KRp4cPt8md_YOg0rr8CqbcjXybO2RkslcHEJe_9lOxtitPsTXGEuLmHfI-t4uPobMljuKGblwmvFrkpeJ8iJh3LWYSRk6PtPfifPctnDDQPiLpdhIavIbgxPOmJ1Zdbkl4jjCIdQqX5quftIprqtBhbtO5WHUd22TMIV4mAA'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jacksonhinklle/status/2038382946856403360",
-        "embed_id": "2038382946856403360",
-        "title": "🚨🇮🇷🇮🇱 BREAKING: Video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/F80RdJBN",
-        "author": "jacksonhinklle"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
-        "embed_id": "2037872167870959841",
-        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
-        "author": "AMK_Mapping_"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Sino/comments/1s6sm4h/israeli_media_report_images_of_damaged_e3_awacs/",
-        "embed_id": "1s6sm4h",
-        "title": "Israeli media report images of damaged E-3 AWACS from Iranian attack (hit was extremely accurate, right on the rotodome...in definitely unrelated news"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/malaysia/comments/1s6foa9/houthis_just_entered_the_iran_war_heres_what_a/",
-        "embed_id": "1s6foa9",
-        "title": "Houthis just entered the Iran war. Here's what a second strait under threat means for Malaysia's oil supply and fuel subsidies."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/emirates/comments/1s6sack/iran_says_its_forces_are_waiting_for_us_ground/",
-        "embed_id": "1s6sack",
-        "title": "Iran says its forces are 'waiting' for US ground troops, as more American marines arrive in region...."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
-        "embed_id": "1s6s9bo",
-        "title": "Last Week in Collapse: March 22-28, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
-        "embed_id": "1s72is6",
-        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Cleveland/comments/1s72hq0/trump_putin_netanyahu_the_new_axis_of_evil/",
-        "embed_id": "1s72hq0",
-        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland No Kings III yesterday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1s6ws1u/iraq_at_the_crossroads_true_sovereignty_or_proxy/",
-        "embed_id": "1s6ws1u",
-        "title": "Iraq at the Crossroads: True Sovereignty or Proxy Battleground? 🇮🇶⚔️"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
-        "embed_id": "1s7bdek",
-        "title": "Iran trolls trumps ceasefire plan"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoSpinMedia/comments/1s6yk32/uss_tripoli_arrives_with_3500_marines_pentagon/",
-        "embed_id": "1s6yk32",
-        "title": "🪖 USS Tripoli Arrives With 3,500 Marines: Pentagon weighs Hormuz and Kharg Island options 👇"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=HpSonUXY6wo",
-        "embed_id": "HpSonUXY6wo",
-        "title": "Black smoke rises from factory hit by Iran missile fragment in Israel",
-        "channel": "Associated Press"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=nLydVjP4mDc",
-        "embed_id": "nLydVjP4mDc",
-        "title": "Iran missile strike hits israeli chemical plant | Beersheba panic and rising war fears",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=3ywbDl67FbE",
-        "embed_id": "3ywbDl67FbE",
-        "title": "Multiple injured after Iran launches missile attack in central Israel",
-        "channel": "Associated Press",
-        "duration": 61
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=xX0ls4b0uz4",
-        "embed_id": "xX0ls4b0uz4",
-        "title": "Iranian missile strikes strain Israel's Iron Dome | DW News",
-        "channel": "DW News",
-        "duration": 1127
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=sqHuwVuuXis",
-        "embed_id": "sqHuwVuuXis",
-        "title": "Drone Footage: Israeli Apartments Devastated Following Iranian Missile Attack",
-        "channel": "New York Post",
-        "duration": 177
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ZIW8Y99yFgg",
-        "embed_id": "ZIW8Y99yFgg",
-        "title": "WATCH: Iran strikes Israel, video shows missile impact",
-        "channel": "LiveNOW from FOX",
-        "duration": 186
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2038285744859500640",
-        "embed_id": "2038285744859500640",
-        "title": "JUST IN: 🇮🇱🇮🇷 Another video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/v4c",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/afshinrattansi/status/2038247875747229725",
-        "embed_id": "2038247875747229725",
-        "title": "Israel’s Beersheba steel complex is on fire after the latest Iranian missile arrivals \n\nOver a month into the war, Iran is still able to announce what",
-        "author": "afshinrattansi"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ashoswai/status/2038245597979857039",
-        "embed_id": "2038245597979857039",
-        "title": "Be'er Sheva, Israel - A direct Iranian missile strike on an area with many chemical factories . https://t.co/0a77fgLkNb",
-        "author": "ashoswai"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2037980665384235198",
-        "embed_id": "2037980665384235198",
-        "title": "BREAKING: Medics say 11 wounded in Iranian missile strike on Israeli village\n\n🔴 LIVE updates: https://t.co/YIdZTbxgJH https://t.co/7opsXAL1Xs",
-        "author": "AJENews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85608",
-        "embed_id": "intelslava/85608",
-        "title": "🇮🇷🇮🇱Iran launched an attack on a chemical plant in Beersheba, Israel.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/T2c1_Sxdllj_TZeSwj-93oejvVljmSlCsBrvNIt_4NXnufy55VFcSXPKnVP0oUCq-5v1ksI20gbH157JkzO9PRAZipzspaZYYPF8ehohAM7VhbC5U6X07IXfws4_u0oW0HzNpJtczw-uUOt10tX3ixxO9igkmpNjP8JKZuWncISgr9KRp4cPt8md_YOg0rr8CqbcjXybO2RkslcHEJe_9lOxtitPsTXGEuLmHfI-t4uPobMljuKGblwmvFrkpeJ8iJh3LWYSRk6PtPfifPctnDDQPiLpdhIavIbgxPOmJ1Zdbkl4jjCIdQqX5quftIprqtBhbtO5WHUd22TMIV4mAA'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jacksonhinklle/status/2038382946856403360",
-        "embed_id": "2038382946856403360",
-        "title": "🚨🇮🇷🇮🇱 BREAKING: Video shows the aftermath of an Iranian ballistic missile strike on an industrial zone in southern Israel.\n\nhttps://t.co/F80RdJBN",
-        "author": "jacksonhinklle"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AMK_Mapping_/status/2037872167870959841",
-        "embed_id": "2037872167870959841",
-        "title": "11 people were injured as a result of the Iranian ballistic missile strike on Beit Shemesh, central Israel. https://t.co/sb8y1n1XmG",
-        "author": "AMK_Mapping_"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Sino/comments/1s6sm4h/israeli_media_report_images_of_damaged_e3_awacs/",
-        "embed_id": "1s6sm4h",
-        "title": "Israeli media report images of damaged E-3 AWACS from Iranian attack (hit was extremely accurate, right on the rotodome...in definitely unrelated news"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/malaysia/comments/1s6foa9/houthis_just_entered_the_iran_war_heres_what_a/",
-        "embed_id": "1s6foa9",
-        "title": "Houthis just entered the Iran war. Here's what a second strait under threat means for Malaysia's oil supply and fuel subsidies."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/emirates/comments/1s6sack/iran_says_its_forces_are_waiting_for_us_ground/",
-        "embed_id": "1s6sack",
-        "title": "Iran says its forces are 'waiting' for US ground troops, as more American marines arrive in region...."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
-        "embed_id": "1s6s9bo",
-        "title": "Last Week in Collapse: March 22-28, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Ohio/comments/1s72is6/trump_putin_netanyahu_the_new_axis_of_evil/",
-        "embed_id": "1s72is6",
-        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland, Oh - No Kings III yesterday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Cleveland/comments/1s72hq0/trump_putin_netanyahu_the_new_axis_of_evil/",
-        "embed_id": "1s72hq0",
-        "title": "TRUMP PUTIN NETANYAHU   THE NEW AXIS OF EVIL - Cleveland No Kings III yesterday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1s6ws1u/iraq_at_the_crossroads_true_sovereignty_or_proxy/",
-        "embed_id": "1s6ws1u",
-        "title": "Iraq at the Crossroads: True Sovereignty or Proxy Battleground? 🇮🇶⚔️"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
-        "embed_id": "1s7bdek",
-        "title": "Iran trolls trumps ceasefire plan"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoSpinMedia/comments/1s6yk32/uss_tripoli_arrives_with_3500_marines_pentagon/",
-        "embed_id": "1s6yk32",
-        "title": "🪖 USS Tripoli Arrives With 3,500 Marines: Pentagon weighs Hormuz and Kharg Island options 👇"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-29.png"
   }
 ]
