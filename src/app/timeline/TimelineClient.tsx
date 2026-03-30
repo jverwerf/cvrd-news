@@ -72,7 +72,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
       <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-          {recentThreads.map((t, i) => (
+          {recentThreads.slice(0, 8).map((t, i) => (
             <button key={t.id} onClick={() => setExpandedId(expandedId === t.id ? null : t.id)}
               className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
