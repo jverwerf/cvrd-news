@@ -1,5 +1,5 @@
 {
-  "headline": "Marco Rubio on iran: 70% Truthful",
+  "headline": "Marco Rubio on iran: 83.8% Truthful",
   "person": {
     "handle": "marcorubio",
     "name": "Marco Rubio",
@@ -8,10 +8,10 @@
   },
   "story_topic": "Iranian Missile Strikes and U.S. Military Response",
   "search_keyword": "iran",
-  "topic_score": 70,
+  "topic_score": 83.8,
   "overall_score": 68.7,
-  "matching_claims": 9,
-  "editorial": "Senator Marco Rubio's recent assertions about Iran's aggressive tactics amidst the latest missile strikes are not without precedent. He has consistently portrayed Iran as a primary antagonist in the Middle East, most recently claiming, \"The Iran regime wants to destroy Israel to become the dominant power in the Middle East,\" a statement rated as TRUE. This aligns with his ongoing narrative that paints Iran as a significant threat to regional stability.\n\nRubio has repeatedly emphasized Iran's role in Middle Eastern conflict, albeit not always accurately. He labeled the Islamic Republic as the \"primary source of violence\" in the region—a claim rated MISLEADING. While his assertion that Iran's regime was aware of the consequences of attacking Israel stands as TRUE, his suggestion about Houthi tactics against U.S. defenses was deemed SOMEWHAT MISLEADING.\n\nOverall, Rubio’s truthfulness score on related topics sits at 70, with a general score of 68.7 across all his claims. Despite a high volume of TRUE claims, the pattern of some misleading statements suggests a tendency to overstate threats, which may skew public perception.\n\nFor readers, this pattern underscores the importance of scrutinizing Rubio's claims in the context of his broader narrative—particularly as tensions with Iran escalate.",
+  "matching_claims": 4,
+  "editorial": "Marco Rubio’s rhetoric on Iran has been thrust into the spotlight, coinciding with recent Iranian missile strikes in the Middle East. Rubio claims that the Iranian regime, despite sanctions, is intent on becoming the dominant power by destroying Israel, a statement rated as TRUE. He’s not mincing words, and with U.S. Marines now poised in the region, his hawkish stance is gaining traction.\n\nRubio's track record reveals a consistent narrative: the Iranian regime is labeled the primary source of regional instability and violence. However, this sweeping claim was tagged as MISLEADING. While Iran's role is significant, the Middle East's complexity defies singular blame. Rubio's assertions often paint a black-and-white picture in a region teeming with shades of gray.\n\nIn the broader context, Rubio's truthfulness score stands at 68.7, with 43 out of 134 claims rated TRUE. His tendency to lean into dramatic narratives is tempered by occasional overstatements, such as oversimplifying Iran's role in Middle Eastern violence. Yet, on the topic of Iran, he maintains a relatively high accuracy with a score of 83.8.\n\nFor those following Middle East tensions, Rubio’s statements are a reminder to scrutinize rhetoric closely, especially when military actions hang in the balance.",
   "matched_tweets": [
     {
       "claim": "The Iran regime wants to destroy Israel to become the dominant power in the Middle East.",
@@ -23,15 +23,6 @@
       "reasoning": "The claim that the Iranian regime seeks to destroy Israel to become the dominant power in the Middle East is supported by multiple sources. Iranian leaders have consistently expressed intentions to eliminate Israel. For instance, Supreme Leader Ali Khamenei has set 2040 as the target year for Israel"
     },
     {
-      "claim": "The elections in Venezuela are not democratic or valid according to the Carter Center.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "On July 22nd the Minister of Defense of #Venezuela Padrino López welcomed the Carter Center and spoke in glowing terms about their work monitoring elections Tonight the CarterCenter issued a statement saying the elections in Venezuela are not democratic or valid The military",
-      "tweet_url": "https://twitter.com/marcorubio/status/1818514265273213351",
-      "domain": "foreign_policy",
-      "reasoning": "The Carter Center issued a statement on July 30, 2024, declaring that Venezuela's presidential election did not meet international standards of electoral integrity and could not be considered democratic. The Center cited the National Electoral Council's failure to announce disaggregated results by p"
-    },
-    {
       "claim": "The Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East and has oppressed the people of Iran for almost 25 years.",
       "verdict": "MISLEADING",
       "score": 0.35,
@@ -39,15 +30,6 @@
       "tweet_url": "https://twitter.com/marcorubio/status/1780635965331058728",
       "domain": "foreign_policy",
       "reasoning": "The claim that the Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East is an oversimplification. While Iran has been involved in various regional conflicts and has supported groups like Hezbollah, attributing the majority of regional ins"
-    },
-    {
-      "claim": "Houthis are using missile and UAV launches to deplete U.S. air defenses and prepare for future swarm attacks against U.S. ships.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Houthis are using these missile & UAV launches to deplete U.S. air defenses & set up future swarm attacks against our ships",
-      "tweet_url": "https://twitter.com/marcorubio/status/1765342077125075006",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that the Houthis are using missile and UAV launches to deplete U.S. air defenses and prepare for future swarm attacks against U.S. ships is partially supported by evidence. The Houthis have indeed escalated their attacks on U.S. ships using missiles and drones, as reported by multiple sour"
     },
     {
       "claim": "The Iranian regime was aware of the consequences of attacking Israel and chose to attack anyway.",
@@ -59,15 +41,6 @@
       "reasoning": "On October 1, 2024, Iran launched approximately 200 ballistic missiles at Israel, marking a significant escalation in their conflict. Prior to the attack, the United States warned Iran that a direct military assault on Israel would carry severe consequences. Despite this, Iran proceeded with the mis"
     },
     {
-      "claim": "There hasn't been a Russian submarine carrying nuclear capable missiles operating in the Caribbean in over 30 years.",
-      "verdict": "FALSE",
-      "score": 0,
-      "tweet_text": "We haven’t had a Russian submarine carrying nuclear capable missiles operating in the Caribbean in over 30 years So if the regime in #Cuba decides to allow one to make a port call just 90 miles from our shores the Biden administration must impose real consequences on them",
-      "tweet_url": "https://twitter.com/marcorubio/status/1798719252490227745",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that no Russian submarine carrying nuclear-capable missiles has operated in the Caribbean in over 30 years is incorrect. In June 2024, the Russian nuclear-powered submarine Kazan, capable of launching nuclear-capable missiles, visited Havana, Cuba, and participated in military exercises in"
-    },
-    {
       "claim": "Israel can conduct strikes against targets in Iran using aircraft over Syrian and Iraqi airspace without entering Iranian airspace.",
       "verdict": "TRUE",
       "score": 1,
@@ -75,25 +48,7 @@
       "tweet_url": "https://twitter.com/marcorubio/status/1781135619508285791",
       "domain": "foreign_policy",
       "reasoning": "The claim that Israel can conduct strikes against targets inside Iran without entering Iranian airspace, by operating over Syrian and Iraqi airspace, is supported by multiple reports. In April 2024, Israeli aircraft launched missiles targeting an air defense radar site near Isfahan, Iran, from beyon"
-    },
-    {
-      "claim": "Without Starlink, Ukraine would have lost the war long ago and Russians would be on the border with Poland right now.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Just making things up. No one has made any threats about cutting Ukraine off from Starlink And say thank you because without Starlink Ukraine would have lost this war long ago and Russians would be on the border with Poland right now",
-      "tweet_url": "https://twitter.com/marcorubio/status/1898755922492588082",
-      "domain": "military",
-      "reasoning": "Starlink has been crucial in maintaining Ukrainian military communications and operations since the onset of Russia's invasion in 2022. Its services have enabled real-time coordination and drone operations, significantly bolstering Ukraine's defense capabilities. However, attributing Ukraine's entir"
-    },
-    {
-      "claim": "China is doing nothing to stop Houthis from attacking ships in the Red Sea that carry medicine, food, and fuel.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Next time China talks about being a “responsible” global leader that promotes a \"community of common destiny for mankind\" remind them how they are doing nothing to stop Houthis from attacking ships in Red Sea carrying medicine, food & fuel for countries all over the world",
-      "tweet_url": "https://twitter.com/marcorubio/status/1767908957593444713",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that China is \"doing nothing\" to stop Houthi attacks in the Red Sea is an oversimplification. While China has not taken direct military action, it has engaged diplomatically by urging Iran to influence the Houthis to cease attacks and has publicly called for an end to harassment of civilia"
     }
   ],
-  "generated_at": "2026-03-29T13:12:22.231Z"
+  "generated_at": "2026-03-30T18:29:47.690Z"
 }
