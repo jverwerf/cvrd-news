@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident has heightened regional tensions and raised alarms about the security of critical infrastructure in the Gulf. The attack has been condemned by the international community, highlighting potential risks to energy security and international relations in the region.",
+    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This attack has heightened regional tensions and raised alarms about the security of critical infrastructure in the Gulf. The international community has condemned the attack, highlighting the potential threats to energy security and international relations in the region.",
     "severity": "major",
     "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T11:00:55.871Z",
+    "last_updated": "2026-03-30T15:01:12.289Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical tensions that have been simmering in the region, particularly the proxy conflicts and economic sanctions that have strained Iran's relations with its neighbors. The focus remains on the immediate impact rather than the broader strategic maneuvers that have led to this escalation. Additionally, the role of international arms sales and military alliances in the region's instability is not being scrutinized.",
-    "social_summary": "Social media is ablaze with outrage and fear, with hashtags like #KuwaitAttack and #IranAggression trending. Memes and viral posts are drawing parallels to past Gulf conflicts, while conspiracy theories suggest ulterior motives behind the attack, such as a distraction from domestic issues within Iran. Some users are calling for increased military presence in the region, while others advocate for diplomatic solutions.",
-    "image_prompt": "A dramatic editorial photo of a shattered water desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human cost and vulnerability of critical infrastructure.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. This attack be a strategic move in response to Kuwait's alliances and its role in regional politics, particularly its relationships with Western powers. Additionally, the economic implications for global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
+    "social_summary": "Social media is ablaze with discussions about the attack, with many users expressing outrage and fear over the implications for regional stability. Memes and conspiracy theories are circulating, suggesting deeper plots involving global superpowers and their interests in the Gulf. Some users are calling for international intervention, while others are questioning the effectiveness of current diplomatic efforts.",
+    "image_prompt": "A dramatic editorial photo of a shattered glass globe with a small flame flickering inside, symbolizing the fragility of global peace and the simmering tensions in the Gulf region.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -27,10 +27,17 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
-        "embed_id": "-aQ1uxff6fY",
-        "title": "Iran strikes Gulf nations | Kuwait troops injured, Qatar intercepts drone, Saudi stopped missile",
-        "duration": 132
+        "url": "https://www.youtube.com/watch?v=lNkDlp1lcBQ",
+        "embed_id": "lNkDlp1lcBQ",
+        "title": "Iran Attacks Kuwait Power Plant; Indian Worker Dies in Desalination Facility Strike | NewsX",
+        "duration": 290
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
+        "embed_id": "2038415564457042141",
+        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
+        "author": "TheCradleMedia"
       },
       {
         "platform": "x",
@@ -38,20 +45,6 @@
         "embed_id": "2038488558600962166",
         "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
         "author": "AdityaRajKaul"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ETERNALPHYSICS/status/2038402706793013666",
-        "embed_id": "2038402706793013666",
-        "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
-        "author": "ETERNALPHYSICS"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2038506025905491987",
-        "embed_id": "2038506025905491987",
-        "title": "🇮🇷🇰🇼 Satellite imagery shows massive damage at a desalination facility in Kuwait, likely the Doha West complex, after an Iranian attack\n\nIt suppli",
-        "author": "MarioNawfal"
       },
       {
         "platform": "reddit",
@@ -88,6 +81,18 @@
         "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
         "embed_id": "1s7en15",
         "title": "Iran Attacks on Kuwait's Desalination Plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/anime_titties/comments/1s7o9uf/iranian_attack_damages_kuwait_power_and/",
+        "embed_id": "1s7o9uf",
+        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1s7nnp4/iran_says_it_didnt_attack_kuwait_desalination/",
+        "embed_id": "1s7nnp4",
+        "title": "Iran Says it didn't attack Kuwait Desalination Plant, accuse Israel for it."
       }
     ],
     "youtube_videos": [
@@ -98,34 +103,27 @@
         "channel": "Al Jazeera English"
       },
       {
-        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
-        "embed_id": "-aQ1uxff6fY",
-        "title": "Iran strikes Gulf nations | Kuwait troops injured, Qatar intercepts drone, Saudi stopped missile",
-        "channel": "Al Jazeera English",
-        "duration": 132
+        "url": "https://www.youtube.com/watch?v=lNkDlp1lcBQ",
+        "embed_id": "lNkDlp1lcBQ",
+        "title": "Iran Attacks Kuwait Power Plant; Indian Worker Dies in Desalination Facility Strike | NewsX",
+        "channel": "NewsX Live",
+        "duration": 290
       }
     ],
     "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
+        "embed_id": "2038415564457042141",
+        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
+        "author": "TheCradleMedia"
+      },
       {
         "platform": "x",
         "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
         "embed_id": "2038488558600962166",
         "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
         "author": "AdityaRajKaul"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ETERNALPHYSICS/status/2038402706793013666",
-        "embed_id": "2038402706793013666",
-        "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
-        "author": "ETERNALPHYSICS"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2038506025905491987",
-        "embed_id": "2038506025905491987",
-        "title": "🇮🇷🇰🇼 Satellite imagery shows massive damage at a desalination facility in Kuwait, likely the Doha West complex, after an Iranian attack\n\nIt suppli",
-        "author": "MarioNawfal"
       },
       {
         "platform": "reddit",
@@ -162,6 +160,18 @@
         "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
         "embed_id": "1s7en15",
         "title": "Iran Attacks on Kuwait's Desalination Plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/anime_titties/comments/1s7o9uf/iranian_attack_damages_kuwait_power_and/",
+        "embed_id": "1s7o9uf",
+        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1s7nnp4/iran_says_it_didnt_attack_kuwait_desalination/",
+        "embed_id": "1s7nnp4",
+        "title": "Iran Says it didn't attack Kuwait Desalination Plant, accuse Israel for it."
       }
     ],
     "image_file": "/images/breaking_2026-03-30.png"
