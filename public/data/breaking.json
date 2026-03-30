@@ -1,5 +1,108 @@
 [
   {
+    "topic": "Iranian Attack on Kuwait Facility",
+    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident represents a notable escalation in regional tensions, with potential implications for international relations and energy security in the Gulf region.",
+    "severity": "major",
+    "detected_at": "2026-03-30T03:00:07.008Z",
+    "last_updated": "2026-03-30T03:00:07.008Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as the impact of international sanctions on its economy and the strategic importance of disrupting energy supplies in the Gulf. Additionally, the geopolitical implications of this attack on global oil markets and the potential for increased military presence by foreign powers in the region are being overlooked.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users condemning Iran's aggression and others questioning the legitimacy of the reports, suggesting false flag operations. Memes and hashtags are circulating, with some users drawing parallels to past Gulf conflicts and others focusing on the human cost of geopolitical tensions.",
+    "image_prompt": "A dramatic editorial photo of a shattered desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human impact of geopolitical conflict.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/3/30/iranian-attack-damages-kuwait-power-and-desalination-plant-kills-worker?traffic_source=rss",
+        "lean": "center",
+        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Cw9WZXVV5LU",
+        "embed_id": "Cw9WZXVV5LU",
+        "title": "Indian worker killed in Iran’s attack in Kuwait’s electric facility as West Asia crisis intensify",
+        "duration": 201
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43025",
+        "embed_id": "warmonitors/43025",
+        "title": "⚡Kuwaiti army announces that at least ten of its soldiers were injured in an Iranian attack",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
+        "embed_id": "1s6s9bo",
+        "title": "Last Week in Collapse: March 22-28, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s7aynu/indian_worker_killed_in_iranian_attack_on_kuwait/",
+        "embed_id": "1s7aynu",
+        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WayOfTheBern/comments/1s77dbj/in_less_than_48_hours_after_attacks_on_its/",
+        "embed_id": "1s77dbj",
+        "title": "In less than 48 hours, after attacks on its infrastructure, Iran attacked metal industry facilities in Bahrain and the United Arab Emirates, military "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
+        "embed_id": "1s7bwn0",
+        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=Cw9WZXVV5LU",
+        "embed_id": "Cw9WZXVV5LU",
+        "title": "Indian worker killed in Iran’s attack in Kuwait’s electric facility as West Asia crisis intensify",
+        "channel": "ANI News",
+        "duration": 201
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43025",
+        "embed_id": "warmonitors/43025",
+        "title": "⚡Kuwaiti army announces that at least ten of its soldiers were injured in an Iranian attack",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
+        "embed_id": "1s6s9bo",
+        "title": "Last Week in Collapse: March 22-28, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1s7aynu/indian_worker_killed_in_iranian_attack_on_kuwait/",
+        "embed_id": "1s7aynu",
+        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WayOfTheBern/comments/1s77dbj/in_less_than_48_hours_after_attacks_on_its/",
+        "embed_id": "1s77dbj",
+        "title": "In less than 48 hours, after attacks on its infrastructure, Iran attacked metal industry facilities in Bahrain and the United Arab Emirates, military "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
+        "embed_id": "1s7bwn0",
+        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-30.png"
+  },
+  {
     "topic": "Iran Missile Strike on Israel",
     "summary": "Iran has launched a missile strike on an industrial facility in southern Israel, causing significant damage and escalating the ongoing conflict between the two countries. This attack has heightened regional tensions and raised the possibility of military retaliation from Israel and its allies. The international community is closely monitoring the situation, as further escalation has broader implications for Middle Eastern stability.",
     "severity": "critical",
@@ -230,390 +333,6 @@
         "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
         "embed_id": "1s7bdek",
         "title": "Iran trolls trumps ceasefire plan"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-29.png"
-  },
-  {
-    "topic": "Iran War Escalation",
-    "summary": "Iran has threatened the USS Abraham Lincoln, a U.S. aircraft carrier, amidst escalating tensions in the Middle East. This comes after reports of over 2,000 deaths in Tehran, prompting the United States to bolster its military presence in the region. The U.S. has deployed additional troops to counter potential threats and stabilize the situation.",
-    "severity": "critical",
-    "detected_at": "2026-03-29T13:00:14.955Z",
-    "last_updated": "2026-03-30T01:01:23.731Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. The U.S. military presence in the Middle East is often tied to securing oil routes and maintaining influence over regional politics. Iran's threats can be seen as a response to perceived encroachments on its sovereignty and attempts to assert its own regional power. Both nations are leveraging the situation to justify military expenditures and political posturing.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for U.S. military actions as necessary for global security, while others criticize it as imperialistic aggression. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the U.S. troop deployment, such as control over oil resources or distraction from domestic issues. Hashtags like #IranWar and #USImperialism are trending.",
-    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing tension and power. In the foreground, shadowy figures representing diplomacy and conflict stand on opposite sides, highlighting the geopolitical struggle.",
-    "sources": [],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lYxuUduMN70",
-        "embed_id": "lYxuUduMN70",
-        "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
-        "duration": 173
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
-        "embed_id": "Ghs03B9lkrw",
-        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
-        "duration": 1114
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
-        "embed_id": "zvkngF-o5p8",
-        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
-        "duration": 595
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "duration": 1470
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=IZwlgroN7-s",
-        "embed_id": "IZwlgroN7-s",
-        "title": "The Options US And Iran Each Have 'Creates A Lot Of Room' For More Escalation In The War: Expert"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
-        "embed_id": "zufp_HAIL-M",
-        "title": "Iran war: Israel warns attacks will 'escalate'",
-        "duration": 172
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=v6Tr1_NEUPM",
-        "embed_id": "v6Tr1_NEUPM",
-        "title": "War With Iran: Escalation, Diplomacy, and What Comes Next | Robert Wexler on 13th and Park",
-        "duration": 1444
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DailyMail/status/2038091162762854781",
-        "embed_id": "2038091162762854781",
-        "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East https://t",
-        "author": "DailyMail"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2038054353739624731",
-        "embed_id": "2038054353739624731",
-        "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
-        "embed_id": "2038023683092976041",
-        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
-        "author": "FurkanGozukara"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/LenaPetrovaOnX/status/2038273876010967391",
-        "embed_id": "2038273876010967391",
-        "title": "🚨 \"If this war goes on for much longer, then there is a possibility that there will be nothing left in the Persian Gulf to produce oil or LNG. Escala",
-        "author": "LenaPetrovaOnX"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/hissgoescobra/status/2038311380395397427",
-        "embed_id": "2038311380395397427",
-        "title": "The E-3 getting hit is a wake up call. But it’s not the first in this Iran War. The THAAD radars. The LNG facilities. We aren’t waking up is the probl",
-        "author": "hissgoescobra"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/KobeissiLetter/status/2038397793400721834",
-        "embed_id": "2038397793400721834",
-        "title": "It's eerily quiet this weekend:\n\nFor the first time since the Iran War began, President Trump has gone unusually quiet this weekend.\n\nNo new headlines",
-        "author": "KobeissiLetter"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2038379124033483208",
-        "embed_id": "2038379124033483208",
-        "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan, Pakistan is stepping up as a key mediator.\n\nIsla",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
-        "embed_id": "2038240220894605543",
-        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
-        "author": "Tiju0Prakash"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/changemyview/comments/1s6e5lb/cmv_the_iran_war_is_very_likely_to_go_down_as_the/",
-        "embed_id": "1s6e5lb",
-        "title": "CMV: The Iran War is very likely to go down as the worst foreign policy mistake in US history and as the imperial overreach which marks the definitive"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/energy/comments/1s64187/the_iran_war_could_drag_into_2027_analyst_warns/",
-        "embed_id": "1s64187",
-        "title": "The Iran war could drag into 2027, analyst warns. The economic fallout is just getting started. As the conflict reaches the four-week mark, more escal"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s67xqs",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stupidpol/comments/1s6l12y/pentagon_prepares_for_major_escalation_in_iran/",
-        "embed_id": "1s6l12y",
-        "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
-        "embed_id": "1s5zzqo",
-        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/brisbane/comments/1s6h5b7/should_qld_cancel_the_olympics/",
-        "embed_id": "1s6h5b7",
-        "title": "Should QLD cancel the Olympics"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoSpinMedia/comments/1s61i1l/iran_strike_hits_us_base_in_saudi_arabia_12/",
-        "embed_id": "1s61i1l",
-        "title": "🪖 Iran Strike Hits U.S. Base in Saudi Arabia: 12 troops wounded as war enters second month 👇"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
-        "embed_id": "1s60ao7",
-        "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s6kv0i",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
-        "embed_id": "1s75olt",
-        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s6xroh/the_iran_war_has_a_new_front_in_yemen_heres_how/",
-        "embed_id": "1s6xroh",
-        "title": "The Iran war has a new front in Yemen. Here’s how it could escalate"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
-        "embed_id": "1s6g4c0",
-        "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
-        "embed_id": "1s71z59",
-        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=lYxuUduMN70",
-        "embed_id": "lYxuUduMN70",
-        "title": "Iran After the Strike: How the War Escalated Into a Global Crisis",
-        "channel": "Al Jazeera English",
-        "duration": 173
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
-        "embed_id": "Ghs03B9lkrw",
-        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
-        "channel": "Amanpour and Company",
-        "duration": 1114
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
-        "embed_id": "zvkngF-o5p8",
-        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
-        "channel": "NewsNation",
-        "duration": 595
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "channel": "Al Jazeera English",
-        "duration": 1470
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=IZwlgroN7-s",
-        "embed_id": "IZwlgroN7-s",
-        "title": "The Options US And Iran Each Have 'Creates A Lot Of Room' For More Escalation In The War: Expert",
-        "channel": "Forbes Breaking News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=zufp_HAIL-M",
-        "embed_id": "zufp_HAIL-M",
-        "title": "Iran war: Israel warns attacks will 'escalate'",
-        "channel": "FOX 9 Minneapolis-St. Paul",
-        "duration": 172
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=v6Tr1_NEUPM",
-        "embed_id": "v6Tr1_NEUPM",
-        "title": "War With Iran: Escalation, Diplomacy, and What Comes Next | Robert Wexler on 13th and Park",
-        "channel": "13th & Park",
-        "duration": 1444
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/DailyMail/status/2038091162762854781",
-        "embed_id": "2038091162762854781",
-        "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East https://t",
-        "author": "DailyMail"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2038054353739624731",
-        "embed_id": "2038054353739624731",
-        "title": "IRAN WAR U.S. UPDATE:\nU.S. Military Lists Enemy Losses\n\nU.S. Central Command (CENTCOM) reports major escalation under Operation Epic Fury since Februa",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2038023683092976041",
-        "embed_id": "2038023683092976041",
-        "title": "Terrifying reality check. The US-Israeli war on Iran is already causing severe fuel rationing and school closures in neighboring countries. Experts wa",
-        "author": "FurkanGozukara"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/LenaPetrovaOnX/status/2038273876010967391",
-        "embed_id": "2038273876010967391",
-        "title": "🚨 \"If this war goes on for much longer, then there is a possibility that there will be nothing left in the Persian Gulf to produce oil or LNG. Escala",
-        "author": "LenaPetrovaOnX"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/hissgoescobra/status/2038311380395397427",
-        "embed_id": "2038311380395397427",
-        "title": "The E-3 getting hit is a wake up call. But it’s not the first in this Iran War. The THAAD radars. The LNG facilities. We aren’t waking up is the probl",
-        "author": "hissgoescobra"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/KobeissiLetter/status/2038397793400721834",
-        "embed_id": "2038397793400721834",
-        "title": "It's eerily quiet this weekend:\n\nFor the first time since the Iran War began, President Trump has gone unusually quiet this weekend.\n\nNo new headlines",
-        "author": "KobeissiLetter"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2038379124033483208",
-        "embed_id": "2038379124033483208",
-        "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan, Pakistan is stepping up as a key mediator.\n\nIsla",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
-        "embed_id": "2038240220894605543",
-        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
-        "author": "Tiju0Prakash"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/changemyview/comments/1s6e5lb/cmv_the_iran_war_is_very_likely_to_go_down_as_the/",
-        "embed_id": "1s6e5lb",
-        "title": "CMV: The Iran War is very likely to go down as the worst foreign policy mistake in US history and as the imperial overreach which marks the definitive"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/energy/comments/1s64187/the_iran_war_could_drag_into_2027_analyst_warns/",
-        "embed_id": "1s64187",
-        "title": "The Iran war could drag into 2027, analyst warns. The economic fallout is just getting started. As the conflict reaches the four-week mark, more escal"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s67xqs/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s67xqs",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stupidpol/comments/1s6l12y/pentagon_prepares_for_major_escalation_in_iran/",
-        "embed_id": "1s6l12y",
-        "title": "Pentagon 'prepares for major escalation in Iran War with ground operations set to last for WEEKS'... as US Marines arrive in the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1s5zzqo/us_to_send_another_10000_ground_troops_to_middle/",
-        "embed_id": "1s5zzqo",
-        "title": "US to send another 10,000 ground troops to Middle East, as war with Iran escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/brisbane/comments/1s6h5b7/should_qld_cancel_the_olympics/",
-        "embed_id": "1s6h5b7",
-        "title": "Should QLD cancel the Olympics"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoSpinMedia/comments/1s61i1l/iran_strike_hits_us_base_in_saudi_arabia_12/",
-        "embed_id": "1s61i1l",
-        "title": "🪖 Iran Strike Hits U.S. Base in Saudi Arabia: 12 troops wounded as war enters second month 👇"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1s60ao7/un_meets_in_secret_while_kids_are_dying_nukes_are/",
-        "embed_id": "1s60ao7",
-        "title": "UN meets in secret while kids are dying, nukes are at risk, and Iran says 'no deal' — this war is spiraling fast"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/economy/comments/1s6kv0i/us_recession_odds_rise_as_iran_war_escalates/",
-        "embed_id": "1s6kv0i",
-        "title": "US recession odds rise as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
-        "embed_id": "1s75olt",
-        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s6xroh/the_iran_war_has_a_new_front_in_yemen_heres_how/",
-        "embed_id": "1s6xroh",
-        "title": "The Iran war has a new front in Yemen. Here’s how it could escalate"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
-        "embed_id": "1s6g4c0",
-        "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
-        "embed_id": "1s71z59",
-        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
