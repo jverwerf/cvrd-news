@@ -1,0 +1,247 @@
+{
+  "generated_at": "2026-03-30T18:40:19.000Z",
+  "threads": [
+    {
+      "id": "ukraine-russia-war",
+      "title": "Ukraine-Russia War",
+      "category": "world",
+      "summary": "Russia launched a full-scale invasion of Ukraine on February 24, 2022, triggering the largest war in Europe since World War II. Early Russian advances on Kyiv were repelled, but fighting intensified in eastern and southern Ukraine. The discovery of civilian massacres in Bucha and the destruction of the Kakhovka Dam shocked the international community. In August 2024, Ukraine launched a surprise invasion of Russia's Kursk Oblast \u2014 the first foreign occupation of Russian territory since WWII. North Korean troops joined Russian forces in late 2024, while the US suspended military aid in early 2025 after a confrontation between Trump, Zelensky, and Vance. By early 2026, Russia had captured key cities including Pokrovsk and Myrnohrad, marking the most significant territorial gains since the war's opening months.",
+      "entries": [
+        {
+          "date": "2022-02-24",
+          "story_index": 0,
+          "topic": "Russia Invades Ukraine",
+          "summary": "Russia launched a full-scale invasion of Ukraine, striking cities across the country with missiles and sending ground forces from multiple directions. President Zelensky declared martial law as explosions rocked Kyiv, Kharkiv, and Odessa. The invasion triggered the largest military conflict in Europe since World War II and prompted an emergency UN Security Council session.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/If61baWF4GE/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=If61baWF4GE",
+              "embed_id": "If61baWF4GE",
+              "channel": "RealLifeLore"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "If61baWF4GE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2022-04-02",
+          "story_index": 0,
+          "topic": "Bucha Massacre Discovered",
+          "summary": "After Russian forces withdrew from the Kyiv suburb of Bucha, images of mass civilian killings shocked the world. Bodies of civilians were found in streets, basements, and mass graves, many showing signs of execution. The discovery led to international outrage and calls for war crimes investigations at the International Criminal Court.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/4cOKoHsiiM0/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=4cOKoHsiiM0",
+              "embed_id": "4cOKoHsiiM0",
+              "channel": "The Sun"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "4cOKoHsiiM0",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2022-10-08",
+          "story_index": 0,
+          "topic": "Kerch Bridge Bombed",
+          "summary": "A massive explosion damaged the Kerch Strait Bridge connecting Russia to Crimea, a critical supply line for Russian forces. The blast killed at least three people and collapsed sections of both the road and rail spans. Russia blamed Ukraine for the attack, while the bridge held enormous symbolic significance as Putin's personal project.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/U5cXvbuqAYs/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=U5cXvbuqAYs",
+              "embed_id": "U5cXvbuqAYs",
+              "channel": "CNN"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "U5cXvbuqAYs",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2022-11-11",
+          "story_index": 0,
+          "topic": "Kherson Liberated",
+          "summary": "Ukrainian forces liberated the city of Kherson, the only regional capital Russia had captured since the invasion began. Russian troops retreated across the Dnipro River after months of Ukrainian counteroffensive pressure. President Zelensky visited the city as residents celebrated in the streets, marking a major turning point in the war.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/M0NQb9OFBrc/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=M0NQb9OFBrc",
+              "embed_id": "M0NQb9OFBrc",
+              "channel": "Channel 4 News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "M0NQb9OFBrc",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2023-06-06",
+          "story_index": 0,
+          "topic": "Kakhovka Dam Destroyed",
+          "summary": "The Kakhovka Dam on the Dnipro River was destroyed, unleashing catastrophic flooding across southern Ukraine. Tens of thousands were evacuated as entire villages were submerged. Ukraine and Russia blamed each other for the destruction, which also threatened the cooling water supply for the Zaporizhzhia nuclear power plant.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/LVRGh-iEpOU/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=LVRGh-iEpOU",
+              "embed_id": "LVRGh-iEpOU",
+              "channel": "Defense Digest"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "LVRGh-iEpOU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-08-06",
+          "story_index": 0,
+          "topic": "Ukraine Invades Kursk, Russia",
+          "summary": "Ukraine launched a surprise cross-border offensive into Russia's Kursk Oblast, the first foreign occupation of Russian territory since World War II. Ukrainian forces captured 1,250 square kilometers and the town of Sudzha. The bold operation aimed to divert Russian forces from eastern Ukraine and boost Ukrainian morale.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/8EGjOOlhbVg/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=8EGjOOlhbVg",
+              "embed_id": "8EGjOOlhbVg",
+              "channel": "CGTN Europe"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "8EGjOOlhbVg",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-10-01",
+          "story_index": 0,
+          "topic": "Vuhledar Falls After Two-Year Siege",
+          "summary": "The Ukrainian city of Vuhledar fell to Russian forces after withstanding repeated assaults since the start of the invasion. The city of 14,000 was reduced to a sprawling ruin. Its capture gave Russia control of a strategic position in Donetsk Oblast that Ukraine had defended for over two years.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/Svq7G70pNlM/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=Svq7G70pNlM",
+              "embed_id": "Svq7G70pNlM",
+              "channel": "The Telegraph"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "Svq7G70pNlM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-11-10",
+          "story_index": 0,
+          "topic": "North Korean Troops Deploy to Ukraine Front",
+          "summary": "Over 10,000 North Korean soldiers deployed to Russia's Kursk Oblast to fight alongside Russian forces against Ukraine. The deployment marked a dramatic escalation and internationalization of the conflict. North Korean troops suffered heavy casualties in initial engagements with Ukrainian forces.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/kSPls3oCFoU/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=kSPls3oCFoU",
+              "embed_id": "kSPls3oCFoU",
+              "channel": "The Military Show"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "kSPls3oCFoU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-02-28",
+          "story_index": 0,
+          "topic": "Trump Suspends Military Aid to Ukraine",
+          "summary": "Following a heated televised meeting between Zelensky, Trump, and Vice President Vance, the United States suspended all military aid and intelligence sharing with Kyiv within a week. The suspension dramatically shifted the battlefield dynamics. When Trump proposed a 30-day ceasefire in March, Zelensky accepted but Putin refused, eager to exploit the pause in American support.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/vff5nfBUjck/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=vff5nfBUjck",
+              "embed_id": "vff5nfBUjck",
+              "channel": "Times Of India"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "vff5nfBUjck",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-15",
+          "story_index": 0,
+          "topic": "Russia Retakes Kursk From Ukraine",
+          "summary": "Russian and North Korean forces drove Ukrainian troops out of Kursk Oblast entirely, ending Ukraine's eight-month occupation of Russian territory. The recapture came after the suspension of US military aid left Ukrainian forces stretched thin. North Korean troops were subsequently withdrawn after suffering significant losses.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/GDPM70n4kqE/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=GDPM70n4kqE",
+              "embed_id": "GDPM70n4kqE",
+              "channel": "HistoryLegends"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "GDPM70n4kqE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-10-30",
+          "story_index": 0,
+          "topic": "Battle of Pokrovsk Intensifies",
+          "summary": "Russian forces pushed into Pokrovsk city proper after months of sustained pressure on the strategic Donetsk hub. Fighting reached the city streets as Ukrainian defenders struggled to hold positions without adequate Western support. Russia had advanced hundreds of square miles through sustained offensive operations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/nxuNrIvCtVQ/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=nxuNrIvCtVQ",
+              "embed_id": "nxuNrIvCtVQ",
+              "channel": "ROSS NAME"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "nxuNrIvCtVQ",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-15",
+          "story_index": 0,
+          "topic": "Russia Captures Pokrovsk and Myrnohrad",
+          "summary": "Russian forces fully captured Pokrovsk, Myrnohrad, and Huliaipole in a series of decisive operations in early 2026. The fall of these cities represented the most significant Russian territorial gains since the early months of the invasion. The losses intensified pressure on Ukraine and sparked renewed calls for negotiations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/oDg6yFtZji8/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=oDg6yFtZji8",
+              "embed_id": "oDg6yFtZji8",
+              "channel": "MapFront"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "oDg6yFtZji8",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2022-02-24",
+      "last_seen": "2026-01-15",
+      "is_active": true,
+      "total_days_span": 1422,
+      "days_covered": 12
+    }
+  ]
+}

@@ -63,32 +63,42 @@ export type TodayLastYearData = {
 
 // ── Data Loading ──
 
-export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null> {
-  // Try engine output first (local dev), then public/data fallback (Vercel)
-  const enginePath = path.resolve(process.cwd(), '../intelligence-engine/output/timeline_threads.json');
-  const publicPath = path.resolve(process.cwd(), 'public/data/timeline_threads.json');
+/** Load a JSON file from engine output or public/data fallback */
+function loadTimelineFile(filename: string): TimelineThreadsOutput | null {
+  const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/${filename}`);
+  const publicPath = path.resolve(process.cwd(), `public/data/${filename}`);
 
-  let dataPath: string | null = null;
-  if (fs.existsSync(enginePath)) {
-    dataPath = enginePath;
-  } else if (fs.existsSync(publicPath)) {
-    dataPath = publicPath;
-  }
+  const dataPath = fs.existsSync(enginePath) ? enginePath
+    : fs.existsSync(publicPath) ? publicPath
+    : null;
 
   if (!dataPath) return null;
 
   try {
-    const fileContents = fs.readFileSync(dataPath, 'utf8');
-    const data = JSON.parse(fileContents) as TimelineThreadsOutput;
-
-    // Filter out threads with no entries
-    data.threads = data.threads.filter(t => t.entries.length >= 2);
-
-    return data;
-  } catch (error) {
-    console.error('Error reading timeline data:', error);
+    return JSON.parse(fs.readFileSync(dataPath, 'utf8')) as TimelineThreadsOutput;
+  } catch {
     return null;
   }
+}
+
+export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null> {
+  const detected = loadTimelineFile('timeline_threads.json');
+  const archive = loadTimelineFile('timeline_archive.json');
+
+  if (!detected && !archive) return null;
+
+  // Merge: archive threads take precedence over detected threads on ID conflicts
+  const archiveIds = new Set((archive?.threads || []).map(t => t.id));
+  const detectedFiltered = (detected?.threads || []).filter(t => !archiveIds.has(t.id));
+  const merged = [...(archive?.threads || []), ...detectedFiltered];
+
+  // Filter out threads with no entries
+  const threads = merged.filter(t => t.entries.length >= 2);
+
+  return {
+    generated_at: detected?.generated_at || archive?.generated_at || new Date().toISOString(),
+    threads,
+  };
 }
 
 export async function getTodayLastYear(): Promise<TodayLastYearData | null> {
