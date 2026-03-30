@@ -1,108 +1,99 @@
 {
-  "headline": "Mike Johnson on homeland security: 57.6% Truthful",
+  "headline": "Marco Rubio on iran: 70% Truthful",
   "person": {
-    "handle": "SpeakerJohnson",
-    "name": "Mike Johnson",
-    "role": "Speaker of the House",
-    "photo": "/data/politicians/photo_SpeakerJohnson.png"
+    "handle": "marcorubio",
+    "name": "Marco Rubio",
+    "role": "Senator",
+    "photo": "/data/politicians/photo_marcorubio.png"
   },
-  "story_topic": "House Republicans Pass DHS Funding Bill Amidst Shutdown",
-  "search_keyword": "homeland security",
-  "topic_score": 57.6,
-  "overall_score": 61.4,
-  "matching_claims": 112,
-  "editorial": "Speaker Mike Johnson is making headlines with his bold claims about the House Republicans' recent passage of the DHS funding bill amidst the looming government shutdown. In a statement, Johnson declared, \"It takes 60 votes to end the Schumer Shutdown,\" a claim rated TRUE. Indeed, Senate rules require 60 votes to overcome a filibuster, but Johnson's rhetoric paints a more complicated picture of partisan gridlock.\n\nJohnson's track record on homeland security reveals a pattern of skewed narratives. He asserts that Republicans twice passed a bill to fund the DHS and pay TSA agents, with nearly every Democrat voting against it — a claim deemed MISLEADING. The portrayal oversimplifies a complex legislative process, ignoring the broader context and bipartisan negotiations. Similarly, his narrative that Democrats caused the longest shutdown in U.S. history last year is another MISLEADING claim that obscures the multifaceted nature of congressional budget battles.\n\nWith an overall truthfulness score of 61.4, Johnson's statements often carry a shade of distortion. Nearly 26% of his claims are misleading, and while 19% are true, the rest either miss the mark or lack full context. This pattern signals a tendency to stretch the truth, especially in high-stakes political showdowns.\n\nFor the reader, it’s clear: always dig deeper than the headline when assessing Speaker Johnson’s claims.",
+  "story_topic": "Iranian Missile Strikes and U.S. Military Response",
+  "search_keyword": "iran",
+  "topic_score": 70,
+  "overall_score": 68.7,
+  "matching_claims": 9,
+  "editorial": "Senator Marco Rubio's recent assertions about Iran's aggressive tactics amidst the latest missile strikes are not without precedent. He has consistently portrayed Iran as a primary antagonist in the Middle East, most recently claiming, \"The Iran regime wants to destroy Israel to become the dominant power in the Middle East,\" a statement rated as TRUE. This aligns with his ongoing narrative that paints Iran as a significant threat to regional stability.\n\nRubio has repeatedly emphasized Iran's role in Middle Eastern conflict, albeit not always accurately. He labeled the Islamic Republic as the \"primary source of violence\" in the region—a claim rated MISLEADING. While his assertion that Iran's regime was aware of the consequences of attacking Israel stands as TRUE, his suggestion about Houthi tactics against U.S. defenses was deemed SOMEWHAT MISLEADING.\n\nOverall, Rubio’s truthfulness score on related topics sits at 70, with a general score of 68.7 across all his claims. Despite a high volume of TRUE claims, the pattern of some misleading statements suggests a tendency to overstate threats, which may skew public perception.\n\nFor readers, this pattern underscores the importance of scrutinizing Rubio's claims in the context of his broader narrative—particularly as tensions with Iran escalate.",
   "matched_tweets": [
     {
-      "claim": "It takes 60 votes to end the Schumer Shutdown.",
+      "claim": "The Iran regime wants to destroy Israel to become the dominant power in the Middle East.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": ".@SenSchumer is incapable of telling the truth. After 44 YEARS in Congress, he pretends not to understand the Senate’s rules. As every 8th grade Civics student knows, it takes 60 votes to end the Schumer Shutdown. Since we only have 53 Republicans, we must have a handful of",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1977421200499331264",
-      "domain": "legislation",
-      "reasoning": "The claim that 'it takes 60 votes to end the Schumer Shutdown' is accurate. In the U.S. Senate, ending a filibuster on legislation, such as a continuing resolution to fund the government, requires a cloture vote with a three-fifths majority, which is 60 out of 100 senators. Therefore, with 53 Republ"
+      "tweet_text": "Iran regime wants to destroy Israel so they can become the dominant power in the Middle East Appeasement will not change their behavior Only threatening the survival of the regime through maximum pressure and direct and disproportionate measures has a chance to influence and",
+      "tweet_url": "https://twitter.com/marcorubio/status/1841178807702581581",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that the Iranian regime seeks to destroy Israel to become the dominant power in the Middle East is supported by multiple sources. Iranian leaders have consistently expressed intentions to eliminate Israel. For instance, Supreme Leader Ali Khamenei has set 2040 as the target year for Israel"
     },
     {
-      "claim": "Republicans passed a bill twice to pay TSA agents and fund DHS, and nearly every Democrat voted against it both times.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "FACT CHECK: Republicans PASSED a bill TWICE to pay TSA agents and fund DHS. Nearly every Democrat voted against it both times. The truth is Democrats want us to REOPEN our border in exchange for funding Homeland Security, and it’s NOT going to happen!",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2034699507707863386",
-      "domain": "legislation",
-      "reasoning": "The claim states that Republicans passed a bill twice to pay TSA agents and fund DHS, and that nearly every Democrat voted against it both times. However, the legislative history indicates a more complex situation. While House Republicans did pass a short-term DHS funding bill on March 27, 2026, thi"
-    },
-    {
-      "claim": "House Republicans funded 11 of 12 appropriations bills and restored regular order",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Today, House Republicans once again delivered real, positive results. While Democrats pushed for yet another prolonged government shutdown, our Republican majority worked together and got the job done — funding 11 of 12 appropriations bills and restoring regular order for the",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2018821928090239387",
-      "domain": "legislation",
-      "reasoning": "The claim that House Republicans funded 11 of 12 appropriations bills and restored regular order is mostly accurate. By February 3, 2026, the House had passed 11 of the 12 appropriations bills, with President Trump signing them into law, thereby funding over 95% of the federal government. This effor"
-    },
-    {
-      "claim": "Democrats caused the longest shutdown in U.S. history last year and Republicans are funding the government through regular order.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "After Democrats caused the longest shutdown in U.S. history last year, Republicans are not going to let them put the American people through that chaos again. We’re funding the government the right way — through regular order. Committees have done the work, 11 of 12",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2018082765829210573",
-      "domain": "domestic",
-      "reasoning": "The claim that 'Democrats caused the longest shutdown in U.S. history last year' is misleading. The 2025 government shutdown, lasting 43 days from October 1 to November 12, was indeed the longest in U.S. history. However, attributing the shutdown solely to Democrats oversimplifies the situation. The"
-    },
-    {
-      "claim": "Congress is passing annual funding bills instead of massive omnibus bills.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "What you are seeing now - is how a strong Congress with America First principles is SUPPOSED to work. No more governing by massive, bloated omnibus bills. We are passing annual funding bills - which strengthens Congress, and lets Republicans deliver policies that improve the",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/2011558850604757414",
-      "domain": "legislation",
-      "reasoning": "The claim that Congress is passing annual funding bills instead of massive omnibus bills is partially accurate. Recent legislative actions indicate a shift towards passing individual appropriations bills. For instance, in January 2026, the House passed a bipartisan package of three spending bills to"
-    },
-    {
-      "claim": "Republicans passed a clean continuing resolution (CR) funding bill in September, which Democrats supported 13 times under Biden.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Republicans know this shutdown isn’t a game — there are no “winners.” That’s why we passed a clean, CR funding bill back in September — something Democrats supported 13 TIMES under Biden. Now Schumer and Jeffries are demanding we “negotiate” with them to open the government,",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1986228088837918801",
-      "domain": "legislation",
-      "reasoning": "The claim that Republicans passed a clean continuing resolution (CR) in September 2025 is accurate, as the House passed such a measure on September 19, 2025, with a vote of 217-212. However, the assertion that Democrats supported similar clean CRs 13 times under President Biden is misleading. While "
-    },
-    {
-      "claim": "House Republicans voted to open the government on September 19 with a clean continuing resolution funding bill.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "It’s Day 34 of the Democrat Shutdown — and here’s the simple truth ⤵️ Democrats are LYING when they say Republicans shut down the government. ✅ House Republicans voted to OPEN the government on September 19 with a CLEAN CR funding bill. ❌ Democrats voted to CLOSE it — and",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1985409429672509692",
-      "domain": "legislation",
-      "reasoning": "The claim that House Republicans voted to open the government on September 19 with a clean continuing resolution funding bill is accurate. On that date, the House passed H.R. 5371, the Continuing Appropriations and Extensions Act, 2026, by a vote of 217 to 212. However, the assertion that Democrats "
-    },
-    {
-      "claim": "Democrats have voted NO more than a dozen times on funding the government.",
+      "claim": "The elections in Venezuela are not democratic or valid according to the Carter Center.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "It’s almost comical how Democrats are STILL trying to blame Republicans for their own shutdown. Republicans have DONE OUR JOB and voted to fund the government. Democrats have voted NO more than a dozen times—because they fear the radical left in their base more than they care",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1983636612551733698",
-      "domain": "domestic",
-      "reasoning": "During the 2025 government shutdown, Senate Democrats blocked Republican-sponsored funding bills multiple times. Reports indicate that Senate Democrats rejected such bills at least 10 times, with some sources noting up to 14 rejections before a revised bill was passed. This supports the claim that D"
+      "tweet_text": "On July 22nd the Minister of Defense of #Venezuela Padrino López welcomed the Carter Center and spoke in glowing terms about their work monitoring elections Tonight the CarterCenter issued a statement saying the elections in Venezuela are not democratic or valid The military",
+      "tweet_url": "https://twitter.com/marcorubio/status/1818514265273213351",
+      "domain": "foreign_policy",
+      "reasoning": "The Carter Center issued a statement on July 30, 2024, declaring that Venezuela's presidential election did not meet international standards of electoral integrity and could not be considered democratic. The Center cited the National Electoral Council's failure to announce disaggregated results by p"
     },
     {
-      "claim": "Every Republican in Congress wants to stop the government shutdown and they have voted 13 times to keep it open.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "EVERY Republican in Congress wants to stop this pointless Democrat-caused shutdown — but we can’t do it alone. We’ve voted 13 TIMES to keep the government open and get the American people the relief they deserve. It takes 60 votes in the Senate, and Democrats have voted again",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1982859176666710155",
-      "domain": "domestic",
-      "reasoning": "The claim that 'Every Republican in Congress wants to stop this pointless Democrat-caused shutdown' and that they have 'voted 13 TIMES to keep the government open' is partially accurate. While House Republicans did pass a clean funding extension and full-year appropriations bills to reopen the gover"
+      "claim": "The Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East and has oppressed the people of Iran for almost 25 years.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "The primary source of violence, conflict, suffering and instability in the Middle East is the criminal “Islamic Republic” regime which has also oppressed the people of #Iran for almost 25 years",
+      "tweet_url": "https://twitter.com/marcorubio/status/1780635965331058728",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that the Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East is an oversimplification. While Iran has been involved in various regional conflicts and has supported groups like Hezbollah, attributing the majority of regional ins"
     },
     {
-      "claim": "House Republicans sent Chuck Schumer a clean continuing resolution funding bill that is the same as one he voted for in March.",
+      "claim": "Houthis are using missile and UAV launches to deplete U.S. air defenses and prepare for future swarm attacks against U.S. ships.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "Let me be clear: House Republicans sent Chuck Schumer a totally CLEAN CR funding bill — the EXACT SAME one he voted for in March. What’s changed? Schumer took heat for doing the right thing from his RADICAL MARXIST base and now is TERRIFIED of them — and of losing the Senate",
-      "tweet_url": "https://twitter.com/SpeakerJohnson/status/1980635539960172887",
-      "domain": "legislation",
-      "reasoning": "In March 2025, Senate Minority Leader Chuck Schumer voted for a Republican-led continuing resolution (CR) to avert a government shutdown, despite expressing concerns about its partisan nature. In October 2025, House Republicans sent the Senate a CR they described as 'clean' and identical to the Marc"
+      "tweet_text": "Houthis are using these missile & UAV launches to deplete U.S. air defenses & set up future swarm attacks against our ships",
+      "tweet_url": "https://twitter.com/marcorubio/status/1765342077125075006",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that the Houthis are using missile and UAV launches to deplete U.S. air defenses and prepare for future swarm attacks against U.S. ships is partially supported by evidence. The Houthis have indeed escalated their attacks on U.S. ships using missiles and drones, as reported by multiple sour"
+    },
+    {
+      "claim": "The Iranian regime was aware of the consequences of attacking Israel and chose to attack anyway.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Iranian regime was fully aware of the consequences of a direct attack on Israel & decided to do so anyways. Those demanding Israel show “restraint” should remember that they have the ability to inflict regime threatening damage on Iran & have already shown restraint by not",
+      "tweet_url": "https://twitter.com/marcorubio/status/1841224856442196447",
+      "domain": "foreign_policy",
+      "reasoning": "On October 1, 2024, Iran launched approximately 200 ballistic missiles at Israel, marking a significant escalation in their conflict. Prior to the attack, the United States warned Iran that a direct military assault on Israel would carry severe consequences. Despite this, Iran proceeded with the mis"
+    },
+    {
+      "claim": "There hasn't been a Russian submarine carrying nuclear capable missiles operating in the Caribbean in over 30 years.",
+      "verdict": "FALSE",
+      "score": 0,
+      "tweet_text": "We haven’t had a Russian submarine carrying nuclear capable missiles operating in the Caribbean in over 30 years So if the regime in #Cuba decides to allow one to make a port call just 90 miles from our shores the Biden administration must impose real consequences on them",
+      "tweet_url": "https://twitter.com/marcorubio/status/1798719252490227745",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that no Russian submarine carrying nuclear-capable missiles has operated in the Caribbean in over 30 years is incorrect. In June 2024, the Russian nuclear-powered submarine Kazan, capable of launching nuclear-capable missiles, visited Havana, Cuba, and participated in military exercises in"
+    },
+    {
+      "claim": "Israel can conduct strikes against targets in Iran using aircraft over Syrian and Iraqi airspace without entering Iranian airspace.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Israel has the ability to conduct strikes against targets inside Iran without entering Iranian air space from aircraft over Syrian and Iraqi airspace",
+      "tweet_url": "https://twitter.com/marcorubio/status/1781135619508285791",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that Israel can conduct strikes against targets inside Iran without entering Iranian airspace, by operating over Syrian and Iraqi airspace, is supported by multiple reports. In April 2024, Israeli aircraft launched missiles targeting an air defense radar site near Isfahan, Iran, from beyon"
+    },
+    {
+      "claim": "Without Starlink, Ukraine would have lost the war long ago and Russians would be on the border with Poland right now.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Just making things up. No one has made any threats about cutting Ukraine off from Starlink And say thank you because without Starlink Ukraine would have lost this war long ago and Russians would be on the border with Poland right now",
+      "tweet_url": "https://twitter.com/marcorubio/status/1898755922492588082",
+      "domain": "military",
+      "reasoning": "Starlink has been crucial in maintaining Ukrainian military communications and operations since the onset of Russia's invasion in 2022. Its services have enabled real-time coordination and drone operations, significantly bolstering Ukraine's defense capabilities. However, attributing Ukraine's entir"
+    },
+    {
+      "claim": "China is doing nothing to stop Houthis from attacking ships in the Red Sea that carry medicine, food, and fuel.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Next time China talks about being a “responsible” global leader that promotes a \"community of common destiny for mankind\" remind them how they are doing nothing to stop Houthis from attacking ships in Red Sea carrying medicine, food & fuel for countries all over the world",
+      "tweet_url": "https://twitter.com/marcorubio/status/1767908957593444713",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that China is \"doing nothing\" to stop Houthi attacks in the Red Sea is an oversimplification. While China has not taken direct military action, it has engaged diplomatically by urging Iran to influence the Houthis to cease attacks and has publicly called for an end to harassment of civilia"
     }
   ],
-  "generated_at": "2026-03-28T21:36:44.119Z"
+  "generated_at": "2026-03-29T13:12:22.231Z"
 }

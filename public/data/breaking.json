@@ -1,14 +1,14 @@
 [
   {
     "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike has targeted a power and water desalination plant in Kuwait, leading to significant damage and the death of an Indian worker. This act has escalated regional tensions and raised concerns about the security of critical infrastructure in the Gulf. The international community has widely condemned the attack, which poses potential risks to energy security and international relations in the region.",
+    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident has heightened regional tensions and raised alarms about the security of critical infrastructure in the Gulf. The attack has been condemned by the international community, highlighting potential risks to energy security and international relations in the region.",
     "severity": "major",
     "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T09:00:38.737Z",
+    "last_updated": "2026-03-30T11:00:55.871Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. This attack be a strategic move in response to Kuwait's alliances and its role in regional politics, particularly its relationships with Western powers. Additionally, the economic implications for global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
-    "social_summary": "Social media is ablaze with outrage and fear, with users sharing images of the damaged facility and expressing concern over the safety of foreign workers in the region. Conspiracy theories are circulating, suggesting deeper plots involving global superpowers manipulating Middle Eastern conflicts for their own gain. Memes are emerging, depicting the Gulf as a powder keg ready to explode.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical tensions that have been simmering in the region, particularly the proxy conflicts and economic sanctions that have strained Iran's relations with its neighbors. The focus remains on the immediate impact rather than the broader strategic maneuvers that have led to this escalation. Additionally, the role of international arms sales and military alliances in the region's instability is not being scrutinized.",
+    "social_summary": "Social media is ablaze with outrage and fear, with hashtags like #KuwaitAttack and #IranAggression trending. Memes and viral posts are drawing parallels to past Gulf conflicts, while conspiracy theories suggest ulterior motives behind the attack, such as a distraction from domestic issues within Iran. Some users are calling for increased military presence in the region, while others advocate for diplomatic solutions.",
     "image_prompt": "A dramatic editorial photo of a shattered water desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human cost and vulnerability of critical infrastructure.",
     "sources": [
       {
@@ -21,23 +21,16 @@
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Cw9WZXVV5LU",
-        "embed_id": "Cw9WZXVV5LU",
-        "title": "Indian worker killed in Iran’s attack in Kuwait’s electric facility as West Asia crisis intensify",
-        "duration": 201
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
         "embed_id": "9vfTT9uX64Q",
         "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
-        "embed_id": "2038415564457042141",
-        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
-        "author": "TheCradleMedia"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
+        "embed_id": "-aQ1uxff6fY",
+        "title": "Iran strikes Gulf nations | Kuwait troops injured, Qatar intercepts drone, Saudi stopped missile",
+        "duration": 132
       },
       {
         "platform": "x",
@@ -99,27 +92,20 @@
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=Cw9WZXVV5LU",
-        "embed_id": "Cw9WZXVV5LU",
-        "title": "Indian worker killed in Iran’s attack in Kuwait’s electric facility as West Asia crisis intensify",
-        "channel": "ANI News",
-        "duration": 201
-      },
-      {
         "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
         "embed_id": "9vfTT9uX64Q",
         "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant",
         "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
+        "embed_id": "-aQ1uxff6fY",
+        "title": "Iran strikes Gulf nations | Kuwait troops injured, Qatar intercepts drone, Saudi stopped missile",
+        "channel": "Al Jazeera English",
+        "duration": 132
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
-        "embed_id": "2038415564457042141",
-        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
-        "author": "TheCradleMedia"
-      },
       {
         "platform": "x",
         "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
