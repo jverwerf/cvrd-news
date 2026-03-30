@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Missile Strike on Israel",
-    "summary": "Iran has launched a missile strike targeting an industrial facility in southern Israel, resulting in significant damage. This act represents a serious escalation in the ongoing conflict between the two nations. The attack has increased regional tensions, with the possibility of further military responses from Israel and its allies looming.",
+    "summary": "Iran has launched a missile strike on an industrial facility in southern Israel, causing significant damage and escalating the ongoing conflict between the two countries. This attack has heightened regional tensions and raised the possibility of military retaliation from Israel and its allies. The international community is closely monitoring the situation, as further escalation has broader implications for Middle Eastern stability.",
     "severity": "critical",
     "detected_at": "2026-03-29T19:00:07.423Z",
-    "last_updated": "2026-03-29T23:00:21.289Z",
+    "last_updated": "2026-03-30T01:00:19.458Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive these actions, such as Iran's strategic interests in asserting regional dominance and Israel's alliances with Western powers. The economic implications of targeting industrial zones, which disrupt supply chains and impact global markets, are also being overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression, while others criticize Israel's military policies. Memes and conspiracy theories abound, suggesting hidden agendas and questioning the timing of the strike in relation to international diplomatic events.",
-    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the looming threat of conflict and the fragility of peace.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict, such as control over regional trade routes and energy resources. Additionally, the role of external powers, particularly the influence of the United States and Russia in the region, is not being fully explored. These geopolitical dynamics are crucial to understanding the broader context of the conflict.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Israel's right to defend itself, while others criticize Iran's actions as a necessary response to perceived Israeli aggression. Conspiracy theories are circulating about foreign powers orchestrating the conflict for their own gain, and memes depicting the conflict as a chess game between global superpowers are going viral.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing different countries and flags, under a stormy sky symbolizing geopolitical tension.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -116,6 +116,12 @@
         "url": "https://reddit.com/r/PLNewsGroup/comments/1s6ws1u/iraq_at_the_crossroads_true_sovereignty_or_proxy/",
         "embed_id": "1s6ws1u",
         "title": "Iraq at the Crossroads: True Sovereignty or Proxy Battleground? 🇮🇶⚔️"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
+        "embed_id": "1s7bdek",
+        "title": "Iran trolls trumps ceasefire plan"
       }
     ],
     "youtube_videos": [
@@ -218,21 +224,27 @@
         "url": "https://reddit.com/r/PLNewsGroup/comments/1s6ws1u/iraq_at_the_crossroads_true_sovereignty_or_proxy/",
         "embed_id": "1s6ws1u",
         "title": "Iraq at the Crossroads: True Sovereignty or Proxy Battleground? 🇮🇶⚔️"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1s7bdek/iran_trolls_trumps_ceasefire_plan/",
+        "embed_id": "1s7bdek",
+        "title": "Iran trolls trumps ceasefire plan"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
   },
   {
     "topic": "Iran War Escalation",
-    "summary": "Iran has issued a threat against the USS Abraham Lincoln, a U.S. aircraft carrier, as tensions in the Middle East continue to rise. This development follows reports of a death toll in Tehran exceeding 2,000, which has led the United States to increase its military presence in the region. The U.S. has deployed additional troops to address potential threats and attempt to stabilize the situation.",
+    "summary": "Iran has threatened the USS Abraham Lincoln, a U.S. aircraft carrier, amidst escalating tensions in the Middle East. This comes after reports of over 2,000 deaths in Tehran, prompting the United States to bolster its military presence in the region. The U.S. has deployed additional troops to counter potential threats and stabilize the situation.",
     "severity": "critical",
     "detected_at": "2026-03-29T13:00:14.955Z",
-    "last_updated": "2026-03-29T23:01:08.126Z",
+    "last_updated": "2026-03-30T01:01:23.731Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. Iran's threats be a strategic move to rally domestic support amidst internal unrest, while the U.S. military buildup is influenced by defense contractors and geopolitical interests in maintaining influence over Middle Eastern oil routes. The broader implications of these actions on global oil prices and international relations are not being thoroughly examined.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for a strong U.S. military response, while others criticize the escalation as unnecessary warmongering. Memes mocking the situation as a 'game of battleships' are circulating, alongside conspiracy theories suggesting ulterior motives behind the U.S. troop deployment, such as control over oil resources.",
-    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing tension and power, with shadowy figures in the foreground representing unseen geopolitical forces at play.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies at play. The U.S. military presence in the Middle East is often tied to securing oil routes and maintaining influence over regional politics. Iran's threats can be seen as a response to perceived encroachments on its sovereignty and attempts to assert its own regional power. Both nations are leveraging the situation to justify military expenditures and political posturing.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for U.S. military actions as necessary for global security, while others criticize it as imperialistic aggression. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the U.S. troop deployment, such as control over oil resources or distraction from domestic issues. Hashtags like #IranWar and #USImperialism are trending.",
+    "image_prompt": "A dramatic editorial photo of a massive aircraft carrier silhouetted against a fiery sunset, symbolizing tension and power. In the foreground, shadowy figures representing diplomacy and conflict stand on opposite sides, highlighting the geopolitical struggle.",
     "sources": [],
     "clips": [
       {
@@ -319,6 +331,27 @@
         "author": "hissgoescobra"
       },
       {
+        "platform": "x",
+        "url": "https://x.com/KobeissiLetter/status/2038397793400721834",
+        "embed_id": "2038397793400721834",
+        "title": "It's eerily quiet this weekend:\n\nFor the first time since the Iran War began, President Trump has gone unusually quiet this weekend.\n\nNo new headlines",
+        "author": "KobeissiLetter"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038379124033483208",
+        "embed_id": "2038379124033483208",
+        "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan, Pakistan is stepping up as a key mediator.\n\nIsla",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
+        "embed_id": "2038240220894605543",
+        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
+        "author": "Tiju0Prakash"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/changemyview/comments/1s6e5lb/cmv_the_iran_war_is_very_likely_to_go_down_as_the/",
         "embed_id": "1s6e5lb",
@@ -389,6 +422,12 @@
         "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
         "embed_id": "1s6g4c0",
         "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
+        "embed_id": "1s71z59",
+        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
       }
     ],
     "youtube_videos": [
@@ -478,6 +517,27 @@
         "author": "hissgoescobra"
       },
       {
+        "platform": "x",
+        "url": "https://x.com/KobeissiLetter/status/2038397793400721834",
+        "embed_id": "2038397793400721834",
+        "title": "It's eerily quiet this weekend:\n\nFor the first time since the Iran War began, President Trump has gone unusually quiet this weekend.\n\nNo new headlines",
+        "author": "KobeissiLetter"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038379124033483208",
+        "embed_id": "2038379124033483208",
+        "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan, Pakistan is stepping up as a key mediator.\n\nIsla",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Tiju0Prakash/status/2038240220894605543",
+        "embed_id": "2038240220894605543",
+        "title": "While the US-Israel war on Iran escalates and the entire region burns, Egypt, Saudi Arabia, Pakistan & Turkey are holding crucial Foreign Ministers' t",
+        "author": "Tiju0Prakash"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/changemyview/comments/1s6e5lb/cmv_the_iran_war_is_very_likely_to_go_down_as_the/",
         "embed_id": "1s6e5lb",
@@ -548,6 +608,12 @@
         "url": "https://reddit.com/r/PERSIAN/comments/1s6g4c0/rift_deepens_between_irans_president_and_guards/",
         "embed_id": "1s6g4c0",
         "title": "Rift deepens between Iran’s president and Guards chief over war, economy"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
+        "embed_id": "1s71z59",
+        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
       }
     ],
     "image_file": "/images/breaking_2026-03-29.png"
