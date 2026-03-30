@@ -548,6 +548,35 @@ export default function PoliticiansPage() {
                 ))}
               </div>
 
+              {/* Matched tweets */}
+              {editorial.matched_tweets?.length > 0 && (
+                <div className="px-5 py-4" style={{ borderTop: '1px solid #2a3a4a' }}>
+                  <span className="text-[9px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-3">Claims We Checked</span>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                    {editorial.matched_tweets.slice(0, 6).map((t: any, i: number) => {
+                      const verdictColor = t.verdict === 'TRUE' ? '#34d399' : t.verdict === 'FALSE' ? '#f87171' : '#f59e0b';
+                      return (
+                        <div key={i}
+                          className="rounded-lg p-3"
+                          style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <p className="text-[11px] text-[#bbb] leading-[1.6] line-clamp-2 mb-2">{t.claim}</p>
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[8px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded"
+                              style={{ color: verdictColor, border: `1px solid ${verdictColor}40` }}>
+                              {t.verdict}
+                            </span>
+                            <span className="text-[8px] text-[#555] uppercase tracking-[0.08em]">{t.domain?.replace(/_/g, ' ')}</span>
+                          </div>
+                          {t.reasoning && (
+                            <p className="text-[10px] text-[#888] leading-[1.5] line-clamp-3">{t.reasoning}</p>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* CTA + Share */}
               <div className="px-5 pb-5 flex items-center gap-3">
                 <Link href={`/onrecord/${editorial.person.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-')}${editorial.search_keyword ? '?q=' + editorial.search_keyword : ''}`}
