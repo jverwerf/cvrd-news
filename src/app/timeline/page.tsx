@@ -1,12 +1,36 @@
+import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
 import { getTimelineThreads, getTodayLastYear } from "@/lib/timeline-data";
 import { LiveBanner } from "@/components/LiveBanner";
 import { TimelineContent } from "./TimelineClient";
 
-export const metadata = {
-  title: "Timeline — Catch Me Up",
-  description: "Track ongoing stories across days. See how narratives evolve over time with video evidence.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const threadData = await getTimelineThreads();
+  const threads = threadData?.threads || [];
+  const threadTitles = threads.slice(0, 5).map(t => t.title).join(', ');
+  const description = threads.length > 0
+    ? `Follow ${threads.length} developing stories: ${threadTitles}. See how each narrative evolves day by day with video evidence from trusted sources.`
+    : 'Track ongoing stories across days. See how narratives evolve over time with video evidence.';
+
+  return {
+    title: 'Timeline — Catch Me Up',
+    description,
+    alternates: { canonical: '/timeline' },
+    openGraph: {
+      title: 'CVRD Timeline — Catch Me Up on the News',
+      description,
+      url: 'https://cvrdnews.com/timeline',
+      type: 'website',
+      images: [{ url: '/logo_new.jpg', width: 1024, height: 559, alt: 'CVRD News Timeline' }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'CVRD Timeline — Catch Me Up',
+      description,
+      images: ['/logo_new.jpg'],
+    },
+  };
+}
 
 const ALL_CATS = [
   { label: 'On Record', slug: '/onrecord' },
@@ -107,6 +131,36 @@ export default async function TimelinePage() {
         </div>
       </div>
 
+      {/* JSON-LD structured data for search engines */}
+      {threadData && threadData.threads.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          name: 'CVRD Timeline — Catch Me Up',
+          description: `Follow ${threadData.threads.length} developing stories as they unfold day by day.`,
+          url: 'https://cvrdnews.com/timeline',
+          publisher: { '@type': 'NewsMediaOrganization', name: 'CVRD News', url: 'https://cvrdnews.com' },
+          dateModified: threadData.generated_at,
+          mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: threadData.threads.length,
+            itemListElement: threadData.threads.map((t, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              item: {
+                '@type': 'NewsArticle',
+                headline: t.title,
+                description: t.summary,
+                datePublished: t.first_seen,
+                dateModified: t.last_seen,
+                articleSection: t.category,
+                publisher: { '@type': 'NewsMediaOrganization', name: 'CVRD News' },
+              },
+            })),
+          },
+        }) }} />
+      )}
+
       {/* CONTENT */}
       {!threadData || threadData.threads.length === 0 ? (
         <div className="flex items-center justify-center py-32">
@@ -120,7 +174,39 @@ export default async function TimelinePage() {
           </div>
         </div>
       ) : (
-        <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} />
+        <>
+          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} />
+
+          {/* Server-rendered content for SEO — visually hidden, crawlable */}
+          <div className="sr-only" aria-hidden="false">
+            <h1>CVRD News Timeline — Catch Me Up</h1>
+            <p>Track {threadData.threads.length} developing stories as they evolve day by day with video evidence from trusted news sources.</p>
+            {threadData.threads.map(thread => (
+              <article key={thread.id}>
+                <h2>{thread.title}</h2>
+                <p>Category: {thread.category} | {thread.first_seen} to {thread.last_seen} | {thread.days_covered} days covered</p>
+                <p>{thread.summary}</p>
+                {thread.entries.map((entry, i) => (
+                  <section key={i}>
+                    <h3>{entry.date}: {entry.topic}</h3>
+                    <p>{entry.summary}</p>
+                    {entry.youtube_videos?.map((v, j) => (
+                      <a key={j} href={v.url || `https://youtube.com/watch?v=${v.embed_id}`}>
+                        Watch: {v.channel} coverage
+                      </a>
+                    ))}
+                  </section>
+                ))}
+              </article>
+            ))}
+            {lastYearData && (
+              <article>
+                <h2>Last Year Today — {lastYearData.date_last_year}</h2>
+                <p>{lastYearData.summary}</p>
+              </article>
+            )}
+          </div>
+        </>
       )}
 
       {/* FOOTER */}

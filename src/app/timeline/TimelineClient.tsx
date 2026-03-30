@@ -56,7 +56,11 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
 
-  const filtered = (filter === 'all' ? threads : threads.filter(t => t.category === filter))
+  // Most Recent = sorted by last activity; Catch Me Up = sorted by biggest/longest-running
+  const recentThreads = [...threads].sort((a, b) => b.last_seen.localeCompare(a.last_seen));
+  const catchMeUpThreads = [...threads].sort((a, b) => b.total_days_span - a.total_days_span || b.days_covered - a.days_covered);
+
+  const filtered = (filter === 'all' ? catchMeUpThreads : catchMeUpThreads.filter(t => t.category === filter))
     .filter(t => !search || t.title.toLowerCase().includes(search.toLowerCase()) ||
       t.entries.some(e => e.topic.toLowerCase().includes(search.toLowerCase())));
 
@@ -64,11 +68,11 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
     <>
       <style dangerouslySetInnerHTML={{ __html: TIMELINE_SCROLL_CSS }} />
 
-      {/* MOST RECENT STORIES — exact same layout as main page "Today's Top Stories" */}
+      {/* MOST RECENT STORIES — sorted by last activity */}
       <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-          {threads.map((t, i) => (
+          {recentThreads.map((t, i) => (
             <button key={t.id} onClick={() => setExpandedId(expandedId === t.id ? null : t.id)}
               className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -173,7 +177,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         return (
           <>
             {/* White banner */}
-            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-8" style={{ background: '#f5f5f5' }}>
+            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
               <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Last Year Today</span>
               <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
                 {lastYearDate}
@@ -363,7 +367,7 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </div>
 
               {/* ═══ HORIZONTAL TIMELINE — scrollable independently ═══ */}
-              <div className="mx-5 rounded-lg p-4 mb-5 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <HorizontalTimeline
                   grouped={grouped}
                   dates={dates}
@@ -371,16 +375,26 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                   onSelect={handleSelectDate}
                 />
               </div>
+              <div className="mx-5 my-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
               {/* Summary + video — outside scroll container */}
               <div className="px-5" ref={contentRef}>
                 {selectedEntries.length > 0 && (
                   <>
-                    <div className="mb-4">
+                    <div className="mb-2">
+                      <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">
+                        {formatDateFull(selectedDate!)}
+                      </span>
+                      <h3 className="text-[17px] text-white leading-snug mt-1" style={serif}>
+                        {selectedEntries[0].topic}
+                      </h3>
+                    </div>
+                    <div className="mb-3 mt-3">
                       {[...new Set(selectedEntries.map(e => e.summary))].map((s, i) => (
                         <p key={i} className="text-[13px] text-[#bbb] leading-[1.7] mb-2 last:mb-0">{s}</p>
                       ))}
                     </div>
+                    <div className="mb-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
                     {mainYtVideo && (
                       <div className="flex justify-center mb-4">
@@ -495,10 +509,12 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                     })()}
 
                     {/* Share */}
-                    <ShareBar
-                      text={`${thread.title} — tracked by CVRD\n\n${thread.summary.substring(0, 120)}...`}
-                      url={`https://cvrdnews.com/timeline`}
-                    />
+                    <div className="px-4 pb-3 pt-1">
+                      <ShareBar
+                        text={`${thread.title} — tracked by CVRD\n\n${thread.summary.substring(0, 120)}...`}
+                        url={`https://cvrdnews.com/timeline`}
+                      />
+                    </div>
                   </motion.div>
                 )}
 
@@ -541,8 +557,9 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
   const allEntries = dates.map(d => ({ date: d, year: getYear(d) }));
 
   // Active entry index drives everything: scrollbar position, year opening, timeline scroll
-  // Start with -1 = nothing open, all collapsed
-  const [activeIdx, setActiveIdx] = useState(-1);
+  // If only 1 year, auto-open it by selecting the first entry
+  const uniqueYears = [...new Set(allEntries.map(e => e.year))];
+  const [activeIdx, setActiveIdx] = useState(uniqueYears.length === 1 ? 0 : -1);
   const activeYear = activeIdx >= 0 ? (allEntries[activeIdx]?.year || '') : '';
   const openYears = new Set(activeYear ? [activeYear] : []);
 
@@ -552,7 +569,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     hasInteracted.current = true;
     const clamped = Math.max(0, Math.min(allEntries.length - 1, idx));
     setActiveIdx(clamped);
-    onSelect(allEntries[clamped].date, true); // load summary + video below, scroll to it
+    onSelect(allEntries[clamped].date); // load summary + video below
     // Scroll the timeline to center this entry's thumbnail after year transition
     setTimeout(() => {
       const date = allEntries[clamped].date;
@@ -571,7 +588,13 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
 
   // Click year label to jump to first entry in that year
   const jumpToYear = (year: string) => {
-    const idx = allEntries.findIndex(e => e.year === year);
+    const currentYear = activeIdx >= 0 ? allEntries[activeIdx]?.year : '';
+    const yearEntries = allEntries.filter(e => e.year === year);
+    if (yearEntries.length === 0) return;
+    // Going to a smaller/earlier year → pick last entry; going to bigger/later year → pick first
+    const goingLeft = year < currentYear;
+    const targetDate = goingLeft ? yearEntries[yearEntries.length - 1].date : yearEntries[0].date;
+    const idx = allEntries.findIndex(e => e.date === targetDate && e.year === year);
     if (idx >= 0) goToEntry(idx);
   };
 
@@ -699,13 +722,15 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
   return (
     <div>
       <div ref={scrollRef}>
-        <div className="flex min-w-max" style={{ gap: YEAR_GAP }}>
+        <div className="flex min-w-max" style={{ gap: YEAR_GAP, paddingRight: 40 }}>
         {yearGroups.map((yg) => {
           const isOpen = openYears.has(yg.year);
           const startIdx = globalIdx;
           const count = yg.dates.length;
           const gap = 4;
-          const activeW = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
+          // Expanded width scales with entry count — min 200px, each entry ~120px, capped at 600
+          const expandedW = isOpen ? Math.min(YEAR_W_EXPANDED, Math.max(YEAR_W_COLLAPSED, count * 120 + (count - 1) * gap)) : YEAR_W_COLLAPSED;
+          const activeW = expandedW;
           const thumbW = Math.floor((activeW - (count - 1) * gap) / count);
           globalIdx += count;
 
@@ -762,7 +787,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                         </div>
 
                         {/* Thumbnail — selected entry pops up bigger */}
-                        <button onClick={(e) => { e.stopPropagation(); onSelect(date, true); }}
+                        <button onClick={(e) => { e.stopPropagation(); onSelect(date); }}
                           className="w-full rounded overflow-hidden cursor-pointer"
                           style={{
                             height: 70,
@@ -803,13 +828,13 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
       </div>
 
       {/* ═══ SCROLLBAR — full content width, dots below thumbnails, draggable ═══ */}
-      <div className="relative mt-3 flex min-w-max" style={{ height: 14, gap: YEAR_GAP }}
+      <div className="relative mt-3 flex min-w-max" style={{ height: 14, gap: YEAR_GAP, paddingRight: 40 }}
         onMouseDown={handleBarDrag} onTouchStart={handleBarDrag}>
         {yearGroups.map((yg) => {
           const isOpen = openYears.has(yg.year);
-          const yearW = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
           const count = yg.dates.length;
           const gap = 4;
+          const yearW = isOpen ? Math.min(YEAR_W_EXPANDED, Math.max(YEAR_W_COLLAPSED, count * 120 + (count - 1) * gap)) : YEAR_W_COLLAPSED;
           const thumbW = Math.floor((yearW - (count - 1) * gap) / count);
           const startIdx = allEntries.findIndex(e => e.year === yg.year);
 
@@ -865,7 +890,7 @@ function TimelineThumb({ date, entries, isSelected, onSelect }: {
   );
 
   return (
-    <button onClick={() => onSelect(date, true)}
+    <button onClick={() => onSelect(date)}
       className="relative cursor-pointer group transition-all duration-200 w-full"
       style={{ height: 75 }}>
       {thumb ? (

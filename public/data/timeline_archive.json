@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-30T18:40:19.000Z",
+  "generated_at": "2026-03-30T19:28:04.937Z",
   "threads": [
     {
       "id": "ukraine-russia-war",
       "title": "Ukraine-Russia War",
       "category": "world",
-      "summary": "Russia launched a full-scale invasion of Ukraine on February 24, 2022, triggering the largest war in Europe since World War II. Early Russian advances on Kyiv were repelled, but fighting intensified in eastern and southern Ukraine. The discovery of civilian massacres in Bucha and the destruction of the Kakhovka Dam shocked the international community. In August 2024, Ukraine launched a surprise invasion of Russia's Kursk Oblast \u2014 the first foreign occupation of Russian territory since WWII. North Korean troops joined Russian forces in late 2024, while the US suspended military aid in early 2025 after a confrontation between Trump, Zelensky, and Vance. By early 2026, Russia had captured key cities including Pokrovsk and Myrnohrad, marking the most significant territorial gains since the war's opening months.",
+      "summary": "Russia launched a full-scale invasion of Ukraine on February 24, 2022, triggering the largest war in Europe since World War II. Early Russian advances on Kyiv were repelled, but fighting intensified in eastern and southern Ukraine. The discovery of civilian massacres in Bucha and the destruction of the Kakhovka Dam shocked the international community. In August 2024, Ukraine launched a surprise invasion of Russia's Kursk Oblast — the first foreign occupation of Russian territory since WWII. North Korean troops joined Russian forces in late 2024, while the US suspended military aid in early 2025 after a confrontation between Trump, Zelensky, and Vance. By early 2026, Russia had captured key cities including Pokrovsk and Myrnohrad, marking the most significant territorial gains since the war's opening months.",
       "entries": [
         {
           "date": "2022-02-24",
@@ -242,6 +242,1752 @@
       "is_active": true,
       "total_days_span": 1422,
       "days_covered": 12
+    },
+    {
+      "id": "gaza-israel-conflict-2024-2026",
+      "title": "Gaza-Israel Conflict: 2024-2026",
+      "category": "world",
+      "summary": "The Gaza-Israel conflict from 2024 to 2026 was marked by significant military and political events. It began with the killing of Hamas leader Yahya Sinwar in October 2024, a major blow to Hamas. A ceasefire in January 2025, mediated by Qatar, temporarily halted hostilities but was soon broken by Israel's 'Operation Might and Sword' in March 2025. Mass protests in Israel and a UN warning of potential genocide in May 2025 highlighted the conflict's domestic and international ramifications. A third ceasefire in October 2025 aimed to initiate peace, but tensions persisted with incidents like the Israeli drone strike in February 2026. The return of Ran Gvili's body in January 2026 marked a significant moment in the ceasefire process. However, ongoing airstrikes and a dire humanitarian crisis in March 2026 underscored the region's volatility.",
+      "entries": [
+        {
+          "date": "2024-10-16",
+          "story_index": 0,
+          "topic": "Killing of Yahya Sinwar",
+          "summary": "Yahya Sinwar, the leader of Hamas in Gaza, was killed by Israeli forces in Rafah. His death marked a significant blow to Hamas's leadership, potentially disrupting its operational capabilities. This event altered the dynamics of the ongoing conflict between Israel and Hamas.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/pvs3elK6RhM/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=pvs3elK6RhM",
+              "embed_id": "pvs3elK6RhM",
+              "channel": "Associated Press"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "pvs3elK6RhM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-01-15",
+          "story_index": 0,
+          "topic": "Second Ceasefire Agreement",
+          "summary": "A ceasefire agreement was announced, mediated by Qatar, involving the release of Israeli hostages in exchange for Palestinian prisoners. This agreement aimed to de-escalate the conflict and address humanitarian concerns, though its fragility was evident in subsequent events.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/Nf1VzNaO4kQ/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=Nf1VzNaO4kQ",
+              "embed_id": "Nf1VzNaO4kQ",
+              "channel": "Global News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "Nf1VzNaO4kQ",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-03-18",
+          "story_index": 0,
+          "topic": "Resumption of Israeli Military Ops",
+          "summary": "Israel launched 'Operation Might and Sword,' ending the ceasefire with a series of massive airstrikes targeting Hamas positions in Gaza. The operation resulted in significant casualties and marked a dramatic escalation in the conflict.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/yN-SIqGf5n8/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=yN-SIqGf5n8",
+              "embed_id": "yN-SIqGf5n8",
+              "channel": "ABC News (Australia)"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "yN-SIqGf5n8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-05",
+          "story_index": 0,
+          "topic": "Mass Anti-War Protests in Israel",
+          "summary": "Large-scale protests erupted in Tel Aviv and Jerusalem, with demonstrators opposing the government's war policies. The protests highlighted growing domestic discontent with the prolonged conflict and pressured the Israeli government to reconsider its strategies.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-05-07",
+          "story_index": 0,
+          "topic": "UN Warning of Potential Genocide",
+          "summary": "United Nations experts warned that Israel's actions in Gaza might amount to 'annihilation' of the population. This statement intensified international scrutiny and condemnation of Israel's military operations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/g6JM9XWMqdA/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=g6JM9XWMqdA",
+              "embed_id": "g6JM9XWMqdA",
+              "channel": "ITV News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "g6JM9XWMqdA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-10-10",
+          "story_index": 0,
+          "topic": "Third Ceasefire Agreement",
+          "summary": "A new ceasefire came into effect after Israel and Hamas agreed to the first phase of a U.S.-backed peace plan. This agreement aimed to halt hostilities and initiate steps toward a lasting peace.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/RdIBWd9H6us/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=RdIBWd9H6us",
+              "embed_id": "RdIBWd9H6us",
+              "channel": "Global News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "RdIBWd9H6us",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-27",
+          "story_index": 0,
+          "topic": "Return of Ran Gvili's Body",
+          "summary": "The body of Ran Gvili, the last Israeli hostage taken by Hamas during the October 7, 2023 attacks, was returned to Israel. This event marked the closure of a painful chapter for Israel and fulfilled a key condition in the ceasefire process.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/iV1l8p148zA/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=iV1l8p148zA",
+              "embed_id": "iV1l8p148zA",
+              "channel": "Al Jazeera English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "iV1l8p148zA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-10",
+          "story_index": 0,
+          "topic": "Israeli Drone Strike in Gaza",
+          "summary": "An Israeli drone strike killed two Palestinians cycling in eastern Deir al-Balah near the ceasefire line. The incident underscored the fragility of the ceasefire and the ongoing volatility in the region.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2026-03-28",
+          "story_index": 0,
+          "topic": "Israeli Airstrikes in Gaza",
+          "summary": "Israeli forces launched airstrikes in Khan Yunis and Shuja'iyya, resulting in multiple Palestinian casualties. These airstrikes highlighted the persistent tensions and the challenges in maintaining a lasting ceasefire.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/PdoHRDkyqXo/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=PdoHRDkyqXo",
+              "embed_id": "PdoHRDkyqXo",
+              "channel": "FRANCE 24 English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "PdoHRDkyqXo",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-30",
+          "story_index": 0,
+          "topic": "Ongoing Humanitarian Crisis",
+          "summary": "The humanitarian situation in Gaza remains dire, with widespread displacement, infrastructure destruction, and limited access to essential services. The prolonged conflict has led to a severe humanitarian crisis, necessitating urgent international aid and intervention.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/dd_mMtPnd4g/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=dd_mMtPnd4g",
+              "embed_id": "dd_mMtPnd4g",
+              "channel": "Al Jazeera English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "dd_mMtPnd4g",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-10-16",
+      "last_seen": "2026-03-30",
+      "is_active": true,
+      "total_days_span": 531,
+      "days_covered": 10
+    },
+    {
+      "id": "iran-israel-conflict-escalation-2024-2026",
+      "title": "Iran-Israel Conflict Escalation 2024-2026",
+      "category": "world",
+      "summary": "The Iran-Israel conflict from 2024 to 2026 was marked by a series of escalating military confrontations and political tensions. It began with an Israeli airstrike on the Iranian consulate in Damascus in April 2024, leading to retaliatory missile attacks by Iran. The assassination of key figures like Hamas leader Ismail Haniyeh further intensified the conflict. In 2025, Israel launched Operation Rising Lion, targeting Iranian military infrastructure, followed by a temporary ceasefire. However, protests in Iran and renewed hostilities in 2026, including U.S. involvement, escalated the conflict further. The situation culminated in intensified military operations by Israel, impacting regional stability and civilian safety.",
+      "entries": [
+        {
+          "date": "2024-04-01",
+          "story_index": 0,
+          "topic": "Israeli Airstrike on Iranian Consulate",
+          "summary": "Israel conducted an airstrike targeting the Iranian consulate complex in Damascus, Syria, resulting in the deaths of multiple senior Iranian officials. This marked a significant escalation, as it was one of the first direct confrontations between Israel and Iran, leading to heightened tensions and subsequent retaliatory actions.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/d1xw3pv1L8k/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=d1xw3pv1L8k",
+              "embed_id": "d1xw3pv1L8k",
+              "channel": "FRANCE 24 English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "d1xw3pv1L8k",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-04-13",
+          "story_index": 0,
+          "topic": "Iran's Retaliatory Strikes on Israel",
+          "summary": "In response to the Damascus airstrike, Iran and its allies launched missile and drone attacks targeting Israeli territory. This was the first direct missile exchange between the two nations, signaling a new phase of open hostilities.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/jofZSgaJSCg/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=jofZSgaJSCg",
+              "embed_id": "jofZSgaJSCg",
+              "channel": "The US Context"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "jofZSgaJSCg",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-07-31",
+          "story_index": 0,
+          "topic": "Assassination of Hamas Leader in Tehran",
+          "summary": "Hamas political leader Ismail Haniyeh was assassinated in Tehran, Iran. The killing of Haniyeh, along with the assassination of Hezbollah commander Fuad Shukr in Lebanon, indicated a coordinated effort to weaken Iran's regional proxies.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/B3OR0X72Cbs/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=B3OR0X72Cbs",
+              "embed_id": "B3OR0X72Cbs",
+              "channel": "Al Jazeera English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "B3OR0X72Cbs",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-10-01",
+          "story_index": 0,
+          "topic": "Iran's Missile Attack on Israel",
+          "summary": "Iran launched a series of missiles targeting Israeli territory. This attack further escalated the conflict, leading to Israeli retaliatory strikes and setting the stage for more intense confrontations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/pYZ2sbB9d9o/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=pYZ2sbB9d9o",
+              "embed_id": "pYZ2sbB9d9o",
+              "channel": "Associated Press"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "pYZ2sbB9d9o",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-06-13",
+          "story_index": 0,
+          "topic": "Israel's Operation Rising Lion",
+          "summary": "Israel initiated a large-scale aerial assault, codenamed 'Operation Rising Lion,' targeting Iranian military and nuclear facilities. This operation significantly debilitated Iran's air defenses and nuclear infrastructure, marking a major escalation in the conflict.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-06-24",
+          "story_index": 0,
+          "topic": "Ceasefire Agreement Announced",
+          "summary": "A ceasefire agreement was announced, involving a phased cessation of hostilities between Iran and Israel. Despite initial violations, the ceasefire held under U.S. pressure, temporarily halting direct confrontations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/OAXUwdPF564/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=OAXUwdPF564",
+              "embed_id": "OAXUwdPF564",
+              "channel": "ABC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "OAXUwdPF564",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-12-28",
+          "story_index": 0,
+          "topic": "Outbreak of Protests in Iran",
+          "summary": "Widespread protests erupted across Iran, driven by economic hardships and political dissatisfaction. The protests indicated significant internal unrest, further destabilizing the Iranian regime amid external pressures.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/UtImO5r9gJE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=UtImO5r9gJE",
+              "embed_id": "UtImO5r9gJE",
+              "channel": "FRANCE 24 English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "UtImO5r9gJE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-28",
+          "story_index": 0,
+          "topic": "U.S. and Israel Launch Major Attacks",
+          "summary": "The United States and Israel commenced coordinated military operations targeting Iranian military and nuclear sites. This marked a significant escalation, with the U.S. directly engaging in the conflict, aiming to dismantle Iran's military capabilities and promote regime change.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/XYiBx4XFOD8/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=XYiBx4XFOD8",
+              "embed_id": "XYiBx4XFOD8",
+              "channel": "PBS NewsHour"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "XYiBx4XFOD8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-01",
+          "story_index": 0,
+          "topic": "Iranian Missile Strike on Beit Shemesh",
+          "summary": "Iran retaliated with missile strikes on Israeli territory, including a residential neighborhood in Beit Shemesh, resulting in civilian casualties. This attack highlighted the conflict's direct impact on civilian populations and the escalating tit-for-tat nature of the hostilities.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/nnuNWyiCcPg/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=nnuNWyiCcPg",
+              "embed_id": "nnuNWyiCcPg",
+              "channel": "AFP News Agency"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "nnuNWyiCcPg",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-27",
+          "story_index": 0,
+          "topic": "Israel Intensifies Military Operations",
+          "summary": "Israel expanded its military operations, targeting Iranian and Lebanese sites, and threatened further actions against Iranian leaders. The intensification of operations indicated a deepening of the conflict, with significant humanitarian consequences and regional destabilization.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/I8pTC-usB7s/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=I8pTC-usB7s",
+              "embed_id": "I8pTC-usB7s",
+              "channel": "Al Jazeera English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "I8pTC-usB7s",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-04-01",
+      "last_seen": "2026-03-27",
+      "is_active": true,
+      "total_days_span": 726,
+      "days_covered": 10
+    },
+    {
+      "id": "ai-regulation-and-safety-milestones",
+      "title": "AI Regulation and Safety Milestones",
+      "category": "world",
+      "summary": "From 2024 to 2026, significant strides were made in AI regulation and safety. In March 2024, the UN adopted a resolution promoting trustworthy AI systems, followed by the AI Seoul Summit in May, which emphasized international collaboration. August 2024 saw the EU's AI Act come into force, setting a global precedent. In September 2025, the Brussels Accord established a binding international framework for AI. December 2025 marked New York's RAISE Act and the Trump administration's national AI policy framework. In early 2026, Anthropic revised its AI safety commitments and pledged $20 million for AI safety advocacy. Democratic candidates highlighted AI policy in their campaigns, and the Axios AI+DC Summit in March 2026 underscored the tension between federal and state AI regulations.",
+      "entries": [
+        {
+          "date": "2024-03-21",
+          "story_index": 0,
+          "topic": "UN Adopts AI Safety Resolution",
+          "summary": "The UN General Assembly adopted a landmark resolution promoting 'safe, secure, and trustworthy' AI systems, emphasizing human rights in AI development and deployment. This resolution underscored the global consensus on the need for ethical AI practices and provided a framework for member states to develop national AI policies.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/c_9kY6sz_Uc/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=c_9kY6sz_Uc",
+              "embed_id": "c_9kY6sz_Uc",
+              "channel": "C-SPAN"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "c_9kY6sz_Uc",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-05-21",
+          "story_index": 0,
+          "topic": "AI Seoul Summit Declaration",
+          "summary": "The AI Seoul Summit, co-hosted by South Korea and the UK, concluded with the Seoul Declaration, emphasizing the development of safe, innovative, and inclusive AI technologies. This summit marked a pivotal moment in international collaboration on AI safety, bringing together leaders from G7 countries, the UN, and major tech companies.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/R0txI5ad_Io/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGCkgZShdMA8=&rs=AOn4CLALNiza-kKMAhL0gQER9w2Yz80ppQ",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=R0txI5ad_Io",
+              "embed_id": "R0txI5ad_Io",
+              "channel": "Trending-AI_World"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "R0txI5ad_Io",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-08-01",
+          "story_index": 0,
+          "topic": "EU AI Act Comes Into Force",
+          "summary": "The European Union's AI Act, the world's first comprehensive legal framework for AI, officially came into force. It introduced a risk-based approach to AI regulation, setting a precedent for global AI governance and influencing international regulatory standards.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/zoVwRrfN7tI/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=zoVwRrfN7tI",
+              "embed_id": "zoVwRrfN7tI",
+              "channel": "The Best AI"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "zoVwRrfN7tI",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-09-01",
+          "story_index": 0,
+          "topic": "Brussels Accord on AI Regulation",
+          "summary": "Thirty-eight nations, including the US, EU member states, China, and India, signed the Brussels Accord, establishing the first binding international framework for generative AI development and deployment. The Accord introduced mandatory watermarking for AI-generated content and strict liability for harmful deepfakes.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/BgTAdVloNug/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=BgTAdVloNug",
+              "embed_id": "BgTAdVloNug",
+              "channel": "Betterway"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "BgTAdVloNug",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-12-19",
+          "story_index": 0,
+          "topic": "New York Enacts RAISE Act",
+          "summary": "Governor Kathy Hochul signed the RAISE Act into law, establishing comprehensive safety rules for AI models in New York, including incident reporting requirements. This legislation positioned New York as a leader in state-level AI regulation, addressing public concerns about AI risks.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-12-20",
+          "story_index": 0,
+          "topic": "Trump's National AI Policy Framework",
+          "summary": "President Donald Trump signed an executive order establishing a 'National Policy Framework for Artificial Intelligence,' discouraging state-level AI regulations. This move highlighted the federal government's intent to centralize AI regulation, sparking debates over state versus federal authority.",
+          "category": "politics",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2026-02-01",
+          "story_index": 0,
+          "topic": "Anthropic Revises AI Safety Policy",
+          "summary": "AI company Anthropic updated its Responsible Scaling Policy, moving away from its 2023 pledge to halt advanced AI development without guaranteed safety. This policy shift reflected the challenges of balancing rapid AI development with safety commitments.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/ykCLHdbLCSM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGCsgWCh_MA8=&rs=AOn4CLBv3Q2SCxRpvsES7uPdNlS-j0LjLA",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=ykCLHdbLCSM",
+              "embed_id": "ykCLHdbLCSM",
+              "channel": "Bloomberg Podcasts"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "ykCLHdbLCSM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-12",
+          "story_index": 0,
+          "topic": "Anthropic's $20M AI Safety Donation",
+          "summary": "Anthropic pledged $20 million to support candidates favoring AI safety, aiming to influence AI policy and regulation through political advocacy. This substantial contribution highlighted the tech industry's active role in shaping AI policy.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/2_3APVbG3BQ/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=2_3APVbG3BQ",
+              "embed_id": "2_3APVbG3BQ",
+              "channel": "CBS News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "2_3APVbG3BQ",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-13",
+          "story_index": 0,
+          "topic": "Democrats Focus on AI in Campaigns",
+          "summary": "Democratic candidates in the 2026 election cycle made AI policy a central focus of their campaigns, addressing its impact on the economy, education, and society. This political shift indicated growing recognition of AI's societal impact.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/EzVBkfv4l0k/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=EzVBkfv4l0k",
+              "embed_id": "EzVBkfv4l0k",
+              "channel": "Forbes Breaking News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "EzVBkfv4l0k",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-24",
+          "story_index": 0,
+          "topic": "Axios AI+DC Summit on AI Regulation",
+          "summary": "At the Axios AI+DC Summit, Representative Deborah Ross argued that the U.S. Constitution should protect state-level AI regulation. This discussion underscored the ongoing tension between federal and state approaches to AI governance.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/cQV12w2z7jQ/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=cQV12w2z7jQ",
+              "embed_id": "cQV12w2z7jQ",
+              "channel": "CNBC Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "cQV12w2z7jQ",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-03-21",
+      "last_seen": "2026-03-24",
+      "is_active": true,
+      "total_days_span": 734,
+      "days_covered": 10
+    },
+    {
+      "id": "us-immigration-and-border-crisis-2024-2026",
+      "title": "US Immigration and Border Crisis 2024-2026",
+      "category": "world",
+      "summary": "The U.S. immigration and border crisis saw significant developments from 2024 to 2026. In July 2024, Vice President Harris faced bipartisan criticism for her border management. By September, ICE revealed that over 13,000 immigrants convicted of homicide were living outside detention, sparking public safety debates. The Biden administration's fast-track asylum initiative in December 2024 aimed to reduce a massive case backlog. In early 2025, unauthorized immigration declined, and border crossings reached historic lows. By May 2025, the U.S. Border Patrol reported zero releases of illegal aliens into the interior. December 2025 saw intensified immigration enforcement in New Orleans. The Trump administration in January 2026 highlighted a significant reduction in border encounters, and by February, efforts to clear the immigration court backlog intensified.",
+      "entries": [
+        {
+          "date": "2024-07-25",
+          "story_index": 0,
+          "topic": "Bipartisan Rebuke of Harris's Border Policy",
+          "summary": "A bipartisan group of lawmakers condemned Vice President Kamala Harris for her handling of the border situation. This rare bipartisan rebuke highlighted growing dissatisfaction with the administration's immigration policies.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/Fb61dfdg6wA/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=Fb61dfdg6wA",
+              "embed_id": "Fb61dfdg6wA",
+              "channel": "Fox Business"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "Fb61dfdg6wA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-09-28",
+          "story_index": 0,
+          "topic": "ICE Reveals 13,000 Convicted Immigrants",
+          "summary": "U.S. Immigration and Customs Enforcement disclosed that more than 13,000 immigrants convicted of homicide were residing in the U.S. outside of detention facilities. The revelation intensified debates over public safety and the effectiveness of immigration enforcement.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/ZoyenXRGI9Y/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=ZoyenXRGI9Y",
+              "embed_id": "ZoyenXRGI9Y",
+              "channel": "Creative Vibes "
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "ZoyenXRGI9Y",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-12-31",
+          "story_index": 0,
+          "topic": "Biden's Fast-Track Asylum Initiative",
+          "summary": "The Biden administration implemented a fast-track asylum process, leading to a projected record number of deportation cases in fiscal year 2025. Aimed at reducing the 3.7 million-case backlog, this initiative marked a significant shift in handling asylum claims.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/7jrt-ZW0dE8/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=7jrt-ZW0dE8",
+              "embed_id": "7jrt-ZW0dE8",
+              "channel": "WFAA"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "7jrt-ZW0dE8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-02",
+          "story_index": 0,
+          "topic": "Unauthorized Immigration Declines",
+          "summary": "Net unauthorized immigration turned negative, with exits surpassing entries. This marked a significant demographic shift, impacting labor markets and policy discussions.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/HiC2gktc3SU/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=HiC2gktc3SU",
+              "embed_id": "HiC2gktc3SU",
+              "channel": "CBS News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "HiC2gktc3SU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-02-01",
+          "story_index": 0,
+          "topic": "US Tariffs on Canadian Goods",
+          "summary": "The U.S. announced sweeping tariffs on Canadian imports, including a 25% tariff on most goods and a 10% tariff on energy products. This action escalated trade tensions, affecting cross-border economic relations and potentially influencing migration patterns.",
+          "category": "markets",
+          "image_file": "https://i.ytimg.com/vi/P2Zj_ybrX3U/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=P2Zj_ybrX3U",
+              "embed_id": "P2Zj_ybrX3U",
+              "channel": "CBC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "P2Zj_ybrX3U",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-03",
+          "story_index": 0,
+          "topic": "Border Crossings Hit Historic Lows",
+          "summary": "Illegal crossings at the U.S.-Mexico border dropped to their lowest levels in decades. The decline was attributed to tightened immigration policies and marked a significant shift in border security dynamics.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/heTe3yL_BM8/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=heTe3yL_BM8",
+              "embed_id": "heTe3yL_BM8",
+              "channel": "Fox Business Clips"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "heTe3yL_BM8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-05",
+          "story_index": 0,
+          "topic": "Zero Release of Illegal Aliens in May",
+          "summary": "For the first time, U.S. Border Patrol reported no releases of illegal aliens into the U.S. interior during May. This milestone reflected a dramatic shift in border enforcement policies.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/cxH9EgVKpaw/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=cxH9EgVKpaw",
+              "embed_id": "cxH9EgVKpaw",
+              "channel": "Sky News Australia"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "cxH9EgVKpaw",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-12-08",
+          "story_index": 0,
+          "topic": "Immigration Crackdown in New Orleans",
+          "summary": "Federal immigration enforcement intensified in New Orleans, following a broader strategy in Democratic-led cities. The crackdown led to widespread fear among immigrant communities and raised concerns about civil liberties.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/kOMqc622P2k/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=kOMqc622P2k",
+              "embed_id": "kOMqc622P2k",
+              "channel": "CBS News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "kOMqc622P2k",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-24",
+          "story_index": 0,
+          "topic": "Trump Highlights Border Security Gains",
+          "summary": "The Trump administration highlighted a 76% reduction in nationwide encounters in the first quarter of fiscal year 2026 compared to the previous year. This demonstrated the administration's commitment to stringent border security measures.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/L_4cXCYKbOQ/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=L_4cXCYKbOQ",
+              "embed_id": "L_4cXCYKbOQ",
+              "channel": "Forbes Breaking News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "L_4cXCYKbOQ",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-24",
+          "story_index": 0,
+          "topic": "Intensified Deportation Efforts in Courts",
+          "summary": "The administration intensified efforts to clear the 3.6 million-case backlog in immigration courts, focusing on increasing deportations. This move aimed to expedite removals and address the backlog, significantly impacting immigration enforcement.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/644UwvSfSV4/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=644UwvSfSV4",
+              "embed_id": "644UwvSfSV4",
+              "channel": "Marina Shepelsky"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "644UwvSfSV4",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-07-25",
+      "last_seen": "2026-02-24",
+      "is_active": true,
+      "total_days_span": 580,
+      "days_covered": 10
+    },
+    {
+      "id": "us-government-shutdown-crisis",
+      "title": "US Government Shutdown Crisis",
+      "category": "politics",
+      "summary": "The US Government Shutdown Crisis from 2024 to 2026 was marked by a series of significant events. It began on October 1, 2025, when the government entered a shutdown due to Congress's failure to pass appropriations legislation. By November 5, 2025, it became the longest shutdown in U.S. history. On November 9, Senate Democrats supported a Republican budget bill, leading to the reopening of the government on November 12. However, complications arose again in January 2026, leading to a partial shutdown on January 31. The situation escalated with the killing of Alex Pretti, causing further political strife. A DHS-specific shutdown began on February 14, 2026, and significant progress was made on March 27, 2026, when the Senate advanced a bill to reopen DHS.",
+      "entries": [
+        {
+          "date": "2025-10-01",
+          "story_index": 0,
+          "topic": "Government Shutdown Begins",
+          "summary": "The federal government entered a shutdown as Congress failed to pass appropriations legislation for the 2026 fiscal year. This marked the beginning of what would become the longest full government shutdown in U.S. history.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/Y_H3uLWfUOE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=Y_H3uLWfUOE",
+              "embed_id": "Y_H3uLWfUOE",
+              "channel": "CNN 10"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "Y_H3uLWfUOE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-11-05",
+          "story_index": 0,
+          "topic": "Longest Shutdown in U.S. History",
+          "summary": "The shutdown reached its 35th day, surpassing the previous record set during President Trump's first term. The impasse was primarily over the extension of Affordable Care Act subsidies, affecting millions of Americans and leading to widespread disruptions.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/9tlaVpa-nNo/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=9tlaVpa-nNo",
+              "embed_id": "9tlaVpa-nNo",
+              "channel": "PBS NewsHour"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "9tlaVpa-nNo",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-11-09",
+          "story_index": 0,
+          "topic": "Senate Democrats Support GOP Budget",
+          "summary": "A group of Senate Democrats broke ranks to support a Republican budget bill, enabling the Senate to reach the necessary 60-vote supermajority. This move paved the way to end the 40-day shutdown.",
+          "category": "politics",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-11-12",
+          "story_index": 0,
+          "topic": "Government Reopens",
+          "summary": "President Trump signed the revised appropriations bill, officially ending the 43-day shutdown—the longest in U.S. history. The agreement included a continuing resolution funding the government until the end of January 2026.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/yMx8R7UZzeM/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=yMx8R7UZzeM",
+              "embed_id": "yMx8R7UZzeM",
+              "channel": "CNN"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "yMx8R7UZzeM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-22",
+          "story_index": 0,
+          "topic": "House Passes Final Appropriations Bills",
+          "summary": "The House of Representatives passed the final three appropriations bills needed to avoid a partial government shutdown. However, subsequent events led to further complications.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/jsGiSMHlmuM/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=jsGiSMHlmuM",
+              "embed_id": "jsGiSMHlmuM",
+              "channel": "Forbes Breaking News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "jsGiSMHlmuM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-24",
+          "story_index": 0,
+          "topic": "Killing of Alex Pretti by CBP Agents",
+          "summary": "The fatal shooting of Alex Pretti by Customs and Border Protection agents led Senate Democrats to withdraw support for the Department of Homeland Security (DHS) funding bill, demanding reforms to federal immigration enforcement.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/iwxnDtdv1Co/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=iwxnDtdv1Co",
+              "embed_id": "iwxnDtdv1Co",
+              "channel": "Forbes Breaking News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "iwxnDtdv1Co",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-31",
+          "story_index": 0,
+          "topic": "Partial Government Shutdown Begins",
+          "summary": "Due to the impasse over DHS funding, a partial government shutdown commenced, affecting about half of federal departments.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/-YpHs-oqPlA/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=-YpHs-oqPlA",
+              "embed_id": "-YpHs-oqPlA",
+              "channel": "NBC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "-YpHs-oqPlA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-03",
+          "story_index": 0,
+          "topic": "Partial Government Shutdown Ends",
+          "summary": "The House approved a package containing five appropriations bills and a two-week continuing resolution for DHS, ending the four-day partial shutdown.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/n7bpNhuEOSg/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=n7bpNhuEOSg",
+              "embed_id": "n7bpNhuEOSg",
+              "channel": "Associated Press"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "n7bpNhuEOSg",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-14",
+          "story_index": 0,
+          "topic": "DHS Shutdown Begins",
+          "summary": "With no agreement on DHS funding, a shutdown specifically affecting the Department of Homeland Security began, leading to significant disruptions, particularly in airport operations.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/hX_tDHlri3s/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=hX_tDHlri3s",
+              "embed_id": "hX_tDHlri3s",
+              "channel": "ABC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "hX_tDHlri3s",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-27",
+          "story_index": 0,
+          "topic": "Senate Advances Bill to Reopen DHS",
+          "summary": "The Senate advanced a bill to mostly reopen DHS, marking significant progress toward ending the 42-day shutdown. The legislation provided funding for most DHS sub-agencies through September, excluding Immigration and Customs Enforcement (ICE) and Customs and Border Protection (CBP).",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/6ubd58DqnJI/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=6ubd58DqnJI",
+              "embed_id": "6ubd58DqnJI",
+              "channel": "Forbes Breaking News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "6ubd58DqnJI",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2025-10-01",
+      "last_seen": "2026-03-27",
+      "is_active": true,
+      "total_days_span": 178,
+      "days_covered": 10
+    },
+    {
+      "id": "escalating-climate-crisis-2024-2026",
+      "title": "Escalating Climate Crisis: 2024-2026",
+      "category": "world",
+      "summary": "From 2024 to 2026, the world witnessed a series of extreme weather events that underscored the escalating impacts of climate change. In January 2024, Arctic storms Gerri and Heather tested North America's resilience, followed by Super Typhoon Yagi's devastation in Southeast Asia in June. Europe recorded its hottest year in September 2024, while the UN reported record climate change indicators in December. The start of 2025 saw unprecedented wildfires in Southern California and deadly flash floods in the U.S. Midwest. Southeast Asia faced severe monsoon floods in June 2025, and Cyclone Senyar struck South Asia in November. Finally, in January 2026, the UN's ",
+      "entries": [
+        {
+          "date": "2024-01-01",
+          "story_index": 0,
+          "topic": "Arctic Storms Hit North America",
+          "summary": "In January 2024, Arctic storms Gerri and Heather swept through North America, bringing frigid cold, high winds, heavy snow, and freezing precipitation. These storms tested the resilience of infrastructure and emergency response systems, highlighting the need for improved preparedness for extreme winter weather events.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2024-06-01",
+          "story_index": 0,
+          "topic": "Super Typhoon Yagi Devastates Southeast Asia",
+          "summary": "In June 2024, Super Typhoon Yagi struck the Philippines, China, and Vietnam, causing hundreds of fatalities and displacing millions. Yagi was one of the most severe typhoons in recent history, underscoring the increasing intensity of tropical cyclones due to climate change.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/Hw9imYScmfs/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=Hw9imYScmfs",
+              "embed_id": "Hw9imYScmfs",
+              "channel": "BBC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "Hw9imYScmfs",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-07-01",
+          "story_index": 0,
+          "topic": "Record Heatwave in Saudi Arabia",
+          "summary": "In July 2024, temperatures near Mecca reached 50°C (122°F) during the Hajj pilgrimage, resulting in numerous heat-related deaths. This extreme heat event highlighted the vulnerability of large gatherings to climate-induced temperature extremes.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/ARhttlWZmnk/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=ARhttlWZmnk",
+              "embed_id": "ARhttlWZmnk",
+              "channel": "ABC News (Australia)"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "ARhttlWZmnk",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-09-01",
+          "story_index": 0,
+          "topic": "Europe's Hottest Year on Record",
+          "summary": "In September 2024, Europe recorded its hottest year, with widespread heatwaves, floods, and storms affecting over 400,000 people. The unprecedented heat and associated disasters emphasized the urgent need for climate adaptation and mitigation strategies in Europe.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/7DFgAEOvC-E/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=7DFgAEOvC-E",
+              "embed_id": "7DFgAEOvC-E",
+              "channel": "FRANCE 24 English"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "7DFgAEOvC-E",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-12-01",
+          "story_index": 0,
+          "topic": "UN Reports Record Climate Indicators",
+          "summary": "In December 2024, the United Nations' World Meteorological Organization released its 'State of the Global Climate' report, indicating that key climate change indicators reached record levels. The report served as a critical warning, highlighting the rapid progression of climate change and the necessity for immediate action.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/GFuIhErDOUE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=GFuIhErDOUE",
+              "embed_id": "GFuIhErDOUE",
+              "channel": "CNBC Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "GFuIhErDOUE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-01-01",
+          "story_index": 0,
+          "topic": "Southern California Wildfires",
+          "summary": "In January 2025, wildfires in Southern California burned over 500,000 acres, destroying thousands of homes and causing numerous fatalities. The unusual timing and severity of these wildfires underscored the expanding fire season and the influence of climate change on fire behavior.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/kr6jCiIqwpE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=kr6jCiIqwpE",
+              "embed_id": "kr6jCiIqwpE",
+              "channel": "ABC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "kr6jCiIqwpE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-01",
+          "story_index": 0,
+          "topic": "Deadly Flash Floods in U.S. Midwest",
+          "summary": "In April 2025, heavy rains led to severe flash flooding across the U.S. Midwest, resulting in hundreds of deaths and widespread destruction. The floods highlighted the increasing frequency and intensity of extreme precipitation events linked to climate change.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/p-siyvEFKY8/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgWShJMA8=&rs=AOn4CLAQ1v4UcVXfuGRL-A4fhv8d3I6nAQ",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=p-siyvEFKY8",
+              "embed_id": "p-siyvEFKY8",
+              "channel": "JustHappn"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "p-siyvEFKY8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-06-01",
+          "story_index": 0,
+          "topic": "Southeast Asia's Monsoon Floods",
+          "summary": "In June 2025, a delayed but intense monsoon season caused severe flooding in Bangladesh and eastern India, displacing nearly 13 million people. The event demonstrated the heightened risks of climate-induced extreme weather in densely populated regions.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/iYA8EIMFm-M/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=iYA8EIMFm-M",
+              "embed_id": "iYA8EIMFm-M",
+              "channel": "DW News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "iYA8EIMFm-M",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-11-01",
+          "story_index": 0,
+          "topic": "Cyclone Senyar Strikes South Asia",
+          "summary": "In November 2025, Cyclone Senyar hit South Asia, causing over 1,500 fatalities and extensive damage. Senyar's impact highlighted the increasing severity of cyclonic storms in the region due to warming ocean temperatures.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/nhJeHTWwEjk/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=nhJeHTWwEjk",
+              "embed_id": "nhJeHTWwEjk",
+              "channel": "Sakshi TV"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "nhJeHTWwEjk",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-01",
+          "story_index": 0,
+          "topic": "UN's 'Global Water Bankruptcy' Report",
+          "summary": "In January 2026, the United Nations University Institute for Water, Environment and Health published the 'Global Water Bankruptcy' report, warning of severe water shortages due to climate change. The report emphasized the critical need for sustainable water management practices in the face of changing climate patterns.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/-C1yDFRb7qo/maxresdefault.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAK4CIoCDAgAEAEYZSBcKEIwDw==&rs=AOn4CLD_0iQyqewJKimoxRlLKfawvihZ8g",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=-C1yDFRb7qo",
+              "embed_id": "-C1yDFRb7qo",
+              "channel": "CGTN"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "-C1yDFRb7qo",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-01-01",
+      "last_seen": "2026-01-01",
+      "is_active": true,
+      "total_days_span": 732,
+      "days_covered": 10
+    },
+    {
+      "id": "escalation-and-truce-us-china-trade-war",
+      "title": "Escalation and Truce: US-China Trade War",
+      "category": "world",
+      "summary": "The US-China trade war saw significant developments from 2024 to 2026. In May 2024, the US increased tariffs on Chinese imports, targeting key sectors. By September, these tariffs were finalized, marking a major escalation. In 2025, under President Trump, tariffs were raised further, leading to immediate retaliation from China. A temporary truce in May 2025 reduced tariffs, but tensions flared again in October with new US tariffs and export controls. A partial de-escalation occurred during the APEC summit in Busan. In 2026, the US Supreme Court struck down certain tariffs, challenging executive authority, while China's trade surplus reached a record high, showcasing its adaptability.",
+      "entries": [
+        {
+          "date": "2024-05-14",
+          "story_index": 0,
+          "topic": "U.S. Increases Tariffs on Chinese Imports",
+          "summary": "The Biden administration announced substantial tariff hikes on Chinese goods, including doubling tariffs on solar cells and tripling those on lithium-ion electric vehicle batteries. This move intensified trade tensions, targeting key sectors of China's export economy.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/TwE1CCcC8yk/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=TwE1CCcC8yk",
+              "embed_id": "TwE1CCcC8yk",
+              "channel": "Bloomberg Technology"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "TwE1CCcC8yk",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-09-13",
+          "story_index": 0,
+          "topic": "Finalization of U.S. Tariff Increases",
+          "summary": "The U.S. finalized the tariff increases, setting them at 100% on electric vehicles, 50% on solar cells, and 25% on electric vehicle batteries, critical minerals, steel, and aluminum. The finalized tariffs marked a significant escalation in the trade conflict, affecting a broad range of Chinese exports.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-02-01",
+          "story_index": 0,
+          "topic": "U.S. Raises Tariffs by 10%",
+          "summary": "President Donald Trump, in his second term, increased tariffs on Chinese goods by an additional 10%. This action signaled a renewed aggressive stance in trade policy towards China.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/ksSzKIBDxig/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=ksSzKIBDxig",
+              "embed_id": "ksSzKIBDxig",
+              "channel": "Bloomberg Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "ksSzKIBDxig",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-02",
+          "story_index": 0,
+          "topic": "U.S. Imposes 34% Tariff on Chinese Imports",
+          "summary": "The U.S. implemented a 34% duty on Chinese imports, referred to as 'Liberation Day' tariffs. This substantial tariff increase further escalated the trade war, prompting immediate retaliation from China.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/MGO3rS4kOGw/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=MGO3rS4kOGw",
+              "embed_id": "MGO3rS4kOGw",
+              "channel": "New York Post"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "MGO3rS4kOGw",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-03",
+          "story_index": 0,
+          "topic": "China Retaliates with 34% Tariff on U.S. Goods",
+          "summary": "In response to U.S. tariffs, China imposed a 34% tariff on all U.S. goods and restricted exports of vital minerals. China's countermeasures intensified the trade conflict, affecting global supply chains.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/QBahwEAxMRw/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=QBahwEAxMRw",
+              "embed_id": "QBahwEAxMRw",
+              "channel": "CNBC Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "QBahwEAxMRw",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-05-12",
+          "story_index": 0,
+          "topic": "Temporary Truce and Tariff Reduction",
+          "summary": "Both countries agreed to reduce tariffs, with the U.S. lowering tariffs on Chinese goods to 30% and China reducing tariffs on U.S. products to 10%. This truce aimed to de-escalate tensions and provided a window for further negotiations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/-NFEFnQ_Y6E/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=-NFEFnQ_Y6E",
+              "embed_id": "-NFEFnQ_Y6E",
+              "channel": "ABC News (Australia)"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "-NFEFnQ_Y6E",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-10-10",
+          "story_index": 0,
+          "topic": "U.S. Announces 100% Tariffs and Export Controls",
+          "summary": "President Trump announced 100% tariffs on Chinese imports and new export controls, effective November 1. This move was in response to China's rare earth export controls and marked a significant escalation in the trade war.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/uO23ms6me3g/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=uO23ms6me3g",
+              "embed_id": "uO23ms6me3g",
+              "channel": "Bloomberg Podcasts"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "uO23ms6me3g",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-10-30",
+          "story_index": 0,
+          "topic": "U.S.-China Trade Talks in Busan",
+          "summary": "During the APEC summit in Busan, South Korea, President Trump and Chinese leader Xi Jinping met, resulting in the U.S. reducing tariffs on Chinese imports by 10% and China agreeing to adjust tariffs on U.S. goods and suspend rare earth export restrictions for one year. This meeting led to a partial de-escalation and set the stage for further negotiations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/XjbKHRnYMTY/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=XjbKHRnYMTY",
+              "embed_id": "XjbKHRnYMTY",
+              "channel": "Bloomberg Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "XjbKHRnYMTY",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02",
+          "story_index": 0,
+          "topic": "U.S. Supreme Court Strikes Down Tariffs",
+          "summary": "The U.S. Supreme Court ruled against the tariffs implemented under the International Emergency Economic Powers Act in the case of Learning Resources v. Trump. This decision challenged the executive authority used to impose tariffs, potentially reshaping future trade policy.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/D4wMK4BopEU/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=D4wMK4BopEU",
+              "embed_id": "D4wMK4BopEU",
+              "channel": "Fox News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "D4wMK4BopEU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03",
+          "story_index": 0,
+          "topic": "China's Trade Surplus Reaches Record High",
+          "summary": "Despite ongoing tariffs, China's trade surplus surged 20% to nearly $1.2 trillion, with significant export growth to regions outside the U.S. This development highlighted China's ability to adapt its trade strategies amid the trade war.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-05-14",
+      "last_seen": "2026-03",
+      "is_active": true,
+      "total_days_span": 657,
+      "days_covered": 10
+    },
+    {
+      "id": "trump-tariffs-and-global-trade-war",
+      "title": "Trump Tariffs and Global Trade War",
+      "category": "world",
+      "summary": "The Trump administration reignited trade tensions in 2025 by imposing sweeping tariffs on Canada and Mexico, leading to immediate retaliatory measures. This marked the beginning of a broader trade conflict, with tariffs expanding to over 60 countries, including the European Union and China. The introduction of the 'Liberation Day' tariffs further escalated tensions, causing significant market disruptions. A temporary agreement with China in May 2025 offered a brief respite, but additional tariffs on Chinese goods soon followed. Legal challenges culminated in a Supreme Court ruling against key tariff measures in February 2026, prompting President Trump to announce a new global 10% tariff. The ongoing trade war significantly impacted global markets and domestic economies, as highlighted by a major ad campaign focusing on its effects on small businesses.",
+      "entries": [
+        {
+          "date": "2025-02-01",
+          "story_index": 0,
+          "topic": "U.S. Imposes Tariffs on Canada and Mexico",
+          "summary": "President Donald Trump signed executive orders imposing 25% tariffs on all goods from Mexico and Canada, with Canadian energy exports facing a 10% tariff. This marked the beginning of a significant trade conflict with key North American partners, disrupting longstanding economic cooperation and leading to retaliatory measures.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/h5P8WHBrQvo/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=h5P8WHBrQvo",
+              "embed_id": "h5P8WHBrQvo",
+              "channel": "CNBC"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "h5P8WHBrQvo",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-02-04",
+          "story_index": 0,
+          "topic": "Canada and Mexico Retaliate with Tariffs",
+          "summary": "In response to U.S. tariffs, Canada and Mexico announced their own tariffs on a range of American products, escalating the trade tensions. The retaliatory actions intensified the trade war, affecting industries and consumers across all three countries.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/_uSO6YjSBbE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=_uSO6YjSBbE",
+              "embed_id": "_uSO6YjSBbE",
+              "channel": "CBC News: The National"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "_uSO6YjSBbE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-03-12",
+          "story_index": 0,
+          "topic": "U.S. Expands Tariffs to More Countries",
+          "summary": "The Trump administration extended tariffs to more than 60 countries and the European Union, with rates reaching up to 145% on Chinese goods and 50% on key sectors like steel and automobiles. The expansion of tariffs led to global market volatility and strained international relations, impacting global supply chains.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/MpRQ5eVJnn8/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLBwdmMZKip8hnIV3uK8weHvo08TSg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=MpRQ5eVJnn8",
+              "embed_id": "MpRQ5eVJnn8",
+              "channel": "Bloomberg Podcasts"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "MpRQ5eVJnn8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-04-02",
+          "story_index": 0,
+          "topic": "\"Liberation Day\" Tariffs Announced",
+          "summary": "President Trump announced a 54% universal tariff, referred to as \"Liberation Day\" tariffs, causing significant market disruptions. The abrupt and substantial tariff increase led to economic uncertainty and highlighted the administration's aggressive trade stance.",
+          "category": "world",
+          "youtube_videos": [],
+          "social_clips": [],
+          "sources": []
+        },
+        {
+          "date": "2025-05-10",
+          "story_index": 0,
+          "topic": "Temporary Agreement Between U.S. and China",
+          "summary": "The U.S. and China reached a temporary agreement in Geneva to reduce tariffs and pause other trade barriers. This agreement provided a brief respite in escalating tensions and indicated potential for future negotiations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/pjkhNHsWc4s/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=pjkhNHsWc4s",
+              "embed_id": "pjkhNHsWc4s",
+              "channel": "NewsNation"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "pjkhNHsWc4s",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-08-29",
+          "story_index": 0,
+          "topic": "U.S. Imposes Additional Tariffs on China",
+          "summary": "The U.S. imposed further tariffs on Chinese imports, citing ongoing trade imbalances and intellectual property concerns. The additional tariffs signaled a continuation of the trade war, affecting global markets and economic growth.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/NrsYkpEe4Do/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=NrsYkpEe4Do",
+              "embed_id": "NrsYkpEe4Do",
+              "channel": "Bloomberg Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "NrsYkpEe4Do",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-11-05",
+          "story_index": 0,
+          "topic": "Supreme Court Hears Tariff Constitutionality",
+          "summary": "The U.S. Supreme Court began hearings on the constitutionality of President Trump's tariff actions. The legal challenge introduced uncertainty about the future of the tariffs and their economic implications.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/3rDJtPBR6Rc/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=3rDJtPBR6Rc",
+              "embed_id": "3rDJtPBR6Rc",
+              "channel": "CBS News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "3rDJtPBR6Rc",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-20",
+          "story_index": 0,
+          "topic": "Supreme Court Overturns Key Tariff Measures",
+          "summary": "The Supreme Court ruled against several of President Trump's tariff measures, leading to their reversal. The decision curtailed the administration's trade policy and prompted a reevaluation of tariff strategies.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/GJoC4AnnYU8/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=GJoC4AnnYU8",
+              "embed_id": "GJoC4AnnYU8",
+              "channel": "ABC News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "GJoC4AnnYU8",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-02-21",
+          "story_index": 0,
+          "topic": "Trump Announces Global 10% Tariff",
+          "summary": "In response to the Supreme Court ruling, President Trump announced a new global 10% tariff on all imports. The new tariff aimed to maintain protectionist trade policies despite legal setbacks, affecting international trade dynamics.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/v4rlxuTCfNA/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGH8gMigtMA8=&rs=AOn4CLAXVmXGfJAEOfXD72Fg6vG928hR0Q",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=v4rlxuTCfNA",
+              "embed_id": "v4rlxuTCfNA",
+              "channel": "PBS NewsHour"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "v4rlxuTCfNA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-30",
+          "story_index": 0,
+          "topic": "Ad Campaign Highlights Tariff Impact",
+          "summary": "A month-long advertising campaign launched in several U.S. cities to draw attention to the adverse effects of tariffs on small businesses. The campaign underscored domestic economic challenges resulting from the trade war and influenced public opinion on trade policies.",
+          "category": "trending",
+          "image_file": "https://i.ytimg.com/vi/hGHP8CFNLEY/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=hGHP8CFNLEY",
+              "embed_id": "hGHP8CFNLEY",
+              "channel": "Bloomberg Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "hGHP8CFNLEY",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2025-02-01",
+      "last_seen": "2026-03-30",
+      "is_active": true,
+      "total_days_span": 423,
+      "days_covered": 10
+    },
+    {
+      "id": "tiktok-ban-and-big-tech-regulation",
+      "title": "TikTok Ban and Big Tech Regulation",
+      "category": "world",
+      "summary": "The saga of TikTok's operations in the U.S. began with the signing of the Protecting Americans from Foreign Adversary Controlled Applications Act in April 2024, which required ByteDance to divest TikTok's U.S. operations. This led to a legal battle as ByteDance challenged the law, but the courts upheld the legislation, culminating in a Supreme Court decision in January 2025. TikTok temporarily shut down its U.S. operations, but President Trump delayed the ban, allowing time for negotiations. By September 2025, a framework agreement was reached for the sale of TikTok's U.S. operations to American investors. The deal was finalized in January 2026, establishing TikTok USDS Joint Venture LLC. In March 2026, Canada allowed TikTok to resume operations under new security commitments, reflecting a trend of stricter regulations for foreign tech companies.",
+      "entries": [
+        {
+          "date": "2024-04-24",
+          "story_index": 0,
+          "topic": "Biden Signs TikTok Ban Law",
+          "summary": "President Joe Biden signed the Protecting Americans from Foreign Adversary Controlled Applications Act, mandating ByteDance to divest TikTok's U.S. operations within 270 days or face a nationwide ban. This legislation marked a significant escalation in U.S. efforts to regulate foreign-owned tech platforms over national security concerns.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/nkvKhDNGLto/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=nkvKhDNGLto",
+              "embed_id": "nkvKhDNGLto",
+              "channel": "Reuters"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "nkvKhDNGLto",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-05-07",
+          "story_index": 0,
+          "topic": "ByteDance Sues U.S. Over TikTok Ban",
+          "summary": "ByteDance and TikTok filed a lawsuit challenging the constitutionality of the new law, arguing it violated First Amendment rights. This legal challenge set the stage for a prolonged judicial battle over the future of TikTok in the U.S.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/rGtdf0xW2Hg/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=rGtdf0xW2Hg",
+              "embed_id": "rGtdf0xW2Hg",
+              "channel": "Bloomberg Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "rGtdf0xW2Hg",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2024-12-06",
+          "story_index": 0,
+          "topic": "Court Upholds TikTok Ban Law",
+          "summary": "A federal appeals court ruled that the law requiring ByteDance to divest TikTok was constitutional, rejecting the company's legal challenge. This decision reinforced the government's position and increased pressure on ByteDance to comply with the divestiture requirement.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/PI8ZJt6XPpY/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=PI8ZJt6XPpY",
+              "embed_id": "PI8ZJt6XPpY",
+              "channel": "CNBC Television"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "PI8ZJt6XPpY",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-01-17",
+          "story_index": 0,
+          "topic": "Supreme Court Upholds TikTok Ban",
+          "summary": "The U.S. Supreme Court unanimously upheld the law, dismissing TikTok's argument that it violated the First Amendment. This ruling removed the final legal obstacle to the enforcement of the TikTok ban, setting a firm deadline for ByteDance's divestiture.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/efA0hAF-gLE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=efA0hAF-gLE",
+              "embed_id": "efA0hAF-gLE",
+              "channel": "Associated Press"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "efA0hAF-gLE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-01-19",
+          "story_index": 0,
+          "topic": "TikTok Shuts Down U.S. Operations",
+          "summary": "As the divestiture deadline passed without a sale, TikTok became unavailable to U.S. users, displaying a message about the ban. The shutdown highlighted the serious consequences of the legal and political battles surrounding TikTok's operations in the U.S.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/lYb2EIxn7Ps/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=lYb2EIxn7Ps",
+              "embed_id": "lYb2EIxn7Ps",
+              "channel": "CNN"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "lYb2EIxn7Ps",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-01-20",
+          "story_index": 0,
+          "topic": "Trump Delays TikTok Ban",
+          "summary": "On his first day in office, President Donald Trump signed an executive order delaying the enforcement of the TikTok ban by 75 days. The delay provided a temporary reprieve for TikTok and opened the door for potential negotiations or sales to U.S. entities.",
+          "category": "politics",
+          "image_file": "https://i.ytimg.com/vi/P4RQtFTOPxE/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=P4RQtFTOPxE",
+              "embed_id": "P4RQtFTOPxE",
+              "channel": "KING 5 Seattle"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "P4RQtFTOPxE",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-09-16",
+          "story_index": 0,
+          "topic": "Agreement Reached for TikTok Sale",
+          "summary": "The U.S. Treasury Secretary announced that a framework agreement had been reached for the sale of TikTok's U.S. operations to a consortium of American investors. This development indicated progress toward resolving the national security concerns while allowing TikTok to continue operating in the U.S.",
+          "category": "markets",
+          "image_file": "https://i.ytimg.com/vi/jzrClCxbluc/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=jzrClCxbluc",
+              "embed_id": "jzrClCxbluc",
+              "channel": "Bloomberg News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "jzrClCxbluc",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2025-12-18",
+          "story_index": 0,
+          "topic": "ByteDance Agrees to TikTok Sale",
+          "summary": "ByteDance agreed in principle to sell the U.S. portion of TikTok to an American-led consortium, including Oracle, Silver Lake, and MGX. The agreement aimed to address U.S. national security concerns by placing TikTok's U.S. operations under American control.",
+          "category": "markets",
+          "image_file": "https://i.ytimg.com/vi/tUH7ulVCzTw/hqdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=tUH7ulVCzTw",
+              "embed_id": "tUH7ulVCzTw",
+              "channel": "Reuters"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "tUH7ulVCzTw",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-01-22",
+          "story_index": 0,
+          "topic": "TikTok USDS Joint Venture Formed",
+          "summary": "The deal was officially closed, creating TikTok USDS Joint Venture LLC, with ByteDance retaining a minority stake of less than 20%. This restructuring allowed TikTok to continue operating in the U.S. under a new ownership structure designed to mitigate national security concerns.",
+          "category": "markets",
+          "image_file": "https://i.ytimg.com/vi/pRL6NPzxxQ4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGDwgZShbMA8=&rs=AOn4CLBkXLbPU56LN-_xloAtp-gHWBnnaQ",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=pRL6NPzxxQ4",
+              "embed_id": "pRL6NPzxxQ4",
+              "channel": "Bloomberg Podcasts"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "pRL6NPzxxQ4",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-09",
+          "story_index": 0,
+          "topic": "Canada Allows TikTok Operations",
+          "summary": "After a national security review, the Canadian government permitted TikTok to continue operations under new legally binding commitments to security. This decision reflected a growing trend of governments negotiating terms to allow foreign tech companies to operate under stricter regulations.",
+          "category": "world",
+          "image_file": "https://i.ytimg.com/vi/BGGTe6KLsIY/maxresdefault.jpg",
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=BGGTe6KLsIY",
+              "embed_id": "BGGTe6KLsIY",
+              "channel": "CTV News"
+            }
+          ],
+          "social_clips": [],
+          "sources": [],
+          "best_video_id": "BGGTe6KLsIY",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [],
+      "first_seen": "2024-04-24",
+      "last_seen": "2026-03-09",
+      "is_active": true,
+      "total_days_span": 685,
+      "days_covered": 10
     }
   ]
 }
