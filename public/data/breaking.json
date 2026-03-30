@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike has targeted a power and water desalination plant in Kuwait, leading to significant damage and the death of an Indian worker. This attack marks a serious escalation in regional tensions, with potential repercussions for international relations and energy security in the Gulf. The incident has drawn widespread condemnation and raised concerns about the stability of critical infrastructure in the region.",
+    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This incident represents a serious escalation in regional tensions, with potential implications for international relations and energy security in the Gulf. The attack has been widely condemned and has heightened concerns about the stability of critical infrastructure in the region.",
     "severity": "major",
     "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T05:01:15.702Z",
+    "last_updated": "2026-03-30T07:00:22.668Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as the impact of international sanctions on its economy and the potential strategic advantage of disrupting Gulf energy supplies. Additionally, the geopolitical chess game involving major powers like the US, China, and Russia, who have vested interests in the region, is not being fully explored.",
-    "social_summary": "Social media is ablaze with outrage and fear, with hashtags like #IranKuwaitConflict trending. Memes depicting the Gulf as a powder keg ready to explode are circulating widely. Conspiracy theories suggest this attack is a false flag operation to justify increased military presence in the region by Western powers.",
-    "image_prompt": "A dramatic editorial photo of a cracked hourglass filled with oil and water, set against a backdrop of a desert landscape with distant smoke plumes, symbolizing the fragile balance of power and resources in the Gulf region.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. The attack is a strategic move to disrupt alliances or signal discontent with recent diplomatic developments involving Kuwait and other Gulf states. Additionally, the economic impact on global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
+    "social_summary": "Social media is ablaze with reactions, ranging from outrage over the loss of life to conspiracy theories about a larger plot involving global powers. Memes and viral posts are highlighting the vulnerability of critical infrastructure in the Gulf, while some users speculate about the potential for a broader conflict. Hashtags related to the incident are trending, with calls for international intervention and peace.",
+    "image_prompt": "A dramatic editorial photo of a shattered water desalination plant under a stormy sky, with a lone worker's helmet lying in the foreground, symbolizing the human cost and vulnerability of critical infrastructure.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -27,11 +27,38 @@
         "duration": 201
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
+        "embed_id": "f20WG4pvHME",
+        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=O1Vf8gXd4y4",
+        "embed_id": "O1Vf8gXd4y4",
+        "title": "Kuwait airport hit by Iranian drone strikes | #ajshorts",
+        "duration": 27
+      },
+      {
         "platform": "x",
         "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
         "embed_id": "2038415564457042141",
         "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
         "author": "TheCradleMedia"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
+        "embed_id": "2038488558600962166",
+        "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ETERNALPHYSICS/status/2038402706793013666",
+        "embed_id": "2038402706793013666",
+        "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
+        "author": "ETERNALPHYSICS"
       },
       {
         "platform": "reddit",
@@ -77,6 +104,19 @@
         "title": "Indian worker killed in Iran’s attack in Kuwait’s electric facility as West Asia crisis intensify",
         "channel": "ANI News",
         "duration": 201
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
+        "embed_id": "f20WG4pvHME",
+        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=O1Vf8gXd4y4",
+        "embed_id": "O1Vf8gXd4y4",
+        "title": "Kuwait airport hit by Iranian drone strikes | #ajshorts",
+        "channel": "Al Jazeera English",
+        "duration": 27
       }
     ],
     "social_clips": [
@@ -86,6 +126,20 @@
         "embed_id": "2038415564457042141",
         "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
         "author": "TheCradleMedia"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
+        "embed_id": "2038488558600962166",
+        "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ETERNALPHYSICS/status/2038402706793013666",
+        "embed_id": "2038402706793013666",
+        "title": "Kuwait's Ministry of Electricity announced significant damage due to an Iranian missile and drone attack on a power plant &amp; a desalination facilit",
+        "author": "ETERNALPHYSICS"
       },
       {
         "platform": "reddit",
@@ -128,15 +182,15 @@
   },
   {
     "topic": "Iran Missile Strike on Israel",
-    "summary": "Iran has launched a missile strike targeting an industrial facility in southern Israel, resulting in significant damage. This act has intensified the existing conflict between Iran and Israel, with potential for military retaliation from Israel and its allies. The situation is being closely watched by the international community due to its potential impact on regional stability in the Middle East.",
+    "summary": "Iran has executed a missile strike on an industrial facility in southern Israel, causing substantial damage. This escalation has heightened tensions between the two nations, with Israel and its allies contemplating military responses. The international community is monitoring the situation closely due to concerns over regional stability in the Middle East.",
     "severity": "critical",
     "detected_at": "2026-03-29T19:00:07.423Z",
-    "last_updated": "2026-03-30T05:02:12.431Z",
+    "last_updated": "2026-03-30T07:00:38.029Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind the conflict, such as control over regional trade routes and energy resources. Additionally, the role of external powers, particularly the influence of the United States and Russia in the region, is not being fully explored. These geopolitical dynamics are crucial in understanding the broader implications of the conflict.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Israel's right to defend itself, while others criticize the attack as a provocation by Iran. Conspiracy theories are circulating, suggesting that the strike is a false flag operation to justify further military action. Memes and viral posts are highlighting the historical tensions between the two nations, often oversimplifying the complex geopolitical landscape.",
-    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the sudden disruption and looming threat of conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and geopolitical strategies that drive these conflicts. The focus remains on immediate military actions rather than the long-term implications of resource control and regional dominance. Additionally, the role of external powers in either exacerbating or mitigating these tensions is often downplayed.",
+    "social_summary": "Social media is ablaze with polarized reactions, ranging from calls for peace to demands for retaliation. Memes and hashtags are circulating, with some users drawing historical parallels to past conflicts in the region. Conspiracy theories about foreign involvement and hidden agendas are also gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a missile's shadow cast over a peaceful industrial landscape, symbolizing the looming threat of conflict amidst everyday life.",
     "sources": [
       {
         "name": "Al Jazeera",
