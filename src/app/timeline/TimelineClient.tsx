@@ -236,6 +236,17 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   onHover: () => void;
 }) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  // Scroll page to content only on explicit click (not scroll sync)
+  const handleSelectDate = (date: string, scrollToContent = false) => {
+    setSelectedDate(date);
+    if (scrollToContent) {
+      setTimeout(() => {
+        contentRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 500);
+    }
+  };
 
   // Group entries by date
   const grouped = groupByDate(thread.entries);
@@ -243,12 +254,6 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   const latestEntry = grouped[dates[dates.length - 1]]?.[0];
   const catColor = categoryColor(thread.category);
 
-  // Auto-select latest date when expanding
-  useEffect(() => {
-    if (isExpanded && !selectedDate && dates.length > 0) {
-      setSelectedDate(dates[dates.length - 1]);
-    }
-  }, [isExpanded]);
 
   // All entries for the selected date
   const selectedEntries = selectedDate ? (grouped[selectedDate] || []) : [];
@@ -337,11 +342,22 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
           >
             <div className="pt-2 pb-5">
 
-              {/* HOW DID WE GET HERE */}
+              {/* HOW DID WE GET HERE / WHAT HAPPENED IN [YEAR] */}
               <div className="px-5">
-                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">How Did We Get Here</span>
+                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">
+                  {selectedDate ? `What Happened in ${getYear(selectedDate)}` : 'How Did We Get Here'}
+                </span>
                 <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                  <p className="text-[13px] text-[#ccc] leading-[1.7] italic">{thread.summary}</p>
+                  <p className="text-[13px] text-[#ccc] leading-[1.7] italic">
+                    {selectedDate
+                      ? (() => {
+                          const year = getYear(selectedDate);
+                          const yearEntries = thread.entries.filter(e => getYear(e.date) === year);
+                          const summaries = [...new Set(yearEntries.map(e => e.summary))];
+                          return summaries.join(' ');
+                        })()
+                      : thread.summary}
+                  </p>
                 </div>
                 <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
               </div>
@@ -352,12 +368,12 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                   grouped={grouped}
                   dates={dates}
                   selectedDate={selectedDate}
-                  onSelect={setSelectedDate}
+                  onSelect={handleSelectDate}
                 />
               </div>
 
               {/* Summary + video — outside scroll container */}
-              <div className="px-5">
+              <div className="px-5" ref={contentRef}>
                 {selectedEntries.length > 0 && (
                   <>
                     <div className="mb-4">
@@ -502,7 +518,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
   grouped: Record<string, ThreadEntry[]>;
   dates: string[];
   selectedDate: string | null;
-  onSelect: (date: string) => void;
+  onSelect: (date: string, scrollToContent?: boolean) => void;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -517,102 +533,173 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     }
   }
 
-  // ALL collapsed by default — scroll or click to open
-  const [openYears, setOpenYears] = useState<Set<string>>(new Set<string>());
+  const YEAR_W_COLLAPSED = 200;
+  const YEAR_W_EXPANDED = 600;
+  const YEAR_GAP = 20;
 
-  // Only one year open at a time — with click lock to prevent scroll override
-  const clickLock = useRef(false);
-  const toggleYear = (year: string) => {
-    clickLock.current = true;
-    setTimeout(() => { clickLock.current = false; }, 2000);
-    setOpenYears(prev => {
-      if (prev.has(year)) return new Set<string>();
-      return new Set([year]);
-    });
-    // Auto-scroll to center the opened year after animation
+  // Flatten all entries with their year for the scrollbar
+  const allEntries = dates.map(d => ({ date: d, year: getYear(d) }));
+
+  // Active entry index drives everything: scrollbar position, year opening, timeline scroll
+  // Start with -1 = nothing open, all collapsed
+  const [activeIdx, setActiveIdx] = useState(-1);
+  const activeYear = activeIdx >= 0 ? (allEntries[activeIdx]?.year || '') : '';
+  const openYears = new Set(activeYear ? [activeYear] : []);
+
+
+  // Navigate to an entry: set active, open its year, select it, scroll timeline
+  const goToEntry = (idx: number) => {
+    hasInteracted.current = true;
+    const clamped = Math.max(0, Math.min(allEntries.length - 1, idx));
+    setActiveIdx(clamped);
+    onSelect(allEntries[clamped].date, true); // load summary + video below, scroll to it
+    // Scroll the timeline to center this entry's thumbnail after year transition
     setTimeout(() => {
-      const el = scrollRef.current?.querySelector(`[data-year="${year}"]`);
-      const container = scrollRef.current?.closest('.timeline-scroll');
+      const date = allEntries[clamped].date;
+      const el = scrollRef.current?.querySelector(`[data-date="${date}"]`);
+      const container = scrollRef.current?.closest('.timeline-scroll') as HTMLElement;
       if (el && container) {
         const elRect = el.getBoundingClientRect();
         const contRect = container.getBoundingClientRect();
-        const targetScroll = container.scrollLeft + (elRect.left - contRect.left) - (contRect.width - elRect.width) / 2;
-        container.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+        container.scrollTo({
+          left: Math.max(0, container.scrollLeft + (elRect.left - contRect.left) - (contRect.width - elRect.width) / 2),
+          behavior: 'smooth',
+        });
       }
     }, 450);
   };
 
-  // Auto-open years when user scrolls the timeline
-  useEffect(() => {
-    // Find the .timeline-scroll ancestor (the actual scroll container)
-    const scrollContainer = scrollRef.current?.closest('.timeline-scroll');
-    if (!scrollContainer || !scrollRef.current) return;
+  // Click year label to jump to first entry in that year
+  const jumpToYear = (year: string) => {
+    const idx = allEntries.findIndex(e => e.year === year);
+    if (idx >= 0) goToEntry(idx);
+  };
 
-    // Ignore scroll events in the first second (layout/mount causes initial scrolls)
-    const mountTime = Date.now();
-    const onScroll = () => {
-      if (Date.now() - mountTime < 1000) return;
-      if (clickLock.current) return;
 
-      const containerRect = scrollContainer.getBoundingClientRect();
-      const centerX = containerRect.left + containerRect.width / 2;
-      const yearEls = scrollRef.current!.querySelectorAll('[data-year]');
-
-      let closest: { year: string; dist: number } | null = null;
-      for (const el of yearEls) {
-        const rect = el.getBoundingClientRect();
-        const elCenter = rect.left + rect.width / 2;
-        const dist = Math.abs(elCenter - centerX);
-        if (!closest || dist < closest.dist) {
-          closest = { year: (el as HTMLElement).dataset.year || '', dist };
-        }
-      }
-
-      if (closest && closest.dist < containerRect.width * 0.25) {
-        setOpenYears(prev => {
-          if (prev.has(closest!.year)) return prev;
-          return new Set([closest!.year]);
-        });
-      }
-    };
-
-    scrollContainer.addEventListener('scroll', onScroll);
-    return () => scrollContainer.removeEventListener('scroll', onScroll);
-  }, [dates.length]);
-
+  // Scroll to selected date thumbnail
   useEffect(() => {
     if (!scrollRef.current || !selectedDate) return;
     const el = scrollRef.current.querySelector(`[data-date="${selectedDate}"]`);
     if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [selectedDate]);
 
-  const YEAR_W_COLLAPSED = 200;
-  const YEAR_W_EXPANDED = 600;
-
-  // Custom scrollbar state
-  const [scrollRatio, setScrollRatio] = useState(0);
-  const [canScroll, setCanScroll] = useState(false);
-
+  // Sync activeIdx when user scrolls the timeline directly
+  // Only start syncing after user has interacted (clicked a year/entry)
+  const scrollSyncLock = useRef(false);
+  const hasInteracted = useRef(false);
   useEffect(() => {
     const container = scrollRef.current?.closest('.timeline-scroll') as HTMLElement | null;
     if (!container) return;
-    const update = () => {
-      const max = container.scrollWidth - container.clientWidth;
-      setCanScroll(max > 10);
-      setScrollRatio(max > 0 ? container.scrollLeft / max : 0);
+    const mountTime = Date.now();
+
+    const onScroll = () => {
+      if (!hasInteracted.current || Date.now() - mountTime < 800 || scrollSyncLock.current) return;
+      const contRect = container.getBoundingClientRect();
+      const centerX = contRect.left + contRect.width / 2;
+
+      // Find the thumbnail closest to viewport center
+      const thumbEls = scrollRef.current?.querySelectorAll('[data-date]');
+      if (!thumbEls) return;
+      let closestIdx = -1;
+      let closestDist = Infinity;
+      let entryCount = 0;
+      for (const el of thumbEls) {
+        const rect = el.getBoundingClientRect();
+        const dist = Math.abs(rect.left + rect.width / 2 - centerX);
+        if (dist < closestDist) {
+          closestDist = dist;
+          closestIdx = entryCount;
+        }
+        entryCount++;
+      }
+
+      // Map the DOM index to our allEntries index by matching dates
+      if (closestIdx >= 0 && closestIdx < dates.length) {
+        const closestDate = dates[closestIdx]; // dates array is sorted
+        const entryIdx = allEntries.findIndex(e => e.date === closestDate);
+        if (entryIdx >= 0 && entryIdx !== activeIdx) {
+          setActiveIdx(entryIdx);
+          onSelect(allEntries[entryIdx].date);
+        }
+      }
     };
-    update();
-    container.addEventListener('scroll', update);
-    const mo = new MutationObserver(update);
-    mo.observe(container, { childList: true, subtree: true, attributes: true });
-    return () => { container.removeEventListener('scroll', update); mo.disconnect(); };
-  }, [openYears]);
+
+    container.addEventListener('scroll', onScroll, { passive: true });
+    return () => container.removeEventListener('scroll', onScroll);
+  }, [activeIdx, dates.length]);
+
+  // Drag on the scrollbar track to scrub through entries
+  const handleBarDrag = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const container = scrollRef.current?.closest('.timeline-scroll') as HTMLElement;
+    if (!container || !scrollRef.current) return;
+
+    scrollSyncLock.current = true;
+
+    const scrub = (clientX: number) => {
+      // Convert mouse X to a position in the scroll content
+      const contRect = container.getBoundingClientRect();
+      const contentX = clientX - contRect.left + container.scrollLeft;
+
+      // Find which thumbnail is closest to this content X
+      const thumbEls = scrollRef.current?.querySelectorAll('[data-date]');
+      if (!thumbEls) return;
+      let closestIdx = 0;
+      let closestDist = Infinity;
+      let idx = 0;
+      for (const el of thumbEls) {
+        const elLeft = (el as HTMLElement).offsetLeft;
+        const elW = (el as HTMLElement).offsetWidth;
+        // offsetLeft is relative to offsetParent, need to walk up to scrollRef
+        const rect = el.getBoundingClientRect();
+        const elCenterInContent = rect.left - contRect.left + container.scrollLeft + rect.width / 2;
+        const dist = Math.abs(elCenterInContent - contentX);
+        if (dist < closestDist) { closestDist = dist; closestIdx = idx; }
+        idx++;
+      }
+      if (closestIdx < allEntries.length) {
+        setActiveIdx(closestIdx);
+        // Scroll to keep the entry visible
+        const date = allEntries[closestIdx]?.date;
+        const el = scrollRef.current?.querySelector(`[data-date="${date}"]`);
+        if (el) {
+          const elRect = el.getBoundingClientRect();
+          if (elRect.left < contRect.left || elRect.right > contRect.right) {
+            container.scrollTo({
+              left: Math.max(0, container.scrollLeft + (elRect.left - contRect.left) - contRect.width / 2 + elRect.width / 2),
+            });
+          }
+        }
+      }
+    };
+
+    const startX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    scrub(startX);
+
+    const onMove = (me: MouseEvent | TouchEvent) => {
+      const cx = 'touches' in me ? me.touches[0].clientX : me.clientX;
+      scrub(cx);
+    };
+    const onEnd = () => {
+      scrollSyncLock.current = false;
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onEnd);
+      document.removeEventListener('touchmove', onMove);
+      document.removeEventListener('touchend', onEnd);
+    };
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onEnd);
+    document.addEventListener('touchmove', onMove);
+    document.addEventListener('touchend', onEnd);
+  };
+
   let globalIdx = 0;
 
   return (
     <div>
       <div ref={scrollRef}>
-        <div className="flex min-w-max" style={{ gap: 20 }}>
+        <div className="flex min-w-max" style={{ gap: YEAR_GAP }}>
         {yearGroups.map((yg) => {
           const isOpen = openYears.has(yg.year);
           const startIdx = globalIdx;
@@ -626,7 +713,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
             <div key={yg.year} data-year={yg.year}
               className="shrink-0 cursor-pointer"
               style={{ width: activeW, transition: 'width 0.4s ease' }}
-              onClick={() => toggleYear(yg.year)}>
+              onClick={() => jumpToYear(yg.year)}>
 
               {/* Year + bracket */}
               <div className="text-center mb-1.5">
@@ -652,8 +739,8 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
               </div>
 
               {/* Expanded: full thumbnails with labels */}
-              <div style={{ maxHeight: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0, overflow: 'hidden', transition: 'all 0.4s ease' }}>
-                <div className="flex" style={{ gap }}>
+              <div style={{ maxHeight: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0, overflow: isOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
+                <div className="flex" style={{ gap, padding: '8px 6px' }}>
                   {yg.dates.map((date, di) => {
                     const dayEntries = grouped[date];
                     const isSelected = date === selectedDate;
@@ -674,10 +761,19 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                           )}
                         </div>
 
-                        {/* Thumbnail */}
-                        <button onClick={(e) => { e.stopPropagation(); onSelect(date); }}
+                        {/* Thumbnail — selected entry pops up bigger */}
+                        <button onClick={(e) => { e.stopPropagation(); onSelect(date, true); }}
                           className="w-full rounded overflow-hidden cursor-pointer"
-                          style={{ height: 70, border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)', opacity: isSelected ? 1 : 0.75, transition: 'all 0.2s' }}>
+                          style={{
+                            height: 70,
+                            border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)',
+                            opacity: isSelected ? 1 : 0.7,
+                            transform: isSelected ? 'scale(1.18)' : 'scale(1)',
+                            boxShadow: isSelected ? '0 4px 16px rgba(218,165,32,0.4)' : 'none',
+                            zIndex: isSelected ? 5 : 1,
+                            position: 'relative',
+                            transition: 'all 0.25s ease',
+                          }}>
                           {dayEntries[0]?.image_file ? (
                             <img src={dayEntries[0].image_file} alt="" className="w-full h-full object-cover" />
                           ) : (
@@ -705,50 +801,53 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
           );
         })}
       </div>
-    </div>
 
-    {/* Custom scrollbar with year segments */}
-    {canScroll && (
-      <div className="mt-2 mx-1 relative" style={{ height: 16 }}>
-        {/* Track — year segments */}
-        <div className="flex w-full h-full items-center" style={{ gap: 2 }}>
-          {yearGroups.map((yg) => {
-            const isOpen = openYears.has(yg.year);
-            const w = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
-            return (
-              <div key={yg.year} className="relative rounded-full overflow-hidden cursor-pointer"
-                style={{ flex: `${w} 0 0`, height: 3, background: 'rgba(218,165,32,0.15)' }}
-                onClick={() => {
-                  toggleYear(yg.year);
-                  const el = scrollRef.current?.querySelector(`[data-year="${yg.year}"]`);
-                  const container = scrollRef.current?.closest('.timeline-scroll');
-                  if (el && container) {
-                    const r = el.getBoundingClientRect();
-                    const c = container.getBoundingClientRect();
-                    container.scrollTo({ left: container.scrollLeft + r.left - c.left - (c.width - r.width) / 2, behavior: 'smooth' });
-                  }
-                }}>
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 text-[7px] text-[#daa520] font-bold pointer-events-none" style={{ opacity: 0.6 }}>{yg.year}</span>
-              </div>
-            );
-          })}
-        </div>
-        {/* Gold indicator — tiny, grows when over a year boundary */}
-        <div className="absolute top-0 h-full pointer-events-none" style={{
-          left: `${scrollRatio * 100}%`,
-          width: 8,
-          transition: 'left 0.05s linear',
-        }}>
-          <div className="mx-auto rounded-full" style={{
-            width: 6,
-            height: '100%',
-            background: '#daa520',
-            boxShadow: '0 0 6px rgba(218,165,32,0.5)',
-          }} />
-        </div>
+      {/* ═══ SCROLLBAR — full content width, dots below thumbnails, draggable ═══ */}
+      <div className="relative mt-3 flex min-w-max" style={{ height: 14, gap: YEAR_GAP }}
+        onMouseDown={handleBarDrag} onTouchStart={handleBarDrag}>
+        {yearGroups.map((yg) => {
+          const isOpen = openYears.has(yg.year);
+          const yearW = isOpen ? YEAR_W_EXPANDED : YEAR_W_COLLAPSED;
+          const count = yg.dates.length;
+          const gap = 4;
+          const thumbW = Math.floor((yearW - (count - 1) * gap) / count);
+          const startIdx = allEntries.findIndex(e => e.year === yg.year);
+
+          return (
+            <div key={yg.year} className="shrink-0 relative" style={{ width: yearW, transition: 'width 0.4s ease' }}>
+              {/* Track line */}
+              <div style={{
+                position: 'absolute', top: '50%', left: 0, width: '100%',
+                height: isOpen ? 4 : 2, transform: 'translateY(-50%)',
+                background: isOpen ? 'rgba(218,165,32,0.3)' : 'rgba(218,165,32,0.12)',
+                borderRadius: 2, transition: 'height 0.2s, background 0.2s',
+              }} />
+              {/* Entry dots — positioned to align with thumbnails above */}
+              {yg.dates.map((_, di) => {
+                const entryIdx = startIdx + di;
+                const isActive = entryIdx === activeIdx;
+                // Center of each thumbnail: offset from year start
+                const dotX = di * (thumbW + gap) + thumbW / 2;
+                return (
+                  <div key={di}
+                    onClick={(e) => { e.stopPropagation(); goToEntry(entryIdx); }}
+                    style={{
+                      position: 'absolute', left: dotX, top: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      width: isActive ? 8 : 3, height: isActive ? 8 : 3,
+                      borderRadius: '50%',
+                      background: isActive ? '#daa520' : 'rgba(218,165,32,0.35)',
+                      boxShadow: isActive ? '0 0 6px rgba(218,165,32,0.5)' : 'none',
+                      transition: 'all 0.15s', cursor: 'pointer', zIndex: isActive ? 10 : 1,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
-    )}
-
+    </div>
     </div>
   );
 }
@@ -756,7 +855,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
 // ── Timeline sub-components ──
 
 function TimelineThumb({ date, entries, isSelected, onSelect }: {
-  date: string; entries: ThreadEntry[]; isSelected: boolean; onSelect: (d: string) => void;
+  date: string; entries: ThreadEntry[]; isSelected: boolean; onSelect: (d: string, scrollToContent?: boolean) => void;
 }) {
   const thumb = entries[0]?.image_file;
   const entryCount = entries.length;
@@ -766,7 +865,7 @@ function TimelineThumb({ date, entries, isSelected, onSelect }: {
   );
 
   return (
-    <button onClick={() => onSelect(date)}
+    <button onClick={() => onSelect(date, true)}
       className="relative cursor-pointer group transition-all duration-200 w-full"
       style={{ height: 75 }}>
       {thumb ? (
