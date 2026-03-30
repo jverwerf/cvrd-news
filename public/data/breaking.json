@@ -1,177 +1,256 @@
 [
   {
-    "topic": "Iranian Attack on Kuwait Facility",
-    "summary": "An Iranian military strike targeted a power and water desalination plant in Kuwait, causing significant damage and resulting in the death of an Indian worker. This attack has heightened regional tensions and raised alarms about the security of critical infrastructure in the Gulf. The international community has condemned the attack, highlighting the potential threats to energy security and international relations in the region.",
-    "severity": "major",
-    "detected_at": "2026-03-30T03:00:07.008Z",
-    "last_updated": "2026-03-30T15:01:12.289Z",
+    "topic": "Iran War Escalation",
+    "summary": "Two projectiles reportedly landed near a vessel off the coast of Saudi Arabia, intensifying regional tensions. This incident comes amid increasing threats from the United States towards Iran, with the U.S. warning of possible military action if a ceasefire agreement is not achieved promptly. The situation adds to the already volatile dynamics in the Middle East, with potential implications for global oil markets and international relations.",
+    "severity": "critical",
+    "detected_at": "2026-03-30T17:00:07.723Z",
+    "last_updated": "2026-03-30T17:00:07.723Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to target Kuwait specifically. This attack be a strategic move in response to Kuwait's alliances and its role in regional politics, particularly its relationships with Western powers. Additionally, the economic implications for global energy markets and the potential for retaliatory actions are not being thoroughly explored.",
-    "social_summary": "Social media is ablaze with discussions about the attack, with many users expressing outrage and fear over the implications for regional stability. Memes and conspiracy theories are circulating, suggesting deeper plots involving global superpowers and their interests in the Gulf. Some users are calling for international intervention, while others are questioning the effectiveness of current diplomatic efforts.",
-    "image_prompt": "A dramatic editorial photo of a shattered glass globe with a small flame flickering inside, symbolizing the fragility of global peace and the simmering tensions in the Gulf region.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/30/iranian-attack-damages-kuwait-power-and-desalination-plant-kills-worker?traffic_source=rss",
-        "lean": "center",
-        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
-      }
-    ],
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly the impact on global oil prices and the interests of major oil corporations. Additionally, the geopolitical chess game involving U.S. alliances with Saudi Arabia and Israel, and Iran's ties with Russia and China, is a critical factor that is being downplayed. These alliances influence the strategic decisions and rhetoric of the involved nations.",
+    "social_summary": "Social media is buzzing with speculation about a potential new war in the Middle East, with hashtags like #IranConflict and #MiddleEastWar trending. Memes and viral posts are drawing parallels to past conflicts, while conspiracy theories suggest ulterior motives related to oil control and military-industrial complex interests. Users are divided, with some calling for peace and others advocating for decisive military action.",
+    "image_prompt": "A dramatic editorial photo of a stormy sea with a lone vessel silhouetted against the horizon, symbolizing the tension and uncertainty in the Middle East. The sky is dark and foreboding, with flashes of lightning illuminating the scene, capturing the volatile atmosphere of the current geopolitical situation.",
+    "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
-        "embed_id": "9vfTT9uX64Q",
-        "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant"
+        "url": "https://www.youtube.com/watch?v=jiwJeFFrrqI",
+        "embed_id": "jiwJeFFrrqI",
+        "title": "Trump paves two paths for Iran war — Negotiation or escalation",
+        "duration": 107
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lNkDlp1lcBQ",
-        "embed_id": "lNkDlp1lcBQ",
-        "title": "Iran Attacks Kuwait Power Plant; Indian Worker Dies in Desalination Facility Strike | NewsX",
-        "duration": 290
+        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
+        "embed_id": "JtfO20JSjbU",
+        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
+        "duration": 243
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
+        "embed_id": "ZUwSExAdw34",
+        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+        "duration": 1470
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=wGFWqdEap8c",
+        "embed_id": "wGFWqdEap8c",
+        "title": "US involvement in the Iran war could escalate",
+        "duration": 103
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=d5ur6Oi40UY",
+        "embed_id": "d5ur6Oi40UY",
+        "title": "Oil rises, stocks fall as Iran war enters fifth week and further escalation looms • FRANCE 24",
+        "duration": 338
       },
       {
         "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
-        "embed_id": "2038415564457042141",
-        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
-        "author": "TheCradleMedia"
+        "url": "https://x.com/Mohsin_o2/status/2038624737925234906",
+        "embed_id": "2038624737925234906",
+        "title": "This Iran-US War wasn’t started by Pakistan, and its outcome or end won’t be decided by Pakistan either. \n\nThe best Pakistan can do is look for de-esc",
+        "author": "Mohsin_o2"
       },
       {
         "platform": "x",
-        "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
-        "embed_id": "2038488558600962166",
-        "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
-        "author": "AdityaRajKaul"
+        "url": "https://x.com/AJEnglish/status/2038537967040692256",
+        "embed_id": "2038537967040692256",
+        "title": "Oil prices have surged to a near two-week high as tensions escalate in the US–Israel war on Iran. \n\nBrent crude rose more than 3% to above $116 a barr",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038534835635970230",
+        "embed_id": "2038534835635970230",
+        "title": "Australian Prime Minister Anthony Albanese says he needs more clarity on the US objectives for the war in Iran, while also calling for de-escalation. ",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/citrinowicz/status/2038499176464453637",
+        "embed_id": "2038499176464453637",
+        "title": "The escalation is already here.\n\nStrikes on steel plants and universities on one side, and Iran’s response,  including damage to desalination faciliti",
+        "author": "citrinowicz"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SoSoValueCrypto/status/2038479831130935450",
+        "embed_id": "2038479831130935450",
+        "title": "SoSoValue Macro Trading Desk | Weekly Brief ⚠️\n\nIran uncertainty hits peak. \nOnly 4 trading days before the Apr 6 Trump deadline.\n▸ Houthis enter war ",
+        "author": "SoSoValueCrypto"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
-        "embed_id": "1s6s9bo",
-        "title": "Last Week in Collapse: March 22-28, 2026"
+        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
+        "embed_id": "1s75olt",
+        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s7aynu/indian_worker_killed_in_iranian_attack_on_kuwait/",
-        "embed_id": "1s7aynu",
-        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+        "url": "https://reddit.com/r/ImmigrationPathways/comments/1s7ldy6/no_kings_protests_sweep_us_as_anti_trump_wave/",
+        "embed_id": "1s7ldy6",
+        "title": "‘No Kings’ Protests Sweep U.S. As Anti Trump Wave Grows Over Iran War And Immigration Crackdown"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/WayOfTheBern/comments/1s77dbj/in_less_than_48_hours_after_attacks_on_its/",
-        "embed_id": "1s77dbj",
-        "title": "In less than 48 hours, after attacks on its infrastructure, Iran attacked metal industry facilities in Bahrain and the United Arab Emirates, military "
+        "url": "https://reddit.com/r/StockMarket/comments/1s7efyi/oil_rises_above_115_as_iran_war_escalates_with/",
+        "embed_id": "1s7efyi",
+        "title": "Oil rises above $115 as Iran war escalates with Nikkei down 4.7% and South Korea Kospi down 4.2%"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
-        "embed_id": "1s7bwn0",
-        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+        "url": "https://reddit.com/r/Conservative/comments/1s7det1/iran_war_escalates_houthis_attack_israel_tehran/",
+        "embed_id": "1s7det1",
+        "title": "Iran war escalates: Houthis attack Israel, Tehran loses power after strikes, peace talks sought"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1s7h52y/israel_announces_wave_of_attacks_on_tehraniranian/",
-        "embed_id": "1s7h52y",
-        "title": "Israel announces wave of attacks on Tehran.Iranian attack hits power, water distillation facility, kuwait."
+        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
+        "embed_id": "1s71z59",
+        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
-        "embed_id": "1s7en15",
-        "title": "Iran Attacks on Kuwait's Desalination Plant"
+        "url": "https://reddit.com/r/worldnews/comments/1s7g55q/tabriz_petrochemical_facility_struck_in_northern/",
+        "embed_id": "1s7g55q",
+        "title": "Tabriz Petrochemical facility struck in northern Iran as war escalates"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/anime_titties/comments/1s7o9uf/iranian_attack_damages_kuwait_power_and/",
-        "embed_id": "1s7o9uf",
-        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
+        "url": "https://reddit.com/r/AskMiddleEast/comments/1s7gnun/trumps_escalation_with_iran_has_caused_millions/",
+        "embed_id": "1s7gnun",
+        "title": "Trumps escalation with Iran has caused millions of Americans to protest against him and the war the past 2 days"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s7nnp4/iran_says_it_didnt_attack_kuwait_desalination/",
-        "embed_id": "1s7nnp4",
-        "title": "Iran Says it didn't attack Kuwait Desalination Plant, accuse Israel for it."
+        "url": "https://reddit.com/r/politics/comments/1s7spce/oil_prices_surge_past_116_as_iran_war_escalates/",
+        "embed_id": "1s7spce",
+        "title": "Oil prices surge past $116 as Iran war escalates"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=9vfTT9uX64Q",
-        "embed_id": "9vfTT9uX64Q",
-        "title": "Kuwait says Indian worker killed in an Iranian attack on a power and desalination plant",
-        "channel": "Al Jazeera English"
+        "url": "https://www.youtube.com/watch?v=jiwJeFFrrqI",
+        "embed_id": "jiwJeFFrrqI",
+        "title": "Trump paves two paths for Iran war — Negotiation or escalation",
+        "channel": "The Washington Examiner",
+        "duration": 107
       },
       {
-        "url": "https://www.youtube.com/watch?v=lNkDlp1lcBQ",
-        "embed_id": "lNkDlp1lcBQ",
-        "title": "Iran Attacks Kuwait Power Plant; Indian Worker Dies in Desalination Facility Strike | NewsX",
-        "channel": "NewsX Live",
-        "duration": 290
+        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
+        "embed_id": "JtfO20JSjbU",
+        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
+        "channel": "Bloomberg Television",
+        "duration": 243
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
+        "embed_id": "ZUwSExAdw34",
+        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+        "channel": "Al Jazeera English",
+        "duration": 1470
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=wGFWqdEap8c",
+        "embed_id": "wGFWqdEap8c",
+        "title": "US involvement in the Iran war could escalate",
+        "channel": "FOX 13 Seattle",
+        "duration": 103
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=d5ur6Oi40UY",
+        "embed_id": "d5ur6Oi40UY",
+        "title": "Oil rises, stocks fall as Iran war enters fifth week and further escalation looms • FRANCE 24",
+        "channel": "FRANCE 24 English",
+        "duration": 338
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/TheCradleMedia/status/2038415564457042141",
-        "embed_id": "2038415564457042141",
-        "title": "BREAKING | Kuwait confirms Iran strikes on a power and water distillation facility\n\nKuwait’s Ministry of Electricity, Water and Renewable Energy said ",
-        "author": "TheCradleMedia"
+        "url": "https://x.com/Mohsin_o2/status/2038624737925234906",
+        "embed_id": "2038624737925234906",
+        "title": "This Iran-US War wasn’t started by Pakistan, and its outcome or end won’t be decided by Pakistan either. \n\nThe best Pakistan can do is look for de-esc",
+        "author": "Mohsin_o2"
       },
       {
         "platform": "x",
-        "url": "https://x.com/AdityaRajKaul/status/2038488558600962166",
-        "embed_id": "2038488558600962166",
-        "title": "#BREAKING: One Indian National killed after an Iranian attack on a desalination facility in Kuwait yesterday. The Indian Embassy in Kuwait  is closely",
-        "author": "AdityaRajKaul"
+        "url": "https://x.com/AJEnglish/status/2038537967040692256",
+        "embed_id": "2038537967040692256",
+        "title": "Oil prices have surged to a near two-week high as tensions escalate in the US–Israel war on Iran. \n\nBrent crude rose more than 3% to above $116 a barr",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJEnglish/status/2038534835635970230",
+        "embed_id": "2038534835635970230",
+        "title": "Australian Prime Minister Anthony Albanese says he needs more clarity on the US objectives for the war in Iran, while also calling for de-escalation. ",
+        "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/citrinowicz/status/2038499176464453637",
+        "embed_id": "2038499176464453637",
+        "title": "The escalation is already here.\n\nStrikes on steel plants and universities on one side, and Iran’s response,  including damage to desalination faciliti",
+        "author": "citrinowicz"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SoSoValueCrypto/status/2038479831130935450",
+        "embed_id": "2038479831130935450",
+        "title": "SoSoValue Macro Trading Desk | Weekly Brief ⚠️\n\nIran uncertainty hits peak. \nOnly 4 trading days before the Apr 6 Trump deadline.\n▸ Houthis enter war ",
+        "author": "SoSoValueCrypto"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/collapse/comments/1s6s9bo/last_week_in_collapse_march_2228_2026/",
-        "embed_id": "1s6s9bo",
-        "title": "Last Week in Collapse: March 22-28, 2026"
+        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
+        "embed_id": "1s75olt",
+        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s7aynu/indian_worker_killed_in_iranian_attack_on_kuwait/",
-        "embed_id": "1s7aynu",
-        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+        "url": "https://reddit.com/r/ImmigrationPathways/comments/1s7ldy6/no_kings_protests_sweep_us_as_anti_trump_wave/",
+        "embed_id": "1s7ldy6",
+        "title": "‘No Kings’ Protests Sweep U.S. As Anti Trump Wave Grows Over Iran War And Immigration Crackdown"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/WayOfTheBern/comments/1s77dbj/in_less_than_48_hours_after_attacks_on_its/",
-        "embed_id": "1s77dbj",
-        "title": "In less than 48 hours, after attacks on its infrastructure, Iran attacked metal industry facilities in Bahrain and the United Arab Emirates, military "
+        "url": "https://reddit.com/r/StockMarket/comments/1s7efyi/oil_rises_above_115_as_iran_war_escalates_with/",
+        "embed_id": "1s7efyi",
+        "title": "Oil rises above $115 as Iran war escalates with Nikkei down 4.7% and South Korea Kospi down 4.2%"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s7bwn0/indian_worker_killed_in_iranian_attack_on_kuwait/",
-        "embed_id": "1s7bwn0",
-        "title": "Indian worker killed in Iranian attack on Kuwait power, desalination plant"
+        "url": "https://reddit.com/r/Conservative/comments/1s7det1/iran_war_escalates_houthis_attack_israel_tehran/",
+        "embed_id": "1s7det1",
+        "title": "Iran war escalates: Houthis attack Israel, Tehran loses power after strikes, peace talks sought"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1s7h52y/israel_announces_wave_of_attacks_on_tehraniranian/",
-        "embed_id": "1s7h52y",
-        "title": "Israel announces wave of attacks on Tehran.Iranian attack hits power, water distillation facility, kuwait."
+        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
+        "embed_id": "1s71z59",
+        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/TimesNow/comments/1s7en15/iran_attacks_on_kuwaits_desalination_plant/",
-        "embed_id": "1s7en15",
-        "title": "Iran Attacks on Kuwait's Desalination Plant"
+        "url": "https://reddit.com/r/worldnews/comments/1s7g55q/tabriz_petrochemical_facility_struck_in_northern/",
+        "embed_id": "1s7g55q",
+        "title": "Tabriz Petrochemical facility struck in northern Iran as war escalates"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/anime_titties/comments/1s7o9uf/iranian_attack_damages_kuwait_power_and/",
-        "embed_id": "1s7o9uf",
-        "title": "Iranian attack damages Kuwait power and desalination plant, kills worker"
+        "url": "https://reddit.com/r/AskMiddleEast/comments/1s7gnun/trumps_escalation_with_iran_has_caused_millions/",
+        "embed_id": "1s7gnun",
+        "title": "Trumps escalation with Iran has caused millions of Americans to protest against him and the war the past 2 days"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s7nnp4/iran_says_it_didnt_attack_kuwait_desalination/",
-        "embed_id": "1s7nnp4",
-        "title": "Iran Says it didn't attack Kuwait Desalination Plant, accuse Israel for it."
+        "url": "https://reddit.com/r/politics/comments/1s7spce/oil_prices_surge_past_116_as_iran_war_escalates/",
+        "embed_id": "1s7spce",
+        "title": "Oil prices surge past $116 as Iran war escalates"
       }
     ],
     "image_file": "/images/breaking_2026-03-30.png"
