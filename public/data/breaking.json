@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Warns of Strikes on US Firms",
-    "summary": "Iran has issued a warning that it will target US firms in retaliation for a series of explosions in Tehran, which Iran attributes to US and Israeli actions. This development marks a significant escalation in the already tense relations between the US and Iran. The international community is concerned about the potential for further military conflict as the situation continues to develop.",
+    "summary": "Iran has threatened to target US firms in response to a series of explosions in Tehran, which it blames on US and Israeli actions. This escalation adds to the already strained relations between the US and Iran, raising concerns about potential military conflict. The international community is closely monitoring the situation as tensions continue to rise.",
     "severity": "critical",
     "detected_at": "2026-03-31T17:00:06.517Z",
-    "last_updated": "2026-03-31T21:00:42.901Z",
+    "last_updated": "2026-03-31T23:00:44.672Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a consequence of Iran's aggressive posturing and its inability to maintain internal security. They emphasize Iran's threats as a sign of desperation and weakness, highlighting the country's economic struggles and internal dissent. The narrative suggests that Iran's threats are more bluster than a credible military strategy, pointing to the country's 'war-torn' state as a limiting factor in its ability to respond effectively.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions. The US and Iran are both under significant economic pressures, with sanctions impacting Iran's economy and the US facing its own fiscal challenges. This conflict serves as a distraction from domestic issues in both countries, and the military-industrial complex benefits from the continued tension. Additionally, the role of regional allies and their influence on US and Iranian actions is not being fully explored.",
-    "social_summary": "Social media is buzzing with conspiracy theories about the true instigators of the explosions, with some users suggesting false flag operations by various governments. Memes mocking the escalation and the perceived incompetence of political leaders are circulating widely. There is also a significant amount of skepticism about the official narratives from both the US and Iranian governments.",
-    "image_prompt": "A dramatic editorial photo of a chessboard with pieces representing the US and Iran, set against a backdrop of a smoldering cityscape, symbolizing the strategic and destructive nature of the conflict.",
+    "right_narrative": "Right-leaning media is framing this as a predictable response from a regime known for its aggressive posturing. They emphasize Iran's history of blaming external forces for internal issues and suggest that Iran's threats are a diversion from its own domestic problems. The narrative also highlights the need for the US to maintain a strong stance against Iranian aggression.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions. The focus on military actions overshadows the underlying economic sanctions and their impact on Iran's economy, which be driving its aggressive stance. Additionally, the geopolitical implications of Iran's alliances with other nations, such as Russia and China, are not being fully explored in the current discourse.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for Iran's stance against perceived US imperialism, while others criticize Iran's government for escalating tensions. Memes and conspiracy theories abound, with some suggesting that the explosions were a false flag operation to justify further US intervention in the region.",
+    "image_prompt": "A dramatic editorial photo of a chessboard with pieces representing the US and Iran, set against a backdrop of a stormy sky, symbolizing the geopolitical tension and strategic maneuvering between the two nations.",
     "sources": [
       {
         "name": "Fox News",
@@ -39,11 +39,25 @@
         "duration": 358
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=vPrOJ7d-7Mg",
+        "embed_id": "vPrOJ7d-7Mg",
+        "title": "Iran to Attack US Tech Companies? Apple, Google, Microsoft on Target List",
+        "duration": 187
+      },
+      {
         "platform": "telegram",
         "url": "https://t.me/intelslava/85684",
         "embed_id": "intelslava/85684",
         "title": "🇮🇷🇺🇸❗️The IRGC threatened to strike at the facilities of American IT companies in the region, including Intel and Microsoft, in the event of conti",
         "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20600",
+        "embed_id": "disclosetv/20600",
+        "title": "NOW - Trump mocks Iran for threatening to strike U.S. tech companies in the Middle East: \"What did they threaten them with BB guns?&#33; They don't ha",
+        "author": "disclosetv"
       },
       {
         "platform": "reddit",
@@ -116,64 +130,6 @@
         "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
         "embed_id": "1s883ul",
         "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85688",
-        "embed_id": "intelslava/85688",
-        "title": "🇮🇷🇷🇺🇺🇦Information has emerged about the deceased senior lieutenant of the Armed Forces of Ukraine, Anatoliy Onishchuk, who was engaged in \"train",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85691",
-        "embed_id": "intelslava/85691",
-        "title": "🇮🇱🇮🇷Israeli missile strikes on the Iranian ZU-23-2, located on the roof of a high-rise building in Tehran.\n\nAt the end, two people, possibly anti-",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/hHN8_ExW7SQ4b_nmqx7-YDqt8HvRv9yEgJd8oZXxGcfFUM9RsGM-2gWQ2fXNfO-IyuJn1n2NCkXSA7nwUV7cRYKO-0bC-lYm2pMXC2F1a-HT8uPmiEphpA10JclNh1FyjyTpCOeqsjF_TjKNosBE_3EbWlxBKPFPkWhjR3_JcLnBa5XIbDQNvxkiG7mPSE_5Muatid1D_LOmvw3Ktso1ofmX515GYBQTSOWdujmKPQkE1HEXlVSVhEUhIPruxOxBIrM_0gxukm1Bf4sBAD66tvzg6cHmv9YkEa_-Mdp3-_NpZkuwWMoJOV569cWv5mbehrO6TxPgM4iuTlXK03Gs3g'",
-        "duration": 30
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/cointelegraph/68673",
-        "embed_id": "cointelegraph/68673",
-        "title": "🗞 Catch up on the news over the last 24 hours&#33;\n\n🚨 Over &#036;195M liquidated in the past hour as Bitcoin fell below &#036;65K.\n\n🚨 US government",
-        "author": "cointelegraph"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43055",
-        "embed_id": "warmonitors/43055",
-        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16256",
-        "embed_id": "France24_en/16256",
-        "title": "Zelensky hails 'historic' defence agreements with Gulf states\nUkrainian President Volodymyr Zelensky on Monday said he signed \"historic\" agreements wi",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16262",
-        "embed_id": "France24_en/16262",
-        "title": "Trump threatens to destroy Iran’s Kharg Island oil hub if no deal reached\nUS President Donald Trump on Monday threatened to destroy Iran’s key oil exp",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16271",
-        "embed_id": "France24_en/16271",
-        "title": "How Trump’s dream of seizing enriched uranium from Iran could end in catastrophe\nUS President Donald Trump is reportedly considering a military missio",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43056",
-        "embed_id": "warmonitors/43056",
-        "title": "War Monitor pinned «❌ BREAKING  Iranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is",
-        "author": "warmonitors"
       }
     ],
     "youtube_videos": [
@@ -183,6 +139,13 @@
         "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
         "channel": "APT",
         "duration": 358
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=vPrOJ7d-7Mg",
+        "embed_id": "vPrOJ7d-7Mg",
+        "title": "Iran to Attack US Tech Companies? Apple, Google, Microsoft on Target List",
+        "channel": "The Free Press Journal",
+        "duration": 187
       }
     ],
     "social_clips": [
@@ -194,6 +157,13 @@
         "author": "intelslava"
       },
       {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20600",
+        "embed_id": "disclosetv/20600",
+        "title": "NOW - Trump mocks Iran for threatening to strike U.S. tech companies in the Middle East: \"What did they threaten them with BB guns?&#33; They don't ha",
+        "author": "disclosetv"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/stocks/comments/1s8r2x9/irgc_threatens_strikes_on_us_tech_giants_across/",
         "embed_id": "1s8r2x9",
@@ -264,79 +234,21 @@
         "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
         "embed_id": "1s883ul",
         "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85688",
-        "embed_id": "intelslava/85688",
-        "title": "🇮🇷🇷🇺🇺🇦Information has emerged about the deceased senior lieutenant of the Armed Forces of Ukraine, Anatoliy Onishchuk, who was engaged in \"train",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85691",
-        "embed_id": "intelslava/85691",
-        "title": "🇮🇱🇮🇷Israeli missile strikes on the Iranian ZU-23-2, located on the roof of a high-rise building in Tehran.\n\nAt the end, two people, possibly anti-",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/hHN8_ExW7SQ4b_nmqx7-YDqt8HvRv9yEgJd8oZXxGcfFUM9RsGM-2gWQ2fXNfO-IyuJn1n2NCkXSA7nwUV7cRYKO-0bC-lYm2pMXC2F1a-HT8uPmiEphpA10JclNh1FyjyTpCOeqsjF_TjKNosBE_3EbWlxBKPFPkWhjR3_JcLnBa5XIbDQNvxkiG7mPSE_5Muatid1D_LOmvw3Ktso1ofmX515GYBQTSOWdujmKPQkE1HEXlVSVhEUhIPruxOxBIrM_0gxukm1Bf4sBAD66tvzg6cHmv9YkEa_-Mdp3-_NpZkuwWMoJOV569cWv5mbehrO6TxPgM4iuTlXK03Gs3g'",
-        "duration": 30
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/cointelegraph/68673",
-        "embed_id": "cointelegraph/68673",
-        "title": "🗞 Catch up on the news over the last 24 hours&#33;\n\n🚨 Over &#036;195M liquidated in the past hour as Bitcoin fell below &#036;65K.\n\n🚨 US government",
-        "author": "cointelegraph"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43055",
-        "embed_id": "warmonitors/43055",
-        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16256",
-        "embed_id": "France24_en/16256",
-        "title": "Zelensky hails 'historic' defence agreements with Gulf states\nUkrainian President Volodymyr Zelensky on Monday said he signed \"historic\" agreements wi",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16262",
-        "embed_id": "France24_en/16262",
-        "title": "Trump threatens to destroy Iran’s Kharg Island oil hub if no deal reached\nUS President Donald Trump on Monday threatened to destroy Iran’s key oil exp",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16271",
-        "embed_id": "France24_en/16271",
-        "title": "How Trump’s dream of seizing enriched uranium from Iran could end in catastrophe\nUS President Donald Trump is reportedly considering a military missio",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43056",
-        "embed_id": "warmonitors/43056",
-        "title": "War Monitor pinned «❌ BREAKING  Iranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is",
-        "author": "warmonitors"
       }
     ],
     "image_file": "/images/breaking_2026-03-31.png"
   },
   {
     "topic": "U.S. Strikes Iranian Nuclear Site",
-    "summary": "The United States launched airstrikes on a city in Iran that contains a nuclear facility, significantly heightening tensions in the Middle East. President Trump has urged allied nations to help secure the Strait of Hormuz, a crucial channel for global oil shipments. The international community is expressing concern over the potential for this action to spark a broader conflict in the region.",
+    "summary": "The United States has conducted airstrikes on a city in Iran that houses a nuclear facility, escalating tensions in the already volatile Middle East. President Trump has called on allied nations to assist in securing the Strait of Hormuz, a vital passage for global oil trade. The international community is worried about the possibility of this action leading to a wider conflict in the region.",
     "severity": "critical",
     "detected_at": "2026-03-31T15:00:08.549Z",
-    "last_updated": "2026-03-31T21:01:22.618Z",
+    "last_updated": "2026-03-31T23:01:47.132Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind the strike, particularly how control over oil routes like the Strait of Hormuz impacts global markets and U.S. economic interests. Additionally, the geopolitical implications of such a strike on U.S.-Iran relations and the balance of power in the Middle East are being downplayed. The focus remains on immediate military actions rather than long-term strategic consequences.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the strike as a necessary action against a nuclear threat, while others condemn it as reckless warmongering. Memes and hashtags like #WWIII and #OilWars are trending, reflecting both fear and satire. Conspiracy theories about ulterior motives, such as controlling oil prices or distracting from domestic issues, are also circulating widely.",
-    "image_prompt": "A dramatic editorial photo of a stormy sea with oil tankers navigating through turbulent waters, symbolizing the geopolitical tensions and economic stakes in the Strait of Hormuz.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind the strike, particularly how control over the Strait of Hormuz impacts global oil prices and benefits certain economies. Additionally, the geopolitical implications of U.S. military actions in Iran are not being fully explored, especially in terms of how they affect U.S. relations with other major powers like China and Russia, who have vested interests in the region.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the U.S. for taking a strong stance against Iran, while others criticize the move as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives such as oil control or political distraction tactics. Hashtags like #NoWarWithIran and #SecureTheStrait are trending, reflecting the divided public opinion.",
+    "image_prompt": "A dramatic editorial photo of a stormy sea with a narrow strait in the foreground, symbolizing the Strait of Hormuz, with dark clouds looming overhead to represent the tension and uncertainty in the region.",
     "sources": [],
     "clips": [
       {
@@ -344,13 +256,6 @@
         "url": "https://www.youtube.com/watch?v=khJ2jEmt4zU",
         "embed_id": "khJ2jEmt4zU",
         "title": "Videos show explosions and fire in an Iranian city as strikes continue"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=WEyelZNda9Q",
-        "embed_id": "WEyelZNda9Q",
-        "title": "US-Israeli strikes hit two Iranian nuclear facilities | ABC NEWS",
-        "duration": 151
       },
       {
         "platform": "youtube",
@@ -400,6 +305,13 @@
         "embed_id": "-NaNU9FTSnM",
         "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
         "duration": 38
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=s4sIs2ARUw4",
+        "embed_id": "s4sIs2ARUw4",
+        "title": "Video shows US strikes in Isfahan, home to a major Iran air base",
+        "duration": 41
       },
       {
         "platform": "x",
@@ -474,13 +386,6 @@
         "channel": "NBC News"
       },
       {
-        "url": "https://www.youtube.com/watch?v=WEyelZNda9Q",
-        "embed_id": "WEyelZNda9Q",
-        "title": "US-Israeli strikes hit two Iranian nuclear facilities | ABC NEWS",
-        "channel": "ABC News (Australia)",
-        "duration": 151
-      },
-      {
         "url": "https://www.youtube.com/watch?v=KcqjURPHnak",
         "embed_id": "KcqjURPHnak",
         "title": "What led to the U.S. strikes on Iran nuclear sites",
@@ -528,6 +433,13 @@
         "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
         "channel": "WTHR",
         "duration": 38
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=s4sIs2ARUw4",
+        "embed_id": "s4sIs2ARUw4",
+        "title": "Video shows US strikes in Isfahan, home to a major Iran air base",
+        "channel": "Associated Press",
+        "duration": 41
       }
     ],
     "social_clips": [
