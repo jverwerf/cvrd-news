@@ -1,6 +1,6 @@
 {
   "date": "2026-03-31",
-  "generated_at": "2026-03-31T14:32:53.922Z",
+  "generated_at": "2026-03-31T15:01:29.230Z",
   "top_narratives": [
     {
       "topic": "Iran War Escalation and Economic Impact",
@@ -852,7 +852,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_1.png"
+      "image_file": "/images/story_2026-03-31_1.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Israel's New Death Penalty Law",
@@ -1070,7 +1086,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_2.png"
+      "image_file": "/images/story_2026-03-31_2.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Myanmar Military Leader's Presidential Ambitions",
@@ -1148,7 +1165,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_3.png"
+      "image_file": "/images/story_2026-03-31_3.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Economic Impact of Iran War on Global Markets",
@@ -1425,7 +1443,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_4.png"
+      "image_file": "/images/story_2026-03-31_4.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Humanitarian Crisis in Sudan",
@@ -1484,7 +1503,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_5.png"
+      "image_file": "/images/story_2026-03-31_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "EU Diplomat Visits Ukraine",
@@ -1618,7 +1638,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_6.png"
+      "image_file": "/images/story_2026-03-31_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Congo's Former Leader on the Run",
@@ -1684,7 +1705,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_7.png"
+      "image_file": "/images/story_2026-03-31_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Gas Prices Surge Amid Iran Conflict",
@@ -1830,7 +1852,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_8.png"
+      "image_file": "/images/story_2026-03-31_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Russia's Oil Tanker Through U.S. Blockade",
@@ -2005,7 +2028,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_9.png"
+      "image_file": "/images/story_2026-03-31_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Shift on Cuba Oil Sanctions",
@@ -2086,7 +2110,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_10.png"
+      "image_file": "/images/story_2026-03-31_10.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Democrats Push for Progressive Policies in Utah",
@@ -2145,7 +2170,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_11.png"
+      "image_file": "/images/story_2026-03-31_11.png",
+      "onrecord_matches": []
     },
     {
       "topic": "TSA Workers Receive Pay Amid Shutdown",
@@ -2276,7 +2302,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_12.png"
+      "image_file": "/images/story_2026-03-31_12.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Senate Republicans and DHS Shutdown Stalemate",
@@ -2590,7 +2617,23 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_13.png"
+      "image_file": "/images/story_2026-03-31_13.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Trump Administration's Immigration Arrests Under Scrutiny",
@@ -2664,7 +2707,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_14.png"
+      "image_file": "/images/story_2026-03-31_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Mexico Demands Answers Over Deaths in ICE Custody",
@@ -2770,7 +2814,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_15.png"
+      "image_file": "/images/story_2026-03-31_15.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Executive Order on Birthright Citizenship",
@@ -2961,7 +3006,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_16.png"
+      "image_file": "/images/story_2026-03-31_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Presidential Library Plans in Miami",
@@ -3091,7 +3137,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_17.png"
+      "image_file": "/images/story_2026-03-31_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Federal Prosecutors Investigate NYC Council Member",
@@ -3161,7 +3208,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_18.png"
+      "image_file": "/images/story_2026-03-31_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "California's Sanctuary Policies Under Fire",
@@ -3241,7 +3289,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_19.png"
+      "image_file": "/images/story_2026-03-31_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Controversy Over 'No Kings' Protest in Florida",
@@ -3399,7 +3448,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_20.png"
+      "image_file": "/images/story_2026-03-31_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "JetBlue Hikes Baggage Fees Amid Rising Fuel Costs",
@@ -3450,7 +3500,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_21.png"
+      "image_file": "/images/story_2026-03-31_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Fed's Powell Comments on Interest Rates Amid Energy Price Surge",
@@ -3534,7 +3585,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_22.png"
+      "image_file": "/images/story_2026-03-31_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Unilever and McCormick Near $60 Billion Merger Deal",
@@ -3626,7 +3678,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_23.png"
+      "image_file": "/images/story_2026-03-31_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "American Exchange Group Acquires Allbirds for $39 Million",
@@ -3676,7 +3729,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_24.png"
+      "image_file": "/images/story_2026-03-31_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Sysco Acquires Restaurant Depot in $29 Billion Deal",
@@ -3774,7 +3828,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_25.png"
+      "image_file": "/images/story_2026-03-31_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Dubai Announces 1 Billion Dirham Economic Support Package",
@@ -3816,7 +3871,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_26.png"
+      "image_file": "/images/story_2026-03-31_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Indonesia's Pertamina Maintains Fuel Prices Despite Global Trends",
@@ -3850,7 +3906,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_27.png"
+      "image_file": "/images/story_2026-03-31_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Unilever Imposes Global Hiring Freeze Citing Middle East Conflict",
@@ -3909,7 +3966,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_28.png"
+      "image_file": "/images/story_2026-03-31_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Poland Implements Law to Lower Petrol Prices",
@@ -3951,7 +4009,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_29.png"
+      "image_file": "/images/story_2026-03-31_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kid Rock's Apache Helicopter Flyby Sparks Army Investigation",
@@ -4164,7 +4223,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_30.png"
+      "image_file": "/images/story_2026-03-31_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jon Stewart Criticizes Trump's Iran War Focus",
@@ -4336,7 +4396,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_31.png"
+      "image_file": "/images/story_2026-03-31_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Cardi B Wins Copyright Lawsuit",
@@ -4389,7 +4450,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_32.png"
+      "image_file": "/images/story_2026-03-31_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Rosalía Opens Residency in Madrid",
@@ -4530,7 +4592,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_33.png"
+      "image_file": "/images/story_2026-03-31_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Taylor Swift Faces Lawsuit Over 'Showgirl' Trademark",
@@ -4676,7 +4739,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_34.png"
+      "image_file": "/images/story_2026-03-31_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Women's March Madness 2026: Final Four Set",
@@ -4799,7 +4863,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_35.png"
+      "image_file": "/images/story_2026-03-31_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "NBA: Bulls Waive Jaden Ivey After Comments",
@@ -5042,7 +5107,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_36.png"
+      "image_file": "/images/story_2026-03-31_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Victor Wembanyama's Record-Setting Double-Double",
@@ -5134,7 +5200,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_37.png"
+      "image_file": "/images/story_2026-03-31_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Lakers' JJ Redick Advocates for Luka Doncic as MVP",
@@ -5224,7 +5291,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_38.png"
+      "image_file": "/images/story_2026-03-31_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "SGA on MVP Chatter: 'I Let My Game Do the Talking'",
@@ -5323,7 +5391,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_39.png"
+      "image_file": "/images/story_2026-03-31_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Haiti's Spiraling Gang Violence",
@@ -5456,7 +5525,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_40.png"
+      "image_file": "/images/story_2026-03-31_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pakistan's Diplomatic Balancing Act Amid Middle East Tensions",
@@ -5493,7 +5563,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_41.png"
+      "image_file": "/images/story_2026-03-31_41.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Scott Mills Questioned by Police Over Historic Allegations",
@@ -5730,7 +5801,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_42.png"
+      "image_file": "/images/story_2026-03-31_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jack Whitehall to Host ‘SNL U.K.’",
@@ -5821,7 +5893,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_43.png"
+      "image_file": "/images/story_2026-03-31_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Dialled In Launches Record Label",
@@ -5874,7 +5947,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_44.png"
+      "image_file": "/images/story_2026-03-31_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Nagarjuna Akkineni's 100th Film",
@@ -5948,7 +6022,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_45.png"
+      "image_file": "/images/story_2026-03-31_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Céline Dion's Return to the Stage",
@@ -6227,7 +6302,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-03-31_46.png"
+      "image_file": "/images/story_2026-03-31_46.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ghana Fires Coach Addo Before World Cup",
@@ -6419,7 +6495,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_47.png"
+      "image_file": "/images/story_2026-03-31_47.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Cardiff's $138M Claim in Sala's Death Dismissed",
@@ -6491,7 +6568,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_48.png"
+      "image_file": "/images/story_2026-03-31_48.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Infantino Touts World Cup Success in Mexico",
@@ -6597,7 +6675,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_49.png"
+      "image_file": "/images/story_2026-03-31_49.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Italy's Last Chance at 2026 World Cup",
@@ -6669,7 +6748,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_50.png"
+      "image_file": "/images/story_2026-03-31_50.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pulisic's Potential Role Shift in U.S. Team",
@@ -6717,7 +6797,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-03-31_51.png"
+      "image_file": "/images/story_2026-03-31_51.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [
