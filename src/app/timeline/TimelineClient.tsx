@@ -151,7 +151,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         </div>
           );
         })()}
-        {filtered.map(thread => (
+        {filtered.slice(0, 4).map(thread => (
           <ThreadCard
             key={thread.id}
             thread={thread}
