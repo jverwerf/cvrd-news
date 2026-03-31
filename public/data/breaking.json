@@ -1,15 +1,15 @@
 [
   {
     "topic": "Kuwaiti tanker attacked amid US-Iran tensions",
-    "summary": "A Kuwaiti oil tanker was attacked, escalating tensions between the United States and Iran. President Trump has threatened to target Iran's energy infrastructure in response, raising the possibility of increased military conflict. This incident highlights the fragile state of US-Iran relations and poses significant risks to global energy security and regional stability.",
+    "summary": "A Kuwaiti oil tanker was attacked, intensifying the already strained relations between the United States and Iran. President Trump has responded with threats to target Iran's energy infrastructure, which leads to further military escalation. This incident underscores the precarious nature of US-Iran relations and the potential threat to global energy security and regional stability.",
     "severity": "major",
     "detected_at": "2026-03-31T07:00:07.379Z",
-    "last_updated": "2026-03-31T09:00:29.949Z",
+    "last_updated": "2026-03-31T11:01:23.624Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack, particularly how it affects the interests of other major powers like China and Russia in the region. The focus remains on US-Iran dynamics, ignoring how this incident shifts alliances and influence global energy markets. Additionally, the economic motivations behind the attack, such as potential benefits for oil prices, are not being explored.",
-    "social_summary": "Social media is buzzing with speculation about the attack being a false flag operation to justify US military action against Iran. Memes are circulating that mock the predictability of escalating tensions whenever oil interests are threatened. Conspiracy theories suggest that the attack is a distraction from domestic issues in the US.",
-    "image_prompt": "A dramatic image of a lone oil tanker silhouetted against a fiery sunset, with dark storm clouds gathering on the horizon, symbolizing impending conflict and uncertainty.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack, particularly how it affects the interests of other major players like China and Russia in the region. The focus remains on US-Iran tensions, ignoring how this incident shifts alliances and influence global oil markets. Additionally, the role of non-state actors in the region, who benefit from increased instability, is not being discussed.",
+    "social_summary": "Social media is buzzing with speculation about the potential for a new Middle Eastern conflict, with hashtags like #OilWar and #GulfTensions trending. Memes depicting oil barrels as ticking time bombs are circulating, while conspiracy theories suggest that the attack was a false flag operation to justify US military action against Iran. The incident has sparked debates about the US's role in the Middle East and its impact on global oil prices.",
+    "image_prompt": "A dramatic image of a lone oil tanker silhouetted against a fiery sunset, with dark storm clouds gathering on the horizon, symbolizing the looming threat of conflict and instability in the Gulf region.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -68,6 +68,12 @@
         "url": "https://reddit.com/r/news/comments/1s8hp4o/kuwaiti_tanker_hit_by_iranian_drone_attack_in/",
         "embed_id": "1s8hp4o",
         "title": "Kuwaiti tanker hit by Iranian drone attack in Dubai port"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/StockMarket/comments/1s8iuvp/iranus_war_latest_massive_kuwaiti_oil_tanker_off/",
+        "embed_id": "1s8iuvp",
+        "title": "Iran-US war latest: Massive Kuwaiti oil tanker off Dubai port hit as Trump issues fresh warning to Tehran"
       }
     ],
     "youtube_videos": [
@@ -122,6 +128,12 @@
         "url": "https://reddit.com/r/news/comments/1s8hp4o/kuwaiti_tanker_hit_by_iranian_drone_attack_in/",
         "embed_id": "1s8hp4o",
         "title": "Kuwaiti tanker hit by Iranian drone attack in Dubai port"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/StockMarket/comments/1s8iuvp/iranus_war_latest_massive_kuwaiti_oil_tanker_off/",
+        "embed_id": "1s8iuvp",
+        "title": "Iran-US war latest: Massive Kuwaiti oil tanker off Dubai port hit as Trump issues fresh warning to Tehran"
       }
     ],
     "image_file": "/images/breaking_2026-03-31.png"
