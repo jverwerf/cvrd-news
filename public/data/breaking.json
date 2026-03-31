@@ -1,14 +1,14 @@
 [
   {
     "topic": "Kuwaiti tanker attacked amid US-Iran tensions",
-    "summary": "A Kuwaiti oil tanker was attacked, intensifying the already strained relations between the United States and Iran. President Trump has responded with threats to target Iran's energy infrastructure, which leads to further military escalation. This incident underscores the precarious nature of US-Iran relations and the potential threat to global energy security and regional stability.",
+    "summary": "A Kuwaiti oil tanker was attacked, escalating tensions between the United States and Iran. President Trump has issued threats to target Iran's energy infrastructure in response, raising the risk of military conflict. This incident highlights the fragile state of US-Iran relations and poses a threat to global energy security and regional stability.",
     "severity": "major",
     "detected_at": "2026-03-31T07:00:07.379Z",
-    "last_updated": "2026-03-31T11:01:23.624Z",
+    "last_updated": "2026-03-31T13:00:46.068Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack, particularly how it affects the interests of other major players like China and Russia in the region. The focus remains on US-Iran tensions, ignoring how this incident shifts alliances and influence global oil markets. Additionally, the role of non-state actors in the region, who benefit from increased instability, is not being discussed.",
-    "social_summary": "Social media is buzzing with speculation about the potential for a new Middle Eastern conflict, with hashtags like #OilWar and #GulfTensions trending. Memes depicting oil barrels as ticking time bombs are circulating, while conspiracy theories suggest that the attack was a false flag operation to justify US military action against Iran. The incident has sparked debates about the US's role in the Middle East and its impact on global oil prices.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack, particularly how it affects the interests of other Gulf states and global oil markets. The focus remains on US-Iran tensions, ignoring the potential for this incident to disrupt international alliances and economic stability. Additionally, the role of non-state actors in the region, who benefit from increased chaos, is not being discussed.",
+    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users blaming Iran directly while others suggest a false flag operation to justify US military action. Memes and viral posts are mocking the escalating rhetoric between Trump and Iranian leaders, highlighting the absurdity of potential war over oil. Conspiracy theories about the involvement of other regional powers are also circulating.",
     "image_prompt": "A dramatic image of a lone oil tanker silhouetted against a fiery sunset, with dark storm clouds gathering on the horizon, symbolizing the looming threat of conflict and instability in the Gulf region.",
     "sources": [
       {
@@ -21,16 +21,22 @@
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
-        "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining &amp; attack on US troops means",
-        "duration": 1427
+        "url": "https://www.youtube.com/watch?v=9QG8InaNWJ4",
+        "embed_id": "9QG8InaNWJ4",
+        "title": "Kuwaiti Oil Tanker Struck by Iranian Drone - Tuesday, March 31, 2026"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=IqXAZ-BsvK8",
+        "embed_id": "IqXAZ-BsvK8",
+        "title": "Iran targets two Kuwaiti oil refineries in drone strikes as ship is attacked off coast of Qatar",
+        "duration": 68
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/intelslava/85657",
-        "embed_id": "intelslava/85657",
-        "title": "🇮🇷🇦🇪🇰🇼A Kuwaiti tanker was attacked in the Dubai port. Moreover, four people were injured in Dubai during an air defense operation.",
+        "url": "https://t.me/intelslava/85678",
+        "embed_id": "intelslava/85678",
+        "title": "🇮🇷🇦🇪🇰🇼The consequences of the attack on the Kuwaiti oil tanker Al-Salmi, which was anchored in the territorial waters of the UAE.",
         "author": "intelslava"
       },
       {
@@ -78,19 +84,25 @@
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
-        "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining &amp; attack on US troops means",
-        "channel": "CNN",
-        "duration": 1427
+        "url": "https://www.youtube.com/watch?v=9QG8InaNWJ4",
+        "embed_id": "9QG8InaNWJ4",
+        "title": "Kuwaiti Oil Tanker Struck by Iranian Drone - Tuesday, March 31, 2026",
+        "channel": "ABC News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IqXAZ-BsvK8",
+        "embed_id": "IqXAZ-BsvK8",
+        "title": "Iran targets two Kuwaiti oil refineries in drone strikes as ship is attacked off coast of Qatar",
+        "channel": "The Sun",
+        "duration": 68
       }
     ],
     "social_clips": [
       {
         "platform": "telegram",
-        "url": "https://t.me/intelslava/85657",
-        "embed_id": "intelslava/85657",
-        "title": "🇮🇷🇦🇪🇰🇼A Kuwaiti tanker was attacked in the Dubai port. Moreover, four people were injured in Dubai during an air defense operation.",
+        "url": "https://t.me/intelslava/85678",
+        "embed_id": "intelslava/85678",
+        "title": "🇮🇷🇦🇪🇰🇼The consequences of the attack on the Kuwaiti oil tanker Al-Salmi, which was anchored in the territorial waters of the UAE.",
         "author": "intelslava"
       },
       {
