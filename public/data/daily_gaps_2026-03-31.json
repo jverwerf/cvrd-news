@@ -1,6 +1,6 @@
 {
   "date": "2026-03-31",
-  "generated_at": "2026-03-31T15:19:18.987Z",
+  "generated_at": "2026-03-31T16:44:20.954Z",
   "top_narratives": [
     {
       "topic": "Iran War Escalation and Economic Impact",
@@ -853,22 +853,7 @@
       ],
       "is_top_story": true,
       "image_file": "/images/story_2026-03-31_1.png",
-      "onrecord_matches": [
-        {
-          "handle": "realDonaldTrump",
-          "name": "Donald J. Trump",
-          "search_keyword": "iran",
-          "matching_claims": 2,
-          "topic_score": 65
-        },
-        {
-          "handle": "marcorubio",
-          "name": "Marco Rubio",
-          "search_keyword": "iran",
-          "matching_claims": 11,
-          "topic_score": 75
-        }
-      ]
+      "onrecord_matches": []
     },
     {
       "topic": "Israel's New Death Penalty Law",
@@ -2618,22 +2603,7 @@
       ],
       "is_top_story": false,
       "image_file": "/images/story_2026-03-31_13.png",
-      "onrecord_matches": [
-        {
-          "handle": "realDonaldTrump",
-          "name": "Donald J. Trump",
-          "search_keyword": "iran",
-          "matching_claims": 2,
-          "topic_score": 65
-        },
-        {
-          "handle": "marcorubio",
-          "name": "Marco Rubio",
-          "search_keyword": "iran",
-          "matching_claims": 11,
-          "topic_score": 75
-        }
-      ]
+      "onrecord_matches": []
     },
     {
       "topic": "Trump Administration's Immigration Arrests Under Scrutiny",
