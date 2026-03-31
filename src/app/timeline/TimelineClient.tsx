@@ -104,53 +104,50 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
 
       {/* Search + Thread list */}
       <div className="px-4 md:px-8 pt-5 pb-16 max-w-5xl mx-auto">
-        {/* Search pill */}
-        <div className="flex items-center gap-2 px-4 py-2 rounded-full mb-5 max-w-sm"
-          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input
-            type="text"
-            placeholder="Search threads..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
-            style={{ background: 'transparent', border: 'none' }}
-          />
-          {search && (
-            <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
-              ×
-            </button>
-          )}
+        {/* Search + Category filters — same row */}
+        <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full shrink-0"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', minWidth: 180 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search threads..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
+              style={{ background: 'transparent', border: 'none' }}
+            />
+            {search && (
+              <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
+                ×
+              </button>
+            )}
+          </div>
+          {(() => {
+            const activeCats = new Set(threads.map(t => t.category));
+            const visibleCats = CATEGORIES.filter(c => c.value === 'all' || activeCats.has(c.value));
+            if (visibleCats.length <= 2) return null;
+            return (
+              <div className="flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+                {visibleCats.map(cat => (
+                  <button key={cat.value} onClick={() => { setFilter(cat.value); setExpandedId(null); }}
+                    className="shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-full transition-colors cursor-pointer"
+                    style={{
+                      background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#253545',
+                      color: filter === cat.value ? '#daa520' : '#999',
+                      border: `1px solid ${filter === cat.value ? 'rgba(218,165,32,0.3)' : '#2a3a4a'}`,
+                    }}>
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+            );
+          })()}
         </div>
-
-        {/* TODAY LAST YEAR — rendered outside this container */}
 
         <div className="space-y-4">
-
-        {/* CATEGORY FILTER — only show categories that have threads */}
-        {(() => {
-          const activeCats = new Set(threads.map(t => t.category));
-          const visibleCats = CATEGORIES.filter(c => c.value === 'all' || activeCats.has(c.value));
-          // Don't show filter at all if only 1 category
-          if (visibleCats.length <= 2) return null;
-          return (
-        <div className="flex items-center gap-2 mt-4 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-          {visibleCats.map(cat => (
-            <button key={cat.value} onClick={() => { setFilter(cat.value); setExpandedId(null); }}
-              className="shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-full transition-colors cursor-pointer"
-              style={{
-                background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#253545',
-                color: filter === cat.value ? '#daa520' : '#999',
-                border: `1px solid ${filter === cat.value ? 'rgba(218,165,32,0.3)' : '#2a3a4a'}`,
-              }}>
-              {cat.label}
-            </button>
-          ))}
-        </div>
-          );
-        })()}
         <div style={{ maxHeight: '80vh', overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
         {filtered.map(thread => (
           <ThreadCard
