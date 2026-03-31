@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Warns of Strikes on US Firms",
-    "summary": "Iran has threatened to target US firms in response to a series of explosions in Tehran, marking a significant escalation in US-Iran tensions. The explosions have heightened fears of further military actions and have drawn international concern over the potential for increased conflict. Various stakeholders are closely monitoring the situation as it unfolds.",
+    "summary": "Iran has issued a warning that it will target US firms in retaliation for a series of explosions in Tehran, which Iran attributes to US and Israeli actions. This development marks a significant escalation in the already tense relations between the US and Iran. The international community is concerned about the potential for further military conflict as the situation continues to develop.",
     "severity": "critical",
     "detected_at": "2026-03-31T17:00:06.517Z",
-    "last_updated": "2026-03-31T19:01:11.704Z",
+    "last_updated": "2026-03-31T21:00:42.901Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a direct consequence of Iran's aggressive posturing and its ongoing support for terrorism. They emphasize the need for a strong US response to deter further Iranian threats and highlight Iran's history of targeting American interests. The narrative suggests that Iran's threats are a desperate attempt to shift focus from its internal issues.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind Iran's threats, particularly how US sanctions have crippled Iran's economy, leading to increased desperation. Additionally, the geopolitical implications of Iran's alliances with other regional powers, such as Russia and China, are not being thoroughly examined. These alliances influence Iran's strategic decisions and the broader regional power dynamics.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing support for a strong US military response, while others criticize the US for escalating tensions. Memes and conspiracy theories are circulating, suggesting that the explosions were a false flag operation to justify military action against Iran. Hashtags like #IranConflict and #USImperialism are trending.",
-    "image_prompt": "A dramatic editorial photo of a chessboard with pieces representing the US and Iran, set against a backdrop of a stormy sky, symbolizing the strategic and volatile nature of the conflict.",
+    "right_narrative": "Right-leaning media is framing this as a consequence of Iran's aggressive posturing and its inability to maintain internal security. They emphasize Iran's threats as a sign of desperation and weakness, highlighting the country's economic struggles and internal dissent. The narrative suggests that Iran's threats are more bluster than a credible military strategy, pointing to the country's 'war-torn' state as a limiting factor in its ability to respond effectively.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions. The US and Iran are both under significant economic pressures, with sanctions impacting Iran's economy and the US facing its own fiscal challenges. This conflict serves as a distraction from domestic issues in both countries, and the military-industrial complex benefits from the continued tension. Additionally, the role of regional allies and their influence on US and Iranian actions is not being fully explored.",
+    "social_summary": "Social media is buzzing with conspiracy theories about the true instigators of the explosions, with some users suggesting false flag operations by various governments. Memes mocking the escalation and the perceived incompetence of political leaders are circulating widely. There is also a significant amount of skepticism about the official narratives from both the US and Iranian governments.",
+    "image_prompt": "A dramatic editorial photo of a chessboard with pieces representing the US and Iran, set against a backdrop of a smoldering cityscape, symbolizing the strategic and destructive nature of the conflict.",
     "sources": [
       {
         "name": "Fox News",
@@ -22,6 +22,12 @@
         "url": "https://www.aljazeera.com/news/2026/3/31/cancer-drug-facility-religious-site-hit-in-israeli-us-strikes-on-iran?traffic_source=rss",
         "lean": "center",
         "title": "Cancer drug facility, religious site hit in Israeli-US strikes on Iran"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/3/31/no-truth-to-us-iranian-negotiations-irans-fm-tells-al-jazeera?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran’s FM confirms contact with US envoy Witkoff, denies talks under way"
       }
     ],
     "clips": [
@@ -31,13 +37,6 @@
         "embed_id": "SKWJJyHAU20",
         "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
         "duration": 358
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=vPrOJ7d-7Mg",
-        "embed_id": "vPrOJ7d-7Mg",
-        "title": "Iran to Attack US Tech Companies? Apple, Google, Microsoft on Target List",
-        "duration": 187
       },
       {
         "platform": "telegram",
@@ -99,6 +98,82 @@
         "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s8o06y/deal_or_face_intensity_us_secretary_of_war_pete/",
         "embed_id": "1s8o06y",
         "title": "‘Deal or face intensity.’ US Secretary of War Pete Hegseth issues a stark warning to Iran, saying President Donald Trump ‘doesn’t bluff’ and will esca"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1s8seaj/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s8seaj",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbets/comments/1s8rd3v/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8rd3v",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
+        "embed_id": "1s883ul",
+        "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85688",
+        "embed_id": "intelslava/85688",
+        "title": "🇮🇷🇷🇺🇺🇦Information has emerged about the deceased senior lieutenant of the Armed Forces of Ukraine, Anatoliy Onishchuk, who was engaged in \"train",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85691",
+        "embed_id": "intelslava/85691",
+        "title": "🇮🇱🇮🇷Israeli missile strikes on the Iranian ZU-23-2, located on the roof of a high-rise building in Tehran.\n\nAt the end, two people, possibly anti-",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/hHN8_ExW7SQ4b_nmqx7-YDqt8HvRv9yEgJd8oZXxGcfFUM9RsGM-2gWQ2fXNfO-IyuJn1n2NCkXSA7nwUV7cRYKO-0bC-lYm2pMXC2F1a-HT8uPmiEphpA10JclNh1FyjyTpCOeqsjF_TjKNosBE_3EbWlxBKPFPkWhjR3_JcLnBa5XIbDQNvxkiG7mPSE_5Muatid1D_LOmvw3Ktso1ofmX515GYBQTSOWdujmKPQkE1HEXlVSVhEUhIPruxOxBIrM_0gxukm1Bf4sBAD66tvzg6cHmv9YkEa_-Mdp3-_NpZkuwWMoJOV569cWv5mbehrO6TxPgM4iuTlXK03Gs3g'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/cointelegraph/68673",
+        "embed_id": "cointelegraph/68673",
+        "title": "🗞 Catch up on the news over the last 24 hours&#33;\n\n🚨 Over &#036;195M liquidated in the past hour as Bitcoin fell below &#036;65K.\n\n🚨 US government",
+        "author": "cointelegraph"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16256",
+        "embed_id": "France24_en/16256",
+        "title": "Zelensky hails 'historic' defence agreements with Gulf states\nUkrainian President Volodymyr Zelensky on Monday said he signed \"historic\" agreements wi",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16262",
+        "embed_id": "France24_en/16262",
+        "title": "Trump threatens to destroy Iran’s Kharg Island oil hub if no deal reached\nUS President Donald Trump on Monday threatened to destroy Iran’s key oil exp",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16271",
+        "embed_id": "France24_en/16271",
+        "title": "How Trump’s dream of seizing enriched uranium from Iran could end in catastrophe\nUS President Donald Trump is reportedly considering a military missio",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43056",
+        "embed_id": "warmonitors/43056",
+        "title": "War Monitor pinned «❌ BREAKING  Iranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is",
+        "author": "warmonitors"
       }
     ],
     "youtube_videos": [
@@ -108,13 +183,6 @@
         "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
         "channel": "APT",
         "duration": 358
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=vPrOJ7d-7Mg",
-        "embed_id": "vPrOJ7d-7Mg",
-        "title": "Iran to Attack US Tech Companies? Apple, Google, Microsoft on Target List",
-        "channel": "The Free Press Journal",
-        "duration": 187
       }
     ],
     "social_clips": [
@@ -178,21 +246,97 @@
         "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s8o06y/deal_or_face_intensity_us_secretary_of_war_pete/",
         "embed_id": "1s8o06y",
         "title": "‘Deal or face intensity.’ US Secretary of War Pete Hegseth issues a stark warning to Iran, saying President Donald Trump ‘doesn’t bluff’ and will esca"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1s8seaj/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s8seaj",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbets/comments/1s8rd3v/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8rd3v",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
+        "embed_id": "1s883ul",
+        "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85688",
+        "embed_id": "intelslava/85688",
+        "title": "🇮🇷🇷🇺🇺🇦Information has emerged about the deceased senior lieutenant of the Armed Forces of Ukraine, Anatoliy Onishchuk, who was engaged in \"train",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85691",
+        "embed_id": "intelslava/85691",
+        "title": "🇮🇱🇮🇷Israeli missile strikes on the Iranian ZU-23-2, located on the roof of a high-rise building in Tehran.\n\nAt the end, two people, possibly anti-",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/hHN8_ExW7SQ4b_nmqx7-YDqt8HvRv9yEgJd8oZXxGcfFUM9RsGM-2gWQ2fXNfO-IyuJn1n2NCkXSA7nwUV7cRYKO-0bC-lYm2pMXC2F1a-HT8uPmiEphpA10JclNh1FyjyTpCOeqsjF_TjKNosBE_3EbWlxBKPFPkWhjR3_JcLnBa5XIbDQNvxkiG7mPSE_5Muatid1D_LOmvw3Ktso1ofmX515GYBQTSOWdujmKPQkE1HEXlVSVhEUhIPruxOxBIrM_0gxukm1Bf4sBAD66tvzg6cHmv9YkEa_-Mdp3-_NpZkuwWMoJOV569cWv5mbehrO6TxPgM4iuTlXK03Gs3g'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/cointelegraph/68673",
+        "embed_id": "cointelegraph/68673",
+        "title": "🗞 Catch up on the news over the last 24 hours&#33;\n\n🚨 Over &#036;195M liquidated in the past hour as Bitcoin fell below &#036;65K.\n\n🚨 US government",
+        "author": "cointelegraph"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16256",
+        "embed_id": "France24_en/16256",
+        "title": "Zelensky hails 'historic' defence agreements with Gulf states\nUkrainian President Volodymyr Zelensky on Monday said he signed \"historic\" agreements wi",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16262",
+        "embed_id": "France24_en/16262",
+        "title": "Trump threatens to destroy Iran’s Kharg Island oil hub if no deal reached\nUS President Donald Trump on Monday threatened to destroy Iran’s key oil exp",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16271",
+        "embed_id": "France24_en/16271",
+        "title": "How Trump’s dream of seizing enriched uranium from Iran could end in catastrophe\nUS President Donald Trump is reportedly considering a military missio",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43056",
+        "embed_id": "warmonitors/43056",
+        "title": "War Monitor pinned «❌ BREAKING  Iranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is",
+        "author": "warmonitors"
       }
     ],
     "image_file": "/images/breaking_2026-03-31.png"
   },
   {
     "topic": "U.S. Strikes Iranian Nuclear Site",
-    "summary": "The United States conducted airstrikes on a city in Iran housing a nuclear facility, escalating tensions in the Middle East. President Trump has called on allied nations to assist in securing the Strait of Hormuz, a vital passage for global oil transport. The international community is worried about the possibility of this leading to a wider conflict.",
+    "summary": "The United States launched airstrikes on a city in Iran that contains a nuclear facility, significantly heightening tensions in the Middle East. President Trump has urged allied nations to help secure the Strait of Hormuz, a crucial channel for global oil shipments. The international community is expressing concern over the potential for this action to spark a broader conflict in the region.",
     "severity": "critical",
     "detected_at": "2026-03-31T15:00:08.549Z",
-    "last_updated": "2026-03-31T19:01:54.062Z",
+    "last_updated": "2026-03-31T21:01:22.618Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind the strike, particularly how control over oil routes like the Strait of Hormuz impacts global markets and U.S. economic interests. Additionally, the geopolitical implications of such a strike on U.S.-Iran relations and the broader Middle East power dynamics are not being fully explored.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for the U.S. action as a necessary step against nuclear proliferation, while others decry it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives tied to oil interests and political distractions from domestic issues.",
-    "image_prompt": "A dramatic editorial photo of a stormy sea with a narrow strait, symbolizing the Strait of Hormuz, with shadowy figures representing global powers looming in the background, highlighting the tension and geopolitical stakes.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind the strike, particularly how control over oil routes like the Strait of Hormuz impacts global markets and U.S. economic interests. Additionally, the geopolitical implications of such a strike on U.S.-Iran relations and the balance of power in the Middle East are being downplayed. The focus remains on immediate military actions rather than long-term strategic consequences.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the strike as a necessary action against a nuclear threat, while others condemn it as reckless warmongering. Memes and hashtags like #WWIII and #OilWars are trending, reflecting both fear and satire. Conspiracy theories about ulterior motives, such as controlling oil prices or distracting from domestic issues, are also circulating widely.",
+    "image_prompt": "A dramatic editorial photo of a stormy sea with oil tankers navigating through turbulent waters, symbolizing the geopolitical tensions and economic stakes in the Strait of Hormuz.",
     "sources": [],
     "clips": [
       {
@@ -251,6 +395,13 @@
         "duration": 222
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-NaNU9FTSnM",
+        "embed_id": "-NaNU9FTSnM",
+        "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
+        "duration": 38
+      },
+      {
         "platform": "x",
         "url": "https://x.com/NBCNews/status/1936577105510142145",
         "embed_id": "1936577105510142145",
@@ -307,6 +458,12 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s8qifp/irans_strike_wounded_over_a_dozen_us_personnel/",
         "embed_id": "1s8qifp",
         "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s8nl0n/why_i_remain_an_sp_bear_after_this_mornings/",
+        "embed_id": "1s8nl0n",
+        "title": "Why I remain an S&amp;P BEAR after this morning's Department of Defense press briefing"
       }
     ],
     "youtube_videos": [
@@ -364,6 +521,13 @@
         "title": "US strikes Iran amid nuclear program tensions, NYPD boosts NYC patrols",
         "channel": "FOX 5 New York",
         "duration": 222
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=-NaNU9FTSnM",
+        "embed_id": "-NaNU9FTSnM",
+        "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
+        "channel": "WTHR",
+        "duration": 38
       }
     ],
     "social_clips": [
@@ -424,157 +588,12 @@
         "url": "https://reddit.com/r/LessCredibleDefence/comments/1s8qifp/irans_strike_wounded_over_a_dozen_us_personnel/",
         "embed_id": "1s8qifp",
         "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-31.png"
-  },
-  {
-    "topic": "Kuwaiti tanker attacked amid US-Iran tensions",
-    "summary": "A Kuwaiti oil tanker was attacked, intensifying the already strained relations between the United States and Iran. President Trump has responded with threats to target Iran's energy infrastructure, which increases the possibility of military conflict. This incident underscores the precarious nature of US-Iran relations and threatens both global energy security and regional stability.",
-    "severity": "major",
-    "detected_at": "2026-03-31T07:00:07.379Z",
-    "last_updated": "2026-03-31T19:02:49.578Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack, particularly how it affects the interests of other major powers like China and Russia in the region. The focus remains on US-Iran dynamics, ignoring how this incident shifts alliances and influence global energy markets. Additionally, the economic motivations behind the attack, such as potential benefits for oil prices, are not being explored.",
-    "social_summary": "Social media is buzzing with speculation about the attack being a false flag operation to justify US military action against Iran. Memes are circulating that mock the predictability of escalating tensions in the Gulf region. Conspiracy theories suggest that the attack is a distraction from domestic issues in the US.",
-    "image_prompt": "A dramatic image of a lone oil tanker silhouetted against a fiery sunset, with dark storm clouds gathering on the horizon, symbolizing the looming threat of conflict and instability.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/31/drone-attack-sparks-fire-on-kuwaiti-tanker-in-uae-amid-irans-gulf-attacks?traffic_source=rss",
-        "lean": "center",
-        "title": "Drone attack sparks fire on Kuwaiti tanker in UAE amid Iran’s Gulf attacks"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=9QG8InaNWJ4",
-        "embed_id": "9QG8InaNWJ4",
-        "title": "Kuwaiti Oil Tanker Struck by Iranian Drone - Tuesday, March 31, 2026"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=M9gZ7AAoCxg",
-        "embed_id": "M9gZ7AAoCxg",
-        "title": "US-Iran War: Tanker Explosion Off Kuwait Coast Triggers Massive Oil Spill Amid Gulf Tensions | WION",
-        "duration": 203
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85678",
-        "embed_id": "intelslava/85678",
-        "title": "🇮🇷🇦🇪🇰🇼The consequences of the attack on the Kuwaiti oil tanker Al-Salmi, which was anchored in the territorial waters of the UAE.",
-        "author": "intelslava"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s7rddp/spain_has_barred_us_planes_and_denied_access_to/",
-        "embed_id": "1s7rddp",
-        "title": "Spain has barred US planes and denied access to military bases for Iran strikes, escalating tensions with Washington. Prime Minister Pedro Sánchez cri"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1s7k3bs/israeli_prime_minister_benjamin_netanyahu_says_in/",
-        "embed_id": "1s7k3bs",
-        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/navy/comments/1s7sqpr/swo6_oped_attacking_desalination_plants_is_a_war/",
-        "embed_id": "1s7sqpr",
-        "title": "SWO6 OP-ED: Attacking desalination plants is a war crime. Admirals and Commanding Officers, if asked to do so, you must refuse to carry out this unlaw"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s88122/gaint_kuwaiti_oil_tanker_attacked_in_uae/",
-        "embed_id": "1s88122",
-        "title": "Gaint Kuwaiti Oil tanker attacked in UAE"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/internationalpolitics/comments/1s80aq6/israeli_prime_minister_benjamin_netanyahu_says_in/",
-        "embed_id": "1s80aq6",
-        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1s8hp4o/kuwaiti_tanker_hit_by_iranian_drone_attack_in/",
-        "embed_id": "1s8hp4o",
-        "title": "Kuwaiti tanker hit by Iranian drone attack in Dubai port"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1s8iuvp/iranus_war_latest_massive_kuwaiti_oil_tanker_off/",
-        "embed_id": "1s8iuvp",
-        "title": "Iran-US war latest: Massive Kuwaiti oil tanker off Dubai port hit as Trump issues fresh warning to Tehran"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=9QG8InaNWJ4",
-        "embed_id": "9QG8InaNWJ4",
-        "title": "Kuwaiti Oil Tanker Struck by Iranian Drone - Tuesday, March 31, 2026",
-        "channel": "ABC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=M9gZ7AAoCxg",
-        "embed_id": "M9gZ7AAoCxg",
-        "title": "US-Iran War: Tanker Explosion Off Kuwait Coast Triggers Massive Oil Spill Amid Gulf Tensions | WION",
-        "channel": "WION",
-        "duration": 203
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85678",
-        "embed_id": "intelslava/85678",
-        "title": "🇮🇷🇦🇪🇰🇼The consequences of the attack on the Kuwaiti oil tanker Al-Salmi, which was anchored in the territorial waters of the UAE.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s7rddp/spain_has_barred_us_planes_and_denied_access_to/",
-        "embed_id": "1s7rddp",
-        "title": "Spain has barred US planes and denied access to military bases for Iran strikes, escalating tensions with Washington. Prime Minister Pedro Sánchez cri"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1s7k3bs/israeli_prime_minister_benjamin_netanyahu_says_in/",
-        "embed_id": "1s7k3bs",
-        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/navy/comments/1s7sqpr/swo6_oped_attacking_desalination_plants_is_a_war/",
-        "embed_id": "1s7sqpr",
-        "title": "SWO6 OP-ED: Attacking desalination plants is a war crime. Admirals and Commanding Officers, if asked to do so, you must refuse to carry out this unlaw"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1s88122/gaint_kuwaiti_oil_tanker_attacked_in_uae/",
-        "embed_id": "1s88122",
-        "title": "Gaint Kuwaiti Oil tanker attacked in UAE"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/internationalpolitics/comments/1s80aq6/israeli_prime_minister_benjamin_netanyahu_says_in/",
-        "embed_id": "1s80aq6",
-        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1s8hp4o/kuwaiti_tanker_hit_by_iranian_drone_attack_in/",
-        "embed_id": "1s8hp4o",
-        "title": "Kuwaiti tanker hit by Iranian drone attack in Dubai port"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1s8iuvp/iranus_war_latest_massive_kuwaiti_oil_tanker_off/",
-        "embed_id": "1s8iuvp",
-        "title": "Iran-US war latest: Massive Kuwaiti oil tanker off Dubai port hit as Trump issues fresh warning to Tehran"
+        "url": "https://reddit.com/r/stocks/comments/1s8nl0n/why_i_remain_an_sp_bear_after_this_mornings/",
+        "embed_id": "1s8nl0n",
+        "title": "Why I remain an S&amp;P BEAR after this morning's Department of Defense press briefing"
       }
     ],
     "image_file": "/images/breaking_2026-03-31.png"
