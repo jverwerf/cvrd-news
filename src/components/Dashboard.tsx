@@ -414,7 +414,7 @@ export function Dashboard({
 
   return (
     <section style={{ background: '#1e2a3a', height: tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
-      <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
+      <div className="h-full grid grid-cols-4 gap-1" style={{ gridTemplateRows: '1fr 2fr 1fr' }}>
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
