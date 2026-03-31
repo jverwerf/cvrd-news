@@ -103,7 +103,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
       </div>
 
       {/* Search + Thread list */}
-      <div className="px-4 md:px-8 pt-5 pb-16 max-w-5xl mx-auto">
+      <div className="px-4 md:px-8 pt-5 pb-4 max-w-5xl mx-auto">
         {/* Search + Category filters — same row */}
         <div className="flex items-center gap-3 mb-5">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full shrink-0"
@@ -289,7 +289,7 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
         <div className="flex">
           {/* Large image — hide when expanded */}
           {!isExpanded && (thread.image_file || latestEntry?.image_file) && (
-            <div className="w-28 md:w-40 shrink-0 overflow-hidden" style={{
+            <div className="w-36 md:w-48 shrink-0 overflow-hidden" style={{
               backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
