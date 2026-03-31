@@ -1,6 +1,6 @@
 {
   "date": "2026-03-31",
-  "generated_at": "2026-03-31T17:59:08.489Z",
+  "generated_at": "2026-03-31T19:39:03.354Z",
   "top_narratives": [
     {
       "topic": "Iran War Escalation and Economic Impact",
@@ -853,7 +853,22 @@
       ],
       "is_top_story": true,
       "image_file": "/images/story_2026-03-31_1.png",
-      "onrecord_matches": []
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Israel's New Death Penalty Law",
@@ -1429,7 +1444,22 @@
       ],
       "is_top_story": true,
       "image_file": "/images/story_2026-03-31_4.png",
-      "onrecord_matches": []
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Humanitarian Crisis in Sudan",
