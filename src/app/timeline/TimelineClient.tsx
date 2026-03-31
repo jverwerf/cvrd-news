@@ -148,7 +148,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         </div>
 
         <div className="space-y-4">
-        <div style={{ maxHeight: 440, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
+        <div style={{ maxHeight: 340, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
         {filtered.map(thread => (
           <ThreadCard
             key={thread.id}
@@ -289,31 +289,31 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
         <div className="flex">
           {/* Large image — hide when expanded */}
           {!isExpanded && (thread.image_file || latestEntry?.image_file) && (
-            <div className="w-40 md:w-56 shrink-0 overflow-hidden" style={{
+            <div className="w-28 md:w-40 shrink-0 overflow-hidden" style={{
               backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              minHeight: 130,
+              minHeight: 90,
             }} />
           )}
 
           {/* Content */}
-          <div className="flex-1 px-5 py-4 flex flex-col justify-center min-w-0">
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>
+          <div className="flex-1 px-4 py-3 flex flex-col justify-center min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>
                 {thread.category}
               </span>
-              <span className="text-[10px] text-[#666]">
+              <span className="text-[9px] text-[#666]">
                 {formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}
               </span>
             </div>
 
-            <h2 className="text-[20px] md:text-[24px] text-white leading-tight tracking-[-0.02em] mb-2 group-hover:text-[#daa520] transition-colors" style={serif}>
+            <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
               {thread.title}
             </h2>
 
             {!isExpanded && (
-              <p className="text-[12px] text-[#888] leading-[1.6] line-clamp-2">
+              <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">
                 {thread.summary}
               </p>
             )}
