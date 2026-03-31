@@ -151,7 +151,8 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         </div>
           );
         })()}
-        {filtered.slice(0, 4).map(thread => (
+        <div style={{ maxHeight: '80vh', overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
+        {filtered.map(thread => (
           <ThreadCard
             key={thread.id}
             thread={thread}
@@ -160,6 +161,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
             onHover={() => setExpandedId(thread.id)}
           />
         ))}
+        </div>
 
         {filtered.length === 0 && (
           <div className="text-center py-16">
