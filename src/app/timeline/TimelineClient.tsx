@@ -72,7 +72,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
       <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-          {recentThreads.slice(0, 8).map((t, i) => (
+          {recentThreads.slice(0, 10).map((t, i) => (
             <button key={t.id} onClick={() => setExpandedId(expandedId === t.id ? null : t.id)}
               className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -775,7 +775,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                     return (
                       <div key={date} data-date={date} className="flex flex-col items-center" style={{ width: thumbW }}>
                         {/* Top: even=topic, odd=date+dot */}
-                        <div className="text-center overflow-hidden" style={{ height: 22, marginBottom: 2 }}>
+                        <div className="text-center overflow-hidden flex flex-col justify-end" style={{ height: 22, marginBottom: 2 }}>
                           {isEven ? (
                             <p className="text-[7px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
                           ) : (
@@ -793,9 +793,9 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                             height: 70,
                             border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)',
                             opacity: isSelected ? 1 : 0.7,
-                            transform: isSelected ? 'scale(1.18)' : 'scale(1)',
-                            boxShadow: isSelected ? '0 4px 16px rgba(218,165,32,0.4)' : 'none',
-                            zIndex: isSelected ? 5 : 1,
+                            transform: 'scale(1)',
+                            boxShadow: isSelected ? '0 2px 8px rgba(218,165,32,0.4)' : 'none',
+                            zIndex: 1,
                             position: 'relative',
                             transition: 'all 0.25s ease',
                           }}>

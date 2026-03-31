@@ -31,6 +31,7 @@ export type TimelineThread = {
   title: string;
   category: string;
   summary: string;
+  image_file?: string;
   entries: ThreadEntry[];
   gap_days: GapDay[];
   first_seen: string;
