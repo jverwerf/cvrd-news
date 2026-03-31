@@ -1,5 +1,103 @@
 [
   {
+    "topic": "U.S. Strikes Iranian Nuclear Site",
+    "summary": "The United States has launched airstrikes targeting a city in Iran that contains a nuclear facility, significantly heightening tensions in the Middle East. This military action has prompted President Trump to urge allied nations to help secure the Strait of Hormuz, a critical chokepoint for global oil shipments. The move has sparked international concern over potential escalation into broader conflict.",
+    "severity": "critical",
+    "detected_at": "2026-03-31T15:00:08.549Z",
+    "last_updated": "2026-03-31T15:00:08.549Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential economic motivations behind the strike, particularly how control over the Strait of Hormuz impacts global oil markets and benefit U.S. energy interests. Additionally, the timing of the strike raises questions about its connection to domestic political pressures facing the Trump administration, which are not being openly discussed.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the strike as a necessary action against a nuclear threat, while others condemn it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives tied to oil interests and political distractions from domestic issues.",
+    "image_prompt": "A dramatic editorial photo of a stormy sea with a narrow passageway, symbolizing the Strait of Hormuz, under a darkened sky with distant flashes of light, representing the airstrikes. The scene conveys tension and uncertainty, with no visible human presence.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=khJ2jEmt4zU",
+        "embed_id": "khJ2jEmt4zU",
+        "title": "Videos show explosions and fire in an Iranian city as strikes continue"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/NBCNews/status/1936577105510142145",
+        "embed_id": "1936577105510142145",
+        "title": "BREAKING: U.S. conducted strikes on multiple nuclear sites in Iran, President Trump announces in a social media post.  https://t.co/4t6W8ZuVHC",
+        "author": "NBCNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/1936576670103920786",
+        "embed_id": "1936576670103920786",
+        "title": "🚨🇺🇸🇮🇷 BREAKING: U.S. STRIKES IRANIAN NUCLEAR SITES\n\n\"We have completed our very successful attack on the three Nuclear sites in Iran, including F",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30421",
+        "embed_id": "Newsmax/30421",
+        "title": "U.S. strikes hit a city Tuesday that is home to one of Iran's main nuclear sites, sending a massive fireball into the sky, and Tehran attacked a fully",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/geopolitics/comments/1s88nlo/irans_strike_wounded_over_a_dozen_us_personnel/",
+        "embed_id": "1s88nlo",
+        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskSocialists/comments/1s8dtfj/if_the_us_government_wants_its_universities_in/",
+        "embed_id": "1s8dtfj",
+        "title": "\"If the U.S. government wants its universities in the region spared, it should condemn the bombardment of (Iranian) universities by 12 o'clock Monday,"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=khJ2jEmt4zU",
+        "embed_id": "khJ2jEmt4zU",
+        "title": "Videos show explosions and fire in an Iranian city as strikes continue",
+        "channel": "NBC News"
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/NBCNews/status/1936577105510142145",
+        "embed_id": "1936577105510142145",
+        "title": "BREAKING: U.S. conducted strikes on multiple nuclear sites in Iran, President Trump announces in a social media post.  https://t.co/4t6W8ZuVHC",
+        "author": "NBCNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/1936576670103920786",
+        "embed_id": "1936576670103920786",
+        "title": "🚨🇺🇸🇮🇷 BREAKING: U.S. STRIKES IRANIAN NUCLEAR SITES\n\n\"We have completed our very successful attack on the three Nuclear sites in Iran, including F",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30421",
+        "embed_id": "Newsmax/30421",
+        "title": "U.S. strikes hit a city Tuesday that is home to one of Iran's main nuclear sites, sending a massive fireball into the sky, and Tehran attacked a fully",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/geopolitics/comments/1s88nlo/irans_strike_wounded_over_a_dozen_us_personnel/",
+        "embed_id": "1s88nlo",
+        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskSocialists/comments/1s8dtfj/if_the_us_government_wants_its_universities_in/",
+        "embed_id": "1s8dtfj",
+        "title": "\"If the U.S. government wants its universities in the region spared, it should condemn the bombardment of (Iranian) universities by 12 o'clock Monday,"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-31.png"
+  },
+  {
     "topic": "Kuwaiti tanker attacked amid US-Iran tensions",
     "summary": "A Kuwaiti oil tanker was attacked, escalating tensions between the United States and Iran. President Trump has issued threats to target Iran's energy infrastructure in response, raising the risk of military conflict. This incident highlights the fragile state of US-Iran relations and poses a threat to global energy security and regional stability.",
     "severity": "major",
