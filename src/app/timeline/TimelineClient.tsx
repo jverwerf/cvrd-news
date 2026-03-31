@@ -148,7 +148,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         </div>
 
         <div className="space-y-4">
-        <div style={{ maxHeight: '80vh', overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
+        <div style={{ maxHeight: 440, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
         {filtered.map(thread => (
           <ThreadCard
             key={thread.id}
