@@ -1,5 +1,182 @@
 [
   {
+    "topic": "Iran Warns of Strikes on US Firms",
+    "summary": "Iran has issued warnings of potential strikes on US firms following a series of explosions in Tehran. This development signifies a notable escalation in the ongoing tensions between the United States and Iran, with fears of further military actions looming. The situation has drawn international attention, with various stakeholders expressing concern over the potential for increased conflict.",
+    "severity": "critical",
+    "detected_at": "2026-03-31T17:00:06.517Z",
+    "last_updated": "2026-03-31T17:00:06.517Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Right-leaning media is framing this as a direct consequence of Iran's aggressive posturing and its inability to manage internal security. They emphasize Iran's threats as a desperate attempt to deflect from its internal issues and portray the US as justified in its defensive measures. The narrative suggests that Iran's actions are reckless and endanger global stability.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly how sanctions and economic pressures are influencing Iran's aggressive stance. Additionally, the geopolitical implications of Iran's alliances with other regional powers and how these relationships be influencing its current strategy are largely ignored. The focus remains on immediate military threats rather than the underlying economic and political drivers.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for Iran's stance against perceived US imperialism, while others criticize Iran's government for endangering its citizens. Memes and conspiracy theories abound, suggesting hidden agendas and questioning the timing of the blasts in Tehran. The discourse is highly charged, reflecting deep-seated divisions.",
+    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with ominous storm clouds gathering overhead, symbolizing the brewing conflict and tension between nations.",
+    "sources": [
+      {
+        "name": "Fox News",
+        "url": "https://www.foxnews.com/media/pakistan-ambassador-warns-iran-too-war-torn-respond-quickly-trump-extends-strike-deadline",
+        "lean": "right",
+        "title": "Pakistan&apos;s ambassador warns Iran too &apos;war-torn&apos; to respond quickly as Trump extends strike deadline"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/3/31/cancer-drug-facility-religious-site-hit-in-israeli-us-strikes-on-iran?traffic_source=rss",
+        "lean": "center",
+        "title": "Cancer drug facility, religious site hit in Israeli-US strikes on Iran"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=SKWJJyHAU20",
+        "embed_id": "SKWJJyHAU20",
+        "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
+        "duration": 358
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=M4UtKeVcj1I",
+        "embed_id": "M4UtKeVcj1I",
+        "title": "Iran warns U S  ground invasion would see troops “set on fire”, state media reports",
+        "duration": 158
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85670",
+        "embed_id": "intelslava/85670",
+        "title": "🇺🇸🇮🇷The US carried out a strike on a major Iranian ammunition depot in Isfahan at night using 2,000-pound bunker-busting bombs.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/i5dW8ypwnIjkypdUpsHZJqrzkpsyMjDBCBzCLFYbX0Nctzd3KGlJnNEPsUE2AXjP38d6UrRjfHY9X2fbeLdNs-M0tTgR2blcOgdBCz-21W5d5wMHR2o94_ETJNF878r-PS_MCKDED8Wie5-3hnzFQZfE0t80VWw21Ux6xk0m-eXZjr2I9YDJYB-W10qpueubciuwCLE1dCLiw-MX-IhyJ_t-sWOlxkC4FdupdsXsOVp7aGgl9Imkles8mmCVUi29t9lLjz5kMDJtMe2Ev330cEUjqGBUC9rBdcpIS37yAcQEJCwlzXLj5vuf_75oVL5FATkzVAgx7XOqXNL2aBiTZg'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85684",
+        "embed_id": "intelslava/85684",
+        "title": "🇮🇷🇺🇸❗️The IRGC threatened to strike at the facilities of American IT companies in the region, including Intel and Microsoft, in the event of conti",
+        "author": "intelslava"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s8r2x9/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8r2x9",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/investing/comments/1s8r1lr/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8r1lr",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ecommerce/comments/1s80vf7/ecommerce_industry_news_recap_week_of_march_30th/",
+        "embed_id": "1s80vf7",
+        "title": "E-commerce Industry News Recap 🔥 Week of March 30th, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/fakehistoryporn/comments/1s8ifip/us_president_benjamin_netanyahu_pictured_here_at/",
+        "embed_id": "1s8ifip",
+        "title": "US President Benjamin Netanyahu, pictured here at the UN General Assembly, warns the world that Iran is approximately 14 minutes away from developing "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Hasan_Piker/comments/1s822h6/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s822h6",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BadHasbara/comments/1s7xmtt/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s7xmtt",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStockMarket/comments/1s8rhxn/breaking_irans_irgc_warns_18_major_us_tech_firms/",
+        "embed_id": "1s8rhxn",
+        "title": "BREAKING: 🇮🇷 Iran’s IRGC warns 18 major US tech firms will be treated as “legitimate targets” from April 1"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=SKWJJyHAU20",
+        "embed_id": "SKWJJyHAU20",
+        "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
+        "channel": "APT",
+        "duration": 358
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=M4UtKeVcj1I",
+        "embed_id": "M4UtKeVcj1I",
+        "title": "Iran warns U S  ground invasion would see troops “set on fire”, state media reports",
+        "channel": "NBC Montana",
+        "duration": 158
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85670",
+        "embed_id": "intelslava/85670",
+        "title": "🇺🇸🇮🇷The US carried out a strike on a major Iranian ammunition depot in Isfahan at night using 2,000-pound bunker-busting bombs.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/i5dW8ypwnIjkypdUpsHZJqrzkpsyMjDBCBzCLFYbX0Nctzd3KGlJnNEPsUE2AXjP38d6UrRjfHY9X2fbeLdNs-M0tTgR2blcOgdBCz-21W5d5wMHR2o94_ETJNF878r-PS_MCKDED8Wie5-3hnzFQZfE0t80VWw21Ux6xk0m-eXZjr2I9YDJYB-W10qpueubciuwCLE1dCLiw-MX-IhyJ_t-sWOlxkC4FdupdsXsOVp7aGgl9Imkles8mmCVUi29t9lLjz5kMDJtMe2Ev330cEUjqGBUC9rBdcpIS37yAcQEJCwlzXLj5vuf_75oVL5FATkzVAgx7XOqXNL2aBiTZg'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85684",
+        "embed_id": "intelslava/85684",
+        "title": "🇮🇷🇺🇸❗️The IRGC threatened to strike at the facilities of American IT companies in the region, including Intel and Microsoft, in the event of conti",
+        "author": "intelslava"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/stocks/comments/1s8r2x9/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8r2x9",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/investing/comments/1s8r1lr/irgc_threatens_strikes_on_us_tech_giants_across/",
+        "embed_id": "1s8r1lr",
+        "title": "IRGC threatens strikes on US tech giants across the Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ecommerce/comments/1s80vf7/ecommerce_industry_news_recap_week_of_march_30th/",
+        "embed_id": "1s80vf7",
+        "title": "E-commerce Industry News Recap 🔥 Week of March 30th, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/fakehistoryporn/comments/1s8ifip/us_president_benjamin_netanyahu_pictured_here_at/",
+        "embed_id": "1s8ifip",
+        "title": "US President Benjamin Netanyahu, pictured here at the UN General Assembly, warns the world that Iran is approximately 14 minutes away from developing "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Hasan_Piker/comments/1s822h6/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s822h6",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BadHasbara/comments/1s7xmtt/a_video_of_this_online_live_chat_has_gone_viral/",
+        "embed_id": "1s7xmtt",
+        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStockMarket/comments/1s8rhxn/breaking_irans_irgc_warns_18_major_us_tech_firms/",
+        "embed_id": "1s8rhxn",
+        "title": "BREAKING: 🇮🇷 Iran’s IRGC warns 18 major US tech firms will be treated as “legitimate targets” from April 1"
+      }
+    ],
+    "image_file": "/images/breaking_2026-03-31.png"
+  },
+  {
     "topic": "U.S. Strikes Iranian Nuclear Site",
     "summary": "The United States has launched airstrikes targeting a city in Iran that contains a nuclear facility, significantly heightening tensions in the Middle East. This military action has prompted President Trump to urge allied nations to help secure the Strait of Hormuz, a critical chokepoint for global oil shipments. The move has sparked international concern over potential escalation into broader conflict.",
     "severity": "critical",
