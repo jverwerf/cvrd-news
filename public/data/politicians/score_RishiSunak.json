@@ -1,0 +1,139 @@
+{
+  "handle": "RishiSunak",
+  "name": "Rishi Sunak",
+  "role": "Former UK Prime Minister, MP for Richmond and Northallerton",
+  "party": "Conservative Party",
+  "country": "UK",
+  "state": null,
+  "tags": [
+    "UK Prime Minister",
+    "AI",
+    "Economy",
+    "Ukraine",
+    "Antisemitism",
+    "Biotech",
+    "Growth",
+    "Education",
+    "Richmond Project",
+    "Columnist"
+  ],
+  "photo_prompt": "Rishi Sunak, South Asian descent, short black hair, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "casualties",
+    "ukraine",
+    "inflicting",
+    "drones.",
+    "britain",
+    "started",
+    "impact",
+    "summit",
+    "series",
+    "prime",
+    "minister.",
+    "created",
+    "independent",
+    "red-team",
+    "capability",
+    "safety.",
+    "screening",
+    "saves",
+    "lives",
+    "swapping",
+    "dependence",
+    "china",
+    "would",
+    "mistake.",
+    "there",
+    "sports",
+    "broadcasting.",
+    "trump's",
+    "decision",
+    "allow"
+  ],
+  "prominence": 36,
+  "followers": 2324167,
+  "overall_score": 75.8,
+  "confidence_interval": 7.3,
+  "verified_claims": 132,
+  "true_count": 63,
+  "somewhat_misleading_count": 49,
+  "misleading_count": 15,
+  "false_count": 5,
+  "pending_count": 125,
+  "dropped_count": 0,
+  "domains": {
+    "military": {
+      "score": 88.3,
+      "count": 3,
+      "true": 2,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "other": {
+      "score": 95.6,
+      "count": 8,
+      "true": 7,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "healthcare": {
+      "score": 66.3,
+      "count": 4,
+      "true": 2,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 1
+    },
+    "foreign_policy": {
+      "score": 85.5,
+      "count": 21,
+      "true": 14,
+      "somewhat_misleading": 5,
+      "misleading": 2,
+      "false": 0
+    },
+    "economics": {
+      "score": 67.6,
+      "count": 46,
+      "true": 14,
+      "somewhat_misleading": 22,
+      "misleading": 8,
+      "false": 2
+    },
+    "health": {
+      "score": 100,
+      "count": 2,
+      "true": 2,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 74.5,
+      "count": 44,
+      "true": 20,
+      "somewhat_misleading": 17,
+      "misleading": 5,
+      "false": 2
+    },
+    "education": {
+      "score": 88.3,
+      "count": 3,
+      "true": 2,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "environment": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-30T21:55:27.061Z"
+}

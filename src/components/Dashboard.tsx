@@ -39,12 +39,14 @@ export function Dashboard({
   videoDate,
   tvMode,
   noAutoPlay,
+  compact,
 }: {
   stories: NarrativeGap[];
   videoUrl?: string;
   videoDate?: string;
   tvMode?: boolean;
   noAutoPlay?: boolean;
+  compact?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const ytPlayerRef = useRef<HTMLIFrameElement>(null);
@@ -413,8 +415,8 @@ export function Dashboard({
   }, []);
 
   return (
-    <section style={{ background: '#1e2a3a', height: tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
-      <div className="h-full grid grid-rows-3 grid-cols-4 gap-1">
+    <section style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
+      <div className={`h-full grid ${compact ? 'grid-rows-2' : 'grid-rows-3'} grid-cols-4 gap-1`}>
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
@@ -668,8 +670,8 @@ export function Dashboard({
 
         <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} />
 
-        {/* ROW 3 */}
-        {[6, 7, 8, 9].map(i => (
+        {/* ROW 3 — hidden when compact */}
+        {!compact && [6, 7, 8, 9].map(i => (
           <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
         ))}
       </div>

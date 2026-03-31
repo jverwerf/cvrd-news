@@ -1,8 +1,8 @@
 {
   "handle": "tedcruz",
-  "verified_count": 47,
-  "dropped_unsure": 1,
-  "pending_count": 17,
+  "verified_count": 60,
+  "dropped_unsure": 3,
+  "pending_count": 22,
   "scored_claims": [
     {
       "tweet_id": "2036480551670911288",
@@ -15,9 +15,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Special Counsel Jack Smith obtained a non-disclosure order from Judge James Boasberg, which prevented the subject from being informed of the subpoena. The order was based on the belief that disclosure could lead to destruction or tampering with evidence, intimidation of potential witnesses, or jeopardizing the investigation. This aligns with the claim that Smith argued the individual might destroy evidence if aware of the subpoena, and that Judge Boasberg approved the order.",
+      "reasoning": "Special Counsel Jack Smith obtained a nondisclosure order from Judge James Boasberg, which prevented the subject of the subpoena from being informed. The order was based on the belief that disclosure could lead to destruction or tampering with evidence, intimidation of potential witnesses, or jeopardizing the investigation. This aligns with the claim that Smith argued the individual might destroy evidence if aware of the subpoena, and that Judge Boasberg approved the order.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:15.758Z"
+      "verified_at": "2026-03-30T14:25:23.712Z"
     },
     {
       "tweet_id": "2036153838692978703",
@@ -30,9 +30,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The Department of Homeland Security (DHS) has been in a partial shutdown since February 14, 2026, due to a lapse in congressional appropriations, resulting in unpaid federal workers and operational disruptions. This shutdown is a direct consequence of political disagreements over immigration enforcement policies, indicating that the crisis is indeed man-made.",
+      "reasoning": "The Department of Homeland Security (DHS) has been in a partial shutdown since February 14, 2026, due to a lapse in congressional appropriations. This shutdown has led to significant disruptions, including unpaid federal workers and travel delays. The crisis is considered 'man-made' as it resulted from political disagreements over immigration enforcement policies and funding decisions by lawmakers. [Source: https://www.narfe.org/blog/2026/03/17/homeland-security-shutdown-enters-fifth-week/]",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:19.878Z"
+      "verified_at": "2026-03-30T14:25:28.069Z"
     },
     {
       "tweet_id": "2034381461118210361",
@@ -45,9 +45,9 @@
       "domain": "domestic",
       "score": 0,
       "verdict": "FALSE",
-      "reasoning": "The claim that 'illegal aliens consistently vote Democrat' is false. Federal law prohibits noncitizens, including undocumented immigrants, from voting in federal elections, and instances of such illegal voting are extremely rare. Studies and audits have consistently found minimal evidence of noncitizen voting. For example, a 2016 study by the Brennan Center for Justice found only 30 suspected incidents of noncitizen voting among 23.5 million votes cast, representing about 0.0001% of all votes. Additionally, there is no substantial evidence to support the assertion that undocumented immigrants, if they were to vote, would consistently support the Democratic Party. Therefore, the claim is both factually incorrect and misleading.",
+      "reasoning": "The claim that 'illegal aliens consistently vote Democrat' is false. Non-citizens, including undocumented immigrants, are legally prohibited from voting in federal and most state elections in the United States. Instances of non-citizen voting are extremely rare and isolated, with no evidence of widespread participation. For example, a 2016 study by the Brennan Center for Justice found only 30 incidents of suspected non-citizen voting among 23.5 million votes cast. Additionally, there is no substantial data indicating the political preferences of non-citizens who have voted illegally, making it impossible to assert that they 'consistently vote Democrat.'",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:27.459Z"
+      "verified_at": "2026-03-30T14:25:32.245Z"
     },
     {
       "tweet_id": "2034332074958536855",
@@ -58,11 +58,11 @@
       "claim": "The vote in the Senate to take up the SAVE America Act was 51-47.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The claim that the Senate voted 51-47 to take up the SAVE America Act is accurate. According to Axios, on March 17, 2026, the Senate voted 51-48 to advance the SAVE America Act past a procedural hurdle. This slight discrepancy in the vote count (51-47 vs. 51-48) may be due to a reporting error or an abstention, but the core claim remains correct.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim states that the Senate voted 51-47 to take up the SAVE America Act. However, multiple reputable sources, including The Guardian and The Washington Post, report that the vote was 51-48. This discrepancy suggests a minor inaccuracy in the claim. While the overall message—that the Senate voted to begin debate on the SAVE America Act—is correct, the specific vote count is slightly off, which could lead a reasonable person to have an incomplete understanding of the exact vote tally.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:32.126Z"
+      "verified_at": "2026-03-30T14:25:37.819Z"
     },
     {
       "tweet_id": "2034092856713896431",
@@ -73,11 +73,11 @@
       "claim": "81% of Americans support requiring photo ID to vote.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 81% of Americans support requiring photo ID to vote is accurate, as multiple polls indicate support levels around 80% or higher. However, the assertion that the only group opposing this measure is elected Democrats in the House and Senate is misleading. While it's true that many Democratic legislators oppose strict voter ID laws, public opinion among Democrats is more nuanced. For instance, a Pew Research Center poll from August 2025 found that 71% of Democrats favor requiring government-issued photo identification to vote. This suggests that a significant portion of Democratic voters support voter ID requirements, even if their elected representatives may not.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "Multiple polls indicate that a significant majority of Americans support requiring photo ID to vote. For instance, a Gallup poll from October 2024 found that 84% of respondents favor this requirement, including 98% of Republicans, 84% of independents, and 67% of Democrats. Similarly, a Pew Research Center survey from February 2024 reported that 81% support requiring government-issued photo identification to vote, with 95% of Republicans and 69% of Democrats in favor. These consistent findings across various polls support the claim that 81% of Americans support requiring photo ID to vote.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:49.836Z"
+      "verified_at": "2026-03-30T14:25:42.755Z"
     },
     {
       "tweet_id": "2032571570837688637",
@@ -90,9 +90,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim accurately states that Mohamed Bailor Jalloh, a naturalized U.S. citizen from Sierra Leone, was previously convicted in 2017 for attempting to provide material support to ISIS and that he attacked Old Dominion University in March 2026. However, the assertion that he was 'released early under Joe Biden' lacks clear evidence. Jalloh was sentenced to 11 years in prison in 2017 and released in December 2024, approximately seven years into his sentence. While this indicates an early release, the specific reasons for his early release are not detailed in the available sources, and it's unclear if this was directly influenced by policies under President Biden's administration. Therefore, while the core facts are correct, the implication that his early release was directly due to actions by President Biden is not substantiated.",
+      "reasoning": "The claim accurately states that Mohamed Bailor Jalloh, a naturalized U.S. citizen from Sierra Leone previously convicted of providing material support to ISIS, attacked Old Dominion University. However, while Jalloh was released from federal custody in December 2024 during Joe Biden's presidency, the decision for his early release was made by the Federal Bureau of Prisons, an agency that operates independently of direct presidential intervention. Therefore, attributing his early release directly to President Biden is misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:46:56.794Z"
+      "verified_at": "2026-03-30T14:25:47.154Z"
     },
     {
       "tweet_id": "2032512528236843233",
@@ -105,9 +105,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Every single Democrat except Fetterman voted to defund DHS yesterday' is somewhat misleading. While it's accurate that Senator John Fetterman was the only Democrat who voted in favor of advancing a DHS funding bill on March 12, 2026, the framing suggests that Democrats actively sought to defund DHS. In reality, Democrats opposed the funding bill due to the absence of reforms to Immigration and Customs Enforcement (ICE) and other immigration enforcement practices. Their opposition was not an attempt to defund DHS but rather a push for changes in immigration enforcement policies. Therefore, while the voting record is correct, the implication that Democrats aimed to defund DHS is misleading.",
+      "reasoning": "On March 12, 2026, the Senate voted on a bill to fund the Department of Homeland Security (DHS). The vote was 51-46 in favor, falling short of the 60 votes needed to overcome a filibuster. Most Democrats opposed the bill, with Senator John Fetterman being the only Democrat to vote in favor. However, characterizing this as a vote to 'defund DHS' is misleading. The Democrats' opposition was based on demands for reforms to Immigration and Customs Enforcement (ICE) operations, not an intent to defund DHS entirely. Their goal was to implement oversight measures, such as requiring judicial warrants for enforcement actions and mandating body cameras for agents, following controversial incidents involving ICE. Therefore, while it's accurate that most Democrats voted against the funding bill, the claim that they voted to 'defund DHS' oversimplifies and misrepresents their position.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:05.255Z"
+      "verified_at": "2026-03-30T14:25:52.783Z"
     },
     {
       "tweet_id": "2032480655305507274",
@@ -120,9 +120,9 @@
       "domain": "domestic",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim states that there have been four recent terrorist attacks across the U.S. and that the Democratic Party voted to defund the Department of Homeland Security (DHS). While there have been recent attacks, such as the Temple Israel synagogue attack in Michigan and the Old Dominion University shooting in Virginia, attributing all four incidents to terrorism is misleading. For instance, the New York City bombing attempt involved failed devices with no injuries, and the Austin bar shooting's classification as terrorism is not confirmed. Additionally, the assertion that the Democratic Party voted to defund DHS is inaccurate. The Senate bill to fund DHS failed due to disagreements over Immigration and Customs Enforcement (ICE) funding, with Democrats advocating for TSA funding while opposing certain ICE practices. This does not equate to a vote to defund DHS entirely. Therefore, the claim distorts the nature of the attacks and misrepresents the legislative actions of the Democratic Party.",
+      "reasoning": "The claim asserts that there have been four recent terrorist attacks across the U.S. and that the Democratic Party voted to defund the Department of Homeland Security (DHS). While there have been recent violent incidents, including a vehicle-ramming attack at a Michigan synagogue and a shooting at a Virginia university, labeling all as 'terrorist attacks' may be an oversimplification without specific details on each event. Regarding DHS funding, the Senate passed a bill to fund most DHS sub-agencies through September, excluding Immigration and Customs Enforcement (ICE) and Customs and Border Protection (CBP), due to Democratic opposition following recent controversies. However, this does not equate to defunding the entire DHS. Therefore, the claim is misleading as it oversimplifies complex events and legislative actions.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:11.556Z"
+      "verified_at": "2026-03-30T14:25:59.743Z"
     },
     {
       "tweet_id": "2032449888764448830",
@@ -133,11 +133,11 @@
       "claim": "There have been four terror attacks in ten days.",
       "claim_type": "factual",
       "domain": "foreign_policy",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Between March 3 and March 13, 2026, there were three notable attacks in the U.S. with potential links to terrorism: (1) On March 10, two men inspired by ISIS brought homemade bombs to a protest in New York City; (2) On March 12, a man with a prior terrorism conviction opened fire at Old Dominion University in Virginia; (3) On March 12, a naturalized citizen from Lebanon attacked a synagogue in Michigan. While these incidents occurred within the stated timeframe, the claim of 'four terror attacks in ten days' lacks evidence for a fourth attack, making the statement somewhat misleading.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The claim that there have been four terror attacks in ten days is accurate. Notable incidents include: 1) The March 12, 2026, attack at Temple Israel in Michigan, where a vehicle was rammed into the synagogue and shots were fired. 2) The March 12, 2026, shooting at Old Dominion University in Virginia, targeting ROTC members. 3) The March 16, 2026, suicide bombings in Maiduguri, Nigeria, resulting in at least 27 deaths. 4) The March 23, 2026, arson attack on Hatzola ambulances in London, claimed by a pro-Iranian group. These events confirm the occurrence of four terror attacks within the specified timeframe.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:16.995Z"
+      "verified_at": "2026-03-30T14:26:07.814Z"
     },
     {
       "tweet_id": "2031373018706973071",
@@ -150,9 +150,9 @@
       "domain": "foreign_policy",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Iran has murdered nearly 1,000 Americans over the last 40 years' is somewhat misleading. While it's documented that Iran is responsible for the deaths of at least 608 U.S. service members in Iraq between 2003 and 2011, and additional incidents like the 1983 Beirut barracks bombing and the 1996 Khobar Towers bombing resulted in American fatalities, the total number approaching 1,000 is an estimate that includes various incidents over decades. The term 'murdered' implies direct and intentional killing, whereas many of these deaths occurred in the context of broader military conflicts and proxy engagements. Therefore, while the number is plausible, the framing lacks nuance and context.",
+      "reasoning": "The claim that 'Iran has murdered nearly 1,000 Americans over the last 40 years' is somewhat misleading. While it's documented that Iran is responsible for the deaths of at least 608 U.S. service members in Iraq between 2003 and 2011, accounting for 17% of all U.S. personnel deaths in Iraq during that period, the total number of American deaths attributed to Iran over the past 40 years is not definitively established. The figure of nearly 1,000 lacks clear substantiation, and the term 'murdered' implies direct intent, which may not accurately reflect all incidents. Therefore, while Iran has been implicated in the deaths of hundreds of Americans, the specific number and characterization in the claim are not fully supported by available evidence.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:22.386Z"
+      "verified_at": "2026-03-30T14:26:14.084Z"
     },
     {
       "tweet_id": "2031199472923918449",
@@ -163,11 +163,11 @@
       "claim": "President Trump has achieved total air and naval dominance in Iran.",
       "claim_type": "factual",
       "domain": "military",
-      "score": 0.35,
-      "verdict": "MISLEADING",
-      "reasoning": "While the U.S. has achieved significant military successes against Iran, including damaging its naval and air capabilities, Iran continues to employ asymmetric tactics such as drone and missile attacks, and has closed the Strait of Hormuz, disrupting global oil markets. Therefore, the claim of 'total air and naval dominance' is misleading, as it suggests complete control, which is not the case given Iran's ongoing operations and strategic maneuvers.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "President Trump's claim of achieving total air and naval dominance in Iran is partially supported by reports of significant U.S. military actions. For instance, Trump stated that the U.S. had 'knocked out' 42 Iranian naval ships and that Iran's air force and navy were 'gone' ([axios.com](https://www.axios.com/2026/03/07/trump-shield-americas-summit-noem-envoy?utm_source=openai)). However, these assertions have been met with skepticism. Former NATO commander James Stavridis warned of significant military threats from Iran, including drones, mines, and possible traps, indicating that Iran retains substantial defensive capabilities ([thedailybeast.com](https://www.thedailybeast.com/trump-79-rants-about-stupid-people-questioning-his-major-war-escalation-in-iran/?utm_source=openai)). Additionally, intelligence assessments contradict Trump's claims, showing that Iran retains a substantial portion of its strike capacity. Therefore, while the U.S. has achieved significant military successes, the claim of total dominance lacks full substantiation.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:26.566Z"
+      "verified_at": "2026-03-30T14:26:26.363Z"
     },
     {
       "tweet_id": "2031065434674368579",
@@ -180,9 +180,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'The Democrat Party is cutting off funding to DHS' is somewhat misleading. While it's true that Senate Democrats have blocked funding bills for the Department of Homeland Security (DHS) due to demands for reforms in immigration enforcement agencies like ICE and CBP, this action is a negotiation tactic aimed at achieving policy changes, not an outright decision to defund DHS. The Democrats' position is to withhold support for DHS funding until specific reforms are addressed, rather than a blanket refusal to fund the department. Therefore, the claim lacks context about the reasons behind the funding impasse.",
+      "reasoning": "The claim that 'The Democrat Party is cutting off funding to DHS' is somewhat misleading. While it's true that Senate Democrats have blocked certain DHS funding bills, leading to a partial shutdown, their actions are primarily aimed at withholding funds from specific agencies like ICE and CBP due to concerns over immigration enforcement practices. Democrats have supported funding other DHS components, such as TSA and the Coast Guard, and have proposed legislation to fund these parts separately. Therefore, the claim lacks context by suggesting a complete cutoff of DHS funding by Democrats.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:31.167Z"
+      "verified_at": "2026-03-30T14:26:36.511Z"
     },
     {
       "tweet_id": "2030745777404805577",
@@ -195,9 +195,9 @@
       "domain": "foreign_policy",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The Trump administration has indeed provided multiple justifications for attacking Iran, including imminent threats, preventing nuclear weapon development, dismantling missile capabilities, and regime change. These varied rationales have been documented in multiple sources, confirming the claim's accuracy.",
+      "reasoning": "The Trump administration has indeed provided multiple justifications for attacking Iran, including claims of imminent threats, preventing nuclear weapon development, addressing ballistic missile capabilities, and responding to alleged assassination attempts. These varied rationales have been documented in multiple sources, indicating a consistent pattern of presenting numerous reasons for military action against Iran.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:37.328Z"
+      "verified_at": "2026-03-30T14:26:40.212Z"
     },
     {
       "tweet_id": "2030056030588055943",
@@ -210,9 +210,9 @@
       "domain": "foreign_policy",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that \"The objective in Iran is regime collapse\" is supported by multiple sources. On February 28, 2026, the United States and Israel launched joint military operations targeting Iranian military infrastructure and leadership, including the assassination of Supreme Leader Ali Khamenei. President Trump explicitly called on the Iranian people to seize the opportunity to take over their government once the operation was over, indicating a clear intent toward regime change. Additionally, Israeli Prime Minister Netanyahu stated that the strikes aimed to create optimal conditions for Iranians to overthrow their government. These actions and statements confirm that the objective was indeed regime collapse.",
+      "reasoning": "The claim that 'The objective in Iran is regime collapse' is supported by multiple sources indicating that the United States and Israel have pursued strategies aimed at destabilizing or overthrowing the Iranian government. On February 28, 2026, coordinated military operations targeted Iranian military sites and leaders, including the assassination of Supreme Leader Ali Khamenei. President Trump and Prime Minister Netanyahu explicitly stated that the goal of these actions was regime change, urging the Iranian people to seize the opportunity to take over their government. These actions and statements confirm that regime collapse was indeed the objective.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:41.263Z"
+      "verified_at": "2026-03-30T14:26:45.102Z"
     },
     {
       "tweet_id": "2029253080420688151",
@@ -225,9 +225,9 @@
       "domain": "foreign_policy",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that the Iranian regime has killed nearly 1,000 Americans is not supported by available evidence. While Iran has been implicated in attacks resulting in American casualties, the specific figure of nearly 1,000 is unsubstantiated. Regarding the assassination plot against President Trump, in November 2024, the U.S. Department of Justice charged an Iranian national, Farhad Shakeri, with plotting to assassinate then-President-elect Donald Trump, allegedly under orders from Iran's Islamic Revolutionary Guard Corps. However, Iranian officials have denied these allegations. Therefore, while there is evidence of an assassination plot linked to Iran, the claim about the number of American deaths lacks substantiation.",
+      "reasoning": "The claim that the Iranian regime has killed nearly 1,000 Americans is supported by historical incidents, including the 1983 Beirut barracks bombing that killed 241 U.S. military personnel. However, the exact number of American deaths attributable to Iran is not definitively established. Regarding the assassination plot against President Trump, the U.S. Department of Justice charged an Iranian national in 2024 for planning such an attack, allegedly directed by Iran's Islamic Revolutionary Guard Corps. While Iran's president denied these allegations, U.S. authorities presented evidence supporting the claim. Therefore, while elements of the statement are accurate, the lack of precise figures and Iran's denial introduce some uncertainty.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:47.106Z"
+      "verified_at": "2026-03-30T14:26:52.890Z"
     },
     {
       "tweet_id": "2029012721186787815",
@@ -240,9 +240,9 @@
       "domain": "foreign_policy",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'The Ayatollah is dead. His senior leaders are dead.' is accurate, as Supreme Leader Ayatollah Ali Khamenei and several senior Iranian officials were killed in U.S.-Israeli airstrikes on February 28, 2026. However, the assertion that 'That makes America much, much safer.' is subjective and lacks concrete evidence. While the elimination of these leaders may impact Iran's capabilities, it could also lead to instability or retaliation, potentially affecting U.S. security. Therefore, the claim is somewhat misleading due to the unsubstantiated assertion about America's safety.",
+      "reasoning": "The claim that 'The Ayatollah and his senior leaders are dead' is accurate, as Iranian state media confirmed the death of Supreme Leader Ayatollah Ali Khamenei and several senior officials in U.S.-Israeli airstrikes on February 28, 2026. However, the assertion that this 'makes America much, much safer' is subjective and lacks concrete evidence. While the elimination of key Iranian leaders might reduce immediate threats, it could also lead to regional instability or retaliatory actions, potentially affecting U.S. security. Therefore, the claim is somewhat misleading due to the unsubstantiated assertion about America's safety.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:51.559Z"
+      "verified_at": "2026-03-30T14:26:58.657Z"
     },
     {
       "tweet_id": "2028925210674508248",
@@ -255,9 +255,9 @@
       "domain": "foreign_policy",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'The assassins admitted they were hired and trained by Iran' is partially accurate. In the 2024 assassination plot against then-candidate Donald Trump, the accused, Asif Merchant, testified that he was acting under instructions from a contact in Iran's Revolutionary Guard and attempted to hire hitmen to kill a U.S. politician. However, Merchant did not specify that he or the hitmen were trained by Iran, and the plot was disrupted before any training could occur. Therefore, while there is evidence of Iranian involvement, the assertion that the assassins admitted to being both hired and trained by Iran lacks complete substantiation.",
+      "reasoning": "The claim that 'The assassins admitted they were hired and trained by Iran' refers to Asif Merchant, a Pakistani businessman convicted in March 2026 for attempting to hire hitmen to assassinate U.S. politicians, including Donald Trump. Merchant testified that he acted under instructions from a contact in Iran's Revolutionary Guard, who provided him with countersurveillance training and directed the assassination scheme. However, Merchant also claimed he was coerced into the plot to protect his family in Iran, and the Iranian government has denied involvement in any assassination plans. While Merchant's testimony implicates Iranian involvement, his assertion of coercion and Iran's denial introduce complexities that make the claim somewhat misleading without additional context.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:47:58.817Z"
+      "verified_at": "2026-03-30T14:27:04.567Z"
     },
     {
       "tweet_id": "2028546705579188599",
@@ -268,11 +268,11 @@
       "claim": "Previous administrations' weakness and appeasement led to current issues in foreign policy.",
       "claim_type": "factual",
       "domain": "foreign_policy",
-      "score": 0.35,
-      "verdict": "MISLEADING",
-      "reasoning": "The claim asserts that 'weakness and appeasement' from previous administrations, specifically those of Barack Obama and Kamala Harris, led to current foreign policy issues. However, this characterization oversimplifies complex international dynamics and lacks substantial evidence. For instance, the Obama administration engaged in significant foreign policy actions, such as lifting the arms embargo on Vietnam to counter China's influence and negotiating the Iran nuclear deal to limit Iran's nuclear capabilities. These actions indicate a strategic approach rather than mere appeasement. Additionally, attributing current foreign policy challenges solely to past administrations ignores the multifaceted nature of international relations, where multiple factors and actors contribute to ongoing issues. Therefore, the claim is misleading as it presents an oversimplified and unsubstantiated narrative.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'weakness and appeasement from previous administrations got us into this mess' suggests that the foreign policy challenges faced by the current administration are solely due to the actions of prior administrations, specifically those of Presidents Obama and Harris. While it's true that previous administrations' policies can influence current international dynamics, attributing all current foreign policy issues to their 'weakness and appeasement' oversimplifies complex geopolitical situations. For instance, the Obama administration faced criticism for its handling of the Ukraine crisis and relations with Russia, with some Americans expressing disapproval of his approach. However, foreign policy outcomes are often the result of multiple factors, including actions taken by various international actors and unforeseen global events. Therefore, while prior policies may have contributed to current challenges, the claim lacks nuance and context, leading to a somewhat misleading impression.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:04.509Z"
+      "verified_at": "2026-03-30T14:27:12.484Z"
     },
     {
       "tweet_id": "2028231104746913981",
@@ -283,11 +283,11 @@
       "claim": "Iran was close to having nuclear weapons and Trump bombed them, destroying their nuclear research.",
       "claim_type": "factual",
       "domain": "foreign_policy",
-      "score": 0.35,
-      "verdict": "MISLEADING",
-      "reasoning": "The claim asserts that Iran was close to having nuclear weapons, and that President Trump bombed and destroyed their nuclear research. While the U.S. did conduct airstrikes on Iranian nuclear facilities in June 2025, evidence suggests that Iran was not on the verge of developing nuclear weapons at that time. The International Atomic Energy Agency (IAEA) confirmed that Iran was not developing nuclear weapons as alleged by the United States. Additionally, the status of Iran's nuclear facilities remains unclear, and there is no concrete evidence that their nuclear research was entirely destroyed. Therefore, the claim is misleading as it overstates Iran's nuclear capabilities and the effectiveness of the U.S. strikes.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that Iran was close to having nuclear weapons is supported by reports indicating Iran had enriched uranium to 60% purity, approaching weapons-grade levels. However, the assertion that Trump 'bombed the shit out of them' and 'nuke research destroyed' is exaggerated. While U.S. and Israeli strikes targeted Iranian military sites, including Kharg Island, the status of Iran's nuclear facilities remains unclear, and there is no definitive evidence that all nuclear research was destroyed. Therefore, the claim contains elements of truth but lacks full context and accuracy.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:09.417Z"
+      "verified_at": "2026-03-30T14:27:20.720Z"
     },
     {
       "tweet_id": "2028175849518756206",
@@ -298,11 +298,11 @@
       "claim": "President Trump decided to go into Iran with overwhelming force, which has prevented the Ayatollah from making threats against America.",
       "claim_type": "factual",
       "domain": "foreign_policy",
-      "score": 0.35,
-      "verdict": "MISLEADING",
-      "reasoning": "While President Trump did initiate a significant military operation against Iran in late February 2026, the claim that this action has prevented the Ayatollah from making threats against America is misleading. Despite the U.S. and Israel launching strikes aimed at regime change and neutralizing threats, Iran has continued to retaliate with asymmetric tactics, including closing the Strait of Hormuz and conducting drone and missile attacks. These actions indicate that the Ayatollah and the Iranian regime remain capable of threatening and acting against U.S. interests. Therefore, the assertion that the Ayatollah is no longer able to make threats is not supported by the ongoing conflict dynamics.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that President Trump's military action in Iran has prevented the Ayatollah from making threats against America is partially accurate. The U.S. launched significant military operations against Iran in late February 2026, targeting Iranian leadership and infrastructure. However, despite these actions, Iranian leaders have continued to issue threats against the U.S. For instance, following U.S. airstrikes, Iranian military leaders warned of retaliatory actions, including threats to regional infrastructure and the Strait of Hormuz. Therefore, while the military operations have impacted Iran's capabilities, they have not entirely stopped Iranian leaders from making threats against America.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:14.055Z"
+      "verified_at": "2026-03-30T14:27:28.079Z"
     },
     {
       "tweet_id": "2028160598341525970",
@@ -315,9 +315,9 @@
       "domain": "foreign_policy",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that the Iranian regime used diplomacy as a stalling tactic and refused to seriously discuss President Trump's red lines has some basis. Reports indicate that Iran was unwilling to negotiate on its ballistic missile program, a key U.S. demand, and insisted that this program was 'never negotiable' ([foxnews.com](https://www.foxnews.com/politics/iran-draws-missile-red-line-analysts-warn-tehran-stalling-us-talks?utm_source=openai)). Additionally, Iran's negotiation tactics have been described as deliberate stalling to buy time ([en.wikipedia.org](https://en.wikipedia.org/wiki/History_and_culture_of_negotiation_in_Iran?utm_source=openai)). However, the claim lacks nuance, as it doesn't acknowledge that both sides had incompatible red lines, making negotiations inherently challenging. Therefore, while the core of the claim is accurate, it omits important context about the complexities of the negotiations.",
+      "reasoning": "The claim that the Iranian regime used diplomacy as a stalling tactic and refused to seriously discuss President Trump's red lines has some basis. Reports indicate that Iran has historically employed negotiations to delay while advancing its nuclear program, and has been resistant to U.S. demands for zero enrichment. However, the assertion that Iran approached talks with 'utter hubris' is subjective and lacks concrete evidence. Additionally, while Iran's negotiation tactics may be seen as stalling, they have engaged in discussions, albeit with firm stances. Therefore, the claim is somewhat misleading due to its subjective language and lack of nuance.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:19.892Z"
+      "verified_at": "2026-03-30T14:27:33.709Z"
     },
     {
       "tweet_id": "2027910060957986879",
@@ -330,9 +330,9 @@
       "domain": "foreign_policy",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim that the administration gave over $100 billion to the Ayatollah is misleading. While there have been assertions, such as those by Senator Ted Cruz, that the Biden administration's policies have resulted in nearly $100 billion flowing to Iran, these figures are contested and lack clear evidence of direct payments. Additionally, while Iran has been implicated in attacks resulting in American casualties, the framing of the claim suggests a direct causation between U.S. financial actions and continued attacks on Americans, which oversimplifies a complex geopolitical situation.",
+      "reasoning": "The claim that the administration gave over $100 billion to the Ayatollah, who continued killing Americans, is misleading. While it's true that Iran has been implicated in attacks resulting in American casualties over the years, the assertion that the U.S. administration directly provided $100 billion to Iran is inaccurate. This figure likely refers to the unfreezing of Iranian assets following the 2015 Joint Comprehensive Plan of Action (JCPOA), which allowed Iran access to its own previously frozen funds. However, these were not direct payments from the U.S. to Iran. Additionally, attributing all subsequent American casualties directly to the release of these funds oversimplifies the complex geopolitical dynamics involved.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:25.115Z"
+      "verified_at": "2026-03-30T14:27:39.683Z"
     },
     {
       "tweet_id": "2027418791420772487",
@@ -345,9 +345,9 @@
       "domain": "domestic",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim asserts that 'Democrat crime policy is causing companies like Target to flee due to violent criminals.' While Target did announce the closure of nine stores in 2023, citing theft and organized retail crime as factors, analyses of crime data in the areas of some closing stores, such as in New York and San Francisco, revealed lower levels of theft compared to nearby stores that remained open. This suggests that factors other than crime may have influenced Target's decision. Additionally, attributing these closures directly to 'Democrat crime policy' oversimplifies the issue, as retail crime is a complex problem influenced by various factors beyond political policies. Therefore, the claim is misleading.",
+      "reasoning": "Target announced the closure of nine stores in 2023, citing theft and organized retail crime as factors threatening the safety of employees and customers. However, attributing these closures solely to 'Democrat crime policy' is misleading. Crime rates and retail theft are influenced by a multitude of factors, including socioeconomic conditions, law enforcement practices, and broader societal trends. Additionally, some reports indicate that police dispatch data did not align with Target's stated reasons for certain closures, suggesting that other business considerations may have played a role. Therefore, while crime was cited as a factor, the claim oversimplifies the issue by attributing it exclusively to Democratic policies.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:29.491Z"
+      "verified_at": "2026-03-30T14:27:49.106Z"
     },
     {
       "tweet_id": "2027212904940917080",
@@ -358,11 +358,11 @@
       "claim": "Our families are safer and our citizens are more prosperous.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Our families are safer' is supported by data indicating a significant decline in crime rates. In 2025, homicides decreased by 21% from 2024, reaching levels not seen since at least 1900. Additionally, 11 of 13 tracked crimes declined compared to 2024. However, the assertion that 'our citizens are more prosperous' lacks specific supporting data. While crime reduction can contribute to a sense of prosperity, without concrete economic indicators, this part of the claim is unsubstantiated. Therefore, the claim is somewhat misleading due to the lack of evidence for the prosperity aspect.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The claim that 'Our families are safer and our citizens are more prosperous' is supported by recent data. In 2025, the U.S. experienced a significant decline in violent crime, with homicides dropping by 21% from 2024, marking the lowest rate since 1900. Additionally, other major crime categories, including aggravated assaults and robberies, saw substantial decreases. While specific economic indicators for 2025 are not detailed in the provided sources, the reduction in crime rates contributes to a perception of increased safety and prosperity among citizens.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:35.061Z"
+      "verified_at": "2026-03-30T14:27:54.315Z"
     },
     {
       "tweet_id": "2026741864108306643",
@@ -375,9 +375,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Deporting individuals convicted of murder could logically reduce the number of murders they might commit in the deporting country. However, the claim oversimplifies the issue by implying a direct and significant impact on overall murder rates without considering other factors that influence crime rates. The statement lacks context about the broader crime dynamics.",
+      "reasoning": "Deporting individuals convicted of murder could logically reduce the number of murders committed by those specific individuals in the deporting country. However, the claim oversimplifies the issue by implying a direct and significant reduction in overall murder rates without considering other factors that influence crime rates. The context of broader crime prevention strategies and the potential for these individuals to commit crimes elsewhere is missing.",
       "used_web_search": false,
-      "verified_at": "2026-03-26T07:48:37.366Z"
+      "verified_at": "2026-03-30T14:27:56.892Z"
     },
     {
       "tweet_id": "2026512807810752807",
@@ -390,9 +390,9 @@
       "domain": "military",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Petty Officer Scott Ruskan was awarded the Legion of Merit for extraordinary heroism during the Camp Mystic flood. During the State of the Union address on February 24, 2026, President Donald Trump honored Ruskan for his role in rescuing 165 people during the devastating floods at Camp Mystic in July 2025. This recognition aligns with the claim made in the tweet.",
+      "reasoning": "Petty Officer Scott Ruskan was awarded the Legion of Merit for extraordinary heroism during the Camp Mystic flood. President Donald Trump presented the award during the State of the Union address on February 24, 2026, recognizing Ruskan's efforts in rescuing 165 people during the devastating floods in Central Texas in July 2025. This information is corroborated by multiple reputable sources, including CBS News and the Houston Chronicle.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:42.603Z"
+      "verified_at": "2026-03-30T14:28:06.957Z"
     },
     {
       "tweet_id": "2026325666241589385",
@@ -405,9 +405,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Gas prices are down' is somewhat misleading. While gas prices in February 2026 were lower compared to February 2025, they had increased from January 2026. Specifically, the average price for regular gasoline in February 2026 was $2.91 per gallon, up 3.5% from January 2026, but down 6.8% from February 2025. This indicates a recent upward trend, contradicting the implication of a consistent decrease. The claim that 'Illegal border crossings are down' is accurate. In January 2026, about 6,100 attempted crossings were detected, a 79.1% decrease from January 2025. However, without specific data on murder rates for February 2026, it's unclear whether they have decreased. Therefore, while the claim contains some truth, the lack of context regarding gas prices and the absence of data on murder rates make it somewhat misleading.",
+      "reasoning": "The claim that 'Gas prices are down' is accurate when comparing February 2026 to February 2025, with a 6.8% decrease in average gas prices. However, gas prices increased by 3.5% from January to February 2026, indicating a recent upward trend. The statement about 'murder rates are down' cannot be verified due to a lack of available data for February 2026. Regarding 'illegal border crossings are down,' data from February 2025 shows a significant decrease in illegal crossings, but more recent statistics are not available to confirm this trend for February 2026. Therefore, while some elements of the claim are true, the lack of current data and the recent increase in gas prices make the overall statement somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:49.902Z"
+      "verified_at": "2026-03-30T14:28:14.156Z"
     },
     {
       "tweet_id": "2026040875382399091",
@@ -420,9 +420,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that a major cartel leader responsible for killing Americans is no longer alive is accurate. Nemesio \"El Mencho\" Oseguera Cervantes, leader of the Jalisco New Generation Cartel (CJNG), was killed by Mexican security forces on February 22, 2026. The CJNG has been implicated in trafficking large quantities of fentanyl and other drugs into the U.S., contributing to numerous American deaths. Therefore, the claim is substantiated by these events.",
+      "reasoning": "The claim that a major cartel leader responsible for killing Americans is no longer alive is accurate. Nemesio Oseguera Cervantes, known as \"El Mencho,\" was the leader of the Jalisco New Generation Cartel (CJNG), a powerful criminal organization involved in drug trafficking and violence affecting both Mexico and the United States. He was killed during a Mexican military operation in Tapalpa, Jalisco, on February 22, 2026. The operation, supported by U.S. intelligence, led to his death and subsequent widespread violence across Mexico, including roadblocks and arson attacks. Given his leadership role in the CJNG and the cartel's extensive criminal activities, it's reasonable to conclude that he was responsible for the deaths of Americans.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:48:56.203Z"
+      "verified_at": "2026-03-30T14:28:26.385Z"
     },
     {
       "tweet_id": "2025030552328302843",
@@ -435,9 +435,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Multiple reports indicate that left-wing activist groups in Minneapolis are actively promoting jury nullification. For instance, Defend612, a Minneapolis-based network, has been advertising 'jury nullification training' sessions aimed at instructing individuals on how to use this legal tactic to resist ICE operations. These sessions are framed as a means to protect individuals from what the group perceives as unjust laws and political persecution. Additionally, similar initiatives have been reported in other cities, such as Washington, D.C., where groups like Freedom Trainers are teaching activists how to get selected for juries and vote 'not guilty' to undermine federal prosecutions. These activities demonstrate a concerted effort by certain left-wing groups to utilize jury nullification as a tool in their activism.",
+      "reasoning": "The claim that left-wing groups are attempting to weaponize jury nullification in Minneapolis is accurate. The activist group Defend the 612 has organized virtual 'Jury Nullification Training' sessions aimed at teaching attendees how to use jury nullification to oppose laws they consider unjust, particularly those related to Immigration and Customs Enforcement (ICE) operations. This initiative is intended to instruct individuals on how to influence jury decisions to acquit defendants, even when evidence suggests guilt, as a form of protest against certain laws and enforcement actions.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:04.050Z"
+      "verified_at": "2026-03-30T14:28:31.692Z"
     },
     {
       "tweet_id": "2024214961107468325",
@@ -450,9 +450,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim asserts that hospitals receiving federal funds should not have transgender programs for minors. Recent actions by the Trump administration support this stance. In December 2025, the Department of Health and Human Services proposed regulations to cut off federal funding from hospitals providing gender-affirming care to minors, including treatments like puberty blockers and hormone therapy. This aligns with the claim that such programs should not exist in federally funded hospitals.",
+      "reasoning": "The claim that hospitals receiving federal funds should not have transgender programs for minors aligns with recent federal actions. In December 2025, the U.S. Department of Health and Human Services proposed regulations to bar hospitals from providing gender-affirming care to minors as a condition for participating in Medicare and Medicaid programs. This move effectively restricts such programs in federally funded hospitals.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:08.965Z"
+      "verified_at": "2026-03-30T14:28:36.005Z"
     },
     {
       "tweet_id": "2024181844804096409",
@@ -465,9 +465,9 @@
       "domain": "legislation",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The Working Families Tax Cut Act includes provisions for a school choice initiative, specifically the Education Freedom Tax Credit, which offers a dollar-for-dollar tax credit up to $1,700 for contributions to scholarship granting organizations supporting K-12 education. This initiative is part of the broader legislation aimed at expanding educational opportunities and affordability for families.",
+      "reasoning": "The Working Families Tax Cut Act, signed into law on July 4, 2025, includes provisions for school choice initiatives. Specifically, it established the Education Freedom Tax Credit, allowing taxpayers to receive credits for contributions to scholarship-granting organizations that support K-12 education. This initiative aims to make education more accessible and affordable for families across America.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:13.295Z"
+      "verified_at": "2026-03-30T14:28:39.740Z"
     },
     {
       "tweet_id": "2023603867254997407",
@@ -480,9 +480,9 @@
       "domain": "history",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that President Eisenhower federalized the National Guard to stop Democratic governors from defying federal law on September 23, 1957, is somewhat misleading. While Eisenhower did federalize the Arkansas National Guard in response to Governor Orval Faubus's defiance of federal desegregation orders, this action occurred on September 24, 1957, not September 23. Additionally, Faubus was a Democrat, but the claim's framing suggests a broader pattern of Democratic governors defying federal law, which is not supported by this specific incident. Therefore, the claim contains elements of truth but lacks precise accuracy and context.",
+      "reasoning": "President Eisenhower did federalize the Arkansas National Guard to enforce desegregation at Little Rock Central High School in 1957. However, this action occurred on September 24, 1957, not September 23. Additionally, the governor involved, Orval Faubus, was a Democrat, but the claim's emphasis on 'Democratic governors' may imply a broader pattern that isn't supported by this single instance.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:17.812Z"
+      "verified_at": "2026-03-30T14:28:45.272Z"
     },
     {
       "tweet_id": "2023585029838774769",
@@ -495,9 +495,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "President Trump has taken actions to mobilize federal resources for public utilities, such as signing an Executive Order in April 2025 to strengthen the reliability and security of the U.S. electric grid. However, his administration has also canceled funding for certain infrastructure projects, like the $18 million allocated for upgrading Imperial County's power grid in October 2025. Therefore, while the claim has some basis, it omits instances where federal support was withdrawn, leading to an incomplete picture.",
+      "reasoning": "President Trump has taken actions to mobilize federal resources for public utilities, such as signing an Executive Order in April 2025 to strengthen the reliability and security of the U.S. electric grid. However, his administration has also canceled funding for certain infrastructure projects, like the $18 million for upgrading Imperial County's power grid in October 2025. Therefore, while the claim has some basis, it omits instances where federal support was withdrawn, leading to an incomplete picture.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:22.946Z"
+      "verified_at": "2026-03-30T14:28:51.651Z"
     },
     {
       "tweet_id": "2023200829956936025",
@@ -508,11 +508,11 @@
       "claim": "There were 1200 Jews massacred on October 7 and ZERO Palestinians.",
       "claim_type": "factual",
       "domain": "other",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 1,200 Jews were massacred on October 7 is accurate, as Hamas-led militants killed approximately 1,200 people, mostly civilians, during the attack. However, the assertion that zero Palestinians were killed is misleading. While the initial attack resulted in Israeli casualties, the subsequent Israeli military response led to significant Palestinian deaths in Gaza. Therefore, stating that no Palestinians were killed in the context of the events surrounding October 7 omits crucial information about the broader conflict and its impact on Palestinian lives.",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim that 'there were 1200 Jews massacred on October 7 and ZERO Palestinians' is misleading. While it's accurate that approximately 1,200 Israelis were killed during the Hamas-led attack on October 7, 2023, the assertion that no Palestinians were killed is false. In the immediate aftermath of the attack, Israeli military operations resulted in Palestinian casualties. For instance, by early 2025, over 50,000 Palestinians had been reported killed due to Israeli military actions in Gaza. Therefore, the claim omits significant context regarding Palestinian casualties, leading to a distorted understanding of the events.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:28.711Z"
+      "verified_at": "2026-03-30T14:28:58.314Z"
     },
     {
       "tweet_id": "2022444322923110811",
@@ -527,7 +527,7 @@
       "verdict": "SOMEWHAT MISLEADING",
       "reasoning": "While photo ID laws are intended to prevent illegal voting and protect election integrity, evidence shows that voter impersonation is extremely rare in the U.S. The claim implies a significant threat to democracy that is not supported by data. However, the core idea that photo ID can help prevent illegal voting is not entirely false.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:31.112Z"
+      "verified_at": "2026-03-30T14:29:01.166Z"
     },
     {
       "tweet_id": "2022432306275979753",
@@ -540,9 +540,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim refers to the Potomac River sewage spill that began on January 19, 2026, when a section of the Potomac Interceptor sewer line collapsed, releasing an estimated 240 to 300 million gallons of untreated wastewater into the river. This incident is widely reported as one of the largest sewage spills in U.S. history. Therefore, the claim is accurate.",
+      "reasoning": "The claim that there was the largest sewage spill in American history is accurate. On January 19, 2026, a section of the Potomac Interceptor sewer line collapsed near Potomac, Maryland, releasing an estimated 240 to 300 million gallons of untreated wastewater into the Potomac River. This incident is considered one of the largest sewage spills in U.S. history, surpassing previous significant spills such as the 143 million gallons released into the Tijuana River in 2017. Therefore, the statement is factually correct.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:38.941Z"
+      "verified_at": "2026-03-30T14:29:06.459Z"
     },
     {
       "tweet_id": "2022412858114609582",
@@ -553,11 +553,11 @@
       "claim": "President Trump moved TikTok to American ownership",
       "claim_type": "factual",
       "domain": "foreign_policy",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "In September 2025, President Donald Trump signed an executive order facilitating the transfer of TikTok's U.S. operations from its Chinese parent company, ByteDance, to a consortium of American investors. This move addressed national security concerns and ensured the app's continued availability in the United States. The new ownership structure granted American entities majority control over TikTok's U.S. operations.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "President Trump signed an executive order in September 2025 facilitating the transfer of TikTok's U.S. operations to a group of American investors, addressing national security concerns over its Chinese ownership. However, the deal was not finalized until January 2026, when TikTok restructured its U.S. operations, resulting in American and allied investors controlling 80.1% of the new joint venture, with ByteDance retaining a 19.9% stake. Therefore, while President Trump initiated the process, the complete transfer to American ownership was not solely his doing and was finalized after his direct involvement.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:43.971Z"
+      "verified_at": "2026-03-30T14:29:15.897Z"
     },
     {
       "tweet_id": "2021683327858598267",
@@ -570,9 +570,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that trading partners have approached the U.S. to reduce tariffs and open markets is partially accurate. In 2025, the U.S. implemented significant tariffs, prompting some countries to negotiate trade agreements to mitigate these effects. For instance, the EU and Australia finalized a free trade agreement in March 2026, aiming to reduce tariffs and enhance market access. However, these negotiations were often driven by the need to counteract U.S. tariffs rather than a proactive desire to open markets. Additionally, some agreements, like the EU-U.S. 'Turnberry agreement,' faced uncertainty due to legal challenges and subsequent policy shifts. Therefore, while there has been movement towards reducing tariffs, the framing that partners are 'rushing' to do so is an overstatement.",
+      "reasoning": "While some U.S. trading partners have expressed willingness to negotiate tariff reductions and market access, these actions are largely in response to the U.S. imposing new tariffs. For instance, the European Union offered mutual tariff reductions on industrial goods, but also prepared for countermeasures. Additionally, the EU approved a trade agreement with the U.S. that includes safeguards allowing suspension if the U.S. violates key provisions. Therefore, the claim that partners are 'rushing' to cut tariffs and open markets is somewhat misleading, as these moves are often reactions to U.S. trade policies rather than proactive initiatives.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:49.505Z"
+      "verified_at": "2026-03-30T14:29:23.224Z"
     },
     {
       "tweet_id": "2020968269075886156",
@@ -585,9 +585,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Senator Ted Cruz has been a prominent advocate for school choice, introducing multiple bills to expand educational opportunities. Notably, he authored the Student Opportunity Amendment, which was included in the 2017 Tax Cuts and Jobs Act, allowing 529 College Savings Plans to cover K-12 tuition. This amendment was signed into law by President Trump. However, the term 'Trump Accounts' refers to a provision in the 'One Big Beautiful Bill' signed by President Trump in July 2025, which established $1,000 seed savings accounts for children. While Cruz has been a strong proponent of school choice, the 'Trump Accounts' initiative was not directly associated with his legislative efforts. Therefore, the claim accurately highlights Cruz's significant role in advancing school choice legislation signed by President Trump but somewhat misleadingly attributes the 'Trump Accounts' to his legislative achievements.",
+      "reasoning": "Senator Ted Cruz's claim highlights two significant legislative achievements: the establishment of 'Trump Accounts' and advancements in school choice, both signed into law by President Trump. 'Trump Accounts' are tax-advantaged savings accounts for children, introduced as part of the 'One Big Beautiful Bill' signed on July 4, 2025. Cruz also played a pivotal role in expanding school choice through legislation like the Universal School Choice Act and the Student Empowerment Act, which were incorporated into the same bill. While these initiatives represent major legislative successes for Cruz, the claim is somewhat misleading because it omits the collaborative efforts of other legislators and the broader context of the legislative process. Additionally, the term 'Trump Accounts' was a rebranding of previously proposed 'MAGA Accounts,' reflecting a symbolic gesture rather than a wholly new initiative.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:56.139Z"
+      "verified_at": "2026-03-30T14:29:33.202Z"
     },
     {
       "tweet_id": "2019895831118156027",
@@ -600,9 +600,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim states that the politician chaired a recent hearing on Somali fraud in Minnesota. Evidence confirms that Senator John Cornyn chaired a Senate Judiciary Subcommittee hearing titled 'Somali Fraud in Minnesota – The Tip of the Iceberg' on February 10, 2026. Therefore, the claim is accurate.",
+      "reasoning": "Senator Ted Cruz chaired a Senate Judiciary Committee hearing on February 4, 2026, focusing on fraud in Minnesota's Somali community. Reports indicate that during the hearing, Democratic senators did not address the fraud directly, instead launching attacks against President Trump. This aligns with the claim that Democrats wanted to discuss topics other than the fraud itself.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:49:59.424Z"
+      "verified_at": "2026-03-30T14:29:37.712Z"
     },
     {
       "tweet_id": "2019510111052657144",
@@ -615,9 +615,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On February 4, 2026, Senator Ted Cruz chaired a Senate Judiciary Subcommittee hearing titled \"Somali Scammers: Fighting Fraud in Minnesota and Beyond,\" focusing on fraud involving the Somali community in Minnesota. This was the first Senate hearing specifically addressing this issue. Therefore, the claim that Senator Ted Cruz chaired the first-ever hearing on Somali fraud in Minnesota is accurate.",
+      "reasoning": "Senator Ted Cruz chaired a Senate Judiciary Subcommittee hearing titled 'Somali Scammers: Fighting Fraud in Minnesota and Beyond' on February 4, 2026. This was the first Senate hearing specifically addressing fraud involving the Somali community in Minnesota. Therefore, the claim that 'Senator Ted Cruz chaired the first-ever hearing on the rampant Somali fraud in Minnesota' is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:11.931Z"
+      "verified_at": "2026-03-30T14:29:46.264Z"
     },
     {
       "tweet_id": "2019487371318948068",
@@ -630,9 +630,9 @@
       "domain": "demographics",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that Israel's Christian population has grown from fewer than 40,000 in 1948 to over 180,000 now is accurate. In 1948, the Christian population was approximately 34,000. As of 2025, it has increased to about 185,000, representing just under 2% of Israel's total population. This data is supported by reports from Israel's Central Bureau of Statistics.",
+      "reasoning": "The claim that Israel's Christian population has grown from fewer than 40,000 in 1948 to over 180,000 now is accurate. In 1948, the Christian population was approximately 34,000. As of early 2026, it has increased to about 185,000, representing just under 2% of Israel's total population. This data is supported by reports from Israel's Central Bureau of Statistics and other reputable sources.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:21.705Z"
+      "verified_at": "2026-03-30T14:29:52.290Z"
     },
     {
       "tweet_id": "2019473096890003746",
@@ -645,9 +645,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that Tim Walz, Keith Ellison, and Jacob Frey were invited to testify at a hearing on fraud in Minnesota and declined the invitation is partially accurate. Governor Tim Walz and Attorney General Keith Ellison were indeed invited to testify before the House Oversight Committee on February 10, 2026, but they did not attend that hearing. However, they later confirmed their appearance and testified under oath at a subsequent hearing on March 4, 2026. There is no evidence indicating that Minneapolis Mayor Jacob Frey was invited to testify at any of these hearings. Therefore, while Walz and Ellison initially declined an invitation but later testified, the inclusion of Frey in the claim is inaccurate.",
+      "reasoning": "The claim that Tim Walz, Keith Ellison, and Jacob Frey declined to testify at a hearing on fraud in Minnesota is partially accurate. Governor Tim Walz and Attorney General Keith Ellison were invited to testify before the House Oversight Committee on February 10, 2026, but the hearing was rescheduled to March 4, 2026, where both testified under oath. There is no evidence that Minneapolis Mayor Jacob Frey was invited to testify at this hearing. Additionally, Senator Ted Cruz chaired a separate Senate hearing on February 4, 2026, focusing on fraud in Minnesota, to which Walz, Ellison, and Frey were invited but declined to attend. Therefore, while they declined to testify at the Senate hearing, Walz and Ellison did testify at the House hearing, and Frey was not invited to the latter.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:27.235Z"
+      "verified_at": "2026-03-30T14:30:00.014Z"
     },
     {
       "tweet_id": "2019451718887510167",
@@ -658,11 +658,11 @@
       "claim": "There is serious money from the extreme left funding radicals in Minneapolis.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "Investigative reports have linked recent anti-ICE protests in Minneapolis to left-wing activist groups funded by individuals like Neville Singham, a Chinese-based American billionaire. Singham has allegedly funneled substantial amounts through various channels to support organizations such as the ANSWER Coalition, Party for Socialism and Liberation, and Code Pink, which have been involved in these demonstrations. Additionally, groups like Indivisible Twin Cities, connected to the national Indivisible Project, have received significant funding from sources like George Soros's Open Society Foundations, further supporting left-wing activism in the area.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim suggests that 'serious money from the extreme left' is funding radicals in Minneapolis. While there is evidence of left-leaning organizations and student groups organizing protests and actions in Minneapolis, the term 'serious money' implies substantial financial backing. Specific details about the scale of funding or the exact sources are not provided in the available information. Therefore, while there is some truth to the claim, the lack of concrete evidence about the extent and sources of funding makes it somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:37.397Z"
+      "verified_at": "2026-03-30T14:30:09.146Z"
     },
     {
       "tweet_id": "2018399868171985266",
@@ -675,9 +675,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "A New York jury awarded $2 million to Fox Varian, a detransitioner who underwent a double mastectomy at age 16 and later regretted the procedure. This case is recognized as the first successful medical malpractice lawsuit brought by a detransitioner in the United States.",
+      "reasoning": "A New York jury awarded $2 million to Fox Varian, a detransitioner who underwent a double mastectomy at age 16. This case is recognized as the first successful medical malpractice lawsuit brought by a detransitioner in the United States.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:43.385Z"
+      "verified_at": "2026-03-30T14:30:13.945Z"
     },
     {
       "tweet_id": "2018366154197045386",
@@ -690,9 +690,9 @@
       "domain": "foreign_policy",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "President Donald Trump signed a presidential memorandum on January 7, 2026, directing the withdrawal of the United States from 66 international organizations, including 31 United Nations entities and 35 non-UN organizations. This action was taken because these organizations were deemed to no longer serve American interests. Therefore, the claim that President Trump has pulled the United States out of 66 different UN committees and agencies is accurate.",
+      "reasoning": "On January 7, 2026, President Donald Trump signed an executive order directing the United States to withdraw from 66 international organizations, including 31 United Nations entities and 35 non-UN organizations. This action was part of the administration's broader effort to disengage from international bodies it deemed contrary to U.S. interests. The claim accurately reflects this development.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:48.320Z"
+      "verified_at": "2026-03-30T14:30:18.742Z"
     },
     {
       "tweet_id": "2018345516711465420",
@@ -705,9 +705,204 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On February 2, 2026, the United States was experiencing a partial government shutdown that began on January 31, 2026, due to Congress failing to pass funding bills, including those for the Department of Labor and the Bureau of Labor Statistics. This led to delays in key economic reports, such as the January employment data. The shutdown ended on February 3, 2026, when the House approved a funding package, which President Trump signed into law, restoring full federal operations. Therefore, the claim made on February 2, 2026, that 'We are in a partial government shutdown' is accurate.",
+      "reasoning": "On February 2, 2026, the U.S. government was experiencing a partial shutdown. This shutdown began on January 31, 2026, due to Congress and the White House failing to pass the necessary spending bills to keep major federal agencies funded and operational. The shutdown affected 78% of the federal discretionary budget, including the Department of Housing and Urban Development. The Senate had passed a spending package late on January 30, 2026, which included full-year funding for five federal spending bills and a two-week stopgap measure for the Department of Homeland Security (DHS). However, the House had yet to vote on this package as of February 2, 2026. Therefore, the claim that \"We are in a partial government shutdown\" made on February 2, 2026, is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-26T07:50:54.672Z"
+      "verified_at": "2026-03-30T14:30:28.325Z"
+    },
+    {
+      "tweet_id": "2032223990895243744",
+      "tweet_text": "True. And the Democrats still refuse to fund the Department of Homeland Security. Utterly indefensible.",
+      "tweet_date": "Thu Mar 12 22:35:30 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2032223990895243744",
+      "tweet_likes": 3826,
+      "claim": "The Democrats refuse to fund the Department of Homeland Security.",
+      "claim_type": "factual",
+      "domain": "legislation",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'The Democrats refuse to fund the Department of Homeland Security' is somewhat misleading. While it's true that Senate Democrats have blocked certain DHS funding bills, their opposition is primarily due to disagreements over specific provisions, particularly related to Immigration and Customs Enforcement (ICE) operations. For instance, Democrats have sought restrictions on ICE activities as a condition for approving further funding. This indicates that their refusal is not a blanket opposition to funding DHS but rather a stance against particular elements within the proposed funding packages. Therefore, the claim lacks important context about the reasons behind the Democrats' actions.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:30:35.711Z"
+    },
+    {
+      "tweet_id": "2031110808126525707",
+      "tweet_text": "President Trump and the U.S. military have achieved total air and naval dominance. We’re seeing extraordinary success in Iran. We break it down on Verdict:",
+      "tweet_date": "Mon Mar 09 20:52:07 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2031110808126525707",
+      "tweet_likes": 449,
+      "claim": "President Trump and the U.S. military have achieved total air and naval dominance in Iran.",
+      "claim_type": "factual",
+      "domain": "military",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that President Trump and the U.S. military have achieved total air and naval dominance in Iran is somewhat misleading. While U.S. forces have significantly degraded Iran's air defense systems and naval capabilities, achieving near control of Iranian airspace and destroying over 120 Iranian vessels, Iran retains some operational capacity. Iranian forces continue to conduct drone and missile attacks on U.S. bases and regional infrastructure, indicating that complete dominance has not been fully realized. Therefore, while the U.S. has achieved substantial superiority, the assertion of total dominance lacks nuance.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:30:42.062Z"
+    },
+    {
+      "tweet_id": "2038312788498452921",
+      "tweet_text": "Amb Huckabee is correct. This was a mistake by the Israeli police. The security concerns are real, but they should not have prevented the Patriarch from entering the Church of the Holy Sepulcher to conduct the Palm Sunday blessing. I trust this mistake will be corrected quickly.",
+      "tweet_date": "Sun Mar 29 17:50:13 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038312788498452921",
+      "tweet_likes": 2479,
+      "claim": "The Israeli police made a mistake by preventing the Patriarch from entering the Church of the Holy Sepulcher.",
+      "claim_type": "factual",
+      "domain": "foreign_policy",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "On March 29, 2026, Israeli police prevented Cardinal Pierbattista Pizzaballa, the Latin Patriarch of Jerusalem, from entering the Church of the Holy Sepulchre to conduct the Palm Sunday Mass. This action was taken due to security concerns amid the ongoing conflict with Iran. The Latin Patriarchate criticized the decision as disproportionate, noting that the planned Mass would have involved fewer than 50 participants, adhering to military guidelines. The incident drew international condemnation, including from U.S. Ambassador Mike Huckabee, who described it as an \"unfortunate overreach.\" Israeli authorities later acknowledged the mistake and allowed the Patriarch access to the church. Therefore, the claim that the Israeli police made a mistake by preventing the Patriarch from entering the Church of the Holy Sepulchre is accurate.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:30:50.771Z"
+    },
+    {
+      "tweet_id": "2038258951687385293",
+      "tweet_text": "Let me be very, very clear. Sharia Law will never be allowed in Texas or the United States of America.",
+      "tweet_date": "Sun Mar 29 14:16:17 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038258951687385293",
+      "tweet_likes": 24811,
+      "claim": "Sharia Law will never be allowed in Texas or the United States of America.",
+      "claim_type": "promise",
+      "domain": "domestic",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The claim that 'Sharia Law will never be allowed in Texas or the United States of America' is accurate. The U.S. Constitution and the Texas Constitution establish that only state and federal laws have legal authority; no religious code, including Sharia law, holds legal force in U.S. courts. Recent legislative actions in Texas, such as House Bill 4211 signed in September 2025, explicitly prohibit the establishment of residential developments enforcing Sharia law. Additionally, in October 2025, U.S. Senators introduced the No Sharia Act to prevent the application of Sharia law nationwide. These measures reinforce the existing legal framework that precludes the implementation of Sharia law in Texas and the broader United States.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:01.248Z"
+    },
+    {
+      "tweet_id": "2037938508938068333",
+      "tweet_text": "If you book a “flight,” it should actually be on a… …plane. ✈️ And federal aviation dollars should NOT be used for buses!",
+      "tweet_date": "Sat Mar 28 17:02:58 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037938508938068333",
+      "tweet_likes": 323,
+      "claim": "Federal aviation dollars should not be used for buses.",
+      "claim_type": "policy",
+      "domain": "legislation",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim suggests that federal aviation funds are being used for buses, implying a misallocation of resources. While it's true that the Federal Aviation Administration (FAA) has provided grants for electric shuttle buses at airports, these funds are designated for on-airport transportation to enhance airport operations and reduce environmental impact. For instance, Pittsburgh International Airport received FAA funding to purchase electric shuttle buses for passenger transport within the airport premises. Therefore, while aviation funds are used for buses, they are intended for airport-related purposes, not general public transit.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:06.748Z"
+    },
+    {
+      "tweet_id": "2037634962183057883",
+      "tweet_text": "The Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republicans in the Senate. Including yours truly. We break down the latest on Arctic Frost on Verdict:",
+      "tweet_date": "Fri Mar 27 20:56:47 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037634962183057883",
+      "tweet_likes": 339,
+      "claim": "The Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republicans in the Senate.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that the Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republican senators is accurate in terms of numbers. Reports indicate that the DOJ subpoenaed phone records of eight Republican senators, which constitutes approximately 20% of the 50 Republican senators. However, the claim lacks context regarding the nature of the data obtained. The subpoenas targeted 'tolling data,' which includes information such as call times, durations, and numbers dialed, but not the content of the calls. This distinction is crucial, as it means the DOJ did not 'tap' or listen to the senators' conversations. Therefore, while the numerical aspect of the claim is correct, the omission of details about the type of data collected could lead a reasonable person to misunderstand the extent of the surveillance.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:15.997Z"
+    },
+    {
+      "tweet_id": "2037602158267318590",
+      "tweet_text": "This week, I chaired a hearing in a Senate Judiciary Subcommittee on Arctic Frost. By any measure, Arctic Frost was orders of magnitude worse than Watergate. More on Verdict:",
+      "tweet_date": "Fri Mar 27 18:46:26 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037602158267318590",
+      "tweet_likes": 148,
+      "claim": "Arctic Frost was orders of magnitude worse than Watergate",
+      "claim_type": "factual",
+      "domain": "other",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'Arctic Frost was orders of magnitude worse than Watergate' is subjective and lacks a clear, quantifiable basis for comparison. Watergate involved illegal activities by President Nixon's administration, leading to his resignation. Arctic Frost refers to an FBI investigation into alleged efforts to overturn the 2020 election, reportedly targeting over 150 Republicans, including President Trump and members of Congress. While Arctic Frost has been described as a significant political scandal, equating it as 'orders of magnitude worse' than Watergate is an opinion that depends on individual perspectives and lacks objective measurement.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:22.111Z"
+    },
+    {
+      "tweet_id": "2037597010119770537",
+      "tweet_text": "Airport Chaos Ends as DHS Is Funded, ICE Defunded, Voter ID Clash | Verdict with Ted Cruz @iHeartRadio",
+      "tweet_date": "Fri Mar 27 18:25:58 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037597010119770537",
+      "tweet_likes": 132,
+      "claim": "DHS is funded and ICE is defunded, leading to the end of airport chaos.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim states that the Department of Homeland Security (DHS) is funded while Immigration and Customs Enforcement (ICE) is defunded, leading to the end of airport chaos. However, as of March 27, 2026, the U.S. House of Representatives passed a short-term funding bill to finance DHS through May 22, 2026, which includes funding for ICE. This move is expected to extend the ongoing DHS shutdown, as the Senate will need to review and approve the House bill. Therefore, the assertion that DHS is funded and ICE is defunded is inaccurate, and the implication that this has led to the end of airport chaos is misleading.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:27.510Z"
+    },
+    {
+      "tweet_id": "2032223990895243744",
+      "tweet_text": "True. And the Democrats still refuse to fund the Department of Homeland Security. Utterly indefensible.",
+      "tweet_date": "Thu Mar 12 22:35:30 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2032223990895243744",
+      "tweet_likes": 3826,
+      "claim": "The Democrats refuse to fund the Department of Homeland Security.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'The Democrats refuse to fund the Department of Homeland Security' is somewhat misleading. While it's true that Senate Democrats have blocked certain funding bills for DHS, their refusal is tied to specific concerns about Immigration and Customs Enforcement (ICE) operations. Democrats have sought reforms to ICE as a condition for approving DHS funding, indicating that their opposition is not to DHS funding as a whole but to aspects related to ICE. Therefore, the claim lacks important context about the reasons behind the funding impasse.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:36.130Z"
+    },
+    {
+      "tweet_id": "2031110808126525707",
+      "tweet_text": "President Trump and the U.S. military have achieved total air and naval dominance. We’re seeing extraordinary success in Iran. We break it down on Verdict:",
+      "tweet_date": "Mon Mar 09 20:52:07 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2031110808126525707",
+      "tweet_likes": 449,
+      "claim": "President Trump and the U.S. military have achieved total air and naval dominance in Iran.",
+      "claim_type": "factual",
+      "domain": "military",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that President Trump and the U.S. military have achieved total air and naval dominance in Iran is partially accurate but lacks important context. U.S. and Israeli forces have conducted extensive airstrikes, reportedly destroying a significant portion of Iran's air defense systems and naval assets. However, Iran retains capabilities to disrupt critical routes like the Strait of Hormuz and continues to pose threats through drone and missile strikes. Therefore, while the U.S. has achieved substantial military success, the assertion of 'total' dominance overlooks Iran's remaining offensive capabilities.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:42.787Z"
+    },
+    {
+      "tweet_id": "2038312788498452921",
+      "tweet_text": "Amb Huckabee is correct. This was a mistake by the Israeli police. The security concerns are real, but they should not have prevented the Patriarch from entering the Church of the Holy Sepulcher to conduct the Palm Sunday blessing. I trust this mistake will be corrected quickly.",
+      "tweet_date": "Sun Mar 29 17:50:13 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038312788498452921",
+      "tweet_likes": 2479,
+      "claim": "The Israeli police made a mistake by preventing the Patriarch from entering the Church of the Holy Sepulcher.",
+      "claim_type": "factual",
+      "domain": "foreign_policy",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "On March 29, 2026, Israeli police prevented Cardinal Pierbattista Pizzaballa, the Latin Patriarch of Jerusalem, from entering the Church of the Holy Sepulchre to conduct the Palm Sunday blessing. This action was taken due to security concerns amid the ongoing conflict with Iran. The Latin Patriarchate criticized the decision as disproportionate, noting that the planned Mass would have involved fewer than 50 participants, adhering to military guidelines. The incident drew international criticism, including from U.S. Ambassador Mike Huckabee, who described it as an \"unfortunate overreach.\" Israeli authorities later acknowledged the mistake and indicated plans to allow conditional access in the coming days.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:31:50.160Z"
+    },
+    {
+      "tweet_id": "2037634962183057883",
+      "tweet_text": "The Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republicans in the Senate. Including yours truly. We break down the latest on Arctic Frost on Verdict:",
+      "tweet_date": "Fri Mar 27 20:56:47 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037634962183057883",
+      "tweet_likes": 339,
+      "claim": "The Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republicans in the Senate.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that the Biden Department of Justice issued subpoenas to obtain the phone records of more than 20% of Republicans in the Senate is partially accurate. Reports indicate that the DOJ subpoenaed phone records of at least eight Republican senators, which constitutes approximately 16% of the 50 Republican senators at that time. While this figure is slightly below 20%, the claim is directionally correct but somewhat exaggerated. Additionally, the subpoenas targeted toll records (metadata such as call times and durations) rather than the content of communications. Therefore, while the core of the claim holds some truth, the specific percentage and nature of the data obtained are somewhat overstated.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:32:01.701Z"
+    },
+    {
+      "tweet_id": "2037597010119770537",
+      "tweet_text": "Airport Chaos Ends as DHS Is Funded, ICE Defunded, Voter ID Clash | Verdict with Ted Cruz @iHeartRadio",
+      "tweet_date": "Fri Mar 27 18:25:58 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037597010119770537",
+      "tweet_likes": 132,
+      "claim": "DHS is funded and ICE is defunded, leading to the end of airport chaos.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim that 'DHS is funded and ICE is defunded, leading to the end of airport chaos' is misleading. While the Senate approved funding for the Department of Homeland Security (DHS), including the Transportation Security Administration (TSA), it excluded funding for Immigration and Customs Enforcement (ICE) and Customs and Border Protection (CBP). This partial funding aimed to alleviate airport disruptions caused by unpaid TSA agents. However, the House of Representatives passed a different short-term funding bill that included ICE and CBP, leading to continued legislative deadlock and ongoing airport issues. Therefore, the assertion that DHS is fully funded, ICE is defunded, and airport chaos has ended does not accurately reflect the complex and unresolved situation.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:32:09.717Z"
     }
   ],
   "dropped_claims": [
@@ -723,7 +918,35 @@
       "gpt_confidence": 80,
       "status": "RESOLVED",
       "deadline": null,
-      "drop_reason": "The claim involves specific percentages of votes and corresponding seat allocations in Virginia and Texas, but the available sources do not provide detailed data to verify these exact figures. While there are reports of redistricting efforts in Texas aimed at increasing Republican seats and legal challenges to these maps, precise statistics matching the claim are not found in the provided information."
+      "drop_reason": "The claim states that in Virginia, 47% of voters voted for Trump but received only 9% of the seats, while 52% voted for Harris and received 91% of the seats. In Texas, 56% voted for Trump and the GOP received 79% of the seats. However, the available sources do not provide specific data to verify these exact percentages. While there are reports of redistricting efforts in Texas aimed at increasing Republican seats, the precise figures mentioned in the claim cannot be confirmed with the current information."
+    },
+    {
+      "tweet_id": "2037165324542394395",
+      "tweet_text": "The Ayatollah was a theocratic zealot who embraced a death cult that celebrated suicide. If he had a nuclear weapon, the odds that he would have used it were unacceptably high.",
+      "tweet_date": "Thu Mar 26 13:50:36 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037165324542394395",
+      "tweet_likes": 3789,
+      "claim": "The Ayatollah would have likely used a nuclear weapon if he had one.",
+      "claim_type": "prediction",
+      "domain": "foreign_policy",
+      "gpt_confidence": 75,
+      "status": "RESOLVED",
+      "deadline": null,
+      "drop_reason": "The claim is speculative and involves predicting hypothetical actions of a historical figure, which cannot be verified with evidence. It is based on an interpretation of the Ayatollah's beliefs and intentions, which are subjective and not factual."
+    },
+    {
+      "tweet_id": "2037165324542394395",
+      "tweet_text": "The Ayatollah was a theocratic zealot who embraced a death cult that celebrated suicide. If he had a nuclear weapon, the odds that he would have used it were unacceptably high.",
+      "tweet_date": "Thu Mar 26 13:50:36 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2037165324542394395",
+      "tweet_likes": 3789,
+      "claim": "The Ayatollah would have likely used a nuclear weapon if he had one.",
+      "claim_type": "prediction",
+      "domain": "foreign_policy",
+      "gpt_confidence": 75,
+      "status": "RESOLVED",
+      "deadline": null,
+      "drop_reason": "The claim is speculative and involves predicting hypothetical actions of a historical figure, which cannot be verified with evidence. It is based on an interpretation of the Ayatollah's beliefs and intentions, which are subjective and not factual."
     }
   ],
   "pending_claims": [
@@ -944,6 +1167,71 @@
       "claim": "The SAVE America Act will force the Democrats' hand and stop sex-change surgeries for kids.",
       "claim_type": "promise",
       "domain": "legislation",
+      "gpt_confidence": 80,
+      "status": "PENDING",
+      "deadline": null
+    },
+    {
+      "tweet_id": "2038613775037706611",
+      "tweet_text": "Longest Shutdown in History Continues, AI Tells us How to Destroy a Nation & \"NO KINGS\" Funding from Commie Billionaires Revealed @benfergusonshow and I break it down on Verdict:",
+      "tweet_date": "Mon Mar 30 13:46:14 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038613775037706611",
+      "tweet_likes": 58,
+      "claim": "The longest government shutdown in history is ongoing.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "gpt_confidence": 80,
+      "status": "PENDING",
+      "deadline": null
+    },
+    {
+      "tweet_id": "2038330775377007026",
+      "tweet_text": "We have a better chance to see new governments in Venezuela, Cuba, and Iran than at any point in our lifetimes. America and the world are safer when our President is strong and our enemies fear him.",
+      "tweet_date": "Sun Mar 29 19:01:41 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038330775377007026",
+      "tweet_likes": 6731,
+      "claim": "We have a better chance to see new governments in Venezuela, Cuba, and Iran than at any point in our lifetimes.",
+      "claim_type": "prediction",
+      "domain": "foreign_policy",
+      "gpt_confidence": 75,
+      "status": "PENDING",
+      "deadline": null
+    },
+    {
+      "tweet_id": "2038613775037706611",
+      "tweet_text": "Longest Shutdown in History Continues, AI Tells us How to Destroy a Nation & \"NO KINGS\" Funding from Commie Billionaires Revealed @benfergusonshow and I break it down on Verdict:",
+      "tweet_date": "Mon Mar 30 13:46:14 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038613775037706611",
+      "tweet_likes": 58,
+      "claim": "The longest government shutdown in history is ongoing.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "gpt_confidence": 80,
+      "status": "PENDING",
+      "deadline": null
+    },
+    {
+      "tweet_id": "2038330775377007026",
+      "tweet_text": "We have a better chance to see new governments in Venezuela, Cuba, and Iran than at any point in our lifetimes. America and the world are safer when our President is strong and our enemies fear him.",
+      "tweet_date": "Sun Mar 29 19:01:41 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038330775377007026",
+      "tweet_likes": 6726,
+      "claim": "There is a better chance to see new governments in Venezuela, Cuba, and Iran than at any point in our lifetimes.",
+      "claim_type": "prediction",
+      "domain": "foreign_policy",
+      "gpt_confidence": 75,
+      "status": "PENDING",
+      "deadline": null
+    },
+    {
+      "tweet_id": "2038258951687385293",
+      "tweet_text": "Let me be very, very clear. Sharia Law will never be allowed in Texas or the United States of America.",
+      "tweet_date": "Sun Mar 29 14:16:17 +0000 2026",
+      "tweet_url": "https://twitter.com/tedcruz/status/2038258951687385293",
+      "tweet_likes": 24807,
+      "claim": "Sharia Law will never be allowed in Texas or the United States of America.",
+      "claim_type": "promise",
+      "domain": "domestic",
       "gpt_confidence": 80,
       "status": "PENDING",
       "deadline": null

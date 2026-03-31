@@ -50,49 +50,49 @@
     "started",
     "pressure"
   ],
-  "prominence": 39,
-  "followers": 14828519,
-  "overall_score": 76,
+  "prominence": 38,
+  "followers": 14834644,
+  "overall_score": 75.6,
   "confidence_interval": 5.2,
-  "verified_claims": 255,
+  "verified_claims": 263,
   "true_count": 100,
-  "somewhat_misleading_count": 138,
-  "misleading_count": 12,
+  "somewhat_misleading_count": 145,
+  "misleading_count": 13,
   "false_count": 5,
-  "pending_count": 134,
-  "dropped_count": 5,
+  "pending_count": 139,
+  "dropped_count": 3,
   "domains": {
     "foreign_policy": {
-      "score": 70.5,
-      "count": 43,
-      "true": 12,
-      "somewhat_misleading": 26,
-      "misleading": 4,
+      "score": 68.9,
+      "count": 44,
+      "true": 11,
+      "somewhat_misleading": 27,
+      "misleading": 5,
       "false": 1
     },
     "domestic": {
-      "score": 81.2,
-      "count": 96,
+      "score": 80.7,
+      "count": 97,
       "true": 47,
-      "somewhat_misleading": 46,
-      "misleading": 3,
-      "false": 0
+      "somewhat_misleading": 47,
+      "misleading": 2,
+      "false": 1
     },
     "politics": {
-      "score": 66.3,
-      "count": 4,
+      "score": 66,
+      "count": 5,
       "true": 2,
-      "somewhat_misleading": 1,
+      "somewhat_misleading": 2,
       "misleading": 0,
       "false": 1
     },
     "economics": {
-      "score": 71.2,
-      "count": 60,
-      "true": 15,
-      "somewhat_misleading": 41,
+      "score": 70.8,
+      "count": 65,
+      "true": 17,
+      "somewhat_misleading": 43,
       "misleading": 3,
-      "false": 1
+      "false": 2
     },
     "military": {
       "score": 82.5,
@@ -103,26 +103,26 @@
       "false": 0
     },
     "legislation": {
-      "score": 71.4,
+      "score": 90,
       "count": 7,
-      "true": 4,
-      "somewhat_misleading": 1,
-      "misleading": 1,
-      "false": 1
+      "true": 5,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
     },
     "other": {
-      "score": 79.2,
-      "count": 30,
-      "true": 14,
-      "somewhat_misleading": 15,
-      "misleading": 0,
-      "false": 1
+      "score": 78.6,
+      "count": 29,
+      "true": 13,
+      "somewhat_misleading": 14,
+      "misleading": 2,
+      "false": 0
     },
     "healthcare": {
-      "score": 74.4,
-      "count": 8,
-      "true": 3,
-      "somewhat_misleading": 4,
+      "score": 69.4,
+      "count": 9,
+      "true": 2,
+      "somewhat_misleading": 6,
       "misleading": 1,
       "false": 0
     },
@@ -143,5 +143,5 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-26T08:22:47.999Z"
+  "scored_at": "2026-03-30T14:18:34.119Z"
 }

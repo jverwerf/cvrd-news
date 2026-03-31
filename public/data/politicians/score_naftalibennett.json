@@ -1,0 +1,130 @@
+{
+  "handle": "naftalibennett",
+  "name": "Naftali Bennett נפתלי בנט",
+  "role": "13th Prime Minister of Israel",
+  "party": "Yamina",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "Israel",
+    "Prime Minister",
+    "Yamina",
+    "Education",
+    "Military",
+    "Politics",
+    "Budget",
+    "Security",
+    "Leadership"
+  ],
+  "photo_prompt": "Naftali Bennett, a middle-aged man with short dark hair and a confident expression, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "liran",
+    "zion,",
+    "fighter",
+    "holon,",
+    "battle",
+    "southern",
+    "lebanon",
+    "while",
+    "defending",
+    "state",
+    "israel.",
+    "million",
+    "shekels",
+    "money",
+    "secretly",
+    "added",
+    "school",
+    "system",
+    "teach",
+    "english,",
+    "instead",
+    "teaches",
+    "children",
+    "rather",
+    "enlist.'",
+    "government",
+    "transferred",
+    "additional",
+    "ultra-orthodox",
+    "education."
+  ],
+  "prominence": 40,
+  "followers": 681854,
+  "overall_score": 78.5,
+  "confidence_interval": 7,
+  "verified_claims": 133,
+  "true_count": 64,
+  "somewhat_misleading_count": 59,
+  "misleading_count": 6,
+  "false_count": 4,
+  "pending_count": 98,
+  "dropped_count": 11,
+  "domains": {
+    "military": {
+      "score": 89.6,
+      "count": 37,
+      "true": 26,
+      "somewhat_misleading": 11,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 75.2,
+      "count": 46,
+      "true": 17,
+      "somewhat_misleading": 26,
+      "misleading": 2,
+      "false": 1
+    },
+    "legislation": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 64.8,
+      "count": 27,
+      "true": 8,
+      "somewhat_misleading": 13,
+      "misleading": 3,
+      "false": 3
+    },
+    "other": {
+      "score": 88.3,
+      "count": 12,
+      "true": 8,
+      "somewhat_misleading": 4,
+      "misleading": 0,
+      "false": 0
+    },
+    "education": {
+      "score": 100,
+      "count": 2,
+      "true": 2,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "economics": {
+      "score": 75.7,
+      "count": 7,
+      "true": 3,
+      "somewhat_misleading": 3,
+      "misleading": 1,
+      "false": 0
+    },
+    "demographics": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-30T15:51:45.074Z"
+}

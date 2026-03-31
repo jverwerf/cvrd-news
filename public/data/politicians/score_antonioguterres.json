@@ -1,0 +1,163 @@
+{
+  "handle": "antonioguterres",
+  "name": "António Guterres",
+  "role": "Secretary-General of the United Nations",
+  "party": "",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "UN",
+    "climate action",
+    "human rights",
+    "peace",
+    "sustainability",
+    "global security",
+    "diplomacy",
+    "food security",
+    "gender equality",
+    "fight racism"
+  ],
+  "photo_prompt": "António Guterres, middle-aged man with short gray hair and a warm smile, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "every",
+    "throw",
+    "enough",
+    "prepare",
+    "billion",
+    "meals",
+    "while",
+    "humanity",
+    "hungry.",
+    "indonesian",
+    "peacekeeper",
+    "unifil",
+    "killed",
+    "another",
+    "seriously",
+    "injured",
+    "during",
+    "hostilities",
+    "between",
+    "israel",
+    "hizbullah.",
+    "endured",
+    "hottest",
+    "years",
+    "record.",
+    "least",
+    "people,",
+    "including",
+    "children",
+    "health"
+  ],
+  "prominence": 38,
+  "followers": 2616317,
+  "overall_score": 96.3,
+  "confidence_interval": 2.2,
+  "verified_claims": 278,
+  "true_count": 249,
+  "somewhat_misleading_count": 29,
+  "misleading_count": 0,
+  "false_count": 0,
+  "pending_count": 112,
+  "dropped_count": 0,
+  "domains": {
+    "other": {
+      "score": 96.6,
+      "count": 104,
+      "true": 94,
+      "somewhat_misleading": 10,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 87.3,
+      "count": 11,
+      "true": 7,
+      "somewhat_misleading": 4,
+      "misleading": 0,
+      "false": 0
+    },
+    "environment": {
+      "score": 100,
+      "count": 7,
+      "true": 7,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "humanitarian": {
+      "score": 91.3,
+      "count": 4,
+      "true": 3,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 99,
+      "count": 110,
+      "true": 107,
+      "somewhat_misleading": 3,
+      "misleading": 0,
+      "false": 0
+    },
+    "economics": {
+      "score": 90.6,
+      "count": 26,
+      "true": 19,
+      "somewhat_misleading": 7,
+      "misleading": 0,
+      "false": 0
+    },
+    "international_law": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "international": {
+      "score": 100,
+      "count": 3,
+      "true": 3,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 82.5,
+      "count": 4,
+      "true": 2,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "health": {
+      "score": 93,
+      "count": 5,
+      "true": 4,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "environmental_policy": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-31T07:32:35.531Z"
+}

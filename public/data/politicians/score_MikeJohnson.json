@@ -1,0 +1,122 @@
+{
+  "handle": "MikeJohnson",
+  "name": "Mike Johnson",
+  "role": "Speaker of the House",
+  "party": "Republican",
+  "country": "US",
+  "state": "Louisiana",
+  "tags": [
+    "Speaker of the House",
+    "Republican",
+    "America First",
+    "border security",
+    "tax cuts",
+    "law enforcement",
+    "family values",
+    "Christian",
+    "Louisiana's 4th District"
+  ],
+  "photo_prompt": "Mike Johnson, middle-aged man with short brown hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "house",
+    "democrats",
+    "voted",
+    "fourth",
+    "reopen",
+    "borders",
+    "protect",
+    "criminal",
+    "illegal",
+    "aliens.",
+    "republicans'",
+    "working",
+    "families",
+    "expanded",
+    "child",
+    "credit",
+    "$2,200",
+    "child.",
+    "under",
+    "president",
+    "trump",
+    "republicans,",
+    "state",
+    "union",
+    "strong",
+    "getting",
+    "stronger",
+    "every",
+    "family",
+    "earned"
+  ],
+  "prominence": 40,
+  "followers": 83917,
+  "overall_score": 57,
+  "confidence_interval": 9.6,
+  "verified_claims": 102,
+  "true_count": 18,
+  "somewhat_misleading_count": 45,
+  "misleading_count": 31,
+  "false_count": 8,
+  "pending_count": 42,
+  "dropped_count": 0,
+  "domains": {
+    "domestic": {
+      "score": 50.4,
+      "count": 53,
+      "true": 7,
+      "somewhat_misleading": 19,
+      "misleading": 21,
+      "false": 6
+    },
+    "legislation": {
+      "score": 72.9,
+      "count": 19,
+      "true": 6,
+      "somewhat_misleading": 11,
+      "misleading": 2,
+      "false": 0
+    },
+    "economics": {
+      "score": 51.1,
+      "count": 22,
+      "true": 1,
+      "somewhat_misleading": 12,
+      "misleading": 7,
+      "false": 2
+    },
+    "other": {
+      "score": 91.3,
+      "count": 4,
+      "true": 3,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "education": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 50,
+      "count": 2,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 1,
+      "false": 0
+    },
+    "politics": {
+      "score": 65,
+      "count": 1,
+      "true": 0,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-30T14:49:58.873Z"
+}

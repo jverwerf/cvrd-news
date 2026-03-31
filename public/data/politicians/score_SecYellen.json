@@ -1,0 +1,122 @@
+{
+  "handle": "SecYellen",
+  "name": "Janet L. Yellen",
+  "role": "78th Secretary of the Treasury",
+  "party": "Democratic Party",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "economy",
+    "Biden-Harris Administration",
+    "Inflation Reduction Act",
+    "infrastructure",
+    "clean energy",
+    "job creation",
+    "financial system",
+    "international relations",
+    "economic recovery"
+  ],
+  "photo_prompt": "Janet L. Yellen, older woman with short gray hair and glasses, wearing a professional suit, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "economic",
+    "agenda",
+    "president",
+    "robust",
+    "recovery",
+    "outperforms",
+    "historical",
+    "data,",
+    "other",
+    "countries,",
+    "forecasts.",
+    "biden-harris",
+    "administration's",
+    "policies",
+    "during",
+    "pandemic",
+    "saved",
+    "businesses,",
+    "created",
+    "jobs,",
+    "spurred",
+    "growth.",
+    "rebuilt",
+    "alliances",
+    "support",
+    "ukraine",
+    "against",
+    "russia,",
+    "manage",
+    "relationship"
+  ],
+  "prominence": 27,
+  "followers": 365891,
+  "overall_score": 91.3,
+  "confidence_interval": 3.1,
+  "verified_claims": 326,
+  "true_count": 247,
+  "somewhat_misleading_count": 77,
+  "misleading_count": 2,
+  "false_count": 0,
+  "pending_count": 141,
+  "dropped_count": 1,
+  "domains": {
+    "economics": {
+      "score": 87.8,
+      "count": 172,
+      "true": 113,
+      "somewhat_misleading": 58,
+      "misleading": 1,
+      "false": 0
+    },
+    "foreign_policy": {
+      "score": 96.4,
+      "count": 106,
+      "true": 95,
+      "somewhat_misleading": 11,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "international_development": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 95,
+      "count": 28,
+      "true": 24,
+      "somewhat_misleading": 4,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 83,
+      "count": 10,
+      "true": 6,
+      "somewhat_misleading": 3,
+      "misleading": 1,
+      "false": 0
+    },
+    "other": {
+      "score": 100,
+      "count": 7,
+      "true": 7,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-30T23:40:18.556Z"
+}

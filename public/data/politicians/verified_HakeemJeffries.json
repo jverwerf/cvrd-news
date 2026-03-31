@@ -1,7 +1,7 @@
 {
   "handle": "HakeemJeffries",
-  "verified_count": 97,
-  "dropped_unsure": 0,
+  "verified_count": 101,
+  "dropped_unsure": 2,
   "pending_count": 52,
   "scored_claims": [
     {
@@ -15,9 +15,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Democrat Emily Gregory won a special election for Florida's 87th House District, which includes Mar-a-Lago, defeating Republican Jon Maples. This district was previously won by Trump by 11 points in the 2024 presidential election. Therefore, the claim that Democrats flipped a state House seat in Palm Beach that Trump won by 11 points in 2024 is accurate.",
+      "reasoning": "Democrat Emily Gregory won a special election for Florida's House District 87, which includes Mar-a-Lago, flipping a seat that President Trump won by 11 points in 2024. This victory is confirmed by multiple reputable sources, including the Associated Press and CBS News.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:22.354Z"
+      "verified_at": "2026-03-30T14:03:49.937Z"
     },
     {
       "tweet_id": "2033340886365438272",
@@ -30,9 +30,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that FCC Chair Brendan Carr, appointed by President Donald Trump, threatened broadcasters over their coverage of the war initiated by Trump is accurate. Carr warned broadcasters that airing 'hoaxes and news distortions' could jeopardize their license renewals, aligning with Trump's criticism of media coverage of the Iran conflict. This action has been widely reported and criticized as a potential violation of the First Amendment.",
+      "reasoning": "The claim that FCC Chair Brendan Carr, appointed by President Donald Trump, threatened to revoke broadcasters' licenses over their coverage of the war in Iran is accurate. On March 14, 2026, Carr accused broadcasters of \"running hoaxes and news distortions\" and warned them to \"correct course before their license renewals come up,\" emphasizing that broadcasters must operate in the public interest or risk losing their licenses. ([gvwire.com](https://gvwire.com/2026/03/16/fcc-chair-threatens-to-revoke-broadcasters-licenses-over-war-coverage/?utm_source=openai)) This action has been widely reported and criticized as a potential violation of the First Amendment, which prohibits government interference with the press. ([democracynow.org](https://www.democracynow.org/2026/3/16/headlines/fcc_chair_brendan_carr_threatens_to_revoke_broadcasters_licenses_over_iran_war_coverage?utm_source=openai))",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:25.545Z"
+      "verified_at": "2026-03-30T14:03:57.344Z"
     },
     {
       "tweet_id": "2026423199664123961",
@@ -45,9 +45,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "In February 2026, the U.S. Consumer Price Index (CPI) rose by 2.4% year-over-year, indicating moderate inflation. While this suggests that prices have increased compared to the previous year, the rate is relatively stable and aligns with the Federal Reserve's target. Therefore, the claim that 'everything is too expensive' is an exaggeration, as it implies a more severe economic situation than the data supports.",
+      "reasoning": "The claim that \"everything is too expensive\" suggests widespread and severe inflation. However, as of February 2026, the U.S. Consumer Price Index (CPI) showed a 2.4% year-over-year increase, indicating moderate inflation levels. While certain categories like shelter costs rose by 3.8%, other areas, such as energy prices, declined by 1.3%. Therefore, while some goods and services have become more expensive, the overall inflation rate does not support the assertion that \"everything\" is excessively costly.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:28.727Z"
+      "verified_at": "2026-03-30T14:04:02.202Z"
     },
     {
       "tweet_id": "2023074102232174609",
@@ -60,9 +60,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that Donald Trump attempted to rig the midterm election by gerrymandering the national congressional map is somewhat misleading. While President Trump did advocate for mid-decade redistricting to favor Republican candidates ahead of the 2026 midterms, redistricting is a state-controlled process, not a national one. His influence was evident in states like Texas, where a Trump-backed redistricting plan was blocked by federal judges for racial gerrymandering, and Missouri, where a court upheld a mid-decade redistricting plan supported by Trump. However, these efforts were state-specific and not part of a coordinated national gerrymandering strategy directly controlled by Trump. Therefore, while there is truth to Trump's involvement in promoting gerrymandering efforts in certain states, the claim overstates his direct control over the national congressional map.",
+      "reasoning": "The claim that Donald Trump tried to rig the midterm election by gerrymandering the national congressional map is somewhat misleading. While President Trump did advocate for mid-decade redistricting to favor Republicans in the 2026 midterms, redistricting is conducted at the state level, not nationally. His efforts influenced several states, including Texas and Missouri, to redraw their congressional maps to benefit Republicans. However, these actions were state-specific and not a national gerrymandering effort. Therefore, while the core of the claim has merit, the framing overstates the scope of Trump's influence.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:37.726Z"
+      "verified_at": "2026-03-30T14:04:07.583Z"
     },
     {
       "tweet_id": "2022708810259853641",
@@ -75,9 +75,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Recent reports indicate that ICE has intensified its immigration enforcement actions, leading to significant public concern. In January 2026, six deaths occurred in ICE custody, and two civilians were fatally shot by ICE agents in public spaces. Additionally, ICE has expanded its operations to include arrests at immigration courthouses, a practice that has been legally contested. These developments suggest that ICE's enforcement measures have become more aggressive, aligning with the claim that the agency has \"gone way too far.\"",
+      "reasoning": "Recent developments indicate that ICE has intensified its immigration enforcement actions, leading to significant public concern. In January 2026, there were six deaths in ICE custody and two fatal shootings involving ICE agents, highlighting the agency's aggressive tactics. Additionally, ICE has expanded its operations to include assisting TSA at airports, despite lacking proper training for such roles, raising questions about the appropriateness of their involvement. Furthermore, the agency has been involved in controversial practices such as conducting arrests at immigration courthouses, which has been criticized for turning legal proceedings into traps for migrants complying with legal obligations. These actions collectively suggest that ICE's enforcement measures have become increasingly aggressive and controversial, supporting the claim that the agency has \"gone way too far\" in its immigration enforcement actions.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:42.859Z"
+      "verified_at": "2026-03-30T14:04:12.377Z"
     },
     {
       "tweet_id": "2020485742581928352",
@@ -90,9 +90,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim states that Donald Trump won the district by 13 points in 2024, and that the Democrat recently won by 24 points, indicating a significant overperformance compared to the presidential election. This is accurate. In the Louisiana House District 60 race, Donald Trump won by 13 points in 2024. In February 2026, Democrat Chasity Verret Martinez won the same district by 24 points, representing a 37-point swing in favor of the Democrats. This substantial shift aligns with the claim's assertion of a dramatic overperformance.",
+      "reasoning": "In the Louisiana House District 60 special election, Democrat Chasity Verret Martinez won by 24 points in a district that Donald Trump had carried by 13 points in the 2024 presidential election. This represents a 37-point swing in favor of the Democrats, confirming the claim's accuracy.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:48.128Z"
+      "verified_at": "2026-03-30T14:04:17.423Z"
     },
     {
       "tweet_id": "2018006805406789839",
@@ -103,11 +103,11 @@
       "claim": "Republicans lost a Texas state senate district that Trump won by 17 points, and the Democrat won by 14 points despite being outspent.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "Democrat Taylor Rehmet won the Texas State Senate District 9 special election on January 31, 2026, defeating Republican Leigh Wambsganss by over 14 percentage points. This district was previously won by Donald Trump by 17 points in the 2024 presidential election. Rehmet's campaign expenditures were approximately $718,000, while Wambsganss reported spending $736,000, indicating that Rehmet was slightly outspent. Therefore, the claim is accurate.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim accurately states that Democrat Taylor Rehmet won a Texas state senate district that Donald Trump had previously won by 17 points, and that Rehmet secured victory by over 14 percentage points. However, the assertion that the Democrat was 'outspent by millions' lacks supporting evidence. Reports indicate that Rehmet's campaign expenditures were comparable to those of his Republican opponent, Leigh Wambsganss. Specifically, Rehmet spent $718,000 leading up to the January runoff, while Wambsganss reported $736,000 in expenditures. Additionally, Rehmet received significant independent support, including a $500,000 ad campaign from VoteVets and $143,383 in donations from the Texas Democratic Party's Texas Majority PAC. Therefore, while the electoral outcome is correctly described, the claim about being 'outspent by millions' is misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:52.847Z"
+      "verified_at": "2026-03-30T14:04:25.304Z"
     },
     {
       "tweet_id": "2013049275354136946",
@@ -118,11 +118,11 @@
       "claim": "Trump demanded Republicans rig the midterm elections by gerrymandering the congressional map in Texas, North Carolina, and Missouri.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that Trump demanded Republicans rig the midterm elections by gerrymandering the congressional map in Texas, North Carolina, and Missouri is partially accurate but lacks nuance. Evidence indicates that President Trump urged Republican-led states, including Texas and Missouri, to redraw congressional districts to favor the GOP ahead of the 2026 midterm elections. In Texas, Governor Greg Abbott signed a revised House map into law in August 2025, aiming to create five additional Republican-leaning districts. In Missouri, the Supreme Court upheld a mid-decade redistricting plan supported by Trump, potentially giving Republicans an advantage in upcoming elections. However, specific evidence of Trump's direct involvement in North Carolina's redistricting efforts is not readily available. While the term \"rig\" implies illegal or unethical manipulation, gerrymandering, though controversial, is a legal practice in the U.S. Therefore, the claim is somewhat misleading due to the lack of specific evidence regarding North Carolina and the pejorative framing of legal actions.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "Multiple credible sources confirm that former President Donald Trump urged Republican-led states, including Texas, North Carolina, and Missouri, to redraw congressional districts to favor the GOP ahead of the 2026 midterm elections. In Texas, Governor Greg Abbott signed legislation in August 2025 to create five additional Republican-friendly seats. ([cbsnews.com](https://www.cbsnews.com/amp/news/texas-californias-redistricting-maps/?utm_source=openai)) In Missouri, the Supreme Court upheld a mid-decade redistricting plan supported by Trump, allowing Republicans to potentially gain an additional seat. ([apnews.com](https://apnews.com/article/f89090b920ce7047e9da3c1cb9ab9699?utm_source=openai)) In North Carolina, the Supreme Court allowed the state to keep its gerrymandered map for the time being. ([axios.com](https://www.axios.com/2018/01/19/supreme-court-temporarily-halts-ruling-for-north-carolina-to-redraw-congressional-maps-1516374791?utm_source=openai)) These actions align with Trump's broader strategy to reshape congressional districts in favor of Republicans. ([washingtonpost.com](https://www.washingtonpost.com/politics/2025/12/01/redistricting-congress-trump-gerrymandering/972a233a-cf06-11f0-92cb-561ee4e6a771_story.html/?utm_source=openai))",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:35:57.642Z"
+      "verified_at": "2026-03-30T14:04:32.649Z"
     },
     {
       "tweet_id": "2008509090469675274",
@@ -135,9 +135,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that Republicans have broken promises regarding lower costs and ending foreign wars is supported by recent events. President Trump, a Republican, initiated military action against Iran, contradicting his earlier pledges to avoid foreign conflicts. This action led to a significant increase in oil prices, exacerbating the existing cost-of-living crisis in the U.S. Additionally, despite promises to reduce prescription drug prices, pharmaceutical companies raised the prices of 948 brand-name medications in January 2026, with some increases exceeding 100%. These developments indicate that the Republican administration has not fulfilled its commitments to lower costs and end foreign wars.",
+      "reasoning": "The claim that Republicans have broken promises regarding lower costs and ending foreign wars is supported by recent events. President Trump initiated 'Operation Epic Fury' against Iran on February 28, 2026, contradicting his earlier non-interventionist stance. This military action has led to increased oil prices and a cost-of-living crisis, with crude oil prices surpassing $100 per barrel and concerns about a potential U.S. recession. Additionally, President Trump admitted he was unconcerned about the rising costs caused by the war in Iran, stating the impact on oil prices and the stock market was 'short-term' and that the conflict was necessary to eliminate Iran's nuclear threat. These actions indicate a departure from promises to lower costs and avoid new foreign conflicts.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:02.299Z"
+      "verified_at": "2026-03-30T14:04:40.066Z"
     },
     {
       "tweet_id": "1998551933561483707",
@@ -150,9 +150,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Eileen Higgins, a Democrat, was elected as Miami's mayor on December 9, 2025, becoming the first Democrat to hold the position since 1997. This marks a span of 28 years without a Democratic mayor in Miami, which aligns with the claim of 'nearly 30 years.'",
+      "reasoning": "Eileen Higgins, a Democrat, was elected as Miami's mayor on December 9, 2025, becoming the first Democrat to hold the position since 1997. This marks a span of 28 years without a Democratic mayor, which aligns with the claim of 'nearly 30 years.'",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:05.452Z"
+      "verified_at": "2026-03-30T14:04:43.217Z"
     },
     {
       "tweet_id": "1996699367563034681",
@@ -165,9 +165,9 @@
       "domain": "economics",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that there is a cost-of-living crisis in the nation is supported by multiple sources. A survey indicates that 87% of Americans believe the U.S. is facing such a crisis, with many struggling to afford necessities like rent and groceries. Additionally, reports highlight that while inflation has decreased to 2.7%, essential costs such as housing and food continue to rise, contributing to financial hardships for many families. These factors confirm the existence of a cost-of-living crisis in the nation.",
+      "reasoning": "The claim that there is a cost of living crisis in the nation is supported by multiple sources. Reports indicate that, as of December 2025, prices for essential goods and services have risen significantly. For instance, the consumer price index showed a 3% increase over the 12 months ending in September 2025, with grocery costs up 2.7% and electricity costs increasing by over 5%. Additionally, community kitchens in New York have seen a surge in demand, reflecting widespread financial strain among residents. These factors collectively substantiate the existence of a cost of living crisis in the nation.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:10.692Z"
+      "verified_at": "2026-03-30T14:04:50.326Z"
     },
     {
       "tweet_id": "1995465861319065694",
@@ -180,9 +180,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim accurately reflects the situation in Tennessee's 7th Congressional District during the December 2025 special election. In 2024, Donald Trump won this district by 22 percentage points. However, in the 2025 special election, Republican Matt Van Epps secured victory by approximately 9 percentage points over Democrat Aftyn Behn, indicating a significant narrowing of the Republican margin. This substantial reduction in the victory margin suggests that Republicans faced challenges in maintaining their previous level of support in the district.",
+      "reasoning": "The claim that Republicans are struggling to hold a House seat in Tennessee that Trump won by 22 points is accurate. In the December 2025 special election for Tennessee's 7th Congressional District, Republican Matt Van Epps won by approximately 9 percentage points over Democrat Aftyn Behn. This is a significant decrease from Trump's 22-point victory in the same district in 2024, indicating a notable shift in voter support and suggesting that Republicans faced challenges in maintaining their previous margin.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:15.497Z"
+      "verified_at": "2026-03-30T14:04:55.845Z"
     },
     {
       "tweet_id": "1991529457128206627",
@@ -195,9 +195,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Representative Rob Bresnahan voted in favor of the 'One Big Beautiful Bill Act' on May 22, 2025, which included substantial cuts to Medicaid. The Congressional Budget Office estimated that the GOP budget, which this bill was part of, would result in the largest Medicaid cuts in American history, totaling approximately $880 billion. Therefore, the claim that Bresnahan voted for the largest cut to Medicaid in American history is accurate.",
+      "reasoning": "Representative Rob Bresnahan voted in favor of a budget resolution that included substantial cuts to Medicaid, estimated at nearly $1 trillion, which has been characterized as the largest reduction in the program's history. This aligns with the claim that he voted for the largest cut to Medicaid in American history.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:18.983Z"
+      "verified_at": "2026-03-30T14:04:59.353Z"
     },
     {
       "tweet_id": "1990802906589901008",
@@ -210,9 +210,9 @@
       "domain": "healthcare",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Donald Trump wants to raise your healthcare premiums and destroy the Affordable Care Act' is somewhat misleading. While President Trump has expressed opposition to extending enhanced ACA subsidies, which could lead to higher premiums for some individuals, he has also proposed alternative measures aimed at reducing healthcare costs, such as the 'Great Healthcare Plan' focusing on lowering drug prices and increasing price transparency. Therefore, the claim lacks context regarding his proposed alternatives.",
+      "reasoning": "President Donald Trump has expressed opposition to extending enhanced Affordable Care Act (ACA) subsidies, which are set to expire at the end of 2025. He stated that premiums would 'skyrocket' due to the ACA's inherent flaws and advocated for redirecting funds directly to consumers instead of subsidizing insurance companies. While this stance could lead to higher premiums if subsidies are not extended, it is not accurate to claim that Trump explicitly wants to raise premiums. Additionally, while Trump has previously sought to repeal the ACA, his recent statements indicate a desire to replace it with a different plan rather than outright destruction. Therefore, the claim that Trump wants to raise healthcare premiums and destroy the ACA is somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:23.842Z"
+      "verified_at": "2026-03-30T14:05:08.966Z"
     },
     {
       "tweet_id": "1989498933392150547",
@@ -225,9 +225,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "President Donald Trump did roll back tariffs on certain agricultural products, including beef, coffee, and bananas, in November 2025, aiming to address rising grocery prices. However, these tariffs were initially imposed by his administration earlier in 2025, contributing to the increase in food costs. While the rollback may help stabilize or slightly reduce prices, it does not fully offset the prior increases caused by the tariffs. Therefore, attributing the reduction in grocery costs solely to the rollback without acknowledging the initial tariff-induced price hikes provides an incomplete picture.",
+      "reasoning": "President Donald Trump did roll back tariffs on certain agricultural products, including beef, coffee, and bananas, in November 2025, aiming to address high grocery prices. However, while this action may have mitigated some price increases, it did not lead to a significant reduction in grocery costs. Many tariffs remained in place, and the overall impact on consumer prices was limited. Therefore, attributing a substantial decrease in grocery costs solely to this rollback is somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:28.616Z"
+      "verified_at": "2026-03-30T14:05:14.113Z"
     },
     {
       "tweet_id": "1988272876760314084",
@@ -238,11 +238,11 @@
       "claim": "House Democrats have defeated a Republican effort to gerrymander a congressional seat in Utah.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'House Democrats have defeated a Republican effort to gerrymander a congressional seat in Utah' is somewhat misleading. While a Utah judge did reject a Republican-drawn congressional map and approved an alternative that creates a Democratic-leaning district, this decision was made by the judiciary, not by House Democrats. Therefore, attributing the defeat of the gerrymandering effort directly to House Democrats overstates their role in this outcome.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "In November 2025, a Utah judge rejected a Republican-drawn congressional map that was deemed to unduly favor Republicans and disfavor Democrats. The judge adopted an alternative map that created a Democratic-leaning district, effectively preventing the Republican effort to gerrymander a congressional seat in Utah. This aligns with the claim that House Democrats defeated the Republican attempt to gerrymander a seat in Utah.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:32.880Z"
+      "verified_at": "2026-03-30T14:05:19.467Z"
     },
     {
       "tweet_id": "1988060347362931120",
@@ -255,9 +255,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'House Republicans created a devastating healthcare crisis and are refusing to address it' is partially accurate. In 2025, House Republicans passed legislation that led to the expiration of enhanced Affordable Care Act (ACA) subsidies, resulting in significant premium increases for over 20 million Americans. However, attributing the entire healthcare crisis solely to House Republicans oversimplifies the issue, as healthcare policy involves multiple stakeholders, including the Senate and the Executive Branch. Additionally, some Republicans have expressed a desire to address rising healthcare costs, indicating that not all are refusing to engage on the issue.",
+      "reasoning": "The claim that 'House Republicans created a devastating healthcare crisis and are refusing to address it' is partially accurate. In late 2025, House Republicans did not extend the enhanced Affordable Care Act (ACA) subsidies, leading to significant increases in health insurance premiums for over 20 million Americans. This inaction contributed to a healthcare crisis. However, in January 2026, the House passed a bill to extend these subsidies, indicating an effort to address the issue. Therefore, while Republicans' earlier actions contributed to the crisis, their subsequent efforts to mitigate it suggest that the claim lacks full context.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:36.880Z"
+      "verified_at": "2026-03-30T14:05:24.840Z"
     },
     {
       "tweet_id": "1983950147076620339",
@@ -270,9 +270,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that House Republicans voted for the largest SNAP cut in American history is accurate. In May 2025, the House passed a budget resolution proposing nearly $300 billion in cuts to the Supplemental Nutrition Assistance Program (SNAP) over the next decade, which would be the largest reduction in the program's history. This information is corroborated by multiple sources, including the Center on Budget and Policy Priorities and statements from various members of Congress.",
+      "reasoning": "In May 2025, House Republicans passed the 'One Big Beautiful Bill,' which included cuts to the Supplemental Nutrition Assistance Program (SNAP) totaling approximately $187 billion over the next decade. This reduction is widely recognized as the largest in the program's history. The Center on Budget and Policy Priorities reported that the House reconciliation plan would cut nearly $300 billion from SNAP through 2034, marking it as the deepest cut to the program to date. Therefore, the claim that House Republicans voted for the largest SNAP cut in American history is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:40.804Z"
+      "verified_at": "2026-03-30T14:05:35.639Z"
     },
     {
       "tweet_id": "1982965467385082093",
@@ -285,9 +285,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that House Republicans created a healthcare crisis and have been on a five-week vacation, preventing the government from reopening, is partially accurate but lacks important context. The government shutdown began on October 1, 2025, due to a deadlock over healthcare funding, particularly the extension of Affordable Care Act tax credits and Medicaid cuts. House Republicans did not hold votes for several weeks during the shutdown, effectively keeping lawmakers out of Washington. However, characterizing this period solely as a 'vacation' oversimplifies the situation, as some Republicans argued they were engaging with constituents during this time. Additionally, while Republicans' actions contributed to the healthcare funding impasse, attributing the entire crisis to them overlooks the complexity of bipartisan negotiations and disagreements. Therefore, the claim is somewhat misleading.",
+      "reasoning": "The claim that House Republicans created a healthcare crisis and have been on a five-week vacation, preventing the government from reopening, is partially accurate but lacks full context. The government shutdown began on October 1, 2025, primarily due to disagreements over extending Affordable Care Act tax credits and reversing Medicaid cuts. House Republicans did cancel votes and extend recesses during this period, effectively reducing legislative activity. However, attributing the entire healthcare crisis solely to House Republicans oversimplifies the complex negotiations and shared responsibilities among both parties. Additionally, while the House's reduced activity contributed to the delay in reopening the government, other factors and stakeholders were also involved.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:47.280Z"
+      "verified_at": "2026-03-30T14:05:44.037Z"
     },
     {
       "tweet_id": "1982069043600179558",
@@ -300,9 +300,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "President Donald Trump commuted the sentence of former Republican Representative George Santos, who had been convicted of fraud and identity theft. Trump justified the commutation by expressing sympathy for Santos and highlighting his loyalty to the Republican Party. Additionally, Trump pardoned other Republican figures, such as former Representative Michael Grimm and former Connecticut Governor John Rowland, both convicted of financial crimes. While these actions suggest a pattern of granting clemency to political allies, there is no direct evidence that these pardons were explicitly exchanged for their loyalty. Therefore, the claim is somewhat misleading as it implies a quid pro quo without concrete proof.",
+      "reasoning": "President Donald Trump commuted the sentence of former Representative George Santos, who had been convicted of fraud and identity theft, leading to his immediate release from prison. Additionally, Trump pardoned other Republican figures, such as former Congressman Michael Grimm and former Connecticut Governor John Rowland, both convicted of financial crimes. While these actions demonstrate a pattern of granting clemency to political allies, there is no direct evidence proving that these pardons were explicitly exchanged for their loyalty. Therefore, the claim is somewhat misleading as it suggests a quid pro quo without concrete evidence.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:50.870Z"
+      "verified_at": "2026-03-30T14:05:51.255Z"
     },
     {
       "tweet_id": "1979317610446754242",
@@ -313,11 +313,11 @@
       "claim": "Donald Trump is not addressing the Republican healthcare crisis affecting working class Americans.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.35,
-      "verdict": "MISLEADING",
-      "reasoning": "The claim suggests that President Donald Trump is neglecting healthcare issues affecting working-class Americans while focusing on commuting George Santos's sentence. However, in January 2026, Trump unveiled 'The Great Healthcare Plan' aimed at lowering healthcare costs and delivering money directly to the people. This plan includes measures to reduce prescription drug prices, lower insurance premiums, and enhance price transparency. Additionally, in July 2025, Trump signed the Working Families Tax Cuts Act, which created the Rural Health Transformation Program, investing $50 billion over five years to improve rural healthcare access. These actions indicate that the administration has been addressing healthcare concerns for working-class Americans. Therefore, the claim is misleading as it overlooks these significant healthcare initiatives.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim suggests that President Donald Trump is neglecting healthcare issues affecting working-class Americans while focusing on commuting George Santos's prison sentence. While it's true that Trump commuted Santos's sentence in October 2025, he has also taken actions related to healthcare. In January 2026, Trump unveiled 'The Great Healthcare Plan' aimed at lowering healthcare costs, including prescription drug prices and insurance premiums. Additionally, in July 2025, he signed the 'Working Families Tax Cuts Act,' which allocated $50 billion over five years to improve rural healthcare access. Therefore, while the timing of Santos's commutation may raise questions, it is inaccurate to state that Trump has entirely ignored healthcare issues affecting working-class Americans.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:55.531Z"
+      "verified_at": "2026-03-30T14:05:59.527Z"
     },
     {
       "tweet_id": "1973838415356739706",
@@ -330,9 +330,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'The American people overwhelmingly agree now is the time to take action on the GOP healthcare crisis' is partially supported by data. A Gallup poll from December 2025 found that 23% of Americans believe the healthcare system is in a 'state of crisis,' and 47% think it has 'major problems,' indicating significant concern. Additionally, 81% of Democrats and 64% of Republicans acknowledge major issues in the system. However, the term 'overwhelmingly' suggests near-universal agreement, which is not fully supported by these figures. While a majority recognize problems, the extent of consensus implied by 'overwhelmingly' is somewhat exaggerated.",
+      "reasoning": "The claim that 'The American people overwhelmingly agree now is the time to take action on the GOP healthcare crisis' lacks specific polling data to substantiate the assertion of overwhelming public agreement. While there was significant public concern over healthcare issues during the 2025 government shutdown, the term 'overwhelmingly' suggests a near-unanimous consensus, which is not clearly supported by available evidence. Therefore, the claim is somewhat misleading due to the lack of precise data backing the extent of public agreement.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:36:59.768Z"
+      "verified_at": "2026-03-30T14:06:12.002Z"
     },
     {
       "tweet_id": "1973785418207285376",
@@ -345,9 +345,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that Donald Trump shut down the government to further his Project 2025 agenda is partially accurate. The government shutdown began on October 1, 2025, due to a failure to pass appropriations legislation. During the shutdown, President Trump expressed intentions to use the situation to implement significant changes aligned with his Project 2025 agenda, including restructuring the federal workforce and cutting programs associated with Democrats. However, attributing the initiation of the shutdown solely to Trump's desire to advance Project 2025 oversimplifies the situation, as the shutdown resulted from broader legislative impasses. Therefore, while there is some truth to the claim, it lacks full context.",
+      "reasoning": "The claim that Donald Trump shut down the government to further his Project 2025 agenda is partially accurate. While the October 2025 government shutdown occurred due to a budget impasse, President Trump utilized the shutdown to implement aspects of Project 2025, such as restructuring the federal workforce and targeting specific agencies for cuts. However, attributing the shutdown's initiation solely to advancing Project 2025 oversimplifies the situation, as the shutdown resulted from broader budgetary disagreements between Republicans and Democrats.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:05.582Z"
+      "verified_at": "2026-03-30T14:06:17.430Z"
     },
     {
       "tweet_id": "1973130647003865279",
@@ -360,9 +360,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "While President Donald Trump did not explicitly state he wanted to shut down the government, his actions and rhetoric during the September 2025 budget negotiations contributed to the impasse that led to the shutdown. He canceled meetings with Democratic leaders, citing their 'unserious and ridiculous demands,' and threatened to implement 'irreversible' cuts to social benefit programs during the funding lapse. These actions suggest a willingness to allow a shutdown to occur to achieve policy objectives, but they do not confirm a direct desire to shut down the government.",
+      "reasoning": "While President Donald Trump did not explicitly state he wanted to shut down the government, his actions and statements during the September 2025 budget negotiations contributed to the impasse that led to the shutdown. He canceled meetings with Democratic leaders, citing their 'unserious and ridiculous demands,' and suggested that a shutdown was 'probably likely.' Additionally, his administration prepared for mass layoffs of federal employees during the shutdown, indicating a willingness to let it occur. However, attributing the shutdown solely to Trump's desire oversimplifies the complex negotiations and shared responsibilities among all parties involved.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:11.124Z"
+      "verified_at": "2026-03-30T14:06:23.565Z"
     },
     {
       "tweet_id": "1966228774497956131",
@@ -373,11 +373,11 @@
       "claim": "The One Big, Ugly Law is devastating rural hospitals in Virginia and across the nation.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The 'One Big Beautiful Bill Act' (OBBBA), signed into law in July 2025, includes significant Medicaid cuts totaling over $1 trillion over the next decade. These reductions are expected to result in the closure of more than 300 rural hospitals nationwide, with several in Virginia at risk. For instance, Augusta Medical Group announced the closure of three rural clinics in Virginia, citing the OBBBA as a contributing factor. Additionally, the Center for Healthcare Quality & Payment Reform reported that nearly a third of Virginia's rural hospitals were at risk of closure as of August 2025. While the OBBBA established a $50 billion Rural Health Transformation Program to support rural healthcare, experts argue that this funding is insufficient to offset the impact of the Medicaid cuts. Therefore, the claim that the OBBBA is devastating rural hospitals in Virginia and across the nation is accurate.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that the 'One Big, Ugly Law' is devastating rural hospitals in Virginia and across the nation is partially accurate. The 'One Big Beautiful Bill Act' (OBBBA), signed into law in July 2025, includes significant Medicaid cuts projected to total $1.02 trillion over the next decade. These cuts are expected to place over 300 rural hospitals at immediate risk of closure, with more than 700 at risk nationwide, including facilities in Virginia. However, the OBBBA also establishes a $50 billion Rural Health Transformation Program over five years, aiming to support rural healthcare providers. Critics argue that this fund is insufficient to offset the Medicaid cuts, but the inclusion of this program indicates that the law is not solely detrimental to rural hospitals. Therefore, while the law poses significant challenges, the claim overlooks the mitigating efforts within the legislation.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:14.895Z"
+      "verified_at": "2026-03-30T14:06:29.484Z"
     },
     {
       "tweet_id": "1956477471060041962",
@@ -388,11 +388,11 @@
       "claim": "Texas House Democrats blocked Greg Abbott from gerrymandering the congressional map during the special session that ended today.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Texas House Democrats did block the passage of the redistricting plan during the first special session by breaking quorum, preventing a vote. However, Governor Greg Abbott immediately called a second special session, and the redistricting plan was eventually passed and signed into law on August 29, 2025. Therefore, while the Democrats' actions delayed the process, they did not ultimately prevent the gerrymandering of the congressional map.",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "While Texas House Democrats did break quorum during the first special session, preventing the passage of the proposed congressional map at that time, their actions did not ultimately block Governor Greg Abbott from implementing gerrymandering. Governor Abbott promptly called a second special session, during which the Republican-controlled legislature passed the redistricting plan, adding five GOP-leaning districts. Therefore, the claim that Democrats 'blocked' gerrymandering is misleading, as the redistricting was eventually enacted despite their initial efforts.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:19.794Z"
+      "verified_at": "2026-03-30T14:06:37.367Z"
     },
     {
       "tweet_id": "1953468425273024976",
@@ -405,9 +405,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Multiple credible sources report that the Trump administration has utilized federal law enforcement agencies to investigate and target political adversaries. Notably, the FBI conducted a raid on former National Security Adviser John Bolton's home, which was criticized as an example of weaponizing law enforcement against political enemies. Additionally, the administration established the Interagency Weaponization Working Group, comprising officials from various federal agencies, to coordinate actions against perceived political opponents. These actions have been widely interpreted as efforts to use law enforcement for political retribution.",
+      "reasoning": "Multiple credible sources report that the Trump administration has utilized federal law enforcement agencies to target political adversaries. Instances include the Department of Justice initiating investigations into individuals such as former FBI Director James Comey and former CIA Director John Brennan, both known critics of President Trump. Additionally, Democratic officials like Rep. LaMonica McIver and Sen. Alex Padilla have faced arrests or detentions by federal agents under contentious circumstances. These actions have been widely interpreted as efforts to intimidate or silence political opponents, aligning with the claim that the administration is weaponizing law enforcement against its adversaries.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:22.794Z"
+      "verified_at": "2026-03-30T14:06:43.584Z"
     },
     {
       "tweet_id": "1950698978686734404",
@@ -420,9 +420,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Senator Josh Hawley voted in favor of the 'One Big Beautiful Bill Act,' which included significant cuts to Medicaid, potentially affecting healthcare coverage for his constituents. Despite his prior opposition to such cuts, his vote supported legislation that could reduce Medicaid funding by nearly $1 trillion over the next decade, impacting millions of Americans, including those in Missouri.",
+      "reasoning": "Senator Josh Hawley voted in favor of the 'One Big Beautiful Bill' in July 2025, which included significant cuts to Medicaid and introduced work requirements for certain recipients. These provisions were projected to reduce health coverage for millions of Americans, including many in Missouri. Although Hawley later introduced legislation to reverse some of these cuts, his initial vote supported measures that would decrease Medicaid funding and potentially limit healthcare access for his constituents.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:27.839Z"
+      "verified_at": "2026-03-30T14:06:48.274Z"
     },
     {
       "tweet_id": "1939140180486562169",
@@ -433,11 +433,11 @@
       "claim": "Senator Josh Hawley voted to cut Medicaid for millions of Americans to provide tax breaks to wealthy corporations.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Senator Josh Hawley voted for the 'One Big Beautiful Bill Act' in July 2025, which included significant Medicaid cuts and tax breaks for corporations. However, he publicly opposed the Medicaid cuts, calling them 'morally wrong and politically suicidal,' and later introduced legislation to reverse these cuts. While he did vote for the bill containing Medicaid reductions and corporate tax breaks, his actions suggest a complex position rather than straightforward support for cutting Medicaid to benefit corporations.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "Senator Josh Hawley voted in favor of the 'One Big Beautiful Bill Act,' which included significant cuts to Medicaid, potentially affecting millions of Americans. The bill also provided substantial tax breaks to corporations. Despite expressing concerns about the Medicaid cuts, Hawley ultimately supported the legislation. This aligns with the claim that he voted to cut Medicaid for millions to provide tax breaks to wealthy corporations.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:31.272Z"
+      "verified_at": "2026-03-30T14:06:52.969Z"
     },
     {
       "tweet_id": "1930108376718917930",
@@ -450,9 +450,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'House Republicans now admit they voted for a reckless budget bill that many did not bother to read' is partially supported by available information. The 'One Big Beautiful Bill Act' was a 940-page document passed under tight deadlines, leading to concerns about insufficient time for thorough review. Reports indicate that the bill was read aloud in the Senate over 16 hours, suggesting that not all legislators had read it in full. However, there is no direct evidence that House Republicans explicitly admitted to voting without reading the bill. Therefore, while the claim has some basis, it lacks concrete admissions from the legislators themselves.",
+      "reasoning": "The claim that House Republicans voted for a budget bill without reading it is partially supported by evidence. The 'One Big Beautiful Bill Act' was a 940-page document, and its full text was read aloud in the Senate over 16 hours, suggesting limited time for thorough review. However, there is no direct evidence that House Republicans admitted to not reading the bill. While the bill's length and expedited process may have hindered comprehensive review, the claim lacks specific admissions from House Republicans, making it somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:35.092Z"
+      "verified_at": "2026-03-30T14:06:58.101Z"
     },
     {
       "tweet_id": "1925729849332690972",
@@ -465,9 +465,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that the GOP tax bill will take away healthcare from more than 13 million Americans is based on projections estimating significant coverage losses due to proposed Medicaid cuts and work requirements. For instance, the Congressional Budget Office estimated that certain proposals could lead to up to 10 million people losing Medicaid coverage. However, these figures are projections, and the actual impact may vary. Additionally, the bill includes various provisions, and not all are directly related to healthcare. Therefore, while the claim highlights a significant potential consequence, it lacks nuance and certainty, making it somewhat misleading.",
+      "reasoning": "The claim that the GOP tax bill will take away healthcare from more than 13 million Americans is based on projections that combine the bill's direct impact with the expiration of enhanced ACA subsidies. The Congressional Budget Office estimated that the bill itself would result in at least 8.6 million people losing health insurance by 2034. The additional losses are tied to the scheduled expiration of ACA subsidies, which, while related, are not directly caused by the tax bill. Therefore, while the bill contributes to significant coverage losses, attributing the entire 13 million figure solely to the tax bill is somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:40.281Z"
+      "verified_at": "2026-03-30T14:07:05.727Z"
     },
     {
       "tweet_id": "1924854122852823185",
@@ -480,9 +480,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that Donald Trump lied about the State and Local Tax (SALT) Deduction and is misleading House Republicans in NY, NJ, and California. In 2025, President Trump signed legislation increasing the SALT deduction cap from $10,000 to $40,000 for 2025, with a phase-out for higher-income taxpayers. This change was particularly significant for residents in high-tax states like NY, NJ, and CA. While some House Republicans from these states advocated for an even higher cap, such as $100,000, the final legislation set the cap at $40,000. There is no clear evidence that Trump lied about the SALT deduction or misled House Republicans; rather, the final policy was a result of legislative negotiation. Therefore, the claim is somewhat misleading as it lacks context regarding the legislative process and the final outcome.",
+      "reasoning": "The claim asserts that Donald Trump lied about the State and Local Tax (SALT) Deduction and is misleading House Republicans in NY, NJ, and California. While the SALT deduction cap was indeed a contentious issue, with Trump initially supporting a $30,000 cap and later endorsing a $40,000 cap for 2025, there is no clear evidence that he 'lied' about it. Additionally, House Republicans from high-tax states like NY, NJ, and CA actively advocated for increasing the SALT deduction cap, indicating they were not simply misled but were engaged in negotiations to benefit their constituents. Therefore, while there were shifts in policy positions, labeling them as lies or deliberate misdirection lacks substantiation.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:46.100Z"
+      "verified_at": "2026-03-30T14:07:14.821Z"
     },
     {
       "tweet_id": "1922444341202542807",
@@ -495,9 +495,9 @@
       "domain": "foreign_policy",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim that 'House Republicans accepted a $400 million flying palace from a friend of Iran' is misleading. The $400 million luxury jet was a gift from Qatar's royal family to the U.S. government, intended for use as Air Force One. While President Trump and Defense Secretary Pete Hegseth were involved in accepting the plane, there is no evidence that House Republicans collectively accepted it. Additionally, Qatar is not considered a 'friend of Iran'; in fact, Qatar has had strained relations with Iran, including a blockade by neighboring countries over alleged ties to Iran. Therefore, the claim distorts the facts regarding both the acceptance of the plane and Qatar's relationship with Iran.",
+      "reasoning": "The claim that 'House Republicans accepted a $400 million flying palace from a friend of Iran' is misleading. The $400 million luxury jet was a gift from Qatar's royal family to the U.S. government, intended for use as Air Force One. While President Trump expressed support for accepting the plane, the formal acceptance was made by Defense Secretary Pete Hegseth, not House Republicans. Additionally, Qatar is not considered a 'friend of Iran'; in fact, Qatar has had strained relations with Iran, including a diplomatic crisis in 2017. Therefore, the claim misrepresents both the recipient and the donor's geopolitical affiliations.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:49.946Z"
+      "verified_at": "2026-03-30T14:07:21.291Z"
     },
     {
       "tweet_id": "1906785288149438683",
@@ -510,9 +510,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim states that Donald Trump won Florida's 1st Congressional District (FL-1) by 37 points and Florida's 6th Congressional District (FL-6) by 30 points. According to available data, in the 2024 presidential election, Trump won FL-1 with 68.1% of the vote to Kamala Harris's 30.9%, a margin of 37.2 points. In FL-6, Trump secured 65% of the vote to Harris's 35%, a margin of 30 points. While the margins are accurate, the claim lacks context regarding the specific election year, which could lead to confusion. Therefore, the claim is somewhat misleading due to the omission of this context.",
+      "reasoning": "The claim states that Donald Trump won Florida's 1st Congressional District (FL-1) by 37 points and the 6th Congressional District (FL-6) by 30 points. However, in the 2024 presidential election, Trump won FL-1 with 68.1% of the vote, leading by approximately 36.2 points, and FL-6 with 65% of the vote, leading by about 30 points. While the claim is nearly accurate, the slight discrepancies in the margins make it somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:37:56.274Z"
+      "verified_at": "2026-03-30T14:07:26.286Z"
     },
     {
       "tweet_id": "1905607767903043735",
@@ -523,11 +523,11 @@
       "claim": "Republicans are crashing the economy, undermining national security, and ripping away healthcare.",
       "claim_type": "factual",
       "domain": "economics",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Republicans are crashing the economy, undermining national security, and ripping away healthcare' is a broad assertion that lacks specific evidence. While there are reports of Republican policies potentially impacting the economy and national security, such as concerns over tariffs and defense funding decisions, these are complex issues with multiple contributing factors. Additionally, the claim about 'ripping away healthcare' is not substantiated with specific actions or policies in the provided information. Therefore, while there may be elements of truth, the claim is somewhat misleading due to its lack of specificity and context.",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim that 'Republicans are crashing the economy, undermining national security, and ripping away healthcare' is an oversimplification that lacks nuance. While certain Republican policies have faced criticism for their potential negative impacts, attributing the entirety of economic challenges, national security issues, and healthcare reductions solely to Republicans is misleading. For instance, President Trump's 2025 tariffs led to increased consumer costs and market volatility, but the economy did not collapse. Additionally, proposed Republican budgets have included significant cuts to healthcare programs like Medicaid and the ACA, potentially increasing the number of uninsured individuals. However, these proposals have not been universally enacted, and their full effects remain uncertain. Therefore, while there are elements of truth, the overall claim presents a distorted picture.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:00.677Z"
+      "verified_at": "2026-03-30T14:07:32.880Z"
     },
     {
       "tweet_id": "1891854797847883830",
@@ -538,11 +538,11 @@
       "claim": "Extreme MAGA Republicans in the House have introduced a bill to make Donald Trump’s birthday a federal holiday.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim states that 'Extreme MAGA Republicans in the House have introduced a bill to make Donald Trump’s birthday a federal holiday.' In reality, the bill was introduced by a single Republican representative, Claudia Tenney, without any co-sponsors. While the core fact that a bill was introduced is accurate, the framing suggests broader support among House Republicans than is evident, leading to a somewhat misleading impression.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "On February 14, 2025, Republican Representative Claudia Tenney introduced the 'Trump’s Birthday and Flag Day Holiday Establishment Act' (H.R.1395) to designate June 14 as a federal holiday honoring both President Donald J. Trump's birthday and Flag Day. This bill was referred to the House Committee on Oversight and Government Reform. Therefore, the claim that 'Extreme MAGA Republicans in the House have introduced a bill to make Donald Trump’s birthday a federal holiday' is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:04.814Z"
+      "verified_at": "2026-03-30T14:07:36.926Z"
     },
     {
       "tweet_id": "1889717721530519754",
@@ -555,9 +555,9 @@
       "domain": "economics",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim states that 'Inflation is up, economic growth is down, and the Trump-backed Republican candidate in the Westchester County Executive race was defeated by more than 25 points.' However, in February 2025, the annual inflation rate actually decreased to 2.8% from 3% in January, indicating a decline rather than an increase. Additionally, while the Republican candidate Christine Sculti lost to Democrat Ken Jenkins by approximately 27.4 percentage points (63.7% to 36.3%), there is no evidence that Sculti was specifically 'Trump-backed.' Therefore, the claim misrepresents the inflation trend and lacks substantiation regarding the candidate's endorsement.",
+      "reasoning": "The claim states that 'Inflation is up, economic growth is down, and the Trump-backed Republican candidate in the Westchester County Executive race was defeated by more than 25 points.' However, in February 2025, the U.S. inflation rate actually decreased to 2.8% from 3.0% in January, indicating a decline rather than an increase. Additionally, the claim lacks specific data on economic growth for that period, making it difficult to verify the assertion that economic growth is down. Regarding the Westchester County Executive race, Democrat Ken Jenkins won with 63.7% of the vote, defeating Republican Christine Sculti, who received 36.3%, resulting in a margin of 27.4 percentage points. While this margin exceeds 25 points, there is no evidence indicating that Sculti was endorsed by former President Trump. Therefore, the claim is misleading as it presents an inaccurate picture of inflation trends and lacks substantiation for the candidate's endorsement.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:11.399Z"
+      "verified_at": "2026-03-30T14:07:42.107Z"
     },
     {
       "tweet_id": "1881866700037280157",
@@ -570,9 +570,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim suggests that House Republicans denied knowledge of Project 2025 in the previous year but are now implementing it. While there is evidence that House Republicans have incorporated elements of Project 2025 into their legislative agenda, such as anti-ESG initiatives mirroring Project 2025 proposals [ ([citizen.org](https://www.citizen.org/news/house-republicans-new-anti-esg-report-mirrors-project-2025-proposals/?utm_source=openai))], there is no clear evidence indicating that they previously denied knowledge of the project. Therefore, the claim is somewhat misleading due to the lack of substantiation regarding their prior denial.",
+      "reasoning": "The claim asserts that House Republicans are implementing Project 2025 after previously denying knowledge of it. While there is evidence that House Republicans have advanced policies aligning with Project 2025's agenda, and some have distanced themselves from the project, the claim lacks specific instances of Republicans explicitly denying knowledge of Project 2025. Therefore, while the core assertion has merit, the lack of concrete evidence regarding prior denials makes the claim somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:17.368Z"
+      "verified_at": "2026-03-30T14:07:46.749Z"
     },
     {
       "tweet_id": "1878124715237371953",
@@ -585,9 +585,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The 2017 Tax Cuts and Jobs Act (TCJA) capped the State and Local Tax (SALT) deduction at $10,000, significantly limiting its benefit, especially for taxpayers in high-tax states. This change did affect many middle-class Americans who previously benefited from larger SALT deductions. However, the TCJA also included provisions that reduced tax rates and increased the standard deduction, which offset the impact of the SALT cap for many taxpayers. Therefore, while the SALT deduction was limited, the overall tax burden for many middle-class Americans was reduced, making the claim that millions were hurt somewhat misleading.",
+      "reasoning": "The 2017 Tax Cuts and Jobs Act (TCJA) did impose a $10,000 cap on the State and Local Tax (SALT) deduction, which previously allowed taxpayers to deduct the full amount of their state and local taxes. This change primarily affected taxpayers in high-tax states. However, the TCJA also included provisions that reduced tax rates and increased the standard deduction, leading to overall tax reductions for many middle-class Americans. Therefore, while the limitation on the SALT deduction did impact some taxpayers, the claim that it 'destroyed' the deduction and 'hurt millions of middle class Americans' overlooks the broader context of the TCJA's tax relief measures.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:21.887Z"
+      "verified_at": "2026-03-30T14:07:54.791Z"
     },
     {
       "tweet_id": "1861838552692080802",
@@ -598,11 +598,11 @@
       "claim": "Trump won the Presidency and swept the battleground states, but the House Republican Majority will be historically narrow.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The claim accurately states that Donald Trump won the presidency in 2024, securing 312 electoral votes and winning all seven key battleground states: Pennsylvania, Georgia, North Carolina, Michigan, Arizona, Wisconsin, and Nevada. Additionally, while Republicans maintained control of the House of Representatives, their majority was reduced from 222 seats in 2022 to 220 seats in 2024, making it historically narrow. Therefore, the claim is true.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that Trump won the presidency and swept the battleground states is accurate. However, the assertion that the House Republican majority is historically narrow lacks specific evidence. While Republicans gained control of the Senate, the size of their majority in the House is not detailed in the available sources. Without precise numbers, it's unclear if the majority is indeed historically narrow.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:26.648Z"
+      "verified_at": "2026-03-30T14:07:59.577Z"
     },
     {
       "tweet_id": "1853152663413674225",
@@ -615,9 +615,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "In July 2023, Iowa's Republican-controlled legislature passed a law banning most abortions after about six weeks of pregnancy. This law was initially blocked by a court injunction but was later upheld by the Iowa Supreme Court in June 2024, allowing it to take effect. Therefore, the claim that Republicans in Iowa enacted a six-week abortion ban is accurate.",
+      "reasoning": "The claim that Republicans in Iowa enacted a six-week abortion ban is accurate. In July 2023, Iowa's Republican-controlled legislature passed a law banning most abortions after six weeks of pregnancy. The law faced legal challenges but was upheld by the Iowa Supreme Court in June 2024, allowing it to take effect on July 29, 2024. This legislation was exclusively supported by Republicans and prohibits most abortions after fetal cardiac activity is detected, which typically occurs around six weeks into pregnancy.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:31.147Z"
+      "verified_at": "2026-03-30T14:08:02.963Z"
     },
     {
       "tweet_id": "1852447217602445745",
@@ -630,9 +630,9 @@
       "domain": "domestic",
       "score": 0.35,
       "verdict": "MISLEADING",
-      "reasoning": "The claim that moderate House Republicans in New York and California want to criminalize abortion care and end Medicare as we know it is misleading. While some Republicans have historically supported restrictive abortion measures, many in competitive districts have recently moderated their positions. For instance, Rep. Mike Lawler (R-N.Y.) opposes a federal abortion ban and supports access to mifepristone. Similarly, Rep. John Duarte (R-Calif.) has described himself as 'pro-choice.' Regarding Medicare, there is no substantial evidence indicating that these moderate Republicans aim to 'end Medicare as we know it.' Therefore, the claim distorts the current positions of these politicians.",
+      "reasoning": "The claim that moderate House Republicans in New York and California want to criminalize abortion care and end Medicare as we know it is misleading. Many of these Republicans have publicly opposed a federal abortion ban and have expressed support for maintaining Medicare. For instance, Rep. Mike Lawler of New York opposes a federal abortion ban and supports exceptions in cases of rape or risk to the mother's life. Similarly, Rep. Lori Chavez-DeRemer of California personally opposes abortion but would oppose a national abortion ban and supports IVF treatments. Additionally, there is no substantial evidence indicating that these moderate Republicans aim to dismantle Medicare. Therefore, the claim distorts the positions of these politicians.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:35.240Z"
+      "verified_at": "2026-03-30T14:08:12.609Z"
     },
     {
       "tweet_id": "1848787961850061243",
@@ -645,9 +645,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Extreme MAGA Republicans want to criminalize abortion care and support Project 2025' is partially accurate. Project 2025, spearheaded by the Heritage Foundation, includes proposals to enforce the Comstock Act, which could lead to criminalizing the mailing of abortion-related materials, effectively restricting access to abortion services. However, while some MAGA Republicans support Project 2025, it is not universally endorsed across the party. Therefore, the claim is somewhat misleading as it overgeneralizes the level of support within the Republican Party.",
+      "reasoning": "The claim that 'Extreme MAGA Republicans want to criminalize abortion care and support Project 2025' is partially accurate. Project 2025, developed by the Heritage Foundation, includes proposals to restrict abortion access, such as enforcing the Comstock Act to ban mailing abortion pills and reversing the FDA's approval of mifepristone. However, while some MAGA Republicans support Project 2025, it is not universally endorsed by all members of the group. Therefore, the claim is somewhat misleading as it overgeneralizes the level of support within the MAGA Republican community.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:41.112Z"
+      "verified_at": "2026-03-30T14:08:19.383Z"
     },
     {
       "tweet_id": "1836184981581750498",
@@ -660,9 +660,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that Haitian immigrants are eating cats and dogs has been thoroughly investigated and debunked by multiple reputable sources. Authorities in Springfield, Ohio, including city spokesperson Karen Graves and local police, have confirmed that there are no credible reports or evidence supporting such allegations. Additionally, incidents cited as evidence, such as a woman arrested for killing a cat, were found to be unrelated to Haitian immigrants and occurred in different locations. Therefore, the statement that 'Haitian immigrants are not eating cats and dogs' is accurate.",
+      "reasoning": "The claim that Haitian immigrants are eating cats and dogs has been thoroughly investigated and debunked by multiple credible sources. Officials in Springfield, Ohio, including the city spokesperson and police, have stated there are no credible reports or evidence supporting these allegations. Fact-checking organizations such as PolitiFact and Snopes have also found these claims to be baseless, originating from unverified social media posts and misinformation. Therefore, the statement 'Haitian immigrants are not eating cats and dogs' is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:45.382Z"
+      "verified_at": "2026-03-30T14:08:23.920Z"
     },
     {
       "tweet_id": "1834602667126956441",
@@ -675,9 +675,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that House Republicans support a national abortion ban is partially accurate. While some House Republicans have endorsed national abortion restrictions, the official Republican Party platform in 2024 omitted a national abortion ban for the first time in 40 years, focusing instead on state-level regulation. Regarding 'Trump's Project 2025,' this initiative was developed by the Heritage Foundation and not directly by Trump or House Republicans. Although some House Republicans align with its conservative goals, it is not an official party initiative. Lastly, the assertion that House Republicans support massive tax cuts for big corporations is consistent with the party's historical stance on corporate tax reductions. However, the claim's framing suggests unanimous support and direct involvement with Project 2025, which is not entirely accurate.",
+      "reasoning": "The claim that House Republicans support a national abortion ban, Trump's Project 2025, and massive tax cuts for big corporations is partially accurate but lacks nuance. While some House Republicans have endorsed national abortion bans, the official Republican platform in 2024 omitted such a ban, focusing instead on state-level regulation. Trump's Project 2025 does propose significant tax cuts for corporations, and House Republicans have advanced related tax legislation. However, attributing unanimous support to all House Republicans oversimplifies the diversity of opinions within the party.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:50.645Z"
+      "verified_at": "2026-03-30T14:08:31.257Z"
     },
     {
       "tweet_id": "1829580242257916324",
@@ -690,9 +690,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that House Republicans in New York and California will support a nationwide abortion ban and are lying if they state otherwise. While some House Republicans from these states have supported national abortion restrictions, this is not universally true for all members. For instance, reports indicate that certain vulnerable House Republicans have misrepresented their records on abortion, suggesting a divergence in positions. Therefore, while there is evidence of support for nationwide abortion bans among some House Republicans in New York and California, it is misleading to categorically state that all will support such measures and are lying if they claim otherwise.",
+      "reasoning": "The claim asserts that House Republicans in New York and California will support a nationwide abortion ban and are lying if they state otherwise. While some House Republicans from these states have supported anti-abortion measures, such as co-sponsoring the Life at Conception Act, which could lead to a nationwide abortion ban, this does not apply universally to all Republican representatives from these states. For instance, Representatives David Valadao, Mike Garcia, and Michelle Steel from California have been noted for their support of such measures. However, without explicit statements or votes from each individual, it's inaccurate to categorically state that all House Republicans from New York and California support a nationwide abortion ban. Therefore, the claim is somewhat misleading as it overgeneralizes the positions of all House Republicans in these states.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:54.343Z"
+      "verified_at": "2026-03-30T14:08:37.450Z"
     },
     {
       "tweet_id": "1816437624514474152",
@@ -705,9 +705,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Extreme MAGA Republicans want to end Social Security and Medicare as we know it' is partially supported by evidence. Some Republican figures and groups have proposed changes to these programs, such as raising the eligibility age or altering benefit structures. For instance, the Republican Study Committee proposed raising the Social Security eligibility age to 69 and offering seniors assistance to buy private health coverage competing against government insurance plans. However, these proposals do not equate to ending the programs entirely. Additionally, former President Donald Trump has publicly stated his intention to protect Social Security and Medicare, though his administration's budgets included proposals for spending reductions aimed at extending the programs' solvency. Therefore, while there is evidence of proposed changes, the claim's framing suggests a complete dismantling of these programs, which is not fully substantiated.",
+      "reasoning": "The claim that 'Extreme MAGA Republicans want to end Social Security and Medicare as we know it' is partially accurate but lacks important context. While some Republican figures have proposed changes to these programs, such as raising the eligibility age or modifying benefits for future recipients, these proposals do not equate to ending the programs entirely. Additionally, former President Donald Trump has publicly stated his commitment to preserving Social Security and Medicare, though his administration's budget proposals did include measures aimed at reducing spending on these programs. Therefore, while there is evidence of Republican-led initiatives to reform Social Security and Medicare, characterizing these efforts as a desire to 'end' the programs is an exaggeration.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:38:59.073Z"
+      "verified_at": "2026-03-30T14:08:45.139Z"
     },
     {
       "tweet_id": "1815545132684288053",
@@ -720,9 +720,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Donald Trump, born on June 14, 1946, was 78 years old when he was nominated as the Republican presidential candidate in July 2024. This makes him the oldest presidential nominee of a major political party in American history, surpassing Joe Biden, who was 77 when nominated in 2020. Therefore, the claim is accurate.",
+      "reasoning": "As of July 2024, Donald Trump, at 78 years old, became the oldest presidential nominee of a major political party in American history. This surpasses the previous record held by Joe Biden, who was 77 when nominated in 2020. Therefore, the claim is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:02.967Z"
+      "verified_at": "2026-03-30T14:08:48.546Z"
     },
     {
       "tweet_id": "1813778008978727423",
@@ -735,24 +735,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "J.D. Vance has expressed support for certain elements of Project 2025 and has a history of advocating for a national abortion ban. He wrote the foreword for a book by Kevin Roberts, the president of the Heritage Foundation and an architect of Project 2025, endorsing Roberts' vision for conservatism. However, Vance has not explicitly endorsed the entire Project 2025 agenda. Regarding abortion, Vance has previously stated he wants abortion to be 'illegal nationally' and has criticized exceptions for rape and incest. Nonetheless, during the 2024 campaign, he claimed that Donald Trump would veto a federal abortion ban, indicating a shift towards a states' rights approach. Therefore, while the claim captures elements of Vance's positions, it lacks nuance regarding his explicit endorsements and recent statements.",
+      "reasoning": "J.D. Vance has expressed support for certain aspects of Project 2025 but has also stated disagreements with parts of it. He wrote the foreword for a book by Kevin Roberts, a key figure behind Project 2025, indicating some level of endorsement. Regarding abortion, Vance has previously supported making abortion illegal nationally and backed federal legislation restricting abortion. However, he has also claimed that his personal views on abortion would not dominate the ticket, suggesting a more nuanced position. Therefore, while the claim captures elements of Vance's positions, it oversimplifies his stance by not acknowledging his stated disagreements and nuanced views.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:08.573Z"
-    },
-    {
-      "tweet_id": "1813547172950048929",
-      "tweet_text": "House Democrats have now out-raised the House Republican campaign arm for the sixth consecutive quarter. Onward 🇺🇸🇺🇸🇺🇸",
-      "tweet_date": "Wed Jul 17 12:11:54 +0000 2024",
-      "tweet_url": "https://twitter.com/hakeemjeffries/status/1813547172950048929",
-      "tweet_likes": 1292,
-      "claim": "House Democrats have out-raised the House Republican campaign arm for the sixth consecutive quarter.",
-      "claim_type": "factual",
-      "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The claim that House Democrats have out-raised the House Republican campaign arm for the sixth consecutive quarter is supported by available evidence. As of July 2024, reports indicate that for the third consecutive quarter, Democratic incumbents and challengers have outraised their Republican opponents by an average of more than $440,000. Additionally, the Democratic Congressional Campaign Committee (DCCC) announced it outraised the National Republican Congressional Committee (NRCC) by $7 million in the second quarter and $5.4 million in June. While specific data for all six quarters is not provided in the available sources, the consistent pattern of Democratic fundraising dominance over multiple quarters supports the claim.",
-      "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:13.555Z"
+      "verified_at": "2026-03-30T14:08:56.119Z"
     },
     {
       "tweet_id": "1805290639577280652",
@@ -763,11 +748,11 @@
       "claim": "Donald Trump and the extreme MAGA Republicans destroyed Roe v. Wade.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The claim that \"Donald Trump and the extreme MAGA Republicans destroyed Roe v. Wade\" is accurate. Former President Donald Trump appointed three conservative justices—Neil Gorsuch, Brett Kavanaugh, and Amy Coney Barrett—to the U.S. Supreme Court, all of whom voted to overturn Roe v. Wade in the 2022 Dobbs v. Jackson Women's Health Organization decision. Trump has publicly taken credit for this outcome, stating, \"I did it. And I'm proud to have done it.\" Additionally, the Republican Party, particularly its more conservative factions often referred to as \"MAGA Republicans,\" has long advocated for overturning Roe v. Wade, aligning with efforts to appoint justices likely to achieve this goal.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'Donald Trump and the extreme MAGA Republicans destroyed Roe v. Wade' is somewhat misleading. While it's true that former President Trump appointed three conservative justices—Neil Gorsuch, Brett Kavanaugh, and Amy Coney Barrett—who were instrumental in the Supreme Court's decision to overturn Roe v. Wade in June 2022, the term 'destroyed' implies direct action by Trump and his supporters. In reality, the Supreme Court, an independent judicial body, made the decision. Trump's role was significant in shaping the Court's composition, but he did not directly overturn the ruling. Additionally, while many Republicans supported the appointments, attributing the decision solely to 'extreme MAGA Republicans' overlooks the broader conservative legal movement's longstanding efforts to challenge Roe v. Wade.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:17.030Z"
+      "verified_at": "2026-03-30T14:09:11.475Z"
     },
     {
       "tweet_id": "1789455254712451577",
@@ -780,9 +765,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Extreme MAGA Republicans have introduced legislation that opens the door to government surveillance of pregnant women' refers to the More Opportunities for Moms to Succeed (MOMS) Act, introduced by Senator Katie Britt in May 2024. This legislation proposed creating a government-run website, pregnancy.gov, to provide pregnancy-related resources and collect data from users. Critics, including Senate Democrats, argued that this could lead to government tracking and coercion of pregnant women. However, the bill's stated intent was to offer support and information, not explicitly to surveil. Therefore, while the legislation could potentially enable increased government oversight, characterizing it as opening the door to surveillance is somewhat misleading without acknowledging the bill's stated purpose.",
+      "reasoning": "The claim suggests that 'Extreme MAGA Republicans' have introduced legislation enabling government surveillance of pregnant women. While Republican Senator Katie Britt introduced the MOMS Act, which proposes creating a government-run website to provide resources to pregnant individuals, the bill does not mandate users to provide personal information, nor does it establish a federal database to track pregnancies. Users can opt to share contact information for follow-up resources, but this is voluntary. Therefore, while the legislation involves government interaction with pregnant individuals, it does not equate to surveillance as implied. Additionally, other Republican-led initiatives, such as the Missouri proposal for a registry of pregnant women 'at risk' for abortions, indicate a trend towards increased governmental involvement in pregnancy-related matters, but the specific claim about surveillance is somewhat exaggerated.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:21.304Z"
+      "verified_at": "2026-03-30T14:09:19.946Z"
     },
     {
       "tweet_id": "1777728682414559536",
@@ -795,9 +780,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "While Donald Trump did not directly overturn Roe v. Wade, his appointment of three conservative Supreme Court justices—Neil Gorsuch, Brett Kavanaugh, and Amy Coney Barrett—was instrumental in the Court's 2022 decision to overturn the ruling. Trump has publicly taken credit for this outcome, stating, 'I was able to kill Roe v. Wade, much to the 'shock' of everyone.' However, the actual decision was made by the Supreme Court, not Trump himself.",
+      "reasoning": "The claim that 'Donald Trump destroyed Roe v. Wade' is somewhat misleading. While the U.S. Supreme Court officially overturned Roe v. Wade in June 2022, Trump's appointment of three conservative justices—Neil Gorsuch, Brett Kavanaugh, and Amy Coney Barrett—was instrumental in creating the majority that led to this decision. Trump himself has publicly taken credit for this outcome, stating, 'I did it. And I'm proud to have done it.' However, the actual act of overturning Roe v. Wade was carried out by the Supreme Court, not Trump directly.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:25.080Z"
+      "verified_at": "2026-03-30T14:09:24.711Z"
     },
     {
       "tweet_id": "1775213561796612279",
@@ -810,9 +795,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that Donald Trump and MAGA extremists aim to criminalize abortion care and impose a nationwide ban on reproductive freedom. While some MAGA-aligned Republicans have advocated for a national abortion ban, Donald Trump's position has been more nuanced. In April 2024, Trump stated that abortion laws should be determined by individual states, declining to endorse a national ban. However, he has also suggested support for restrictions, such as a 15-week limit, and has taken credit for the Supreme Court's decision to overturn Roe v. Wade, which has led to increased state-level restrictions. Therefore, while elements of the claim are accurate, it lacks the nuance of Trump's stated position, making it somewhat misleading.",
+      "reasoning": "The claim asserts that Donald Trump and MAGA extremists aim to criminalize abortion care and impose a nationwide ban on reproductive freedom. While some MAGA-aligned Republicans have advocated for a national abortion ban, Donald Trump's position has been more nuanced. In April 2024, Trump stated that abortion laws should be determined by individual states, declining to endorse a national ban. However, he has also suggested support for restrictions, such as a 15-week limit, and has taken credit for the Supreme Court's decision to overturn Roe v. Wade, which has led to increased state-level restrictions. Therefore, while the claim captures the general direction of anti-abortion efforts within the MAGA movement, it oversimplifies Trump's stance by not acknowledging his emphasis on state-level decision-making.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:28.529Z"
+      "verified_at": "2026-03-30T14:09:32.289Z"
     },
     {
       "tweet_id": "1763659302684737579",
@@ -825,9 +810,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Extreme MAGA Republicans want to criminalize reproductive healthcare and ban fertility treatments like IVF nationally' is partially accurate but lacks nuance. While some Republican lawmakers have supported legislation like the Life at Conception Act, which defines life at fertilization and could impact IVF practices, there is no widespread, unified effort among 'Extreme MAGA Republicans' to ban IVF nationally. Additionally, some Republicans have expressed support for IVF access. Therefore, the claim is somewhat misleading as it overgeneralizes the position of all 'Extreme MAGA Republicans' without acknowledging the diversity of opinions within the group.",
+      "reasoning": "The claim that 'Extreme MAGA Republicans want to criminalize reproductive healthcare and ban fertility treatments like IVF nationally' is somewhat misleading. While some Republican lawmakers have supported legislation that could restrict reproductive healthcare, including IVF, there is no unified national effort by 'Extreme MAGA Republicans' to criminalize reproductive healthcare or ban IVF. For instance, the Republican Party's 2024 platform supports states establishing fetal personhood, which could impact IVF access, but does not explicitly call for a national ban on fertility treatments. Additionally, some Republicans have expressed support for IVF access, indicating a lack of consensus within the party. Therefore, while there are elements of truth, the claim overgeneralizes the position of all 'Extreme MAGA Republicans.'",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:32.680Z"
+      "verified_at": "2026-03-30T14:09:37.205Z"
     },
     {
       "tweet_id": "1757767109059166566",
@@ -840,9 +825,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim suggests that 'Extreme MAGA Republicans' are focused solely on political stunts and Donald Trump, neglecting key issues like the economy, inflation, housing affordability, border security, and national security. While there is evidence that some Republicans have engaged in political maneuvers, such as blocking bipartisan border security deals at Trump's behest ([democrats.org](https://democrats.org/news/maga-republicans-put-donald-trump-and-politics-ahead-of-securing-the-border/?utm_source=openai)), it's also documented that the Republican platform emphasizes addressing inflation, border security, and economic issues ([iheart.com](https://www.iheart.com/podcast/53-republican-news-2024-123065618/episode/republican-platform-focuses-on-inflation-border-250856916/?utm_source=openai)). Therefore, the claim overlooks the broader policy focus of the party, making it somewhat misleading.",
+      "reasoning": "While some 'Extreme MAGA Republicans' have engaged in political stunts and focused on Donald Trump, it is inaccurate to suggest they have entirely neglected key issues like the economy, inflation, housing affordability, border security, and national security. For instance, the 2024 Republican National Convention platform addressed topics such as immigration, the economy, and national security. Additionally, Donald Trump's 2024 campaign emphasized economic policies, including protective tariffs and tax reforms. Therefore, the claim overlooks the broader policy focus of these Republicans.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:37.512Z"
+      "verified_at": "2026-03-30T14:09:41.842Z"
     },
     {
       "tweet_id": "1754340488683905394",
@@ -855,9 +840,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Extreme MAGA Republicans are blocking a bipartisan Senate bill related to immigration before even reading it' is somewhat misleading. While it's true that Senate Republicans blocked a bipartisan border security bill in February 2024, the assertion that they did so 'before even reading it' lacks substantiated evidence. Reports indicate that the bill faced immediate opposition from Republicans, with some expressing concerns about its adequacy in addressing border issues. However, there is no clear evidence that they opposed it without reviewing its contents. Therefore, while the core of the claim is accurate, the framing suggests a level of negligence that isn't fully supported by available information.",
+      "reasoning": "The claim that 'Extreme MAGA Republicans are blocking a bipartisan Senate bill related to immigration before even reading it' is partially accurate. In February 2024, House Speaker Mike Johnson, a Republican, declared the bipartisan immigration bill 'dead on arrival' shortly after its release, indicating a swift rejection. However, it's not definitively established that this decision was made 'before even reading it.' While the rapid dismissal suggests limited review, without explicit evidence confirming that the bill was not read at all, the claim lacks full substantiation.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:43.213Z"
+      "verified_at": "2026-03-30T14:09:46.051Z"
     },
     {
       "tweet_id": "1752390421462818926",
@@ -870,9 +855,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The 2017 Tax Cuts and Jobs Act (TCJA) did not eliminate the State and Local Tax (SALT) deduction but capped it at $10,000, reducing its benefit, especially for taxpayers in high-tax states. While this change affected some middle-class families, the TCJA also increased the standard deduction and adjusted tax brackets, leading to tax cuts for many middle-income households. Therefore, the claim that the TCJA \"obliterated\" the SALT deduction and hurt middle-class families lacks nuance and context.",
+      "reasoning": "The 2017 Tax Cuts and Jobs Act (TCJA) did not eliminate the State and Local Tax (SALT) deduction but capped it at $10,000. This cap primarily affected taxpayers in high-tax states, many of whom are middle-class families. However, the TCJA also increased the standard deduction and lowered tax rates, which offset the impact for many middle-income taxpayers. While some middle-class families in high-tax states experienced higher tax liabilities due to the SALT cap, others benefited from the overall tax reforms. Therefore, the claim that the TCJA \"obliterated\" the SALT deduction and universally \"hurt middle class families\" lacks nuance and context.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:48.474Z"
+      "verified_at": "2026-03-30T14:09:53.008Z"
     },
     {
       "tweet_id": "1717647887855685835",
@@ -883,11 +868,11 @@
       "claim": "Extreme MAGA Republicans in New York voted to shield George Santos from accountability.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim states that 'Extreme MAGA Republicans in New York voted to shield George Santos from accountability.' While it's true that some New York Republicans voted against expelling Santos during the November 1, 2023, vote, this characterization overlooks the fact that other New York Republicans actively sought his expulsion. For instance, Rep. Anthony D'Esposito and other New York GOP freshmen introduced a resolution to expel Santos on October 11, 2023. Therefore, the claim is somewhat misleading as it generalizes the actions of all New York Republicans without acknowledging the efforts of those who pursued accountability.",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim states that 'Extreme MAGA Republicans in New York voted to shield George Santos from accountability.' However, the record shows that several New York Republican representatives actively sought to expel Santos. On October 11, 2023, six freshman Republican lawmakers from New York introduced a measure to expel Santos from Congress. This group included Reps. Anthony D'Esposito, Nick LaLota, Mike Lawler, Marc Molinaro, Nick Langworthy, and Brandon Williams. Additionally, on October 26, 2023, Rep. D'Esposito introduced a privileged resolution to force a vote on Santos's expulsion. While the initial expulsion vote on November 1, 2023, failed to achieve the necessary two-thirds majority, it is inaccurate to suggest that New York Republicans uniformly voted to shield Santos. In fact, many took active steps to hold him accountable. Therefore, the claim is misleading as it overlooks the efforts by these New York Republicans to expel Santos.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:54.231Z"
+      "verified_at": "2026-03-30T14:10:01.234Z"
     },
     {
       "tweet_id": "1712838034058596592",
@@ -900,9 +885,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Former President Donald Trump endorsed Representative Jim Jordan for House Speaker on October 6, 2023. Jordan has been a prominent supporter of Trump's claims regarding the 2020 election. However, there is no evidence that Trump specifically 'ordered' House Republicans in New York to support Jordan. Additionally, while Jordan has a strong anti-abortion stance, the claim that he 'wants to eliminate reproductive freedom' is a broad characterization. Therefore, the claim contains elements of truth but lacks precise context and evidence for some assertions.",
+      "reasoning": "Former President Donald Trump endorsed Representative Jim Jordan for House Speaker on October 5, 2023. Jordan has been characterized as an 'election denier' due to his actions following the 2020 presidential election. However, the claim that Trump 'ordered' House Republicans in New York to support Jordan is an exaggeration; while he endorsed Jordan, there is no evidence of him issuing direct orders to specific state delegations. Additionally, while Jordan has a conservative stance on reproductive rights, the phrase 'wants to eliminate reproductive freedom' is a broad characterization that may oversimplify his position.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:39:57.897Z"
+      "verified_at": "2026-03-30T14:10:07.200Z"
     },
     {
       "tweet_id": "1690908078131064833",
@@ -915,9 +900,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "President Biden has consistently supported a woman's right to make her own reproductive healthcare decisions. In June 2023, he signed an executive order aimed at protecting and increasing access to contraception, demonstrating his commitment to reproductive rights. Additionally, during his 2023 State of the Union address, Biden called on Congress to restore federal abortion rights, further underscoring his support for women's reproductive freedoms.",
+      "reasoning": "President Biden has consistently supported a woman's right to make her own reproductive healthcare decisions. Following the Supreme Court's decision to overturn Roe v. Wade, his administration has taken multiple actions to protect and expand access to reproductive health services. These include signing executive orders to safeguard access to abortion and contraception, directing federal agencies to strengthen privacy protections for reproductive health information, and advocating for the restoration of Roe's protections through federal legislation. These actions demonstrate his unequivocal support for reproductive rights.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:01.191Z"
+      "verified_at": "2026-03-30T14:10:12.123Z"
     },
     {
       "tweet_id": "1685032734375194626",
@@ -930,9 +915,9 @@
       "domain": "economics",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that Florida has high inflation is accurate, as regions like Miami and Tampa experienced inflation rates of 9% and 7.3% respectively in mid-2023, significantly above the national average of 4% at that time. However, the assertion of low wages is misleading. In the first quarter of 2023, average weekly wages in Miami-Dade and Broward counties increased by 9.4% and 8.2% respectively, outpacing the national average wage growth of 6.6%. Therefore, while Florida faced high inflation, wage growth in certain areas was robust, contradicting the claim of low wages.",
+      "reasoning": "As of July 2023, Florida experienced higher inflation rates compared to the national average. For instance, the Miami-Fort Lauderdale-West Palm Beach area had an inflation rate of 9% over the 12 months ending in April 2023, more than double the national average of 4% during the same period. ([amp.cnn.com](https://amp.cnn.com/cnn/2023/07/10/economy/florida-inflation-hotspot-regional?utm_source=openai)) However, the claim that Florida has \"low wages\" is less clear-cut. In July 2023, farm workers in Florida were paid an average gross wage of $16.04 per hour, up from $15.98 in July 2022. ([morningagclips.com](https://www.morningagclips.com/southern-region-farm-labor-report-5/?utm_source=openai)) While this indicates wage growth, it doesn't necessarily reflect the broader wage landscape across all sectors in Florida. Therefore, while the state did experience higher inflation, the assertion of \"low wages\" lacks sufficient context and may not accurately represent the overall wage situation.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:07.543Z"
+      "verified_at": "2026-03-30T14:10:23.094Z"
     },
     {
       "tweet_id": "1679186451949289474",
@@ -943,11 +928,11 @@
       "claim": "Extreme MAGA Republicans are determined to impose a nationwide ban on abortion care.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "The claim that 'Extreme MAGA Republicans are determined to impose a nationwide ban on abortion care' is supported by multiple instances of Republican lawmakers advocating for federal abortion restrictions. For example, Senator Lindsey Graham announced plans to reintroduce legislation for a federal 15-week abortion ban. Additionally, 22 Republican state attorneys general filed a brief seeking to revoke the FDA's approval of mifepristone, which would effectively ban the medication nationwide. These actions indicate a concerted effort by certain Republican factions to implement nationwide abortion bans.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "While some Republican lawmakers have proposed national abortion bans, the claim that 'Extreme MAGA Republicans are determined to impose a nationwide ban on abortion care' lacks specificity and overgeneralizes the position of all 'MAGA Republicans.' Not all members of this group have publicly supported such measures. For instance, Senator Lindsey Graham introduced a federal 15-week abortion ban in 2022, and 125 House Republicans co-sponsored the 'Life at Conception Act,' which could affect abortion access nationwide. However, other prominent figures, like Florida Governor Ron DeSantis, have not explicitly endorsed a federal ban, leading to criticism from anti-abortion groups. Therefore, while there is evidence of efforts toward a nationwide ban by some 'MAGA Republicans,' the claim overstates the uniformity and determination across the entire group.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:13.338Z"
+      "verified_at": "2026-03-30T14:10:29.078Z"
     },
     {
       "tweet_id": "1675261041909833730",
@@ -960,24 +945,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that Supreme Court justices appointed by former President Trump have negatively impacted Black Americans. Notably, in June 2023, the Supreme Court ruled 6-3 to end race-conscious admissions programs at Harvard and the University of North Carolina, effectively dismantling affirmative action in college admissions. This decision is expected to reduce the representation of Black and Latino students on college campuses. However, attributing this outcome solely to Trump's appointees is somewhat misleading. While Justices Gorsuch, Kavanaugh, and Barrett, appointed by Trump, were part of the majority, the decision also included votes from other conservative justices not appointed by him. Therefore, while Trump's appointees contributed to the ruling, the claim oversimplifies the Court's composition and decision-making process.",
+      "reasoning": "The claim asserts that Supreme Court justices appointed by former President Trump have negatively impacted Black Americans. Notably, the Court's conservative majority, which includes three Trump appointees, ruled to end race-conscious admissions in higher education, a decision expected to reduce Black student representation on campuses. However, attributing this outcome solely to Trump's appointees overlooks the collective role of the entire conservative majority in these decisions.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:17.724Z"
-    },
-    {
-      "tweet_id": "1668769412860747776",
-      "tweet_text": "MAGA Republican House members in New York pretend to be moderate. But they just voted with the NRA. And against gun safety in America. These people are too extreme to be trusted.",
-      "tweet_date": "Tue Jun 13 23:56:46 +0000 2023",
-      "tweet_url": "https://twitter.com/hakeemjeffries/status/1668769412860747776",
-      "tweet_likes": 804,
-      "claim": "MAGA Republican House members in New York voted against gun safety and with the NRA.",
-      "claim_type": "factual",
-      "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "In June 2023, House Republicans, including those from New York, voted to nullify an ATF rule requiring pistols with stabilizing braces to be registered as short-barreled rifles. This vote aligned with the NRA's position opposing the rule. However, the claim that these members voted 'against gun safety' is somewhat misleading, as the ATF rule's impact on safety is debated. While the rule aimed to regulate firearms potentially used in mass shootings, opponents argued it infringed on Second Amendment rights without significantly enhancing safety. Therefore, while the vote did align with the NRA, characterizing it as a vote against gun safety lacks nuance.",
-      "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:23.746Z"
+      "verified_at": "2026-03-30T14:10:32.802Z"
     },
     {
       "tweet_id": "1659954761364385796",
@@ -990,9 +960,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that 'Extreme MAGA Republicans lied about homeless vets being evicted to house migrants' is accurate. In May 2023, reports emerged alleging that homeless veterans were evicted from New York hotels to accommodate migrants. Investigations revealed that these reports were fabricated by the Yerik Israel Toney Foundation, whose founder admitted to making up the story. The false narrative was widely disseminated by certain Republican figures and media outlets before being debunked.",
+      "reasoning": "The claim that 'Extreme MAGA Republicans lied about homeless vets being evicted to house migrants' is accurate. In May 2023, reports emerged alleging that homeless veterans were evicted from New York hotels to accommodate migrants. These reports were later debunked, revealing that the story was fabricated by the Yerik Israel Toney Foundation. The foundation's founder admitted to making up the story, and investigations confirmed that no veterans were displaced to house migrants. Therefore, the assertion that certain Republicans propagated this false narrative is true.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:27.454Z"
+      "verified_at": "2026-03-30T14:10:43.532Z"
     },
     {
       "tweet_id": "1658666720221954048",
@@ -1005,9 +975,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Donna Deegan, a Democrat, won the Jacksonville mayoral election on May 16, 2023, defeating Republican Daniel Davis, who was backed by Governor Ron DeSantis. Deegan's victory marked a significant political shift in Jacksonville, a city that had been under Republican leadership for most of the past 30 years. However, attributing her win solely to voters rejecting DeSantis' 'book-banning' agenda oversimplifies the outcome. While DeSantis has supported policies that led to the removal of certain books from schools, the mayoral election likely reflected a combination of factors, including local issues and candidate appeal, rather than a direct referendum on state-level education policies.",
+      "reasoning": "Donna Deegan's victory in the Jacksonville mayoral election marked a significant shift, as she became the first Democrat to hold the position since 2011. However, attributing her win solely to a rejection of Governor DeSantis's book policies oversimplifies the outcome. While DeSantis has been associated with policies leading to the removal of certain books from schools, the mayoral election likely reflected a broader range of local issues and voter concerns beyond just the book policies.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:36.147Z"
+      "verified_at": "2026-03-30T14:10:49.415Z"
     },
     {
       "tweet_id": "1646939110211198976",
@@ -1020,9 +990,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim accurately states that 'Extreme MAGA Republicans' convened in Nashville shortly after a mass shooting and the expulsion of two Black lawmakers. Specifically, the Republican National Committee held a donor retreat in Nashville on April 14, 2023, attended by prominent Republicans including former President Donald Trump. This event occurred less than three weeks after the March 27, 2023, mass shooting at The Covenant School in Nashville, which resulted in six deaths. Additionally, on April 6, 2023, the Tennessee House of Representatives expelled two Black Democratic lawmakers, Justin Jones and Justin Pearson, for participating in a gun control protest. Therefore, the claim is factually correct.",
+      "reasoning": "The claim accurately states that 'Extreme MAGA Republicans' convened in Nashville shortly after a mass shooting and the expulsion of two Black lawmakers. The Republican-controlled Tennessee House expelled two Black Democratic representatives, Justin Jones and Justin Pearson, on April 6, 2023, for participating in a gun control protest following the March 27, 2023, Covenant School shooting in Nashville, which resulted in six deaths. The expulsion occurred days after the mass shooting, aligning with the timeline presented in the claim.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:42.242Z"
+      "verified_at": "2026-03-30T14:10:55.016Z"
     },
     {
       "tweet_id": "1644188667743817731",
@@ -1035,9 +1005,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that two young Black legislators were expelled in Tennessee is accurate; Representatives Justin Jones and Justin J. Pearson were expelled on April 6, 2023, for leading a gun control protest on the House floor. However, both were reinstated to their positions within a week, which the claim omits. Regarding George Santos, he was charged with multiple counts of fraud and other offenses in May 2023 and pleaded guilty to wire fraud and identity theft in August 2024. While he faced significant legal issues, the term 'serial fraudster' is a subjective characterization. Additionally, Santos was expelled from the House in December 2024, contradicting the claim that House Republicans refused to expel him. Therefore, the claim is somewhat misleading due to the omission of key details and the use of subjective language.",
+      "reasoning": "The claim that two young Black legislators were expelled in Tennessee is accurate. Representatives Justin Jones and Justin J. Pearson, both Black, were expelled from the Tennessee House of Representatives on April 6, 2023, for leading a gun control protest on the House floor. However, the term 'wrongfully' is subjective and reflects an opinion rather than a factual statement. Regarding George Santos, he was charged with multiple counts of fraud and other offenses in May 2023 and pleaded guilty to wire fraud and identity theft in August 2024. While 'serial fraudster' is a colloquial term, it aligns with the multiple fraud-related charges and admissions against him. The claim that 'Extreme MAGA Republicans in the House refuse to expel' Santos is somewhat misleading. While the House did not expel Santos immediately, he was expelled in December 2023 by a vote of 311 to 114, indicating bipartisan support for his expulsion. Therefore, the claim is somewhat misleading due to the omission of the bipartisan nature of Santos's expulsion and the subjective language used.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:47.025Z"
+      "verified_at": "2026-03-30T14:11:01.374Z"
     },
     {
       "tweet_id": "1644060101538467856",
@@ -1050,9 +1020,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Several prominent figures associated with the 'MAGA' movement have publicly called for defunding the FBI and the Department of Justice. For instance, former President Donald Trump urged Republicans to 'defund' these agencies, stating that they have been 'weaponized' against him. Additionally, Representative Jim Jordan suggested limiting funds to these agencies in response to their treatment of Trump. These statements indicate a clear intent among some 'MAGA' Republicans to reduce or eliminate funding for the FBI and DOJ.",
+      "reasoning": "Former President Donald Trump, a leading figure among 'MAGA Republicans,' explicitly called for Congress to defund the Department of Justice (DOJ) and the Federal Bureau of Investigation (FBI) in April 2023. Additionally, Representative Marjorie Taylor Greene, a prominent MAGA Republican, has repeatedly advocated for defunding these agencies. These statements and actions substantiate the claim that 'Extreme MAGA Republicans want to defund the FBI and the Department of Justice.'",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:52.157Z"
+      "verified_at": "2026-03-30T14:11:05.468Z"
     },
     {
       "tweet_id": "1628212060277428225",
@@ -1065,9 +1035,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "As of February 22, 2023, the U.S. House of Representatives comprised 222 Republicans and 213 Democrats. To achieve a majority, a party needs at least 218 seats. Therefore, Democrats required five additional seats to reclaim the majority, making the claim accurate.",
+      "reasoning": "As of February 22, 2023, the U.S. House of Representatives comprised 222 Republicans and 213 Democrats. To achieve a majority, a party needs at least 218 seats. Therefore, Democrats required five additional seats to reclaim the majority in 2024.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:40:57.756Z"
+      "verified_at": "2026-03-30T14:11:09.278Z"
     },
     {
       "tweet_id": "1619093142745088000",
@@ -1078,11 +1048,11 @@
       "claim": "Extreme MAGA Republicans in the House have not passed any bills that improve life for everyday Americans.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0,
-      "verdict": "FALSE",
-      "reasoning": "As of January 27, 2023, the Republican-controlled House had passed several bills aimed at improving life for everyday Americans. For instance, H.R. 342, the Cost-Share Accountability Act, was passed on January 12, 2023, to enhance transparency in the Department of Energy's funding processes. Additionally, H.R. 302, the Energy Cybersecurity University Leadership Act, passed on January 11, 2023, aimed to bolster cybersecurity in energy infrastructure. These examples demonstrate that the claim is incorrect.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "As of January 27, 2023, House Republicans had passed several bills, including H.R. 676, the Coastal Communities Ocean Acidification Act, which aims to address environmental concerns affecting coastal communities. However, many of these bills had not been enacted into law, as they required approval from the Senate and the President. While the claim that House Republicans had not passed any bills to improve life for everyday Americans is technically incorrect, the overall impact of these bills was limited at that time due to the legislative process.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:03.345Z"
+      "verified_at": "2026-03-30T14:11:13.469Z"
     },
     {
       "tweet_id": "1614333027550650370",
@@ -1095,9 +1065,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The former President, Donald Trump, was impeached twice. The first impeachment was for abuse of power and obstruction of Congress related to the Ukraine scandal, not explicitly 'corrupt abuse of power.' The second impeachment was for incitement of insurrection related to the January 6 Capitol riot. The claim slightly exaggerates the charges by using 'corrupt' and 'violent insurrection,' which may lead to a somewhat distorted understanding.",
+      "reasoning": "The former President, Donald Trump, was impeached twice. The first impeachment was for abuse of power and obstruction of Congress related to the Ukraine scandal, not explicitly labeled as 'corrupt abuse of power.' The second impeachment was for incitement of insurrection following the January 6 Capitol riot. The claim is mostly accurate but uses charged language ('corrupt abuse of power') that is not the official wording of the articles of impeachment.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:05.691Z"
+      "verified_at": "2026-03-30T14:11:17.570Z"
     },
     {
       "tweet_id": "1563988075377729536",
@@ -1110,9 +1080,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Democrat Pat Ryan won the special election for New York's 19th Congressional District on August 23, 2022, defeating Republican Marc Molinaro. The district is considered a competitive swing seat, as evidenced by its history of close elections and its role in previous Democratic majorities. Therefore, the claim that the Republican candidate lost in NY-19, a competitive swing seat, is accurate.",
+      "reasoning": "In the August 23, 2022, special election for New York's 19th Congressional District, Democrat Pat Ryan defeated Republican Marc Molinaro. The district is considered a competitive swing seat, as evidenced by its history of close races and its role as a critical building block in recent Democratic majorities. Therefore, the claim that the Republican candidate lost in NY-19, a competitive swing seat, is accurate.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:10.376Z"
+      "verified_at": "2026-03-30T14:11:21.576Z"
     },
     {
       "tweet_id": "1561443905958191109",
@@ -1123,11 +1093,11 @@
       "claim": "House Democrats passed legislation that makes gun trafficking a federal crime for the first time in U.S. history.",
       "claim_type": "factual",
       "domain": "legislation",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim states that House Democrats passed legislation making gun trafficking a federal crime for the first time in U.S. history. While the Bipartisan Safer Communities Act, signed into law in June 2022, did establish the first standalone federal statutes specifically targeting gun trafficking and straw purchasing, the legislation was bipartisan, not solely passed by House Democrats. Additionally, prior to this act, gun trafficking was addressed under other federal statutes, though not as standalone offenses. Therefore, the claim is somewhat misleading as it omits the bipartisan nature of the legislation and the existence of prior laws addressing gun trafficking.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The claim is accurate. The Bipartisan Safer Communities Act, signed into law in June 2022, made gun trafficking a federal crime for the first time in U.S. history. This legislation was passed by the House of Representatives and included provisions to criminalize arms trafficking and straw purchases, addressing a significant gap in federal law.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:18.117Z"
+      "verified_at": "2026-03-30T14:11:25.500Z"
     },
     {
       "tweet_id": "1550436242063609860",
@@ -1140,9 +1110,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On July 21, 2022, during a campaign event in Perinton, New York, Congressman Lee Zeldin was attacked by a man identified as David Jakubonis. Jakubonis climbed onto the stage while Zeldin was speaking and attempted to stab him with a pointed plastic keychain designed for self-defense. Zeldin was unharmed, and the attacker was subdued by audience members and taken into custody. This incident is well-documented in multiple reputable sources.",
+      "reasoning": "On July 21, 2022, during a campaign event in Perinton, New York, Congressman Lee Zeldin was attacked by a man identified as David Jakubonis. Jakubonis climbed onto the stage while Zeldin was speaking and attempted to stab him with a pointed weapon. Zeldin was unharmed, and the attacker was subdued by audience members and subsequently arrested. This incident is well-documented in multiple reputable sources.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:23.064Z"
+      "verified_at": "2026-03-30T14:11:29.708Z"
     },
     {
       "tweet_id": "1545069350234869760",
@@ -1155,9 +1125,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Multiple sources confirm that over 20 Republican candidates with QAnon affiliations ran for the U.S. House in the 2022 elections. Media Matters identified at least 45 such candidates, and Vice reported 40 by July 2021. While not all were successful, the claim that Republicans had more than 20 QAnon believers as House candidates is accurate.",
+      "reasoning": "Multiple sources confirm that over 20 Republican candidates with ties to the QAnon conspiracy theory ran for the U.S. House in the 2022 elections. Media Matters identified at least 61 Republican congressional candidates who had expressed support for QAnon. Additionally, the Anti-Defamation League reported that at least 45 candidates running for office in 2022 had lent credence to QAnon. These figures substantiate the claim that Republicans had more than 20 QAnon believers as candidates for the House.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:26.560Z"
+      "verified_at": "2026-03-30T14:11:34.627Z"
     },
     {
       "tweet_id": "1529581515788754944",
@@ -1170,9 +1140,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "In the May 2022 Republican primaries, several candidates endorsed by former President Donald Trump lost key statewide races. In Georgia, Trump-backed candidates such as David Perdue for governor and Jody Hice for secretary of state were defeated by incumbents Brian Kemp and Brad Raffensperger, respectively. In Idaho, incumbent Governor Brad Little defeated Trump-endorsed Lieutenant Governor Janice McGeachin in the gubernatorial primary. Similarly, in Nebraska, Trump's endorsed candidate for governor, Charles Herbster, lost to Jim Pillen. These outcomes indicate that Trump-backed candidates faced significant defeats in these states during that period.",
+      "reasoning": "In the May 2022 Republican primaries, candidates endorsed by former President Donald Trump faced significant defeats in Georgia, Idaho, and Nebraska. In Georgia, Governor Brian Kemp and Secretary of State Brad Raffensperger, both incumbents, decisively defeated Trump-backed challengers David Perdue and Jody Hice, respectively. In Idaho, incumbent Governor Brad Little overcame a primary challenge from Trump-endorsed Lieutenant Governor Janice McGeachin. Similarly, in Nebraska, Trump-supported candidate Charles Herbster lost the gubernatorial primary to Jim Pillen, who was backed by the state's outgoing governor. These outcomes indicate that Trump-backed statewide candidates lost in all three states during that period.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:31.712Z"
+      "verified_at": "2026-03-30T14:11:40.556Z"
     },
     {
       "tweet_id": "1528113749290373120",
@@ -1185,9 +1155,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that a Republican judge in Steuben County degraded Black and Latino populations in five New York City-based congressional districts and eliminated the most Jewish district in the country. While Judge Patrick McAllister, a Republican, did rule that New York's congressional maps were unconstitutional and ordered redrawing, the actual redistricting was carried out by a court-appointed special master, Jonathan Cervas. The new maps led to significant changes, including the combination of districts represented by Jerry Nadler and Carolyn Maloney, both of whom are Jewish, into a single district, effectively reducing Jewish representation. Additionally, concerns were raised about the impact on Black and Latino representation, with figures like Rep. Hakeem Jeffries criticizing the draft maps for targeting Black representation. However, attributing these outcomes directly to Judge McAllister is misleading, as the special master was responsible for the specific redistricting decisions.",
+      "reasoning": "The claim asserts that a Republican judge in Steuben County degraded Black and Latino populations in five New York City-based congressional districts and eliminated the most Jewish district in the country. Judge Patrick McAllister, a Republican, ruled that New York's congressional maps were unconstitutionally gerrymandered and ordered new maps to be drawn. The redistricting process led to significant changes, including the combination of districts represented by Jerry Nadler and Carolyn Maloney, both of whom have substantial Jewish constituencies. However, the judge appointed a special master, Jonathan Cervas, to redraw the maps, and the final decisions were made by the court, not solely by the judge. While the redistricting resulted in changes affecting minority populations, attributing these outcomes directly and solely to Judge McAllister is an oversimplification.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:37.408Z"
+      "verified_at": "2026-03-30T14:11:47.049Z"
     },
     {
       "tweet_id": "1527712240484360192",
@@ -1200,9 +1170,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim asserts that the draft redistricting map degrades the Black and Latino population in four Brooklyn and Queens congressional districts. While there were concerns about the impact of redistricting on minority communities in New York City, specific evidence indicating degradation in exactly four districts in Brooklyn and Queens is not readily available. For instance, the 7th Congressional District, represented by Nydia Velázquez, underwent significant changes, but it's unclear if this led to a decrease in Black and Latino representation. Additionally, the redistricting process faced criticism for potentially diluting minority voting power, but the exact number of affected districts in Brooklyn and Queens isn't specified. Therefore, while the claim highlights valid concerns, it lacks precise evidence for the specific assertion about four districts.",
+      "reasoning": "The claim that the draft redistricting map degrades the Black and Latino population in four Brooklyn and Queens congressional districts is partially supported by concerns raised by community leaders and elected officials. For instance, Congressman Hakeem Jeffries criticized the redistricting process, stating that the new map was a 'constitutional travesty' and expressing concern over its impact on communities of color. Additionally, local leaders in Brooklyn have called for reconsideration of the redistricting maps, arguing that they divide historically unified communities, potentially diluting their political influence. However, while these concerns highlight potential negative impacts, the term 'degrades' is subjective and implies a deliberate diminishment, which is not conclusively supported by the available evidence. Therefore, the claim is somewhat misleading as it presents a perspective that, while valid, may not fully encapsulate the complexities of the redistricting process and its outcomes.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:47.530Z"
+      "verified_at": "2026-03-30T14:11:54.125Z"
     },
     {
       "tweet_id": "1527664762359783425",
@@ -1215,9 +1185,9 @@
       "domain": "legislation",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that the draft State Senate map 'shattered' the Howard Beach neighborhood and disregarded the constitutional requirement to protect communities of interest is partially accurate. While the draft map did divide certain neighborhoods, including Howard Beach, the special master made efforts to preserve other communities of interest, such as reuniting Bedford-Stuyvesant and Crown Heights in Brooklyn. Therefore, while some neighborhoods were divided, the assertion that the special master 'blatantly disregarded' the constitutional requirement is an overstatement.",
+      "reasoning": "The claim that the draft State Senate map 'shattered' the Howard Beach neighborhood and disregarded the constitutional requirement to protect communities of interest is partially accurate. While the draft map did divide Howard Beach into multiple districts, the special master, Jonathan Cervas, made efforts to preserve communities of interest in other areas, such as reuniting Bedford-Stuyvesant and Crown Heights in Brooklyn. Therefore, while Howard Beach was divided, the assertion that the special master 'blatantly disregarded' the constitutional requirement is an overstatement.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:41:56.115Z"
+      "verified_at": "2026-03-30T14:12:03.025Z"
     },
     {
       "tweet_id": "1527102917991342082",
@@ -1230,9 +1200,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The New York Court of Appeals did invalidate the congressional and state Senate redistricting maps in April 2022, citing unconstitutional partisan intent and procedural violations. This decision led to the appointment of a special master to redraw the maps, causing significant changes and disruptions in the redistricting process. However, attributing the 'chaos' solely to the Court of Appeals overlooks the initial failure of the Independent Redistricting Commission to agree on maps and the legislature's subsequent unconstitutional actions. Therefore, while the court's decision was a catalyst for change, the root causes of the redistricting issues were more complex.",
+      "reasoning": "The New York Court of Appeals did invalidate the congressional and state Senate redistricting maps in April 2022, citing violations of the state constitution's procedures and a partisan gerrymander. This decision led to a chaotic redistricting process, including delayed primaries and confusion among candidates. However, attributing the chaos solely to the Court of Appeals overlooks the legislature's role in bypassing the Independent Redistricting Commission and enacting maps that violated constitutional requirements. Therefore, while the court's decision was a catalyst, the legislature's actions were the root cause of the redistricting turmoil.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:01.941Z"
+      "verified_at": "2026-03-30T14:12:14.024Z"
     },
     {
       "tweet_id": "1507381701433081856",
@@ -1245,9 +1215,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Virginia 'Ginni' Thomas, wife of Supreme Court Justice Clarence Thomas, sent multiple text messages to then-White House Chief of Staff Mark Meadows urging efforts to overturn the 2020 presidential election results. These messages, obtained by the House January 6 Committee, demonstrate her active involvement in advocating for the reversal of the election outcome. Additionally, Thomas lobbied lawmakers in key swing states, such as Wisconsin and Arizona, to appoint alternate electors favoring Donald Trump. These actions substantiate the claim that she pressed the Trump White House to overturn the 2020 election and suggest grounds for investigation.",
+      "reasoning": "Virginia 'Ginni' Thomas, wife of Supreme Court Justice Clarence Thomas, sent multiple text messages to then-White House Chief of Staff Mark Meadows urging efforts to overturn the 2020 presidential election results. These messages, obtained by the House January 6 Committee, demonstrate her active involvement in advocating for the reversal of the election outcome. Additionally, Thomas lobbied lawmakers in key swing states, such as Wisconsin and Arizona, to appoint alternate electors favoring Donald Trump. These actions substantiate the claim that she pressed the Trump White House to overturn the 2020 election and should be investigated.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:06.943Z"
+      "verified_at": "2026-03-30T14:12:19.758Z"
     },
     {
       "tweet_id": "1476326637662875648",
@@ -1260,9 +1230,9 @@
       "domain": "legislation",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The U.S. Constitution does not specify that the Speaker of the House must be a current member of Congress. While traditionally the Speaker has always been a member, there is no constitutional requirement for this. Therefore, the claim about the constitutional requirement is accurate.",
+      "reasoning": "The U.S. Constitution does not specify that the Speaker of the House must be a current member of Congress. While traditionally the Speaker has always been a member, there is no constitutional requirement for this. Therefore, the claim is accurate.",
       "used_web_search": false,
-      "verified_at": "2026-03-27T09:42:08.527Z"
+      "verified_at": "2026-03-30T14:12:21.625Z"
     },
     {
       "tweet_id": "1457032219424350217",
@@ -1273,11 +1243,11 @@
       "claim": "Infrastructure is crumbling throughout America, particularly in communities of color.",
       "claim_type": "factual",
       "domain": "domestic",
-      "score": 0.65,
-      "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Our infrastructure is crumbling throughout America' aligns with the American Society of Civil Engineers' 2021 Report Card, which gave U.S. infrastructure an overall grade of C-, indicating mediocre condition with significant deficiencies. However, the assertion that this deterioration is 'particularly in communities of color' lacks specific supporting data. While it's recognized that infrastructure issues can disproportionately affect marginalized communities, the claim would benefit from concrete evidence to substantiate this disparity.",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "The claim that America's infrastructure is crumbling, particularly in communities of color, is supported by multiple sources. The American Society of Civil Engineers' 2021 Report Card gave U.S. infrastructure an overall grade of C-, indicating significant deterioration. Additionally, historical infrastructure projects have often disproportionately harmed communities of color, leading to persistent disparities. For instance, past public infrastructure projects have deepened racial and social inequities by bulldozing communities of color to build highways or depriving families with low incomes of quality housing. Therefore, the claim accurately reflects the state of U.S. infrastructure and its disproportionate impact on communities of color.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:14.516Z"
+      "verified_at": "2026-03-30T14:12:27.682Z"
     },
     {
       "tweet_id": "1431370811198394371",
@@ -1290,9 +1260,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "In August 2021, Florida experienced a significant surge in COVID-19 cases and deaths. By August 10, the state had surpassed 40,000 total COVID-19 deaths, with 15,322 new cases reported on August 9. ([bocanewsnow.com](https://bocanewsnow.com/2021/08/10/florida-state-passes-40000-covid-19-deaths-more-than-15k-new-cases/?utm_source=openai)) On August 27, Florida was averaging 247 deaths per day, with August already among the worst months of the pandemic, recording 3,452 deaths. ([cfpublic.org](https://www.cfpublic.org/2021-08-27/coronavirus-update-more-than-half-of-floridas-covid-19-deaths-under-50-were-reported-in-the-past-3-months?utm_source=openai)) These statistics confirm that Governor Ron DeSantis was presiding over a high number of COVID-19 deaths in Florida during that period.",
+      "reasoning": "In August 2021, Florida experienced a significant surge in COVID-19 cases and deaths. By August 27, the state was averaging 247 deaths per day, with a total of nearly 44,000 deaths. This marked August as one of the deadliest months since January 2021. Additionally, on August 10, Florida surpassed 40,000 total COVID-19 deaths, and by August 19, the death toll had risen to 41,937. These statistics confirm that Governor Ron DeSantis was overseeing a period with a high number of COVID-19 deaths in Florida during that time.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:19.172Z"
+      "verified_at": "2026-03-30T14:12:32.554Z"
     },
     {
       "tweet_id": "1399940983287074822",
@@ -1305,9 +1275,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "Melanie Stansbury, a Democrat, won the special election for New Mexico's 1st congressional district on June 1, 2021, defeating Republican Mark Moores by a significant margin. Stansbury secured approximately 60% of the vote, while Moores received about 36%. This 24-point victory aligns with the claim of a 'blowout' and a 'big defeat' for the Republican opponent. The district has a history of Democratic leanings, with President Biden winning it by 23 points in 2020, but Stansbury's margin slightly exceeded that, indicating a decisive win.",
+      "reasoning": "Melanie Stansbury, a Democrat, won the special election for New Mexico's 1st congressional district on June 1, 2021, defeating Republican Mark Moores. Stansbury secured approximately 60.4% of the vote, while Moores received about 35.6%, resulting in a margin of nearly 25 percentage points. This substantial victory aligns with the claim that she won by a large margin in a competitive special election.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:25.092Z"
+      "verified_at": "2026-03-30T14:12:35.754Z"
     },
     {
       "tweet_id": "1399057533042630661",
@@ -1318,11 +1288,11 @@
       "claim": "Vaccinations are up, infections are down, and small businesses are open again in NYC.",
       "claim_type": "factual",
       "domain": "health",
-      "score": 1,
-      "verdict": "TRUE",
-      "reasoning": "As of May 30, 2021, New York City was experiencing a significant increase in COVID-19 vaccinations, a decline in infections, and the reopening of small businesses. By mid-May 2021, over 7.3 million vaccine doses had been administered in NYC, with daily doses peaking at over 100,000 in early April. Concurrently, COVID-19 cases and hospitalizations were decreasing, with the overall age-adjusted vaccine effectiveness against hospitalization remaining stable between 89.5% and 95.1% from May 3 to July 25, 2021. Additionally, small businesses, including popular venues like the outdoor food market Smorgasburg, announced reopening dates in early June 2021, indicating a broader trend of economic recovery. Therefore, the claim accurately reflects the situation in NYC at that time.",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "As of May 30, 2021, New York City had made significant progress in its COVID-19 vaccination campaign, with over 9.6 million doses administered by July 11, 2021, covering 68.9% of its adult residents with at least one dose. This suggests that vaccinations were indeed up. Concurrently, the city experienced a decline in COVID-19 cases, dropping from over 5,500 average daily cases in January 2021 to less than 350 in early July 2021. However, the claim that 'small businesses are open again' lacks specificity. While many businesses had reopened by that time, some restrictions and challenges remained, and not all small businesses were fully operational. Therefore, while the overall direction of the claim is accurate, the lack of detail regarding the status of small businesses makes it somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:31.702Z"
+      "verified_at": "2026-03-30T14:12:40.401Z"
     },
     {
       "tweet_id": "1390367450336841729",
@@ -1335,9 +1305,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "The claim that the 2020 presidential election was the most secure in American history is supported by a joint statement from the Cybersecurity and Infrastructure Security Agency (CISA) and the Election Infrastructure Government Coordinating Council. They stated, 'The November 3rd election was the most secure in American history,' and confirmed, 'There is no evidence that any voting system deleted or lost votes, changed votes, or was in any way compromised.' This assessment was made by top U.S. government officials responsible for election security.",
+      "reasoning": "The claim that the 2020 presidential election was the most secure in American history is supported by a joint statement from the Election Infrastructure Government Coordinating Council and the Cybersecurity and Infrastructure Security Agency (CISA). They stated, 'There is no evidence that any voting system deleted or lost votes, changed votes, or was in any way compromised.' This assessment was made by top U.S. government officials responsible for election security, indicating a high level of confidence in the integrity of the 2020 election.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:37.497Z"
+      "verified_at": "2026-03-30T14:12:43.613Z"
     },
     {
       "tweet_id": "1388319976407322625",
@@ -1350,9 +1320,9 @@
       "domain": "domestic",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "The claim that 'Republican legislatures want to make it harder to vote and easier to cheat' is partially supported by evidence. In 2021, Republican-controlled state legislatures introduced and passed numerous laws that imposed new voting restrictions, such as stricter voter ID requirements, limitations on mail-in voting, and reduced access to ballot drop boxes. These measures have been criticized for potentially making it more difficult for certain groups, particularly minorities, to vote. However, the assertion that these legislatures aim to make it 'easier to cheat' lacks substantiated evidence. While some laws have shifted control over election administration, there is no clear indication that the intent was to facilitate electoral fraud. Therefore, the claim is somewhat misleading as it combines a factual basis with an unproven assertion.",
+      "reasoning": "The claim that 'Republican legislatures want to make it harder to vote and easier to cheat' is partially supported by evidence. In 2021, Republican-led state legislatures enacted numerous laws that imposed new restrictions on voting access, such as stricter voter ID requirements and limitations on mail-in voting. For instance, Georgia's Election Integrity Act of 2021 introduced several measures that made voting more challenging, including requiring additional identification for absentee ballots and limiting the use of ballot drop boxes. However, the assertion that these legislatures aim to make it 'easier to cheat' lacks substantiated evidence. While some laws have shifted control over election administration, there is no clear indication that these changes were intended to facilitate electoral fraud. Therefore, while the claim about making voting harder has merit, the suggestion that the intent is to make cheating easier is not well-supported.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:43.586Z"
+      "verified_at": "2026-03-30T14:12:50.314Z"
     },
     {
       "tweet_id": "1387444352524472328",
@@ -1365,9 +1335,9 @@
       "domain": "other",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On April 28, 2021, federal agents executed search warrants at Rudolph Giuliani's Manhattan home and office, seizing electronic devices as part of a criminal investigation into his dealings with Ukraine. This action indicates that Giuliani was under federal criminal investigation at that time.",
+      "reasoning": "On April 28, 2021, federal agents executed search warrants at Rudolph Giuliani's Manhattan apartment and office, seizing electronic devices as part of an investigation into his dealings with Ukraine. This action indicates that Giuliani was under federal criminal investigation at that time.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:49.441Z"
+      "verified_at": "2026-03-30T14:12:56.070Z"
     },
     {
       "tweet_id": "1385690658590056449",
@@ -1380,9 +1350,9 @@
       "domain": "other",
       "score": 0,
       "verdict": "FALSE",
-      "reasoning": "The claim that 'Republican registration in America is down more than 25 percent' is not supported by available data. For instance, in Pennsylvania, Republican registrations increased from 3,222,286 in 2017 to 3,423,465 in 2021, a rise of approximately 6.2%. While some states like West Virginia have seen declines in Democratic registrations, there is no evidence of a nationwide 25% decrease in Republican registrations. Therefore, the claim is false.",
+      "reasoning": "The claim that 'Republican registration in America is down more than 25 percent' is not supported by available data. While some states experienced declines in Republican voter registration in early 2021, the decreases were far less than 25%. For instance, Arizona saw a reduction of approximately 1.5% in Republican registrants between January and April 2021. Similarly, Kentucky reported a decrease of about 0.04% in total voter registration in April 2020, with Republican registration slightly increasing by 0.02%. No evidence indicates a nationwide decline of over 25% in Republican voter registration during this period.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:42:56.923Z"
+      "verified_at": "2026-03-30T14:13:02.916Z"
     },
     {
       "tweet_id": "1369711283323494403",
@@ -1395,9 +1365,9 @@
       "domain": "legislation",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On March 10, 2021, the U.S. House of Representatives passed the $1.9 trillion American Rescue Plan, as indicated in the claim. The bill was approved by a vote of 220-211, with all Republicans and one Democrat voting against it. This aligns with the statement that the House would pass the plan on that day.",
+      "reasoning": "The claim that 'The House will pass the $1.9 trillion American Rescue Plan today' was made on March 10, 2021. On that date, the U.S. House of Representatives did indeed pass the American Rescue Plan, a $1.9 trillion COVID-19 relief package, by a vote of 220-211. This aligns with the claim made in the tweet.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:43:00.444Z"
+      "verified_at": "2026-03-30T14:13:06.837Z"
     },
     {
       "tweet_id": "1350967395729498113",
@@ -1410,9 +1380,9 @@
       "domain": "domestic",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On January 6, 2021, a violent mob of supporters of then-President Donald Trump stormed the U.S. Capitol in an attempt to prevent Congress from certifying Joe Biden's electoral victory. This unprecedented attack resulted in multiple deaths, numerous injuries, and significant damage to the Capitol. Despite the disruption, Congress reconvened and completed the certification process, affirming Biden's win. The claim accurately describes these events.",
+      "reasoning": "On January 6, 2021, a violent mob of supporters of then-President Donald Trump stormed the U.S. Capitol in an attempt to prevent Congress from certifying Joe Biden's electoral victory. This event resulted in multiple deaths, injuries to law enforcement officers, and significant property damage. The rioters' actions directly aimed to disrupt the formal certification process of the 2020 presidential election results.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:43:04.627Z"
+      "verified_at": "2026-03-30T14:13:11.747Z"
     },
     {
       "tweet_id": "1349473297558339588",
@@ -1425,9 +1395,9 @@
       "domain": "legislation",
       "score": 1,
       "verdict": "TRUE",
-      "reasoning": "On January 13, 2021, the U.S. House of Representatives voted to impeach President Donald Trump. The final vote was 232 in favor and 197 against. All 222 Democrats voted for impeachment, joined by 10 Republicans, while 197 Republicans voted against it. This confirms the claim that \"Ten House Republicans voted to impeach the President and 197 voted against it.\"",
+      "reasoning": "On January 13, 2021, the U.S. House of Representatives voted to impeach President Donald Trump. The final vote was 232 in favor and 197 against. Among those who voted in favor, 10 were Republicans, while 197 Republicans voted against the impeachment. This information is corroborated by multiple reputable sources, including CBS News and The Guardian.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:43:09.963Z"
+      "verified_at": "2026-03-30T14:13:15.566Z"
     },
     {
       "tweet_id": "1349112180633980936",
@@ -1440,9 +1410,9 @@
       "domain": "other",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "In January 2021, D.C. Attorney General Karl Racine indicated that Donald Trump Jr. was a person of interest in a criminal investigation into the January 6 Capitol attack, considering potential charges for incitement. However, there is no public record confirming that Trump Jr. was formally placed under criminal investigation or charged. Therefore, while there was consideration of an investigation, stating definitively that he was \"under criminal investigation\" is somewhat misleading.",
+      "reasoning": "In January 2021, D.C. Attorney General Karl Racine indicated that Donald Trump Jr. was a person of interest in a criminal investigation into the January 6 Capitol attack, considering potential charges for incitement. However, there is no public record confirming that Trump Jr. was formally placed under criminal investigation or charged. Therefore, while there was consideration of an investigation, stating definitively that he was under criminal investigation is somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:43:16.069Z"
+      "verified_at": "2026-03-30T14:13:19.833Z"
     },
     {
       "tweet_id": "1347682219775717377",
@@ -1455,12 +1425,131 @@
       "domain": "other",
       "score": 0.65,
       "verdict": "SOMEWHAT MISLEADING",
-      "reasoning": "Rudy Giuliani did indeed use the phrase 'trial by combat' during his speech at the 'Save America' rally on January 6, 2021. However, whether this constitutes 'incitement to violence' is subject to legal interpretation and debate. While his language was provocative, Giuliani later claimed the remark was hyperbolic and not meant to be taken literally. Therefore, the claim is somewhat misleading as it presents an interpretation that is not universally accepted.",
+      "reasoning": "Rudy Giuliani did indeed use the phrase 'trial by combat' during his speech at the January 6, 2021, rally, which some interpreted as incitement to violence. However, Giuliani later claimed that his remark was hyperbolic and not meant to be taken literally. While the phrase is provocative, the intent behind it is subject to interpretation, making the claim somewhat misleading.",
       "used_web_search": true,
-      "verified_at": "2026-03-27T09:43:21.696Z"
+      "verified_at": "2026-03-30T14:13:23.875Z"
+    },
+    {
+      "tweet_id": "1977041696920584370",
+      "tweet_text": "Republicans have created a healthcare crisis in America. We must decisively address it.",
+      "tweet_date": "Sat Oct 11 16:00:46 +0000 2025",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1977041696920584370",
+      "tweet_likes": 5029,
+      "claim": "Republicans have created a healthcare crisis in America.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'Republicans have created a healthcare crisis in America' is partially supported by recent events. Republican opposition to extending Affordable Care Act (ACA) subsidies has led to concerns about rising health insurance premiums. For instance, Senate Republicans introduced a health care plan that did not include an extension of enhanced ACA subsidies, potentially causing significant premium increases for millions of Americans. Additionally, Republican lawmakers have considered cuts to federal healthcare programs to finance other initiatives, which could further impact healthcare affordability. However, attributing the entire healthcare crisis solely to Republican actions overlooks other contributing factors, such as systemic issues within the healthcare system and decisions made by both parties over time. Therefore, while Republican policies have played a role, the claim lacks full context.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:29.308Z"
+    },
+    {
+      "tweet_id": "1965106543243960482",
+      "tweet_text": "We will not let the American people forget that Republicans voted for the largest cut to Medicaid in American history.",
+      "tweet_date": "Mon Sep 08 17:34:44 +0000 2025",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1965106543243960482",
+      "tweet_likes": 521,
+      "claim": "Republicans voted for the largest cut to Medicaid in American history.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "In 2025, House Republicans passed a budget resolution (H.Con.Res.14) instructing the Energy and Commerce Committee to cut $880 billion, necessitating deep cuts to Medicaid. The Congressional Budget Office confirmed that achieving this target without affecting Medicare would require significant reductions to Medicaid. This action represents the largest cut to Medicaid in American history.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:34.948Z"
+    },
+    {
+      "tweet_id": "1841303256875880687",
+      "tweet_text": "JD Vance claimed that Donald Trump saved the Affordable Care Act. Really? The former President tried to destroy it. These extremists have never met a lie they are unwilling to tell.",
+      "tweet_date": "Wed Oct 02 02:24:40 +0000 2024",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1841303256875880687",
+      "tweet_likes": 23534,
+      "claim": "Donald Trump tried to destroy the Affordable Care Act.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "During his presidency, Donald Trump actively sought to dismantle the Affordable Care Act (ACA). On his first day in office, he signed Executive Order 13765, directing agencies to minimize the ACA's economic burden pending its repeal. His administration supported legal challenges aiming to invalidate the ACA, including backing a lawsuit that sought to eliminate protections for individuals with pre-existing conditions. Additionally, Trump celebrated a 2018 federal court ruling that declared the ACA unconstitutional, calling it a \"big, big victory.\" These actions demonstrate a concerted effort to destroy the ACA.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:38.807Z"
+    },
+    {
+      "tweet_id": "1801310681490202875",
+      "tweet_text": "Donald Trump and Extreme MAGA Republicans destroyed Roe v. Wade. Stop lying to the American people about your intentions.",
+      "tweet_date": "Thu Jun 13 17:48:27 +0000 2024",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1801310681490202875",
+      "tweet_likes": 515,
+      "claim": "Donald Trump and Extreme MAGA Republicans destroyed Roe v. Wade.",
+      "claim_type": "factual",
+      "domain": "legislation",
+      "score": 1,
+      "verdict": "TRUE",
+      "reasoning": "Former President Donald Trump has publicly taken credit for the Supreme Court's decision to overturn Roe v. Wade, citing his appointment of three conservative justices who were instrumental in the ruling. For instance, during a Fox News town hall in January 2024, Trump stated, \"For 54 years they were trying to get Roe v. Wade terminated, and I did it. And I'm proud to have done it.\" Additionally, Senate Majority Leader Chuck Schumer has attributed the decision to \"justices, appointed by Republicans,\" indicating the role of Republican-appointed justices in the ruling. Therefore, the claim that \"Donald Trump and Extreme MAGA Republicans destroyed Roe v. Wade\" is accurate.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:45.199Z"
+    },
+    {
+      "tweet_id": "1623185231485325316",
+      "tweet_text": "President Biden told the truth. Extreme MAGA Republicans want to cut Social Security and Medicare. Period.",
+      "tweet_date": "Wed Feb 08 05:01:31 +0000 2023",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1623185231485325316",
+      "tweet_likes": 16752,
+      "claim": "Extreme MAGA Republicans want to cut Social Security and Medicare.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.65,
+      "verdict": "SOMEWHAT MISLEADING",
+      "reasoning": "The claim that 'Extreme MAGA Republicans want to cut Social Security and Medicare' contains elements of truth but lacks important context. Some Republican proposals, such as those from the Republican Study Committee, have suggested changes like raising the eligibility age for these programs. However, these proposals have not been universally adopted within the party, and key Republican leaders have publicly opposed cuts to Social Security and Medicare. Therefore, while certain factions have advocated for changes that could be perceived as cuts, it is misleading to suggest that all 'Extreme MAGA Republicans' uniformly support such measures.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:51.920Z"
+    },
+    {
+      "tweet_id": "2037341520366292997",
+      "tweet_text": "Democrats have forced the administration to Pay TSA agents. And end the airport chaos. Difficult takes a day, impossible takes a week.",
+      "tweet_date": "Fri Mar 27 01:30:45 +0000 2026",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/2037341520366292997",
+      "tweet_likes": 4172,
+      "claim": "Democrats have forced the administration to pay TSA agents and end airport chaos.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "score": 0.35,
+      "verdict": "MISLEADING",
+      "reasoning": "The claim that 'Democrats have forced the administration to pay TSA agents and end airport chaos' is misleading. While Democrats have advocated for funding the Department of Homeland Security (DHS) to pay TSA agents, the administration, led by President Trump, took unilateral action by signing an executive order on March 27, 2026, to pay TSA agents without congressional approval. This move was not a result of Democratic pressure but rather an independent decision by the administration. Therefore, attributing the payment of TSA agents and the resolution of airport chaos solely to Democratic efforts does not accurately reflect the sequence of events.",
+      "used_web_search": true,
+      "verified_at": "2026-03-30T14:13:59.257Z"
     }
   ],
-  "dropped_claims": [],
+  "dropped_claims": [
+    {
+      "tweet_id": "1813547172950048929",
+      "tweet_text": "House Democrats have now out-raised the House Republican campaign arm for the sixth consecutive quarter. Onward 🇺🇸🇺🇸🇺🇸",
+      "tweet_date": "Wed Jul 17 12:11:54 +0000 2024",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1813547172950048929",
+      "tweet_likes": 1292,
+      "claim": "House Democrats have out-raised the House Republican campaign arm for the sixth consecutive quarter.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "gpt_confidence": 80,
+      "status": "RESOLVED",
+      "deadline": null,
+      "drop_reason": "The claim states that House Democrats have out-raised the House Republican campaign arm for six consecutive quarters as of July 17, 2024. However, the available information does not provide specific fundraising figures for both parties over the specified period. While an Axios report from April 2024 indicates that Democratic candidates in competitive House districts raised an average of $970,000 in the first quarter of 2024, surpassing their Republican counterparts, this data does not confirm a six-quarter trend. Additionally, the National Republican Congressional Committee (NRCC) reported raising $117.2 million in 2025, but comparable figures for the Democratic Congressional Campaign Committee (DCCC) are not provided. Without comprehensive data covering the entire period in question, it is not possible to verify the accuracy of the claim."
+    },
+    {
+      "tweet_id": "1668769412860747776",
+      "tweet_text": "MAGA Republican House members in New York pretend to be moderate. But they just voted with the NRA. And against gun safety in America. These people are too extreme to be trusted.",
+      "tweet_date": "Tue Jun 13 23:56:46 +0000 2023",
+      "tweet_url": "https://twitter.com/hakeemjeffries/status/1668769412860747776",
+      "tweet_likes": 804,
+      "claim": "MAGA Republican House members in New York voted against gun safety and with the NRA.",
+      "claim_type": "factual",
+      "domain": "domestic",
+      "gpt_confidence": 80,
+      "status": "RESOLVED",
+      "deadline": null,
+      "drop_reason": "The claim asserts that 'MAGA Republican House members in New York' voted against gun safety measures and aligned with the NRA. However, specific details about the vote in question, including the date, bill number, and the representatives involved, are not provided. Without this information, it's challenging to verify the claim's accuracy. Additionally, the term 'MAGA Republican' is not clearly defined, making it difficult to identify which representatives are being referenced. Therefore, based on the available information, I cannot determine the truthfulness of the claim."
+    }
+  ],
   "pending_claims": [
     {
       "tweet_id": "2032145140085592359",

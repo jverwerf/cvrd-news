@@ -1,0 +1,131 @@
+{
+  "handle": "vonderleyen",
+  "name": "Ursula von der Leyen",
+  "role": "President of the European Commission",
+  "party": "European People's Party",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "EU",
+    "European Commission",
+    "trade",
+    "security",
+    "defense",
+    "Indo-Pacific",
+    "partnership",
+    "free trade",
+    "solidarity",
+    "social market economy"
+  ],
+  "photo_prompt": "Ursula von der Leyen, a middle-aged woman with short blonde hair and a professional demeanor, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "indo-pacific",
+    "crucial",
+    "world’s",
+    "security",
+    "tension",
+    "there",
+    "affects",
+    "global",
+    "security.",
+    "trade",
+    "thriving",
+    "between",
+    "zealand,",
+    "horizon",
+    "europe",
+    "partnerships",
+    "place.",
+    "eu-australia",
+    "agreement",
+    "concluded.",
+    "member",
+    "states",
+    "largest",
+    "contributor",
+    "energy",
+    "prices",
+    "under",
+    "pressure",
+    "ongoing",
+    "middle"
+  ],
+  "prominence": 40,
+  "followers": 1707374,
+  "overall_score": 93.5,
+  "confidence_interval": 3.4,
+  "verified_claims": 201,
+  "true_count": 168,
+  "somewhat_misleading_count": 30,
+  "misleading_count": 1,
+  "false_count": 2,
+  "pending_count": 282,
+  "dropped_count": 1,
+  "domains": {
+    "foreign_policy": {
+      "score": 94.8,
+      "count": 100,
+      "true": 89,
+      "somewhat_misleading": 9,
+      "misleading": 0,
+      "false": 2
+    },
+    "economics": {
+      "score": 91,
+      "count": 39,
+      "true": 29,
+      "somewhat_misleading": 10,
+      "misleading": 0,
+      "false": 0
+    },
+    "legislation": {
+      "score": 96.8,
+      "count": 11,
+      "true": 10,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 97.7,
+      "count": 15,
+      "true": 14,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "other": {
+      "score": 89.1,
+      "count": 22,
+      "true": 16,
+      "somewhat_misleading": 5,
+      "misleading": 1,
+      "false": 0
+    },
+    "domestic": {
+      "score": 93,
+      "count": 10,
+      "true": 8,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "environment": {
+      "score": 76.7,
+      "count": 3,
+      "true": 1,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "environmental_policy": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-30T22:47:32.605Z"
+}

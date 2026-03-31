@@ -1,37 +1,105 @@
 {
-  "date_last_year": "2025-03-29",
-  "date_generated": "2026-03-29T01:42:42.983Z",
-  "summary": "One year ago today, on March 29, 2025, the world was reflecting on the fourth anniversary of the Ever Given's dislodgement from the Suez Canal, a pivotal event that had once disrupted global trade. In the United States, news briefings were dominated by ongoing political developments and economic updates, as the nation continued to navigate the complexities of a post-pandemic world. Across Europe, news bulletins provided insights into the continent's response to climate change and the evolving geopolitical landscape. Meanwhile, podcasts and news channels offered in-depth analyses of current events, highlighting the interconnectedness of global affairs. This day served as a reminder of the ever-changing nature of world events and the importance of staying informed.",
+  "date_last_year": "2025-03-30",
+  "date_generated": "2026-03-31T09:03:02.115Z",
+  "summary": "On March 31, 2025, two major crises captured global attention. In the United States, a severe measles outbreak spread across five states, with Texas reporting the highest number of cases. The outbreak highlighted concerns over declining vaccination rates and the potential for international spread, as cases in Mexico were linked to the U.S. situation. Meanwhile, Myanmar was reeling from a devastating earthquake that struck on March 28, claiming over 1,700 lives and causing widespread destruction. The international community, including the United Nations, mobilized to provide urgent aid to the affected regions. These events underscored significant public health and humanitarian challenges, prompting coordinated responses from global health and aid organizations.",
+  "stories": [
+    {
+      "headline": "Measles Outbreaks Escalate Across U.S. States",
+      "summary": "The United States is experiencing significant measles outbreaks in at least five states, with Texas reporting the highest number of cases at 400. The CDC confirmed 483 cases nationwide, surpassing the total for 2024. Declining vaccination rates are a major concern, with only 80% of residents in the affected Texas county vaccinated. The outbreak has also spread to Mexico, raising international health concerns.",
+      "youtube_queries": [
+        "Measles outbreak in Texas March 31 2025",
+        "CDC response to U.S. measles outbreak March 2025",
+        "Impact of low vaccination rates on measles March 2025"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "IvpjS5KbREk",
+          "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
+          "channel": "PBS NewsHour",
+          "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
+        },
+        {
+          "id": "LwDg85WBTsE",
+          "title": "Measles outbreak warning in NSW and SA as vaccinations drop | ABC NEWS",
+          "channel": "ABC News (Australia)",
+          "thumbnail": "https://i.ytimg.com/vi/LwDg85WBTsE/maxresdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "IvpjS5KbREk",
+        "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
+        "channel": "PBS NewsHour",
+        "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
+      }
+    },
+    {
+      "headline": "Devastating Earthquake in Myanmar Claims 1,700+ Lives",
+      "summary": "A 7.7 magnitude earthquake struck Myanmar on March 28, 2025, resulting in over 1,700 deaths and widespread destruction. The disaster severely impacted the nation's infrastructure, already weakened by civil conflict. The United Nations and humanitarian organizations are providing aid, with thousands feared trapped under rubble. The WHO classified the earthquake as a top-level emergency, appealing for urgent funding.",
+      "youtube_queries": [
+        "Myanmar earthquake aftermath March 31 2025",
+        "International aid response to Myanmar earthquake March 2025",
+        "Impact of Myanmar earthquake on infrastructure March 2025"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "vqsvMOcWoVU",
+          "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
+        },
+        {
+          "id": "DTCG8o6Ssj4",
+          "title": "Magnitude 7.7 earthquake hits Myanmar with damage reported in Bangkok | BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/DTCG8o6Ssj4/maxresdefault.jpg"
+        },
+        {
+          "id": "B1eWRJGT1fM",
+          "title": "International aid picks up as scale of quake overwhelms Myanmar | DW News",
+          "channel": "DW News",
+          "thumbnail": "https://i.ytimg.com/vi/B1eWRJGT1fM/maxresdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "vqsvMOcWoVU",
+        "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
+        "channel": "BBC News",
+        "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
+      }
+    }
+  ],
   "videos": [
     {
-      "id": "fooPgeqcAGk",
-      "title": "US News Briefing 2025-03-29 7 AM Eastern...",
-      "channel": "Clockwise US News",
-      "thumbnail": "https://i.ytimg.com/vi/fooPgeqcAGk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGD0gUihyMA8=&rs=AOn4CLAOR1KPw6oevz20DkfIRs63KTNUEQ"
+      "id": "IvpjS5KbREk",
+      "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
+      "channel": "PBS NewsHour",
+      "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
     },
     {
-      "id": "egbyT9vE40Y",
-      "title": "Latest news bulletin | March 29th – Evening",
-      "channel": "euronews",
-      "thumbnail": "https://i.ytimg.com/vi/egbyT9vE40Y/hqdefault.jpg"
+      "id": "LwDg85WBTsE",
+      "title": "Measles outbreak warning in NSW and SA as vaccinations drop | ABC NEWS",
+      "channel": "ABC News (Australia)",
+      "thumbnail": "https://i.ytimg.com/vi/LwDg85WBTsE/maxresdefault.jpg"
     },
     {
-      "id": "L-sSkrY2wrQ",
-      "title": "Latest news bulletin | March 29th – Midday",
-      "channel": "euronews",
-      "thumbnail": "https://i.ytimg.com/vi/L-sSkrY2wrQ/hqdefault.jpg"
+      "id": "vqsvMOcWoVU",
+      "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
+      "channel": "BBC News",
+      "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
     },
     {
-      "id": "ERikCfmsPIU",
-      "title": "NEWS AND CLUES PODCAST - 2025-03-29",
-      "channel": "News And Clues",
-      "thumbnail": "https://i.ytimg.com/vi/ERikCfmsPIU/maxresdefault.jpg"
+      "id": "DTCG8o6Ssj4",
+      "title": "Magnitude 7.7 earthquake hits Myanmar with damage reported in Bangkok | BBC News",
+      "channel": "BBC News",
+      "thumbnail": "https://i.ytimg.com/vi/DTCG8o6Ssj4/maxresdefault.jpg"
     },
     {
-      "id": "Tx-h5T1HxDs",
-      "title": "Latest news bulletin | March 29th – Morning",
-      "channel": "euronews",
-      "thumbnail": "https://i.ytimg.com/vi/Tx-h5T1HxDs/hqdefault.jpg"
+      "id": "B1eWRJGT1fM",
+      "title": "International aid picks up as scale of quake overwhelms Myanmar | DW News",
+      "channel": "DW News",
+      "thumbnail": "https://i.ytimg.com/vi/B1eWRJGT1fM/maxresdefault.jpg"
     }
   ]
 }

@@ -1,0 +1,139 @@
+{
+  "handle": "SecBlinken",
+  "name": "Secretary Antony Blinken",
+  "role": "Former U.S. Secretary of State",
+  "party": "Democratic Party",
+  "country": "US",
+  "state": null,
+  "tags": [
+    "diplomacy",
+    "foreign policy",
+    "Ukraine",
+    "music diplomacy",
+    "human rights",
+    "global security",
+    "American leadership",
+    "Venezuela",
+    "NATO",
+    "State Department"
+  ],
+  "photo_prompt": "Secretary Antony Blinken, middle-aged man with short dark hair and glasses, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
+  "claim_keywords": [
+    "antony",
+    "blinken",
+    "traveled",
+    "countries",
+    "years.",
+    "united",
+    "states",
+    "stronger",
+    "place",
+    "deliver",
+    "american",
+    "people",
+    "implementation",
+    "diplomatic",
+    "plan.",
+    "synthetic",
+    "drugs",
+    "fentanyl",
+    "killer",
+    "americans",
+    "18-45.",
+    "u.s.-armenia",
+    "strategic",
+    "partnership",
+    "commission",
+    "launched",
+    "intensify",
+    "cooperation",
+    "mutual",
+    "interests."
+  ],
+  "prominence": 28,
+  "followers": 2188617,
+  "overall_score": 95.6,
+  "confidence_interval": 2.4,
+  "verified_claims": 270,
+  "true_count": 240,
+  "somewhat_misleading_count": 27,
+  "misleading_count": 2,
+  "false_count": 1,
+  "pending_count": 148,
+  "dropped_count": 6,
+  "domains": {
+    "foreign_policy": {
+      "score": 95.7,
+      "count": 226,
+      "true": 202,
+      "somewhat_misleading": 21,
+      "misleading": 2,
+      "false": 1
+    },
+    "other": {
+      "score": 91.3,
+      "count": 8,
+      "true": 6,
+      "somewhat_misleading": 2,
+      "misleading": 0,
+      "false": 0
+    },
+    "military": {
+      "score": 96.1,
+      "count": 9,
+      "true": 8,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "health": {
+      "score": 82.5,
+      "count": 2,
+      "true": 1,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "humanitarian": {
+      "score": 100,
+      "count": 2,
+      "true": 2,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "history": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    },
+    "domestic": {
+      "score": 95.6,
+      "count": 8,
+      "true": 7,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "economics": {
+      "score": 97.3,
+      "count": 13,
+      "true": 12,
+      "somewhat_misleading": 1,
+      "misleading": 0,
+      "false": 0
+    },
+    "healthcare": {
+      "score": 100,
+      "count": 1,
+      "true": 1,
+      "somewhat_misleading": 0,
+      "misleading": 0,
+      "false": 0
+    }
+  },
+  "scored_at": "2026-03-31T07:32:35.537Z"
+}

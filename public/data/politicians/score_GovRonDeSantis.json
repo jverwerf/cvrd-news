@@ -12,9 +12,9 @@
     "Coastal Resiliency",
     "Law Enforcement",
     "AI Policy",
-    "Infrastructure",
-    "Economic Growth",
-    "Family Farms"
+    "Public Safety",
+    "Family Farms",
+    "Statue Commemoration"
   ],
   "photo_prompt": "Ron DeSantis, a middle-aged man with short brown hair and a confident demeanor, wearing a suit and tie, studio lighting, clean navy blue background, editorial style, sharp focus, no text",
   "claim_keywords": [
@@ -50,46 +50,46 @@
     "terra"
   ],
   "prominence": 33,
-  "followers": 6032850,
-  "overall_score": 88.6,
-  "confidence_interval": 3.9,
-  "verified_claims": 251,
-  "true_count": 179,
-  "somewhat_misleading_count": 64,
+  "followers": 6032942,
+  "overall_score": 89.4,
+  "confidence_interval": 3.8,
+  "verified_claims": 255,
+  "true_count": 186,
+  "somewhat_misleading_count": 62,
   "misleading_count": 5,
-  "false_count": 3,
-  "pending_count": 65,
-  "dropped_count": 9,
+  "false_count": 2,
+  "pending_count": 66,
+  "dropped_count": 10,
   "domains": {
     "legislation": {
-      "score": 90.5,
-      "count": 40,
+      "score": 91.2,
+      "count": 39,
       "true": 31,
-      "somewhat_misleading": 8,
+      "somewhat_misleading": 7,
       "misleading": 0,
       "false": 1
     },
     "economics": {
-      "score": 81.9,
+      "score": 86,
       "count": 42,
-      "true": 22,
-      "somewhat_misleading": 18,
-      "misleading": 2,
+      "true": 26,
+      "somewhat_misleading": 15,
+      "misleading": 1,
       "false": 0
     },
     "domestic": {
-      "score": 90.7,
-      "count": 119,
-      "true": 91,
-      "somewhat_misleading": 25,
-      "misleading": 2,
-      "false": 1
+      "score": 90.9,
+      "count": 122,
+      "true": 93,
+      "somewhat_misleading": 26,
+      "misleading": 3,
+      "false": 0
     },
     "other": {
-      "score": 93.8,
-      "count": 17,
-      "true": 14,
-      "somewhat_misleading": 3,
+      "score": 96.1,
+      "count": 18,
+      "true": 16,
+      "somewhat_misleading": 2,
       "misleading": 0,
       "false": 0
     },
@@ -102,9 +102,9 @@
       "false": 0
     },
     "education": {
-      "score": 80.8,
-      "count": 18,
-      "true": 10,
+      "score": 81.8,
+      "count": 19,
+      "true": 11,
       "somewhat_misleading": 7,
       "misleading": 0,
       "false": 1
@@ -118,10 +118,10 @@
       "false": 0
     },
     "healthcare": {
-      "score": 100,
+      "score": 82.5,
       "count": 2,
-      "true": 2,
-      "somewhat_misleading": 0,
+      "true": 1,
+      "somewhat_misleading": 1,
       "misleading": 0,
       "false": 0
     },
@@ -142,10 +142,10 @@
       "false": 0
     },
     "infrastructure": {
-      "score": 100,
+      "score": 65,
       "count": 1,
-      "true": 1,
-      "somewhat_misleading": 0,
+      "true": 0,
+      "somewhat_misleading": 1,
       "misleading": 0,
       "false": 0
     },
@@ -158,5 +158,5 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-26T08:22:48.287Z"
+  "scored_at": "2026-03-30T14:19:31.374Z"
 }

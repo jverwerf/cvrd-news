@@ -1,5 +1,5 @@
 {
-  "headline": "Marco Rubio on iran: 83.8% Truthful",
+  "headline": "Marco Rubio on iran: 72.5% Truthful",
   "person": {
     "handle": "marcorubio",
     "name": "Marco Rubio",
@@ -8,10 +8,10 @@
   },
   "story_topic": "Iranian Missile Strikes and U.S. Military Response",
   "search_keyword": "iran",
-  "topic_score": 83.8,
+  "topic_score": 72.5,
   "overall_score": 68.7,
-  "matching_claims": 4,
-  "editorial": "Marco Rubio’s rhetoric on Iran has been thrust into the spotlight, coinciding with recent Iranian missile strikes in the Middle East. Rubio claims that the Iranian regime, despite sanctions, is intent on becoming the dominant power by destroying Israel, a statement rated as TRUE. He’s not mincing words, and with U.S. Marines now poised in the region, his hawkish stance is gaining traction.\n\nRubio's track record reveals a consistent narrative: the Iranian regime is labeled the primary source of regional instability and violence. However, this sweeping claim was tagged as MISLEADING. While Iran's role is significant, the Middle East's complexity defies singular blame. Rubio's assertions often paint a black-and-white picture in a region teeming with shades of gray.\n\nIn the broader context, Rubio's truthfulness score stands at 68.7, with 43 out of 134 claims rated TRUE. His tendency to lean into dramatic narratives is tempered by occasional overstatements, such as oversimplifying Iran's role in Middle Eastern violence. Yet, on the topic of Iran, he maintains a relatively high accuracy with a score of 83.8.\n\nFor those following Middle East tensions, Rubio’s statements are a reminder to scrutinize rhetoric closely, especially when military actions hang in the balance.",
+  "matching_claims": 6,
+  "editorial": "Senator Marco Rubio's fiery rhetoric on Iran hits the bullseye today as tensions skyrocket with Iranian missile strikes targeting the Middle East. Rubio, a stalwart hawk on Iranian issues, recently stated, \"The Iran regime wants to destroy Israel to become the dominant power in the Middle East.\" Our fact-checkers confirm this claim as TRUE, highlighting the seriousness of the threat amidst these unfolding events.\n\nRubio's track record on Iran is a mix of accuracy and overstatement. His assertion that Iran was aware of the consequences of its attacks on Israel is spot on. However, his claim that the Islamic Republic is the primary driver of Middle Eastern instability was flagged as MISLEADING. The complexity of the region's conflicts can't be pinned on a single regime, despite Iran's significant role.\n\nWhen it comes to truthfulness, Rubio holds a respectable score of 72.5 on Iranian matters, slightly higher than his overall score of 68.7. While he has a knack for hitting the mark, a fraction of his claims veer into the realm of exaggeration, as seen in his statements about U.S. financial dealings with Iran.\n\nFor readers, it’s crucial to parse Rubio’s words with a keen eye: while his insights are often grounded in truth, the devil is in the misleading details.",
   "matched_tweets": [
     {
       "claim": "The Iran regime wants to destroy Israel to become the dominant power in the Middle East.",
@@ -21,15 +21,6 @@
       "tweet_url": "https://twitter.com/marcorubio/status/1841178807702581581",
       "domain": "foreign_policy",
       "reasoning": "The claim that the Iranian regime seeks to destroy Israel to become the dominant power in the Middle East is supported by multiple sources. Iranian leaders have consistently expressed intentions to eliminate Israel. For instance, Supreme Leader Ali Khamenei has set 2040 as the target year for Israel"
-    },
-    {
-      "claim": "The Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East and has oppressed the people of Iran for almost 25 years.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "The primary source of violence, conflict, suffering and instability in the Middle East is the criminal “Islamic Republic” regime which has also oppressed the people of #Iran for almost 25 years",
-      "tweet_url": "https://twitter.com/marcorubio/status/1780635965331058728",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that the Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East is an oversimplification. While Iran has been involved in various regional conflicts and has supported groups like Hezbollah, attributing the majority of regional ins"
     },
     {
       "claim": "The Iranian regime was aware of the consequences of attacking Israel and chose to attack anyway.",
@@ -48,7 +39,34 @@
       "tweet_url": "https://twitter.com/marcorubio/status/1781135619508285791",
       "domain": "foreign_policy",
       "reasoning": "The claim that Israel can conduct strikes against targets inside Iran without entering Iranian airspace, by operating over Syrian and Iraqi airspace, is supported by multiple reports. In April 2024, Israeli aircraft launched missiles targeting an air defense radar site near Isfahan, Iran, from beyon"
+    },
+    {
+      "claim": "The Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East and has oppressed the people of Iran for almost 25 years.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "The primary source of violence, conflict, suffering and instability in the Middle East is the criminal “Islamic Republic” regime which has also oppressed the people of #Iran for almost 25 years",
+      "tweet_url": "https://twitter.com/marcorubio/status/1780635965331058728",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that the Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East is an oversimplification. While Iran has been involved in various regional conflicts and has supported groups like Hezbollah, attributing the majority of regional ins"
+    },
+    {
+      "claim": "Biden agreed to send $6 billion to the Iran regime.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Biden agreed to send $6 billion to Iran regime that today marked anniversary of “Islamic Revolution” with chants of “Death to America” and “Death to Israel” (Photo AP/Vahid Salemi)",
+      "tweet_url": "https://twitter.com/marcorubio/status/1756711441934200967",
+      "domain": "foreign_policy",
+      "reasoning": "The claim that President Biden agreed to send $6 billion to the Iranian regime refers to a 2023 agreement where the U.S. facilitated the release of $6 billion in Iranian funds that had been frozen in South Korea. These funds were Iranian assets, not U.S. taxpayer money, and were intended for humanit"
+    },
+    {
+      "claim": "The UN Security Council passed a resolution demanding Israel not defeat Hamas and Biden decided not to veto it.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "The UN Security Council just passed a resolution demanding Israel not defeat Hamas & to appease far-left anti-semitic/Pro-Hamas activists Biden decided not to veto it",
+      "tweet_url": "https://twitter.com/marcorubio/status/1772289923963322848",
+      "domain": "foreign_policy",
+      "reasoning": "The UN Security Council passed a resolution on March 25, 2024, calling for an immediate ceasefire in Gaza during Ramadan and the unconditional release of all hostages. The United States abstained from the vote, allowing the resolution to pass. However, the resolution did not explicitly demand that I"
     }
   ],
-  "generated_at": "2026-03-30T18:29:47.690Z"
+  "generated_at": "2026-03-30T19:17:55.271Z"
 }

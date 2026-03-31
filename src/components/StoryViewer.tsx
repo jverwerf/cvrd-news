@@ -172,7 +172,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
               <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
                 <ErrorBoundary>
-                  <Dashboard key="dash-brief" stories={[briefStory]} videoUrl={undefined} videoDate={undefined} />
+                  <Dashboard key="dash-brief" stories={[briefStory]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
                 </ErrorBoundary>
                 {!dashExpanded && (
                   <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
@@ -429,7 +429,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
               <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
                 <ErrorBoundary>
-                  <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={undefined} videoDate={undefined} />
+                  <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
                 </ErrorBoundary>
                 {!dashExpanded && (
                   <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
