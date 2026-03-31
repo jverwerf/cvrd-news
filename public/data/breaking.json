@@ -1,310 +1,110 @@
 [
   {
-    "topic": "Iran War Escalation",
-    "summary": "Two projectiles have reportedly landed near a vessel off the coast of Saudi Arabia, escalating tensions in the Middle East. This incident occurs as the United States issues warnings to Iran, suggesting potential military action if a ceasefire is not reached soon. The situation exacerbates the fragile geopolitical climate in the region, with potential repercussions for global oil markets and international diplomatic relations.",
-    "severity": "critical",
-    "detected_at": "2026-03-30T17:00:07.723Z",
-    "last_updated": "2026-03-30T23:00:41.902Z",
+    "topic": "Kuwaiti tanker attacked amid US-Iran tensions",
+    "summary": "A Kuwaiti oil tanker has been attacked, intensifying the already high tensions between the United States and Iran. President Trump has responded by threatening to target Iran's energy infrastructure, signaling a potential escalation in military conflict. This incident is a critical point in the ongoing US-Iran standoff, with global implications for energy security and regional stability.",
+    "severity": "major",
+    "detected_at": "2026-03-31T07:00:07.379Z",
+    "last_updated": "2026-03-31T07:00:07.379Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations driving these tensions. The strategic location of the incident near Saudi Arabia, a major oil producer, suggests that control over oil routes and resources is a significant factor. Additionally, the role of arms sales and military contracts in the region's economy is not being scrutinized, despite their influence on the escalation of conflict.",
-    "social_summary": "Social media is buzzing with speculation about the potential for a larger conflict, with hashtags like #IranWar and #MiddleEastCrisis trending. Memes and viral posts are drawing parallels to past conflicts in the region, while conspiracy theories suggest ulterior motives behind the U.S. warnings. Some users are calling for peace and diplomatic solutions, while others express skepticism about the true intentions of involved nations.",
-    "image_prompt": "A dramatic sunset over a tense Middle Eastern coastline, with silhouetted military vessels on the horizon and oil rigs in the foreground, symbolizing the intersection of conflict and commerce.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this attack on global oil markets and the potential for economic destabilization. The focus remains on military posturing rather than the economic fallout that affects countries far beyond the Middle East. Additionally, the role of other regional players, such as Saudi Arabia and Israel, in influencing US policy towards Iran is not being scrutinized.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting false flag operations to justify military intervention. Memes mocking the US's aggressive stance and Iran's defiance are circulating widely. Hashtags like #OilWar and #MiddleEastCrisis are trending, reflecting public anxiety over potential conflict escalation.",
+    "image_prompt": "A dramatic image of a lone oil tanker silhouetted against a fiery sunset, with dark storm clouds gathering on the horizon, symbolizing impending conflict and uncertainty.",
     "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
-        "embed_id": "JtfO20JSjbU",
-        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-        "duration": 243
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "duration": 1470
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=d5ur6Oi40UY",
-        "embed_id": "d5ur6Oi40UY",
-        "title": "Oil rises, stocks fall as Iran war enters fifth week and further escalation looms • FRANCE 24",
-        "duration": 338
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
-        "embed_id": "zvkngF-o5p8",
-        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
-        "duration": 595
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=mT2rOy8RBCU",
-        "embed_id": "mT2rOy8RBCU",
-        "title": "Iran threatens U.S. troops as tensions escalate: 50,000 Americans now in Middle East",
-        "duration": 62
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=wGFWqdEap8c",
-        "embed_id": "wGFWqdEap8c",
-        "title": "US involvement in the Iran war could escalate",
-        "duration": 103
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
         "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining & attack on US troops means",
-        "duration": 1426
+        "title": "Iran war expands: What Houthis joining &amp; attack on US troops means",
+        "duration": 1427
       },
       {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2038534835635970230",
-        "embed_id": "2038534835635970230",
-        "title": "Australian Prime Minister Anthony Albanese says he needs more clarity on the US objectives for the war in Iran, while also calling for de-escalation. ",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/joni_askola/status/2038594720142618988",
-        "embed_id": "2038594720142618988",
-        "title": "Trump’s war on Iran is the perfect example of an escalation trap. \n\nWashington now has to choose between a catastrophic, long war and a humiliating re",
-        "author": "joni_askola"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2038715232361533722",
-        "embed_id": "2038715232361533722",
-        "title": "Iran is pushing the Houthis to prepare to restart a campaign in the Red Sea against shipping contingent on further escalation from the US in the war o",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Faytuks/status/2038713219590639645",
-        "embed_id": "2038713219590639645",
-        "title": "Iran is pushing the Houthis to prepare for a renewed campaign against Red Sea shipping, contingent upon any further escalation by the US in its war on",
-        "author": "Faytuks"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/alon_mizrahi/status/2038632949915308521",
-        "embed_id": "2038632949915308521",
-        "title": "The US and Israel thought they were fooling Iran and dictating the terms of this war. \n\nWrong. Iran has been fooling them, and the war is right where ",
-        "author": "alon_mizrahi"
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85657",
+        "embed_id": "intelslava/85657",
+        "title": "🇮🇷🇦🇪🇰🇼A Kuwaiti tanker was attacked in the Dubai port. Moreover, four people were injured in Dubai during an air defense operation.",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
-        "embed_id": "1s75olt",
-        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
+        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s7rddp/spain_has_barred_us_planes_and_denied_access_to/",
+        "embed_id": "1s7rddp",
+        "title": "Spain has barred US planes and denied access to military bases for Iran strikes, escalating tensions with Washington. Prime Minister Pedro Sánchez cri"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/ImmigrationPathways/comments/1s7ldy6/no_kings_protests_sweep_us_as_anti_trump_wave/",
-        "embed_id": "1s7ldy6",
-        "title": "‘No Kings’ Protests Sweep U.S. As Anti Trump Wave Grows Over Iran War And Immigration Crackdown"
+        "url": "https://reddit.com/r/Global_News_Hub/comments/1s7k3bs/israeli_prime_minister_benjamin_netanyahu_says_in/",
+        "embed_id": "1s7k3bs",
+        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1s7efyi/oil_rises_above_115_as_iran_war_escalates_with/",
-        "embed_id": "1s7efyi",
-        "title": "Oil rises above $115 as Iran war escalates with Nikkei down 4.7% and South Korea Kospi down 4.2%"
+        "url": "https://reddit.com/r/navy/comments/1s7sqpr/swo6_oped_attacking_desalination_plants_is_a_war/",
+        "embed_id": "1s7sqpr",
+        "title": "SWO6 OP-ED: Attacking desalination plants is a war crime. Admirals and Commanding Officers, if asked to do so, you must refuse to carry out this unlaw"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s7det1/iran_war_escalates_houthis_attack_israel_tehran/",
-        "embed_id": "1s7det1",
-        "title": "Iran war escalates: Houthis attack Israel, Tehran loses power after strikes, peace talks sought"
+        "url": "https://reddit.com/r/UAE/comments/1s88122/gaint_kuwaiti_oil_tanker_attacked_in_uae/",
+        "embed_id": "1s88122",
+        "title": "Gaint Kuwaiti Oil tanker attacked in UAE"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
-        "embed_id": "1s71z59",
-        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s7g55q/tabriz_petrochemical_facility_struck_in_northern/",
-        "embed_id": "1s7g55q",
-        "title": "Tabriz Petrochemical facility struck in northern Iran as war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskMiddleEast/comments/1s7gnun/trumps_escalation_with_iran_has_caused_millions/",
-        "embed_id": "1s7gnun",
-        "title": "Trumps escalation with Iran has caused millions of Americans to protest against him and the war the past 2 days"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s7spce/oil_prices_surge_past_116_as_iran_war_escalates/",
-        "embed_id": "1s7spce",
-        "title": "Oil prices surge past $116 as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1s7ydb3/1_billion_a_day_the_escalating_cost_of_americas/",
-        "embed_id": "1s7ydb3",
-        "title": "$1 billion a day: The escalating cost of America’s war with Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s8246t/trump_threatens_irans_energy_infrastructure/",
-        "embed_id": "1s8246t",
-        "title": "Trump threatens Iran's energy infrastructure, claims 'regime change' complete as war escalates"
+        "url": "https://reddit.com/r/internationalpolitics/comments/1s80aq6/israeli_prime_minister_benjamin_netanyahu_says_in/",
+        "embed_id": "1s80aq6",
+        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
-        "embed_id": "JtfO20JSjbU",
-        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-        "channel": "Bloomberg Television",
-        "duration": 243
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "channel": "Al Jazeera English",
-        "duration": 1470
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=d5ur6Oi40UY",
-        "embed_id": "d5ur6Oi40UY",
-        "title": "Oil rises, stocks fall as Iran war enters fifth week and further escalation looms • FRANCE 24",
-        "channel": "FRANCE 24 English",
-        "duration": 338
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=zvkngF-o5p8",
-        "embed_id": "zvkngF-o5p8",
-        "title": "US war in Iran: Panel gauges whether end or escalation is at hand | On Balance",
-        "channel": "NewsNation",
-        "duration": 595
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=mT2rOy8RBCU",
-        "embed_id": "mT2rOy8RBCU",
-        "title": "Iran threatens U.S. troops as tensions escalate: 50,000 Americans now in Middle East",
-        "channel": "CBS Miami",
-        "duration": 62
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=wGFWqdEap8c",
-        "embed_id": "wGFWqdEap8c",
-        "title": "US involvement in the Iran war could escalate",
-        "channel": "FOX 13 Seattle",
-        "duration": 103
-      },
-      {
         "url": "https://www.youtube.com/watch?v=NTETc3MpL-k",
         "embed_id": "NTETc3MpL-k",
-        "title": "Iran war expands: What Houthis joining & attack on US troops means",
+        "title": "Iran war expands: What Houthis joining &amp; attack on US troops means",
         "channel": "CNN",
-        "duration": 1426
+        "duration": 1427
       }
     ],
     "social_clips": [
       {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2038534835635970230",
-        "embed_id": "2038534835635970230",
-        "title": "Australian Prime Minister Anthony Albanese says he needs more clarity on the US objectives for the war in Iran, while also calling for de-escalation. ",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/joni_askola/status/2038594720142618988",
-        "embed_id": "2038594720142618988",
-        "title": "Trump’s war on Iran is the perfect example of an escalation trap. \n\nWashington now has to choose between a catastrophic, long war and a humiliating re",
-        "author": "joni_askola"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2038715232361533722",
-        "embed_id": "2038715232361533722",
-        "title": "Iran is pushing the Houthis to prepare to restart a campaign in the Red Sea against shipping contingent on further escalation from the US in the war o",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Faytuks/status/2038713219590639645",
-        "embed_id": "2038713219590639645",
-        "title": "Iran is pushing the Houthis to prepare for a renewed campaign against Red Sea shipping, contingent upon any further escalation by the US in its war on",
-        "author": "Faytuks"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/alon_mizrahi/status/2038632949915308521",
-        "embed_id": "2038632949915308521",
-        "title": "The US and Israel thought they were fooling Iran and dictating the terms of this war. \n\nWrong. Iran has been fooling them, and the war is right where ",
-        "author": "alon_mizrahi"
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85657",
+        "embed_id": "intelslava/85657",
+        "title": "🇮🇷🇦🇪🇰🇼A Kuwaiti tanker was attacked in the Dubai port. Moreover, four people were injured in Dubai during an air defense operation.",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1s75olt/well_that_escalated_quickly_i_guess_times_up/",
-        "embed_id": "1s75olt",
-        "title": "Well, that escalated quickly. I guess time's up... BREAKING: \n\nVideo of Trump and Israel are bombing Iran’s energy infrastructure.\n\nMillions are now p"
+        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s7rddp/spain_has_barred_us_planes_and_denied_access_to/",
+        "embed_id": "1s7rddp",
+        "title": "Spain has barred US planes and denied access to military bases for Iran strikes, escalating tensions with Washington. Prime Minister Pedro Sánchez cri"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/ImmigrationPathways/comments/1s7ldy6/no_kings_protests_sweep_us_as_anti_trump_wave/",
-        "embed_id": "1s7ldy6",
-        "title": "‘No Kings’ Protests Sweep U.S. As Anti Trump Wave Grows Over Iran War And Immigration Crackdown"
+        "url": "https://reddit.com/r/Global_News_Hub/comments/1s7k3bs/israeli_prime_minister_benjamin_netanyahu_says_in/",
+        "embed_id": "1s7k3bs",
+        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1s7efyi/oil_rises_above_115_as_iran_war_escalates_with/",
-        "embed_id": "1s7efyi",
-        "title": "Oil rises above $115 as Iran war escalates with Nikkei down 4.7% and South Korea Kospi down 4.2%"
+        "url": "https://reddit.com/r/navy/comments/1s7sqpr/swo6_oped_attacking_desalination_plants_is_a_war/",
+        "embed_id": "1s7sqpr",
+        "title": "SWO6 OP-ED: Attacking desalination plants is a war crime. Admirals and Commanding Officers, if asked to do so, you must refuse to carry out this unlaw"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s7det1/iran_war_escalates_houthis_attack_israel_tehran/",
-        "embed_id": "1s7det1",
-        "title": "Iran war escalates: Houthis attack Israel, Tehran loses power after strikes, peace talks sought"
+        "url": "https://reddit.com/r/UAE/comments/1s88122/gaint_kuwaiti_oil_tanker_attacked_in_uae/",
+        "embed_id": "1s88122",
+        "title": "Gaint Kuwaiti Oil tanker attacked in UAE"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/DeepMarketScan/comments/1s71z59/why_is_trump_sharing_an_old_letter_calling_him_a/",
-        "embed_id": "1s71z59",
-        "title": "Why is Trump sharing an old letter calling him a 'peacemaker' NOW as the Iran war escalates?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1s7g55q/tabriz_petrochemical_facility_struck_in_northern/",
-        "embed_id": "1s7g55q",
-        "title": "Tabriz Petrochemical facility struck in northern Iran as war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskMiddleEast/comments/1s7gnun/trumps_escalation_with_iran_has_caused_millions/",
-        "embed_id": "1s7gnun",
-        "title": "Trumps escalation with Iran has caused millions of Americans to protest against him and the war the past 2 days"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1s7spce/oil_prices_surge_past_116_as_iran_war_escalates/",
-        "embed_id": "1s7spce",
-        "title": "Oil prices surge past $116 as Iran war escalates"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1s7ydb3/1_billion_a_day_the_escalating_cost_of_americas/",
-        "embed_id": "1s7ydb3",
-        "title": "$1 billion a day: The escalating cost of America’s war with Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1s8246t/trump_threatens_irans_energy_infrastructure/",
-        "embed_id": "1s8246t",
-        "title": "Trump threatens Iran's energy infrastructure, claims 'regime change' complete as war escalates"
+        "url": "https://reddit.com/r/internationalpolitics/comments/1s80aq6/israeli_prime_minister_benjamin_netanyahu_says_in/",
+        "embed_id": "1s80aq6",
+        "title": "Israeli Prime Minister Benjamin Netanyahu says in a video statement that he has instructed the military to “further expand” its invasion of southern L"
       }
     ],
-    "image_file": "/images/breaking_2026-03-30.png"
+    "image_file": "/images/breaking_2026-03-31.png"
   }
 ]
