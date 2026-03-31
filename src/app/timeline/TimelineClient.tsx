@@ -76,9 +76,9 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
             <button key={t.id} onClick={() => setExpandedId(expandedId === t.id ? null : t.id)}
               className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              {t.entries[t.entries.length - 1]?.image_file && (
+              {(t.image_file || t.entries[t.entries.length - 1]?.image_file) && (
                 <div className="h-28 overflow-hidden" style={{
-                  backgroundImage: `url(${t.entries[t.entries.length - 1].image_file})`,
+                  backgroundImage: `url(${t.image_file || t.entries[t.entries.length - 1].image_file})`,
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
                   <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
@@ -289,9 +289,9 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
       <button onClick={onToggle} className="w-full text-left cursor-pointer group">
         <div className="flex">
           {/* Large image — hide when expanded */}
-          {!isExpanded && latestEntry?.image_file && (
+          {!isExpanded && (thread.image_file || latestEntry?.image_file) && (
             <div className="w-40 md:w-56 shrink-0 overflow-hidden" style={{
-              backgroundImage: `url(${latestEntry.image_file})`,
+              backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               minHeight: 130,
