@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
-    "summary": "Iranian attacks have led to fires in Kuwait and Bahrain, and a fatality in the UAE, marking a significant escalation in regional tensions. These incidents underscore the fragile security situation in the Middle East and have heightened concerns about the potential for further conflict. The events have drawn international attention to the geopolitical instability in the region.",
+    "summary": "Iranian attacks have resulted in fires in Kuwait and Bahrain, and a fatality in the UAE, escalating regional tensions in the Middle East. These incidents highlight the precarious security situation and have raised alarms about the potential for further conflict. The international community is closely monitoring the situation due to its implications for geopolitical stability.",
     "severity": "major",
     "detected_at": "2026-04-01T09:00:08.668Z",
-    "last_updated": "2026-04-01T17:00:46.070Z",
+    "last_updated": "2026-04-01T19:01:14.045Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations that be driving these aggressive actions. The focus remains on the immediate violence rather than the strategic interests Iran have in destabilizing its neighbors. Additionally, the role of international arms sales and military alliances in escalating tensions is not being scrutinized.",
-    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are false flags orchestrated by external powers to justify military intervention. Memes and viral posts are circulating, depicting the Middle East as a powder keg ready to explode, with hashtags calling for peace and de-escalation trending.",
-    "image_prompt": "A dramatic editorial photo of a smoldering skyline at dusk, with silhouettes of oil rigs in the foreground, symbolizing the volatile intersection of energy resources and geopolitical conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations that be driving these aggressive actions. The focus remains on immediate security threats, ignoring how sanctions and economic pressures on Iran be influencing its regional behavior. Additionally, the role of external powers in either exacerbating or mitigating these tensions is not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are a pretext for larger military interventions. Memes and viral posts are drawing parallels to past conflicts in the region, while others are questioning the timing and motives behind the attacks, fueling debates about international involvement.",
+    "image_prompt": "A dramatic editorial photo of a smoldering skyline at dusk, with silhouettes of oil rigs in the foreground, symbolizing the intersection of conflict and economic interests in the Middle East.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -66,6 +66,13 @@
         "url": "https://t.me/warmonitors/43059",
         "embed_id": "warmonitors/43059",
         "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
         "author": "warmonitors"
       },
       {
@@ -197,6 +204,13 @@
         "url": "https://t.me/warmonitors/43059",
         "embed_id": "warmonitors/43059",
         "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
         "author": "warmonitors"
       },
       {
