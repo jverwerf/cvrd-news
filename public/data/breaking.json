@@ -1,5 +1,212 @@
 [
   {
+    "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
+    "summary": "Iranian attacks have led to fires in Kuwait and Bahrain, with a reported fatality in the UAE. This development signifies a notable escalation in regional hostilities, raising concerns about the potential for further conflict in the Middle East. The incidents underscore the fragile security situation in the region and the potential for broader geopolitical ramifications.",
+    "severity": "major",
+    "detected_at": "2026-04-01T09:00:08.668Z",
+    "last_updated": "2026-04-01T09:00:08.668Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying motivations behind Iran's actions, such as internal political pressures or strategic objectives in the Gulf. The focus remains on the immediate consequences rather than the broader geopolitical chess game, including the influence of external powers like the US and Russia in the region. Economic factors, such as sanctions and oil market dynamics, are also being overlooked as potential drivers of these aggressive maneuvers.",
+    "social_summary": "Social media is ablaze with speculation and outrage, with hashtags like #IranAttacks and #MiddleEastConflict trending. Memes and viral posts are drawing parallels to past conflicts, while conspiracy theories suggest ulterior motives involving global superpowers. The discourse is polarized, with some users calling for diplomatic solutions and others advocating for military responses.",
+    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with dark smoke billowing into a crimson sky, symbolizing the volatile tensions in the Middle East. In the foreground, silhouettes of oil workers and emergency responders are seen against the fiery backdrop, capturing the human element amidst geopolitical turmoil.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/1/iran-attacks-cause-fire-in-kuwait-bahrain-kill-man-in-uae?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran attacks cause fire in Kuwait, Bahrain; kill man in UAE"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=qoM5JjL26so",
+        "embed_id": "qoM5JjL26so",
+        "title": "Kuwait says no oil spill or injuries after Iranian attack causes fire on tanker at Dubai Port",
+        "duration": 177
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=oCE1vtrdYuE",
+        "embed_id": "oCE1vtrdYuE",
+        "title": "Sirens, panic across Bahrain, Saudi Arabia and Kuwait as Iranian strikes continue",
+        "duration": 256
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=S6VNFeV4wU8",
+        "embed_id": "S6VNFeV4wU8",
+        "title": "Bahrain’s refinery burns after Iranian attacks | DW News",
+        "duration": 67
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=xiFCSF8sTlU",
+        "embed_id": "xiFCSF8sTlU",
+        "title": "Fuel depot on fire in Bahrain following Iranian attack",
+        "duration": 31
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85696",
+        "embed_id": "intelslava/85696",
+        "title": "🇮🇷🇺🇸🇧🇭❗️Iranian missiles hit the headquarters of Batelco in Hamal, Bahrain, the largest telecommunications company in the country, where Amazon ",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43059",
+        "embed_id": "warmonitors/43059",
+        "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CuratedTumblr/comments/1s8zb1l/on_common_knowledge/",
+        "embed_id": "1s8zb1l",
+        "title": "On common knowledge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TheLastAirbender/comments/1s8qbxn/do_any_one_feel_as_if_the_criticism_of_korra/",
+        "embed_id": "1s8qbxn",
+        "title": "Do any one feel as if the criticism of Korra leaving the spirit portals open doesn't make sense?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueUnpopularOpinion/comments/1s8lbm3/the_amount_of_people_eating_up_iranian_propaganda/",
+        "embed_id": "1s8lbm3",
+        "title": "The amount of people eating up Iranian propaganda is astonishing"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/SubredditDrama/comments/1s8rpk6/because_i_feel_the_need_to_fight_against_it_to/",
+        "embed_id": "1s8rpk6",
+        "title": "“Because I feel the need to fight against it to make sure it doesn't happen here. I will take a billion downvotes to do so.” A savior stands alone in "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueUnpopularOpinion/comments/1s8s8hm/cmv_i_get_not_supporting_israel_i_dont_get/",
+        "embed_id": "1s8s8hm",
+        "title": "CMV: I get not supporting Israel, I don't get supporting Palestine"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Stellaris/comments/1s8m0sp/stellaris_433_patch_released_checksum_456f/",
+        "embed_id": "1s8m0sp",
+        "title": "Stellaris 4.3.3 patch released (checksum 456f)"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1s8y58j/he_also_said_all_houses_in_lebanese_villages_near/",
+        "embed_id": "1s8y58j",
+        "title": "He also said all houses in Lebanese villages near the Israeli border would be demolished."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NDTVLive/comments/1s8iobt/as_iran_ramps_up_attack_on_gulf_amid_west_asia/",
+        "embed_id": "1s8iobt",
+        "title": "As Iran ramps up attack on Gulf amid West Asia war, here's a look at what Iran struck most, and what was used by Iran\n\n#Datafy"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=qoM5JjL26so",
+        "embed_id": "qoM5JjL26so",
+        "title": "Kuwait says no oil spill or injuries after Iranian attack causes fire on tanker at Dubai Port",
+        "channel": "Al Jazeera English",
+        "duration": 177
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=oCE1vtrdYuE",
+        "embed_id": "oCE1vtrdYuE",
+        "title": "Sirens, panic across Bahrain, Saudi Arabia and Kuwait as Iranian strikes continue",
+        "channel": "Al Jazeera English",
+        "duration": 256
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=S6VNFeV4wU8",
+        "embed_id": "S6VNFeV4wU8",
+        "title": "Bahrain’s refinery burns after Iranian attacks | DW News",
+        "channel": "DW News",
+        "duration": 67
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=xiFCSF8sTlU",
+        "embed_id": "xiFCSF8sTlU",
+        "title": "Fuel depot on fire in Bahrain following Iranian attack",
+        "channel": "CNN",
+        "duration": 31
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85696",
+        "embed_id": "intelslava/85696",
+        "title": "🇮🇷🇺🇸🇧🇭❗️Iranian missiles hit the headquarters of Batelco in Hamal, Bahrain, the largest telecommunications company in the country, where Amazon ",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43059",
+        "embed_id": "warmonitors/43059",
+        "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/CuratedTumblr/comments/1s8zb1l/on_common_knowledge/",
+        "embed_id": "1s8zb1l",
+        "title": "On common knowledge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TheLastAirbender/comments/1s8qbxn/do_any_one_feel_as_if_the_criticism_of_korra/",
+        "embed_id": "1s8qbxn",
+        "title": "Do any one feel as if the criticism of Korra leaving the spirit portals open doesn't make sense?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueUnpopularOpinion/comments/1s8lbm3/the_amount_of_people_eating_up_iranian_propaganda/",
+        "embed_id": "1s8lbm3",
+        "title": "The amount of people eating up Iranian propaganda is astonishing"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/SubredditDrama/comments/1s8rpk6/because_i_feel_the_need_to_fight_against_it_to/",
+        "embed_id": "1s8rpk6",
+        "title": "“Because I feel the need to fight against it to make sure it doesn't happen here. I will take a billion downvotes to do so.” A savior stands alone in "
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueUnpopularOpinion/comments/1s8s8hm/cmv_i_get_not_supporting_israel_i_dont_get/",
+        "embed_id": "1s8s8hm",
+        "title": "CMV: I get not supporting Israel, I don't get supporting Palestine"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Stellaris/comments/1s8m0sp/stellaris_433_patch_released_checksum_456f/",
+        "embed_id": "1s8m0sp",
+        "title": "Stellaris 4.3.3 patch released (checksum 456f)"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1s8y58j/he_also_said_all_houses_in_lebanese_villages_near/",
+        "embed_id": "1s8y58j",
+        "title": "He also said all houses in Lebanese villages near the Israeli border would be demolished."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NDTVLive/comments/1s8iobt/as_iran_ramps_up_attack_on_gulf_amid_west_asia/",
+        "embed_id": "1s8iobt",
+        "title": "As Iran ramps up attack on Gulf amid West Asia war, here's a look at what Iran struck most, and what was used by Iran\n\n#Datafy"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-01.png"
+  },
+  {
     "topic": "Israeli Airstrikes on Beirut",
     "summary": "Israeli airstrikes have targeted Beirut, causing extensive damage and triggering a search for victims by emergency workers. This marks a significant escalation in the ongoing conflict between Israel and Lebanon, raising concerns about civilian casualties and the potential for further destabilization in the region. The international community is closely monitoring the situation as tensions between the two countries continue to rise.",
     "severity": "major",
