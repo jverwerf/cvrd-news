@@ -3,7 +3,7 @@
   "name": "Ursula von der Leyen",
   "role": "President of the European Commission",
   "party": "European People's Party",
-  "country": "US",
+  "country": "DE",
   "state": null,
   "tags": [
     "EU",
@@ -127,5 +127,9 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-30T22:47:32.605Z"
+  "scored_at": "2026-03-30T22:47:32.605Z",
+  "photo": "/data/politicians/photo_vonderleyen.png",
+  "region": "Europe",
+  "profession": "politician",
+  "alignment": "center"
 }

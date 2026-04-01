@@ -3,7 +3,7 @@
   "name": "António Guterres",
   "role": "Secretary-General of the United Nations",
   "party": "",
-  "country": "US",
+  "country": "PT",
   "state": null,
   "tags": [
     "UN",
@@ -159,5 +159,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-31T07:32:35.531Z"
+  "scored_at": "2026-03-31T07:32:35.531Z",
+  "region": "Europe",
+  "profession": "politician",
+  "alignment": "center"
 }

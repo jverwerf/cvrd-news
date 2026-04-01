@@ -3,7 +3,7 @@
   "name": "בני גנץ - Benny Gantz",
   "role": "Minister of Defense",
   "party": "Blue and White",
-  "country": "US",
+  "country": "IL",
   "state": null,
   "tags": [
     "Defense",
@@ -111,5 +111,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-31T08:31:48.064Z"
+  "scored_at": "2026-03-31T08:31:48.064Z",
+  "region": "Middle East",
+  "profession": "politician",
+  "alignment": "center"
 }

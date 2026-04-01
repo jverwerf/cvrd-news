@@ -150,5 +150,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-26T23:07:36.347Z"
+  "scored_at": "2026-03-26T23:07:36.347Z",
+  "region": "US",
+  "profession": "public-figure",
+  "alignment": "right"
 }

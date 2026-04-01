@@ -135,5 +135,8 @@
       "false": 2
     }
   },
-  "scored_at": "2026-03-27T10:32:13.651Z"
+  "scored_at": "2026-03-27T10:32:13.651Z",
+  "region": "US",
+  "profession": "politician",
+  "alignment": "right"
 }

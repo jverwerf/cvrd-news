@@ -3,7 +3,7 @@
   "name": "Naftali Bennett נפתלי בנט",
   "role": "13th Prime Minister of Israel",
   "party": "Yamina",
-  "country": "US",
+  "country": "IL",
   "state": null,
   "tags": [
     "Israel",
@@ -126,5 +126,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-30T15:51:45.074Z"
+  "scored_at": "2026-03-30T15:51:45.074Z",
+  "region": "Middle East",
+  "profession": "politician",
+  "alignment": "right"
 }

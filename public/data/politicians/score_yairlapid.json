@@ -3,7 +3,7 @@
   "name": "Yair Lapid",
   "role": "Leader of the Opposition, Former Prime Minister",
   "party": "Yesh Atid",
-  "country": "US",
+  "country": "IL",
   "state": null,
   "tags": [
     "Israeli politics",
@@ -126,5 +126,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-30T15:07:12.323Z"
+  "scored_at": "2026-03-30T15:07:12.323Z",
+  "region": "Middle East",
+  "profession": "politician",
+  "alignment": "center"
 }

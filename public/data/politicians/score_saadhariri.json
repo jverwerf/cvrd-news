@@ -3,7 +3,7 @@
   "name": "Saad Hariri",
   "role": "Former Prime Minister of Lebanon",
   "party": "Future Movement",
-  "country": "US",
+  "country": "LB",
   "state": null,
   "tags": [
     "Lebanon",
@@ -111,5 +111,8 @@
       "false": 0
     }
   },
-  "scored_at": "2026-03-30T16:56:01.784Z"
+  "scored_at": "2026-03-30T16:56:01.784Z",
+  "region": "Middle East",
+  "profession": "politician",
+  "alignment": "center"
 }
