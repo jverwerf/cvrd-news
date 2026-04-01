@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
-    "summary": "Iranian attacks have led to fires in Kuwait and Bahrain, with a fatality reported in the UAE. These incidents represent a significant escalation in regional tensions, underscoring the fragile security situation in the Middle East. The events have heightened concerns about the potential for further conflict and broader geopolitical ramifications.",
+    "summary": "Iranian attacks have resulted in fires in Kuwait and Bahrain, with a fatality occurring in the UAE. These incidents mark a significant escalation in regional tensions, highlighting the precarious security situation in the Middle East. The events have raised alarms about the potential for further conflict and broader geopolitical consequences.",
     "severity": "major",
     "detected_at": "2026-04-01T09:00:08.668Z",
-    "last_updated": "2026-04-01T13:00:31.617Z",
+    "last_updated": "2026-04-01T15:00:29.868Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying motivations behind Iran's actions, such as internal political pressures or strategic military objectives. There is also a lack of discussion on how these incidents affect global oil markets, given the region's critical role in energy supply. The focus remains on immediate consequences rather than long-term geopolitical shifts.",
-    "social_summary": "Social media is buzzing with speculation about the reasons behind Iran's aggressive actions, with some users suggesting it is a response to international sanctions. Memes and viral posts are drawing parallels to historical conflicts in the region, while conspiracy theories about foreign interference are gaining traction. The discourse is polarized, with users either condemning Iran's actions or questioning the narratives presented by Western media.",
-    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with dark smoke billowing into a crimson sky, symbolizing the escalating tensions and the volatile nature of Middle Eastern geopolitics.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as sanctions and economic isolation, which be driving its aggressive posture. Additionally, the role of international arms sales and military alliances in escalating tensions is not being scrutinized. The focus remains on immediate events rather than the long-term geopolitical strategies at play.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are false flags orchestrated by other regional powers. Memes are circulating that mock the international community's inability to de-escalate tensions, while others express solidarity with the affected nations. The hashtag #MiddleEastCrisis is trending, with users debating the potential for a larger conflict.",
+    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with dark smoke billowing into a crimson sky, symbolizing the volatile geopolitical tensions in the Middle East.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -113,6 +113,12 @@
         "url": "https://reddit.com/r/Overwatch/comments/1s99rzy/overwatch_mid_april_update_upcoming_changes/",
         "embed_id": "1s99rzy",
         "title": "Overwatch Mid April Update - Upcoming Changes"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BORUpdates/comments/1s9fm0x/almond_smell_at_the_plant_should_i_evacuate/",
+        "embed_id": "1s9fm0x",
+        "title": "Almond smell at the plant, should I evacuate everyone?"
       }
     ],
     "youtube_videos": [
@@ -212,21 +218,27 @@
         "url": "https://reddit.com/r/Overwatch/comments/1s99rzy/overwatch_mid_april_update_upcoming_changes/",
         "embed_id": "1s99rzy",
         "title": "Overwatch Mid April Update - Upcoming Changes"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BORUpdates/comments/1s9fm0x/almond_smell_at_the_plant_should_i_evacuate/",
+        "embed_id": "1s9fm0x",
+        "title": "Almond smell at the plant, should I evacuate everyone?"
       }
     ],
     "image_file": "/images/breaking_2026-04-01.png"
   },
   {
     "topic": "Israeli Airstrikes on Beirut",
-    "summary": "Israeli airstrikes have targeted Beirut, causing extensive damage and leading to a search for victims by emergency workers. This marks a significant escalation in the ongoing conflict between Israel and Lebanon, raising concerns about civilian casualties and regional instability. The international community is closely monitoring the situation as tensions between the two countries continue to rise.",
+    "summary": "Israeli airstrikes have hit Beirut, resulting in significant destruction and prompting emergency workers to search for victims. This development represents a major escalation in the conflict between Israel and Lebanon, with heightened fears of civilian casualties and increased regional instability. The international community is paying close attention to the situation as tensions between the two nations intensify.",
     "severity": "major",
     "detected_at": "2026-04-01T03:00:06.745Z",
-    "last_updated": "2026-04-01T13:00:56.294Z",
+    "last_updated": "2026-04-01T15:00:56.033Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive these conflicts, such as territorial disputes, historical grievances, and the influence of external powers like the United States and Iran. The economic implications, including the impact on local economies and international trade routes, are also being overlooked. Additionally, the role of arms sales and military aid in perpetuating the conflict is not being scrutinized.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian life and others defending the airstrikes as a necessary measure for national security. Memes and hashtags are circulating, with some drawing parallels to past conflicts in the region. Conspiracy theories about foreign intervention and hidden agendas are also gaining traction.",
-    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance and emergency workers silhouetted against the glow of fires, symbolizing the chaos and urgency of the situation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this escalation. The airstrikes are not just a response to immediate threats but are part of a broader strategy involving regional power dynamics and alliances. Economic interests, such as control over resources and influence in the Middle East, play a crucial role in the ongoing conflict, yet these factors are often overshadowed by the immediate military actions and humanitarian concerns.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian lives and others defending Israel's right to self-defense. Memes and hashtags are circulating, highlighting the disparity in media coverage and questioning the motives behind the airstrikes. Conspiracy theories are also emerging, suggesting ulterior motives tied to international politics and resource control.",
+    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance, symbolizing conflict and tension. In the foreground, a lone figure stands on a rooftop, looking out over the city, representing the human impact and the search for peace amidst chaos.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -317,6 +329,12 @@
         "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English"
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=4M8ffR5XlJ8",
+        "embed_id": "4M8ffR5XlJ8",
+        "title": "Moment Israeli strike hits Beirut building | DW News"
+      },
+      {
         "platform": "x",
         "url": "https://x.com/Osint613/status/2038504142486777863",
         "embed_id": "2038504142486777863",
@@ -380,6 +398,20 @@
         "embed_id": "2039092400316985496",
         "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
         "author": "WarMonitors"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2037976511467159915",
+        "embed_id": "2037976511467159915",
+        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16276",
+        "embed_id": "France24_en/16276",
+        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
+        "author": "france24_en"
       }
     ],
     "youtube_videos": [
@@ -462,6 +494,12 @@
         "embed_id": "Dh-VTNHaGBM",
         "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English",
         "channel": "France 24 English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=4M8ffR5XlJ8",
+        "embed_id": "4M8ffR5XlJ8",
+        "title": "Moment Israeli strike hits Beirut building | DW News",
+        "channel": "DW News"
       }
     ],
     "social_clips": [
@@ -529,6 +567,20 @@
         "embed_id": "2039092400316985496",
         "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
         "author": "WarMonitors"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2037976511467159915",
+        "embed_id": "2037976511467159915",
+        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16276",
+        "embed_id": "France24_en/16276",
+        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
+        "author": "france24_en"
       }
     ],
     "image_file": "/images/breaking_2026-04-01.png"
