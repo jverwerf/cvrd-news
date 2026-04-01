@@ -16,9 +16,13 @@ type PoliticianScore = {
   false_count: number;
   pending_count: number;
   country?: string;
+  region?: string;
   party?: string;
   role?: string;
+  role_weight?: number;
+  profession?: string;
   tags?: string[];
+  [key: string]: any;
 };
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
@@ -111,7 +115,7 @@ export default function LeaderboardPage() {
   const availableCountries = regionFilter === 'all' ? [] :
     [...new Set(scores
       .filter(p => {
-        const region = p.region || REGIONS[p.country] || 'Other';
+        const region = p.region || (p.country ? REGIONS[p.country] : undefined) || 'Other';
         if (regionFilter === 'US') return region === 'US';
         if (regionFilter === 'middle-east') return region === 'Middle East';
         if (regionFilter === 'europe') return region === 'Europe';
@@ -124,7 +128,7 @@ export default function LeaderboardPage() {
     .filter(p => {
       // Row 1: Region — use explicit region field, fall back to REGIONS map
       if (regionFilter !== 'all') {
-        const region = p.region || REGIONS[p.country] || 'Other';
+        const region = p.region || (p.country ? REGIONS[p.country] : undefined) || 'Other';
         if (regionFilter === 'US' && region !== 'US') return false;
         if (regionFilter === 'middle-east' && region !== 'Middle East') return false;
         if (regionFilter === 'europe' && region !== 'Europe') return false;
@@ -250,7 +254,7 @@ export default function LeaderboardPage() {
         { label: 'Region', items: REGION_FILTERS, value: regionFilter, set: (v: string) => { setRegionFilter(v); setCountryFilter('all'); }, color: '#daa520', bg: 'rgba(184,134,11,' },
         ...(availableCountries.length > 1 ? [{
           label: 'Country',
-          items: [{ label: 'All', value: 'all' }, ...availableCountries.map(cc => ({ label: COUNTRY_NAMES[cc] || cc, value: cc }))],
+          items: [{ label: 'All', value: 'all' }, ...availableCountries.map(cc => ({ label: (cc ? COUNTRY_NAMES[cc] : undefined) || cc || '?', value: cc || 'unknown' }))],
           value: countryFilter, set: setCountryFilter, color: '#daa520', bg: 'rgba(184,134,11,',
         }] : []),
         { label: 'Leaning', items: ALIGNMENT_FILTERS, value: alignmentFilter, set: setAlignmentFilter, color: '#88bbff', bg: 'rgba(100,180,255,' },
