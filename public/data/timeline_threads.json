@@ -5,7 +5,7 @@
       "id": "iran-war",
       "title": "Iran War",
       "category": "world",
-      "summary": "The conflict between Iran and various international actors, including the U.S. and Israel, has intensified with missile strikes, diplomatic standoffs, and regional escalations. The war has also impacted global oil prices and involved multiple countries in the Middle East.",
+      "summary": "The Iran-Israel conflict intensified on March 26, 2026, when Israel conducted strikes on Iranian targets, prompting a diplomatic standoff between the U.S. and Iran. In a broader crackdown, the UAE and Qatar arrested hundreds for sharing videos of the conflict, highlighting regional tensions. On March 28, the situation escalated further when Iranian forces launched a missile strike on a U.S. military base in Saudi Arabia, injuring 12 American troops. The same day, Iran-backed Houthi rebels attacked Israel, marking a significant expansion of hostilities. As the conflict progressed, missile and drone strikes from Iran prompted U.S. military responses, with both sides engaging in a continuous cycle of aggression. By March 31, the war's impact was felt globally, particularly in oil markets, raising concerns about long-term economic consequences.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -2960,7 +2960,7 @@
           "left_narrative": "The left is focusing on the humanitarian impact of the conflict, highlighting the struggles of Iranian civilians and the fractured leadership within Iran. There is also criticism of the U.S. administration's aggressive stance and its economic consequences.",
           "right_narrative": "The right is emphasizing the strategic necessity of the U.S. actions against Iran, portraying them as a defense against Iranian aggression. There is also a focus on the potential benefits of weakening Iran's military capabilities.",
           "what_they_arent_telling_you": "On Reddit, users are sharing unverified reports of civilian casualties from the strikes, which are largely absent from mainstream coverage. The oil industry's profit margins are benefiting from the price surge, a detail often omitted. Social media posts question the accuracy of the reported success of U.S. operations, citing discrepancies in official statements.",
-          "image_file": "/images/story_2026-03-31_1.png",
+          "image_file": "/images/threads/iran-war_2026-03-31.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -3808,7 +3808,7 @@
       "id": "no-kings-protests",
       "title": "No Kings Protests",
       "category": "politics",
-      "summary": "The 'No Kings' protests have gained momentum across the U.S., challenging President Trump's leadership and advocating for democratic reforms. The movement has seen widespread participation and has been marked by significant public demonstrations.",
+      "summary": "The \"No Kings\" protests began on March 28, 2026, as a grassroots movement challenging President Donald Trump's leadership, igniting demonstrations in various U.S. cities. By March 30, the protests had escalated significantly, with millions participating nationwide, rallying against perceived authoritarianism and calling for democratic reforms. The movement's momentum continued to grow, capturing national attention and media coverage. On March 31, a specific protest in Florida garnered controversy after the Democratic Party's involvement raised questions about political motivations behind the demonstrations. Currently, the protests remain active, with organizers planning further actions to sustain momentum and amplify their message against Trump's administration.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -4030,7 +4030,7 @@
           "left_narrative": "The left views the 'No Kings' protests as a powerful demonstration of grassroots activism, emphasizing the need for democratic accountability and resistance to authoritarian tendencies. They highlight the diverse coalition of groups involved in the protests.",
           "right_narrative": "The right criticizes the protests as misguided, arguing that they are fueled by misinformation and anti-establishment sentiments. They warn that such movements destabilize the political landscape and undermine legitimate governance.",
           "what_they_arent_telling_you": "Reddit threads reveal that the protests were organized through decentralized networks, a detail not widely reported by mainstream media. A viral TikTok video captures police using force to disperse protesters, raising questions about law enforcement's response. Leaked internal memos suggest that some protest organizers have ties to international advocacy groups, which influence the movement's direction.",
-          "image_file": "/images/story_2026-03-30_15.png",
+          "image_file": "/images/threads/no-kings-protests_2026-03-30.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -4337,7 +4337,7 @@
           "left_narrative": "The left is focusing on the protest's message against authoritarianism and the importance of free speech. They argue that the incident should not overshadow the broader issues being addressed by the protest.",
           "right_narrative": "The right criticizes the protest as an example of left-wing violence and intolerance. They argue that the incident highlights the need for law and order and the dangers of inflammatory rhetoric.",
           "what_they_arent_telling_you": "On Reddit, users are sharing videos showing peaceful parts of the protest, which are not being highlighted by mainstream media. The media is not addressing the potential political motivations behind the assault charges. Social media posts reveal that some protestors were reportedly provoked by counter-protestors, leading to the escalation.",
-          "image_file": "/images/story_2026-03-31_20.png",
+          "image_file": "/images/threads/no-kings-protests_2026-03-31.png",
           "social_clips": [
             {
               "platform": "x",
@@ -4488,13 +4488,14 @@
       "last_seen": "2026-03-31",
       "is_active": true,
       "total_days_span": 4,
-      "days_covered": 3
+      "days_covered": 3,
+      "image_file": "/images/threads/no-kings-protests.png"
     },
     {
       "id": "tsa-funding-and-government-shutdown",
       "title": "TSA Funding and Government Shutdown",
       "category": "politics",
-      "summary": "The U.S. government shutdown has led to a funding crisis for the TSA, with President Trump signing an executive order to ensure TSA workers receive pay. The shutdown has caused significant disruptions at airports and sparked political debates.",
+      "summary": "The ongoing stalemate over funding for the Transportation Security Administration (TSA) began on March 26, 2026, as Congress struggled to reach an agreement, raising concerns about potential disruptions at airports nationwide. In response to the escalating crisis, President Trump intervened on March 28 by signing an executive order aimed at ensuring that TSA workers would continue to receive their pay despite the looming government shutdown. This decisive action was taken to alleviate fears of workforce shortages and operational disruptions at critical transportation hubs. By March 31, TSA workers began receiving their paychecks, providing some relief amid the ongoing uncertainty. The situation remains fluid as Congress continues to negotiate funding solutions, with the potential for further developments in the coming days.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -4505,7 +4506,7 @@
           "left_narrative": "The New York Times emphasizes the Democrats' call for increased TSA funding and restrictions on ICE as part of the negotiations, criticizing Republicans for using the issue as leverage.",
           "right_narrative": "Fox News argues that the deadlock is due to Democrats' refusal to compromise on border security measures, framing the shutdown risk as a failure of Democratic leadership.",
           "what_they_arent_telling_you": "A Reddit post in r/news with 9K upvotes highlights that some airports have already started reducing staff in anticipation of funding cuts, a detail not covered by mainstream media. This benefits airlines by potentially reducing operational costs. Internal TSA memos reveal plans for service reductions, contradicting official statements about maintaining security standards.",
-          "image_file": "/images/story_2026-03-26_14.png",
+          "image_file": "/images/threads/tsa-funding-and-government-shutdown_2026-03-26.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -4660,7 +4661,7 @@
           "left_narrative": "The left is criticizing the executive order as a temporary fix that doesn't address the root causes of the shutdown. They argue that it is a political maneuver to shift blame away from the administration's inability to pass a comprehensive funding bill.",
           "right_narrative": "The right is praising the executive order as a decisive action to support essential workers during the shutdown. They highlight it as an example of Trump's commitment to national security and federal employees.",
           "what_they_arent_telling_you": "A Reddit post in r/news with 15K upvotes discusses how the executive order bypasses standard legislative processes, raising concerns about executive overreach. Mainstream media is not covering the potential legal challenges to the order. A viral X post from @EndWokeness highlights inconsistencies in TSA funding allocations.",
-          "image_file": "/images/story_2026-03-28_16.png",
+          "image_file": "/images/threads/tsa-funding-and-government-shutdown_2026-03-28.png",
           "social_clips": [
             {
               "platform": "x",
@@ -5022,7 +5023,7 @@
       "id": "ukraines-defense-deals",
       "title": "Ukraine's Defense Deals",
       "category": "world",
-      "summary": "Ukraine has strengthened its military alliances by signing defense cooperation agreements with Saudi Arabia and Qatar, aiming to enhance its air defense capabilities amid regional conflicts.",
+      "summary": "On March 27, 2026, Ukraine and Saudi Arabia solidified their defense ties by signing a significant cooperation agreement, which aims to enhance military collaboration between the two nations. This deal is part of Ukraine's broader strategy to strengthen its defense capabilities amid ongoing regional conflicts. Just two days later, on March 29, Ukraine announced the completion of air defense agreements with both Qatar and Saudi Arabia, further expanding its military partnerships within the Gulf region. These developments underscore Ukraine's proactive approach to securing international support and advanced military technology as tensions in Eastern Europe continue to rise. The agreements represent a critical pivot for Ukraine in diversifying its defense partnerships beyond traditional allies.",
       "entries": [
         {
           "date": "2026-03-27",
@@ -5033,7 +5034,7 @@
           "left_narrative": "Not enough coverage yet — check back soon.",
           "right_narrative": "Not enough coverage yet — check back soon.",
           "what_they_arent_telling_you": "A Reddit post in r/worldnews with 8K upvotes reveals that the agreement includes a controversial clause allowing Saudi troops to be stationed in Ukraine, which is not widely reported. Mainstream media is not discussing the financial incentives provided by Saudi Arabia to secure the deal, which raises questions about Ukraine's autonomy in decision-making. Additionally, leaked documents indicate that some EU countries are concerned about the implications for regional stability.",
-          "image_file": "/images/story_2026-03-27_4.png",
+          "image_file": "/images/threads/ukraines-defense-deals_2026-03-27.png",
           "social_clips": [
             {
               "platform": "x",
@@ -5242,7 +5243,8 @@
       "last_seen": "2026-03-29",
       "is_active": false,
       "total_days_span": 3,
-      "days_covered": 2
+      "days_covered": 2,
+      "image_file": "/images/threads/ukraines-defense-deals.png"
     }
   ]
 }
