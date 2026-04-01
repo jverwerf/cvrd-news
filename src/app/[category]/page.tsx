@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
 import { LiveBanner } from "@/components/LiveBanner";

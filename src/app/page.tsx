@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getDailyGaps } from "@/lib/data";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LiveBanner } from "@/components/LiveBanner";
