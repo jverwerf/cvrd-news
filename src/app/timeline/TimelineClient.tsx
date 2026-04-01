@@ -149,15 +149,35 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
 
         <div className="space-y-4">
         <div style={{ maxHeight: 340, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
-        {filtered.map(thread => (
-          <ThreadCard
-            key={thread.id}
-            thread={thread}
-            isExpanded={expandedId === thread.id}
-            onToggle={() => setExpandedId(expandedId === thread.id ? null : thread.id)}
-            onHover={() => setExpandedId(thread.id)}
-          />
-        ))}
+        {filtered.map(thread => {
+          const latestEntry = thread.entries[thread.entries.length - 1];
+          const catColor = categoryColor(thread.category);
+          return (
+            <a key={thread.id} href={`/timeline/${thread.id}`}
+              className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
+              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div className="flex">
+                {(thread.image_file || latestEntry?.image_file) && (
+                  <div className="w-36 md:w-48 shrink-0 overflow-hidden" style={{
+                    backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
+                    backgroundSize: 'cover', backgroundPosition: 'center',
+                    minHeight: 90,
+                  }} />
+                )}
+                <div className="flex-1 px-4 py-3 flex flex-col justify-center min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>{thread.category}</span>
+                    <span className="text-[9px] text-[#666]">{formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}</span>
+                  </div>
+                  <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
+                    {thread.title}
+                  </h2>
+                  <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">{thread.summary}</p>
+                </div>
+              </div>
+            </a>
+          );
+        })}
         </div>
 
         {filtered.length === 0 && (
