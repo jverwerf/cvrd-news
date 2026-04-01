@@ -1,6 +1,25 @@
 export const dynamic = 'force-dynamic';
 
+import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const data = await getDailyGaps();
+  const stories = (data?.top_narratives || []).filter((s: any) => s.is_top_story).slice(0, 6);
+  const topics = stories.map((s: any) => s.topic).join('. ');
+  const desc = topics ? `Today: ${topics}` : 'Daily news from 36+ sources across the political spectrum.';
+  return {
+    title: 'CVRD News — Your Streaming Platform to Cover the News',
+    description: desc.slice(0, 160),
+    openGraph: {
+      title: 'CVRD News — Every Side of Every Story',
+      description: desc.slice(0, 200),
+      url: 'https://cvrdnews.com',
+      images: stories[0]?.image_file ? [{ url: `https://cvrdnews.com${stories[0].image_file}` }] : [{ url: 'https://cvrdnews.com/logo_new.jpg' }],
+    },
+    alternates: { canonical: '/' },
+  };
+}
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { LiveBanner } from "@/components/LiveBanner";
 import { StoryViewer } from "@/components/StoryViewer";
