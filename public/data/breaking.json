@@ -1,15 +1,15 @@
 [
   {
     "topic": "Israeli Airstrikes on Beirut",
-    "summary": "Israeli airstrikes have hit Beirut, leading to significant destruction and prompting emergency workers to search for victims. This escalation in the conflict between Israel and Lebanon has raised alarms about the potential impact on civilians and the broader regional stability. The international community is watching closely as tensions between the two nations intensify.",
+    "summary": "Israeli airstrikes have targeted Beirut, causing extensive damage and triggering a search for victims by emergency workers. This marks a significant escalation in the ongoing conflict between Israel and Lebanon, raising concerns about civilian casualties and the potential for further destabilization in the region. The international community is closely monitoring the situation as tensions between the two countries continue to rise.",
     "severity": "major",
     "detected_at": "2026-04-01T03:00:06.745Z",
-    "last_updated": "2026-04-01T05:00:43.068Z",
+    "last_updated": "2026-04-01T07:00:22.680Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this conflict, such as the influence of external powers like the United States and Iran in the region. Additionally, the economic interests tied to military actions, including arms sales and defense contracts, remain unexamined. The focus on immediate violence overshadows the long-term strategic goals of both nations.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over civilian casualties and others defending Israel's right to self-defense. Memes and hashtags are circulating, highlighting the disparity in media coverage and questioning the motives behind the airstrikes. Conspiracy theories about foreign intervention and hidden agendas are also gaining traction.",
-    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with dark clouds looming overhead and faint silhouettes of emergency workers amidst rubble, symbolizing the tension and destruction of the conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this conflict, such as territorial disputes and historical grievances that fuel ongoing hostilities. Additionally, the role of external powers in either supporting or condemning these actions is often downplayed, despite their significant influence on the conflict's trajectory. The economic implications for both nations, particularly in terms of infrastructure damage and humanitarian aid, are also largely overlooked.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian lives, while others justify the strikes as a necessary defense measure. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, with each side claiming victimhood. Conspiracy theories about foreign intervention and hidden agendas are also gaining traction, further complicating public perception.",
+    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance, symbolizing conflict and destruction. In the foreground, a lone figure stands on a rooftop, looking out over the city, embodying the themes of vigilance and resilience amidst chaos.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -81,6 +81,13 @@
         "duration": 74
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=NwPp6wgbJ8M",
+        "embed_id": "NwPp6wgbJ8M",
+        "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
+        "duration": 27
+      },
+      {
         "platform": "x",
         "url": "https://x.com/Osint613/status/2038504142486777863",
         "embed_id": "2038504142486777863",
@@ -137,6 +144,27 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
         "duration": 30
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitors/status/2039092400316985496",
+        "embed_id": "2039092400316985496",
+        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
+        "author": "WarMonitors"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2037976511467159915",
+        "embed_id": "2037976511467159915",
+        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16276",
+        "embed_id": "France24_en/16276",
+        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
+        "author": "france24_en"
       }
     ],
     "youtube_videos": [
@@ -200,6 +228,13 @@
         "title": "Israel strikes Beirut as it carries out airstrikes in Lebanon",
         "channel": "Associated Press",
         "duration": 74
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=NwPp6wgbJ8M",
+        "embed_id": "NwPp6wgbJ8M",
+        "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
+        "channel": "Al Jazeera English",
+        "duration": 27
       }
     ],
     "social_clips": [
@@ -260,271 +295,29 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
         "duration": 30
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitors/status/2039092400316985496",
+        "embed_id": "2039092400316985496",
+        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
+        "author": "WarMonitors"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2037976511467159915",
+        "embed_id": "2037976511467159915",
+        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16276",
+        "embed_id": "France24_en/16276",
+        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
+        "author": "france24_en"
       }
     ],
     "image_file": "/images/breaking_2026-04-01.png"
-  },
-  {
-    "topic": "Iran Warns of Strikes on US Firms",
-    "summary": "Iran has threatened to target US companies in response to a series of explosions in Tehran, which it blames on US and Israeli actions. This escalation adds to the already strained US-Iran relations, raising concerns about a potential military conflict. The international community is closely monitoring the situation as tensions rise.",
-    "severity": "critical",
-    "detected_at": "2026-03-31T17:00:06.517Z",
-    "last_updated": "2026-04-01T05:01:25.229Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a continuation of Iran's aggressive posturing and a threat to global stability. They emphasize Iran's history of hostility towards the US and its allies, portraying the country as a destabilizing force in the Middle East. The narrative suggests that Iran's threats are a desperate attempt to assert power in the face of internal and external pressures.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly how sanctions and economic isolation have pushed Iran into a corner. The focus remains on military and political narratives, ignoring the underlying economic struggles that drive Iran's actions. Additionally, the role of proxy conflicts in the region, which complicate direct US-Iran relations, is largely overlooked.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for Iran's stance against perceived US aggression, while others condemn Iran's threats as reckless. Memes and conspiracy theories abound, with some suggesting that the explosions were a false flag operation to justify further US intervention in the region.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a burning city skyline, symbolizing the strategic and volatile nature of US-Iran relations.",
-    "sources": [
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/media/pakistan-ambassador-warns-iran-too-war-torn-respond-quickly-trump-extends-strike-deadline",
-        "lean": "right",
-        "title": "Pakistan&apos;s ambassador warns Iran too &apos;war-torn&apos; to respond quickly as Trump extends strike deadline"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/31/cancer-drug-facility-religious-site-hit-in-israeli-us-strikes-on-iran?traffic_source=rss",
-        "lean": "center",
-        "title": "Cancer drug facility, religious site hit in Israeli-US strikes on Iran"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/3/31/no-truth-to-us-iranian-negotiations-irans-fm-tells-al-jazeera?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran’s FM confirms contact with US envoy Witkoff, denies talks under way"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/3/31/eu-warns-oil-and-gas-prices-wont-quickly-return-to-normal-after-iran-war?traffic_source=rss",
-        "lean": "center",
-        "title": "EU warns oil and gas prices won’t quickly return to normal after Iran war"
-      },
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/media/marco-rubio-says-us-can-see-finish-line-iran-he-warns-next-north-korea",
-        "lean": "right",
-        "title": "Marco Rubio warns Iran wanted to be the &apos;next North Korea&apos; as he sees &apos;finish line&apos; in conflict"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=SKWJJyHAU20",
-        "embed_id": "SKWJJyHAU20",
-        "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
-        "duration": 358
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Pkzlt0WX3aQ",
-        "embed_id": "Pkzlt0WX3aQ",
-        "title": "Iran warns it will target 18 specific U.S. tech and finance companies in Mideast from Wednesday",
-        "duration": 125
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85684",
-        "embed_id": "intelslava/85684",
-        "title": "🇮🇷🇺🇸❗️The IRGC threatened to strike at the facilities of American IT companies in the region, including Intel and Microsoft, in the event of conti",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20600",
-        "embed_id": "disclosetv/20600",
-        "title": "NOW - Trump mocks Iran for threatening to strike U.S. tech companies in the Middle East: \"What did they threaten them with BB guns?&#33; They don't ha",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s8r2x9/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8r2x9",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/investing/comments/1s8r1lr/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8r1lr",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ecommerce/comments/1s80vf7/ecommerce_industry_news_recap_week_of_march_30th/",
-        "embed_id": "1s80vf7",
-        "title": "E-commerce Industry News Recap 🔥 Week of March 30th, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/fakehistoryporn/comments/1s8ifip/us_president_benjamin_netanyahu_pictured_here_at/",
-        "embed_id": "1s8ifip",
-        "title": "US President Benjamin Netanyahu, pictured here at the UN General Assembly, warns the world that Iran is approximately 14 minutes away from developing "
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Hasan_Piker/comments/1s822h6/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s822h6",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BadHasbara/comments/1s7xmtt/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s7xmtt",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStockMarket/comments/1s8rhxn/breaking_irans_irgc_warns_18_major_us_tech_firms/",
-        "embed_id": "1s8rhxn",
-        "title": "BREAKING: 🇮🇷 Iran’s IRGC warns 18 major US tech firms will be treated as “legitimate targets” from April 1"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/technology/comments/1s8v18p/iran_says_will_target_us_firms_in_west_asia/",
-        "embed_id": "1s8v18p",
-        "title": "Iran says will target US firms in West Asia starting Apr 1; Microsoft, Google, Apple on list of 18: 'Expect destruction'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s8o06y/deal_or_face_intensity_us_secretary_of_war_pete/",
-        "embed_id": "1s8o06y",
-        "title": "‘Deal or face intensity.’ US Secretary of War Pete Hegseth issues a stark warning to Iran, saying President Donald Trump ‘doesn’t bluff’ and will esca"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s8seaj/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s8seaj",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/wallstreetbets/comments/1s8rd3v/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8rd3v",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
-        "embed_id": "1s883ul",
-        "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/technews/comments/1s90t5t/iran_threatens_to_start_attacking_major_us_tech/",
-        "embed_id": "1s90t5t",
-        "title": "Iran Threatens to Start Attacking Major US Tech Firms on April 1"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=SKWJJyHAU20",
-        "embed_id": "SKWJJyHAU20",
-        "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
-        "channel": "APT",
-        "duration": 358
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Pkzlt0WX3aQ",
-        "embed_id": "Pkzlt0WX3aQ",
-        "title": "Iran warns it will target 18 specific U.S. tech and finance companies in Mideast from Wednesday",
-        "channel": "CBS Chicago",
-        "duration": 125
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85684",
-        "embed_id": "intelslava/85684",
-        "title": "🇮🇷🇺🇸❗️The IRGC threatened to strike at the facilities of American IT companies in the region, including Intel and Microsoft, in the event of conti",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20600",
-        "embed_id": "disclosetv/20600",
-        "title": "NOW - Trump mocks Iran for threatening to strike U.S. tech companies in the Middle East: \"What did they threaten them with BB guns?&#33; They don't ha",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s8r2x9/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8r2x9",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/investing/comments/1s8r1lr/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8r1lr",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ecommerce/comments/1s80vf7/ecommerce_industry_news_recap_week_of_march_30th/",
-        "embed_id": "1s80vf7",
-        "title": "E-commerce Industry News Recap 🔥 Week of March 30th, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/fakehistoryporn/comments/1s8ifip/us_president_benjamin_netanyahu_pictured_here_at/",
-        "embed_id": "1s8ifip",
-        "title": "US President Benjamin Netanyahu, pictured here at the UN General Assembly, warns the world that Iran is approximately 14 minutes away from developing "
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Hasan_Piker/comments/1s822h6/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s822h6",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BadHasbara/comments/1s7xmtt/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s7xmtt",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStockMarket/comments/1s8rhxn/breaking_irans_irgc_warns_18_major_us_tech_firms/",
-        "embed_id": "1s8rhxn",
-        "title": "BREAKING: 🇮🇷 Iran’s IRGC warns 18 major US tech firms will be treated as “legitimate targets” from April 1"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/technology/comments/1s8v18p/iran_says_will_target_us_firms_in_west_asia/",
-        "embed_id": "1s8v18p",
-        "title": "Iran says will target US firms in West Asia starting Apr 1; Microsoft, Google, Apple on list of 18: 'Expect destruction'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1s8o06y/deal_or_face_intensity_us_secretary_of_war_pete/",
-        "embed_id": "1s8o06y",
-        "title": "‘Deal or face intensity.’ US Secretary of War Pete Hegseth issues a stark warning to Iran, saying President Donald Trump ‘doesn’t bluff’ and will esca"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1s8seaj/a_video_of_this_online_live_chat_has_gone_viral/",
-        "embed_id": "1s8seaj",
-        "title": "A video of this online live chat has gone viral in which a pro-monarchy Iranian musician thanks young Israeli women for ‘saving’ Iran through US-Israe"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/wallstreetbets/comments/1s8rd3v/irgc_threatens_strikes_on_us_tech_giants_across/",
-        "embed_id": "1s8rd3v",
-        "title": "IRGC threatens strikes on US tech giants across the Middle East"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s883ul/trump_says_war_will_end_very_soon_and_that_oil/",
-        "embed_id": "1s883ul",
-        "title": "Trump says war will end \"very soon\" and that oil prices will drop below $100/bbl after surging Sunday...oh wait, that was March 9th"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/technews/comments/1s90t5t/iran_threatens_to_start_attacking_major_us_tech/",
-        "embed_id": "1s90t5t",
-        "title": "Iran Threatens to Start Attacking Major US Tech Firms on April 1"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-31.png"
   }
 ]
