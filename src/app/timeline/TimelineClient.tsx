@@ -73,8 +73,8 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {recentThreads.slice(0, 10).map((t, i) => (
-            <button key={t.id} onClick={() => setExpandedId(expandedId === t.id ? null : t.id)}
-              className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+            <a key={t.id} href={`/timeline/${t.id}`}
+              className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
               {(t.image_file || t.entries[t.entries.length - 1]?.image_file) && (
                 <div className="h-28 overflow-hidden" style={{
@@ -90,7 +90,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
                   {t.title}
                 </p>
               </div>
-            </button>
+            </a>
           ))}
         </div>
       </div>
@@ -308,9 +308,10 @@ function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </span>
             </div>
 
-            <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
+            <a href={`/timeline/${thread.id}`} onClick={(e) => e.stopPropagation()}
+              className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors block hover:underline" style={serif}>
               {thread.title}
-            </h2>
+            </a>
 
             {!isExpanded && (
               <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">
