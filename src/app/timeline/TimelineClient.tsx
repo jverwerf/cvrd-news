@@ -373,14 +373,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                 </span>
                 <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                   <p className="text-[13px] text-[#ccc] leading-[1.7] italic">
-                    {selectedDate
-                      ? (() => {
-                          const year = getYear(selectedDate);
-                          const yearEntries = thread.entries.filter(e => getYear(e.date) === year);
-                          const summaries = [...new Set(yearEntries.map(e => e.summary))];
-                          return summaries.join(' ');
-                        })()
-                      : thread.summary}
+                    {thread.summary}
                   </p>
                 </div>
                 <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
