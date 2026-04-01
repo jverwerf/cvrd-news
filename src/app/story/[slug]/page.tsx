@@ -61,8 +61,22 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   const { story, date, otherStories } = result;
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: story.topic,
+    description: (story.summary || '').slice(0, 200),
+    image: story.image_file ? [`https://cvrdnews.com${story.image_file}`] : [],
+    datePublished: date,
+    dateModified: date,
+    author: { '@type': 'Organization', name: 'CVRD News', url: 'https://cvrdnews.com' },
+    publisher: { '@type': 'Organization', name: 'CVRD News', logo: { '@type': 'ImageObject', url: 'https://cvrdnews.com/logo3.png' } },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `https://cvrdnews.com/story/${slug}` },
+  };
+
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="sticky top-0" style={{ zIndex: 100 }}>
         <div className="relative" style={{ background: '#1e2a3a' }}>
           <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>

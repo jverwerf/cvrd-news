@@ -10,6 +10,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
+function topicToSlug(topic: string): string {
+  return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
+}
+
 export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   stories: NarrativeGap[];
   videoUrl?: string;
@@ -131,8 +135,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Today&apos;s Top Stories</h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {stories.map((s, i) => (
-                <button key={i} onClick={() => setCurrentIdx(i)}
-                  className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02]"
+                <a key={i} href={`/story/${topicToSlug(s.topic)}`}
+                  className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                   style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                   {s.image_file && (
                     <div className="h-28 overflow-hidden" style={{
@@ -148,7 +152,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       {s.topic}
                     </p>
                   </div>
-                </button>
+                </a>
               ))}
             </div>
           </div>
