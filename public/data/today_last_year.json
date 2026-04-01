@@ -1,105 +1,117 @@
 {
-  "date_last_year": "2025-03-30",
-  "date_generated": "2026-03-31T09:03:02.115Z",
-  "summary": "On March 31, 2025, two major crises captured global attention. In the United States, a severe measles outbreak spread across five states, with Texas reporting the highest number of cases. The outbreak highlighted concerns over declining vaccination rates and the potential for international spread, as cases in Mexico were linked to the U.S. situation. Meanwhile, Myanmar was reeling from a devastating earthquake that struck on March 28, claiming over 1,700 lives and causing widespread destruction. The international community, including the United Nations, mobilized to provide urgent aid to the affected regions. These events underscored significant public health and humanitarian challenges, prompting coordinated responses from global health and aid organizations.",
+  "date_last_year": "2025-04-01",
+  "date_generated": "2026-04-01T15:00:12.520Z",
+  "summary": "April 1, 2025, was marked by significant global developments. President Donald Trump announced new trade tariffs, labeling the day as 'Liberation Day' for American trade. This move, which included potential 20% duties on various imports, raised concerns of economic repercussions and prompted threats of retaliation from Europe. Meanwhile, tensions in the Middle East escalated dramatically. The ongoing conflict in Gaza resulted in the tragic deaths of 322 children over ten days. Additionally, an Israeli operation in Beirut led to the killing of a Hezbollah official, and the U.S. responded by deploying a second aircraft carrier to the region, indicating increased military readiness. These events highlighted the day's geopolitical volatility and economic uncertainty.",
   "stories": [
     {
-      "headline": "Measles Outbreaks Escalate Across U.S. States",
-      "summary": "The United States is experiencing significant measles outbreaks in at least five states, with Texas reporting the highest number of cases at 400. The CDC confirmed 483 cases nationwide, surpassing the total for 2024. Declining vaccination rates are a major concern, with only 80% of residents in the affected Texas county vaccinated. The outbreak has also spread to Mexico, raising international health concerns.",
+      "headline": "Trump Announces New Trade Tariffs on Imports",
+      "summary": "President Donald Trump announced new trade tariffs, calling it 'Liberation Day' for American trade. The tariffs, which could include 20% duties on various imports, were set to take effect immediately. This decision sparked global concern, with Europe threatening retaliation and economists warning of potential inflation and negative impacts on U.S. GDP growth in 2025.",
       "youtube_queries": [
-        "Measles outbreak in Texas March 31 2025",
-        "CDC response to U.S. measles outbreak March 2025",
-        "Impact of low vaccination rates on measles March 2025"
+        "Trump announces new trade tariffs April 1 2025",
+        "Impact of Trump's tariffs on global trade April 2025",
+        "European response to US trade tariffs April 1 2025"
       ],
-      "category": "world",
+      "category": "politics",
       "videos": [
         {
-          "id": "IvpjS5KbREk",
-          "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
-          "channel": "PBS NewsHour",
-          "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
+          "id": "Su3f3nbgqx4",
+          "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
+          "channel": "CNN",
+          "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
         },
         {
-          "id": "LwDg85WBTsE",
-          "title": "Measles outbreak warning in NSW and SA as vaccinations drop | ABC NEWS",
-          "channel": "ABC News (Australia)",
-          "thumbnail": "https://i.ytimg.com/vi/LwDg85WBTsE/maxresdefault.jpg"
+          "id": "R8NdE32Pgak",
+          "title": "Trump's Latest Tariffs on China 'Not Entirely Unexpected': International Economics Expert",
+          "channel": "Bloomberg Podcasts",
+          "thumbnail": "https://i.ytimg.com/vi/R8NdE32Pgak/maxresdefault.jpg"
+        },
+        {
+          "id": "XTgopzlGZHU",
+          "title": "Why Trump’s tariffs are a massive mistake",
+          "channel": "The Economist",
+          "thumbnail": "https://i.ytimg.com/vi/XTgopzlGZHU/hqdefault.jpg"
         }
       ],
       "video": {
-        "id": "IvpjS5KbREk",
-        "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
-        "channel": "PBS NewsHour",
-        "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
+        "id": "Su3f3nbgqx4",
+        "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
+        "channel": "CNN",
+        "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
       }
     },
     {
-      "headline": "Devastating Earthquake in Myanmar Claims 1,700+ Lives",
-      "summary": "A 7.7 magnitude earthquake struck Myanmar on March 28, 2025, resulting in over 1,700 deaths and widespread destruction. The disaster severely impacted the nation's infrastructure, already weakened by civil conflict. The United Nations and humanitarian organizations are providing aid, with thousands feared trapped under rubble. The WHO classified the earthquake as a top-level emergency, appealing for urgent funding.",
+      "headline": "Middle East Tensions Escalate Amid Gaza Conflict",
+      "summary": "Tensions in the Middle East escalated as the UN reported 322 children killed in Gaza over ten days. An Israeli operation in Beirut resulted in the death of a Hezbollah official, further heightening regional tensions. In response, the U.S. deployed a second aircraft carrier to the West Asia region, signaling increased military readiness.",
       "youtube_queries": [
-        "Myanmar earthquake aftermath March 31 2025",
-        "International aid response to Myanmar earthquake March 2025",
-        "Impact of Myanmar earthquake on infrastructure March 2025"
+        "Middle East tensions escalate April 1 2025",
+        "Gaza conflict child casualties April 2025",
+        "US military deployment to West Asia April 2025"
       ],
       "category": "world",
       "videos": [
         {
-          "id": "vqsvMOcWoVU",
-          "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
-          "channel": "BBC News",
-          "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
+          "id": "e02xgbVm3tw",
+          "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
         },
         {
-          "id": "DTCG8o6Ssj4",
-          "title": "Magnitude 7.7 earthquake hits Myanmar with damage reported in Bangkok | BBC News",
-          "channel": "BBC News",
-          "thumbnail": "https://i.ytimg.com/vi/DTCG8o6Ssj4/maxresdefault.jpg"
+          "id": "m1XxGuFeUMY",
+          "title": "Brent Oil Drops Below $100 As Trump Talks War End | The Opening Trade 4/1/2026",
+          "channel": "Bloomberg Television",
+          "thumbnail": "https://i.ytimg.com/vi/m1XxGuFeUMY/maxresdefault.jpg"
         },
         {
-          "id": "B1eWRJGT1fM",
-          "title": "International aid picks up as scale of quake overwhelms Myanmar | DW News",
-          "channel": "DW News",
-          "thumbnail": "https://i.ytimg.com/vi/B1eWRJGT1fM/maxresdefault.jpg"
+          "id": "r6Ocfah8iVc",
+          "title": "Iran launches attacks across Middle East in response to US and Israel strikes | BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/r6Ocfah8iVc/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "vqsvMOcWoVU",
-        "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
-        "channel": "BBC News",
-        "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
+        "id": "e02xgbVm3tw",
+        "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
+        "channel": "Al Jazeera English",
+        "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
       }
     }
   ],
   "videos": [
     {
-      "id": "IvpjS5KbREk",
-      "title": "What to know about South Carolina’s big measles outbreak and who is most at risk",
-      "channel": "PBS NewsHour",
-      "thumbnail": "https://i.ytimg.com/vi/IvpjS5KbREk/maxresdefault.jpg"
+      "id": "Su3f3nbgqx4",
+      "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
+      "channel": "CNN",
+      "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
     },
     {
-      "id": "LwDg85WBTsE",
-      "title": "Measles outbreak warning in NSW and SA as vaccinations drop | ABC NEWS",
-      "channel": "ABC News (Australia)",
-      "thumbnail": "https://i.ytimg.com/vi/LwDg85WBTsE/maxresdefault.jpg"
+      "id": "R8NdE32Pgak",
+      "title": "Trump's Latest Tariffs on China 'Not Entirely Unexpected': International Economics Expert",
+      "channel": "Bloomberg Podcasts",
+      "thumbnail": "https://i.ytimg.com/vi/R8NdE32Pgak/maxresdefault.jpg"
     },
     {
-      "id": "vqsvMOcWoVU",
-      "title": "Myanmar earthquake death toll rises to more than 1,000 as hundreds trapped under rubble | BBC News",
+      "id": "XTgopzlGZHU",
+      "title": "Why Trump’s tariffs are a massive mistake",
+      "channel": "The Economist",
+      "thumbnail": "https://i.ytimg.com/vi/XTgopzlGZHU/hqdefault.jpg"
+    },
+    {
+      "id": "e02xgbVm3tw",
+      "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
+      "channel": "Al Jazeera English",
+      "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
+    },
+    {
+      "id": "m1XxGuFeUMY",
+      "title": "Brent Oil Drops Below $100 As Trump Talks War End | The Opening Trade 4/1/2026",
+      "channel": "Bloomberg Television",
+      "thumbnail": "https://i.ytimg.com/vi/m1XxGuFeUMY/maxresdefault.jpg"
+    },
+    {
+      "id": "r6Ocfah8iVc",
+      "title": "Iran launches attacks across Middle East in response to US and Israel strikes | BBC News",
       "channel": "BBC News",
-      "thumbnail": "https://i.ytimg.com/vi/vqsvMOcWoVU/maxresdefault.jpg"
-    },
-    {
-      "id": "DTCG8o6Ssj4",
-      "title": "Magnitude 7.7 earthquake hits Myanmar with damage reported in Bangkok | BBC News",
-      "channel": "BBC News",
-      "thumbnail": "https://i.ytimg.com/vi/DTCG8o6Ssj4/maxresdefault.jpg"
-    },
-    {
-      "id": "B1eWRJGT1fM",
-      "title": "International aid picks up as scale of quake overwhelms Myanmar | DW News",
-      "channel": "DW News",
-      "thumbnail": "https://i.ytimg.com/vi/B1eWRJGT1fM/maxresdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/r6Ocfah8iVc/maxresdefault.jpg"
     }
   ]
 }
