@@ -232,7 +232,7 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
 
 // ── Thread Card ──
 
-function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
+export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   thread: TimelineThread;
   isExpanded: boolean;
   onToggle: () => void;
