@@ -1,6 +1,6 @@
 {
   "date": "2026-04-01",
-  "generated_at": "2026-04-01T07:31:10.577Z",
+  "generated_at": "2026-04-01T10:32:52.261Z",
   "top_narratives": [
     {
       "topic": "Iran War: U.S. Military Campaign to Wind Down",
@@ -699,7 +699,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_1.png"
+      "image_file": "/images/story_2026-04-01_1.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Putin's Internet Blackout in Russia",
@@ -784,7 +785,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_2.png"
+      "image_file": "/images/story_2026-04-01_2.png",
+      "onrecord_matches": []
     },
     {
       "topic": "King Charles to Visit U.S. Amid Tensions",
@@ -930,7 +932,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_3.png"
+      "image_file": "/images/story_2026-04-01_3.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "U.S. Senators Press Taiwan on Military Spending",
@@ -970,7 +988,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_4.png"
+      "image_file": "/images/story_2026-04-01_4.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Assures Colombian President of No Charges",
@@ -1002,7 +1021,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_5.png"
+      "image_file": "/images/story_2026-04-01_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Senators Press Taiwan on Military Spending",
@@ -1028,7 +1048,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_6.png"
+      "image_file": "/images/story_2026-04-01_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Assures Colombian President of No Charges",
@@ -1062,7 +1083,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_7.png"
+      "image_file": "/images/story_2026-04-01_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Exempts Gulf of Mexico Drillers from Environmental Protections",
@@ -1136,7 +1158,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_8.png"
+      "image_file": "/images/story_2026-04-01_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iran Threatens to Attack U.S. Tech Companies",
@@ -1253,7 +1276,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_9.png"
+      "image_file": "/images/story_2026-04-01_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Executive Order on Mail-In Voting Sparks Controversy",
@@ -1487,7 +1511,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_10.png"
+      "image_file": "/images/story_2026-04-01_10.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Supreme Court Considers Birthright Citizenship Limitation",
@@ -1708,7 +1733,16 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_11.png"
+      "image_file": "/images/story_2026-04-01_11.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "voting",
+          "matching_claims": 4,
+          "topic_score": 16.3
+        }
+      ]
     },
     {
       "topic": "Homeland Security Shutdown Standoff",
@@ -2147,7 +2181,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_12.png"
+      "image_file": "/images/story_2026-04-01_12.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Legal Battle with the IRS",
@@ -2185,7 +2220,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_13.png"
+      "image_file": "/images/story_2026-04-01_13.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kristi Noem's Husband in Scandal Over Cross-Dressing Photos",
@@ -2339,7 +2375,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_14.png"
+      "image_file": "/images/story_2026-04-01_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Alabama Governor Kay Ivey Hospitalized",
@@ -2388,7 +2425,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_15.png"
+      "image_file": "/images/story_2026-04-01_15.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Florida Supreme Court Halts Execution Over DNA Dispute",
@@ -2424,7 +2462,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_16.png"
+      "image_file": "/images/story_2026-04-01_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "ICE's Controversial Plan to Target Marines' Families",
@@ -2515,7 +2554,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_17.png"
+      "image_file": "/images/story_2026-04-01_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Judge Blocks Trump's NPR and PBS Defunding Order",
@@ -2631,7 +2671,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_18.png"
+      "image_file": "/images/story_2026-04-01_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Gas Price Dilemma",
@@ -2760,7 +2801,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_19.png"
+      "image_file": "/images/story_2026-04-01_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Dow Soars Over 1,100 Points Amid Iran War De-escalation Hopes",
@@ -2927,7 +2969,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_20.png"
+      "image_file": "/images/story_2026-04-01_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Eli Lilly to Acquire Narcolepsy Drug Developer for $6.3 Billion",
@@ -2978,7 +3021,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_21.png"
+      "image_file": "/images/story_2026-04-01_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "McCormick to Merge with Unilever's Food Unit",
@@ -3083,7 +3127,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_22.png"
+      "image_file": "/images/story_2026-04-01_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Renewables Reach 50% of Global Electricity Capacity",
@@ -3139,7 +3184,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_23.png"
+      "image_file": "/images/story_2026-04-01_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "US Consumer Confidence Rises Despite Drop in Job Openings",
@@ -3190,7 +3236,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_24.png"
+      "image_file": "/images/story_2026-04-01_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Oil Exports to Greece Resume After Four-Year Hiatus",
@@ -3252,7 +3299,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_25.png"
+      "image_file": "/images/story_2026-04-01_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "UK Publisher Future's Shares Plummet Due to Google Search Changes",
@@ -3300,7 +3348,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_26.png"
+      "image_file": "/images/story_2026-04-01_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Helium Shortage Threatens South Korean Chipmakers",
@@ -3355,7 +3404,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_27.png"
+      "image_file": "/images/story_2026-04-01_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Vitol Trader Addison Retires Amid US-Venezuela Export Deal",
@@ -3424,7 +3474,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_28.png"
+      "image_file": "/images/story_2026-04-01_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Global Ban on Digital Duties Expires After Stalled WTO Talks",
@@ -3480,7 +3531,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_29.png"
+      "image_file": "/images/story_2026-04-01_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Bruce Springsteen's Fiery Speech Against Trump",
@@ -3571,7 +3623,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_30.png"
+      "image_file": "/images/story_2026-04-01_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Megan Thee Stallion Hospitalized During Broadway Show",
@@ -3693,7 +3746,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_31.png"
+      "image_file": "/images/story_2026-04-01_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kim Kardashian's Legal Battle Over Sex Tape Settlement",
@@ -3782,7 +3836,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_32.png"
+      "image_file": "/images/story_2026-04-01_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tiger Woods Seeks Treatment After DUI Arrest",
@@ -4005,7 +4060,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_33.png"
+      "image_file": "/images/story_2026-04-01_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Salt-N-Pepa's Legal Battle Over Music Royalties",
@@ -4092,7 +4148,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_34.png"
+      "image_file": "/images/story_2026-04-01_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kid Rock's Helicopter Flyby Controversy",
@@ -4378,7 +4435,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_35.png"
+      "image_file": "/images/story_2026-04-01_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "NFL Owners Consider 18-Game Regular Season",
@@ -4432,7 +4490,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_36.png"
+      "image_file": "/images/story_2026-04-01_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tiger Woods Steps Away from Golf",
@@ -4511,7 +4570,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_37.png"
+      "image_file": "/images/story_2026-04-01_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "USMNT's Pulisic Faces Goal Drought",
@@ -4601,7 +4661,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_38.png"
+      "image_file": "/images/story_2026-04-01_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Italy Misses Third Straight World Cup",
@@ -4731,7 +4792,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_39.png"
+      "image_file": "/images/story_2026-04-01_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ovechkin Extends Record with 20th 30-Goal Season",
@@ -4847,7 +4909,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_40.png"
+      "image_file": "/images/story_2026-04-01_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "US Warns Americans in Saudi Arabia Amid Rising Tensions",
@@ -4933,7 +4996,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_41.png"
+      "image_file": "/images/story_2026-04-01_41.png",
+      "onrecord_matches": []
     },
     {
       "topic": "France Refuses Israel Airspace for US Arms Transfer",
@@ -5013,7 +5077,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_42.png"
+      "image_file": "/images/story_2026-04-01_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Super Mario Galaxy Movie Cast Announcement",
@@ -5173,7 +5238,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_43.png"
+      "image_file": "/images/story_2026-04-01_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Taylor Swift's Star-Studded L.A. Weekend",
@@ -5235,7 +5301,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_44.png"
+      "image_file": "/images/story_2026-04-01_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Jessie Jones, Actress and Playwright, Dies at 75",
@@ -5292,7 +5359,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_45.png"
+      "image_file": "/images/story_2026-04-01_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Joel McHale's Rise to Leading Man Status",
@@ -5350,7 +5418,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_46.png"
+      "image_file": "/images/story_2026-04-01_46.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pistons Clinch First Division Title in 18 Years",
@@ -5413,7 +5482,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_47.png"
+      "image_file": "/images/story_2026-04-01_47.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Stephen Curry Cleared for Scrimmage",
@@ -5494,7 +5564,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_48.png"
+      "image_file": "/images/story_2026-04-01_48.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Shai Gilgeous-Alexander on MVP Chatter",
@@ -5572,7 +5643,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-01_49.png"
+      "image_file": "/images/story_2026-04-01_49.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Bulls Waive Jaden Ivey After Anti-Gay Comments",
@@ -5735,7 +5807,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-01_50.png"
+      "image_file": "/images/story_2026-04-01_50.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [
