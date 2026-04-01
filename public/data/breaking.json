@@ -1,15 +1,15 @@
 [
   {
     "topic": "Israeli Airstrikes on Beirut",
-    "summary": "Israeli airstrikes have targeted Beirut, prompting emergency workers to search for victims amidst the destruction. This military action marks a significant escalation in the ongoing conflict between Israel and Lebanon, raising concerns about the impact on civilian populations and regional stability. The international community is closely monitoring the situation as tensions continue to rise.",
+    "summary": "Israeli airstrikes have hit Beirut, leading to significant destruction and prompting emergency workers to search for victims. This escalation in the conflict between Israel and Lebanon has raised alarms about the potential impact on civilians and the broader regional stability. The international community is watching closely as tensions between the two nations intensify.",
     "severity": "major",
     "detected_at": "2026-04-01T03:00:06.745Z",
-    "last_updated": "2026-04-01T03:00:06.745Z",
+    "last_updated": "2026-04-01T05:00:43.068Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind these airstrikes, such as the influence of external powers in the region or the strategic interests at play. Additionally, there is little discussion about the long-term humanitarian impact on the civilian population in Beirut, which is already grappling with economic and political instability.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian lives, while others justify the strikes as a necessary defense measure. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the timing of the strikes, including potential distractions from domestic issues within Israel.",
-    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance, symbolizing conflict and tension. In the foreground, a lone figure stands on a rooftop, looking out over the city, embodying the human cost of geopolitical strife.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this conflict, such as the influence of external powers like the United States and Iran in the region. Additionally, the economic interests tied to military actions, including arms sales and defense contracts, remain unexamined. The focus on immediate violence overshadows the long-term strategic goals of both nations.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over civilian casualties and others defending Israel's right to self-defense. Memes and hashtags are circulating, highlighting the disparity in media coverage and questioning the motives behind the airstrikes. Conspiracy theories about foreign intervention and hidden agendas are also gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with dark clouds looming overhead and faint silhouettes of emergency workers amidst rubble, symbolizing the tension and destruction of the conflict.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -60,11 +60,25 @@
         "duration": 1415
       },
       {
-        "platform": "x",
-        "url": "https://x.com/WarMonitors/status/2039092400316985496",
-        "embed_id": "2039092400316985496",
-        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
-        "author": "WarMonitors"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=KKQVm9xg_Es",
+        "embed_id": "KKQVm9xg_Es",
+        "title": "Israel strikes Beirut for first time in months, saying it killed Hezbollah chief of staff",
+        "duration": 322
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=3Ml1zKb_5mA",
+        "embed_id": "3Ml1zKb_5mA",
+        "title": "Israeli airstrike hits an apartment building in Bachoura, central Beirut",
+        "duration": 23
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Tu5-77_4VJU",
+        "embed_id": "Tu5-77_4VJU",
+        "title": "Israel strikes Beirut as it carries out airstrikes in Lebanon",
+        "duration": 74
       },
       {
         "platform": "x",
@@ -72,13 +86,6 @@
         "embed_id": "2038504142486777863",
         "title": "Israeli forces carried out airstrikes on Hezbollah positions in Beirut’s southern suburbs. https://t.co/8O2gvn81Zb",
         "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2037976511467159915",
-        "embed_id": "2037976511467159915",
-        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
-        "author": "MOSSADil"
       },
       {
         "platform": "x",
@@ -114,6 +121,22 @@
         "embed_id": "2031827500092047372",
         "title": "🚨BREAKING: The Israeli Air Force has begun a deadly wave of airstrikes on Hezbollah cells and positions in Beirut, Lebanon, in response to the 100 ro",
         "author": "VividProwess"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/DropSiteNews/status/2039040958193369309",
+        "embed_id": "2039040958193369309",
+        "title": "Beirut was hit again by Israeli airstrikes on Tuesday, as bombardment continues across Beirut and southern Lebanon.\n\nAccording to Lebanon’s official h",
+        "author": "DropSiteNews"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43046",
+        "embed_id": "warmonitors/43046",
+        "title": "⚡️Israeli strike on Dahye, Beirut",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
+        "duration": 30
       }
     ],
     "youtube_videos": [
@@ -156,29 +179,36 @@
         "title": "Israel strikes Lebanon’s Beirut, saying it struck a Hezbollah target in Dahiyeh",
         "channel": "Al Jazeera English",
         "duration": 1415
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=KKQVm9xg_Es",
+        "embed_id": "KKQVm9xg_Es",
+        "title": "Israel strikes Beirut for first time in months, saying it killed Hezbollah chief of staff",
+        "channel": "Sky News",
+        "duration": 322
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=3Ml1zKb_5mA",
+        "embed_id": "3Ml1zKb_5mA",
+        "title": "Israeli airstrike hits an apartment building in Bachoura, central Beirut",
+        "channel": "AP Archive",
+        "duration": 23
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Tu5-77_4VJU",
+        "embed_id": "Tu5-77_4VJU",
+        "title": "Israel strikes Beirut as it carries out airstrikes in Lebanon",
+        "channel": "Associated Press",
+        "duration": 74
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitors/status/2039092400316985496",
-        "embed_id": "2039092400316985496",
-        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
-        "author": "WarMonitors"
-      },
       {
         "platform": "x",
         "url": "https://x.com/Osint613/status/2038504142486777863",
         "embed_id": "2038504142486777863",
         "title": "Israeli forces carried out airstrikes on Hezbollah positions in Beirut’s southern suburbs. https://t.co/8O2gvn81Zb",
         "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2037976511467159915",
-        "embed_id": "2037976511467159915",
-        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
-        "author": "MOSSADil"
       },
       {
         "platform": "x",
@@ -214,21 +244,37 @@
         "embed_id": "2031827500092047372",
         "title": "🚨BREAKING: The Israeli Air Force has begun a deadly wave of airstrikes on Hezbollah cells and positions in Beirut, Lebanon, in response to the 100 ro",
         "author": "VividProwess"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/DropSiteNews/status/2039040958193369309",
+        "embed_id": "2039040958193369309",
+        "title": "Beirut was hit again by Israeli airstrikes on Tuesday, as bombardment continues across Beirut and southern Lebanon.\n\nAccording to Lebanon’s official h",
+        "author": "DropSiteNews"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43046",
+        "embed_id": "warmonitors/43046",
+        "title": "⚡️Israeli strike on Dahye, Beirut",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
+        "duration": 30
       }
     ],
     "image_file": "/images/breaking_2026-04-01.png"
   },
   {
     "topic": "Iran Warns of Strikes on US Firms",
-    "summary": "Iran has issued a warning that it will target US firms in retaliation for a series of explosions in Tehran, which it attributes to US and Israeli actions. This development exacerbates the already tense relations between the US and Iran, with fears of a potential military conflict looming. The international community is on high alert as the situation unfolds.",
+    "summary": "Iran has threatened to target US companies in response to a series of explosions in Tehran, which it blames on US and Israeli actions. This escalation adds to the already strained US-Iran relations, raising concerns about a potential military conflict. The international community is closely monitoring the situation as tensions rise.",
     "severity": "critical",
     "detected_at": "2026-03-31T17:00:06.517Z",
-    "last_updated": "2026-04-01T01:01:19.676Z",
+    "last_updated": "2026-04-01T05:01:25.229Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a consequence of Iran's aggressive posturing and its history of supporting terrorism. They emphasize the need for a strong US response to deter further Iranian threats and protect American interests. The narrative suggests that Iran's threats are a desperate attempt to shift blame for its internal issues onto external enemies.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly the impact on global oil markets. The geopolitical struggle for influence in the Middle East, with Iran seeking to assert its power against US and Israeli interests, is a critical factor. Additionally, the role of defense contractors and their influence on US foreign policy decisions remains unexamined.",
-    "social_summary": "Social media is buzzing with conspiracy theories about the true motives behind the explosions in Tehran, with some users speculating about covert operations by intelligence agencies. Memes mocking the potential for another 'endless war' are circulating, alongside viral takes criticizing both US and Iranian leadership for their handling of the situation. The hashtag #NoWarWithIran is trending as users call for peace.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing the US and Iran in a tense standoff, under a stormy sky symbolizing the brewing conflict.",
+    "right_narrative": "Right-leaning media is framing this as a continuation of Iran's aggressive posturing and a threat to global stability. They emphasize Iran's history of hostility towards the US and its allies, portraying the country as a destabilizing force in the Middle East. The narrative suggests that Iran's threats are a desperate attempt to assert power in the face of internal and external pressures.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly how sanctions and economic isolation have pushed Iran into a corner. The focus remains on military and political narratives, ignoring the underlying economic struggles that drive Iran's actions. Additionally, the role of proxy conflicts in the region, which complicate direct US-Iran relations, is largely overlooked.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing support for Iran's stance against perceived US aggression, while others condemn Iran's threats as reckless. Memes and conspiracy theories abound, with some suggesting that the explosions were a false flag operation to justify further US intervention in the region.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a burning city skyline, symbolizing the strategic and volatile nature of US-Iran relations.",
     "sources": [
       {
         "name": "Fox News",
@@ -253,6 +299,12 @@
         "url": "https://www.aljazeera.com/video/newsfeed/2026/3/31/eu-warns-oil-and-gas-prices-wont-quickly-return-to-normal-after-iran-war?traffic_source=rss",
         "lean": "center",
         "title": "EU warns oil and gas prices won’t quickly return to normal after Iran war"
+      },
+      {
+        "name": "Fox News",
+        "url": "https://www.foxnews.com/media/marco-rubio-says-us-can-see-finish-line-iran-he-warns-next-north-korea",
+        "lean": "right",
+        "title": "Marco Rubio warns Iran wanted to be the &apos;next North Korea&apos; as he sees &apos;finish line&apos; in conflict"
       }
     ],
     "clips": [
@@ -262,6 +314,13 @@
         "embed_id": "SKWJJyHAU20",
         "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
         "duration": 358
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Pkzlt0WX3aQ",
+        "embed_id": "Pkzlt0WX3aQ",
+        "title": "Iran warns it will target 18 specific U.S. tech and finance companies in Mideast from Wednesday",
+        "duration": 125
       },
       {
         "platform": "telegram",
@@ -363,6 +422,13 @@
         "title": "Iran’s Revolutionary Guards Warn of Strikes on US Companies | APT",
         "channel": "APT",
         "duration": 358
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Pkzlt0WX3aQ",
+        "embed_id": "Pkzlt0WX3aQ",
+        "title": "Iran warns it will target 18 specific U.S. tech and finance companies in Mideast from Wednesday",
+        "channel": "CBS Chicago",
+        "duration": 125
       }
     ],
     "social_clips": [
@@ -457,264 +523,6 @@
         "url": "https://reddit.com/r/technews/comments/1s90t5t/iran_threatens_to_start_attacking_major_us_tech/",
         "embed_id": "1s90t5t",
         "title": "Iran Threatens to Start Attacking Major US Tech Firms on April 1"
-      }
-    ],
-    "image_file": "/images/breaking_2026-03-31.png"
-  },
-  {
-    "topic": "U.S. Strikes Iranian Nuclear Site",
-    "summary": "The United States has launched airstrikes on an Iranian city that contains a nuclear facility, significantly heightening tensions in the Middle East. President Trump has urged allied nations to help secure the Strait of Hormuz, a crucial channel for global oil transportation. This move has sparked international concern over the potential for a broader conflict in the region.",
-    "severity": "critical",
-    "detected_at": "2026-03-31T15:00:08.549Z",
-    "last_updated": "2026-04-01T01:02:32.384Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind the strike, particularly how control over the Strait of Hormuz impacts global oil prices and benefits certain economic interests. Additionally, the geopolitical implications of such a strike are not being fully explored, especially in terms of how it affects U.S. relations with other major powers like China and Russia, who have vested interests in the region.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the strike as a necessary action against a nuclear threat, while others condemn it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives related to oil control and election year politics. Hashtags like #NoWarWithIran and #DefendTheStrait are trending.",
-    "image_prompt": "A dramatic editorial photo of a stormy sea with oil tankers navigating through narrow straits, under a sky filled with ominous clouds, symbolizing geopolitical tension and economic stakes.",
-    "sources": [],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=khJ2jEmt4zU",
-        "embed_id": "khJ2jEmt4zU",
-        "title": "Videos show explosions and fire in an Iranian city as strikes continue"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=KcqjURPHnak",
-        "embed_id": "KcqjURPHnak",
-        "title": "What led to the U.S. strikes on Iran nuclear sites",
-        "duration": 296
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=0GUuVN1UUiI",
-        "embed_id": "0GUuVN1UUiI",
-        "title": "U.S. strikes Iranian nuclear sites",
-        "duration": 215
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GV4K-gVq_Ak",
-        "embed_id": "GV4K-gVq_Ak",
-        "title": "New Details Emerge About US Strike on Iran's Nuclear Sites",
-        "duration": 116
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=7gj5EKYr_bo",
-        "embed_id": "7gj5EKYr_bo",
-        "title": "The Tactics Behind Trump’s Bombing of Iran’s Nuclear Facilities | WSJ",
-        "duration": 242
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=qXxM83TWDS4",
-        "embed_id": "qXxM83TWDS4",
-        "title": "How the US strikes on Iranian nuclear sites unfolded | BBC News",
-        "duration": 247
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lRJH1aJXPY4",
-        "embed_id": "lRJH1aJXPY4",
-        "title": "US strikes Iran amid nuclear program tensions, NYPD boosts NYC patrols",
-        "duration": 222
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=-NaNU9FTSnM",
-        "embed_id": "-NaNU9FTSnM",
-        "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
-        "duration": 38
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/NBCNews/status/1936577105510142145",
-        "embed_id": "1936577105510142145",
-        "title": "BREAKING: U.S. conducted strikes on multiple nuclear sites in Iran, President Trump announces in a social media post.  https://t.co/4t6W8ZuVHC",
-        "author": "NBCNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/1936576670103920786",
-        "embed_id": "1936576670103920786",
-        "title": "🚨🇺🇸🇮🇷 BREAKING: U.S. STRIKES IRANIAN NUCLEAR SITES\n\n\"We have completed our very successful attack on the three Nuclear sites in Iran, including F",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30421",
-        "embed_id": "Newsmax/30421",
-        "title": "U.S. strikes hit a city Tuesday that is home to one of Iran's main nuclear sites, sending a massive fireball into the sky, and Tehran attacked a fully",
-        "author": "newsmax"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2017327682418028751",
-        "embed_id": "2017327682418028751",
-        "title": "Something to note: In June 2025, U.S. President Donald Trump attacked Iranian nuclear sites and announced it on Truth Social just before 8 pm ET on a ",
-        "author": "Osint613"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1s88nlo/irans_strike_wounded_over_a_dozen_us_personnel/",
-        "embed_id": "1s88nlo",
-        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskSocialists/comments/1s8dtfj/if_the_us_government_wants_its_universities_in/",
-        "embed_id": "1s8dtfj",
-        "title": "\"If the U.S. government wants its universities in the region spared, it should condemn the bombardment of (Iranian) universities by 12 o'clock Monday,"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoFilterNews/comments/1s8qu5b/trump_targets_more_children_with_strike_on/",
-        "embed_id": "1s8qu5b",
-        "title": "Trump Targets More Children With Strike on Iranian Orphanage | The U.S.-Israeli attacks have killed at least 230 children during the war so far."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/inthenews/comments/1s8quah/trump_targets_more_children_with_strike_on/",
-        "embed_id": "1s8quah",
-        "title": "Trump Targets More Children With Strike on Iranian Orphanage | The U.S.-Israeli attacks have killed at least 230 children during the war so far."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s8qifp/irans_strike_wounded_over_a_dozen_us_personnel/",
-        "embed_id": "1s8qifp",
-        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s8nl0n/why_i_remain_an_sp_bear_after_this_mornings/",
-        "embed_id": "1s8nl0n",
-        "title": "Why I remain an S&amp;P BEAR after this morning's Department of Defense press briefing"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=khJ2jEmt4zU",
-        "embed_id": "khJ2jEmt4zU",
-        "title": "Videos show explosions and fire in an Iranian city as strikes continue",
-        "channel": "NBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=KcqjURPHnak",
-        "embed_id": "KcqjURPHnak",
-        "title": "What led to the U.S. strikes on Iran nuclear sites",
-        "channel": "NBC News",
-        "duration": 296
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=0GUuVN1UUiI",
-        "embed_id": "0GUuVN1UUiI",
-        "title": "U.S. strikes Iranian nuclear sites",
-        "channel": "Queen City News",
-        "duration": 215
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GV4K-gVq_Ak",
-        "embed_id": "GV4K-gVq_Ak",
-        "title": "New Details Emerge About US Strike on Iran's Nuclear Sites",
-        "channel": "Inside Edition",
-        "duration": 116
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=7gj5EKYr_bo",
-        "embed_id": "7gj5EKYr_bo",
-        "title": "The Tactics Behind Trump’s Bombing of Iran’s Nuclear Facilities | WSJ",
-        "channel": "The Wall Street Journal",
-        "duration": 242
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=qXxM83TWDS4",
-        "embed_id": "qXxM83TWDS4",
-        "title": "How the US strikes on Iranian nuclear sites unfolded | BBC News",
-        "channel": "BBC News",
-        "duration": 247
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=lRJH1aJXPY4",
-        "embed_id": "lRJH1aJXPY4",
-        "title": "US strikes Iran amid nuclear program tensions, NYPD boosts NYC patrols",
-        "channel": "FOX 5 New York",
-        "duration": 222
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=-NaNU9FTSnM",
-        "embed_id": "-NaNU9FTSnM",
-        "title": "US strikes a city home to an Iranian nuclear site as conflict enters its second month",
-        "channel": "WTHR",
-        "duration": 38
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/NBCNews/status/1936577105510142145",
-        "embed_id": "1936577105510142145",
-        "title": "BREAKING: U.S. conducted strikes on multiple nuclear sites in Iran, President Trump announces in a social media post.  https://t.co/4t6W8ZuVHC",
-        "author": "NBCNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/1936576670103920786",
-        "embed_id": "1936576670103920786",
-        "title": "🚨🇺🇸🇮🇷 BREAKING: U.S. STRIKES IRANIAN NUCLEAR SITES\n\n\"We have completed our very successful attack on the three Nuclear sites in Iran, including F",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30421",
-        "embed_id": "Newsmax/30421",
-        "title": "U.S. strikes hit a city Tuesday that is home to one of Iran's main nuclear sites, sending a massive fireball into the sky, and Tehran attacked a fully",
-        "author": "newsmax"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2017327682418028751",
-        "embed_id": "2017327682418028751",
-        "title": "Something to note: In June 2025, U.S. President Donald Trump attacked Iranian nuclear sites and announced it on Truth Social just before 8 pm ET on a ",
-        "author": "Osint613"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1s88nlo/irans_strike_wounded_over_a_dozen_us_personnel/",
-        "embed_id": "1s88nlo",
-        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskSocialists/comments/1s8dtfj/if_the_us_government_wants_its_universities_in/",
-        "embed_id": "1s8dtfj",
-        "title": "\"If the U.S. government wants its universities in the region spared, it should condemn the bombardment of (Iranian) universities by 12 o'clock Monday,"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NoFilterNews/comments/1s8qu5b/trump_targets_more_children_with_strike_on/",
-        "embed_id": "1s8qu5b",
-        "title": "Trump Targets More Children With Strike on Iranian Orphanage | The U.S.-Israeli attacks have killed at least 230 children during the war so far."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/inthenews/comments/1s8quah/trump_targets_more_children_with_strike_on/",
-        "embed_id": "1s8quah",
-        "title": "Trump Targets More Children With Strike on Iranian Orphanage | The U.S.-Israeli attacks have killed at least 230 children during the war so far."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1s8qifp/irans_strike_wounded_over_a_dozen_us_personnel/",
-        "embed_id": "1s8qifp",
-        "title": "Iran's strike wounded over a dozen U.S. personnel and hit valuable jets in Saudi Arabia"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/stocks/comments/1s8nl0n/why_i_remain_an_sp_bear_after_this_mornings/",
-        "embed_id": "1s8nl0n",
-        "title": "Why I remain an S&amp;P BEAR after this morning's Department of Defense press briefing"
       }
     ],
     "image_file": "/images/breaking_2026-03-31.png"
