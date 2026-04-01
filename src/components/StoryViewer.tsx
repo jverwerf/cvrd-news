@@ -298,13 +298,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
                     <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').map((c: any, i: number) => (
                       <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity min-w-0"
-                        style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
-                        <span className="text-[11px] text-[#bbb] truncate">{c.title}</span>
-                        <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                        <div className="flex items-start gap-2">
+                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
+                          <div className="min-w-0">
+                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                            <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+                          </div>
+                        </div>
                       </a>
                     ))}
                   </div>
@@ -318,13 +323,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                     <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                     {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').map((c: any, i: number) => (
                       <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity min-w-0"
-                        style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
-                        <span className="text-[11px] text-[#bbb] truncate">{c.title}</span>
-                        <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                        <div className="flex items-start gap-2">
+                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
+                          <div className="min-w-0">
+                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                          </div>
+                        </div>
                       </a>
                     ))}
                   </div>
