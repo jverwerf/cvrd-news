@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
-    "summary": "Iranian attacks have resulted in fires in Kuwait and Bahrain, with a fatality occurring in the UAE. These incidents mark a significant escalation in regional tensions, highlighting the precarious security situation in the Middle East. The events have raised alarms about the potential for further conflict and broader geopolitical consequences.",
+    "summary": "Iranian attacks have led to fires in Kuwait and Bahrain, and a fatality in the UAE, marking a significant escalation in regional tensions. These incidents underscore the fragile security situation in the Middle East and have heightened concerns about the potential for further conflict. The events have drawn international attention to the geopolitical instability in the region.",
     "severity": "major",
     "detected_at": "2026-04-01T09:00:08.668Z",
-    "last_updated": "2026-04-01T15:00:29.868Z",
+    "last_updated": "2026-04-01T17:00:46.070Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind Iran's actions, such as sanctions and economic isolation, which be driving its aggressive posture. Additionally, the role of international arms sales and military alliances in escalating tensions is not being scrutinized. The focus remains on immediate events rather than the long-term geopolitical strategies at play.",
-    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are false flags orchestrated by other regional powers. Memes are circulating that mock the international community's inability to de-escalate tensions, while others express solidarity with the affected nations. The hashtag #MiddleEastCrisis is trending, with users debating the potential for a larger conflict.",
-    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with dark smoke billowing into a crimson sky, symbolizing the volatile geopolitical tensions in the Middle East.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations that be driving these aggressive actions. The focus remains on the immediate violence rather than the strategic interests Iran have in destabilizing its neighbors. Additionally, the role of international arms sales and military alliances in escalating tensions is not being scrutinized.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are false flags orchestrated by external powers to justify military intervention. Memes and viral posts are circulating, depicting the Middle East as a powder keg ready to explode, with hashtags calling for peace and de-escalation trending.",
+    "image_prompt": "A dramatic editorial photo of a smoldering skyline at dusk, with silhouettes of oil rigs in the foreground, symbolizing the volatile intersection of energy resources and geopolitical conflict.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -48,6 +48,20 @@
         "duration": 31
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=li6sxV8EmwM",
+        "embed_id": "li6sxV8EmwM",
+        "title": "Explosions reported in UAE, Kuwait and Bahrain as military op against Iran spills into wider region",
+        "duration": 99
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=SjC-7hsxTiU",
+        "embed_id": "SjC-7hsxTiU",
+        "title": "Footage shows moment Iranian strike hits high-rise in Bahrain",
+        "duration": 80
+      },
+      {
         "platform": "telegram",
         "url": "https://t.me/warmonitors/43059",
         "embed_id": "warmonitors/43059",
@@ -119,6 +133,18 @@
         "url": "https://reddit.com/r/BORUpdates/comments/1s9fm0x/almond_smell_at_the_plant_should_i_evacuate/",
         "embed_id": "1s9fm0x",
         "title": "Almond smell at the plant, should I evacuate everyone?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1s9e7mw/us_air_and_naval_assets_in_middle_east/",
+        "embed_id": "1s9e7mw",
+        "title": "Us air and naval assets in Middle East"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Chaos40k/comments/1s9gliz/2_new_detachments_and_def_mut_and_kravek_rules/",
+        "embed_id": "1s9gliz",
+        "title": "2 new detachments and Def, Mut, and Kravek rules"
       }
     ],
     "youtube_videos": [
@@ -149,6 +175,20 @@
         "title": "Fuel depot on fire in Bahrain following Iranian attack",
         "channel": "CNN",
         "duration": 31
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=li6sxV8EmwM",
+        "embed_id": "li6sxV8EmwM",
+        "title": "Explosions reported in UAE, Kuwait and Bahrain as military op against Iran spills into wider region",
+        "channel": "euronews",
+        "duration": 99
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=SjC-7hsxTiU",
+        "embed_id": "SjC-7hsxTiU",
+        "title": "Footage shows moment Iranian strike hits high-rise in Bahrain",
+        "channel": "Guardian News",
+        "duration": 80
       }
     ],
     "social_clips": [
@@ -224,363 +264,18 @@
         "url": "https://reddit.com/r/BORUpdates/comments/1s9fm0x/almond_smell_at_the_plant_should_i_evacuate/",
         "embed_id": "1s9fm0x",
         "title": "Almond smell at the plant, should I evacuate everyone?"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-01.png"
-  },
-  {
-    "topic": "Israeli Airstrikes on Beirut",
-    "summary": "Israeli airstrikes have hit Beirut, resulting in significant destruction and prompting emergency workers to search for victims. This development represents a major escalation in the conflict between Israel and Lebanon, with heightened fears of civilian casualties and increased regional instability. The international community is paying close attention to the situation as tensions between the two nations intensify.",
-    "severity": "major",
-    "detected_at": "2026-04-01T03:00:06.745Z",
-    "last_updated": "2026-04-01T15:00:56.033Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this escalation. The airstrikes are not just a response to immediate threats but are part of a broader strategy involving regional power dynamics and alliances. Economic interests, such as control over resources and influence in the Middle East, play a crucial role in the ongoing conflict, yet these factors are often overshadowed by the immediate military actions and humanitarian concerns.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian lives and others defending Israel's right to self-defense. Memes and hashtags are circulating, highlighting the disparity in media coverage and questioning the motives behind the airstrikes. Conspiracy theories are also emerging, suggesting ulterior motives tied to international politics and resource control.",
-    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance, symbolizing conflict and tension. In the foreground, a lone figure stands on a rooftop, looking out over the city, representing the human impact and the search for peace amidst chaos.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/1/emergency-workers-search-for-victims-of-israeli-airstrikes-on-beirut?traffic_source=rss",
-        "lean": "center",
-        "title": "Emergency workers search for victims of Israeli airstrikes on Beirut"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=QgMFKWiHch4",
-        "embed_id": "QgMFKWiHch4",
-        "title": "Emergency workers search for victims of Israeli airstrikes on Beirut | AJ #shorts"
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=3YOcvhEJbh0",
-        "embed_id": "3YOcvhEJbh0",
-        "title": "Israeli strike destroys building in Beirut's southern suburb"
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1s9e7mw/us_air_and_naval_assets_in_middle_east/",
+        "embed_id": "1s9e7mw",
+        "title": "Us air and naval assets in Middle East"
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=KnETP2OTbRY",
-        "embed_id": "KnETP2OTbRY",
-        "title": "How Beirut is coming under heavy attack from Israeli airstrikes",
-        "duration": 258
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=IU6hsgmTIbY",
-        "embed_id": "IU6hsgmTIbY",
-        "title": "Israel airstrike hits an apartment building in Beirut, Lebanon",
-        "duration": 23
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=udq4o5awVdc",
-        "embed_id": "udq4o5awVdc",
-        "title": "Israel says it began wave of airstrikes in Beirut",
-        "duration": 248
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=KrQ023RIxco",
-        "embed_id": "KrQ023RIxco",
-        "title": "Israel strikes Lebanon’s Beirut, saying it struck a Hezbollah target in Dahiyeh",
-        "duration": 1415
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=KKQVm9xg_Es",
-        "embed_id": "KKQVm9xg_Es",
-        "title": "Israel strikes Beirut for first time in months, saying it killed Hezbollah chief of staff",
-        "duration": 322
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=3Ml1zKb_5mA",
-        "embed_id": "3Ml1zKb_5mA",
-        "title": "Israeli airstrike hits an apartment building in Bachoura, central Beirut",
-        "duration": 23
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Tu5-77_4VJU",
-        "embed_id": "Tu5-77_4VJU",
-        "title": "Israel strikes Beirut as it carries out airstrikes in Lebanon",
-        "duration": 74
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=NwPp6wgbJ8M",
-        "embed_id": "NwPp6wgbJ8M",
-        "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
-        "duration": 27
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=sfRRsVQxW8E",
-        "embed_id": "sfRRsVQxW8E",
-        "title": "Israeli ‘targeted assassination’ in Lebanon's Beirut causes widespread damage"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Dh-VTNHaGBM",
-        "embed_id": "Dh-VTNHaGBM",
-        "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=4M8ffR5XlJ8",
-        "embed_id": "4M8ffR5XlJ8",
-        "title": "Moment Israeli strike hits Beirut building | DW News"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2038504142486777863",
-        "embed_id": "2038504142486777863",
-        "title": "Israeli forces carried out airstrikes on Hezbollah positions in Beirut’s southern suburbs. https://t.co/8O2gvn81Zb",
-        "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2032708706807246928",
-        "embed_id": "2032708706807246928",
-        "title": "🇱🇧 LEBANON | Israeli airstrikes and shelling killed dozens across southern Lebanon and Beirut’s southern suburbs on Friday.\n\n🔸Major attacks:\n\n▪️ An",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jacksonhinklle/status/2032252163020202032",
-        "embed_id": "2032252163020202032",
-        "title": "🚨🇮🇱🇱🇧 BREAKING: Israeli airstrikes on Beirut\n\nhttps://t.co/7UBnPJLYVB",
-        "author": "jacksonhinklle"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2032032103353774378",
-        "embed_id": "2032032103353774378",
-        "title": "🚨 At least 64 people were killed and 142 injured in a single day of Israeli airstrikes across Beirut, southern Lebanon, and the Bekaa Valley on Wedne",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/EylonALevy/status/2031918589909876879",
-        "embed_id": "2031918589909876879",
-        "title": "🎯In the space of 30 minutes, the IDF hit 10 Hezbollah HQs in large-scale airstrikes on its Dahieh stronghold of Beirut. \n\nIt blew up dozens of Hezbol",
-        "author": "EylonALevy"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/VividProwess/status/2031827500092047372",
-        "embed_id": "2031827500092047372",
-        "title": "🚨BREAKING: The Israeli Air Force has begun a deadly wave of airstrikes on Hezbollah cells and positions in Beirut, Lebanon, in response to the 100 ro",
-        "author": "VividProwess"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2039040958193369309",
-        "embed_id": "2039040958193369309",
-        "title": "Beirut was hit again by Israeli airstrikes on Tuesday, as bombardment continues across Beirut and southern Lebanon.\n\nAccording to Lebanon’s official h",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43046",
-        "embed_id": "warmonitors/43046",
-        "title": "⚡️Israeli strike on Dahye, Beirut",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitors/status/2039092400316985496",
-        "embed_id": "2039092400316985496",
-        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
-        "author": "WarMonitors"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2037976511467159915",
-        "embed_id": "2037976511467159915",
-        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16276",
-        "embed_id": "France24_en/16276",
-        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
-        "author": "france24_en"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=QgMFKWiHch4",
-        "embed_id": "QgMFKWiHch4",
-        "title": "Emergency workers search for victims of Israeli airstrikes on Beirut | AJ #shorts",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=3YOcvhEJbh0",
-        "embed_id": "3YOcvhEJbh0",
-        "title": "Israeli strike destroys building in Beirut's southern suburb",
-        "channel": "The Guardian"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=KnETP2OTbRY",
-        "embed_id": "KnETP2OTbRY",
-        "title": "How Beirut is coming under heavy attack from Israeli airstrikes",
-        "channel": "Sky News",
-        "duration": 258
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=IU6hsgmTIbY",
-        "embed_id": "IU6hsgmTIbY",
-        "title": "Israel airstrike hits an apartment building in Beirut, Lebanon",
-        "channel": "Associated Press",
-        "duration": 23
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=udq4o5awVdc",
-        "embed_id": "udq4o5awVdc",
-        "title": "Israel says it began wave of airstrikes in Beirut",
-        "channel": "Al Jazeera English",
-        "duration": 248
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=KrQ023RIxco",
-        "embed_id": "KrQ023RIxco",
-        "title": "Israel strikes Lebanon’s Beirut, saying it struck a Hezbollah target in Dahiyeh",
-        "channel": "Al Jazeera English",
-        "duration": 1415
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=KKQVm9xg_Es",
-        "embed_id": "KKQVm9xg_Es",
-        "title": "Israel strikes Beirut for first time in months, saying it killed Hezbollah chief of staff",
-        "channel": "Sky News",
-        "duration": 322
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=3Ml1zKb_5mA",
-        "embed_id": "3Ml1zKb_5mA",
-        "title": "Israeli airstrike hits an apartment building in Bachoura, central Beirut",
-        "channel": "AP Archive",
-        "duration": 23
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Tu5-77_4VJU",
-        "embed_id": "Tu5-77_4VJU",
-        "title": "Israel strikes Beirut as it carries out airstrikes in Lebanon",
-        "channel": "Associated Press",
-        "duration": 74
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=NwPp6wgbJ8M",
-        "embed_id": "NwPp6wgbJ8M",
-        "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
-        "channel": "Al Jazeera English",
-        "duration": 27
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=sfRRsVQxW8E",
-        "embed_id": "sfRRsVQxW8E",
-        "title": "Israeli ‘targeted assassination’ in Lebanon's Beirut causes widespread damage",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Dh-VTNHaGBM",
-        "embed_id": "Dh-VTNHaGBM",
-        "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English",
-        "channel": "France 24 English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=4M8ffR5XlJ8",
-        "embed_id": "4M8ffR5XlJ8",
-        "title": "Moment Israeli strike hits Beirut building | DW News",
-        "channel": "DW News"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2038504142486777863",
-        "embed_id": "2038504142486777863",
-        "title": "Israeli forces carried out airstrikes on Hezbollah positions in Beirut’s southern suburbs. https://t.co/8O2gvn81Zb",
-        "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2032708706807246928",
-        "embed_id": "2032708706807246928",
-        "title": "🇱🇧 LEBANON | Israeli airstrikes and shelling killed dozens across southern Lebanon and Beirut’s southern suburbs on Friday.\n\n🔸Major attacks:\n\n▪️ An",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jacksonhinklle/status/2032252163020202032",
-        "embed_id": "2032252163020202032",
-        "title": "🚨🇮🇱🇱🇧 BREAKING: Israeli airstrikes on Beirut\n\nhttps://t.co/7UBnPJLYVB",
-        "author": "jacksonhinklle"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2032032103353774378",
-        "embed_id": "2032032103353774378",
-        "title": "🚨 At least 64 people were killed and 142 injured in a single day of Israeli airstrikes across Beirut, southern Lebanon, and the Bekaa Valley on Wedne",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/EylonALevy/status/2031918589909876879",
-        "embed_id": "2031918589909876879",
-        "title": "🎯In the space of 30 minutes, the IDF hit 10 Hezbollah HQs in large-scale airstrikes on its Dahieh stronghold of Beirut. \n\nIt blew up dozens of Hezbol",
-        "author": "EylonALevy"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/VividProwess/status/2031827500092047372",
-        "embed_id": "2031827500092047372",
-        "title": "🚨BREAKING: The Israeli Air Force has begun a deadly wave of airstrikes on Hezbollah cells and positions in Beirut, Lebanon, in response to the 100 ro",
-        "author": "VividProwess"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/DropSiteNews/status/2039040958193369309",
-        "embed_id": "2039040958193369309",
-        "title": "Beirut was hit again by Israeli airstrikes on Tuesday, as bombardment continues across Beirut and southern Lebanon.\n\nAccording to Lebanon’s official h",
-        "author": "DropSiteNews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43046",
-        "embed_id": "warmonitors/43046",
-        "title": "⚡️Israeli strike on Dahye, Beirut",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/agUYltINEB9739fNcd-L5UNncmRmeCrX4ikLOE4-G7Y_evJBZ5awS8VuCAhTFN69txKacquwNTsKX7wDj0Z_dIxe_pHJNPjbe8fwZzUfINeO0O2HMwd1UqZGajYVm2kPl9siebDUPTZlf99Ldxnn2O5MqQhgRQMoG6gGax4VJlD8fgWkvwVQENW06kzFZjmhy4hW6CWCAD-rsqA6gMiIPFeHmXOnpOahY6gqhnH2G6pNbH06leeNBi-O5sUW5m3feIqor8y92IhiW7Ar90D8aiIIITg89YBwL3kx4Rz9ziVqDOmJ8Nq5dKT9tU_IyAy5Cu1UiwV_a9WaIo8hUMgCNA'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitors/status/2039092400316985496",
-        "embed_id": "2039092400316985496",
-        "title": "⚡3 Israeli airstrikes on Beirut's southern suburbs",
-        "author": "WarMonitors"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2037976511467159915",
-        "embed_id": "2037976511467159915",
-        "title": "🚨 ARAB REPORT:\n\n• Three Israeli airstrikes on the town of Machghara in southern Lebanon\n• Israeli jets flying at high altitude over Beirut and its su",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16276",
-        "embed_id": "France24_en/16276",
-        "title": "Lebanon condemns Israel’s 'clear intention' to impose new occupation of its territory\nLebanon said Israeli strikes hit near Beirut’s airport road on T",
-        "author": "france24_en"
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Chaos40k/comments/1s9gliz/2_new_detachments_and_def_mut_and_kravek_rules/",
+        "embed_id": "1s9gliz",
+        "title": "2 new detachments and Def, Mut, and Kravek rules"
       }
     ],
     "image_file": "/images/breaking_2026-04-01.png"
