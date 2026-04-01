@@ -102,6 +102,12 @@ export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null
   };
 }
 
+export async function getTimelineThread(slug: string): Promise<TimelineThread | null> {
+  const data = await getTimelineThreads();
+  if (!data) return null;
+  return data.threads.find(t => t.id === slug) || null;
+}
+
 export async function getTodayLastYear(): Promise<TodayLastYearData | null> {
   const enginePath = path.resolve(process.cwd(), '../intelligence-engine/output/today_last_year.json');
   const publicPath = path.resolve(process.cwd(), 'public/data/today_last_year.json');
