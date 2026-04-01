@@ -1,5 +1,108 @@
 [
   {
+    "topic": "Burundi Military Base Blast",
+    "summary": "An explosion at a military base in Burundi has led to the deaths of at least 13 people and injured dozens more. This incident represents a notable increase in violence in the region, prompting worries about the country's security and stability. The cause of the explosion is currently under investigation, with authorities working to determine whether it was an accident or an act of sabotage.",
+    "severity": "major",
+    "detected_at": "2026-04-01T21:00:08.520Z",
+    "last_updated": "2026-04-01T21:00:08.520Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential international implications of this explosion. Burundi's strategic position in East Africa and its history of political unrest mean that this incident has broader geopolitical consequences. Additionally, the role of foreign military aid and its impact on regional stability is not being discussed.",
+    "social_summary": "Social media is buzzing with speculation about the cause of the explosion, with some users suggesting it was an inside job or linked to regional power struggles. Memes and viral posts are highlighting the lack of transparency from the Burundian government, while conspiracy theories about foreign involvement are gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a smoldering military base at dawn, with silhouetted figures of soldiers surveying the damage, set against a backdrop of rising smoke and an ominous sky.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/1/burundi-says-at-least-13-killed-dozens-injured-in-military-base-blast?traffic_source=rss",
+        "lean": "center",
+        "title": "Burundi says at least 13 killed, dozens injured in military base blast"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=oeQTHc1XfUc",
+        "embed_id": "oeQTHc1XfUc",
+        "title": "Bujumbura Burundi explosion at military bases",
+        "duration": 12
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16274",
+        "embed_id": "France24_en/16274",
+        "title": "Burundi's main city rocked by blasts after electrical fire at military store\nMultiple blasts hit Burundi's main city of Bujumbura on Tuesday after an ",
+        "author": "france24_en"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/patientgamers/comments/1s9nhgy/beating_assassins_creed_2_as_a_pacifist/",
+        "embed_id": "1s9nhgy",
+        "title": "Beating Assassin’s Creed 2 as a Pacifist"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/northernireland/comments/1s9t56h/proxy_lurgan_bomb_driven_past_empty_security_post/",
+        "embed_id": "1s9t56h",
+        "title": "Proxy Lurgan bomb driven past empty security post and open gate into PSNI station compound"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/assassinscreed/comments/1s9niae/beating_assassins_creed_2_as_a_pacifist/",
+        "embed_id": "1s9niae",
+        "title": "Beating Assassin’s Creed 2 as a Pacifist"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/respectthreads/comments/1s9ecsc/respect_rené_rodin_the_mad_thinker_marvel_comics/",
+        "embed_id": "1s9ecsc",
+        "title": "Respect René Rodin, the Mad Thinker (Marvel Comics, 616)"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=oeQTHc1XfUc",
+        "embed_id": "oeQTHc1XfUc",
+        "title": "Bujumbura Burundi explosion at military bases",
+        "channel": "My adventures in Uganda",
+        "duration": 12
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16274",
+        "embed_id": "France24_en/16274",
+        "title": "Burundi's main city rocked by blasts after electrical fire at military store\nMultiple blasts hit Burundi's main city of Bujumbura on Tuesday after an ",
+        "author": "france24_en"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/patientgamers/comments/1s9nhgy/beating_assassins_creed_2_as_a_pacifist/",
+        "embed_id": "1s9nhgy",
+        "title": "Beating Assassin’s Creed 2 as a Pacifist"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/northernireland/comments/1s9t56h/proxy_lurgan_bomb_driven_past_empty_security_post/",
+        "embed_id": "1s9t56h",
+        "title": "Proxy Lurgan bomb driven past empty security post and open gate into PSNI station compound"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/assassinscreed/comments/1s9niae/beating_assassins_creed_2_as_a_pacifist/",
+        "embed_id": "1s9niae",
+        "title": "Beating Assassin’s Creed 2 as a Pacifist"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/respectthreads/comments/1s9ecsc/respect_rené_rodin_the_mad_thinker_marvel_comics/",
+        "embed_id": "1s9ecsc",
+        "title": "Respect René Rodin, the Mad Thinker (Marvel Comics, 616)"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-01.png"
+  },
+  {
     "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
     "summary": "Iranian attacks have resulted in fires in Kuwait and Bahrain, and a fatality in the UAE, escalating regional tensions in the Middle East. These incidents highlight the precarious security situation and have raised alarms about the potential for further conflict. The international community is closely monitoring the situation due to its implications for geopolitical stability.",
     "severity": "major",
