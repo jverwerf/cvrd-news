@@ -47,7 +47,7 @@ function categoryColor(cat: string): string {
 }
 
 const TIMELINE_SCROLL_CSS = `
-.timeline-scroll { overflow-x: scroll !important; scrollbar-width: none !important; -ms-overflow-style: none !important; }
+.timeline-scroll { overflow-x: scroll !important; overflow-y: hidden !important; scrollbar-width: none !important; -ms-overflow-style: none !important; }
 .timeline-scroll::-webkit-scrollbar { display: none !important; }
 `;
 
@@ -380,7 +380,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </div>
 
               {/* ═══ HORIZONTAL TIMELINE — scrollable independently ═══ */}
-              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
                 <HorizontalTimeline
                   grouped={grouped}
                   dates={dates}

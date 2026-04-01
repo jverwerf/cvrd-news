@@ -1,72 +1,99 @@
 {
-  "headline": "Marco Rubio on iran: 72.5% Truthful",
+  "headline": "Secretary Antony Blinken on military: 96.1% Truthful",
   "person": {
-    "handle": "marcorubio",
-    "name": "Marco Rubio",
-    "role": "Senator",
-    "photo": "/data/politicians/photo_marcorubio.png"
+    "handle": "SecBlinken",
+    "name": "Secretary Antony Blinken",
+    "role": "Former U.S. Secretary of State",
+    "photo": "/data/politicians/photo_SecBlinken.png"
   },
-  "story_topic": "Iranian Missile Strikes and U.S. Military Response",
-  "search_keyword": "iran",
-  "topic_score": 72.5,
-  "overall_score": 68.7,
-  "matching_claims": 6,
-  "editorial": "Senator Marco Rubio's fiery rhetoric on Iran hits the bullseye today as tensions skyrocket with Iranian missile strikes targeting the Middle East. Rubio, a stalwart hawk on Iranian issues, recently stated, \"The Iran regime wants to destroy Israel to become the dominant power in the Middle East.\" Our fact-checkers confirm this claim as TRUE, highlighting the seriousness of the threat amidst these unfolding events.\n\nRubio's track record on Iran is a mix of accuracy and overstatement. His assertion that Iran was aware of the consequences of its attacks on Israel is spot on. However, his claim that the Islamic Republic is the primary driver of Middle Eastern instability was flagged as MISLEADING. The complexity of the region's conflicts can't be pinned on a single regime, despite Iran's significant role.\n\nWhen it comes to truthfulness, Rubio holds a respectable score of 72.5 on Iranian matters, slightly higher than his overall score of 68.7. While he has a knack for hitting the mark, a fraction of his claims veer into the realm of exaggeration, as seen in his statements about U.S. financial dealings with Iran.\n\nFor readers, it’s crucial to parse Rubio’s words with a keen eye: while his insights are often grounded in truth, the devil is in the misleading details.",
+  "story_topic": "Iran War: U.S. Military Campaign to Wind Down",
+  "search_keyword": "military",
+  "topic_score": 96.1,
+  "overall_score": 95.6,
+  "matching_claims": 9,
+  "editorial": "As the U.S. military campaign in Iran winds down, all eyes turn to Secretary Antony Blinken. While not directly involved in the Iran conflict's recent de-escalation, Blinken's track record on military aid is indisputable. He has consistently advocated for robust support to Ukraine, with claims like the U.S. delivering a $725 million military aid package ringing true. His statements on military aid have been verified time and again, painting a picture of a diplomat committed to supporting international allies.\n\nBlinken's unwavering push for military support isn't new. His past claims, such as the U.S. sending $125 million in weapons to Ukraine, have been meticulously fact-checked and found accurate. His emphasis on strengthening allies like NATO—backed by solid evidence of NATO's enhanced capabilities—has been a consistent thread. Blinken’s focus has been clear: maintaining a strong military alliance to counter global threats.\n\nWith a truthfulness score of 95.6%, Blinken's claims largely hold water. Out of 270 statements evaluated, only three have been found misleading or false. This paints a picture of a statesman who, at least in the realm of military discourse, prefers accuracy over bluster.\n\nFor those scrutinizing today's winding down of the Iran conflict, Blinken’s track record suggests a steady hand in turbulent times.",
   "matched_tweets": [
     {
-      "claim": "The Iran regime wants to destroy Israel to become the dominant power in the Middle East.",
+      "claim": "The United States is delivering $725 million in additional weapons and equipment for Ukraine's defense.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Iran regime wants to destroy Israel so they can become the dominant power in the Middle East Appeasement will not change their behavior Only threatening the survival of the regime through maximum pressure and direct and disproportionate measures has a chance to influence and",
-      "tweet_url": "https://twitter.com/marcorubio/status/1841178807702581581",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that the Iranian regime seeks to destroy Israel to become the dominant power in the Middle East is supported by multiple sources. Iranian leaders have consistently expressed intentions to eliminate Israel. For instance, Supreme Leader Ali Khamenei has set 2040 as the target year for Israel"
+      "tweet_text": "Today, I am announcing the delivery of $725 million in additional weapons and equipment for Ukraine’s defense. The United States and more than 50 nations stand united with Ukraine.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1863687201067876761",
+      "domain": "military",
+      "reasoning": "The claim that the United States announced a $725 million military aid package for Ukraine on December 2, 2024, is accurate. This package included ammunition for HIMARS, Stinger missiles, counter-drone systems, anti-personnel landmines, and other equipment. The announcement was made by Secretary of "
     },
     {
-      "claim": "The Iranian regime was aware of the consequences of attacking Israel and chose to attack anyway.",
+      "claim": "The U.S. is sending a new package of weapons and equipment to support Ukraine's military forces.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Iranian regime was fully aware of the consequences of a direct attack on Israel & decided to do so anyways. Those demanding Israel show “restraint” should remember that they have the ability to inflict regime threatening damage on Iran & have already shown restraint by not",
-      "tweet_url": "https://twitter.com/marcorubio/status/1841224856442196447",
-      "domain": "foreign_policy",
-      "reasoning": "On October 1, 2024, Iran launched approximately 200 ballistic missiles at Israel, marking a significant escalation in their conflict. Prior to the attack, the United States warned Iran that a direct military assault on Israel would carry severe consequences. Despite this, Iran proceeded with the mis"
+      "tweet_text": "The U.S. is sending a new package of urgently needed weapons and equipment to support Ukraine's military forces as they defend against Russia’s ongoing attacks. This support will help Ukraine protect its troops, its people, and reinforce its capabilities on the front lines.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1827079362060886514",
+      "domain": "military",
+      "reasoning": "On August 23, 2024, the U.S. Department of Defense announced a new $125 million military aid package to Ukraine. This package included air defense missiles, counter-drone equipment, anti-armor missiles, and ammunition, aligning with the claim that the U.S. is sending a new package of weapons and equ"
     },
     {
-      "claim": "Israel can conduct strikes against targets in Iran using aircraft over Syrian and Iraqi airspace without entering Iranian airspace.",
+      "claim": "Czechia has demonstrated true leadership with its efforts to source more ammunition for Ukraine’s defense against Russia.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Israel has the ability to conduct strikes against targets inside Iran without entering Iranian air space from aircraft over Syrian and Iraqi airspace",
-      "tweet_url": "https://twitter.com/marcorubio/status/1781135619508285791",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that Israel can conduct strikes against targets inside Iran without entering Iranian airspace, by operating over Syrian and Iraqi airspace, is supported by multiple reports. In April 2024, Israeli aircraft launched missiles targeting an air defense radar site near Isfahan, Iran, from beyon"
+      "tweet_text": "Met with Czech President @prezidentpavel to discuss Czechia’s military modernization and assistance to Ukraine. Czechia has demonstrated true leadership with its efforts to source more ammunition for Ukraine’s defense against Russia.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1796256554888692056",
+      "domain": "military",
+      "reasoning": "Czechia has indeed demonstrated leadership in sourcing ammunition for Ukraine's defense against Russia. In 2024, under the Czech initiative, Ukraine received 500,000 artillery shells purchased from outside Europe. Additionally, Czechia acted as an intermediary in supplying about 1.5 million shells i"
     },
     {
-      "claim": "The Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East and has oppressed the people of Iran for almost 25 years.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "The primary source of violence, conflict, suffering and instability in the Middle East is the criminal “Islamic Republic” regime which has also oppressed the people of #Iran for almost 25 years",
-      "tweet_url": "https://twitter.com/marcorubio/status/1780635965331058728",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that the Islamic Republic regime is the primary source of violence, conflict, suffering, and instability in the Middle East is an oversimplification. While Iran has been involved in various regional conflicts and has supported groups like Hezbollah, attributing the majority of regional ins"
+      "claim": "Thousands of Ukrainian civilians and soldiers have lost limbs due to the war initiated by Putin.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Thousands of Ukrainian civilians and soldiers have tragically lost limbs in Putin’s war. @EsperBionics is an innovative Ukrainian-American company helping injured Ukrainians gain back function and independence by providing them with advanced multifunctional prosthetics.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1790850167207248074",
+      "domain": "military",
+      "reasoning": "The claim that thousands of Ukrainian civilians and soldiers have lost limbs due to the war initiated by Putin is supported by multiple credible sources. Estimates indicate that between 20,000 and 50,000 Ukrainians have undergone amputations since the onset of the conflict. For instance, the Wall St"
     },
     {
-      "claim": "Biden agreed to send $6 billion to the Iran regime.",
+      "claim": "NATO is stronger than ever before",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "NATO is stronger than ever before. I met with Secretary General @jensstoltenberg in Brussels in advance of the 75th anniversary of the NATO Alliance. We will continue to work closely to address global challenges, including Russia’s aggression against Ukraine.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1775633054523945193",
+      "domain": "military",
+      "reasoning": "The claim that \"NATO is stronger than ever before\" is supported by several key developments in 2024. Firstly, NATO conducted Steadfast Defender 2024, its largest military exercise since the Cold War, involving approximately 90,000 troops from all 31 member states and Sweden, demonstrating enhanced o"
+    },
+    {
+      "claim": "A French munitions factory is providing equipment to Ukraine.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Toured a French munitions factory that is providing equipment to Ukraine as they continue their fight against Russia's unjust war. We stand steadfast with our partners and allies in support of Ukraine’s sovereignty and territorial integrity.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1775199268439011641",
+      "domain": "military",
+      "reasoning": "The claim that a French munitions factory is providing equipment to Ukraine is accurate. France has delivered significant military equipment to Ukraine, including 30 CAESAR self-propelled howitzers and 6 TRF1 howitzers, as reported by the French Ministry of Armed Forces. Additionally, French defense"
+    },
+    {
+      "claim": "Sweden officially joined NATO.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Earlier today, I was with @SwedishPM Kristersson as Sweden officially joined @NATO. Tonight at #SOTU, @POTUS welcomed Sweden to the strongest military alliance the world has ever known.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1765937149600227556",
+      "domain": "military",
+      "reasoning": "Sweden officially joined NATO on March 7, 2024, becoming the alliance's 32nd member. This marked the end of Sweden's longstanding policy of neutrality and was formalized when Swedish Prime Minister Ulf Kristersson handed over the accession documents to U.S. Secretary of State Antony Blinken in Washi"
+    },
+    {
+      "claim": "Ukrainians have stood toe to toe with the Russian military, conceded no territory, and pushed Russia's navy back in the Black Sea, opening a corridor for grain exports.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "Biden agreed to send $6 billion to Iran regime that today marked anniversary of “Islamic Revolution” with chants of “Death to America” and “Death to Israel” (Photo AP/Vahid Salemi)",
-      "tweet_url": "https://twitter.com/marcorubio/status/1756711441934200967",
-      "domain": "foreign_policy",
-      "reasoning": "The claim that President Biden agreed to send $6 billion to the Iranian regime refers to a 2023 agreement where the U.S. facilitated the release of $6 billion in Iranian funds that had been frozen in South Korea. These funds were Iranian assets, not U.S. taxpayer money, and were intended for humanit"
+      "tweet_text": "Ukrainians have done what no one thought was possible: stood toe to toe with one of the biggest militaries, conceded no territory, and they pushed Russia’s navy back in the Black Sea and opened a corridor to allow them to export grain and other products to the world.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1740780043692040247",
+      "domain": "military",
+      "reasoning": "The claim that Ukrainians have 'stood toe to toe' with the Russian military and 'pushed Russia's navy back in the Black Sea' is broadly accurate, reflecting Ukraine's resilience and military efforts. However, the assertion that they have 'conceded no territory' is misleading. Since the onset of the "
     },
     {
-      "claim": "The UN Security Council passed a resolution demanding Israel not defeat Hamas and Biden decided not to veto it.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "The UN Security Council just passed a resolution demanding Israel not defeat Hamas & to appease far-left anti-semitic/Pro-Hamas activists Biden decided not to veto it",
-      "tweet_url": "https://twitter.com/marcorubio/status/1772289923963322848",
-      "domain": "foreign_policy",
-      "reasoning": "The UN Security Council passed a resolution on March 25, 2024, calling for an immediate ceasefire in Gaza during Ramadan and the unconditional release of all hostages. The United States abstained from the vote, allowing the resolution to pass. However, the resolution did not explicitly demand that I"
+      "claim": "This year’s last package of weapons and equipment is being announced to support Ukraine.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "We are announcing this year’s last package of weapons and equipment under previous drawdowns to support the people of Ukraine. We continue to urge Congress to act quickly to advance our national security interests by helping Ukraine defend itself.",
+      "tweet_url": "https://twitter.com/SecBlinken/status/1740180403535876284",
+      "domain": "military",
+      "reasoning": "The claim states that the U.S. announced its final package of weapons and equipment for Ukraine in 2023. On December 27, 2023, the U.S. announced a $250 million military aid package to Ukraine, which officials indicated could be the last unless Congress approved additional funding. This package incl"
     }
   ],
-  "generated_at": "2026-03-30T19:17:55.271Z"
+  "generated_at": "2026-04-01T10:52:48.036Z"
 }
