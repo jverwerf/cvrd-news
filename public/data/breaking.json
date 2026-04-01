@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attacks Cause Fire in Kuwait and Bahrain",
-    "summary": "Iranian attacks have led to fires in Kuwait and Bahrain, with a reported fatality in the UAE. This development signifies a notable escalation in regional hostilities, raising concerns about the potential for further conflict in the Middle East. The incidents underscore the fragile security situation in the region and the potential for broader geopolitical ramifications.",
+    "summary": "Iranian attacks have resulted in fires in Kuwait and Bahrain, with one fatality reported in the UAE. This marks a significant escalation in regional tensions, highlighting the precarious security environment in the Middle East. The incidents have raised alarms about the potential for further conflict and broader geopolitical consequences.",
     "severity": "major",
     "detected_at": "2026-04-01T09:00:08.668Z",
-    "last_updated": "2026-04-01T09:00:08.668Z",
+    "last_updated": "2026-04-01T11:00:20.543Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying motivations behind Iran's actions, such as internal political pressures or strategic objectives in the Gulf. The focus remains on the immediate consequences rather than the broader geopolitical chess game, including the influence of external powers like the US and Russia in the region. Economic factors, such as sanctions and oil market dynamics, are also being overlooked as potential drivers of these aggressive maneuvers.",
-    "social_summary": "Social media is ablaze with speculation and outrage, with hashtags like #IranAttacks and #MiddleEastConflict trending. Memes and viral posts are drawing parallels to past conflicts, while conspiracy theories suggest ulterior motives involving global superpowers. The discourse is polarized, with some users calling for diplomatic solutions and others advocating for military responses.",
-    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with dark smoke billowing into a crimson sky, symbolizing the volatile tensions in the Middle East. In the foreground, silhouettes of oil workers and emergency responders are seen against the fiery backdrop, capturing the human element amidst geopolitical turmoil.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying motivations behind Iran's actions, such as internal political pressures or strategic objectives in the region. Additionally, the role of international powers in either exacerbating or mitigating these tensions is not being thoroughly examined. The economic implications for oil markets and global trade routes, given the region's strategic importance, are also being overlooked.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that these attacks are a pretext for larger military interventions. Memes and viral posts are drawing parallels to past Middle Eastern conflicts, while others are questioning the media's portrayal of Iran as the sole aggressor. Hashtags related to Middle Eastern peace and calls for diplomatic solutions are trending.",
+    "image_prompt": "A dramatic editorial photo of a burning oil field at dusk, with silhouettes of firefighters battling the blaze, set against a backdrop of a distant city skyline. The image symbolizes the tension and fragility of peace in the Middle East.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -49,16 +49,16 @@
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/intelslava/85696",
-        "embed_id": "intelslava/85696",
-        "title": "🇮🇷🇺🇸🇧🇭❗️Iranian missiles hit the headquarters of Batelco in Hamal, Bahrain, the largest telecommunications company in the country, where Amazon ",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
         "url": "https://t.me/warmonitors/43059",
         "embed_id": "warmonitors/43059",
         "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
         "author": "warmonitors"
       },
       {
@@ -143,16 +143,16 @@
     "social_clips": [
       {
         "platform": "telegram",
-        "url": "https://t.me/intelslava/85696",
-        "embed_id": "intelslava/85696",
-        "title": "🇮🇷🇺🇸🇧🇭❗️Iranian missiles hit the headquarters of Batelco in Hamal, Bahrain, the largest telecommunications company in the country, where Amazon ",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
         "url": "https://t.me/warmonitors/43059",
         "embed_id": "warmonitors/43059",
         "title": "⚡Sky News Arabia: Our correspondent reports: Sirens activated in Bahrain and explosions heard as a result of intercepting attacks from Iran.",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43055",
+        "embed_id": "warmonitors/43055",
+        "title": "❌ BREAKING\n\nIranian intelligence sources confirm that following Tehran's recent threats against the UAE, the Emirati government is now showing hesitat",
         "author": "warmonitors"
       },
       {
@@ -208,15 +208,15 @@
   },
   {
     "topic": "Israeli Airstrikes on Beirut",
-    "summary": "Israeli airstrikes have targeted Beirut, causing extensive damage and triggering a search for victims by emergency workers. This marks a significant escalation in the ongoing conflict between Israel and Lebanon, raising concerns about civilian casualties and the potential for further destabilization in the region. The international community is closely monitoring the situation as tensions between the two countries continue to rise.",
+    "summary": "Israeli airstrikes have hit Beirut, resulting in significant destruction and prompting emergency workers to search for victims. This development represents a major escalation in the conflict between Israel and Lebanon, with heightened fears of civilian casualties and regional instability. The international community is watching closely as tensions between the two nations intensify.",
     "severity": "major",
     "detected_at": "2026-04-01T03:00:06.745Z",
-    "last_updated": "2026-04-01T07:00:22.680Z",
+    "last_updated": "2026-04-01T11:00:35.101Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this conflict, such as territorial disputes and historical grievances that fuel ongoing hostilities. Additionally, the role of external powers in either supporting or condemning these actions is often downplayed, despite their significant influence on the conflict's trajectory. The economic implications for both nations, particularly in terms of infrastructure damage and humanitarian aid, are also largely overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage over the loss of civilian lives, while others justify the strikes as a necessary defense measure. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, with each side claiming victimhood. Conspiracy theories about foreign intervention and hidden agendas are also gaining traction, further complicating public perception.",
-    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with smoke rising in the distance, symbolizing conflict and destruction. In the foreground, a lone figure stands on a rooftop, looking out over the city, embodying the themes of vigilance and resilience amidst chaos.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations driving this escalation. Israel's actions are often linked to broader regional security concerns, including Hezbollah's influence in Lebanon and its ties to Iran. Meanwhile, Lebanon's internal political instability and economic crisis are exacerbating its vulnerability to external conflicts, yet these factors are largely ignored in the immediate coverage of the airstrikes.",
+    "social_summary": "Social media is ablaze with polarized reactions. Some users are sharing graphic images and videos of the destruction, calling for international intervention. Others are spreading conspiracy theories about foreign powers manipulating the conflict for their own gain. Memes and hashtags are circulating, with some users trivializing the situation while others express outrage and solidarity with the victims.",
+    "image_prompt": "A dramatic editorial photo of a city skyline at dusk, with dark clouds looming overhead and faint silhouettes of emergency workers amidst rubble, symbolizing the tension and destruction of the airstrikes.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -293,6 +293,18 @@
         "embed_id": "NwPp6wgbJ8M",
         "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
         "duration": 27
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=sfRRsVQxW8E",
+        "embed_id": "sfRRsVQxW8E",
+        "title": "Israeli ‘targeted assassination’ in Lebanon's Beirut causes widespread damage"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Dh-VTNHaGBM",
+        "embed_id": "Dh-VTNHaGBM",
+        "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English"
       },
       {
         "platform": "x",
@@ -442,6 +454,18 @@
         "title": "Smoke rises over Beirut suburbs after massive Israeli airstrike | #ajshorts",
         "channel": "Al Jazeera English",
         "duration": 27
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=sfRRsVQxW8E",
+        "embed_id": "sfRRsVQxW8E",
+        "title": "Israeli ‘targeted assassination’ in Lebanon's Beirut causes widespread damage",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Dh-VTNHaGBM",
+        "embed_id": "Dh-VTNHaGBM",
+        "title": "Lebanon says Israeli strikes on Beirut area kill 7 • FRANCE 24 English",
+        "channel": "France 24 English"
       }
     ],
     "social_clips": [
