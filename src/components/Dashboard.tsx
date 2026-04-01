@@ -610,18 +610,12 @@ export function Dashboard({
                 </button>
               </div>
 
-              <button onClick={prevStory} className="p-0.5 hover:opacity-60 shrink-0" title="Previous story">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><rect x="3" y="5" width="2" height="14" /><polygon points="19 5 9 12 19 19" /></svg>
-              </button>
               <button onClick={prevItem} className="p-0.5 hover:opacity-60 shrink-0" title="Previous clip">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
               <span className="text-[7px] text-white/40 font-mono shrink-0">{clipInStory}/{clipsInStory}</span>
               <button onClick={next} className="p-0.5 hover:opacity-60 shrink-0" title="Next clip">
                 <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
-              </button>
-              <button onClick={nextStory} className="p-0.5 hover:opacity-60 shrink-0" title="Next story">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="white"><polygon points="5 5 15 12 5 19" /><rect x="19" y="5" width="2" height="14" /></svg>
               </button>
 
               {/* Volume — click to toggle, hover to show slider */}
