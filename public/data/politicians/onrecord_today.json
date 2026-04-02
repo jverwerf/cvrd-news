@@ -1,108 +1,108 @@
 {
-  "headline": "Donald Trump on domestic: 37.8% Truthful",
+  "headline": "Volodymyr Zelenskyy on domestic: 100% Truthful",
   "person": {
-    "handle": "realDonaldTrump",
-    "name": "Donald J. Trump",
-    "role": "President of the United States",
-    "photo": "/data/politicians/photo_realDonaldTrump.png"
+    "handle": "ZelenskyyUa",
+    "name": "Volodymyr Zelenskyy",
+    "role": "President of Ukraine",
+    "photo": "/data/politicians/photo_ZelenskyyUa.png"
   },
   "story_topic": "Iran War Escalation and Global Impact",
   "search_keyword": "domestic",
-  "topic_score": 37.8,
-  "overall_score": 44.7,
-  "matching_claims": 32,
-  "editorial": "As tensions flare in the Persian Gulf, President Trump is doubling down on his aggressive military strategy toward Iran. Yet, when it comes to domestic matters, his record paints a different picture. Trump's claim about \"record-breaking numbers of Arab and Muslim voters in Michigan\" wanting peace as part of a broad coalition was deemed \"somewhat misleading.\" While there was a notable shift in voter allegiance, the notion of a coalition is not as robust as he suggests.\n\nOn the domestic front, Trump has a mixed record of truthfulness. His assertion of a \"self-deportation program\" was accurate, but claims of rampant radical Islamic terrorism are misleading. These assessments align with his broader pattern of skewed narratives, where out of 63 vetted claims, only 10 were found true, while 24 were misleading, and 14 outright false.\n\nWith an overall truthfulness score of 44.7, Trump's track record is a minefield of half-truths and exaggerations. The President's penchant for hyperbole often clouds critical issues, leaving the public to sift fact from fiction in matters of national and international importance.\n\nIn a world where facts are as volatile as politics, staying informed is your best defense.",
+  "topic_score": 100,
+  "overall_score": 95.4,
+  "matching_claims": 27,
+  "editorial": "President Volodymyr Zelenskyy of Ukraine, while not directly involved in the U.S.-Iran conflict, is an exemplar of accuracy in communication—a stark contrast to the murky narratives surrounding the Middle East escalation. In a time where misinformation can inflame global tensions, Zelenskyy has maintained a pristine record. For instance, his claim about the Mykolaiv explosion, where seven National Police officers were injured, was confirmed true by multiple sources.\n\nZelenskyy's domestic claims consistently hold up under scrutiny. Reports of two explosions in Lviv, resulting in 25 injuries and one death, were verified true. His transparency offers a refreshing contrast to the ambiguity rampant in international discourse, where the credibility of casualty figures and the motives behind military actions are often questioned.\n\nWith an overall truthfulness score of 95.4%, Zelenskyy's record includes 304 true claims out of 345, and only a single false claim. This pattern of reliability is crucial as Ukraine navigates its own geopolitical challenges, ensuring confidence in his leadership during times of turmoil.\n\nIn a world beset by misinformation, Zelenskyy's truthfulness is a rare commodity—one that demands emulation.",
   "matched_tweets": [
     {
-      "claim": "Tito Asfura was the highly successful Mayor of Tegucigalpa where he brought running water to millions and paved hundreds of kilometers of roads.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Democracy is on trial in the coming Elections in the beautiful country of Honduras on November 30th. Will Maduro and his Narcoterrorists take over another country like they have taken over Cuba, Nicaragua, and Venezuela? The man who is standing up for Democracy, and fighting against Maduro, is Tito ",
-      "tweet_url": "https://x.com/realDonaldTrump/status/1994438342403141889",
-      "domain": "domestic",
-      "reasoning": "While Nasry 'Tito' Asfura, as mayor of Tegucigalpa from 2014 to 2022, initiated numerous infrastructure projects, including road improvements, the claim that he 'brought running water to millions' is an overstatement. Reports indicate that even after seven years of his administration, the capital co"
-    },
-    {
-      "claim": "I signed an Executive Order to launch the first-ever self-deportation program.",
+      "claim": "Seven National Police officers were injured in an explosion in Mykolaiv, with two in serious condition.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Today, I signed an Executive Order to launch the first-ever self-deportation program. Illegal aliens who stay in America face punishments, including—sudden deportation, in a place and manner solely of our discretion. TO ALL ILLEGAL ALIENS: BOOK YOUR FREE FLIGHT RIGHT NOW!",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1921008311492624867",
+      "tweet_text": "I have just received the first reports from law enforcement officials regarding the explosion in Mykolaiv. National Police officers were injured – seven people wounded, two of them in serious condition. They are receiving the necessary assistance. All circumstances are being",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025988914456965603",
       "domain": "domestic",
-      "reasoning": "On May 9, 2025, President Donald Trump signed an executive order establishing the first-ever self-deportation program, known as 'Project Homecoming.' This program offers undocumented immigrants free flights and a $1,000 stipend to voluntarily return to their home countries. The initiative aims to en"
+      "reasoning": "Multiple reputable sources confirm that on February 23, 2026, an explosion occurred at a non-operational gas station in Mykolaiv, injuring seven National Police officers, with two in serious condition. The incident has been classified as a terrorist attack by Ukrainian authorities."
     },
     {
-      "claim": "Radical Islamic Terrorism and other forms of violent crime have become so bad in America that it is hard to imagine or believe.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "With the Biden “Open Border’s Policy” I said, many times during Rallies, and elsewhere, that Radical Islamic Terrorism, and other forms of violent crime, will become so bad in America that it will become hard to even imagine or believe. That time has come, only worse than ever",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1875049915367235899",
-      "domain": "domestic",
-      "reasoning": "While there was a significant terrorist attack in New Orleans on January 1, 2025, attributed to radical Islamic terrorism, overall violent crime rates in the United States declined substantially in 2025. Homicides fell by 21% in 35 large cities, reaching the lowest levels since 1900. Therefore, the "
-    },
-    {
-      "claim": "Record-breaking numbers of Arab and Muslim voters in Michigan want peace and are part of a broad coalition.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "We are building the biggest and broadest coalition in American Political History. This includes record-breaking numbers of Arab and Muslim Voters in Michigan who want PEACE. They know Kamala and her warmonger Cabinet will invade the Middle East, get millions of Muslims killed,",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1853571107439399155",
-      "domain": "domestic",
-      "reasoning": "While there was a notable shift of Arab and Muslim voters in Michigan away from the Democratic Party in the 2024 election, the claim that this resulted in 'record-breaking numbers' joining Trump's coalition is somewhat misleading. In Dearborn, a city with a significant Arab American population, Trum"
-    },
-    {
-      "claim": "Mimi Ramirez-Rodriguez was kidnapped and murdered by an illegal alien.",
+      "claim": "There were two explosions in Lviv, resulting in 25 injuries and one death of a 23-year-old police officer.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Mimi Ramirez-Rodriguez was kidnapped and murdered by an illegal alien—leaving behind a 9 year-old girl. I met her grieving mom Carmen tonight in Georgia. With your vote Tuesday, we will end Kamala’s invasion and we will not allow illegals to spill one more drop of American blood.",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1853279976193507602",
+      "tweet_text": "A cynical and brutal terrorist act is being investigated in Lviv. There were two explosions, and the second occurred after emergency services had already arrived at the scene. Twenty-five people were injured. Tragically, one person – a 23-year-old police officer – was killed. My",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025646413028163641",
       "domain": "domestic",
-      "reasoning": "The claim that Minelys \"Mimi\" Rodriguez-Ramirez was kidnapped and murdered by an illegal alien is accurate. On October 22, 2024, Rodriguez-Ramirez went missing after being last seen at a Walmart in Cornelia, Georgia. Her body was discovered near the Walmart shortly thereafter. Angel DeJesus Rivera-S"
+      "reasoning": "The claim accurately reports that two explosions occurred in Lviv, resulting in 25 injuries and the death of a 23-year-old police officer. Multiple sources confirm these details, including the number of casualties and the age of the deceased officer."
     },
     {
-      "claim": "Kamala has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "As we rescue our economy, I will also restore our borders. Over the past 4 years, Kamala has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people. She has violated her oath, eradicated our sovereign border, and unleashed an",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1852945058305114396",
+      "claim": "A person suspected of committing a terrorist act in Lviv has been detained, resulting in 25 people injured and one person dead.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Міністр внутрішніх справ України Ігор Клименко доповів про затримання особи, яка підозрюється у вчиненні терористичного акту у Львові. Двадцять п’ять людей поранено, одна людина загинула. Мої співчуття рідним... Слідству надано всі необхідні ресурси. Тривають необхідні",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025493719118397712",
       "domain": "domestic",
-      "reasoning": "The claim that Kamala Harris \"has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people\" is a subjective and hyperbolic statement lacking specific evidence. While there have been criticisms of Harris's policies, particularly regarding immigrati"
+      "reasoning": "The claim accurately reports that a suspect was detained in connection with a terrorist act in Lviv, resulting in 25 injuries and one death. Multiple sources confirm that on February 22, 2026, explosions in Lviv led to the death of a 23-year-old police officer and injuries to 25 individuals. Ukraini"
     },
     {
-      "claim": "I never mentioned wanting to end the Affordable Care Act or Social Security.",
-      "verdict": "FALSE",
-      "score": 0,
-      "tweet_text": "Lyin’ Kamala is giving a News Conference now, saying that I want to end the Affordable Care Act. I never mentioned doing that, never even thought about such a thing. She also said I want to end Social Security. Likewise, never mentioned it, or thought of it. She is the one that",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1852033066157441249",
+      "claim": "An individual suspected of carrying out a terrorist attack in Lviv has been detained, resulting in 25 injuries and 1 death.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Minister of Internal Affairs of Ukraine Ihor Klymenko reported on the detention of an individual suspected of carrying out the terrorist attack in Lviv. Twenty-five people were injured, and one person was killed. My condolences to the family and loved ones... All necessary",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025493716882886712",
       "domain": "domestic",
-      "reasoning": "Donald Trump's claim that he \"never mentioned\" wanting to end the Affordable Care Act (ACA) or Social Security is contradicted by his previous statements and actions. In November 2023, Trump stated he was \"seriously looking at alternatives\" to the ACA, criticizing it as expensive and subpar healthca"
+      "reasoning": "The claim accurately reports that a suspect was detained in connection with a terrorist attack in Lviv, which resulted in 25 injuries and one death. Ukrainian authorities, including Minister of Internal Affairs Ihor Klymenko, confirmed these details. The suspect, a 33-year-old Ukrainian woman, was a"
     },
     {
-      "claim": "Trump has done more for Puerto Rico than any other President",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "“Ignore The Democrat And Media Outrage. Trump Has Done More For Puerto Rico Than Any Other President”",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851458837032612095",
+      "claim": "The Security Service of Ukraine, the National Police, and the Office of the Prosecutor General neutralized Russian mercenaries preparing assassination attempts against Ukrainian citizens.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "I want to commend the efforts of the Security Service of Ukraine, the National Police, and the Office of the Prosecutor General – they neutralized Russian mercenaries preparing assassination attempts against our citizens. These were rather high-profile names, and preventing such",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025253277906907456",
       "domain": "domestic",
-      "reasoning": "The claim that 'Trump has done more for Puerto Rico than any other President' is misleading. While the Trump administration did allocate significant funds for Puerto Rico's recovery after Hurricane Maria, the actual disbursement was much lower than claimed. As of April 2019, approximately $11.2 bill"
+      "reasoning": "Ukrainian authorities, including the Security Service of Ukraine, the National Police, and the Office of the Prosecutor General, successfully neutralized Russian mercenaries who were preparing assassination attempts against Ukrainian citizens. This operation, known as 'Enigma 2.0,' resulted in the d"
     },
     {
-      "claim": "Kamala is running billboards near the Border advertising free legal services for illegal alien criminals.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "Kamala is now running billboards near the Border advertising FREE Legal Services for Illegal Alien Criminals. When I win, the billboards are coming down, and the Migrant Gangs are going home!",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851328401644405039",
+      "claim": "The government has activated programs to support ordinary people during the energy crisis.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Провів нараду щодо оперативної роботи в громадах і, зокрема, в Києві в умовах надзвичайної енергетичної ситуації. Разом з Юлією Свириденко й Олександром Кубраковим визначили наступні пріоритетні кроки. Уже активізовані урядові програми, що підтримують як звичайних людей, так і",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2024152585821708786",
       "domain": "domestic",
-      "reasoning": "The Department of Homeland Security's Office of the Immigration Detention Ombudsman (OIDO) did fund billboards near the U.S.-Mexico border offering assistance to individuals in immigration custody, stating, \"Your brother in immigration custody has rights, we're here to help.\" However, these billboar"
+      "reasoning": "The Ukrainian government has indeed activated programs to support ordinary people during the energy crisis. In early February 2026, the Cabinet of Ministers launched an initiative offering direct cash grants to small businesses for power equipment, aiming to help them maintain operations amid ongoin"
     },
     {
-      "claim": "York County received thousands of potentially fraudulent voter registration forms and mail-in ballot applications, and Lancaster County had 2600 fake ballots and forms written by the same person.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "Wow! York County, Pennsylvania, received THOUSANDS of potentially FRAUDULENT Voter Registration Forms and Mail-In Ballot Applications from a third party group. This is on top of Lancaster County being caught with 2600 Fake Ballots and Forms, all written by the same person. Really",
-      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851309196827828616",
+      "claim": "A meeting was held on rapid-response operations in communities under a state of emergency in the energy system.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "I held a meeting on rapid-response operations in communities, and particularly in Kyiv, under a state of emergency in the energy system. Together with Yuliia Svyrydenko and Oleksandr Kubrakov, we identified the next priority steps. Government programs supporting both ordinary",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2024152582508224892",
       "domain": "domestic",
-      "reasoning": "Donald Trump's claim that York County received thousands of potentially fraudulent voter registration forms and mail-in ballot applications, and that Lancaster County had 2,600 fake ballots and forms written by the same person, is misleading. While both counties did investigate suspicious voter regi"
+      "reasoning": "President Volodymyr Zelenskyy held a meeting on February 18, 2026, focusing on rapid-response operations in communities, particularly in Kyiv, amid a state of emergency in the energy system. He was joined by Yuliia Svyrydenko and Oleksandr Kubrakov to identify priority steps to address the energy cr"
+    },
+    {
+      "claim": "General Major Oleksandr Poklad reported on countering enemy plans against Ukraine and was tasked with cleaning the Security Service of Ukraine from those serving foreign interests.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Була сьогодні доповідь генерал-майора СБУ Олександра Поклада щодо протидії планам ворога проти нашої країни. Також доручив Олександру зайнятися питанням очищення Служби безпеки України від тих, хто служить на посадах не Україні, а іншим інтересам. Потрібні жорсткі дії та реально",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2023478470764826899",
+      "domain": "domestic",
+      "reasoning": "The claim accurately reflects President Zelenskyy's statements and actions. On February 16, 2026, Zelenskyy reported receiving a briefing from Major General Oleksandr Poklad regarding countering enemy plans against Ukraine. Additionally, he tasked Poklad with purging the Security Service of Ukraine "
+    },
+    {
+      "claim": "The recent delivery of generators and medicines to Ukraine is a strong contribution to our resilience.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "I thank His Holiness @Pontifex for his prayers and deeds in support of Ukraine. The recent delivery of generators and medicines to Ukraine, as Russia continues to attack our energy infrastructure during the winter cold, is a strong contribution to our resilience. This is an",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2021572100583035374",
+      "domain": "domestic",
+      "reasoning": "The claim that the recent delivery of generators and medicines to Ukraine is a strong contribution to resilience is accurate. In February 2026, Pope Leo XIV organized the delivery of 80 electric generators, along with medicines and food supplies, to Ukraine. This aid was in response to the severe co"
+    },
+    {
+      "claim": "The Government of Ukraine approved new programs to support people and communities, making it easier for homeowners associations to purchase new equipment.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Together with Prime Minister Yuliia Svyrydenko we approved the new programs to support people and communities. The Government of Ukraine must make it significantly easier for homeowners associations (OSBBs) to purchase new equipment – generators and other machinery needed amid",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2020916691505381803",
+      "domain": "domestic",
+      "reasoning": "The claim that the Government of Ukraine approved new programs to support people and communities, facilitating homeowners associations' purchase of new equipment, is accurate. On February 9, 2026, President Volodymyr Zelenskyy and Prime Minister Yuliia Svyrydenko announced initiatives to assist citi"
     }
   ],
-  "generated_at": "2026-04-02T13:39:59.439Z"
+  "generated_at": "2026-04-02T13:40:45.198Z"
 }
