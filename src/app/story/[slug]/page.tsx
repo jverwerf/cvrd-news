@@ -4,15 +4,37 @@ import { StoryPage } from "@/components/StoryPage";
 
 export const dynamic = 'force-dynamic';
 
+import fs from 'fs';
+import path from 'path';
+
+function topicToSlug(topic: string): string {
+  return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
+}
+
 async function getStory(slug: string) {
-  const baseUrl = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
-  try {
-    const resp = await fetch(`${baseUrl}/api/story/${slug}`, { cache: 'no-store' });
-    if (!resp.ok) return null;
-    return await resp.json();
-  } catch {
-    return null;
+  const dataDir = path.resolve(process.cwd(), 'public/data');
+  if (!fs.existsSync(dataDir)) return null;
+
+  const files = fs.readdirSync(dataDir)
+    .filter(f => f.startsWith('daily_gaps_') && f.endsWith('.json'))
+    .sort()
+    .reverse();
+
+  for (const f of files) {
+    const date = f.replace('daily_gaps_', '').replace('.json', '');
+    try {
+      const data = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf-8'));
+      for (const story of (data.top_narratives || [])) {
+        if (topicToSlug(story.topic) === slug) {
+          const otherStories = (data.top_narratives || [])
+            .filter((s: any) => topicToSlug(s.topic) !== slug)
+            .slice(0, 5);
+          return { story, date, otherStories };
+        }
+      }
+    } catch {}
   }
+  return null;
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
