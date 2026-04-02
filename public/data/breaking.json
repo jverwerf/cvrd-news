@@ -1,15 +1,15 @@
 [
   {
     "topic": "U.S. Urges Immediate Evacuation of Americans in Iraq",
-    "summary": "The U.S. government has called for an immediate evacuation of American citizens from Iraq, citing escalating threats from Iran-backed militias. This directive is a response to increasing regional tensions and the potential for conflict. The situation underscores the fragile security environment in Iraq and the broader Middle East.",
+    "summary": "The U.S. government has issued an urgent directive for American citizens to evacuate Iraq due to rising threats from Iran-backed militias. This move comes amid escalating tensions in the region, highlighting the precarious security situation in Iraq and the broader Middle East. The evacuation order reflects concerns over potential conflict and the safety of U.S. nationals in the area.",
     "severity": "major",
     "detected_at": "2026-04-02T15:00:07.990Z",
-    "last_updated": "2026-04-02T15:00:07.990Z",
+    "last_updated": "2026-04-02T17:00:43.950Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical dynamics, such as the U.S.'s strategic interests in the region and how these influence its foreign policy decisions. The focus remains on immediate threats without exploring the long-term implications of U.S. military presence and its impact on regional stability. Additionally, the economic interests tied to oil and defense contracts are not being scrutinized.",
-    "social_summary": "Social media is buzzing with speculation about the U.S.'s true motives, with some users suggesting this is a pretext for military intervention. Memes are circulating that mock the cyclical nature of U.S. involvement in the Middle East. Conspiracy theories are emerging, claiming this evacuation is a distraction from domestic issues.",
-    "image_prompt": "A dramatic sunset over a Middle Eastern cityscape, with silhouetted figures hurriedly boarding a plane, symbolizing urgency and tension. In the background, shadowy outlines of military vehicles hint at the looming threat.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical dynamics, such as the U.S.'s strategic interests in maintaining influence in Iraq and the broader Middle East. The focus on Iran-backed militias diverts attention from the complex web of alliances and rivalries that shape the region's politics. Additionally, the economic implications of a destabilized Iraq, particularly concerning oil markets, remain underexplored.",
+    "social_summary": "Social media is buzzing with speculation about the U.S.'s true motives, with some users suggesting this is a prelude to military action. Memes and viral posts are drawing parallels to past U.S. interventions in the Middle East, questioning the timing and intent behind the evacuation order. Conspiracy theories are circulating about potential false flag operations to justify increased military presence.",
+    "image_prompt": "A dramatic sunset over a Middle Eastern cityscape, with silhouetted figures hurriedly boarding a plane, symbolizing urgency and tension. In the background, shadowy outlines of military vehicles and distant plumes of smoke hint at underlying conflict.",
     "sources": [],
     "clips": [
       {
@@ -116,6 +116,12 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/Ao45XG7YnLEkBT_8-98_EDzm6LUuAM6QICoyzg9jmW_ysPxNVYNyylZjsV8Z33oAJ7Ct2EzNTs_9vineNN25-E00P3gUVy3TZISVK2ri5u4zlIgaJiuGlhsc3mUEgHhd0B7_IC2R_ARlvmMOlup9so67Ntpwt2xW2cWgMedoWRoBuR1KnSSdSrtixXVQu92L-kd8gV_3Dh82jk6BnqSowfqMnxpOPZOyFXfkgbmjwMZetUovXMb0une1jSzWKZjKfLmqvwg97ddpuOqfrslKAU2CgPy_xMW6I1FlJ1Olsy0MjZ1AF-xhDKSsElfYg5mkjcfE3pwWHtxM3-c7ZS7YBw'",
         "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/bergencounty/comments/1sai61z/paramus_says_american_dream_malls_sunday_sales/",
+        "embed_id": "1sai61z",
+        "title": "Paramus Says American Dream Mall's Sunday Sales Flatly Violate State Law"
       }
     ],
     "youtube_videos": [
@@ -225,21 +231,27 @@
         "author": "warmonitors",
         "thumbnail": "https://cdn4.telesco.pe/file/Ao45XG7YnLEkBT_8-98_EDzm6LUuAM6QICoyzg9jmW_ysPxNVYNyylZjsV8Z33oAJ7Ct2EzNTs_9vineNN25-E00P3gUVy3TZISVK2ri5u4zlIgaJiuGlhsc3mUEgHhd0B7_IC2R_ARlvmMOlup9so67Ntpwt2xW2cWgMedoWRoBuR1KnSSdSrtixXVQu92L-kd8gV_3Dh82jk6BnqSowfqMnxpOPZOyFXfkgbmjwMZetUovXMb0une1jSzWKZjKfLmqvwg97ddpuOqfrslKAU2CgPy_xMW6I1FlJ1Olsy0MjZ1AF-xhDKSsElfYg5mkjcfE3pwWHtxM3-c7ZS7YBw'",
         "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/bergencounty/comments/1sai61z/paramus_says_american_dream_malls_sunday_sales/",
+        "embed_id": "1sai61z",
+        "title": "Paramus Says American Dream Mall's Sunday Sales Flatly Violate State Law"
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
   },
   {
     "topic": "Magnitude 7.4 Earthquake in Indonesia",
-    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, causing at least one confirmed death and significant structural damage. Initial tsunami warnings were issued but have since been lifted. Rescue operations are ongoing as authorities remain vigilant for potential aftershocks.",
+    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, resulting in at least one confirmed death and causing significant structural damage. Initial tsunami warnings were issued but have since been lifted. Rescue operations are underway as authorities monitor for potential aftershocks.",
     "severity": "major",
     "detected_at": "2026-04-02T05:00:07.355Z",
-    "last_updated": "2026-04-02T13:01:32.422Z",
-    "left_narrative": "Left-leaning media is emphasizing the human impact of the earthquake, focusing on the loss of life and the destruction of homes and infrastructure. They highlight the vulnerability of Indonesia to natural disasters and the need for international aid and support to help the affected communities recover.",
-    "right_narrative": "Right-leaning media is focusing on the immediate response to the earthquake, including the lifting of the tsunami warning and the efficiency of local authorities in managing the crisis. They are highlighting the resilience of the Indonesian people and the importance of preparedness in mitigating the impact of such natural disasters.",
-    "what_they_arent_telling_you": "Neither side is delving into the long-term economic impact on Indonesia, a country already grappling with economic challenges. The focus is not on how this disaster affect Indonesia's tourism industry, a significant part of its economy, or how international financial aid be allocated and used in the aftermath.",
-    "social_summary": "Social media is buzzing with videos and images of the earthquake's aftermath, showing collapsed buildings and rescue efforts. There are viral posts questioning the effectiveness of Indonesia's disaster preparedness and conspiracy theories about the earthquake being a result of human activity or government testing.",
-    "image_prompt": "A dramatic image of a cracked earth with a small, resilient flower growing through the fissure, symbolizing hope and resilience amidst destruction.",
+    "last_updated": "2026-04-02T17:01:51.885Z",
+    "left_narrative": "Left-leaning media is emphasizing the human impact of the earthquake, focusing on the loss of life and the destruction of homes and infrastructure. They highlight the vulnerability of Indonesia to natural disasters and the need for international aid and support in the aftermath. The narrative often includes a call for increased global attention to climate change and its potential role in exacerbating natural disasters.",
+    "right_narrative": "Right-leaning media is focusing on the immediate facts of the earthquake, such as the magnitude, the death toll, and the structural damage. They are highlighting the efficiency of the Indonesian government's response, including the quick lifting of the tsunami warning and the ongoing rescue operations. The narrative tends to emphasize the resilience of the affected communities and the importance of self-reliance in disaster response.",
+    "what_they_arent_telling_you": "Neither side is delving deeply into the economic implications of the earthquake on Indonesia's already fragile economy. The potential long-term impact on tourism, a significant source of revenue for the region, is not being addressed. Additionally, there is little discussion on the preparedness and infrastructure investments needed to mitigate future disasters in a country prone to such events.",
+    "social_summary": "Social media is reacting with a mix of sympathy and skepticism. Viral takes include calls for international aid and criticism of the Indonesian government's preparedness. Memes and conspiracy theories are circulating, with some users falsely linking the earthquake to secret government projects or climate change manipulation. Hashtags like #PrayForIndonesia and #EarthquakeRelief are trending.",
+    "image_prompt": "A dramatic editorial photo of a cracked and tilted building against a stormy sky, with a lone figure standing in the foreground, symbolizing resilience and vulnerability in the face of natural disasters.",
     "sources": [
       {
         "name": "BBC",
@@ -291,6 +303,20 @@
         "url": "https://www.youtube.com/watch?v=wgaTSXhp0KU",
         "embed_id": "wgaTSXhp0KU",
         "title": "Emergency crews search for survivors after 7.4 magnitude earthquake hits Indonesia"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Vw7M7amhFXs",
+        "embed_id": "Vw7M7amhFXs",
+        "title": "Magnitude 7.4 earthquake off Indonesia coast triggers tsunami warning",
+        "duration": 54
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GiikrM1UeOk",
+        "embed_id": "GiikrM1UeOk",
+        "title": "Magnitude 7.4 earthquake damages buildings in Indonesia",
+        "duration": 46
       },
       {
         "platform": "x",
@@ -374,6 +400,20 @@
         "embed_id": "wgaTSXhp0KU",
         "title": "Emergency crews search for survivors after 7.4 magnitude earthquake hits Indonesia",
         "channel": "The Guardian"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Vw7M7amhFXs",
+        "embed_id": "Vw7M7amhFXs",
+        "title": "Magnitude 7.4 earthquake off Indonesia coast triggers tsunami warning",
+        "channel": "USA TODAY",
+        "duration": 54
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=GiikrM1UeOk",
+        "embed_id": "GiikrM1UeOk",
+        "title": "Magnitude 7.4 earthquake damages buildings in Indonesia",
+        "channel": "CBS Philadelphia",
+        "duration": 46
       }
     ],
     "social_clips": [
