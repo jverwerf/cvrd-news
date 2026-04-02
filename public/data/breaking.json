@@ -1,15 +1,15 @@
 [
   {
     "topic": "Magnitude 7.4 Earthquake in Indonesia",
-    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, causing at least one confirmed death and damaging buildings. The earthquake prompted initial tsunami warnings, which have since been lifted. Authorities are on high alert for potential aftershocks and further casualties as rescue operations continue.",
+    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, resulting in at least one confirmed death and causing structural damage to buildings. Initial tsunami warnings were issued but have since been lifted. Authorities remain vigilant for aftershocks and are conducting rescue operations to assess and mitigate further casualties.",
     "severity": "major",
     "detected_at": "2026-04-02T05:00:07.355Z",
-    "last_updated": "2026-04-02T05:00:07.355Z",
-    "left_narrative": "Left-leaning media is emphasizing the vulnerability of Indonesia to natural disasters, highlighting the need for improved infrastructure and emergency response systems. They are focusing on the human impact, including the loss of life and damage to homes, and are calling for international aid and support to help the affected communities recover.",
+    "last_updated": "2026-04-02T07:00:26.800Z",
+    "left_narrative": "Left-leaning media is emphasizing the vulnerability of Indonesia to natural disasters due to its location on the Pacific Ring of Fire. They highlight the need for international aid and support to improve infrastructure and disaster preparedness in the region. The narrative often includes a critique of the Indonesian government's response capabilities and the socio-economic impact on affected communities.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the long-term economic implications for Indonesia, a country heavily reliant on tourism and agriculture, both of which is severely impacted by such natural disasters. Additionally, there is little discussion on how climate change be influencing the frequency and intensity of these seismic events, which has broader implications for the region's stability.",
-    "social_summary": "Social media is buzzing with expressions of sympathy and solidarity for Indonesia, with hashtags like #PrayForIndonesia trending. Conspiracy theories are circulating about government cover-ups regarding the true extent of the damage. Memes are emerging that critique the global response to natural disasters, comparing it to other recent events.",
-    "image_prompt": "A dramatic editorial photo of a cracked earth landscape with a lone, resilient tree standing amidst the ruins, symbolizing both the devastation and the hope for recovery in Indonesia.",
+    "what_they_arent_telling_you": "Neither side is delving deeply into the economic implications of repeated natural disasters on Indonesia's long-term development. The focus remains on immediate humanitarian concerns, overlooking how these events affect foreign investment and economic stability. Additionally, there is little discussion on the role of climate change in exacerbating the frequency and intensity of such natural disasters.",
+    "social_summary": "Social media is buzzing with expressions of solidarity and calls for prayers for Indonesia. Viral takes include criticism of the government's preparedness and conspiracy theories about the earthquake being a result of secret military tests. Memes are circulating that juxtapose the natural beauty of Indonesia with its susceptibility to natural disasters, highlighting the irony and tragedy of the situation.",
+    "image_prompt": "A dramatic editorial photo of a cracked earth landscape with a lone, resilient tree standing tall amidst the devastation, symbolizing both the fragility and strength of nature and humanity.",
     "sources": [
       {
         "name": "BBC",
@@ -31,6 +31,19 @@
       }
     ],
     "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=kx42minDcW4",
+        "embed_id": "kx42minDcW4",
+        "title": "7.4-magnitude quake sends panicked Indonesians fleeing as buildings collapse | AJ #shorts"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=cntM1VRsUO4",
+        "embed_id": "cntM1VRsUO4",
+        "title": "7.4-magnitude quake damages building in eastern Indonesia | AFP",
+        "duration": 36
+      },
       {
         "platform": "x",
         "url": "https://x.com/BNONews/status/1696251278626582781",
@@ -88,7 +101,21 @@
         "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
       }
     ],
-    "youtube_videos": [],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=kx42minDcW4",
+        "embed_id": "kx42minDcW4",
+        "title": "7.4-magnitude quake sends panicked Indonesians fleeing as buildings collapse | AJ #shorts",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=cntM1VRsUO4",
+        "embed_id": "cntM1VRsUO4",
+        "title": "7.4-magnitude quake damages building in eastern Indonesia | AFP",
+        "channel": "AFP News Agency",
+        "duration": 36
+      }
+    ],
     "social_clips": [
       {
         "platform": "x",
@@ -151,15 +178,15 @@
   },
   {
     "topic": "Burundi Military Base Blast",
-    "summary": "An explosion at a military base in Burundi resulted in the deaths of at least 13 individuals and injured dozens more. This event marks a significant increase in violence, prompting concerns over regional security and stability. Investigations are underway to ascertain whether the explosion was accidental or a deliberate act of sabotage.",
+    "summary": "An explosion at a military base in Burundi has killed at least 13 people and injured dozens more. The incident has raised alarms about regional security and stability, as authorities investigate whether the explosion was accidental or an act of sabotage. This event highlights the ongoing challenges faced by Burundi in maintaining peace and security within its borders.",
     "severity": "major",
     "detected_at": "2026-04-01T21:00:08.520Z",
-    "last_updated": "2026-04-02T03:01:03.331Z",
+    "last_updated": "2026-04-02T07:00:43.693Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident. Burundi's strategic position in East Africa and its history of political instability make it a focal point for regional power dynamics. The explosion is a symptom of deeper political tensions or external influences seeking to destabilize the region further.",
-    "social_summary": "Social media is rife with speculation, with some users suggesting government conspiracy theories or foreign intervention as potential causes. Memes and viral posts are circulating, highlighting the perceived incompetence of local authorities and the tragic loss of life, while others express solidarity with the victims and call for international attention.",
-    "image_prompt": "A dramatic editorial photo of a smoldering military base at dawn, with silhouetted figures of soldiers standing solemnly amidst the ruins, symbolizing both loss and resilience.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this explosion. Burundi's strategic position in East Africa and its history of political instability make it a focal point for regional power dynamics. The incident has ramifications for international military aid and influence in the region, as global powers seek to leverage the situation to their advantage.",
+    "social_summary": "Social media is buzzing with speculation about the cause of the explosion, with some users suggesting government conspiracy theories or foreign intervention. Memes and viral posts are circulating, depicting the explosion as a symbol of the broader chaos in the region. The incident has sparked debates about the effectiveness of Burundi's military and government in ensuring national security.",
+    "image_prompt": "A dramatic editorial photo of a smoldering military base at dawn, with silhouetted soldiers surveying the damage, set against a backdrop of rising smoke and an ominous sky, symbolizing uncertainty and tension.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -174,13 +201,6 @@
         "url": "https://www.youtube.com/watch?v=yp1yJTueUZI",
         "embed_id": "yp1yJTueUZI",
         "title": "Explosions at military depot in Burundi kill more than a dozen people"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=gNIaDw5dEb4",
-        "embed_id": "gNIaDw5dEb4",
-        "title": "Escalating violence in Burundi",
-        "duration": 105
       },
       {
         "platform": "telegram",
@@ -227,13 +247,6 @@
         "embed_id": "yp1yJTueUZI",
         "title": "Explosions at military depot in Burundi kill more than a dozen people",
         "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=gNIaDw5dEb4",
-        "embed_id": "gNIaDw5dEb4",
-        "title": "Escalating violence in Burundi",
-        "channel": "CGTN Africa",
-        "duration": 105
       }
     ],
     "social_clips": [
