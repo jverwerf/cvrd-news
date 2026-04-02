@@ -1,6 +1,6 @@
 {
   "date": "2026-04-02",
-  "generated_at": "2026-04-02T19:28:20.711Z",
+  "generated_at": "2026-04-02T21:25:06.938Z",
   "top_narratives": [
     {
       "topic": "NASA's Artemis II Launch",
@@ -793,7 +793,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_1.png"
+      "image_file": "/images/story_2026-04-02_1.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iran War and Trump's Address",
@@ -1461,7 +1462,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_2.png"
+      "image_file": "/images/story_2026-04-02_2.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Iranian Missile Launches Detected",
@@ -1666,7 +1683,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_3.png"
+      "image_file": "/images/story_2026-04-02_3.png",
+      "onrecord_matches": []
     },
     {
       "topic": "UK to Host Hormuz Strait Talks",
@@ -1847,7 +1865,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_4.png"
+      "image_file": "/images/story_2026-04-02_4.png",
+      "onrecord_matches": []
     },
     {
       "topic": "US Lifts Sanctions on Venezuela's Delcy Rodríguez",
@@ -1952,7 +1971,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_5.png"
+      "image_file": "/images/story_2026-04-02_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Magnitude 7.8 Earthquake in Indonesia",
@@ -2123,7 +2143,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_6.png"
+      "image_file": "/images/story_2026-04-02_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Sudanese Rebels Accused of Using Rape as a Weapon",
@@ -2178,7 +2199,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_7.png"
+      "image_file": "/images/story_2026-04-02_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Israel's New Death Penalty Law for Terrorists",
@@ -2340,7 +2362,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_8.png"
+      "image_file": "/images/story_2026-04-02_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "China's Space Ambitions and NASA's Response",
@@ -2399,7 +2422,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_9.png"
+      "image_file": "/images/story_2026-04-02_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Iran War Address Sparks Backlash",
@@ -2701,7 +2725,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_10.png"
+      "image_file": "/images/story_2026-04-02_10.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pam Bondi's Imminent Departure Amid Epstein Files Scandal",
@@ -2962,7 +2987,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_11.png"
+      "image_file": "/images/story_2026-04-02_11.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Birthright Citizenship Debate Reignites",
@@ -3239,7 +3265,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_12.png"
+      "image_file": "/images/story_2026-04-02_12.png",
+      "onrecord_matches": []
     },
     {
       "topic": "ActBlue's Foreign Donations Scandal",
@@ -3299,7 +3326,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_13.png"
+      "image_file": "/images/story_2026-04-02_13.png",
+      "onrecord_matches": []
     },
     {
       "topic": "ICE Lawsuit Over Warrantless Searches",
@@ -3344,7 +3372,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_14.png"
+      "image_file": "/images/story_2026-04-02_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Homeland Security Funding Standoff",
@@ -3577,7 +3606,16 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_15.png"
+      "image_file": "/images/story_2026-04-02_15.png",
+      "onrecord_matches": [
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "citizenship",
+          "matching_claims": 2,
+          "topic_score": 82.5
+        }
+      ]
     },
     {
       "topic": "Mail-In Voting Controversy",
@@ -3657,7 +3695,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_16.png"
+      "image_file": "/images/story_2026-04-02_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "NATO Withdrawal Debate",
@@ -3762,7 +3801,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_17.png"
+      "image_file": "/images/story_2026-04-02_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Venezuela Sanctions Lifted",
@@ -3810,7 +3850,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_18.png"
+      "image_file": "/images/story_2026-04-02_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ramy Youssef's HBO Comedy Special 'In Love'",
@@ -3874,7 +3915,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_19.png"
+      "image_file": "/images/story_2026-04-02_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Netflix Orders 'The Corrections' Starring Meryl Streep",
@@ -3981,7 +4023,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_20.png"
+      "image_file": "/images/story_2026-04-02_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Olivia Rodrigo's New Album Announcement",
@@ -4090,7 +4133,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_21.png"
+      "image_file": "/images/story_2026-04-02_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Keanu Reeves' Band Dogstar Returns to Billboard Charts",
@@ -4188,7 +4232,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_22.png"
+      "image_file": "/images/story_2026-04-02_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Sam Altman's Apology to Disney CEO",
@@ -4233,7 +4278,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_23.png"
+      "image_file": "/images/story_2026-04-02_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "BTS Tops Streaming Songs Chart",
@@ -4281,7 +4327,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_24.png"
+      "image_file": "/images/story_2026-04-02_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "J. Cole Joins Chinese Basketball Association",
@@ -4401,7 +4448,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_25.png"
+      "image_file": "/images/story_2026-04-02_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "NBA Investigation into LA Clippers and Kawhi Leonard",
@@ -4440,7 +4488,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_26.png"
+      "image_file": "/images/story_2026-04-02_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tiger Woods' DUI Arrest Footage Released",
@@ -4633,7 +4682,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_27.png"
+      "image_file": "/images/story_2026-04-02_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Italy's Soccer President Resigns After World Cup Failure",
@@ -4750,7 +4800,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_28.png"
+      "image_file": "/images/story_2026-04-02_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kirk Cousins Joins Raiders as Mentor",
@@ -4886,7 +4937,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_29.png"
+      "image_file": "/images/story_2026-04-02_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Pirates Call Up Teen Phenom Griffin",
@@ -5044,7 +5096,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_30.png"
+      "image_file": "/images/story_2026-04-02_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's New Pharmaceutical Tariffs",
@@ -5142,7 +5195,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_31.png"
+      "image_file": "/images/story_2026-04-02_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Supreme Court to Hear Landmark Birthright Citizenship Case",
@@ -5275,7 +5329,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_32.png"
+      "image_file": "/images/story_2026-04-02_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Mortgage Rates Rise Amid Iran Conflict",
@@ -5372,7 +5427,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_33.png"
+      "image_file": "/images/story_2026-04-02_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Oil Prices Surge Amid Middle Eastern Tensions",
@@ -5661,7 +5717,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_34.png"
+      "image_file": "/images/story_2026-04-02_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Blue Owl's Private Credit Crisis",
@@ -5775,7 +5832,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_35.png"
+      "image_file": "/images/story_2026-04-02_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tesla's Disappointing Sales Quarter",
@@ -5900,7 +5958,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_36.png"
+      "image_file": "/images/story_2026-04-02_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Inflation Pressures Mount as Iran War Continues",
@@ -6138,7 +6197,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_37.png"
+      "image_file": "/images/story_2026-04-02_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Global Airlines Face Bankruptcy Risk Due to Fuel Costs",
@@ -6202,7 +6262,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_38.png"
+      "image_file": "/images/story_2026-04-02_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Private Sector Hiring Surprises Analysts",
@@ -6276,7 +6337,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_39.png"
+      "image_file": "/images/story_2026-04-02_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Seth MacFarlane's 'Dungeon Crawler Carl' Lands at Peacock",
@@ -6377,7 +6439,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_40.png"
+      "image_file": "/images/story_2026-04-02_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Euphoria to Screen at Coachella",
@@ -6466,7 +6529,16 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_41.png"
+      "image_file": "/images/story_2026-04-02_41.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "oil",
+          "matching_claims": 1,
+          "topic_score": 35
+        }
+      ]
     },
     {
       "topic": "Brian Littrell Clears Name After Beach Argument",
@@ -6546,7 +6618,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_42.png"
+      "image_file": "/images/story_2026-04-02_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ex-Steelers Safety Kyle Dugger Signs with Bengals",
@@ -6613,7 +6686,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_43.png"
+      "image_file": "/images/story_2026-04-02_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Iowa State Hoops Star Audi Crooks Enters Transfer Portal",
@@ -6779,7 +6853,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_44.png"
+      "image_file": "/images/story_2026-04-02_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Spurs Boss De Zerbi Apologizes for Greenwood Remarks",
@@ -6859,7 +6934,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_45.png"
+      "image_file": "/images/story_2026-04-02_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Barcelona's Joan Laporta Criticizes FIFA Over Raphinha Injury",
@@ -6934,7 +7010,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_46.png"
+      "image_file": "/images/story_2026-04-02_46.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Rams Receiver Puka Nacua in Rehab, Attorney Confirms",
@@ -7105,7 +7182,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_47.png"
+      "image_file": "/images/story_2026-04-02_47.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [
