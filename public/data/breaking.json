@@ -1,5 +1,155 @@
 [
   {
+    "topic": "Magnitude 7.4 Earthquake in Indonesia",
+    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, causing at least one confirmed death and damaging buildings. The earthquake prompted initial tsunami warnings, which have since been lifted. Authorities are on high alert for potential aftershocks and further casualties as rescue operations continue.",
+    "severity": "major",
+    "detected_at": "2026-04-02T05:00:07.355Z",
+    "last_updated": "2026-04-02T05:00:07.355Z",
+    "left_narrative": "Left-leaning media is emphasizing the vulnerability of Indonesia to natural disasters, highlighting the need for improved infrastructure and emergency response systems. They are focusing on the human impact, including the loss of life and damage to homes, and are calling for international aid and support to help the affected communities recover.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the long-term economic implications for Indonesia, a country heavily reliant on tourism and agriculture, both of which is severely impacted by such natural disasters. Additionally, there is little discussion on how climate change be influencing the frequency and intensity of these seismic events, which has broader implications for the region's stability.",
+    "social_summary": "Social media is buzzing with expressions of sympathy and solidarity for Indonesia, with hashtags like #PrayForIndonesia trending. Conspiracy theories are circulating about government cover-ups regarding the true extent of the damage. Memes are emerging that critique the global response to natural disasters, comparing it to other recent events.",
+    "image_prompt": "A dramatic editorial photo of a cracked earth landscape with a lone, resilient tree standing amidst the ruins, symbolizing both the devastation and the hope for recovery in Indonesia.",
+    "sources": [
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/cn53krrrr24o?at_medium=RSS&amp;at_campaign=rss",
+        "lean": "center",
+        "title": "Magnitude 7.4 earthquake hits off Indonesia, killing one"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/1/magnitude-7-4-quake-hits-off-indonesias-ternate-tsunami-warning-triggered?traffic_source=rss",
+        "lean": "center",
+        "title": "Magnitude 7.4 quake hits off Indonesia’s Ternate, tsunami warning lifted"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/world/2026/apr/02/magnitude-78-earthquake-strikes-in-indonesia-sparking-tsunami-alert",
+        "lean": "left",
+        "title": "One killed and buildings damaged as magnitude 7.4 earthquake strikes Indonesia"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/BNONews/status/1696251278626582781",
+        "embed_id": "1696251278626582781",
+        "title": "BREAKING: 7.4-magnitude earthquake hits the Java Sea in Indonesia - BMKG https://t.co/vRD5qDdFhb",
+        "author": "BNONews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BBCWorld/status/1470634970477731841",
+        "embed_id": "1470634970477731841",
+        "title": "7.4 magnitude earthquake shakes eastern Indonesia https://t.co/gZzMkKEEpB",
+        "author": "BBCWorld"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/FrankieMacdonald/comments/1sa1iuv/74_magnitude_earthquake_just_struck_somewhere_in/",
+        "embed_id": "1sa1iuv",
+        "title": "7.4 Magnitude Earthquake just struck somewhere in Indonesia as for April 1, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa16qc",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa0xpn",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PrepperIntel/comments/1sa1jil/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa1jil",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/indonesia/comments/1sa1289/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa1289",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sa0ra5/indonesia_earthquake_tsunami_alert_issued_after/",
+        "embed_id": "1sa0ra5",
+        "title": "Indonesia Earthquake: Tsunami Alert Issued After Magnitude 7.8 Quake Strikes Molucca Sea Near Maju Island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/DisasterUpdate/comments/1sa14ok/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa14ok",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      }
+    ],
+    "youtube_videos": [],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/BNONews/status/1696251278626582781",
+        "embed_id": "1696251278626582781",
+        "title": "BREAKING: 7.4-magnitude earthquake hits the Java Sea in Indonesia - BMKG https://t.co/vRD5qDdFhb",
+        "author": "BNONews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BBCWorld/status/1470634970477731841",
+        "embed_id": "1470634970477731841",
+        "title": "7.4 magnitude earthquake shakes eastern Indonesia https://t.co/gZzMkKEEpB",
+        "author": "BBCWorld"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/FrankieMacdonald/comments/1sa1iuv/74_magnitude_earthquake_just_struck_somewhere_in/",
+        "embed_id": "1sa1iuv",
+        "title": "7.4 Magnitude Earthquake just struck somewhere in Indonesia as for April 1, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa16qc",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa0xpn",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PrepperIntel/comments/1sa1jil/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa1jil",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/indonesia/comments/1sa1289/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa1289",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sa0ra5/indonesia_earthquake_tsunami_alert_issued_after/",
+        "embed_id": "1sa0ra5",
+        "title": "Indonesia Earthquake: Tsunami Alert Issued After Magnitude 7.8 Quake Strikes Molucca Sea Near Maju Island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/DisasterUpdate/comments/1sa14ok/magnitude_78_earthquake_strikes_in_indonesia/",
+        "embed_id": "1sa14ok",
+        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-02.png"
+  },
+  {
     "topic": "Burundi Military Base Blast",
     "summary": "An explosion at a military base in Burundi resulted in the deaths of at least 13 individuals and injured dozens more. This event marks a significant increase in violence, prompting concerns over regional security and stability. Investigations are underway to ascertain whether the explosion was accidental or a deliberate act of sabotage.",
     "severity": "major",
