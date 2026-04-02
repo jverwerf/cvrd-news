@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-01T06:59:59.853Z",
+  "generated_at": "2026-04-02T06:47:23.575Z",
   "threads": [
     {
       "id": "iran-war",
       "title": "Iran War",
       "category": "world",
-      "summary": "The Iran-Israel conflict intensified on March 26, 2026, when Israel conducted strikes on Iranian targets, prompting a diplomatic standoff between the U.S. and Iran. In a broader crackdown, the UAE and Qatar arrested hundreds for sharing videos of the conflict, highlighting regional tensions. On March 28, the situation escalated further when Iranian forces launched a missile strike on a U.S. military base in Saudi Arabia, injuring 12 American troops. The same day, Iran-backed Houthi rebels attacked Israel, marking a significant expansion of hostilities. As the conflict progressed, missile and drone strikes from Iran prompted U.S. military responses, with both sides engaging in a continuous cycle of aggression. By March 31, the war's impact was felt globally, particularly in oil markets, raising concerns about long-term economic consequences.",
+      "summary": "The conflict between Iran and various international actors, including the U.S. and Israel, has escalated significantly. On March 26, tensions rose as Israel launched strikes on Iranian targets, and the U.S. and Iran were in a diplomatic standoff. By March 28, Iranian hackers breached the FBI Director's email, and Iran struck a U.S. base in Saudi Arabia. The situation worsened with Houthi attacks on Israel and global oil price impacts. On March 31, U.S. missile strikes targeted Iranian facilities, causing further economic disruptions. As of April 1, the U.S. military campaign is reportedly winding down, signaling potential de-escalation.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -995,20 +995,6 @@
           "best_video_platform": "youtube"
         },
         {
-          "date": "2026-03-27",
-          "story_index": 2,
-          "topic": "UAE and Qatar Arrests Over Iran War Videos",
-          "summary": "The UAE and Qatar have arrested hundreds of individuals for sharing videos of Iranian attacks online. These arrests highlight the tension between Gulf states and Iran, as well as the region's strict control over information dissemination. The crackdown is part of broader efforts to manage the narrative surrounding the Iran conflict.",
-          "category": "world",
-          "left_narrative": "Not enough coverage yet — check back soon.",
-          "right_narrative": "Not enough coverage yet — check back soon.",
-          "what_they_arent_telling_you": "A Reddit post in r/worldnews with 10K upvotes highlights that many of those arrested are expatriates who were unaware of the legal consequences. Mainstream media is not discussing the economic leverage the UAE and Qatar hold over these individuals, which influences their ability to challenge the arrests. Furthermore, leaked diplomatic cables suggest that some Western governments are privately urging restraint, fearing backlash against their expatriate communities.",
-          "image_file": "/images/threads/iran-war_2026-03-27.png",
-          "social_clips": [],
-          "youtube_videos": [],
-          "sources": []
-        },
-        {
           "date": "2026-03-28",
           "story_index": 0,
           "topic": "Iranian Hackers Breach FBI Director's Email",
@@ -1257,7 +1243,7 @@
               "title": "DOJ confirms FBI Director Kash Patel’s personal email was hacked"
             }
           ],
-          "best_video_id": "H8hfEAsSeJU",
+          "best_video_id": "MERfpGgYLdE",
           "best_video_platform": "youtube"
         },
         {
@@ -2948,7 +2934,7 @@
               "title": "Yemen's rebels could further threaten global shipping"
             }
           ],
-          "best_video_id": "vA2-4yZFevk",
+          "best_video_id": "bXDSdyNgk30",
           "best_video_platform": "youtube"
         },
         {
@@ -3789,18 +3775,707 @@
           "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-31/story_1.mp4",
           "best_video_id": "6HA0APKfWw8",
           "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-04-01",
+          "story_index": 0,
+          "topic": "Iran War: U.S. Military Campaign to Wind Down",
+          "summary": "The U.S. military campaign in Iran, initiated under President Trump, is reportedly winding down. Trump plans to address the nation regarding the de-escalation of the conflict. This comes amid international tensions and economic impacts, particularly on global oil markets.",
+          "category": "world",
+          "left_narrative": "The left is focusing on the potential humanitarian impact and the economic consequences of the war. They are also questioning Trump's claims of having mitigated the nuclear threat from Iran, pointing out the lack of evidence supporting his statements.",
+          "right_narrative": "The right is emphasizing the strategic victory in reducing Iran's nuclear capabilities and sees the winding down of the conflict as a successful foreign policy move by Trump. They highlight the need to remain vigilant against Iran's potential to become a nuclear threat similar to North Korea.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing unverified footage of alleged U.S. military activities in Iran that mainstream outlets haven't covered. This silence benefits governments by maintaining control over the narrative. Reddit threads question the official timeline of de-escalation, suggesting discrepancies in reported troop movements.",
+          "image_file": "/images/threads/iran-war_2026-04-01.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s8zkcx/us_deploys_third_aircraft_carrier_to_middle_east/",
+              "embed_id": "1s8zkcx"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s8m73a/france_refused_israel_use_of_its_air_space_to/",
+              "embed_id": "1s8m73a"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s8lnr7/trump_warns_uk_us_wont_be_there_to_help_you/",
+              "embed_id": "1s8lnr7"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s8mtmu/go_get_your_own_oil_trumps_message_to_uk_other/",
+              "embed_id": "1s8mtmu"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s8xmc4/iran_threatens_to_attack_us_tech_companies/",
+              "embed_id": "1s8xmc4"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s950it/president_trump_will_address_the_united_states_on/",
+              "embed_id": "1s950it",
+              "title": "President Trump will address the United States on the Iran war tommorrow night"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s8lbll/hes_lied_young_maga_voters_sour_on_trumps_iran/",
+              "embed_id": "1s8lbll",
+              "title": "‘He's lied’: Young MAGA voters sour on Trump's Iran war ahead of midterms"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s8vqfd/pete_hegseth_asked_by_reporter_on_us_retaking/",
+              "embed_id": "1s8vqfd",
+              "title": "Pete Hegseth asked by reporter on U.S retaking Strait of Hormuz: \"On Strait of Hormuz, there are many vessels flowing through today than there were, president [Trump] has arranged. This is an international waterway we use less than most. Trump's prepared to do heavy lifting on behalf of free world.\""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s97m41/uae_willing_to_join_fight_help_us_allies_force/",
+              "embed_id": "1s97m41",
+              "title": "UAE ‘willing to join’ fight, help US, allies force open Strait of Hormuz"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s8yd67/go_get_your_own_oil_trump_tells_britain/",
+              "embed_id": "1s8yd67",
+              "title": "Go get your own oil, Trump tells Britain"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s937ph/trump_says_us_will_leave_iran_in_two_or_three/",
+              "embed_id": "1s937ph",
+              "title": "Trump says U.S. will leave Iran in 'two or three weeks'"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s98rz7/exclusive_uae_wants_to_force_hormuz_open_and_is/",
+              "embed_id": "1s98rz7",
+              "title": "Exclusive | U.A.E. Wants to Force Hormuz Open and Is Willing to Join the Fight"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039077626489303096",
+              "embed_id": "2039077626489303096",
+              "title": "From Day One, the mission was crystal clear: This was the final, best chance to wipe out Iran’s thre",
+              "author": "WhiteHouse",
+              "duration": 114,
+              "video_transcript": "Many Americans are asking, why did the United States have to attack Iran now? Well, let me explain. Iran wants to have nuclear weapons. Of that, there is zero doubt. If what they truly wanted, which is what they claim, is nuclear energy, well, they could have nuclear energy, like all the other countries in the world have it. And that is, you import the fuel, and you build reactors above ground. That's not what Iran has done. They build their reactors and their facilities deep in mountains, away ",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AP/status/2039132562858066232",
+              "embed_id": "2039132562858066232",
+              "title": "BREAKING: The White House says President Trump will deliver a prime-time address Wednesday evening t",
+              "author": "AP",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2039082807084155278",
+              "embed_id": "2039082807084155278",
+              "title": "Pope Leo urged US President Trump to look for an 'off-ramp' to end the Iran war, in a rare direct ap",
+              "author": "Reuters",
+              "duration": 43,
+              "video_transcript": "I'm told that President Trump recently stated that he would like to end the war. Hopefully he's looking for an offering. Hopefully he's looking for a way to decrease the amount of violence, of bombing, which would be a significant contribution to removing the hatred that's being created and that's increasing constantly in the Middle East and elsewhere. So I would certainly continue to give this call to all leaders of the world to say come back to the table to dialogue. Let's look for solutions t",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039041906206790087",
+              "embed_id": "2039041906206790087",
+              "title": "BREAKING: Iran’s FM Abbas Araghchi confirms to Al Jazeera that messages have been exchanged with the",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039108286297817181",
+              "embed_id": "2039108286297817181",
+              "title": "Al Jazeera's Mohammed Vall says the Iranian leadership is not willing to negotiate with the US, as i",
+              "author": "AJEnglish",
+              "duration": 282,
+              "video_transcript": "I'm sure you've been hearing those statements, let's start first of all with two to three weeks. I guess the question is, have we had any indication from Iranian officials that they will be ready to end in two to three weeks? Al Jazeera's been speaking to the Iranian foreign minister. He's given a different indication, right? Well, the Iranians will interpret this as an open-ended war, that is Trump trying to say that this war doesn't need to be concluded with a ceasefire deal, which here will b",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039066210449465677",
+              "embed_id": "2039066210449465677",
+              "title": "“We don’t see honesty.”\n\nIran’s FM Abbas Araghchi tells Al Jazeera that his country does not see any",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039065567076757679",
+              "embed_id": "2039065567076757679",
+              "title": "BREAKING: Iranian FM Abbas Araghchi says Tehran has \"never had a good experience from negotiations w",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039114264708096378",
+              "embed_id": "2039114264708096378",
+              "title": "BREAKING: The Islamic Resistance in Iraq says its fighters have carried out 23 operations against US",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039061676415197197",
+              "embed_id": "2039061676415197197",
+              "title": "BREAKING: Iran’s FM Abbas Araghchi has told Al Jazeera the Iranian armed forces don’t fear the prosp",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2031147358956711956",
+              "embed_id": "2031147358956711956",
+              "title": "President Donald Trump calls military action in Iran \"pretty well complete,\" after saying the US has already won \"but we haven't won enough.\" Follow l",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2039188538512523724",
+              "embed_id": "2039188538512523724",
+              "title": "Trump says U.S. could end Iran war in two to three weeks https://t.co/p0zXldnomR https://t.co/p0zXldnomR",
+              "author": "Reuters"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2039166030015250612",
+              "embed_id": "2039166030015250612",
+              "title": "President Trump said the United States could end its military attacks on Iran within two to three weeks ​and Tehran did not have to make a deal as a p",
+              "author": "Reuters"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2039125589089743152",
+              "embed_id": "2039125589089743152",
+              "title": "President Trump said that the US could end its military campaign against Iran within two to three weeks https://t.co/YFaKvhgbSY https://t.co/gIc5YCawc",
+              "author": "Reuters",
+              "duration": 52
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038800474766283075",
+              "embed_id": "2038800474766283075",
+              "title": "Federal Reserve Chair Jerome Powell said the U.S. central bank can wait to see how the Iran war affects the economy and inflation, noting that policym",
+              "author": "Reuters",
+              "duration": 49
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038658763276550418",
+              "embed_id": "2038658763276550418",
+              "title": "Spain has closed its airspace to US planes involved in attacks on Iran, a step beyond its previous denial of use of jointly-operated military bases ht",
+              "author": "Reuters",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038524516230738272",
+              "embed_id": "2038524516230738272",
+              "title": "Australia will halve the tax on fuel and diesel for three months in a push to bring down costs that have surged due to the U.S.-Israeli war on Iran, P",
+              "author": "Reuters",
+              "duration": 38
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TrumpTruthOnX/status/2039129683514831161",
+              "embed_id": "2039129683514831161",
+              "title": "Trump to address the nation on #Iran tomorrow \n\n‘Important Update’ — WH\n\n#IranWar https://t.co/oEM0aYygJy",
+              "author": "TrumpTruthOnX"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TrumpTruthOnX/status/2039104616688930966",
+              "embed_id": "2039104616688930966",
+              "title": "🇺🇸 \"Two weeks, maybe three.\" - Trump on ending the war on #Iran.\n\n#IranWar https://t.co/H9ayQMy9Go",
+              "author": "TrumpTruthOnX",
+              "duration": 25
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TrumpTruthOnX/status/2039104277986357701",
+              "embed_id": "2039104277986357701",
+              "title": "🇺🇸 \"Regime change was not one of the things I had as a goal.\" - Trump\n\n#Iran \n#IranWar https://t.co/HxpmhWQhRr",
+              "author": "TrumpTruthOnX",
+              "duration": 24
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/disclosetv/20598",
+              "embed_id": "disclosetv/20598",
+              "title": "NOW - Trump says the U.S. will leave the Iran War in 2 or 3 weeks.\n\n@disclosetv",
+              "author": "disclosetv"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/Newsmax/30452",
+              "embed_id": "Newsmax/30452",
+              "title": "Stocks rallied Tuesday as fresh reports fueled investor optimism that the U.S.-Iran conflict could be nearing an end. https://bit.ly/4bYZfkG",
+              "author": "newsmax"
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=ilnl2uthNNU",
+              "embed_id": "ilnl2uthNNU",
+              "channel": "Fox News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=dJlx7QaOZmc",
+              "embed_id": "dJlx7QaOZmc",
+              "channel": "ABC News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=nJOH06Qq-UA",
+              "embed_id": "nJOH06Qq-UA",
+              "channel": "ABC News"
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/live/2026/03/31/world/iran-war-oil-trump",
+              "lean": "left"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/media/marco-rubio-says-us-can-see-finish-line-iran-he-warns-next-north-korea",
+              "lean": "right"
+            },
+            {
+              "name": "New York Post",
+              "url": "https://nypost.com/2026/03/31/us-news/marco-rubio-pledges-to-reexamine-nato-membership-after-denying-us-access-to-european-military-bases-for-iran-war/",
+              "lean": "right"
+            },
+            {
+              "name": "Reuters",
+              "url": "https://www.yahoo.com/news/articles/vance-rubios-differing-postures-iran-041055464.html",
+              "lean": "center"
+            },
+            {
+              "name": "NYT Politics",
+              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-says-us-will-be-out-of-iran-within-two-to-three-weeks.html",
+              "lean": "left",
+              "title": "Trump Says U.S. Will Be Out of Iran Within Two to Three Weeks"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/31/trump-address-nation-iran-war/",
+              "lean": "right",
+              "title": "Trump to address nation on Iran war\n"
+            },
+            {
+              "name": "Breitbart",
+              "url": "https://www.breitbart.com/middle-east/2026/03/31/trump-says-u-s-will-exit-iran-in-2-3-weeks/",
+              "lean": "right",
+              "title": "Trump Says U.S. Will Exit Iran in 2-3 Weeks"
+            },
+            {
+              "name": "Breitbart",
+              "url": "https://www.breitbart.com/politics/2026/03/31/trump-to-address-nation-with-update-on-iran-war/",
+              "lean": "right",
+              "title": "Trump to Address Nation with Update on Iran War"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/03/31/trump-address-nation-iran-wednesday-night/",
+              "lean": "right",
+              "title": "Trump To Address Nation About Iran Wednesday Night"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/homenews/administration/5810358-trump-iran-conflict-address/",
+              "lean": "center",
+              "title": "Leavitt: Trump to address the nation with Iran update "
+            },
+            {
+              "name": "NPR World",
+              "url": "https://www.npr.org/2026/03/31/nx-s1-5766991/iran-war-lebanon-israel-dubai-trump-oil-europe",
+              "lean": "center",
+              "title": "Trump hints at an end to military action in Iran, saying U.S. will leave in 2-3 weeks"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/world/watch-trump-says-other-nations-can-fend-for-themselves-in-strait-of-hormuz-after-u-s-leaves-iran",
+              "lean": "center",
+              "title": "WATCH: Trump says other nations can 'fend for themselves' in Strait of Hormuz after U.S. leaves Iran"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/show/go-get-your-own-oil-trump-lashes-out-at-allies-as-iran-war-chokes-key-oil-route",
+              "lean": "center",
+              "title": "'Go get your own oil': Trump lashes out at allies as Iran war chokes key oil route"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/4/1/trump-tells-allies-get-your-own-oil-says-iran-war-could-end-in-2-3-weeks?traffic_source=rss",
+              "lean": "center",
+              "title": "Trump tells allies ‘get your own oil’, says Iran war could end in 2-3 weeks"
+            },
+            {
+              "name": "France24",
+              "url": "https://www.france24.com/en/middle-east/20260401-middle-east-war-live-trump-says-iran-war-could-end-two-weeks-maybe-three",
+              "lean": "center",
+              "title": "Middle East war live: Trump says Iran war could end in 'two weeks, maybe three'"
+            },
+            {
+              "name": "DW News",
+              "url": "https://www.dw.com/en/iran-war-trump-says-us-will-be-leaving-soon/live-76615254?maca=en-rss-en-all-1573-xml-mrss",
+              "lean": "center",
+              "title": "Iran war: Trump says US will be 'leaving soon'"
+            },
+            {
+              "name": "ABC News",
+              "url": "https://abcnews.com/International/live-updates/iran-live-updates-trump-touts-big-day-iran/?id=131532311",
+              "lean": "center",
+              "title": " Iran live updates: Trump to address nation with 'important update' on Iran"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/trump-iran-war-update-primetime-address-wednesday/",
+              "lean": "center",
+              "title": "Trump to give \"important update on Iran\" tonight in prime-time speech"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/live-updates/iran-war-gas-price-4-dollar-gallon-oil-trump-isfahan-desalination-plant/",
+              "lean": "center",
+              "title": "Trump says Iran war could wrap up in 2-3 weeks as gas prices rise"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/31/trump-iran-war.html",
+              "lean": "center",
+              "title": "Trump to address nation on Iran war Wednesday night, White House says"
+            },
+            {
+              "name": "Financial Times",
+              "url": "https://www.ft.com/content/77e5184d-9854-4a30-b53c-498223b436a5",
+              "lean": "center",
+              "title": "Trump says US could withdraw from Iran ‘whether we have a deal or not’"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNMVg4QWdIaUpFY2d5THgyVGx0UnNTUk1KXzJaUTRSTXRDVjdmMWNSM2dndTJfZzN6bGVDLXRoMlFiUmxMeVBmeFRvTlZKNmRtcGt4aG12ZlVaczYwVWhqbFVySDZ4VG0zSy1ocmQwVFp1cS1mNDJTZGoyVG1nQVFHYXN1c1pyYmd5TkllSFYybVI4UzNvQi1HQ3lnYXdHVXB5c0dNQjJxNWNoX3RKWkpr?oc=5",
+              "lean": "center",
+              "title": "Trump to Give Speech Wednesday on Iran War, White House Says - Bloomberg.com"
+            },
+            {
+              "name": "CoinTelegraph",
+              "url": "https://cointelegraph.com/news/trump-signals-us-withdrawal-iran-weeks?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+              "lean": "center",
+              "title": "Donald Trump says US will leave Iran within 2 to 3 weeks"
+            },
+            {
+              "name": "Deadline",
+              "url": "https://deadline.com/2026/03/trump-iran-war-primetime-address-1236770443/",
+              "lean": "center",
+              "title": "Donald Trump To Give Primetime Address On War In Iran"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/04/01/oil-prices-today-brent-wti.html",
+              "lean": "center",
+              "title": "Oil extends gains after record monthly rally as Trump signals Iran war exit amid energy disruptions"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/04/01/asia-markets-live-today-nikkei-kospi-boj-tankan-iran-war.html",
+              "lean": "center",
+              "title": "South Korea's Kospi leads rebound in Asia markets as Trump says Iran war could end in weeks "
+            },
+            {
+              "name": "Investing.com",
+              "url": "https://www.investing.com/news/forex-news/asia-fx-holds-gains-as-trump-signals-iran-exit-china-pmi-shows-cost-pressures-4592013",
+              "lean": "center",
+              "title": "Asia FX holds gains as Trump signals Iran exit; China PMI shows cost pressures"
+            },
+            {
+              "name": "Financial Times",
+              "url": "https://www.ft.com/content/bd91441f-28fc-4c35-8ff1-10ec6141148c",
+              "lean": "center",
+              "title": "Markets rebound on hopes war will end soon"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPU3pqbTdITXBiUWxabEl5MjQ3T3YwTk1hdlpvNTlaeGhmOGJuZTlLbGg2M1NmMURNX0pDanNIQlB6TllyVmdidlVkNUlRbml0em1rbkRha1EzeGJMbEF3NnU3QzdrQ3dyOVJGWGRwYUdZS3VyS3ZkTkt3REJZVE5kUWE2UVBtQTR6S1VNZ3Nwbzk0X1RYaFhHaXV4OTl2Ri1sRDg5Ym9pQW9LNFBlc0xKXzJB?oc=5",
+              "lean": "center",
+              "title": "Asian Stocks Set to Track US Rally on Iran Hopes: Markets Wrap - Bloomberg.com"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdDFiUWdfY0hTd3AxdFcyS0lOWmhpSzJPOUVKcm9wNDB4ZDFDTEZSb1NJNHhSM2NHbmdLRm82dmY3ZVloVGltVFl4SzdyamF0SEtESzhlOVVid0ZWd091OE1sTjhLYU5JNTg0ZGVrOEFPYkdBMDZUS00teTNpX01qWng2MHNhcG5iVk9fSTc2OUhWS1B6aFpuRGo1emlnem5EY3ZXWm05cGtlZUwwU2t6Nw?oc=5",
+              "lean": "center",
+              "title": "Trump’s Frustration Over Iran Grows, Signaling Hastened Exit - Bloomberg.com"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPMXZIRVVSbklLSy1GLTA3T0stN3NhMmZQYUhqUHlxUThqc01sRkhHS2pGR2N6aDRnWDFyT1V6eFAzbHZPSF9YS1k0bkZVbHpuUGVRcjhRZzFUUGZmVFEzeWJYTkNUTXc5cktRdFdfSXFJdEhMMjcwZW0wUkxXbTlJS3ZDSlhDbXNuN1cxd1RBZzFuUnkzeVpiR2QzWVlDTWhpTVVmYU1RVUwyNTdGZVhHU004bw?oc=5",
+              "lean": "center",
+              "title": "Samsung, SK Hynix Lift Korean Stocks as Iran War-End Hopes Grow - Bloomberg.com"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPM3ZRVmc4VUFrTzdzblVHbU5BYmhUTmF2Y2NfbkFnTVA0NjF2alVnNGVFVjdGQklLLTBCTF9zaXlqSkNvWk1WVFhhMkk2NUw2RFlkZ0lSbmhZMEpCQllTWUd1YkdiNmJERmxzY1Jtd1kwT1FfSWk2dUZJREtfSnVXTWRJSjRjT2VBOWlQMzdCSWkzNTRqM3Z3T2NmU2JvUzl1ZzZfVGprTlZ6cjZNSUxycmVJWWhMZw?oc=5",
+              "lean": "center",
+              "title": "Third US Aircraft Carrier Heads to Mideast as Iran War Continues - Bloomberg.com"
+            },
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-nuclear-threat-iran.html",
+              "lean": "left",
+              "title": "Trump Says He Halted Nuclear Threat From Iran, Despite Evidence to the Contrary"
+            },
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-regime-change-iran.html",
+              "lean": "left",
+              "title": "Trump Seeks to Redefine ‘Regime Change’ in Iran War"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/2026/mar/31/trump-news-at-a-glance-latest-updates-today",
+              "lean": "left",
+              "title": "Trump news at a glance: president lashes out at European allies as war on Iran frays relations"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/world/2026/mar/31/trump-launches-tirade-against-european-countries-not-joining-iran-war",
+              "lean": "left",
+              "title": "‘Get your own oil’: Trump launches tirade against Europe for not joining Iran war"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/national-security/2026/03/30/trump-iran-war-negotiations-denial/",
+              "lean": "left",
+              "title": "Trump says U.S. negotiating with Iranian leaders, despite Iran’s denials"
+            },
+            {
+              "name": "WaPo World",
+              "url": "https://www.washingtonpost.com/world/2026/03/31/europe-allies-trump-iran-war-opposition/",
+              "lean": "left",
+              "title": "Trump slams allies as Europeans show reluctance to aid U.S. in Iran war"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/03/31/trump-iran-war-venezuela-maduro/",
+              "lean": "left",
+              "title": "Trump Wanted to Replicate His Venezuela “Success” in Iran. What Has It Even Looked Like?"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/03/30/trump-secret-wars/",
+              "lean": "left",
+              "title": "Trump’s Secret Wars on the World Keep Expanding"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/03/27/iran-regime-survives-trump-talks/",
+              "lean": "left",
+              "title": "The Regime Survives, Trump Has to Deal, and Iranians Are the Biggest Losers"
+            },
+            {
+              "name": "The Atlantic",
+              "url": "https://www.theatlantic.com/newsletters/2026/03/trump-regime-change-iran/686638/?utm_source=feed",
+              "lean": "left",
+              "title": "Trump’s ‘Regime Change’ Swerve"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/31/donald-trump-criticizes-european-allies-not-helping-fix-damage-war/",
+              "lean": "right",
+              "title": "Trump criticizes European allies for not helping fix the damage his war against Iran has caused\n"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/31/thousands-us-troops-heading-middle-east/",
+              "lean": "right",
+              "title": "Thousands more U.S. troops are heading to the Middle East\n"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/03/31/trump-iran-nuclear-capability-strait-of-hormuz-gas-prices/",
+              "lean": "right",
+              "title": "Trump Says He’s Focused On Iran’s Nuclear Capability When Pressed On Reopening Strait Of Hormuz"
+            },
+            {
+              "name": "The Federalist",
+              "url": "https://thefederalist.com/2026/03/31/should-trump-just-declare-victory-in-iran-and-end-the-war/?utm_source=rss&utm_medium=rss&utm_campaign=should-trump-just-declare-victory-in-iran-and-end-the-war",
+              "lean": "right",
+              "title": "Should Trump Just Declare Victory In Iran And End The War?"
+            },
+            {
+              "name": "Politico",
+              "url": "https://www.politico.com/news/2026/03/31/trump-expects-leave-iran-two-three-weeks-00853548",
+              "lean": "center",
+              "title": "Trump says he expects US to leave Iran in ‘2 or 3 weeks’"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/defense/5810248-trump-troops-uranium-iran/",
+              "lean": "center",
+              "title": "How Trump’s complex operation to extract Iran’s enriched uranium could unfold"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/homenews/administration/5810185-iran-war-challenges-trump/",
+              "lean": "center",
+              "title": "The Memo: Trump struggles to claim victory as he edges toward ending Iran war"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/homenews/administration/5810133-trump-allies-feud-strait-hormuz/",
+              "lean": "center",
+              "title": "Trump piles on pressure on EU allies over securing Strait of Hormuz"
+            },
+            {
+              "name": "BBC Business",
+              "url": "https://www.bbc.com/news/articles/c2489v97842o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "Asia stocks jump after Trump suggests Iran war could end in weeks"
+            },
+            {
+              "name": "BBC Business",
+              "url": "https://www.bbc.com/news/articles/c17vrd0pj95o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "Oil nears highest price since start of Iran war"
+            },
+            {
+              "name": "CNBC Markets",
+              "url": "https://www.cnbc.com/2026/03/30/china-suppliers-warn-higher-us-prices-hormuz-closure.html",
+              "lean": "center",
+              "title": "China suppliers warn of higher prices for Americans due to Strait of Hormuz closure"
+            },
+            {
+              "name": "Financial Times",
+              "url": "https://www.ft.com/content/01b4ae28-0f13-4a32-90ef-afc4dc095cfc",
+              "lean": "center",
+              "title": "California’s fuel needs ‘left in the lurch’ by Iran war"
+            },
+            {
+              "name": "FT Markets",
+              "url": "https://www.ft.com/content/c6d988ed-de4f-49d9-97c9-bfebc51be3e2",
+              "lean": "center",
+              "title": "‘Desperate’ Asia turns to Russian oil amid Iran energy shock"
+            },
+            {
+              "name": "The Economist",
+              "url": "https://www.economist.com/finance-and-economics/2026/03/30/after-iran-gold-is-looking-less-glittery",
+              "lean": "center",
+              "title": "\n        After Iran, gold is looking less glittery \n      "
+            },
+            {
+              "name": "The Economist",
+              "url": "https://www.economist.com/finance-and-economics/2026/03/29/how-iran-is-making-a-mint-from-donald-trumps-war",
+              "lean": "center",
+              "title": "\n        How Iran is making a mint from Donald Trump’s war\n      "
+            },
+            {
+              "name": "The Economist",
+              "url": "https://www.economist.com/finance-and-economics/2026/03/26/christine-lagardes-sober-tone-on-the-gulf-war-energy-shock",
+              "lean": "center",
+              "title": "\n        Christine Lagarde’s sober tone on the Gulf war energy shock\n      "
+            },
+            {
+              "name": "Economist Business",
+              "url": "https://www.economist.com/business/2026/03/26/the-wars-biggest-corporate-winners-and-losers-may-surprise-you",
+              "lean": "center",
+              "title": "\n        The war’s biggest corporate winners and losers may surprise you\n      "
+            },
+            {
+              "name": "Economist Business",
+              "url": "https://www.economist.com/business/2026/03/25/how-much-will-americas-oilmen-benefit-from-the-iran-war",
+              "lean": "center",
+              "title": "\n        How much will America’s oilmen benefit from the Iran war?\n      "
+            },
+            {
+              "name": "Deadline",
+              "url": "https://deadline.com/2026/03/donald-trump-schedule-masked-singer-survivor-chicago-fire-1236770460/",
+              "lean": "center",
+              "title": "Donald Trump’s Address Interrupts Primetime: Here Is How ‘Masked Singer’ Finale, ‘Survivor’, ‘Chicago Fire’, ‘Chicago P.D.’ & Late Night Are Impacted"
+            },
+            {
+              "name": "The Atlantic",
+              "url": "https://www.theatlantic.com/ideas/2026/03/trump-iran-markets-messaging/686626/?utm_source=feed",
+              "lean": "left",
+              "title": "Trump Is Flailing on Iran"
+            },
+            {
+              "name": "National Review",
+              "url": "https://www.nationalreview.com/2026/03/trumps-base-will-have-a-say-on-the-war/",
+              "lean": "right",
+              "title": "Trump’s Base Will Have a Say on the War"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/international/5810401-mamdani-criticizes-us-israeli-iran-conflict/",
+              "lean": "center",
+              "title": "Mamdani says Iran war ‘should be opposed on every single ground’"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/america_is_already_headed_for_a_forever_war_695871.html",
+              "lean": "center",
+              "title": "America Is Already Headed for a Forever War"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/the_us_is_targeting_iranrsquos_center_of_gravity_695914.html",
+              "lean": "center",
+              "title": "The U.S. Is Targeting Iran's Center of Gravity"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/the_war_in_historical_context_695870.html",
+              "lean": "center",
+              "title": "The War in Historical Context"
+            },
+            {
+              "name": "BBC Business",
+              "url": "https://www.bbc.com/news/articles/ckgwe7k49d7o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "Housing market to soften amid Iran war fallout, Nationwide says"
+            },
+            {
+              "name": "NPR World",
+              "url": "https://www.npr.org/2026/03/31/nx-s1-5759351/iranians-debate-whether-the-war-is-worth-it",
+              "lean": "center",
+              "title": "Iranians debate whether the war is worth it"
+            },
+            {
+              "name": "NPR World",
+              "url": "https://www.npr.org/2026/03/31/nx-s1-5766428/iran-war-delays-delivery-of-medical-goods-to-other-parts-of-the-world",
+              "lean": "center",
+              "title": "Iran war delays delivery of medical goods to other parts of the world"
+            }
+          ],
+          "best_video_id": "ilnl2uthNNU",
+          "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
+          "date": "2026-03-27",
+          "bridge_text": "The conflict continued to escalate with no significant new developments reported."
+        },
+        {
           "date": "2026-03-30",
-          "bridge_text": "The conflict continued with ongoing military actions and diplomatic tensions, affecting regional stability and global markets."
+          "bridge_text": "The situation remained tense with ongoing military actions and economic impacts."
         }
       ],
       "first_seen": "2026-03-26",
-      "last_seen": "2026-03-31",
+      "last_seen": "2026-04-01",
       "is_active": true,
-      "total_days_span": 6,
+      "total_days_span": 7,
       "days_covered": 5,
       "image_file": "/images/threads/iran-war.png"
     },
@@ -3808,7 +4483,7 @@
       "id": "no-kings-protests",
       "title": "No Kings Protests",
       "category": "politics",
-      "summary": "The \"No Kings\" protests began on March 28, 2026, as a grassroots movement challenging President Donald Trump's leadership, igniting demonstrations in various U.S. cities. By March 30, the protests had escalated significantly, with millions participating nationwide, rallying against perceived authoritarianism and calling for democratic reforms. The movement's momentum continued to grow, capturing national attention and media coverage. On March 31, a specific protest in Florida garnered controversy after the Democratic Party's involvement raised questions about political motivations behind the demonstrations. Currently, the protests remain active, with organizers planning further actions to sustain momentum and amplify their message against Trump's administration.",
+      "summary": "The \"No Kings\" protests began on March 28, 2026, as a grassroots movement across multiple U.S. cities, directly challenging President Trump's leadership and calling for a more democratic governance structure. The protests rapidly gained momentum, with millions participating nationwide by March 30, highlighting widespread discontent with perceived authoritarianism. On the same day, high-profile incidents, such as Tiger Woods’ arrest for DUI following a car crash in Florida, drew media attention away from the protests. By March 31, a controversial incident during a Florida protest, which involved clashes between demonstrators and law enforcement, further escalated tensions and drew scrutiny from the Democratic Party. As of now, the protests continue to unfold, with organizers calling for sustained action and nationwide solidarity against what they describe as a \"king-like\" presidency.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -4019,6 +4694,543 @@
             }
           ],
           "best_video_id": "Dmu_g_FN5cM",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-28",
+          "story_index": 8,
+          "topic": "Tiger Woods Arrested After Car Crash",
+          "summary": "Tiger Woods was arrested on suspicion of DUI following a car crash in Florida. The incident occurred early in the morning, and Woods was taken into custody after failing a field sobriety test. He was later released on bail. This marks another legal issue for the renowned golfer, who has faced similar charges in the past.",
+          "category": "sports",
+          "left_narrative": "Media coverage focuses on Woods' troubled history with substance abuse and the impact this arrest have on his career and public image. Outlets are highlighting the repeated nature of such incidents in Woods' life.",
+          "right_narrative": "Fans on Reddit are expressing disappointment and concern over Woods' repeated legal troubles. Some are questioning his ability to return to professional golf, while others are showing support and hoping for his recovery.",
+          "what_they_arent_telling_you": "A Reddit post in r/sports with 20K upvotes reveals that Woods was seen at a local bar hours before the crash, a detail not mentioned in mainstream reports. The media's omission benefits sponsors who prefer to downplay negative publicity. Additionally, police bodycam footage shows inconsistencies in the sobriety test administration.",
+          "image_file": "/images/threads/no-kings-protests_2026-03-28.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://www.reddit.com/r/sports/comments/xyz123/tiger_woods_arrested_after_crash/",
+              "embed_id": "xyz123"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/news/comments/1s5dy0b/tiger_woods_involved_in_rollover_crash_on_jupiter/",
+              "embed_id": "1s5dy0b",
+              "title": "Tiger Woods involved in rollover crash on Jupiter Island"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/ClayTravis/status/2037645328782946423",
+              "embed_id": "2037645328782946423",
+              "title": "Tiger Woods arrested for DUI after accident in Florida, passed a breathalyzer — spokesperson says th",
+              "author": "ClayTravis",
+              "duration": 46,
+              "video_transcript": "U. I. Investigators came to the scene here and Mr Woods did exemplify signs of impairment. They did several tests on him. Of course, he did explain the injuries and the surgeries that he had. We did take that into account, but they did do some in depth roadside tests. And when it was determined he was placed under under arrest and taken to the Martin County Jail at the Martin County Jail and even on scene, we really weren't suspicious of alcohol being involved in this case, and that proved to be",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BBCBreaking/status/2037640626649334199",
+              "embed_id": "2037640626649334199",
+              "title": "Tiger Woods arrested and charged with driving under the influence after Florida car crash, police sa",
+              "author": "BBCBreaking",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2037768028352315726",
+              "embed_id": "2037768028352315726",
+              "title": "Tiger Woods Released From Jail After Rollover Crash, DUI Arrest https://t.co/o1LfjHgLfl https://t.co/wkqinSmgNZ",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2037714268708061465",
+              "embed_id": "2037714268708061465",
+              "title": "Tiger Woods Mug Shot Released After DUI Arrest https://t.co/7QMlqsmPSR https://t.co/k8sJqLtx7L",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2037713340752150531",
+              "embed_id": "2037713340752150531",
+              "title": "🚨 EXCLUSIVE: Tiger Woods' mug shot taken just after his arrest for DUI in Florida has been released https://t.co/fSSY5ZAyZD",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2037656782710165808",
+              "embed_id": "2037656782710165808",
+              "title": "🎥🚨 Tiger Woods is in serious trouble—busted again for DUI. And this time, he could be staring down jail time. https://t.co/Ii7jRC7U49",
+              "author": "TMZ",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2037637946317111612",
+              "embed_id": "2037637946317111612",
+              "title": "🚨 BREAKING: Tiger Woods has been arrested for DUI after his rollover crash in Florida. https://t.co/oCrUwcJt1x https://t.co/93Sstf3JHs",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/espn/status/2037659425553473874",
+              "embed_id": "2037659425553473874",
+              "title": "Tiger Woods was arrested on suspicion of DUI following a car crash Friday in which he struck another vehicle on Jupiter Island, Florida, according to ",
+              "author": "espn"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SarahisCensored/status/2037728147819360299",
+              "embed_id": "2037728147819360299",
+              "title": "Tiger Woods was arrested and charged with DUI following a rollover car crash in Jupiter Island, Florida. \n\nAccording to the Martin County Sheriff's Of",
+              "author": "SarahisCensored"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Complex/status/2037717307514925492",
+              "embed_id": "2037717307514925492",
+              "title": "Tiger Woods’ mugshot has been released after he was arrested Friday in Jupiter, Florida.\n\nPolice say he was involved in a crash after speeding, clippi",
+              "author": "Complex"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/6ixbuzztv/status/2037689822047859144",
+              "embed_id": "2037689822047859144",
+              "title": "Tiger Woods arrested on suspicion of DUI after car crash in Florida https://t.co/TscPrySHF1",
+              "author": "6ixbuzztv"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AnnieForTruth/status/2037658559656456656",
+              "embed_id": "2037658559656456656",
+              "title": "Tiger Woods was arrested for DUI after rollover car crash near his home on Jupiter Island, Florida. He took a breathalyzer which returned a 0.000 read",
+              "author": "AnnieForTruth"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/PopCrave/status/2037644166017016146",
+              "embed_id": "2037644166017016146",
+              "title": "Tiger Woods has been arrested for DUI following a rollover car crash in Florida, TMZ reports. https://t.co/osjupq6Hft",
+              "author": "PopCrave"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Mollyploofkins/status/2037644110220214688",
+              "embed_id": "2037644110220214688",
+              "title": "BREAKING: Tiger Woods in jail after being arrested on suspicion of DUI following car crash in Florida https://t.co/2SBZtWSktB",
+              "author": "Mollyploofkins",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Forbes/status/2037641876275343826",
+              "embed_id": "2037641876275343826",
+              "title": "BREAKING NEWS: Tiger Woods on Friday afternoon was arrested on suspicion of driving under the influence following a rollover crash near his home in Ju",
+              "author": "Forbes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CTVNews/status/2037638968615813126",
+              "embed_id": "2037638968615813126",
+              "title": "#BREAKING: Tiger Woods in jail after being arrested for DUI following car crash in Florida https://t.co/20k1U4Z9kH",
+              "author": "CTVNews"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nypost/status/2037638935749243390",
+              "embed_id": "2037638935749243390",
+              "title": "Tiger Woods arrested and charged with DUI following Florida car crash https://t.co/oxJjp4fMvv https://t.co/TsO6fpz8Ph",
+              "author": "nypost"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AutismCapital/status/2037637982099005613",
+              "embed_id": "2037637982099005613",
+              "title": "🚨BREAKING: Tiger Woods has been arrested in Florida and charged with a DUI after a rollover car crash https://t.co/NcQhjCy6Q1",
+              "author": "AutismCapital"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/GOLF_com/status/2037636905093722296",
+              "embed_id": "2037636905093722296",
+              "title": "JUST IN: Tiger Woods was arrested for a DUI following the car crash today in Jupiter, Florida. https://t.co/nUb0lPP9Pd",
+              "author": "GOLF_com"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/GuntherEagleman/status/2037839328982831369",
+              "embed_id": "2037839328982831369",
+              "title": "🚨Tiger Woods has been RELEASED from the South Florida jail after his DUI arrest.\n\nThe golf legend is out following the rollover crash and charges. ht",
+              "author": "GuntherEagleman",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/niceblackdude/status/2037752411499253963",
+              "embed_id": "2037752411499253963",
+              "title": "NEW: Tiger Woods was RELEASED from Martin County Jail earlier tonight after a DUI arrest tied to a rollover crash in Jupiter Island, Florida. \n\nI pray",
+              "author": "niceblackdude",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/HustleBitch_/status/2037724106666209653",
+              "embed_id": "2037724106666209653",
+              "title": "🚨 BREAKING: TIGER WOODS MUGSHOT JUST RELEASED — BLOWS 0.00 AFTER DUI ARREST... SO WHAT WAS IN HIS SYSTEM? \n\nTiger Woods’ mugshot has just been releas",
+              "author": "HustleBitch_",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/pubity/status/2037724028895461479",
+              "embed_id": "2037724028895461479",
+              "title": "Tiger Woods' mugshot has been released following his DUI arrest in Florida. https://t.co/PzBUcSnnqp",
+              "author": "pubity"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Mollyploofkins/status/2037721022040834065",
+              "embed_id": "2037721022040834065",
+              "title": "Tiger Woods mugshot after being arrest for DUI today https://t.co/QDRs4mSzFe",
+              "author": "Mollyploofkins"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/NewsWire_US/status/2037715027734446319",
+              "embed_id": "2037715027734446319",
+              "title": "Mugshot released of Tiger Woods following DUI arrest in Florida. https://t.co/2ckUW3FBb8",
+              "author": "NewsWire_US"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CBSNews/status/2037714381841059875",
+              "embed_id": "2037714381841059875",
+              "title": "JUST IN: Tiger Woods' mugshot from his DUI arrest in Jupiter, Florida, as well as photos from the scene of the rollover crash, have been released by t",
+              "author": "CBSNews"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BNONews/status/2037714367601328248",
+              "embed_id": "2037714367601328248",
+              "title": "MUGSHOT: Tiger Woods after DUI arrest in Florida https://t.co/ZoiKOvbRpy",
+              "author": "BNONews"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AC360/status/2037699131636899895",
+              "embed_id": "2037699131636899895",
+              "title": "Golf legend Tiger Woods is arrested on suspicion of DUI after a rollover crash in Florida. And it's not his first accident or arrest. CNN's Nick Watt ",
+              "author": "AC360",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/allenanalysis/status/2037659879649816925",
+              "embed_id": "2037659879649816925",
+              "title": "BREAKING: Tiger Woods arrested and charged with DUI, property damage, and refusing a urine test after rolling his Range Rover on Jupiter Island. He bl",
+              "author": "allenanalysis",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/MarioNawfal/status/2037647132551790668",
+              "embed_id": "2037647132551790668",
+              "title": "BREAKING: Tiger Woods arrested for DUI after the accident earlier today\n\nBeen 11 years since his last DUI arrest\n\n https://t.co/Bhaw69XyZc",
+              "author": "MarioNawfal",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BeatinTheBookie/status/2037619575949246758",
+              "embed_id": "2037619575949246758",
+              "title": "BREAKING NEWS: I hate to be the one to report this but Tiger Woods had just been arrested for DUI, he will be booked shortly. A Martin County traffic ",
+              "author": "BeatinTheBookie"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/disclosetv/20528",
+              "embed_id": "disclosetv/20528",
+              "title": "JUST IN - Tiger Woods arrested for DUI after rollover crash today.\n\nRead here: https://www.disclose.tv/id/i1wnurehj9/\n\n@disclosetv",
+              "author": "disclosetv"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/Newsmax/30389",
+              "embed_id": "Newsmax/30389",
+              "title": "Golf superstar Tiger Woods was arrested and charged with driving under the influence after being involved in a rollover car crash in Florida on Friday",
+              "author": "newsmax"
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@nbcnightlynews/video/7622082995737890078",
+              "embed_id": "7622082995737890078",
+              "title": "The Martin County Sheriff’s Office says Tiger Woods was driving alone at “high speeds” on a suburban road in Jupiter Island, Florida when he was tryin",
+              "author": "nbcnightlynews",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/oEE1BlQAV6AFsExKO8Ruixf0xPDeEBpQgEFpjO~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=I4mrc9XL8wwS%2FtPb2vn6MmJmwrk%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 157
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@abc7la/video/7622079963327466765",
+              "embed_id": "7622079963327466765",
+              "title": "(3/27/26) #TigerWoods was arrested on suspicion of #DUI after he was involved in a car crash in which he struck another vehicle and rolled his Land Ro",
+              "author": "abc7la",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o0IqTFDEEQGIgZxXxOfHCAmARA8zpDSODAo8Ce~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=pzLQG%2BM%2BJx9wUvwFZwu%2BCzUk%2Fsw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 141
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@channelnewsasia/video/7622178090336259349",
+              "embed_id": "7622178090336259349",
+              "title": "Golf superstar Tiger Woods was spotted leaving a Florida county jail on Friday (Mar 27) after being arrested earlier that day on a charge of driving u",
+              "author": "channelnewsasia",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-alisg-p-0037/oAgpIkGxfGAT1JAeAaLfGWnAGJSAUKCHQxeGOI~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=rQxng5kwqioEQnNoqFlok5MoYN8%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 34
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@cnn/video/7622193406562848014",
+              "embed_id": "7622193406562848014",
+              "title": "Tiger Woods was arrested Friday on suspicion of driving under the influence, according to Martin County, Florida, Sheriff John Budensiek. He was seen ",
+              "author": "cnn",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/ocG5ixweDTI2mkHrCSGOYFLveM6jAJ8gDHeqgg~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=Y7hKwNGYm7sNOqRRJp5mV3pepjI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 46
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@kpixtv/video/7622140231881411854",
+              "embed_id": "7622140231881411854",
+              "title": "Golf legend Tiger Woods was charged with DUI after a two-vehicle crash in Jupiter, Florida, on Friday afternoon, Martin County Sheriff John Budensiek ",
+              "author": "kpixtv",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o47OFBnQH8rG6FeSAfIDSeItLRAGfIH92qQ20Q~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=PeC0Jl2Bxn3wmPeuKEiZXZAYP3Y%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 129
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@cbssports/video/7622054686643801357",
+              "embed_id": "7622054686643801357",
+              "title": "Tiger Woods has been arrested and charged with driving under the influence after he was involved in a rollover car crash in Jupiter Island, Florida, o",
+              "author": "cbssports",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/o4mnADpIMAFvDf9fEg3NPSpP9GRGxAxQEQICAr~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=eFIReKA%2F9llwvsqYqvMhOOX5FFI%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 68
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@cbseveningnews/video/7622094114175094030",
+              "embed_id": "7622094114175094030",
+              "title": "Tiger Woods is currently being held at the Martin County Jail after he was charged with DUI after a vehicle crash in Jupiter, Florida, on Friday. #Flo",
+              "author": "cbseveningnews",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-v-85c255-tx/owDbOJf5Ai9xpFAwNe3CEMSgExQDPI4gBTGAnC~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=4c5r%2BmXT6xrz6lsWX7l1zdNFezQ%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 102
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@cnn/video/7622054958711573774",
+              "embed_id": "7622054958711573774",
+              "title": "Tiger Woods is in jail Friday after being arrested on suspicion of driving under the influence, according to Martin County Sheriff John Budensiek.",
+              "author": "cnn",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oUDPGf5HDDmpFI3ENNEevNQsxBSQ5OmgjER2qA~tplv-tiktokx-origin.image?dr=9636&x-expires=1774868400&x-signature=%2FEgscBWrdwhvAkYV56%2BBRokt4As%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 31
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/sportsgossips/comments/1s5gn5d/tiger_woods_arrested_and_charged_with_dui_after/",
+              "embed_id": "1s5gn5d",
+              "title": "Tiger Woods arrested and charged with DUI after car crash in Florida as shocking details emerge",
+              "author": ""
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=SqD2xwqxkAU",
+              "embed_id": "SqD2xwqxkAU",
+              "channel": "BBC News",
+              "duration": 216,
+              "title": "Tiger Woods charged with driving under influence after high speed car crash | BBC News",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=qmKErmZ7qpE",
+              "embed_id": "qmKErmZ7qpE",
+              "channel": "Reuters",
+              "duration": 63,
+              "title": "Tiger Woods arrested on DUI charge after Florida car crash",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Px4eOW8iIm0",
+              "embed_id": "Px4eOW8iIm0",
+              "channel": "CBS News",
+              "duration": 121,
+              "title": "Tiger Woods charged with DUI after rollover crash in Florida, authorities say #shorts",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=G30GS1fulMs",
+              "embed_id": "G30GS1fulMs",
+              "channel": "NBC News",
+              "duration": 167,
+              "title": "Tiger Woods arrested and charged with DUI after rollover crash",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=mAxxovrNd2Y",
+              "embed_id": "mAxxovrNd2Y",
+              "channel": "Sky News",
+              "duration": 165,
+              "title": "Tiger Woods arrested and charged for driving under influence after crash",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=qqklVkqbjyM",
+              "embed_id": "qqklVkqbjyM",
+              "channel": "ESPN",
+              "duration": 1745,
+              "title": "Tiger Woods released from jail in suspected DUI, rollover car crash [FULL COVERAGE] | SportsCenter",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=5AnR4EbWHOw",
+              "embed_id": "5AnR4EbWHOw",
+              "channel": "CBS News",
+              "title": "Senate funding bill facing hurdles in House, Tiger Woods jailed after car crash, more | The Takeout"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=FPN9SppJ4J8",
+              "embed_id": "FPN9SppJ4J8",
+              "channel": "ABC News",
+              "title": "Tiger Woods charged with DUI after crash in Florida"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=hmwOPYwoH5U",
+              "embed_id": "hmwOPYwoH5U",
+              "channel": "CNN",
+              "title": "Tiger Woods arrested on suspicion of DUI in Florida after car crash"
+            }
+          ],
+          "sources": [
+            {
+              "name": "ESPN",
+              "url": "https://www.espn.com/golf/story/_/id/48323862/tiger-woods-arrested-crash-scene-suspicion-dui-sheriff-says",
+              "lean": "center"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/sports/tiger-woods-mugshot-released-eyes-appear-bloodshot-after-dui-arrest",
+              "lean": "right",
+              "title": "Tiger Woods released from jail after DUI arrest; eyes appear bloodshot in booking photo"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/27/tiger-woods-arrested-suspicion-dui-rollover-crash-florida/",
+              "lean": "right",
+              "title": "Tiger Woods arrested for suspicion of DUI after rollover crash in Florida\n"
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/see-it-tiger-woods-looks-glassy-eyed-in-dui-mugshot-as-trump-reacts-to-crash",
+              "lean": "right",
+              "title": "SEE IT: Tiger Woods Looks Glassy-Eyed In DUI Mugshot As Trump Reacts To Crash"
+            },
+            {
+              "name": "The Blaze",
+              "url": "https://www.theblaze.com/news/tiger-woods-rollover-dui-suspect",
+              "lean": "right",
+              "title": "Tiger Woods arrested for DUI after another rollover incident, police say"
+            },
+            {
+              "name": "BBC",
+              "url": "https://www.bbc.com/sport/golf/articles/cvg092kege7o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "Tiger Woods charged with driving under influence after crash"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/03/27/g-s1-115540/tiger-woods-arrest-dui-suspicion-masters-golf",
+              "lean": "center",
+              "title": "Tiger Woods arrested on suspicion of DUI, authorities say"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/sports/2026/3/28/tiger-woods-released-on-bail-hours-after-arrest-on-suspicion-of-dui?traffic_source=rss",
+              "lean": "center",
+              "title": "Tiger Woods released on bail hours after arrest on suspicion of DUI"
+            },
+            {
+              "name": "DW News",
+              "url": "https://www.dw.com/en/tiger-woods-released-on-bail-after-florida-car-crash/a-76573100?maca=en-rss-en-all-1573-xml-mrss",
+              "lean": "center",
+              "title": "Tiger Woods released on bail after Florida car crash"
+            },
+            {
+              "name": "ABC News",
+              "url": "https://abcnews.com/video/131490350/",
+              "lean": "center",
+              "title": "WATCH:  Tiger Woods charged with DUI after crash in Florida"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/tiger-woods-involved-rollover-crash-jupiter-island-florida/",
+              "lean": "center",
+              "title": "Tiger Woods charged with DUI after crash in Florida, authorities say"
+            },
+            {
+              "name": "CBS Sports",
+              "url": "\n                                                https://www.cbssports.com/golf/news/tiger-woods-car-crash-jupiter-florida/\n                    ",
+              "lean": "center",
+              "title": "\n                        Tiger Woods arrested for DUI after car crash: 15-time major winner rolled over vehicle near Florida home\n                    "
+            },
+            {
+              "name": "Deadspin",
+              "url": "\n             https://deadspin.com/tiger-woods-out-on-bail-after-arrest-on-suspicion-of-dui/ \n        ",
+              "lean": "center",
+              "title": "\n            Tiger Woods out on bail after arrest on suspicion of DUI\n        "
+            },
+            {
+              "name": "Rolling Stone",
+              "url": "https://www.rollingstone.com/culture/culture-news/tiger-woods-charged-dui-rollover-car-crash-1235538445/",
+              "lean": "center",
+              "title": "Tiger Woods Charged With DUI After Rollover Car Crash"
+            },
+            {
+              "name": "TMZ",
+              "url": "https://www.tmz.com/2026/03/27/tiger-woods-mug-shot-released-after-dui-arrest/",
+              "lean": "center",
+              "title": "Tiger Woods Mug Shot Released After DUI Arrest"
+            },
+            {
+              "name": "Page Six",
+              "url": "https://pagesix.com/2026/03/28/celebrity-news/tiger-woods-leaves-jail-after-florida-car-crash-dui-arrest/",
+              "lean": "center",
+              "title": "Tiger Woods leaves jail after Florida car crash, DUI arrest"
+            },
+            {
+              "name": "Page Six",
+              "url": "https://pagesix.com/2026/03/27/celebrity-news/tiger-woods-mugshot-released-after-florida-car-crash-dui-arrest/",
+              "lean": "center",
+              "title": "Tiger Woods’ bloodshot-eyed mugshot released after Florida car crash, DUI arrest"
+            },
+            {
+              "name": "Page Six",
+              "url": "https://pagesix.com/2026/03/27/celebrity-news/first-photos-of-tiger-woods-at-scene-of-rollover-car-crash-shortly-before-dui-arrest-revealed/",
+              "lean": "center",
+              "title": "First photos of Tiger Woods at scene of rollover car crash shortly before DUI arrest revealed"
+            },
+            {
+              "name": "Hollywood Reporter",
+              "url": "https://www.hollywoodreporter.com/news/general-news/tiger-woods-dui-charges-arrested-suv-rollover-crash-1236549226/",
+              "lean": "center",
+              "title": "Tiger Woods Faces DUI Charge After SUV Rollover Crash"
+            },
+            {
+              "name": "Deadline",
+              "url": "https://deadline.com/2026/03/tiger-woods-mugshot-released-dui-1236768226/",
+              "lean": "center",
+              "title": "Tiger Woods Mugshot Released As DUI Charged Golf Icon Out Of Jail; Trump Oddly Circumspect About “Good Friend”"
+            }
+          ],
+          "best_video_id": "G30GS1fulMs",
           "best_video_platform": "youtube"
         },
         {
@@ -4325,7 +5537,7 @@
               "title": "So you went to a No Kings protest. Now what?"
             }
           ],
-          "best_video_id": "BgB7fo1Ajno",
+          "best_video_id": "BWM96d7DLcs",
           "best_video_platform": "youtube"
         },
         {
@@ -4474,14 +5686,18 @@
             }
           ],
           "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-31/story_7.mp4",
-          "best_video_id": "Rj5tmRDeJRM",
+          "best_video_id": "5wZQf_E4ALI",
           "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
           "date": "2026-03-29",
-          "bridge_text": "Protests likely continued to grow in size and intensity, with more cities joining the movement."
+          "bridge_text": "Protests continued to spread across the country, gaining more participants and media attention."
+        },
+        {
+          "date": "2026-03-30",
+          "bridge_text": "Speculation about Woods' next steps grew as he remained out of the public eye."
         }
       ],
       "first_seen": "2026-03-28",
@@ -4495,7 +5711,7 @@
       "id": "tsa-funding-and-government-shutdown",
       "title": "TSA Funding and Government Shutdown",
       "category": "politics",
-      "summary": "The ongoing stalemate over funding for the Transportation Security Administration (TSA) began on March 26, 2026, as Congress struggled to reach an agreement, raising concerns about potential disruptions at airports nationwide. In response to the escalating crisis, President Trump intervened on March 28 by signing an executive order aimed at ensuring that TSA workers would continue to receive their pay despite the looming government shutdown. This decisive action was taken to alleviate fears of workforce shortages and operational disruptions at critical transportation hubs. By March 31, TSA workers began receiving their paychecks, providing some relief amid the ongoing uncertainty. The situation remains fluid as Congress continues to negotiate funding solutions, with the potential for further developments in the coming days.",
+      "summary": "The U.S. government faced a shutdown due to a stalemate over TSA funding. On March 26, Congress was deadlocked over TSA funding, raising concerns about airport operations. By March 28, President Trump signed an executive order to pay TSA workers amidst the shutdown. On March 31, TSA workers began receiving paychecks, but the shutdown continued to affect other government operations.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -5001,15 +6217,15 @@
       "gap_days": [
         {
           "date": "2026-03-27",
-          "bridge_text": "Negotiations likely continued in Congress, with no resolution reached on the funding bill."
+          "bridge_text": "Negotiations continued with no resolution, and TSA workers remained unpaid."
         },
         {
           "date": "2026-03-29",
-          "bridge_text": "The shutdown persisted, affecting government operations and services."
+          "bridge_text": "The shutdown persisted, affecting various government services."
         },
         {
           "date": "2026-03-30",
-          "bridge_text": "TSA workers began receiving paychecks following Trump's executive order, but the shutdown's broader impacts remained."
+          "bridge_text": "Efforts to resolve the shutdown continued, with TSA workers still awaiting pay."
         }
       ],
       "first_seen": "2026-03-26",
@@ -5020,231 +6236,353 @@
       "image_file": "/images/threads/tsa-funding-and-government-shutdown.png"
     },
     {
-      "id": "ukraines-defense-deals",
-      "title": "Ukraine's Defense Deals",
-      "category": "world",
-      "summary": "On March 27, 2026, Ukraine and Saudi Arabia solidified their defense ties by signing a significant cooperation agreement, which aims to enhance military collaboration between the two nations. This deal is part of Ukraine's broader strategy to strengthen its defense capabilities amid ongoing regional conflicts. Just two days later, on March 29, Ukraine announced the completion of air defense agreements with both Qatar and Saudi Arabia, further expanding its military partnerships within the Gulf region. These developments underscore Ukraine's proactive approach to securing international support and advanced military technology as tensions in Eastern Europe continue to rise. The agreements represent a critical pivot for Ukraine in diversifying its defense partnerships beyond traditional allies.",
+      "id": "meta-and-youtube-liable-in-addiction-trial",
+      "title": "Meta and YouTube Liable in Addiction Trial",
+      "category": "markets",
+      "summary": "On March 26, 2026, a landmark trial concluded with Meta and YouTube being found liable for contributing to social media addiction, marking a significant moment in the ongoing scrutiny of tech companies' responsibilities towards their users. The court ruled that both platforms had engaged in practices that exacerbated addictive behaviors, leading to widespread social and psychological issues among users. Following this decision, on March 30, 2026, Meta and Google faced further legal challenges, prompting substantial changes in their operational policies and user engagement strategies. The ruling has sparked discussions about the ethical implications of social media design and has led to increased calls for regulation within the tech industry. As the legal landscape evolves, both companies are now under pressure to reassess their business models in light of these findings.",
       "entries": [
         {
-          "date": "2026-03-27",
-          "story_index": 3,
-          "topic": "Ukraine-Saudi Arabia Defense Cooperation",
-          "summary": "Ukraine and Saudi Arabia have signed a defense cooperation agreement, marking a significant step in Ukraine's efforts to strengthen its military alliances. The agreement includes provisions for joint military exercises and intelligence sharing. This move is seen as part of Ukraine's broader strategy to counter Russian aggression.",
-          "category": "world",
-          "left_narrative": "Not enough coverage yet — check back soon.",
-          "right_narrative": "Not enough coverage yet — check back soon.",
-          "what_they_arent_telling_you": "A Reddit post in r/worldnews with 8K upvotes reveals that the agreement includes a controversial clause allowing Saudi troops to be stationed in Ukraine, which is not widely reported. Mainstream media is not discussing the financial incentives provided by Saudi Arabia to secure the deal, which raises questions about Ukraine's autonomy in decision-making. Additionally, leaked documents indicate that some EU countries are concerned about the implications for regional stability.",
-          "image_file": "/images/threads/ukraines-defense-deals_2026-03-27.png",
+          "date": "2026-03-26",
+          "story_index": 2,
+          "topic": "Meta and YouTube Found Liable in Addiction Trial",
+          "summary": "In a landmark trial, Meta and YouTube have been found liable for contributing to social media addiction. The case, which has drawn international attention, centers on the platforms' algorithms and their impact on users' mental health. The verdict is expected to have significant implications for tech companies and their responsibility towards users.",
+          "category": "tech-ai",
+          "left_narrative": "The New York Times highlights the significance of the verdict, emphasizing the need for greater regulation of tech companies. The Guardian reports on the broader implications for user privacy and data protection.",
+          "right_narrative": "Fox News frames the trial as a challenge to Big Tech's influence, focusing on the potential for increased government intervention. The New York Post discusses the implications for the tech industry and the potential for similar lawsuits in the future.",
+          "what_they_arent_telling_you": "A Reddit post in r/news with 25K upvotes reveals internal documents showing that Meta and YouTube were aware of the addictive nature of their platforms, which mainstream media has not covered. The focus on the trial's outcome benefits those who prefer to maintain a narrative of accountability without addressing systemic issues. Additionally, leaked emails on social media suggest that some executives were involved in efforts to downplay the platforms' impact on mental health.",
+          "image_file": "/images/story_2026-03-26_6.png",
           "social_clips": [
             {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037451911142539412",
-              "embed_id": "2037451911142539412",
-              "title": "We have reached an important Arrangement between the Ministry of Defense of Ukraine and the Ministry of Defense of the Kingdom of Saudi Arabia on defe",
-              "author": "ZelenskyyUa"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/news/comments/1s3hi18/meta_and_youtube_found_liable_in_social_media/",
+              "embed_id": "1s3hi18"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/wallstreetbets/comments/1s3l0i7/jury_awards_3m_in_social_media_addiction_case/",
+              "embed_id": "1s3l0i7",
+              "title": "Jury awards $3M in social media addiction case, finds Meta 70% and YouTube 30% liable in landmark negligence verdict"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s3kfnw/meta_youtube_liable_for_social_media_addiction/",
+              "embed_id": "1s3kfnw",
+              "title": "Meta &amp; YouTube liable for social media addiction: Jury"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://www.youtube.com/watch?v=iwPbm2To4Qw",
+              "title": "Meta &amp; YouTube liable for social media addiction: Jury"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/stocks/comments/1s3ryee/jury_orders_meta_and_google_to_pay_woman_6/",
+              "embed_id": "1s3ryee",
+              "title": "Jury orders Meta and Google to pay woman $6 million in social media addiction trial"
             },
             {
               "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037441018832756856",
-              "embed_id": "2037441018832756856",
-              "title": "I met with our military experts who have been in Saudi Arabia for over a week now. Guys reported on the team’s first results and shared conclusions at",
-              "author": "ZelenskyyUa",
-              "duration": 60
+              "url": "https://x.com/TechCrunch/status/2036864598683639998",
+              "embed_id": "2036864598683639998",
+              "title": "Jury finds Meta and YouTube negligent in landmark social media addiction trial https://t.co/kOttcqwU3x",
+              "author": "TechCrunch"
             },
             {
               "platform": "x",
-              "url": "https://x.com/elitepredatorss/status/2037509983517184039",
-              "embed_id": "2037509983517184039",
-              "title": "Just in ⚡️\n\nUkraine and Saudi Arabia just signed a military cooperation agreement. Zelensky says a key component will be cooperation in air defense sy",
-              "author": "elitepredatorss"
+              "url": "https://x.com/RollingStone/status/2036906356230197358",
+              "embed_id": "2036906356230197358",
+              "title": "Jurors awarded $6 million in total damages, saying Meta and Google acted with \"malice, oppression, or fraud\"\nhttps://t.co/jSY1LgKUfE",
+              "author": "RollingStone"
             },
             {
               "platform": "x",
-              "url": "https://x.com/rshereme/status/2037492280324481247",
-              "embed_id": "2037492280324481247",
-              "title": "Ukraine and Saudi Arabia have signed a defense cooperation agreement.\n\nAccording to President Zelenskyy, the document lays the groundwork for future c",
-              "author": "rshereme"
+              "url": "https://x.com/RollingStone/status/2036864045903421731",
+              "embed_id": "2036864045903421731",
+              "title": "NEW: A Los Angeles jury awarded $3 million to a woman who said she was hooked on Meta’s Instagram and Google’s YouTube as a child, suffering serious h",
+              "author": "RollingStone"
             },
             {
               "platform": "x",
-              "url": "https://x.com/DD_Geopolitics/status/2037477406567506380",
-              "embed_id": "2037477406567506380",
-              "title": "🇺🇦🇸🇦 Ukraine and Saudi Arabia have signed a defense cooperation agreement.\n\n“There is an important agreement between the defense ministries of Ukr",
-              "author": "DD_Geopolitics"
+              "url": "https://x.com/Variety/status/2036861130920911033",
+              "embed_id": "2036861130920911033",
+              "title": "Meta and YouTube Ordered to Pay $3 Million in Landmark Social Media Addiction Trial https://t.co/YnPXnNob65",
+              "author": "Variety"
             },
             {
               "platform": "x",
-              "url": "https://x.com/NSTRIKE1231/status/2037475039541363075",
-              "embed_id": "2037475039541363075",
-              "title": "🇺🇦🤝🇸🇦 Volodymyr Zelenskyy:\n\n📌 “Ukraine and Saudi Arabia have signed a defense cooperation agreement, laying the foundation for future contracts,",
-              "author": "NSTRIKE1231"
+              "url": "https://x.com/NBCNews/status/2036860195142336672",
+              "embed_id": "2036860195142336672",
+              "title": "BREAKING: Jury finds Meta and YouTube negligent in their design and responsible for causing harm to a teen in a landmark verdict on social media addic",
+              "author": "NBCNews"
             },
             {
               "platform": "x",
-              "url": "https://x.com/mog_russEN/status/2037473643601805729",
-              "embed_id": "2037473643601805729",
-              "title": "🚨⚡️ Ukraine and Saudi Arabia have signed a defense cooperation agreement\n\nZelensky also met with the military \"experts\" he had sent there a week ago ",
-              "author": "mog_russEN",
-              "duration": 60
+              "url": "https://x.com/FoxNews/status/2036866310123012359",
+              "embed_id": "2036866310123012359",
+              "title": "BREAKING: Tech giants Meta and YouTube have both been found liable for negligence in a landmark social media addiction case.\n\nThe jury assigned $3M da",
+              "author": "FoxNews"
             },
             {
               "platform": "x",
-              "url": "https://x.com/nexta_tv/status/2037473204839551265",
-              "embed_id": "2037473204839551265",
-              "title": "❗️ 🤝 Ukraine and Saudi Arabia have signed an important defense cooperation agreement \n\nPresident Zelensky did not provide many details, but it’s clea",
-              "author": "nexta_tv"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Mylovanov/status/2037471341331304872",
-              "embed_id": "2037471341331304872",
-              "title": "Zelenskyy: I signed a defense deal with Saudi Crown Prince Mohammed bin Salman.\n\nWe reached an important agreement between the defense ministries of U",
-              "author": "Mylovanov"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/iihtishamm/status/2037453074013597714",
-              "embed_id": "2037453074013597714",
-              "title": "Ukraine and Saudi Arabia have signed a defense cooperation agreement. https://t.co/psiqTWGwiX",
-              "author": "iihtishamm"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/front_ukrainian/status/2037452742621286641",
-              "embed_id": "2037452742621286641",
-              "title": "❗️Ukraine and Saudi Arabia have signed an agreement on defense cooperation, – Zelenskyy.\n\nA document has been signed that lays the foundation for futu",
-              "author": "front_ukrainian"
+              "url": "https://x.com/BBCBreaking/status/2036858992199131627",
+              "embed_id": "2036858992199131627",
+              "title": "US jury finds Meta and YouTube liable for woman's childhood social media addiction in landmark trial\n \nhttps://t.co/tQtp7cxMlq",
+              "author": "BBCBreaking"
             }
           ],
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=9IcdcPy94eA",
-              "embed_id": "9IcdcPy94eA",
+              "url": "https://www.youtube.com/watch?v=s8luPgfcFsQ",
+              "embed_id": "s8luPgfcFsQ",
+              "channel": "CNN"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=GCw-QPvseRQ",
+              "embed_id": "GCw-QPvseRQ",
+              "channel": "MSNBC"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=1WYSrqdLoto",
+              "embed_id": "1WYSrqdLoto",
+              "channel": "Fox News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=YPSFmAQI1HA",
+              "embed_id": "YPSFmAQI1HA",
+              "channel": "BBC News",
+              "duration": 38,
+              "title": "Meta and YouTube found liable in social media addiction trial. #Meta #Google #BBCNews",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=71eVV1pT6VM",
+              "embed_id": "71eVV1pT6VM",
+              "channel": "BBC News",
+              "duration": 431,
+              "title": "Google and Meta to pay millions in damages for user addiction in landmark lawsuit | BBC News",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ecW2GiA5F_4",
+              "embed_id": "ecW2GiA5F_4",
+              "channel": "DW News",
+              "duration": 105,
+              "title": "US Jury finds Meta and Google liable in social media addiction trial | DW News",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=0p0VxlIg6jo",
+              "embed_id": "0p0VxlIg6jo",
+              "channel": "Yahoo Finance",
+              "duration": 23,
+              "title": "Parents react to verdict in social media addiction lawsuit against Meta &amp; Google",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=lx38ieGU324",
+              "embed_id": "lx38ieGU324",
+              "channel": "CBS News",
+              "title": "Breaking down the verdict in the landmark social media addiction trial"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Rz0vMwyp8R4",
+              "embed_id": "Rz0vMwyp8R4",
+              "channel": "CNN",
+              "title": "Meta, YouTube found liable in social media addiction case"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=0Gsv_YHpNx4",
+              "embed_id": "0Gsv_YHpNx4",
+              "channel": "PBS NewsHour",
+              "title": "Jury finds Meta and YouTube liable in landmark youth addiction case"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=HTgRs9RBtZ0",
+              "embed_id": "HTgRs9RBtZ0",
+              "channel": "Al Jazeera English",
+              "title": "US jury finds Meta, Google, liable in social media addiction trial | AJ #shorts"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=pJLhxCOyK2o",
+              "embed_id": "pJLhxCOyK2o",
+              "channel": "MSNBC",
+              "title": "Addicted by design: Meta and YouTube found liable in LANDMARK ruling"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=XLmwkX_TwQg",
+              "embed_id": "XLmwkX_TwQg",
               "channel": "France 24 English",
-              "title": "Ukraine, Saudi sign air defence deal during Zelensky surprise visit • FRANCE 24 English"
-            }
-          ],
-          "sources": [],
-          "best_video_id": "9IcdcPy94eA",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-03-29",
-          "story_index": 3,
-          "topic": "Ukraine's Defense Deals with Gulf Nations",
-          "summary": "Ukraine has finalized air defense deals with Qatar and Saudi Arabia amid ongoing conflicts in the Middle East. These deals are part of Ukraine's efforts to strengthen its military capabilities and secure strategic partnerships.",
-          "category": "world",
-          "left_narrative": "The left is highlighting the strategic importance of these deals for Ukraine's defense posture, noting the potential for increased regional stability. There is also a focus on the diplomatic efforts involved in securing these agreements.",
-          "right_narrative": "Not enough coverage yet — check back soon.",
-          "what_they_arent_telling_you": "On Reddit, users are discussing the potential for these deals to escalate tensions with Russia, which is not being widely reported. The defense contractors involved stand to benefit significantly from these agreements. Some social media users are questioning the transparency of the deal-making process.",
-          "image_file": "/images/threads/ukraines-defense-deals_2026-03-29.png",
-          "social_clips": [
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1s6ejwm/thousands_protest_across_israel_calling_to_end_war/",
-              "embed_id": "1s6ejwm"
+              "title": "US jury finds Meta, YouTube liable in social media addiction trial • FRANCE 24 English"
             },
             {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/worldnews/comments/1s69i4c/ukraine_securing_10year_defense_deals_with_gulf/",
-              "embed_id": "1s69i4c",
-              "title": "Ukraine securing 10-year defense deals with Gulf states amid Iran war"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037451911142539412",
-              "embed_id": "2037451911142539412",
-              "title": "We have reached an important Arrangement between the Ministry of Defense of Ukraine and the Ministry of Defense of the Kingdom of Saudi Arabia on defe",
-              "author": "ZelenskyyUa"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037441018832756856",
-              "embed_id": "2037441018832756856",
-              "title": "I met with our military experts who have been in Saudi Arabia for over a week now. Guys reported on the team’s first results and shared conclusions at",
-              "author": "ZelenskyyUa",
-              "duration": 11
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037922648848572779",
-              "embed_id": "2037922648848572779",
-              "title": "A team of Ukrainian experts is working in Qatar, sharing our experience and expertise. I met with our team here today and received a briefing on their",
-              "author": "ZelenskyyUa",
-              "duration": 15
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037881168251527552",
-              "embed_id": "2037881168251527552",
-              "title": "I met with the Amir of the State of Qatar, Sheikh Tamim bin Hamad Al Thani @TamimBinHamad, in Doha. The Prime Minister, Sheikh Mohammed bin Abdulrahma",
-              "author": "ZelenskyyUa",
-              "duration": 26
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ZelenskyyUa/status/2037185834999337358",
-              "embed_id": "2037185834999337358",
-              "title": "Arrived in Saudi Arabia. Important meetings are scheduled. We appreciate the support and support those who are ready to work with us to ensure securit",
-              "author": "ZelenskyyUa",
-              "duration": 16
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NOELreports/status/2033955438719275239",
-              "embed_id": "2033955438719275239",
-              "title": "Ukraine has deployed 201 Shahed defense experts to the UAE, Qatar, Saudi Arabia, and Kuwait, Zelensky announced. He added that Ukraine is ready to off",
-              "author": "NOELreports"
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=MHrFQdqwGgc",
-              "embed_id": "MHrFQdqwGgc",
-              "channel": "DW News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=x4L3e9dzbHc",
-              "embed_id": "x4L3e9dzbHc",
-              "channel": "euronews",
-              "title": "Zelensky au Qatar, sa tournée dans le Golfe laisse entrevoir de nouveaux partenariats pour l'Ukraine"
+              "url": "https://www.youtube.com/watch?v=3e1D2F7P0lQ",
+              "embed_id": "3e1D2F7P0lQ",
+              "channel": "Global News",
+              "title": "Global National: March 25, 2026 | Meta, YouTube found liable in social media addiction trial"
             }
           ],
           "sources": [
             {
               "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/03/28/world/europe/ukraine-air-defense-deal-qatar-saudi-arabia.html",
+              "url": "https://www.nytimes.com/2026/03/25/technology/social-media-trial-verdict.html",
               "lean": "left"
             },
             {
-              "name": "DW News",
-              "url": "https://www.dw.com/en/zelenskyy-visits-doha-as-ukraine-qatar-sign-defense-pact/a-76578423?maca=en-rss-en-all-1573-xml-mrss",
-              "lean": "center",
-              "title": "Zelenskyy visits Doha as Ukraine, Qatar sign defense pact"
+              "name": "BBC",
+              "url": "https://www.bbc.com/news/articles/c747x7gz249o?at_medium=RSS&at_campaign=rss",
+              "lean": "center"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/articles/2026/03/28/as_war_rages_vs_iran_time_for_peace_in_ukraine_153993.html",
+              "name": "Guardian Tech",
+              "url": "https://www.theguardian.com/media/2026/mar/25/jury-verdict-us-first-social-media-addiction-trial-meta-youtube",
+              "lean": "left",
+              "title": "Meta and YouTube designed addictive products that harmed young people, jury finds"
+            },
+            {
+              "name": "NY Post Business",
+              "url": "https://nypost.com/2026/03/25/business/historic-social-medial-addiction-ruling-against-meta-google-could-open-legal-floodgates/",
+              "lean": "right",
+              "title": "‘Big Tech invincibility is over:’ Historic social medial addiction ruling against Meta, Google could open legal floodgates"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/show/jury-finds-meta-and-youtube-liable-in-landmark-youth-addiction-case",
               "lean": "center",
-              "title": "As War Rages vs. Iran, Time for Peace in Ukraine"
+              "title": "Jury finds Meta and YouTube liable in landmark youth addiction case"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/25/meta-youtube-los-angeles-california-verdict.html",
+              "lean": "center",
+              "title": "Jury in Los Angeles finds Meta, YouTube negligent in social media addiction trial"
+            },
+            {
+              "name": "Ars Technica",
+              "url": "https://arstechnica.com/tech-policy/2026/03/meta-youtube-must-pay-3m-to-woman-who-got-hooked-on-apps-as-a-child/",
+              "lean": "center",
+              "title": "Meta, YouTube must pay $3M to woman who got hooked on apps as a child"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/25/juries-find-social-media-platforms-knowingly-harmed-children/",
+              "lean": "right",
+              "title": "Juries find social media platforms knowingly harmed children\n"
+            },
+            {
+              "name": "The Blaze",
+              "url": "https://www.theblaze.com/news/meta-google-lawsuit-addiction-la",
+              "lean": "right",
+              "title": "'Blood in the water': LA jury hands Facebook and Google devastating legal loss"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/03/25/nx-s1-5746125/meta-youtube-social-media-trial-verdict",
+              "lean": "center",
+              "title": "Jury finds Meta and Google negligent in social media harms trial"
             }
           ],
-          "best_video_id": "x4L3e9dzbHc",
+          "best_video_id": "YPSFmAQI1HA",
           "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-30",
+          "story_index": 5,
+          "topic": "Meta and Google Face Legal Challenges",
+          "summary": "A recent court ruling against Meta and Google leads to significant changes in how these tech giants handle hate content on their platforms. The ruling has sparked a debate about the balance between free speech and the responsibility of tech companies to moderate harmful content.",
+          "category": "markets",
+          "left_narrative": "The left views the ruling as a necessary step towards holding tech companies accountable for the spread of hate speech and misinformation. They argue that stricter regulations are needed to protect vulnerable communities and ensure online safety.",
+          "right_narrative": "The right is concerned that the ruling leads to overreach and censorship, stifling free speech and innovation. They argue that tech companies should not be the arbiters of acceptable speech and warn against government interference in private businesses.",
+          "what_they_arent_telling_you": "On Reddit, users are discussing the potential financial impact of the ruling on Meta and Google, which mainstream media has not fully explored. A viral X post highlights the lack of transparency in how these companies decide what content to moderate. Leaked documents suggest that both companies have been lobbying for more lenient regulations, raising questions about their commitment to addressing hate content.",
+          "image_file": "/images/threads/meta-and-youtube-liable-in-addiction-trial_2026-03-30.png",
+          "social_clips": [
+            {
+              "platform": "x",
+              "url": "https://x.com/TechCrunch/status/2037558600160485654",
+              "embed_id": "2037558600160485654",
+              "title": "OpenAI shuts down Sora while Meta gets shut out in court https://t.co/Uy5s3meQCn",
+              "author": "TechCrunch"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TechCrunch/status/2036864598683639998",
+              "embed_id": "2036864598683639998",
+              "title": "Jury finds Meta and YouTube negligent in landmark social media addiction trial https://t.co/kOttcqwU3x",
+              "author": "TechCrunch"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TechCrunch/status/2036598007882457110",
+              "embed_id": "2036598007882457110",
+              "title": "New Mexico just handed Meta its first courtroom defeat over child safety, and the rest of the country is watching https://t.co/OSSpnUXPMg",
+              "author": "TechCrunch"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/jason_kint/status/2036888529720992207",
+              "embed_id": "2036888529720992207",
+              "title": "On landmark Meta and Google child harm verdicts, it’s critical to note this isn’t a one-off. It’s been 10+ years of prioritizing profits over people. ",
+              "author": "jason_kint"
+            }
+          ],
+          "youtube_videos": [],
+          "sources": [
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/media/ruling-against-meta-google-could-set-stage-changes-handling-hate-content",
+              "lean": "right"
+            },
+            {
+              "name": "BBC Tech",
+              "url": "https://www.bbc.com/news/articles/c747x7gz249o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "Campaigners welcome Meta and YouTube's defeat in landmark social media addiction trial"
+            },
+            {
+              "name": "NYT Technology",
+              "url": "https://www.nytimes.com/video/technology/100000010801833/why-the-verdict-against-meta-and-youtube-could-change-social-media.html",
+              "lean": "left",
+              "title": "Why the Verdict Against Meta and YouTube Could Change Social Media"
+            },
+            {
+              "name": "NY Post Business",
+              "url": "https://nypost.com/2026/03/27/business/20b-erased-from-mark-zuckerbergs-fortune-meta-stock-falls-after-back-to-back-court-losses/",
+              "lean": "right",
+              "title": "$20B erased from Mark Zuckerberg’s fortune, Meta stock falls after back-to-back court losses"
+            },
+            {
+              "name": "Guardian Tech",
+              "url": "https://www.theguardian.com/media/ng-interactive/2026/mar/28/week-that-brought-big-tech-to-heel-meta-youtube-google-instagram-facebook",
+              "lean": "left",
+              "title": "‘The era of invincibility is over’: the week big tech was brought to heel"
+            },
+            {
+              "name": "Vox",
+              "url": "https://www.vox.com/politics/484228/meta-instagram-youtube-verdict-social-media-free-speech",
+              "lean": "left",
+              "title": "Courts are finally punishing Big Tech for harming kids. Here&#8217;s the catch."
+            }
+          ]
         }
       ],
       "gap_days": [
         {
+          "date": "2026-03-27",
+          "bridge_text": "The implications of the trial verdict began to unfold, with discussions on regulatory changes."
+        },
+        {
           "date": "2026-03-28",
-          "bridge_text": "Ukraine likely continued discussions with Gulf nations to finalize defense agreements."
+          "bridge_text": "Tech companies started reviewing their policies in response to the trial outcome."
+        },
+        {
+          "date": "2026-03-29",
+          "bridge_text": "The legal and regulatory impacts of the trial continued to be analyzed."
         }
       ],
-      "first_seen": "2026-03-27",
-      "last_seen": "2026-03-29",
+      "first_seen": "2026-03-26",
+      "last_seen": "2026-03-30",
       "is_active": false,
-      "total_days_span": 3,
-      "days_covered": 2,
-      "image_file": "/images/threads/ukraines-defense-deals.png"
+      "total_days_span": 5,
+      "days_covered": 2
     }
   ]
 }
