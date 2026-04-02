@@ -1,0 +1,49 @@
+# CVRD News
+
+> Your streaming platform to cover the news.
+
+CVRD (pronounced "Covered") is a news dashboard that pulls together coverage from across the political spectrum — left, right, and center — so you can see the full picture in one place. Instead of reading one outlet's version of events, CVRD shows you how every side is framing the same story, what narratives they're pushing, and what they're leaving out.
+
+## What CVRD Does
+
+- Daily news dashboard across 5 categories: World, Politics, Markets, Trending, Sports
+- Side-by-side left vs right media narratives for every story
+- "What they aren't telling you" — the angle mainstream outlets miss
+- Embedded video clips, social posts, and sources from dozens of outlets
+- Daily video show hosted by Agent Zero recapping the day's biggest stories
+- On Record — tracking what politicians claim vs what's actually true
+- The Verdict — fact-check video reports on public figures
+- Timeline — ongoing stories tracked across multiple days
+
+## Key Pages
+
+- https://cvrdnews.com/ — Today's top stories with narrative gap analysis
+- https://cvrdnews.com/world — World news
+- https://cvrdnews.com/politics — Political coverage
+- https://cvrdnews.com/markets — Markets and economy
+- https://cvrdnews.com/trending — Culture and trending stories
+- https://cvrdnews.com/sports — Sports coverage
+- https://cvrdnews.com/timeline — Ongoing story threads tracked across days
+- https://cvrdnews.com/onrecord — Politician truth scores and fact-checks
+- https://cvrdnews.com/onrecord/leaderboard — Ranked politician truthfulness
+- https://cvrdnews.com/tv — Video content hub
+- https://cvrdnews.com/show — Daily video show
+- https://cvrdnews.com/breaking — Real-time breaking news
+
+## Content Structure
+
+Each story includes:
+- Factual summary of the event
+- Left-leaning media narrative
+- Right-leaning media narrative
+- "What they aren't telling you" — the angle mainstream outlets miss
+- Social media pulse — what ordinary people are saying
+- Video clips from YouTube, X, Reddit, and TikTok
+- Source links from outlets across the political spectrum
+
+## About
+
+CVRD is not left or right. It covers the full spectrum and lets readers decide. The platform is built by Andlane, an independent media company.
+
+Website: https://cvrdnews.com
+Contact: info@cvrdnews.com
