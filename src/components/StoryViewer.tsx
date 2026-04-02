@@ -136,6 +136,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
               {stories.map((s, i) => (
                 <a key={i} href={`/story/${topicToSlug(s.topic)}`}
+                  onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
                   className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                   style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                   {s.image_file && (
