@@ -1,99 +1,108 @@
 {
-  "headline": "Secretary Antony Blinken on military: 96.1% Truthful",
+  "headline": "Donald Trump on domestic: 37.8% Truthful",
   "person": {
-    "handle": "SecBlinken",
-    "name": "Secretary Antony Blinken",
-    "role": "Former U.S. Secretary of State",
-    "photo": "/data/politicians/photo_SecBlinken.png"
+    "handle": "realDonaldTrump",
+    "name": "Donald J. Trump",
+    "role": "President of the United States",
+    "photo": "/data/politicians/photo_realDonaldTrump.png"
   },
-  "story_topic": "Iran War: U.S. Military Campaign to Wind Down",
-  "search_keyword": "military",
-  "topic_score": 96.1,
-  "overall_score": 95.6,
-  "matching_claims": 9,
-  "editorial": "As the U.S. military campaign in Iran winds down, all eyes turn to Secretary Antony Blinken. While not directly involved in the Iran conflict's recent de-escalation, Blinken's track record on military aid is indisputable. He has consistently advocated for robust support to Ukraine, with claims like the U.S. delivering a $725 million military aid package ringing true. His statements on military aid have been verified time and again, painting a picture of a diplomat committed to supporting international allies.\n\nBlinken's unwavering push for military support isn't new. His past claims, such as the U.S. sending $125 million in weapons to Ukraine, have been meticulously fact-checked and found accurate. His emphasis on strengthening allies like NATO—backed by solid evidence of NATO's enhanced capabilities—has been a consistent thread. Blinken’s focus has been clear: maintaining a strong military alliance to counter global threats.\n\nWith a truthfulness score of 95.6%, Blinken's claims largely hold water. Out of 270 statements evaluated, only three have been found misleading or false. This paints a picture of a statesman who, at least in the realm of military discourse, prefers accuracy over bluster.\n\nFor those scrutinizing today's winding down of the Iran conflict, Blinken’s track record suggests a steady hand in turbulent times.",
+  "story_topic": "Iran War Escalation and Global Impact",
+  "search_keyword": "domestic",
+  "topic_score": 37.8,
+  "overall_score": 44.7,
+  "matching_claims": 32,
+  "editorial": "As tensions flare in the Persian Gulf, President Trump is doubling down on his aggressive military strategy toward Iran. Yet, when it comes to domestic matters, his record paints a different picture. Trump's claim about \"record-breaking numbers of Arab and Muslim voters in Michigan\" wanting peace as part of a broad coalition was deemed \"somewhat misleading.\" While there was a notable shift in voter allegiance, the notion of a coalition is not as robust as he suggests.\n\nOn the domestic front, Trump has a mixed record of truthfulness. His assertion of a \"self-deportation program\" was accurate, but claims of rampant radical Islamic terrorism are misleading. These assessments align with his broader pattern of skewed narratives, where out of 63 vetted claims, only 10 were found true, while 24 were misleading, and 14 outright false.\n\nWith an overall truthfulness score of 44.7, Trump's track record is a minefield of half-truths and exaggerations. The President's penchant for hyperbole often clouds critical issues, leaving the public to sift fact from fiction in matters of national and international importance.\n\nIn a world where facts are as volatile as politics, staying informed is your best defense.",
   "matched_tweets": [
     {
-      "claim": "The United States is delivering $725 million in additional weapons and equipment for Ukraine's defense.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Today, I am announcing the delivery of $725 million in additional weapons and equipment for Ukraine’s defense. The United States and more than 50 nations stand united with Ukraine.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1863687201067876761",
-      "domain": "military",
-      "reasoning": "The claim that the United States announced a $725 million military aid package for Ukraine on December 2, 2024, is accurate. This package included ammunition for HIMARS, Stinger missiles, counter-drone systems, anti-personnel landmines, and other equipment. The announcement was made by Secretary of "
-    },
-    {
-      "claim": "The U.S. is sending a new package of weapons and equipment to support Ukraine's military forces.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "The U.S. is sending a new package of urgently needed weapons and equipment to support Ukraine's military forces as they defend against Russia’s ongoing attacks. This support will help Ukraine protect its troops, its people, and reinforce its capabilities on the front lines.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1827079362060886514",
-      "domain": "military",
-      "reasoning": "On August 23, 2024, the U.S. Department of Defense announced a new $125 million military aid package to Ukraine. This package included air defense missiles, counter-drone equipment, anti-armor missiles, and ammunition, aligning with the claim that the U.S. is sending a new package of weapons and equ"
-    },
-    {
-      "claim": "Czechia has demonstrated true leadership with its efforts to source more ammunition for Ukraine’s defense against Russia.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Met with Czech President @prezidentpavel to discuss Czechia’s military modernization and assistance to Ukraine. Czechia has demonstrated true leadership with its efforts to source more ammunition for Ukraine’s defense against Russia.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1796256554888692056",
-      "domain": "military",
-      "reasoning": "Czechia has indeed demonstrated leadership in sourcing ammunition for Ukraine's defense against Russia. In 2024, under the Czech initiative, Ukraine received 500,000 artillery shells purchased from outside Europe. Additionally, Czechia acted as an intermediary in supplying about 1.5 million shells i"
-    },
-    {
-      "claim": "Thousands of Ukrainian civilians and soldiers have lost limbs due to the war initiated by Putin.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Thousands of Ukrainian civilians and soldiers have tragically lost limbs in Putin’s war. @EsperBionics is an innovative Ukrainian-American company helping injured Ukrainians gain back function and independence by providing them with advanced multifunctional prosthetics.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1790850167207248074",
-      "domain": "military",
-      "reasoning": "The claim that thousands of Ukrainian civilians and soldiers have lost limbs due to the war initiated by Putin is supported by multiple credible sources. Estimates indicate that between 20,000 and 50,000 Ukrainians have undergone amputations since the onset of the conflict. For instance, the Wall St"
-    },
-    {
-      "claim": "NATO is stronger than ever before",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "NATO is stronger than ever before. I met with Secretary General @jensstoltenberg in Brussels in advance of the 75th anniversary of the NATO Alliance. We will continue to work closely to address global challenges, including Russia’s aggression against Ukraine.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1775633054523945193",
-      "domain": "military",
-      "reasoning": "The claim that \"NATO is stronger than ever before\" is supported by several key developments in 2024. Firstly, NATO conducted Steadfast Defender 2024, its largest military exercise since the Cold War, involving approximately 90,000 troops from all 31 member states and Sweden, demonstrating enhanced o"
-    },
-    {
-      "claim": "A French munitions factory is providing equipment to Ukraine.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Toured a French munitions factory that is providing equipment to Ukraine as they continue their fight against Russia's unjust war. We stand steadfast with our partners and allies in support of Ukraine’s sovereignty and territorial integrity.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1775199268439011641",
-      "domain": "military",
-      "reasoning": "The claim that a French munitions factory is providing equipment to Ukraine is accurate. France has delivered significant military equipment to Ukraine, including 30 CAESAR self-propelled howitzers and 6 TRF1 howitzers, as reported by the French Ministry of Armed Forces. Additionally, French defense"
-    },
-    {
-      "claim": "Sweden officially joined NATO.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Earlier today, I was with @SwedishPM Kristersson as Sweden officially joined @NATO. Tonight at #SOTU, @POTUS welcomed Sweden to the strongest military alliance the world has ever known.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1765937149600227556",
-      "domain": "military",
-      "reasoning": "Sweden officially joined NATO on March 7, 2024, becoming the alliance's 32nd member. This marked the end of Sweden's longstanding policy of neutrality and was formalized when Swedish Prime Minister Ulf Kristersson handed over the accession documents to U.S. Secretary of State Antony Blinken in Washi"
-    },
-    {
-      "claim": "Ukrainians have stood toe to toe with the Russian military, conceded no territory, and pushed Russia's navy back in the Black Sea, opening a corridor for grain exports.",
+      "claim": "Tito Asfura was the highly successful Mayor of Tegucigalpa where he brought running water to millions and paved hundreds of kilometers of roads.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "Ukrainians have done what no one thought was possible: stood toe to toe with one of the biggest militaries, conceded no territory, and they pushed Russia’s navy back in the Black Sea and opened a corridor to allow them to export grain and other products to the world.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1740780043692040247",
-      "domain": "military",
-      "reasoning": "The claim that Ukrainians have 'stood toe to toe' with the Russian military and 'pushed Russia's navy back in the Black Sea' is broadly accurate, reflecting Ukraine's resilience and military efforts. However, the assertion that they have 'conceded no territory' is misleading. Since the onset of the "
+      "tweet_text": "Democracy is on trial in the coming Elections in the beautiful country of Honduras on November 30th. Will Maduro and his Narcoterrorists take over another country like they have taken over Cuba, Nicaragua, and Venezuela? The man who is standing up for Democracy, and fighting against Maduro, is Tito ",
+      "tweet_url": "https://x.com/realDonaldTrump/status/1994438342403141889",
+      "domain": "domestic",
+      "reasoning": "While Nasry 'Tito' Asfura, as mayor of Tegucigalpa from 2014 to 2022, initiated numerous infrastructure projects, including road improvements, the claim that he 'brought running water to millions' is an overstatement. Reports indicate that even after seven years of his administration, the capital co"
     },
     {
-      "claim": "This year’s last package of weapons and equipment is being announced to support Ukraine.",
+      "claim": "I signed an Executive Order to launch the first-ever self-deportation program.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "We are announcing this year’s last package of weapons and equipment under previous drawdowns to support the people of Ukraine. We continue to urge Congress to act quickly to advance our national security interests by helping Ukraine defend itself.",
-      "tweet_url": "https://twitter.com/SecBlinken/status/1740180403535876284",
-      "domain": "military",
-      "reasoning": "The claim states that the U.S. announced its final package of weapons and equipment for Ukraine in 2023. On December 27, 2023, the U.S. announced a $250 million military aid package to Ukraine, which officials indicated could be the last unless Congress approved additional funding. This package incl"
+      "tweet_text": "Today, I signed an Executive Order to launch the first-ever self-deportation program. Illegal aliens who stay in America face punishments, including—sudden deportation, in a place and manner solely of our discretion. TO ALL ILLEGAL ALIENS: BOOK YOUR FREE FLIGHT RIGHT NOW!",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1921008311492624867",
+      "domain": "domestic",
+      "reasoning": "On May 9, 2025, President Donald Trump signed an executive order establishing the first-ever self-deportation program, known as 'Project Homecoming.' This program offers undocumented immigrants free flights and a $1,000 stipend to voluntarily return to their home countries. The initiative aims to en"
+    },
+    {
+      "claim": "Radical Islamic Terrorism and other forms of violent crime have become so bad in America that it is hard to imagine or believe.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "With the Biden “Open Border’s Policy” I said, many times during Rallies, and elsewhere, that Radical Islamic Terrorism, and other forms of violent crime, will become so bad in America that it will become hard to even imagine or believe. That time has come, only worse than ever",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1875049915367235899",
+      "domain": "domestic",
+      "reasoning": "While there was a significant terrorist attack in New Orleans on January 1, 2025, attributed to radical Islamic terrorism, overall violent crime rates in the United States declined substantially in 2025. Homicides fell by 21% in 35 large cities, reaching the lowest levels since 1900. Therefore, the "
+    },
+    {
+      "claim": "Record-breaking numbers of Arab and Muslim voters in Michigan want peace and are part of a broad coalition.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "We are building the biggest and broadest coalition in American Political History. This includes record-breaking numbers of Arab and Muslim Voters in Michigan who want PEACE. They know Kamala and her warmonger Cabinet will invade the Middle East, get millions of Muslims killed,",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1853571107439399155",
+      "domain": "domestic",
+      "reasoning": "While there was a notable shift of Arab and Muslim voters in Michigan away from the Democratic Party in the 2024 election, the claim that this resulted in 'record-breaking numbers' joining Trump's coalition is somewhat misleading. In Dearborn, a city with a significant Arab American population, Trum"
+    },
+    {
+      "claim": "Mimi Ramirez-Rodriguez was kidnapped and murdered by an illegal alien.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Mimi Ramirez-Rodriguez was kidnapped and murdered by an illegal alien—leaving behind a 9 year-old girl. I met her grieving mom Carmen tonight in Georgia. With your vote Tuesday, we will end Kamala’s invasion and we will not allow illegals to spill one more drop of American blood.",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1853279976193507602",
+      "domain": "domestic",
+      "reasoning": "The claim that Minelys \"Mimi\" Rodriguez-Ramirez was kidnapped and murdered by an illegal alien is accurate. On October 22, 2024, Rodriguez-Ramirez went missing after being last seen at a Walmart in Cornelia, Georgia. Her body was discovered near the Walmart shortly thereafter. Angel DeJesus Rivera-S"
+    },
+    {
+      "claim": "Kamala has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "As we rescue our economy, I will also restore our borders. Over the past 4 years, Kamala has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people. She has violated her oath, eradicated our sovereign border, and unleashed an",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1852945058305114396",
+      "domain": "domestic",
+      "reasoning": "The claim that Kamala Harris \"has orchestrated the most egregious betrayal that any leader in American history has ever inflicted on our people\" is a subjective and hyperbolic statement lacking specific evidence. While there have been criticisms of Harris's policies, particularly regarding immigrati"
+    },
+    {
+      "claim": "I never mentioned wanting to end the Affordable Care Act or Social Security.",
+      "verdict": "FALSE",
+      "score": 0,
+      "tweet_text": "Lyin’ Kamala is giving a News Conference now, saying that I want to end the Affordable Care Act. I never mentioned doing that, never even thought about such a thing. She also said I want to end Social Security. Likewise, never mentioned it, or thought of it. She is the one that",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1852033066157441249",
+      "domain": "domestic",
+      "reasoning": "Donald Trump's claim that he \"never mentioned\" wanting to end the Affordable Care Act (ACA) or Social Security is contradicted by his previous statements and actions. In November 2023, Trump stated he was \"seriously looking at alternatives\" to the ACA, criticizing it as expensive and subpar healthca"
+    },
+    {
+      "claim": "Trump has done more for Puerto Rico than any other President",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "“Ignore The Democrat And Media Outrage. Trump Has Done More For Puerto Rico Than Any Other President”",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851458837032612095",
+      "domain": "domestic",
+      "reasoning": "The claim that 'Trump has done more for Puerto Rico than any other President' is misleading. While the Trump administration did allocate significant funds for Puerto Rico's recovery after Hurricane Maria, the actual disbursement was much lower than claimed. As of April 2019, approximately $11.2 bill"
+    },
+    {
+      "claim": "Kamala is running billboards near the Border advertising free legal services for illegal alien criminals.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "Kamala is now running billboards near the Border advertising FREE Legal Services for Illegal Alien Criminals. When I win, the billboards are coming down, and the Migrant Gangs are going home!",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851328401644405039",
+      "domain": "domestic",
+      "reasoning": "The Department of Homeland Security's Office of the Immigration Detention Ombudsman (OIDO) did fund billboards near the U.S.-Mexico border offering assistance to individuals in immigration custody, stating, \"Your brother in immigration custody has rights, we're here to help.\" However, these billboar"
+    },
+    {
+      "claim": "York County received thousands of potentially fraudulent voter registration forms and mail-in ballot applications, and Lancaster County had 2600 fake ballots and forms written by the same person.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "Wow! York County, Pennsylvania, received THOUSANDS of potentially FRAUDULENT Voter Registration Forms and Mail-In Ballot Applications from a third party group. This is on top of Lancaster County being caught with 2600 Fake Ballots and Forms, all written by the same person. Really",
+      "tweet_url": "https://twitter.com/realDonaldTrump/status/1851309196827828616",
+      "domain": "domestic",
+      "reasoning": "Donald Trump's claim that York County received thousands of potentially fraudulent voter registration forms and mail-in ballot applications, and that Lancaster County had 2,600 fake ballots and forms written by the same person, is misleading. While both counties did investigate suspicious voter regi"
     }
   ],
-  "generated_at": "2026-04-01T10:52:48.036Z"
+  "generated_at": "2026-04-02T13:39:59.439Z"
 }
