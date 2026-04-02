@@ -1,5 +1,162 @@
 [
   {
+    "topic": "Iran Bridge Strike Casualties",
+    "summary": "An airstrike in Iran has led to the collapse of a major bridge, resulting in at least 8 deaths and 95 injuries. The incident has heightened tensions in the region, with U.S. officials calling for diplomatic negotiations to prevent further escalation. Iran has responded with threats against American allies, indicating a potential for increased conflict.",
+    "severity": "major",
+    "detected_at": "2026-04-02T23:00:12.651Z",
+    "last_updated": "2026-04-02T23:00:12.651Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Right-leaning media is emphasizing the strategic importance of the bridge and the potential threat Iran poses to American interests and allies. They highlight Iran's aggressive rhetoric and suggest that the U.S. must maintain a strong stance to deter further Iranian aggression. The narrative suggests that Iran's actions are a direct challenge to U.S. influence in the region.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and geopolitical factors driving the conflict. The airstrike's timing coincides with ongoing negotiations over Iran's nuclear program and regional power dynamics. Additionally, the economic sanctions on Iran have exacerbated internal pressures, potentially influencing Iran's aggressive posture as a means of rallying domestic support.",
+    "social_summary": "Social media is abuzz with polarized reactions, with some users condemning the U.S. for its involvement in foreign conflicts, while others support a hardline stance against Iran. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the airstrike, such as control over regional resources or a distraction from domestic issues in the U.S.",
+    "image_prompt": "A dramatic image of a collapsed bridge in a desolate landscape, with smoke rising in the background. In the foreground, a lone figure stands, symbolizing the human cost of geopolitical conflict.",
+    "sources": [
+      {
+        "name": "Fox News",
+        "url": "https://www.foxnews.com/world/irans-tallest-bridge-collapses-reported-us-airstrikes-iran-threatens-american-allies-retaliation",
+        "lean": "right",
+        "title": "Iran&apos;s tallest bridge collapses after reported US airstrikes; Iran threatens American allies in retaliation"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
+        "embed_id": "yaIO1WF5rfQ",
+        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=wsA4zOE0aP0",
+        "embed_id": "wsA4zOE0aP0",
+        "title": "Latest update: Peace talks , Iran warns US invasion as strikes intensify across the Middle East",
+        "duration": 1181
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
+        "embed_id": "hnA7t-CeTac",
+        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
+        "duration": 542
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/QudsNen/status/2039714269005029486",
+        "embed_id": "2039714269005029486",
+        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
+        "author": "QudsNen"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85772",
+        "embed_id": "intelslava/85772",
+        "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30540",
+        "embed_id": "Newsmax/30540",
+        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
+        "embed_id": "1sakax8",
+        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
+        "embed_id": "1samlmz",
+        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Hasan_Piker/comments/1saocls/biggest_bridge_in_iran_was_destroyed_by_us_and/",
+        "embed_id": "1saocls",
+        "title": "Biggest bridge in Iran was destroyed by US and Israel."
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
+        "embed_id": "yaIO1WF5rfQ",
+        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=wsA4zOE0aP0",
+        "embed_id": "wsA4zOE0aP0",
+        "title": "Latest update: Peace talks , Iran warns US invasion as strikes intensify across the Middle East",
+        "channel": "Al Jazeera English",
+        "duration": 1181
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
+        "embed_id": "hnA7t-CeTac",
+        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
+        "channel": "Kanal13",
+        "duration": 542
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/QudsNen/status/2039714269005029486",
+        "embed_id": "2039714269005029486",
+        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
+        "author": "QudsNen"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85772",
+        "embed_id": "intelslava/85772",
+        "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30540",
+        "embed_id": "Newsmax/30540",
+        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
+        "embed_id": "1sakax8",
+        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
+        "embed_id": "1samlmz",
+        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Hasan_Piker/comments/1saocls/biggest_bridge_in_iran_was_destroyed_by_us_and/",
+        "embed_id": "1saocls",
+        "title": "Biggest bridge in Iran was destroyed by US and Israel."
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-02.png"
+  },
+  {
     "topic": "Iran Bridge Collapse After Strikes",
     "summary": "Iran's largest bridge has collapsed following recent military strikes, exacerbating tensions in an already unstable region. The destruction of this critical infrastructure has heightened fears of further conflict escalation. Former President Trump has weighed in, indicating that more developments are expected, adding to the anxiety surrounding the situation.",
     "severity": "critical",
