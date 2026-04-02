@@ -1,15 +1,15 @@
 [
   {
     "topic": "Magnitude 7.4 Earthquake in Indonesia",
-    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, resulting in at least one confirmed death and causing structural damage to buildings. Initial tsunami warnings were issued but have since been lifted. Authorities remain vigilant for aftershocks and are conducting rescue operations to assess and mitigate further casualties.",
+    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, causing at least one confirmed death and significant structural damage. Initial tsunami warnings were issued but have since been lifted. Authorities are actively conducting rescue operations and monitoring for aftershocks to prevent further casualties.",
     "severity": "major",
     "detected_at": "2026-04-02T05:00:07.355Z",
-    "last_updated": "2026-04-02T07:00:26.800Z",
-    "left_narrative": "Left-leaning media is emphasizing the vulnerability of Indonesia to natural disasters due to its location on the Pacific Ring of Fire. They highlight the need for international aid and support to improve infrastructure and disaster preparedness in the region. The narrative often includes a critique of the Indonesian government's response capabilities and the socio-economic impact on affected communities.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is delving deeply into the economic implications of repeated natural disasters on Indonesia's long-term development. The focus remains on immediate humanitarian concerns, overlooking how these events affect foreign investment and economic stability. Additionally, there is little discussion on the role of climate change in exacerbating the frequency and intensity of such natural disasters.",
-    "social_summary": "Social media is buzzing with expressions of solidarity and calls for prayers for Indonesia. Viral takes include criticism of the government's preparedness and conspiracy theories about the earthquake being a result of secret military tests. Memes are circulating that juxtapose the natural beauty of Indonesia with its susceptibility to natural disasters, highlighting the irony and tragedy of the situation.",
-    "image_prompt": "A dramatic editorial photo of a cracked earth landscape with a lone, resilient tree standing tall amidst the devastation, symbolizing both the fragility and strength of nature and humanity.",
+    "last_updated": "2026-04-02T09:00:27.854Z",
+    "left_narrative": "Left-leaning media is emphasizing the vulnerability of Indonesia to natural disasters, highlighting the need for international aid and support in disaster preparedness and response. They focus on the human impact, stressing the importance of global cooperation in addressing climate change and its potential role in increasing the frequency of such events.",
+    "right_narrative": "Right-leaning media is focusing on the immediate impact of the earthquake, such as the structural damage and the response of local authorities. They highlight the resilience of the Indonesian people and the effectiveness of the local government's response in lifting the tsunami warning promptly and conducting rescue operations efficiently.",
+    "what_they_arent_telling_you": "Neither side is discussing the economic implications of repeated natural disasters on Indonesia's economy, particularly in terms of tourism and foreign investment. There is also little mention of the geopolitical dynamics in the region, where Indonesia's strategic location makes it a focal point for international aid and influence, which can affect how disaster relief is managed and perceived.",
+    "social_summary": "Social media is buzzing with sympathy for the victims, with hashtags like #PrayForIndonesia trending. There are viral videos showing the aftermath, and conspiracy theories are circulating about whether the earthquake was a natural occurrence or influenced by human activity. Memes about the resilience of Indonesians are also popular, showcasing their spirit in the face of adversity.",
+    "image_prompt": "A dramatic image of a cracked earth with a small Indonesian village in the background, symbolizing the fragility and resilience of life in the face of natural disasters.",
     "sources": [
       {
         "name": "BBC",
@@ -28,6 +28,12 @@
         "url": "https://www.theguardian.com/world/2026/apr/02/magnitude-78-earthquake-strikes-in-indonesia-sparking-tsunami-alert",
         "lean": "left",
         "title": "One killed and buildings damaged as magnitude 7.4 earthquake strikes Indonesia"
+      },
+      {
+        "name": "NY Post",
+        "url": "https://nypost.com/2026/04/02/world-news/indonesia-earthquake-kills-one-triggering-small-tsunami/",
+        "lean": "right",
+        "title": "Earthquake off Indonesia topples buildings, kills 1 person and sets off small tsunami"
       }
     ],
     "clips": [
@@ -178,15 +184,15 @@
   },
   {
     "topic": "Burundi Military Base Blast",
-    "summary": "An explosion at a military base in Burundi has killed at least 13 people and injured dozens more. The incident has raised alarms about regional security and stability, as authorities investigate whether the explosion was accidental or an act of sabotage. This event highlights the ongoing challenges faced by Burundi in maintaining peace and security within its borders.",
+    "summary": "An explosion at a military base in Burundi resulted in the deaths of at least 13 individuals and left dozens injured. The cause of the explosion is under investigation, with authorities considering both accidental and sabotage scenarios. This incident underscores the persistent security challenges in Burundi and raises concerns about regional stability.",
     "severity": "major",
     "detected_at": "2026-04-01T21:00:08.520Z",
-    "last_updated": "2026-04-02T07:00:43.693Z",
+    "last_updated": "2026-04-02T09:00:44.626Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this explosion. Burundi's strategic position in East Africa and its history of political instability make it a focal point for regional power dynamics. The incident has ramifications for international military aid and influence in the region, as global powers seek to leverage the situation to their advantage.",
-    "social_summary": "Social media is buzzing with speculation about the cause of the explosion, with some users suggesting government conspiracy theories or foreign intervention. Memes and viral posts are circulating, depicting the explosion as a symbol of the broader chaos in the region. The incident has sparked debates about the effectiveness of Burundi's military and government in ensuring national security.",
-    "image_prompt": "A dramatic editorial photo of a smoldering military base at dawn, with silhouetted soldiers surveying the damage, set against a backdrop of rising smoke and an ominous sky, symbolizing uncertainty and tension.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affect Burundi's relationships with neighboring countries and international allies. There is also a lack of discussion on the potential internal political ramifications, such as how this impact the current government's hold on power or influence upcoming elections.",
+    "social_summary": "Social media is buzzing with speculation about the cause of the explosion, with some users suggesting government conspiracy theories or foreign intervention. Memes and viral posts are circulating, questioning the safety protocols at military installations and the government's transparency in handling the crisis.",
+    "image_prompt": "A dramatic silhouette of a military base at dusk, with smoke rising in the background, symbolizing tension and uncertainty. In the foreground, a lone soldier stands, looking towards the horizon, representing vigilance and the quest for truth.",
     "sources": [
       {
         "name": "Al Jazeera",
