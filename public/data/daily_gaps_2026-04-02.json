@@ -1,6 +1,6 @@
 {
   "date": "2026-04-02",
-  "generated_at": "2026-04-02T12:11:14.919Z",
+  "generated_at": "2026-04-02T13:32:06.945Z",
   "top_narratives": [
     {
       "topic": "Iran War Escalation and Global Impact",
@@ -938,7 +938,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_1.png"
+      "image_file": "/images/story_2026-04-02_1.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Artemis II Lunar Mission",
@@ -1827,7 +1828,23 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_2.png"
+      "image_file": "/images/story_2026-04-02_2.png",
+      "onrecord_matches": [
+        {
+          "handle": "realDonaldTrump",
+          "name": "Donald J. Trump",
+          "search_keyword": "iran",
+          "matching_claims": 2,
+          "topic_score": 65
+        },
+        {
+          "handle": "marcorubio",
+          "name": "Marco Rubio",
+          "search_keyword": "iran",
+          "matching_claims": 11,
+          "topic_score": 75
+        }
+      ]
     },
     {
       "topic": "Magnitude 7.8 Earthquake in Indonesia",
@@ -1945,7 +1962,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_3.png"
+      "image_file": "/images/story_2026-04-02_3.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Death of Refugee in Buffalo Ruled a Homicide",
@@ -2080,7 +2098,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_4.png"
+      "image_file": "/images/story_2026-04-02_4.png",
+      "onrecord_matches": []
     },
     {
       "topic": "U.S. Lifts Sanctions on Venezuela's New Leader",
@@ -2209,7 +2228,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_5.png"
+      "image_file": "/images/story_2026-04-02_5.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Israel's Intensified Attacks on Lebanon",
@@ -2415,7 +2435,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_6.png"
+      "image_file": "/images/story_2026-04-02_6.png",
+      "onrecord_matches": []
     },
     {
       "topic": "China's Space Ambitions and U.S. Response",
@@ -2477,7 +2498,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_7.png"
+      "image_file": "/images/story_2026-04-02_7.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Burundi Ammunition Depot Explosion",
@@ -2567,7 +2589,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_8.png"
+      "image_file": "/images/story_2026-04-02_8.png",
+      "onrecord_matches": []
     },
     {
       "topic": "South Korea's Defense Industry and Iran War",
@@ -2623,7 +2646,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_9.png"
+      "image_file": "/images/story_2026-04-02_9.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Gaza Evacuation of Children Amid Conflict",
@@ -2697,7 +2721,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_10.png"
+      "image_file": "/images/story_2026-04-02_10.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Address on Iran War",
@@ -3384,7 +3409,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_11.png"
+      "image_file": "/images/story_2026-04-02_11.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Supreme Court Birthright Citizenship Case",
@@ -3978,7 +4004,16 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_12.png"
+      "image_file": "/images/story_2026-04-02_12.png",
+      "onrecord_matches": [
+        {
+          "handle": "AOC",
+          "name": "Alexandria Ocasio-Cortez",
+          "search_keyword": "gaza",
+          "matching_claims": 2,
+          "topic_score": 82.5
+        }
+      ]
     },
     {
       "topic": "DHS Shutdown Deal",
@@ -4317,7 +4352,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_13.png"
+      "image_file": "/images/story_2026-04-02_13.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump's Birthright Citizenship Proposal",
@@ -4490,7 +4526,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_14.png"
+      "image_file": "/images/story_2026-04-02_14.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Oil Prices Surge Amid Iran Tensions",
@@ -4662,7 +4699,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_15.png"
+      "image_file": "/images/story_2026-04-02_15.png",
+      "onrecord_matches": []
     },
     {
       "topic": "SpaceX Files for IPO",
@@ -4868,7 +4906,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_16.png"
+      "image_file": "/images/story_2026-04-02_16.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Global Stock Markets React to Iran Conflict",
@@ -4993,7 +5032,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_17.png"
+      "image_file": "/images/story_2026-04-02_17.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Interest Rate Speculations Amid Economic Uncertainty",
@@ -5057,7 +5097,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_18.png"
+      "image_file": "/images/story_2026-04-02_18.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Housing Market Faces Uncertainty",
@@ -5108,7 +5149,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_19.png"
+      "image_file": "/images/story_2026-04-02_19.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Corporate Earnings Season Begins",
@@ -5331,7 +5373,8 @@
         }
       ],
       "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_20.png"
+      "image_file": "/images/story_2026-04-02_20.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Commodities Market Volatility",
@@ -5357,7 +5400,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_21.png"
+      "image_file": "/images/story_2026-04-02_21.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Job Market Trends Amid Economic Shifts",
@@ -5440,7 +5484,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_22.png"
+      "image_file": "/images/story_2026-04-02_22.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trade Tensions and Global Supply Chains",
@@ -5485,7 +5530,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_23.png"
+      "image_file": "/images/story_2026-04-02_23.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Inflation Concerns Amid Economic Challenges",
@@ -5537,7 +5583,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_24.png"
+      "image_file": "/images/story_2026-04-02_24.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Mozart's Sister Steals the Spotlight",
@@ -5582,7 +5629,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_25.png"
+      "image_file": "/images/story_2026-04-02_25.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Cannes Film Market Highlights AI and Innovation",
@@ -5642,7 +5690,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_26.png"
+      "image_file": "/images/story_2026-04-02_26.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ranbir Kapoor as Lord Rama in 'Ramayana'",
@@ -5759,7 +5808,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_27.png"
+      "image_file": "/images/story_2026-04-02_27.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Vir Das Ventures into Horror with 'Baara Number'",
@@ -5800,7 +5850,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_28.png"
+      "image_file": "/images/story_2026-04-02_28.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Ella Langley's Star-Studded 'Choosin’ Texas' Video",
@@ -5992,7 +6043,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_29.png"
+      "image_file": "/images/story_2026-04-02_29.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Wemby stays hot, doubles-down on MVP chase",
@@ -6152,7 +6204,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_30.png"
+      "image_file": "/images/story_2026-04-02_30.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Rams receiver Nacua is in rehab, attorney says",
@@ -6298,7 +6351,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_31.png"
+      "image_file": "/images/story_2026-04-02_31.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Woods can leave U.S. for treatment, judge rules",
@@ -6431,7 +6485,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_32.png"
+      "image_file": "/images/story_2026-04-02_32.png",
+      "onrecord_matches": []
     },
     {
       "topic": "WC final tickets hit $10,990 as FIFA reopens sales",
@@ -6478,7 +6533,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_33.png"
+      "image_file": "/images/story_2026-04-02_33.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Kansas coach Self to return for 2026-27 season",
@@ -6559,7 +6615,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_34.png"
+      "image_file": "/images/story_2026-04-02_34.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Trump Discusses Firing Attorney General Pam Bondi",
@@ -6667,7 +6724,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_35.png"
+      "image_file": "/images/story_2026-04-02_35.png",
+      "onrecord_matches": []
     },
     {
       "topic": "ActBlue Under Scrutiny for Foreign Donations",
@@ -6743,7 +6801,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_36.png"
+      "image_file": "/images/story_2026-04-02_36.png",
+      "onrecord_matches": []
     },
     {
       "topic": "XO, Kitty Season 3 Unveiled",
@@ -6876,7 +6935,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_37.png"
+      "image_file": "/images/story_2026-04-02_37.png",
+      "onrecord_matches": []
     },
     {
       "topic": "The Masked Singer Season 14 Finale",
@@ -7298,7 +7358,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_38.png"
+      "image_file": "/images/story_2026-04-02_38.png",
+      "onrecord_matches": []
     },
     {
       "topic": "BTS Dominates YouTube Charts",
@@ -7344,7 +7405,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_39.png"
+      "image_file": "/images/story_2026-04-02_39.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Tiffany Young's New Music Deal",
@@ -7404,7 +7466,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_40.png"
+      "image_file": "/images/story_2026-04-02_40.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Chuck Norris AI Scandal",
@@ -7466,7 +7529,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_41.png"
+      "image_file": "/images/story_2026-04-02_41.png",
+      "onrecord_matches": []
     },
     {
       "topic": "J. Cole to Play Basketball in China",
@@ -7547,7 +7611,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_42.png"
+      "image_file": "/images/story_2026-04-02_42.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Celtics' Historic First Quarter Performance",
@@ -7633,7 +7698,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_43.png"
+      "image_file": "/images/story_2026-04-02_43.png",
+      "onrecord_matches": []
     },
     {
       "topic": "QB Fernando Mendoza Shines at Pro Day",
@@ -7761,7 +7827,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_44.png"
+      "image_file": "/images/story_2026-04-02_44.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Chelsea's Financial Woes: Record Losses",
@@ -7860,7 +7927,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_45.png"
+      "image_file": "/images/story_2026-04-02_45.png",
+      "onrecord_matches": []
     },
     {
       "topic": "Grizzlies' Clarke Arrested on Drug Charges",
@@ -7944,7 +8012,8 @@
         }
       ],
       "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_46.png"
+      "image_file": "/images/story_2026-04-02_46.png",
+      "onrecord_matches": []
     }
   ],
   "top_10_topics": [

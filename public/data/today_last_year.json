@@ -1,117 +1,75 @@
 {
-  "date_last_year": "2025-04-01",
-  "date_generated": "2026-04-01T15:00:12.520Z",
-  "summary": "April 1, 2025, was marked by significant global developments. President Donald Trump announced new trade tariffs, labeling the day as 'Liberation Day' for American trade. This move, which included potential 20% duties on various imports, raised concerns of economic repercussions and prompted threats of retaliation from Europe. Meanwhile, tensions in the Middle East escalated dramatically. The ongoing conflict in Gaza resulted in the tragic deaths of 322 children over ten days. Additionally, an Israeli operation in Beirut led to the killing of a Hezbollah official, and the U.S. responded by deploying a second aircraft carrier to the region, indicating increased military readiness. These events highlighted the day's geopolitical volatility and economic uncertainty.",
+  "date_last_year": "2025-04-02",
+  "date_generated": "2026-04-02T13:34:52.024Z",
+  "summary": "April 2, 2025, was marked by significant global and domestic events. In the United States, President Donald Trump announced sweeping tariffs on imports, sparking fears of a trade war and causing market instability. The tariffs, dubbed 'Liberation Day' tariffs, included a 10% baseline on all imports and higher rates on Chinese goods, leading to threats of retaliation from affected countries. Concurrently, a devastating tornado outbreak and severe flooding struck the Southern and Midwestern U.S., resulting in 24 fatalities and extensive damage. The natural disaster caused over $4.1 billion in damages, with Kentucky experiencing the worst flooding. These events underscored the day's economic and humanitarian challenges.",
   "stories": [
     {
-      "headline": "Trump Announces New Trade Tariffs on Imports",
-      "summary": "President Donald Trump announced new trade tariffs, calling it 'Liberation Day' for American trade. The tariffs, which could include 20% duties on various imports, were set to take effect immediately. This decision sparked global concern, with Europe threatening retaliation and economists warning of potential inflation and negative impacts on U.S. GDP growth in 2025.",
+      "headline": "Trump's 'Liberation Day' Tariffs Spark Global Tensions",
+      "summary": "President Donald Trump announced new tariffs on imports, including a 10% baseline and a 54% tariff on Chinese goods. The move, effective April 5, led to market volatility and threats of retaliation from China and the EU. The White House's decision to exempt Russia and North Korea added to diplomatic tensions. The announcement caused Dow futures to drop significantly, reflecting investor concerns over a potential trade war.",
       "youtube_queries": [
-        "Trump announces new trade tariffs April 1 2025",
-        "Impact of Trump's tariffs on global trade April 2025",
-        "European response to US trade tariffs April 1 2025"
+        "Trump announces tariffs April 2 2025 impact on markets",
+        "Global reaction to Trump's tariffs April 2 2025",
+        "Analysis of Trump's tariffs April 2 2025 economic effects"
       ],
       "category": "politics",
       "videos": [
         {
-          "id": "Su3f3nbgqx4",
-          "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
-          "channel": "CNN",
-          "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
+          "id": "5SB9ysu1vUA",
+          "title": "Pres. Trump announces 'permanent' auto tariffs going into effect April 2",
+          "channel": "CNBC Television",
+          "thumbnail": "https://i.ytimg.com/vi/5SB9ysu1vUA/maxresdefault.jpg"
         },
         {
-          "id": "R8NdE32Pgak",
-          "title": "Trump's Latest Tariffs on China 'Not Entirely Unexpected': International Economics Expert",
-          "channel": "Bloomberg Podcasts",
-          "thumbnail": "https://i.ytimg.com/vi/R8NdE32Pgak/maxresdefault.jpg"
+          "id": "UXyH39GxVGA",
+          "title": "Oil Surges As Trump Vows To Hit Iran Hard | The Opening Trade 4/2/2026",
+          "channel": "Bloomberg Television",
+          "thumbnail": "https://i.ytimg.com/vi/UXyH39GxVGA/maxresdefault.jpg"
         },
         {
-          "id": "XTgopzlGZHU",
-          "title": "Why Trump’s tariffs are a massive mistake",
-          "channel": "The Economist",
-          "thumbnail": "https://i.ytimg.com/vi/XTgopzlGZHU/hqdefault.jpg"
+          "id": "fOVz_1kzfvA",
+          "title": "Stocks hit session lows as President Trump threatens 'massive' tariff hike on China",
+          "channel": "CNBC Television",
+          "thumbnail": "https://i.ytimg.com/vi/fOVz_1kzfvA/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "Su3f3nbgqx4",
-        "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
-        "channel": "CNN",
-        "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
+        "id": "5SB9ysu1vUA",
+        "title": "Pres. Trump announces 'permanent' auto tariffs going into effect April 2",
+        "channel": "CNBC Television",
+        "thumbnail": "https://i.ytimg.com/vi/5SB9ysu1vUA/maxresdefault.jpg"
       }
     },
     {
-      "headline": "Middle East Tensions Escalate Amid Gaza Conflict",
-      "summary": "Tensions in the Middle East escalated as the UN reported 322 children killed in Gaza over ten days. An Israeli operation in Beirut resulted in the death of a Hezbollah official, further heightening regional tensions. In response, the U.S. deployed a second aircraft carrier to the West Asia region, signaling increased military readiness.",
+      "headline": "Tornadoes and Floods Devastate Southern U.S.",
+      "summary": "A severe weather system caused a tornado outbreak and historic flooding across the Southern and Midwestern U.S. from April 2 to April 7, 2025. The disaster resulted in 24 deaths, 47 injuries, and $4.1 billion in damages. Kentucky was particularly hard-hit, with record rainfall and river levels. The event highlighted the need for emergency response and climate resilience in affected regions.",
       "youtube_queries": [
-        "Middle East tensions escalate April 1 2025",
-        "Gaza conflict child casualties April 2025",
-        "US military deployment to West Asia April 2025"
+        "Tornado outbreak April 2 2025 Southern US impact",
+        "Flooding in Kentucky April 2 2025 aftermath and response",
+        "April 2025 tornadoes and floods US weather analysis"
       ],
       "category": "world",
-      "videos": [
-        {
-          "id": "e02xgbVm3tw",
-          "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
-        },
-        {
-          "id": "m1XxGuFeUMY",
-          "title": "Brent Oil Drops Below $100 As Trump Talks War End | The Opening Trade 4/1/2026",
-          "channel": "Bloomberg Television",
-          "thumbnail": "https://i.ytimg.com/vi/m1XxGuFeUMY/maxresdefault.jpg"
-        },
-        {
-          "id": "r6Ocfah8iVc",
-          "title": "Iran launches attacks across Middle East in response to US and Israel strikes | BBC News",
-          "channel": "BBC News",
-          "thumbnail": "https://i.ytimg.com/vi/r6Ocfah8iVc/maxresdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "e02xgbVm3tw",
-        "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
-        "channel": "Al Jazeera English",
-        "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
-      }
+      "videos": [],
+      "video": null
     }
   ],
   "videos": [
     {
-      "id": "Su3f3nbgqx4",
-      "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
-      "channel": "CNN",
-      "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
+      "id": "5SB9ysu1vUA",
+      "title": "Pres. Trump announces 'permanent' auto tariffs going into effect April 2",
+      "channel": "CNBC Television",
+      "thumbnail": "https://i.ytimg.com/vi/5SB9ysu1vUA/maxresdefault.jpg"
     },
     {
-      "id": "R8NdE32Pgak",
-      "title": "Trump's Latest Tariffs on China 'Not Entirely Unexpected': International Economics Expert",
-      "channel": "Bloomberg Podcasts",
-      "thumbnail": "https://i.ytimg.com/vi/R8NdE32Pgak/maxresdefault.jpg"
-    },
-    {
-      "id": "XTgopzlGZHU",
-      "title": "Why Trump’s tariffs are a massive mistake",
-      "channel": "The Economist",
-      "thumbnail": "https://i.ytimg.com/vi/XTgopzlGZHU/hqdefault.jpg"
-    },
-    {
-      "id": "e02xgbVm3tw",
-      "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
-      "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
-    },
-    {
-      "id": "m1XxGuFeUMY",
-      "title": "Brent Oil Drops Below $100 As Trump Talks War End | The Opening Trade 4/1/2026",
+      "id": "UXyH39GxVGA",
+      "title": "Oil Surges As Trump Vows To Hit Iran Hard | The Opening Trade 4/2/2026",
       "channel": "Bloomberg Television",
-      "thumbnail": "https://i.ytimg.com/vi/m1XxGuFeUMY/maxresdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/UXyH39GxVGA/maxresdefault.jpg"
     },
     {
-      "id": "r6Ocfah8iVc",
-      "title": "Iran launches attacks across Middle East in response to US and Israel strikes | BBC News",
-      "channel": "BBC News",
-      "thumbnail": "https://i.ytimg.com/vi/r6Ocfah8iVc/maxresdefault.jpg"
+      "id": "fOVz_1kzfvA",
+      "title": "Stocks hit session lows as President Trump threatens 'massive' tariff hike on China",
+      "channel": "CNBC Television",
+      "thumbnail": "https://i.ytimg.com/vi/fOVz_1kzfvA/maxresdefault.jpg"
     }
   ]
 }
