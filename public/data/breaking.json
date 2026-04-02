@@ -1,5 +1,171 @@
 [
   {
+    "topic": "Iran Bridge Collapse After Strikes",
+    "summary": "Iran's largest bridge has collapsed as a result of recent military strikes, intensifying the already volatile situation in the region. The incident has raised alarms about the potential for further conflict escalation. Former President Trump has commented on the situation, suggesting that additional developments are imminent, which has contributed to the growing tension.",
+    "severity": "critical",
+    "detected_at": "2026-04-02T19:00:06.979Z",
+    "last_updated": "2026-04-02T19:00:06.979Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of the bridge collapse, particularly how it affects international trade routes and regional power dynamics. The focus remains on immediate military actions rather than the long-term economic and strategic consequences for Iran and its neighbors. Additionally, the role of foreign powers in either supporting or condemning the strikes is not being thoroughly examined.",
+    "social_summary": "Social media is abuzz with polarized reactions, with some users blaming foreign intervention for the escalation, while others criticize Iran's military strategies. Memes and conspiracy theories are circulating, suggesting hidden agendas behind the strikes, including theories about resource control and political maneuvering. The incident has sparked debates about the effectiveness of military interventions in resolving regional conflicts.",
+    "image_prompt": "A dramatic editorial photo of a crumbling bridge silhouetted against a fiery sunset, symbolizing the collapse of stability and the dawn of uncertainty in the region.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=1G8nNhit7YE",
+        "embed_id": "1G8nNhit7YE",
+        "title": "US-Israeli Strikes Rock Iran’s B1 Bridge on Tehran-Karaj Highway, Several Injured Reported",
+        "duration": 196
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=DPAVf1Z5hoc",
+        "embed_id": "DPAVf1Z5hoc",
+        "title": "US-Israeli Airstrikes Destroy  Key Bridge Linking Tehran to Karaj | US Iran War News | News18",
+        "duration": 308
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
+        "embed_id": "hnA7t-CeTac",
+        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
+        "duration": 542
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43080",
+        "embed_id": "warmonitors/43080",
+        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1sannnx/trump_on_irans_bridge_collapse/",
+        "embed_id": "1sannnx",
+        "title": "Trump on Iran's Bridge Collapse"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
+        "embed_id": "1sakax8",
+        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
+        "embed_id": "1samlmz",
+        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskSocialists/comments/1sanni2/us_and_israeli_destroyed_the_b1_bridge_which/",
+        "embed_id": "1sanni2",
+        "title": "US and Israeli destroyed the B1 Bridge, which crosses Karaj river, northern Iran."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/neoliberal/comments/1salm85/there_is_no_trump_doctrine_only_whims_francis/",
+        "embed_id": "1salm85",
+        "title": "There Is No Trump Doctrine, Only Whims (Francis Fukuyama)"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NatureofPredators/comments/1s9wjo9/ficnap_nature_of_supervillains_mwahahahahahaha/",
+        "embed_id": "1s9wjo9",
+        "title": "(FICNAP) Nature of Supervillains, Mwahahahahahaha!"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=1G8nNhit7YE",
+        "embed_id": "1G8nNhit7YE",
+        "title": "US-Israeli Strikes Rock Iran’s B1 Bridge on Tehran-Karaj Highway, Several Injured Reported",
+        "channel": "MIRROR NOW",
+        "duration": 196
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=DPAVf1Z5hoc",
+        "embed_id": "DPAVf1Z5hoc",
+        "title": "US-Israeli Airstrikes Destroy  Key Bridge Linking Tehran to Karaj | US Iran War News | News18",
+        "channel": "CNN-News18",
+        "duration": 308
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
+        "embed_id": "hnA7t-CeTac",
+        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
+        "channel": "Kanal13",
+        "duration": 542
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43080",
+        "embed_id": "warmonitors/43080",
+        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1sannnx/trump_on_irans_bridge_collapse/",
+        "embed_id": "1sannnx",
+        "title": "Trump on Iran's Bridge Collapse"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
+        "embed_id": "1sakax8",
+        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
+        "embed_id": "1samlmz",
+        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskSocialists/comments/1sanni2/us_and_israeli_destroyed_the_b1_bridge_which/",
+        "embed_id": "1sanni2",
+        "title": "US and Israeli destroyed the B1 Bridge, which crosses Karaj river, northern Iran."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/neoliberal/comments/1salm85/there_is_no_trump_doctrine_only_whims_francis/",
+        "embed_id": "1salm85",
+        "title": "There Is No Trump Doctrine, Only Whims (Francis Fukuyama)"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NatureofPredators/comments/1s9wjo9/ficnap_nature_of_supervillains_mwahahahahahaha/",
+        "embed_id": "1s9wjo9",
+        "title": "(FICNAP) Nature of Supervillains, Mwahahahahahaha!"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-02.png"
+  },
+  {
     "topic": "U.S. Urges Immediate Evacuation of Americans in Iraq",
     "summary": "The U.S. government has issued an urgent directive for American citizens to evacuate Iraq due to rising threats from Iran-backed militias. This move comes amid escalating tensions in the region, highlighting the precarious security situation in Iraq and the broader Middle East. The evacuation order reflects concerns over potential conflict and the safety of U.S. nationals in the area.",
     "severity": "major",
@@ -237,241 +403,6 @@
         "url": "https://reddit.com/r/bergencounty/comments/1sai61z/paramus_says_american_dream_malls_sunday_sales/",
         "embed_id": "1sai61z",
         "title": "Paramus Says American Dream Mall's Sunday Sales Flatly Violate State Law"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-02.png"
-  },
-  {
-    "topic": "Magnitude 7.4 Earthquake in Indonesia",
-    "summary": "A magnitude 7.4 earthquake struck off the coast of Indonesia, resulting in at least one confirmed death and causing significant structural damage. Initial tsunami warnings were issued but have since been lifted. Rescue operations are underway as authorities monitor for potential aftershocks.",
-    "severity": "major",
-    "detected_at": "2026-04-02T05:00:07.355Z",
-    "last_updated": "2026-04-02T17:01:51.885Z",
-    "left_narrative": "Left-leaning media is emphasizing the human impact of the earthquake, focusing on the loss of life and the destruction of homes and infrastructure. They highlight the vulnerability of Indonesia to natural disasters and the need for international aid and support in the aftermath. The narrative often includes a call for increased global attention to climate change and its potential role in exacerbating natural disasters.",
-    "right_narrative": "Right-leaning media is focusing on the immediate facts of the earthquake, such as the magnitude, the death toll, and the structural damage. They are highlighting the efficiency of the Indonesian government's response, including the quick lifting of the tsunami warning and the ongoing rescue operations. The narrative tends to emphasize the resilience of the affected communities and the importance of self-reliance in disaster response.",
-    "what_they_arent_telling_you": "Neither side is delving deeply into the economic implications of the earthquake on Indonesia's already fragile economy. The potential long-term impact on tourism, a significant source of revenue for the region, is not being addressed. Additionally, there is little discussion on the preparedness and infrastructure investments needed to mitigate future disasters in a country prone to such events.",
-    "social_summary": "Social media is reacting with a mix of sympathy and skepticism. Viral takes include calls for international aid and criticism of the Indonesian government's preparedness. Memes and conspiracy theories are circulating, with some users falsely linking the earthquake to secret government projects or climate change manipulation. Hashtags like #PrayForIndonesia and #EarthquakeRelief are trending.",
-    "image_prompt": "A dramatic editorial photo of a cracked and tilted building against a stormy sky, with a lone figure standing in the foreground, symbolizing resilience and vulnerability in the face of natural disasters.",
-    "sources": [
-      {
-        "name": "BBC",
-        "url": "https://www.bbc.com/news/articles/cn53krrrr24o?at_medium=RSS&amp;at_campaign=rss",
-        "lean": "center",
-        "title": "Magnitude 7.4 earthquake hits off Indonesia, killing one"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/1/magnitude-7-4-quake-hits-off-indonesias-ternate-tsunami-warning-triggered?traffic_source=rss",
-        "lean": "center",
-        "title": "Magnitude 7.4 quake hits off Indonesia’s Ternate, tsunami warning lifted"
-      },
-      {
-        "name": "The Guardian",
-        "url": "https://www.theguardian.com/world/2026/apr/02/magnitude-78-earthquake-strikes-in-indonesia-sparking-tsunami-alert",
-        "lean": "left",
-        "title": "One killed and buildings damaged as magnitude 7.4 earthquake strikes Indonesia"
-      },
-      {
-        "name": "NY Post",
-        "url": "https://nypost.com/2026/04/02/world-news/indonesia-earthquake-kills-one-triggering-small-tsunami/",
-        "lean": "right",
-        "title": "Earthquake off Indonesia topples buildings, kills 1 person and sets off small tsunami"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=kx42minDcW4",
-        "embed_id": "kx42minDcW4",
-        "title": "7.4-magnitude quake sends panicked Indonesians fleeing as buildings collapse | AJ #shorts"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=cntM1VRsUO4",
-        "embed_id": "cntM1VRsUO4",
-        "title": "7.4-magnitude quake damages building in eastern Indonesia | AFP",
-        "duration": 36
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GBRCgsionrU",
-        "embed_id": "GBRCgsionrU",
-        "title": "Earthquake off Indonesia topples buildings and sets off a small tsunami"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=wgaTSXhp0KU",
-        "embed_id": "wgaTSXhp0KU",
-        "title": "Emergency crews search for survivors after 7.4 magnitude earthquake hits Indonesia"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Vw7M7amhFXs",
-        "embed_id": "Vw7M7amhFXs",
-        "title": "Magnitude 7.4 earthquake off Indonesia coast triggers tsunami warning",
-        "duration": 54
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GiikrM1UeOk",
-        "embed_id": "GiikrM1UeOk",
-        "title": "Magnitude 7.4 earthquake damages buildings in Indonesia",
-        "duration": 46
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BNONews/status/1696251278626582781",
-        "embed_id": "1696251278626582781",
-        "title": "BREAKING: 7.4-magnitude earthquake hits the Java Sea in Indonesia - BMKG https://t.co/vRD5qDdFhb",
-        "author": "BNONews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BBCWorld/status/1470634970477731841",
-        "embed_id": "1470634970477731841",
-        "title": "7.4 magnitude earthquake shakes eastern Indonesia https://t.co/gZzMkKEEpB",
-        "author": "BBCWorld"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/FrankieMacdonald/comments/1sa1iuv/74_magnitude_earthquake_just_struck_somewhere_in/",
-        "embed_id": "1sa1iuv",
-        "title": "7.4 Magnitude Earthquake just struck somewhere in Indonesia as for April 1, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa16qc",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa0xpn",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PrepperIntel/comments/1sa1jil/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa1jil",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/indonesia/comments/1sa1289/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa1289",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sa0ra5/indonesia_earthquake_tsunami_alert_issued_after/",
-        "embed_id": "1sa0ra5",
-        "title": "Indonesia Earthquake: Tsunami Alert Issued After Magnitude 7.8 Quake Strikes Molucca Sea Near Maju Island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/DisasterUpdate/comments/1sa14ok/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa14ok",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=kx42minDcW4",
-        "embed_id": "kx42minDcW4",
-        "title": "7.4-magnitude quake sends panicked Indonesians fleeing as buildings collapse | AJ #shorts",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=cntM1VRsUO4",
-        "embed_id": "cntM1VRsUO4",
-        "title": "7.4-magnitude quake damages building in eastern Indonesia | AFP",
-        "channel": "AFP News Agency",
-        "duration": 36
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GBRCgsionrU",
-        "embed_id": "GBRCgsionrU",
-        "title": "Earthquake off Indonesia topples buildings and sets off a small tsunami",
-        "channel": "Associated Press"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=wgaTSXhp0KU",
-        "embed_id": "wgaTSXhp0KU",
-        "title": "Emergency crews search for survivors after 7.4 magnitude earthquake hits Indonesia",
-        "channel": "The Guardian"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Vw7M7amhFXs",
-        "embed_id": "Vw7M7amhFXs",
-        "title": "Magnitude 7.4 earthquake off Indonesia coast triggers tsunami warning",
-        "channel": "USA TODAY",
-        "duration": 54
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GiikrM1UeOk",
-        "embed_id": "GiikrM1UeOk",
-        "title": "Magnitude 7.4 earthquake damages buildings in Indonesia",
-        "channel": "CBS Philadelphia",
-        "duration": 46
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/BNONews/status/1696251278626582781",
-        "embed_id": "1696251278626582781",
-        "title": "BREAKING: 7.4-magnitude earthquake hits the Java Sea in Indonesia - BMKG https://t.co/vRD5qDdFhb",
-        "author": "BNONews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BBCWorld/status/1470634970477731841",
-        "embed_id": "1470634970477731841",
-        "title": "7.4 magnitude earthquake shakes eastern Indonesia https://t.co/gZzMkKEEpB",
-        "author": "BBCWorld"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/FrankieMacdonald/comments/1sa1iuv/74_magnitude_earthquake_just_struck_somewhere_in/",
-        "embed_id": "1sa1iuv",
-        "title": "7.4 Magnitude Earthquake just struck somewhere in Indonesia as for April 1, 2026"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa16qc",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sa0xpn/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa0xpn",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PrepperIntel/comments/1sa1jil/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa1jil",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/indonesia/comments/1sa1289/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa1289",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sa0ra5/indonesia_earthquake_tsunami_alert_issued_after/",
-        "embed_id": "1sa0ra5",
-        "title": "Indonesia Earthquake: Tsunami Alert Issued After Magnitude 7.8 Quake Strikes Molucca Sea Near Maju Island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/DisasterUpdate/comments/1sa14ok/magnitude_78_earthquake_strikes_in_indonesia/",
-        "embed_id": "1sa14ok",
-        "title": "Magnitude 7.8 earthquake strikes in Indonesia, sparking tsunami alert"
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
