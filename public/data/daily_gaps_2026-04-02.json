@@ -984,7 +984,7 @@
           "role": "Iranian President"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_1.png"
     },
     {
@@ -2043,7 +2043,7 @@
           "role": "President of Lebanon"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_3.png"
     },
     {
@@ -2277,7 +2277,7 @@
           "role": "President of the United States"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_5.png"
     },
     {
@@ -2381,7 +2381,7 @@
           "role": "President of the State of Palestine"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_6.png"
     },
     {
@@ -2454,7 +2454,7 @@
           "role": "UK Justice Secretary"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_7.png"
     },
     {
@@ -2530,7 +2530,7 @@
           "role": "President of China"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_8.png"
     },
     {
@@ -2572,7 +2572,7 @@
           "role": "Brazilian Judge"
         }
       ],
-      "is_top_story": false,
+      "is_top_story": true,
       "image_file": "/images/story_2026-04-02_9.png"
     },
     {
@@ -3226,7 +3226,7 @@
           "role": "Chief Justice of the United States"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-04-02_11.png"
     },
     {
@@ -3357,7 +3357,7 @@
           "role": "Secretary of Homeland Security"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-04-02_12.png"
     },
     {
@@ -3648,7 +3648,7 @@
           "role": "Chief Justice of the United States"
         }
       ],
-      "is_top_story": true,
+      "is_top_story": false,
       "image_file": "/images/story_2026-04-02_14.png"
     },
     {
@@ -3708,248 +3708,6 @@
       ],
       "is_top_story": false,
       "image_file": "/images/story_2026-04-02_15.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_16.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/YourAnonNews/status/2039407686190526882",
-          "embed_id": "2039407686190526882",
-          "title": "Trump announces he is issuing an unconstitutional executive order to shut down mail-in voting nationwide and he will defund states if they do not comp",
-          "author": "YourAnonNews",
-          "duration": 67
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/YourAnonNews/status/2039403847727141350",
-          "embed_id": "2039403847727141350",
-          "title": "Trump signs an unconstitutional executive order to shut down mail-in voting nationwide and he will defund states if they do not comply with him | DHS ",
-          "author": "YourAnonNews"
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_17.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/Mollyploofkins/status/2039302407859974233",
-          "embed_id": "2039302407859974233",
-          "title": "Trump signs an unconstitutional executive order to create a national list of eligible voters and limit mail-in voting https://t.co/bWgmXfzvTH",
-          "author": "Mollyploofkins",
-          "duration": 67
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_18.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/AP/status/2039116024050491619",
-          "embed_id": "2039116024050491619",
-          "title": "Elections officials in Oregon and Arizona are the first to pledge legal challenges to President Trump's executive order to create a nationwide list of",
-          "author": "AP"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/AP/status/2039098803190378850",
-          "embed_id": "2039098803190378850",
-          "title": "BREAKING: President Trump signs an order directing the creation of a national eligible voter list, a move expected to face swift legal challenges. htt",
-          "author": "AP"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/DemocracyDocket/status/2009787855871037840",
-          "embed_id": "2009787855871037840",
-          "title": "BREAKING: In a major win for voters, a federal court blocked key parts of Trump’s anti-voting executive order.\n\nThe judge ruled Trump had no authority",
-          "author": "DemocracyDocket"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/DemocracyDocket/status/1957445113103143139",
-          "embed_id": "1957445113103143139",
-          "title": "BREAKING: In a blatantly unconstitutional move, Trump announces plans for a new executive order aiming to eliminate mail-in voting ahead of the 2026 m",
-          "author": "DemocracyDocket"
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_19.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/politico/status/2039099570584699068",
-          "embed_id": "2039099570584699068",
-          "title": "Trump to sign order limiting mail-in voting https://t.co/xmAZHF1UPg",
-          "author": "politico"
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_20.png"
-    },
-    {
-      "topic": "Trump's Executive Order on Mail Voting Sparks Legal Battles",
-      "category": "politics",
-      "summary": "President Trump has signed an executive order aimed at shutting down mail-in voting across the United States, threatening to defund states that do not comply. The order mandates the Department of Homeland Security to prepare a list of citizens by state, and the USPS is instructed to block mail-in ballots from individuals not on the list. This move has sparked immediate backlash and legal challenges from Democratic leaders who argue the order is unconstitutional.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing a video of the executive order announcement, which is gaining traction for its controversial nature. Mainstream media is not discussing the financial implications for states that rely on federal funding. Critics point out that the timing of the order, close to upcoming elections, raises questions about its intent to influence voter turnout.",
-      "social_summary": "Reddit is buzzing with discussions about the legality of the executive order, with many users expressing concern over potential voter suppression. X users are debating the implications for upcoming elections, while TikTok creators are mocking the order with satirical videos.",
-      "evidence_url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail prompt. No text in the image.",
-      "social_clips": [],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "President of the United States"
-        },
-        {
-          "name": "Kevin McCarthy",
-          "role": "Speaker of the House"
-        },
-        {
-          "name": "Nancy Pelosi",
-          "role": "House Minority Leader"
-        }
-      ],
-      "is_top_story": true,
-      "image_file": "/images/story_2026-04-02_21.png"
     },
     {
       "topic": "SpaceX Files for IPO",
@@ -4523,298 +4281,6 @@
       ],
       "is_top_story": false,
       "image_file": "/images/story_2026-04-02_24.png"
-    },
-    {
-      "topic": "Oil Prices Surge Amid Iran Conflict",
-      "category": "markets",
-      "summary": "Oil prices have surged over 5% following President Trump's announcement of continued military action against Iran. The geopolitical tensions have raised concerns over potential disruptions in oil supply, particularly through the Strait of Hormuz, a critical chokepoint for global oil shipments. Analysts warn that prolonged conflict leads to further volatility in oil markets.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing concerns that the oil price surge is being exacerbated by speculative trading, which is not being addressed by mainstream media. This benefits hedge funds and oil companies who profit from volatility. Additionally, leaked documents on X suggest that some government officials have financial interests in oil futures, raising conflict of interest questions.",
-      "social_summary": "Reddit users are discussing the impact of rising oil prices on everyday expenses, with many expressing frustration over the lack of alternative energy solutions. X is filled with debates about the ethics of profiting from war-induced market fluctuations. TikTok creators are making videos explaining the basics of oil trading to a younger audience.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of an oil rig at sunset.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2038716858619015329",
-          "embed_id": "2038716858619015329",
-          "title": "Oil prices settle at their highest level since July 2022 as the war against Iran enters its fifth week https://t.co/k54PFRYqL7",
-          "author": "CNN"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2038539690802811250",
-          "embed_id": "2038539690802811250",
-          "title": "Oil prices rose Monday, with Brent crude crossing $116 a barrel, after comments by President Donald Trump sparked fears that the Middle East conflict ",
-          "author": "CNN"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2038388145998188899",
-          "embed_id": "2038388145998188899",
-          "title": "Oil prices climb after Tehran warns against a US ground invasion, with Brent crude and US crude both above $100 a barrel https://t.co/dtHVsIok4G",
-          "author": "CNN"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2036388457241620884",
-          "embed_id": "2036388457241620884",
-          "title": "Oil prices rose Tuesday after fresh fighting overnight between Israel and Iran diminished hopes that an end to the Middle East war, now in its fourth ",
-          "author": "CNN"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2035854094393319433",
-          "embed_id": "2035854094393319433",
-          "title": "Oil prices rose after Iran threatened to shut down the Strait of Hormuz indefinitely in response to President Donald Trump’s ultimatum on the restorat",
-          "author": "CNN"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNN/status/2032596782555808027",
-          "embed_id": "2032596782555808027",
-          "title": "The price of oil surged as Iran limited traffic through the Strait of Hormuz, a key waterway for the global energy supply. CNN's David Goldman breaks ",
-          "author": "CNN",
-          "duration": 114
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/AP/status/2036762387424944481",
-          "embed_id": "2036762387424944481",
-          "title": "BREAKING: Most Americans say U.S. military action in Iran has gone too far, and many worry about being able to afford gas, according to a new AP-NORC ",
-          "author": "AP"
-        }
-      ],
-      "youtube_videos": [
-        {
-          "url": "https://www.youtube.com/watch?v=gmdJDf3Xjuc",
-          "embed_id": "gmdJDf3Xjuc",
-          "channel": "PBS NewsHour",
-          "title": "WATCH: Despite rising gas prices, 'we're in great shape for the future,' Trump says of Iran war"
-        }
-      ],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "Former President of the United States"
-        },
-        {
-          "name": "Mohammad Javad Zarif",
-          "role": "Iranian Foreign Minister"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_25.png"
-    },
-    {
-      "topic": "SpaceX's IPO and Its Impact on the Market",
-      "category": "markets",
-      "summary": "SpaceX, the private aerospace company founded by Elon Musk, has filed confidentially for an initial public offering (IPO). This move potentially make it one of the most significant IPOs in recent history, with the company valued at over $100 billion. SpaceX is known for its ambitious projects, including the Starlink satellite internet service and plans for Mars colonization.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are speculating that SpaceX's IPO is a strategy to raise funds for its Mars colonization plans, which mainstream media has not emphasized. Additionally, discussions on X suggest that some investors are concerned about the potential for market manipulation given Musk's history of controversial tweets.",
-      "social_summary": "Reddit threads are buzzing with speculation about SpaceX's valuation, with users debating whether it's a good investment. X users are sharing memes about Elon Musk's ambitious plans for Mars. Tech enthusiasts on TikTok are excited but cautious, discussing the potential risks of investing in a Musk-led company.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of a SpaceX rocket launch.",
-      "social_clips": [],
-      "youtube_videos": [
-        {
-          "url": "https://www.youtube.com/watch?v=QLplMRNRhcw",
-          "embed_id": "QLplMRNRhcw",
-          "channel": "Yahoo Finance",
-          "title": "SpaceX: The company’s future IPO prospects"
-        }
-      ],
-      "sources": [],
-      "people": [
-        {
-          "name": "Elon Musk",
-          "role": "CEO of SpaceX"
-        },
-        {
-          "name": "Gwynne Shotwell",
-          "role": "President and COO of SpaceX"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_26.png"
-    },
-    {
-      "topic": "Oil Prices Surge Amid Iran Conflict",
-      "category": "markets",
-      "summary": "Oil prices have surged over 5% following President Trump's announcement of continued military action against Iran. The geopolitical tensions have raised concerns over potential disruptions in oil supply, particularly through the Strait of Hormuz, a critical chokepoint for global oil shipments. Analysts warn that prolonged conflict leads to further volatility in oil markets.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing concerns that the oil price surge is being exacerbated by speculative trading, which is not being addressed by mainstream media. This benefits hedge funds and oil companies who profit from volatility. Additionally, leaked documents on X suggest that some government officials have financial interests in oil futures, raising conflict of interest questions.",
-      "social_summary": "Reddit users are discussing the impact of rising oil prices on everyday expenses, with many expressing frustration over the lack of alternative energy solutions. X is filled with debates about the ethics of profiting from war-induced market fluctuations. TikTok creators are making videos explaining the basics of oil trading to a younger audience.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of an oil rig at sunset.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/CNBC/status/2039579242854236609",
-          "embed_id": "2039579242854236609",
-          "title": "Trump’s threat to hit Iran 'extremely hard' jolts Asian stocks, U.S. futures and oil first https://t.co/mLiCzAUJnw",
-          "author": "CNBC"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNBC/status/2039526507849130498",
-          "embed_id": "2039526507849130498",
-          "title": "“The hard part is done,” President Donald Trump said in his address to the nation Wednesday night about the Iran war. The recent jump in gas prices is",
-          "author": "CNBC"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/CNBC/status/2038882237098184894",
-          "embed_id": "2038882237098184894",
-          "title": "U.S. gasoline hits $4 per gallon, highest since 2022, as Iran war drives up fuel prices https://t.co/dEg5Jy2yzG",
-          "author": "CNBC"
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "Former President of the United States"
-        },
-        {
-          "name": "Mohammad Javad Zarif",
-          "role": "Iranian Foreign Minister"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_27.png"
-    },
-    {
-      "topic": "SpaceX's IPO and Its Impact on the Market",
-      "category": "markets",
-      "summary": "SpaceX, the private aerospace company founded by Elon Musk, has filed confidentially for an initial public offering (IPO). This move potentially make it one of the most significant IPOs in recent history, with the company valued at over $100 billion. SpaceX is known for its ambitious projects, including the Starlink satellite internet service and plans for Mars colonization.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are speculating that SpaceX's IPO is a strategy to raise funds for its Mars colonization plans, which mainstream media has not emphasized. Additionally, discussions on X suggest that some investors are concerned about the potential for market manipulation given Musk's history of controversial tweets.",
-      "social_summary": "Reddit threads are buzzing with speculation about SpaceX's valuation, with users debating whether it's a good investment. X users are sharing memes about Elon Musk's ambitious plans for Mars. Tech enthusiasts on TikTok are excited but cautious, discussing the potential risks of investing in a Musk-led company.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of a SpaceX rocket launch.",
-      "social_clips": [
-        {
-          "platform": "x",
-          "url": "https://x.com/MarketWatch/status/2036803075453702650",
-          "embed_id": "2036803075453702650",
-          "title": "SpaceX could soon file for an IPO. Why EchoStar and other space stocks are rising. https://t.co/EOy0vhqUmU",
-          "author": "MarketWatch"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/MarketWatch/status/2028830824091537893",
-          "embed_id": "2028830824091537893",
-          "title": "Watch for SpaceX to trade like Tesla on steroids once it goes public: analyst https://t.co/bHqseyNiVT",
-          "author": "MarketWatch"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/MarketWatch/status/2028811977263284422",
-          "embed_id": "2028811977263284422",
-          "title": "SpaceX’s stock could trade like Tesla ‘on steroids’ after IPO, analyst says https://t.co/2nR2xvOXzN",
-          "author": "MarketWatch"
-        },
-        {
-          "platform": "x",
-          "url": "https://x.com/MarketWatch/status/2024173821989622179",
-          "embed_id": "2024173821989622179",
-          "title": "You can invest in SpaceX before its IPO — but should you? https://t.co/E2Svgx4yqv",
-          "author": "MarketWatch"
-        }
-      ],
-      "youtube_videos": [],
-      "sources": [],
-      "people": [
-        {
-          "name": "Elon Musk",
-          "role": "CEO of SpaceX"
-        },
-        {
-          "name": "Gwynne Shotwell",
-          "role": "President and COO of SpaceX"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_28.png"
-    },
-    {
-      "topic": "Oil Prices Surge Amid Iran Conflict",
-      "category": "markets",
-      "summary": "Oil prices have surged over 5% following President Trump's announcement of continued military action against Iran. The geopolitical tensions have raised concerns over potential disruptions in oil supply, particularly through the Strait of Hormuz, a critical chokepoint for global oil shipments. Analysts warn that prolonged conflict leads to further volatility in oil markets.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are sharing concerns that the oil price surge is being exacerbated by speculative trading, which is not being addressed by mainstream media. This benefits hedge funds and oil companies who profit from volatility. Additionally, leaked documents on X suggest that some government officials have financial interests in oil futures, raising conflict of interest questions.",
-      "social_summary": "Reddit users are discussing the impact of rising oil prices on everyday expenses, with many expressing frustration over the lack of alternative energy solutions. X is filled with debates about the ethics of profiting from war-induced market fluctuations. TikTok creators are making videos explaining the basics of oil trading to a younger audience.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of an oil rig at sunset.",
-      "social_clips": [],
-      "youtube_videos": [
-        {
-          "url": "https://www.youtube.com/watch?v=KBvyhADyZ0w",
-          "embed_id": "KBvyhADyZ0w",
-          "channel": "NBC News",
-          "title": "Trump suggests the Strait of Hormuz could open up 'naturally'"
-        }
-      ],
-      "sources": [],
-      "people": [
-        {
-          "name": "Donald Trump",
-          "role": "Former President of the United States"
-        },
-        {
-          "name": "Mohammad Javad Zarif",
-          "role": "Iranian Foreign Minister"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_29.png"
-    },
-    {
-      "topic": "SpaceX's IPO and Its Impact on the Market",
-      "category": "markets",
-      "summary": "SpaceX, the private aerospace company founded by Elon Musk, has filed confidentially for an initial public offering (IPO). This move potentially make it one of the most significant IPOs in recent history, with the company valued at over $100 billion. SpaceX is known for its ambitious projects, including the Starlink satellite internet service and plans for Mars colonization.",
-      "left_narrative": "Not enough coverage yet — check back soon.",
-      "right_narrative": "Not enough coverage yet — check back soon.",
-      "what_they_arent_telling_you": "On Reddit, users are speculating that SpaceX's IPO is a strategy to raise funds for its Mars colonization plans, which mainstream media has not emphasized. Additionally, discussions on X suggest that some investors are concerned about the potential for market manipulation given Musk's history of controversial tweets.",
-      "social_summary": "Reddit threads are buzzing with speculation about SpaceX's valuation, with users debating whether it's a good investment. X users are sharing memes about Elon Musk's ambitious plans for Mars. Tech enthusiasts on TikTok are excited but cautious, discussing the potential risks of investing in a Musk-led company.",
-      "evidence_url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-      "image_prompt": "Cinematic, gritty, serious thumbnail of a SpaceX rocket launch.",
-      "social_clips": [],
-      "youtube_videos": [
-        {
-          "url": "https://www.youtube.com/watch?v=p4LxP8GxsIk",
-          "embed_id": "p4LxP8GxsIk",
-          "channel": "Fox Business",
-          "title": "SpaceX eyeing public market: it could be ‘the IPO of the year’, says Teresa Rivas"
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=im4uwN6cmQc",
-          "embed_id": "im4uwN6cmQc",
-          "channel": "Bloomberg Podcasts",
-          "title": "Musk's SpaceX Approved for New Starship Launch as IPO Rumors Swirl"
-        }
-      ],
-      "sources": [],
-      "people": [
-        {
-          "name": "Elon Musk",
-          "role": "CEO of SpaceX"
-        },
-        {
-          "name": "Gwynne Shotwell",
-          "role": "President and COO of SpaceX"
-        }
-      ],
-      "is_top_story": false,
-      "image_file": "/images/story_2026-04-02_30.png"
     },
     {
       "topic": "Vir Das Announces Found-Footage Horror Film",
