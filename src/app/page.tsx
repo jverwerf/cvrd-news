@@ -47,9 +47,9 @@ export default async function Home() {
   const allStories = data?.top_narratives || [];
   const isBreaking = await hasBreakingNews();
 
-  const top10 = allStories.filter(s => s.is_top_story).length >= 6
+  const top10 = allStories.filter(s => s.is_top_story).length >= 10
     ? allStories.filter(s => s.is_top_story)
-    : allStories.slice(0, 6);
+    : allStories.slice(0, 10);
 
   const stories = top10;
 
