@@ -1,5 +1,148 @@
 [
   {
+    "topic": "Kuwait Missile and Drone Strikes",
+    "summary": "Kuwait's critical infrastructure, including a desalination plant and an oil refinery, has been targeted by missile and drone strikes. This incident represents a significant escalation in regional tensions, highlighting vulnerabilities in the security of essential facilities. The attacks have raised alarms about the potential for further destabilization in the Middle East.",
+    "severity": "major",
+    "detected_at": "2026-04-03T11:00:07.057Z",
+    "last_updated": "2026-04-03T11:00:07.057Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential involvement of external state actors who have interests in destabilizing the region for geopolitical gain. The focus remains on the immediate impact rather than exploring the broader implications of energy security and water supply in a region heavily reliant on such infrastructure. Additionally, the economic ramifications for global oil markets are not being thoroughly examined.",
+    "social_summary": "Social media is buzzing with speculation about the origins of the attacks, with some users blaming regional powers while others suggest foreign intervention. Memes and viral posts are highlighting the irony of targeting a desalination plant in a desert region, emphasizing the critical nature of water resources. Conspiracy theories are circulating about the potential for these attacks to be a pretext for military intervention by larger powers.",
+    "image_prompt": "A dramatic editorial photo of a silhouetted oil refinery against a fiery sunset, with drones ominously hovering in the sky, symbolizing the tension and vulnerability of critical infrastructure.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/3/kuwait-desalination-plant-oil-refinery-hit-by-missile-and-drone-strikes?traffic_source=rss",
+        "lean": "center",
+        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
+        "embed_id": "-aQ1uxff6fY",
+        "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
+        "duration": 132
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2038285659069198367",
+        "embed_id": "2038285659069198367",
+        "title": "🚨 BREAKING: Kuwait reports 10 soldiers injured in missile and drone attacks on its military camp, part of a broader wave of Iranian strikes on region",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TehranTimes79/status/2037444765445214352",
+        "embed_id": "2037444765445214352",
+        "title": "#BREAKING \nMajor damage reported to infrastructure at Mubarak Al-Kabeer Port in Kuwait following drone and missile strikes. https://t.co/jl3Zdlj6KV",
+        "author": "TehranTimes79"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43088",
+        "embed_id": "warmonitors/43088",
+        "title": "⚡️#BREAKING Kuwait says its Mina al-Ahmadi oil refinery again hit by Iranian drones, sparking multiple fires at the facility",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ukraine/comments/1sb7uji/morozov_explosives_plantkey_to_russias_missile/",
+        "embed_id": "1sb7uji",
+        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
+        "embed_id": "1sb6v5l",
+        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UkrainianConflict/comments/1sb749o/morozov_explosives_plantkey_to_russias_missile/",
+        "embed_id": "1sb749o",
+        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
+        "embed_id": "1sasryn",
+        "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
+        "embed_id": "-aQ1uxff6fY",
+        "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
+        "channel": "Al Jazeera English",
+        "duration": 132
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/MOSSADil/status/2038285659069198367",
+        "embed_id": "2038285659069198367",
+        "title": "🚨 BREAKING: Kuwait reports 10 soldiers injured in missile and drone attacks on its military camp, part of a broader wave of Iranian strikes on region",
+        "author": "MOSSADil"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TehranTimes79/status/2037444765445214352",
+        "embed_id": "2037444765445214352",
+        "title": "#BREAKING \nMajor damage reported to infrastructure at Mubarak Al-Kabeer Port in Kuwait following drone and missile strikes. https://t.co/jl3Zdlj6KV",
+        "author": "TehranTimes79"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43088",
+        "embed_id": "warmonitors/43088",
+        "title": "⚡️#BREAKING Kuwait says its Mina al-Ahmadi oil refinery again hit by Iranian drones, sparking multiple fires at the facility",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ukraine/comments/1sb7uji/morozov_explosives_plantkey_to_russias_missile/",
+        "embed_id": "1sb7uji",
+        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
+        "embed_id": "1sb6v5l",
+        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UkrainianConflict/comments/1sb749o/morozov_explosives_plantkey_to_russias_missile/",
+        "embed_id": "1sb749o",
+        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
+        "embed_id": "1sasryn",
+        "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-03.png"
+  },
+  {
     "topic": "Iran Missile Strikes",
     "summary": "Iran has launched missile strikes targeting Israel and several Gulf states, resulting in explosions not only in these regions but also within Tehran itself. This escalation marks a significant increase in Middle Eastern tensions, prompting international calls for restraint and diplomatic intervention to prevent further conflict. The situation has heightened fears of a broader regional war.",
     "severity": "critical",
