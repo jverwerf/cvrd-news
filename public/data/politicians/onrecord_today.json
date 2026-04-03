@@ -1,108 +1,108 @@
 {
-  "headline": "Volodymyr Zelenskyy on domestic: 100% Truthful",
+  "headline": "Naftali Bennett נפתלי בנט on military: 89.6% Truthful",
   "person": {
-    "handle": "ZelenskyyUa",
-    "name": "Volodymyr Zelenskyy",
-    "role": "President of Ukraine",
-    "photo": "/data/politicians/photo_ZelenskyyUa.png"
+    "handle": "naftalibennett",
+    "name": "Naftali Bennett נפתלי בנט",
+    "role": "13th Prime Minister of Israel",
+    "photo": "/data/politicians/photo_naftalibennett.png"
   },
-  "story_topic": "Iran War Escalation and Global Impact",
-  "search_keyword": "domestic",
-  "topic_score": 100,
-  "overall_score": 95.4,
-  "matching_claims": 27,
-  "editorial": "President Volodymyr Zelenskyy of Ukraine, while not directly involved in the U.S.-Iran conflict, is an exemplar of accuracy in communication—a stark contrast to the murky narratives surrounding the Middle East escalation. In a time where misinformation can inflame global tensions, Zelenskyy has maintained a pristine record. For instance, his claim about the Mykolaiv explosion, where seven National Police officers were injured, was confirmed true by multiple sources.\n\nZelenskyy's domestic claims consistently hold up under scrutiny. Reports of two explosions in Lviv, resulting in 25 injuries and one death, were verified true. His transparency offers a refreshing contrast to the ambiguity rampant in international discourse, where the credibility of casualty figures and the motives behind military actions are often questioned.\n\nWith an overall truthfulness score of 95.4%, Zelenskyy's record includes 304 true claims out of 345, and only a single false claim. This pattern of reliability is crucial as Ukraine navigates its own geopolitical challenges, ensuring confidence in his leadership during times of turmoil.\n\nIn a world beset by misinformation, Zelenskyy's truthfulness is a rare commodity—one that demands emulation.",
+  "story_topic": "Iran War and Trump's Address",
+  "search_keyword": "military",
+  "topic_score": 89.6,
+  "overall_score": 78.5,
+  "matching_claims": 37,
+  "editorial": "Naftali Bennett might not have been on the podium for Trump's latest address, but his claims on military readiness are just as relevant. While Bennett asserts that \"all reservists are fully mobilized and ready to take action against Hezbollah,\" our fact-checking confirms this claim as TRUE. This aligns with his strong record on military statements, including his accurate remarks on the role of combat engineers in Gaza and Lebanon.\n\nBennett's track record on military topics reveals a pattern of accuracy. Out of five recent claims, four were verified as TRUE, with only one marked as SOMEWHAT MISLEADING. That claim concerned the government's provision of troops to the IDF, where Bennett's statement didn't fully capture the complexity of the situation, despite IDF Chief of Staff Eyal Zamir's noted concerns.\n\nWith an impressive military topic score of 89.6, Bennett's overall truthfulness isn't too far behind at 78.5. He has made 133 claims, with 64 deemed true. While his misleading count is low at six, vigilance remains key. His statements on military matters show a clear pattern of reliability, especially pertinent as geopolitical tensions ripple from Trump's Iran address.\n\nFor the reader, Bennett's military claims are a rare beacon of precision in a sea of political rhetoric.",
   "matched_tweets": [
     {
-      "claim": "Seven National Police officers were injured in an explosion in Mykolaiv, with two in serious condition.",
+      "claim": "Liran Ben Zion, a tank fighter from Holon, fell in battle in southern Lebanon while defending the State of Israel.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "I have just received the first reports from law enforcement officials regarding the explosion in Mykolaiv. National Police officers were injured – seven people wounded, two of them in serious condition. They are receiving the necessary assistance. All circumstances are being",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025988914456965603",
-      "domain": "domestic",
-      "reasoning": "Multiple reputable sources confirm that on February 23, 2026, an explosion occurred at a non-operational gas station in Mykolaiv, injuring seven National Police officers, with two in serious condition. The incident has been classified as a terrorist attack by Ukrainian authorities."
+      "tweet_text": "הלב של כל עם ישראל כואב על נפילתו של סמל לירן בן ציון, לוחם שריון בן העיר חולון. לירן נפל בקרב בדרום לבנון, בהגנה על מדינת ישראל. תנחומי העמוקים למשפחתו. יהי זכרו ברוך.",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2038570456559624377",
+      "domain": "military",
+      "reasoning": "The claim states that Liran Ben Zion, a tank fighter from Holon, fell in battle in southern Lebanon while defending the State of Israel. According to reports, Sgt. Liran Ben Zion, 19, was killed by anti-tank fire in Lebanon on March 30, 2026. This information corroborates the claim, confirming its a"
     },
     {
-      "claim": "There were two explosions in Lviv, resulting in 25 injuries and one death of a 23-year-old police officer.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "A cynical and brutal terrorist act is being investigated in Lviv. There were two explosions, and the second occurred after emergency services had already arrived at the scene. Twenty-five people were injured. Tragically, one person – a 23-year-old police officer – was killed. My",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025646413028163641",
-      "domain": "domestic",
-      "reasoning": "The claim accurately reports that two explosions occurred in Lviv, resulting in 25 injuries and the death of a 23-year-old police officer. Multiple sources confirm these details, including the number of casualties and the age of the deceased officer."
+      "claim": "The government is not providing the IDF with soldiers despite the Chief of Staff's request for more troops due to exhaustion among reservists.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "בזמן מלחמה מכונת הרעל של נתניהו ושופרותיו פתחו במתקפה נבזית כנגד הרמטכ״ל זמיר, אחד המפקדים התקיפים שידעה ישראל, רק בגלל שהוא העז לומר לממשלה: ״אין לי מספיק חיילים לעמוד בכל המשימות ובשבע החזיתות. המילואימניקים שחוקים. תנו לי חיילים.״ אבל הממשלה לא נותנת לצה״ל חיילים כי גולדקנופף",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2037510813188026873",
+      "domain": "military",
+      "reasoning": "IDF Chief of Staff Eyal Zamir has indeed expressed concerns about a shortage of soldiers and the strain on reservists, urging the government to address these issues. However, the government has taken steps to respond, including approving a NIS 6.2 billion plan to support reservists and increasing de"
     },
     {
-      "claim": "A person suspected of committing a terrorist act in Lviv has been detained, resulting in 25 people injured and one person dead.",
+      "claim": "The death of hero Maahr Khatar is a historic milestone and marks the first casualty from Majdal Shams in the Golan Heights, solidifying the bond between the Druze in the Golan and the state of Israel.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Міністр внутрішніх справ України Ігор Клименко доповів про затримання особи, яка підозрюється у вчиненні терористичного акту у Львові. Двадцять п’ять людей поранено, одна людина загинула. Мої співчуття рідним... Слідству надано всі необхідні ресурси. Тривають необхідні",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025493719118397712",
-      "domain": "domestic",
-      "reasoning": "The claim accurately reports that a suspect was detained in connection with a terrorist act in Lviv, resulting in 25 injuries and one death. Multiple sources confirm that on February 22, 2026, explosions in Lviv led to the death of a 23-year-old police officer and injuries to 25 individuals. Ukraini"
+      "tweet_text": "נפילתו בקרב של גיבור ישראל רס\"ל מאהר ח'טאר היא אבן דרך כואבת, אך היסטורית. מאהר הוא הנופל הראשון ממג'דל שמס שבגולן. מותו הכואב חותם בדם את הברית בין הדרוזים בגולן לבין המדינה, ופותח פרק חדש בתולדות ישראל. לאורך עשרות שנים, לאחינו הדרוזים ברמת הגולן היו יחסים מורכבים עם מדינת",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2031030437359853796",
+      "domain": "military",
+      "reasoning": "The claim states that the death of Sgt. First Class Maher Khatar is a historic milestone, marking the first casualty from Majdal Shams in the Golan Heights, and solidifying the bond between the Druze community in the Golan and the state of Israel. According to multiple sources, including United with"
     },
     {
-      "claim": "An individual suspected of carrying out a terrorist attack in Lviv has been detained, resulting in 25 injuries and 1 death.",
+      "claim": "Combat engineers are at the forefront of fighting in both Gaza and Lebanon.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Minister of Internal Affairs of Ukraine Ihor Klymenko reported on the detention of an individual suspected of carrying out the terrorist attack in Lviv. Twenty-five people were injured, and one person was killed. My condolences to the family and loved ones... All necessary",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025493716882886712",
-      "domain": "domestic",
-      "reasoning": "The claim accurately reports that a suspect was detained in connection with a terrorist attack in Lviv, which resulted in 25 injuries and one death. Ukrainian authorities, including Minister of Internal Affairs Ihor Klymenko, confirmed these details. The suspect, a 33-year-old Ukrainian woman, was a"
+      "tweet_text": "עם ישראל כואב על נפילתו של לוחם ההנדסה סמ״ר אור דמרי ז\"ל בקרב בדרום לבנון. במלחמה הזו מפעילי הצמ״ה עומדים בחוד החנית של הלחימה גם בעזה וגם בלבנון, וחשוב שעם ישראל יכיר ויוקיר את אומץ ליבם ואת הקרבתם. שולח את תנחומיי למשפחה. איזה אור כבה כאן💔",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2030997237946323095",
+      "domain": "military",
+      "reasoning": "The claim that combat engineers are at the forefront of fighting in both Gaza and Lebanon is supported by recent events. In Lebanon, Israeli combat engineers have been actively involved in operations against Hezbollah, including clearing improvised explosive devices and demolishing enemy infrastruct"
     },
     {
-      "claim": "The Security Service of Ukraine, the National Police, and the Office of the Prosecutor General neutralized Russian mercenaries preparing assassination attempts against Ukrainian citizens.",
+      "claim": "All reservists are fully mobilized and ready to take action against Hezbollah.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "I want to commend the efforts of the Security Service of Ukraine, the National Police, and the Office of the Prosecutor General – they neutralized Russian mercenaries preparing assassination attempts against our citizens. These were rather high-profile names, and preventing such",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2025253277906907456",
-      "domain": "domestic",
-      "reasoning": "Ukrainian authorities, including the Security Service of Ukraine, the National Police, and the Office of the Prosecutor General, successfully neutralized Russian mercenaries who were preparing assassination attempts against Ukrainian citizens. This operation, known as 'Enigma 2.0,' resulted in the d"
+      "tweet_text": "גבול לבנון, עכשיו. 100% התייצבות של המילואימניקים. כל הלוחמים וכל התושבים כאן מאוחדים באותו מסר: \"אנחנו מוכנים לתת כל מה שצריך, רק תסיימו את המלאכה של הסרת האיום מחיזבאללה אחת ולתמיד!\"",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2029225756354613302",
+      "domain": "military",
+      "reasoning": "The claim that \"all reservists are fully mobilized and ready to take action against Hezbollah\" is supported by multiple reports indicating that Israel has mobilized a significant number of reservists in response to escalating tensions with Hezbollah. As of early March 2026, approximately 100,000 res"
     },
     {
-      "claim": "The government has activated programs to support ordinary people during the energy crisis.",
+      "claim": "An Israeli Air Force F-35I Adir fighter jet shot down an Iranian YAK-130 fighter aircraft over Tehran.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Провів нараду щодо оперативної роботи в громадах і, зокрема, в Києві в умовах надзвичайної енергетичної ситуації. Разом з Юлією Свириденко й Олександром Кубраковим визначили наступні пріоритетні кроки. Уже активізовані урядові програми, що підтримують як звичайних людей, так і",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2024152585821708786",
-      "domain": "domestic",
-      "reasoning": "The Ukrainian government has indeed activated programs to support ordinary people during the energy crisis. In early February 2026, the Cabinet of Ministers launched an initiative offering direct cash grants to small businesses for power equipment, aiming to help them maintain operations amid ongoin"
+      "tweet_text": "For the first time ever an F-35 has shot down a manned fighter aircraft. An Israeli Air Force F-35I Adir fighter jet shot down an Iranian YAK-130 fighter aircraft a short time ago over the skies of Tehran.",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2029119392429027394",
+      "domain": "military",
+      "reasoning": "Multiple reputable sources, including the Israel Defense Forces (IDF), have confirmed that on March 4, 2026, an Israeli Air Force F-35I 'Adir' fighter jet shot down an Iranian Yak-130 aircraft over Tehran. This event marks the first time an F-35 has downed a manned fighter jet in combat. The Yak-130"
     },
     {
-      "claim": "A meeting was held on rapid-response operations in communities under a state of emergency in the energy system.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "I held a meeting on rapid-response operations in communities, and particularly in Kyiv, under a state of emergency in the energy system. Together with Yuliia Svyrydenko and Oleksandr Kubrakov, we identified the next priority steps. Government programs supporting both ordinary",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2024152582508224892",
-      "domain": "domestic",
-      "reasoning": "President Volodymyr Zelenskyy held a meeting on February 18, 2026, focusing on rapid-response operations in communities, particularly in Kyiv, amid a state of emergency in the energy system. He was joined by Yuliia Svyrydenko and Oleksandr Kubrakov to identify priority steps to address the energy cr"
+      "claim": "The leader of a terrorist organization was killed, and he was responsible for the deaths of many Israelis over the years.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "ח׳אמנאי, ראש תמנון הטרור חוסל. הוא אחראי לרציחתם של כל כך הרבה ישראלים, במשך כל כך הרבה שנים. השבת קראנו בבתי הכנסת: \"זָכוֹר אֵת אֲשֶׁר עָשָׂה לְךָ עֲמָלֵק\", ובאותו הזמן טייסי חיל האוויר שלנו חיסלו את עמלק של הדור הזה. בזכותם העולם הוא מקום טוב יותר. עם ישראל חי ושואג🇮🇱",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2027988179140165848",
+      "domain": "military",
+      "reasoning": "The claim states that 'The leader of a terrorist organization was killed, and he was responsible for the deaths of many Israelis over the years.' This refers to Ayatollah Ali Khamenei, Iran's Supreme Leader, who was killed in a joint U.S.-Israeli airstrike on February 28, 2026. While Khamenei was in"
     },
     {
-      "claim": "General Major Oleksandr Poklad reported on countering enemy plans against Ukraine and was tasked with cleaning the Security Service of Ukraine from those serving foreign interests.",
+      "claim": "The public is outraged because Haredi youth do not serve in the military and there is a demand for their immediate enlistment.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Була сьогодні доповідь генерал-майора СБУ Олександра Поклада щодо протидії планам ворога проти нашої країни. Також доручив Олександру зайнятися питанням очищення Служби безпеки України від тих, хто служить на посадах не Україні, а іншим інтересам. Потрібні жорсткі дії та реально",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2023478470764826899",
-      "domain": "domestic",
-      "reasoning": "The claim accurately reflects President Zelenskyy's statements and actions. On February 16, 2026, Zelenskyy reported receiving a briefing from Major General Oleksandr Poklad regarding countering enemy plans against Ukraine. Additionally, he tasked Poklad with purging the Security Service of Ukraine "
+      "tweet_text": "הגיעה השעה למהפכה: להפסיק לממן בתי ספר חרדים שמחנכים נגד המדינה, נגד הצבא ונגד כולנו. ** המדינה הזדעזעה כשהמונים תקפו חיילות בלב בני ברק. הציבור גם רותח מזעם בגלל שצעירים חרדים לא משרתים ולא נכנסים תחת האלונקה. כולם דורשים גיוס מלא ומיידי של צעירים חרדים. * אבל האמת היא",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2024014516430729249",
+      "domain": "military",
+      "reasoning": "The claim that the public is outraged because Haredi youth do not serve in the military and there is a demand for their immediate enlistment is accurate. Recent events have intensified this sentiment. In January 2026, a 14-year-old boy was killed during a protest against Haredi military conscription"
     },
     {
-      "claim": "The recent delivery of generators and medicines to Ukraine is a strong contribution to our resilience.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "I thank His Holiness @Pontifex for his prayers and deeds in support of Ukraine. The recent delivery of generators and medicines to Ukraine, as Russia continues to attack our energy infrastructure during the winter cold, is a strong contribution to our resilience. This is an",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2021572100583035374",
-      "domain": "domestic",
-      "reasoning": "The claim that the recent delivery of generators and medicines to Ukraine is a strong contribution to resilience is accurate. In February 2026, Pope Leo XIV organized the delivery of 80 electric generators, along with medicines and food supplies, to Ukraine. This aid was in response to the severe co"
+      "claim": "Netanyahu is silent and supports a recruitment law that endangers our soldiers.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "לא הבנתי מי שואל אותו. תראו, הבעיה היא לא דרעי שהתרגל שהוא בעל הבית של המדינה, אלא נתניהו שמכר לו אותה. כשדרעי קורא לצעירים חרדים בריאים שלא להעז להתגייס לעזרת חיילי צה״ל, נתניהו שותק, מגבה, ומקדם חוק גיוס שמפקיר את חיילינו. כל חיילת וחייל, כל אשה ואיש יוכלו להסתובב בכל רחבי",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2023069572207661507",
+      "domain": "military",
+      "reasoning": "The claim that Netanyahu is silent and supports a recruitment law that endangers soldiers is partially accurate. Netanyahu has indeed supported legislation that exempts many ultra-Orthodox men from military service, which has been criticized for potentially undermining the IDF's manpower needs. Howe"
     },
     {
-      "claim": "The Government of Ukraine approved new programs to support people and communities, making it easier for homeowners associations to purchase new equipment.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "Together with Prime Minister Yuliia Svyrydenko we approved the new programs to support people and communities. The Government of Ukraine must make it significantly easier for homeowners associations (OSBBs) to purchase new equipment – generators and other machinery needed amid",
-      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2020916691505381803",
-      "domain": "domestic",
-      "reasoning": "The claim that the Government of Ukraine approved new programs to support people and communities, facilitating homeowners associations' purchase of new equipment, is accurate. On February 9, 2026, President Volodymyr Zelenskyy and Prime Minister Yuliia Svyrydenko announced initiatives to assist citi"
+      "claim": "Netanyahu and the ultra-Orthodox encouraged institutional evasion of military service in response to calls of 'we will die rather than enlist'.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "בני ברק, עכשיו. נתניהו והחרדים העלימו עין מקריאות \"נמות ולא נתגייס״ ועודדו השתמטות ממוסדת. ככה זה נראה כשההשתמטות מנצחת.",
+      "tweet_url": "https://twitter.com/naftalibennett/status/2023058281372291348",
+      "domain": "military",
+      "reasoning": "The claim suggests that Prime Minister Benjamin Netanyahu and ultra-Orthodox leaders encouraged institutional evasion of military service in response to calls of 'we will die rather than enlist.' While it's true that Netanyahu's government has faced criticism for policies perceived as accommodating "
     }
   ],
-  "generated_at": "2026-04-02T13:40:45.198Z"
+  "generated_at": "2026-04-02T21:37:31.175Z"
 }

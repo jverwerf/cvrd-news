@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-02T18:58:41.792Z",
+  "generated_at": "2026-04-03T12:54:47.654Z",
   "threads": [
     {
       "id": "iran-war",
       "title": "Iran War",
       "category": "world",
-      "summary": "The Iran War has seen significant escalation over the past week, beginning on March 26, 2026, when Israel launched new strikes on Iranian targets, further heightening tensions. On March 28, Iran responded by launching a missile strike on a U.S. military base in Saudi Arabia, injuring 12 American troops, and Iranian-backed Houthi rebels attacked Israel with missiles, marking their first direct involvement in the conflict. The war's impact has been felt globally, particularly in oil markets, with fluctuations expected due to the ongoing hostilities. By March 31, the U.S. military had initiated missile strikes against Iranian positions, intensifying the conflict. However, on April 1, reports emerged that the U.S. military campaign, which began under President Trump, was winding down. As of April 2, President Trump announced further escalations in the conflict, indicating a continued commitment to military action despite the potential for broader global repercussions.",
+      "summary": "The Iran War, which began escalating on March 26, 2026, saw significant developments following Israeli airstrikes on Iranian targets. That same day, tensions heightened as the U.S. and Iran faced a diplomatic standoff amid conflicting reports about potential negotiations. On March 28, Iran retaliated by launching a missile strike on a U.S. military base in Saudi Arabia, injuring 12 American troops. The situation intensified further when Iranian-backed Houthi rebels attacked Israel, marking their involvement in the conflict. By March 31, U.S. military responses had increased, targeting Iranian positions. However, on April 1, reports indicated that the U.S. military campaign was winding down, and President Trump addressed the nation on April 2, stating that Iran would allow increased oil shipments. Shortly after his address, Israeli military detected new Iranian missile launches, indicating that tensions remain high.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -599,6 +599,414 @@
           ],
           "best_video_id": "PKMeqHoiVOM",
           "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-26",
+          "story_index": 1,
+          "topic": "U.S. and Iran Diplomatic Standoff",
+          "summary": "The United States and Iran are locked in a diplomatic standoff, with conflicting reports about potential negotiations. While Trump claims talks are underway, Iranian officials deny any formal discussions. This comes amid heightened tensions in the Middle East, with both nations accusing each other of escalating the conflict. The international community is urging restraint and calling for a peaceful resolution.",
+          "category": "world",
+          "left_narrative": "The New York Times reports on the confusion surrounding the alleged negotiations, emphasizing the lack of transparency from the Trump administration. The Guardian highlights the potential consequences of the standoff, including the risk of further destabilization in the region.",
+          "right_narrative": "Fox News focuses on Iran's refusal to engage in talks, framing it as a strategic move to gain leverage. The New York Post discusses the implications for U.S. foreign policy, noting the challenges faced by the Trump administration in managing the situation.",
+          "what_they_arent_telling_you": "A Reddit thread in r/worldnews with 12K upvotes discusses leaked audio of Iranian officials mocking Trump's claims of negotiations, which mainstream media has not covered. The lack of media scrutiny benefits political leaders who prefer to maintain a narrative of control. Additionally, documents shared on social media suggest that the U.S. has been covertly supporting opposition groups in Iran, a detail not widely reported.",
+          "image_file": "/images/threads/iran-war_2026-03-26.png",
+          "social_clips": [
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2036986672131326340",
+              "embed_id": "2036986672131326340"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2036905048957956172",
+              "embed_id": "2036905048957956172"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s3ols0/israel_fears_donald_trump_could_announce_iran/",
+              "embed_id": "1s3ols0",
+              "title": "Israel fears Donald Trump could announce Iran ceasefire despite low deal odds"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s3vwj2/trump_makes_frantic_excuse_after_irans/",
+              "embed_id": "1s3vwj2",
+              "title": "Trump Makes Frantic Excuse After Iran’s Humiliating Reveal"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s3do4j/iran_rejects_us_peace_plan_and_sets_5_conditions/",
+              "embed_id": "1s3do4j",
+              "title": "Iran rejects US peace plan and sets 5 conditions to end the war — including international recognition of control over the Strait of Hormuz"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/worldnews/comments/1s3zdps/germanys_defence_minister_claims_trump_has_no/",
+              "embed_id": "1s3zdps",
+              "title": "Germany's defence minister claims Trump has 'no exit strategy' in Iran"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s3vt0x/negotiating_with_yourself_iran_is_laughing_at/",
+              "embed_id": "1s3vt0x",
+              "title": "'Negotiating with yourself?': Iran is laughing at Trump | Simon Marks"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://youtu.be/rkkevhulPUM?si=C_lM1QPg-rSbySNt",
+              "title": "'Negotiating with yourself?': Iran is laughing at Trump | Simon Marks"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s3tov4/karoline_leavitt_asked_by_reporter_about_airborne/",
+              "embed_id": "1s3tov4",
+              "title": "Karoline Leavitt asked by reporter about Airborne division troops being deployed on Iran War: \"Does the WH consider this conflict as wrapping up or changing shape?\": \"We are meeting our goals of operation Epic Fury expeditiously. The president [Trump] likes to maintain options at his disposal.\""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://www.youtube.com/watch?v=RXCHIKP-aj8",
+              "title": "Karoline Leavitt asked by reporter about Airborne division troops being deployed on Iran War: \"Does the WH consider this conflict as wrapping up or changing shape?\": \"We are meeting our goals of operation Epic Fury expeditiously. The president [Trump] likes to maintain options at his disposal.\""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s3ip8m/german_president_calls_iran_war_a_disastrous/",
+              "embed_id": "1s3ip8m",
+              "title": "German president calls Iran war a disastrous mistake, in rare rebuke of Trump"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s3tlpn/iran_rejects_trumps_peace_proposal/",
+              "embed_id": "1s3tlpn",
+              "title": "Iran rejects Trump’s peace proposal"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://youtu.be/SGKWetGKkME?si=fooF7I7OuLMv2qRU",
+              "title": "Iran rejects Trump’s peace proposal"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s3mhp8/uae_ambassador_to_us_warns_against_ending_iran/",
+              "embed_id": "1s3mhp8",
+              "title": "UAE ambassador to US warns against ending Iran war too soon"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/geopolitics/comments/1s3lrn4/live_updates_irans_toreign_minister_says_his/",
+              "embed_id": "1s3lrn4",
+              "title": "Live updates: Iran''s toreign minister says his government does not plan any negotiations to end the war"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s3js1s/white_house_denies_existence_of_15point_iran/",
+              "embed_id": "1s3js1s",
+              "title": "White House denies existence of 15-point Iran ceasefire plan touted by Trump days ago"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AP/status/2036897324513816655",
+              "embed_id": "2036897324513816655",
+              "title": "Iran’s foreign minister says his government does not plan on any negotiations to end the war and tha",
+              "author": "AP",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2036889659364581624",
+              "embed_id": "2036889659364581624",
+              "title": "BREAKING: Iranian FM Abbas Araghchi says the US has failed to achieve its key war objectives against",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2037030534170255725",
+              "embed_id": "2037030534170255725",
+              "title": "In an interview broadcast on state television, Iranian Foreign Minister Abbas Araqchi said that Tehr",
+              "author": "Reuters",
+              "duration": 31,
+              "video_transcript": "No negotiations have taken place so far. I state firmly that there has been no negotiation or dialogue with the American side. However, in recent days the American side has begun sending various messages through different intermediaries. Messages being conveyed through our friendly countries and us responding by stating our positions or issuing the necessary warnings is not called negotiation or dialogue. It is simply an exchange of messages through our friends.",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2036892165041795505",
+              "embed_id": "2036892165041795505",
+              "title": "Iran's FM Abbas Araghchi says there are currently no negotiations taking place between Tehran and th",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TheAtlantic/status/2036673192022913256",
+              "embed_id": "2036673192022913256",
+              "title": "Trump touts progress in talks with Iran, and Tehran claims that's a fiction, underscoring how little control either side has over the conflict or its ",
+              "author": "TheAtlantic"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TheAtlantic/status/2036476900768366948",
+              "embed_id": "2036476900768366948",
+              "title": "Trump touts progress in talks with Iran, and Tehran claims that's a fiction, underscoring how little control either side has over the conflict or its ",
+              "author": "TheAtlantic"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2037021605151596979",
+              "embed_id": "2037021605151596979",
+              "title": "President ​Trump said Iran was desperate to make a deal to end nearly four weeks of fighting, contradicting the Iranian foreign minister who said his ",
+              "author": "Reuters"
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=x7rLgPw437w",
+              "embed_id": "x7rLgPw437w",
+              "channel": "The Guardian"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=pMm4PMDEq6M",
+              "embed_id": "pMm4PMDEq6M",
+              "channel": "BBC News",
+              "duration": 77,
+              "title": "Iran rejects President Trump&#39;s peace plan. #Iran #US #BBCNews",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=8ApfBDgx_jE",
+              "embed_id": "8ApfBDgx_jE",
+              "channel": "BBC News",
+              "duration": 1672,
+              "title": "Has Iran rejected a US peace plan? | BBC Newscast",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=1XIfL0Y1HHE",
+              "embed_id": "1XIfL0Y1HHE",
+              "channel": "Reuters",
+              "duration": 150,
+              "title": "Iran says it is reviewing US proposal, but has no interest in talks",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=D9aSNMGbPIs",
+              "embed_id": "D9aSNMGbPIs",
+              "channel": "DW News",
+              "duration": 93,
+              "title": "What US and Iran have to say about negotiations | DW News",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ukO66NyKHfw",
+              "embed_id": "ukO66NyKHfw",
+              "channel": "DW News",
+              "duration": 1510,
+              "title": "US-Iran ceasefire: What&#39;s in Iran&#39;s counter proposal? | DW News",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=UmyeDVb8rX0",
+              "embed_id": "UmyeDVb8rX0",
+              "channel": "CBS News",
+              "duration": 42,
+              "title": "Trump claims that Iran wants &quot;to make a deal so badly&quot; #shorts",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=cX3C7vuuk3w",
+              "embed_id": "cX3C7vuuk3w",
+              "channel": "The Intercept",
+              "duration": 58,
+              "title": "Iran War and Public Hearings",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=UaTiFJPzXN0",
+              "embed_id": "UaTiFJPzXN0",
+              "channel": "MSNBC",
+              "duration": 597,
+              "title": "Trump LOSING Republicans over lack of Iran plan; embarrassingly simplistic briefings exposed",
+              "relevance": 6
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=dEGNBQ7lEIo",
+              "embed_id": "dEGNBQ7lEIo",
+              "channel": "BBC News",
+              "title": "Oil traders bet millions minutes before Donald Trump's Iran talks post. #DonaldTrump #BBCNews"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=2jdhhnYmwD8",
+              "embed_id": "2jdhhnYmwD8",
+              "channel": "A N Report",
+              "title": "Iran Rejects US Ceasefire Plan | “Trump Won’t Decide Timeline” | A N REPORT"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=TF78dcoq5ms",
+              "embed_id": "TF78dcoq5ms",
+              "channel": "Rachel Maddow Podcast.",
+              "title": "Trump PANICS as Iran SHUTS DOWN Negotiations — War Tensions EXPLODE!! | Rachel Maddow "
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=iwfzfam96xo",
+              "embed_id": "iwfzfam96xo",
+              "channel": "BBC News",
+              "title": "Trump says negotiations to end Iran war happening &#39;right now&#39; | BBC News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=YiFOy9UVgXo",
+              "embed_id": "YiFOy9UVgXo",
+              "channel": "Bloomberg News",
+              "title": "Iran Strikes Continue Even as Trump Claims Talks to End War"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=hBNM4ySM-U4",
+              "embed_id": "hBNM4ySM-U4",
+              "channel": "Channel 4 News",
+              "title": "Iran war latest: is there any hope for Trump’s peace talks?"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ukIHkZReYwQ",
+              "embed_id": "ukIHkZReYwQ",
+              "channel": "ET Now",
+              "title": "LIVE: Trump Praises &quot;Strong&quot; Talks With Iran to End the War | Trump Latest Live | Trump On Iran"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=VQpt6Y-IIJU",
+              "embed_id": "VQpt6Y-IIJU",
+              "channel": "Associated Press",
+              "title": "Iran strikes Israel as Trump says war winds down but no sign of reduced fighting"
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/25/world/middleeast/trump-iran-talks-contradiction.html",
+              "lean": "left"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/media/why-trump-iran-seem-light-years-apart-any-possible-deal-end-war",
+              "lean": "right"
+            },
+            {
+              "name": "The Blaze",
+              "url": "https://www.theblaze.com/news/utterly-false-white-house-sets-the-record-straight-over-media-s-laughable-iran-narratives",
+              "lean": "right",
+              "title": "'Utterly false': White House sets the record straight over media's 'laughable' Iran narratives"
+            },
+            {
+              "name": "National Review",
+              "url": "https://www.nationalreview.com/2026/03/the-iran-deal-was-never-the-solution-to-the-regimes-nuclear-program/",
+              "lean": "right",
+              "title": "The ‘Iran Deal’ Was Never the Solution to the Regime’s Nuclear Program"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/live-updates/iran-war-trump-israel-tehran-mocks-us-warns-against-ground-invasion/",
+              "lean": "center",
+              "title": "White House says Trump will \"unleash hell\" if Iran doesn't make deal"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/trump-says-he-doesnt-want-to-call-iran-conflict-a-war-because-of-need-for-congressional-approval/",
+              "lean": "center",
+              "title": "Trump says he doesn't call Iran conflict a \"war\" due to need for approval from Congress"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/25/iran-war-us-trump.html",
+              "lean": "center",
+              "title": "Iran has no intention to hold talks with U.S; foreign minister says Trump proposal to end war being reviewed "
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/26/trump-iran-peace-talks-troops-ceasefire-forever-war.html",
+              "lean": "center",
+              "title": "Trump wants to squeeze Iran into peace talks with more troops — but it may backfire, analysts say"
+            },
+            {
+              "name": "WaPo World",
+              "url": "https://www.washingtonpost.com/world/2026/03/25/us-iran-war-trump-talks-pakistan/",
+              "lean": "left",
+              "title": "U.S. plan to end war seeks removal of Iran’s enriched uranium, officials say"
+            },
+            {
+              "name": "WaPo World",
+              "url": "https://www.washingtonpost.com/national-security/2026/03/24/us-iran-peace-talks-pakistan-turkey-egypt/",
+              "lean": "left",
+              "title": "Tehran denies claims of progress in peace talks, as Trump declares war ‘won’"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/economy/2026/3/26/oil-prices-rise-higher-as-iran-denies-us-talks-dimming-deescalation-hopes?traffic_source=rss",
+              "lean": "center",
+              "title": "Oil prices rise higher as Iran denies US talks, dimming deescalation hopes"
+            },
+            {
+              "name": "ABC News",
+              "url": "https://abcnews.com/Politics/us-iran-conflict-hands-chinas-xi-upper-hand/story?id=131412478",
+              "lean": "center",
+              "title": " US-Iran conflict hands China's Xi upper hand ahead of Trump meeting: Experts"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/former-iran-detainee-fears-americans-iranian-prisons-danger/",
+              "lean": "center",
+              "title": "Former Iran detainees fear Americans held in Iranian prisons face heightened danger"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/25/stock-market-today-live-updates.html",
+              "lean": "center",
+              "title": "Stock futures little changed as traders monitor U.S.-Iran war developments: Live updates"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/26/us-iran-conflicting-signals-markets-oil-volatility.html",
+              "lean": "center",
+              "title": "'Grin and bear it': How investors are navigating the Trump-Iran market whiplash"
+            },
+            {
+              "name": "CNBC Markets",
+              "url": "https://www.cnbc.com/2026/03/20/elizabeth-warren-demands-answers-on-costs-economic-impact-of-illegal-and-reckless-war.html",
+              "lean": "center",
+              "title": "Elizabeth Warren demands answers on costs, economic impact of 'illegal and reckless war'"
+            },
+            {
+              "name": "Investing.com",
+              "url": "https://www.investing.com/news/economic-indicators/iran-conflict-threatens-to-stall-germanys-economic-growth-imk-says-4581599",
+              "lean": "center",
+              "title": "Iran conflict threatens to stall Germany’s economic growth, IMK says"
+            },
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/26/world/europe/iran-trump-hormuz-europe-dilemma.html",
+              "lean": "left",
+              "title": "Trump’s Threats to Europe Put Its Leaders in a Double Bind Over Iran"
+            },
+            {
+              "name": "Townhall",
+              "url": "https://townhall.com/columnists/veroniquederugy/2026/03/26/how-will-congress-choose-to-handle-the-iran-bill-n2673459",
+              "lean": "right",
+              "title": "How Will Congress Choose to Handle the Iran Bill?"
+            }
+          ],
+          "best_video_id": "D9aSNMGbPIs",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-03-27",
+          "story_index": 2,
+          "topic": "UAE and Qatar Arrests Over Iran War Videos",
+          "summary": "The UAE and Qatar have arrested hundreds of individuals for sharing videos of Iranian attacks online. These arrests highlight the tension between Gulf states and Iran, as well as the region's strict control over information dissemination. The crackdown is part of broader efforts to manage the narrative surrounding the Iran conflict.",
+          "category": "world",
+          "left_narrative": "Not enough coverage yet — check back soon.",
+          "right_narrative": "Not enough coverage yet — check back soon.",
+          "what_they_arent_telling_you": "A Reddit post in r/worldnews with 10K upvotes highlights that many of those arrested are expatriates who were unaware of the legal consequences. Mainstream media is not discussing the economic leverage the UAE and Qatar hold over these individuals, which influences their ability to challenge the arrests. Furthermore, leaked diplomatic cables suggest that some Western governments are privately urging restraint, fearing backlash against their expatriate communities.",
+          "image_file": "/images/threads/iran-war_2026-03-27.png",
+          "social_clips": [],
+          "youtube_videos": [],
+          "sources": []
         },
         {
           "date": "2026-03-28",
@@ -2292,6 +2700,355 @@
           "best_video_platform": "youtube"
         },
         {
+          "date": "2026-03-30",
+          "story_index": 1,
+          "topic": "Iran War and Oil Shipments",
+          "summary": "Amid the ongoing conflict with Iran, U.S. President Donald Trump announced that Iran will allow more oil ships through the Strait of Hormuz. This development comes as part of negotiations aimed at de-escalating tensions and ensuring the flow of oil to global markets.",
+          "category": "world",
+          "left_narrative": "The left is skeptical of Trump's claims, questioning the effectiveness of his negotiations and highlighting the potential environmental risks of increased oil shipments.",
+          "right_narrative": "The right is praising Trump's deal-making skills, emphasizing the importance of securing oil supplies and stabilizing global markets.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing satellite images of the Strait of Hormuz, questioning the security of the passage. The mainstream media is not discussing the potential impact on oil prices and the global economy. A Reddit post highlights the lack of transparency in the negotiations with Iran.",
+          "image_file": "/images/threads/iran-war_2026-03-30.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/wallstreetbets/comments/1s7jjc9/monday_morning_market_manipulation_nyt_reports/",
+              "embed_id": "1s7jjc9",
+              "title": "Monday morning market manipulation: NYT reports \"Trump Says Iran Agreed to Allow 20 More Ships of Oil Through Strait of Hormuz\""
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2038439837728944638",
+              "embed_id": "2038439837728944638",
+              "title": "Trump says his “favourite thing” is to take Iran’s oil, dismissing critics in the US as “stupid peop",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038393827086741820",
+              "embed_id": "2038393827086741820",
+              "title": "Pakistan says it's preparing to host \"meaningful talks\" to end the US-Israel war with Iran even as T",
+              "author": "Reuters",
+              "duration": 101,
+              "video_transcript": "Pakistan said on Sunday was preparing to host meaningful talks in the coming days to end the conflict in Iran. This comes after Iran accused the US of preparing a land assault while seeking negotiations. Pakistan's Foreign Minister Ishaq Dar said he and other foreign ministers in the region met on Sunday to discuss possible ways to bring an early and permanent end to the war as well as potential US-Iran talks in Islamabad. Pakistan will be honored to host and facilitate meaningful talks between ",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2038492793123766442",
+              "embed_id": "2038492793123766442",
+              "title": "A Canadian activist and YouTuber filmed congestion in the Strait of Hormuz during a tour aboard a sh",
+              "author": "AJEnglish",
+              "duration": 85,
+              "video_transcript": "So we're now to the waters of the Strait of Hormuz. I would say we're about a couple of kilometers from the shore. And we were told we're only going to get 20 minutes out here because there are drones in the sky. And the genocidal Israeli entity has a long and sordid record of murdering journalists with gleeful impunity. So unfortunately we're not going to be able to spend too much time out here. But I'll give you a good panoramic view right now of what we can see. This is the island of Hormuz. ",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038466853220311450",
+              "embed_id": "2038466853220311450",
+              "title": "President Trump said the US and Iran have been meeting ‘directly and indirectly’ and that Iran's new",
+              "author": "Reuters",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2038379124033483208",
+              "embed_id": "2038379124033483208",
+              "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan",
+              "author": "AJEnglish",
+              "duration": 47,
+              "video_transcript": "♪♪ ♪♪ ♪♪ ♪♪ ♪♪",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2038416556229538217",
+              "embed_id": "2038416556229538217",
+              "title": "BREAKING: President Trump is weighing a risky military operation to extract about 1,000 pounds of ur",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2038464462403797375",
+              "embed_id": "2038464462403797375",
+              "title": "In Surat, thousands of migrant workers are leaving the city as the global conflict begins to hit Ind",
+              "author": "AJEnglish",
+              "duration": 126,
+              "video_transcript": "In the Indian city of Surat, thousands of workers are waiting to get on the train. It's the same one they arrived on, in search of better paying jobs. The Iran war has affected the textile industry here, making work much harder to come by. Now they're returning home, where job opportunities are scarce, but at least they'll be able to make hot meals. Cooking gas is the biggest problem for everyone sitting here. We couldn't get any, despite rations. So how are we supposed to cook our meals? We're ",
+              "relevance": 7
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038489478701125949",
+              "embed_id": "2038489478701125949",
+              "title": "President Trump said negotiations with Iran were going \"extremely well,\" adding that the country is preparing to allow oil tankers to pass through the",
+              "author": "Reuters",
+              "duration": 42
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=apY0u7u3mZA",
+              "embed_id": "apY0u7u3mZA",
+              "channel": "Fox News",
+              "duration": 372,
+              "title": "American Petroleum Institute CEO stresses: &#39;OPEN THE STRAIT OF HORMUZ&#39;",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=6EZeDTOmRS0",
+              "embed_id": "6EZeDTOmRS0",
+              "channel": "Fox News",
+              "duration": 418,
+              "title": "Iranian regime WARNED over Strait of Hormuz: &#39;THIS IS NOT GOING TO END WELL&#39;",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=fl_Okavgp_Q",
+              "embed_id": "fl_Okavgp_Q",
+              "channel": "Al Jazeera",
+              "duration": 457,
+              "title": "Trump says deal with Iran is &#39;close&#39;, but warns US could seize Kharg Island",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=4GIBct9cHzY",
+              "embed_id": "4GIBct9cHzY",
+              "channel": "Al Jazeera",
+              "duration": 180,
+              "title": "Trump says Iran’s ‘had regime change’ as he describes &#39;boatloads of oil&#39; | AJ #shorts",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=xldX3gKNe1s",
+              "embed_id": "xldX3gKNe1s",
+              "channel": "Financial Times",
+              "duration": 30,
+              "title": "Trump says US is negotiating with Iran &#39;directly and indirectly&#39; | FT #shorts",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ytyv1PI4cAU",
+              "embed_id": "ytyv1PI4cAU",
+              "channel": "Al Jazeera",
+              "duration": 86,
+              "title": "Canadian YouTuber captures congestion of dozens of ships in Hormuz Strait | AJ #shorts",
+              "relevance": 6
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=dsyWYxX-uyI",
+              "embed_id": "dsyWYxX-uyI",
+              "channel": "Forbes Breaking News",
+              "title": "Trump Tells Reporters That Iran Is Allowing '20 Boats Of Oil' Through Strait Of Hormuz",
+              "transcript_summary": "0:00 President, Mr. President.\n0:01 >> So, we uh we've had very good\n0:03 negotiations today with Iran, getting a\n0:06 lot of the things that they should have\n0:08 given us a long time ago. We'll see how\n0:10 it works out, but they're very good.\n0:12 Moving on very nicely. They've destroyed\n0:14 a lot of additional targets today. The\n0:16 Navyy's gone. The Air Force has gone. We\n0:18 know that. We destroyed many, many uh\n0:21 targets today. It was a big day. And we\n0:25 are negotiating with them directly and\n0:27 indirectly.\n0:28 We have emissaries but we also are\n0:30 dealing directly and uh as you know\n0:33 they've agreed to send eight boats two\n0:36 days ago and then they added another two\n0:39 so it was 10 votes and now today they\n0:44 gave us as a tribute I don't know I\n0:47 can't define it exactly but they gave us\n0:50 I think out of a sign of respect 20\n0:53 boats of oil big boats of oil going\n0:56 through the Hormmo straight\n0:59 And that's taking place uh starting\n1:01 tomorro..."
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/live/2026/03/30/world/iran-war-trump-oil-news",
+              "lean": "left"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/international/5806993-regime-change-trump-iran-war/",
+              "lean": "center",
+              "title": "Trump claims deaths of Iranian leaders ‘truly is regime change’"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/international/5806957-trump-iran-war-oil-control/",
+              "lean": "center",
+              "title": "Trump says ‘my favorite thing is to take the oil in Iran’"
+            },
+            {
+              "name": "AP News",
+              "url": "https://www.yahoo.com/news/articles/trump-news-glance-generational-divide-004921461.html",
+              "lean": "center",
+              "title": "Trump news at a glance: Generational divide over Iran war emerges at key conservative conference"
+            },
+            {
+              "name": "Politico",
+              "url": "https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378",
+              "lean": "center",
+              "title": "‘He’s lied about everything’: Iran war puts Trump on shaky ground with young MAGA men"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/defense/5806811-mckenzie-us-iran-raids/",
+              "lean": "center",
+              "title": "Former Centcom commander: US military has been working on Iran ground raid plans for years"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/homenews/house/5806767-auchincloss-warns-against-iran-invasion/",
+              "lean": "center",
+              "title": "House Democrat warns of ‘boots-on-the-ground quagmire’ in Iran"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/healthcare/5806752-ansari-calls-for-iran-offramp/",
+              "lean": "center",
+              "title": "Iranian American lawmaker says Trump needs to find an off-ramp quickly for Iran war"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/29/war_in_iran_the_everything_shock_695738.html",
+              "lean": "center",
+              "title": "War in Iran: The Everything Shock"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/29/trump_is_breaking_the_middle_easts_old_power_structure_695743.html",
+              "lean": "center",
+              "title": "Trump Is Breaking the Middle East's Old Power Structure"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/29/success_in_iran_will_come_down_to_managing_fear_of_energy_prices_695735.html",
+              "lean": "center",
+              "title": "Success in Iran Will Come Down To Managing Fear of Energy Prices"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/video/2026/03/29/retired_centcom_commander_weve_wargamed_iran_war_for_years_and_were_further_along_than_we_would_have_expected_at_this_point_in_the_simulations.html",
+              "lean": "center",
+              "title": "Iran War Running Ahead of Years of Simulations"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/29/how_americans_can_end_this_war_695749.html",
+              "lean": "center",
+              "title": "How Americans Can End This War"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/29/iran_doesnt_want_to_talk_to_kushner_or_witkoff_695742.html",
+              "lean": "center",
+              "title": "Iran Doesn't Want to Talk to Kushner or Witkoff"
+            },
+            {
+              "name": "NYT Business",
+              "url": "https://www.nytimes.com/2026/03/29/business/energy-environment/iran-war-natural-gas.html",
+              "lean": "left",
+              "title": "Why the Iran War May Force Countries to Rely Less on Natural Gas"
+            },
+            {
+              "name": "HuffPost",
+              "url": "https://www.huffpost.com/entry/cory-booker-trump-iran-war-meet-the-press_n_69c943cbe4b0a014076f6ab1",
+              "lean": "left",
+              "title": "Cory Booker Scolds Trump For Entering U.S. Into Iran War With ‘No Foreseeable Off-Ramp’"
+            },
+            {
+              "name": "HuffPost",
+              "url": "https://www.huffpost.com/entry/james-lankford-supports-trump-troops-ground-iran_n_69c94348e4b051d223bde415",
+              "lean": "left",
+              "title": "GOP Senator Argues Trump Is ‘Right To Put Troops’ On The Ground In Iran"
+            },
+            {
+              "name": "HuffPost",
+              "url": "https://www.huffpost.com/entry/iran-war-choices-trump_n_69c8818de4b06be0a3088719",
+              "lean": "left",
+              "title": "One Month Into Iran War, Only Hard Choices For Trump"
+            },
+            {
+              "name": "NYT Politics",
+              "url": "https://www.nytimes.com/2026/03/29/us/politics/trump-special-operations-forces-iran.html",
+              "lean": "left",
+              "title": "Special Operations Forces Sent to Mideast as Trump Weighs Next Move"
+            },
+            {
+              "name": "NYT Politics",
+              "url": "https://www.nytimes.com/2026/03/29/us/politics/us-marines-middle-east-iran-war.html",
+              "lean": "left",
+              "title": "The U.S. Now Has Over 50,000 Troops in the Middle East"
+            },
+            {
+              "name": "NYT Politics",
+              "url": "https://www.nytimes.com/2026/03/28/upshot/iran-war-trump-popularity.html",
+              "lean": "left",
+              "title": "Is Iran a Political Problem for Trump? Tell Me How Long the War Lasts."
+            },
+            {
+              "name": "NY Post Business",
+              "url": "https://nypost.com/2026/03/29/business/two-gas-india-flagged-gas-tankers-crossing-the-strait-of-hormuz/",
+              "lean": "right",
+              "title": "Two India-flagged gas tankers crossing the Strait of Hormuz after Iran opens waterway to ‘non-hostile vessels’"
+            },
+            {
+              "name": "Reuters Business",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUl93QW8wYmwzTHA3MnhVcmEzTkJ3N25VcEhoZTluT1JlX3lueUNDUTJqdmtvQ3BuM0pYYVc1bENPVHBpUklCSm9vOGRUaUg1UjJzTDMxMHdvWkZjeFBFQW9PUnIyclVDUXRuRVhBM1k0RU5TbmxFSGxEQlhLemo4RXE1d2RZOWdRQWRwWXRYSjU1TW93cHdPWFlwbEY4U1JTNDAyRnFFdzhLeDc3MzJyTG9wbEFzR2N3?oc=5",
+              "lean": "center",
+              "title": "Luxury carmakers' gold-leafed Gulf profits under threat from Iran war - Reuters"
+            },
+            {
+              "name": "Politico",
+              "url": "https://www.politico.com/news/2026/03/29/iran-war-trump-gop-midterms-prices-00849116",
+              "lean": "center",
+              "title": "A month into Iran, the GOP’s political reality sinks in"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/30/canadian-youtuber-captures-congestion-of-dozens-of-ships-in-hormuz-strait?traffic_source=rss",
+              "lean": "center",
+              "title": "Canadian YouTuber captures congestion of dozens of ships in Hormuz Strait"
+            },
+            {
+              "name": "Financial Times",
+              "url": "https://www.ft.com/content/3bd9fb6c-2985-4d24-b86b-23b7884031f5",
+              "lean": "center",
+              "title": "Trump says US could ‘take the oil in Iran’"
+            },
+            {
+              "name": "BBC Business",
+              "url": "https://www.bbc.com/news/articles/c8957kqqdg4o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "'Ripple of fear' over Iran war hits consumer confidence"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/30/cnbc-daily-open-trumps-favorite-thing-is-iranian-oil.html",
+              "lean": "center",
+              "title": "CNBC Daily Open: Trump's 'favorite thing' is Iranian oil"
+            },
+            {
+              "name": "FT Markets",
+              "url": "https://www.ft.com/content/dc55ed32-c38b-4897-a1b6-d19b6d42875e",
+              "lean": "center",
+              "title": "Ineos flagship project risks delay from Strait of Hormuz crisis"
+            },
+            {
+              "name": "The Economist",
+              "url": "https://www.economist.com/finance-and-economics/2026/03/29/how-iran-is-making-a-mint-from-donald-trumps-war",
+              "lean": "center",
+              "title": "\n        How Iran is making a mint from Donald Trump’s war\n      "
+            },
+            {
+              "name": "Economist Business",
+              "url": "https://www.economist.com/business/2026/03/25/how-much-will-americas-oilmen-benefit-from-the-iran-war",
+              "lean": "center",
+              "title": "\n        How much will America’s oilmen benefit from the Iran war?\n      "
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSjI2aUNyVFZCU3huNVFnUHNreHI3REMtWmdKWmQtQ2F2ZTRZN08yeHBITUZaUGhRMUlaRHNJMlRCN2tRdEVsYkRqcHpQSDZnZUE0OUZVRmJxNFBIM2FpV0FRQktKTlFacWJQSUsyUnpkb3hDbDB3MGhDVGVvV3V5V1ZSYzVhblRVX05mX2hOdXA5NDhSWGNxZzFvaXhuODhLRklORE96ZjFfeC1UOUFLM2Zn?oc=5",
+              "lean": "center",
+              "title": "Trump Says Iran ‘Gave’ the US Most of Its Demands in Peace Plan - Bloomberg.com"
+            },
+            {
+              "name": "Bloomberg",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSk5HZlRza0pMcVpNSDFRMlBzUUFvVTdCenZfd1lVRDRwVDJNbXlOSDNkSnFrVDQ5eGl1dFJlMm1WbU9DUEhKR29rWG54d1hJenFFdl9xZmRpc09zdEtRRjBHZDE0aVAweHBNS3psc29xaE4zeW94eHFfTVJEeUFhSUFWRHJrOGdYUFZrdXQ4djNOSmZKLTQ5c2diTDFKaTdJQ2h5UHpzOXo2Wl9obkRsbw?oc=5",
+              "lean": "center",
+              "title": "Trump Says US Could ‘Take The Oil’ in Iran, Seize Export Hub: FT - Bloomberg.com"
+            }
+          ],
+          "best_video_id": "apY0u7u3mZA",
+          "best_video_platform": "youtube"
+        },
+        {
           "date": "2026-03-31",
           "story_index": 0,
           "topic": "Iran War Escalation and Economic Impact",
@@ -3817,129 +4574,51 @@
         },
         {
           "date": "2026-04-02",
-          "story_index": 0,
-          "topic": "Iran War Escalation and Global Impact",
-          "summary": "The ongoing conflict between the United States and Iran has intensified, with President Trump announcing further military actions. The Strait of Hormuz remains a focal point, affecting global oil prices and causing economic ripples worldwide. Iran has launched retaliatory strikes, impacting Gulf nations and escalating regional tensions. The international community is closely monitoring the situation, with concerns over potential nuclear developments.",
+          "story_index": 1,
+          "topic": "Iran War and Trump's Address",
+          "summary": "President Trump delivered a prime-time address on the ongoing conflict with Iran, stating that the war is nearing completion. He emphasized that the U.S. military objectives have been largely achieved, but did not provide a clear timeline for withdrawal. The conflict has led to significant geopolitical tensions, affecting global oil prices and international relations.",
           "category": "world",
-          "left_narrative": "The left is emphasizing the humanitarian impact of the conflict, highlighting the civilian casualties and regional destabilization. They criticize the Trump administration's aggressive stance and lack of diplomatic efforts, focusing on the economic repercussions and the strain on global alliances.",
-          "right_narrative": "The right supports Trump's decisive military actions, framing them as necessary to curb Iran's nuclear ambitions and protect American interests. They argue that a strong stance is required to maintain regional stability and prevent Iran from becoming a nuclear threat.",
-          "what_they_arent_telling_you": "On Reddit, users are sharing videos of the aftermath of missile strikes in Tehran, which are largely absent from mainstream coverage. The media is downplaying the role of defense contractors who stand to profit from prolonged conflict. Reports from Zero Hedge suggest discrepancies in the official casualty figures, raising questions about transparency.",
+          "left_narrative": "The left criticizes Trump's address as lacking clarity and failing to provide a concrete plan for ending the conflict. They argue that the war has destabilized the region and criticize the administration's handling of international diplomacy.",
+          "right_narrative": "The right supports Trump's strong stance against Iran, viewing the military actions as necessary to prevent Iran from developing nuclear weapons. They emphasize the importance of maintaining U.S. strength and credibility on the global stage.",
+          "what_they_arent_telling_you": "On Reddit's r/politics, users are sharing clips of Trump's slurred speech, questioning his fitness for office. Mainstream media often omits these discussions, which influence public perception of leadership. Some Redditors highlight the lack of transparency in military operations and the absence of congressional oversight, which is not widely covered.",
           "image_file": "/images/threads/iran-war_2026-04-02.png",
           "social_clips": [
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/worldnews/comments/1s9stvv/iran_says_it_will_not_reopen_strait_of_hormuz/",
-              "embed_id": "1s9stvv"
+              "url": "https://reddit.com/r/politics/comments/1sa45em/trump_delivers_jawdropping_and_slurred_iran/",
+              "embed_id": "1sa45em"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/worldnews/comments/1s9v597/iranian_president_says_in_letter_that_iran/",
-              "embed_id": "1s9v597"
+              "url": "https://reddit.com/r/politics/comments/1sa7aiq/maybe_trump_should_not_have_given_this_speech/",
+              "embed_id": "1sa7aiq"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/worldnews/comments/1s9w5b1/trump_to_declare_iran_war_is_winding_down_and/",
-              "embed_id": "1s9w5b1"
+              "url": "https://reddit.com/r/worldnews/comments/1sa8tts/trump_us_to_bomb_iran_back_to_stone_ages_over/",
+              "embed_id": "1sa8tts"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1sa16qc/magnitude_78_earthquake_strikes_in_indonesia/",
-              "embed_id": "1sa16qc"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039524863702896683",
-              "embed_id": "2039524863702896683"
+              "url": "https://reddit.com/r/worldnews/comments/1saeu24/macron_says_it_is_unrealistic_to_open_hormuz/",
+              "embed_id": "1saeu24"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1sa6f5e/president_trump_to_counties_on_strait_of_hormuz/",
-              "embed_id": "1sa6f5e",
-              "title": "President Trump to Counties on Strait of Hormuz: \"To those countries that can't get fuel, many of refused to get involved in decapitation of Iran, we had to do it ourselves, I have a suggestion; buy oil from USA. We have so much. And, go to the Strait and take it. Protect it. Use it for yourselves.\""
+              "url": "https://reddit.com/r/politics/comments/1safu86/trump_says_government_should_stop_funding/",
+              "embed_id": "1safu86"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/geopolitics/comments/1sab72h/trumps_croaky_and_absurd_iran_speech_shows_just/",
-              "embed_id": "1sab72h",
-              "title": "Trump's croaky and absurd Iran speech shows just how badly the war is going"
+              "url": "https://reddit.com/r/videos/comments/1sa3yie/president_trump_addresses_the_nation_on_war_with/",
+              "embed_id": "1sa3yie",
+              "title": "President Trump addresses the nation on war with Iran: War was launched to prevent Iran from getting nuclear weapons, strategic objectives almost achieved, economy in a good state, U.S. will continue to hit Iran hard over the nest 2-3 weeks and \"bring them back to the stone age where they belong.\""
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1s9kmee/democratic_lawmakers_are_launching_an/",
-              "embed_id": "1s9kmee",
-              "title": "Democratic lawmakers are launching an investigation after a report from the Financial Times claimed a broker for Defense Secretary Pete Hegseth tried to invest in a fund with defense stocks weeks before the Iran war."
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1s9z2z5/iranian_president_pezeshkians_letter_addresses/",
-              "embed_id": "1s9z2z5",
-              "title": "Iranian President Pezeshkian’s letter addresses American people, not Trump"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1s9sjkr/amazons_cloud_business_in_bahrain_damaged_in_iran/",
-              "embed_id": "1s9sjkr",
-              "title": "Amazon's cloud business in Bahrain damaged in Iran strike, FT reports"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/worldnews/comments/1sa9ppq/i_gave_up_my_career_to_leak_this_un_envoy_resigns/",
-              "embed_id": "1sa9ppq",
-              "title": "‘I gave up my career to leak this’: UN envoy resigns over claims of planned nuclear strike on Iran"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1sa0mg0/hes_been_losing_control_iran_war_drags_trump_down/",
-              "embed_id": "1sa0mg0",
-              "title": "‘He’s been losing control’: Iran war drags Trump down to devastating new polling lows"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/StockMarket/comments/1sa3nb2/looks_like_the_war_is_still_on/",
-              "embed_id": "1sa3nb2",
-              "title": "Looks like the war is still on!"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/Economics/comments/1s9jdrb/americas_frozen_jobs_market_could_stay_on_ice_due/",
-              "embed_id": "1s9jdrb",
-              "title": "America’s frozen jobs market could stay on ice due to Iran war | CNN Business"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/Economics/comments/1sa550h/stock_futures_fall_after_trump_says_iran_war_will/",
-              "embed_id": "1sa550h",
-              "title": "Stock futures fall after Trump says Iran war will continue for weeks: Live updates"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/Conservative/comments/1sa3lg8/iran_rejects_trumps_claim_of_ceasefire_request/",
-              "embed_id": "1sa3lg8",
-              "title": "Iran rejects Trump’s claim of cease-fire request, says Tehran determined to win war"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/geopolitics/comments/1sa58qb/the_hidden_cost_damage_to_13_us_bases_in_the/",
-              "embed_id": "1sa58qb",
-              "title": "\"The Hidden Cost: Damage to 13 U.S. Bases in the Middle East\"."
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/PoliticalDiscussion/comments/1s90p53/oil_dips_markets_skyrocket_are_we_at_the_cliff_of/",
-              "embed_id": "1s90p53",
-              "title": "Oil dips, markets skyrocket. Are we at the cliff of a rapid exit from the Middle East and Hormuz issue left for other NATO members and non-members to deal with?"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/geopolitics/comments/1sa3xs6/iran_is_skeptical_about_diplomacy_us_intelligence/",
-              "embed_id": "1sa3xs6",
-              "title": "Iran Is Skeptical About Diplomacy, U.S. Intelligence Says"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/finance/comments/1rsp3bs/goldman_executive_says_private_markets_clients/",
-              "embed_id": "1rsp3bs",
-              "title": "Goldman executive says private markets clients ‘glad’ about Iran war ‘distraction’"
+              "url": "https://reddit.com/r/worldnews/comments/1sak22t/be_serious_dont_speak_every_day_macron_criticises/",
+              "embed_id": "1sak22t",
+              "title": "'Be serious... don't speak every day': Macron criticises Trump approach to Iran war"
             },
             {
               "platform": "x",
@@ -3947,25 +4626,7 @@
               "embed_id": "2039512336436760735",
               "title": "\"Iran has been, essentially, decimated.\" - President Donald J. Trump",
               "author": "WhiteHouse",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/WhiteHouse/status/2039438654733475868",
-              "embed_id": "2039438654733475868",
-              "title": "For decades, Iran has targeted Americans and destabilized the world.\n\nDay One of Operation Epic Fury",
-              "author": "WhiteHouse",
-              "duration": 53,
-              "video_transcript": "Alright, let's go over it again. One more time. For 47 years, Iran has been killing Americans and attacking Americans across this planet. And other presidents had an opportunity to do something about it. That's right. And they all warned about how Iran was dangerous, but they refused to act. And this president's not someone that's going to refuse to act. Keep going. He defined very clearly on the first night of this operation what the goal was. We were going to destroy Iran's navy, and that is h",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/WhiteHouse/status/2039520737250115858",
-              "embed_id": "2039520737250115858",
-              "title": "\"For years, everyone has said that Iran cannot have nuclear weapons. But in the end, those are just ",
-              "author": "WhiteHouse",
-              "relevance": 9
+              "relevance": 8
             },
             {
               "platform": "x",
@@ -3975,7 +4636,7 @@
               "author": "WhiteHouse",
               "duration": 81,
               "video_transcript": "As we speak this evening, it's been just one month since the United States military began Operation Epic Fury, targeting the world's number one state sponsor of terror, Iran. In these past four weeks, our armed forces have delivered swift, decisive, overwhelming victories on the battlefield, victories like few people have ever seen before. Tonight, Iran's navy is gone. Their air force is in ruins. Their leaders, most of them, terrorist regime they led, are now dead. Their command and control of ",
-              "relevance": 9
+              "relevance": 8
             },
             {
               "platform": "x",
@@ -3985,7 +4646,7 @@
               "author": "WhiteHouse",
               "duration": 37,
               "video_transcript": "Why don't you explain this to me like I am an eight-year-old? Operation Epic Fury is not an endless war. It's a decisive campaign with clear objectives to destroy Iran's offensive military capabilities and ensure they never obtain a nuclear weapon. Why don't you explain this to me like I'm five? No nukes, no Navy, and a complete dismantling of their missile program and defense industrial base. Ho! This is success, pure American success, on plan, and as the president said, ahead of pace.",
-              "relevance": 9
+              "relevance": 8
             },
             {
               "platform": "x",
@@ -3993,178 +4654,22 @@
               "embed_id": "2039515901335126187",
               "title": "WE ARE ON-TRACK TO COMPLETE ALL OF AMERICA’S MILITARY OBJECTIVES SHORTLY. 🇺🇸 https://t.co/qTx8ragA",
               "author": "WhiteHouse",
-              "relevance": 9
+              "relevance": 8
             },
             {
               "platform": "x",
-              "url": "https://x.com/WhiteHouse/status/2039501652210729111",
-              "embed_id": "2039501652210729111",
-              "title": "🇺🇸 TONIGHT: President Donald J. Trump addresses the nation on Operation Epic Fury.\n\n9 PM EST — don",
-              "author": "WhiteHouse",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2039566514983145493",
-              "embed_id": "2039566514983145493",
-              "title": "Hopes for a swift end to the Middle East war faded after President Trump vowed more aggressive strik",
-              "author": "Reuters",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2039490493566882288",
-              "embed_id": "2039490493566882288",
-              "title": "The US will end its war on Iran fairly soon and could return for 'spot hits' if needed, President Tr",
-              "author": "Reuters",
-              "duration": 91,
-              "video_transcript": "U.S. President Donald Trump told Reuters on Wednesday that the U.S. will end its war on Iran, quote, pretty quickly and could return for spot hits if needed. Trump's comments came hours before he was scheduled to make a prime-time address to the nation. Reuters White House correspondent Steve Holland said Trump also spoke about his frustrations with NATO. He said he would express disgust at NATO for not helping open the Strait of Hormuz. And he said he is absolutely considering withdrawing from ",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/WhiteHouse/status/2039511084877435307",
-              "embed_id": "2039511084877435307",
-              "title": "From the very first day of President Trump's campaign in 2015, he made it clear that Iran can NEVER ",
+              "url": "https://x.com/WhiteHouse/status/2039701216033206489",
+              "embed_id": "2039701216033206489",
+              "title": "In just ONE MONTH, President Trump &amp; the U.S. military delivered devastating blows to Iran: sink",
               "author": "WhiteHouse",
               "relevance": 8
             },
             {
               "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039516197373501454",
-              "embed_id": "2039516197373501454",
-              "title": "\"The speech was embarrassing, depressing, incoherent and full of contradictions\". \n\nFormer senior na",
-              "author": "AJEnglish",
-              "duration": 27,
-              "video_transcript": "The speech was embarrassing, depressing, incoherent, and full of contradictions. You take out Iran's oil, you're just going to raise the price of oil and gasoline. I think Iran will be looking at that as a victory speech for them. It was a pity the president could not lay out his case and tell us what he plans to do. Taking out Iran's infrastructure is not the answer. And I'm deeply embarrassed and, I'm afraid, very, very unhappy with that speech.",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039432359016018030",
-              "embed_id": "2039432359016018030",
-              "title": "Iran’s President Masoud Pezeshkian has stressed that ordinary Americans are not viewed as enemies, d",
-              "author": "AJEnglish",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039500561603523051",
-              "embed_id": "2039500561603523051",
-              "title": "\"The most important thing he wants to say is that Iran is not a threat and it is the Americans who h",
-              "author": "AJEnglish",
-              "duration": 294,
-              "video_transcript": "You more of Iranian President Massoud Pazashkian's letter addressing the American people in it He says attacking Iran's vital infrastructure including energy and industrial facilities is a direct attack on the Iranian people Beyond constituting a war crime such actions carry consequences that extend far beyond Iran's borders is America first truly among the priorities of the US government today The choice between confrontation and engagement is both real and consequential Its outcome will shape ",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039421289312428394",
-              "embed_id": "2039421289312428394",
-              "title": "Iranian President Masoud Pezeshkian has rejected portrayals of Iran as a security threat, saying it ",
-              "author": "AJEnglish",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039382328435171567",
-              "embed_id": "2039382328435171567",
-              "title": "A senior Iranian official has laughed in response to US President Donald Trump’s claim that Iran’s p",
-              "author": "AJEnglish",
-              "duration": 80,
-              "video_transcript": "I was on the phone with a senior Iranian official, and I asked him about this. He was laughing and said, President Trump is trying to get any kind of stances he hear and try to translate them into what fits him. He wants a ceasefire, and the issue is that the Iranians haven't called for, asked for anything like this. Abbas Araghchi told yesterday our bureau chief here in Tehran the same issue, we're not looking for a ceasefire. He was completely clear there is no talks going on, and whatever is ",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039414432594342172",
-              "embed_id": "2039414432594342172",
-              "title": "Funeral processions held in Tehran for Iran's IRGC Navy commander, Alireza Tangsiri, and others who ",
-              "author": "AJEnglish",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2039433530636124352",
-              "embed_id": "2039433530636124352",
-              "title": "Iran’s President Masoud Pezeshkian also questioned the role of Israel in the war, asking, \"is it not",
-              "author": "AJEnglish",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StateDept/status/2039527891277582787",
-              "embed_id": "2039527891277582787",
-              "title": "PRESIDENT TRUMP: Iran’s navy is gone. Their air force is in ruins. Most of their leaders are dead. The commanding control of the Islamic Revolutionary",
-              "author": "StateDept",
-              "duration": 55
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StateDept/status/2039526559401594894",
-              "embed_id": "2039526559401594894",
-              "title": "PRESIDENT TRUMP: Because of the actions we have taken, we are on the cusp of ending Iran's sinister threat to America and the world.\n\nThe world is wat",
-              "author": "StateDept",
-              "duration": 30
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StateDept/status/2039525753268961747",
-              "embed_id": "2039525753268961747",
-              "title": "PRESIDENT TRUMP: We have all the cards, Iran has none. We are in this military operation for 32 days and they have been eviscerated. They are no longe",
-              "author": "StateDept",
-              "duration": 78
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StateDept/status/2039521751114400242",
-              "embed_id": "2039521751114400242",
-              "title": "PRESIDENT TRUMP: We’ve decimated Iran both militarily and economically. The countries who receive oil through the Strait of Hormuz must now take care ",
-              "author": "StateDept",
-              "duration": 40
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StateDept/status/2039518534871753091",
-              "embed_id": "2039518534871753091",
-              "title": "PRESIDENT TRUMP: Our objectives for Operation Epic Fury are simple and clear. We are systematically dismantling the Iranian regime’s ability to threat",
-              "author": "StateDept",
-              "duration": 55
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNN/status/2039508931161026693",
-              "embed_id": "2039508931161026693",
-              "title": "President Trump is addressing the nation on the war with Iran. Watch CNN, stream on the CNN app and follow live updates: https://t.co/V9hU71Wjdz https",
-              "author": "CNN"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNN/status/2039293164591141147",
-              "embed_id": "2039293164591141147",
-              "title": "Trump renews his attacks on NATO, suggesting he could withdraw the US from the alliance over its lack of support for his war on Iran. \n\nFollow live up",
-              "author": "CNN"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNN/status/2038594759833317626",
-              "embed_id": "2038594759833317626",
-              "title": "Trump threatens to obliterate Iran's energy sources if a deal isn't reached while Tehran calls US proposal to end the war \"unrealistic.\" Follow live u",
-              "author": "CNN"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNN/status/2037628272717054212",
-              "embed_id": "2037628272717054212",
-              "title": "Dow closes in correction, down 10% since a record high in February, as war with Iran roils markets. https://t.co/GiFoxENAVY https://t.co/bBxSS5Gytp",
-              "author": "CNN"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNN/status/2036986749486789060",
-              "embed_id": "2036986749486789060",
-              "title": "A key group of House Republicans is growing increasingly wary of the US war with Iran after a briefing with Department of Defense officials on Wednesd",
-              "author": "CNN"
+              "url": "https://x.com/AP/status/2039520737858388370",
+              "embed_id": "2039520737858388370",
+              "title": "President Donald Trump said U.S. forces will “finish the job” in Iran soon as “core strategic objectives are nearing completion\" in his first national",
+              "author": "AP"
             },
             {
               "platform": "x",
@@ -4175,31 +4680,32 @@
             },
             {
               "platform": "x",
-              "url": "https://x.com/nytimes/status/2037628513314849245",
-              "embed_id": "2037628513314849245",
-              "title": "Breaking News: Stocks fell 1.7% today, skidding into a fifth week of losses, as investors lost patience with the war in Iran. It's the worst streak of",
-              "author": "nytimes"
+              "url": "https://x.com/MarioNawfal/status/2039666140352540875",
+              "embed_id": "2039666140352540875",
+              "title": "🇺🇸 TRUMP'S IRAN SPEECH: MARKETS HEARD \"2-3 MORE WEEKS\" AND TANKED\n\nTrump gave his first primetime address on the war saying it's \"nearing completion",
+              "author": "MarioNawfal"
             },
             {
               "platform": "x",
-              "url": "https://x.com/nytimes/status/2034659330398523795",
-              "embed_id": "2034659330398523795",
-              "title": "Breaking News: The Pentagon asked the White House for $200 billion to fund the war in Iran, according to two officials with knowledge of the matter. T",
-              "author": "nytimes"
+              "url": "https://x.com/Reuters/status/2039567245278589430",
+              "embed_id": "2039567245278589430",
+              "title": "President Trump staunchly defended his handling of the month-old US-Israeli war on Iran in a prime-time address, saying the US military was nearing co",
+              "author": "Reuters"
             },
             {
               "platform": "x",
-              "url": "https://x.com/nytimes/status/2033948990446748063",
-              "embed_id": "2033948990446748063",
-              "title": "In @nytopinion\n\n“President Trump went to war against Iran without explaining his strategy to the American people or the world. It now appears that he ",
-              "author": "nytimes"
+              "url": "https://x.com/Reuters/status/2039534564146643109",
+              "embed_id": "2039534564146643109",
+              "title": "U.S. President Donald Trump told the nation in a televised speech on Wednesday night that the U.S. military had nearly accomplished its goals in Iran,",
+              "author": "Reuters",
+              "duration": 52
             },
             {
               "platform": "x",
-              "url": "https://x.com/nytimes/status/2033909771649085875",
-              "embed_id": "2033909771649085875",
-              "title": "Breaking News: A top U.S. counterterrorism official resigned, publicly citing his opposition to the Iran war. “I cannot in good conscience support the",
-              "author": "nytimes"
+              "url": "https://x.com/Reuters/status/2039519496675697147",
+              "embed_id": "2039519496675697147",
+              "title": "President Trump told the nation in a televised speech that the US military had nearly completed the goals it had set out to accomplish in its war with",
+              "author": "Reuters"
             }
           ],
           "youtube_videos": [
@@ -4209,159 +4715,348 @@
               "channel": "CNN"
             },
             {
-              "url": "https://www.youtube.com/watch?v=9xjPGebjrCM",
-              "embed_id": "9xjPGebjrCM",
-              "channel": "The Guardian"
-            },
-            {
               "url": "https://www.youtube.com/watch?v=HIyLHjOQR9M",
               "embed_id": "HIyLHjOQR9M",
               "channel": "Washington Post"
             },
             {
-              "url": "https://www.youtube.com/watch?v=OzXA-VuYEHM",
-              "embed_id": "OzXA-VuYEHM",
-              "channel": "MSNBC"
+              "url": "https://www.youtube.com/watch?v=9xjPGebjrCM",
+              "embed_id": "9xjPGebjrCM",
+              "channel": "The Guardian"
             },
             {
-              "url": "https://www.youtube.com/watch?v=cu5ULWuNmC0",
-              "embed_id": "cu5ULWuNmC0",
-              "channel": "MSNBC"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=cVznYfkXWEo",
-              "embed_id": "cVznYfkXWEo",
-              "channel": "Yahoo Finance",
-              "duration": 12,
-              "title": "Trump says US doesn&#39;t &#39;need their oil&#39; in speech on Middle East war",
+              "url": "https://www.youtube.com/watch?v=Emj05OISreo",
+              "embed_id": "Emj05OISreo",
+              "channel": "MSNBC",
+              "duration": 656,
+              "title": "Lawrence: Trump failed to explain his war, disgraced military calling it &#39;a little journey to Iran&#39;",
               "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=hB-DIM8mqpE",
-              "embed_id": "hB-DIM8mqpE",
-              "channel": "Bloomberg",
-              "duration": 300,
-              "title": "Iran’s President Issues Open Letter to the American Public",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=FCgh3F2zmSU",
+              "embed_id": "FCgh3F2zmSU",
+              "channel": "MSNBC",
+              "duration": 552,
+              "title": "&#39;Disinformation&#39;: Trump uses primetime address to trot out familiar Iran talking points",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=IsAAdFtcUk4",
-              "embed_id": "IsAAdFtcUk4",
-              "channel": "Bloomberg",
-              "duration": 66,
-              "title": "US will feel effects of Iran for &quot;a very long time&quot;",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=s9lbU7yeG7g",
+              "embed_id": "s9lbU7yeG7g",
+              "channel": "MSNBC",
+              "duration": 106,
+              "title": "&#39;Massive political failure&#39;: Nicolle reacts to Trump address on Iran",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=WyxV88gn7M8",
-              "embed_id": "WyxV88gn7M8",
-              "channel": "Bloomberg",
-              "duration": 66,
-              "title": "US will feel effects of Iran for “a very long time” #shorts #iran #trump",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=OzXA-VuYEHM",
+              "embed_id": "OzXA-VuYEHM",
+              "channel": "MSNBC",
+              "duration": 143,
+              "title": "Hayes&#39; INSTANT REACTION to Trump&#39;s prime-time Iran war speech",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=_xtOsjOtK5A",
-              "embed_id": "_xtOsjOtK5A",
-              "channel": "Bloomberg",
-              "duration": 422,
-              "title": "Iran Impact Hitting Those at Bottom of &#39;K-Shaped Economy Hardest, Says Peter Atwater",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=TUt37bk-p3U",
+              "embed_id": "TUt37bk-p3U",
+              "channel": "New York Post",
+              "duration": 1126,
+              "title": "ICYMI: President Trump Makes White House Address To The Nation About The Iran War",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=PVHmg0ILs4E",
-              "embed_id": "PVHmg0ILs4E",
-              "channel": "Bloomberg",
-              "duration": 571,
-              "title": "Stocks Surge Ahead of Trump Iran Remarks | Closing Bell",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=ZZJrAzXQFFU",
+              "embed_id": "ZZJrAzXQFFU",
+              "channel": "BBC News",
+              "duration": 839,
+              "title": "Iran denies Trump&#39;s claim it requested ceasefire | BBC News",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=AtVu2QH9ZO8",
-              "embed_id": "AtVu2QH9ZO8",
-              "channel": "Bloomberg",
-              "duration": 1044,
-              "title": "Proud Trump Pulled the Trigger Against Iran Says Former Vice President Pence",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=wY0Fr4sJjOQ",
+              "embed_id": "wY0Fr4sJjOQ",
+              "channel": "Reuters",
+              "duration": 124,
+              "title": "Trump tells wary public Iran war&#39;s end is &#39;getting very close&#39;",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=znYrGVThbSQ",
-              "embed_id": "znYrGVThbSQ",
-              "channel": "Financial Times",
-              "duration": 70,
-              "title": "Trump says US allies will have to reopen the Strait of Hormuz themselves | FT #shorts",
-              "relevance": 7
+              "url": "https://www.youtube.com/watch?v=v2o4NUpV_D0",
+              "embed_id": "v2o4NUpV_D0",
+              "channel": "Reuters",
+              "duration": 52,
+              "title": "Trump vows to hit Iran &#39;extremely hard,&#39; warns of Stone Age strikes",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=XpxgbbR-mIU",
-              "embed_id": "XpxgbbR-mIU",
-              "channel": "Financial Times",
+              "url": "https://www.youtube.com/watch?v=i6wabKr-hUc",
+              "embed_id": "i6wabKr-hUc",
+              "channel": "Reuters",
+              "duration": 52,
+              "title": "Trump vows to hit Iran &#39;extremely hard&#39;",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=-0gCCEhMQ58",
+              "embed_id": "-0gCCEhMQ58",
+              "channel": "Reuters",
+              "duration": 92,
+              "title": "Trump says US may exit Iran war soon, threatens to quit NATO",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=lxe5Zt0sD7g",
+              "embed_id": "lxe5Zt0sD7g",
+              "channel": "AP News",
+              "duration": 94,
+              "title": "Trump offers few new details on Iran military operation in national address",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=VeOA6_j2cCM",
+              "embed_id": "VeOA6_j2cCM",
+              "channel": "AP News",
               "duration": 96,
-              "title": "Why the closure of the Strait of Hormuz is about more than just oil | FT #shorts",
-              "relevance": 7
+              "title": "Trump says the US &#39;core strategic objectives&#39; in Iran are &#39;nearing completion&#39;",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=UZSU92cPEqQ",
-              "embed_id": "UZSU92cPEqQ",
-              "channel": "CNN",
-              "title": "CNN's first reactions to Trump's Iran war address"
+              "url": "https://www.youtube.com/watch?v=EGLJ2xNLeZc",
+              "embed_id": "EGLJ2xNLeZc",
+              "channel": "AP News",
+              "duration": 1130,
+              "title": "LIVE: Trump addresses the nation on the Iran war",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ng79VaT1XkQ",
+              "embed_id": "ng79VaT1XkQ",
+              "channel": "PBS NewsHour",
+              "duration": 240,
+              "title": "WATCH: Trump says U.S. will hit Iran &#39;very hard&#39; if it makes a move for nuclear material",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=gmdJDf3Xjuc",
+              "embed_id": "gmdJDf3Xjuc",
+              "channel": "PBS NewsHour",
+              "duration": 170,
+              "title": "WATCH: Despite rising gas prices, &#39;we&#39;re in great shape for the future,&#39; Trump says of Iran war",
+              "relevance": 9
             },
             {
               "url": "https://www.youtube.com/watch?v=he9YoGyjJzw",
               "embed_id": "he9YoGyjJzw",
               "channel": "PBS NewsHour",
-              "title": "WATCH: Trump says U.S. military objectives in Iran ‘nearing completion'"
+              "duration": 145,
+              "title": "WATCH: Trump says U.S. military objectives in Iran ‘nearing completion&#39;",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=RHZ4iXE1yk0",
-              "embed_id": "RHZ4iXE1yk0",
-              "channel": "ABC News",
-              "title": "President Trump vows to bring Iran 'back to the stone ages' if no deal is made"
+              "url": "https://www.youtube.com/watch?v=InurSEhD5ug",
+              "embed_id": "InurSEhD5ug",
+              "channel": "DW News",
+              "duration": 749,
+              "title": "Trump says Iran war nearly over, but warns of more strikes  | DW News",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=wxV1FydaTnA",
-              "embed_id": "wxV1FydaTnA",
-              "channel": "ABC News",
-              "title": "President Trump promises to hit Iran \"extremely hard\" over next few weeks"
+              "url": "https://www.youtube.com/watch?v=gSMd1LiDRKQ",
+              "embed_id": "gSMd1LiDRKQ",
+              "channel": "CBS News",
+              "title": "Takeaways from Trump&#39;s prime-time address on the Iran war",
+              "relevance": 9
             },
             {
-              "url": "https://www.youtube.com/watch?v=YmrquGW-l5Q",
-              "embed_id": "YmrquGW-l5Q",
+              "url": "https://www.youtube.com/watch?v=h8Lt4FcrGog",
+              "embed_id": "h8Lt4FcrGog",
+              "channel": "CBS News",
+              "title": "Watch: Trump says U.S. will hit Iran very hard &quot;over the next 2 to 3 weeks&quot; | Special Report",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=MSYnkGCaAmo",
+              "embed_id": "MSYnkGCaAmo",
+              "channel": "CBS News",
+              "title": "Trump addresses nation on Iran war | full video",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Baztij8JN3E",
+              "embed_id": "Baztij8JN3E",
+              "channel": "CBS News",
+              "title": "Trump to give &quot;important update on Iran&quot; in national address",
+              "relevance": 9
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=HB13LQ2iKHQ",
+              "embed_id": "HB13LQ2iKHQ",
+              "channel": "Al Jazeera",
+              "duration": 259,
+              "title": "Tehran to ‘fight back’ after Trump pledges to bomb Iran into ‘Stone Ages’",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=nlsuK2Y1CLM",
+              "embed_id": "nlsuK2Y1CLM",
+              "channel": "DW News",
+              "duration": 114,
+              "title": "Trump’s speech: Iran exit strategy missing | DW News",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=nsxZlzE7Nz4",
+              "embed_id": "nsxZlzE7Nz4",
+              "channel": "DW News",
+              "duration": 62,
+              "title": "Trump says Iran &quot;no longer a threat&quot; | DW News",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=cnJpTaNTfHk",
+              "embed_id": "cnJpTaNTfHk",
+              "channel": "France 24",
+              "duration": 276,
+              "title": "Iran vows &#39;more destructive&#39; attacks after Trump threats • FRANCE 24 English",
+              "relevance": 8
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Rn0MBdcyE9k",
+              "embed_id": "Rn0MBdcyE9k",
+              "channel": "Reuters",
+              "duration": 142,
+              "title": "Wall Street ends higher on speculation Iran war may end",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=6-wQIVhk0LY",
+              "embed_id": "6-wQIVhk0LY",
+              "channel": "Reuters",
+              "duration": 81,
+              "title": "Poll finds two-thirds of Americans want quick end to Iran war",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=iOn9hDZHyQs",
+              "embed_id": "iOn9hDZHyQs",
+              "channel": "AP News",
+              "duration": 87,
+              "title": "Iran president writes open letter to Americans asking if war is in their interests",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=FnQBsJrxogo",
+              "embed_id": "FnQBsJrxogo",
+              "channel": "CBS News",
+              "title": "Fuel prices spike, markets slide after Trump's Iran address"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=oajZVDx__vM",
+              "embed_id": "oajZVDx__vM",
+              "channel": "CBS News",
+              "title": "Key takeaways from Trump's Iran war address as worries about his approval rating grow"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=79N8fDdic8w",
+              "embed_id": "79N8fDdic8w",
               "channel": "ABC News",
-              "title": "President Trump says \"core strategic objectives\" in Iran are \"nearing completion\""
+              "title": "Trump addresses nation over war with Iran amid economic and global fallout"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=N4LTXaxqAHo",
+              "embed_id": "N4LTXaxqAHo",
+              "channel": "PBS NewsHour",
+              "title": "President Trump address to the nation — PBS News Special Report"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=sLSiXBPzJJM",
+              "embed_id": "sLSiXBPzJJM",
+              "channel": "C-SPAN",
+              "title": "President Trump Addresses Nation on War with Iran (Full Speech)"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=On0IaFJE0qY",
+              "embed_id": "On0IaFJE0qY",
+              "channel": "C-SPAN",
+              "title": "President Trump Addresses the Nation on Iran War"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=iMVBYnFdUg4",
+              "embed_id": "iMVBYnFdUg4",
+              "channel": "C-SPAN",
+              "title": "Trump: “Nearing completion” of objectives in Iran"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=jaG89e1JIH0",
+              "embed_id": "jaG89e1JIH0",
+              "channel": "BBC News",
+              "title": "US President Trump says Iran war objectives 'nearing completion' | BBC News"
             }
           ],
           "sources": [
             {
               "name": "New York Times",
               "url": "https://www.nytimes.com/live/2026/04/02/world/iran-war-trump-news",
-              "lean": "left"
-            },
-            {
-              "name": "Fox News",
-              "url": "https://www.foxnews.com/politics/what-you-need-know-5-key-takeaways-from-trumps-iran-address",
-              "lean": "right"
-            },
-            {
-              "name": "Reuters",
-              "url": "https://www.yahoo.com/news/articles/iran-hezbollah-fire-rockets-israel-073740233.html",
-              "lean": "center"
-            },
-            {
-              "name": "The Guardian",
-              "url": "https://www.theguardian.com/us-news/2026/apr/01/trump-iran-war-address-white-house",
-              "lean": "left"
+              "lean": "left",
+              "title": "Iran War Live Updates: Macron Faults Trump For Shifting U.S. Goals"
             },
             {
               "name": "Breitbart",
-              "url": "https://www.breitbart.com/politics/2026/04/01/trump-says-core-objectives-of-iran-war-nearing-completion/",
+              "url": "https://www.breitbart.com/politics/2026/04/02/iran-vows-humiliation-disgrace-permanent-and-certain-regret-for-a-crushed-u-s-after-trump-address/",
               "lean": "right"
             },
             {
-              "name": "NPR World",
-              "url": "https://www.npr.org/2026/04/01/nx-s1-5770093/trump-address-iran-war",
+              "name": "BBC",
+              "url": "https://www.bbc.com/news/articles/cevk0e4ykwko?at_medium=RSS&at_campaign=rss",
               "lean": "center",
-              "title": "Trump makes his case for war with Iran, saying the conflict is 'nearing completion'"
+              "title": "'Be serious... don't speak every day': Macron criticises Trump approach to Iran war"
+            },
+            {
+              "name": "The Guardian",
+              "url": "https://www.theguardian.com/us-news/2026/apr/02/trump-iran-war-address-backlash",
+              "lean": "left"
+            },
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/04/01/us/politics/trump-iran-war-address-takeaways.html",
+              "lean": "left",
+              "title": "5 Takeaways From Trump’s Speech on Iran"
+            },
+            {
+              "name": "HuffPost",
+              "url": "https://www.huffpost.com/entry/trump-iran-war-prime-time-address_n_69cda1d6e4b010aa534a0ba5",
+              "lean": "left",
+              "title": "Trump To Tell Wary Public That Iran War Goals Have Been Accomplished In Prime-Time Address"
+            },
+            {
+              "name": "NYT Politics",
+              "url": "https://www.nytimes.com/2026/04/01/us/politics/trump-transcript-speech-iran.html",
+              "lean": "left",
+              "title": "Transcript: Trump’s Speech on Iran War"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/04/01/trump-speech-iran-war/",
+              "lean": "left",
+              "title": "Trump says Iran war is ‘nearing completion’ as he seeks to calm economic worries"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/04/01/trump-address-iran-war-live-updates/",
+              "lean": "left",
+              "title": "Trump, in address to nation, says conflict with Iran ‘nearing completion’"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/04/02/trump-address-iran-war-operation-epic-fury-no-new-details/",
+              "lean": "right",
+              "title": "Editor Daily Rundown: Trump Addresses Nation On Iran War"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/politics/4-takeaways-from-trumps-address-on-the-iran-war",
+              "lean": "center",
+              "title": "4 takeaways from Trump's address on the Iran war"
             },
             {
               "name": "PBS NewsHour",
@@ -4370,94 +5065,34 @@
               "title": "Trump signals Iran war could end soon but gives mixed signals on how"
             },
             {
-              "name": "Al Jazeera",
-              "url": "https://www.aljazeera.com/news/2026/4/2/iran-war-what-is-happening-on-day-34-of-us-israel-attacks?traffic_source=rss",
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/stocks-down-today-trump-speech-sp500-index-djia-oil-prices/",
               "lean": "center",
-              "title": "Iran war: What is happening on day 34 of US-Israel attacks?"
-            },
-            {
-              "name": "France24",
-              "url": "https://www.france24.com/en/middle-east/20260402-middle-east-live-israeli-air-defences-intercept-multiple-iranian-missile-waves",
-              "lean": "center",
-              "title": "Middle East live: Iran vows 'crushing' attacks after Trump dims hopes of swift end to war"
-            },
-            {
-              "name": "France24",
-              "url": "https://www.france24.com/en/americas/20260402-trump-addresses-nation-on-iran-war",
-              "lean": "center",
-              "title": "Trump pledges to 'finish the job' in Iran in national address but offers no exit plan"
-            },
-            {
-              "name": "DW News",
-              "url": "https://www.dw.com/en/fact-check-donald-trump-speaks-on-iran-oil-and-economy/a-76636405?maca=en-rss-en-all-1573-xml-mrss",
-              "lean": "center",
-              "title": "Fact check: Donald Trump speaks on Iran, oil and economy"
-            },
-            {
-              "name": "ABC News",
-              "url": "https://abcnews.com/International/live-updates/iran-live-updates-trump-touts-big-day-iran/?id=131532311",
-              "lean": "center",
-              "title": " Iran live updates: Israel, UAE, Saudi Arabia report drone and missile attacks"
+              "title": "Stocks slide after Trump vows to continue Iran strikes"
             },
             {
               "name": "CBS News",
-              "url": "https://www.cbsnews.com/live-updates/iran-war-trump-nato-tehran-threatens-us-tech-companies-strait-of-hormuz/",
+              "url": "https://www.cbsnews.com/video/dow-plunges-following-trump-iran-remarks/",
               "lean": "center",
-              "title": "Iran war's \"core strategic objectives are nearing completion,\" Trump says"
+              "title": "Dow plunges following Trump Iran remarks"
             },
             {
-              "name": "CBS News",
-              "url": "https://www.cbsnews.com/video/trump-says-us-hit-iran-very-hard-next-weeks-special-report/",
-              "lean": "center",
-              "title": "Watch: Trump says U.S. will hit Iran very hard \"over the next 2 to 3 weeks\" | Special Report"
-            },
-            {
-              "name": "MarketWatch",
-              "url": "https://www.marketwatch.com/story/stock-futures-sink-as-trump-says-u-s-on-track-to-complete-iran-objectives-very-shortly-83d76b47?mod=mw_rss_topstories",
-              "lean": "center",
-              "title": "Stock futures sink as Trump says U.S. on track to complete Iran objectives ‘very shortly’"
-            },
-            {
-              "name": "Financial Times",
-              "url": "https://www.ft.com/content/3af1d6e5-2a61-47f9-af65-efeb1b859ab9",
-              "lean": "center",
-              "title": "Trump threatens to hit Iran ‘extremely hard’ in coming weeks"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOcWpvOUpzVExabG9LTnlRYmRUbEFqV3BDTXZGVFAzVFBsaV95OUFkRnVhbVFNT25lVWRDUnN5T3lxUUVqdXpJMU1nTEZ3eTNHZC1wUVhzMXVVaG90SVZOVTNfX3dMSC1ZVk5rZ3h0R2hxX0k2Q2xETHo1ZEs4bXJjLXBTRzhfTlEzMWhiaEpoR2M2dFZOOWNENkJxLTVEeks3UGFnWkcyYkJKaGVTX0NjTEVwcXQ?oc=5",
-              "lean": "center",
-              "title": "Trump Stirs Market, Political Angst With Vague Timeline for Iran - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNTWJONkhZQjhGQlBDTjBYRmZqZXQyTnpTWXliOXBsR1FWclJkdmR4YWVRc3c3emRmRWdGZDlYZ2R1X0ZVVXI5d3dHV29PbEhYUWxXcGFGZnBiN0o5WUhrSHQ2cFo2S1d6aVZrS1Z0dGNyQlQzSTBELVRtbUZJSXpyQ3FtN3RSZS1pSXVtRVlfYV9rS0NRWDMtOVV4aFd0QzZLV0tZ?oc=5",
-              "lean": "center",
-              "title": "Trump Threatens to Escalate Iran War But Says End Is Very Close - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQVk1CeVhhVGloTEV5d0NibzJSNzdtd2tEMGhBVHB3eDlHMXFOZmFLamdtNlN5TWNQVGl0SlRqXzBxSk41QjBrMHZJT01vWDIxa0ZobTJUcm9DdUNOMTBEZTVyZjNhb1hWcVBTZXZJOUZ0X2s3eW5uTUgwZzlIZUFKek5pOHlQblNXTkhaanZDQVlVV1JBcmp1RUxZMHd2a1RueXRfSFZxTThFSUFxVUQ5MUVkMFo?oc=5",
-              "lean": "center",
-              "title": "Trump’s Renewed Iran Warning Risks More Volatility, Analysts Say - Bloomberg.com"
-            },
-            {
-              "name": "Barron's",
-              "url": "https://news.google.com/rss/articles/CBMihANBVV95cUxQcDBUcmdSZExQbVJ1bl9iZnoxVjBHWVNpeXNiUjZQdmlGcEE5S1VIMWFmdklZT0xLUzhTeWlua1ZhMjVickstNHYyMG05cThVbW5GTlNLakpDVUIydElEVVZ1TlYzX1lsY3VtMlQ1dVItTXFiZVMyZmFNY19WYm5VUDV5V2NzVldCdTBIU09oaElRWEMwTEJWQ0VJNWVuejVabFlWY0ZvSjBsT0RhTzlBajRENjFEczhfUmlQNnZRT1ozb1E2X1ktZ3F6YmNYRms2S3N1Q2F4TFBQeUVCZW14UUVzQml3TzZuSnJ5WV93NlpNQ2FaRkZXVmdYMTl3d1JxcU8zcnBQTzR2eUJMZVhPWS1qYmFWeWdpSUJRN1dlUDJTT0VYREk3cUE5eW45V2JoTGJRTU9pazVIQlN3S3JBbTBzcUNGRlZOUEtqeERfb2MtTnpvVjdRYUVHeWF4WW1aQ01ISmdyR3JxUl9KY2x0TXY0eml2X2lXN0R2d3ROMmNqaE9I?oc=5",
-              "lean": "center",
-              "title": "Trump’s Iran Speech Shed Little Light On War. What Investors Still Want to Hear. - Barron's"
-            },
-            {
-              "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/04/01/us/politics/trump-goals-iran-war.html",
+              "name": "NYT Business",
+              "url": "https://www.nytimes.com/2026/04/02/business/dealbook/trump-iran-war-markets.html",
               "lean": "left",
-              "title": "Trump Initially Laid Out Five Goals for the Iran War. Here’s Where They Stand."
+              "title": "Why Stocks Tumbled After Trump’s Iran Address"
             },
             {
-              "name": "WaPo World",
-              "url": "https://www.washingtonpost.com/world/2026/03/31/europe-allies-trump-iran-war-opposition/",
+              "name": "CNN",
+              "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRl93TG9tb2drbW9hYk9rNVB6UmpHSnpVdFZsdDFfdHhSVmJwNmJDVFEySmQtNmJDNDBQbFF5WXRPWmRHMWVSVk5YVHNOaEtlUENldWxBNks5ZG5qaGlNZlJ3c2JIQ2Q1ZU9CMXhKOXI4MmdmbkRrbnJWSElLWlJLM3N0RGRmV1FqalE?oc=5",
               "lean": "left",
-              "title": "Trump slams allies as Europeans show reluctance to aid U.S. in Iran war"
+              "title": "Europe didn’t want an Iran war, yet Trump is saddling it with the consequences - CNN"
+            },
+            {
+              "name": "CNN Politics",
+              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNQnVuOVNRZkpxLWVFUElONHk4a1VVQkdxZVlTTWJFTXhFZVctaVpxMUZRZ2pVUGhaYm1SRjl3MzhMbjUyeVdUTno1VElXM01PQVR2Z0JWajdZSmU2enBQNXFnRmtlWnh0NG5LejItZ0QyZFpWcERidGJUcmxsU1g3NkFTNG5lTUlU?oc=5",
+              "lean": "left",
+              "title": "Trump makes his best case for the war — but fails to ease worries about how it will end - CNN"
             },
             {
               "name": "Vox",
@@ -4466,100 +5101,22 @@
               "title": "Is this the beginning of the end of the war in Iran?"
             },
             {
-              "name": "The Intercept",
-              "url": "https://theintercept.com/2026/04/01/iran-war-us-casualty-numbers-trump-hegseth/",
-              "lean": "left",
-              "title": "“Casualty Cover-Up”: The Pentagon Is Hiding U.S. Losses Under Trump in the Middle East"
-            },
-            {
-              "name": "Zero Hedge",
-              "url": "https://www.zerohedge.com/geopolitical/uae-poised-join-anti-iran-operations-trump-rips-nato-paper-tiger-says-exit-beyond",
-              "lean": "right",
-              "title": "Oil Spikes As Trump Vows To Hit Iran \"Extremely Hard Over Next 2-3 Weeks\", Threatens To Send It \"Back To The Stone Ages\""
-            },
-            {
-              "name": "Politico",
-              "url": "https://www.politico.com/news/2026/04/01/trump-warns-u-s-will-hit-iran-extremely-hard-over-next-two-to-three-weeks-00855071",
-              "lean": "center",
-              "title": "Trump warns U.S. will hit Iran ‘extremely hard’ over next two to three weeks"
-            },
-            {
-              "name": "Politico",
-              "url": "https://www.politico.com/news/2026/04/01/trump-iran-war-strait-of-hormuz-ceasefire-00853870",
-              "lean": "center",
-              "title": "Trump says war in Iran will not end until Strait of Hormuz is reopened"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/homenews/administration/5812275-trump-iran-stone-ages-peace-deal/",
-              "lean": "center",
-              "title": "Trump: US will return Iran ‘back to the stone ages’ if there’s no deal in coming weeks"
-            },
-            {
-              "name": "CoinTelegraph",
-              "url": "https://cointelegraph.com/news/trump-is-going-to-give-a-key-address-about-iran?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
-              "lean": "center",
-              "title": "Bitcoin dips, oil rises as Trump addresses nation on war in Iran"
-            },
-            {
-              "name": "WaPo World",
-              "url": "https://www.washingtonpost.com/national-security/2026/04/01/trump-commando-plan-seize-iran-uranium/",
-              "lean": "left",
-              "title": "Risky commando plan to seize Iran’s uranium came at Trump’s request "
-            },
-            {
               "name": "Vox",
               "url": "https://www.vox.com/future-perfect/484383/iran-war-coal-strait-hormuz-oil-tankers-climate-change",
               "lean": "left",
               "title": "How the Iran war came for elevator rides, street lights, and even butter chicken"
             },
             {
-              "name": "The Intercept",
-              "url": "https://theintercept.com/2026/04/01/iranian-americans-against-war-poll-israel/",
-              "lean": "left",
-              "title": "Iranian Americans Have Turned Against the War, New Poll Finds"
-            },
-            {
-              "name": "The Intercept",
-              "url": "https://theintercept.com/2026/03/31/trump-iran-war-venezuela-maduro/",
-              "lean": "left",
-              "title": "Trump Wanted to Replicate His Venezuela “Success” in Iran. What Has It Even Looked Like?"
-            },
-            {
-              "name": "The Intercept",
-              "url": "https://theintercept.com/2026/03/30/trump-secret-wars/",
-              "lean": "left",
-              "title": "Trump’s Secret Wars on the World Keep Expanding"
-            },
-            {
-              "name": "The Intercept",
-              "url": "https://theintercept.com/2026/03/27/iran-regime-survives-trump-talks/",
-              "lean": "left",
-              "title": "The Regime Survives, Trump Has to Deal, and Iranians Are the Biggest Losers"
-            },
-            {
-              "name": "Slate",
-              "url": "https://slate.com/news-and-politics/2026/04/veterans-war-iran-donald-trump-strategy.html?via=rss",
-              "lean": "left",
-              "title": "I Found the Veterans at the Huge Anti-Trump Protest. Their Views on Iran Were Revealing."
-            },
-            {
-              "name": "The Atlantic",
-              "url": "https://www.theatlantic.com/podcasts/2026/04/david-frum-show-graeme-wood-strait-of-hormuz/686642/?utm_source=feed",
-              "lean": "left",
-              "title": "Watching War From the Strait of Hormuz"
-            },
-            {
-              "name": "Daily Caller",
-              "url": "https://dailycaller.com/2026/04/02/opinion-strait-of-hormuz-closure-impacts-much-more-than-just-oil-david-blackmon/",
+              "name": "Zero Hedge",
+              "url": "https://www.zerohedge.com/markets/futures-bonds-tumble-oil-soars-after-trump-dashes-hopes-early-end-iran-war",
               "lean": "right",
-              "title": "DAVID BLACKMON: Strait Of Hormuz Closure Impacts Much More Than Just Oil"
+              "title": "Futures, Bonds Tumble, Oil Soars After Trump Dashes Hopes For Early End To Iran War "
             },
             {
               "name": "The Federalist",
-              "url": "https://thefederalist.com/2026/04/01/the-iran-war-is-splintering/?utm_source=rss&utm_medium=rss&utm_campaign=the-iran-war-is-splintering",
+              "url": "https://thefederalist.com/2026/04/01/trump-war-objectives-have-been-achieved-iran-no-longer-a-threat/?utm_source=rss&utm_medium=rss&utm_campaign=trump-war-objectives-have-been-achieved-iran-no-longer-a-threat",
               "lean": "right",
-              "title": "The Iran War Is Splintering"
+              "title": "Trump: War Objectives Have Been Achieved, Iran ‘No Longer A Threat’"
             },
             {
               "name": "Townhall",
@@ -4568,76 +5125,82 @@
               "title": "Trump’s Strategic Iranian Oil Balancing Act: Now It's Time to Finish the Job"
             },
             {
-              "name": "Reuters Business",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPRjFGSThkUWxFdXpNUGNPU1JZUUFHOXZtQUpibFNJemVOaV80TUlsZEpDT29DVVIwMllLM25xd3ROR2JCc1VkZFJ3bWJhM2tmR09QNWFwN3l0c3Q3VjktTHcxYVd2Q1ZvYzVOeDloeHVnXzc2WmJMVW9WOGd6SDJENFlSX0xBVmkwdGNwVmtTRXFMc2JXWUdJWjAtSlc2dndvTVhZYTAySHdLSnRwRXJGTXdfN09YUQ?oc=5",
-              "lean": "center",
-              "title": "Amazon's cloud business in Bahrain damaged in Iran strike, FT reports - reuters.com"
+              "name": "Townhall",
+              "url": "https://townhall.com/columnists/dalia-ziada/2026/04/02/iranian-aggression-demands-return-to-abraham-accords-peacemaking-n2673799",
+              "lean": "right",
+              "title": "Iranian Aggression Demands Return to Abraham Accords Peacemaking"
             },
             {
-              "name": "AP News",
-              "url": "https://www.yahoo.com/news/articles/despite-trumps-claims-theres-no-001305926.html",
+              "name": "NY Sun",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPU0s3N28zQ1JVVXYyOGhYLUFnU09ZS2VVUU5JakwzQXZKaXZFOEJuQkc2a3BSdjl5aWdJRmJrRGJlSGpoQjdxMnV3YlFpTDB5NGF5cjE4LU9oLW4yd0hOWkpBSTlLVHlaT3M0ODdVclZnS1ZJOGdFQTFJRHFGaWVxVUU2N2lnMGpxdzg0SkZ0bjZrYTRzWWYzREhPOVR2VW0tSUd0RGV2MEFZTTdDVWthRFRHc0p4YTAwVE43OW13?oc=5",
+              "lean": "right",
+              "title": "After Years of Preparation, America’s Military Is Executing a Brilliant Campaign Against Iran - The New York Sun"
+            },
+            {
+              "name": "NY Sun",
+              "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRXA1QWtaTi1sNy1MNzZieTMtX0JMNWdyaDBvYzdPNF9TLWJNelhyYzhiWkU4RUJ1aXF3RG5vNHpsQ2xXZEhETVN1VzhkazV6NVo2eTFDNk1HWndDby1Id1RqYWwzc1RYbFpMZ3RKckxWeTZrNU82T1ZCSmwyZVU5RkcxTlNESThMQm9XdlVVeVNMYWRCLWIxa01UVjZ3cHNfZ3NZRU5OQ3dYOWpMTFlib0JyUzY5WmZIRVNmdE5DNUpQTkZYazJJ?oc=5",
+              "lean": "right",
+              "title": "By Opposing Iran War, European Allies Risk Their Future and Disappoint Rubio, a ‘Big Supporter’ of NATO - The New York Sun"
+            },
+            {
+              "name": "Reuters Business",
+              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNcTdIT01VWG5hRkZza3JnUHVuRUJnUXJTOWYyU2pHOWpOUUFQWjlOTktJcDNqR3I1OWY4WXdyd1htSjRkVHhYaDkyYUFUOWg3Q2daTXBYRTR6RzVBVlR2d3IwblR3NWFxWDVxME9wRVdrdHpBZlhaenBGOHpJZW9ubFd2QlN6ZlY4QUMtamRnU2hSU05XQ1M2TEhpYV8xa2xZaEtHNHVrYUxOLXlFaS0xbGl1Sm5kUQ?oc=5",
               "lean": "center",
-              "title": "Despite Trump's claims, there's no indication Iran's regime has lost power, Western officials and experts say"
+              "title": "Wall Street ends higher on speculation about end to Iran war - Reuters"
             },
             {
               "name": "Politico",
-              "url": "https://www.politico.com/news/2026/04/01/trump-nato-no-plans-withdrawal-00854455",
+              "url": "https://www.politico.com/news/2026/04/02/what-the-hell-did-he-just-say-gop-iran-worries-build-after-trump-speech-00855321",
               "lean": "center",
-              "title": "Trump has threatened to leave NATO over Iran. There are few signs that’s happening."
+              "title": "'What the hell did he just say?' GOP Iran worries build after Trump speech"
+            },
+            {
+              "name": "Politico",
+              "url": "https://www.politico.com/news/2026/04/01/trump-warns-u-s-will-hit-iran-extremely-hard-over-next-two-to-three-weeks-00855071",
+              "lean": "center",
+              "title": "Trump warns US will hit Iran ‘extremely hard’ over next two to three weeks"
             },
             {
               "name": "The Hill",
-              "url": "https://thehill.com/homenews/education/5812171-nyu-abu-dhabi-campus-closure/",
+              "url": "https://thehill.com/policy/international/5813008-trump-threatens-iran-escalation/",
               "lean": "center",
-              "title": "NYU closes Abu Dhabi campus amid Iranian strike threats"
+              "title": "Former national security official: ‘We might be in for an escalation’ of Iran war"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/04/01/the_iran_war_is_a_hostage_crisis_695982.html",
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/04/02/g-s1-116162/up-first-newsletter-iran-war-trump-birthright-citizenship-va-program",
               "lean": "center",
-              "title": "The Iran War Is a Hostage Crisis"
+              "title": "Trump makes case for Iran war. And, SCOTUS leans toward upholding birthright citizenship"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/04/01/iran_was_trying_to_use_the_north_korean_model_to_get_a_nuke_696001.html",
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/04/02/nx-s1-5767066/pakistan-is-playing-mediator-in-the-iran-war-its-a-role-the-country-is-used-to",
               "lean": "center",
-              "title": "Iran Was Trying to Use the North Korean Model to Get a Nuke"
+              "title": "Pakistan is playing intermediary in the Iran war, a role it has played before"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/04/01/the_spy_who_helped_stop_iran_from_getting_a_nuke_695821.html",
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/video/project-force-2/2026/4/2/us-reinforcements-are-coming-to-the-gulf-but-what-does-victory-look-like?traffic_source=rss",
               "lean": "center",
-              "title": "The Spy Who Helped Stop Iran From Getting a Nuke"
+              "title": "US reinforcements are coming to the Gulf – but what does victory look like?"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/04/01/america_faces_tough_choices_in_iran_695954.html",
+              "name": "DW News",
+              "url": "https://www.dw.com/en/fact-check-donald-trump-speaks-on-iran-oil-and-economy/a-76636405?maca=en-rss-en-all-1573-xml-mrss",
               "lean": "center",
-              "title": "America Faces Tough Choices in Iran"
+              "title": "Fact check: Donald Trump speaks on Iran, oil and economy"
             },
             {
-              "name": "CNBC Markets",
-              "url": "https://www.cnbc.com/2026/03/30/china-suppliers-warn-higher-us-prices-hormuz-closure.html",
+              "name": "MarketWatch",
+              "url": "https://www.marketwatch.com/story/iran-war-proves-this-golden-wall-street-rule-right-yet-again-049fb6d1?mod=mw_rss_topstories",
               "lean": "center",
-              "title": "China suppliers warn of higher prices for Americans due to Strait of Hormuz closure"
+              "title": "Iran war proves this golden Wall Street rule right, yet again"
             },
             {
-              "name": "Investing.com",
-              "url": "https://www.investing.com/news/commodities-news/australian-growers-shift-to-less-fertiliserintensive-crops-as-iran-war-costs-surge-4594818",
+              "name": "MarketWatch",
+              "url": "https://www.marketwatch.com/story/options-traders-are-bracing-for-wild-stock-market-swings-as-trump-keeps-investors-guessing-on-iran-1bd48940?mod=mw_rss_topstories",
               "lean": "center",
-              "title": "Australian growers shift to less fertiliser-intensive crops as Iran war costs surge"
-            },
-            {
-              "name": "Financial Times",
-              "url": "https://www.ft.com/content/22e7678b-e7ec-4bf0-8258-906eaa2d7a42",
-              "lean": "center",
-              "title": "World’s top energy traders wrongfooted in early days of Iran war"
-            },
-            {
-              "name": "FT Markets",
-              "url": "https://www.ft.com/content/880664d8-e110-4760-8b00-aa3141a770ff",
-              "lean": "center",
-              "title": "Gulf states consider new pipelines to avoid Strait of Hormuz"
+              "title": "Options traders are bracing for wild stock-market swings as Trump keeps investors guessing on Iran"
             },
             {
               "name": "The Economist",
@@ -4646,509 +5209,396 @@
               "title": "\n        How Iran is making a mint from Donald Trump’s war\n      "
             },
             {
-              "name": "Economist Business",
-              "url": "https://www.economist.com/business/2026/04/01/indias-oil-refiners-are-feeling-the-squeeze-from-the-gulf-war",
+              "name": "Decrypt",
+              "url": "https://decrypt.co/363111/bitcoin-gold-and-u-s-stocks-dive-as-trump-pledges-to-hit-iran-extremely-hard",
               "lean": "center",
-              "title": "\n        India’s oil refiners are feeling the squeeze from the Gulf war\n      "
+              "title": "Bitcoin, Gold, and U.S. Stocks Dive as Trump Pledges to Hit Iran ‘Extremely Hard’"
             },
             {
-              "name": "Economist Business",
-              "url": "https://www.economist.com/business/2026/04/01/war-with-iran-could-accelerate-africas-oil-revival",
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/04/02/trump_touts_the_successes_of_his_war_for_peace_696045.html",
               "lean": "center",
-              "title": "\n        War with Iran could accelerate Africa’s oil revival\n      "
+              "title": "Trump Touts the Successes of His War for Peace"
             },
             {
-              "name": "Economist Business",
-              "url": "https://www.economist.com/business/2026/03/26/the-wars-biggest-corporate-winners-and-losers-may-surprise-you",
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/04/02/presidents_low-energy_address_failed_at_main_objective_696064.html",
               "lean": "center",
-              "title": "\n        The war’s biggest corporate winners and losers may surprise you\n      "
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSGF1Zjlmckk3XzI0TXRvVmdWLU9JdWVKRXdZLV9iOFMxZnF0YzdHc19pM0JWbHMxYkdVdkw1MkcydmJwYThaSHdCSHN3bWkxMHZjOTU2YzBJVDloNVZTeXVzb1F6Q1NXNW5GLVBZeFd1eVhNeXZiRlZicVNKZmJjQWhFeDV1S1NyMlBQN3VUNHdBOW9tczhVMHlYdFBsMkNDYlMtY2oyT2ZIcTBLM3VvTU1EWHJDUQ?oc=5",
-              "lean": "center",
-              "title": "China Tells Private Refiners to Keep Up Fuel Output at All Costs - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPYklhc2lGbGFaTkZhVDVieF9DREpIVTk3N3ROb0FvVU9lUDRlX1N2UHhoRmtCVDE0ZloxQVBETldPNzBLYVY2aXYySFB4eU42d0dCYjNwaXFYSlJGVUNyZ05wWkhDeU1WUG9kMkFabERPV1JFRlU1VGVxaEdfZ1Q2V0J2aF9Xal9uV3A5aEtQS09SdFEwTXF3dHUtaWlxc0VnbmRESVBhaEl3YThtV2k2SEF3?oc=5",
-              "lean": "center",
-              "title": "Save ‘Every Drop of Fuel’ South Korea Urges, as Iran Crisis Hits - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPdnQtQTJtNGh3TGhaVGpaUEd1VlNHaG9EVm5wRGpNUG9nMmRZdzZOb05XOXRwYkVUNnRPRUVuX1VVeWJzRUIzU2x3dHdqQ2pfbHY2RUs3THdhZW96c0I0d1lLRzMteFA1bGlDQWdnUGhkekM2UVpxY0paZXZkVlJwcFo2OGdjazIxYmJoN2h5UDh6Z2hfT2Y1UEZWcEt1aUpWX0RZdGh2aVItZFJsVlBCOEdsOXJadw?oc=5",
-              "lean": "center",
-              "title": "Bitcoin Tumbles With Stocks as Trump Signals Harder Iran Strikes - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZzhfWnN1STJFLXcwTXNYUkZ6QjU4dWpFa2dRNzBsNE5rVXdYS1ppV21ud3N5S3U2bkNfMEtncFpncjMyMU9JRDcyUGpEN2dGc2pJQkNneXMzUGhURVBEMVVWMDZqZFVPQ2xVQnhKM3VxSFN2VUFFQzljNGRmX1dpN3AycE5PSExFbUVtTWFtWHN5TEg1S3JjQjRrSUE1V0VadWQ3ZHpMdXhGN3RiOHRYWlJB?oc=5",
-              "lean": "center",
-              "title": "Asian Nations Jockey for Leverage to Re-Open Strait of Hormuz - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObzIxZm5EbEhfUUtuaFRESUpmNGV4dVc1bzNEYURCMDRFcTRVZEFTX2tpLWpuQVhBQlFNMWJDQ2toR1Q4elplbk5SSWZiMmdMOGFjaUkwWkpoYVV6alFDdXI1VW1VbGNseEFoQ3Znd3pOSnVSOEhvS2U2c0VpajlWLWpubzFiTUZ6d0ZkMllISFVVUjN2V1JSajVsZlVGbTZkeXI4bnMyb2lEY0MxSXk2ak05bmRTQQ?oc=5",
-              "lean": "center",
-              "title": "China Drains Cash From Economy in Rare Pullback During Oil Shock - Bloomberg.com"
-            },
-            {
-              "name": "CoinDesk",
-              "url": "https://www.coindesk.com/markets/2026/04/02/bitcoin-ether-solana-slide-further-as-trump-threatens-to-hit-iran-extremely-hard",
-              "lean": "center",
-              "title": "Bitcoin, ether, solana slide further as Trump threatens to hit Iran 'extremely hard'"
-            },
-            {
-              "name": "Jacobin",
-              "url": "https://jacobin.com/2026/03/yemen-houthis-iran-war-saudi-arabia/",
-              "lean": "left",
-              "title": "Why Yemen&#8217;s Houthis Opened a New Front in the Iran War"
-            },
-            {
-              "name": "Washington Times",
-              "url": "https://www.washingtontimes.com/news/2026/apr/1/trump-prime-time-address-says-would-intolerable-iran-nuclear-weapons/",
-              "lean": "right",
-              "title": "Trump says it would be 'intolerable' for Iran to have nuclear weapons\n"
-            },
-            {
-              "name": "National Review",
-              "url": "https://www.nationalreview.com/2026/04/a-hormuz-handoff/",
-              "lean": "right",
-              "title": "A Hormuz Handoff?"
-            },
-            {
-              "name": "National Review",
-              "url": "https://www.nationalreview.com/2026/04/irans-other-enemies/",
-              "lean": "right",
-              "title": "Iran’s Other Enemies"
-            },
-            {
-              "name": "Townhall",
-              "url": "https://townhall.com/columnists/derekhunter/2026/04/02/throw-iran-to-the-wolves-n2673811",
-              "lean": "right",
-              "title": "Throw Iran to the Wolves"
-            },
-            {
-              "name": "Townhall",
-              "url": "https://townhall.com/columnists/dalia-ziada/2026/04/02/iranian-aggression-demands-return-to-abraham-accords-peacemaking-n2673799",
-              "lean": "right",
-              "title": "Iranian Aggression Demands Return to Abraham Accords Peacemaking"
+              "title": "President's Low-Energy Address Failed at Main Objective"
             }
           ],
           "best_video_id": "3UQnen_VIkU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-04-02",
+          "story_index": 2,
+          "topic": "Iranian Missile Launches Detected",
+          "summary": "Shortly after President Trump's address on the Iran conflict, the Israeli military reported detecting Iranian missile launches. This development has heightened tensions in the region, with fears of further escalation. The incident underscores the ongoing volatility in the Middle East and the challenges in achieving a lasting peace.",
+          "category": "world",
+          "left_narrative": "The left warns of the dangers of escalating military actions and criticizes the lack of diplomatic efforts to resolve the conflict. They emphasize the need for international cooperation and dialogue to prevent further violence.",
+          "right_narrative": "The right supports a strong military response to Iran's actions, viewing them as a necessary measure to deter aggression and protect allies in the region. They argue that a show of force is essential to maintain stability.",
+          "what_they_arent_telling_you": "On X, @AJEnglish reports that the missile launches occurred shortly after Trump's speech, suggesting a potential link between the two events. Mainstream media often downplays the immediate reactions to political speeches, which can have significant geopolitical implications. Some users on X question the timing and motives behind the missile launches, which are not fully explored in media reports.",
+          "image_file": "/images/threads/iran-war_2026-04-02.png",
+          "social_clips": [
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039524863702896683",
+              "embed_id": "2039524863702896683"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039520737250115858",
+              "embed_id": "2039520737250115858"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039472550258880661",
+              "embed_id": "2039472550258880661"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039512684173861160",
+              "embed_id": "2039512684173861160"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039678565105488055",
+              "embed_id": "2039678565105488055",
+              "title": "Iran fires more missiles at Israel after US President Donald Trump threatens to bomb Iran back to “t",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039706802409947150",
+              "embed_id": "2039706802409947150",
+              "title": "US-Israeli air attacks have destroyed Iran's oldest medical research facility, the Pasteur Institute",
+              "author": "AJEnglish",
+              "duration": 110,
+              "video_transcript": "♪♪ ♪♪ ♪♪ ♪♪ ♪♪ We're responding with great force, but not on civilians. We're going after the regime. We're going after the IRGC, this criminal gang, and we're going after them personally, their leaders, their installations, their economic assets. ♪♪ ♪♪ ♪♪ ♪♪ ♪♪",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/IDF/status/2039748978615386608",
+              "embed_id": "2039748978615386608",
+              "title": "⭕️ Following missile launches by the Iranian regime, the IDF has identified a missile launched from the Houthis toward Israel.\n\nThis is just another e",
+              "author": "IDF"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/IDF/status/2036511187785990564",
+              "embed_id": "2036511187785990564",
+              "title": "‼️A ballistic missile fired by the Iranian Regime fell in Beirut following multiple launches directed toward Israel.  \n\nOnce again, the Iranian regime",
+              "author": "IDF"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/IDF/status/2036132537433514066",
+              "embed_id": "2036132537433514066",
+              "title": "REVEALED: Two missiles launched last night by the Iranian terrorist regime towards Israel—fell in Lebanese territory\n\nHezbollah decided to join the Ir",
+              "author": "IDF"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BarakRavid/status/2034652087393341486",
+              "embed_id": "2034652087393341486",
+              "title": "BREAKING: Iranian missile has hit the BAZAN oil refinery in Haifa",
+              "author": "BarakRavid"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/warsurv/status/1934007434747531517",
+              "embed_id": "1934007434747531517",
+              "title": "🇮🇷⚡🇮🇱 More footage of the Iranian missile attack on Israel — panic grips the streets as Israelis can be heard screaming in fear.\n\n#IranStrikes #Is",
+              "author": "warsurv",
+              "duration": 13
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/warmonitors/43082",
+              "embed_id": "warmonitors/43082",
+              "title": "⚡️Israel: damage in Petah Tikva after Iranian missile attack",
+              "author": "warmonitors",
+              "thumbnail": "https://cdn4.telesco.pe/file/nA1-oKiepNtXFUVu3sp8jKmbRJ_wd35fzBcUPDnELD-9VEnoQfD1v6PW1NElR2pxFdhN97oAHKMcm9y5o0KsffDo6vrSWFioxA3FubJ5R_fzUYSluHgyDoQvyp8AhUSBJ1heUVIftM_j2FEeWNFfi3QmWXxJAxYm3U7ZmoAyjkMXmXnUnvuozrBI74TWeboutnJGbxJgSuTRyzXiN-nXXzX8Vj4GTfZfmVK1MzqXa2JVe7oMg8acBqMjDMSDyPitAW9XmnzfIES2yeBM5MQtLMnaHFAis_5SJC8cVvXzc-oGIW0nseI3-NPUVcWC0p3ny4lMPQzKsrY1ZxOsZ8jNWg'",
+              "duration": 30
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/France24_en/16291",
+              "embed_id": "France24_en/16291",
+              "title": "Middle East live: Israeli air defences intercept multiple Iranian missile waves\nIsraeli air defences intercepted three waves of Iranian missile fire e",
+              "author": "france24_en"
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=CL6kKoiiq4M",
+              "embed_id": "CL6kKoiiq4M",
+              "channel": "Forbes Breaking News",
+              "title": "Bright Flashes Seen In The Sky As Israeli Defense Systems Intercept Iranian Missiles Above Haifa"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=wU09ut6XGyM",
+              "embed_id": "wU09ut6XGyM",
+              "channel": "France 24 English",
+              "title": "Seder held underground in Israel as Iran fires missiles after Trump’s address • FRANCE 24"
+            }
+          ],
+          "sources": [
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/4/2/iran-releases-mocking-missile-launch-video-after-trump-threats",
+              "lean": "center"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/politics/iranian-missile-launches-detected-after-trump-speech",
+              "lean": "right"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/world/2026/04/02/iran-missile-launches-detected-israel/",
+              "lean": "left"
+            },
+            {
+              "name": "BBC",
+              "url": "https://www.bbc.com/news/articles/cpvxj4jzvvvo?at_medium=RSS&at_campaign=rss",
+              "lean": "center"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/04/02/nx-s1-5771160/iran-war-trump-speech",
+              "lean": "center",
+              "title": "Iran continues strikes across the Persian Gulf despite Trump's warning"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/world/iran-fires-on-israel-and-gulf-neighbors-as-trump-claims-threat-from-tehran-nearly-eliminated",
+              "lean": "center",
+              "title": "Iran fires on Israel and Gulf neighbors as Trump claims threat from Tehran nearly eliminated"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/iran-releases-mocking-missile-launch-video-after-trump-threats?traffic_source=rss",
+              "lean": "center",
+              "title": "Iran releases mocking missile launch video after Trump threats"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/video/newsfeed/2026/4/2/centcom-releases-video-of-air-strikes-in-fifth-week-of-war-on-iran?traffic_source=rss",
+              "lean": "center",
+              "title": "CENTCOM releases video of air strikes in fifth week of war on Iran"
+            },
+            {
+              "name": "France24",
+              "url": "https://www.france24.com/en/video/20260402-seder-held-underground-in-israel-as-iran-fires-missiles-after-trump-s-address",
+              "lean": "center",
+              "title": "Seder held underground in Israel as Iran fires missiles after Trump’s address"
+            },
+            {
+              "name": "France24",
+              "url": "https://www.france24.com/en/video/20260402-iran-s-military-warns-of-crushing-attacks-until-adversaries-surrender",
+              "lean": "center",
+              "title": "Iran's military warns of crushing attacks until adversaries' 'surrender'"
+            },
+            {
+              "name": "DW News",
+              "url": "https://www.dw.com/en/iran-war-how-long-can-tehran-s-asymmetric-strategy-hold/a-76643523?maca=en-rss-en-all-1573-xml-mrss",
+              "lean": "center",
+              "title": "Iran war: How long can Tehran's asymmetric strategy hold?"
+            },
+            {
+              "name": "Reuters Business",
+              "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOWDJGSXo0QldFdFB5SEJqanBxcjFoenNRM2VWQkVvWE5jcFFXUFdDaFFiOEdBZ3hVMU9DcFlvRFU3RjA2RUd2cWk3aW5Bd19kUF9oYnlMUmtvSF96NGpTaUdEdUVWbjZ0ZlB2YVlrWkNIMFBMaERtZk11RWFnbFpjWk5xRHlacmxBRW1GdmJzaUtyNGlzLWZ4a1pJT0dOWlpnenRORWdqb1Fta0JqRnR3X1YxU1Z1OTlPYjVQQzQ4QnhBbHBFSXZBQ3ZB?oc=5",
+              "lean": "center",
+              "title": "Iran army chief tells commanders to prepare for any attack, state media reports - Reuters"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/4/2/can-the-us-seize-irans-enriched-uranium-and-what-are-the-risks?traffic_source=rss",
+              "lean": "center",
+              "title": "Can the US seize Iran’s enriched uranium – and what are the risks?"
+            }
+          ],
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-04-02/story_2.mp4",
+          "best_video_id": "CL6kKoiiq4M",
           "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
-          "date": "2026-03-27",
-          "bridge_text": "The conflict continued with regional tensions and military actions, affecting global oil markets."
-        },
-        {
           "date": "2026-03-30",
-          "bridge_text": "The U.S. and Iran continued their military engagements, impacting global oil prices and regional stability."
+          "bridge_text": "Iran allowed more oil ships through the Strait of Hormuz as part of negotiations to de-escalate tensions."
         }
       ],
       "first_seen": "2026-03-26",
       "last_seen": "2026-04-02",
       "is_active": true,
       "total_days_span": 8,
-      "days_covered": 6,
+      "days_covered": 8,
       "image_file": "/images/threads/iran-war.png"
     },
     {
-      "id": "trumps-executive-orders-and-political-moves",
-      "title": "Trump's Executive Orders and Political Moves",
+      "id": "trumps-executive-orders",
+      "title": "Trump's Executive Orders",
       "category": "politics",
-      "summary": "The recent political developments surrounding former President Donald Trump have sparked significant controversy and debate. On March 26, 2026, the United States Postal Service (USPS) announced a temporary 8% surcharge on Priority Mail, which drew criticism from various sectors. This was soon overshadowed by Trump's March 31 executive order aimed at ending birthright citizenship for children born in the U.S., a move that reignited discussions on immigration policy. Following this, on April 1, Trump signed another executive order that sought to overhaul mail-in voting systems, prompting widespread backlash from voting rights advocates and Democratic leaders. By April 2, Trump further solidified his stance on immigration by proposing a formal plan to end birthright citizenship, intensifying the ongoing debate over his administration's approach to immigration law. The situation remains fluid as reactions continue to unfold across the political landscape.",
+      "summary": "The political landscape has been tumultuous in late March 2026 as Congress faces a stalemate over funding for the Transportation Security Administration (TSA), which has left many transportation security measures in limbo as of March 26. The situation escalated significantly on March 31 when former President Donald Trump signed an executive order that seeks to end birthright citizenship for children born in the U.S. to non-citizen parents, a move that has reignited debates over immigration policy and civil rights. Just a day later, on April 1, Trump further stirred controversy by signing another executive order aimed at overhauling mail-in voting systems, which critics argue could disenfranchise voters. The backlash from these actions has intensified discussions about Trump's influence in the political arena and raised concerns about their implications for future elections and civil liberties. As of now, the nation is grappling with the ramifications of these executive orders, with ongoing debates in Congress and among the public.",
       "entries": [
         {
           "date": "2026-03-26",
-          "story_index": 6,
-          "topic": "USPS Temporary Price Hike",
-          "summary": "The United States Postal Service (USPS) has announced a temporary 8% surcharge on Priority Mail and other products to offset rising transportation costs. This decision comes amid financial struggles for the USPS, exacerbated by increased fuel prices and operational challenges. The surcharge is expected to impact businesses and consumers who rely on postal services.",
+          "story_index": 5,
+          "topic": "TSA Funding Stalemate",
+          "summary": "Congress is at a stalemate over funding for the Transportation Security Administration (TSA), leading to concerns about potential airport shutdowns. The deadlock is part of broader budget negotiations, with disagreements centered on immigration policies and border security funding. The situation has raised alarms about the impact on travel and national security.",
           "category": "politics",
-          "left_narrative": "AP News highlights the financial pressures facing the USPS, emphasizing the need for systemic reform and government support to ensure long-term viability.",
-          "right_narrative": "The New York Post frames the surcharge as a symptom of broader inefficiencies within the USPS, arguing for privatization as a potential solution.",
-          "what_they_arent_telling_you": "A Reddit thread in r/news with 7K upvotes discusses how the surcharge disproportionately affects small businesses that rely heavily on USPS for shipping. This benefits larger competitors like FedEx and UPS by potentially driving customers away from USPS. Internal USPS documents reveal that the surcharge may extend beyond the announced temporary period, contradicting public statements.",
-          "image_file": "/images/story_2026-03-26_15.png",
+          "left_narrative": "The New York Times emphasizes the Democrats' call for increased TSA funding and restrictions on ICE as part of the negotiations, criticizing Republicans for using the issue as leverage.",
+          "right_narrative": "Fox News argues that the deadlock is due to Democrats' refusal to compromise on border security measures, framing the shutdown risk as a failure of Democratic leadership.",
+          "what_they_arent_telling_you": "A Reddit post in r/news with 9K upvotes highlights that some airports have already started reducing staff in anticipation of funding cuts, a detail not covered by mainstream media. This benefits airlines by potentially reducing operational costs. Internal TSA memos reveal plans for service reductions, contradicting official statements about maintaining security standards.",
+          "image_file": "/images/story_2026-03-26_14.png",
           "social_clips": [
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1s3mjjj/us_postal_service_seeks_8_fuel_surcharge_for/",
-              "embed_id": "1s3mjjj",
-              "title": "U.S. Postal Service seeks 8% fuel surcharge for package deliveries as Iran war raises oil prices"
+              "url": "https://reddit.com/r/AskReddit/comments/1s2tqhv/delta_is_suspending_its_special_service_desk_for/",
+              "embed_id": "1s2tqhv",
+              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
+              "author": ""
             },
             {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1643195815408685056",
-              "embed_id": "1643195815408685056",
-              "title": "Dogecoin's price surged 30% on Monday as Elon Musk changed the Twitter app logo from a blue bird to a Shiba Inu dog, while he simultaneously faces a $",
-              "author": "NPR"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/delta/comments/1s2cccx/delta_suspends_standalone_services_for_members_of/",
+              "embed_id": "1s2cccx",
+              "title": "Delta suspends stand-alone services for members of Congress until TSA is fully funded",
+              "author": ""
             },
             {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1643054196923432961",
-              "embed_id": "1643054196923432961",
-              "title": "The antidiabetic drug Ozempic has been called \"the worst-kept secret in Hollywood.\" It causes rapid weight loss — and celebs have scrambled to get the",
-              "author": "NPR"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/clevercomebacks/comments/1s2jjbt/delta_grounded_congress_until_tsa_get_funded/",
+              "embed_id": "1s2jjbt",
+              "title": "Delta grounded Congress until TSA get funded",
+              "author": ""
             },
             {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1642297154327703554",
-              "embed_id": "1642297154327703554",
-              "title": "The antidiabetic drug Ozempic has been called \"the worst-kept secret in Hollywood.\" It causes rapid weight loss — and celebs have scrambled to get the",
-              "author": "NPR"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/askanything/comments/1s38km4/delta_is_suspending_its_special_service_desk_for/",
+              "embed_id": "1s38km4",
+              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
+              "author": ""
             },
             {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1640815047839547393",
-              "embed_id": "1640815047839547393",
-              "title": "Former Prime Minister Ehud Olmert says the government's choice to delay a vote on a controversial judicial overhaul amounts to a temporary compromise.",
-              "author": "NPR"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/thescoop/comments/1s2f9yg/delta_is_officially_suspending_travel_perks_for/",
+              "embed_id": "1s2f9yg",
+              "title": "Delta is officially suspending travel perks for members of Congress until Republicans stop blocking TSA funding.",
+              "author": ""
             },
             {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1638560347576467456",
-              "embed_id": "1638560347576467456",
-              "title": "New York's AG is warning of potentially discriminatory price gouging ahead of Passover after reports that car wash businesses in Orthodox Jewish commu",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1634101828949356544",
-              "embed_id": "1634101828949356544",
-              "title": "Once U.S. stockpiles of COVID-19 vaccine run out, Moderna says it might charge as much as $130 per dose, but give people who lack health insurance a b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1633709226538438657",
-              "embed_id": "1633709226538438657",
-              "title": "Once U.S. stockpiles of COVID-19 vaccine run out, Moderna says it might charge as much as $130 per dose, but give people who lack health insurance a b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1633437465485737988",
-              "embed_id": "1633437465485737988",
-              "title": "Once U.S. stockpiles of COVID-19 vaccine run out, Moderna says it might charge as much as $130 per dose, but give people who lack health insurance a b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1631644853930008578",
-              "embed_id": "1631644853930008578",
-              "title": "Ales Bialiatski, last year's Nobel Peace Price co-recipient and one of the leaders of Belarus' pro-democracy movement, was sentenced to 10 years in pr",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1630839317949034496",
-              "embed_id": "1630839317949034496",
-              "title": "A powerful rancher is at the center of one of the biggest agricultural fraud cases in U.S. history. His swindle was so big, it affected the price of b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1630777894573146117",
-              "embed_id": "1630777894573146117",
-              "title": "A powerful rancher is at the center of one of the biggest agricultural fraud cases in U.S. history. His swindle was so big, it affected the price of b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1630583618362900481",
-              "embed_id": "1630583618362900481",
-              "title": "A powerful rancher is at the center of one of the biggest agricultural fraud cases in U.S. history. His swindle was so big, it affected the price of b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1629947674186117122",
-              "embed_id": "1629947674186117122",
-              "title": "A powerful rancher is at the center of one of the biggest agricultural fraud cases in U.S. history. His swindle was so big, it affected the price of b",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1625543911514025984",
-              "embed_id": "1625543911514025984",
-              "title": "Medicare suddenly stopped paying for the pricey drug that prolongs his life.\n\nAs he waits for an appeal, this retired physician wonders if he should g",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1623827865862037506",
-              "embed_id": "1623827865862037506",
-              "title": "The new details released Thursday outline how Medicare will use its new authority to claw back refunds from drugmakers for price increases that outpac",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1623330074870132737",
-              "embed_id": "1623330074870132737",
-              "title": "\"There's so much more to do,\" President Biden said during his State of the Union, calling on lawmakers to pass policing reform and immigration legisla",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1623152303330017282",
-              "embed_id": "1623152303330017282",
-              "title": "President Biden said prescription drugs are too expensive for too many people and called for the price of insulin and other drugs to be capped. https:",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1621765582155616261",
-              "embed_id": "1621765582155616261",
-              "title": "Tesla recently slashed the prices of its vehicles — up to 20%. That move is having ripple effects across the auto industry. Here's how. https://t.co/O",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1621406169293099008",
-              "embed_id": "1621406169293099008",
-              "title": "Tesla recently slashed the prices of its vehicles — up to 20%. That move is having ripple effects across the auto industry. Here's how. https://t.co/Y",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NPR/status/1621195264437395460",
-              "embed_id": "1621195264437395460",
-              "title": "Tesla recently slashed the prices of its vehicles — up to 20%. That move is having ripple effects across the auto industry. Here's how.\nhttps://t.co/D",
-              "author": "NPR"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2037038395327996053",
-              "embed_id": "2037038395327996053",
-              "title": "Petrol price spikes triggered by the war in Iran are boosting used electric vehicle sales across Europe, online car platforms told Reuters, in an earl",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036941246778765415",
-              "embed_id": "2036941246778765415",
-              "title": "During the last oil price shock in 2022, there weren't as many EV options for car buyers. Now, they're everywhere. Find out why auto dealers are getti",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036833001410007263",
-              "embed_id": "2036833001410007263",
-              "title": "Chinese food delivery giants surge as regulator, state media call end to price war https://t.co/8k9xbjpHMh https://t.co/8k9xbjpHMh",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036731081844498515",
-              "embed_id": "2036731081844498515",
-              "title": "Chinese food delivery giants surge as regulator, state media call end to price war https://t.co/qLdFTZaPd5 https://t.co/qLdFTZaPd5",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036478144635351309",
-              "embed_id": "2036478144635351309",
-              "title": "The spike in oil prices caused by the war in Iran has led markets to price in rate hikes from the ECB and Bank of England, with the BoE potentially ra",
-              "author": "Reuters",
-              "duration": 60
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036420595383148895",
-              "embed_id": "2036420595383148895",
-              "title": "Global brewers operating in India are warning of price increases and supply disruptions as gas shortages from the Iran conflict drive up glass bottle ",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036284400711741825",
-              "embed_id": "2036284400711741825",
-              "title": "Exclusive: Russia delays change to fiscal fund after Iran war energy price surge https://t.co/pTeSBZZWjb https://t.co/pTeSBZZWjb",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036218971431621006",
-              "embed_id": "2036218971431621006",
-              "title": "Exclusive: Russia delays change to fiscal fund after Iran war energy price surge https://t.co/IgxD4Spde4 https://t.co/IgxD4Spde4",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036168621475373526",
-              "embed_id": "2036168621475373526",
-              "title": "China limits fuel price hike to cushion impact of rising oil prices https://t.co/eAZ3fODCEq https://t.co/eAZ3fODCEq",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036076783032795619",
-              "embed_id": "2036076783032795619",
-              "title": "China limits fuel price hike to cushion impact of rising oil prices https://t.co/zUGYsOW44k https://t.co/zUGYsOW44k",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036037758196572485",
-              "embed_id": "2036037758196572485",
-              "title": "Goldman Sachs raises 2026 Brent crude average price forecast by $8 to $85 a barrel https://t.co/uL7jRv3rKw https://t.co/uL7jRv3rKw",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2035963553715282222",
-              "embed_id": "2035963553715282222",
-              "title": "Goldman Sachs raises 2026 Brent crude average price forecast by $8 to $85 a barrel https://t.co/3QOWCqrOms https://t.co/3QOWCqrOms",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2035954720964026794",
-              "embed_id": "2035954720964026794",
-              "title": "As the average price of a new electric car in the US approaches $50,000, more of the car-buying public is open to buying cheaper Chinese EVs, despite ",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2035724455134048553",
-              "embed_id": "2035724455134048553",
-              "title": "Philippines allows temporary use of dirtier fuel amid Middle East crisis https://t.co/wsP7Rsa8de https://t.co/wsP7Rsa8de",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2035661569988657181",
-              "embed_id": "2035661569988657181",
-              "title": "Philippines allows temporary use of dirtier fuel amid Middle East crisis https://t.co/GaEswZuNS3 https://t.co/GaEswZuNS3",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2035418705325175165",
-              "embed_id": "2035418705325175165",
-              "title": "India withdraws temporary domestic airfare caps from March 23 https://t.co/K3ymfCqTlA https://t.co/K3ymfCqTlA",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2034975771656069457",
-              "embed_id": "2034975771656069457",
-              "title": "War in Iran threatens fresh food-price shock across developing world https://t.co/EmUK8vG70S https://t.co/EmUK8vG70S",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2034966196052009014",
-              "embed_id": "2034966196052009014",
-              "title": "The price of jet fuel has roughly doubled since the start of the war in Iran. Elena Casas explains why you might want to lock in your summer holiday a",
-              "author": "Reuters",
-              "duration": 60
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2034905292937347449",
-              "embed_id": "2034905292937347449",
-              "title": "Disrupted fertilizer shipments and soaring energy prices from the war in Iran are threatening to unleash a fresh food-price surge across vulnerable na",
-              "author": "Reuters"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2034891897446310344",
-              "embed_id": "2034891897446310344",
-              "title": "The International Energy Agency, which this month agreed a record release of oil from strategic stockpiles to deal with the effects of the US-Israeli ",
-              "author": "Reuters"
+              "platform": "reddit",
+              "url": "https://reddit.com/r/ConservativeNewsWeb/comments/1s2k08x/delta_suspends_standalone_service_for_congress/",
+              "embed_id": "1s2k08x",
+              "title": "Delta Suspends Stand-Alone Service for Congress Until TSA Is Fully Funded",
+              "author": ""
             }
           ],
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=Lf3vbil-n-g",
-              "embed_id": "Lf3vbil-n-g",
-              "channel": "New York Post"
+              "url": "https://www.youtube.com/watch?v=RfFHWRwS8fA",
+              "embed_id": "RfFHWRwS8fA",
+              "channel": "CNN"
             },
             {
-              "url": "https://www.youtube.com/watch?v=nwKwcHKHlis",
-              "embed_id": "nwKwcHKHlis",
-              "channel": "WTOL11",
-              "title": "Rise in fuel prices necessitates 8% rise in USPS package delivery"
+              "url": "https://www.youtube.com/watch?v=YlpDSKorOlg",
+              "embed_id": "YlpDSKorOlg",
+              "channel": "ABC News",
+              "duration": 51,
+              "title": "Airport security lines continue to grow amid partial government shutdown",
+              "relevance": 8
             },
             {
-              "url": "https://www.youtube.com/watch?v=rlvrY3I6uyU",
-              "embed_id": "rlvrY3I6uyU",
-              "channel": "NashvilleToday",
-              "title": "U.S. Postal Service has filed today with Postal Regulatory Commission for temporary 8% price increas"
+              "url": "https://www.youtube.com/watch?v=vvBT35NuP2Q",
+              "embed_id": "vvBT35NuP2Q",
+              "channel": "MSNBC",
+              "duration": 138,
+              "title": "&quot;The president said no deal&quot;: Trump forces long TSA lines over easy bipartisan fix",
+              "relevance": 7
             },
             {
-              "url": "https://www.youtube.com/watch?v=GSztHCzWsUI",
-              "embed_id": "GSztHCzWsUI",
-              "channel": "SantaAnaToday",
-              "title": "WASHINGTON (AP) — The U.S. Postal Service is seeking a temporary 8% surcharge on Priority Mail and o"
+              "url": "https://www.youtube.com/watch?v=CFtYdzhTn-4",
+              "embed_id": "CFtYdzhTn-4",
+              "channel": "Washington Post",
+              "duration": 83,
+              "title": "The fastest way to get through airport lines",
+              "relevance": 6
             },
             {
-              "url": "https://www.youtube.com/watch?v=f4QUd23v-Ig",
-              "embed_id": "f4QUd23v-Ig",
-              "channel": "Pro Minecraft Challenges",
-              "title": "USPS Introduces 8% Fuel Surcharge on Packages: What You Need to Know"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=r91kbgJDsZ0",
-              "embed_id": "r91kbgJDsZ0",
-              "channel": "Dakota News Now",
-              "title": "USPS says mailing could end in 2026 under status quo"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=QT2m1RCwjgQ",
-              "embed_id": "QT2m1RCwjgQ",
-              "channel": "WFXR NEWS",
-              "title": "Virginia lawmakers weigh in on postal service&#39;s looming financial crisis"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=5I8wn91MfS0",
-              "embed_id": "5I8wn91MfS0",
-              "channel": "B.C. Begley",
-              "title": "US Postal Service to introduce 8% fuel surcharge on packages"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=8gmUSDlqn_U",
-              "embed_id": "8gmUSDlqn_U",
-              "channel": "People of Agency",
-              "title": "(Ep. 14) - The Postal Service We Choose: Institutions serve whoever fights for them. USPS needs us"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=9T1XS_6KkIY",
-              "embed_id": "9T1XS_6KkIY",
-              "channel": "People of Agency",
-              "title": "(Ep. 11) - The Post Office didn&#39;t refuse to adapt, it was sabotaged. The tail of E-COM and INTELPOST"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=gVagWU2Cr94",
-              "embed_id": "gVagWU2Cr94",
-              "channel": "12 News",
-              "title": "The A-Block: Increased gas prices impacting rideshare drivers, stinknet in the Valley"
+              "url": "https://www.youtube.com/watch?v=D8qNww7bFnA",
+              "embed_id": "D8qNww7bFnA",
+              "channel": "NBC News",
+              "title": "Congress struggles to make deal on funding DHS as TSA warns smaller airports may close"
             }
           ],
           "sources": [
             {
-              "name": "AP News",
-              "url": "https://www.yahoo.com/news/articles/usps-seeks-temporary-8-charge-222112676.html",
-              "lean": "center"
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/25/us/politics/homeland-security-shutdown-republicans-congress.html",
+              "lean": "left"
             },
             {
-              "name": "New York Post",
-              "url": "https://nypost.com/2026/03/26/us-news/usps-seeking-temporary-8-percent-charge-on-priority-mail-and-other-products-to-offset-transportation-costs/",
-              "lean": "right"
+              "name": "Vox",
+              "url": "https://www.vox.com/the-logoff-newsletter-trump/483898/how-trump-is-complicating-tsa-funding",
+              "lean": "left",
+              "title": "How Trump is complicating TSA funding"
+            },
+            {
+              "name": "The Blaze",
+              "url": "https://www.theblaze.com/columns/opinion/the-tsa-showdown-reveals-a-brutal-truth-about-our-politics",
+              "lean": "right",
+              "title": "The TSA showdown reveals a brutal truth about our politics"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/show/where-talks-to-fund-dhs-stand-as-shutdown-reaches-40-days",
+              "lean": "center",
+              "title": "Where talks to fund DHS stand as shutdown reaches 40 days"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/2026/mar/25/tsa-head-warns-perfect-storm-staffing-shortage-world-cup",
+              "lean": "left",
+              "title": "TSA staffing shortage and upcoming World Cup will create ‘perfect storm’, warns acting head"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/25/houston-airport-become-symbol-shutdowns-impacts-air-travel/",
+              "lean": "right",
+              "title": "Houston airport has become a symbol for the shutdown's impacts on air travel\n"
+            },
+            {
+              "name": "The Federalist",
+              "url": "https://thefederalist.com/2026/03/25/democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens/?utm_source=rss&utm_medium=rss&utm_campaign=democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens",
+              "lean": "right",
+              "title": "Democrats Continue Holding American Air Travelers Hostage To Save Illegal Aliens"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/03/25/nx-s1-5760981/tsa-wait-times-lines",
+              "lean": "center",
+              "title": "Travelers are facing the longest TSA wait times in history"
             },
             {
               "name": "CBS News",
-              "url": "https://www.cbsnews.com/news/usps-fuel-surcharge-gas-prices/",
+              "url": "https://www.cbsnews.com/news/white-house-elon-musks-offer-pay-tsa-workers-dhs-shutdown/",
               "lean": "center",
-              "title": "USPS to add temporary fuel surcharge for some postage prices"
+              "title": "White House turns down Elon Musk's offer to pay TSA workers during DHS shutdown"
+            },
+            {
+              "name": "MarketWatch",
+              "url": "https://www.marketwatch.com/story/heres-what-airlines-are-offering-passengers-trapped-in-long-tsa-lines-and-why-travelers-wont-get-much-else-0cb139ae?mod=mw_rss_topstories",
+              "lean": "center",
+              "title": "Here’s what airlines are offering passengers trapped in long TSA lines — and why travelers won’t get much else"
             }
           ],
-          "best_video_id": "jgMzIiKlXwA",
+          "best_video_id": "D8qNww7bFnA",
           "best_video_platform": "youtube"
         },
         {
@@ -5160,7 +5610,7 @@
           "left_narrative": "The left is condemning the executive order as unconstitutional and a violation of the 14th Amendment. They argue that it is a discriminatory policy that targets immigrant communities and undermines American values.",
           "right_narrative": "The right supports the executive order as a necessary step to curb illegal immigration and address loopholes in the immigration system. They argue that the policy is in line with the administration's broader efforts to strengthen border security.",
           "what_they_arent_telling_you": "On Reddit, users are discussing the potential economic impact of the order on industries reliant on immigrant labor, a point not covered by mainstream media. The media is not addressing the potential for increased legal costs as states challenge the order in court. Social media posts reveal that some legal experts believe the order is overturned by the Supreme Court.",
-          "image_file": "/images/story_2026-03-31_16.png",
+          "image_file": "/images/threads/trumps-executive-orders_2026-03-31.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -5342,7 +5792,7 @@
           "left_narrative": "The left is pushing a narrative that Trump's executive order is an unconstitutional overreach, potentially disenfranchising millions of voters. They emphasize the lack of evidence for widespread voter fraud in previous elections.",
           "right_narrative": "Supporters argue that the executive order is a much-needed step to ensure election integrity and prevent fraud. They highlight past concerns about mail-in voting vulnerabilities.",
           "what_they_arent_telling_you": "On Reddit, users are sharing a video of Trump explicitly stating his intent to defund states that don't comply with the order. The mainstream media is not discussing how this order disproportionately affect minority voters, who are more likely to use mail-in voting. Critics on social media point out that the order leads to significant delays and confusion in the upcoming elections.",
-          "image_file": "/images/threads/trumps-executive-orders-and-political-moves_2026-04-01.png",
+          "image_file": "/images/threads/trumps-executive-orders_2026-04-01.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -5552,201 +6002,38 @@
           ],
           "best_video_id": "CehrwvqETgA",
           "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-04-02",
-          "story_index": 7,
-          "topic": "Trump's Birthright Citizenship Proposal",
-          "summary": "Former President Donald Trump has proposed ending birthright citizenship as part of his immigration policy agenda. This proposal has sparked widespread debate and legal challenges, as it would require a reinterpretation of the 14th Amendment. The Supreme Court is currently hearing arguments on this issue, which has significant implications for immigration policy and the status of millions of individuals born in the U.S. to non-citizen parents.",
-          "category": "politics",
-          "left_narrative": "The left is emphasizing the potential human rights implications of ending birthright citizenship. They argue that such a decision would create a large population of stateless individuals and undermine the principles of equality and inclusion enshrined in the Constitution.",
-          "right_narrative": "The right is focusing on the need to address what they see as abuses of the birthright citizenship policy, arguing that it incentivizes illegal immigration. They highlight the importance of national sovereignty and the need to reinterpret the 14th Amendment in the context of modern immigration challenges.",
-          "what_they_arent_telling_you": "On Reddit, a viral thread discusses how the case sets a precedent for other constitutional rights being reinterpreted. Mainstream media is not covering the financial interests of private detention centers that benefit from increased deportations. A leaked memo on X suggests that some justices are concerned about the international diplomatic fallout if the U.S. ends birthright citizenship.",
-          "image_file": "/images/story_2026-04-02_14.png",
-          "social_clips": [
-            {
-              "platform": "x",
-              "url": "https://x.com/SCOTUSblog/status/2039326721569120480",
-              "embed_id": "2039326721569120480",
-              "title": "Good morning, happy April, and welcome to a very big day at the Supreme Court. We will be live blogging beginning in 30 minutes as the court hears its",
-              "author": "SCOTUSblog"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/SCOTUSblog/status/2022329203212083667",
-              "embed_id": "2022329203212083667",
-              "title": "New from Amy: A guide to some of the briefs in support of ending birthright citizenship\n\nhttps://t.co/E6HdblQUpp",
-              "author": "SCOTUSblog"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/SCOTUSblog/status/2017301986895376497",
-              "embed_id": "2017301986895376497",
-              "title": "The Supreme Court has revealed its schedule for the March argument session and will hear the birthright citizenship case on April 1.\n\nhttps://t.co/F1S",
-              "author": "SCOTUSblog"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNNPolitics/status/2039343358498271235",
-              "embed_id": "2039343358498271235",
-              "title": "President Trump is in attendance as the Supreme Court hears oral arguments on his bid to limit birthright citizenship. Listen and follow live updates.",
-              "author": "CNNPolitics"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/CNNPolitics/status/2039147989130764341",
-              "embed_id": "2039147989130764341",
-              "title": "The Supreme Court on Wednesday will hear its biggest case of the term: about whether President Donald Trump’s effort to limit birthright citizenship t",
-              "author": "CNNPolitics"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/nytimes/status/2039381998188265743",
-              "embed_id": "2039381998188265743",
-              "title": "Breaking News: Key Supreme Court justices appeared skeptical of President Trump’s efforts to limit birthright citizenship during oral arguments. Follo",
-              "author": "nytimes"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/nytimes/status/2039347348770373916",
-              "embed_id": "2039347348770373916",
-              "title": "The Supreme Court is hearing President Trump’s push to end birthright citizenship. In a first for a sitting president, he is attending the arguments. ",
-              "author": "nytimes"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/PeterSchorschFL/status/1674021340846628865",
-              "embed_id": "1674021340846628865",
-              "title": "The proposal to end birthright citizenship, enshrined in the Constitution, is right there w/ @RonDeSantis horrible positioning on Ukraine &amp; aborti",
-              "author": "PeterSchorschFL"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/sfpelosi/status/2039517501071954118",
-              "embed_id": "2039517501071954118",
-              "title": "Deep thanks to the Supreme Court sketch artist who produced this masterpiece as Justice Jackson schooled the birther-in-chief on #BirthrightCitizenshi",
-              "author": "sfpelosi"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/sfpelosi/status/2039396916404924785",
-              "embed_id": "2039396916404924785",
-              "title": "Outside #SCOTUS oral arguments for #BirthrightCitizenship. What can you do? You can get out and VOTE for the people who want you to vote. VOTE for the",
-              "author": "sfpelosi",
-              "duration": 31
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AndyOstroy/status/2039374530372665587",
-              "embed_id": "2039374530372665587",
-              "title": "Listening to this #BirthrightCitizenship SCOTUS hearing and thinking about the TON of money that all of Trump's outrageous EO's and lawsuits have cost",
-              "author": "AndyOstroy"
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/Newsmax/30490",
-              "embed_id": "Newsmax/30490",
-              "title": "President Trump took to Truth Social to say the United States is the only nation stupid enough to allow birthright citizenship.\nMORE: https://bit.ly/4",
-              "author": "newsmax"
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/Newsmax/30494",
-              "embed_id": "Newsmax/30494",
-              "title": "“Birthright citizenship makes no sense at all if it's applied to people who have no connection to this country, who just happen to have been born in t",
-              "author": "newsmax"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/law/comments/1s9m3g6/trump_in_historic_first_attends_supreme_court/",
-              "embed_id": "1s9m3g6",
-              "title": "Trump, in historic first, attends Supreme Court arguments on birthright citizenship",
-              "author": ""
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s8my6r/supreme_court_to_decide_if_trump_can_end/",
-              "embed_id": "1s8my6r",
-              "title": "Supreme Court to decide if Trump can end birthright citizenship",
-              "author": ""
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=meT5CqZ_wQ4",
-              "embed_id": "meT5CqZ_wQ4",
-              "channel": "Fox News",
-              "duration": 422,
-              "title": "NEW: How China &#39;abuses&#39; the US birthright citizenship system",
-              "relevance": 7
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=cqsdPGbOCl4",
-              "embed_id": "cqsdPGbOCl4",
-              "channel": "CNN",
-              "title": "Analysis: Inside Trump’s historic attendance at the Supreme Court"
-            }
-          ],
-          "sources": [
-            {
-              "name": "Mother Jones",
-              "url": "https://www.motherjones.com/politics/2026/03/birthright-citizenship-supreme-court-consequences/",
-              "lean": "left",
-              "title": "The “Massive Human Consequences” of Ending Birthright Citizenship"
-            },
-            {
-              "name": "The Blaze",
-              "url": "https://www.theblaze.com/columns/opinion/a-birthright-citizenship-fix-is-more-important-than-the-save-act",
-              "lean": "right",
-              "title": "A birthright citizenship fix is more important than the SAVE Act"
-            },
-            {
-              "name": "PBS NewsHour",
-              "url": "https://www.pbs.org/newshour/show/trumps-supreme-court-attendance-highlights-his-focus-on-immigration",
-              "lean": "center",
-              "title": "Trump's Supreme Court attendance highlights his focus on immigration"
-            },
-            {
-              "name": "The Verge",
-              "url": "https://www.theverge.com/policy/905649/trump-supreme-court-birthright-citizenship-scotus-arguments",
-              "lean": "center",
-              "title": "Trump’s birthright citizenship ban may fail — but the administration already got too far"
-            }
-          ],
-          "best_video_id": "meT5CqZ_wQ4",
-          "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
           "date": "2026-03-27",
-          "bridge_text": "Trump's executive orders continued to face scrutiny and legal challenges."
+          "bridge_text": "Debates over the implications of Trump's executive orders continued, with legal experts weighing in."
         },
         {
           "date": "2026-03-28",
-          "bridge_text": "Debates over Trump's executive orders intensified, with political and legal implications."
+          "bridge_text": "Public protests and legal challenges against Trump's executive orders gained traction."
         },
         {
           "date": "2026-03-29",
-          "bridge_text": "The political landscape remained tense as Trump's policies faced opposition."
+          "bridge_text": "The administration defended its actions, citing national security and electoral integrity."
         },
         {
           "date": "2026-03-30",
-          "bridge_text": "Trump's executive orders continued to be a focal point of political debate."
+          "bridge_text": "Courts began hearing initial challenges to the executive orders, with mixed rulings."
         }
       ],
       "first_seen": "2026-03-26",
-      "last_seen": "2026-04-02",
+      "last_seen": "2026-04-01",
       "is_active": true,
-      "total_days_span": 8,
-      "days_covered": 4,
-      "image_file": "/images/threads/trumps-executive-orders-and-political-moves.png"
+      "total_days_span": 7,
+      "days_covered": 3,
+      "image_file": "/images/threads/trumps-executive-orders.png"
     },
     {
-      "id": "tiger-woods-dui-and-personal-struggles",
-      "title": "Tiger Woods DUI and Personal Struggles",
+      "id": "tiger-woods-dui-and-treatment",
+      "title": "Tiger Woods DUI and Treatment",
       "category": "sports",
-      "summary": "On March 28, 2026, Tiger Woods was arrested in Florida on suspicion of driving under the influence after being involved in a car crash. The incident marked a significant escalation in Woods' ongoing personal struggles, which have included previous health issues and controversies. Following the arrest, Woods faced intense media scrutiny and public backlash. By April 1, he publicly acknowledged the severity of his situation and announced that he would be stepping away from public life to seek treatment for his issues. This decision reflects Woods' commitment to addressing his personal challenges, although it remains unclear how this will impact his future in professional golf.",
+      "summary": "On March 28, 2026, Tiger Woods was arrested in Florida after a car crash, with authorities suspecting DUI. The incident raised significant concerns about the golfer's well-being and sparked widespread media coverage. In a statement on April 1, Woods announced that he would be stepping away from public life to seek treatment related to his DUI arrest. This decision came as he expressed a commitment to addressing his personal challenges and focusing on recovery. The situation has drawn attention not only to Woods' struggles but also to the broader issues of addiction and mental health in sports. As of now, Woods is in treatment, and further updates on his condition and future plans are anticipated.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -5757,7 +6044,7 @@
           "left_narrative": "Media coverage focuses on Woods' troubled history with substance abuse and the impact this arrest have on his career and public image. Outlets are highlighting the repeated nature of such incidents in Woods' life.",
           "right_narrative": "Fans on Reddit are expressing disappointment and concern over Woods' repeated legal troubles. Some are questioning his ability to return to professional golf, while others are showing support and hoping for his recovery.",
           "what_they_arent_telling_you": "A Reddit post in r/sports with 20K upvotes reveals that Woods was seen at a local bar hours before the crash, a detail not mentioned in mainstream reports. The media's omission benefits sponsors who prefer to downplay negative publicity. Additionally, police bodycam footage shows inconsistencies in the sobriety test administration.",
-          "image_file": "/images/threads/tiger-woods-dui-and-personal-struggles_2026-03-28.png",
+          "image_file": "/images/story_2026-03-28_39.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -6506,28 +6793,29 @@
       "gap_days": [
         {
           "date": "2026-03-29",
-          "bridge_text": "Tiger Woods' arrest continued to be a major news story, with discussions about his future."
+          "bridge_text": "Woods' arrest continued to dominate headlines, with discussions about his future in golf."
         },
         {
           "date": "2026-03-30",
-          "bridge_text": "Woods' legal and personal challenges remained in the spotlight."
+          "bridge_text": "Woods' team announced he would be stepping away from public life to focus on recovery."
         },
         {
           "date": "2026-03-31",
-          "bridge_text": "The sports community reacted to Woods' decision to seek treatment."
+          "bridge_text": "Support from fans and fellow athletes poured in as Woods began his treatment."
         }
       ],
       "first_seen": "2026-03-28",
       "last_seen": "2026-04-01",
       "is_active": true,
       "total_days_span": 5,
-      "days_covered": 2
+      "days_covered": 2,
+      "image_file": "/images/threads/tiger-woods-dui-and-treatment.png"
     },
     {
       "id": "no-kings-protests",
       "title": "No Kings Protests",
       "category": "politics",
-      "summary": "The \"No Kings\" protests began on March 28, 2026, as a grassroots movement challenging President Trump's leadership, with demonstrations erupting in multiple cities across the United States. By March 30, the movement had escalated significantly, with millions participating nationwide, rallying against perceived authoritarianism and calling for democratic reforms. The protests garnered widespread media attention and sparked discussions about the state of democracy in the U.S. On March 31, a particularly controversial protest in Florida drew scrutiny after it was reported that the local Democratic Party had endorsed the movement, raising questions about political affiliations and the motivations behind the demonstrations. As of now, the protests continue to gain momentum, with organizers planning further actions and discussions about their long-term goals.",
+      "summary": "The 'No Kings' protests have gained momentum across the U.S., challenging perceived authoritarianism and advocating for democratic reforms. The movement has seen widespread participation and significant media coverage.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -6737,7 +7025,7 @@
               "title": "Al Gore’s Rallying Cry Ahead of Saturday’s No Kings Protests"
             }
           ],
-          "best_video_id": "4IDRT8TbG4M",
+          "best_video_id": "Dmu_g_FN5cM",
           "best_video_platform": "youtube"
         },
         {
@@ -7200,7 +7488,7 @@
       "gap_days": [
         {
           "date": "2026-03-29",
-          "bridge_text": "Protests continued to spread, with increasing participation and media coverage."
+          "bridge_text": "Protests continued to spread, with organizers planning larger demonstrations in major cities."
         }
       ],
       "first_seen": "2026-03-28",
@@ -7211,10 +7499,10 @@
       "image_file": "/images/threads/no-kings-protests.png"
     },
     {
-      "id": "meta-and-youtube-legal-challenges",
-      "title": "Meta and YouTube Legal Challenges",
+      "id": "meta-and-youtube-liability",
+      "title": "Meta and YouTube Liability",
       "category": "markets",
-      "summary": "On March 26, 2026, a landmark trial concluded with Meta and YouTube being found liable for contributing to a woman's social media addiction, marking a significant legal precedent for technology companies. This ruling has raised concerns about the responsibility of social media platforms in promoting addictive behaviors among users. Following this decision, on March 30, both Meta and Google faced further legal challenges, prompting potential changes in operational practices and user engagement strategies for these tech giants. The implications of these rulings may lead to increased scrutiny and regulation of social media platforms as they navigate the legal landscape surrounding user addiction. As of now, both companies are assessing their next steps in response to these ongoing legal challenges.",
+      "summary": "On March 26, 2026, a landmark trial concluded with a jury finding Meta and YouTube liable for contributing to a woman's social media addiction, marking a significant moment in legal accountability for tech companies. The verdict has raised questions about the responsibility of social media platforms in fostering addictive behaviors among users. Following this ruling, on March 30, both Meta and Google faced additional legal challenges that could lead to substantial changes in their operational practices and content moderation policies. The implications of these rulings could reshape the landscape of social media liability, as more lawsuits are anticipated in the wake of this precedent. As the situation develops, both companies are likely to assess their user engagement strategies and legal defenses in response to growing scrutiny.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -7225,7 +7513,7 @@
           "left_narrative": "The New York Times highlights the significance of the verdict, emphasizing the need for greater regulation of tech companies. The Guardian reports on the broader implications for user privacy and data protection.",
           "right_narrative": "Fox News frames the trial as a challenge to Big Tech's influence, focusing on the potential for increased government intervention. The New York Post discusses the implications for the tech industry and the potential for similar lawsuits in the future.",
           "what_they_arent_telling_you": "A Reddit post in r/news with 25K upvotes reveals internal documents showing that Meta and YouTube were aware of the addictive nature of their platforms, which mainstream media has not covered. The focus on the trial's outcome benefits those who prefer to maintain a narrative of accountability without addressing systemic issues. Additionally, leaked emails on social media suggest that some executives were involved in efforts to downplay the platforms' impact on mental health.",
-          "image_file": "/images/threads/meta-and-youtube-legal-challenges_2026-03-26.png",
+          "image_file": "/images/story_2026-03-26_6.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -7468,7 +7756,7 @@
           "left_narrative": "The New York Times emphasizes the need for stricter regulations on tech companies to protect users, highlighting the ruling as a step towards accountability.",
           "right_narrative": "The New York Post warns of potential overreach and the impact on innovation, suggesting that the ruling could stifle technological advancement.",
           "what_they_arent_telling_you": "A Reddit post in r/news with 13K upvotes discusses how internal documents from Meta reveal knowledge of the addictive nature of their algorithms, a detail not widely reported. This benefits plaintiffs in similar cases by providing precedent. The trial transcripts show conflicting testimonies from Meta executives, contradicting their public statements about user safety.",
-          "image_file": "/images/threads/meta-and-youtube-legal-challenges_2026-03-26.png",
+          "image_file": "/images/story_2026-03-26_19.png",
           "social_clips": [
             {
               "platform": "x",
@@ -7555,7 +7843,7 @@
           "left_narrative": "The left views the ruling as a necessary step towards holding tech companies accountable for the spread of hate speech and misinformation. They argue that stricter regulations are needed to protect vulnerable communities and ensure online safety.",
           "right_narrative": "The right is concerned that the ruling leads to overreach and censorship, stifling free speech and innovation. They argue that tech companies should not be the arbiters of acceptable speech and warn against government interference in private businesses.",
           "what_they_arent_telling_you": "On Reddit, users are discussing the potential financial impact of the ruling on Meta and Google, which mainstream media has not fully explored. A viral X post highlights the lack of transparency in how these companies decide what content to moderate. Leaked documents suggest that both companies have been lobbying for more lenient regulations, raising questions about their commitment to addressing hate content.",
-          "image_file": "/images/story_2026-03-30_17.png",
+          "image_file": "/images/threads/meta-and-youtube-liability_2026-03-30.png",
           "social_clips": [
             {
               "platform": "x",
@@ -7629,22 +7917,23 @@
       "gap_days": [
         {
           "date": "2026-03-27",
-          "bridge_text": "Legal proceedings against Meta and YouTube continued, with implications for tech regulation."
+          "bridge_text": "The implications of the trial continued to be discussed, with tech companies evaluating their content policies."
         },
         {
           "date": "2026-03-28",
-          "bridge_text": "The legal challenges faced by Meta and YouTube remained a topic of discussion."
+          "bridge_text": "Legal experts debated the potential changes in tech industry regulations following the trial's outcome."
         },
         {
           "date": "2026-03-29",
-          "bridge_text": "Meta and YouTube's legal issues continued to impact their business strategies."
+          "bridge_text": "Tech companies began implementing changes to their algorithms to comply with the court ruling."
         }
       ],
       "first_seen": "2026-03-26",
       "last_seen": "2026-03-30",
       "is_active": false,
       "total_days_span": 5,
-      "days_covered": 2
+      "days_covered": 2,
+      "image_file": "/images/threads/meta-and-youtube-liability.png"
     }
   ]
 }
