@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Bridge Strike Casualties",
-    "summary": "An airstrike in Iran has led to the collapse of a major bridge, resulting in at least 8 deaths and 95 injuries. The incident has heightened tensions in the region, with U.S. officials calling for diplomatic negotiations to prevent further escalation. Iran has responded with threats against American allies, indicating a potential for increased conflict.",
+    "summary": "An airstrike in Iran caused the collapse of a major bridge, resulting in at least 8 deaths and 95 injuries. This incident has increased regional tensions, with the U.S. urging diplomatic talks to avoid further conflict. Iran has issued threats against American allies, suggesting a potential escalation in hostilities.",
     "severity": "major",
     "detected_at": "2026-04-02T23:00:12.651Z",
-    "last_updated": "2026-04-02T23:00:12.651Z",
+    "last_updated": "2026-04-03T01:01:17.477Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is emphasizing the strategic importance of the bridge and the potential threat Iran poses to American interests and allies. They highlight Iran's aggressive rhetoric and suggest that the U.S. must maintain a strong stance to deter further Iranian aggression. The narrative suggests that Iran's actions are a direct challenge to U.S. influence in the region.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and geopolitical factors driving the conflict. The airstrike's timing coincides with ongoing negotiations over Iran's nuclear program and regional power dynamics. Additionally, the economic sanctions on Iran have exacerbated internal pressures, potentially influencing Iran's aggressive posture as a means of rallying domestic support.",
-    "social_summary": "Social media is abuzz with polarized reactions, with some users condemning the U.S. for its involvement in foreign conflicts, while others support a hardline stance against Iran. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the airstrike, such as control over regional resources or a distraction from domestic issues in the U.S.",
-    "image_prompt": "A dramatic image of a collapsed bridge in a desolate landscape, with smoke rising in the background. In the foreground, a lone figure stands, symbolizing the human cost of geopolitical conflict.",
+    "right_narrative": "Right-leaning media is framing this as a consequence of Iran's aggressive posturing and its threats against American allies. They emphasize Iran's role in escalating tensions and suggest that the airstrike is a justified response to Iran's provocations. The narrative focuses on the need for a strong stance against Iran's threats to maintain regional stability.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic interests that be influencing the conflict. The region's strategic importance for oil and trade routes is a significant factor in the tensions. Additionally, the role of other regional powers, such as Russia and China, in either supporting or opposing Iran's actions is not being thoroughly examined.",
+    "social_summary": "Social media is abuzz with polarized reactions, with some users condemning the airstrike as an act of aggression and others supporting it as a necessary measure against Iran's threats. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the airstrike, including control over oil resources and geopolitical dominance.",
+    "image_prompt": "A dramatic editorial photo of a collapsed bridge in a desolate landscape, with smoke rising in the background and a lone figure standing at the edge, symbolizing the fragility of peace and the looming threat of conflict.",
     "sources": [
       {
         "name": "Fox News",
@@ -27,17 +27,16 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=wsA4zOE0aP0",
-        "embed_id": "wsA4zOE0aP0",
-        "title": "Latest update: Peace talks , Iran warns US invasion as strikes intensify across the Middle East",
-        "duration": 1181
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
         "embed_id": "hnA7t-CeTac",
         "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
         "duration": 542
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
+        "embed_id": "I3UFKTUYDQ0",
+        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8"
       },
       {
         "platform": "x",
@@ -55,10 +54,19 @@
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/Newsmax/30540",
-        "embed_id": "Newsmax/30540",
-        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
-        "author": "newsmax"
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43080",
+        "embed_id": "warmonitors/43080",
+        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
+        "author": "warmonitors"
       },
       {
         "platform": "reddit",
@@ -93,18 +101,17 @@
         "channel": "Al Jazeera English"
       },
       {
-        "url": "https://www.youtube.com/watch?v=wsA4zOE0aP0",
-        "embed_id": "wsA4zOE0aP0",
-        "title": "Latest update: Peace talks , Iran warns US invasion as strikes intensify across the Middle East",
-        "channel": "Al Jazeera English",
-        "duration": 1181
-      },
-      {
         "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
         "embed_id": "hnA7t-CeTac",
         "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
         "channel": "Kanal13",
         "duration": 542
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
+        "embed_id": "I3UFKTUYDQ0",
+        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8",
+        "channel": "Associated Press"
       }
     ],
     "social_clips": [
@@ -124,10 +131,19 @@
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/Newsmax/30540",
-        "embed_id": "Newsmax/30540",
-        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
-        "author": "newsmax"
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43080",
+        "embed_id": "warmonitors/43080",
+        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
+        "author": "warmonitors"
       },
       {
         "platform": "reddit",
@@ -158,15 +174,15 @@
   },
   {
     "topic": "Iran Bridge Collapse After Strikes",
-    "summary": "Iran's largest bridge has collapsed following recent military strikes, exacerbating tensions in an already unstable region. The destruction of this critical infrastructure has heightened fears of further conflict escalation. Former President Trump has weighed in, indicating that more developments are expected, adding to the anxiety surrounding the situation.",
+    "summary": "Iran's largest bridge has collapsed after recent military strikes, intensifying regional instability. The destruction of this key infrastructure has raised concerns about escalating conflicts. Former President Trump has commented on the situation, suggesting that further developments are imminent, which has contributed to the growing unease.",
     "severity": "critical",
     "detected_at": "2026-04-02T19:00:06.979Z",
-    "last_updated": "2026-04-02T21:00:46.149Z",
+    "last_updated": "2026-04-03T01:02:03.995Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the strategic importance of the bridge in terms of military logistics and regional connectivity. The collapse not only disrupts civilian life but also impacts military operations and supply routes, which is a significant factor in the ongoing conflict dynamics. Additionally, the financial implications of rebuilding such infrastructure amidst sanctions and economic strain are not being discussed.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users blaming foreign intervention for the strikes, while others criticize Iran's military strategies. Memes and conspiracy theories are circulating, suggesting that the bridge collapse is a pretext for further military action. Hashtags related to the incident are trending, reflecting widespread concern and speculation.",
-    "image_prompt": "A dramatic editorial photo of a collapsed bridge in a desolate landscape, with dark storm clouds looming overhead, symbolizing the tension and uncertainty in the region.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential economic ramifications of the bridge collapse on Iran's internal logistics and trade. The focus remains on military and political implications, ignoring how this infrastructure loss cripple local economies and affect daily life. Additionally, the geopolitical motivations behind the strikes and their timing are not being scrutinized, leaving questions about the broader strategic objectives unexamined.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users blaming foreign intervention for the strikes, while others criticize Iran's government for failing to protect critical infrastructure. Memes and conspiracy theories are circulating, suggesting hidden agendas behind the strikes, with some users speculating about a potential increase in military actions in the region.",
+    "image_prompt": "A dramatic editorial photo of a crumbling bridge silhouetted against a stormy sky, symbolizing instability and looming conflict, with distant military aircraft faintly visible in the clouds.",
     "sources": [],
     "clips": [
       {
@@ -191,6 +207,12 @@
         "duration": 450
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
+        "embed_id": "I3UFKTUYDQ0",
+        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8"
+      },
+      {
         "platform": "telegram",
         "url": "https://t.me/warmonitors/43080",
         "embed_id": "warmonitors/43080",
@@ -203,6 +225,22 @@
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30540",
+        "embed_id": "Newsmax/30540",
+        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
+        "author": "newsmax"
       },
       {
         "platform": "reddit",
@@ -262,6 +300,12 @@
         "title": "JUST IN: Trump shares video of Iran's biggest bridge 'tumbling town'",
         "channel": "Fox News",
         "duration": 450
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
+        "embed_id": "I3UFKTUYDQ0",
+        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8",
+        "channel": "Associated Press"
       }
     ],
     "social_clips": [
@@ -278,6 +322,22 @@
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20633",
+        "embed_id": "disclosetv/20633",
+        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
+        "author": "disclosetv",
+        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30540",
+        "embed_id": "Newsmax/30540",
+        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
+        "author": "newsmax"
       },
       {
         "platform": "reddit",
@@ -320,15 +380,15 @@
   },
   {
     "topic": "U.S. Urges Immediate Evacuation of Americans in Iraq",
-    "summary": "The U.S. government has called for an immediate evacuation of American citizens from Iraq, citing increased threats from Iran-backed militias. This directive underscores the heightened tensions in the Middle East, particularly between the U.S. and Iran, and reflects concerns over the safety of Americans in the region. The situation highlights the fragile security environment in Iraq and the potential for conflict escalation.",
+    "summary": "The U.S. government has issued an urgent directive for American citizens to evacuate Iraq due to escalating threats from Iran-backed militias. This move reflects the growing tensions between the U.S. and Iran, with Iraq caught in the middle as a potential flashpoint for conflict. The directive underscores the precarious security situation in the region and the U.S.'s concern for the safety of its citizens abroad.",
     "severity": "major",
     "detected_at": "2026-04-02T15:00:07.990Z",
-    "last_updated": "2026-04-02T21:01:34.836Z",
+    "last_updated": "2026-04-03T01:02:37.746Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical dynamics that contribute to these tensions, such as the U.S.'s strategic interests in the region and Iran's influence over local militias. The focus remains on immediate threats without delving into the long-term implications of U.S. military presence and its impact on regional stability. Additionally, the economic interests tied to oil and military contracts in Iraq are not being discussed.",
-    "social_summary": "Social media is buzzing with reactions ranging from concern for American citizens to criticism of U.S. foreign policy. Memes and viral posts are highlighting the cyclical nature of U.S. involvement in Middle Eastern conflicts, with some users drawing parallels to past evacuations. Conspiracy theories are circulating about the timing of the evacuation order, suggesting ulterior motives related to upcoming elections or military strategies.",
-    "image_prompt": "A dramatic editorial photo of an empty American embassy in Iraq at dusk, with a lone flag fluttering in the wind, symbolizing the urgency and isolation of the evacuation directive.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this evacuation. The focus remains on immediate threats, but the underlying issue is the strategic power struggle between the U.S. and Iran for influence in the Middle East. This evacuation is a precursor to more aggressive military posturing or diplomatic maneuvers, which are not being openly discussed.",
+    "social_summary": "Social media is buzzing with speculation about the potential for a new conflict in the Middle East, with hashtags like #IraqEvacuation and #IranThreat trending. Memes and viral posts are drawing parallels to past U.S. military interventions, while conspiracy theories suggest ulterior motives behind the evacuation directive, such as oil interests or political distractions.",
+    "image_prompt": "A dramatic editorial photo of an empty Baghdad street at dusk, with a lone American flag fluttering in the wind, symbolizing the evacuation and the tense geopolitical atmosphere.",
     "sources": [],
     "clips": [
       {
@@ -339,31 +399,10 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=P_IGooWhW9Y",
-        "embed_id": "P_IGooWhW9Y",
-        "title": "ALL AMERICANS TOLD TO LEAVE IRAQ NOW — The Evacuation Order Nobody Is Talking About",
-        "duration": 648
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ooWmEBZww4U",
-        "embed_id": "ooWmEBZww4U",
-        "title": "US Embassy Iraq Evacuation: Washington issues urgent travel warning| US- NewsX World",
-        "duration": 55
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=ADz3uQ9-aO4",
         "embed_id": "ADz3uQ9-aO4",
         "title": "State Department Urges U.S. Government Employees To Leave Iraq",
         "duration": 55
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=hkxoUJ5D_Kk",
-        "embed_id": "hkxoUJ5D_Kk",
-        "title": "Breaking: U.S. Orders All Americans to Leave Iraq Immediately",
-        "duration": 118
       },
       {
         "platform": "youtube",
@@ -453,6 +492,25 @@
         "url": "https://reddit.com/r/Defeat_Project_2025/comments/1sag9cm/trump_says_hes_considering_pulling_us_out_of/",
         "embed_id": "1sag9cm",
         "title": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30541",
+        "embed_id": "Newsmax/30541",
+        "title": "REPORT: Pentagon chief Pete Hegseth has asked U.S. Army Chief of Staff Randy George to step down and take immediate retirement, according to a report.",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Baking/comments/1saonva/the_worth_killing_a_duchess_over_cake_my/",
+        "embed_id": "1saonva",
+        "title": "The \"Worth Killing a Duchess Over\" Cake: My realization of the 1870s Windmill (Pineapple &amp; Coconut) Cake"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/popheads/comments/1saqgys/1999_jpop_ultimate_rate_hikaru_utada_vs_ayumi/",
+        "embed_id": "1saqgys",
+        "title": "1999 J-Pop Ultimate Rate (Hikaru Utada vs. Ayumi Hamasaki vs. Sheena Ringo)"
       }
     ],
     "youtube_videos": [
@@ -463,32 +521,11 @@
         "channel": "Al Jazeera English"
       },
       {
-        "url": "https://www.youtube.com/watch?v=P_IGooWhW9Y",
-        "embed_id": "P_IGooWhW9Y",
-        "title": "ALL AMERICANS TOLD TO LEAVE IRAQ NOW — The Evacuation Order Nobody Is Talking About",
-        "channel": "Truth Streamsssd",
-        "duration": 648
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ooWmEBZww4U",
-        "embed_id": "ooWmEBZww4U",
-        "title": "US Embassy Iraq Evacuation: Washington issues urgent travel warning| US- NewsX World",
-        "channel": "NewsX World",
-        "duration": 55
-      },
-      {
         "url": "https://www.youtube.com/watch?v=ADz3uQ9-aO4",
         "embed_id": "ADz3uQ9-aO4",
         "title": "State Department Urges U.S. Government Employees To Leave Iraq",
         "channel": "CBS Miami",
         "duration": 55
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=hkxoUJ5D_Kk",
-        "embed_id": "hkxoUJ5D_Kk",
-        "title": "Breaking: U.S. Orders All Americans to Leave Iraq Immediately",
-        "channel": "Sensor Studio",
-        "duration": 118
       },
       {
         "url": "https://www.youtube.com/watch?v=DswXuIS8-KE",
@@ -580,6 +617,25 @@
         "url": "https://reddit.com/r/Defeat_Project_2025/comments/1sag9cm/trump_says_hes_considering_pulling_us_out_of/",
         "embed_id": "1sag9cm",
         "title": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30541",
+        "embed_id": "Newsmax/30541",
+        "title": "REPORT: Pentagon chief Pete Hegseth has asked U.S. Army Chief of Staff Randy George to step down and take immediate retirement, according to a report.",
+        "author": "newsmax"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Baking/comments/1saonva/the_worth_killing_a_duchess_over_cake_my/",
+        "embed_id": "1saonva",
+        "title": "The \"Worth Killing a Duchess Over\" Cake: My realization of the 1870s Windmill (Pineapple &amp; Coconut) Cake"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/popheads/comments/1saqgys/1999_jpop_ultimate_rate_hikaru_utada_vs_ayumi/",
+        "embed_id": "1saqgys",
+        "title": "1999 J-Pop Ultimate Rate (Hikaru Utada vs. Ayumi Hamasaki vs. Sheena Ringo)"
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
