@@ -1,15 +1,15 @@
 [
   {
     "topic": "Kuwait Missile and Drone Strikes",
-    "summary": "Kuwait's critical infrastructure, including a desalination plant and an oil refinery, has been targeted by missile and drone strikes. This incident represents a significant escalation in regional tensions, highlighting vulnerabilities in the security of essential facilities. The attacks have raised alarms about the potential for further destabilization in the Middle East.",
+    "summary": "Kuwait has experienced a significant security breach as missile and drone strikes targeted its critical infrastructure, including a desalination plant and an oil refinery. These attacks underscore the vulnerabilities in the region's essential facilities and have heightened concerns about escalating tensions in the Middle East. The incident has prompted discussions on the need for enhanced security measures to protect vital resources.",
     "severity": "major",
     "detected_at": "2026-04-03T11:00:07.057Z",
-    "last_updated": "2026-04-03T11:00:07.057Z",
+    "last_updated": "2026-04-03T13:00:35.768Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential involvement of external state actors who have interests in destabilizing the region for geopolitical gain. The focus remains on the immediate impact rather than exploring the broader implications of energy security and water supply in a region heavily reliant on such infrastructure. Additionally, the economic ramifications for global oil markets are not being thoroughly examined.",
-    "social_summary": "Social media is buzzing with speculation about the origins of the attacks, with some users blaming regional powers while others suggest foreign intervention. Memes and viral posts are highlighting the irony of targeting a desalination plant in a desert region, emphasizing the critical nature of water resources. Conspiracy theories are circulating about the potential for these attacks to be a pretext for military intervention by larger powers.",
-    "image_prompt": "A dramatic editorial photo of a silhouetted oil refinery against a fiery sunset, with drones ominously hovering in the sky, symbolizing the tension and vulnerability of critical infrastructure.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential motivations behind these attacks, such as geopolitical power plays or economic sabotage aimed at destabilizing Kuwait's economy. There is also a lack of discussion on the international arms trade and how these weapons are acquired and deployed in the region, which provide insight into the broader implications of such attacks.",
+    "social_summary": "Social media is buzzing with speculation about the perpetrators, with some users pointing fingers at regional adversaries while others suggest internal sabotage. Memes and viral posts are highlighting the irony of oil-rich nations being vulnerable to such attacks, and conspiracy theories are circulating about foreign powers orchestrating the strikes to manipulate oil prices.",
+    "image_prompt": "A dramatic editorial photo of a silhouetted skyline of Kuwait City at dusk, with ominous clouds and faint outlines of drones in the sky, symbolizing the unseen threats looming over the nation's critical infrastructure.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -25,6 +25,20 @@
         "embed_id": "-aQ1uxff6fY",
         "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
         "duration": 132
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=CR_u3mJz1zs",
+        "embed_id": "CR_u3mJz1zs",
+        "title": "Iranian drone attack leaves Kuwait government building engulfed in flames",
+        "duration": 66
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=WQ8g15AFsc8",
+        "embed_id": "WQ8g15AFsc8",
+        "title": "Gulf under attack as missile strikes escalate across kuwait, bahrain, uae and saudi arabia",
+        "duration": 137
       },
       {
         "platform": "x",
@@ -76,6 +90,12 @@
         "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
         "embed_id": "1sasryn",
         "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbbc6i/kuwait_desalination_plant_oil_refinery_hit_by/",
+        "embed_id": "1sbbc6i",
+        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
       }
     ],
     "youtube_videos": [
@@ -85,6 +105,20 @@
         "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
         "channel": "Al Jazeera English",
         "duration": 132
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=CR_u3mJz1zs",
+        "embed_id": "CR_u3mJz1zs",
+        "title": "Iranian drone attack leaves Kuwait government building engulfed in flames",
+        "channel": "The Sun",
+        "duration": 66
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=WQ8g15AFsc8",
+        "embed_id": "WQ8g15AFsc8",
+        "title": "Gulf under attack as missile strikes escalate across kuwait, bahrain, uae and saudi arabia",
+        "channel": "Al Jazeera English",
+        "duration": 137
       }
     ],
     "social_clips": [
@@ -138,22 +172,35 @@
         "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
         "embed_id": "1sasryn",
         "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbbc6i/kuwait_desalination_plant_oil_refinery_hit_by/",
+        "embed_id": "1sbbc6i",
+        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
       }
     ],
     "image_file": "/images/breaking_2026-04-03.png"
   },
   {
     "topic": "Iran Missile Strikes",
-    "summary": "Iran has launched missile strikes targeting Israel and several Gulf states, resulting in explosions not only in these regions but also within Tehran itself. This escalation marks a significant increase in Middle Eastern tensions, prompting international calls for restraint and diplomatic intervention to prevent further conflict. The situation has heightened fears of a broader regional war.",
+    "summary": "Iran has launched missile strikes against Israel and several Gulf states, including Kuwait, where a desalination plant and oil refinery were hit. The attacks have also resulted in explosions within Tehran, indicating a complex and potentially self-destructive escalation. This development has significantly increased tensions in the Middle East, with international entities urging for restraint and diplomatic solutions to avert a wider regional conflict.",
     "severity": "critical",
     "detected_at": "2026-04-03T05:00:07.785Z",
-    "last_updated": "2026-04-03T09:00:20.919Z",
+    "last_updated": "2026-04-03T13:01:18.040Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations and power struggles that fuel these conflicts. The arms trade, oil interests, and regional dominance are critical factors driving these hostilities. Additionally, the role of external powers in either exacerbating or mitigating these tensions is often downplayed, despite their significant influence on regional stability.",
-    "social_summary": "Social media is ablaze with polarized reactions, ranging from calls for peace to demands for retaliation. Memes and hashtags are circulating, with some users drawing historical parallels to past conflicts in the region. Conspiracy theories are also emerging, suggesting hidden agendas behind the strikes, including foreign interference and covert alliances.",
-    "image_prompt": "A dramatic editorial photo of a missile silhouetted against a fiery sunset, symbolizing the escalating tensions in the Middle East. The scene is set against a backdrop of a city skyline, with shadows of people watching from a distance, capturing the gravity and uncertainty of the situation.",
-    "sources": [],
+    "what_they_arent_telling_you": "Neither side is addressing the potential internal dissent within Iran that be influencing these aggressive actions. The strikes on Tehran suggest possible internal sabotage or factional conflict within Iran's political or military ranks. Additionally, the economic motivations behind targeting Gulf states' infrastructure, such as oil refineries, are not being thoroughly examined, particularly in the context of global oil markets and sanctions on Iran.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting that the strikes on Tehran are a false flag operation to justify further military action. Memes are circulating depicting the Middle East as a powder keg, with Iran lighting the fuse. Viral takes are questioning the timing of the strikes, linking them to recent diplomatic talks and suggesting ulterior motives.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing different Middle Eastern countries, some toppled over, others in mid-move, under a stormy sky symbolizing the brewing conflict.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/3/kuwait-desalination-plant-oil-refinery-hit-by-missile-and-drone-strikes?traffic_source=rss",
+        "lean": "center",
+        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
+      }
+    ],
     "clips": [
       {
         "platform": "youtube",
@@ -198,11 +245,11 @@
         "duration": 53
       },
       {
-        "platform": "x",
-        "url": "https://x.com/TousiTVOfficial/status/2039861574668620004",
-        "embed_id": "2039861574668620004",
-        "title": "IDF releases footage of strikes targeting IRGC missile launchers across western and central Iran.\n\nThe Israeli Air Force dropped ~140 munitions on 50 ",
-        "author": "TousiTVOfficial"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
+        "embed_id": "WTbUX7UZ-B0",
+        "title": "Iranian Missile Strike Rocks Petah Tikva",
+        "duration": 127
       },
       {
         "platform": "x",
@@ -233,6 +280,34 @@
         "embed_id": "2039921560753262747",
         "title": "🚨 Breaking: 🇮🇷🇮🇱 Iranian ballistic missile strikes central Israel. https://t.co/NOSqb75PpH",
         "author": "IranArmystan_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2040014791880606167",
+        "embed_id": "2040014791880606167",
+        "title": "BREAKING: IRGC ANNOUNCE WAVE 92\n\nIran says it launched missile and drone strikes on U.S. and Israeli targets, including U.S. amphibious vessels (LCU) ",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SuppressedNws1/status/2040013312016953387",
+        "embed_id": "2040013312016953387",
+        "title": "⚡️JUST IN: IRGC announces Wave 92.\n\nIran says it launched missile and drone strikes on U.S. and Israeli targets, including U.S. amphibious vessels (LC",
+        "author": "SuppressedNws1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/QudsNen/status/2039983469275594917",
+        "embed_id": "2039983469275594917",
+        "title": "Thick columns of smoke continue to rise in Haifa, northern occupied Palestine, following the recent Iranian missile strikes, with shrapnel falling acr",
+        "author": "QudsNen"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85810",
+        "embed_id": "intelslava/85810",
+        "title": "🇮🇷🇮🇱The strike of Iranian ballistic missiles on Petah Tikva precisely hit a drone production plant belonging to the Israeli company AeroSol.",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
@@ -313,16 +388,16 @@
         "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
         "channel": "Al Jazeera English",
         "duration": 53
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
+        "embed_id": "WTbUX7UZ-B0",
+        "title": "Iranian Missile Strike Rocks Petah Tikva",
+        "channel": "New York Post",
+        "duration": 127
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/TousiTVOfficial/status/2039861574668620004",
-        "embed_id": "2039861574668620004",
-        "title": "IDF releases footage of strikes targeting IRGC missile launchers across western and central Iran.\n\nThe Israeli Air Force dropped ~140 munitions on 50 ",
-        "author": "TousiTVOfficial"
-      },
       {
         "platform": "x",
         "url": "https://x.com/A_M_R_M1/status/2039844124442931347",
@@ -352,6 +427,34 @@
         "embed_id": "2039921560753262747",
         "title": "🚨 Breaking: 🇮🇷🇮🇱 Iranian ballistic missile strikes central Israel. https://t.co/NOSqb75PpH",
         "author": "IranArmystan_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2040014791880606167",
+        "embed_id": "2040014791880606167",
+        "title": "BREAKING: IRGC ANNOUNCE WAVE 92\n\nIran says it launched missile and drone strikes on U.S. and Israeli targets, including U.S. amphibious vessels (LCU) ",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SuppressedNws1/status/2040013312016953387",
+        "embed_id": "2040013312016953387",
+        "title": "⚡️JUST IN: IRGC announces Wave 92.\n\nIran says it launched missile and drone strikes on U.S. and Israeli targets, including U.S. amphibious vessels (LC",
+        "author": "SuppressedNws1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/QudsNen/status/2039983469275594917",
+        "embed_id": "2039983469275594917",
+        "title": "Thick columns of smoke continue to rise in Haifa, northern occupied Palestine, following the recent Iranian missile strikes, with shrapnel falling acr",
+        "author": "QudsNen"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85810",
+        "embed_id": "intelslava/85810",
+        "title": "🇮🇷🇮🇱The strike of Iranian ballistic missiles on Petah Tikva precisely hit a drone production plant belonging to the Israeli company AeroSol.",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
@@ -391,254 +494,5 @@
       }
     ],
     "image_file": "/images/breaking_2026-04-03.png"
-  },
-  {
-    "topic": "Iran Bridge Strike Casualties",
-    "summary": "An airstrike in Iran led to the collapse of a major bridge, resulting in at least 8 deaths and 95 injuries. The incident has heightened regional tensions, with the United States calling for diplomatic discussions to prevent further conflict. Iran has responded with threats against American allies, indicating a possible escalation in hostilities.",
-    "severity": "major",
-    "detected_at": "2026-04-02T23:00:12.651Z",
-    "last_updated": "2026-04-03T09:00:41.151Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing this as a necessary action to curb Iran's aggressive posturing in the region. They emphasize Iran's threats against American allies as evidence of Iran's destabilizing influence and justify the airstrike as a defensive measure. The narrative suggests that Iran's response is typical of its hostile behavior and underscores the need for a strong stance against Iranian aggression.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic interests that be influencing these military actions. The region's strategic importance for oil transportation and the potential impact on global oil prices are not being discussed. Additionally, the role of international arms sales and defense contracts in perpetuating regional conflicts is overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users condemning the airstrike as an act of war and others defending it as a necessary measure against a hostile regime. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the strike, such as control over oil resources or a distraction from domestic issues in the US.",
-    "image_prompt": "A dramatic editorial photo of a collapsed bridge in a desolate landscape, with smoke rising in the background and a lone figure standing at the edge, symbolizing the fragility of peace and the looming threat of conflict.",
-    "sources": [
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/world/irans-tallest-bridge-collapses-reported-us-airstrikes-iran-threatens-american-allies-retaliation",
-        "lean": "right",
-        "title": "Iran&apos;s tallest bridge collapses after reported US airstrikes; Iran threatens American allies in retaliation"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/3/iran-vows-retaliation-after-deadly-us-strike-on-bridge-in-karaj?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran vows retaliation after deadly US strike on bridge in Karaj"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
-        "embed_id": "yaIO1WF5rfQ",
-        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
-        "embed_id": "I3UFKTUYDQ0",
-        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=WmF8pkKsJTo",
-        "embed_id": "WmF8pkKsJTo",
-        "title": "Iran vows retaliation after deadly US strike on bridge in Karaj | AJ #shorts"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=JNlnUTpY170",
-        "embed_id": "JNlnUTpY170",
-        "title": "At least eight killed and 100 injured in US strike on Iranian bridge. #Karaj #Iran #BBCNews"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85772",
-        "embed_id": "intelslava/85772",
-        "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30540",
-        "embed_id": "Newsmax/30540",
-        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
-        "author": "newsmax"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/QudsNen/status/2039714269005029486",
-        "embed_id": "2039714269005029486",
-        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
-        "author": "QudsNen"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20633",
-        "embed_id": "disclosetv/20633",
-        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
-        "author": "disclosetv",
-        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
-        "embed_id": "1sakax8",
-        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
-        "embed_id": "1samlmz",
-        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
-        "embed_id": "1sagrds",
-        "title": "Trump mulls seizing Kharg island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Hasan_Piker/comments/1saocls/biggest_bridge_in_iran_was_destroyed_by_us_and/",
-        "embed_id": "1saocls",
-        "title": "Biggest bridge in Iran was destroyed by US and Israel."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sb01nr/trump_warns_tehran_more_to_follow_after_strike/",
-        "embed_id": "1sb01nr",
-        "title": "Trump warns Tehran ‘more to follow’ after strike destroys Iran’s largest bridge"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
-        "embed_id": "1sb0qs2",
-        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/newsPH/comments/1sb1elq/trump_announces_destruction_of_irans_tallest/",
-        "embed_id": "1sb1elq",
-        "title": "Trump announces destruction of Iran's tallest bridge"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sb2ya4/trump_threatens_strikes_on_iran_bridges_and_power/",
-        "embed_id": "1sb2ya4",
-        "title": "Trump threatens strikes on Iran bridges and power plants"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sb450b/trump_threatens_to_strike_irans_bridges_and/",
-        "embed_id": "1sb450b",
-        "title": "Trump threatens to strike Iran's bridges and electric power plants"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
-        "embed_id": "yaIO1WF5rfQ",
-        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
-        "embed_id": "I3UFKTUYDQ0",
-        "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8",
-        "channel": "Associated Press"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=WmF8pkKsJTo",
-        "embed_id": "WmF8pkKsJTo",
-        "title": "Iran vows retaliation after deadly US strike on bridge in Karaj | AJ #shorts",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=JNlnUTpY170",
-        "embed_id": "JNlnUTpY170",
-        "title": "At least eight killed and 100 injured in US strike on Iranian bridge. #Karaj #Iran #BBCNews",
-        "channel": "BBC News"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85772",
-        "embed_id": "intelslava/85772",
-        "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30540",
-        "embed_id": "Newsmax/30540",
-        "title": "TRUMP URGES IRAN DEAL: President Donald Trump on Thursday posted a video of a massive bridge strike in Iran, using the footage to urge Tehran to \"make",
-        "author": "newsmax"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/QudsNen/status/2039714269005029486",
-        "embed_id": "2039714269005029486",
-        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
-        "author": "QudsNen"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20633",
-        "embed_id": "disclosetv/20633",
-        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
-        "author": "disclosetv",
-        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/justincaseyoumissedit/comments/1sakax8/footage_shows_the_moment_usisraeli_airstrikes/",
-        "embed_id": "1sakax8",
-        "title": "Footage shows the moment US/Israeli airstrikes struck the B1 Bridge in Karaj, Iran, earlier today."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrueAnon/comments/1samlmz/trump_threatens_more_terrorist_strikes_on/",
-        "embed_id": "1samlmz",
-        "title": "Trump threatens more terrorist strikes on civilian infrastructure unless Iran agrees to a deal"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
-        "embed_id": "1sagrds",
-        "title": "Trump mulls seizing Kharg island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Hasan_Piker/comments/1saocls/biggest_bridge_in_iran_was_destroyed_by_us_and/",
-        "embed_id": "1saocls",
-        "title": "Biggest bridge in Iran was destroyed by US and Israel."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sb01nr/trump_warns_tehran_more_to_follow_after_strike/",
-        "embed_id": "1sb01nr",
-        "title": "Trump warns Tehran ‘more to follow’ after strike destroys Iran’s largest bridge"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
-        "embed_id": "1sb0qs2",
-        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/newsPH/comments/1sb1elq/trump_announces_destruction_of_irans_tallest/",
-        "embed_id": "1sb1elq",
-        "title": "Trump announces destruction of Iran's tallest bridge"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sb2ya4/trump_threatens_strikes_on_iran_bridges_and_power/",
-        "embed_id": "1sb2ya4",
-        "title": "Trump threatens strikes on Iran bridges and power plants"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sb450b/trump_threatens_to_strike_irans_bridges_and/",
-        "embed_id": "1sb450b",
-        "title": "Trump threatens to strike Iran's bridges and electric power plants"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-02.png"
   }
 ]
