@@ -1,5 +1,88 @@
 [
   {
+    "topic": "Drone Strike on Sudan Hospital",
+    "summary": "A drone strike targeted a hospital in Sudan, resulting in the deaths of at least 10 people, as reported by Médecins Sans Frontières (MSF). This incident underscores the persistent violence and humanitarian challenges facing the region. The attack has drawn international condemnation and raised concerns about the safety of medical facilities in conflict zones.",
+    "severity": "major",
+    "detected_at": "2026-04-03T21:00:07.330Z",
+    "last_updated": "2026-04-03T21:00:07.330Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential involvement or interests of foreign powers in the Sudanese conflict, which be influencing the use of drone technology. Additionally, the economic motivations behind the conflict, such as control over resources, remain underreported. The focus is primarily on the immediate humanitarian impact rather than the broader geopolitical dynamics at play.",
+    "social_summary": "Social media is ablaze with outrage over the attack, with users sharing graphic images and calling for international intervention. Conspiracy theories are circulating about the origins of the drone, with some suggesting foreign governments' involvement. Memes criticizing the lack of global response to African conflicts are gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a shattered hospital ward, with sunlight streaming through broken windows, symbolizing both destruction and hope. In the foreground, a lone stethoscope lies amidst the debris, representing the targeted attack on healthcare.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/3/drone-strike-on-sudan-hospital-kills-10-medical-charity-msf-says?traffic_source=rss",
+        "lean": "center",
+        "title": "Drone strike on Sudan hospital kills 10, medical charity MSF says"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=OU3XdjabWtw",
+        "embed_id": "OU3XdjabWtw",
+        "title": "Dozens dead after drone strikes on Sudan kindergarten and hospital | BBC News",
+        "duration": 247
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GKABiLnb3LA",
+        "embed_id": "GKABiLnb3LA",
+        "title": "Dozens killed in drone attack on hospital in Sudan’s Darfur",
+        "duration": 550
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BSonblast/status/2039910894122180983",
+        "embed_id": "2039910894122180983",
+        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
+        "author": "BSonblast"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/KareemRifai/status/1798373096233324611",
+        "embed_id": "1798373096233324611",
+        "title": "The imagery from the New York Times report on the forgotten crisis in Sudan is heart-wrenching:\n\nA drone strike victim.\nThe ruins of Aliaa Specialist ",
+        "author": "KareemRifai"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=OU3XdjabWtw",
+        "embed_id": "OU3XdjabWtw",
+        "title": "Dozens dead after drone strikes on Sudan kindergarten and hospital | BBC News",
+        "channel": "BBC News",
+        "duration": 247
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=GKABiLnb3LA",
+        "embed_id": "GKABiLnb3LA",
+        "title": "Dozens killed in drone attack on hospital in Sudan’s Darfur",
+        "channel": "Al Jazeera English",
+        "duration": 550
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/BSonblast/status/2039910894122180983",
+        "embed_id": "2039910894122180983",
+        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
+        "author": "BSonblast"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/KareemRifai/status/1798373096233324611",
+        "embed_id": "1798373096233324611",
+        "title": "The imagery from the New York Times report on the forgotten crisis in Sudan is heart-wrenching:\n\nA drone strike victim.\nThe ruins of Aliaa Specialist ",
+        "author": "KareemRifai"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-03.png"
+  },
+  {
     "topic": "US Fighter Jet Shot Down Over Iran",
     "summary": "A US fighter jet has been shot down over Iranian territory, leading to a search and rescue operation for the crew members. This incident has heightened tensions between the United States and Iran, with potential implications for military and diplomatic relations. The international community is closely monitoring the situation, concerned about the broader consequences of this escalation.",
     "severity": "critical",
