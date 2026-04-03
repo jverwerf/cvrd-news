@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Missile Strikes",
-    "summary": "Iran has launched a series of missile strikes targeting Israel and several Gulf states, with reports of explosions also occurring in and around Tehran. This marks a significant escalation in regional hostilities, heightening fears of a broader conflict. The international community is closely monitoring the situation, with calls for restraint and diplomatic solutions to prevent further escalation.",
+    "summary": "Iran has initiated missile strikes against Israel and multiple Gulf states, leading to explosions in these regions as well as in Tehran. This development represents a major intensification of tensions in the Middle East, raising concerns about the potential for a wider conflict. Global leaders are urging calm and advocating for diplomatic efforts to de-escalate the situation.",
     "severity": "critical",
     "detected_at": "2026-04-03T05:00:07.785Z",
-    "last_updated": "2026-04-03T05:00:07.785Z",
+    "last_updated": "2026-04-03T07:00:18.547Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these hostilities. Iran's actions be influenced by internal pressures, such as economic sanctions and domestic unrest, which are not being highlighted. Additionally, the geopolitical chess game involving major powers like the US, Russia, and China, who have vested interests in the region, is not being adequately covered.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Iran's actions as a defense against perceived aggression, while others condemn the strikes as reckless and dangerous. Memes and conspiracy theories are circulating, suggesting hidden alliances and ulterior motives behind the attacks, further fueling online debates.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a Middle Eastern city skyline at dusk, with pieces symbolizing different countries and a shadowy hand poised to make a move.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and political motivations driving these actions. Iran's strikes be a response to perceived threats or sanctions that have crippled its economy, while Israel and Gulf states have their own strategic interests in maintaining regional dominance. The geopolitical chess game involving superpowers like the US, Russia, and China is also a critical factor that is being overlooked.",
+    "social_summary": "Social media is ablaze with polarized reactions, ranging from calls for peace to demands for retaliation. Memes and hashtags are trending, with some users drawing historical parallels to past conflicts in the region. Conspiracy theories are circulating, suggesting hidden alliances and ulterior motives behind the strikes.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a Middle Eastern city skyline at dusk, with pieces symbolizing different nations and a shadowy hand poised to make a move.",
     "sources": [],
     "clips": [
       {
@@ -48,6 +48,13 @@
         "duration": 93
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
+        "embed_id": "wNNgYjuPcS4",
+        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
+        "duration": 53
+      },
+      {
         "platform": "x",
         "url": "https://x.com/TousiTVOfficial/status/2039861574668620004",
         "embed_id": "2039861574668620004",
@@ -76,6 +83,20 @@
         "embed_id": "France24_en/16291",
         "title": "Middle East live: Israeli air defences intercept multiple Iranian missile waves\nIsraeli air defences intercepted three waves of Iranian missile fire e",
         "author": "france24_en"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IranArmystan_/status/2039921560753262747",
+        "embed_id": "2039921560753262747",
+        "title": "🚨 Breaking: 🇮🇷🇮🇱 Iranian ballistic missile strikes central Israel. https://t.co/NOSqb75PpH",
+        "author": "IranArmystan_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Currentreport1/status/2039905340226183212",
+        "embed_id": "2039905340226183212",
+        "title": "BREAKING:\n\nUS intelligence says Iran still has major military capability despite ongoing strikes. \n\nHalf of its missile launchers remain intact, inclu",
+        "author": "Currentreport1"
       },
       {
         "platform": "reddit",
@@ -149,6 +170,13 @@
         "title": "Iran missile strike hits israeli chemical plant, Beersheba panics and war fears rise.",
         "channel": "Al Jazeera English",
         "duration": 93
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
+        "embed_id": "wNNgYjuPcS4",
+        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
+        "channel": "Al Jazeera English",
+        "duration": 53
       }
     ],
     "social_clips": [
@@ -181,6 +209,20 @@
         "embed_id": "France24_en/16291",
         "title": "Middle East live: Israeli air defences intercept multiple Iranian missile waves\nIsraeli air defences intercepted three waves of Iranian missile fire e",
         "author": "france24_en"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IranArmystan_/status/2039921560753262747",
+        "embed_id": "2039921560753262747",
+        "title": "🚨 Breaking: 🇮🇷🇮🇱 Iranian ballistic missile strikes central Israel. https://t.co/NOSqb75PpH",
+        "author": "IranArmystan_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Currentreport1/status/2039905340226183212",
+        "embed_id": "2039905340226183212",
+        "title": "BREAKING:\n\nUS intelligence says Iran still has major military capability despite ongoing strikes. \n\nHalf of its missile launchers remain intact, inclu",
+        "author": "Currentreport1"
       },
       {
         "platform": "reddit",
@@ -223,14 +265,14 @@
   },
   {
     "topic": "Iran Bridge Strike Casualties",
-    "summary": "An airstrike in Iran led to the collapse of a significant bridge, causing at least 8 fatalities and 95 injuries. The incident has heightened regional tensions, with the United States calling for diplomatic discussions to prevent further conflict. Iran has responded with threats against American allies, indicating a possible escalation in hostilities.",
+    "summary": "An airstrike in Iran resulted in the collapse of a major bridge, leading to at least 8 deaths and 95 injuries. This incident has increased regional tensions, with the United States advocating for diplomatic talks to avoid further conflict. Iran has issued threats against American allies, suggesting a potential escalation in hostilities.",
     "severity": "major",
     "detected_at": "2026-04-02T23:00:12.651Z",
-    "last_updated": "2026-04-03T03:01:13.277Z",
+    "last_updated": "2026-04-03T07:00:34.844Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is emphasizing the strategic importance of the bridge and portraying the airstrike as a necessary action to curb Iranian aggression. They highlight Iran's threats against American allies as evidence of Iran's destabilizing influence in the region. The narrative suggests that the U.S. must remain firm in its stance against Iran to protect its interests and those of its allies.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic implications of the bridge's destruction, particularly how it affects local trade and infrastructure. The focus is on military and political tensions, ignoring the potential humanitarian crisis that arise from disrupted supply chains and increased regional instability. Additionally, the role of other regional powers in either exacerbating or mitigating the conflict is not being discussed.",
-    "social_summary": "Social media is rife with polarized opinions, with some users condemning the U.S. for its aggressive tactics and others supporting the strike as a justified response to Iranian threats. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the airstrike, such as control over regional resources or a distraction from domestic issues in the U.S.",
+    "right_narrative": "Right-leaning media is framing this as a necessary action to curb Iran's aggressive military posturing in the region. They emphasize Iran's threats against American allies as evidence of Iran's destabilizing influence and justify the airstrike as a defensive measure. The narrative suggests that the U.S. is acting to protect its interests and those of its allies from Iranian aggression.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and geopolitical motivations behind the airstrike. The bridge's strategic importance for trade and military logistics in the region is not being discussed. Additionally, the role of international arms deals and economic sanctions in escalating tensions is overlooked, as is the influence of regional powers like Russia and China in the conflict.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users supporting the airstrike as a necessary action against a hostile regime, while others condemn it as reckless and inhumane. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the strike, such as control over regional resources or a distraction from domestic issues in the U.S.",
     "image_prompt": "A dramatic editorial photo of a collapsed bridge in a desolate landscape, with smoke rising in the background and a lone figure standing at the edge, symbolizing the fragility of peace and the looming threat of conflict.",
     "sources": [
       {
@@ -255,13 +297,6 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
-        "embed_id": "hnA7t-CeTac",
-        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
-        "duration": 542
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
         "embed_id": "I3UFKTUYDQ0",
         "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8"
@@ -273,25 +308,11 @@
         "title": "Iran vows retaliation after deadly US strike on bridge in Karaj | AJ #shorts"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/QudsNen/status/2039714269005029486",
-        "embed_id": "2039714269005029486",
-        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
-        "author": "QudsNen"
-      },
-      {
         "platform": "telegram",
         "url": "https://t.me/intelslava/85772",
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43080",
-        "embed_id": "warmonitors/43080",
-        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
-        "author": "warmonitors"
       },
       {
         "platform": "telegram",
@@ -329,6 +350,30 @@
         "url": "https://reddit.com/r/worldnews/comments/1sb01nr/trump_warns_tehran_more_to_follow_after_strike/",
         "embed_id": "1sb01nr",
         "title": "Trump warns Tehran ‘more to follow’ after strike destroys Iran’s largest bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
+        "embed_id": "1sb0qs2",
+        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/newsPH/comments/1sb1elq/trump_announces_destruction_of_irans_tallest/",
+        "embed_id": "1sb1elq",
+        "title": "Trump announces destruction of Iran's tallest bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sb2ya4/trump_threatens_strikes_on_iran_bridges_and_power/",
+        "embed_id": "1sb2ya4",
+        "title": "Trump threatens strikes on Iran bridges and power plants"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1sb450b/trump_threatens_to_strike_irans_bridges_and/",
+        "embed_id": "1sb450b",
+        "title": "Trump threatens to strike Iran's bridges and electric power plants"
       }
     ],
     "youtube_videos": [
@@ -337,13 +382,6 @@
         "embed_id": "yaIO1WF5rfQ",
         "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation",
         "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=hnA7t-CeTac",
-        "embed_id": "hnA7t-CeTac",
-        "title": "Iran’s highest bridge linking Tehran to Karaj is struck in a joint US-Israeli strike",
-        "channel": "Kanal13",
-        "duration": 542
       },
       {
         "url": "https://www.youtube.com/watch?v=I3UFKTUYDQ0",
@@ -360,25 +398,11 @@
     ],
     "social_clips": [
       {
-        "platform": "x",
-        "url": "https://x.com/QudsNen/status/2039714269005029486",
-        "embed_id": "2039714269005029486",
-        "title": "According to Iranian reports, US-Israeli aircraft bombarded the B1 Bridge in Karaj, Iran, twice today. The second strike targeted civil defense teams ",
-        "author": "QudsNen"
-      },
-      {
         "platform": "telegram",
         "url": "https://t.me/intelslava/85772",
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43080",
-        "embed_id": "warmonitors/43080",
-        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
-        "author": "warmonitors"
       },
       {
         "platform": "telegram",
@@ -416,21 +440,45 @@
         "url": "https://reddit.com/r/worldnews/comments/1sb01nr/trump_warns_tehran_more_to_follow_after_strike/",
         "embed_id": "1sb01nr",
         "title": "Trump warns Tehran ‘more to follow’ after strike destroys Iran’s largest bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
+        "embed_id": "1sb0qs2",
+        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/newsPH/comments/1sb1elq/trump_announces_destruction_of_irans_tallest/",
+        "embed_id": "1sb1elq",
+        "title": "Trump announces destruction of Iran's tallest bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sb2ya4/trump_threatens_strikes_on_iran_bridges_and_power/",
+        "embed_id": "1sb2ya4",
+        "title": "Trump threatens strikes on Iran bridges and power plants"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1sb450b/trump_threatens_to_strike_irans_bridges_and/",
+        "embed_id": "1sb450b",
+        "title": "Trump threatens to strike Iran's bridges and electric power plants"
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
   },
   {
     "topic": "Iran Bridge Collapse After Strikes",
-    "summary": "Iran's largest bridge in Karaj has collapsed following military strikes, exacerbating regional tensions. The destruction of this critical infrastructure has heightened fears of escalating conflict in the area. Former President Trump has weighed in, indicating that further developments are expected, adding to the uncertainty and concern surrounding the situation.",
+    "summary": "Iran's largest bridge in Karaj has collapsed after military strikes, significantly increasing regional tensions. The destruction of this vital infrastructure has raised fears of further conflict escalation. Former President Trump has commented on the situation, suggesting that more developments are anticipated, contributing to the prevailing uncertainty and concern.",
     "severity": "critical",
     "detected_at": "2026-04-02T19:00:06.979Z",
-    "last_updated": "2026-04-03T03:02:07.036Z",
+    "last_updated": "2026-04-03T07:00:51.508Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential economic ramifications of the bridge collapse on Iran's internal logistics and trade. The focus remains on military and political implications, ignoring how this infrastructure loss cripple local economies and affect civilian life. Additionally, the geopolitical motivations behind the strikes and their timing are not being scrutinized, leaving questions about the broader strategic objectives unexamined.",
-    "social_summary": "Social media is abuzz with polarized reactions, with some users blaming US aggression and others pointing fingers at Iran's military provocations. Memes and conspiracy theories are circulating, suggesting hidden agendas behind the strikes, with some claiming it is a distraction from domestic issues in both countries. Viral takes are also questioning the role of international diplomacy in preventing further escalation.",
-    "image_prompt": "A dramatic, symbolic image of a shattered bridge under a stormy sky, with dark clouds looming overhead, representing the collapse of stability and the brewing conflict in the region.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects international relations and trade routes in the region. The focus remains on immediate military and political reactions, ignoring the potential long-term economic impacts and the role of external powers in either exacerbating or mitigating the situation.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users blaming foreign intervention for the collapse, while others criticize Iran's military strategies. Memes and conspiracy theories are circulating, suggesting hidden agendas behind the strikes, with hashtags like #BridgeGate and #IranConflict trending.",
+    "image_prompt": "A dramatic editorial photo of a crumbling bridge under a stormy sky, symbolizing geopolitical tension and uncertainty, with shadowy figures in the background representing unseen forces at play.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -468,11 +516,11 @@
         "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43080",
-        "embed_id": "warmonitors/43080",
-        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
-        "author": "warmonitors"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
+        "embed_id": "yaIO1WF5rfQ",
+        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation",
+        "duration": 107
       },
       {
         "platform": "telegram",
@@ -480,15 +528,6 @@
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20633",
-        "embed_id": "disclosetv/20633",
-        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
-        "author": "disclosetv",
-        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
-        "duration": 30
       },
       {
         "platform": "telegram",
@@ -550,6 +589,18 @@
         "url": "https://reddit.com/r/Conservative/comments/1sb0bpw/iran_announces_threats_following_reported_us/",
         "embed_id": "1sb0bpw",
         "title": "Iran announces threats following reported US airstrikes collapsing nation's key bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sb2cng/irans_tallest_bridge_collapses_after_reported_us/",
+        "embed_id": "1sb2cng",
+        "title": "Iran's tallest bridge collapses after reported US airstrikes, Iran threatens American allies in retaliation"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
+        "embed_id": "1sb0qs2",
+        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
       }
     ],
     "youtube_videos": [
@@ -579,31 +630,22 @@
         "embed_id": "I3UFKTUYDQ0",
         "title": "Dramatic video shows strikes on Iran's biggest bridge, killing 8",
         "channel": "Associated Press"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=yaIO1WF5rfQ",
+        "embed_id": "yaIO1WF5rfQ",
+        "title": "Trump posts Iran bridge strike video, calls for deal and warns of escalation",
+        "channel": "Al Jazeera English",
+        "duration": 107
       }
     ],
     "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43080",
-        "embed_id": "warmonitors/43080",
-        "title": "⚡Trump on Truth Social: The biggest bridge in Iran comes tumbling down, never to be used again — Much more to follow&#33; IT IS TIME FOR IRAN TO MAKE ",
-        "author": "warmonitors"
-      },
       {
         "platform": "telegram",
         "url": "https://t.me/intelslava/85772",
         "embed_id": "intelslava/85772",
         "title": "🇺🇸🇮🇷Trump is relishing the moment of the US air strike on Iran's highest bridge on social media and declares that Tehran will either make a deal o",
         "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20633",
-        "embed_id": "disclosetv/20633",
-        "title": "JUST IN - Trump: \"The biggest bridge in Iran comes tumbling down.\"\n\n@disclosetv",
-        "author": "disclosetv",
-        "thumbnail": "https://cdn1.telesco.pe/file/SHlc3goGZtIk-JUuwKb44gvkN38u0pYBlATYIZ1CHBczuOZL_0ZjvpAHB6iYcra-qi6hArVA0bj3lyF1ZaJ2q6FP1YW7qEskZMOshvXY5e9O1ytUeq90K0YYwnJ83f5VVzbAOvgkakk67KeEQwTWIISArxPT6cg8xlmiWs7eSqMNrj7lgZBJWl7bzX9591N0Fi_Y4LFSKdUl5aQdZDCj-ZmG3fspeaxSiYxE3sRGBTtthTWkODP62AiSJslG7icksm0lnqSKxM-Jhzl0xMaAXFuwhEGFNSgJ4LqUd_c7SPpsBCKKp_JzadcGo-kpxOADRJDAW2iBtst9pch3L_N4ew'",
-        "duration": 30
       },
       {
         "platform": "telegram",
@@ -665,6 +707,18 @@
         "url": "https://reddit.com/r/Conservative/comments/1sb0bpw/iran_announces_threats_following_reported_us/",
         "embed_id": "1sb0bpw",
         "title": "Iran announces threats following reported US airstrikes collapsing nation's key bridge"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sb2cng/irans_tallest_bridge_collapses_after_reported_us/",
+        "embed_id": "1sb2cng",
+        "title": "Iran's tallest bridge collapses after reported US airstrikes, Iran threatens American allies in retaliation"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/WhitePeopleTwitter/comments/1sb0qs2/the_us_made_sure_to_kill_any_first_responders_who/",
+        "embed_id": "1sb0qs2",
+        "title": "The US made sure to kill any first responders who were coming to assist people after the bridge attack"
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
