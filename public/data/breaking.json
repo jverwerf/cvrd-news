@@ -1,5 +1,227 @@
 [
   {
+    "topic": "Iran Missile Strikes",
+    "summary": "Iran has launched a series of missile strikes targeting Israel and several Gulf states, with reports of explosions also occurring in and around Tehran. This marks a significant escalation in regional hostilities, heightening fears of a broader conflict. The international community is closely monitoring the situation, with calls for restraint and diplomatic solutions to prevent further escalation.",
+    "severity": "critical",
+    "detected_at": "2026-04-03T05:00:07.785Z",
+    "last_updated": "2026-04-03T05:00:07.785Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic motivations behind these hostilities. Iran's actions be influenced by internal pressures, such as economic sanctions and domestic unrest, which are not being highlighted. Additionally, the geopolitical chess game involving major powers like the US, Russia, and China, who have vested interests in the region, is not being adequately covered.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing support for Iran's actions as a defense against perceived aggression, while others condemn the strikes as reckless and dangerous. Memes and conspiracy theories are circulating, suggesting hidden alliances and ulterior motives behind the attacks, further fueling online debates.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a Middle Eastern city skyline at dusk, with pieces symbolizing different countries and a shadowy hand poised to make a move.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=5uzn8gIyw3Y",
+        "embed_id": "5uzn8gIyw3Y",
+        "title": "Terrifying moment Iranian missile strikes yards from US troops taking cover from attack",
+        "duration": 66
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
+        "embed_id": "ELU-UAQ0OxY",
+        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
+        "duration": 231
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=9I0JFlI48EQ",
+        "embed_id": "9I0JFlI48EQ",
+        "title": "Iran Attacks Israel – Trump’s Shock Move Changes Everything",
+        "duration": 912
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=PYcxJK-SxC8",
+        "embed_id": "PYcxJK-SxC8",
+        "title": "Iran’s Massive Missile Attack on Israel | 80+ Strikes & US Bases Hit?”",
+        "duration": 945
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=nLydVjP4mDc",
+        "embed_id": "nLydVjP4mDc",
+        "title": "Iran missile strike hits israeli chemical plant, Beersheba panics and war fears rise.",
+        "duration": 93
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TousiTVOfficial/status/2039861574668620004",
+        "embed_id": "2039861574668620004",
+        "title": "IDF releases footage of strikes targeting IRGC missile launchers across western and central Iran.\n\nThe Israeli Air Force dropped ~140 munitions on 50 ",
+        "author": "TousiTVOfficial"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/A_M_R_M1/status/2039844124442931347",
+        "embed_id": "2039844124442931347",
+        "title": "🚨 Panic in Tel Aviv, reports Fox News. Live footage shows highways completely paralyzed by Iranian missile strikes. Drivers are forced to abandon the",
+        "author": "A_M_R_M1"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43082",
+        "embed_id": "warmonitors/43082",
+        "title": "⚡️Israel: damage in Petah Tikva after Iranian missile attack",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/nA1-oKiepNtXFUVu3sp8jKmbRJ_wd35fzBcUPDnELD-9VEnoQfD1v6PW1NElR2pxFdhN97oAHKMcm9y5o0KsffDo6vrSWFioxA3FubJ5R_fzUYSluHgyDoQvyp8AhUSBJ1heUVIftM_j2FEeWNFfi3QmWXxJAxYm3U7ZmoAyjkMXmXnUnvuozrBI74TWeboutnJGbxJgSuTRyzXiN-nXXzX8Vj4GTfZfmVK1MzqXa2JVe7oMg8acBqMjDMSDyPitAW9XmnzfIES2yeBM5MQtLMnaHFAis_5SJC8cVvXzc-oGIW0nseI3-NPUVcWC0p3ny4lMPQzKsrY1ZxOsZ8jNWg'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16291",
+        "embed_id": "France24_en/16291",
+        "title": "Middle East live: Israeli air defences intercept multiple Iranian missile waves\nIsraeli air defences intercepted three waves of Iranian missile fire e",
+        "author": "france24_en"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1saa6rd/the_us_has_struck_11000_targets_in_iran_so_why/",
+        "embed_id": "1saa6rd",
+        "title": "The US Has Struck 11,000 Targets in Iran — So Why Are Missiles Still Flying Every Single Day?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/apexlegends/comments/1saj9ss/amazon_web_services_got_disrupted_by_iran_missile/",
+        "embed_id": "1saj9ss",
+        "title": "Amazon web services got disrupted by IRAN missile."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1sb1fil/trump_said_iran_is_decimated_the_cia_disagrees/",
+        "embed_id": "1sb1fil",
+        "title": "Trump Said Iran Is 'Decimated' — The CIA Disagrees. Half Their Missile Launchers Are Still Standing"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/USIranWar/comments/1saxykg/us_intelligence_assesses_iran_maintains/",
+        "embed_id": "1saxykg",
+        "title": "US intelligence assesses Iran maintains significant missile launching capability, sources say"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UkraineWarRoom/comments/1sat5wq/one_missile_half_a_fleet_irans_strike_on_saudi/",
+        "embed_id": "1sat5wq",
+        "title": "One Missile, Half a Fleet: iran's Strike on Saudi Airbase May Have Permanently Grounded the EC-130H Compass Call"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=5uzn8gIyw3Y",
+        "embed_id": "5uzn8gIyw3Y",
+        "title": "Terrifying moment Iranian missile strikes yards from US troops taking cover from attack",
+        "channel": "The Sun",
+        "duration": 66
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
+        "embed_id": "ELU-UAQ0OxY",
+        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
+        "channel": "Fox News",
+        "duration": 231
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=9I0JFlI48EQ",
+        "embed_id": "9I0JFlI48EQ",
+        "title": "Iran Attacks Israel – Trump’s Shock Move Changes Everything",
+        "channel": "WORLD MILITARY UPDATE ",
+        "duration": 912
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=PYcxJK-SxC8",
+        "embed_id": "PYcxJK-SxC8",
+        "title": "Iran’s Massive Missile Attack on Israel | 80+ Strikes & US Bases Hit?”",
+        "channel": "WORLD MILITARY UPDATE ",
+        "duration": 945
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=nLydVjP4mDc",
+        "embed_id": "nLydVjP4mDc",
+        "title": "Iran missile strike hits israeli chemical plant, Beersheba panics and war fears rise.",
+        "channel": "Al Jazeera English",
+        "duration": 93
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/TousiTVOfficial/status/2039861574668620004",
+        "embed_id": "2039861574668620004",
+        "title": "IDF releases footage of strikes targeting IRGC missile launchers across western and central Iran.\n\nThe Israeli Air Force dropped ~140 munitions on 50 ",
+        "author": "TousiTVOfficial"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/A_M_R_M1/status/2039844124442931347",
+        "embed_id": "2039844124442931347",
+        "title": "🚨 Panic in Tel Aviv, reports Fox News. Live footage shows highways completely paralyzed by Iranian missile strikes. Drivers are forced to abandon the",
+        "author": "A_M_R_M1"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43082",
+        "embed_id": "warmonitors/43082",
+        "title": "⚡️Israel: damage in Petah Tikva after Iranian missile attack",
+        "author": "warmonitors",
+        "thumbnail": "https://cdn4.telesco.pe/file/nA1-oKiepNtXFUVu3sp8jKmbRJ_wd35fzBcUPDnELD-9VEnoQfD1v6PW1NElR2pxFdhN97oAHKMcm9y5o0KsffDo6vrSWFioxA3FubJ5R_fzUYSluHgyDoQvyp8AhUSBJ1heUVIftM_j2FEeWNFfi3QmWXxJAxYm3U7ZmoAyjkMXmXnUnvuozrBI74TWeboutnJGbxJgSuTRyzXiN-nXXzX8Vj4GTfZfmVK1MzqXa2JVe7oMg8acBqMjDMSDyPitAW9XmnzfIES2yeBM5MQtLMnaHFAis_5SJC8cVvXzc-oGIW0nseI3-NPUVcWC0p3ny4lMPQzKsrY1ZxOsZ8jNWg'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16291",
+        "embed_id": "France24_en/16291",
+        "title": "Middle East live: Israeli air defences intercept multiple Iranian missile waves\nIsraeli air defences intercepted three waves of Iranian missile fire e",
+        "author": "france24_en"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1saa6rd/the_us_has_struck_11000_targets_in_iran_so_why/",
+        "embed_id": "1saa6rd",
+        "title": "The US Has Struck 11,000 Targets in Iran — So Why Are Missiles Still Flying Every Single Day?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
+        "embed_id": "1sagrds",
+        "title": "Trump mulls seizing Kharg island"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/apexlegends/comments/1saj9ss/amazon_web_services_got_disrupted_by_iran_missile/",
+        "embed_id": "1saj9ss",
+        "title": "Amazon web services got disrupted by IRAN missile."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1sb1fil/trump_said_iran_is_decimated_the_cia_disagrees/",
+        "embed_id": "1sb1fil",
+        "title": "Trump Said Iran Is 'Decimated' — The CIA Disagrees. Half Their Missile Launchers Are Still Standing"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/USIranWar/comments/1saxykg/us_intelligence_assesses_iran_maintains/",
+        "embed_id": "1saxykg",
+        "title": "US intelligence assesses Iran maintains significant missile launching capability, sources say"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UkraineWarRoom/comments/1sat5wq/one_missile_half_a_fleet_irans_strike_on_saudi/",
+        "embed_id": "1sat5wq",
+        "title": "One Missile, Half a Fleet: iran's Strike on Saudi Airbase May Have Permanently Grounded the EC-130H Compass Call"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-03.png"
+  },
+  {
     "topic": "Iran Bridge Strike Casualties",
     "summary": "An airstrike in Iran led to the collapse of a significant bridge, causing at least 8 fatalities and 95 injuries. The incident has heightened regional tensions, with the United States calling for diplomatic discussions to prevent further conflict. Iran has responded with threats against American allies, indicating a possible escalation in hostilities.",
     "severity": "major",
@@ -443,308 +665,6 @@
         "url": "https://reddit.com/r/Conservative/comments/1sb0bpw/iran_announces_threats_following_reported_us/",
         "embed_id": "1sb0bpw",
         "title": "Iran announces threats following reported US airstrikes collapsing nation's key bridge"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-02.png"
-  },
-  {
-    "topic": "U.S. Urges Immediate Evacuation of Americans in Iraq",
-    "summary": "The U.S. government has called for an immediate evacuation of American citizens from Iraq, citing increased threats from Iran-backed militias. This decision highlights the escalating tensions between the U.S. and Iran, with Iraq positioned as a potential conflict zone. The directive emphasizes the volatile security environment and the U.S.'s priority on protecting its nationals overseas.",
-    "severity": "major",
-    "detected_at": "2026-04-02T15:00:07.990Z",
-    "last_updated": "2026-04-03T03:02:58.732Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this evacuation. The focus remains on immediate threats, but the underlying issue is the strategic power struggle between the U.S. and Iran for influence in the Middle East. This evacuation also be a precursor to more aggressive military posturing or diplomatic maneuvers, which are not being openly discussed.",
-    "social_summary": "Social media is buzzing with speculation about the potential for a new conflict in the Middle East, with users drawing parallels to past U.S. military interventions. Memes and viral posts are highlighting the perceived cyclical nature of U.S. foreign policy in the region. Conspiracy theories are circulating about the timing of the evacuation, suggesting ulterior motives related to domestic politics or economic interests.",
-    "image_prompt": "A dramatic editorial photo of an American passport lying on a dusty Baghdad street, with a backdrop of distant, blurred military vehicles and a setting sun casting long shadows, symbolizing the urgency and gravity of the evacuation.",
-    "sources": [],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=2ShFYNalEms",
-        "embed_id": "2ShFYNalEms",
-        "title": "US embassy urges American citizens to leave Iraq immediately, warning of possible attacks"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ADz3uQ9-aO4",
-        "embed_id": "ADz3uQ9-aO4",
-        "title": "State Department Urges U.S. Government Employees To Leave Iraq",
-        "duration": 55
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=DswXuIS8-KE",
-        "embed_id": "DswXuIS8-KE",
-        "title": "US orders non-emergency personnel out of Iraq",
-        "duration": 178
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ooWmEBZww4U",
-        "embed_id": "ooWmEBZww4U",
-        "title": "US Embassy Iraq Evacuation: Washington issues urgent travel warning| US- NewsX World",
-        "duration": 55
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=hkxoUJ5D_Kk",
-        "embed_id": "hkxoUJ5D_Kk",
-        "title": "Breaking: U.S. Orders All Americans to Leave Iraq Immediately",
-        "duration": 118
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1sa1cwv/aita_for_admitting_to_my_son_that_i_love_his/",
-        "embed_id": "1sa1cwv",
-        "title": "AITA for admitting to my son that I love his mother more than him and telling him he's acting self centered?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1sa70tw/my_mil_wants_us_to_file_for_bankruptcy_for_her/",
-        "embed_id": "1sa70tw",
-        "title": "My MIL wants us to file for bankruptcy for her debt"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Destiny/comments/1saaums/socialism_was_not_achieved_in_41_days_the/",
-        "embed_id": "1saaums",
-        "title": "Socialism was not achieved in 41 days. The democrat party is unsalvageable, Billions must die."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1saitih/president_of_iran_debunks_trumps_claims_about_the/",
-        "embed_id": "1saitih",
-        "title": "President of Iran Debunks Trumps claims about the war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/atheism/comments/1s9qa9z/breaking_ffrf_court_victory_federal_judge_rules/",
-        "embed_id": "1s9qa9z",
-        "title": "Breaking — FFRF court victory! Federal judge rules Arkansas Ten Commandments monument unconstitutional"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NatureofPredators/comments/1s9tlfp/thetrials_and_tribulations_of_siffy_a_nature_of/",
-        "embed_id": "1s9tlfp",
-        "title": "TheTrials and Tribulations of Siffy - A Nature of Himonly side story"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NatureofPredators/comments/1s9xk1w/if_history_had_gone_different_30/",
-        "embed_id": "1s9xk1w",
-        "title": "If history had gone different (30/?)"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/atheism/comments/1s9vg6h/court_blocks_attempt_to_turn_churches_into/",
-        "embed_id": "1s9vg6h",
-        "title": "Court blocks attempt to turn churches into tax-free political machines (for now)"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85764",
-        "embed_id": "intelslava/85764",
-        "title": "🇸🇦🇶🇦🇦🇪🇮🇷The Gulf countries are considering the construction of new pipelines to bypass the Strait of Hormuz due to the threat of long-term Ira",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43060",
-        "embed_id": "warmonitors/43060",
-        "title": "⚡️Footage reportedly captures the moment an Iranian ballistic missile explodes right next to U.S. troops as they take cover at an American base on Mar",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/Ao45XG7YnLEkBT_8-98_EDzm6LUuAM6QICoyzg9jmW_ysPxNVYNyylZjsV8Z33oAJ7Ct2EzNTs_9vineNN25-E00P3gUVy3TZISVK2ri5u4zlIgaJiuGlhsc3mUEgHhd0B7_IC2R_ARlvmMOlup9so67Ntpwt2xW2cWgMedoWRoBuR1KnSSdSrtixXVQu92L-kd8gV_3Dh82jk6BnqSowfqMnxpOPZOyFXfkgbmjwMZetUovXMb0une1jSzWKZjKfLmqvwg97ddpuOqfrslKAU2CgPy_xMW6I1FlJ1Olsy0MjZ1AF-xhDKSsElfYg5mkjcfE3pwWHtxM3-c7ZS7YBw'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/bergencounty/comments/1sai61z/paramus_says_american_dream_malls_sunday_sales/",
-        "embed_id": "1sai61z",
-        "title": "Paramus Says American Dream Mall's Sunday Sales Flatly Violate State Law"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/democrats/comments/1saq4dt/just_a_reminder/",
-        "embed_id": "1saq4dt",
-        "title": "Just a reminder"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Defeat_Project_2025/comments/1sag9cm/trump_says_hes_considering_pulling_us_out_of/",
-        "embed_id": "1sag9cm",
-        "title": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30541",
-        "embed_id": "Newsmax/30541",
-        "title": "REPORT: Pentagon chief Pete Hegseth has asked U.S. Army Chief of Staff Randy George to step down and take immediate retirement, according to a report.",
-        "author": "newsmax"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Baking/comments/1saonva/the_worth_killing_a_duchess_over_cake_my/",
-        "embed_id": "1saonva",
-        "title": "The \"Worth Killing a Duchess Over\" Cake: My realization of the 1870s Windmill (Pineapple &amp; Coconut) Cake"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/popheads/comments/1saqgys/1999_jpop_ultimate_rate_hikaru_utada_vs_ayumi/",
-        "embed_id": "1saqgys",
-        "title": "1999 J-Pop Ultimate Rate (Hikaru Utada vs. Ayumi Hamasaki vs. Sheena Ringo)"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LeopardsAteMyFace/comments/1sb01kh/suddenly_not_a_republican_soon_hell_say_he_didnt/",
-        "embed_id": "1sb01kh",
-        "title": "Suddenly “not a Republican…”, soon he’ll say he didn’t vote for Trump."
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=2ShFYNalEms",
-        "embed_id": "2ShFYNalEms",
-        "title": "US embassy urges American citizens to leave Iraq immediately, warning of possible attacks",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ADz3uQ9-aO4",
-        "embed_id": "ADz3uQ9-aO4",
-        "title": "State Department Urges U.S. Government Employees To Leave Iraq",
-        "channel": "CBS Miami",
-        "duration": 55
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=DswXuIS8-KE",
-        "embed_id": "DswXuIS8-KE",
-        "title": "US orders non-emergency personnel out of Iraq",
-        "channel": "CGTN America",
-        "duration": 178
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ooWmEBZww4U",
-        "embed_id": "ooWmEBZww4U",
-        "title": "US Embassy Iraq Evacuation: Washington issues urgent travel warning| US- NewsX World",
-        "channel": "NewsX World",
-        "duration": 55
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=hkxoUJ5D_Kk",
-        "embed_id": "hkxoUJ5D_Kk",
-        "title": "Breaking: U.S. Orders All Americans to Leave Iraq Immediately",
-        "channel": "Sensor Studio",
-        "duration": 118
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1sa1cwv/aita_for_admitting_to_my_son_that_i_love_his/",
-        "embed_id": "1sa1cwv",
-        "title": "AITA for admitting to my son that I love his mother more than him and telling him he's acting self centered?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BestofRedditorUpdates/comments/1sa70tw/my_mil_wants_us_to_file_for_bankruptcy_for_her/",
-        "embed_id": "1sa70tw",
-        "title": "My MIL wants us to file for bankruptcy for her debt"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Destiny/comments/1saaums/socialism_was_not_achieved_in_41_days_the/",
-        "embed_id": "1saaums",
-        "title": "Socialism was not achieved in 41 days. The democrat party is unsalvageable, Billions must die."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1saitih/president_of_iran_debunks_trumps_claims_about_the/",
-        "embed_id": "1saitih",
-        "title": "President of Iran Debunks Trumps claims about the war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/atheism/comments/1s9qa9z/breaking_ffrf_court_victory_federal_judge_rules/",
-        "embed_id": "1s9qa9z",
-        "title": "Breaking — FFRF court victory! Federal judge rules Arkansas Ten Commandments monument unconstitutional"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NatureofPredators/comments/1s9tlfp/thetrials_and_tribulations_of_siffy_a_nature_of/",
-        "embed_id": "1s9tlfp",
-        "title": "TheTrials and Tribulations of Siffy - A Nature of Himonly side story"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NatureofPredators/comments/1s9xk1w/if_history_had_gone_different_30/",
-        "embed_id": "1s9xk1w",
-        "title": "If history had gone different (30/?)"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/atheism/comments/1s9vg6h/court_blocks_attempt_to_turn_churches_into/",
-        "embed_id": "1s9vg6h",
-        "title": "Court blocks attempt to turn churches into tax-free political machines (for now)"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85764",
-        "embed_id": "intelslava/85764",
-        "title": "🇸🇦🇶🇦🇦🇪🇮🇷The Gulf countries are considering the construction of new pipelines to bypass the Strait of Hormuz due to the threat of long-term Ira",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43060",
-        "embed_id": "warmonitors/43060",
-        "title": "⚡️Footage reportedly captures the moment an Iranian ballistic missile explodes right next to U.S. troops as they take cover at an American base on Mar",
-        "author": "warmonitors",
-        "thumbnail": "https://cdn4.telesco.pe/file/Ao45XG7YnLEkBT_8-98_EDzm6LUuAM6QICoyzg9jmW_ysPxNVYNyylZjsV8Z33oAJ7Ct2EzNTs_9vineNN25-E00P3gUVy3TZISVK2ri5u4zlIgaJiuGlhsc3mUEgHhd0B7_IC2R_ARlvmMOlup9so67Ntpwt2xW2cWgMedoWRoBuR1KnSSdSrtixXVQu92L-kd8gV_3Dh82jk6BnqSowfqMnxpOPZOyFXfkgbmjwMZetUovXMb0une1jSzWKZjKfLmqvwg97ddpuOqfrslKAU2CgPy_xMW6I1FlJ1Olsy0MjZ1AF-xhDKSsElfYg5mkjcfE3pwWHtxM3-c7ZS7YBw'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/bergencounty/comments/1sai61z/paramus_says_american_dream_malls_sunday_sales/",
-        "embed_id": "1sai61z",
-        "title": "Paramus Says American Dream Mall's Sunday Sales Flatly Violate State Law"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/democrats/comments/1saq4dt/just_a_reminder/",
-        "embed_id": "1saq4dt",
-        "title": "Just a reminder"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Defeat_Project_2025/comments/1sag9cm/trump_says_hes_considering_pulling_us_out_of/",
-        "embed_id": "1sag9cm",
-        "title": "Trump says he's considering pulling U.S. out of 'paper tiger' NATO"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30541",
-        "embed_id": "Newsmax/30541",
-        "title": "REPORT: Pentagon chief Pete Hegseth has asked U.S. Army Chief of Staff Randy George to step down and take immediate retirement, according to a report.",
-        "author": "newsmax"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Baking/comments/1saonva/the_worth_killing_a_duchess_over_cake_my/",
-        "embed_id": "1saonva",
-        "title": "The \"Worth Killing a Duchess Over\" Cake: My realization of the 1870s Windmill (Pineapple &amp; Coconut) Cake"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/popheads/comments/1saqgys/1999_jpop_ultimate_rate_hikaru_utada_vs_ayumi/",
-        "embed_id": "1saqgys",
-        "title": "1999 J-Pop Ultimate Rate (Hikaru Utada vs. Ayumi Hamasaki vs. Sheena Ringo)"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LeopardsAteMyFace/comments/1sb01kh/suddenly_not_a_republican_soon_hell_say_he_didnt/",
-        "embed_id": "1sb01kh",
-        "title": "Suddenly “not a Republican…”, soon he’ll say he didn’t vote for Trump."
       }
     ],
     "image_file": "/images/breaking_2026-04-02.png"
