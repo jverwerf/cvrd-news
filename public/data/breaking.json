@@ -1,5 +1,223 @@
 [
   {
+    "topic": "Iran Strike Near Nuclear Facility",
+    "summary": "A strike has occurred near Iran's Bushehr nuclear facility, leading to the death of a security guard and damage to a nearby building. This incident heightens existing tensions in the region, particularly concerning the safety and security of nuclear sites. The attack's origins and motivations remain unclear, adding to the complexity of the geopolitical situation.",
+    "severity": "major",
+    "detected_at": "2026-04-04T11:00:07.183Z",
+    "last_updated": "2026-04-04T11:00:07.183Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential involvement of external state actors who have vested interests in destabilizing Iran's nuclear capabilities. The focus remains on the immediate incident without delving into the broader geopolitical chess game involving regional powers and their proxies. Additionally, the economic implications of such strikes on global oil markets and regional stability are largely ignored.",
+    "social_summary": "Social media is rife with speculation, with some users suggesting the involvement of foreign intelligence agencies, while others blame internal sabotage. Memes and viral posts are drawing parallels to past covert operations against Iran's nuclear program, fueling conspiracy theories. The incident has sparked debates on the effectiveness of Iran's security measures and the potential for further escalation.",
+    "image_prompt": "A dramatic, symbolic image of a lone guard standing in front of a massive, shadowy nuclear facility at dusk, with a distant explosion illuminating the sky, capturing the tension and uncertainty surrounding the event.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=V_qVzmk3pLI",
+        "embed_id": "V_qVzmk3pLI",
+        "title": "Iran launches attack on Israel’s top secret nuclear facility in Negev desert | BBC News",
+        "duration": 411
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=LyATNwXUlWg",
+        "embed_id": "LyATNwXUlWg",
+        "title": "Iran strikes near nuclear facility in Israel | BBC News",
+        "duration": 849
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=t-f_u7GDd8w",
+        "embed_id": "t-f_u7GDd8w",
+        "title": "Iran strikes Israeli towns near nuclear site | BBC News",
+        "duration": 191
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=bfJiBmiI7r4",
+        "embed_id": "bfJiBmiI7r4",
+        "title": "Is the Iran war escalating? Strikes near nuclear sites in Natanz and Dimona | DW News",
+        "duration": 1079
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=BhiJoLcU3cM",
+        "embed_id": "BhiJoLcU3cM",
+        "title": "How striking Iran&#39;s nuclear power plant may impact the entire region",
+        "duration": 72
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=82OgUPn-xGU",
+        "embed_id": "82OgUPn-xGU",
+        "title": "JUST IN: Iran says Natanz nuclear facility HIT in airstrike",
+        "duration": 423
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=7ON0HwnJCtM",
+        "embed_id": "7ON0HwnJCtM",
+        "title": "War with Iran enters fourth week as strikes target nuclear facilities",
+        "duration": 174
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2037088415640936522",
+        "embed_id": "2037088415640936522",
+        "title": "🇷🇺🇺🇸🇮🇷 Russia's foreign ministry accused the U.S. and Israel of trying to spark a nuclear disaster with a second strike near Iran's Bushehr nucl",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/VigilantFox/status/2034420943464886377",
+        "embed_id": "2034420943464886377",
+        "title": "REPORT: A missile strike near Iran’s Bushehr nuclear facility has triggered a Russian evacuation, and Moscow is now warning Israel it may have crossed",
+        "author": "VigilantFox"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
+        "embed_id": "1sbjb2a",
+        "title": "Open letter to our Government - What are our values?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1sbuafc/usisraeli_doubletap_strike_on_the_b1_bridge/",
+        "embed_id": "1sbuafc",
+        "title": "US/Israeli double-tap strike on the B1 bridge happened while Iranians were celebrating ‘Day of Nature’ and while families were out and about in the ar"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1sbo0p3/another_us_jet_lost_a10_warthog_attack_plane/",
+        "embed_id": "1sbo0p3",
+        "title": "Another US Jet Lost: A-10 Warthog Attack Plane Crashes Near Strait of Hormuz After Iran F-15 'Strike'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/geopolitics/comments/1sbeuc4/13_us_bases_in_middle_east_nearly_uninhabitable/",
+        "embed_id": "1sbeuc4",
+        "title": "13 U.S. Bases in Middle East Nearly Uninhabitable After Iran Missile Strikes — CENTCOM Forced to Disperse Troops as War Reshapes American Force Postur"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/pwnhub/comments/1sbopkg/irans_strikes_on_oracle_facilities_put_cloud/",
+        "embed_id": "1sbopkg",
+        "title": "Iran's Strikes on Oracle Facilities Put Cloud Infrastructure Security on the Map"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProIran/comments/1sbip5b/iaeas_silence_makes_it_complicit_in_usisraeli/",
+        "embed_id": "1sbip5b",
+        "title": "IAEA’s silence makes it complicit in US-Israeli attacks on Iran’s nuclear facilities: AEOI"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=V_qVzmk3pLI",
+        "embed_id": "V_qVzmk3pLI",
+        "title": "Iran launches attack on Israel’s top secret nuclear facility in Negev desert | BBC News",
+        "channel": "BBC News",
+        "duration": 411
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=LyATNwXUlWg",
+        "embed_id": "LyATNwXUlWg",
+        "title": "Iran strikes near nuclear facility in Israel | BBC News",
+        "channel": "BBC News",
+        "duration": 849
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=t-f_u7GDd8w",
+        "embed_id": "t-f_u7GDd8w",
+        "title": "Iran strikes Israeli towns near nuclear site | BBC News",
+        "channel": "BBC News",
+        "duration": 191
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=bfJiBmiI7r4",
+        "embed_id": "bfJiBmiI7r4",
+        "title": "Is the Iran war escalating? Strikes near nuclear sites in Natanz and Dimona | DW News",
+        "channel": "DW News",
+        "duration": 1079
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=BhiJoLcU3cM",
+        "embed_id": "BhiJoLcU3cM",
+        "title": "How striking Iran&#39;s nuclear power plant may impact the entire region",
+        "channel": "CNN",
+        "duration": 72
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=82OgUPn-xGU",
+        "embed_id": "82OgUPn-xGU",
+        "title": "JUST IN: Iran says Natanz nuclear facility HIT in airstrike",
+        "channel": "Fox News",
+        "duration": 423
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=7ON0HwnJCtM",
+        "embed_id": "7ON0HwnJCtM",
+        "title": "War with Iran enters fourth week as strikes target nuclear facilities",
+        "channel": "CBS News",
+        "duration": 174
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2037088415640936522",
+        "embed_id": "2037088415640936522",
+        "title": "🇷🇺🇺🇸🇮🇷 Russia's foreign ministry accused the U.S. and Israel of trying to spark a nuclear disaster with a second strike near Iran's Bushehr nucl",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/VigilantFox/status/2034420943464886377",
+        "embed_id": "2034420943464886377",
+        "title": "REPORT: A missile strike near Iran’s Bushehr nuclear facility has triggered a Russian evacuation, and Moscow is now warning Israel it may have crossed",
+        "author": "VigilantFox"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
+        "embed_id": "1sbjb2a",
+        "title": "Open letter to our Government - What are our values?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1sbuafc/usisraeli_doubletap_strike_on_the_b1_bridge/",
+        "embed_id": "1sbuafc",
+        "title": "US/Israeli double-tap strike on the B1 bridge happened while Iranians were celebrating ‘Day of Nature’ and while families were out and about in the ar"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TimesNow/comments/1sbo0p3/another_us_jet_lost_a10_warthog_attack_plane/",
+        "embed_id": "1sbo0p3",
+        "title": "Another US Jet Lost: A-10 Warthog Attack Plane Crashes Near Strait of Hormuz After Iran F-15 'Strike'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/geopolitics/comments/1sbeuc4/13_us_bases_in_middle_east_nearly_uninhabitable/",
+        "embed_id": "1sbeuc4",
+        "title": "13 U.S. Bases in Middle East Nearly Uninhabitable After Iran Missile Strikes — CENTCOM Forced to Disperse Troops as War Reshapes American Force Postur"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/pwnhub/comments/1sbopkg/irans_strikes_on_oracle_facilities_put_cloud/",
+        "embed_id": "1sbopkg",
+        "title": "Iran's Strikes on Oracle Facilities Put Cloud Infrastructure Security on the Map"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProIran/comments/1sbip5b/iaeas_silence_makes_it_complicit_in_usisraeli/",
+        "embed_id": "1sbip5b",
+        "title": "IAEA’s silence makes it complicit in US-Israeli attacks on Iran’s nuclear facilities: AEOI"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-04.png"
+  },
+  {
     "topic": "Afghanistan Earthquake",
     "summary": "A powerful earthquake has struck Afghanistan, leading to the tragic deaths of eight members of a single family. This disaster underscores the region's susceptibility to seismic activity and compounds the existing humanitarian challenges faced by the Afghan population. The earthquake has drawn attention to the need for improved infrastructure and emergency response capabilities in the country.",
     "severity": "major",
@@ -802,102 +1020,5 @@
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
-  },
-  {
-    "topic": "Drone Strike on Sudan Hospital",
-    "summary": "A drone strike hit a hospital in Sudan, killing at least 10 people, according to Médecins Sans Frontières (MSF). This attack highlights ongoing violence and humanitarian issues in the region. The international community has condemned the strike, stressing the importance of protecting medical facilities in conflict areas.",
-    "severity": "major",
-    "detected_at": "2026-04-03T21:00:07.330Z",
-    "last_updated": "2026-04-04T07:00:53.036Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential origins of the drone or the parties responsible for the strike. There is a lack of discussion on the geopolitical interests that be influencing the conflict in Sudan, including foreign powers' involvement or support for local factions. The economic motivations behind the conflict, such as control over resources, remain unexplored.",
-    "social_summary": "Social media is buzzing with outrage over the attack, with users sharing graphic images and videos purportedly from the scene. Memes criticizing the international community's 'thoughts and prayers' response are circulating widely. Conspiracy theories are emerging, suggesting foreign governments' involvement in the strike, though these lack evidence.",
-    "image_prompt": "A dramatic editorial photo of a hospital in ruins, with a lone medical worker standing amidst the debris, symbolizing resilience and the humanitarian crisis in conflict zones.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/3/drone-strike-on-sudan-hospital-kills-10-medical-charity-msf-says?traffic_source=rss",
-        "lean": "center",
-        "title": "Drone strike on Sudan hospital kills 10, medical charity MSF says"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=OU3XdjabWtw",
-        "embed_id": "OU3XdjabWtw",
-        "title": "Dozens dead after drone strikes on Sudan kindergarten and hospital | BBC News",
-        "duration": 247
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GKABiLnb3LA",
-        "embed_id": "GKABiLnb3LA",
-        "title": "Dozens killed in drone attack on hospital in Sudan’s Darfur",
-        "duration": 550
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=4PaNuPyO9Dc",
-        "embed_id": "4PaNuPyO9Dc",
-        "title": "Sudan drone attack on key hospital killed 64 people during Eid, WHO says",
-        "duration": 181
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/khali_DJo/status/1936520432800161996",
-        "embed_id": "1936520432800161996",
-        "title": "In yet another horrific chapter of Sudan’s ongoing war, the Sudanese Armed Forces launched a drone strike on Muglad Hospital in West Kordofan , a plac",
-        "author": "khali_DJo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BSonblast/status/2039910894122180983",
-        "embed_id": "2039910894122180983",
-        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
-        "author": "BSonblast"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=OU3XdjabWtw",
-        "embed_id": "OU3XdjabWtw",
-        "title": "Dozens dead after drone strikes on Sudan kindergarten and hospital | BBC News",
-        "channel": "BBC News",
-        "duration": 247
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GKABiLnb3LA",
-        "embed_id": "GKABiLnb3LA",
-        "title": "Dozens killed in drone attack on hospital in Sudan’s Darfur",
-        "channel": "Al Jazeera English",
-        "duration": 550
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=4PaNuPyO9Dc",
-        "embed_id": "4PaNuPyO9Dc",
-        "title": "Sudan drone attack on key hospital killed 64 people during Eid, WHO says",
-        "channel": "FTV ENGLISH",
-        "duration": 181
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/khali_DJo/status/1936520432800161996",
-        "embed_id": "1936520432800161996",
-        "title": "In yet another horrific chapter of Sudan’s ongoing war, the Sudanese Armed Forces launched a drone strike on Muglad Hospital in West Kordofan , a plac",
-        "author": "khali_DJo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BSonblast/status/2039910894122180983",
-        "embed_id": "2039910894122180983",
-        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
-        "author": "BSonblast"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-03.png"
   }
 ]
