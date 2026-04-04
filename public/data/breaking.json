@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iranian Missile Attack on Israel",
-    "summary": "Iran has launched a missile attack targeting residential areas in central Israel, marking a significant escalation in the ongoing conflict between the two nations. This attack has heightened tensions in the region and raised concerns about potential military responses from Israel and its allies. The international community is closely monitoring the situation, fearing further destabilization in the Middle East.",
+    "summary": "Iran has launched a missile attack on residential areas in central Israel, significantly escalating the conflict between the two countries. This act has intensified regional tensions and prompted concerns about possible military retaliation from Israel and its allies. The international community is on high alert, worried about further destabilization in the already volatile Middle East.",
     "severity": "critical",
     "detected_at": "2026-04-04T05:00:06.815Z",
-    "last_updated": "2026-04-04T05:00:06.815Z",
+    "last_updated": "2026-04-04T07:00:20.553Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to escalate the conflict at this particular moment. The timing of the attack be linked to internal political pressures within Iran or strategic calculations related to its regional influence. Additionally, the role of external powers, such as the United States and Russia, in either exacerbating or mitigating the conflict is not being thoroughly examined.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing solidarity with Israel and others condemning the attack as a justified response to Israeli actions. Memes and hashtags are circulating, with conspiracy theories suggesting foreign involvement or ulterior motives behind the attack. The discourse is highly charged, reflecting deep-seated biases and historical grievances.",
-    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, casting a shadow over a peaceful residential neighborhood, symbolizing the sudden disruption of normalcy and the looming threat of conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive such aggressive actions. The attack is not just a spontaneous act of aggression but is deeply rooted in a complex web of regional power struggles, proxy wars, and international alliances. The economic interests tied to arms sales and military aid in the region are also largely ignored in mainstream narratives.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage and calling for immediate retaliation, while others urge for de-escalation and peace talks. Conspiracy theories are circulating, suggesting hidden agendas involving global superpowers manipulating the conflict for their own gain. Memes and viral posts are highlighting the human cost of the conflict, emphasizing the impact on civilians.",
+    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky over a cityscape, symbolizing the tension and impending conflict. The city below is illuminated, with people looking up in a mix of fear and awe, capturing the human element of geopolitical strife.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -46,6 +46,20 @@
         "duration": 127
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
+        "embed_id": "wNNgYjuPcS4",
+        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
+        "duration": 53
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
+        "embed_id": "lGVg_d0CHcA",
+        "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
+        "duration": 160
+      },
+      {
         "platform": "x",
         "url": "https://x.com/AJENews/status/2040104540079624667",
         "embed_id": "2040104540079624667",
@@ -58,13 +72,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/bonzerbarry/status/2039752728092545151",
-        "embed_id": "2039752728092545151",
-        "title": ">Israeli platform: Multi-front attack on Israel: In the latest barrages, fire from Iran, Yemen, and Lebanon.\n>Israeli Broadcasting Authority: An Irani",
-        "author": "bonzerbarry"
       },
       {
         "platform": "x",
@@ -132,6 +139,29 @@
         "duration": 30
       },
       {
+        "platform": "x",
+        "url": "https://x.com/Shayan86/status/2040237841398059409",
+        "embed_id": "2040237841398059409",
+        "title": "Daytime footage shows the impact crater caused by an Iranian ballistic missile attack on Petah Tikva, Israel.\n\nThe severely damaged warehouse appears ",
+        "author": "Shayan86"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2039964985384640640",
+        "embed_id": "2039964985384640640",
+        "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85849",
+        "embed_id": "intelslava/85849",
+        "title": "🇮🇷🇮🇱The arrival of a cassette warhead of an Iranian ballistic missile over central Israel.\n\nThe footage shows the consequences of the detonation o",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZyX-tsLxQoYe2aBmMTbcVCmfhK8DrpYnMJJNRoQDUjSi9HbZssoti_WwwThrNVW58fv928QXny_Fb2XrBecsfCnEsSPKsjL3Q5yMG4XjKYTFGJOevWkOfRpNAC-OOX1EbwFbSm4SQRYEbtbbLu6tZzwX1hu1jq2crBuDFiaXwWHU_yLSK5_U2G9HFTNLkpv0izARUo2OO5uWySieTtE68j8CE01cYYmdrBNPip2JpaF9CqixT-5WBU8MUo7eYMIru7CbzW1Is-yDTbYm_Ld-j2ui8VH-NnPgjk76RUV9MuIRNNGKglqYM8ZixuBvfZF6IuXs3t7EFWi6KWXCWTcMWg'",
+        "duration": 30
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
         "embed_id": "1sb5xu2",
@@ -160,6 +190,12 @@
         "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
         "embed_id": "1sbrz8y",
         "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PoliticalDiscussion/comments/1sbf4tq/which_is_more_believable_white_house_and_pentagon/",
+        "embed_id": "1sbf4tq",
+        "title": "Which is more believable, White House and Pentagon claims that Iran's missile and drone capability is almost completely destroyed or U.S. intelligence"
       }
     ],
     "youtube_videos": [
@@ -188,6 +224,20 @@
         "title": "Iranian Missile Strike Rocks Petah Tikva",
         "channel": "New York Post",
         "duration": 127
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
+        "embed_id": "wNNgYjuPcS4",
+        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
+        "channel": "Al Jazeera English",
+        "duration": 53
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
+        "embed_id": "lGVg_d0CHcA",
+        "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
+        "channel": "Al Jazeera English",
+        "duration": 160
       }
     ],
     "social_clips": [
@@ -204,13 +254,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/bonzerbarry/status/2039752728092545151",
-        "embed_id": "2039752728092545151",
-        "title": ">Israeli platform: Multi-front attack on Israel: In the latest barrages, fire from Iran, Yemen, and Lebanon.\n>Israeli Broadcasting Authority: An Irani",
-        "author": "bonzerbarry"
       },
       {
         "platform": "x",
@@ -278,6 +321,29 @@
         "duration": 30
       },
       {
+        "platform": "x",
+        "url": "https://x.com/Shayan86/status/2040237841398059409",
+        "embed_id": "2040237841398059409",
+        "title": "Daytime footage shows the impact crater caused by an Iranian ballistic missile attack on Petah Tikva, Israel.\n\nThe severely damaged warehouse appears ",
+        "author": "Shayan86"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2039964985384640640",
+        "embed_id": "2039964985384640640",
+        "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85849",
+        "embed_id": "intelslava/85849",
+        "title": "🇮🇷🇮🇱The arrival of a cassette warhead of an Iranian ballistic missile over central Israel.\n\nThe footage shows the consequences of the detonation o",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZyX-tsLxQoYe2aBmMTbcVCmfhK8DrpYnMJJNRoQDUjSi9HbZssoti_WwwThrNVW58fv928QXny_Fb2XrBecsfCnEsSPKsjL3Q5yMG4XjKYTFGJOevWkOfRpNAC-OOX1EbwFbSm4SQRYEbtbbLu6tZzwX1hu1jq2crBuDFiaXwWHU_yLSK5_U2G9HFTNLkpv0izARUo2OO5uWySieTtE68j8CE01cYYmdrBNPip2JpaF9CqixT-5WBU8MUo7eYMIru7CbzW1Is-yDTbYm_Ld-j2ui8VH-NnPgjk76RUV9MuIRNNGKglqYM8ZixuBvfZF6IuXs3t7EFWi6KWXCWTcMWg'",
+        "duration": 30
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
         "embed_id": "1sb5xu2",
@@ -306,21 +372,27 @@
         "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
         "embed_id": "1sbrz8y",
         "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PoliticalDiscussion/comments/1sbf4tq/which_is_more_believable_white_house_and_pentagon/",
+        "embed_id": "1sbf4tq",
+        "title": "Which is more believable, White House and Pentagon claims that Iran's missile and drone capability is almost completely destroyed or U.S. intelligence"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Iran Downs US Warplanes",
-    "summary": "Iran has reportedly shot down two US warplanes, escalating tensions between the two countries. This incident follows a series of aggressive actions and retaliatory strikes, raising fears of a broader conflict in the region. The international community is closely monitoring the situation, concerned about the potential for further military escalation.",
+    "summary": "Iran has reportedly shot down two US warplanes, significantly escalating tensions between the United States and Iran. This incident is part of a series of aggressive actions and retaliatory strikes between the two nations, raising fears of a broader conflict in the Middle East. The international community is on high alert, with concerns about the potential for further military escalation in the region.",
     "severity": "critical",
     "detected_at": "2026-04-04T01:00:07.004Z",
-    "last_updated": "2026-04-04T03:01:09.929Z",
+    "last_updated": "2026-04-04T07:00:36.753Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical strategies that have led to this confrontation. The focus remains on immediate military actions rather than the long-term implications of US-Iran relations, including economic sanctions and regional power dynamics. Additionally, the role of other regional players, such as Russia and China, in influencing these tensions is largely ignored.",
-    "social_summary": "Social media is ablaze with reactions, ranging from calls for peace to demands for retaliation. Memes and hashtags like #WorldWar3 are trending, with users expressing both fear and skepticism about the official narratives. Conspiracy theories suggesting ulterior motives behind the incident are also gaining traction, questioning the timing and intent of the military actions.",
-    "image_prompt": "A dramatic editorial photo of two fighter jets in a tense standoff over a desert landscape, with stormy skies and distant city lights symbolizing geopolitical tension.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical strategies that have led to this escalation. The focus remains on immediate military actions rather than the long-term strategic interests, such as control over regional resources and influence. Additionally, the economic implications of such conflicts, including impacts on global oil prices and trade routes, are not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with reactions, ranging from calls for peace to demands for retaliation. Memes and viral posts are circulating, depicting the incident as a potential trigger for World War III. Conspiracy theories are also emerging, suggesting ulterior motives behind the escalation, such as distracting from domestic issues in both countries.",
+    "image_prompt": "A dramatic editorial photo of two fighter jets in a tense standoff over a desert landscape, with a backdrop of ominous storm clouds gathering, symbolizing the escalating tensions and uncertainty.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -378,6 +450,13 @@
         "embed_id": "Y2EOb8MXLI8",
         "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
         "duration": 561
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=rSZ2ZHAK7QU",
+        "embed_id": "rSZ2ZHAK7QU",
+        "title": "Two US fighter jets shot down by Iran | ABC NEWS",
+        "duration": 278
       },
       {
         "platform": "telegram",
@@ -445,6 +524,34 @@
         "embed_id": "intelslava/85844",
         "title": "🇺🇸🇮🇷The Iranian army officially announces that its air defenses have managed to shoot down the American A10 S aircraft in the waters of the Persia",
         "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43119",
+        "embed_id": "warmonitors/43119",
+        "title": "⚡Trump in conversation with NBC News: The downing of the plane in Iran will not affect attempts to negotiate with Iran - \"This is a war. We are at war",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85860",
+        "embed_id": "intelslava/85860",
+        "title": "🇮🇱🇺🇸🇮🇷Hebrew Channel: Commando forces belonging to the US Army have begun a field operation inside Iranian territory with the aim of searching f",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30568",
+        "embed_id": "Newsmax/30568",
+        "title": "BREAKING: One of the crew members of a U.S. fighter jet that was shot down over Iran has been recovered alive by U.S. special forces inside Iranian te",
+        "author": "newsmax"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30565",
+        "embed_id": "Newsmax/30565",
+        "title": "BREAKING: Newsmax has confirmed Friday that a U.S. fighter jet has been shot down over Iran's southwest.\n\nA search and rescue operation is underway to",
+        "author": "newsmax"
       },
       {
         "platform": "reddit",
@@ -508,6 +615,13 @@
         "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
         "channel": "LiveNOW from FOX",
         "duration": 561
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=rSZ2ZHAK7QU",
+        "embed_id": "rSZ2ZHAK7QU",
+        "title": "Two US fighter jets shot down by Iran | ABC NEWS",
+        "channel": "ABC News (Australia)",
+        "duration": 278
       }
     ],
     "social_clips": [
@@ -579,6 +693,34 @@
         "author": "intelslava"
       },
       {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43119",
+        "embed_id": "warmonitors/43119",
+        "title": "⚡Trump in conversation with NBC News: The downing of the plane in Iran will not affect attempts to negotiate with Iran - \"This is a war. We are at war",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85860",
+        "embed_id": "intelslava/85860",
+        "title": "🇮🇱🇺🇸🇮🇷Hebrew Channel: Commando forces belonging to the US Army have begun a field operation inside Iranian territory with the aim of searching f",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30568",
+        "embed_id": "Newsmax/30568",
+        "title": "BREAKING: One of the crew members of a U.S. fighter jet that was shot down over Iran has been recovered alive by U.S. special forces inside Iranian te",
+        "author": "newsmax"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/Newsmax/30565",
+        "embed_id": "Newsmax/30565",
+        "title": "BREAKING: Newsmax has confirmed Friday that a U.S. fighter jet has been shot down over Iran's southwest.\n\nA search and rescue operation is underway to",
+        "author": "newsmax"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Conservative/comments/1sbrs09/2nd_us_warplane_crashes_near_hormuz_after_f15/",
         "embed_id": "1sbrs09",
@@ -595,15 +737,15 @@
   },
   {
     "topic": "Drone Strike on Sudan Hospital",
-    "summary": "A drone strike targeted a hospital in Sudan, resulting in the deaths of at least 10 individuals, as reported by Médecins Sans Frontières (MSF). This incident underscores the persistent violence and humanitarian challenges in the region. The international community has expressed strong condemnation, emphasizing the need to safeguard medical facilities in conflict zones.",
+    "summary": "A drone strike hit a hospital in Sudan, killing at least 10 people, according to Médecins Sans Frontières (MSF). This attack highlights ongoing violence and humanitarian issues in the region. The international community has condemned the strike, stressing the importance of protecting medical facilities in conflict areas.",
     "severity": "major",
     "detected_at": "2026-04-03T21:00:07.330Z",
-    "last_updated": "2026-04-04T03:02:10.837Z",
+    "last_updated": "2026-04-04T07:00:53.036Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential geopolitical motivations behind the drone strike, such as regional power struggles or foreign interests in Sudan's resources. Additionally, there is little discussion on the accountability mechanisms for such attacks and the role of international arms trade in perpetuating conflict in the region.",
-    "social_summary": "Social media is ablaze with outrage over the attack, with users sharing graphic images and calling for justice. Memes and hashtags are circulating, demanding accountability from both local and international actors. Conspiracy theories are emerging, suggesting foreign involvement or ulterior motives behind the strike.",
-    "image_prompt": "A symbolic image of a shattered hospital ward, with a lone, blood-stained teddy bear amidst the debris, under a dim, somber light filtering through a broken window.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential origins of the drone or the parties responsible for the strike. There is a lack of discussion on the geopolitical interests that be influencing the conflict in Sudan, including foreign powers' involvement or support for local factions. The economic motivations behind the conflict, such as control over resources, remain unexplored.",
+    "social_summary": "Social media is buzzing with outrage over the attack, with users sharing graphic images and videos purportedly from the scene. Memes criticizing the international community's 'thoughts and prayers' response are circulating widely. Conspiracy theories are emerging, suggesting foreign governments' involvement in the strike, though these lack evidence.",
+    "image_prompt": "A dramatic editorial photo of a hospital in ruins, with a lone medical worker standing amidst the debris, symbolizing resilience and the humanitarian crisis in conflict zones.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -635,25 +777,18 @@
         "duration": 181
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=tKjpbXEOYSQ",
-        "embed_id": "tKjpbXEOYSQ",
-        "title": "Deadly strike on Sudan hospital kills 70, injures 150 as drone attacks surge in 2026",
-        "duration": 991
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/KareemRifai/status/1798373096233324611",
-        "embed_id": "1798373096233324611",
-        "title": "The imagery from the New York Times report on the forgotten crisis in Sudan is heart-wrenching:\n\nA drone strike victim.\nThe ruins of Aliaa Specialist ",
-        "author": "KareemRifai"
-      },
-      {
         "platform": "x",
         "url": "https://x.com/khali_DJo/status/1936520432800161996",
         "embed_id": "1936520432800161996",
         "title": "In yet another horrific chapter of Sudan’s ongoing war, the Sudanese Armed Forces launched a drone strike on Muglad Hospital in West Kordofan , a plac",
         "author": "khali_DJo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BSonblast/status/2039910894122180983",
+        "embed_id": "2039910894122180983",
+        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
+        "author": "BSonblast"
       }
     ],
     "youtube_videos": [
@@ -677,29 +812,22 @@
         "title": "Sudan drone attack on key hospital killed 64 people during Eid, WHO says",
         "channel": "FTV ENGLISH",
         "duration": 181
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=tKjpbXEOYSQ",
-        "embed_id": "tKjpbXEOYSQ",
-        "title": "Deadly strike on Sudan hospital kills 70, injures 150 as drone attacks surge in 2026",
-        "channel": "Channel Africa",
-        "duration": 991
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/KareemRifai/status/1798373096233324611",
-        "embed_id": "1798373096233324611",
-        "title": "The imagery from the New York Times report on the forgotten crisis in Sudan is heart-wrenching:\n\nA drone strike victim.\nThe ruins of Aliaa Specialist ",
-        "author": "KareemRifai"
-      },
       {
         "platform": "x",
         "url": "https://x.com/khali_DJo/status/1936520432800161996",
         "embed_id": "1936520432800161996",
         "title": "In yet another horrific chapter of Sudan’s ongoing war, the Sudanese Armed Forces launched a drone strike on Muglad Hospital in West Kordofan , a plac",
         "author": "khali_DJo"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BSonblast/status/2039910894122180983",
+        "embed_id": "2039910894122180983",
+        "title": "Today's quick update [Apr 2]:\n\n- 12 ppl reported killed in RSF drone strike on AlJabalein Hospital in White Nile State (red).\n\n- Sudan Doctors Network",
+        "author": "BSonblast"
       }
     ],
     "image_file": "/images/breaking_2026-04-03.png"
