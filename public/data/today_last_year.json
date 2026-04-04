@@ -1,93 +1,75 @@
 {
-  "date_last_year": "2025-04-03",
-  "date_generated": "2026-04-03T15:41:31.842Z",
-  "summary": "April 3, 2025, was marked by significant global and domestic events. President Donald Trump announced sweeping tariffs on imports, sparking fears of a global trade war and causing a sharp decline in U.S. financial markets. The Dow Jones Industrial Average fell dramatically, reflecting investor concerns about potential economic repercussions. Meanwhile, a severe storm system wreaked havoc across the central and southern United States, with tornadoes causing widespread damage and power outages. States like Arkansas and Tennessee declared emergencies as meteorologists warned of ongoing flooding risks. These stories highlighted the day's focus on economic and environmental challenges.",
+  "date_last_year": "2025-04-04",
+  "date_generated": "2026-04-04T08:05:53.109Z",
+  "summary": "April 4, 2025, was marked by significant global events impacting both economic and political landscapes. The announcement of new U.S. tariffs by President Donald Trump led to a dramatic plunge in global financial markets, with Wall Street alone losing approximately $2.5 trillion in value. This move heightened fears of escalating trade tensions and drew international criticism. Meanwhile, in South Korea, the Constitutional Court upheld the impeachment of President Yoon Suk Yeol, following his controversial declaration of martial law. This decision ended Yoon's presidency and initiated a period of political transition in the country.",
   "stories": [
     {
-      "headline": "Trump's Tariffs Trigger Global Trade Tensions",
-      "summary": "On April 2, 2025, President Donald Trump announced new tariffs, including a 10% levy on all imports and higher rates for 60 nations. This decision raised fears of a global trade war, leading to a sharp decline in U.S. financial markets. The Dow Jones fell 1,200 points, and the S&P 500 lost $2.5 trillion in market value. Economists warned of potential consumer price increases and supply chain disruptions.",
+      "headline": "Global Markets Plunge Due to New U.S. Tariffs",
+      "summary": "On April 4, 2025, global financial markets experienced significant turmoil following the announcement of new tariffs by President Donald Trump. The tariffs targeted a wide range of imported goods, leading to a sharp decline in stock markets worldwide, with Wall Street losing approximately $2.5 trillion in value. Investors reacted negatively, fearing escalating trade tensions and potential economic repercussions. The move also drew international criticism, with leaders expressing concerns over the impact on global trade and economic stability.",
       "youtube_queries": [
-        "Trump tariffs announcement April 3 2025 market reaction",
-        "Global trade tensions after Trump's tariffs April 3 2025",
-        "Economic impact of Trump's tariffs April 3 2025 analysis"
+        "Global market reaction to US tariffs April 4 2025",
+        "Impact of Trump's tariffs on global economy April 4 2025",
+        "Wall Street losses due to US tariffs April 4 2025"
       ],
-      "category": "politics",
+      "category": "markets",
       "videos": [
         {
-          "id": "v-tsoTB7tcY",
-          "title": "Stocks plunge as Wall Street reacts to Trump’s tariffs",
-          "channel": "CNN",
-          "thumbnail": "https://i.ytimg.com/vi/v-tsoTB7tcY/maxresdefault.jpg"
+          "id": "gxL-2avxwqs",
+          "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
         },
         {
-          "id": "Su3f3nbgqx4",
-          "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
-          "channel": "CNN",
-          "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
+          "id": "6DxUsfObDss",
+          "title": "PBS News Hour full episode, April 4, 2025",
+          "channel": "PBS NewsHour",
+          "thumbnail": "https://i.ytimg.com/vi/6DxUsfObDss/hqdefault.jpg"
         },
         {
-          "id": "UXyH39GxVGA",
-          "title": "Oil Surges As Trump Vows To Hit Iran Hard | The Opening Trade 4/2/2026",
-          "channel": "Bloomberg Television",
-          "thumbnail": "https://i.ytimg.com/vi/UXyH39GxVGA/maxresdefault.jpg"
+          "id": "rVYW7AkyEqU",
+          "title": "CBC News: The National | Global stock market meltdown continues",
+          "channel": "CBC News: The National",
+          "thumbnail": "https://i.ytimg.com/vi/rVYW7AkyEqU/hqdefault.jpg"
         }
       ],
       "video": {
-        "id": "v-tsoTB7tcY",
-        "title": "Stocks plunge as Wall Street reacts to Trump’s tariffs",
-        "channel": "CNN",
-        "thumbnail": "https://i.ytimg.com/vi/v-tsoTB7tcY/maxresdefault.jpg"
+        "id": "gxL-2avxwqs",
+        "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+        "channel": "ABC News",
+        "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
       }
     },
     {
-      "headline": "Tornadoes Ravage Central and Southern U.S.",
-      "summary": "A severe storm system hit the central and southern U.S. on April 2-3, 2025, causing tornadoes and severe weather. States like Nevada, Missouri, and Oklahoma experienced significant damage and power outages affecting over 300,000 customers. Arkansas and Tennessee declared states of emergency, with at least two fatalities reported in Tennessee. Meteorologists warned of ongoing flooding risks as heavy rains continued.",
+      "headline": "Impeachment of South Korean President Upheld",
+      "summary": "On April 4, 2025, South Korea's Constitutional Court unanimously upheld the impeachment of President Yoon Suk Yeol. The impeachment was in response to Yoon's declaration of martial law, a move that had sparked widespread protests and political unrest across the country. The court's decision effectively ended Yoon's presidency, leading to a period of political transition in South Korea.",
       "youtube_queries": [
-        "Tornado damage in central US April 3 2025",
-        "Severe weather impacts in southern US April 3 2025",
-        "Emergency response to US tornadoes April 3 2025"
+        "South Korea Constitutional Court impeachment decision April 4 2025",
+        "Yoon Suk Yeol impeachment and martial law April 4 2025",
+        "Political transition in South Korea post-impeachment April 4 2025"
       ],
-      "category": "world",
-      "videos": [
-        {
-          "id": "on1pjsxYOwc",
-          "title": "Surviving Largest Tornado Outbreak Ever Recorded (Full Episode) | Witness to Disaster | Nat Geo",
-          "channel": "National Geographic",
-          "thumbnail": "https://i.ytimg.com/vi/on1pjsxYOwc/maxresdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "on1pjsxYOwc",
-        "title": "Surviving Largest Tornado Outbreak Ever Recorded (Full Episode) | Witness to Disaster | Nat Geo",
-        "channel": "National Geographic",
-        "thumbnail": "https://i.ytimg.com/vi/on1pjsxYOwc/maxresdefault.jpg"
-      }
+      "category": "politics",
+      "videos": [],
+      "video": null
     }
   ],
   "videos": [
     {
-      "id": "v-tsoTB7tcY",
-      "title": "Stocks plunge as Wall Street reacts to Trump’s tariffs",
-      "channel": "CNN",
-      "thumbnail": "https://i.ytimg.com/vi/v-tsoTB7tcY/maxresdefault.jpg"
+      "id": "gxL-2avxwqs",
+      "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
     },
     {
-      "id": "Su3f3nbgqx4",
-      "title": "Trump, tariffs and Canada: CNN's Harry Enten runs the numbers",
-      "channel": "CNN",
-      "thumbnail": "https://i.ytimg.com/vi/Su3f3nbgqx4/maxresdefault.jpg"
+      "id": "6DxUsfObDss",
+      "title": "PBS News Hour full episode, April 4, 2025",
+      "channel": "PBS NewsHour",
+      "thumbnail": "https://i.ytimg.com/vi/6DxUsfObDss/hqdefault.jpg"
     },
     {
-      "id": "UXyH39GxVGA",
-      "title": "Oil Surges As Trump Vows To Hit Iran Hard | The Opening Trade 4/2/2026",
-      "channel": "Bloomberg Television",
-      "thumbnail": "https://i.ytimg.com/vi/UXyH39GxVGA/maxresdefault.jpg"
-    },
-    {
-      "id": "on1pjsxYOwc",
-      "title": "Surviving Largest Tornado Outbreak Ever Recorded (Full Episode) | Witness to Disaster | Nat Geo",
-      "channel": "National Geographic",
-      "thumbnail": "https://i.ytimg.com/vi/on1pjsxYOwc/maxresdefault.jpg"
+      "id": "rVYW7AkyEqU",
+      "title": "CBC News: The National | Global stock market meltdown continues",
+      "channel": "CBC News: The National",
+      "thumbnail": "https://i.ytimg.com/vi/rVYW7AkyEqU/hqdefault.jpg"
     }
   ]
 }
