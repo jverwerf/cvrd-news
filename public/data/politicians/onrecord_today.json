@@ -1,108 +1,108 @@
 {
-  "headline": "Naftali Bennett נפתלי בנט on military: 89.6% Truthful",
+  "headline": "Marco Rubio on domestic: 62.4% Truthful",
   "person": {
-    "handle": "naftalibennett",
-    "name": "Naftali Bennett נפתלי בנט",
-    "role": "13th Prime Minister of Israel",
-    "photo": "/data/politicians/photo_naftalibennett.png"
+    "handle": "marcorubio",
+    "name": "Marco Rubio",
+    "role": "U.S. Secretary of State",
+    "photo": "/data/politicians/photo_marcorubio.png"
   },
-  "story_topic": "Iran War and Trump's Address",
-  "search_keyword": "military",
-  "topic_score": 89.6,
-  "overall_score": 78.5,
-  "matching_claims": 37,
-  "editorial": "Naftali Bennett might not have been on the podium for Trump's latest address, but his claims on military readiness are just as relevant. While Bennett asserts that \"all reservists are fully mobilized and ready to take action against Hezbollah,\" our fact-checking confirms this claim as TRUE. This aligns with his strong record on military statements, including his accurate remarks on the role of combat engineers in Gaza and Lebanon.\n\nBennett's track record on military topics reveals a pattern of accuracy. Out of five recent claims, four were verified as TRUE, with only one marked as SOMEWHAT MISLEADING. That claim concerned the government's provision of troops to the IDF, where Bennett's statement didn't fully capture the complexity of the situation, despite IDF Chief of Staff Eyal Zamir's noted concerns.\n\nWith an impressive military topic score of 89.6, Bennett's overall truthfulness isn't too far behind at 78.5. He has made 133 claims, with 64 deemed true. While his misleading count is low at six, vigilance remains key. His statements on military matters show a clear pattern of reliability, especially pertinent as geopolitical tensions ripple from Trump's Iran address.\n\nFor the reader, Bennett's military claims are a rare beacon of precision in a sea of political rhetoric.",
+  "story_topic": "Pam Bondi's Ouster as Attorney General",
+  "search_keyword": "domestic",
+  "topic_score": 62.4,
+  "overall_score": 68.7,
+  "matching_claims": 43,
+  "editorial": "Marco Rubio, now the U.S. Secretary of State, is no stranger to provocative statements. As Pam Bondi's ouster as Attorney General rattles Washington, Rubio's recent claim that a non-citizen student illegally voted in Michigan and his vote will still be counted stands out. This assertion is indeed true, yet highlights a complex picture of election integrity issues without offering the whole story.\n\nRubio's track record on domestic matters, especially regarding immigration and electoral integrity, is peppered with partially accurate claims. For instance, his statement about Hispanics voting primarily to avoid military conflicts and protect against criminal migrants was labeled \"Somewhat Misleading.\" Similarly, his account of a wanted killer from El Salvador entering the U.S. and committing murder was also marked as \"Somewhat Misleading.\"\n\nOverall, Rubio's truthfulness score is a middling 68.7, with 43 of his 134 checked claims rated as true. However, with 23 claims deemed misleading and 5 outright false, his pattern reveals a penchant for blending fact with fiction, often skewing data to support a narrative.\n\nFor readers, Rubio's claims are a reminder to critically assess political statements, especially when they intersect with today's hot-button issues.",
   "matched_tweets": [
     {
-      "claim": "Liran Ben Zion, a tank fighter from Holon, fell in battle in southern Lebanon while defending the State of Israel.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "הלב של כל עם ישראל כואב על נפילתו של סמל לירן בן ציון, לוחם שריון בן העיר חולון. לירן נפל בקרב בדרום לבנון, בהגנה על מדינת ישראל. תנחומי העמוקים למשפחתו. יהי זכרו ברוך.",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2038570456559624377",
-      "domain": "military",
-      "reasoning": "The claim states that Liran Ben Zion, a tank fighter from Holon, fell in battle in southern Lebanon while defending the State of Israel. According to reports, Sgt. Liran Ben Zion, 19, was killed by anti-tank fire in Lebanon on March 30, 2026. This information corroborates the claim, confirming its a"
-    },
-    {
-      "claim": "The government is not providing the IDF with soldiers despite the Chief of Staff's request for more troops due to exhaustion among reservists.",
+      "claim": "Hispanics voted to lower the high cost of living, keep their kids from being sent to fight a war, and protect their families from criminal illegal migrants.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "בזמן מלחמה מכונת הרעל של נתניהו ושופרותיו פתחו במתקפה נבזית כנגד הרמטכ״ל זמיר, אחד המפקדים התקיפים שידעה ישראל, רק בגלל שהוא העז לומר לממשלה: ״אין לי מספיק חיילים לעמוד בכל המשימות ובשבע החזיתות. המילואימניקים שחוקים. תנו לי חיילים.״ אבל הממשלה לא נותנת לצה״ל חיילים כי גולדקנופף",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2037510813188026873",
-      "domain": "military",
-      "reasoning": "IDF Chief of Staff Eyal Zamir has indeed expressed concerns about a shortage of soldiers and the strain on reservists, urging the government to address these issues. However, the government has taken steps to respond, including approving a NIS 6.2 billion plan to support reservists and increasing de"
+      "tweet_text": "Why are so many in the media shocked that hispanics voted to lower the high cost of living, keep their kids from being sent to fight a war & protect their families from criminal illegal migrants who rob, rape and/or murder people in America?",
+      "tweet_url": "https://twitter.com/marcorubio/status/1854319437412700626",
+      "domain": "domestic",
+      "reasoning": "The claim suggests that Hispanics voted primarily to address the high cost of living, avoid military conflicts, and protect against criminal illegal migrants. While economic concerns were significant for Hispanic voters in the 2024 election, with many expressing worries about the cost of living and "
     },
     {
-      "claim": "The death of hero Maahr Khatar is a historic milestone and marks the first casualty from Majdal Shams in the Golan Heights, solidifying the bond between the Druze in the Golan and the state of Israel.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "נפילתו בקרב של גיבור ישראל רס\"ל מאהר ח'טאר היא אבן דרך כואבת, אך היסטורית. מאהר הוא הנופל הראשון ממג'דל שמס שבגולן. מותו הכואב חותם בדם את הברית בין הדרוזים בגולן לבין המדינה, ופותח פרק חדש בתולדות ישראל. לאורך עשרות שנים, לאחינו הדרוזים ברמת הגולן היו יחסים מורכבים עם מדינת",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2031030437359853796",
-      "domain": "military",
-      "reasoning": "The claim states that the death of Sgt. First Class Maher Khatar is a historic milestone, marking the first casualty from Majdal Shams in the Golan Heights, and solidifying the bond between the Druze community in the Golan and the state of Israel. According to multiple sources, including United with"
-    },
-    {
-      "claim": "Combat engineers are at the forefront of fighting in both Gaza and Lebanon.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "עם ישראל כואב על נפילתו של לוחם ההנדסה סמ״ר אור דמרי ז\"ל בקרב בדרום לבנון. במלחמה הזו מפעילי הצמ״ה עומדים בחוד החנית של הלחימה גם בעזה וגם בלבנון, וחשוב שעם ישראל יכיר ויוקיר את אומץ ליבם ואת הקרבתם. שולח את תנחומיי למשפחה. איזה אור כבה כאן💔",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2030997237946323095",
-      "domain": "military",
-      "reasoning": "The claim that combat engineers are at the forefront of fighting in both Gaza and Lebanon is supported by recent events. In Lebanon, Israeli combat engineers have been actively involved in operations against Hezbollah, including clearing improvised explosive devices and demolishing enemy infrastruct"
-    },
-    {
-      "claim": "All reservists are fully mobilized and ready to take action against Hezbollah.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "גבול לבנון, עכשיו. 100% התייצבות של המילואימניקים. כל הלוחמים וכל התושבים כאן מאוחדים באותו מסר: \"אנחנו מוכנים לתת כל מה שצריך, רק תסיימו את המלאכה של הסרת האיום מחיזבאללה אחת ולתמיד!\"",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2029225756354613302",
-      "domain": "military",
-      "reasoning": "The claim that \"all reservists are fully mobilized and ready to take action against Hezbollah\" is supported by multiple reports indicating that Israel has mobilized a significant number of reservists in response to escalating tensions with Hezbollah. As of early March 2026, approximately 100,000 res"
-    },
-    {
-      "claim": "An Israeli Air Force F-35I Adir fighter jet shot down an Iranian YAK-130 fighter aircraft over Tehran.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "For the first time ever an F-35 has shot down a manned fighter aircraft. An Israeli Air Force F-35I Adir fighter jet shot down an Iranian YAK-130 fighter aircraft a short time ago over the skies of Tehran.",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2029119392429027394",
-      "domain": "military",
-      "reasoning": "Multiple reputable sources, including the Israel Defense Forces (IDF), have confirmed that on March 4, 2026, an Israeli Air Force F-35I 'Adir' fighter jet shot down an Iranian Yak-130 aircraft over Tehran. This event marks the first time an F-35 has downed a manned fighter jet in combat. The Yak-130"
-    },
-    {
-      "claim": "The leader of a terrorist organization was killed, and he was responsible for the deaths of many Israelis over the years.",
+      "claim": "A non-citizen from China voted in Michigan and the vote will still be counted.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "ח׳אמנאי, ראש תמנון הטרור חוסל. הוא אחראי לרציחתם של כל כך הרבה ישראלים, במשך כל כך הרבה שנים. השבת קראנו בבתי הכנסת: \"זָכוֹר אֵת אֲשֶׁר עָשָׂה לְךָ עֲמָלֵק\", ובאותו הזמן טייסי חיל האוויר שלנו חיסלו את עמלק של הדור הזה. בזכותם העולם הוא מקום טוב יותר. עם ישראל חי ושואג🇮🇱",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2027988179140165848",
-      "domain": "military",
-      "reasoning": "The claim states that 'The leader of a terrorist organization was killed, and he was responsible for the deaths of many Israelis over the years.' This refers to Ayatollah Ali Khamenei, Iran's Supreme Leader, who was killed in a joint U.S.-Israeli airstrike on February 28, 2026. While Khamenei was in"
+      "tweet_text": "A non-citizen from China voted in Michigan While now facing charges THE VOTE WILL STILL BE COUNTED!",
+      "tweet_url": "https://twitter.com/marcorubio/status/1853113579609727340",
+      "domain": "domestic",
+      "reasoning": "A Chinese national, Haoxiang Gao, illegally registered and voted in Michigan's 2024 election. He was charged with false claims to register or vote and voting by aliens. While Michigan law mandates counting all cast ballots, including those later found illegal, such instances are extremely rare. In t"
     },
     {
-      "claim": "The public is outraged because Haredi youth do not serve in the military and there is a demand for their immediate enlistment.",
+      "claim": "A non-citizen student illegally voted in Michigan and the vote will still be counted.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "הגיעה השעה למהפכה: להפסיק לממן בתי ספר חרדים שמחנכים נגד המדינה, נגד הצבא ונגד כולנו. ** המדינה הזדעזעה כשהמונים תקפו חיילות בלב בני ברק. הציבור גם רותח מזעם בגלל שצעירים חרדים לא משרתים ולא נכנסים תחת האלונקה. כולם דורשים גיוס מלא ומיידי של צעירים חרדים. * אבל האמת היא",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2024014516430729249",
-      "domain": "military",
-      "reasoning": "The claim that the public is outraged because Haredi youth do not serve in the military and there is a demand for their immediate enlistment is accurate. Recent events have intensified this sentiment. In January 2026, a 14-year-old boy was killed during a protest against Haredi military conscription"
+      "tweet_text": "A non-citizen student illegally voted in Michigan this weekend Even though the student now faces charges, THE VOTE WILL STILL BE COUNTED!",
+      "tweet_url": "https://twitter.com/marcorubio/status/1851991917036228620",
+      "domain": "domestic",
+      "reasoning": "A non-U.S. citizen student at the University of Michigan illegally registered and voted in the 2024 general election. Despite facing felony charges, the vote was counted because Michigan law does not provide a mechanism to retrieve and void ballots once they are cast. This incident underscores the r"
     },
     {
-      "claim": "Netanyahu is silent and supports a recruitment law that endangers our soldiers.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "לא הבנתי מי שואל אותו. תראו, הבעיה היא לא דרעי שהתרגל שהוא בעל הבית של המדינה, אלא נתניהו שמכר לו אותה. כשדרעי קורא לצעירים חרדים בריאים שלא להעז להתגייס לעזרת חיילי צה״ל, נתניהו שותק, מגבה, ומקדם חוק גיוס שמפקיר את חיילינו. כל חיילת וחייל, כל אשה ואיש יוכלו להסתובב בכל רחבי",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2023069572207661507",
-      "domain": "military",
-      "reasoning": "The claim that Netanyahu is silent and supports a recruitment law that endangers soldiers is partially accurate. Netanyahu has indeed supported legislation that exempts many ultra-Orthodox men from military service, which has been criticized for potentially undermining the IDF's manpower needs. Howe"
+      "claim": "Federal agencies knew a rooftop sniper was a significant vulnerability at Trump's outdoor rallies and the Secret Service failed to address it.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Even before the attempted assassination of Trump, federal agencies knew a rooftop sniper was a significant vulnerability at his outdoor rallies and Secret Service failed to address it",
+      "tweet_url": "https://twitter.com/marcorubio/status/1816113955292450898",
+      "domain": "domestic",
+      "reasoning": "Prior to the attempted assassination of former President Donald Trump at a July 2024 rally in Butler, Pennsylvania, federal agencies, including the Secret Service, were aware that the rooftop of the AGR International building posed a significant security vulnerability due to its clear line of sight "
     },
     {
-      "claim": "Netanyahu and the ultra-Orthodox encouraged institutional evasion of military service in response to calls of 'we will die rather than enlist'.",
+      "claim": "A wanted killer from El Salvador crossed the border and was released into the U.S. by Biden, and was arrested in Maryland for murdering a mother of 5.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "בני ברק, עכשיו. נתניהו והחרדים העלימו עין מקריאות \"נמות ולא נתגייס״ ועודדו השתמטות ממוסדת. ככה זה נראה כשההשתמטות מנצחת.",
-      "tweet_url": "https://twitter.com/naftalibennett/status/2023058281372291348",
-      "domain": "military",
-      "reasoning": "The claim suggests that Prime Minister Benjamin Netanyahu and ultra-Orthodox leaders encouraged institutional evasion of military service in response to calls of 'we will die rather than enlist.' While it's true that Netanyahu's government has faced criticism for policies perceived as accommodating "
+      "tweet_text": "In 2023 a wanted killer fled El Salvador to America by crossing Biden’s open border & was released into our country by Biden Last night he was arrested in Maryland for the murder of a mother of 5",
+      "tweet_url": "https://twitter.com/marcorubio/status/1802123145391849689",
+      "domain": "domestic",
+      "reasoning": "The claim that a wanted killer from El Salvador crossed the border and was released into the U.S. by the Biden administration, later committing a murder in Maryland, is partially accurate but lacks crucial context. In 2023, Victor Martinez-Hernandez, a fugitive from El Salvador, illegally entered th"
+    },
+    {
+      "claim": "The Biden Administration is allowing dangerous gang members to enter the country.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "I have been warning the Biden Administration for months that we are being invaded by dangerous gang members and yet they keep letting them in.",
+      "tweet_url": "https://twitter.com/marcorubio/status/1798340209584877752",
+      "domain": "domestic",
+      "reasoning": "The claim that the Biden Administration is allowing dangerous gang members to enter the country has some basis, as reports indicate that gang-affiliated individuals have entered the U.S. during this administration. For instance, a House Judiciary Committee report highlighted that the Department of H"
+    },
+    {
+      "claim": "There are terrorists inside of America who entered via Biden's open border.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Read between the lines of the recent and numerous urgent warnings from the FBI director It’s not just possible, it is almost certain we now have terrorists inside of America who entered via Biden’s open border #FoxNews",
+      "tweet_url": "https://twitter.com/marcorubio/status/1792571876847374572",
+      "domain": "domestic",
+      "reasoning": "FBI Director Christopher Wray has expressed concerns about known or suspected terrorists using fake identification to cross the southern border, indicating that such individuals have entered the U.S. ([newsweek.com](https://www.newsweek.com/terrorists-using-fake-ids-cross-border-raises-red-flags-fbi"
+    },
+    {
+      "claim": "We have had 11 million illegal immigrants come in under 3 years of Biden.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "11million illegal immigrants? That was 10 years ago. Now we have had that many come in under 3 years of Biden and we are unfortunately going to have to do something dramatic about it",
+      "tweet_url": "https://twitter.com/marcorubio/status/1792334339428298850",
+      "domain": "domestic",
+      "reasoning": "The claim that 11 million illegal immigrants have entered the U.S. under President Biden over three years is an overstatement. U.S. Customs and Border Protection (CBP) data indicates approximately 7.3 million encounters at the southwest border from January 2021 to early 2024. However, 'encounters' i"
+    },
+    {
+      "claim": "Hundreds of thousands of American students are facing safety issues and disruptions in their education due to violent antisemitic leftist mobs.",
+      "verdict": "MISLEADING",
+      "score": 0.35,
+      "tweet_text": "Hundreds of thousands of American students are having their safety endangered and their education disrupted by violent antisemitic leftist mobs Where is our President?",
+      "tweet_url": "https://twitter.com/marcorubio/status/1786002075744158072",
+      "domain": "domestic",
+      "reasoning": "While there were instances of antisemitic incidents and disruptions on American campuses in 2024, the claim that 'hundreds of thousands of American students' faced safety issues and educational disruptions due to 'violent antisemitic leftist mobs' is an exaggeration. Specific events, such as the dis"
+    },
+    {
+      "claim": "The foreign aid bill provided over $3.5 billion to help bring migrants from the Middle East to America.",
+      "verdict": "SOMEWHAT MISLEADING",
+      "score": 0.65,
+      "tweet_text": "Not only did the “foreign aid” bill that passed yesterday do nothing about the mass migration invasion of America, it provided over $3.5 billion to help bring migrants from the Middle East to America",
+      "tweet_url": "https://twitter.com/marcorubio/status/1783146713777070084",
+      "domain": "domestic",
+      "reasoning": "The claim that the foreign aid bill provided over $3.5 billion to help bring migrants from the Middle East to America is partially accurate but lacks context. The $95 billion aid package signed into law in April 2024 did include $3.5 billion allocated to the Department of State for expanding migrati"
     }
   ],
-  "generated_at": "2026-04-02T21:37:31.175Z"
+  "generated_at": "2026-04-03T15:50:58.677Z"
 }

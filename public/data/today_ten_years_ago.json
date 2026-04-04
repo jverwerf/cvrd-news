@@ -1,0 +1,93 @@
+{
+  "date_last_year": "2016-04-03",
+  "date_generated": "2026-04-03T16:28:50.836Z",
+  "summary": "April 3, 2016, was marked by two major events that captured global attention. The release of the Panama Papers exposed the secretive financial dealings of numerous high-profile individuals, sparking worldwide outrage and calls for greater financial transparency. Meanwhile, in the United States, an Amtrak train derailment in Chester, Pennsylvania, resulted in fatalities and injuries, raising serious concerns about railway safety and infrastructure maintenance. These stories underscored significant issues in financial ethics and transportation safety, prompting discussions and investigations in their respective fields.",
+  "stories": [
+    {
+      "headline": "Panama Papers Leak Exposes Global Financial Secrets",
+      "summary": "The Panama Papers, a massive leak of 11.5 million documents from the law firm Mossack Fonseca, were released by the ICIJ and *Süddeutsche Zeitung*. The documents revealed how politicians, business leaders, and celebrities used offshore tax havens to hide wealth and evade taxes. The leak led to global outrage, investigations, and discussions on financial transparency and ethics.",
+      "youtube_queries": [
+        "Panama Papers leak 2016 global impact",
+        "Panama Papers 2016 financial secrecy revelations",
+        "Panama Papers 2016 political fallout"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "_byreniNl2Y",
+          "title": "\"Panama Papers\" leak causes major global fallout",
+          "channel": "CBS News",
+          "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+        },
+        {
+          "id": "6W61qT312Y8",
+          "title": "'Panama Papers:' How are taxes avoided and assets hidden?",
+          "channel": "euronews Business",
+          "thumbnail": "https://i.ytimg.com/vi/6W61qT312Y8/hqdefault.jpg"
+        },
+        {
+          "id": "OnlkycLIQIE",
+          "title": "Obama, World Leaders React to 'Panama Papers'",
+          "channel": "Associated Press",
+          "thumbnail": "https://i.ytimg.com/vi/OnlkycLIQIE/maxresdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "_byreniNl2Y",
+        "title": "\"Panama Papers\" leak causes major global fallout",
+        "channel": "CBS News",
+        "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+      }
+    },
+    {
+      "headline": "Amtrak Train Derailment in Pennsylvania Kills Two",
+      "summary": "An Amtrak train traveling from New York City to Savannah derailed in Chester, Pennsylvania, after hitting a backhoe on the tracks. The accident resulted in the deaths of two maintenance workers and injuries to 35 passengers. This incident raised concerns about railway safety and infrastructure maintenance, prompting investigations into Amtrak's safety protocols.",
+      "youtube_queries": [
+        "Amtrak train derailment Chester Pennsylvania 2016",
+        "Amtrak safety concerns after 2016 derailment",
+        "Chester Pennsylvania train accident April 2016"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "h5klGnIqO_M",
+          "title": "Chester, Pennyslvania news conference on Amtrak derailment",
+          "channel": "PBS NewsHour",
+          "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+        }
+      ],
+      "video": {
+        "id": "h5klGnIqO_M",
+        "title": "Chester, Pennyslvania news conference on Amtrak derailment",
+        "channel": "PBS NewsHour",
+        "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": "_byreniNl2Y",
+      "title": "\"Panama Papers\" leak causes major global fallout",
+      "channel": "CBS News",
+      "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+    },
+    {
+      "id": "6W61qT312Y8",
+      "title": "'Panama Papers:' How are taxes avoided and assets hidden?",
+      "channel": "euronews Business",
+      "thumbnail": "https://i.ytimg.com/vi/6W61qT312Y8/hqdefault.jpg"
+    },
+    {
+      "id": "OnlkycLIQIE",
+      "title": "Obama, World Leaders React to 'Panama Papers'",
+      "channel": "Associated Press",
+      "thumbnail": "https://i.ytimg.com/vi/OnlkycLIQIE/maxresdefault.jpg"
+    },
+    {
+      "id": "h5klGnIqO_M",
+      "title": "Chester, Pennyslvania news conference on Amtrak derailment",
+      "channel": "PBS NewsHour",
+      "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+    }
+  ]
+}

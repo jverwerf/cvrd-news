@@ -122,3 +122,18 @@ export async function getTodayLastYear(): Promise<TodayLastYearData | null> {
     return JSON.parse(fs.readFileSync(dataPath, 'utf8')) as TodayLastYearData;
   } catch { return null; }
 }
+
+export async function getTodayTenYearsAgo(): Promise<TodayLastYearData | null> {
+  const enginePath = path.resolve(process.cwd(), '../intelligence-engine/output/today_ten_years_ago.json');
+  const publicPath = path.resolve(process.cwd(), 'public/data/today_ten_years_ago.json');
+
+  let dataPath: string | null = null;
+  if (fs.existsSync(enginePath)) dataPath = enginePath;
+  else if (fs.existsSync(publicPath)) dataPath = publicPath;
+
+  if (!dataPath) return null;
+
+  try {
+    return JSON.parse(fs.readFileSync(dataPath, 'utf8')) as TodayLastYearData;
+  } catch { return null; }
+}

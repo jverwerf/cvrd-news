@@ -51,7 +51,7 @@ const TIMELINE_SCROLL_CSS = `
 .timeline-scroll::-webkit-scrollbar { display: none !important; }
 `;
 
-export function TimelineContent({ threads, generatedAt, lastYear }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null }) {
+export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null; tenYearsAgo?: TodayLastYearData | null }) {
   const [filter, setFilter] = useState('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -216,6 +216,64 @@ export function TimelineContent({ threads, generatedAt, lastYear }: { threads: T
                   <div className="px-5 pb-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                       {lastYear.videos.map((v, i) => (
+                        <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <div style={{ aspectRatio: '16/9' }}>
+                            <iframe
+                              src={`https://www.youtube.com/embed/${v.id}`}
+                              className="w-full h-full"
+                              style={{ border: 'none' }}
+                              allowFullScreen
+                              loading="lazy"
+                            />
+                          </div>
+                          <div className="p-2.5">
+                            <p className="text-[11px] text-white font-medium leading-snug line-clamp-2">{v.title}</p>
+                            <span className="text-[9px] text-[#555] mt-0.5 block">{v.channel}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Share row */}
+                <div className="px-5 pb-4">
+                  <ShareBar text={shareText} url={shareUrl} />
+                </div>
+              </div>
+            </div>
+          </>
+        );
+      })()}
+
+      {/* TEN YEARS AGO TODAY */}
+      {tenYearsAgo && tenYearsAgo.summary && (() => {
+        const tenYearsDate = new Date(tenYearsAgo.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        const shareUrl = 'https://cvrdnews.com/timeline';
+        const shareText = `10 Years Ago Today — ${tenYearsDate}\n\n${tenYearsAgo.summary.substring(0, 120)}...`;
+        return (
+          <>
+            {/* White banner */}
+            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
+              <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">10 Years Ago Today</span>
+              <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+                {tenYearsDate}
+              </h2>
+            </div>
+
+            {/* Content in card */}
+            <div className="px-6 md:px-12 pt-5 pb-8">
+              <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {/* Summary */}
+                <div className="p-5 pb-4">
+                  <p className="text-[14px] text-[#ccc] leading-[1.8]">{tenYearsAgo.summary}</p>
+                </div>
+
+                {/* Videos — inside card */}
+                {tenYearsAgo.videos.length > 0 && (
+                  <div className="px-5 pb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {tenYearsAgo.videos.map((v, i) => (
                         <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                           <div style={{ aspectRatio: '16/9' }}>
                             <iframe

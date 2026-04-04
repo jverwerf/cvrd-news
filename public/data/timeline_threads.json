@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-04-03T12:54:47.654Z",
+  "generated_at": "2026-04-04T06:32:20.853Z",
   "threads": [
     {
       "id": "iran-war",
       "title": "Iran War",
       "category": "world",
-      "summary": "The Iran War, which began escalating on March 26, 2026, saw significant developments following Israeli airstrikes on Iranian targets. That same day, tensions heightened as the U.S. and Iran faced a diplomatic standoff amid conflicting reports about potential negotiations. On March 28, Iran retaliated by launching a missile strike on a U.S. military base in Saudi Arabia, injuring 12 American troops. The situation intensified further when Iranian-backed Houthi rebels attacked Israel, marking their involvement in the conflict. By March 31, U.S. military responses had increased, targeting Iranian positions. However, on April 1, reports indicated that the U.S. military campaign was winding down, and President Trump addressed the nation on April 2, stating that Iran would allow increased oil shipments. Shortly after his address, Israeli military detected new Iranian missile launches, indicating that tensions remain high.",
+      "summary": "The conflict between Iran and the U.S. has escalated with missile strikes and diplomatic tensions. Recent developments include Iranian missile attacks on U.S. bases and Israel, U.S. military responses, and the impact on global oil markets. The situation remains volatile with ongoing military actions and international diplomatic efforts.",
       "entries": [
         {
           "date": "2026-03-26",
@@ -993,20 +993,6 @@
           ],
           "best_video_id": "D9aSNMGbPIs",
           "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-03-27",
-          "story_index": 2,
-          "topic": "UAE and Qatar Arrests Over Iran War Videos",
-          "summary": "The UAE and Qatar have arrested hundreds of individuals for sharing videos of Iranian attacks online. These arrests highlight the tension between Gulf states and Iran, as well as the region's strict control over information dissemination. The crackdown is part of broader efforts to manage the narrative surrounding the Iran conflict.",
-          "category": "world",
-          "left_narrative": "Not enough coverage yet — check back soon.",
-          "right_narrative": "Not enough coverage yet — check back soon.",
-          "what_they_arent_telling_you": "A Reddit post in r/worldnews with 10K upvotes highlights that many of those arrested are expatriates who were unaware of the legal consequences. Mainstream media is not discussing the economic leverage the UAE and Qatar hold over these individuals, which influences their ability to challenge the arrests. Furthermore, leaked diplomatic cables suggest that some Western governments are privately urging restraint, fearing backlash against their expatriate communities.",
-          "image_file": "/images/threads/iran-war_2026-03-27.png",
-          "social_clips": [],
-          "youtube_videos": [],
-          "sources": []
         },
         {
           "date": "2026-03-28",
@@ -2700,355 +2686,6 @@
           "best_video_platform": "youtube"
         },
         {
-          "date": "2026-03-30",
-          "story_index": 1,
-          "topic": "Iran War and Oil Shipments",
-          "summary": "Amid the ongoing conflict with Iran, U.S. President Donald Trump announced that Iran will allow more oil ships through the Strait of Hormuz. This development comes as part of negotiations aimed at de-escalating tensions and ensuring the flow of oil to global markets.",
-          "category": "world",
-          "left_narrative": "The left is skeptical of Trump's claims, questioning the effectiveness of his negotiations and highlighting the potential environmental risks of increased oil shipments.",
-          "right_narrative": "The right is praising Trump's deal-making skills, emphasizing the importance of securing oil supplies and stabilizing global markets.",
-          "what_they_arent_telling_you": "On Reddit, users are sharing satellite images of the Strait of Hormuz, questioning the security of the passage. The mainstream media is not discussing the potential impact on oil prices and the global economy. A Reddit post highlights the lack of transparency in the negotiations with Iran.",
-          "image_file": "/images/threads/iran-war_2026-03-30.png",
-          "social_clips": [
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/wallstreetbets/comments/1s7jjc9/monday_morning_market_manipulation_nyt_reports/",
-              "embed_id": "1s7jjc9",
-              "title": "Monday morning market manipulation: NYT reports \"Trump Says Iran Agreed to Allow 20 More Ships of Oil Through Strait of Hormuz\""
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2038439837728944638",
-              "embed_id": "2038439837728944638",
-              "title": "Trump says his “favourite thing” is to take Iran’s oil, dismissing critics in the US as “stupid peop",
-              "author": "AJEnglish",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2038393827086741820",
-              "embed_id": "2038393827086741820",
-              "title": "Pakistan says it's preparing to host \"meaningful talks\" to end the US-Israel war with Iran even as T",
-              "author": "Reuters",
-              "duration": 101,
-              "video_transcript": "Pakistan said on Sunday was preparing to host meaningful talks in the coming days to end the conflict in Iran. This comes after Iran accused the US of preparing a land assault while seeking negotiations. Pakistan's Foreign Minister Ishaq Dar said he and other foreign ministers in the region met on Sunday to discuss possible ways to bring an early and permanent end to the war as well as potential US-Iran talks in Islamabad. Pakistan will be honored to host and facilitate meaningful talks between ",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2038492793123766442",
-              "embed_id": "2038492793123766442",
-              "title": "A Canadian activist and YouTuber filmed congestion in the Strait of Hormuz during a tour aboard a sh",
-              "author": "AJEnglish",
-              "duration": 85,
-              "video_transcript": "So we're now to the waters of the Strait of Hormuz. I would say we're about a couple of kilometers from the shore. And we were told we're only going to get 20 minutes out here because there are drones in the sky. And the genocidal Israeli entity has a long and sordid record of murdering journalists with gleeful impunity. So unfortunately we're not going to be able to spend too much time out here. But I'll give you a good panoramic view right now of what we can see. This is the island of Hormuz. ",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2038466853220311450",
-              "embed_id": "2038466853220311450",
-              "title": "President Trump said the US and Iran have been meeting ‘directly and indirectly’ and that Iran's new",
-              "author": "Reuters",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2038379124033483208",
-              "embed_id": "2038379124033483208",
-              "title": "As the US–Israeli war on Iran enters its second month and Tehran rejects Washington’s ceasefire plan",
-              "author": "AJEnglish",
-              "duration": 47,
-              "video_transcript": "♪♪ ♪♪ ♪♪ ♪♪ ♪♪",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2038416556229538217",
-              "embed_id": "2038416556229538217",
-              "title": "BREAKING: President Trump is weighing a risky military operation to extract about 1,000 pounds of ur",
-              "author": "AJEnglish",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AJEnglish/status/2038464462403797375",
-              "embed_id": "2038464462403797375",
-              "title": "In Surat, thousands of migrant workers are leaving the city as the global conflict begins to hit Ind",
-              "author": "AJEnglish",
-              "duration": 126,
-              "video_transcript": "In the Indian city of Surat, thousands of workers are waiting to get on the train. It's the same one they arrived on, in search of better paying jobs. The Iran war has affected the textile industry here, making work much harder to come by. Now they're returning home, where job opportunities are scarce, but at least they'll be able to make hot meals. Cooking gas is the biggest problem for everyone sitting here. We couldn't get any, despite rations. So how are we supposed to cook our meals? We're ",
-              "relevance": 7
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2038489478701125949",
-              "embed_id": "2038489478701125949",
-              "title": "President Trump said negotiations with Iran were going \"extremely well,\" adding that the country is preparing to allow oil tankers to pass through the",
-              "author": "Reuters",
-              "duration": 42
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=apY0u7u3mZA",
-              "embed_id": "apY0u7u3mZA",
-              "channel": "Fox News",
-              "duration": 372,
-              "title": "American Petroleum Institute CEO stresses: &#39;OPEN THE STRAIT OF HORMUZ&#39;",
-              "relevance": 8
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=6EZeDTOmRS0",
-              "embed_id": "6EZeDTOmRS0",
-              "channel": "Fox News",
-              "duration": 418,
-              "title": "Iranian regime WARNED over Strait of Hormuz: &#39;THIS IS NOT GOING TO END WELL&#39;",
-              "relevance": 8
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=fl_Okavgp_Q",
-              "embed_id": "fl_Okavgp_Q",
-              "channel": "Al Jazeera",
-              "duration": 457,
-              "title": "Trump says deal with Iran is &#39;close&#39;, but warns US could seize Kharg Island",
-              "relevance": 7
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=4GIBct9cHzY",
-              "embed_id": "4GIBct9cHzY",
-              "channel": "Al Jazeera",
-              "duration": 180,
-              "title": "Trump says Iran’s ‘had regime change’ as he describes &#39;boatloads of oil&#39; | AJ #shorts",
-              "relevance": 7
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=xldX3gKNe1s",
-              "embed_id": "xldX3gKNe1s",
-              "channel": "Financial Times",
-              "duration": 30,
-              "title": "Trump says US is negotiating with Iran &#39;directly and indirectly&#39; | FT #shorts",
-              "relevance": 7
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=ytyv1PI4cAU",
-              "embed_id": "ytyv1PI4cAU",
-              "channel": "Al Jazeera",
-              "duration": 86,
-              "title": "Canadian YouTuber captures congestion of dozens of ships in Hormuz Strait | AJ #shorts",
-              "relevance": 6
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=dsyWYxX-uyI",
-              "embed_id": "dsyWYxX-uyI",
-              "channel": "Forbes Breaking News",
-              "title": "Trump Tells Reporters That Iran Is Allowing '20 Boats Of Oil' Through Strait Of Hormuz",
-              "transcript_summary": "0:00 President, Mr. President.\n0:01 >> So, we uh we've had very good\n0:03 negotiations today with Iran, getting a\n0:06 lot of the things that they should have\n0:08 given us a long time ago. We'll see how\n0:10 it works out, but they're very good.\n0:12 Moving on very nicely. They've destroyed\n0:14 a lot of additional targets today. The\n0:16 Navyy's gone. The Air Force has gone. We\n0:18 know that. We destroyed many, many uh\n0:21 targets today. It was a big day. And we\n0:25 are negotiating with them directly and\n0:27 indirectly.\n0:28 We have emissaries but we also are\n0:30 dealing directly and uh as you know\n0:33 they've agreed to send eight boats two\n0:36 days ago and then they added another two\n0:39 so it was 10 votes and now today they\n0:44 gave us as a tribute I don't know I\n0:47 can't define it exactly but they gave us\n0:50 I think out of a sign of respect 20\n0:53 boats of oil big boats of oil going\n0:56 through the Hormmo straight\n0:59 And that's taking place uh starting\n1:01 tomorro..."
-            }
-          ],
-          "sources": [
-            {
-              "name": "New York Times",
-              "url": "https://www.nytimes.com/live/2026/03/30/world/iran-war-trump-oil-news",
-              "lean": "left"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/policy/international/5806993-regime-change-trump-iran-war/",
-              "lean": "center",
-              "title": "Trump claims deaths of Iranian leaders ‘truly is regime change’"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/policy/international/5806957-trump-iran-war-oil-control/",
-              "lean": "center",
-              "title": "Trump says ‘my favorite thing is to take the oil in Iran’"
-            },
-            {
-              "name": "AP News",
-              "url": "https://www.yahoo.com/news/articles/trump-news-glance-generational-divide-004921461.html",
-              "lean": "center",
-              "title": "Trump news at a glance: Generational divide over Iran war emerges at key conservative conference"
-            },
-            {
-              "name": "Politico",
-              "url": "https://www.politico.com/news/2026/03/28/iran-trump-maga-men-divide-cpac-00849378",
-              "lean": "center",
-              "title": "‘He’s lied about everything’: Iran war puts Trump on shaky ground with young MAGA men"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/policy/defense/5806811-mckenzie-us-iran-raids/",
-              "lean": "center",
-              "title": "Former Centcom commander: US military has been working on Iran ground raid plans for years"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/homenews/house/5806767-auchincloss-warns-against-iran-invasion/",
-              "lean": "center",
-              "title": "House Democrat warns of ‘boots-on-the-ground quagmire’ in Iran"
-            },
-            {
-              "name": "The Hill",
-              "url": "https://thehill.com/policy/healthcare/5806752-ansari-calls-for-iran-offramp/",
-              "lean": "center",
-              "title": "Iranian American lawmaker says Trump needs to find an off-ramp quickly for Iran war"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/29/war_in_iran_the_everything_shock_695738.html",
-              "lean": "center",
-              "title": "War in Iran: The Everything Shock"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/29/trump_is_breaking_the_middle_easts_old_power_structure_695743.html",
-              "lean": "center",
-              "title": "Trump Is Breaking the Middle East's Old Power Structure"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/29/success_in_iran_will_come_down_to_managing_fear_of_energy_prices_695735.html",
-              "lean": "center",
-              "title": "Success in Iran Will Come Down To Managing Fear of Energy Prices"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/video/2026/03/29/retired_centcom_commander_weve_wargamed_iran_war_for_years_and_were_further_along_than_we_would_have_expected_at_this_point_in_the_simulations.html",
-              "lean": "center",
-              "title": "Iran War Running Ahead of Years of Simulations"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/29/how_americans_can_end_this_war_695749.html",
-              "lean": "center",
-              "title": "How Americans Can End This War"
-            },
-            {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/29/iran_doesnt_want_to_talk_to_kushner_or_witkoff_695742.html",
-              "lean": "center",
-              "title": "Iran Doesn't Want to Talk to Kushner or Witkoff"
-            },
-            {
-              "name": "NYT Business",
-              "url": "https://www.nytimes.com/2026/03/29/business/energy-environment/iran-war-natural-gas.html",
-              "lean": "left",
-              "title": "Why the Iran War May Force Countries to Rely Less on Natural Gas"
-            },
-            {
-              "name": "HuffPost",
-              "url": "https://www.huffpost.com/entry/cory-booker-trump-iran-war-meet-the-press_n_69c943cbe4b0a014076f6ab1",
-              "lean": "left",
-              "title": "Cory Booker Scolds Trump For Entering U.S. Into Iran War With ‘No Foreseeable Off-Ramp’"
-            },
-            {
-              "name": "HuffPost",
-              "url": "https://www.huffpost.com/entry/james-lankford-supports-trump-troops-ground-iran_n_69c94348e4b051d223bde415",
-              "lean": "left",
-              "title": "GOP Senator Argues Trump Is ‘Right To Put Troops’ On The Ground In Iran"
-            },
-            {
-              "name": "HuffPost",
-              "url": "https://www.huffpost.com/entry/iran-war-choices-trump_n_69c8818de4b06be0a3088719",
-              "lean": "left",
-              "title": "One Month Into Iran War, Only Hard Choices For Trump"
-            },
-            {
-              "name": "NYT Politics",
-              "url": "https://www.nytimes.com/2026/03/29/us/politics/trump-special-operations-forces-iran.html",
-              "lean": "left",
-              "title": "Special Operations Forces Sent to Mideast as Trump Weighs Next Move"
-            },
-            {
-              "name": "NYT Politics",
-              "url": "https://www.nytimes.com/2026/03/29/us/politics/us-marines-middle-east-iran-war.html",
-              "lean": "left",
-              "title": "The U.S. Now Has Over 50,000 Troops in the Middle East"
-            },
-            {
-              "name": "NYT Politics",
-              "url": "https://www.nytimes.com/2026/03/28/upshot/iran-war-trump-popularity.html",
-              "lean": "left",
-              "title": "Is Iran a Political Problem for Trump? Tell Me How Long the War Lasts."
-            },
-            {
-              "name": "NY Post Business",
-              "url": "https://nypost.com/2026/03/29/business/two-gas-india-flagged-gas-tankers-crossing-the-strait-of-hormuz/",
-              "lean": "right",
-              "title": "Two India-flagged gas tankers crossing the Strait of Hormuz after Iran opens waterway to ‘non-hostile vessels’"
-            },
-            {
-              "name": "Reuters Business",
-              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUl93QW8wYmwzTHA3MnhVcmEzTkJ3N25VcEhoZTluT1JlX3lueUNDUTJqdmtvQ3BuM0pYYVc1bENPVHBpUklCSm9vOGRUaUg1UjJzTDMxMHdvWkZjeFBFQW9PUnIyclVDUXRuRVhBM1k0RU5TbmxFSGxEQlhLemo4RXE1d2RZOWdRQWRwWXRYSjU1TW93cHdPWFlwbEY4U1JTNDAyRnFFdzhLeDc3MzJyTG9wbEFzR2N3?oc=5",
-              "lean": "center",
-              "title": "Luxury carmakers' gold-leafed Gulf profits under threat from Iran war - Reuters"
-            },
-            {
-              "name": "Politico",
-              "url": "https://www.politico.com/news/2026/03/29/iran-war-trump-gop-midterms-prices-00849116",
-              "lean": "center",
-              "title": "A month into Iran, the GOP’s political reality sinks in"
-            },
-            {
-              "name": "Al Jazeera",
-              "url": "https://www.aljazeera.com/video/newsfeed/2026/3/30/canadian-youtuber-captures-congestion-of-dozens-of-ships-in-hormuz-strait?traffic_source=rss",
-              "lean": "center",
-              "title": "Canadian YouTuber captures congestion of dozens of ships in Hormuz Strait"
-            },
-            {
-              "name": "Financial Times",
-              "url": "https://www.ft.com/content/3bd9fb6c-2985-4d24-b86b-23b7884031f5",
-              "lean": "center",
-              "title": "Trump says US could ‘take the oil in Iran’"
-            },
-            {
-              "name": "BBC Business",
-              "url": "https://www.bbc.com/news/articles/c8957kqqdg4o?at_medium=RSS&at_campaign=rss",
-              "lean": "center",
-              "title": "'Ripple of fear' over Iran war hits consumer confidence"
-            },
-            {
-              "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/03/30/cnbc-daily-open-trumps-favorite-thing-is-iranian-oil.html",
-              "lean": "center",
-              "title": "CNBC Daily Open: Trump's 'favorite thing' is Iranian oil"
-            },
-            {
-              "name": "FT Markets",
-              "url": "https://www.ft.com/content/dc55ed32-c38b-4897-a1b6-d19b6d42875e",
-              "lean": "center",
-              "title": "Ineos flagship project risks delay from Strait of Hormuz crisis"
-            },
-            {
-              "name": "The Economist",
-              "url": "https://www.economist.com/finance-and-economics/2026/03/29/how-iran-is-making-a-mint-from-donald-trumps-war",
-              "lean": "center",
-              "title": "\n        How Iran is making a mint from Donald Trump’s war\n      "
-            },
-            {
-              "name": "Economist Business",
-              "url": "https://www.economist.com/business/2026/03/25/how-much-will-americas-oilmen-benefit-from-the-iran-war",
-              "lean": "center",
-              "title": "\n        How much will America’s oilmen benefit from the Iran war?\n      "
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOSjI2aUNyVFZCU3huNVFnUHNreHI3REMtWmdKWmQtQ2F2ZTRZN08yeHBITUZaUGhRMUlaRHNJMlRCN2tRdEVsYkRqcHpQSDZnZUE0OUZVRmJxNFBIM2FpV0FRQktKTlFacWJQSUsyUnpkb3hDbDB3MGhDVGVvV3V5V1ZSYzVhblRVX05mX2hOdXA5NDhSWGNxZzFvaXhuODhLRklORE96ZjFfeC1UOUFLM2Zn?oc=5",
-              "lean": "center",
-              "title": "Trump Says Iran ‘Gave’ the US Most of Its Demands in Peace Plan - Bloomberg.com"
-            },
-            {
-              "name": "Bloomberg",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSk5HZlRza0pMcVpNSDFRMlBzUUFvVTdCenZfd1lVRDRwVDJNbXlOSDNkSnFrVDQ5eGl1dFJlMm1WbU9DUEhKR29rWG54d1hJenFFdl9xZmRpc09zdEtRRjBHZDE0aVAweHBNS3psc29xaE4zeW94eHFfTVJEeUFhSUFWRHJrOGdYUFZrdXQ4djNOSmZKLTQ5c2diTDFKaTdJQ2h5UHpzOXo2Wl9obkRsbw?oc=5",
-              "lean": "center",
-              "title": "Trump Says US Could ‘Take The Oil’ in Iran, Seize Export Hub: FT - Bloomberg.com"
-            }
-          ],
-          "best_video_id": "apY0u7u3mZA",
-          "best_video_platform": "youtube"
-        },
-        {
           "date": "2026-03-31",
           "story_index": 0,
           "topic": "Iran War Escalation and Economic Impact",
@@ -3883,7 +3520,6 @@
               "title": "Lessons From the Vietnam War for Iran"
             }
           ],
-          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-31/story_1.mp4",
           "best_video_id": "6HA0APKfWw8",
           "best_video_platform": "youtube"
         },
@@ -5227,7 +4863,7 @@
               "title": "President's Low-Energy Address Failed at Main Objective"
             }
           ],
-          "best_video_id": "3UQnen_VIkU",
+          "best_video_id": "Emj05OISreo",
           "best_video_platform": "youtube"
         },
         {
@@ -5425,615 +5061,540 @@
           "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-04-02/story_2.mp4",
           "best_video_id": "CL6kKoiiq4M",
           "best_video_platform": "youtube"
-        }
-      ],
-      "gap_days": [
+        },
         {
-          "date": "2026-03-30",
-          "bridge_text": "Iran allowed more oil ships through the Strait of Hormuz as part of negotiations to de-escalate tensions."
-        }
-      ],
-      "first_seen": "2026-03-26",
-      "last_seen": "2026-04-02",
-      "is_active": true,
-      "total_days_span": 8,
-      "days_covered": 8,
-      "image_file": "/images/threads/iran-war.png"
-    },
-    {
-      "id": "trumps-executive-orders",
-      "title": "Trump's Executive Orders",
-      "category": "politics",
-      "summary": "The political landscape has been tumultuous in late March 2026 as Congress faces a stalemate over funding for the Transportation Security Administration (TSA), which has left many transportation security measures in limbo as of March 26. The situation escalated significantly on March 31 when former President Donald Trump signed an executive order that seeks to end birthright citizenship for children born in the U.S. to non-citizen parents, a move that has reignited debates over immigration policy and civil rights. Just a day later, on April 1, Trump further stirred controversy by signing another executive order aimed at overhauling mail-in voting systems, which critics argue could disenfranchise voters. The backlash from these actions has intensified discussions about Trump's influence in the political arena and raised concerns about their implications for future elections and civil liberties. As of now, the nation is grappling with the ramifications of these executive orders, with ongoing debates in Congress and among the public.",
-      "entries": [
-        {
-          "date": "2026-03-26",
-          "story_index": 5,
-          "topic": "TSA Funding Stalemate",
-          "summary": "Congress is at a stalemate over funding for the Transportation Security Administration (TSA), leading to concerns about potential airport shutdowns. The deadlock is part of broader budget negotiations, with disagreements centered on immigration policies and border security funding. The situation has raised alarms about the impact on travel and national security.",
-          "category": "politics",
-          "left_narrative": "The New York Times emphasizes the Democrats' call for increased TSA funding and restrictions on ICE as part of the negotiations, criticizing Republicans for using the issue as leverage.",
-          "right_narrative": "Fox News argues that the deadlock is due to Democrats' refusal to compromise on border security measures, framing the shutdown risk as a failure of Democratic leadership.",
-          "what_they_arent_telling_you": "A Reddit post in r/news with 9K upvotes highlights that some airports have already started reducing staff in anticipation of funding cuts, a detail not covered by mainstream media. This benefits airlines by potentially reducing operational costs. Internal TSA memos reveal plans for service reductions, contradicting official statements about maintaining security standards.",
-          "image_file": "/images/story_2026-03-26_14.png",
+          "date": "2026-04-03",
+          "story_index": 4,
+          "topic": "Trump's Iran War Strategy Under Fire",
+          "summary": "President Trump's strategy in the ongoing conflict with Iran is facing criticism from both domestic and international observers. The U.S. has increased military presence in the region, and Trump has made several public statements about the conflict's objectives. Critics argue that the strategy lacks clarity and escalates tensions further.",
+          "category": "world",
+          "left_narrative": "The left criticizes Trump's strategy as reckless and lacking a clear endgame. They highlight the potential for increased regional instability and question the administration's motives.",
+          "right_narrative": "The right supports Trump's approach, emphasizing the need to counter Iran's influence and protect U.S. interests. They argue that decisive action is necessary to maintain global security.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing reports of civilian casualties in Iran, a detail not prominently covered in mainstream media. Some posts question the accuracy of official casualty figures, suggesting they be underreported.",
+          "image_file": "/images/threads/iran-war_2026-04-03.png",
           "social_clips": [
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/AskReddit/comments/1s2tqhv/delta_is_suspending_its_special_service_desk_for/",
-              "embed_id": "1s2tqhv",
-              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
-              "author": ""
+              "url": "https://reddit.com/r/worldnews/comments/1satrzn/irgc_attacks_dubai_oracle_data_center_us_fighter/",
+              "embed_id": "1satrzn"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/delta/comments/1s2cccx/delta_suspends_standalone_services_for_members_of/",
-              "embed_id": "1s2cccx",
-              "title": "Delta suspends stand-alone services for members of Congress until TSA is fully funded",
-              "author": ""
+              "url": "https://reddit.com/r/NeutralPolitics/comments/1rol62j/what_are_the_potential_strategic_benefits_and/",
+              "embed_id": "1rol62j",
+              "title": "What are the potential strategic benefits and costs to the US of a prolonged war in Iran, as distinct from the limited, short-duration operations conducted in other countries?"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/clevercomebacks/comments/1s2jjbt/delta_grounded_congress_until_tsa_get_funded/",
-              "embed_id": "1s2jjbt",
-              "title": "Delta grounded Congress until TSA get funded",
-              "author": ""
+              "url": "https://reddit.com/r/geopolitics/comments/1sb8tao/trumps_rage_and_hubris_tells_us_the_truth_he_is/",
+              "embed_id": "1sb8tao",
+              "title": "Trump’s rage and hubris tells us the truth – he is losing in Iran"
             },
             {
               "platform": "reddit",
-              "url": "https://reddit.com/r/askanything/comments/1s38km4/delta_is_suspending_its_special_service_desk_for/",
-              "embed_id": "1s38km4",
-              "title": "Delta is suspending it's special service desk for members of Congress until TSA is fully funded. How do you feel about that?",
-              "author": ""
+              "url": "https://reddit.com/r/geopolitics/comments/1sb586w/uks_reeves_angry_over_trumps_decision_to_attack/",
+              "embed_id": "1sb586w",
+              "title": "UK’s Reeves ‘angry’ over Trump’s decision to attack Iran"
             },
             {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/thescoop/comments/1s2f9yg/delta_is_officially_suspending_travel_perks_for/",
-              "embed_id": "1s2f9yg",
-              "title": "Delta is officially suspending travel perks for members of Congress until Republicans stop blocking TSA funding.",
-              "author": ""
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039800714092786056",
+              "embed_id": "2039800714092786056",
+              "title": "OPERATION EPIC FURY 🇺🇸\n\nPresident Donald J. Trump's preference was always the path of diplomacy — ",
+              "author": "WhiteHouse",
+              "duration": 59,
+              "video_transcript": "My first preference was always the path of diplomacy, yet the regime continued their relentless quest for nuclear weapons and rejected every attempt at an agreement. For this reason, in June, I ordered a strike on Iran's key nuclear facilities, an Operation Midnight Hammer. Nobody's ever seen anything like it. Those beautiful B-2 bombers performed magnificently. We totally obliterated those nuclear sites. The regime then sought to rebuild their nuclear program at a totally different location, ma",
+              "relevance": 8
             },
             {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/ConservativeNewsWeb/comments/1s2k08x/delta_suspends_standalone_service_for_congress/",
-              "embed_id": "1s2k08x",
-              "title": "Delta Suspends Stand-Alone Service for Congress Until TSA Is Fully Funded",
-              "author": ""
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039749326390379002",
+              "embed_id": "2039749326390379002",
+              "title": "IT IS TIME FOR IRAN TO MAKE A DEAL BEFORE IT IS TOO LATE. https://t.co/h8A3s9UO39",
+              "author": "WhiteHouse",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039954980262518911",
+              "embed_id": "2039954980262518911",
+              "title": "President Donald Trump has stepped up his threats against Iran, warning the US military “hasn’t even",
+              "author": "AJEnglish",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039718320736285096",
+              "embed_id": "2039718320736285096",
+              "title": "If Iran obtained a nuclear weapon, they would be able to carry out their campaigns of terror and mas",
+              "author": "WhiteHouse",
+              "relevance": 7
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2039508931161026693",
+              "embed_id": "2039508931161026693",
+              "title": "President Trump is addressing the nation on the war with Iran. Watch CNN, stream on the CNN app and follow live updates: https://t.co/V9hU71Wjdz https",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2039453275833974889",
+              "embed_id": "2039453275833974889",
+              "title": "Just one-third of Americans believe President Donald Trump has a clear plan to handle the situation in Iran, according to a new CNN poll, underscoring",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2039293164591141147",
+              "embed_id": "2039293164591141147",
+              "title": "Trump renews his attacks on NATO, suggesting he could withdraw the US from the alliance over its lack of support for his war on Iran. \n\nFollow live up",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2038716858619015329",
+              "embed_id": "2038716858619015329",
+              "title": "Oil prices settle at their highest level since July 2022 as the war against Iran enters its fifth week https://t.co/k54PFRYqL7",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/2039702252831527231",
+              "embed_id": "2039702252831527231",
+              "title": "Breaking News: The S&amp;P 500 opened sharply lower and oil prices surged by more than 10% after President Trump pledged to hit Iran “extremely hard.”",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/2039508168678502411",
+              "embed_id": "2039508168678502411",
+              "title": "Follow live: President Trump's address to the nation comes as the war with Iran has stretched into a second month. https://t.co/Hei4K2HFSt",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/2037266242814283834",
+              "embed_id": "2037266242814283834",
+              "title": "Breaking News: U.S. stocks had their biggest loss since the war with Iran started, with the S&amp;P 500 falling 1.7% https://t.co/4PQyMmrnXJ",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/2036438930770329702",
+              "embed_id": "2036438930770329702",
+              "title": "Breaking News: Prince Mohammed bin Salman of Saudi Arabia pushed President Trump to continue the war against Iran, people briefed on the conversations",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SprinterPress/status/2039424527084499203",
+              "embed_id": "2039424527084499203",
+              "title": "Trump's \"brilliant\" exit strategy: \"Not my strait, not my problem\"\n\nTrump announced that the US will end its military operations in Iran \"very soon, m",
+              "author": "SprinterPress",
+              "duration": 32
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SprinterPress/status/2039211479036019055",
+              "embed_id": "2039211479036019055",
+              "title": "Trump's \"Genius\" Exit Strategy: \"Not My Strait, Not My Problem\"\n\nTrump announced the U.S. will wrap up its military operations in Iran \"very soon, per",
+              "author": "SprinterPress",
+              "duration": 32
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/DD_Geopolitics/status/2033333079008579769",
+              "embed_id": "2033333079008579769",
+              "title": "🇺🇸 Trump has a new Iran war strategy: it's not happening.\n\nIn his newest crashout he declared that all footage of Iranian strikes, burning ships, an",
+              "author": "DD_Geopolitics"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BRICSinfo/status/2031670089510986176",
+              "embed_id": "2031670089510986176",
+              "title": "JUST IN: 🇺🇸🇮🇷 President Trump's administration is not considering changing its military strategy against Iran despite rising oil prices, Politico ",
+              "author": "BRICSinfo"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/NEWSMAX/status/2027953221424030134",
+              "embed_id": "2027953221424030134",
+              "title": "'MASTER CLASS IN TACTICS': U.S. Navy Reserve Captain Morgan Murphy and former Navy intelligence officer Jack Posobiec break down President Trump's mil",
+              "author": "NEWSMAX",
+              "duration": 300
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/RudyGiuliani/status/2021023962831220743",
+              "embed_id": "2021023962831220743",
+              "title": "Join us at 8 pm ET tonight for America's Mayor Live, where we will analyze President Trump's Iran Strategy amid the massive military build up in the r",
+              "author": "RudyGiuliani"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/disclosetv/20625",
+              "embed_id": "disclosetv/20625",
+              "title": "NOW - Trump on Iran: \"We're going to hit them extremely hard over the next 2-3 weeks. We're going to bring them back to the stone ages, where they bel",
+              "author": "disclosetv",
+              "thumbnail": "https://cdn1.telesco.pe/file/cZexmwdLWaoMCWquzBypxqdSOcdQXb3RPzABG0gTPsy1Uzb0pBss35G-fRwoM0H7VIoizBJaWkd7ngCz9tFKZgCGbvWIwBklgSSexjM1-vAWU0G68EP7EHTFmHyiNDuprJloZ8PR8K_yP-d8YelU4iHWemRECLzOEvw0bmoW6cqlTMA6iLRNkIaQRB_4Xxje21-3DivCk79ZtqmPpYmEBuwIS54Q2EeamZdmX9oCjyJDYYOV1pBehDJa1d4teR4QgNVAN52po1Th-aysiuslOZCu8J4Ke88LF5IRbGfKTmg42n-h3xnngJl6s6ATN33IaQg7z78dN83Y4qzGZ60cWw'",
+              "duration": 30
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/warmonitors/43086",
+              "embed_id": "warmonitors/43086",
+              "title": "⚡️ Trump says that the U.S. will continue demolishing Iranian infrastructure if the regime doesn’t negotiate.",
+              "author": "warmonitors"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/intelslava/85812",
+              "embed_id": "intelslava/85812",
+              "title": "🇺🇸🇮🇷Trump announced new strikes on Iran. He confirmed that they attacked several bridges, and the next targets will be the energy sector.\n\nAll of ",
+              "author": "intelslava"
             }
           ],
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=RfFHWRwS8fA",
-              "embed_id": "RfFHWRwS8fA",
-              "channel": "CNN"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=YlpDSKorOlg",
-              "embed_id": "YlpDSKorOlg",
+              "url": "https://www.youtube.com/watch?v=FiJvVioBHeU",
+              "embed_id": "FiJvVioBHeU",
               "channel": "ABC News",
-              "duration": 51,
-              "title": "Airport security lines continue to grow amid partial government shutdown",
+              "duration": 32,
+              "title": "Nightline special edition: War with Iran Day 34",
               "relevance": 8
             },
             {
-              "url": "https://www.youtube.com/watch?v=vvBT35NuP2Q",
-              "embed_id": "vvBT35NuP2Q",
-              "channel": "MSNBC",
-              "duration": 138,
-              "title": "&quot;The president said no deal&quot;: Trump forces long TSA lines over easy bipartisan fix",
+              "url": "https://www.youtube.com/watch?v=KvL7OsfnH9A",
+              "embed_id": "KvL7OsfnH9A",
+              "channel": "PBS NewsHour",
+              "duration": 451,
+              "title": "How Gulf nations and European allies are responding to Trump&#39;s Iran address",
               "relevance": 7
             },
             {
-              "url": "https://www.youtube.com/watch?v=CFtYdzhTn-4",
-              "embed_id": "CFtYdzhTn-4",
-              "channel": "Washington Post",
-              "duration": 83,
-              "title": "The fastest way to get through airport lines",
+              "url": "https://www.youtube.com/watch?v=DP6hgc10OZ4",
+              "embed_id": "DP6hgc10OZ4",
+              "channel": "Al Jazeera",
+              "duration": 275,
+              "title": "Hegseth’s ‘unprecedented’ language raises war crimes fears in Iran",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=i1rOmAPuBeA",
+              "embed_id": "i1rOmAPuBeA",
+              "channel": "Financial Times",
+              "duration": 120,
+              "title": "Trump address on Iran fails to deliver clarity | FT #shorts",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=znYrGVThbSQ",
+              "embed_id": "znYrGVThbSQ",
+              "channel": "Financial Times",
+              "duration": 70,
+              "title": "Trump says US allies will have to reopen the Strait of Hormuz themselves | FT #shorts",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=8XC_fDHzMqw",
+              "embed_id": "8XC_fDHzMqw",
+              "channel": "DW News",
+              "duration": 135,
+              "title": "German businesses brace for economic fallout from Iran war | DW News",
               "relevance": 6
             },
             {
-              "url": "https://www.youtube.com/watch?v=D8qNww7bFnA",
-              "embed_id": "D8qNww7bFnA",
-              "channel": "NBC News",
-              "title": "Congress struggles to make deal on funding DHS as TSA warns smaller airports may close"
+              "url": "https://www.youtube.com/watch?v=IjiUSPyNZW4",
+              "embed_id": "IjiUSPyNZW4",
+              "channel": "CNN",
+              "title": "Fareed: Trump is looking to ‘simply leave’ Iran war"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=DfiLbQsVB_I",
+              "embed_id": "DfiLbQsVB_I",
+              "channel": "CNN",
+              "title": "Retired generals break down Iran war strategy after week 4"
             }
           ],
           "sources": [
             {
               "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/03/25/us/politics/homeland-security-shutdown-republicans-congress.html",
+              "url": "https://www.nytimes.com/live/2026/04/03/world/iran-war-trump-oil",
               "lean": "left"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/world/2026/04/03/trump-iran-leaders-war-assassinations-hormuz/",
+              "lean": "left",
+              "title": "Trump heralds regime change, but Iran’s leaders remain hard-liners"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/politics/trump-iran-war-strategy",
+              "lean": "right"
+            },
+            {
+              "name": "NPR World",
+              "url": "https://www.npr.org/2026/04/02/g-s1-116162/up-first-newsletter-iran-war-trump-birthright-citizenship-va-program",
+              "lean": "center",
+              "title": "Trump makes case for Iran war. And, SCOTUS leans toward upholding birthright citizenship"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/04/03/trump-iran-midterms-gas-prices/",
+              "lean": "left",
+              "title": "Trump pushed the Iran war in prime time. The public wasn’t sold."
+            },
+            {
+              "name": "WaPo World",
+              "url": "https://www.washingtonpost.com/world/2026/04/03/pope-leo-god-war-trump-peace/",
+              "lean": "left",
+              "title": "As U.S. bombs Iran, Pope Leo criticizes those who would use God for war"
+            },
+            {
+              "name": "WaPo World",
+              "url": "https://www.washingtonpost.com/national-security/2026/04/01/trump-commando-plan-seize-iran-uranium/",
+              "lean": "left",
+              "title": "Risky commando plan to seize Iran’s uranium came at Trump’s request "
             },
             {
               "name": "Vox",
-              "url": "https://www.vox.com/the-logoff-newsletter-trump/483898/how-trump-is-complicating-tsa-funding",
+              "url": "https://www.vox.com/politics/484675/trump-iran-speech-war-strait-hormuz",
               "lean": "left",
-              "title": "How Trump is complicating TSA funding"
+              "title": "Is this the beginning of the end of the war in Iran?"
             },
             {
-              "name": "The Blaze",
-              "url": "https://www.theblaze.com/columns/opinion/the-tsa-showdown-reveals-a-brutal-truth-about-our-politics",
-              "lean": "right",
-              "title": "The TSA showdown reveals a brutal truth about our politics"
+              "name": "MSNBC",
+              "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPUldQMTZRelU1RkdWTFU2aGhJZmZtMzR6RV9vci1HUVptR0pBOXlLd2FZNzk1RVV6NHZfTlZWblRjT3BDZjgyc3VBRHRxUjVScEFhLWdxMkFmUE1kNlV5cFNVS1FUcnUyNEVremw1eGo1UU9wMVRtdFBLaEdKSGFDNFdOMUUtZTJHVlpPdlVVQkd3WkNWbGdqRkdsRXlyanRycVFzTGNSUV9EUHhldFBwX1B5U2hZakJPVEY2dmZ3eW54QQ?oc=5",
+              "lean": "left",
+              "title": "Source: VP Vance talking to intermediaries to Iran as war drags on - MS NOW"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/04/03/trump-christian-right-iran-evangelicals/",
+              "lean": "left",
+              "title": "Trump’s Holy War Abroad and at Home"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/04/01/iranian-americans-against-war-poll-israel/",
+              "lean": "left",
+              "title": "Iranian Americans Have Turned Against the War, New Poll Finds"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/04/01/iran-war-us-casualty-numbers-trump-hegseth/",
+              "lean": "left",
+              "title": "“Casualty Cover-Up”: The Pentagon Is Hiding U.S. Losses Under Trump in the Middle East"
+            },
+            {
+              "name": "The Intercept",
+              "url": "https://theintercept.com/2026/03/31/trump-iran-war-venezuela-maduro/",
+              "lean": "left",
+              "title": "Trump Wanted to Replicate His Venezuela “Success” in Iran. What Has It Even Looked Like?"
+            },
+            {
+              "name": "Slate",
+              "url": "https://slate.com/news-and-politics/2026/04/trump-iran-war-news-speech-lies.html?via=rss",
+              "lean": "left",
+              "title": "Trump’s First Speech About the War With Iran Explained Absolutely Nothing"
+            },
+            {
+              "name": "Jacobin",
+              "url": "https://jacobin.com/2026/04/trump-war-iran-cost-childcare/",
+              "lean": "left",
+              "title": "The War on Iran Is More Expensive Than You Think"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/energy-environment/5814089-strait-hormuz-iran-trump-leverage/",
+              "lean": "center",
+              "title": "Iran ‘toll booth’ on Strait of Hormuz underscores its leverage on Trump, US"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/policy/defense/5814413-uss-gerald-ford-departs-croatia/",
+              "lean": "center",
+              "title": "USS Gerald R. Ford aircraft carrier to return to Middle East amid Iran fight"
+            },
+            {
+              "name": "BBC",
+              "url": "https://www.bbc.com/news/articles/crm1vj941x9o?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "'I haven't slept for days': Iranians describe mounting desperation after a month of war"
+            },
+            {
+              "name": "BBC",
+              "url": "https://www.bbc.com/news/articles/cevk0e4ykwko?at_medium=RSS&at_campaign=rss",
+              "lean": "center",
+              "title": "'Be serious... don't speak every day': Macron criticises Trump approach to Iran war"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/04/03/nx-s1-5771684/trumps-weird-week",
+              "lean": "center",
+              "title": "Takeaways from Trump's tough week, as war and gas prices take a toll"
+            },
+            {
+              "name": "NPR World",
+              "url": "https://www.npr.org/2026/04/02/nx-s1-5767066/pakistan-is-playing-mediator-in-the-iran-war-its-a-role-the-country-is-used-to",
+              "lean": "center",
+              "title": "Pakistan is playing intermediary in the Iran war, a role it has played before"
             },
             {
               "name": "PBS NewsHour",
-              "url": "https://www.pbs.org/newshour/show/where-talks-to-fund-dhs-stand-as-shutdown-reaches-40-days",
+              "url": "https://www.pbs.org/newshour/show/how-gulf-nations-and-european-allies-are-responding-to-trumps-iran-address",
               "lean": "center",
-              "title": "Where talks to fund DHS stand as shutdown reaches 40 days"
+              "title": "How Gulf nations and European allies are responding to Trump's Iran address"
             },
             {
-              "name": "The Guardian US",
-              "url": "https://www.theguardian.com/us-news/2026/mar/25/tsa-head-warns-perfect-storm-staffing-shortage-world-cup",
-              "lean": "left",
-              "title": "TSA staffing shortage and upcoming World Cup will create ‘perfect storm’, warns acting head"
-            },
-            {
-              "name": "Washington Times",
-              "url": "https://www.washingtontimes.com/news/2026/mar/25/houston-airport-become-symbol-shutdowns-impacts-air-travel/",
-              "lean": "right",
-              "title": "Houston airport has become a symbol for the shutdown's impacts on air travel\n"
-            },
-            {
-              "name": "The Federalist",
-              "url": "https://thefederalist.com/2026/03/25/democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens/?utm_source=rss&utm_medium=rss&utm_campaign=democrats-continue-holding-american-air-travelers-hostage-to-save-illegal-aliens",
-              "lean": "right",
-              "title": "Democrats Continue Holding American Air Travelers Hostage To Save Illegal Aliens"
-            },
-            {
-              "name": "NPR",
-              "url": "https://www.npr.org/2026/03/25/nx-s1-5760981/tsa-wait-times-lines",
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/4/3/over-100-us-legal-experts-condemn-strikes-on-iran-as-possible-war-crimes?traffic_source=rss",
               "lean": "center",
-              "title": "Travelers are facing the longest TSA wait times in history"
+              "title": "Over 100 US legal experts condemn strikes on Iran as possible ‘war crimes’"
+            },
+            {
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/news/2026/4/3/iran-condemns-us-israeli-moral-collapse-after-attacks-on-civilian-sites?traffic_source=rss",
+              "lean": "center",
+              "title": "Iran condemns US-Israeli ‘moral collapse’ after attacks on civilian sites"
+            },
+            {
+              "name": "DW News",
+              "url": "https://www.dw.com/en/are-iran-allied-paramilitaries-dragging-iraq-into-the-war/a-76643752?maca=en-rss-en-all-1573-xml-mrss",
+              "lean": "center",
+              "title": "Are Iran-allied paramilitaries dragging Iraq into the war?"
+            },
+            {
+              "name": "DW News",
+              "url": "https://www.dw.com/en/iran-war-unsc-to-vote-on-gulf-led-resolution-to-open-hormuz/live-76649854?maca=en-rss-en-all-1573-xml-mrss",
+              "lean": "center",
+              "title": "Iran war: UNSC to vote on Gulf-led resolution to open Hormuz"
             },
             {
               "name": "CBS News",
-              "url": "https://www.cbsnews.com/news/white-house-elon-musks-offer-pay-tsa-workers-dhs-shutdown/",
+              "url": "https://www.cbsnews.com/video/full-interview-u-s-military-archbishop-timothy-broglio-on-iran/",
               "lean": "center",
-              "title": "White House turns down Elon Musk's offer to pay TSA workers during DHS shutdown"
+              "title": "Full interview: U.S. Military Archbishop Timothy Broglio on Iran"
             },
             {
-              "name": "MarketWatch",
-              "url": "https://www.marketwatch.com/story/heres-what-airlines-are-offering-passengers-trapped-in-long-tsa-lines-and-why-travelers-wont-get-much-else-0cb139ae?mod=mw_rss_topstories",
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/video/u-s-military-archbishop-suggests-iran-war-isnt-justified/",
               "lean": "center",
-              "title": "Here’s what airlines are offering passengers trapped in long TSA lines — and why travelers won’t get much else"
-            }
-          ],
-          "best_video_id": "D8qNww7bFnA",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-03-31",
-          "story_index": 5,
-          "topic": "Trump's Executive Order on Birthright Citizenship",
-          "summary": "President Trump has signed an executive order ending birthright citizenship for children born in the U.S. to non-citizen parents. This controversial move has sparked legal challenges and debates about its constitutionality. The order is part of a broader immigration policy aimed at reducing illegal immigration and addressing what the administration calls 'birth tourism.'",
-          "category": "politics",
-          "left_narrative": "The left is condemning the executive order as unconstitutional and a violation of the 14th Amendment. They argue that it is a discriminatory policy that targets immigrant communities and undermines American values.",
-          "right_narrative": "The right supports the executive order as a necessary step to curb illegal immigration and address loopholes in the immigration system. They argue that the policy is in line with the administration's broader efforts to strengthen border security.",
-          "what_they_arent_telling_you": "On Reddit, users are discussing the potential economic impact of the order on industries reliant on immigrant labor, a point not covered by mainstream media. The media is not addressing the potential for increased legal costs as states challenge the order in court. Social media posts reveal that some legal experts believe the order is overturned by the Supreme Court.",
-          "image_file": "/images/threads/trumps-executive-orders_2026-03-31.png",
-          "social_clips": [
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1s8a7u0/flashback_trump_signs_executive_order_ending/",
-              "embed_id": "1s8a7u0"
+              "title": "U.S. military archbishop suggests Iran war isn't justified"
             },
             {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2038529159094239703",
-              "embed_id": "2038529159094239703",
-              "title": "Trump's executive order stripping birthright citizenship is headed to the Supreme Court, with the case drawing parallels to the 1898 Wong Kim Ark ruli",
-              "author": "Reuters",
-              "duration": 206
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/EricLDaugh/status/2038573620943823091",
-              "embed_id": "2038573620943823091",
-              "title": "🚨 BREAKING: President Trump says the Supreme Court must DO THE RIGHT THING and uphold his executive order ending birthright citizenship for migrants\n",
-              "author": "EricLDaugh"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/chrisgeidner/status/2038382990321979521",
-              "embed_id": "2038382990321979521",
-              "title": "NEW: The birthright citizenship arguments will show what Donald Trump has done to the United States.\n\nTrump's executive order to end birthright citize",
-              "author": "chrisgeidner"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ShannonBream/status/2038335857451483373",
-              "embed_id": "2038335857451483373",
-              "title": "Previewing this week’s Supreme Court showdown over birthright citizenship.  We’ve got you covered for Wednesday’s arguments! \n\nhttps://t.co/uf02ILdDSW",
-              "author": "ShannonBream"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/StandUpForTrmp/status/2038051382343696668",
-              "embed_id": "2038051382343696668",
-              "title": "🚨The US Supreme Court is about to consider UPHOLDING President Trump's executive order that ends birthright citizenship for illegal aliens and migran",
-              "author": "StandUpForTrmp",
-              "duration": 60
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/JDunlap1974/status/2037938162085814538",
-              "embed_id": "2037938162085814538",
-              "title": "BREAKING: SCOTUS is scheduled to hear arguments in President Trump’s birthright citizenship executive order.\n\nThe Supreme Court (SCOTUS) is scheduled ",
-              "author": "JDunlap1974",
-              "duration": 60
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/60Minutes/status/2028545876872823087",
-              "embed_id": "2028545876872823087",
-              "title": "Federal District Judge John Coughenour was unprepared for what happened after he temporarily blocked President Trump's birthright citizenship executiv",
-              "author": "60Minutes"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ChristopherHale/status/2027499538919919999",
-              "embed_id": "2027499538919919999",
-              "title": "“President Trump’s Executive Order banning birthright citizenship is antithetical to the Catholic Church’s teachings.\n\n“Children do nothing wrong by b",
-              "author": "ChristopherHale"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/ChristopherHale/status/2027380386590810347",
-              "embed_id": "2027380386590810347",
-              "title": "NEW: In a historic legal intervention, America’s Catholic bishops have asked the Supreme Court to strike down Trump’s executive order ending birthrigh",
-              "author": "ChristopherHale"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/RepChipRoy/status/2018384777338892404",
-              "embed_id": "2018384777338892404",
-              "title": "Rep. Roy joined @SenEricSchmitt in filing an amicus brief in support of President Trump's Executive Order defending the original meaning of the 14th A",
-              "author": "RepChipRoy"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/RepChipRoy/status/2016951007708639476",
-              "embed_id": "2016951007708639476",
-              "title": "🚨STATEMENT: Rep. Roy, @SenEricSchmitt File Amicus Brief in Support of President Trump’s Birthright Citizenship Executive Order. \n\nRep. Roy: “For deca",
-              "author": "RepChipRoy"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/RepTroyNehls/status/2016884899391602752",
-              "embed_id": "2016884899391602752",
-              "title": "Birthright citizenship has become a magnet for illegal immigration and a threat to our national sovereignty.\n\nAmerican citizenship is a privilege, and",
-              "author": "RepTroyNehls"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/moderatepolitics/comments/1s6v5rv/supreme_court_prepares_to_review_trump_executive/",
-              "embed_id": "1s6v5rv",
-              "title": "Supreme Court prepares to review Trump executive order on birthright citizenship",
-              "author": ""
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/ParlerWatch/comments/1s7oefq/trump_goes_on_a_tirade_about_birthright/",
-              "embed_id": "1s7oefq",
-              "title": "Trump goes on a tirade about birthright citizenship being abut slaves and not “rich people from china” even though Wong Kim Ark in 1898 was about a Ch",
-              "author": ""
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/Conservative/comments/1s7u4xh/supreme_court_hears_oral_arguments_on_trumps/",
-              "embed_id": "1s7u4xh",
-              "title": "Supreme Court Hears Oral Arguments on Trump's Birthright Citizenship Executive Order",
-              "author": ""
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/law/comments/1s7yx9t/trump_rips_birthright_citizenship_ahead_of/",
-              "embed_id": "1s7yx9t",
-              "title": "Trump rips birthright citizenship ahead of Supreme Court arguments",
-              "author": ""
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=3XW9LjoQuJA",
-              "embed_id": "3XW9LjoQuJA",
-              "channel": "France 24",
-              "duration": 296,
-              "title": "&quot;Dumb judges&quot;: Trump heckles Supreme Court ahead of pivotal birthright case • FRANCE 24 English",
-              "relevance": 7
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=RYecNCgwSfE",
-              "embed_id": "RYecNCgwSfE",
-              "channel": "C-SPAN",
-              "title": "U.S. Supreme Court Oral Argument on Trump Restricting Birthright Citizenship"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=rc88dNqVNbE",
-              "embed_id": "rc88dNqVNbE",
-              "channel": "",
-              "title": "FLASHBACK: Trump Signs Executive Order Ending Birthright Citizenship For Everyone Born In U.S."
-            }
-          ],
-          "sources": [
-            {
-              "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/03/30/us/politics/trump-executive-order-birthright-citizenship.html",
-              "lean": "left"
-            },
-            {
-              "name": "Fox News",
-              "url": "https://www.foxnews.com/politics/trump-executive-order-birthright-citizenship",
-              "lean": "right"
-            },
-            {
-              "name": "Washington Post",
-              "url": "https://www.washingtonpost.com/politics/2026/03/30/trump-birthright-citizenship-supreme-court-case/",
-              "lean": "left",
-              "title": "Trump officials cite white supremacists in bid to end birthright citizenship"
-            },
-            {
-              "name": "Daily Caller",
-              "url": "https://dailycaller.com/2026/03/30/gregg-jarrett-why-trump-supreme-court-birthright-citizenship/",
-              "lean": "right",
-              "title": "Gregg Jarrett Breaks Down How Trump Could Sway Supreme Court On Birthright Citizenship"
-            }
-          ],
-          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-31/story_6.mp4",
-          "best_video_id": "3XW9LjoQuJA",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-04-01",
-          "story_index": 2,
-          "topic": "Trump's Executive Order on Mail-In Voting Sparks Controversy",
-          "summary": "Former President Trump signed an executive order aiming to overhaul mail-in voting systems across the United States, citing concerns over election integrity. The order mandates the Department of Homeland Security to prepare a list of eligible voters and requires the USPS to block ballots from non-listed individuals. Critics argue this disenfranchise voters, while supporters claim it's necessary for secure elections.",
-          "category": "politics",
-          "left_narrative": "The left is pushing a narrative that Trump's executive order is an unconstitutional overreach, potentially disenfranchising millions of voters. They emphasize the lack of evidence for widespread voter fraud in previous elections.",
-          "right_narrative": "Supporters argue that the executive order is a much-needed step to ensure election integrity and prevent fraud. They highlight past concerns about mail-in voting vulnerabilities.",
-          "what_they_arent_telling_you": "On Reddit, users are sharing a video of Trump explicitly stating his intent to defund states that don't comply with the order. The mainstream media is not discussing how this order disproportionately affect minority voters, who are more likely to use mail-in voting. Critics on social media point out that the order leads to significant delays and confusion in the upcoming elections.",
-          "image_file": "/images/threads/trumps-executive-orders_2026-04-01.png",
-          "social_clips": [
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s8zrg0/white_house_says_trump_to_sign_executive_order/",
-              "embed_id": "1s8zrg0"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
-              "embed_id": "1s96d9f"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/WhiteHouse/status/2039104348320338033",
-              "embed_id": "2039104348320338033"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s8wv3t/judge_blocks_trump_white_house_ballroom_project/",
-              "embed_id": "1s8wv3t"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s8w4gc/judge_rules_trump_order_eliminating_npr_pbs/",
-              "embed_id": "1s8w4gc"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s92t4u/trump_signs_an_executive_order_to_create_federal/",
-              "embed_id": "1s92t4u",
-              "title": "Trump signs an executive order to create federal voter lists"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/politics/comments/1s940h8/oregon_one_of_first_states_to_sue_trump_for/",
-              "embed_id": "1s940h8",
-              "title": "Oregon one of first states to sue Trump for executive order restricting mail-in votes"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1s91m41/trump_signs_order_directing_creation_of_a/",
-              "embed_id": "1s91m41",
-              "title": "Trump signs order directing creation of a national voter list, a move sure to face legal challenges"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AP/status/2039098803190378850",
-              "embed_id": "2039098803190378850",
-              "title": "BREAKING: President Trump signs an order directing the creation of a national eligible voter list, a",
-              "author": "AP",
-              "relevance": 9
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/AP/status/2039116024050491619",
-              "embed_id": "2039116024050491619",
-              "title": "Elections officials in Oregon and Arizona are the first to pledge legal challenges to President Trum",
-              "author": "AP",
-              "relevance": 8
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/politico/status/2039099570584699068",
-              "embed_id": "2039099570584699068",
-              "title": "Trump to sign order limiting mail-in voting https://t.co/xmAZHF1UPg",
-              "author": "politico"
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/disclosetv/20597",
-              "embed_id": "disclosetv/20597",
-              "title": "NOW - Trump signs executive order curbing mail-in ballot fraud, requiring Homeland Security to prepare a list of citizens eligible to vote in each sta",
-              "author": "disclosetv"
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/Newsmax/30459",
-              "embed_id": "Newsmax/30459",
-              "title": "EXECUTIVE ORDER: President Donald Trump signed a sweeping executive order on Tuesday aimed at tightening election security, saying the move will help ",
-              "author": "newsmax"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/law/comments/1s92lir/executive_order_dhs_will_prepare_list_of_citizens/",
-              "embed_id": "1s92lir",
-              "title": "Executive order: DHS will prepare list of citizens, by state, and USPS will block mail in ballots to anyone not on that list",
-              "author": ""
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=CehrwvqETgA",
-              "embed_id": "CehrwvqETgA",
-              "channel": "NBC News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=-wMUytXNIhE",
-              "embed_id": "-wMUytXNIhE",
-              "channel": "Forbes Breaking News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=Sus8_2S4azg",
-              "embed_id": "Sus8_2S4azg",
-              "channel": "Forbes Breaking News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=wMIKuKf9Lmo",
-              "embed_id": "wMIKuKf9Lmo",
-              "channel": "CNN",
-              "title": "Trump signed an executive order in Oval Office"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=tejZtmxQMhk",
-              "embed_id": "tejZtmxQMhk",
-              "channel": "",
-              "title": "Trump signs an unconstitutional executive order to shut down mail-in voting nationwide and he will defund states if they do not comply with him | DHS will prepare list of citizens by state and USPS will block mail in ballots from anyone not on that list",
-              "transcript_summary": "0:00 This was a meeting set up very proudly\n0:03 by us having to do with voter integrity\n0:05 and mail-in ballots and uh stopping the\n0:09 massive cheating that's gone on. And so\n0:12 we're going to be signing an executive\n0:14 order. It's I believe it's foolproof and\n0:17 maybe it'll be tested, maybe it won't. I\n0:19 think it's very obvious what's said. And\n0:21 I'll ask Will Sharf to start off.\n0:24 Attorney, a great talent, a very\n0:26 brilliant young man. and if you could\n0:29 discuss it and then I'm going to ask\n0:30 Howard Lutnick to say a few words and\n0:32 then I'm going to sign it and we'll take\n0:34 a couple of questions. Okay. Thank you.\n0:36 >> Mr. President, as you said, you have in\n0:37 front of you an executive order that\n0:39 deals with a number of issues relating\n0:41 to election integrity. As you've\n0:43 consistently identified two of the\n0:44 biggest problems we have with election\n0:46 integrity in this country are one,\n0:48 inaccurate voter roles that allow\n0:50 ine..."
-            }
-          ],
-          "sources": [
-            {
-              "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-mail-in-ballots-voting-executive-order.html",
-              "lean": "left"
-            },
-            {
-              "name": "Fox News",
-              "url": "https://www.foxnews.com/politics/trump-signs-executive-order-overhauling-mail-in-voting-major-election-integrity-push",
-              "lean": "right"
-            },
-            {
-              "name": "AP News",
-              "url": "https://www.yahoo.com/news/articles/supreme-court-hears-high-profile-040352303.html",
-              "lean": "center"
-            },
-            {
-              "name": "Reuters",
-              "url": "https://www.yahoo.com/news/articles/judge-orders-trump-admin-restore-011138374.html",
-              "lean": "center"
-            },
-            {
-              "name": "The Guardian US",
-              "url": "https://www.theguardian.com/us-news/2026/mar/31/trump-executive-order-restrict-mail-in-ballots",
-              "lean": "left",
-              "title": "Trump signs order to restrict mail-in ballots in probably unconstitutional move"
-            },
-            {
-              "name": "Washington Post",
-              "url": "https://www.washingtonpost.com/politics/2026/03/31/trump-mail-voting-executive-order/",
-              "lean": "left",
-              "title": "Trump issues order attempting to change rules for mail-in voting"
-            },
-            {
-              "name": "Daily Wire",
-              "url": "https://www.dailywire.com/news/trump-targets-mail-in-as-new-move-could-reshape-how-your-ballot-is-handled",
-              "lean": "right",
-              "title": "Trump Targets Mail-In Voting As New Move Could Reshape How Your Ballot Is Handled"
-            },
-            {
-              "name": "Breitbart",
-              "url": "https://www.breitbart.com/politics/2026/03/31/trump-signs-order-to-verify-mail-in-ballots-used-by-eligible-voters/",
-              "lean": "right",
-              "title": "Trump Signs Order to Verify Mail-In Ballots Used by Eligible Voters"
-            },
-            {
-              "name": "Zero Hedge",
-              "url": "https://www.zerohedge.com/political/trump-signs-executive-order-crack-down-legendary-cheating-lists-mail-voting",
-              "lean": "right",
-              "title": "Trump Signs Executive Order To Crack Down On 'Legendary' Cheating With Lists For Mail-In Voting"
-            },
-            {
-              "name": "Politico",
-              "url": "https://www.politico.com/news/2026/03/31/trump-executive-order-limiting-mail-in-voting-00853296",
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/archbishop-timothy-broglio-military-catholic-chaplains-iran-war/",
               "lean": "center",
-              "title": "Trump signs order limiting mail-in voting"
+              "title": "Military archbishop suggests Iran war isn't justified"
             },
             {
-              "name": "RealClearPolitics",
-              "url": "https://www.realclearpolitics.com/2026/03/31/trumprsquos_toothless_executive_order_on_mail-in_ballots_695917.html",
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/timothy-broglio-archbishop-archdiocese-for-the-military-services-usa-face-the-nation-transcript-04-05-2026/",
               "lean": "center",
-              "title": "Trump's Toothless Executive Order on Mail-In Ballots"
-            },
-            {
-              "name": "NPR",
-              "url": "https://www.npr.org/2026/03/31/nx-s1-5508948/trump-voter-list-mail-ballots-executive-order",
-              "lean": "center",
-              "title": "Trump signs a new executive order on voting. Experts say he lacks the authority"
+              "title": "Transcript: Archbishop Timothy Broglio on \"Face the Nation with Margaret Brennan,\" April 5, 2026"
             },
             {
               "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/03/31/trump-mail-in-voting-executive-order.html",
+              "url": "https://www.cnbc.com/2026/04/01/stock-market-today-live-updates.html",
               "lean": "center",
-              "title": "Trump signs executive order limiting mail-in voting ahead of 2026 U.S. elections"
+              "title": "Dow closes lower as Trump comments dampen traders’ hopes for Iran war ending: Live updates"
             },
             {
-              "name": "The Guardian US",
-              "url": "https://www.theguardian.com/us-news/2026/mar/31/trump-order-election-voting-explainer",
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/04/trumps-iran-speech-offered-zero-answers-and-backfired/",
               "lean": "left",
-              "title": "Trump’s order to limit mail-in voting: does he have the authority?"
+              "title": "Trump’s Iran Speech Offered Zero Answers and Backfired"
             },
             {
-              "name": "The Guardian US",
-              "url": "https://www.theguardian.com/us-news/live/2026/mar/31/donald-trump-iran-shutdown-dhs-tsa-ice-immigration-kennedy-center-latest-news-updates",
-              "lean": "left",
-              "title": "Democrats and voting rights advocates vow to fight Trump’s latest order: ‘massive and unconstitutional suppression effort’ – as it happened"
+              "name": "National Review",
+              "url": "https://www.nationalreview.com/2026/04/the-week-theres-no-end-in-sight-for-the-iran-war/",
+              "lean": "right",
+              "title": "The Week: There’s No End in Sight for the Iran War"
+            },
+            {
+              "name": "National Review",
+              "url": "https://www.nationalreview.com/2026/04/president-trump-was-playing-for-time-in-his-iran-speech/",
+              "lean": "right",
+              "title": "President Trump Was Playing for Time in His Iran Speech"
+            },
+            {
+              "name": "National Review",
+              "url": "https://www.nationalreview.com/2026/04/the-presidents-not-so-reassuring-iran-address/",
+              "lean": "right",
+              "title": "The President’s Not-So-Reassuring Iran Address"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/04/03/opinion-trumps-iran-gamble-could-end-in-a-desert-one-catastrophe-brandon-weichert/",
+              "lean": "right",
+              "title": "BRANDON WEICHERT: Trump’s Iran Gamble Could End In A Desert One Catastrophe"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/04/03/opinion-the-u-s-needs-ground-troops-to-win-war-in-iran-ed-woodson/",
+              "lean": "right",
+              "title": "ED WOODSON: The U.S. Needs Ground Troops To Win War In Iran"
+            },
+            {
+              "name": "Reuters",
+              "url": "https://www.yahoo.com/news/articles/french-ship-crosses-strait-hormuz-092937811.html",
+              "lean": "center",
+              "title": "French ship crosses Strait of Hormuz in first Western European transit during Iran war"
+            },
+            {
+              "name": "Reuters Business",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZFAyb1FPMU1naGdONTc0WEJXM08wMC1FRFd0N2VEaUNEVGQxcE45MUlrUDlfQWU0SzVkQUZQUi1Bc3BsMVdUZTAtaDUwLVBicVdVTjBQaWNXOEZfMnBpSl8xbDZnRWhrYUszWWZndFRFYVVMMmpXZEROU29uZUFObVIxMzI5NDhqNlQzRF90bHoxb2FOU3FrdzNDTHUwcHBJT3RYamZNa2YtNVB0QTFIeEo0TzdMVncwMkpRV1Zn?oc=5",
+              "lean": "center",
+              "title": "BOJ keeps rate‑hike door open even as Iran war squeezes firms - Reuters"
+            },
+            {
+              "name": "Reuters Business",
+              "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQMFNKX041OXdSeTdrSDEwT0hTellUTzVIX240eTBQclNUOFBmT3lnV05yMnc2MDB4dWRybFVZZG5mSV9SZzAyWGtVRng1ZXJGR2tJSENRbFp3N2RzQ0ljNDFIR2FFOXBFSndBQ3BZc2pYUi1veGVsUE42N08xR21SckdpNWQ1N3dpcXJfelRlUHgtaU5QaEVZYUFUQUZfQzZCSXNnc1pVb0hKVzY5c1NibkhFWWhaRHBrS2NCUHJfMEFwMWVDNUhIcHBPalZVc3JiVG5mbmVR?oc=5",
+              "lean": "center",
+              "title": "Hyundai Motor flags export disruptions as Middle East conflict hits shipping - Reuters"
+            },
+            {
+              "name": "AP News",
+              "url": "https://www.yahoo.com/news/articles/trump-offers-murky-path-forward-105218245.html",
+              "lean": "center",
+              "title": "Trump offers murky path forward for Republicans as Iran war clouds midterm elections"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/04/02/did_trumps_iran_address_move_the_needle_696108.html",
+              "lean": "center",
+              "title": "Did Trump's Iran Address Move the Needle?"
             }
           ],
-          "best_video_id": "CehrwvqETgA",
+          "best_video_id": "FiJvVioBHeU",
           "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
           "date": "2026-03-27",
-          "bridge_text": "Debates over the implications of Trump's executive orders continued, with legal experts weighing in."
-        },
-        {
-          "date": "2026-03-28",
-          "bridge_text": "Public protests and legal challenges against Trump's executive orders gained traction."
-        },
-        {
-          "date": "2026-03-29",
-          "bridge_text": "The administration defended its actions, citing national security and electoral integrity."
+          "bridge_text": "Tensions continued to rise with no significant new developments reported."
         },
         {
           "date": "2026-03-30",
-          "bridge_text": "Courts began hearing initial challenges to the executive orders, with mixed rulings."
+          "bridge_text": "The conflict persisted with ongoing military engagements and diplomatic efforts."
         }
       ],
       "first_seen": "2026-03-26",
-      "last_seen": "2026-04-01",
+      "last_seen": "2026-04-03",
       "is_active": true,
-      "total_days_span": 7,
-      "days_covered": 3,
-      "image_file": "/images/threads/trumps-executive-orders.png"
+      "total_days_span": 9,
+      "days_covered": 7,
+      "image_file": "/images/threads/iran-war.png"
     },
     {
-      "id": "tiger-woods-dui-and-treatment",
-      "title": "Tiger Woods DUI and Treatment",
+      "id": "tiger-woods-dui-incident",
+      "title": "Tiger Woods DUI Incident",
       "category": "sports",
-      "summary": "On March 28, 2026, Tiger Woods was arrested in Florida after a car crash, with authorities suspecting DUI. The incident raised significant concerns about the golfer's well-being and sparked widespread media coverage. In a statement on April 1, Woods announced that he would be stepping away from public life to seek treatment related to his DUI arrest. This decision came as he expressed a commitment to addressing his personal challenges and focusing on recovery. The situation has drawn attention not only to Woods' struggles but also to the broader issues of addiction and mental health in sports. As of now, Woods is in treatment, and further updates on his condition and future plans are anticipated.",
+      "summary": "On March 28, 2026, Tiger Woods was arrested on suspicion of DUI following a car crash in Florida. The incident drew significant media attention, particularly as it occurred amidst a protest called the 'No Kings' protest, which was organized by the Democratic Party and gained traction on March 31. The protest aimed to address various social issues, but Woods' arrest overshadowed the event, drawing public scrutiny and debate. By April 3, reports indicated that Woods appeared surprised during his arrest when stopped by a deputy, claiming he was unaware of his level of impairment. As the situation unfolds, the implications of the arrest on Woods' career and public image remain uncertain, with fans and analysts closely watching for further developments.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -6044,7 +5605,7 @@
           "left_narrative": "Media coverage focuses on Woods' troubled history with substance abuse and the impact this arrest have on his career and public image. Outlets are highlighting the repeated nature of such incidents in Woods' life.",
           "right_narrative": "Fans on Reddit are expressing disappointment and concern over Woods' repeated legal troubles. Some are questioning his ability to return to professional golf, while others are showing support and hoping for his recovery.",
           "what_they_arent_telling_you": "A Reddit post in r/sports with 20K upvotes reveals that Woods was seen at a local bar hours before the crash, a detail not mentioned in mainstream reports. The media's omission benefits sponsors who prefer to downplay negative publicity. Additionally, police bodycam footage shows inconsistencies in the sobriety test administration.",
-          "image_file": "/images/story_2026-03-28_39.png",
+          "image_file": "/images/threads/tiger-woods-dui-incident_2026-03-28.png",
           "social_clips": [
             {
               "platform": "reddit",
@@ -6573,30 +6134,204 @@
           "best_video_platform": "youtube"
         },
         {
-          "date": "2026-04-01",
+          "date": "2026-03-31",
           "story_index": 7,
-          "topic": "Tiger Woods Seeks Treatment After DUI Arrest",
-          "summary": "Tiger Woods has announced that he is stepping away from public life to seek treatment following a DUI arrest. The announcement came after a car crash incident on March 30, 2026.",
-          "category": "sports",
-          "left_narrative": "Media coverage focuses on Woods' history of personal struggles and the impact of this latest incident on his career and legacy.",
-          "right_narrative": "Fans on Reddit are expressing support for Woods, with many hoping he gets the help he needs. Some are discussing the pressures of fame and the toll it takes on public figures.",
-          "what_they_arent_telling_you": "On TikTok, users are sharing clips of Woods' previous interviews about personal challenges, which mainstream media has not highlighted. The media has not questioned how this incident affect his sponsorship deals. Details about the substances involved in the DUI were initially withheld, sparking speculation.",
-          "image_file": "/images/story_2026-04-01_33.png",
+          "topic": "Controversy Over 'No Kings' Protest in Florida",
+          "summary": "A protest in Florida, dubbed the 'No Kings' protest, has gained attention after the Democratic Party chair of a local county was accused of assaulting a man with a bullhorn. The protest, which aimed to criticize perceived authoritarian tendencies in government, turned violent, leading to multiple arrests and injuries.",
+          "category": "politics",
+          "left_narrative": "The left is focusing on the protest's message against authoritarianism and the importance of free speech. They argue that the incident should not overshadow the broader issues being addressed by the protest.",
+          "right_narrative": "The right criticizes the protest as an example of left-wing violence and intolerance. They argue that the incident highlights the need for law and order and the dangers of inflammatory rhetoric.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing videos showing peaceful parts of the protest, which are not being highlighted by mainstream media. The media is not addressing the potential political motivations behind the assault charges. Social media posts reveal that some protestors were reportedly provoked by counter-protestors, leading to the escalation.",
+          "image_file": "/images/story_2026-03-31_20.png",
           "social_clips": [
             {
+              "platform": "x",
+              "url": "https://x.com/chucktodd/status/1980258051660694014",
+              "embed_id": "1980258051660694014",
+              "title": "Protesting is \"the most American thing you can do.\" I shut down criticism of the No Kings Protest. \n\nLink to the full discussion in the bio.\n\n#nokings",
+              "author": "chucktodd",
+              "duration": 28
+            },
+            {
               "platform": "reddit",
-              "url": "https://www.reddit.com/r/golf/comments/2039038898811343008",
-              "embed_id": "2039038898811343008"
+              "url": "https://reddit.com/r/50501/comments/1s6uk6f/about_50_supporters_of_president_donald_trump/",
+              "embed_id": "1s6uk6f",
+              "title": "About 50 supporters of President Donald Trump engaged in verbal altercations with \"No Kings\" protesters in West Palm Beach, Florida. Police officers w",
+              "author": ""
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=5wZQf_E4ALI",
+              "embed_id": "5wZQf_E4ALI",
+              "channel": "Fox News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=6pDrjZObnjI",
+              "embed_id": "6pDrjZObnjI",
+              "channel": "Daily Wire"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=eew5iCqwRnI",
+              "embed_id": "eew5iCqwRnI",
+              "channel": "Washington Post",
+              "duration": 20,
+              "title": "People come together to create human banner for No Kings protest",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Rj5tmRDeJRM",
+              "embed_id": "Rj5tmRDeJRM",
+              "channel": "PBS NewsHour",
+              "duration": 653,
+              "title": "Tamara Keith and Amy Walter on turnout for &#39;No Kings&#39; protests",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=aOouiSwL6gw",
+              "embed_id": "aOouiSwL6gw",
+              "channel": "MSNBC",
+              "title": "Lawrence: Even some Trump voters joined the ‘No Kings’ protests"
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/30/us/no-kings-protest-florida.html",
+              "lean": "left"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/us/florida-countys-democratic-party-chair-accused-hitting-man-head-bullhorn-no-kings-protest",
+              "lean": "right"
+            },
+            {
+              "name": "Jacobin",
+              "url": "https://jacobin.com/2026/03/no-kings-protest-trump-authoritarianism/",
+              "lean": "left",
+              "title": "The No Kings Protests Are Cause for Hope"
+            },
+            {
+              "name": "PBS NewsHour",
+              "url": "https://www.pbs.org/newshour/show/tamara-keith-and-amy-walter-on-turnout-for-no-kings-protests",
+              "lean": "center",
+              "title": "Tamara Keith and Amy Walter on turnout for 'No Kings' protests"
+            },
+            {
+              "name": "ABC News",
+              "url": "https://abcnews.com/video/131526347/",
+              "lean": "center",
+              "title": "WATCH:  ‘No Kings’ protests around the country"
+            },
+            {
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/03/this-weekends-no-kings-rallies-were-historically-massive-trump-iran-ice/",
+              "lean": "left",
+              "title": "This Weekend’s No Kings Rallies Were Historically Massive"
+            },
+            {
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/03/no-kings-rally-nyc-hopes-fears-video/",
+              "lean": "left",
+              "title": "No Kings Rallygoers in New York Share Their Biggest Fears—and Greatest Hopes"
+            },
+            {
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/03/no-kings-three-protestors-demand-trump-administration/",
+              "lean": "left",
+              "title": "No Kings Demonstrators Protest Trump Across the Country"
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/the-no-kings-protests-released-new-levels-of-absurd",
+              "lean": "right",
+              "title": "The ‘No Kings’ Protests Released New Levels Of Absurd"
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/no-kings-rallies-paid-for-by-a-king",
+              "lean": "right",
+              "title": "‘No Kings’ Rallies — Paid For By A King"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/03/30/brit-hume-no-kings-protest-reveals-todays-politics/",
+              "lean": "right",
+              "title": "‘A Certain Absurdity About All This’: Brit Hume Breaks Down What No Kings Protest Reveals About Today’s Politics"
+            },
+            {
+              "name": "The Federalist",
+              "url": "https://thefederalist.com/2026/03/30/the-latest-no-kings-protest-is-the-sound-of-a-tired-old-thing-trying-to-not-die/?utm_source=rss&utm_medium=rss&utm_campaign=the-latest-no-kings-protest-is-the-sound-of-a-tired-old-thing-trying-to-not-die",
+              "lean": "right",
+              "title": "The Latest ‘No Kings’ Protest Is The Sound Of A Tired Old Thing Trying To Not Die"
+            },
+            {
+              "name": "Slate",
+              "url": "https://slate.com/news-and-politics/2026/03/trump-2026-midterms-no-kings-winning.html?via=rss",
+              "lean": "left",
+              "title": "What Trump Plans to Do in 2026 and How the “No Kings” Movement Can Defeat Him"
+            },
+            {
+              "name": "TMZ",
+              "url": "https://www.tmz.com/2026/03/30/alleged-ice-agent-beat-up-at-no-kings-protest/",
+              "lean": "center",
+              "title": "Man Dressed Like ICE Agent Beat Up At No Kings Protest In Hawaii, On Video"
+            }
+          ],
+          "best_video_id": "QEQqEasdXVU",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-04-03",
+          "story_index": 6,
+          "topic": "Tiger Woods' Surprising DUI Arrest",
+          "summary": "Tiger Woods was stopped by a deputy and appeared surprised during his DUI arrest, mentioning he was just talking to the president. The incident occurred after Woods was found asleep at the wheel in Florida. Bodycam footage shows Woods' confusion and his subsequent arrest.",
+          "category": "sports",
+          "left_narrative": "Media coverage focuses on the unexpected nature of Tiger Woods' arrest and his mention of a conversation with the president, highlighting the public's interest in Woods' personal life and legal troubles.",
+          "right_narrative": "Fans on Reddit are discussing the implications of Tiger Woods' statement about speaking with the president, with some questioning the relevance of this detail to his DUI arrest.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing the bodycam footage that shows Woods' confusion, which hasn't been widely aired on TV. The media benefits from focusing on Woods' celebrity status rather than the specifics of the arrest. The footage contradicts the narrative that Woods was fully aware of his surroundings during the incident.",
+          "image_file": "/images/story_2026-04-03_24.png",
+          "social_clips": [
+            {
+              "platform": "x",
+              "url": "https://x.com/EndWokeness/status/2039718496066584860",
+              "embed_id": "2039718496066584860"
             },
             {
               "platform": "x",
-              "url": "https://x.com/ClayTravis/status/2038844748916490539",
-              "embed_id": "2038844748916490539",
-              "title": "Tiger Woods’s athletic career is over. His job is to be a dad now. I hope he gets the help he needs ",
-              "author": "ClayTravis",
-              "duration": 89,
-              "video_transcript": "We're very lucky that Tiger didn't hurt himself or someone else. At this point, there's no way Tiger Woods should be driving. We know that Charlie Woods, the son of Tiger Woods, a very talented golfer. And we've seen Tiger, uh, work with him as a caddy and, uh, and start to, uh, just be involved with his son and his golf life. Um, I would say to Tiger, one of the great moments in sports, in my opinion, is the Sunday of the U S open, which is always on father's day weekend. When oftentimes dad is",
-              "relevance": 9
+              "url": "https://x.com/CNN/status/2039123963779907820",
+              "embed_id": "2039123963779907820",
+              "title": "Tiger Woods says he is stepping away for a \"period of time to seek treatment and focus on my health\" after his not guilty plea to a DUI charge. https:",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2039084086027796705",
+              "embed_id": "2039084086027796705",
+              "title": "Tiger Woods enters a not guilty plea and demands a jury trial following a rollover crash in Florida last week. https://t.co/HxkIBkpuW1",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2038987749617717298",
+              "embed_id": "2038987749617717298",
+              "title": "Tiger Woods had bloodshot eyes and failed sobriety tests after crash, arrest affidavit says. Police also found prescription painkillers during search.",
+              "author": "CNN"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNN/status/2037817155803111526",
+              "embed_id": "2037817155803111526",
+              "title": "Tiger Woods was arrested Friday on suspicion of driving under the influence, according to Martin County, Florida, Sheriff John Budensiek. He was seen ",
+              "author": "CNN",
+              "duration": 47
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/espn/status/2039820702174363921",
+              "embed_id": "2039820702174363921",
+              "title": "The Martin County Sheriff's Office released bodycam footage Thursday from Tiger Woods' DUI arrest.\n\nIt shows deputies removing two pills from his pock",
+              "author": "espn"
             },
             {
               "platform": "x",
@@ -6607,215 +6342,985 @@
             },
             {
               "platform": "x",
-              "url": "https://x.com/espn/status/2039113177544204687",
-              "embed_id": "2039113177544204687",
-              "title": "Breaking: Tiger Woods announced he is stepping away from golf to seek treatment and focus on his health. https://t.co/48mAeCk8Oo",
+              "url": "https://x.com/espn/status/2038987750926376981",
+              "embed_id": "2038987750926376981",
+              "title": "Tiger Woods told authorities that he was looking down at his phone and changing the radio station before his rollover crash last week in Florida, acco",
               "author": "espn"
             },
             {
               "platform": "x",
-              "url": "https://x.com/espn/status/2037659425553473874",
-              "embed_id": "2037659425553473874",
-              "title": "Tiger Woods was arrested on suspicion of DUI following a car crash Friday in which he struck another vehicle on Jupiter Island, Florida, according to ",
-              "author": "espn"
+              "url": "https://x.com/TMZ/status/2039833516175741018",
+              "embed_id": "2039833516175741018",
+              "title": "Tiger Woods Crash Victim Hires Lawyer https://t.co/E4pFiKhr9M https://t.co/YtqopbnO95",
+              "author": "TMZ"
             },
             {
               "platform": "x",
-              "url": "https://x.com/SportsCenter/status/2037643720426721298",
-              "embed_id": "2037643720426721298",
-              "title": "Tiger Woods showed signs of impairment Friday at the scene of a car crash in which he struck another vehicle and rolled his Land Rover, authorities sa",
-              "author": "SportsCenter",
-              "duration": 177
+              "url": "https://x.com/TMZ/status/2039819352967348315",
+              "embed_id": "2039819352967348315",
+              "title": "Tiger Woods Told Officer He Was 'Hoping To' Play Masters At Crash Scene https://t.co/hM5WOWDzmV https://t.co/pCItJsPeTS",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039817809950327001",
+              "embed_id": "2039817809950327001",
+              "title": "🚨 In the time between Tiger Woods flipping his car and being arrested for DUI, the golf legend dialed up President Donald Trump from the scene of the",
+              "author": "TMZ",
+              "duration": 111
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039815199985721728",
+              "embed_id": "2039815199985721728",
+              "title": "WATCH: Tiger Woods calls President Donald Trump from scene after flipping car ☎️ https://t.co/Egh2BB3cra https://t.co/X65J4riwro",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039774116950004038",
+              "embed_id": "2039774116950004038",
+              "title": "Tiger Woods Cited for Careless Driving on Top of DUI Charge https://t.co/V7BTpyrwHS https://t.co/1TSkvIfPzs",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039737626522177810",
+              "embed_id": "2039737626522177810",
+              "title": "More body cam footage from Tiger Woods' DUI arrest shows him getting placed in handcuffs after several field sobriety tests 🎥 https://t.co/XyB0QAdzBD",
+              "author": "TMZ",
+              "duration": 257
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039720975764484427",
+              "embed_id": "2039720975764484427",
+              "title": "Tiger Woods' DUI body cam footage shows the golf legend kneeling at the scene and describing what led to his rollover crash 🗣️ https://t.co/rT1Z5Sy3J",
+              "author": "TMZ",
+              "duration": 120
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039719998839767104",
+              "embed_id": "2039719998839767104",
+              "title": "🚨🎥 WATCH: Tiger Woods DUI body cam footage released https://t.co/qBT9iLQ5Vh",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039470413466435973",
+              "embed_id": "2039470413466435973",
+              "title": "Exclusive: Tiger Woods is getting support from Vanessa Trump amid DUI fallout and treatment. \n\nRead more: https://t.co/Wqw1wdJLkl https://t.co/H8IcoGS",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039111704252977220",
+              "embed_id": "2039111704252977220",
+              "title": "🚨 Tiger Woods is seeking treatment after his DUI arrest.\n\nDetails: https://t.co/aFUwcEnpFO https://t.co/76jJbfauxS",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039073768358776849",
+              "embed_id": "2039073768358776849",
+              "title": "🚨 EXCLUSIVE: Tiger Woods pleads not guilty and retains a high-powered attorney from his 2017 DUI arrest. https://t.co/vUvqEgjNBC https://t.co/BcAkRRd",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2039028760301678936",
+              "embed_id": "2039028760301678936",
+              "title": "Today on @TMZLive we found out Tiger Woods had opioids in his pocket during his DUI arrest.\n\nDetails at 10:30am PT. https://t.co/nyU0mGXBeS",
+              "author": "TMZ",
+              "duration": 7
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/2038990968821535210",
+              "embed_id": "2038990968821535210",
+              "title": "From @TheAthletic: More details of Tiger Woods's DUI arrest were released Tuesday. Officers describe Woods as “sweating profusely” at the time of the ",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/TMZ/status/2038970218484011182",
+              "embed_id": "2038970218484011182",
+              "title": "😳 EXCLUSIVE: Tiger Woods had pills in his pocket at the time of his DUI arrest, cops say.\n\nDetails: https://t.co/IkI1PYq3KM https://t.co/BYoTDMTyTi",
+              "author": "TMZ"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AJEnglish/status/2039836523827446093",
+              "embed_id": "2039836523827446093",
+              "title": "Police bodycam footage shows the moment golfer Tiger Woods was arrested after his car rolled over. \n\nHe pleaded not guilty and says he will step away ",
+              "author": "AJEnglish",
+              "duration": 55
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/pubity/status/2039830615831245124",
+              "embed_id": "2039830615831245124",
+              "title": "Tiger Woods called Donald Trump for assistance right before he was arrested for a DUI according to police bodycam footage. https://t.co/3I18GBwhKk",
+              "author": "pubity"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Complex/status/2039806699679224043",
+              "embed_id": "2039806699679224043",
+              "title": "Bodycam footage of Tiger Woods after the crash that resulted in a DUI charge in Jupiter Island, Florida. \n\n“I looked down at my phone… and all of a su",
+              "author": "Complex"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/DesireeAmerica4/status/2039802580612645025",
+              "embed_id": "2039802580612645025",
+              "title": "BREAKING: Money can buy a lot of things, but it can't buy you out of bodycam footage. \n\n​Tiger Woods was just cuffed for DUI after a rollover crash in",
+              "author": "DesireeAmerica4",
+              "duration": 128
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/BBCSport/status/2039775682746839339",
+              "embed_id": "2039775682746839339",
+              "title": "Bodycam footage from the Martin County Sheriff's Office shows the moment Tiger Woods is arrested for driving under the influence after a car crash in ",
+              "author": "BBCSport",
+              "duration": 45
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/FearedBuck/status/2039729775367893439",
+              "embed_id": "2039729775367893439",
+              "title": "Bodycam footage of Tiger Woods after the crash that resulted in a DUI charge https://t.co/JRH5Buy4Sy",
+              "author": "FearedBuck",
+              "duration": 113
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/NUCLRGOLF/status/2039729698968584223",
+              "embed_id": "2039729698968584223",
+              "title": "🚨🏌️👮‍♂️ #WATCH — Tiger Woods' DUI arrest bodycam footage has been released. \n\n“I looked down at my phone and all of a sudden, boom!”\n\n https://t.co",
+              "author": "NUCLRGOLF",
+              "duration": 111
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Hunter_Eagleman/status/2039724631322395109",
+              "embed_id": "2039724631322395109",
+              "title": "NEW:🚨 Bodycam footage released of Tiger Woods crash and DUI charge.   https://t.co/23NU50Zlt9",
+              "author": "Hunter_Eagleman",
+              "duration": 132
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/EricLDaugh/status/2039724268418703408",
+              "embed_id": "2039724268418703408",
+              "title": "🚨 JUST IN: Bodycam footage released of Tiger Woods' rollover crash and DUI charge\n\nWoods pleads not guilty to DUI and is demanding a jury trial\n\nHis ",
+              "author": "EricLDaugh",
+              "duration": 132
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/GigglingGanon/status/2039740244128387495",
+              "embed_id": "2039740244128387495",
+              "title": "Breaking:\nTiger woods body cam footage released. 👀👇 #tigerwoods https://t.co/lTckxwJCED",
+              "author": "GigglingGanon",
+              "duration": 54
             },
             {
               "platform": "telegram",
-              "url": "https://t.me/Newsmax/30445",
-              "embed_id": "Newsmax/30445",
-              "title": "Golf legend Tiger Woods' eyes were bloodshot and glassy, his pupils dilated and he had hydrocodone pills in his pocket when interviewed at the scene o",
+              "url": "https://t.me/Newsmax/30536",
+              "embed_id": "Newsmax/30536",
+              "title": "New bodycam footage has been released following Tiger Woods’ arrest for DUI in Jupiter, Florida, showing a detailed look at the moments following a ro",
+              "author": "newsmax"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/Newsmax/30532",
+              "embed_id": "Newsmax/30532",
+              "title": "Tiger Woods expressed astonishment as he was handcuffed after crashing his vehicle last week in Florida, according to body camera footage released Thu",
               "author": "newsmax"
             },
             {
               "platform": "tiktok",
-              "url": "https://www.tiktok.com/@dailymailsportusa/video/7623417120046566678",
-              "embed_id": "7623417120046566678",
-              "title": "Tiger Woods reportedly had two hydrocodone pills in his pocket when he was arrested for DUI in Florida on Friday.\n\nAccording to TMZ, an arrest affidav",
-              "author": "dailymailsportusa",
-              "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/oYCjjAkBpC05wnqiiAAeoAENEFmLfyGgDRIYDA~tplv-tiktokx-origin.image?dr=9636&x-expires=1775196000&x-signature=hOGj6wImFMG%2F9lL2jtwHVYfmyUs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-              "duration": 8
+              "url": "https://www.tiktok.com/@cbseveningnews/video/7624298620992474381",
+              "embed_id": "7624298620992474381",
+              "title": "In body camera footage of Tiger Woods' DUI arrest last week in Florida, he told deputies that he had been checking his phone while driving and hit the",
+              "author": "cbseveningnews",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-v-85c255-tx/o0MzBf6ewi6SIz8IUApgiCKOEvBvEA7wDD1AVx~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=ZYkzgzVU3RhvCbgd00G%2B6iSVomE%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 122
             },
             {
               "platform": "tiktok",
-              "url": "https://www.tiktok.com/@cbsnews/video/7623613122510638349",
-              "embed_id": "7623613122510638349",
-              "title": "Famed golfer Tiger Woods released a statement on social media Tuesday saying he's stepping away to seek treatment after pleading not guilty to DUI. CB",
+              "url": "https://www.tiktok.com/@cbsnews/video/7624317316217556237",
+              "embed_id": "7624317316217556237",
+              "title": "Bodycam video from Tiger Woods' DUI arrest after he crashed his car in Jupiter, Florida, showed the 15-time major winner going through field sobriety ",
               "author": "cbsnews",
-              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oEDENiMPiyg48DcI6AgvGkjAB8aBA43ziEgyA~tplv-tiktokx-dmt-logom:tos-useast5-i-0068-tx/oUAXAe2vGOGnLAdRPZIBgdI4MJIQe0PAieGmeA.image?dr=9634&x-expires=1775196000&x-signature=6VKCZYLvyRzeq2mL2y%2Fu0rEu9AU%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-              "duration": 123
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oQyejg4fTgk2IFHfCCnX1MdQgbMWNNAsnA8KKo~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=KEK7kUNQBAqslnUMzQX6wPaSU%2Bw%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 104
             },
             {
               "platform": "tiktok",
-              "url": "https://www.tiktok.com/@abcworldnews/video/7623604861065530637",
-              "embed_id": "7623604861065530637",
-              "title": "#TigerWoods is speaking out after pleading not guilty to DUI following the crash near his home in #Florida. The police report reveals he allegedly fai",
-              "author": "abcworldnews",
-              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/o0mzSQAQDDvxHBfzgEfEEqEsbFX2lpDw704BcY~tplv-tiktokx-origin.image?dr=9636&x-expires=1775196000&x-signature=R32YJSXcnHwZEBk%2FrNw%2FD%2FzL95w%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-              "duration": 131
+              "url": "https://www.tiktok.com/@bbcnews/video/7624469427228101910",
+              "embed_id": "7624469427228101910",
+              "title": "Tiger Woods was arrested for driving under the influence after a car crash in Florida last month. He submitted a written plea of not guilty via his la",
+              "author": "bbcnews",
+              "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-no1a-p-0037-no/okB9KABj5DevOAo9Pzj5S7XiAUxiEB0ZCIwAlC~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=PtYPStjlXPrGQZlMbd1m3pchsMs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 55
             },
             {
               "platform": "tiktok",
-              "url": "https://www.tiktok.com/@wthrcom/video/7623654953113996557",
-              "embed_id": "7623654953113996557",
-              "title": "Tiger Woods said he’ll step away and seek treatment on Tuesday, days after his vehicle crashed in Florida and he was arrested on suspicion of DUI.",
-              "author": "wthrcom",
-              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oYeqdA5OTjHjMeUMCyLIAOGxgmJDJziIIxeWkV~tplv-tiktokx-origin.image?dr=9636&x-expires=1775196000&x-signature=hLxqIi0lztl0NmRHvxTFURsADzY%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
-              "duration": 52
+              "url": "https://www.tiktok.com/@extra_tv/video/7624335392229166366",
+              "embed_id": "7624335392229166366",
+              "title": "Newly released police footage from #TigerWoods’ DUI arrest shows the golfer yawning and hiccuping after he was arrested and put in the back of a patro",
+              "author": "extra_tv",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/okPiECAhIWIqHo51ofy6PI4B0LAFTBpm5AiAAi~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=6W2IDa552KtX3pLKLOdEjSOiyCs%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 91
             },
             {
               "platform": "tiktok",
-              "url": "https://www.tiktok.com/@nypost/video/7623539178835348750",
-              "embed_id": "7623539178835348750",
-              "title": "Tiger Woods allegedly had two hydrocodone pills stashed in his pocket when he was busted on DUI charges in Florida. The Post's Rikki Schlott breaks do",
-              "author": "nypost",
-              "thumbnail": "https://p16-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/oESKQaiAMmyxInBoLgA4M0U4HCcxIJy6iBCbP~tplv-tiktokx-origin.image?dr=14575&x-expires=1775196000&x-signature=MpC2f1GukZgwK8A%2FdlQOQKDm6ig%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=my2",
-              "duration": 50
+              "url": "https://www.tiktok.com/@nbcnews/video/7624230652988247310",
+              "embed_id": "7624230652988247310",
+              "title": "Newly released body camera footage from Tiger Woods' DUI arrest shows the golfer participating in field sobriety tests and later being handcuffed.",
+              "author": "nbcnews",
+              "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-useast5-p-0068-tx/oo0AJZOHzBRE1AiKyBpIzWcAA5B9w1fDlqtBiK~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=aKwr9IuWtB%2FhpDGNFsErCAm9miA%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 36
             },
             {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/golf/comments/1s8o2t5/tiger_woods_had_pills_in_his_pocket_at_time_of/",
-              "embed_id": "1s8o2t5",
-              "title": "Tiger Woods Had Pills In His Pocket At Time Of DUI Arrest, Cops Say",
-              "author": ""
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@nbcsouthflorida/video/7624248139289038111",
+              "embed_id": "7624248139289038111",
+              "title": "Newly released bodycam video captured the moment golf legend Tiger Woods was arrested following a rollover crash in Florida.\n\nA Martin County Sheriff'",
+              "author": "nbcsouthflorida",
+              "thumbnail": "https://p19-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/o4ALEYrwGgMeE7RnA0LAqYrrREesTAIQIfAqEn~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=ZZYrXTI9RsGJXv5oHUmpoyTAU%2F0%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast8",
+              "duration": 67
             },
             {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/Fauxmoi/comments/1s8p33a/tiger_woods_had_pills_in_his_pocket_at_the_time/",
-              "embed_id": "1s8p33a",
-              "title": "Tiger Woods had pills in his pocket at the time of his DUI arrest",
-              "author": ""
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@gma/video/7624500340221578510",
+              "embed_id": "7624500340221578510",
+              "title": "Body camera footage has been released showing Tiger Woods’ arrest for driving under the influence following his rollover crash in Florida last week.\nF",
+              "author": "gma",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast5-p-85c255-tx/o8LCeII6Pz0C1ECqDDirAi5YABvBiwqpkIPTUC~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=G3vbXd1sGTmMWTw%2B5TftaNXT5Ls%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 97
+            },
+            {
+              "platform": "tiktok",
+              "url": "https://www.tiktok.com/@abcnews/video/7624236605565406495",
+              "embed_id": "7624236605565406495",
+              "title": "Body camera footage has been released showing the law enforcement response to Tiger Woods' rollover crash in Florida.\n \nThe footage from the Martin Co",
+              "author": "abcnews",
+              "thumbnail": "https://p16-common-sign.tiktokcdn-us.com/tos-useast8-p-0068-tx2/ogl7uailO1X5EDAmYR6AAklAAAc6It5TiBcSP~tplv-tiktokx-origin.image?dr=9636&x-expires=1775390400&x-signature=tN%2BvfHOmTEfri4MnC1HcoBdVZ2s%3D&t=4d5b0474&ps=13740610&shp=81f88b70&shcp=43f4a2f9&idc=useast5",
+              "duration": 128
             }
           ],
           "youtube_videos": [
             {
-              "url": "https://www.youtube.com/watch?v=QEQqEasdXVU",
-              "embed_id": "QEQqEasdXVU",
-              "channel": "CBS News",
-              "title": "Tiger Woods says he is \"stepping away\" to seek treatment after DUI arrest",
-              "transcript_summary": "0:01 Breaking news, famed golfer Tiger Woods\n0:03 has released a statement on social media\n0:05 after his DUI arrest in Florida. Tiger\n0:08 says he is stepping away for a period of\n0:10 time to get treatment and focus on his\n0:12 health in order to work toward a lasting\n0:15 recovery. A newly released police report\n0:18 details what Woods told investigators\n0:20 and what made investigators suspicious\n0:22 that he might be driving under the\n0:24 influence. CBS News correspondent Nicole\n0:26 Valdez has more now from South Florida.\n0:29 New details tonight from Friday's\n0:31 rollover crash on Jupiter Island. In a\n0:34 newly released arrest report, Tiger\n0:35 Woods told deputies he was looking at\n0:37 his phone and changing the radio and\n0:40 didn't see a truck slowing down ahead\n0:42 before clipping a trailer and flipping\n0:44 his SUV. According to the report, police\n0:46 found two white pills in Woods's pocket,\n0:49 later identified as hydrocodone, a\n0:52 powerful painkiller. Woods told\n..."
+              "url": "https://www.youtube.com/watch?v=c8N7uEz2fVM",
+              "embed_id": "c8N7uEz2fVM",
+              "channel": "NBC News",
+              "title": "Florida sheriff releases video showing Tiger Woods’ DUI arrest"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=9XAUEyjPVDA",
+              "embed_id": "9XAUEyjPVDA",
+              "channel": "BBC News",
+              "title": "Tiger Woods arrest bodycam footage released by police. #TigerWoods #Florida #BBCNews"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=zMk8jJk31CM",
+              "embed_id": "zMk8jJk31CM",
+              "channel": "Associated Press",
+              "title": "Tiger Woods tells deputy he was 'talking to the president,' body cam shows"
             }
           ],
           "sources": [
             {
-              "name": "Variety",
-              "url": "https://variety.com/2026/sports/news/tiger-woods-seeking-treatment-car-crash-dui-1236704119/",
+              "name": "ESPN",
+              "url": "https://www.espn.com/golf/story/_/id/48378214/bodycam-shows-tiger-woods-surprised-dui-arrest",
               "lean": "center"
-            },
-            {
-              "name": "Rolling Stone",
-              "url": "https://www.rollingstone.com/culture/culture-news/tiger-woods-pleads-not-guilty-rollover-crash-1235539860/",
-              "lean": "center"
-            },
-            {
-              "name": "TMZ",
-              "url": "https://www.tmz.com/2026/03/31/tiger-woods-seeking-treatment-after-dui-arrest/",
-              "lean": "center"
-            },
-            {
-              "name": "Daily Wire",
-              "url": "https://www.dailywire.com/news/tiger-woods-breaks-silence-after-dui-arrest-pga-tour-also-issues-statement",
-              "lean": "right",
-              "title": "Tiger Woods Breaks Silence After DUI Arrest, PGA Tour Also Issues Statement"
             },
             {
               "name": "Daily Caller",
-              "url": "https://dailycaller.com/2026/03/31/tiger-woods-announcement-treatment-dui-arrest/",
+              "url": "https://dailycaller.com/2026/04/02/tiger-woods-crash-scene-video-phone-president-donald-trump-dui-arrest/",
               "lean": "right",
-              "title": "Tiger Woods Announces He’s Stepping Away To ‘Seek Treatment’ After DUI Arrest"
+              "title": "Tiger Woods Claims To Be On Phone With President Donald Trump In Crash Scene Video"
             },
             {
-              "name": "BBC",
-              "url": "https://www.bbc.com/sport/golf/articles/c87wjj424vro?at_medium=RSS&at_campaign=rss",
+              "name": "Al Jazeera",
+              "url": "https://www.aljazeera.com/sports/2026/4/3/tiger-woods-told-police-after-car-crash-he-was-talking-to-the-president?traffic_source=rss",
               "lean": "center",
-              "title": "Tiger Woods to 'step away and seek treatment' after crash"
+              "title": "Tiger Woods told police after car crash he was ‘talking to the president’"
             },
             {
-              "name": "DW News",
-              "url": "https://www.dw.com/en/tiger-woods-stepping-away-for-treatment-after-dui-arrest/a-76615488?maca=en-rss-en-all-1573-xml-mrss",
+              "name": "ABC News",
+              "url": "https://abcnews.com/video/131669952/",
               "lean": "center",
-              "title": "Tiger Woods 'stepping away' for treatment after DUI arrest"
+              "title": "WATCH:  Body camera video shows Tiger Woods' field sobriety tests, DUI arrest after crash"
             },
             {
-              "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/03/31/tiger-woods-opioids-dui-arrest-affidavit.html",
+              "name": "ABC News",
+              "url": "https://abcnews.com/video/131656979/",
               "lean": "center",
-              "title": "Tiger Woods says he is seeking treatment after DUI rollover crash in Florida"
+              "title": "WATCH:  Body camera footage released in Tiger Woods rollover car crash: 'I'm being arrested?'"
             },
             {
-              "name": "Rolling Stone",
-              "url": "https://www.rollingstone.com/culture/culture-sports/tiger-woods-rollover-crash-dui-arrest-police-new-details-1235539628/",
+              "name": "People",
+              "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQbjRLSEpWSzFmN0xrTjFMdV9pYnNTUGMzcnZiZEJyN3B4ZWxaWTg3cklDdDVzZGJOaTZ3YnhGREhqUVJEaFNLTlBIaWlyLUY2ci1SMkJwb2w1MXBmUXM1cE1XWEdwdzQ5V2QtUFp5cHlvekZpVkQtTUtSdjd4dVVaS2pFTnVPYk80cmFuNFdReWdPQjJtM0hELThyNXVKX3RtQ3BlR3RPOVY2QTFhc0JOTkZwMVhxVUxmYUVLUQ?oc=5",
               "lean": "center",
-              "title": "Tiger Woods Found With Hydrocodone Pills in His Pocket During DUI Arrest: Report"
-            },
-            {
-              "name": "E! News",
-              "url": "https://www.eonline.com/news/1430289/tiger-woods-on-dui-arrest-seeking-treatment?cmpid=rss-syndicate-genericrss-us-top_stories",
-              "lean": "center",
-              "title": "Tiger Woods Says He's Seeking Treatment After DUI Arrest"
-            },
-            {
-              "name": "Page Six",
-              "url": "https://pagesix.com/2026/03/31/celebrity-news/tiger-woods-speaks-out-after-car-crash/",
-              "lean": "center",
-              "title": "Tiger Woods speaks out after DUI arrest, says he will ‘seek treatment’"
-            },
-            {
-              "name": "Hollywood Reporter",
-              "url": "https://www.hollywoodreporter.com/news/general-news/tiger-woods-treatment-dui-crash-1236553268/",
-              "lean": "center",
-              "title": "Tiger Woods Says He’s Seeking Treatment After DUI and SUV Rollover Crash"
-            },
-            {
-              "name": "Deadline",
-              "url": "https://deadline.com/2026/03/tiger-woods-addresses-dui-arrest-not-guilty-plea-1236770509/",
-              "lean": "center",
-              "title": "Tiger Woods Addresses DUI Arrest After Not Guilty Plea: “I Am Stepping Away For A Period Of Time To Seek Treatment”"
-            },
-            {
-              "name": "Ars Technica",
-              "url": "https://arstechnica.com/tech-policy/2026/03/sweaty-glassy-eyed-tiger-woods-blames-cell-phone-use-for-his-car-crash/",
-              "lean": "center",
-              "title": "Sweaty, glassy-eyed Tiger Woods blames cell phone use for his car crash"
+              "title": "Tiger Woods Arrest Body Cam Footage Shows Him Telling Police He's 'Hoping' to Golf in the Masters: 'Depends on Y'all' - people.com"
             }
           ],
-          "best_video_id": "QEQqEasdXVU",
+          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-04-03/story_5.mp4",
+          "best_video_id": "c8N7uEz2fVM",
           "best_video_platform": "youtube"
         }
       ],
       "gap_days": [
         {
           "date": "2026-03-29",
-          "bridge_text": "Woods' arrest continued to dominate headlines, with discussions about his future in golf."
-        },
-        {
-          "date": "2026-03-30",
-          "bridge_text": "Woods' team announced he would be stepping away from public life to focus on recovery."
-        },
-        {
-          "date": "2026-03-31",
-          "bridge_text": "Support from fans and fellow athletes poured in as Woods began his treatment."
+          "bridge_text": "Woods' arrest continued to dominate sports news, with discussions about his future."
         }
       ],
       "first_seen": "2026-03-28",
+      "last_seen": "2026-04-03",
+      "is_active": true,
+      "total_days_span": 7,
+      "days_covered": 3
+    },
+    {
+      "id": "trumps-executive-orders-and-policies",
+      "title": "Trump's Executive Orders and Policies",
+      "category": "politics",
+      "summary": "On March 31, 2026, President Trump signed an executive order ending birthright citizenship for children born in the U.S. to non-citizen parents, a move that has reignited the national debate over immigration policy. The following day, Trump further stirred controversy by signing another executive order aimed at overhauling mail-in voting systems, which critics argue could disenfranchise voters. These actions have prompted immediate legal challenges, with the U.S. Supreme Court agreeing to hear a case on April 1 that questions the constitutionality of the birthright citizenship clause of the 14th Amendment. As of now, the political landscape is charged, with supporters praising Trump's efforts to tighten immigration and voting regulations, while opponents warn of potential civil rights violations. The outcomes of these legal proceedings could have significant implications for both immigration and electoral processes in the U.S.",
+      "entries": [
+        {
+          "date": "2026-03-31",
+          "story_index": 5,
+          "topic": "Trump's Executive Order on Birthright Citizenship",
+          "summary": "President Trump has signed an executive order ending birthright citizenship for children born in the U.S. to non-citizen parents. This controversial move has sparked legal challenges and debates about its constitutionality. The order is part of a broader immigration policy aimed at reducing illegal immigration and addressing what the administration calls 'birth tourism.'",
+          "category": "politics",
+          "left_narrative": "The left is condemning the executive order as unconstitutional and a violation of the 14th Amendment. They argue that it is a discriminatory policy that targets immigrant communities and undermines American values.",
+          "right_narrative": "The right supports the executive order as a necessary step to curb illegal immigration and address loopholes in the immigration system. They argue that the policy is in line with the administration's broader efforts to strengthen border security.",
+          "what_they_arent_telling_you": "On Reddit, users are discussing the potential economic impact of the order on industries reliant on immigrant labor, a point not covered by mainstream media. The media is not addressing the potential for increased legal costs as states challenge the order in court. Social media posts reveal that some legal experts believe the order is overturned by the Supreme Court.",
+          "image_file": "/images/story_2026-03-31_16.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s8a7u0/flashback_trump_signs_executive_order_ending/",
+              "embed_id": "1s8a7u0"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/Reuters/status/2038529159094239703",
+              "embed_id": "2038529159094239703",
+              "title": "Trump's executive order stripping birthright citizenship is headed to the Supreme Court, with the case drawing parallels to the 1898 Wong Kim Ark ruli",
+              "author": "Reuters",
+              "duration": 206
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/EricLDaugh/status/2038573620943823091",
+              "embed_id": "2038573620943823091",
+              "title": "🚨 BREAKING: President Trump says the Supreme Court must DO THE RIGHT THING and uphold his executive order ending birthright citizenship for migrants\n",
+              "author": "EricLDaugh"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/chrisgeidner/status/2038382990321979521",
+              "embed_id": "2038382990321979521",
+              "title": "NEW: The birthright citizenship arguments will show what Donald Trump has done to the United States.\n\nTrump's executive order to end birthright citize",
+              "author": "chrisgeidner"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/ShannonBream/status/2038335857451483373",
+              "embed_id": "2038335857451483373",
+              "title": "Previewing this week’s Supreme Court showdown over birthright citizenship.  We’ve got you covered for Wednesday’s arguments! \n\nhttps://t.co/uf02ILdDSW",
+              "author": "ShannonBream"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/StandUpForTrmp/status/2038051382343696668",
+              "embed_id": "2038051382343696668",
+              "title": "🚨The US Supreme Court is about to consider UPHOLDING President Trump's executive order that ends birthright citizenship for illegal aliens and migran",
+              "author": "StandUpForTrmp",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/JDunlap1974/status/2037938162085814538",
+              "embed_id": "2037938162085814538",
+              "title": "BREAKING: SCOTUS is scheduled to hear arguments in President Trump’s birthright citizenship executive order.\n\nThe Supreme Court (SCOTUS) is scheduled ",
+              "author": "JDunlap1974",
+              "duration": 60
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/60Minutes/status/2028545876872823087",
+              "embed_id": "2028545876872823087",
+              "title": "Federal District Judge John Coughenour was unprepared for what happened after he temporarily blocked President Trump's birthright citizenship executiv",
+              "author": "60Minutes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/ChristopherHale/status/2027499538919919999",
+              "embed_id": "2027499538919919999",
+              "title": "“President Trump’s Executive Order banning birthright citizenship is antithetical to the Catholic Church’s teachings.\n\n“Children do nothing wrong by b",
+              "author": "ChristopherHale"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/ChristopherHale/status/2027380386590810347",
+              "embed_id": "2027380386590810347",
+              "title": "NEW: In a historic legal intervention, America’s Catholic bishops have asked the Supreme Court to strike down Trump’s executive order ending birthrigh",
+              "author": "ChristopherHale"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/RepChipRoy/status/2018384777338892404",
+              "embed_id": "2018384777338892404",
+              "title": "Rep. Roy joined @SenEricSchmitt in filing an amicus brief in support of President Trump's Executive Order defending the original meaning of the 14th A",
+              "author": "RepChipRoy"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/RepChipRoy/status/2016951007708639476",
+              "embed_id": "2016951007708639476",
+              "title": "🚨STATEMENT: Rep. Roy, @SenEricSchmitt File Amicus Brief in Support of President Trump’s Birthright Citizenship Executive Order. \n\nRep. Roy: “For deca",
+              "author": "RepChipRoy"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/RepTroyNehls/status/2016884899391602752",
+              "embed_id": "2016884899391602752",
+              "title": "Birthright citizenship has become a magnet for illegal immigration and a threat to our national sovereignty.\n\nAmerican citizenship is a privilege, and",
+              "author": "RepTroyNehls"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/moderatepolitics/comments/1s6v5rv/supreme_court_prepares_to_review_trump_executive/",
+              "embed_id": "1s6v5rv",
+              "title": "Supreme Court prepares to review Trump executive order on birthright citizenship",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/ParlerWatch/comments/1s7oefq/trump_goes_on_a_tirade_about_birthright/",
+              "embed_id": "1s7oefq",
+              "title": "Trump goes on a tirade about birthright citizenship being abut slaves and not “rich people from china” even though Wong Kim Ark in 1898 was about a Ch",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/Conservative/comments/1s7u4xh/supreme_court_hears_oral_arguments_on_trumps/",
+              "embed_id": "1s7u4xh",
+              "title": "Supreme Court Hears Oral Arguments on Trump's Birthright Citizenship Executive Order",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/law/comments/1s7yx9t/trump_rips_birthright_citizenship_ahead_of/",
+              "embed_id": "1s7yx9t",
+              "title": "Trump rips birthright citizenship ahead of Supreme Court arguments",
+              "author": ""
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=3XW9LjoQuJA",
+              "embed_id": "3XW9LjoQuJA",
+              "channel": "France 24",
+              "duration": 296,
+              "title": "&quot;Dumb judges&quot;: Trump heckles Supreme Court ahead of pivotal birthright case • FRANCE 24 English",
+              "relevance": 7
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=RYecNCgwSfE",
+              "embed_id": "RYecNCgwSfE",
+              "channel": "C-SPAN",
+              "title": "U.S. Supreme Court Oral Argument on Trump Restricting Birthright Citizenship"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=rc88dNqVNbE",
+              "embed_id": "rc88dNqVNbE",
+              "channel": "",
+              "title": "FLASHBACK: Trump Signs Executive Order Ending Birthright Citizenship For Everyone Born In U.S."
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/30/us/politics/trump-executive-order-birthright-citizenship.html",
+              "lean": "left"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/politics/trump-executive-order-birthright-citizenship",
+              "lean": "right"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/03/30/trump-birthright-citizenship-supreme-court-case/",
+              "lean": "left",
+              "title": "Trump officials cite white supremacists in bid to end birthright citizenship"
+            },
+            {
+              "name": "Daily Caller",
+              "url": "https://dailycaller.com/2026/03/30/gregg-jarrett-why-trump-supreme-court-birthright-citizenship/",
+              "lean": "right",
+              "title": "Gregg Jarrett Breaks Down How Trump Could Sway Supreme Court On Birthright Citizenship"
+            }
+          ],
+          "best_video_id": "3XW9LjoQuJA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-04-01",
+          "story_index": 2,
+          "topic": "Trump's Executive Order on Mail-In Voting Sparks Controversy",
+          "summary": "Former President Trump signed an executive order aiming to overhaul mail-in voting systems across the United States, citing concerns over election integrity. The order mandates the Department of Homeland Security to prepare a list of eligible voters and requires the USPS to block ballots from non-listed individuals. Critics argue this disenfranchise voters, while supporters claim it's necessary for secure elections.",
+          "category": "politics",
+          "left_narrative": "The left is pushing a narrative that Trump's executive order is an unconstitutional overreach, potentially disenfranchising millions of voters. They emphasize the lack of evidence for widespread voter fraud in previous elections.",
+          "right_narrative": "Supporters argue that the executive order is a much-needed step to ensure election integrity and prevent fraud. They highlight past concerns about mail-in voting vulnerabilities.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing a video of Trump explicitly stating his intent to defund states that don't comply with the order. The mainstream media is not discussing how this order disproportionately affect minority voters, who are more likely to use mail-in voting. Critics on social media point out that the order leads to significant delays and confusion in the upcoming elections.",
+          "image_file": "/images/story_2026-04-01_10.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s8zrg0/white_house_says_trump_to_sign_executive_order/",
+              "embed_id": "1s8zrg0"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s96d9f/trump_signs_an_unconstitutional_executive_order/",
+              "embed_id": "1s96d9f"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/WhiteHouse/status/2039104348320338033",
+              "embed_id": "2039104348320338033"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s8wv3t/judge_blocks_trump_white_house_ballroom_project/",
+              "embed_id": "1s8wv3t"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s8w4gc/judge_rules_trump_order_eliminating_npr_pbs/",
+              "embed_id": "1s8w4gc"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s92t4u/trump_signs_an_executive_order_to_create_federal/",
+              "embed_id": "1s92t4u",
+              "title": "Trump signs an executive order to create federal voter lists"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s940h8/oregon_one_of_first_states_to_sue_trump_for/",
+              "embed_id": "1s940h8",
+              "title": "Oregon one of first states to sue Trump for executive order restricting mail-in votes"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/news/comments/1s91m41/trump_signs_order_directing_creation_of_a/",
+              "embed_id": "1s91m41",
+              "title": "Trump signs order directing creation of a national voter list, a move sure to face legal challenges"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AP/status/2039098803190378850",
+              "embed_id": "2039098803190378850",
+              "title": "BREAKING: President Trump signs an order directing the creation of a national eligible voter list, a",
+              "author": "AP",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AP/status/2039116024050491619",
+              "embed_id": "2039116024050491619",
+              "title": "Elections officials in Oregon and Arizona are the first to pledge legal challenges to President Trum",
+              "author": "AP",
+              "relevance": 8
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/politico/status/2039099570584699068",
+              "embed_id": "2039099570584699068",
+              "title": "Trump to sign order limiting mail-in voting https://t.co/xmAZHF1UPg",
+              "author": "politico"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/disclosetv/20597",
+              "embed_id": "disclosetv/20597",
+              "title": "NOW - Trump signs executive order curbing mail-in ballot fraud, requiring Homeland Security to prepare a list of citizens eligible to vote in each sta",
+              "author": "disclosetv"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/Newsmax/30459",
+              "embed_id": "Newsmax/30459",
+              "title": "EXECUTIVE ORDER: President Donald Trump signed a sweeping executive order on Tuesday aimed at tightening election security, saying the move will help ",
+              "author": "newsmax"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/law/comments/1s92lir/executive_order_dhs_will_prepare_list_of_citizens/",
+              "embed_id": "1s92lir",
+              "title": "Executive order: DHS will prepare list of citizens, by state, and USPS will block mail in ballots to anyone not on that list",
+              "author": ""
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=CehrwvqETgA",
+              "embed_id": "CehrwvqETgA",
+              "channel": "NBC News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=-wMUytXNIhE",
+              "embed_id": "-wMUytXNIhE",
+              "channel": "Forbes Breaking News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=Sus8_2S4azg",
+              "embed_id": "Sus8_2S4azg",
+              "channel": "Forbes Breaking News"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=wMIKuKf9Lmo",
+              "embed_id": "wMIKuKf9Lmo",
+              "channel": "CNN",
+              "title": "Trump signed an executive order in Oval Office"
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=tejZtmxQMhk",
+              "embed_id": "tejZtmxQMhk",
+              "channel": "",
+              "title": "Trump signs an unconstitutional executive order to shut down mail-in voting nationwide and he will defund states if they do not comply with him | DHS will prepare list of citizens by state and USPS will block mail in ballots from anyone not on that list",
+              "transcript_summary": "0:00 This was a meeting set up very proudly\n0:03 by us having to do with voter integrity\n0:05 and mail-in ballots and uh stopping the\n0:09 massive cheating that's gone on. And so\n0:12 we're going to be signing an executive\n0:14 order. It's I believe it's foolproof and\n0:17 maybe it'll be tested, maybe it won't. I\n0:19 think it's very obvious what's said. And\n0:21 I'll ask Will Sharf to start off.\n0:24 Attorney, a great talent, a very\n0:26 brilliant young man. and if you could\n0:29 discuss it and then I'm going to ask\n0:30 Howard Lutnick to say a few words and\n0:32 then I'm going to sign it and we'll take\n0:34 a couple of questions. Okay. Thank you.\n0:36 >> Mr. President, as you said, you have in\n0:37 front of you an executive order that\n0:39 deals with a number of issues relating\n0:41 to election integrity. As you've\n0:43 consistently identified two of the\n0:44 biggest problems we have with election\n0:46 integrity in this country are one,\n0:48 inaccurate voter roles that allow\n0:50 ine..."
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-mail-in-ballots-voting-executive-order.html",
+              "lean": "left"
+            },
+            {
+              "name": "Fox News",
+              "url": "https://www.foxnews.com/politics/trump-signs-executive-order-overhauling-mail-in-voting-major-election-integrity-push",
+              "lean": "right"
+            },
+            {
+              "name": "AP News",
+              "url": "https://www.yahoo.com/news/articles/supreme-court-hears-high-profile-040352303.html",
+              "lean": "center"
+            },
+            {
+              "name": "Reuters",
+              "url": "https://www.yahoo.com/news/articles/judge-orders-trump-admin-restore-011138374.html",
+              "lean": "center"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/2026/mar/31/trump-executive-order-restrict-mail-in-ballots",
+              "lean": "left",
+              "title": "Trump signs order to restrict mail-in ballots in probably unconstitutional move"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/03/31/trump-mail-voting-executive-order/",
+              "lean": "left",
+              "title": "Trump issues order attempting to change rules for mail-in voting"
+            },
+            {
+              "name": "Daily Wire",
+              "url": "https://www.dailywire.com/news/trump-targets-mail-in-as-new-move-could-reshape-how-your-ballot-is-handled",
+              "lean": "right",
+              "title": "Trump Targets Mail-In Voting As New Move Could Reshape How Your Ballot Is Handled"
+            },
+            {
+              "name": "Breitbart",
+              "url": "https://www.breitbart.com/politics/2026/03/31/trump-signs-order-to-verify-mail-in-ballots-used-by-eligible-voters/",
+              "lean": "right",
+              "title": "Trump Signs Order to Verify Mail-In Ballots Used by Eligible Voters"
+            },
+            {
+              "name": "Zero Hedge",
+              "url": "https://www.zerohedge.com/political/trump-signs-executive-order-crack-down-legendary-cheating-lists-mail-voting",
+              "lean": "right",
+              "title": "Trump Signs Executive Order To Crack Down On 'Legendary' Cheating With Lists For Mail-In Voting"
+            },
+            {
+              "name": "Politico",
+              "url": "https://www.politico.com/news/2026/03/31/trump-executive-order-limiting-mail-in-voting-00853296",
+              "lean": "center",
+              "title": "Trump signs order limiting mail-in voting"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/trumprsquos_toothless_executive_order_on_mail-in_ballots_695917.html",
+              "lean": "center",
+              "title": "Trump's Toothless Executive Order on Mail-In Ballots"
+            },
+            {
+              "name": "NPR",
+              "url": "https://www.npr.org/2026/03/31/nx-s1-5508948/trump-voter-list-mail-ballots-executive-order",
+              "lean": "center",
+              "title": "Trump signs a new executive order on voting. Experts say he lacks the authority"
+            },
+            {
+              "name": "CNBC",
+              "url": "https://www.cnbc.com/2026/03/31/trump-mail-in-voting-executive-order.html",
+              "lean": "center",
+              "title": "Trump signs executive order limiting mail-in voting ahead of 2026 U.S. elections"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/2026/mar/31/trump-order-election-voting-explainer",
+              "lean": "left",
+              "title": "Trump’s order to limit mail-in voting: does he have the authority?"
+            },
+            {
+              "name": "The Guardian US",
+              "url": "https://www.theguardian.com/us-news/live/2026/mar/31/donald-trump-iran-shutdown-dhs-tsa-ice-immigration-kennedy-center-latest-news-updates",
+              "lean": "left",
+              "title": "Democrats and voting rights advocates vow to fight Trump’s latest order: ‘massive and unconstitutional suppression effort’ – as it happened"
+            }
+          ],
+          "best_video_id": "CehrwvqETgA",
+          "best_video_platform": "youtube"
+        },
+        {
+          "date": "2026-04-01",
+          "story_index": 3,
+          "topic": "Supreme Court Considers Birthright Citizenship Limitation",
+          "summary": "The U.S. Supreme Court is hearing a case challenging the birthright citizenship clause of the 14th Amendment. The Trump administration argues for limiting citizenship to children born to U.S. citizens, while opponents claim this violates constitutional rights. The decision has significant implications for immigration and citizenship laws.",
+          "category": "politics",
+          "left_narrative": "The left argues that the case is a direct attack on the 14th Amendment and immigrant rights, warning of the potential for increased statelessness and discrimination.",
+          "right_narrative": "The right supports the case as a necessary measure to curb illegal immigration and ensure that citizenship is not exploited by non-citizens seeking to gain benefits.",
+          "what_they_arent_telling_you": "On Reddit, users are sharing historical analyses of the 14th Amendment's origins, which are not being discussed in mainstream coverage. The media is not highlighting how this case affects U.S. citizens with undocumented parents. Legal experts on social media are questioning the administration's interpretation of the amendment, citing past Supreme Court rulings that upheld birthright citizenship.",
+          "image_file": "/images/threads/trumps-executive-orders-and-policies_2026-04-01.png",
+          "social_clips": [
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/news/comments/1s8ohum/supreme_court_rules_against_colorado_ban_on/",
+              "embed_id": "1s8ohum"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/videos/comments/1s8a7u0/flashback_trump_signs_executive_order_ending/",
+              "embed_id": "1s8a7u0"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/EndWokeness/status/2039078541225071104",
+              "embed_id": "2039078541225071104"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s8r21v/ice_plans_to_target_family_members_of_us_marines/",
+              "embed_id": "1s8r21v"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/AP/status/2039165239506206976",
+              "embed_id": "2039165239506206976",
+              "title": "BREAKING: President Donald Trump to attend Wednesday’s Supreme Court hearing on birthright citizensh",
+              "author": "AP",
+              "relevance": 9
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SCOTUSblog/status/2038992190345560117",
+              "embed_id": "2038992190345560117",
+              "title": "Reminder: We will be live again tomorrow (Wednesday) morning for oral argument in the birthright citizenship case. The live blog will begin at 9:30 a.",
+              "author": "SCOTUSblog"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SCOTUSblog/status/2038602847504179613",
+              "embed_id": "2038602847504179613",
+              "title": "Our new animated explainer with Briefly breaks down Trump v. Barbara, the birthright citizenship case the Court will hear on April 1.\n\nWatch here: htt",
+              "author": "SCOTUSblog"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SCOTUSblog/status/2037547926268858514",
+              "embed_id": "2037547926268858514",
+              "title": "We will be live blogging the birthright citizenship oral argument on Wednesday, April 1. The live blog will begin at 9:30 a.m. EDT.\n\nhttps://t.co/M1x5",
+              "author": "SCOTUSblog"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/SCOTUSblog/status/2037525768662548988",
+              "embed_id": "2037525768662548988",
+              "title": "The key arguments in the birthright citizenship case\n\nhttps://t.co/ucRiwA0t6r",
+              "author": "SCOTUSblog"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CNNPolitics/status/2039147989130764341",
+              "embed_id": "2039147989130764341",
+              "title": "The Supreme Court on Wednesday will hear its biggest case of the term: about whether President Donald Trump’s effort to limit birthright citizenship t",
+              "author": "CNNPolitics"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/CatoInstitute/status/2036186422785278134",
+              "embed_id": "2036186422785278134",
+              "title": "Trump’s rationales for denying birthright citizenship to children of undocumented immigrants are at odds with the 14th Amendment’s core purpose: grant",
+              "author": "CatoInstitute"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/nytimes/status/1943329946518049253",
+              "embed_id": "1943329946518049253",
+              "title": "Breaking News: In a class-action challenge, a federal judge blocked the Trump administration from enforcing an executive order ending birthright citiz",
+              "author": "nytimes"
+            },
+            {
+              "platform": "x",
+              "url": "https://x.com/KDKA/status/1938603373151846716",
+              "embed_id": "1938603373151846716",
+              "title": "JUST IN: The Supreme Court on Friday said it will allow the Trump administration to partially enforce an executive order that seeks to end birthright ",
+              "author": "KDKA"
+            },
+            {
+              "platform": "telegram",
+              "url": "https://t.me/disclosetv/20607",
+              "embed_id": "disclosetv/20607",
+              "title": "JUST IN - Trump plans to attend Wednesday’s Supreme Court hearing on birthright citizenship, making him the first sitting president to attend oral arg",
+              "author": "disclosetv"
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/politics/comments/1s8my6r/supreme_court_to_decide_if_trump_can_end/",
+              "embed_id": "1s8my6r",
+              "title": "Supreme Court to decide if Trump can end birthright citizenship",
+              "author": ""
+            },
+            {
+              "platform": "reddit",
+              "url": "https://reddit.com/r/scotus/comments/1s93ms1/trump_plans_to_attend_oral_arguments_in_supreme/",
+              "embed_id": "1s93ms1",
+              "title": "Trump plans to attend oral arguments in Supreme Court birthright citizenship case",
+              "author": ""
+            }
+          ],
+          "youtube_videos": [
+            {
+              "url": "https://www.youtube.com/watch?v=wcPV602WKuE",
+              "embed_id": "wcPV602WKuE",
+              "channel": "CNN",
+              "title": "Trump says he'll attend Supreme Court arguments on birthright citizenship"
+            }
+          ],
+          "sources": [
+            {
+              "name": "New York Times",
+              "url": "https://www.nytimes.com/2026/03/31/us/politics/trump-irs-lawsuit-doj.html",
+              "lean": "left"
+            },
+            {
+              "name": "Zero Hedge",
+              "url": "https://www.zerohedge.com/political/4-things-know-about-scotus-case-could-end-birthright-citizenship",
+              "lean": "right",
+              "title": "4 Things To Know About SCOTUS Case That Could End Birthright Citizenship"
+            },
+            {
+              "name": "AP News",
+              "url": "https://www.yahoo.com/news/articles/trump-plans-attend-wednesdays-supreme-021314478.html",
+              "lean": "center",
+              "title": "Trump plans to attend Wednesday's Supreme Court hearing on his bid to limit birthright citizenship"
+            },
+            {
+              "name": "The Hill",
+              "url": "https://thehill.com/regulation/court-battles/5810409-trump-to-attend-birthright-hearing/",
+              "lean": "center",
+              "title": "Trump to attend Supreme Court oral arguments for birthright citizenship case"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/trump_is_right_on_birthright_citizenship_695909.html",
+              "lean": "center",
+              "title": "Trump Is Right on Birthright Citizenship"
+            },
+            {
+              "name": "RealClearPolitics",
+              "url": "https://www.realclearpolitics.com/2026/03/31/birthright_citizenship_and_the_making_of_citizens_695916.html",
+              "lean": "center",
+              "title": "Birthright Citizenship and the Making of Citizens"
+            },
+            {
+              "name": "CBS News",
+              "url": "https://www.cbsnews.com/news/trump-attend-supreme-court-arguments-birthright-citizenship-case/",
+              "lean": "center",
+              "title": "Trump plans to attend Supreme Court arguments in birthright citizenship case"
+            },
+            {
+              "name": "Investing.com",
+              "url": "https://www.investing.com/news/politics-news/trump-says-he-will-likely-go-to-supreme-court-personally-for-birthright-citizenship-case-4591831",
+              "lean": "center",
+              "title": "Trump will personally go to Supreme Court for birthright citizenship case"
+            },
+            {
+              "name": "Washington Post",
+              "url": "https://www.washingtonpost.com/politics/2026/03/31/birthright-citizenship-supreme-court-trump/",
+              "lean": "left",
+              "title": "Supreme Court could strip citizenship of Florida baby, born to a ‘dreamer’"
+            },
+            {
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/03/birthright-citizenship-supreme-court-consequences/",
+              "lean": "left",
+              "title": "The “Massive Human Consequences” of Ending Birthright Citizenship"
+            },
+            {
+              "name": "Mother Jones",
+              "url": "https://www.motherjones.com/politics/2026/03/birthright-citizenship-ilan-wurman-history-amicus-brief/",
+              "lean": "left",
+              "title": "The Nonsense Case Against Birthright Citizenship"
+            },
+            {
+              "name": "Washington Times",
+              "url": "https://www.washingtontimes.com/news/2026/mar/31/trump-plans-attend-supreme-court-hearing-birthright-citizenship/",
+              "lean": "right",
+              "title": "Trump plans to attend Supreme Court hearing on birthright citizenship\n"
+            },
+            {
+              "name": "Breitbart",
+              "url": "https://www.breitbart.com/politics/2026/03/31/president-trump-attend-scotus-oral-arguments-birthright-citizenship/",
+              "lean": "right",
+              "title": "President Trump to Attend SCOTUS Oral Arguments on Birthright Citizenship"
+            }
+          ],
+          "best_video_id": "wcPV602WKuE",
+          "best_video_platform": "youtube"
+        }
+      ],
+      "gap_days": [
+        {
+          "date": "2026-04-02",
+          "bridge_text": "Legal challenges and public debates over Trump's executive orders continued."
+        }
+      ],
+      "first_seen": "2026-03-31",
       "last_seen": "2026-04-01",
       "is_active": true,
-      "total_days_span": 5,
+      "total_days_span": 2,
       "days_covered": 2,
-      "image_file": "/images/threads/tiger-woods-dui-and-treatment.png"
+      "image_file": "/images/threads/trumps-executive-orders-and-policies.png"
     },
     {
       "id": "no-kings-protests",
       "title": "No Kings Protests",
       "category": "politics",
-      "summary": "The 'No Kings' protests have gained momentum across the U.S., challenging perceived authoritarianism and advocating for democratic reforms. The movement has seen widespread participation and significant media coverage.",
+      "summary": "The 'No Kings' protests have gained momentum across the U.S., challenging President Trump's leadership and advocating for democratic reforms. The movement has seen widespread participation and has sparked significant political discourse.",
       "entries": [
         {
           "date": "2026-03-28",
@@ -7480,7 +7985,6 @@
               "title": "Man Dressed Like ICE Agent Beat Up At No Kings Protest In Hawaii, On Video"
             }
           ],
-          "short_video": "/Users/verwerft/Documents/CVRD/intelligence-engine/output/videos/shorts_2026-03-31/story_7.mp4",
           "best_video_id": "5wZQf_E4ALI",
           "best_video_platform": "youtube"
         }
@@ -7488,7 +7992,7 @@
       "gap_days": [
         {
           "date": "2026-03-29",
-          "bridge_text": "Protests continued to spread, with organizers planning larger demonstrations in major cities."
+          "bridge_text": "Protests continued with increasing participation and media coverage."
         }
       ],
       "first_seen": "2026-03-28",
@@ -7497,443 +8001,6 @@
       "total_days_span": 4,
       "days_covered": 3,
       "image_file": "/images/threads/no-kings-protests.png"
-    },
-    {
-      "id": "meta-and-youtube-liability",
-      "title": "Meta and YouTube Liability",
-      "category": "markets",
-      "summary": "On March 26, 2026, a landmark trial concluded with a jury finding Meta and YouTube liable for contributing to a woman's social media addiction, marking a significant moment in legal accountability for tech companies. The verdict has raised questions about the responsibility of social media platforms in fostering addictive behaviors among users. Following this ruling, on March 30, both Meta and Google faced additional legal challenges that could lead to substantial changes in their operational practices and content moderation policies. The implications of these rulings could reshape the landscape of social media liability, as more lawsuits are anticipated in the wake of this precedent. As the situation develops, both companies are likely to assess their user engagement strategies and legal defenses in response to growing scrutiny.",
-      "entries": [
-        {
-          "date": "2026-03-26",
-          "story_index": 2,
-          "topic": "Meta and YouTube Found Liable in Addiction Trial",
-          "summary": "In a landmark trial, Meta and YouTube have been found liable for contributing to social media addiction. The case, which has drawn international attention, centers on the platforms' algorithms and their impact on users' mental health. The verdict is expected to have significant implications for tech companies and their responsibility towards users.",
-          "category": "tech-ai",
-          "left_narrative": "The New York Times highlights the significance of the verdict, emphasizing the need for greater regulation of tech companies. The Guardian reports on the broader implications for user privacy and data protection.",
-          "right_narrative": "Fox News frames the trial as a challenge to Big Tech's influence, focusing on the potential for increased government intervention. The New York Post discusses the implications for the tech industry and the potential for similar lawsuits in the future.",
-          "what_they_arent_telling_you": "A Reddit post in r/news with 25K upvotes reveals internal documents showing that Meta and YouTube were aware of the addictive nature of their platforms, which mainstream media has not covered. The focus on the trial's outcome benefits those who prefer to maintain a narrative of accountability without addressing systemic issues. Additionally, leaked emails on social media suggest that some executives were involved in efforts to downplay the platforms' impact on mental health.",
-          "image_file": "/images/story_2026-03-26_6.png",
-          "social_clips": [
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/news/comments/1s3hi18/meta_and_youtube_found_liable_in_social_media/",
-              "embed_id": "1s3hi18"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/wallstreetbets/comments/1s3l0i7/jury_awards_3m_in_social_media_addiction_case/",
-              "embed_id": "1s3l0i7",
-              "title": "Jury awards $3M in social media addiction case, finds Meta 70% and YouTube 30% liable in landmark negligence verdict"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/videos/comments/1s3kfnw/meta_youtube_liable_for_social_media_addiction/",
-              "embed_id": "1s3kfnw",
-              "title": "Meta &amp; YouTube liable for social media addiction: Jury"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://www.youtube.com/watch?v=iwPbm2To4Qw",
-              "title": "Meta &amp; YouTube liable for social media addiction: Jury"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/stocks/comments/1s3ryee/jury_orders_meta_and_google_to_pay_woman_6/",
-              "embed_id": "1s3ryee",
-              "title": "Jury orders Meta and Google to pay woman $6 million in social media addiction trial"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/TechCrunch/status/2036864598683639998",
-              "embed_id": "2036864598683639998",
-              "title": "Jury finds Meta and YouTube negligent in landmark social media addiction trial https://t.co/kOttcqwU3x",
-              "author": "TechCrunch"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/RollingStone/status/2036906356230197358",
-              "embed_id": "2036906356230197358",
-              "title": "Jurors awarded $6 million in total damages, saying Meta and Google acted with \"malice, oppression, or fraud\"\nhttps://t.co/jSY1LgKUfE",
-              "author": "RollingStone"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/RollingStone/status/2036864045903421731",
-              "embed_id": "2036864045903421731",
-              "title": "NEW: A Los Angeles jury awarded $3 million to a woman who said she was hooked on Meta’s Instagram and Google’s YouTube as a child, suffering serious h",
-              "author": "RollingStone"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Variety/status/2036861130920911033",
-              "embed_id": "2036861130920911033",
-              "title": "Meta and YouTube Ordered to Pay $3 Million in Landmark Social Media Addiction Trial https://t.co/YnPXnNob65",
-              "author": "Variety"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/NBCNews/status/2036860195142336672",
-              "embed_id": "2036860195142336672",
-              "title": "BREAKING: Jury finds Meta and YouTube negligent in their design and responsible for causing harm to a teen in a landmark verdict on social media addic",
-              "author": "NBCNews"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/FoxNews/status/2036866310123012359",
-              "embed_id": "2036866310123012359",
-              "title": "BREAKING: Tech giants Meta and YouTube have both been found liable for negligence in a landmark social media addiction case.\n\nThe jury assigned $3M da",
-              "author": "FoxNews"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/BBCBreaking/status/2036858992199131627",
-              "embed_id": "2036858992199131627",
-              "title": "US jury finds Meta and YouTube liable for woman's childhood social media addiction in landmark trial\n \nhttps://t.co/tQtp7cxMlq",
-              "author": "BBCBreaking"
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=s8luPgfcFsQ",
-              "embed_id": "s8luPgfcFsQ",
-              "channel": "CNN"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=GCw-QPvseRQ",
-              "embed_id": "GCw-QPvseRQ",
-              "channel": "MSNBC"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=1WYSrqdLoto",
-              "embed_id": "1WYSrqdLoto",
-              "channel": "Fox News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=YPSFmAQI1HA",
-              "embed_id": "YPSFmAQI1HA",
-              "channel": "BBC News",
-              "duration": 38,
-              "title": "Meta and YouTube found liable in social media addiction trial. #Meta #Google #BBCNews",
-              "relevance": 9
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=71eVV1pT6VM",
-              "embed_id": "71eVV1pT6VM",
-              "channel": "BBC News",
-              "duration": 431,
-              "title": "Google and Meta to pay millions in damages for user addiction in landmark lawsuit | BBC News",
-              "relevance": 9
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=ecW2GiA5F_4",
-              "embed_id": "ecW2GiA5F_4",
-              "channel": "DW News",
-              "duration": 105,
-              "title": "US Jury finds Meta and Google liable in social media addiction trial | DW News",
-              "relevance": 9
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=0p0VxlIg6jo",
-              "embed_id": "0p0VxlIg6jo",
-              "channel": "Yahoo Finance",
-              "duration": 23,
-              "title": "Parents react to verdict in social media addiction lawsuit against Meta &amp; Google",
-              "relevance": 9
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=lx38ieGU324",
-              "embed_id": "lx38ieGU324",
-              "channel": "CBS News",
-              "title": "Breaking down the verdict in the landmark social media addiction trial"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=Rz0vMwyp8R4",
-              "embed_id": "Rz0vMwyp8R4",
-              "channel": "CNN",
-              "title": "Meta, YouTube found liable in social media addiction case"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=0Gsv_YHpNx4",
-              "embed_id": "0Gsv_YHpNx4",
-              "channel": "PBS NewsHour",
-              "title": "Jury finds Meta and YouTube liable in landmark youth addiction case"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=HTgRs9RBtZ0",
-              "embed_id": "HTgRs9RBtZ0",
-              "channel": "Al Jazeera English",
-              "title": "US jury finds Meta, Google, liable in social media addiction trial | AJ #shorts"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=pJLhxCOyK2o",
-              "embed_id": "pJLhxCOyK2o",
-              "channel": "MSNBC",
-              "title": "Addicted by design: Meta and YouTube found liable in LANDMARK ruling"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=XLmwkX_TwQg",
-              "embed_id": "XLmwkX_TwQg",
-              "channel": "France 24 English",
-              "title": "US jury finds Meta, YouTube liable in social media addiction trial • FRANCE 24 English"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=3e1D2F7P0lQ",
-              "embed_id": "3e1D2F7P0lQ",
-              "channel": "Global News",
-              "title": "Global National: March 25, 2026 | Meta, YouTube found liable in social media addiction trial"
-            }
-          ],
-          "sources": [
-            {
-              "name": "New York Times",
-              "url": "https://www.nytimes.com/2026/03/25/technology/social-media-trial-verdict.html",
-              "lean": "left"
-            },
-            {
-              "name": "BBC",
-              "url": "https://www.bbc.com/news/articles/c747x7gz249o?at_medium=RSS&at_campaign=rss",
-              "lean": "center"
-            },
-            {
-              "name": "Guardian Tech",
-              "url": "https://www.theguardian.com/media/2026/mar/25/jury-verdict-us-first-social-media-addiction-trial-meta-youtube",
-              "lean": "left",
-              "title": "Meta and YouTube designed addictive products that harmed young people, jury finds"
-            },
-            {
-              "name": "NY Post Business",
-              "url": "https://nypost.com/2026/03/25/business/historic-social-medial-addiction-ruling-against-meta-google-could-open-legal-floodgates/",
-              "lean": "right",
-              "title": "‘Big Tech invincibility is over:’ Historic social medial addiction ruling against Meta, Google could open legal floodgates"
-            },
-            {
-              "name": "PBS NewsHour",
-              "url": "https://www.pbs.org/newshour/show/jury-finds-meta-and-youtube-liable-in-landmark-youth-addiction-case",
-              "lean": "center",
-              "title": "Jury finds Meta and YouTube liable in landmark youth addiction case"
-            },
-            {
-              "name": "CNBC",
-              "url": "https://www.cnbc.com/2026/03/25/meta-youtube-los-angeles-california-verdict.html",
-              "lean": "center",
-              "title": "Jury in Los Angeles finds Meta, YouTube negligent in social media addiction trial"
-            },
-            {
-              "name": "Ars Technica",
-              "url": "https://arstechnica.com/tech-policy/2026/03/meta-youtube-must-pay-3m-to-woman-who-got-hooked-on-apps-as-a-child/",
-              "lean": "center",
-              "title": "Meta, YouTube must pay $3M to woman who got hooked on apps as a child"
-            },
-            {
-              "name": "Washington Times",
-              "url": "https://www.washingtontimes.com/news/2026/mar/25/juries-find-social-media-platforms-knowingly-harmed-children/",
-              "lean": "right",
-              "title": "Juries find social media platforms knowingly harmed children\n"
-            },
-            {
-              "name": "The Blaze",
-              "url": "https://www.theblaze.com/news/meta-google-lawsuit-addiction-la",
-              "lean": "right",
-              "title": "'Blood in the water': LA jury hands Facebook and Google devastating legal loss"
-            },
-            {
-              "name": "NPR",
-              "url": "https://www.npr.org/2026/03/25/nx-s1-5746125/meta-youtube-social-media-trial-verdict",
-              "lean": "center",
-              "title": "Jury finds Meta and Google negligent in social media harms trial"
-            }
-          ],
-          "best_video_id": "YPSFmAQI1HA",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-03-26",
-          "story_index": 8,
-          "topic": "Meta and YouTube Found Liable in Addiction Trial",
-          "summary": "In a landmark trial, Meta and YouTube have been found liable for contributing to a woman's social media addiction, resulting in a $3 million verdict. The case has significant implications for tech companies and their responsibilities regarding user well-being. The ruling could open the door for more lawsuits against social media platforms.",
-          "category": "tech-ai",
-          "left_narrative": "The New York Times emphasizes the need for stricter regulations on tech companies to protect users, highlighting the ruling as a step towards accountability.",
-          "right_narrative": "The New York Post warns of potential overreach and the impact on innovation, suggesting that the ruling could stifle technological advancement.",
-          "what_they_arent_telling_you": "A Reddit post in r/news with 13K upvotes discusses how internal documents from Meta reveal knowledge of the addictive nature of their algorithms, a detail not widely reported. This benefits plaintiffs in similar cases by providing precedent. The trial transcripts show conflicting testimonies from Meta executives, contradicting their public statements about user safety.",
-          "image_file": "/images/story_2026-03-26_19.png",
-          "social_clips": [
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036974674647585048",
-              "embed_id": "2036974674647585048",
-              "title": "A Los Angeles jury found Meta and Google negligent for designing social media platforms that are harmful to young people, in a $6 million verdict that",
-              "author": "Reuters",
-              "duration": 60
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/Reuters/status/2036970136180043855",
-              "embed_id": "2036970136180043855",
-              "title": "Google and Meta were found liable for designing platforms that are harmful for kids and teens, in a landmark verdict that could force tech firms to re",
-              "author": "Reuters",
-              "duration": 60
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/Newsmax/30306",
-              "embed_id": "Newsmax/30306",
-              "title": "BREAKING: A jury found both Google and Meta liable in a first-of-its-kind lawsuit that aimed to hold social media platforms responsible for harm to ch",
-              "author": "newsmax"
-            },
-            {
-              "platform": "telegram",
-              "url": "https://t.me/France24_en/16198",
-              "embed_id": "France24_en/16198",
-              "title": "California jury finds Meta, YouTube liable in landmark social media trial\nA California jury found both Meta and YouTube liable for &#036;3 million in ",
-              "author": "france24_en"
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/InterstellarKinetics/comments/1s3i8x6/breaking_a_jury_just_ordered_meta_and_youtube_to/",
-              "embed_id": "1s3i8x6",
-              "title": "BREAKING: A Jury Just Ordered Meta And YouTube To Pay $3 Million In The First-Ever Social Media Addiction Trial, Opening The Door To 1,600 More Lawsui",
-              "author": ""
-            },
-            {
-              "platform": "reddit",
-              "url": "https://reddit.com/r/DeepStateCentrism/comments/1s3i5ar/meta_and_youtube_lose_landmark_social_media_trial/",
-              "embed_id": "1s3i5ar",
-              "title": "Meta and Youtube Lose Landmark Social Media Trial",
-              "author": ""
-            }
-          ],
-          "youtube_videos": [
-            {
-              "url": "https://www.youtube.com/watch?v=567w_2-2FtA",
-              "embed_id": "567w_2-2FtA",
-              "channel": "CBS News",
-              "title": "DHS shutdown hits Day 40, Meta and YouTube found liable in addiction trial, more | The Takeout"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=A7SjN897jwM",
-              "embed_id": "A7SjN897jwM",
-              "channel": "BBC News",
-              "title": "Meta and Google found liable in landmark social media addiction trial | BBC News"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=AFJDNNQqZ0A",
-              "embed_id": "AFJDNNQqZ0A",
-              "channel": "Sky News",
-              "title": "Tech giants found liable for social media addiction | The Wrap with Anna Botting"
-            }
-          ],
-          "sources": [
-            {
-              "name": "NY Post Business",
-              "url": "https://nypost.com/2026/03/25/us-news/jury-takes-on-instagram-and-youtube-in-social-media-showdown/",
-              "lean": "right",
-              "title": "Meta, YouTube found liable for woman’s debilitating social media addiction in $3M landmark trial"
-            }
-          ],
-          "best_video_id": "A7SjN897jwM",
-          "best_video_platform": "youtube"
-        },
-        {
-          "date": "2026-03-30",
-          "story_index": 5,
-          "topic": "Meta and Google Face Legal Challenges",
-          "summary": "A recent court ruling against Meta and Google leads to significant changes in how these tech giants handle hate content on their platforms. The ruling has sparked a debate about the balance between free speech and the responsibility of tech companies to moderate harmful content.",
-          "category": "markets",
-          "left_narrative": "The left views the ruling as a necessary step towards holding tech companies accountable for the spread of hate speech and misinformation. They argue that stricter regulations are needed to protect vulnerable communities and ensure online safety.",
-          "right_narrative": "The right is concerned that the ruling leads to overreach and censorship, stifling free speech and innovation. They argue that tech companies should not be the arbiters of acceptable speech and warn against government interference in private businesses.",
-          "what_they_arent_telling_you": "On Reddit, users are discussing the potential financial impact of the ruling on Meta and Google, which mainstream media has not fully explored. A viral X post highlights the lack of transparency in how these companies decide what content to moderate. Leaked documents suggest that both companies have been lobbying for more lenient regulations, raising questions about their commitment to addressing hate content.",
-          "image_file": "/images/threads/meta-and-youtube-liability_2026-03-30.png",
-          "social_clips": [
-            {
-              "platform": "x",
-              "url": "https://x.com/TechCrunch/status/2037558600160485654",
-              "embed_id": "2037558600160485654",
-              "title": "OpenAI shuts down Sora while Meta gets shut out in court https://t.co/Uy5s3meQCn",
-              "author": "TechCrunch"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/TechCrunch/status/2036864598683639998",
-              "embed_id": "2036864598683639998",
-              "title": "Jury finds Meta and YouTube negligent in landmark social media addiction trial https://t.co/kOttcqwU3x",
-              "author": "TechCrunch"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/TechCrunch/status/2036598007882457110",
-              "embed_id": "2036598007882457110",
-              "title": "New Mexico just handed Meta its first courtroom defeat over child safety, and the rest of the country is watching https://t.co/OSSpnUXPMg",
-              "author": "TechCrunch"
-            },
-            {
-              "platform": "x",
-              "url": "https://x.com/jason_kint/status/2036888529720992207",
-              "embed_id": "2036888529720992207",
-              "title": "On landmark Meta and Google child harm verdicts, it’s critical to note this isn’t a one-off. It’s been 10+ years of prioritizing profits over people. ",
-              "author": "jason_kint"
-            }
-          ],
-          "youtube_videos": [],
-          "sources": [
-            {
-              "name": "Fox News",
-              "url": "https://www.foxnews.com/media/ruling-against-meta-google-could-set-stage-changes-handling-hate-content",
-              "lean": "right"
-            },
-            {
-              "name": "BBC Tech",
-              "url": "https://www.bbc.com/news/articles/c747x7gz249o?at_medium=RSS&at_campaign=rss",
-              "lean": "center",
-              "title": "Campaigners welcome Meta and YouTube's defeat in landmark social media addiction trial"
-            },
-            {
-              "name": "NYT Technology",
-              "url": "https://www.nytimes.com/video/technology/100000010801833/why-the-verdict-against-meta-and-youtube-could-change-social-media.html",
-              "lean": "left",
-              "title": "Why the Verdict Against Meta and YouTube Could Change Social Media"
-            },
-            {
-              "name": "NY Post Business",
-              "url": "https://nypost.com/2026/03/27/business/20b-erased-from-mark-zuckerbergs-fortune-meta-stock-falls-after-back-to-back-court-losses/",
-              "lean": "right",
-              "title": "$20B erased from Mark Zuckerberg’s fortune, Meta stock falls after back-to-back court losses"
-            },
-            {
-              "name": "Guardian Tech",
-              "url": "https://www.theguardian.com/media/ng-interactive/2026/mar/28/week-that-brought-big-tech-to-heel-meta-youtube-google-instagram-facebook",
-              "lean": "left",
-              "title": "‘The era of invincibility is over’: the week big tech was brought to heel"
-            },
-            {
-              "name": "Vox",
-              "url": "https://www.vox.com/politics/484228/meta-instagram-youtube-verdict-social-media-free-speech",
-              "lean": "left",
-              "title": "Courts are finally punishing Big Tech for harming kids. Here&#8217;s the catch."
-            }
-          ]
-        }
-      ],
-      "gap_days": [
-        {
-          "date": "2026-03-27",
-          "bridge_text": "The implications of the trial continued to be discussed, with tech companies evaluating their content policies."
-        },
-        {
-          "date": "2026-03-28",
-          "bridge_text": "Legal experts debated the potential changes in tech industry regulations following the trial's outcome."
-        },
-        {
-          "date": "2026-03-29",
-          "bridge_text": "Tech companies began implementing changes to their algorithms to comply with the court ruling."
-        }
-      ],
-      "first_seen": "2026-03-26",
-      "last_seen": "2026-03-30",
-      "is_active": false,
-      "total_days_span": 5,
-      "days_covered": 2,
-      "image_file": "/images/threads/meta-and-youtube-liability.png"
     }
   ]
 }
