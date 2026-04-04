@@ -1,5 +1,316 @@
 [
   {
+    "topic": "Iranian Missile Attack on Israel",
+    "summary": "Iran has launched a missile attack targeting residential areas in central Israel, marking a significant escalation in the ongoing conflict between the two nations. This attack has heightened tensions in the region and raised concerns about potential military responses from Israel and its allies. The international community is closely monitoring the situation, fearing further destabilization in the Middle East.",
+    "severity": "critical",
+    "detected_at": "2026-04-04T05:00:06.815Z",
+    "last_updated": "2026-04-04T05:00:06.815Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind Iran's decision to escalate the conflict at this particular moment. The timing of the attack be linked to internal political pressures within Iran or strategic calculations related to its regional influence. Additionally, the role of external powers, such as the United States and Russia, in either exacerbating or mitigating the conflict is not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing solidarity with Israel and others condemning the attack as a justified response to Israeli actions. Memes and hashtags are circulating, with conspiracy theories suggesting foreign involvement or ulterior motives behind the attack. The discourse is highly charged, reflecting deep-seated biases and historical grievances.",
+    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, casting a shadow over a peaceful residential neighborhood, symbolizing the sudden disruption of normalcy and the looming threat of conflict.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/4/iranian-missile-attack-hits-residential-areas-in-central-israel?traffic_source=rss",
+        "lean": "center",
+        "title": "Iranian missile attack hits residential areas in central Israel"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=lyYLyUj-S0Y",
+        "embed_id": "lyYLyUj-S0Y",
+        "title": "Iranian missile attack hits residential areas in central Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=3ux_kScdm2E",
+        "embed_id": "3ux_kScdm2E",
+        "title": "Israel Under Fire: Iranian missiles and Hezbollah rockets strike north and centre."
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
+        "embed_id": "ELU-UAQ0OxY",
+        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
+        "duration": 231
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
+        "embed_id": "WTbUX7UZ-B0",
+        "title": "Iranian Missile Strike Rocks Petah Tikva",
+        "duration": 127
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2040104540079624667",
+        "embed_id": "2040104540079624667",
+        "title": "Drone footage from Israel shows damage to a factory in Petah Tikva after debris from an intercepted Iranian missile struck the site. \n\nThe attack come",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039980799278096616",
+        "embed_id": "2039980799278096616",
+        "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/bonzerbarry/status/2039752728092545151",
+        "embed_id": "2039752728092545151",
+        "title": ">Israeli platform: Multi-front attack on Israel: In the latest barrages, fire from Iran, Yemen, and Lebanon.\n>Israeli Broadcasting Authority: An Irani",
+        "author": "bonzerbarry"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
+        "embed_id": "2039589293560316082",
+        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
+        "embed_id": "2039508762776506387",
+        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MintPressNews/status/2039504405104296103",
+        "embed_id": "2039504405104296103",
+        "title": "🚨BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions in occupied Jerusalem &amp; direct hits recorded in the north. https",
+        "author": "MintPressNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039360908812857827",
+        "embed_id": "2039360908812857827",
+        "title": "⚡️Footage from Ramat Gan and Tel Aviv following the Iranian missile attack on central Israel moments ago. https://t.co/FDcVIqTyRA",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SkyNews/status/2039351458953404712",
+        "embed_id": "2039351458953404712",
+        "title": "Iranian missile strikes on central Israel have left 14 people injured, Israel's emergency service has said.\n \nThe casualties include children includin",
+        "author": "SkyNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/A_M_R_M1/status/2038807023517679954",
+        "embed_id": "2038807023517679954",
+        "title": "🚨Breaking: The Iranian Revolutionary Guard announces it is carrying out a large-scale missile attack on Israel.",
+        "author": "A_M_R_M1"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43111",
+        "embed_id": "warmonitors/43111",
+        "title": "⚡️6 missile launches from Iran towards northern Israel in the last couple hours",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43110",
+        "embed_id": "warmonitors/43110",
+        "title": "⚡️Iran launching missiles at Israel now",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85855",
+        "embed_id": "intelslava/85855",
+        "title": "🇮🇷🇮🇱Major destruction in Ramat Gan, due to the fall of an Iranian missile with cluster warhead.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZAGI4Ruk_4nrzI5s_fw9JpI2iOsEqm9ldSslk4W0oYlt1AdnbV60kTcYPUDAW8D7XEmiWM-QR9V8M04rS5JUjfxFwYZ7IofCawnw3i8VmcM6GSEqupgOhlimQj29TF5M35HE-AW_bSNGt3jk7dIH7Oco4CGHdyDFDJVVy0qnupRAtzH6wtZy9mtELa55XxXUCNKqq6HbZ4J-WI7uCq2Bx3rtqWj4ifd2We3pKZjFenu0Yoyg_-x0scWxG3EzwKeAgHRmo4V9vyGbZkAVrJNxP6-qepkVVREbly4gj3HDhB04hzysuhguy3Ilrg3lbkN69BdMV2EaodkSUS8sszyKxg'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
+        "embed_id": "1sb5xu2",
+        "title": "Direct missile hit on Israel’s Petah Tikva amid Iranian and Yemeni attacks"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1sbc069/very_long_caption_pls_suggest_how_to_make_it/",
+        "embed_id": "1sbc069",
+        "title": "very long caption pls suggest how to make it shorter"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
+        "embed_id": "1sb6v5l",
+        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/kurdistan/comments/1sb8ab5/the_britishraised_brothers_who_stopped_kurds/",
+        "embed_id": "1sb8ab5",
+        "title": "The British-raised brothers who stopped Kurds being dragged into Trump’s war"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
+        "embed_id": "1sbrz8y",
+        "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=lyYLyUj-S0Y",
+        "embed_id": "lyYLyUj-S0Y",
+        "title": "Iranian missile attack hits residential areas in central Israel",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=3ux_kScdm2E",
+        "embed_id": "3ux_kScdm2E",
+        "title": "Israel Under Fire: Iranian missiles and Hezbollah rockets strike north and centre.",
+        "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
+        "embed_id": "ELU-UAQ0OxY",
+        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
+        "channel": "Fox News",
+        "duration": 231
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
+        "embed_id": "WTbUX7UZ-B0",
+        "title": "Iranian Missile Strike Rocks Petah Tikva",
+        "channel": "New York Post",
+        "duration": 127
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/AJENews/status/2040104540079624667",
+        "embed_id": "2040104540079624667",
+        "title": "Drone footage from Israel shows damage to a factory in Petah Tikva after debris from an intercepted Iranian missile struck the site. \n\nThe attack come",
+        "author": "AJENews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039980799278096616",
+        "embed_id": "2039980799278096616",
+        "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/bonzerbarry/status/2039752728092545151",
+        "embed_id": "2039752728092545151",
+        "title": ">Israeli platform: Multi-front attack on Israel: In the latest barrages, fire from Iran, Yemen, and Lebanon.\n>Israeli Broadcasting Authority: An Irani",
+        "author": "bonzerbarry"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
+        "embed_id": "2039589293560316082",
+        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
+        "embed_id": "2039508762776506387",
+        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MintPressNews/status/2039504405104296103",
+        "embed_id": "2039504405104296103",
+        "title": "🚨BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions in occupied Jerusalem &amp; direct hits recorded in the north. https",
+        "author": "MintPressNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039360908812857827",
+        "embed_id": "2039360908812857827",
+        "title": "⚡️Footage from Ramat Gan and Tel Aviv following the Iranian missile attack on central Israel moments ago. https://t.co/FDcVIqTyRA",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SkyNews/status/2039351458953404712",
+        "embed_id": "2039351458953404712",
+        "title": "Iranian missile strikes on central Israel have left 14 people injured, Israel's emergency service has said.\n \nThe casualties include children includin",
+        "author": "SkyNews"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/A_M_R_M1/status/2038807023517679954",
+        "embed_id": "2038807023517679954",
+        "title": "🚨Breaking: The Iranian Revolutionary Guard announces it is carrying out a large-scale missile attack on Israel.",
+        "author": "A_M_R_M1"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43111",
+        "embed_id": "warmonitors/43111",
+        "title": "⚡️6 missile launches from Iran towards northern Israel in the last couple hours",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43110",
+        "embed_id": "warmonitors/43110",
+        "title": "⚡️Iran launching missiles at Israel now",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85855",
+        "embed_id": "intelslava/85855",
+        "title": "🇮🇷🇮🇱Major destruction in Ramat Gan, due to the fall of an Iranian missile with cluster warhead.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZAGI4Ruk_4nrzI5s_fw9JpI2iOsEqm9ldSslk4W0oYlt1AdnbV60kTcYPUDAW8D7XEmiWM-QR9V8M04rS5JUjfxFwYZ7IofCawnw3i8VmcM6GSEqupgOhlimQj29TF5M35HE-AW_bSNGt3jk7dIH7Oco4CGHdyDFDJVVy0qnupRAtzH6wtZy9mtELa55XxXUCNKqq6HbZ4J-WI7uCq2Bx3rtqWj4ifd2We3pKZjFenu0Yoyg_-x0scWxG3EzwKeAgHRmo4V9vyGbZkAVrJNxP6-qepkVVREbly4gj3HDhB04hzysuhguy3Ilrg3lbkN69BdMV2EaodkSUS8sszyKxg'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
+        "embed_id": "1sb5xu2",
+        "title": "Direct missile hit on Israel’s Petah Tikva amid Iranian and Yemeni attacks"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/whennews/comments/1sbc069/very_long_caption_pls_suggest_how_to_make_it/",
+        "embed_id": "1sbc069",
+        "title": "very long caption pls suggest how to make it shorter"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
+        "embed_id": "1sb6v5l",
+        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/kurdistan/comments/1sb8ab5/the_britishraised_brothers_who_stopped_kurds/",
+        "embed_id": "1sb8ab5",
+        "title": "The British-raised brothers who stopped Kurds being dragged into Trump’s war"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
+        "embed_id": "1sbrz8y",
+        "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-04.png"
+  },
+  {
     "topic": "Iran Downs US Warplanes",
     "summary": "Iran has reportedly shot down two US warplanes, escalating tensions between the two countries. This incident follows a series of aggressive actions and retaliatory strikes, raising fears of a broader conflict in the region. The international community is closely monitoring the situation, concerned about the potential for further military escalation.",
     "severity": "critical",
@@ -389,619 +700,6 @@
         "embed_id": "1936520432800161996",
         "title": "In yet another horrific chapter of Sudan’s ongoing war, the Sudanese Armed Forces launched a drone strike on Muglad Hospital in West Kordofan , a plac",
         "author": "khali_DJo"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-03.png"
-  },
-  {
-    "topic": "US Fighter Jet Shot Down Over Iran",
-    "summary": "A US fighter jet has been shot down over Iranian territory, leading to a search and rescue operation for the crew members. This incident has heightened tensions between the United States and Iran, with potential impacts on military and diplomatic relations. The international community is closely monitoring the situation due to its possible broader implications.",
-    "severity": "critical",
-    "detected_at": "2026-04-03T15:00:07.284Z",
-    "last_updated": "2026-04-04T03:02:27.328Z",
-    "left_narrative": "Left-leaning media is emphasizing the dangerous escalation of military tensions between the US and Iran, highlighting the need for diplomatic solutions to prevent further conflict. They are focusing on the potential human cost and the importance of de-escalation to avoid a larger military confrontation. The narrative suggests that this incident underscores the risks of aggressive military posturing.",
-    "right_narrative": "Right-leaning media is framing this as a direct act of aggression by Iran, underscoring the need for a strong military response to protect US interests and personnel. They are focusing on the heroism of the US military in conducting the search and rescue operation and are critical of any perceived weakness in the US's response to such provocations. The narrative suggests that this incident justifies a more assertive military stance.",
-    "what_they_arent_telling_you": "Neither side is delving into the geopolitical chess game at play, where both the US and Iran are maneuvering for regional influence. The incident be a calculated move by Iran to test US resolve or a response to perceived provocations. Additionally, the economic implications, such as potential impacts on oil markets and global trade routes, are not being thoroughly explored.",
-    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting this is a false flag operation to justify increased military presence in the region. Memes are circulating that mock the situation, while others express concern over the potential for war. The incident has sparked debates about US foreign policy and military strategy.",
-    "image_prompt": "A dramatic scene of a fighter jet silhouetted against a fiery sunset, with smoke trailing behind it as it descends over a vast desert landscape, symbolizing the tension and uncertainty of the situation.",
-    "sources": [
-      {
-        "name": "NPR",
-        "url": "https://www.npr.org/2026/04/03/nx-s1-5773108/american-jet-shot-down-iran",
-        "lean": "left",
-        "title": "A U.S. jet goes down over Iran, a U.S. official confirms"
-      },
-      {
-        "name": "Daily Wire",
-        "url": "https://www.dailywire.com/news/u-s-fighter-jet-shot-down-over-iran-massive-search-and-rescue-operation-underway",
-        "lean": "right",
-        "title": "U.S. Fighter Jet Shot Down Over Iran, Massive Search And Rescue Operation Underway"
-      },
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/politics/us-pilot-rescued-from-downed-f-15-fighter-jet-iran-search-second-crew-member-ongoing",
-        "lean": "right",
-        "title": "US pilot rescued from downed F-15 fighter jet in Iran, search for second crew member ongoing"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/3/iranian-forces-launch-search-for-pilot-of-downed-us-fighter-jet?traffic_source=rss",
-        "lean": "center",
-        "title": "Iranian forces launch search for crew of downed US fighter jet"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/3/what-we-know-about-the-us-fighter-jet-shot-down-in-iran?traffic_source=rss",
-        "lean": "center",
-        "title": "What we know about the US fighter jet shot down in Iran"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=m1qysPLcbeQ",
-        "embed_id": "m1qysPLcbeQ",
-        "title": "Breaking News: Iran shoots down U.S. F-35 fighter jet, sources say"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=yce_tlfusOA",
-        "embed_id": "yce_tlfusOA",
-        "title": "American fighter jet appears to have been shot down by Iran, U.S. official says"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=mT-95RVmXVc",
-        "embed_id": "mT-95RVmXVc",
-        "title": "Iran says it downed US fighter jet as search and rescue under way"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=kuxo_NJqVBU",
-        "embed_id": "kuxo_NJqVBU",
-        "title": "BREAKING: Military confirms U.S. fighter jet shot down in Iran",
-        "duration": 36
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
-        "embed_id": "GOYSO4hoaPk",
-        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
-        "duration": 292
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=M1Un_jtVjro",
-        "embed_id": "M1Un_jtVjro",
-        "title": "1 crew member from F-15E fighter jet downed over Iran rescued, U.S. officials say"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=cm14uN1xDjY",
-        "embed_id": "cm14uN1xDjY",
-        "title": "LIVE: U.S. F-15 fighter goes down in Iran, rescue mission underway | NBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
-        "embed_id": "2xIVn81Jsyg",
-        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=mgJSeg01KQc",
-        "embed_id": "mgJSeg01KQc",
-        "title": "U.S. fighter jet goes down over Iran"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=jhp3HdwA_u4",
-        "embed_id": "jhp3HdwA_u4",
-        "title": "Search ongoing for 2nd crew member after Iran downs U.S. fighter jet"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
-        "embed_id": "P1hc6o1l6Bo",
-        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=RIHnC3QTgSU",
-        "embed_id": "RIHnC3QTgSU",
-        "title": "Dangerous rescue mission underway after US fighter jet shot down over Iran"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=VENGBzEC-ko",
-        "embed_id": "VENGBzEC-ko",
-        "title": "Iran downed a US fighter jet. Could that change the calculus of war?"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Rhzzx7JgR2k",
-        "embed_id": "Rhzzx7JgR2k",
-        "title": "U.S. fighter jet shot down over Iran as strikes on infrastructure expand across Mideast"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=YloOdOBdejw",
-        "embed_id": "YloOdOBdejw",
-        "title": "Iranian and US forces race to find missing American airman after fighter jet shot down | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=7MZHC2l7eSY",
-        "embed_id": "7MZHC2l7eSY",
-        "title": "Search and rescue operation under way after US fighter jet shot down over Iran | BBC News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
-        "embed_id": "NE92ZzTeDGA",
-        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/NatashaBertrand/status/2040075482666852663",
-        "embed_id": "2040075482666852663",
-        "title": "A US fighter jet has been shot down over Iran, three US sources said confirming Iranian state media reports.\nUS forces have launched search and rescue",
-        "author": "NatashaBertrand"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jimsciutto/status/2040075369433141498",
-        "embed_id": "2040075369433141498",
-        "title": "Breaking: A US fighter jet has been shot down over Iran, three US sources said confirming Iranian state media reports. US forces have launched search ",
-        "author": "jimsciutto"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/KobeissiLetter/status/2040109336525935004",
-        "embed_id": "2040109336525935004",
-        "title": "BREAKING: US officials confirm that one of the two crew members from the US fighter jet that was shot down over Iran has been rescued.\n\nThe status of ",
-        "author": "KobeissiLetter"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Currentreport1/status/2040098281112645914",
-        "embed_id": "2040098281112645914",
-        "title": "BREAKING:\n\nOne pilot from the US F-15 fighter jet that was shot down over Iran has been successfully rescued by US force – CBS\n\nHowever the rescue ope",
-        "author": "Currentreport1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2040098184848912710",
-        "embed_id": "2040098184848912710",
-        "title": "BREAKING: 🇺🇸🇮🇷 One of two crew members of the US F-15E fighter jet shot down over Iran has been rescued, CBS reports.",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BarakRavid/status/2040095439291129910",
-        "embed_id": "2040095439291129910",
-        "title": "🚨🇺🇸🇮🇷One of two crew members of a U.S. fighter jet that was shot down over Iran was located and rescued by U.S. special forces and the search for",
-        "author": "BarakRavid"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/axios/status/2040094901346463797",
-        "embed_id": "2040094901346463797",
-        "title": "BREAKING: One of two crew members of a U.S. fighter jet that was shot down over Iran was located and rescued by U.S. special forces and the search for",
-        "author": "axios"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2040135997535457595",
-        "embed_id": "2040135997535457595",
-        "title": "Iranian media says a US fighter jet has been shot down over Iran, and the US military is conducting a search and rescue operation. US media report tha",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Megatron_ron/status/2040109461658804324",
-        "embed_id": "2040109461658804324",
-        "title": "BREAKING: 🇺🇸🇮🇷 US officials confirm that one of the two crew members from the US fighter jet that was shot down over Iran has been rescued.",
-        "author": "Megatron_ron"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2040105587791274156",
-        "embed_id": "2040105587791274156",
-        "title": "BREAKING: FOX News confirms a US F-15 fighter jet has been shot down over Iran near Kharg Island. The Pentagon is in full panic mode as open source im",
-        "author": "FurkanGozukara"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20640",
-        "embed_id": "disclosetv/20640",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Reuters/status/2040242951624765609",
-        "embed_id": "2040242951624765609",
-        "title": "A US fighter jet ​has been shot down over Iran and search-and-rescue efforts have so far recovered one of two crew members who ejected, in the first k",
-        "author": "Reuters"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2040192151154266272",
-        "embed_id": "2040192151154266272",
-        "title": "🇺🇸 US military incidents today:\n\n• F-15 fighter jet shot down. One crew member rescued, one still missing.\n• 2x HH-60W Jolly Green II rescue helicop",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2040147687803355561",
-        "embed_id": "2040147687803355561",
-        "title": "BREAKING: IRAN MILITARY SPOKESMAN ON WAVES 91 AND 92 OF OPERATION TRUE PROMISE 4\n\nA US fighter jet shot down over central Iran directly after the US c",
-        "author": "ShaykhSulaiman"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheDustyBC/status/2040122155720180086",
-        "embed_id": "2040122155720180086",
-        "title": "🚨JUST IN: 🇺🇸🇮🇷 US officials say a US F-15E fighter jet has been shot down over Iran, with the status of the two pilots still unknown, per WSJ. ht",
-        "author": "TheDustyBC"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1sbevk5/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbevk5",
-        "title": "US fighter jet shot down over Iran, search underway for crew, US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sbf5n9/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbf5n9",
-        "title": "US fighter jet shot down over Iran,  search underway for crew,  US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1sb6ejb/tehran_claims_to_have_shot_down_us_fighter_jet/",
-        "embed_id": "1sb6ejb",
-        "title": "Tehran claims to have shot down US fighter jet over central Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/aviation/comments/1sb9u79/iran_releases_photos_of_alleged_us_f35_debris/",
-        "embed_id": "1sb9u79",
-        "title": "Iran releases photos of alleged US F-35 debris"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sbf6w9/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbf6w9",
-        "title": "US fighter jet shot down over Iran, search underway for crew, US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sbf8wr/us_fighter_jet_shot_down_over_iran_us_sources_say/",
-        "embed_id": "1sbf8wr",
-        "title": "US fighter jet shot down over Iran, US sources say"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PrepperIntel/comments/1sbap07/iran_armed_forces_says_us_fighter_jet_shot_down/",
-        "embed_id": "1sbap07",
-        "title": "Iran armed forces says US fighter jet shot down over Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/USNEWS/comments/1sbf9lc/us_fighter_jet_shot_down_over_iran_us_sources_say/",
-        "embed_id": "1sbf9lc",
-        "title": "US fighter jet shot down over Iran, US sources say"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbfcc4/us_fighter_jet_shot_down_over_iran_and_search_is/",
-        "embed_id": "1sbfcc4",
-        "title": "US fighter jet shot down over Iran and search is underway, sources say: CNN"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1sbgzbp/us_launches_search_and_rescue_mission_for_the/",
-        "embed_id": "1sbgzbp",
-        "title": "US launches search and rescue mission for the pilots of American F-15 shot down over Iran - so much for \"100% of Iranian air defense are gone\""
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/videos/comments/1sbjw9y/us_fighter_jet_shot_down_over_iran_as_search_for/",
-        "embed_id": "1sbjw9y",
-        "title": "US fighter jet shot down over Iran as search for missing crew unfolds"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1sbdy6v/iran_claims_it_shot_down_2_us_f35_jets_in_24/",
-        "embed_id": "1sbdy6v",
-        "title": "Iran claims it shot down 2 US F-35 jets in 24 hours, but US CENTCOM says all aircraft are accounted for."
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=m1qysPLcbeQ",
-        "embed_id": "m1qysPLcbeQ",
-        "title": "Breaking News: Iran shoots down U.S. F-35 fighter jet, sources say",
-        "channel": "CBS News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=yce_tlfusOA",
-        "embed_id": "yce_tlfusOA",
-        "title": "American fighter jet appears to have been shot down by Iran, U.S. official says",
-        "channel": "ABC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=mT-95RVmXVc",
-        "embed_id": "mT-95RVmXVc",
-        "title": "Iran says it downed US fighter jet as search and rescue under way",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=kuxo_NJqVBU",
-        "embed_id": "kuxo_NJqVBU",
-        "title": "BREAKING: Military confirms U.S. fighter jet shot down in Iran",
-        "channel": "KING 5 Seattle",
-        "duration": 36
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
-        "embed_id": "GOYSO4hoaPk",
-        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
-        "channel": "NewsNation",
-        "duration": 292
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=M1Un_jtVjro",
-        "embed_id": "M1Un_jtVjro",
-        "title": "1 crew member from F-15E fighter jet downed over Iran rescued, U.S. officials say",
-        "channel": "CBS News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=cm14uN1xDjY",
-        "embed_id": "cm14uN1xDjY",
-        "title": "LIVE: U.S. F-15 fighter goes down in Iran, rescue mission underway | NBC News",
-        "channel": "NBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
-        "embed_id": "2xIVn81Jsyg",
-        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway",
-        "channel": "NBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=mgJSeg01KQc",
-        "embed_id": "mgJSeg01KQc",
-        "title": "U.S. fighter jet goes down over Iran",
-        "channel": "NBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=jhp3HdwA_u4",
-        "embed_id": "jhp3HdwA_u4",
-        "title": "Search ongoing for 2nd crew member after Iran downs U.S. fighter jet",
-        "channel": "CBS News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
-        "embed_id": "P1hc6o1l6Bo",
-        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory",
-        "channel": "ABC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=RIHnC3QTgSU",
-        "embed_id": "RIHnC3QTgSU",
-        "title": "Dangerous rescue mission underway after US fighter jet shot down over Iran",
-        "channel": "ABC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=VENGBzEC-ko",
-        "embed_id": "VENGBzEC-ko",
-        "title": "Iran downed a US fighter jet. Could that change the calculus of war?",
-        "channel": "ABC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Rhzzx7JgR2k",
-        "embed_id": "Rhzzx7JgR2k",
-        "title": "U.S. fighter jet shot down over Iran as strikes on infrastructure expand across Mideast",
-        "channel": "PBS NewsHour"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=YloOdOBdejw",
-        "embed_id": "YloOdOBdejw",
-        "title": "Iranian and US forces race to find missing American airman after fighter jet shot down | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=7MZHC2l7eSY",
-        "embed_id": "7MZHC2l7eSY",
-        "title": "Search and rescue operation under way after US fighter jet shot down over Iran | BBC News",
-        "channel": "BBC News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
-        "embed_id": "NE92ZzTeDGA",
-        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News",
-        "channel": "BBC News"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/NatashaBertrand/status/2040075482666852663",
-        "embed_id": "2040075482666852663",
-        "title": "A US fighter jet has been shot down over Iran, three US sources said confirming Iranian state media reports.\nUS forces have launched search and rescue",
-        "author": "NatashaBertrand"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/jimsciutto/status/2040075369433141498",
-        "embed_id": "2040075369433141498",
-        "title": "Breaking: A US fighter jet has been shot down over Iran, three US sources said confirming Iranian state media reports. US forces have launched search ",
-        "author": "jimsciutto"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/KobeissiLetter/status/2040109336525935004",
-        "embed_id": "2040109336525935004",
-        "title": "BREAKING: US officials confirm that one of the two crew members from the US fighter jet that was shot down over Iran has been rescued.\n\nThe status of ",
-        "author": "KobeissiLetter"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Currentreport1/status/2040098281112645914",
-        "embed_id": "2040098281112645914",
-        "title": "BREAKING:\n\nOne pilot from the US F-15 fighter jet that was shot down over Iran has been successfully rescued by US force – CBS\n\nHowever the rescue ope",
-        "author": "Currentreport1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2040098184848912710",
-        "embed_id": "2040098184848912710",
-        "title": "BREAKING: 🇺🇸🇮🇷 One of two crew members of the US F-15E fighter jet shot down over Iran has been rescued, CBS reports.",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BarakRavid/status/2040095439291129910",
-        "embed_id": "2040095439291129910",
-        "title": "🚨🇺🇸🇮🇷One of two crew members of a U.S. fighter jet that was shot down over Iran was located and rescued by U.S. special forces and the search for",
-        "author": "BarakRavid"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/axios/status/2040094901346463797",
-        "embed_id": "2040094901346463797",
-        "title": "BREAKING: One of two crew members of a U.S. fighter jet that was shot down over Iran was located and rescued by U.S. special forces and the search for",
-        "author": "axios"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJEnglish/status/2040135997535457595",
-        "embed_id": "2040135997535457595",
-        "title": "Iranian media says a US fighter jet has been shot down over Iran, and the US military is conducting a search and rescue operation. US media report tha",
-        "author": "AJEnglish"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Megatron_ron/status/2040109461658804324",
-        "embed_id": "2040109461658804324",
-        "title": "BREAKING: 🇺🇸🇮🇷 US officials confirm that one of the two crew members from the US fighter jet that was shot down over Iran has been rescued.",
-        "author": "Megatron_ron"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/FurkanGozukara/status/2040105587791274156",
-        "embed_id": "2040105587791274156",
-        "title": "BREAKING: FOX News confirms a US F-15 fighter jet has been shot down over Iran near Kharg Island. The Pentagon is in full panic mode as open source im",
-        "author": "FurkanGozukara"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20640",
-        "embed_id": "disclosetv/20640",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Reuters/status/2040242951624765609",
-        "embed_id": "2040242951624765609",
-        "title": "A US fighter jet ​has been shot down over Iran and search-and-rescue efforts have so far recovered one of two crew members who ejected, in the first k",
-        "author": "Reuters"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BRICSinfo/status/2040192151154266272",
-        "embed_id": "2040192151154266272",
-        "title": "🇺🇸 US military incidents today:\n\n• F-15 fighter jet shot down. One crew member rescued, one still missing.\n• 2x HH-60W Jolly Green II rescue helicop",
-        "author": "BRICSinfo"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2040147687803355561",
-        "embed_id": "2040147687803355561",
-        "title": "BREAKING: IRAN MILITARY SPOKESMAN ON WAVES 91 AND 92 OF OPERATION TRUE PROMISE 4\n\nA US fighter jet shot down over central Iran directly after the US c",
-        "author": "ShaykhSulaiman"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TheDustyBC/status/2040122155720180086",
-        "embed_id": "2040122155720180086",
-        "title": "🚨JUST IN: 🇺🇸🇮🇷 US officials say a US F-15E fighter jet has been shot down over Iran, with the status of the two pilots still unknown, per WSJ. ht",
-        "author": "TheDustyBC"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/news/comments/1sbevk5/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbevk5",
-        "title": "US fighter jet shot down over Iran, search underway for crew, US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sbf5n9/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbf5n9",
-        "title": "US fighter jet shot down over Iran,  search underway for crew,  US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LessCredibleDefence/comments/1sb6ejb/tehran_claims_to_have_shot_down_us_fighter_jet/",
-        "embed_id": "1sb6ejb",
-        "title": "Tehran claims to have shot down US fighter jet over central Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/aviation/comments/1sb9u79/iran_releases_photos_of_alleged_us_f35_debris/",
-        "embed_id": "1sb9u79",
-        "title": "Iran releases photos of alleged US F-35 debris"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sbf6w9/us_fighter_jet_shot_down_over_iran_search/",
-        "embed_id": "1sbf6w9",
-        "title": "US fighter jet shot down over Iran, search underway for crew, US official says"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sbf8wr/us_fighter_jet_shot_down_over_iran_us_sources_say/",
-        "embed_id": "1sbf8wr",
-        "title": "US fighter jet shot down over Iran, US sources say"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PrepperIntel/comments/1sbap07/iran_armed_forces_says_us_fighter_jet_shot_down/",
-        "embed_id": "1sbap07",
-        "title": "Iran armed forces says US fighter jet shot down over Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/USNEWS/comments/1sbf9lc/us_fighter_jet_shot_down_over_iran_us_sources_say/",
-        "embed_id": "1sbf9lc",
-        "title": "US fighter jet shot down over Iran, US sources say"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbfcc4/us_fighter_jet_shot_down_over_iran_and_search_is/",
-        "embed_id": "1sbfcc4",
-        "title": "US fighter jet shot down over Iran and search is underway, sources say: CNN"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1sbgzbp/us_launches_search_and_rescue_mission_for_the/",
-        "embed_id": "1sbgzbp",
-        "title": "US launches search and rescue mission for the pilots of American F-15 shot down over Iran - so much for \"100% of Iranian air defense are gone\""
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/videos/comments/1sbjw9y/us_fighter_jet_shot_down_over_iran_as_search_for/",
-        "embed_id": "1sbjw9y",
-        "title": "US fighter jet shot down over Iran as search for missing crew unfolds"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1sbdy6v/iran_claims_it_shot_down_2_us_f35_jets_in_24/",
-        "embed_id": "1sbdy6v",
-        "title": "Iran claims it shot down 2 US F-35 jets in 24 hours, but US CENTCOM says all aircraft are accounted for."
       }
     ],
     "image_file": "/images/breaking_2026-04-03.png"
