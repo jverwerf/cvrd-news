@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Strike Near Nuclear Facility",
-    "summary": "A strike occurred near Iran's Bushehr nuclear facility, leading to the death of a security guard and damage to a nearby building. This incident has heightened regional tensions concerning the safety and security of nuclear sites in the Middle East. The attack's origins and motivations remain unclear, adding complexity to the already volatile geopolitical situation in the region.",
+    "summary": "A strike near Iran's Bushehr nuclear facility resulted in the death of a security guard and damage to a nearby building. This incident has intensified concerns over the safety and security of nuclear sites in the Middle East. The origins and motivations behind the attack are currently unknown, complicating the already tense geopolitical landscape in the region.",
     "severity": "major",
     "detected_at": "2026-04-04T11:00:07.183Z",
-    "last_updated": "2026-04-04T15:01:12.378Z",
+    "last_updated": "2026-04-04T17:01:18.431Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this strike on international nuclear agreements and the broader geopolitical power dynamics. The focus remains on immediate security concerns, while the underlying issues of nuclear proliferation and regional power struggles are largely ignored. Additionally, the economic interests tied to nuclear energy and military defense contracts are not being scrutinized.",
-    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users blaming foreign intelligence agencies and others suggesting internal sabotage. Memes and viral posts are circulating, depicting the incident as a symbol of the ongoing 'shadow war' in the Middle East. Conspiracy theories about a larger plot to destabilize the region are gaining traction.",
-    "image_prompt": "A dramatic editorial photo of a shadowy figure standing in front of a barbed-wire fence, with a distant view of a nuclear facility under a stormy sky, symbolizing tension and secrecy.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this strike on international nuclear agreements and the broader geopolitical power dynamics. The focus remains on immediate security concerns rather than the long-term impact on diplomatic relations and regional stability. Additionally, the role of external powers in either exacerbating or mitigating these tensions is not being thoroughly examined.",
+    "social_summary": "Social media is buzzing with speculation about the perpetrators, with some users blaming regional adversaries and others suggesting internal sabotage. Memes and viral posts are drawing parallels to past incidents at nuclear sites, fueling conspiracy theories about covert operations. The incident has sparked debates about nuclear safety and the potential for escalation in the region.",
+    "image_prompt": "A dramatic, symbolic image of a cracked hourglass with sand spilling over a map of the Middle East, set against a backdrop of a nuclear facility silhouette at dusk.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -41,13 +41,6 @@
         "author": "VigilantFox"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20649",
-        "embed_id": "disclosetv/20649",
-        "title": "JUST IN - Russia's state nuclear company Rosatom evacuates a further 198 ​of its staff from Iran's Bushehr ‌nuclear power plant.\n\nRead here: https://w",
-        "author": "disclosetv"
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
         "embed_id": "1sbjb2a",
@@ -100,6 +93,12 @@
         "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
         "embed_id": "1sc7leu",
         "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
+        "embed_id": "1sc82wy",
+        "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
       }
     ],
     "youtube_videos": [
@@ -127,13 +126,6 @@
         "author": "VigilantFox"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20649",
-        "embed_id": "disclosetv/20649",
-        "title": "JUST IN - Russia's state nuclear company Rosatom evacuates a further 198 ​of its staff from Iran's Bushehr ‌nuclear power plant.\n\nRead here: https://w",
-        "author": "disclosetv"
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
         "embed_id": "1sbjb2a",
@@ -186,21 +178,27 @@
         "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
         "embed_id": "1sc7leu",
         "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
+        "embed_id": "1sc82wy",
+        "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Afghanistan Earthquake",
-    "summary": "A powerful earthquake has struck Afghanistan, leading to the tragic deaths of eight members of a single family. This disaster underscores Afghanistan's susceptibility to natural calamities and intensifies the existing humanitarian challenges. The incident has reignited debates on the necessity for improved infrastructure and emergency response mechanisms in the country.",
+    "summary": "A devastating earthquake has hit Afghanistan, resulting in the deaths of eight members of one family. This tragedy highlights the country's vulnerability to natural disasters and exacerbates ongoing humanitarian issues. The event has sparked renewed discussions about the urgent need for better infrastructure and more effective emergency response systems in Afghanistan.",
     "severity": "major",
     "detected_at": "2026-04-04T09:00:09.760Z",
-    "last_updated": "2026-04-04T15:01:39.593Z",
+    "last_updated": "2026-04-04T17:02:14.257Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure deficiencies, which are partly a result of decades of foreign intervention and subsequent withdrawal. The focus remains on immediate humanitarian needs, overlooking how international aid and political dynamics have historically influenced Afghanistan's capacity to handle such disasters.",
-    "social_summary": "Social media is buzzing with sympathy for the victims, while also criticizing the Afghan government's preparedness and response. Memes and posts highlight the irony of international aid promises versus the reality on the ground. Conspiracy theories suggest that foreign powers are deliberately neglecting Afghanistan's infrastructure needs to maintain geopolitical leverage.",
-    "image_prompt": "A symbolic image of a cracked, barren landscape with a single, resilient flower growing amidst the rubble, representing hope and resilience in the face of disaster.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure challenges, which are deeply tied to decades of conflict and foreign intervention. The lack of international aid and investment in rebuilding efforts post-U.S. withdrawal is a critical factor in the country's inability to handle such disasters effectively. Additionally, the role of regional powers in either supporting or neglecting Afghanistan's development needs is largely overlooked.",
+    "social_summary": "On social media, there is an outpouring of sympathy for the victims, with many users criticizing the international community for its lack of support. Memes and viral posts highlight the disparity between global military spending and humanitarian aid. Conspiracy theories are circulating about the earthquake being a result of secret military tests, reflecting a deep mistrust in official narratives.",
+    "image_prompt": "A symbolic image of a cracked, barren landscape with a single, fragile home standing amidst the ruins, under a stormy sky, representing resilience and vulnerability.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -225,11 +223,18 @@
         "duration": 210
       },
       {
-        "platform": "x",
-        "url": "https://x.com/Global_Quake/status/2040101277800030488",
-        "embed_id": "2040101277800030488",
-        "title": "NOW: Magnitude 6.7 Earthquake strikes Afghanistan. https://t.co/GxNJ72MEe8",
-        "author": "Global_Quake"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=iKZGAm4-_2g",
+        "embed_id": "iKZGAm4-_2g",
+        "title": "5.9 MAGNITUDE EARTHQUAKE HITS AFGHANISTAN: 8 KILLED; TREMORS FELT IN INDIA",
+        "duration": 84
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=1E32VmNGnuI",
+        "embed_id": "1E32VmNGnuI",
+        "title": "Afghanistan-Pakistan Earthquake Disaster: 8 People Killed in Massive Quake | Key Details",
+        "duration": 182
       },
       {
         "platform": "x",
@@ -237,6 +242,13 @@
         "embed_id": "2040340340323074429",
         "title": "An earthquake in Afghanistan killed eight members of the same family when their home collapsed in Gosfand Dara, Kabul province. A two-year-old child w",
         "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/mog_russEN/status/2040339203142431142",
+        "embed_id": "2040339203142431142",
+        "title": "🚨⚡️An earthquake of magnitude 5.8–5.9 struck Afghanistan, killing 8 people and injuring one child, with tremors also felt in Pakistan and India. http",
+        "author": "mog_russEN"
       }
     ],
     "youtube_videos": [
@@ -253,43 +265,63 @@
         "title": "Afghanistan Earthquake: Powerful Quake Hits Afghan, 8 Dead as Tremors Felt Across Pakistan Regions",
         "channel": "NewsX Live",
         "duration": 210
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=iKZGAm4-_2g",
+        "embed_id": "iKZGAm4-_2g",
+        "title": "5.9 MAGNITUDE EARTHQUAKE HITS AFGHANISTAN: 8 KILLED; TREMORS FELT IN INDIA",
+        "channel": "Global Window",
+        "duration": 84
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=1E32VmNGnuI",
+        "embed_id": "1E32VmNGnuI",
+        "title": "Afghanistan-Pakistan Earthquake Disaster: 8 People Killed in Massive Quake | Key Details",
+        "channel": "MIRROR NOW",
+        "duration": 182
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/Global_Quake/status/2040101277800030488",
-        "embed_id": "2040101277800030488",
-        "title": "NOW: Magnitude 6.7 Earthquake strikes Afghanistan. https://t.co/GxNJ72MEe8",
-        "author": "Global_Quake"
-      },
       {
         "platform": "x",
         "url": "https://x.com/AJEnglish/status/2040340340323074429",
         "embed_id": "2040340340323074429",
         "title": "An earthquake in Afghanistan killed eight members of the same family when their home collapsed in Gosfand Dara, Kabul province. A two-year-old child w",
         "author": "AJEnglish"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/mog_russEN/status/2040339203142431142",
+        "embed_id": "2040339203142431142",
+        "title": "🚨⚡️An earthquake of magnitude 5.8–5.9 struck Afghanistan, killing 8 people and injuring one child, with tremors also felt in Pakistan and India. http",
+        "author": "mog_russEN"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Iranian Missile Attack on Israel",
-    "summary": "Iran has launched a missile attack on residential areas in central Israel, significantly escalating the conflict between the two countries. This act has increased regional tensions and the likelihood of military retaliation from Israel and its allies. The international community is watching closely, worried about the potential for further destabilization in the Middle East.",
+    "summary": "Iran has launched a missile attack targeting residential areas in central Israel, marking a significant escalation in the ongoing conflict between the two nations. This aggressive move has heightened regional tensions and increased the probability of a military response from Israel and its allies. The international community is closely monitoring the situation, concerned about the potential for further destabilization in the already volatile Middle East.",
     "severity": "critical",
     "detected_at": "2026-04-04T05:00:06.815Z",
-    "last_updated": "2026-04-04T15:02:54.543Z",
+    "last_updated": "2026-04-04T17:02:46.847Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind the attack, such as Iran's strategic interests in the region and its alliances with other Middle Eastern entities. Additionally, the role of international arms deals and military aid in fueling this conflict is not being scrutinized. The economic implications of prolonged conflict on global oil markets are also being overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression and others criticizing Israel's past military actions. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, while conspiracy theories suggest foreign powers are manipulating the situation for their own gain. The discourse is highly charged and divisive.",
-    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky over a cityscape, symbolizing the tension and impending conflict. The city below is illuminated, representing the civilian impact and the looming threat of escalation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive such aggressive actions. Iran's missile attack is not just a standalone act of aggression but part of a broader strategy to assert its influence in the region and challenge Western-aligned powers. Similarly, Israel's potential military response is not merely defensive but also a strategic move to maintain its regional dominance and deter future threats.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's actions and others criticizing Israel's past military operations in the region. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, while conspiracy theories suggest external powers are manipulating the situation to justify military interventions.",
+    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, casting a shadow over a peaceful residential neighborhood, symbolizing the sudden and jarring intrusion of conflict into everyday life.",
     "sources": [
       {
         "name": "Al Jazeera",
         "url": "https://www.aljazeera.com/video/newsfeed/2026/4/4/iranian-missile-attack-hits-residential-areas-in-central-israel?traffic_source=rss",
         "lean": "center",
         "title": "Iranian missile attack hits residential areas in central Israel"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/4/vehicles-burn-in-israel-after-being-hit-with-iranian-projectile-debris?traffic_source=rss",
+        "lean": "center",
+        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris"
       }
     ],
     "clips": [
@@ -347,6 +379,12 @@
         "duration": 610
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=PqXDhFABuJ4",
+        "embed_id": "PqXDhFABuJ4",
+        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris | AJ #shorts"
+      },
+      {
         "platform": "x",
         "url": "https://x.com/AJENews/status/2040104540079624667",
         "embed_id": "2040104540079624667",
@@ -359,13 +397,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MintPressNews/status/2039504405104296103",
-        "embed_id": "2039504405104296103",
-        "title": "🚨BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions in occupied Jerusalem &amp; direct hits recorded in the north. https",
-        "author": "MintPressNews"
       },
       {
         "platform": "x",
@@ -410,6 +441,27 @@
         "embed_id": "2039964985384640640",
         "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
         "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
+        "embed_id": "2039589293560316082",
+        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
+        "embed_id": "2039508762776506387",
+        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43141",
+        "embed_id": "warmonitors/43141",
+        "title": "⚡Al Arabiya correspondent: Sirens sound in Haifa and northern Israel after Iranian and Lebanese missiles were detected.",
+        "author": "warmonitors"
       },
       {
         "platform": "reddit",
@@ -464,6 +516,24 @@
         "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
         "embed_id": "1sc7wp2",
         "title": "Iranian cluster missile strike on 'Tel Aviv'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/InternationalNews/comments/1sc6132/iranians_claim_terrorist_attack_after_us_struck/",
+        "embed_id": "1sc6132",
+        "title": "Iranians claim terrorist attack after US struck the bridge waited for medics and civilians to show up to help construction workers and fired on them t"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/canadaleft/comments/1sc64wu/iranian_missile_strikes_southern_israel/",
+        "embed_id": "1sc64wu",
+        "title": "Iranian missile strikes southern 'Israel.'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1sc5v5p/bnei_brakcentral_israel_smoke_rose_and_sirens/",
+        "embed_id": "1sc5v5p",
+        "title": "Bnei Brak,central 'Israel': Smoke rose and sirens blared as residents fled to the streets following a reported Iranian missile strike."
       }
     ],
     "youtube_videos": [
@@ -519,6 +589,12 @@
         "title": "WATCH: Aftermath of Iranian Missile Attack in Israel’s Ramat Gan | APT",
         "channel": "APT",
         "duration": 610
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=PqXDhFABuJ4",
+        "embed_id": "PqXDhFABuJ4",
+        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris | AJ #shorts",
+        "channel": "Al Jazeera English"
       }
     ],
     "social_clips": [
@@ -535,13 +611,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MintPressNews/status/2039504405104296103",
-        "embed_id": "2039504405104296103",
-        "title": "🚨BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions in occupied Jerusalem &amp; direct hits recorded in the north. https",
-        "author": "MintPressNews"
       },
       {
         "platform": "x",
@@ -586,6 +655,27 @@
         "embed_id": "2039964985384640640",
         "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
         "author": "MarioNawfal"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
+        "embed_id": "2039589293560316082",
+        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
+        "author": "AdityaRajKaul"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
+        "embed_id": "2039508762776506387",
+        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
+        "author": "ShaykhSulaiman"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43141",
+        "embed_id": "warmonitors/43141",
+        "title": "⚡Al Arabiya correspondent: Sirens sound in Haifa and northern Israel after Iranian and Lebanese missiles were detected.",
+        "author": "warmonitors"
       },
       {
         "platform": "reddit",
@@ -640,6 +730,24 @@
         "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
         "embed_id": "1sc7wp2",
         "title": "Iranian cluster missile strike on 'Tel Aviv'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/InternationalNews/comments/1sc6132/iranians_claim_terrorist_attack_after_us_struck/",
+        "embed_id": "1sc6132",
+        "title": "Iranians claim terrorist attack after US struck the bridge waited for medics and civilians to show up to help construction workers and fired on them t"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/canadaleft/comments/1sc64wu/iranian_missile_strikes_southern_israel/",
+        "embed_id": "1sc64wu",
+        "title": "Iranian missile strikes southern 'Israel.'"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1sc5v5p/bnei_brakcentral_israel_smoke_rose_and_sirens/",
+        "embed_id": "1sc5v5p",
+        "title": "Bnei Brak,central 'Israel': Smoke rose and sirens blared as residents fled to the streets following a reported Iranian missile strike."
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
