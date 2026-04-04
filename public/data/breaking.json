@@ -1,21 +1,27 @@
 [
   {
     "topic": "Iran Attack Casualties",
-    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, escalating tensions in the region. This incident is part of the broader conflict between Israel and Iran, which has seen a series of retaliatory actions and military engagements. The attack raises concerns about the stability of the region and the potential for further escalation.",
+    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, further escalating tensions between Israel and Iran. This incident is part of a series of retaliatory actions and military engagements between the two nations. The attack has raised concerns about regional stability and the potential for further escalation of conflict.",
     "severity": "major",
     "detected_at": "2026-04-04T19:00:07.128Z",
-    "last_updated": "2026-04-04T19:00:07.128Z",
+    "last_updated": "2026-04-04T21:00:41.322Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind targeting petrochemical facilities, which are crucial to Iran's economy. The attack is part of a broader strategy to weaken Iran's economic infrastructure, thereby exerting pressure on its government. Additionally, the geopolitical implications of such attacks are not being fully explored, particularly how they affect global oil markets and international diplomatic relations.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing outrage over the loss of life and others speculating about the involvement of foreign intelligence agencies. Memes and conspiracy theories are circulating, suggesting that the attack is a false flag operation to justify further military action. Hashtags related to the incident are trending, with users debating the potential for a larger conflict.",
-    "image_prompt": "A dramatic editorial photo of a smoldering industrial complex at dusk, with dark smoke billowing into the sky, symbolizing the tension and uncertainty in the region. In the foreground, a lone figure stands silhouetted, representing the human cost of geopolitical conflicts.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic implications of these attacks on global oil markets and how they affect international relations. The focus remains on the immediate military and political tensions, ignoring the broader economic fallout that impacts global energy prices and supply chains. Additionally, the role of external powers in either exacerbating or mitigating these tensions is not being thoroughly examined.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing outrage over the loss of life and others debating the legitimacy of the attack as a defensive measure. Memes and conspiracy theories are circulating, suggesting hidden agendas by global superpowers to destabilize the region for economic gain. Hashtags related to the attack are trending, with users calling for peace and others demanding retribution.",
+    "image_prompt": "A dramatic editorial photo of a cracked globe with oil spilling out, symbolizing the fragility of global stability and the impact of regional conflicts on the world stage.",
     "sources": [
       {
         "name": "BBC",
         "url": "https://www.bbc.com/news/articles/c5y90jl8veyo?at_medium=RSS&amp;at_campaign=rss",
         "lean": "center",
         "title": "UN watchdog voices 'deep concern' as Iran reports new attacks on nuclear plant"
+      },
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/4/universities-hit-as-us-israel-ramp-up-attacks-on-irans-infrastructure?traffic_source=rss",
+        "lean": "center",
+        "title": "Universities hit as US, Israel ramp up attacks on Iran’s infrastructure"
       }
     ],
     "clips": [
@@ -34,69 +40,6 @@
         "duration": 121
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=EJ3RtsGlccA",
-        "embed_id": "EJ3RtsGlccA",
-        "title": "4000+ U.S. Troops KILLED? Iran Missile Hit U.S Base In Jordan, Interceptor Fails| Trump HUMILIATED?",
-        "duration": 185
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=gK9n72OMOvw",
-        "embed_id": "gK9n72OMOvw",
-        "title": "Iran’s BIGGEST ATTACK On US Soldiers; ‘Over 500 Casualties As Missiles Pound Hideouts In Dubai",
-        "duration": 885
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=W2sNJb83onM",
-        "embed_id": "W2sNJb83onM",
-        "title": "Top U.S. counterterrorism official resigns as Iran security leader killed in strike",
-        "duration": 356
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=T02au1s0RPQ",
-        "embed_id": "T02au1s0RPQ",
-        "title": "Iran’s Supreme Leader Ayatollah Ali Khamenei killed in US-Israeli attack",
-        "duration": 230
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=JMZombxkDiM",
-        "embed_id": "JMZombxkDiM",
-        "title": "HUGE! ‘150 US Casualties In…’: Iran Inflicts ‘BIGGEST’ Blow In Missile Strikes; Pentagon ‘Scrambles’",
-        "duration": 561
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=IEssB0xH1v4",
-        "embed_id": "IEssB0xH1v4",
-        "title": "‘DEADLIEST DAY…’: Dozens Of US Troops KILLED After Iran Missile HITS American Hideout In Dubai?",
-        "duration": 627
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/RyanRozbiani/status/2040338588164866525",
-        "embed_id": "2040338588164866525",
-        "title": "JUST IN 🇮🇷🇺🇸: Dubai Confirms Iran Attack On Oracle \n\nDubai confirmed an attack on Oracle Corporation in Dubai Internet City, stating only the buil",
-        "author": "RyanRozbiani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/JDoghouse43/status/2040254216812556766",
-        "embed_id": "2040254216812556766",
-        "title": "@MENA_Puls @BlueSkyAmb When will the weak elected Republican Representatives stand up for 🇺🇸 and stop Trump before he starts a ground attack   In Ir",
-        "author": "JDoghouse43"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
-      },
-      {
         "platform": "x",
         "url": "https://x.com/TadhgHickey/status/2039812338820255793",
         "embed_id": "2039812338820255793",
@@ -104,82 +47,10 @@
         "author": "TadhgHickey"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/snarwani/status/2039501061929447754",
-        "embed_id": "2039501061929447754",
-        "title": "\"Sources informed The Cradle on 1 April that an 'Israeli-aligned current' within the White House, led by Jared Kushner, has been supplying US Presiden",
-        "author": "snarwani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Kathleen_Tyson_/status/2038923121676136920",
-        "embed_id": "2038923121676136920",
-        "title": "Very big US casualties being hidden if this animation is remotely accurate about Iran’s attack on the Kuwait Island amphibious vessels and Special For",
-        "author": "Kathleen_Tyson_"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/thefireofOla/status/2038178896768573565",
-        "embed_id": "2038178896768573565",
-        "title": "So why did Israeli/US attack Iranian University? I'm sure those in support of this terrifying attack know that civilians are the casualties.\n    If Ir",
-        "author": "thefireofOla"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/cirnosad/status/2037825604247326898",
-        "embed_id": "2037825604247326898",
-        "title": "This is the attack where the 6 LCUs were destroyed and the US suffered 200 casualties. This was a ret*rded placement that likely relied on Iran fallin",
-        "author": "cirnosad"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/RyanRozbiani/status/2037647970951127361",
-        "embed_id": "2037647970951127361",
-        "title": "Third Attack by America and Israel on Iran's Bushehr Nuclear Power Plant\n\nStatement from Iran: \nA projectile hit the Bushehr nuclear power plant area ",
-        "author": "RyanRozbiani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/PiersUncensored/status/2037617904439505105",
-        "embed_id": "2037617904439505105",
-        "title": "Max Amini tells Piers Morgan the people of Iran are “hoping for a strategic attack\" to dismantle the regime.\n\n\"We'd like for this regime to fall with ",
-        "author": "PiersUncensored"
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
         "embed_id": "1sbpiou",
         "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85891",
-        "embed_id": "intelslava/85891",
-        "title": "🇮🇱🇮🇷An attack by the Israeli Air Force on a camouflaged Iranian ballistic missile launcher in Tabriz.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZSePoiriC6w_L6GeFOlqrD17drLoL51_bNzLCwjvSIOnkiReHxf47FGE23WoTMRZ6P-AJhhlsxhy7X0TA55mndRNsXnhFwTnl-kbzo4Ab9nAJOb2iEWS3ne-uy16hUIQfArBeZX6PSwbwfIB2GQ7q9cBLH7g5wZXpEYvelbn7v3dfFVyVGd_ZHkdDdmRrf8LRWjpgTeyZQhaiAB6gsmbSEEwsYGTrZJYLCphN1Nk9z7oFy-_CXzWvhkbmmfvgL9OTOQhI1uFA1goGRF3bFjvOYEe2mzA1dr7MJlOrAHCuUAJ8crJHlltvoUFjmp6jDFCiew7zqjkLY4K9zK8JZHogQ'",
-        "duration": 30
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16315",
-        "embed_id": "France24_en/16315",
-        "title": "Baltic Sea strikes: How Ukraine aims to undermine Russia's oil profits from Iran war\nUkraine has in recent days intensified drone attacks on ports and",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16324",
-        "embed_id": "France24_en/16324",
-        "title": "Videos show US missiles being launched from Kuwait into Iran\nDespite denials from Arab countries in the Persian Gulf region, there is growing evidence",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/liveuamap/12053",
-        "embed_id": "liveuamap/12053",
-        "title": "Abu Dhabi authorities are responding to an incident of falling debris at the Habshan gas facilities following an intercepted attack, the Abu Dhabi Med",
-        "author": "liveuamap"
       }
     ],
     "youtube_videos": [
@@ -196,72 +67,9 @@
         "title": "Pentagon reports new American casualties from Iran war",
         "channel": "NBC News",
         "duration": 121
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=EJ3RtsGlccA",
-        "embed_id": "EJ3RtsGlccA",
-        "title": "4000+ U.S. Troops KILLED? Iran Missile Hit U.S Base In Jordan, Interceptor Fails| Trump HUMILIATED?",
-        "channel": "Oneindia News",
-        "duration": 185
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=gK9n72OMOvw",
-        "embed_id": "gK9n72OMOvw",
-        "title": "Iran’s BIGGEST ATTACK On US Soldiers; ‘Over 500 Casualties As Missiles Pound Hideouts In Dubai",
-        "channel": "Times Of India",
-        "duration": 885
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=W2sNJb83onM",
-        "embed_id": "W2sNJb83onM",
-        "title": "Top U.S. counterterrorism official resigns as Iran security leader killed in strike",
-        "channel": "NBC News",
-        "duration": 356
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=T02au1s0RPQ",
-        "embed_id": "T02au1s0RPQ",
-        "title": "Iran’s Supreme Leader Ayatollah Ali Khamenei killed in US-Israeli attack",
-        "channel": "WPLG Local 10",
-        "duration": 230
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=JMZombxkDiM",
-        "embed_id": "JMZombxkDiM",
-        "title": "HUGE! ‘150 US Casualties In…’: Iran Inflicts ‘BIGGEST’ Blow In Missile Strikes; Pentagon ‘Scrambles’",
-        "channel": "Times Of India",
-        "duration": 561
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=IEssB0xH1v4",
-        "embed_id": "IEssB0xH1v4",
-        "title": "‘DEADLIEST DAY…’: Dozens Of US Troops KILLED After Iran Missile HITS American Hideout In Dubai?",
-        "channel": "Times Of India",
-        "duration": 627
       }
     ],
     "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/RyanRozbiani/status/2040338588164866525",
-        "embed_id": "2040338588164866525",
-        "title": "JUST IN 🇮🇷🇺🇸: Dubai Confirms Iran Attack On Oracle \n\nDubai confirmed an attack on Oracle Corporation in Dubai Internet City, stating only the buil",
-        "author": "RyanRozbiani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/JDoghouse43/status/2040254216812556766",
-        "embed_id": "2040254216812556766",
-        "title": "@MENA_Puls @BlueSkyAmb When will the weak elected Republican Representatives stand up for 🇺🇸 and stop Trump before he starts a ground attack   In Ir",
-        "author": "JDoghouse43"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
-      },
       {
         "platform": "x",
         "url": "https://x.com/TadhgHickey/status/2039812338820255793",
@@ -270,97 +78,25 @@
         "author": "TadhgHickey"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/snarwani/status/2039501061929447754",
-        "embed_id": "2039501061929447754",
-        "title": "\"Sources informed The Cradle on 1 April that an 'Israeli-aligned current' within the White House, led by Jared Kushner, has been supplying US Presiden",
-        "author": "snarwani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Kathleen_Tyson_/status/2038923121676136920",
-        "embed_id": "2038923121676136920",
-        "title": "Very big US casualties being hidden if this animation is remotely accurate about Iran’s attack on the Kuwait Island amphibious vessels and Special For",
-        "author": "Kathleen_Tyson_"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/thefireofOla/status/2038178896768573565",
-        "embed_id": "2038178896768573565",
-        "title": "So why did Israeli/US attack Iranian University? I'm sure those in support of this terrifying attack know that civilians are the casualties.\n    If Ir",
-        "author": "thefireofOla"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/cirnosad/status/2037825604247326898",
-        "embed_id": "2037825604247326898",
-        "title": "This is the attack where the 6 LCUs were destroyed and the US suffered 200 casualties. This was a ret*rded placement that likely relied on Iran fallin",
-        "author": "cirnosad"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/RyanRozbiani/status/2037647970951127361",
-        "embed_id": "2037647970951127361",
-        "title": "Third Attack by America and Israel on Iran's Bushehr Nuclear Power Plant\n\nStatement from Iran: \nA projectile hit the Bushehr nuclear power plant area ",
-        "author": "RyanRozbiani"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/PiersUncensored/status/2037617904439505105",
-        "embed_id": "2037617904439505105",
-        "title": "Max Amini tells Piers Morgan the people of Iran are “hoping for a strategic attack\" to dismantle the regime.\n\n\"We'd like for this regime to fall with ",
-        "author": "PiersUncensored"
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
         "embed_id": "1sbpiou",
         "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85891",
-        "embed_id": "intelslava/85891",
-        "title": "🇮🇱🇮🇷An attack by the Israeli Air Force on a camouflaged Iranian ballistic missile launcher in Tabriz.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZSePoiriC6w_L6GeFOlqrD17drLoL51_bNzLCwjvSIOnkiReHxf47FGE23WoTMRZ6P-AJhhlsxhy7X0TA55mndRNsXnhFwTnl-kbzo4Ab9nAJOb2iEWS3ne-uy16hUIQfArBeZX6PSwbwfIB2GQ7q9cBLH7g5wZXpEYvelbn7v3dfFVyVGd_ZHkdDdmRrf8LRWjpgTeyZQhaiAB6gsmbSEEwsYGTrZJYLCphN1Nk9z7oFy-_CXzWvhkbmmfvgL9OTOQhI1uFA1goGRF3bFjvOYEe2mzA1dr7MJlOrAHCuUAJ8crJHlltvoUFjmp6jDFCiew7zqjkLY4K9zK8JZHogQ'",
-        "duration": 30
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16315",
-        "embed_id": "France24_en/16315",
-        "title": "Baltic Sea strikes: How Ukraine aims to undermine Russia's oil profits from Iran war\nUkraine has in recent days intensified drone attacks on ports and",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16324",
-        "embed_id": "France24_en/16324",
-        "title": "Videos show US missiles being launched from Kuwait into Iran\nDespite denials from Arab countries in the Persian Gulf region, there is growing evidence",
-        "author": "france24_en"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/liveuamap/12053",
-        "embed_id": "liveuamap/12053",
-        "title": "Abu Dhabi authorities are responding to an incident of falling debris at the Habshan gas facilities following an intercepted attack, the Abu Dhabi Med",
-        "author": "liveuamap"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Iran Strike Near Nuclear Facility",
-    "summary": "A strike near Iran's Bushehr nuclear facility resulted in the death of a security guard and damage to a nearby building. This incident has intensified concerns over the safety and security of nuclear sites in the Middle East. The origins and motivations behind the attack are currently unknown, complicating the already tense geopolitical landscape in the region.",
+    "summary": "A strike occurred near Iran's Bushehr nuclear facility, leading to the death of a security guard and damage to a nearby building. This incident has heightened fears regarding the safety and security of nuclear sites in the Middle East. The attack's origins and motivations remain unclear, adding complexity to the already strained geopolitical situation in the region.",
     "severity": "major",
     "detected_at": "2026-04-04T11:00:07.183Z",
-    "last_updated": "2026-04-04T17:01:18.431Z",
+    "last_updated": "2026-04-04T21:01:21.343Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this strike on international nuclear agreements and the broader geopolitical power dynamics. The focus remains on immediate security concerns rather than the long-term impact on diplomatic relations and regional stability. Additionally, the role of external powers in either exacerbating or mitigating these tensions is not being thoroughly examined.",
-    "social_summary": "Social media is buzzing with speculation about the perpetrators, with some users blaming regional adversaries and others suggesting internal sabotage. Memes and viral posts are drawing parallels to past incidents at nuclear sites, fueling conspiracy theories about covert operations. The incident has sparked debates about nuclear safety and the potential for escalation in the region.",
-    "image_prompt": "A dramatic, symbolic image of a cracked hourglass with sand spilling over a map of the Middle East, set against a backdrop of a nuclear facility silhouette at dusk.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this attack on international nuclear agreements and the broader geopolitical power dynamics. The focus remains on immediate security concerns rather than exploring how this incident influence Iran's nuclear negotiations or regional alliances. Additionally, the role of external state actors in either supporting or condemning the attack is not being thoroughly examined.",
+    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users suggesting it is a false flag operation to justify increased military presence in the region. Memes and viral posts are drawing parallels to past incidents involving nuclear facilities, while conspiracy theories about foreign intervention are gaining traction. The incident has sparked debates about nuclear safety and regional stability.",
+    "image_prompt": "A dramatic editorial photo of a shadowy figure standing in front of a barbed-wire fence, with a distant, blurred silhouette of a nuclear facility in the background, under a stormy sky.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -378,6 +114,13 @@
         "duration": 186
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=lpDbLxwzsp8",
+        "embed_id": "lpDbLxwzsp8",
+        "title": "US-Iran War: Iran’s Bushehr Nuclear Plant Hit, Security Personnel Killed, Support Building Damaged",
+        "duration": 110
+      },
+      {
         "platform": "x",
         "url": "https://x.com/MarioNawfal/status/2037088415640936522",
         "embed_id": "2037088415640936522",
@@ -450,6 +193,12 @@
         "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
         "embed_id": "1sc82wy",
         "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1scj3qe/nuclear_plants_must_never_be_attacked_says/",
+        "embed_id": "1scj3qe",
+        "title": "Nuclear Plants 'Must Never Be Attacked,' Says Watchdog as Iran Reports US-Israeli Strike at Bushehr Facility"
       }
     ],
     "youtube_videos": [
@@ -459,6 +208,13 @@
         "title": "Airstrikes hit near Iranian nuclear facility after US warplanes shot down",
         "channel": "LiveNOW from FOX",
         "duration": 186
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=lpDbLxwzsp8",
+        "embed_id": "lpDbLxwzsp8",
+        "title": "US-Iran War: Iran’s Bushehr Nuclear Plant Hit, Security Personnel Killed, Support Building Damaged",
+        "channel": "WION",
+        "duration": 110
       }
     ],
     "social_clips": [
@@ -535,21 +291,27 @@
         "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
         "embed_id": "1sc82wy",
         "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/politics/comments/1scj3qe/nuclear_plants_must_never_be_attacked_says/",
+        "embed_id": "1scj3qe",
+        "title": "Nuclear Plants 'Must Never Be Attacked,' Says Watchdog as Iran Reports US-Israeli Strike at Bushehr Facility"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Afghanistan Earthquake",
-    "summary": "A devastating earthquake has hit Afghanistan, resulting in the deaths of eight members of one family. This tragedy highlights the country's vulnerability to natural disasters and exacerbates ongoing humanitarian issues. The event has sparked renewed discussions about the urgent need for better infrastructure and more effective emergency response systems in Afghanistan.",
+    "summary": "A powerful earthquake has struck Afghanistan, leading to the tragic deaths of eight members of a single family. This disaster underscores Afghanistan's susceptibility to natural calamities and intensifies the existing humanitarian challenges. The incident has reignited debates on the necessity for improved infrastructure and more efficient emergency response mechanisms in the country.",
     "severity": "major",
     "detected_at": "2026-04-04T09:00:09.760Z",
-    "last_updated": "2026-04-04T17:02:14.257Z",
+    "last_updated": "2026-04-04T21:02:24.037Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure challenges, which are deeply tied to decades of conflict and foreign intervention. The lack of international aid and investment in rebuilding efforts post-U.S. withdrawal is a critical factor in the country's inability to handle such disasters effectively. Additionally, the role of regional powers in either supporting or neglecting Afghanistan's development needs is largely overlooked.",
-    "social_summary": "On social media, there is an outpouring of sympathy for the victims, with many users criticizing the international community for its lack of support. Memes and viral posts highlight the disparity between global military spending and humanitarian aid. Conspiracy theories are circulating about the earthquake being a result of secret military tests, reflecting a deep mistrust in official narratives.",
-    "image_prompt": "A symbolic image of a cracked, barren landscape with a single, fragile home standing amidst the ruins, under a stormy sky, representing resilience and vulnerability.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure deficiencies, which are partly a result of decades of foreign intervention and subsequent withdrawal. The focus remains on immediate humanitarian needs, overlooking how international aid and political dynamics have historically influenced Afghanistan's capacity to handle such disasters.",
+    "social_summary": "Social media is buzzing with sympathy for the victims, while also criticizing the Afghan government's preparedness and response. Memes and posts highlight the irony of international aid promises versus the reality on the ground. Conspiracy theories suggest that foreign powers are deliberately neglecting Afghanistan's infrastructure needs to maintain geopolitical leverage.",
+    "image_prompt": "A symbolic image of a cracked, barren landscape with a single, resilient flower growing amidst the rubble, representing hope and resilience in the face of disaster.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -575,17 +337,17 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=iKZGAm4-_2g",
-        "embed_id": "iKZGAm4-_2g",
-        "title": "5.9 MAGNITUDE EARTHQUAKE HITS AFGHANISTAN: 8 KILLED; TREMORS FELT IN INDIA",
-        "duration": 84
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=1E32VmNGnuI",
         "embed_id": "1E32VmNGnuI",
         "title": "Afghanistan-Pakistan Earthquake Disaster: 8 People Killed in Massive Quake | Key Details",
         "duration": 182
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=RT6RkVa6r6E",
+        "embed_id": "RT6RkVa6r6E",
+        "title": "Powerful earthquake in Afghanistan claims eight lives | زلزله‌ شدید در افغانستان جان ۸ تن را گرفت",
+        "duration": 197
       },
       {
         "platform": "x",
@@ -618,18 +380,18 @@
         "duration": 210
       },
       {
-        "url": "https://www.youtube.com/watch?v=iKZGAm4-_2g",
-        "embed_id": "iKZGAm4-_2g",
-        "title": "5.9 MAGNITUDE EARTHQUAKE HITS AFGHANISTAN: 8 KILLED; TREMORS FELT IN INDIA",
-        "channel": "Global Window",
-        "duration": 84
-      },
-      {
         "url": "https://www.youtube.com/watch?v=1E32VmNGnuI",
         "embed_id": "1E32VmNGnuI",
         "title": "Afghanistan-Pakistan Earthquake Disaster: 8 People Killed in Massive Quake | Key Details",
         "channel": "MIRROR NOW",
         "duration": 182
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=RT6RkVa6r6E",
+        "embed_id": "RT6RkVa6r6E",
+        "title": "Powerful earthquake in Afghanistan claims eight lives | زلزله‌ شدید در افغانستان جان ۸ تن را گرفت",
+        "channel": "Ariana News",
+        "duration": 197
       }
     ],
     "social_clips": [
