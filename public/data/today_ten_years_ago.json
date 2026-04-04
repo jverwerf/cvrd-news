@@ -1,15 +1,15 @@
 {
-  "date_last_year": "2016-04-03",
-  "date_generated": "2026-04-03T16:28:50.836Z",
-  "summary": "April 3, 2016, was marked by two major events that captured global attention. The release of the Panama Papers exposed the secretive financial dealings of numerous high-profile individuals, sparking worldwide outrage and calls for greater financial transparency. Meanwhile, in the United States, an Amtrak train derailment in Chester, Pennsylvania, resulted in fatalities and injuries, raising serious concerns about railway safety and infrastructure maintenance. These stories underscored significant issues in financial ethics and transportation safety, prompting discussions and investigations in their respective fields.",
+  "date_last_year": "2016-04-04",
+  "date_generated": "2026-04-04T08:08:09.902Z",
+  "summary": "April 4, 2016, was marked by two major events that captured global attention. The Panama Papers leak, unveiled by the ICIJ and *Süddeutsche Zeitung*, exposed the use of offshore tax havens by numerous high-profile individuals, leading to widespread outrage and calls for reform. Meanwhile, in the world of sports, the Villanova Wildcats won the NCAA Men's Basketball Championship in a thrilling game against the North Carolina Tar Heels, highlighted by a last-second three-pointer. These stories underscored significant developments in both international finance and American sports history.",
   "stories": [
     {
-      "headline": "Panama Papers Leak Exposes Global Financial Secrets",
-      "summary": "The Panama Papers, a massive leak of 11.5 million documents from the law firm Mossack Fonseca, were released by the ICIJ and *Süddeutsche Zeitung*. The documents revealed how politicians, business leaders, and celebrities used offshore tax havens to hide wealth and evade taxes. The leak led to global outrage, investigations, and discussions on financial transparency and ethics.",
+      "headline": "Panama Papers Leak Exposes Global Tax Evasion",
+      "summary": "The Panama Papers, a massive leak of 11.5 million documents from Mossack Fonseca, revealed how politicians, business leaders, and celebrities used offshore tax havens to hide wealth and evade taxes. The leak, published by the ICIJ and *Süddeutsche Zeitung*, led to global outrage, investigations, and policy changes. The documents detailed over 214,000 offshore companies, implicating numerous high-profile individuals.",
       "youtube_queries": [
         "Panama Papers leak 2016 global impact",
-        "Panama Papers 2016 financial secrecy revelations",
-        "Panama Papers 2016 political fallout"
+        "Mossack Fonseca Panama Papers scandal 2016",
+        "ICIJ Panama Papers investigation 2016"
       ],
       "category": "world",
       "videos": [
@@ -20,16 +20,16 @@
           "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
         },
         {
-          "id": "6W61qT312Y8",
-          "title": "'Panama Papers:' How are taxes avoided and assets hidden?",
-          "channel": "euronews Business",
-          "thumbnail": "https://i.ytimg.com/vi/6W61qT312Y8/hqdefault.jpg"
+          "id": "k2APYPjTWZ8",
+          "title": "The Panama Papers, explained with piggy banks",
+          "channel": "Vox",
+          "thumbnail": "https://i.ytimg.com/vi/k2APYPjTWZ8/hqdefault.jpg"
         },
         {
-          "id": "OnlkycLIQIE",
-          "title": "Obama, World Leaders React to 'Panama Papers'",
-          "channel": "Associated Press",
-          "thumbnail": "https://i.ytimg.com/vi/OnlkycLIQIE/maxresdefault.jpg"
+          "id": "nEngOAzk0fM",
+          "title": "Panama Papers: Mossack Fonseca leak reveals elite&#39;s tax havens - BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/nEngOAzk0fM/hqdefault.jpg"
         }
       ],
       "video": {
@@ -40,27 +40,27 @@
       }
     },
     {
-      "headline": "Amtrak Train Derailment in Pennsylvania Kills Two",
-      "summary": "An Amtrak train traveling from New York City to Savannah derailed in Chester, Pennsylvania, after hitting a backhoe on the tracks. The accident resulted in the deaths of two maintenance workers and injuries to 35 passengers. This incident raised concerns about railway safety and infrastructure maintenance, prompting investigations into Amtrak's safety protocols.",
+      "headline": "Villanova Wins NCAA Title with Buzzer-Beater",
+      "summary": "On April 4, 2016, the Villanova Wildcats won the NCAA Men's Basketball Championship by defeating the North Carolina Tar Heels 77–74. The game ended with a dramatic buzzer-beating three-pointer by Kris Jenkins, securing Villanova's first national title since 1985. This thrilling finish is celebrated as one of the most memorable moments in college basketball history.",
       "youtube_queries": [
-        "Amtrak train derailment Chester Pennsylvania 2016",
-        "Amtrak safety concerns after 2016 derailment",
-        "Chester Pennsylvania train accident April 2016"
+        "Villanova vs North Carolina NCAA final 2016 highlights",
+        "Kris Jenkins buzzer beater 2016 NCAA championship",
+        "Villanova Wildcats 2016 NCAA championship game recap"
       ],
-      "category": "world",
+      "category": "sports",
       "videos": [
         {
-          "id": "h5klGnIqO_M",
-          "title": "Chester, Pennyslvania news conference on Amtrak derailment",
-          "channel": "PBS NewsHour",
-          "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+          "id": "LWQNCe9a7v4",
+          "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
+          "channel": "Bleacher Report",
+          "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "h5klGnIqO_M",
-        "title": "Chester, Pennyslvania news conference on Amtrak derailment",
-        "channel": "PBS NewsHour",
-        "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+        "id": "LWQNCe9a7v4",
+        "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
+        "channel": "Bleacher Report",
+        "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
       }
     }
   ],
@@ -72,22 +72,22 @@
       "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
     },
     {
-      "id": "6W61qT312Y8",
-      "title": "'Panama Papers:' How are taxes avoided and assets hidden?",
-      "channel": "euronews Business",
-      "thumbnail": "https://i.ytimg.com/vi/6W61qT312Y8/hqdefault.jpg"
+      "id": "k2APYPjTWZ8",
+      "title": "The Panama Papers, explained with piggy banks",
+      "channel": "Vox",
+      "thumbnail": "https://i.ytimg.com/vi/k2APYPjTWZ8/hqdefault.jpg"
     },
     {
-      "id": "OnlkycLIQIE",
-      "title": "Obama, World Leaders React to 'Panama Papers'",
-      "channel": "Associated Press",
-      "thumbnail": "https://i.ytimg.com/vi/OnlkycLIQIE/maxresdefault.jpg"
+      "id": "nEngOAzk0fM",
+      "title": "Panama Papers: Mossack Fonseca leak reveals elite&#39;s tax havens - BBC News",
+      "channel": "BBC News",
+      "thumbnail": "https://i.ytimg.com/vi/nEngOAzk0fM/hqdefault.jpg"
     },
     {
-      "id": "h5klGnIqO_M",
-      "title": "Chester, Pennyslvania news conference on Amtrak derailment",
-      "channel": "PBS NewsHour",
-      "thumbnail": "https://i.ytimg.com/vi/h5klGnIqO_M/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgYChSMA8=&rs=AOn4CLAIotHz1N5q8F2wuSGYKocwIbZZfg"
+      "id": "LWQNCe9a7v4",
+      "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
+      "channel": "Bleacher Report",
+      "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
     }
   ]
 }
