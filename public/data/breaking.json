@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Strike Near Nuclear Facility",
-    "summary": "A strike near Iran's Bushehr nuclear facility resulted in the death of a security guard and damage to a nearby building. The incident has intensified regional tensions, especially regarding the safety of nuclear sites. The origins and motivations behind the attack are currently unknown, complicating the geopolitical landscape further.",
+    "summary": "A strike occurred near Iran's Bushehr nuclear facility, leading to the death of a security guard and damage to a nearby building. This incident has heightened regional tensions concerning the safety and security of nuclear sites in the Middle East. The attack's origins and motivations remain unclear, adding complexity to the already volatile geopolitical situation in the region.",
     "severity": "major",
     "detected_at": "2026-04-04T11:00:07.183Z",
-    "last_updated": "2026-04-04T13:00:22.515Z",
+    "last_updated": "2026-04-04T15:01:12.378Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this strike on international nuclear agreements and the broader geopolitical power dynamics in the Middle East. The focus remains on immediate security concerns rather than the long-term strategic shifts this incident trigger, including the influence of external powers in the region.",
-    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users suggesting foreign intervention while others blame internal dissent. Memes and viral posts are circulating, depicting the incident as a symbol of the fragile state of Middle Eastern geopolitics. Conspiracy theories are rampant, with claims of covert operations by various state actors.",
-    "image_prompt": "A dramatic, symbolic image of a cracked globe with a nuclear symbol, set against a backdrop of a desert landscape at dusk, with a lone security guard's silhouette in the foreground.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential implications of this strike on international nuclear agreements and the broader geopolitical power dynamics. The focus remains on immediate security concerns, while the underlying issues of nuclear proliferation and regional power struggles are largely ignored. Additionally, the economic interests tied to nuclear energy and military defense contracts are not being scrutinized.",
+    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users blaming foreign intelligence agencies and others suggesting internal sabotage. Memes and viral posts are circulating, depicting the incident as a symbol of the ongoing 'shadow war' in the Middle East. Conspiracy theories about a larger plot to destabilize the region are gaining traction.",
+    "image_prompt": "A dramatic editorial photo of a shadowy figure standing in front of a barbed-wire fence, with a distant view of a nuclear facility under a stormy sky, symbolizing tension and secrecy.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -21,59 +21,10 @@
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=V_qVzmk3pLI",
-        "embed_id": "V_qVzmk3pLI",
-        "title": "Iran launches attack on Israel’s top secret nuclear facility in Negev desert | BBC News",
-        "duration": 411
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=LyATNwXUlWg",
-        "embed_id": "LyATNwXUlWg",
-        "title": "Iran strikes near nuclear facility in Israel | BBC News",
-        "duration": 849
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=t-f_u7GDd8w",
-        "embed_id": "t-f_u7GDd8w",
-        "title": "Iran strikes Israeli towns near nuclear site | BBC News",
-        "duration": 191
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=bfJiBmiI7r4",
-        "embed_id": "bfJiBmiI7r4",
-        "title": "Is the Iran war escalating? Strikes near nuclear sites in Natanz and Dimona | DW News",
-        "duration": 1079
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=BhiJoLcU3cM",
-        "embed_id": "BhiJoLcU3cM",
-        "title": "How striking Iran&#39;s nuclear power plant may impact the entire region",
-        "duration": 72
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=82OgUPn-xGU",
-        "embed_id": "82OgUPn-xGU",
-        "title": "JUST IN: Iran says Natanz nuclear facility HIT in airstrike",
-        "duration": 423
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=7ON0HwnJCtM",
-        "embed_id": "7ON0HwnJCtM",
-        "title": "War with Iran enters fourth week as strikes target nuclear facilities",
-        "duration": 174
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=HKA_yKKgxlE",
-        "embed_id": "HKA_yKKgxlE",
-        "title": "Iranian missile strikes near Israeli nuclear site. #Israel #Iran #Dimona #BBCNews",
-        "duration": 26
+        "url": "https://www.youtube.com/watch?v=SJHc9d6zX2U",
+        "embed_id": "SJHc9d6zX2U",
+        "title": "Airstrikes hit near Iranian nuclear facility after US warplanes shot down",
+        "duration": 186
       },
       {
         "platform": "x",
@@ -88,6 +39,13 @@
         "embed_id": "2034420943464886377",
         "title": "REPORT: A missile strike near Iran’s Bushehr nuclear facility has triggered a Russian evacuation, and Moscow is now warning Israel it may have crossed",
         "author": "VigilantFox"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20649",
+        "embed_id": "disclosetv/20649",
+        "title": "JUST IN - Russia's state nuclear company Rosatom evacuates a further 198 ​of its staff from Iran's Bushehr ‌nuclear power plant.\n\nRead here: https://w",
+        "author": "disclosetv"
       },
       {
         "platform": "reddit",
@@ -130,64 +88,27 @@
         "url": "https://reddit.com/r/worldnews/comments/1sc74ho/usisraeli_strike_on_irans_bushehr_nuclear_plant/",
         "embed_id": "1sc74ho",
         "title": "US-Israeli strike on Iran's Bushehr nuclear plant kills 1, injures 5"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sc8vyy/irans_foreign_minister_warns_attacks_on_nuclear/",
+        "embed_id": "1sc8vyy",
+        "title": "Iran’s foreign minister warns attacks on nuclear facilities will “end life” in Gulf cities"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
+        "embed_id": "1sc7leu",
+        "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=V_qVzmk3pLI",
-        "embed_id": "V_qVzmk3pLI",
-        "title": "Iran launches attack on Israel’s top secret nuclear facility in Negev desert | BBC News",
-        "channel": "BBC News",
-        "duration": 411
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=LyATNwXUlWg",
-        "embed_id": "LyATNwXUlWg",
-        "title": "Iran strikes near nuclear facility in Israel | BBC News",
-        "channel": "BBC News",
-        "duration": 849
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=t-f_u7GDd8w",
-        "embed_id": "t-f_u7GDd8w",
-        "title": "Iran strikes Israeli towns near nuclear site | BBC News",
-        "channel": "BBC News",
-        "duration": 191
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=bfJiBmiI7r4",
-        "embed_id": "bfJiBmiI7r4",
-        "title": "Is the Iran war escalating? Strikes near nuclear sites in Natanz and Dimona | DW News",
-        "channel": "DW News",
-        "duration": 1079
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=BhiJoLcU3cM",
-        "embed_id": "BhiJoLcU3cM",
-        "title": "How striking Iran&#39;s nuclear power plant may impact the entire region",
-        "channel": "CNN",
-        "duration": 72
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=82OgUPn-xGU",
-        "embed_id": "82OgUPn-xGU",
-        "title": "JUST IN: Iran says Natanz nuclear facility HIT in airstrike",
-        "channel": "Fox News",
-        "duration": 423
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=7ON0HwnJCtM",
-        "embed_id": "7ON0HwnJCtM",
-        "title": "War with Iran enters fourth week as strikes target nuclear facilities",
-        "channel": "CBS News",
-        "duration": 174
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=HKA_yKKgxlE",
-        "embed_id": "HKA_yKKgxlE",
-        "title": "Iranian missile strikes near Israeli nuclear site. #Israel #Iran #Dimona #BBCNews",
-        "channel": "BBC News",
-        "duration": 26
+        "url": "https://www.youtube.com/watch?v=SJHc9d6zX2U",
+        "embed_id": "SJHc9d6zX2U",
+        "title": "Airstrikes hit near Iranian nuclear facility after US warplanes shot down",
+        "channel": "LiveNOW from FOX",
+        "duration": 186
       }
     ],
     "social_clips": [
@@ -206,6 +127,13 @@
         "author": "VigilantFox"
       },
       {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20649",
+        "embed_id": "disclosetv/20649",
+        "title": "JUST IN - Russia's state nuclear company Rosatom evacuates a further 198 ​of its staff from Iran's Bushehr ‌nuclear power plant.\n\nRead here: https://w",
+        "author": "disclosetv"
+      },
+      {
         "platform": "reddit",
         "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
         "embed_id": "1sbjb2a",
@@ -246,20 +174,32 @@
         "url": "https://reddit.com/r/worldnews/comments/1sc74ho/usisraeli_strike_on_irans_bushehr_nuclear_plant/",
         "embed_id": "1sc74ho",
         "title": "US-Israeli strike on Iran's Bushehr nuclear plant kills 1, injures 5"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sc8vyy/irans_foreign_minister_warns_attacks_on_nuclear/",
+        "embed_id": "1sc8vyy",
+        "title": "Iran’s foreign minister warns attacks on nuclear facilities will “end life” in Gulf cities"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
+        "embed_id": "1sc7leu",
+        "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Afghanistan Earthquake",
-    "summary": "A devastating earthquake has hit Afghanistan, resulting in the deaths of eight members of one family. This tragedy highlights the country's vulnerability to natural disasters and exacerbates the ongoing humanitarian issues. The event has sparked discussions about the urgent need for better infrastructure and emergency response systems in Afghanistan.",
+    "summary": "A powerful earthquake has struck Afghanistan, leading to the tragic deaths of eight members of a single family. This disaster underscores Afghanistan's susceptibility to natural calamities and intensifies the existing humanitarian challenges. The incident has reignited debates on the necessity for improved infrastructure and emergency response mechanisms in the country.",
     "severity": "major",
     "detected_at": "2026-04-04T09:00:09.760Z",
-    "last_updated": "2026-04-04T13:00:42.294Z",
+    "last_updated": "2026-04-04T15:01:39.593Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure challenges. The international community's limited engagement post-U.S. withdrawal has left Afghanistan with inadequate resources to handle such disasters. The focus remains on immediate humanitarian aid rather than long-term development and stability, which are crucial for preventing future tragedies.",
-    "social_summary": "Social media is buzzing with sympathy for the victims, but also criticism of the Afghan government's preparedness. Memes and posts highlight the irony of international aid promises versus the reality on the ground. Conspiracy theories suggest that foreign powers are neglecting Afghanistan's needs to maintain geopolitical leverage.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure deficiencies, which are partly a result of decades of foreign intervention and subsequent withdrawal. The focus remains on immediate humanitarian needs, overlooking how international aid and political dynamics have historically influenced Afghanistan's capacity to handle such disasters.",
+    "social_summary": "Social media is buzzing with sympathy for the victims, while also criticizing the Afghan government's preparedness and response. Memes and posts highlight the irony of international aid promises versus the reality on the ground. Conspiracy theories suggest that foreign powers are deliberately neglecting Afghanistan's infrastructure needs to maintain geopolitical leverage.",
     "image_prompt": "A symbolic image of a cracked, barren landscape with a single, resilient flower growing amidst the rubble, representing hope and resilience in the face of disaster.",
     "sources": [
       {
@@ -271,11 +211,18 @@
     ],
     "clips": [
       {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2040102612847022236",
-        "embed_id": "2040102612847022236",
-        "title": "M6.7 Earthquake strikes Afghanistan.",
-        "author": "Osint613"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=E4cktUBjJO0",
+        "embed_id": "E4cktUBjJO0",
+        "title": "YA ALLAH Kher!! Devastating Earthquake Hits Afghanistan – Many D**d! | Breaking News | 92 NewsHD",
+        "duration": 51
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=-Z0t4mlfzTg",
+        "embed_id": "-Z0t4mlfzTg",
+        "title": "Afghanistan Earthquake: Powerful Quake Hits Afghan, 8 Dead as Tremors Felt Across Pakistan Regions",
+        "duration": 210
       },
       {
         "platform": "x",
@@ -286,23 +233,31 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/mog_russEN/status/2040339203142431142",
-        "embed_id": "2040339203142431142",
-        "title": "🚨⚡️An earthquake of magnitude 5.8–5.9 struck Afghanistan, killing 8 people and injuring one child, with tremors also felt in Pakistan and India. http",
-        "author": "mog_russEN"
+        "url": "https://x.com/AJEnglish/status/2040340340323074429",
+        "embed_id": "2040340340323074429",
+        "title": "An earthquake in Afghanistan killed eight members of the same family when their home collapsed in Gosfand Dara, Kabul province. A two-year-old child w",
+        "author": "AJEnglish"
       }
     ],
-    "youtube_videos": [],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=E4cktUBjJO0",
+        "embed_id": "E4cktUBjJO0",
+        "title": "YA ALLAH Kher!! Devastating Earthquake Hits Afghanistan – Many D**d! | Breaking News | 92 NewsHD",
+        "channel": "92 News HD",
+        "duration": 51
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=-Z0t4mlfzTg",
+        "embed_id": "-Z0t4mlfzTg",
+        "title": "Afghanistan Earthquake: Powerful Quake Hits Afghan, 8 Dead as Tremors Felt Across Pakistan Regions",
+        "channel": "NewsX Live",
+        "duration": 210
+      }
+    ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/Osint613/status/2040102612847022236",
-        "embed_id": "2040102612847022236",
-        "title": "M6.7 Earthquake strikes Afghanistan.",
-        "author": "Osint613"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/Global_Quake/status/2040101277800030488",
         "embed_id": "2040101277800030488",
         "title": "NOW: Magnitude 6.7 Earthquake strikes Afghanistan. https://t.co/GxNJ72MEe8",
@@ -310,25 +265,25 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/mog_russEN/status/2040339203142431142",
-        "embed_id": "2040339203142431142",
-        "title": "🚨⚡️An earthquake of magnitude 5.8–5.9 struck Afghanistan, killing 8 people and injuring one child, with tremors also felt in Pakistan and India. http",
-        "author": "mog_russEN"
+        "url": "https://x.com/AJEnglish/status/2040340340323074429",
+        "embed_id": "2040340340323074429",
+        "title": "An earthquake in Afghanistan killed eight members of the same family when their home collapsed in Gosfand Dara, Kabul province. A two-year-old child w",
+        "author": "AJEnglish"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
   },
   {
     "topic": "Iranian Missile Attack on Israel",
-    "summary": "Iran has launched a missile attack targeting residential areas in central Israel, marking a significant escalation in the ongoing conflict between the two nations. This aggressive move has heightened regional tensions and raised the possibility of military retaliation from Israel and its allies. The international community is closely monitoring the situation, concerned about the potential for further destabilization in the Middle East.",
+    "summary": "Iran has launched a missile attack on residential areas in central Israel, significantly escalating the conflict between the two countries. This act has increased regional tensions and the likelihood of military retaliation from Israel and its allies. The international community is watching closely, worried about the potential for further destabilization in the Middle East.",
     "severity": "critical",
     "detected_at": "2026-04-04T05:00:06.815Z",
-    "last_updated": "2026-04-04T13:01:38.249Z",
+    "last_updated": "2026-04-04T15:02:54.543Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive such aggressive actions. Iran's missile attack is not just a standalone act of aggression but part of a broader strategy to assert its influence in the region and challenge Western alliances. Similarly, Israel's potential response is not merely defensive but also a demonstration of its military capabilities and a message to its adversaries about its readiness to protect its sovereignty.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's actions and calling for strong retaliation, while others criticize Israel's past military actions as a catalyst for the current situation. Conspiracy theories are circulating, suggesting hidden agendas involving global superpowers, and memes are emerging that depict the conflict as a chess game between Iran and Israel, with the rest of the world as spectators.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing Iran and Israel in a tense standoff, under a stormy sky symbolizing the brewing conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations behind the attack, such as Iran's strategic interests in the region and its alliances with other Middle Eastern entities. Additionally, the role of international arms deals and military aid in fueling this conflict is not being scrutinized. The economic implications of prolonged conflict on global oil markets are also being overlooked.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's aggression and others criticizing Israel's past military actions. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, while conspiracy theories suggest foreign powers are manipulating the situation for their own gain. The discourse is highly charged and divisive.",
+    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky over a cityscape, symbolizing the tension and impending conflict. The city below is illuminated, representing the civilian impact and the looming threat of escalation.",
     "sources": [
       {
         "name": "Al Jazeera",
@@ -366,13 +321,6 @@
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
-        "embed_id": "wNNgYjuPcS4",
-        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
-        "duration": 53
-      },
-      {
-        "platform": "youtube",
         "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
         "embed_id": "lGVg_d0CHcA",
         "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
@@ -384,6 +332,19 @@
         "embed_id": "zGVkg74suXA",
         "title": "Iran inflicts heavy damage on Israel in latest missile strikes",
         "duration": 161
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=IhC-gH_sopY",
+        "embed_id": "IhC-gH_sopY",
+        "title": "Iranian Missile Debris Damages Building In Central Israel"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=EV6w555qvbs",
+        "embed_id": "EV6w555qvbs",
+        "title": "WATCH: Aftermath of Iranian Missile Attack in Israel’s Ramat Gan | APT",
+        "duration": 610
       },
       {
         "platform": "x",
@@ -398,13 +359,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
-        "embed_id": "2039508762776506387",
-        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
-        "author": "ShaykhSulaiman"
       },
       {
         "platform": "x",
@@ -458,15 +412,6 @@
         "author": "MarioNawfal"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85849",
-        "embed_id": "intelslava/85849",
-        "title": "🇮🇷🇮🇱The arrival of a cassette warhead of an Iranian ballistic missile over central Israel.\n\nThe footage shows the consequences of the detonation o",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZyX-tsLxQoYe2aBmMTbcVCmfhK8DrpYnMJJNRoQDUjSi9HbZssoti_WwwThrNVW58fv928QXny_Fb2XrBecsfCnEsSPKsjL3Q5yMG4XjKYTFGJOevWkOfRpNAC-OOX1EbwFbSm4SQRYEbtbbLu6tZzwX1hu1jq2crBuDFiaXwWHU_yLSK5_U2G9HFTNLkpv0izARUo2OO5uWySieTtE68j8CE01cYYmdrBNPip2JpaF9CqixT-5WBU8MUo7eYMIru7CbzW1Is-yDTbYm_Ld-j2ui8VH-NnPgjk76RUV9MuIRNNGKglqYM8ZixuBvfZF6IuXs3t7EFWi6KWXCWTcMWg'",
-        "duration": 30
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
         "embed_id": "1sb5xu2",
@@ -513,6 +458,12 @@
         "url": "https://reddit.com/r/IndianStreetBets/comments/1sbj8pf/a_failed_iranian_missile_launched_against_israel/",
         "embed_id": "1sbj8pf",
         "title": "A failed Iranian missile launched against Israel from the area of Mehrabad International Airport in Tehran exploded in a residential area near the air"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
+        "embed_id": "1sc7wp2",
+        "title": "Iranian cluster missile strike on 'Tel Aviv'"
       }
     ],
     "youtube_videos": [
@@ -543,13 +494,6 @@
         "duration": 127
       },
       {
-        "url": "https://www.youtube.com/watch?v=wNNgYjuPcS4",
-        "embed_id": "wNNgYjuPcS4",
-        "title": "Videos capture projectile falling in central Israel following Iranian missile strike | AJ #shorts",
-        "channel": "Al Jazeera English",
-        "duration": 53
-      },
-      {
         "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
         "embed_id": "lGVg_d0CHcA",
         "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
@@ -562,6 +506,19 @@
         "title": "Iran inflicts heavy damage on Israel in latest missile strikes",
         "channel": "CBS Evening News",
         "duration": 161
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IhC-gH_sopY",
+        "embed_id": "IhC-gH_sopY",
+        "title": "Iranian Missile Debris Damages Building In Central Israel",
+        "channel": "Forbes Breaking News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=EV6w555qvbs",
+        "embed_id": "EV6w555qvbs",
+        "title": "WATCH: Aftermath of Iranian Missile Attack in Israel’s Ramat Gan | APT",
+        "channel": "APT",
+        "duration": 610
       }
     ],
     "social_clips": [
@@ -578,13 +535,6 @@
         "embed_id": "2039980799278096616",
         "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
         "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
-        "embed_id": "2039508762776506387",
-        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
-        "author": "ShaykhSulaiman"
       },
       {
         "platform": "x",
@@ -638,15 +588,6 @@
         "author": "MarioNawfal"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85849",
-        "embed_id": "intelslava/85849",
-        "title": "🇮🇷🇮🇱The arrival of a cassette warhead of an Iranian ballistic missile over central Israel.\n\nThe footage shows the consequences of the detonation o",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZyX-tsLxQoYe2aBmMTbcVCmfhK8DrpYnMJJNRoQDUjSi9HbZssoti_WwwThrNVW58fv928QXny_Fb2XrBecsfCnEsSPKsjL3Q5yMG4XjKYTFGJOevWkOfRpNAC-OOX1EbwFbSm4SQRYEbtbbLu6tZzwX1hu1jq2crBuDFiaXwWHU_yLSK5_U2G9HFTNLkpv0izARUo2OO5uWySieTtE68j8CE01cYYmdrBNPip2JpaF9CqixT-5WBU8MUo7eYMIru7CbzW1Is-yDTbYm_Ld-j2ui8VH-NnPgjk76RUV9MuIRNNGKglqYM8ZixuBvfZF6IuXs3t7EFWi6KWXCWTcMWg'",
-        "duration": 30
-      },
-      {
         "platform": "reddit",
         "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
         "embed_id": "1sb5xu2",
@@ -693,349 +634,12 @@
         "url": "https://reddit.com/r/IndianStreetBets/comments/1sbj8pf/a_failed_iranian_missile_launched_against_israel/",
         "embed_id": "1sbj8pf",
         "title": "A failed Iranian missile launched against Israel from the area of Mehrabad International Airport in Tehran exploded in a residential area near the air"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-04.png"
-  },
-  {
-    "topic": "Iran Downs US Warplanes",
-    "summary": "Iran has reportedly shot down two US warplanes, marking a significant escalation in the ongoing tensions between the United States and Iran. This incident is part of a series of aggressive actions and retaliatory strikes between the two nations, heightening fears of a broader conflict in the Middle East. The international community is on high alert, with concerns about the potential for further military escalation in the region.",
-    "severity": "critical",
-    "detected_at": "2026-04-04T01:00:07.004Z",
-    "last_updated": "2026-04-04T13:02:08.537Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical strategies that have led to this point. The focus remains on immediate military actions rather than the long-term implications of foreign policy decisions and alliances. The economic interests tied to military presence in the region, such as control over oil routes and regional influence, are not being discussed openly.",
-    "social_summary": "Social media is ablaze with reactions ranging from outrage to conspiracy theories. Some users are speculating about a potential World War III, while others are sharing memes that trivialize the seriousness of the situation. Hashtags like #IranUSConflict and #MiddleEastTensions are trending, with users expressing both fear and skepticism about the official narratives.",
-    "image_prompt": "A dramatic editorial photo of a tense standoff between two fighter jets in a stormy sky, symbolizing the escalating conflict and uncertainty in international relations.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/liveblog/2026/4/4/iran-war-live-tehran-downs-2-us-warplanes-israel-bombs-lebanon-bridges?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran war live: Tehran downs 2 US warplanes; Israel bombs Lebanon bridges"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
-        "embed_id": "GOYSO4hoaPk",
-        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
-        "duration": 292
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
-        "embed_id": "P1hc6o1l6Bo",
-        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory",
-        "duration": 222
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
-        "embed_id": "2xIVn81Jsyg",
-        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway",
-        "duration": 1080
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=AqB7zdQMINA",
-        "embed_id": "AqB7zdQMINA",
-        "title": "US F-15 fighter shot down over Iran as search for missing crew unfolds",
-        "duration": 654
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
-        "embed_id": "NE92ZzTeDGA",
-        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News",
-        "duration": 99
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=fGAL9ttB5_Y",
-        "embed_id": "fGAL9ttB5_Y",
-        "title": "SPECIAL REPORT: American fighter jet appears to have been shot down by Iran, U.S. official says",
-        "duration": 341
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Y2EOb8MXLI8",
-        "embed_id": "Y2EOb8MXLI8",
-        "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
-        "duration": 561
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=rSZ2ZHAK7QU",
-        "embed_id": "rSZ2ZHAK7QU",
-        "title": "Two US fighter jets shot down by Iran | ABC NEWS",
-        "duration": 278
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=amD5aQUKt8E",
-        "embed_id": "amD5aQUKt8E",
-        "title": "2 U.S. warplanes shot down over Iran, crew member missing",
-        "duration": 195
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=RIHnC3QTgSU",
-        "embed_id": "RIHnC3QTgSU",
-        "title": "Dangerous rescue mission underway after US fighter jet shot down over Iran",
-        "duration": 312
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20640",
-        "embed_id": "disclosetv/20640",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20645",
-        "embed_id": "disclosetv/20645",
-        "title": "JUST IN - A second U.S. plane, an A-10 Warthog, was downed by Iran today near the Strait of Hormuz.\n\nRead here: https://www.disclose.tv/id/6yynuihai8/",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85838",
-        "embed_id": "intelslava/85838",
-        "title": "🇮🇷🇺🇸⚡️The helicopter UH-60 Black Hawk (HH-60G Pave Hawk) might have been shot down by Iran during a rescue operation to search for pilots of a dow",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85839",
-        "embed_id": "intelslava/85839",
-        "title": "🇮🇷🇺🇸⚡️An American attack aircraft A-10 Thunderbolt II crashed near the Strait of Hormuz, and its pilot was rescued, according to The New York Time",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43106",
-        "embed_id": "warmonitors/43106",
-        "title": "⚡️Israeli outlets are claiming that one of the American pilots that was shot down over Iran was rescued, search for the other continues.\n\nNo confirmat",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43108",
-        "embed_id": "warmonitors/43108",
-        "title": "U.S and Israeli officials claim to have rescued one of the pilots shot down over Iran. \n\nOSINT platform, Middle East Tracker - middleastracker.com wer",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85844",
-        "embed_id": "intelslava/85844",
-        "title": "🇺🇸🇮🇷The Iranian army officially announces that its air defenses have managed to shoot down the American A10 S aircraft in the waters of the Persia",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30568",
-        "embed_id": "Newsmax/30568",
-        "title": "BREAKING: One of the crew members of a U.S. fighter jet that was shot down over Iran has been recovered alive by U.S. special forces inside Iranian te",
-        "author": "newsmax"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30565",
-        "embed_id": "Newsmax/30565",
-        "title": "BREAKING: Newsmax has confirmed Friday that a U.S. fighter jet has been shot down over Iran's southwest.\n\nA search and rescue operation is underway to",
-        "author": "newsmax"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16319",
-        "embed_id": "France24_en/16319",
-        "title": "Two US fighter jets downed in Mideast, one crew member rescued\nA US fighter jet was shot down over Iranian airspace on Friday, triggering a search ope",
-        "author": "france24_en"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1sbrs09/2nd_us_warplane_crashes_near_hormuz_after_f15/",
-        "embed_id": "1sbrs09",
-        "title": "2nd US Warplane Crashes Near Hormuz After F-15 Downed Over Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1saztu7/iran_claims_it_shot_down_a_usisraeli_warplane/",
-        "embed_id": "1saztu7",
-        "title": "Iran Claims It Shot Down a US/Israeli Warplane Near the Strait of Hormuz — Pentagon Says 'All Aircraft Accounted For' Who's Lying?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UPSC_Forum/comments/1sc3pp0/why_did_iran_wait_almost_6_weeks_before_starting/",
-        "embed_id": "1sc3pp0",
-        "title": "Why did Iran wait almost 6 weeks before starting to shoot down US warplanes?"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
-        "embed_id": "GOYSO4hoaPk",
-        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
-        "channel": "NewsNation",
-        "duration": 292
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
-        "embed_id": "P1hc6o1l6Bo",
-        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory",
-        "channel": "ABC News",
-        "duration": 222
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
-        "embed_id": "2xIVn81Jsyg",
-        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway",
-        "channel": "NBC News",
-        "duration": 1080
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=AqB7zdQMINA",
-        "embed_id": "AqB7zdQMINA",
-        "title": "US F-15 fighter shot down over Iran as search for missing crew unfolds",
-        "channel": "CNN",
-        "duration": 654
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
-        "embed_id": "NE92ZzTeDGA",
-        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News",
-        "channel": "BBC News",
-        "duration": 99
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=fGAL9ttB5_Y",
-        "embed_id": "fGAL9ttB5_Y",
-        "title": "SPECIAL REPORT: American fighter jet appears to have been shot down by Iran, U.S. official says",
-        "channel": "ABC News",
-        "duration": 341
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Y2EOb8MXLI8",
-        "embed_id": "Y2EOb8MXLI8",
-        "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
-        "channel": "LiveNOW from FOX",
-        "duration": 561
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=rSZ2ZHAK7QU",
-        "embed_id": "rSZ2ZHAK7QU",
-        "title": "Two US fighter jets shot down by Iran | ABC NEWS",
-        "channel": "ABC News (Australia)",
-        "duration": 278
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=amD5aQUKt8E",
-        "embed_id": "amD5aQUKt8E",
-        "title": "2 U.S. warplanes shot down over Iran, crew member missing",
-        "channel": "KTLA 5",
-        "duration": 195
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=RIHnC3QTgSU",
-        "embed_id": "RIHnC3QTgSU",
-        "title": "Dangerous rescue mission underway after US fighter jet shot down over Iran",
-        "channel": "ABC News",
-        "duration": 312
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20640",
-        "embed_id": "disclosetv/20640",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20645",
-        "embed_id": "disclosetv/20645",
-        "title": "JUST IN - A second U.S. plane, an A-10 Warthog, was downed by Iran today near the Strait of Hormuz.\n\nRead here: https://www.disclose.tv/id/6yynuihai8/",
-        "author": "disclosetv"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85838",
-        "embed_id": "intelslava/85838",
-        "title": "🇮🇷🇺🇸⚡️The helicopter UH-60 Black Hawk (HH-60G Pave Hawk) might have been shot down by Iran during a rescue operation to search for pilots of a dow",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85839",
-        "embed_id": "intelslava/85839",
-        "title": "🇮🇷🇺🇸⚡️An American attack aircraft A-10 Thunderbolt II crashed near the Strait of Hormuz, and its pilot was rescued, according to The New York Time",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43106",
-        "embed_id": "warmonitors/43106",
-        "title": "⚡️Israeli outlets are claiming that one of the American pilots that was shot down over Iran was rescued, search for the other continues.\n\nNo confirmat",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43108",
-        "embed_id": "warmonitors/43108",
-        "title": "U.S and Israeli officials claim to have rescued one of the pilots shot down over Iran. \n\nOSINT platform, Middle East Tracker - middleastracker.com wer",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85844",
-        "embed_id": "intelslava/85844",
-        "title": "🇺🇸🇮🇷The Iranian army officially announces that its air defenses have managed to shoot down the American A10 S aircraft in the waters of the Persia",
-        "author": "intelslava"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30568",
-        "embed_id": "Newsmax/30568",
-        "title": "BREAKING: One of the crew members of a U.S. fighter jet that was shot down over Iran has been recovered alive by U.S. special forces inside Iranian te",
-        "author": "newsmax"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/Newsmax/30565",
-        "embed_id": "Newsmax/30565",
-        "title": "BREAKING: Newsmax has confirmed Friday that a U.S. fighter jet has been shot down over Iran's southwest.\n\nA search and rescue operation is underway to",
-        "author": "newsmax"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16319",
-        "embed_id": "France24_en/16319",
-        "title": "Two US fighter jets downed in Mideast, one crew member rescued\nA US fighter jet was shot down over Iranian airspace on Friday, triggering a search ope",
-        "author": "france24_en"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Conservative/comments/1sbrs09/2nd_us_warplane_crashes_near_hormuz_after_f15/",
-        "embed_id": "1sbrs09",
-        "title": "2nd US Warplane Crashes Near Hormuz After F-15 Downed Over Iran"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1saztu7/iran_claims_it_shot_down_a_usisraeli_warplane/",
-        "embed_id": "1saztu7",
-        "title": "Iran Claims It Shot Down a US/Israeli Warplane Near the Strait of Hormuz — Pentagon Says 'All Aircraft Accounted For' Who's Lying?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UPSC_Forum/comments/1sc3pp0/why_did_iran_wait_almost_6_weeks_before_starting/",
-        "embed_id": "1sc3pp0",
-        "title": "Why did Iran wait almost 6 weeks before starting to shoot down US warplanes?"
+        "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
+        "embed_id": "1sc7wp2",
+        "title": "Iranian cluster missile strike on 'Tel Aviv'"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
