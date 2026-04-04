@@ -1,5 +1,73 @@
 [
   {
+    "topic": "Afghanistan Earthquake",
+    "summary": "A powerful earthquake has struck Afghanistan, leading to the tragic deaths of eight members of a single family. This disaster underscores the region's susceptibility to seismic activity and compounds the existing humanitarian challenges faced by the Afghan population. The earthquake has drawn attention to the need for improved infrastructure and emergency response capabilities in the country.",
+    "severity": "major",
+    "detected_at": "2026-04-04T09:00:09.760Z",
+    "last_updated": "2026-04-04T09:00:09.760Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of Afghanistan's infrastructure vulnerabilities. International aid and investment have been inconsistent, often influenced by political agendas rather than humanitarian needs. The lack of sustained support has left Afghanistan ill-prepared for natural disasters, perpetuating a cycle of crisis and dependency.",
+    "social_summary": "Social media is awash with sympathy for the victims, but also criticism of the international community's failure to provide adequate support to Afghanistan. Memes and posts highlight the disparity between global military spending and humanitarian aid, questioning priorities. Conspiracy theories suggest that foreign powers benefit from Afghanistan's instability, though these lack evidence.",
+    "image_prompt": "A symbolic image of a cracked, barren landscape with a single, resilient flower growing amidst the rubble, representing hope and resilience in the face of disaster.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/4/afghanistan-earthquake-kills-eight-members-of-same-family?traffic_source=rss",
+        "lean": "center",
+        "title": "Afghanistan earthquake kills eight members of same family"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/Goreunit/status/2040103491843301737",
+        "embed_id": "2040103491843301737",
+        "title": "*5.9 magnitude earthquake hits Afghanistan, tremors felt in Jammu and Kashmir*\n\nArea: Afghanistan-Tajikistan Border Region\nTime: 2026-04-03 16:12:58.0",
+        "author": "Goreunit"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2040102612847022236",
+        "embed_id": "2040102612847022236",
+        "title": "M6.7 Earthquake strikes Afghanistan.",
+        "author": "Osint613"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Global_Quake/status/2040101277800030488",
+        "embed_id": "2040101277800030488",
+        "title": "NOW: Magnitude 6.7 Earthquake strikes Afghanistan. https://t.co/GxNJ72MEe8",
+        "author": "Global_Quake"
+      }
+    ],
+    "youtube_videos": [],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/Goreunit/status/2040103491843301737",
+        "embed_id": "2040103491843301737",
+        "title": "*5.9 magnitude earthquake hits Afghanistan, tremors felt in Jammu and Kashmir*\n\nArea: Afghanistan-Tajikistan Border Region\nTime: 2026-04-03 16:12:58.0",
+        "author": "Goreunit"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2040102612847022236",
+        "embed_id": "2040102612847022236",
+        "title": "M6.7 Earthquake strikes Afghanistan.",
+        "author": "Osint613"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Global_Quake/status/2040101277800030488",
+        "embed_id": "2040101277800030488",
+        "title": "NOW: Magnitude 6.7 Earthquake strikes Afghanistan. https://t.co/GxNJ72MEe8",
+        "author": "Global_Quake"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-04.png"
+  },
+  {
     "topic": "Iranian Missile Attack on Israel",
     "summary": "Iran has launched a missile attack on residential areas in central Israel, significantly escalating the conflict between the two countries. This act has intensified regional tensions and prompted concerns about possible military retaliation from Israel and its allies. The international community is on high alert, worried about further destabilization in the already volatile Middle East.",
     "severity": "critical",
