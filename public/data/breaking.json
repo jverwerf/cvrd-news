@@ -1,5 +1,356 @@
 [
   {
+    "topic": "Iran Attack Casualties",
+    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, escalating tensions in the region. This incident is part of the broader conflict between Israel and Iran, which has seen a series of retaliatory actions and military engagements. The attack raises concerns about the stability of the region and the potential for further escalation.",
+    "severity": "major",
+    "detected_at": "2026-04-04T19:00:07.128Z",
+    "last_updated": "2026-04-04T19:00:07.128Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind targeting petrochemical facilities, which are crucial to Iran's economy. The attack is part of a broader strategy to weaken Iran's economic infrastructure, thereby exerting pressure on its government. Additionally, the geopolitical implications of such attacks are not being fully explored, particularly how they affect global oil markets and international diplomatic relations.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing outrage over the loss of life and others speculating about the involvement of foreign intelligence agencies. Memes and conspiracy theories are circulating, suggesting that the attack is a false flag operation to justify further military action. Hashtags related to the incident are trending, with users debating the potential for a larger conflict.",
+    "image_prompt": "A dramatic editorial photo of a smoldering industrial complex at dusk, with dark smoke billowing into the sky, symbolizing the tension and uncertainty in the region. In the foreground, a lone figure stands silhouetted, representing the human cost of geopolitical conflicts.",
+    "sources": [
+      {
+        "name": "BBC",
+        "url": "https://www.bbc.com/news/articles/c5y90jl8veyo?at_medium=RSS&amp;at_campaign=rss",
+        "lean": "center",
+        "title": "UN watchdog voices 'deep concern' as Iran reports new attacks on nuclear plant"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=1TvVobMOFHA",
+        "embed_id": "1TvVobMOFHA",
+        "title": "RPT: 15 US troops injured in Iran attack, 5 in serious condition",
+        "duration": 800
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=hpd8OImGkYE",
+        "embed_id": "hpd8OImGkYE",
+        "title": "Pentagon reports new American casualties from Iran war",
+        "duration": 121
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=EJ3RtsGlccA",
+        "embed_id": "EJ3RtsGlccA",
+        "title": "4000+ U.S. Troops KILLED? Iran Missile Hit U.S Base In Jordan, Interceptor Fails| Trump HUMILIATED?",
+        "duration": 185
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=gK9n72OMOvw",
+        "embed_id": "gK9n72OMOvw",
+        "title": "Iran’s BIGGEST ATTACK On US Soldiers; ‘Over 500 Casualties As Missiles Pound Hideouts In Dubai",
+        "duration": 885
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=W2sNJb83onM",
+        "embed_id": "W2sNJb83onM",
+        "title": "Top U.S. counterterrorism official resigns as Iran security leader killed in strike",
+        "duration": 356
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=T02au1s0RPQ",
+        "embed_id": "T02au1s0RPQ",
+        "title": "Iran’s Supreme Leader Ayatollah Ali Khamenei killed in US-Israeli attack",
+        "duration": 230
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=JMZombxkDiM",
+        "embed_id": "JMZombxkDiM",
+        "title": "HUGE! ‘150 US Casualties In…’: Iran Inflicts ‘BIGGEST’ Blow In Missile Strikes; Pentagon ‘Scrambles’",
+        "duration": 561
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=IEssB0xH1v4",
+        "embed_id": "IEssB0xH1v4",
+        "title": "‘DEADLIEST DAY…’: Dozens Of US Troops KILLED After Iran Missile HITS American Hideout In Dubai?",
+        "duration": 627
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/RyanRozbiani/status/2040338588164866525",
+        "embed_id": "2040338588164866525",
+        "title": "JUST IN 🇮🇷🇺🇸: Dubai Confirms Iran Attack On Oracle \n\nDubai confirmed an attack on Oracle Corporation in Dubai Internet City, stating only the buil",
+        "author": "RyanRozbiani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDoghouse43/status/2040254216812556766",
+        "embed_id": "2040254216812556766",
+        "title": "@MENA_Puls @BlueSkyAmb When will the weak elected Republican Representatives stand up for 🇺🇸 and stop Trump before he starts a ground attack   In Ir",
+        "author": "JDoghouse43"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
+        "embed_id": "2039874952044728446",
+        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
+        "embed_id": "2039812338820255793",
+        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
+        "author": "TadhgHickey"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2039501061929447754",
+        "embed_id": "2039501061929447754",
+        "title": "\"Sources informed The Cradle on 1 April that an 'Israeli-aligned current' within the White House, led by Jared Kushner, has been supplying US Presiden",
+        "author": "snarwani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Kathleen_Tyson_/status/2038923121676136920",
+        "embed_id": "2038923121676136920",
+        "title": "Very big US casualties being hidden if this animation is remotely accurate about Iran’s attack on the Kuwait Island amphibious vessels and Special For",
+        "author": "Kathleen_Tyson_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/thefireofOla/status/2038178896768573565",
+        "embed_id": "2038178896768573565",
+        "title": "So why did Israeli/US attack Iranian University? I'm sure those in support of this terrifying attack know that civilians are the casualties.\n    If Ir",
+        "author": "thefireofOla"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/cirnosad/status/2037825604247326898",
+        "embed_id": "2037825604247326898",
+        "title": "This is the attack where the 6 LCUs were destroyed and the US suffered 200 casualties. This was a ret*rded placement that likely relied on Iran fallin",
+        "author": "cirnosad"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/RyanRozbiani/status/2037647970951127361",
+        "embed_id": "2037647970951127361",
+        "title": "Third Attack by America and Israel on Iran's Bushehr Nuclear Power Plant\n\nStatement from Iran: \nA projectile hit the Bushehr nuclear power plant area ",
+        "author": "RyanRozbiani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/PiersUncensored/status/2037617904439505105",
+        "embed_id": "2037617904439505105",
+        "title": "Max Amini tells Piers Morgan the people of Iran are “hoping for a strategic attack\" to dismantle the regime.\n\n\"We'd like for this regime to fall with ",
+        "author": "PiersUncensored"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
+        "embed_id": "1sbpiou",
+        "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85891",
+        "embed_id": "intelslava/85891",
+        "title": "🇮🇱🇮🇷An attack by the Israeli Air Force on a camouflaged Iranian ballistic missile launcher in Tabriz.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZSePoiriC6w_L6GeFOlqrD17drLoL51_bNzLCwjvSIOnkiReHxf47FGE23WoTMRZ6P-AJhhlsxhy7X0TA55mndRNsXnhFwTnl-kbzo4Ab9nAJOb2iEWS3ne-uy16hUIQfArBeZX6PSwbwfIB2GQ7q9cBLH7g5wZXpEYvelbn7v3dfFVyVGd_ZHkdDdmRrf8LRWjpgTeyZQhaiAB6gsmbSEEwsYGTrZJYLCphN1Nk9z7oFy-_CXzWvhkbmmfvgL9OTOQhI1uFA1goGRF3bFjvOYEe2mzA1dr7MJlOrAHCuUAJ8crJHlltvoUFjmp6jDFCiew7zqjkLY4K9zK8JZHogQ'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16315",
+        "embed_id": "France24_en/16315",
+        "title": "Baltic Sea strikes: How Ukraine aims to undermine Russia's oil profits from Iran war\nUkraine has in recent days intensified drone attacks on ports and",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16324",
+        "embed_id": "France24_en/16324",
+        "title": "Videos show US missiles being launched from Kuwait into Iran\nDespite denials from Arab countries in the Persian Gulf region, there is growing evidence",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/liveuamap/12053",
+        "embed_id": "liveuamap/12053",
+        "title": "Abu Dhabi authorities are responding to an incident of falling debris at the Habshan gas facilities following an intercepted attack, the Abu Dhabi Med",
+        "author": "liveuamap"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=1TvVobMOFHA",
+        "embed_id": "1TvVobMOFHA",
+        "title": "RPT: 15 US troops injured in Iran attack, 5 in serious condition",
+        "channel": "LiveNOW from FOX",
+        "duration": 800
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hpd8OImGkYE",
+        "embed_id": "hpd8OImGkYE",
+        "title": "Pentagon reports new American casualties from Iran war",
+        "channel": "NBC News",
+        "duration": 121
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=EJ3RtsGlccA",
+        "embed_id": "EJ3RtsGlccA",
+        "title": "4000+ U.S. Troops KILLED? Iran Missile Hit U.S Base In Jordan, Interceptor Fails| Trump HUMILIATED?",
+        "channel": "Oneindia News",
+        "duration": 185
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=gK9n72OMOvw",
+        "embed_id": "gK9n72OMOvw",
+        "title": "Iran’s BIGGEST ATTACK On US Soldiers; ‘Over 500 Casualties As Missiles Pound Hideouts In Dubai",
+        "channel": "Times Of India",
+        "duration": 885
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=W2sNJb83onM",
+        "embed_id": "W2sNJb83onM",
+        "title": "Top U.S. counterterrorism official resigns as Iran security leader killed in strike",
+        "channel": "NBC News",
+        "duration": 356
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=T02au1s0RPQ",
+        "embed_id": "T02au1s0RPQ",
+        "title": "Iran’s Supreme Leader Ayatollah Ali Khamenei killed in US-Israeli attack",
+        "channel": "WPLG Local 10",
+        "duration": 230
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=JMZombxkDiM",
+        "embed_id": "JMZombxkDiM",
+        "title": "HUGE! ‘150 US Casualties In…’: Iran Inflicts ‘BIGGEST’ Blow In Missile Strikes; Pentagon ‘Scrambles’",
+        "channel": "Times Of India",
+        "duration": 561
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=IEssB0xH1v4",
+        "embed_id": "IEssB0xH1v4",
+        "title": "‘DEADLIEST DAY…’: Dozens Of US Troops KILLED After Iran Missile HITS American Hideout In Dubai?",
+        "channel": "Times Of India",
+        "duration": 627
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/RyanRozbiani/status/2040338588164866525",
+        "embed_id": "2040338588164866525",
+        "title": "JUST IN 🇮🇷🇺🇸: Dubai Confirms Iran Attack On Oracle \n\nDubai confirmed an attack on Oracle Corporation in Dubai Internet City, stating only the buil",
+        "author": "RyanRozbiani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDoghouse43/status/2040254216812556766",
+        "embed_id": "2040254216812556766",
+        "title": "@MENA_Puls @BlueSkyAmb When will the weak elected Republican Representatives stand up for 🇺🇸 and stop Trump before he starts a ground attack   In Ir",
+        "author": "JDoghouse43"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
+        "embed_id": "2039874952044728446",
+        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
+        "author": "warfareanalysis"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
+        "embed_id": "2039812338820255793",
+        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
+        "author": "TadhgHickey"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/snarwani/status/2039501061929447754",
+        "embed_id": "2039501061929447754",
+        "title": "\"Sources informed The Cradle on 1 April that an 'Israeli-aligned current' within the White House, led by Jared Kushner, has been supplying US Presiden",
+        "author": "snarwani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Kathleen_Tyson_/status/2038923121676136920",
+        "embed_id": "2038923121676136920",
+        "title": "Very big US casualties being hidden if this animation is remotely accurate about Iran’s attack on the Kuwait Island amphibious vessels and Special For",
+        "author": "Kathleen_Tyson_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/thefireofOla/status/2038178896768573565",
+        "embed_id": "2038178896768573565",
+        "title": "So why did Israeli/US attack Iranian University? I'm sure those in support of this terrifying attack know that civilians are the casualties.\n    If Ir",
+        "author": "thefireofOla"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/cirnosad/status/2037825604247326898",
+        "embed_id": "2037825604247326898",
+        "title": "This is the attack where the 6 LCUs were destroyed and the US suffered 200 casualties. This was a ret*rded placement that likely relied on Iran fallin",
+        "author": "cirnosad"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/RyanRozbiani/status/2037647970951127361",
+        "embed_id": "2037647970951127361",
+        "title": "Third Attack by America and Israel on Iran's Bushehr Nuclear Power Plant\n\nStatement from Iran: \nA projectile hit the Bushehr nuclear power plant area ",
+        "author": "RyanRozbiani"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/PiersUncensored/status/2037617904439505105",
+        "embed_id": "2037617904439505105",
+        "title": "Max Amini tells Piers Morgan the people of Iran are “hoping for a strategic attack\" to dismantle the regime.\n\n\"We'd like for this regime to fall with ",
+        "author": "PiersUncensored"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
+        "embed_id": "1sbpiou",
+        "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85891",
+        "embed_id": "intelslava/85891",
+        "title": "🇮🇱🇮🇷An attack by the Israeli Air Force on a camouflaged Iranian ballistic missile launcher in Tabriz.",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZSePoiriC6w_L6GeFOlqrD17drLoL51_bNzLCwjvSIOnkiReHxf47FGE23WoTMRZ6P-AJhhlsxhy7X0TA55mndRNsXnhFwTnl-kbzo4Ab9nAJOb2iEWS3ne-uy16hUIQfArBeZX6PSwbwfIB2GQ7q9cBLH7g5wZXpEYvelbn7v3dfFVyVGd_ZHkdDdmRrf8LRWjpgTeyZQhaiAB6gsmbSEEwsYGTrZJYLCphN1Nk9z7oFy-_CXzWvhkbmmfvgL9OTOQhI1uFA1goGRF3bFjvOYEe2mzA1dr7MJlOrAHCuUAJ8crJHlltvoUFjmp6jDFCiew7zqjkLY4K9zK8JZHogQ'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16315",
+        "embed_id": "France24_en/16315",
+        "title": "Baltic Sea strikes: How Ukraine aims to undermine Russia's oil profits from Iran war\nUkraine has in recent days intensified drone attacks on ports and",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16324",
+        "embed_id": "France24_en/16324",
+        "title": "Videos show US missiles being launched from Kuwait into Iran\nDespite denials from Arab countries in the Persian Gulf region, there is growing evidence",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/liveuamap/12053",
+        "embed_id": "liveuamap/12053",
+        "title": "Abu Dhabi authorities are responding to an incident of falling debris at the Habshan gas facilities following an intercepted attack, the Abu Dhabi Med",
+        "author": "liveuamap"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-04.png"
+  },
+  {
     "topic": "Iran Strike Near Nuclear Facility",
     "summary": "A strike near Iran's Bushehr nuclear facility resulted in the death of a security guard and damage to a nearby building. This incident has intensified concerns over the safety and security of nuclear sites in the Middle East. The origins and motivations behind the attack are currently unknown, complicating the already tense geopolitical landscape in the region.",
     "severity": "major",
@@ -295,459 +646,6 @@
         "embed_id": "2040339203142431142",
         "title": "🚨⚡️An earthquake of magnitude 5.8–5.9 struck Afghanistan, killing 8 people and injuring one child, with tremors also felt in Pakistan and India. http",
         "author": "mog_russEN"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-04.png"
-  },
-  {
-    "topic": "Iranian Missile Attack on Israel",
-    "summary": "Iran has launched a missile attack targeting residential areas in central Israel, marking a significant escalation in the ongoing conflict between the two nations. This aggressive move has heightened regional tensions and increased the probability of a military response from Israel and its allies. The international community is closely monitoring the situation, concerned about the potential for further destabilization in the already volatile Middle East.",
-    "severity": "critical",
-    "detected_at": "2026-04-04T05:00:06.815Z",
-    "last_updated": "2026-04-04T17:02:46.847Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical motivations that drive such aggressive actions. Iran's missile attack is not just a standalone act of aggression but part of a broader strategy to assert its influence in the region and challenge Western-aligned powers. Similarly, Israel's potential military response is not merely defensive but also a strategic move to maintain its regional dominance and deter future threats.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users expressing outrage at Iran's actions and others criticizing Israel's past military operations in the region. Memes and hashtags are circulating, depicting the conflict as a David vs. Goliath scenario, while conspiracy theories suggest external powers are manipulating the situation to justify military interventions.",
-    "image_prompt": "A dramatic editorial photo of a missile streaking across a twilight sky, casting a shadow over a peaceful residential neighborhood, symbolizing the sudden and jarring intrusion of conflict into everyday life.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/4/iranian-missile-attack-hits-residential-areas-in-central-israel?traffic_source=rss",
-        "lean": "center",
-        "title": "Iranian missile attack hits residential areas in central Israel"
-      },
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/video/newsfeed/2026/4/4/vehicles-burn-in-israel-after-being-hit-with-iranian-projectile-debris?traffic_source=rss",
-        "lean": "center",
-        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lyYLyUj-S0Y",
-        "embed_id": "lyYLyUj-S0Y",
-        "title": "Iranian missile attack hits residential areas in central Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=3ux_kScdm2E",
-        "embed_id": "3ux_kScdm2E",
-        "title": "Israel Under Fire: Iranian missiles and Hezbollah rockets strike north and centre."
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
-        "embed_id": "ELU-UAQ0OxY",
-        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
-        "duration": 231
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
-        "embed_id": "WTbUX7UZ-B0",
-        "title": "Iranian Missile Strike Rocks Petah Tikva",
-        "duration": 127
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
-        "embed_id": "lGVg_d0CHcA",
-        "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
-        "duration": 160
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=zGVkg74suXA",
-        "embed_id": "zGVkg74suXA",
-        "title": "Iran inflicts heavy damage on Israel in latest missile strikes",
-        "duration": 161
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=IhC-gH_sopY",
-        "embed_id": "IhC-gH_sopY",
-        "title": "Iranian Missile Debris Damages Building In Central Israel"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=EV6w555qvbs",
-        "embed_id": "EV6w555qvbs",
-        "title": "WATCH: Aftermath of Iranian Missile Attack in Israel’s Ramat Gan | APT",
-        "duration": 610
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=PqXDhFABuJ4",
-        "embed_id": "PqXDhFABuJ4",
-        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris | AJ #shorts"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2040104540079624667",
-        "embed_id": "2040104540079624667",
-        "title": "Drone footage from Israel shows damage to a factory in Petah Tikva after debris from an intercepted Iranian missile struck the site. \n\nThe attack come",
-        "author": "AJENews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039980799278096616",
-        "embed_id": "2039980799278096616",
-        "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
-        "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039360908812857827",
-        "embed_id": "2039360908812857827",
-        "title": "⚡️Footage from Ramat Gan and Tel Aviv following the Iranian missile attack on central Israel moments ago. https://t.co/FDcVIqTyRA",
-        "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/SkyNews/status/2039351458953404712",
-        "embed_id": "2039351458953404712",
-        "title": "Iranian missile strikes on central Israel have left 14 people injured, Israel's emergency service has said.\n \nThe casualties include children includin",
-        "author": "SkyNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/A_M_R_M1/status/2038807023517679954",
-        "embed_id": "2038807023517679954",
-        "title": "🚨Breaking: The Iranian Revolutionary Guard announces it is carrying out a large-scale missile attack on Israel.",
-        "author": "A_M_R_M1"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85855",
-        "embed_id": "intelslava/85855",
-        "title": "🇮🇷🇮🇱Major destruction in Ramat Gan, due to the fall of an Iranian missile with cluster warhead.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZAGI4Ruk_4nrzI5s_fw9JpI2iOsEqm9ldSslk4W0oYlt1AdnbV60kTcYPUDAW8D7XEmiWM-QR9V8M04rS5JUjfxFwYZ7IofCawnw3i8VmcM6GSEqupgOhlimQj29TF5M35HE-AW_bSNGt3jk7dIH7Oco4CGHdyDFDJVVy0qnupRAtzH6wtZy9mtELa55XxXUCNKqq6HbZ4J-WI7uCq2Bx3rtqWj4ifd2We3pKZjFenu0Yoyg_-x0scWxG3EzwKeAgHRmo4V9vyGbZkAVrJNxP6-qepkVVREbly4gj3HDhB04hzysuhguy3Ilrg3lbkN69BdMV2EaodkSUS8sszyKxg'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Shayan86/status/2040237841398059409",
-        "embed_id": "2040237841398059409",
-        "title": "Daytime footage shows the impact crater caused by an Iranian ballistic missile attack on Petah Tikva, Israel.\n\nThe severely damaged warehouse appears ",
-        "author": "Shayan86"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2039964985384640640",
-        "embed_id": "2039964985384640640",
-        "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
-        "embed_id": "2039589293560316082",
-        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
-        "author": "AdityaRajKaul"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
-        "embed_id": "2039508762776506387",
-        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
-        "author": "ShaykhSulaiman"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43141",
-        "embed_id": "warmonitors/43141",
-        "title": "⚡Al Arabiya correspondent: Sirens sound in Haifa and northern Israel after Iranian and Lebanese missiles were detected.",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
-        "embed_id": "1sb5xu2",
-        "title": "Direct missile hit on Israel’s Petah Tikva amid Iranian and Yemeni attacks"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/whennews/comments/1sbc069/very_long_caption_pls_suggest_how_to_make_it/",
-        "embed_id": "1sbc069",
-        "title": "very long caption pls suggest how to make it shorter"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
-        "embed_id": "1sb6v5l",
-        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/kurdistan/comments/1sb8ab5/the_britishraised_brothers_who_stopped_kurds/",
-        "embed_id": "1sb8ab5",
-        "title": "The British-raised brothers who stopped Kurds being dragged into Trump’s war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
-        "embed_id": "1sbrz8y",
-        "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PoliticalDiscussion/comments/1sbf4tq/which_is_more_believable_white_house_and_pentagon/",
-        "embed_id": "1sbf4tq",
-        "title": "Which is more believable, White House and Pentagon claims that Iran's missile and drone capability is almost completely destroyed or U.S. intelligence"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sc1744/iranian_ballistic_missile_impacts_israel_after/",
-        "embed_id": "1sc1744",
-        "title": "Iranian Ballistic Missile impacts Israel after evading 12 consecutive interceptor missiles"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbj8pf/a_failed_iranian_missile_launched_against_israel/",
-        "embed_id": "1sbj8pf",
-        "title": "A failed Iranian missile launched against Israel from the area of Mehrabad International Airport in Tehran exploded in a residential area near the air"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
-        "embed_id": "1sc7wp2",
-        "title": "Iranian cluster missile strike on 'Tel Aviv'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1sc6132/iranians_claim_terrorist_attack_after_us_struck/",
-        "embed_id": "1sc6132",
-        "title": "Iranians claim terrorist attack after US struck the bridge waited for medics and civilians to show up to help construction workers and fired on them t"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/canadaleft/comments/1sc64wu/iranian_missile_strikes_southern_israel/",
-        "embed_id": "1sc64wu",
-        "title": "Iranian missile strikes southern 'Israel.'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1sc5v5p/bnei_brakcentral_israel_smoke_rose_and_sirens/",
-        "embed_id": "1sc5v5p",
-        "title": "Bnei Brak,central 'Israel': Smoke rose and sirens blared as residents fled to the streets following a reported Iranian missile strike."
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=lyYLyUj-S0Y",
-        "embed_id": "lyYLyUj-S0Y",
-        "title": "Iranian missile attack hits residential areas in central Israel",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=3ux_kScdm2E",
-        "embed_id": "3ux_kScdm2E",
-        "title": "Israel Under Fire: Iranian missiles and Hezbollah rockets strike north and centre.",
-        "channel": "Al Jazeera English"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ELU-UAQ0OxY",
-        "embed_id": "ELU-UAQ0OxY",
-        "title": "Iran HITS Tel Aviv with missile strikes injuring at least 29",
-        "channel": "Fox News",
-        "duration": 231
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=WTbUX7UZ-B0",
-        "embed_id": "WTbUX7UZ-B0",
-        "title": "Iranian Missile Strike Rocks Petah Tikva",
-        "channel": "New York Post",
-        "duration": 127
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=lGVg_d0CHcA",
-        "embed_id": "lGVg_d0CHcA",
-        "title": "Iran&#39;s attacks on: Israel missile lands in Petah Tikva creating a large crater",
-        "channel": "Al Jazeera English",
-        "duration": 160
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=zGVkg74suXA",
-        "embed_id": "zGVkg74suXA",
-        "title": "Iran inflicts heavy damage on Israel in latest missile strikes",
-        "channel": "CBS Evening News",
-        "duration": 161
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=IhC-gH_sopY",
-        "embed_id": "IhC-gH_sopY",
-        "title": "Iranian Missile Debris Damages Building In Central Israel",
-        "channel": "Forbes Breaking News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=EV6w555qvbs",
-        "embed_id": "EV6w555qvbs",
-        "title": "WATCH: Aftermath of Iranian Missile Attack in Israel’s Ramat Gan | APT",
-        "channel": "APT",
-        "duration": 610
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=PqXDhFABuJ4",
-        "embed_id": "PqXDhFABuJ4",
-        "title": "Vehicles burn in Israel after being hit with Iranian projectile debris | AJ #shorts",
-        "channel": "Al Jazeera English"
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/AJENews/status/2040104540079624667",
-        "embed_id": "2040104540079624667",
-        "title": "Drone footage from Israel shows damage to a factory in Petah Tikva after debris from an intercepted Iranian missile struck the site. \n\nThe attack come",
-        "author": "AJENews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039980799278096616",
-        "embed_id": "2039980799278096616",
-        "title": "⚡️Following an Iranian missile attack on northern Israel moments ago:\n\nHebrew sources report “shrapnels” fell in 7 locations in Haifa and Kiryat Ata, ",
-        "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039360908812857827",
-        "embed_id": "2039360908812857827",
-        "title": "⚡️Footage from Ramat Gan and Tel Aviv following the Iranian missile attack on central Israel moments ago. https://t.co/FDcVIqTyRA",
-        "author": "warfareanalysis"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/SkyNews/status/2039351458953404712",
-        "embed_id": "2039351458953404712",
-        "title": "Iranian missile strikes on central Israel have left 14 people injured, Israel's emergency service has said.\n \nThe casualties include children includin",
-        "author": "SkyNews"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/A_M_R_M1/status/2038807023517679954",
-        "embed_id": "2038807023517679954",
-        "title": "🚨Breaking: The Iranian Revolutionary Guard announces it is carrying out a large-scale missile attack on Israel.",
-        "author": "A_M_R_M1"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85855",
-        "embed_id": "intelslava/85855",
-        "title": "🇮🇷🇮🇱Major destruction in Ramat Gan, due to the fall of an Iranian missile with cluster warhead.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/ZAGI4Ruk_4nrzI5s_fw9JpI2iOsEqm9ldSslk4W0oYlt1AdnbV60kTcYPUDAW8D7XEmiWM-QR9V8M04rS5JUjfxFwYZ7IofCawnw3i8VmcM6GSEqupgOhlimQj29TF5M35HE-AW_bSNGt3jk7dIH7Oco4CGHdyDFDJVVy0qnupRAtzH6wtZy9mtELa55XxXUCNKqq6HbZ4J-WI7uCq2Bx3rtqWj4ifd2We3pKZjFenu0Yoyg_-x0scWxG3EzwKeAgHRmo4V9vyGbZkAVrJNxP6-qepkVVREbly4gj3HDhB04hzysuhguy3Ilrg3lbkN69BdMV2EaodkSUS8sszyKxg'",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Shayan86/status/2040237841398059409",
-        "embed_id": "2040237841398059409",
-        "title": "Daytime footage shows the impact crater caused by an Iranian ballistic missile attack on Petah Tikva, Israel.\n\nThe severely damaged warehouse appears ",
-        "author": "Shayan86"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2039964985384640640",
-        "embed_id": "2039964985384640640",
-        "title": "🇮🇷🇮🇱 During an Iranian missile attack on Israel, a group of residents ran to Education Minister Yoav Kisch's home seeking shelter. He turned them ",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/AdityaRajKaul/status/2039589293560316082",
-        "embed_id": "2039589293560316082",
-        "title": "Iranian missile attack led to a water pipe blast in Central Tel Aviv of Israel. Chaos on the road. https://t.co/0TvMGqiB3i",
-        "author": "AdityaRajKaul"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ShaykhSulaiman/status/2039508762776506387",
-        "embed_id": "2039508762776506387",
-        "title": "BREAKING: Joint Hezbollah-Iranian Missile Attack On Israeli Targets\n\nExplosions heard in Israel. https://t.co/UIEVvYF6Fo",
-        "author": "ShaykhSulaiman"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43141",
-        "embed_id": "warmonitors/43141",
-        "title": "⚡Al Arabiya correspondent: Sirens sound in Haifa and northern Israel after Iranian and Lebanese missiles were detected.",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Global_News_Hub/comments/1sb5xu2/direct_missile_hit_on_israels_petah_tikva_amid/",
-        "embed_id": "1sb5xu2",
-        "title": "Direct missile hit on Israel’s Petah Tikva amid Iranian and Yemeni attacks"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/whennews/comments/1sbc069/very_long_caption_pls_suggest_how_to_make_it/",
-        "embed_id": "1sbc069",
-        "title": "very long caption pls suggest how to make it shorter"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
-        "embed_id": "1sb6v5l",
-        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/kurdistan/comments/1sb8ab5/the_britishraised_brothers_who_stopped_kurds/",
-        "embed_id": "1sb8ab5",
-        "title": "The British-raised brothers who stopped Kurds being dragged into Trump’s war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PoliticsDownUnder/comments/1sbrz8y/easterly_opinion_iran_just_published_a_full_peace/",
-        "embed_id": "1sbrz8y",
-        "title": "Easterly opinion. 🚨🚨🚨 IRAN JUST PUBLISHED A FULL PEACE DEAL AND NOBODY IS TALKING ABOUT THE BETRAYAL HIDING IN PLAIN SIGHT"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PoliticalDiscussion/comments/1sbf4tq/which_is_more_believable_white_house_and_pentagon/",
-        "embed_id": "1sbf4tq",
-        "title": "Which is more believable, White House and Pentagon claims that Iran's missile and drone capability is almost completely destroyed or U.S. intelligence"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sc1744/iranian_ballistic_missile_impacts_israel_after/",
-        "embed_id": "1sc1744",
-        "title": "Iranian Ballistic Missile impacts Israel after evading 12 consecutive interceptor missiles"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbj8pf/a_failed_iranian_missile_launched_against_israel/",
-        "embed_id": "1sbj8pf",
-        "title": "A failed Iranian missile launched against Israel from the area of Mehrabad International Airport in Tehran exploded in a residential area near the air"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NewsRewind/comments/1sc7wp2/iranian_cluster_missile_strike_on_tel_aviv/",
-        "embed_id": "1sc7wp2",
-        "title": "Iranian cluster missile strike on 'Tel Aviv'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/InternationalNews/comments/1sc6132/iranians_claim_terrorist_attack_after_us_struck/",
-        "embed_id": "1sc6132",
-        "title": "Iranians claim terrorist attack after US struck the bridge waited for medics and civilians to show up to help construction workers and fired on them t"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/canadaleft/comments/1sc64wu/iranian_missile_strikes_southern_israel/",
-        "embed_id": "1sc64wu",
-        "title": "Iranian missile strikes southern 'Israel.'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TrendoraX/comments/1sc5v5p/bnei_brakcentral_israel_smoke_rose_and_sirens/",
-        "embed_id": "1sc5v5p",
-        "title": "Bnei Brak,central 'Israel': Smoke rose and sirens blared as residents fled to the streets following a reported Iranian missile strike."
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
