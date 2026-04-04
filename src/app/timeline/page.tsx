@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
-import { getTimelineThreads, getTodayLastYear } from "@/lib/timeline-data";
+import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo } from "@/lib/timeline-data";
 import { LiveBanner } from "@/components/LiveBanner";
 import { TimelineContent } from "./TimelineClient";
 
@@ -51,10 +51,11 @@ async function hasBreakingNews(): Promise<boolean> {
 }
 
 export default async function TimelinePage() {
-  const [data, threadData, lastYearData, isBreaking] = await Promise.all([
+  const [data, threadData, lastYearData, tenYearsData, isBreaking] = await Promise.all([
     getDailyGaps(),
     getTimelineThreads(),
     getTodayLastYear(),
+    getTodayTenYearsAgo(),
     hasBreakingNews(),
   ]);
 
@@ -175,7 +176,7 @@ export default async function TimelinePage() {
         </div>
       ) : (
         <>
-          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} />
+          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} tenYearsAgo={tenYearsData} />
 
           {/* Server-rendered content for SEO — visually hidden, crawlable */}
           <div className="sr-only" aria-hidden="false">
