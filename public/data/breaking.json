@@ -1,5 +1,274 @@
 [
   {
+    "topic": "Iran Downs US Warplanes",
+    "summary": "Iran has reportedly shot down two US warplanes, marking a significant escalation in the already tense relations between the two nations. This military action has heightened fears of further conflict in the region, as it follows a series of aggressive maneuvers and retaliatory strikes. The incident has drawn international attention, with concerns about the potential for a broader military confrontation.",
+    "severity": "critical",
+    "detected_at": "2026-04-04T01:00:07.004Z",
+    "last_updated": "2026-04-04T01:00:07.004Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying geopolitical strategies that have led to this escalation. The focus remains on immediate military actions rather than the long-term strategic interests, such as control over regional resources and influence. Additionally, the economic implications of such military engagements, including impacts on global oil prices and regional trade, are not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with reactions, ranging from calls for peace to demands for retaliation. Memes depicting the incident as a game of chess between superpowers are circulating widely. Conspiracy theories suggesting hidden alliances and ulterior motives behind the downing of the planes are gaining traction, with some users speculating about the involvement of other regional powers.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a stormy sky, with pieces representing military jets and flags of Iran and the US, symbolizing the strategic and volatile nature of the conflict.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/liveblog/2026/4/4/iran-war-live-tehran-downs-2-us-warplanes-israel-bombs-lebanon-bridges?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran war live: Tehran downs 2 US warplanes; Israel bombs Lebanon bridges"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
+        "embed_id": "GOYSO4hoaPk",
+        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
+        "duration": 292
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
+        "embed_id": "P1hc6o1l6Bo",
+        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory",
+        "duration": 222
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
+        "embed_id": "2xIVn81Jsyg",
+        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway",
+        "duration": 1080
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=AqB7zdQMINA",
+        "embed_id": "AqB7zdQMINA",
+        "title": "US F-15 fighter shot down over Iran as search for missing crew unfolds",
+        "duration": 654
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
+        "embed_id": "NE92ZzTeDGA",
+        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News",
+        "duration": 99
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=fGAL9ttB5_Y",
+        "embed_id": "fGAL9ttB5_Y",
+        "title": "SPECIAL REPORT: American fighter jet appears to have been shot down by Iran, U.S. official says",
+        "duration": 341
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Y2EOb8MXLI8",
+        "embed_id": "Y2EOb8MXLI8",
+        "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
+        "duration": 561
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20640",
+        "embed_id": "disclosetv/20640",
+        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20645",
+        "embed_id": "disclosetv/20645",
+        "title": "JUST IN - A second U.S. plane, an A-10 Warthog, was downed by Iran today near the Strait of Hormuz.\n\nRead here: https://www.disclose.tv/id/6yynuihai8/",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85836",
+        "embed_id": "intelslava/85836",
+        "title": "🇮🇷🇺🇸The Iranians are firing small arms at American MH-60M Black Hawk helicopters, which were involved in today's operation to rescue the crew of a",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZqkR_0UJPuvEoGJ3XA9gej-Y4cBHCDvNTcahk8TTCjFP7YgM3FU97s_MB0u3NzN2hyyPhL7SN8eW01HKOmaMEUSfjoaUF5EHcH8cDs46nrB525R9RF9RvFlVFuntryIaIWofsZkUruLf5NMFz4kmBy3n1_f3uDawxXjgsXcy9_tWpm3BuzUz6eTKfD6NrpkbuxLkEYm36tzNSRGhSriZjsrLBO45EpRboksiMZh8OSL4QbxrZDtKfmeFebRqo2yAsSSBSMFrdm-xd1NSm8qmwhR0SV00LBtWixTIbogU1DaaopuEVaMKRXwxvm-Eqxd7FG0JjIODY-7PVEFC32Uhug'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85838",
+        "embed_id": "intelslava/85838",
+        "title": "🇮🇷🇺🇸⚡️The helicopter UH-60 Black Hawk (HH-60G Pave Hawk) might have been shot down by Iran during a rescue operation to search for pilots of a dow",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85839",
+        "embed_id": "intelslava/85839",
+        "title": "🇮🇷🇺🇸⚡️An American attack aircraft A-10 Thunderbolt II crashed near the Strait of Hormuz, and its pilot was rescued, according to The New York Time",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43106",
+        "embed_id": "warmonitors/43106",
+        "title": "⚡️Israeli outlets are claiming that one of the American pilots that was shot down over Iran was rescued, search for the other continues.\n\nNo confirmat",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43108",
+        "embed_id": "warmonitors/43108",
+        "title": "U.S and Israeli officials claim to have rescued one of the pilots shot down over Iran. \n\nOSINT platform, Middle East Tracker - middleastracker.com wer",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85848",
+        "embed_id": "intelslava/85848",
+        "title": "🇮🇷🇺🇸Footage claimed to be of the downing of a US Air Force A-10 attack aircraft by Iranian air defense systems, which occurred today at around the",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/SQhw3UrHLXGiNIc6AvH-VtEKTzYHcs9dJc7ilnyjGGxfj3ZzEJE2q-SIyCsjq5B79fumdLVS0-MCRabjX00eGtX3tJbKpDVpitzrfXyACMnGTjDI_W6sQ41pGDcdvc5x67hefRqN61lA7_obpyYu3hajizTF9myM6z4G0Lg9YqztAukSm6gXdrT9FKfBBGUZ0SfF-djQQiaHzeD50__xSEwF1eGKgV6sATIIiP1htp0h-UAIwy0YaTl1iPDCwiGTXeNlwTw_qIlDFwoI7a2DUcvjHhPpmZD6rhkj82Rl-1stc3eP_BsmN7vkT1HO1EZ4SqI8qg7veziqMPSoglLW7g'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Conservative/comments/1sbrs09/2nd_us_warplane_crashes_near_hormuz_after_f15/",
+        "embed_id": "1sbrs09",
+        "title": "2nd US Warplane Crashes Near Hormuz After F-15 Downed Over Iran"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1saztu7/iran_claims_it_shot_down_a_usisraeli_warplane/",
+        "embed_id": "1saztu7",
+        "title": "Iran Claims It Shot Down a US/Israeli Warplane Near the Strait of Hormuz — Pentagon Says 'All Aircraft Accounted For' Who's Lying?"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=GOYSO4hoaPk",
+        "embed_id": "GOYSO4hoaPk",
+        "title": "US fighter jet reportedly shot down over Iran | NewsNation Live",
+        "channel": "NewsNation",
+        "duration": 292
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=P1hc6o1l6Bo",
+        "embed_id": "P1hc6o1l6Bo",
+        "title": "U.S. officials: American fighter jet shot down by Iran over Iranian territory",
+        "channel": "ABC News",
+        "duration": 222
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=2xIVn81Jsyg",
+        "embed_id": "2xIVn81Jsyg",
+        "title": "Special Report: U.S. fighter jet goes down over Iran, search and rescue mission underway",
+        "channel": "NBC News",
+        "duration": 1080
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=AqB7zdQMINA",
+        "embed_id": "AqB7zdQMINA",
+        "title": "US F-15 fighter shot down over Iran as search for missing crew unfolds",
+        "channel": "CNN",
+        "duration": 654
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=NE92ZzTeDGA",
+        "embed_id": "NE92ZzTeDGA",
+        "title": "American fighter jet shot down over Iran, US and Iranian media report | BBC News",
+        "channel": "BBC News",
+        "duration": 99
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=fGAL9ttB5_Y",
+        "embed_id": "fGAL9ttB5_Y",
+        "title": "SPECIAL REPORT: American fighter jet appears to have been shot down by Iran, U.S. official says",
+        "channel": "ABC News",
+        "duration": 341
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Y2EOb8MXLI8",
+        "embed_id": "Y2EOb8MXLI8",
+        "title": "2 U.S. warplanes shot down by Iran: Details on F-15 Eagle & A-10 Warthog",
+        "channel": "LiveNOW from FOX",
+        "duration": 561
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20640",
+        "embed_id": "disclosetv/20640",
+        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20645",
+        "embed_id": "disclosetv/20645",
+        "title": "JUST IN - A second U.S. plane, an A-10 Warthog, was downed by Iran today near the Strait of Hormuz.\n\nRead here: https://www.disclose.tv/id/6yynuihai8/",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85836",
+        "embed_id": "intelslava/85836",
+        "title": "🇮🇷🇺🇸The Iranians are firing small arms at American MH-60M Black Hawk helicopters, which were involved in today's operation to rescue the crew of a",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/ZqkR_0UJPuvEoGJ3XA9gej-Y4cBHCDvNTcahk8TTCjFP7YgM3FU97s_MB0u3NzN2hyyPhL7SN8eW01HKOmaMEUSfjoaUF5EHcH8cDs46nrB525R9RF9RvFlVFuntryIaIWofsZkUruLf5NMFz4kmBy3n1_f3uDawxXjgsXcy9_tWpm3BuzUz6eTKfD6NrpkbuxLkEYm36tzNSRGhSriZjsrLBO45EpRboksiMZh8OSL4QbxrZDtKfmeFebRqo2yAsSSBSMFrdm-xd1NSm8qmwhR0SV00LBtWixTIbogU1DaaopuEVaMKRXwxvm-Eqxd7FG0JjIODY-7PVEFC32Uhug'",
+        "duration": 30
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85838",
+        "embed_id": "intelslava/85838",
+        "title": "🇮🇷🇺🇸⚡️The helicopter UH-60 Black Hawk (HH-60G Pave Hawk) might have been shot down by Iran during a rescue operation to search for pilots of a dow",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85839",
+        "embed_id": "intelslava/85839",
+        "title": "🇮🇷🇺🇸⚡️An American attack aircraft A-10 Thunderbolt II crashed near the Strait of Hormuz, and its pilot was rescued, according to The New York Time",
+        "author": "intelslava"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43106",
+        "embed_id": "warmonitors/43106",
+        "title": "⚡️Israeli outlets are claiming that one of the American pilots that was shot down over Iran was rescued, search for the other continues.\n\nNo confirmat",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/warmonitors/43108",
+        "embed_id": "warmonitors/43108",
+        "title": "U.S and Israeli officials claim to have rescued one of the pilots shot down over Iran. \n\nOSINT platform, Middle East Tracker - middleastracker.com wer",
+        "author": "warmonitors"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85848",
+        "embed_id": "intelslava/85848",
+        "title": "🇮🇷🇺🇸Footage claimed to be of the downing of a US Air Force A-10 attack aircraft by Iranian air defense systems, which occurred today at around the",
+        "author": "intelslava",
+        "thumbnail": "https://cdn5.telesco.pe/file/SQhw3UrHLXGiNIc6AvH-VtEKTzYHcs9dJc7ilnyjGGxfj3ZzEJE2q-SIyCsjq5B79fumdLVS0-MCRabjX00eGtX3tJbKpDVpitzrfXyACMnGTjDI_W6sQ41pGDcdvc5x67hefRqN61lA7_obpyYu3hajizTF9myM6z4G0Lg9YqztAukSm6gXdrT9FKfBBGUZ0SfF-djQQiaHzeD50__xSEwF1eGKgV6sATIIiP1htp0h-UAIwy0YaTl1iPDCwiGTXeNlwTw_qIlDFwoI7a2DUcvjHhPpmZD6rhkj82Rl-1stc3eP_BsmN7vkT1HO1EZ4SqI8qg7veziqMPSoglLW7g'",
+        "duration": 30
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Conservative/comments/1sbrs09/2nd_us_warplane_crashes_near_hormuz_after_f15/",
+        "embed_id": "1sbrs09",
+        "title": "2nd US Warplane Crashes Near Hormuz After F-15 Downed Over Iran"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TrendoraX/comments/1saztu7/iran_claims_it_shot_down_a_usisraeli_warplane/",
+        "embed_id": "1saztu7",
+        "title": "Iran Claims It Shot Down a US/Israeli Warplane Near the Strait of Hormuz — Pentagon Says 'All Aircraft Accounted For' Who's Lying?"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-04.png"
+  },
+  {
     "topic": "Drone Strike on Sudan Hospital",
     "summary": "A drone strike hit a hospital in Sudan, killing at least 10 people, according to Médecins Sans Frontières (MSF). This attack highlights ongoing violence and humanitarian issues in the region. The international community has condemned the strike, raising alarms about the protection of medical facilities in conflict areas.",
     "severity": "major",
@@ -647,235 +916,6 @@
         "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1sbdy6v/iran_claims_it_shot_down_2_us_f35_jets_in_24/",
         "embed_id": "1sbdy6v",
         "title": "Iran claims it shot down 2 US F-35 jets in 24 hours, but US CENTCOM says all aircraft are accounted for."
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-03.png"
-  },
-  {
-    "topic": "Kuwait Missile and Drone Strikes",
-    "summary": "Kuwait has been targeted by missile and drone strikes, hitting key infrastructure including a desalination plant and an oil refinery. These attacks highlight the region's vulnerabilities and have raised alarms about increasing tensions in the Middle East. The incidents have sparked debates on improving security measures to safeguard critical resources.",
-    "severity": "major",
-    "detected_at": "2026-04-03T11:00:07.057Z",
-    "last_updated": "2026-04-03T23:02:04.058Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential geopolitical motivations behind these attacks, such as regional power struggles or proxy conflicts involving larger nations. There is also a lack of discussion on the economic implications for global oil markets and how these incidents affect international relations and trade agreements.",
-    "social_summary": "Social media is buzzing with speculation about the perpetrators, with some users pointing fingers at regional powers while others suggest involvement from non-state actors. Memes and viral posts are highlighting the irony of high-tech warfare targeting basic infrastructure, and conspiracy theories are circulating about hidden agendas behind the attacks.",
-    "image_prompt": "A dramatic image of a missile and drone silhouetted against a fiery sunset, with the outlines of an oil refinery and desalination plant in the foreground, symbolizing the clash between technology and essential resources.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/3/kuwait-desalination-plant-oil-refinery-hit-by-missile-and-drone-strikes?traffic_source=rss",
-        "lean": "center",
-        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
-        "embed_id": "-aQ1uxff6fY",
-        "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
-        "duration": 132
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=WQ8g15AFsc8",
-        "embed_id": "WQ8g15AFsc8",
-        "title": "Gulf under attack as missile strikes escalate across kuwait, bahrain, uae and saudi arabia",
-        "duration": 137
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=CR_u3mJz1zs",
-        "embed_id": "CR_u3mJz1zs",
-        "title": "Iranian drone attack leaves Kuwait government building engulfed in flames",
-        "duration": 66
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=1_TKrRUx-ok",
-        "embed_id": "1_TKrRUx-ok",
-        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes | Kalinga TV",
-        "duration": 290
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2038285659069198367",
-        "embed_id": "2038285659069198367",
-        "title": "🚨 BREAKING: Kuwait reports 10 soldiers injured in missile and drone attacks on its military camp, part of a broader wave of Iranian strikes on region",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TehranTimes79/status/2037444765445214352",
-        "embed_id": "2037444765445214352",
-        "title": "#BREAKING \nMajor damage reported to infrastructure at Mubarak Al-Kabeer Port in Kuwait following drone and missile strikes. https://t.co/jl3Zdlj6KV",
-        "author": "TehranTimes79"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43088",
-        "embed_id": "warmonitors/43088",
-        "title": "⚡️#BREAKING Kuwait says its Mina al-Ahmadi oil refinery again hit by Iranian drones, sparking multiple fires at the facility",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Zlatti_71/status/2038851064326209542",
-        "embed_id": "2038851064326209542",
-        "title": "‼️🇮🇷🇺🇸 Iran destroyed the US military base Buring in Kuwait.\n\nMissile and drone strikes destroyed aircraft hangars, military barracks, a gym, ware",
-        "author": "Zlatti_71"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85831",
-        "embed_id": "intelslava/85831",
-        "title": "🇮🇷🇰🇼The Mina Al-Ahmad oil refinery in Kuwait was attacked by Iranian drones this morning.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/PRvIJQctAPf89r_uP0oS-4AocPaq5fMdprMx-M04jPnbvEQyGD_I7J8D3CATIUMRIyDbPLhIsmvexFmcJYZi0MBIXpajApx-m5fwIPzA5IYNLvruFyUukF8e2Zn2DSaj9VOXbIVf-CMM6qQaK_DM9MF7ArSX4BLLslZDBauhAHs_eV2qNvOPZSegKKh0Nx9pg0CalXOVpzoGlb74OiPotgaF95J_d1LmsJqzu_FXM4_hK4sCJ7V9cFofmBA2TtnrlPmPKWWP6qblzKp-OILiGZ56l9hJDSeGWkEFc14ts1kcN1x8YNM89tzWoN1jIZCdvTFnJqVu3mjYs_l1IrF-5Q'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
-        "embed_id": "1sagrds",
-        "title": "Trump mulls seizing Kharg island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ukraine/comments/1sb7uji/morozov_explosives_plantkey_to_russias_missile/",
-        "embed_id": "1sb7uji",
-        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
-        "embed_id": "1sb6v5l",
-        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UkrainianConflict/comments/1sb749o/morozov_explosives_plantkey_to_russias_missile/",
-        "embed_id": "1sb749o",
-        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
-        "embed_id": "1sasryn",
-        "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbbc6i/kuwait_desalination_plant_oil_refinery_hit_by/",
-        "embed_id": "1sbbc6i",
-        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=-aQ1uxff6fY",
-        "embed_id": "-aQ1uxff6fY",
-        "title": "Iran strikes Gulf nations; Kuwait troops injured; Qatar intercepts drone; Saudi stopped missile",
-        "channel": "Al Jazeera English",
-        "duration": 132
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=WQ8g15AFsc8",
-        "embed_id": "WQ8g15AFsc8",
-        "title": "Gulf under attack as missile strikes escalate across kuwait, bahrain, uae and saudi arabia",
-        "channel": "Al Jazeera English",
-        "duration": 137
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=CR_u3mJz1zs",
-        "embed_id": "CR_u3mJz1zs",
-        "title": "Iranian drone attack leaves Kuwait government building engulfed in flames",
-        "channel": "The Sun",
-        "duration": 66
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=1_TKrRUx-ok",
-        "embed_id": "1_TKrRUx-ok",
-        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes | Kalinga TV",
-        "channel": "Kalinga TV",
-        "duration": 290
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/MOSSADil/status/2038285659069198367",
-        "embed_id": "2038285659069198367",
-        "title": "🚨 BREAKING: Kuwait reports 10 soldiers injured in missile and drone attacks on its military camp, part of a broader wave of Iranian strikes on region",
-        "author": "MOSSADil"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/TehranTimes79/status/2037444765445214352",
-        "embed_id": "2037444765445214352",
-        "title": "#BREAKING \nMajor damage reported to infrastructure at Mubarak Al-Kabeer Port in Kuwait following drone and missile strikes. https://t.co/jl3Zdlj6KV",
-        "author": "TehranTimes79"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/warmonitors/43088",
-        "embed_id": "warmonitors/43088",
-        "title": "⚡️#BREAKING Kuwait says its Mina al-Ahmadi oil refinery again hit by Iranian drones, sparking multiple fires at the facility",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Zlatti_71/status/2038851064326209542",
-        "embed_id": "2038851064326209542",
-        "title": "‼️🇮🇷🇺🇸 Iran destroyed the US military base Buring in Kuwait.\n\nMissile and drone strikes destroyed aircraft hangars, military barracks, a gym, ware",
-        "author": "Zlatti_71"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85831",
-        "embed_id": "intelslava/85831",
-        "title": "🇮🇷🇰🇼The Mina Al-Ahmad oil refinery in Kuwait was attacked by Iranian drones this morning.",
-        "author": "intelslava",
-        "thumbnail": "https://cdn5.telesco.pe/file/PRvIJQctAPf89r_uP0oS-4AocPaq5fMdprMx-M04jPnbvEQyGD_I7J8D3CATIUMRIyDbPLhIsmvexFmcJYZi0MBIXpajApx-m5fwIPzA5IYNLvruFyUukF8e2Zn2DSaj9VOXbIVf-CMM6qQaK_DM9MF7ArSX4BLLslZDBauhAHs_eV2qNvOPZSegKKh0Nx9pg0CalXOVpzoGlb74OiPotgaF95J_d1LmsJqzu_FXM4_hK4sCJ7V9cFofmBA2TtnrlPmPKWWP6qblzKp-OILiGZ56l9hJDSeGWkEFc14ts1kcN1x8YNM89tzWoN1jIZCdvTFnJqVu3mjYs_l1IrF-5Q'",
-        "duration": 30
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/MapPorn/comments/1sagrds/trump_mulls_seizing_kharg_island/",
-        "embed_id": "1sagrds",
-        "title": "Trump mulls seizing Kharg island"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ukraine/comments/1sb7uji/morozov_explosives_plantkey_to_russias_missile/",
-        "embed_id": "1sb7uji",
-        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/suppressed_news/comments/1sb6v5l/you_can_intercept_a_missile_you_can_shoot_down_a/",
-        "embed_id": "1sb6v5l",
-        "title": "You can intercept a missile, you can shoot down a drone, you can destroy a launch site and they’ll rebuild it in weeks but you can’t intercept a gener"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UkrainianConflict/comments/1sb749o/morozov_explosives_plantkey_to_russias_missile/",
-        "embed_id": "1sb749o",
-        "title": "Morozov Explosives Plant—Key to Russia’s Missile Program—Hit in Drone Strike"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/Sino/comments/1sasryn/how_to_take_down_an_f35_over_iran_chinese/",
-        "embed_id": "1sasryn",
-        "title": "How to take down an F-35 over Iran? Chinese engineer’s prophetic tutorial goes viral after Iran shoots down F-35"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndianStreetBets/comments/1sbbc6i/kuwait_desalination_plant_oil_refinery_hit_by/",
-        "embed_id": "1sbbc6i",
-        "title": "Kuwait desalination plant, oil refinery hit by missile and drone strikes"
       }
     ],
     "image_file": "/images/breaking_2026-04-03.png"
