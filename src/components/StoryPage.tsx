@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { VideoGrid } from "./VideoGrid";
+import { Dashboard } from "./Dashboard";
 import { Tweet } from 'react-tweet';
 import { OnRecordWidget } from "./OnRecordWidget";
 import type { NarrativeGap } from "../lib/data";
@@ -57,6 +58,13 @@ export function StoryPage({ story, date, otherStories }: {
         <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
           {story.topic}
         </h1>
+      </div>
+
+      {/* ON AIR — DASHBOARD */}
+      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+          <Dashboard stories={[story]} videoUrl={undefined} videoDate={undefined} />
+        </div>
       </div>
 
       {/* CONTENT */}
