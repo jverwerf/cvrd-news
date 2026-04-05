@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Conflict Escalation",
-    "summary": "A joint US-Israeli military operation in Iran resulted in the deaths of five individuals, reportedly during an attempt to rescue a US pilot. This incident has intensified the already strained relations between Iran and the US-Israel alliance. The international community is expressing concern over the potential for further escalation in the region.",
+    "summary": "A joint military operation by the US and Israel in Iran led to the deaths of five individuals, reportedly during a mission to rescue a US pilot. This incident has heightened tensions between Iran and the US-Israel alliance, with the international community worried about the potential for further conflict in the region.",
     "severity": "critical",
     "detected_at": "2026-04-05T11:00:07.514Z",
-    "last_updated": "2026-04-05T15:00:22.182Z",
+    "last_updated": "2026-04-05T17:00:54.411Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is emphasizing the necessity of the operation, framing it as a justified response to protect American lives and interests. They highlight Iran's role in escalating tensions and portray the US-Israel alliance as a stabilizing force in the region. Criticism of the operation is downplayed, focusing instead on the strategic importance of countering Iranian aggression.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications, such as the impact on global oil markets and the potential for this conflict to draw in other regional powers like Russia or China. The financial interests of defense contractors benefiting from prolonged military engagements are also not being scrutinized.",
-    "social_summary": "Social media is ablaze with polarized opinions, with some users praising the operation as a necessary defense measure, while others condemn it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the operation, such as distracting from domestic issues or influencing upcoming elections.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing different countries, under a stormy sky symbolizing geopolitical tension.",
+    "right_narrative": "Right-leaning media is emphasizing the necessity of the operation, framing it as a justified action to protect American lives. They highlight Iran's aggressive posture and the need for decisive action to counter threats. The narrative underscores the importance of US-Israel cooperation in maintaining regional stability and security.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications, such as how this operation affect US relations with other Middle Eastern countries or the potential impact on global oil markets. There is also little discussion on the internal political dynamics within Iran that is influencing its foreign policy decisions.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users praising the operation as a necessary defense measure, while others condemn it as reckless aggression. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the operation, such as control over regional resources or political distractions.",
+    "image_prompt": "A dramatic editorial photo of a tense military standoff at dusk, with silhouetted figures against a backdrop of a desert landscape, symbolizing the high-stakes geopolitical tension.",
     "sources": [
       {
         "name": "Fox News",
@@ -34,18 +34,32 @@
         "duration": 1470
       },
       {
-        "platform": "x",
-        "url": "https://x.com/BenSwann_/status/2040162994441637951",
-        "embed_id": "2040162994441637951",
-        "title": "Tensions with Iran appear to be escalating, as President Trump signals the possibility of additional strikes, with no clear path to de-escalation. \n\nA",
-        "author": "BenSwann_"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "duration": 1114
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
+        "embed_id": "GiNqawXBaF8",
+        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
+        "duration": 404
       },
       {
         "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
-        "embed_id": "2040433934022987888",
-        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
-        "author": "WarMonitor3"
+        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
+        "embed_id": "2040261458072678904",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16338",
+        "embed_id": "France24_en/16338",
+        "title": "Inside the race to rescue a downed US airman in Iran\nPresident Donald Trump on Sunday hailed a daring rescue of a downed US airman in central Iran, bu",
+        "author": "france24_en"
       },
       {
         "platform": "reddit",
@@ -80,22 +94,36 @@
         "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
         "channel": "Al Jazeera English",
         "duration": 1470
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
+        "embed_id": "Ghs03B9lkrw",
+        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
+        "channel": "Amanpour and Company",
+        "duration": 1114
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
+        "embed_id": "GiNqawXBaF8",
+        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
+        "channel": "Fox News",
+        "duration": 404
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/BenSwann_/status/2040162994441637951",
-        "embed_id": "2040162994441637951",
-        "title": "Tensions with Iran appear to be escalating, as President Trump signals the possibility of additional strikes, with no clear path to de-escalation. \n\nA",
-        "author": "BenSwann_"
+        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
+        "embed_id": "2040261458072678904",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
-        "embed_id": "2040433934022987888",
-        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
-        "author": "WarMonitor3"
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16338",
+        "embed_id": "France24_en/16338",
+        "title": "Inside the race to rescue a downed US airman in Iran\nPresident Donald Trump on Sunday hailed a daring rescue of a downed US airman in central Iran, bu",
+        "author": "france24_en"
       },
       {
         "platform": "reddit",
@@ -121,15 +149,15 @@
   },
   {
     "topic": "US Rescues Downed Airman in Iran",
-    "summary": "The United States conducted a successful rescue operation for an airman whose F-15 jet was shot down in Iran. The mission involved cooperation between US and Israeli forces and resulted in at least five casualties. This incident has heightened tensions between the US and Iran, raising concerns about regional stability.",
+    "summary": "The United States successfully rescued an airman after his F-15 jet was shot down in Iran. The operation involved collaboration between US and Israeli forces and resulted in at least five casualties. This incident has escalated tensions between the US and Iran, raising concerns about the stability of the region.",
     "severity": "critical",
     "detected_at": "2026-04-05T09:00:05.811Z",
-    "last_updated": "2026-04-05T15:00:43.051Z",
-    "left_narrative": "Left-leaning media is emphasizing the reckless nature of US military operations in volatile regions, highlighting the potential for unnecessary escalation and loss of life. They are critical of the US's aggressive stance towards Iran, suggesting that such actions undermine diplomatic efforts and increase the risk of broader conflict.",
+    "last_updated": "2026-04-05T17:01:13.189Z",
+    "left_narrative": "Left-leaning media is emphasizing the reckless nature of US military operations in volatile regions, highlighting the potential for escalation into broader conflict. They are critical of the US's aggressive stance towards Iran, suggesting that such actions undermine diplomatic efforts and increase the risk of war. The involvement of Israeli forces is also scrutinized, pointing to the complex geopolitical alliances that further destabilize the Middle East.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of US-Israeli military cooperation in Iranian territory. This operation is seen as a provocation not just by Iran, but by other regional powers like Russia and China, who have vested interests in the Middle East. The financial and strategic motivations behind such military actions, including defense contracts and regional influence, remain largely unexplored.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the US military's bravery and others condemning the operation as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the rescue, such as testing military capabilities or distracting from domestic issues. The incident has sparked debates about US foreign policy and military interventionism.",
-    "image_prompt": "A dramatic scene of a lone fighter jet soaring over a desert landscape, with a backdrop of stormy skies symbolizing geopolitical tension. In the foreground, shadowy figures representing international alliances and conflicts loom ominously.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader implications of increased military presence and operations in the Middle East, particularly how they affect local populations and long-term regional stability. The financial and political motivations behind maintaining such a presence, including arms sales and geopolitical influence, are not being discussed. Additionally, the potential for retaliatory actions by Iran and their impact on global oil markets is largely ignored.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the US military's capabilities and others condemning the operation as a dangerous provocation. Memes and viral posts are circulating, depicting the rescue as either a heroic act or a reckless gamble. Conspiracy theories are emerging, suggesting ulterior motives behind the operation, such as distracting from domestic issues or influencing upcoming elections.",
+    "image_prompt": "A dramatic scene of a lone fighter jet soaring over a vast desert landscape, with a distant horizon hinting at geopolitical tensions. The sky is a mix of dawn and dusk, symbolizing uncertainty and conflict.",
     "sources": [
       {
         "name": "BBC",
@@ -176,11 +204,10 @@
         "title": "US rescues airman from Iran after intense firefight in enemy territory"
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20656",
-        "embed_id": "disclosetv/20656",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.  Read here: https://www.disclose.tv/id/26ac91ccaf/  UPDA",
-        "author": "disclosetv"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=6WGCVT72574",
+        "embed_id": "6WGCVT72574",
+        "title": "War in the Middle East: the US rescues missing airman from Iran • FRANCE 24 English"
       },
       {
         "platform": "telegram",
@@ -191,16 +218,16 @@
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/warmonitors/43169",
-        "embed_id": "warmonitors/43169",
-        "title": "⚡️Trump: F-15 Pilot Rescued from Iran Tonight - Seriously Injured; Iranian Military Closes In on Him",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
         "url": "https://t.me/France24_en/16330",
         "embed_id": "France24_en/16330",
         "title": "Middle East War live: Rescued crew member from downed US fighter jet 'safe and sound,' says Trump\nUS President Donald Trump said on Sunday that forces",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16331",
+        "embed_id": "France24_en/16331",
+        "title": "Crew member from downed US fighter jet rescued in 'miraculous' operation, says Trump\nUS President Donald Trump said Sunday that US forces had safely r",
         "author": "france24_en"
       },
       {
@@ -244,6 +271,12 @@
         "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1scv7pn/april_4_2026/",
         "embed_id": "1scv7pn",
         "title": "April 4, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sd33kk/us_forced_to_destroy_two_of_its_own_aircraft/",
+        "embed_id": "1sd33kk",
+        "title": "US forced to destroy two of its own aircraft after rescuing F-15 pilot from Iran"
       }
     ],
     "youtube_videos": [
@@ -270,16 +303,15 @@
         "embed_id": "D3H6qEvFSQI",
         "title": "US rescues airman from Iran after intense firefight in enemy territory",
         "channel": "Al Jazeera English"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=6WGCVT72574",
+        "embed_id": "6WGCVT72574",
+        "title": "War in the Middle East: the US rescues missing airman from Iran • FRANCE 24 English",
+        "channel": "France 24 English"
       }
     ],
     "social_clips": [
-      {
-        "platform": "telegram",
-        "url": "https://t.me/disclosetv/20656",
-        "embed_id": "disclosetv/20656",
-        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.  Read here: https://www.disclose.tv/id/26ac91ccaf/  UPDA",
-        "author": "disclosetv"
-      },
       {
         "platform": "telegram",
         "url": "https://t.me/warmonitors/43158",
@@ -289,16 +321,16 @@
       },
       {
         "platform": "telegram",
-        "url": "https://t.me/warmonitors/43169",
-        "embed_id": "warmonitors/43169",
-        "title": "⚡️Trump: F-15 Pilot Rescued from Iran Tonight - Seriously Injured; Iranian Military Closes In on Him",
-        "author": "warmonitors"
-      },
-      {
-        "platform": "telegram",
         "url": "https://t.me/France24_en/16330",
         "embed_id": "France24_en/16330",
         "title": "Middle East War live: Rescued crew member from downed US fighter jet 'safe and sound,' says Trump\nUS President Donald Trump said on Sunday that forces",
+        "author": "france24_en"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16331",
+        "embed_id": "France24_en/16331",
+        "title": "Crew member from downed US fighter jet rescued in 'miraculous' operation, says Trump\nUS President Donald Trump said Sunday that US forces had safely r",
         "author": "france24_en"
       },
       {
@@ -342,6 +374,12 @@
         "url": "https://reddit.com/r/HeatherCoxRichardson/comments/1scv7pn/april_4_2026/",
         "embed_id": "1scv7pn",
         "title": "April 4, 2026"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sd33kk/us_forced_to_destroy_two_of_its_own_aircraft/",
+        "embed_id": "1sd33kk",
+        "title": "US forced to destroy two of its own aircraft after rescuing F-15 pilot from Iran"
       }
     ],
     "image_file": "/images/breaking_2026-04-05.png",
