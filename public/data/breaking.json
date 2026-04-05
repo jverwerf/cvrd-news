@@ -1,113 +1,147 @@
 [
   {
-    "topic": "Iran Attack Casualties",
-    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, further escalating tensions between Israel and Iran. This incident is part of ongoing retaliatory actions and military engagements between the two nations, raising concerns about regional stability and the potential for further conflict in the Middle East. The attack has drawn international attention, with various countries and organizations expressing concern over the increasing hostilities.",
-    "severity": "major",
-    "detected_at": "2026-04-04T19:00:07.128Z",
-    "last_updated": "2026-04-05T07:00:35.857Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
+    "topic": "US Rescues Downed Airman in Iran",
+    "summary": "The United States conducted a successful rescue operation for an airman whose F-15 jet was shot down in Iran. The mission, which involved US-Israeli collaboration, resulted in at least five casualties. This incident has heightened tensions between the US and Iran, with potential implications for regional stability.",
+    "severity": "critical",
+    "detected_at": "2026-04-05T09:00:05.811Z",
+    "last_updated": "2026-04-05T09:00:05.811Z",
+    "left_narrative": "Left-leaning media is emphasizing the reckless nature of the US military's actions, highlighting the escalation of violence and the potential for further conflict in the Middle East. They are critical of the Trump administration's aggressive foreign policy, suggesting that such operations leads to unnecessary loss of life and destabilization.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications of these attacks are not being fully explored, particularly how they affect global oil markets and international relations with countries dependent on Middle Eastern oil.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing outrage over the loss of life and others debating the legitimacy of the attack as a defensive measure. Memes and conspiracy theories are circulating, suggesting hidden agendas and questioning the involvement of other nations in the conflict. Hashtags related to Middle Eastern peace and calls for international intervention are trending.",
-    "image_prompt": "A dramatic editorial photo of a cracked globe with oil spilling out, symbolizing the fragility of global stability and the impact of Middle Eastern conflicts on the world stage.",
+    "what_they_arent_telling_you": "Neither side is delving into the geopolitical implications of US-Israeli cooperation in this operation. The collaboration signals a deeper strategic alliance that provoke further regional tensions, particularly with Iran's allies. Additionally, the financial and political costs of such military interventions are not being scrutinized, leaving questions about long-term US involvement in the region.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users celebrating the rescue as a testament to US military prowess, while others criticize it as a dangerous provocation. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the operation, including speculation about oil interests and military-industrial complex influences.",
+    "image_prompt": "A dramatic scene depicting a lone fighter jet soaring over a desert landscape, with a backdrop of stormy skies symbolizing geopolitical tensions. In the foreground, shadowy figures representing international alliances and conflicts loom ominously.",
     "sources": [
       {
         "name": "BBC",
-        "url": "https://www.bbc.com/news/articles/c5y90jl8veyo?at_medium=RSS&amp;at_campaign=rss",
+        "url": "https://www.bbc.com/news/articles/cm2k1dgz142o?at_medium=RSS&amp;at_campaign=rss",
         "lean": "center",
-        "title": "UN watchdog voices 'deep concern' as Iran reports new attacks on nuclear plant"
+        "title": "What we know so far about rescue of US airman in Iran"
       },
       {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/4/universities-hit-as-us-israel-ramp-up-attacks-on-irans-infrastructure?traffic_source=rss",
-        "lean": "center",
-        "title": "Universities hit as US, Israel ramp up attacks on Iran’s infrastructure"
+        "name": "NPR",
+        "url": "https://www.npr.org/2026/04/05/nx-s1-5774368/u-s-military-rescue-airman-iran",
+        "lean": "left",
+        "title": "Trump says U.S. military has rescued airman shot down over Iran"
       }
     ],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=2TkadNX3nuw",
-        "embed_id": "2TkadNX3nuw",
-        "title": "US-Israel Strike Iran: Bushehr Nuke Plant, Khuzestan Petrochemical Zone Hit | Middle East War",
-        "duration": 188
+        "url": "https://www.youtube.com/watch?v=AP3V7SjaTP8",
+        "embed_id": "AP3V7SjaTP8",
+        "title": "BREAKING: US rescues missing pilot whose F-15 fighter jet was downed in Iran"
       },
       {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ERROs9KioAI",
-        "embed_id": "ERROs9KioAI",
-        "title": "Latest Update: Iran war escalates, US troops deployed, oil prices crash",
-        "duration": 1407
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20640",
+        "embed_id": "disclosetv/20640",
+        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
+        "author": "disclosetv"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
-        "embed_id": "1sbpiou",
-        "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85914",
+        "embed_id": "intelslava/85914",
+        "title": "🇺🇸🇮🇷Trump announced the rescue of the second pilot of the plane shot down in Iran.\n\nAccording to him, the US military conducted \"one of the most d",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/JoeRogan/comments/1sclbwk/palantir_in_gaza_omnibus/",
-        "embed_id": "1sclbwk",
-        "title": "Palantir in Gaza: Omnibus"
+        "url": "https://reddit.com/r/Military/comments/1sct1nj/second_us_crew_member_from_downed_jet_recovered/",
+        "embed_id": "1sct1nj",
+        "title": "Second US crew member from downed jet recovered"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sc8v65/bolton_trump_likely_in_panic_mode_after_iran/",
-        "embed_id": "1sc8v65",
-        "title": "Bolton: Trump likely in ‘panic mode’ after Iran attacks US fighter jets"
+        "url": "https://reddit.com/r/worldnews/comments/1sctgp9/us_forces_rescue_second_crew_member_from_f15/",
+        "embed_id": "1sctgp9",
+        "title": "U.S. forces rescue second crew member from F-15 downed in Iran: Officials"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1sc7jlc/rescue_team_in_iran_face_harrowing_and_dangerous/",
+        "embed_id": "1sc7jlc",
+        "title": "Rescue team in Iran face 'harrowing and dangerous' search for US crew member"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/navy/comments/1sctyol/reports_that_the_second_aircrew_has_been_exfiled/",
+        "embed_id": "1sctyol",
+        "title": "Reports that the second aircrew has been exfiled after evading for two days"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbetsGER/comments/1sctmsd/der_film_wird_den_amis_milliarden_einbringen/",
+        "embed_id": "1sctmsd",
+        "title": "Der Film wird den Amis Milliarden einbringen 📈🔥"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1scuofd/second_airman_in_f15e_that_was_shot_down_over/",
+        "embed_id": "1scuofd",
+        "title": "Second airman in F-15E that was shot down over Iran rescued safely, U.S. officials say"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=2TkadNX3nuw",
-        "embed_id": "2TkadNX3nuw",
-        "title": "US-Israel Strike Iran: Bushehr Nuke Plant, Khuzestan Petrochemical Zone Hit | Middle East War",
-        "channel": "MIRROR NOW",
-        "duration": 188
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=ERROs9KioAI",
-        "embed_id": "ERROs9KioAI",
-        "title": "Latest Update: Iran war escalates, US troops deployed, oil prices crash",
-        "channel": "Al Jazeera English",
-        "duration": 1407
+        "url": "https://www.youtube.com/watch?v=AP3V7SjaTP8",
+        "embed_id": "AP3V7SjaTP8",
+        "title": "BREAKING: US rescues missing pilot whose F-15 fighter jet was downed in Iran",
+        "channel": "Sky News"
       }
     ],
     "social_clips": [
       {
-        "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
+        "platform": "telegram",
+        "url": "https://t.me/disclosetv/20640",
+        "embed_id": "disclosetv/20640",
+        "title": "JUST IN - U.S. fighter jet shot down in Iran, search and rescue operations underway for crew.\n\nRead here: https://www.disclose.tv/id/26ac91ccaf/\n\nUPDA",
+        "author": "disclosetv"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85914",
+        "embed_id": "intelslava/85914",
+        "title": "🇺🇸🇮🇷Trump announced the rescue of the second pilot of the plane shot down in Iran.\n\nAccording to him, the US military conducted \"one of the most d",
+        "author": "intelslava"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/conspiracy/comments/1sbpiou/retired_counterterrorism_intel_officer_josephine/",
-        "embed_id": "1sbpiou",
-        "title": "Retired Counterterrorism Intel Officer Josephine Guilbeau Exposes the Feb 28, 2026 Minab School Strike: Claims U.S. Deliberately Targeted the Iranian "
+        "url": "https://reddit.com/r/Military/comments/1sct1nj/second_us_crew_member_from_downed_jet_recovered/",
+        "embed_id": "1sct1nj",
+        "title": "Second US crew member from downed jet recovered"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/JoeRogan/comments/1sclbwk/palantir_in_gaza_omnibus/",
-        "embed_id": "1sclbwk",
-        "title": "Palantir in Gaza: Omnibus"
+        "url": "https://reddit.com/r/worldnews/comments/1sctgp9/us_forces_rescue_second_crew_member_from_f15/",
+        "embed_id": "1sctgp9",
+        "title": "U.S. forces rescue second crew member from F-15 downed in Iran: Officials"
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1sc8v65/bolton_trump_likely_in_panic_mode_after_iran/",
-        "embed_id": "1sc8v65",
-        "title": "Bolton: Trump likely in ‘panic mode’ after Iran attacks US fighter jets"
+        "url": "https://reddit.com/r/news/comments/1sc7jlc/rescue_team_in_iran_face_harrowing_and_dangerous/",
+        "embed_id": "1sc7jlc",
+        "title": "Rescue team in Iran face 'harrowing and dangerous' search for US crew member"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/navy/comments/1sctyol/reports_that_the_second_aircrew_has_been_exfiled/",
+        "embed_id": "1sctyol",
+        "title": "Reports that the second aircrew has been exfiled after evading for two days"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/wallstreetbetsGER/comments/1sctmsd/der_film_wird_den_amis_milliarden_einbringen/",
+        "embed_id": "1sctmsd",
+        "title": "Der Film wird den Amis Milliarden einbringen 📈🔥"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/news/comments/1scuofd/second_airman_in_f15e_that_was_shot_down_over/",
+        "embed_id": "1scuofd",
+        "title": "Second airman in F-15E that was shot down over Iran rescued safely, U.S. officials say"
       }
     ],
-    "image_file": "/images/breaking_2026-04-04.png"
+    "image_file": "/images/breaking_2026-04-05.png"
   }
 ]
