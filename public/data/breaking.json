@@ -1,5 +1,121 @@
 [
   {
+    "topic": "Iran Conflict Escalation",
+    "summary": "Iran has announced that five individuals were killed during joint US-Israeli military operations aimed at rescuing a US pilot. This incident represents a notable intensification of the conflict, underscoring the rising tensions between Iran and the US-Israel alliance. The operation has drawn international attention, with various countries expressing concern over the potential for further escalation.",
+    "severity": "critical",
+    "detected_at": "2026-04-05T11:00:07.514Z",
+    "last_updated": "2026-04-05T11:00:07.514Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects the balance of power in the Middle East. The focus remains on immediate military actions rather than the strategic interests of regional players like Russia and China, who have vested interests in Iran. Additionally, the economic motivations behind these military engagements, such as control over oil routes and regional influence, are not being discussed.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users condemning the US-Israeli actions as aggressive imperialism, while others defend them as necessary measures for national security. Memes and hashtags like #IranConflict and #MiddleEastTensions are trending, with conspiracy theories suggesting ulterior motives behind the rescue operation, such as testing military capabilities or distracting from domestic issues.",
+    "image_prompt": "A dramatic editorial photo of a barren desert landscape at dusk, with distant silhouettes of military helicopters hovering over the horizon, casting long shadows on the sand. The scene is framed by a setting sun, symbolizing the tension and uncertainty of the region.",
+    "sources": [],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
+        "embed_id": "JtfO20JSjbU",
+        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
+        "duration": 244
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
+        "embed_id": "2040433934022987888",
+        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
+        "author": "WarMonitor3"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
+        "embed_id": "2040261458072678904",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDunlap1974/status/2040259090316743019",
+        "embed_id": "2040259090316743019",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BenSwann_/status/2040162994441637951",
+        "embed_id": "2040162994441637951",
+        "title": "Tensions with Iran appear to be escalating, as President Trump signals the possibility of additional strikes, with no clear path to de-escalation. \n\nA",
+        "author": "BenSwann_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IsraelRadar_com/status/2039954763849085003",
+        "embed_id": "2039954763849085003",
+        "title": "Israel wants to start bombing national infrastructure in Iran but US vetoed move for fear of regional escalation; discussion is now focused on ways to",
+        "author": "IsraelRadar_com"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/sadcringe/comments/1sctz9m/holy_war/",
+        "embed_id": "1sctz9m",
+        "title": "Holy war"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
+        "embed_id": "JtfO20JSjbU",
+        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
+        "channel": "Bloomberg Television",
+        "duration": 244
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
+        "embed_id": "2040433934022987888",
+        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
+        "author": "WarMonitor3"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
+        "embed_id": "2040261458072678904",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/JDunlap1974/status/2040259090316743019",
+        "embed_id": "2040259090316743019",
+        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
+        "author": "JDunlap1974"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BenSwann_/status/2040162994441637951",
+        "embed_id": "2040162994441637951",
+        "title": "Tensions with Iran appear to be escalating, as President Trump signals the possibility of additional strikes, with no clear path to de-escalation. \n\nA",
+        "author": "BenSwann_"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/IsraelRadar_com/status/2039954763849085003",
+        "embed_id": "2039954763849085003",
+        "title": "Israel wants to start bombing national infrastructure in Iran but US vetoed move for fear of regional escalation; discussion is now focused on ways to",
+        "author": "IsraelRadar_com"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/sadcringe/comments/1sctz9m/holy_war/",
+        "embed_id": "1sctz9m",
+        "title": "Holy war"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-05.png"
+  },
+  {
     "topic": "US Rescues Downed Airman in Iran",
     "summary": "The United States conducted a successful rescue operation for an airman whose F-15 jet was shot down in Iran. The mission, which involved US-Israeli collaboration, resulted in at least five casualties. This incident has heightened tensions between the US and Iran, with potential implications for regional stability.",
     "severity": "critical",
