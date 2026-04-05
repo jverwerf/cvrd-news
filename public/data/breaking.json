@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attack Casualties",
-    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, escalating tensions between Israel and Iran. This incident is part of a series of retaliatory actions and military engagements between the two nations. The attack has raised concerns about regional stability and the potential for further conflict in the Middle East.",
+    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, further escalating tensions between Israel and Iran. This incident is part of ongoing retaliatory actions and military engagements between the two nations, raising concerns about regional stability and the potential for further conflict in the Middle East. The attack has drawn international attention, with various countries and organizations expressing concern over the increasing hostilities.",
     "severity": "major",
     "detected_at": "2026-04-04T19:00:07.128Z",
-    "last_updated": "2026-04-05T05:01:01.168Z",
+    "last_updated": "2026-04-05T07:00:35.857Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications of these attacks extend beyond Israel and Iran, involving global powers with vested interests in the region's resources and political landscape.",
-    "social_summary": "Social media is buzzing with polarized reactions. Some users are sharing memes that trivialize the conflict, while others are spreading conspiracy theories about foreign powers orchestrating the attacks. Hashtags calling for peace and de-escalation are trending, but so are those demanding retaliation and justice for the victims.",
-    "image_prompt": "A dramatic editorial photo of a smoldering petrochemical plant at dusk, with dark smoke billowing into the sky, symbolizing the tension and unrest in the Middle East. In the foreground, a lone figure stands silhouetted, representing the human cost of geopolitical conflicts.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications of these attacks are not being fully explored, particularly how they affect global oil markets and international relations with countries dependent on Middle Eastern oil.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users expressing outrage over the loss of life and others debating the legitimacy of the attack as a defensive measure. Memes and conspiracy theories are circulating, suggesting hidden agendas and questioning the involvement of other nations in the conflict. Hashtags related to Middle Eastern peace and calls for international intervention are trending.",
+    "image_prompt": "A dramatic editorial photo of a cracked globe with oil spilling out, symbolizing the fragility of global stability and the impact of Middle Eastern conflicts on the world stage.",
     "sources": [
       {
         "name": "BBC",
@@ -41,10 +41,10 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
-        "embed_id": "2039812338820255793",
-        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
-        "author": "TadhgHickey"
+        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
+        "embed_id": "2039874952044728446",
+        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
+        "author": "warfareanalysis"
       },
       {
         "platform": "reddit",
@@ -84,10 +84,10 @@
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
-        "embed_id": "2039812338820255793",
-        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
-        "author": "TadhgHickey"
+        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
+        "embed_id": "2039874952044728446",
+        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
+        "author": "warfareanalysis"
       },
       {
         "platform": "reddit",

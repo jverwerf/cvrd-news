@@ -1,108 +1,108 @@
 {
-  "headline": "בני גנץ - Benny Gantz on military: 73.1% Truthful",
+  "headline": "Volodymyr Zelenskyy on military: 94.3% Truthful",
   "person": {
-    "handle": "gantzbe",
-    "name": "בני גנץ - Benny Gantz",
-    "role": "Minister of Defense",
-    "photo": "/data/politicians/photo_gantzbe.png"
+    "handle": "ZelenskyyUa",
+    "name": "Volodymyr Zelenskyy",
+    "role": "President of Ukraine",
+    "photo": "/data/politicians/photo_ZelenskyyUa.png"
   },
-  "story_topic": "U.S. Fighter Jet Shot Down in Iran",
+  "story_topic": "Iran Conflict Escalates: US Airman Rescued",
   "search_keyword": "military",
-  "topic_score": 73.1,
-  "overall_score": 78.3,
-  "matching_claims": 59,
-  "editorial": "As the world holds its breath over the recent downing of a U.S. fighter jet in Iran, Israeli Defense Minister Benny Gantz finds himself in the midst of a military storm of his own making. Gantz, a key figure in Israel's defense apparatus, has been scrutinized for his claims regarding military operations in Israel and its borders. His assertion that Israeli soldiers are taking control of points in Lebanon has been verified as true, yet his broader narratives often waver in accuracy.\n\nGantz's track record on military claims is a mixed battlefield. His statement about reservists facing cuts to processing days post-service aligns with recent reports, earning it a true verdict. However, his claim of Israel conducting bombings \"of hundreds and thousands of tons\" is deemed somewhat misleading, raising eyebrows about the precision of his military narrative. His assertion about hostages and border terrorists, debunked as false, further complicates his image as a reliable source on defense matters.\n\nWith an overall truthfulness score of 78.3 and a topic-specific score of 73.1, Gantz's statements are more often true than not. Yet, the pattern of inaccuracies suggests a tendency to amplify threats and achievements—a common tactic in defense rhetoric. Out of 209 claims, 102 have been rated true, with 11 misleading and 7 false, indicating a need for cautious interpretation of his declarations.\n\nFor those watching the skies and borders, Gantz's mixed messages underscore the importance of discerning fact from embellishment in times of crisis.",
+  "topic_score": 94.3,
+  "overall_score": 95.4,
+  "matching_claims": 146,
+  "editorial": "Volodymyr Zelenskyy, Ukraine's fact-checked president, could teach others a lesson in honesty amidst today's Iran conflict escalation. As the US military rescues a downed airman in hostile Iranian territory, Zelenskyy has consistently demonstrated accuracy in his own military-related claims, especially concerning drone attacks by Russian forces in Ukraine.\n\nZelenskyy's record on military matters is stellar. He accurately reported on March 24, 2026, that Russia launched a wave of Iranian 'shahed' drones, hitting Ukrainian targets like a church in Lviv and a maternity hospital in Ivano-Frankivsk, all confirmed by credible sources. Each of his five recent claims on such drone attacks has been verified as true, showcasing his commitment to factual transparency even during crisis.\n\nHis broader truthfulness is exceptional, boasting a 95.4% overall accuracy rate out of 345 claims. Only three claims have been found misleading, and just one false. This pattern of reliability sets a high bar for truth in leadership, particularly during tumultuous times.\n\nFor readers, Zelenskyy's example is a reminder that even in the fog of conflict, precise and truthful communication is not just possible—it's essential.",
   "matched_tweets": [
     {
-      "claim": "During the time when our children were drafted into reserves, there were 251 hostages in Gaza, there were terrorists in the border area, and the fate of the State of Israel was in question for the first time since its establishment.",
-      "verdict": "FALSE",
-      "score": 0,
-      "tweet_text": "יאיר, צר לי על העובדה שבזמן שהילדים של כולנו גויסו למילואים, שבעזה היו 251 חטופים, שבעוטף עדיין היו מחבלים ושגורלה של מדינת ישראל עמד לראשונה בסימן שאלה מאז הקמתה - בחרת לשבת בחוץ ולעשות שיקולים פוליטיים. יש רגעים שגם מפוליטיקאים מותר לדרוש מנהיגות אחרת. לא את הקריירה הפוליטית",
-      "tweet_url": "https://twitter.com/gantzbe/status/2035802525157531822",
-      "domain": "military",
-      "reasoning": "The claim states that during the time when children were drafted into reserves, there were 251 hostages in Gaza, terrorists in the border area, and the fate of the State of Israel was in question for the first time since its establishment. However, as of January 26, 2026, all hostages had been returned from Gaza to Israel, and the remains of the last hostage were recovered on that date. Therefore, by March 22, 2026, there were no hostages remaining in Gaza. Additionally, while there have been incidents involving terrorists near the border, such as the elimination of three terrorists in northern Gaza on March 10, 2026, these do not indicate a situation where the fate of the State of Israel was in question. Therefore, the claim is false."
-    },
-    {
-      "claim": "Israeli soldiers are taking control of points in Lebanon while the Knesset is engaged in divisive legislation.",
+      "claim": "Iranian 'shaheds' enhanced by Russia hit a church in Lviv and a maternity hospital was damaged in Ivano-Frankivsk.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "השתגענו? אני נמצא בצפון, יש פה תושבים חזקים, שנשארים בבתים, שומרים על הילדים שלהם. פגשתי לוחמים שיצאו מהבית ולא יודעים מתי יחזרו. ובזמן שכולנו עומדים מאחורי כוחות הביטחון וכל אזרחי ישראל בחזית - הכנסת עוסקת בחקיקה שקורעת אותנו? לוחמי צה\"ל משתלטים על נקודות בלבנון, ובכנסת הולכים",
-      "tweet_url": "https://twitter.com/gantzbe/status/2029187080966836604",
+      "tweet_text": "Iranian “shaheds” enhanced by Russia hit a church in Lviv – this is utterly perverse, and only the likes of Putin could take pleasure in it. In Ivano-Frankivsk, a maternity hospital was damaged. The scale of today’s attack strongly indicates that Russia has no intention of really",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2036530224108601828",
       "domain": "military",
-      "reasoning": "The claim that Israeli soldiers are taking control of points in Lebanon is accurate. On March 3, 2026, Israeli Defense Minister Israel Katz announced that the Israel Defense Forces (IDF) were authorized to advance and take control of additional strategic positions in Lebanon to prevent attacks on Israeli border communities. Concurrently, the Knesset has been advancing controversial legislation, including a law instituting the death penalty for Palestinians convicted of killing Israelis in nationalistic attacks, which has been criticized for being discriminatory and in violation of international standards. Therefore, the claim is substantiated by current events."
+      "reasoning": "Multiple credible sources confirm that on March 24, 2026, Russian forces launched a large-scale drone and missile attack on Ukraine, utilizing Iranian-designed Shahed drones. In Lviv, the attack caused a fire at St. Andrew’s Church, a UNESCO World Heritage site. In Ivano-Frankivsk, the attack damaged maternity hospitals and resulted in civilian casualties. These reports substantiate the claim that Iranian 'Shaheds' enhanced by Russia hit a church in Lviv and damaged a maternity hospital in Ivano-Frankivsk."
     },
     {
-      "claim": "Netanyahu failed in his responsibility for the security of Israeli citizens on October 7th.",
+      "claim": "Russia launched a new wave of 'Shahed' drones against Ukraine during the report of our negotiators.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "ממה אתה מפחד, נתניהו? כמו גנב בלילה בחרת ציטוטים שנוחים לך, כאלה שמתאימים לסיפור שאתה מנסה למכור. על יכולות שיווק אפשר לפרגן - בזה אתה מצטיין. אבל אתה לא איש שיווק - אתה ראש ממשלת ישראל. וביום הארור של ה־7/10 אתה ישבת בכיסא ונשאת באחריות העליונה לביטחונם של אזרחי ישראל - וכשלת.",
-      "tweet_url": "https://twitter.com/gantzbe/status/2019737193854517291",
+      "tweet_text": "Детально обговорили підсумки зустрічей в Америці. Показово, що в час доповіді наших переговірників Росія запустила нову хвилю «шахедів» проти України. Команда доповіла про те, що реально звучало у Флориді: акценти, можливості й труднощі. Найбільш важливо пропрацювати гарантії",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2036396535810765197",
       "domain": "military",
-      "reasoning": "The claim that Prime Minister Benjamin Netanyahu failed in his responsibility for the security of Israeli citizens on October 7, 2023, is supported by multiple sources. The Israeli military's investigation acknowledged a 'complete failure' in preventing the Hamas attack, citing underestimation of Hamas' capabilities and intelligence shortcomings. Despite these findings, Netanyahu has consistently denied personal responsibility, attributing the failures to intelligence agencies and previous government decisions. Opposition leaders, such as Yair Lapid, have accused Netanyahu of blocking comprehensive investigations into the attack, further suggesting a failure in leadership responsibility."
+      "reasoning": "On March 24, 2026, Russia launched a significant wave of Shahed drones against Ukraine. Reports indicate that nearly 1,000 drones were deployed that day, marking one of the largest drone attacks since the conflict began. This massive assault targeted multiple Ukrainian cities, including Lviv, where drones struck the historic Ensemble of the Bernardine Monastery, a UNESCO World Heritage site, causing a fire. The timing of this attack coincided with a report from Ukrainian negotiators, underscoring the claim's accuracy."
     },
     {
-      "claim": "We conducted bombings of hundreds and thousands of tons on terrorist targets before the ground entry and after evacuating the population.",
+      "claim": "Russia launched a new wave of 'shahed' drones against Ukraine during the discussions in the United States.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "We had a detailed discussion on the outcomes of the meetings in the United States. It is telling that while our negotiators were reporting, Russia launched a new wave of “shahed” drones against Ukraine. The team reported on what was actually discussed in Florida – the key",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2036396532128235762",
+      "domain": "military",
+      "reasoning": "On March 24, 2026, Russia launched a significant wave of Shahed drones against Ukraine, with reports indicating nearly 1,000 drones were deployed that day. This attack coincided with discussions between U.S. and Ukrainian negotiators in Florida aimed at reviving talks on ending the Ukraine war. The timing of the drone assault during these discussions suggests a deliberate action by Russia."
+    },
+    {
+      "claim": "There were massive Russian attacks overnight causing damage to residential buildings in Zaporizhzhia and Poltava, and nearly 40 drones were launched at Shostka in Sumy region.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Тривають відновлювальні роботи після масованої російської атаки вночі в наших регіонах. У Запоріжжі та Полтаві пошкоджені звичайні багатоповерхівки, були пожежі. Майже 40 дронів запустили по Шостці на Сумщині. У Слатиному на Харківщині вдарили дроном по електропоїзду. Загалом",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2036351247729488300",
+      "domain": "military",
+      "reasoning": "The claim accurately reports that on the night of March 23-24, 2026, Russian forces launched a massive attack on Ukraine, resulting in damage to residential buildings in Zaporizhzhia and Poltava, and nearly 40 drones targeting Shostka in the Sumy region. Multiple sources confirm these events, including reports of residential buildings being damaged and fires breaking out in Zaporizhzhia and Poltava, as well as a significant drone assault on Shostka."
+    },
+    {
+      "claim": "Recovery efforts are underway in regions affected by a massive Russian attack, with damage to apartment buildings and fires in Zaporizhzhia and Poltava, and nearly 40 drones launched against Shostka in the Sumy region.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Recovery efforts are underway in our regions following last night’s massive Russian attack. In Zaporizhzhia and Poltava, ordinary apartment buildings were damaged, and fires broke out. Nearly 40 drones were launched against Shostka in the Sumy region. In Slatyne, in the Kharkiv",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2036351243501674830",
+      "domain": "military",
+      "reasoning": "The claim accurately describes the events of March 24, 2026. Russian forces launched a large-scale attack on multiple Ukrainian regions, including Zaporizhzhia and Poltava, resulting in damage to residential buildings and fires. In Zaporizhzhia, at least one person was killed, and nine others were injured, with six multi-storey buildings and two private houses damaged. In Poltava, explosions damaged residential buildings and a hotel, causing fires and resulting in two deaths and 11 injuries. Additionally, Russian forces targeted Shostka in the Sumy region, with reports indicating drone strikes on border communities, leading to civilian casualties. These details are corroborated by multiple sources, including reports from the Kyiv Post, Odessa Journal, and The Ukrainian Review."
+    },
+    {
+      "claim": "Russia launched nearly 1,550 attack drones, more than 1,260 guided aerial bombs, and two missiles against Ukraine in the past week, and increased its crude oil sales due to the easing of sanctions.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "הנזק בעלילת הדם של נתניהו שאני סיכנתי חיילי גולני הוא לא הפגיעה הפוליטית בי אלא הפגיעה באמון של חיילי צה\"ל ובמפקדים ששולחים אותם לקרב. זה מה שהוא עשה שוב. אנחנו שומרים על החיילים שלנו וביצענו הפצצות במאות ואלפי טונות על יעדי טרור לפני הכניסה הקרקעית ואחרי פינוי אוכלוסייה. מבחינה",
-      "tweet_url": "https://twitter.com/gantzbe/status/2016799492872208498",
+      "tweet_text": "Over the past week, Russia launched nearly 1,550 attack drones against Ukraine, more than 1,260 guided aerial bombs, and two missiles. Over that same week, due to the easing of sanctions, Russia increased its crude oil sales to finance its war. Revenues give Russia a sense of",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2035636087037603959",
       "domain": "military",
-      "reasoning": "The claim that Israel conducted bombings of hundreds and thousands of tons on terrorist targets before ground entry and after evacuating the population is partially accurate. Israel did carry out extensive airstrikes prior to ground operations, reportedly dropping over 70,000 tonnes of bombs on Gaza by 2024. However, evidence indicates that these bombings often occurred in areas where civilians were present, even after evacuation orders. Analyses by CNN, The New York Times, and Sky News found that Israel bombed areas it had previously designated as safe zones for civilians. Therefore, while the bombings targeted terrorist sites, the assertion that they occurred only after evacuating the population is misleading, as many civilians remained in these areas during the strikes."
+      "reasoning": "The claim states that Russia launched nearly 1,550 attack drones, more than 1,260 guided aerial bombs, and two missiles against Ukraine in the past week, and increased its crude oil sales due to the easing of sanctions. While the numbers of drones and bombs are consistent with reports from Ukrainian President Volodymyr Zelenskyy, who mentioned nearly 1,750 drones and 1,530 bombs in a week, the claim underreports the number of missiles, as Zelenskyy reported 39 missiles. Additionally, the assertion that Russia increased its crude oil sales due to the easing of sanctions is supported by reports indicating that the U.S. temporarily eased some sanctions on Russian oil to stabilize global energy markets, leading to increased Russian oil revenues. However, the claim lacks specific figures or context regarding the extent of the increase in crude oil sales, making it somewhat misleading."
     },
     {
-      "claim": "Reservists are being told that their processing and organization days after long service are being cut.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "מילואימניקים מדווחים לי בשעות האחרונות שהוחלט לקצץ להם את ימי העיבוד וההתארגנות אחרי שירות ארוך של חודשים. זו שערוריה שאין כדוגמתה. במקום לגייס את החרדים ולהקל על מי שנושאים בנטל - מכבידים. על מי אתם עושים סיבוב? על מי שמתייצבים ל-100 ימים? לחודשיים? בעולם שבו אנחנו חיים, אם יש",
-      "tweet_url": "https://twitter.com/gantzbe/status/2020788229583012071",
-      "domain": "military",
-      "reasoning": "The claim that reservists are being informed about cuts to their processing and organization days after extended service is accurate. Recent reports indicate that the Israel Defense Forces (IDF) have implemented directives reducing post-deployment processing days and preparation periods for reservists. These changes have led to significant backlash from reservist commanders and senior officers, who warn that such reductions could undermine operational preparedness and the mental resilience of soldiers after prolonged periods of service. The IDF's decision to cut these essential recovery and organization days aligns with the claim made in the tweet."
-    },
-    {
-      "claim": "Terrorists outside Gaza broke the ceasefire and participated in attacks against our soldiers.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "המחבלים שמחוץ לעיר עזה שברו את הפסקת האש, וחלקם השתתפו במתקפות נגד החיילים שלנו. אסור לתת להם לצאת מהמנהרות ולהתארגן מחדש - בטח לא כשיש לנו עדיין חטופים חללים בעזה. אחרת - חזרנו ל-6 באוקטובר.",
-      "tweet_url": "https://twitter.com/gantzbe/status/1985289231787319560",
-      "domain": "military",
-      "reasoning": "The claim that terrorists outside Gaza broke the ceasefire and participated in attacks against Israeli soldiers is supported by multiple reports. Between November 22 and November 26, 2025, Palestinian terrorists violated the Gaza ceasefire 14 times, including an incident on November 22 where an armed terrorist used a humanitarian aid route to fire at Israeli troops. Additionally, from November 13 to November 21, there were at least eight ceasefire violations involving attacks on Israeli soldiers. These incidents confirm that the ceasefire was breached by terrorists outside Gaza who engaged in attacks against Israeli forces."
-    },
-    {
-      "claim": "The coalition deal does not include actual recruitment for military service.",
-      "verdict": "TRUE",
-      "score": 1,
-      "tweet_text": "עוד “חוק גיוס” בלי גיוס. עוד דיל קואליציוני על הגב של הילדים שלנו. ביטחון ישראל לא אמור להיות קלף פוליטי. תתביישו.",
-      "tweet_url": "https://twitter.com/gantzbe/status/1983244000837456292",
-      "domain": "military",
-      "reasoning": "The claim that the coalition deal does not include actual recruitment for military service is accurate. Despite various legislative efforts and proposals aimed at addressing the conscription of ultra-Orthodox (haredi) men into the Israel Defense Forces (IDF), no effective measures have been implemented to enforce their enlistment. For instance, a bill proposed in November 2025 was criticized for its broad definitions and weak sanctions, making it unlikely to significantly increase haredi recruitment. Additionally, the bill allowed for non-military service roles and included broad definitions of 'haredi,' further diluting its impact. These factors indicate that the coalition agreements and legislative actions have not resulted in substantial recruitment for military service."
-    },
-    {
-      "claim": "The IDF has needed more soldiers for two years, and this situation will not change.",
+      "claim": "The full-scale war in Ukraine has been ongoing for five years, and Russian aggression began in 2014.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "יש שתי אפשרויות: או שח״כ ביסמוט וחבריו לקואליציה חושבים שהביאו את השלום ולא צריך עוד חיילים, או שהם פשוט משחקים בביטחון המדינה והאינטרס הלאומי בשביל פוליטיקה זולה. צה״ל חייב עוד חיילים כבר שנתיים, וזה לא הולך להשתנות. גיוס חרדים זה לא משחק פוליטי - זהו צו השעה. זה האינטרס",
-      "tweet_url": "https://twitter.com/gantzbe/status/1978878276018766011",
+      "tweet_text": "Ід мубарак усім мусульманам в Україні та в усьому світі. Цьогорічний Рамазан-байрам знову проходить для громад України в час повномасштабної війни, яка триває вже пʼятий рік, але ми памʼятаємо, що російська агресія почалася ще 2014 року з того, що росіяни знову відібрали дім і",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2034933845187797329",
       "domain": "military",
-      "reasoning": "The claim that the IDF has needed more soldiers for two years and that this situation will not change is partially accurate. In 2023 and 2024, the IDF experienced a surge in recruitment, with combat units receiving more soldiers than anticipated, sometimes over 20% more than expected. However, by early 2026, the IDF acknowledged inefficiencies in manpower management, admitting to unnecessary recruitment of thousands of reservists and initiating plans to reduce the number of reservists. This indicates that while there was a need for more soldiers in the past two years, the situation is evolving, and the assertion that the need 'will not change' lacks nuance."
+      "reasoning": "The claim states that the full-scale war in Ukraine has been ongoing for five years as of March 2026. However, Russia's full-scale invasion began on February 24, 2022, which is just over four years prior to March 2026. While the conflict between Russia and Ukraine started in 2014 with the annexation of Crimea and the war in Donbas, the full-scale invasion commenced in 2022. Therefore, the claim exaggerates the duration of the full-scale war by approximately one year."
     },
     {
-      "claim": "Yesterday, 240 Haredim enlisted in the IDF, most of them in combat roles.",
+      "claim": "Ukrainian manufacturers signed four cooperation documents with the Spanish engineering and technology group Sener Aerospace & Defence, three of which are specifically with Sener, regarding collaboration in the missile and air defense sectors.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "אתמול התגייסו 240 חרדים לצה״ל, רובם לקרבי. זה עדיין לא מספיק, במיוחד בזמן מלחמה - אבל זו התחלה שמראה שהדברים משתנים. בציבור החרדי יש יותר ויותר צעירים שרוצים להיות חלק מברית המשרתים. הם מבינים שזה לא נגד התורה - להפך, זו מצווה. לחבר’ה שהתגייסו אני אומר - תמשיכו, אתם פורצי הדרך",
-      "tweet_url": "https://twitter.com/gantzbe/status/1962923130491699340",
+      "tweet_text": "Зустрівся з керівництвом іспанської інженерно-технологічної групи Sener Aerospace & Defence. Сьогодні наші виробники підписали тут чотири документи про співпрацю, три з яких – саме із Sener. Домовленості стосуються налагодження співпраці в ракетній галузі й ППО. Це те, що",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2034244632406605918",
       "domain": "military",
-      "reasoning": "The claim that 240 Haredim enlisted in the IDF on September 1, 2025, with most in combat roles, is accurate. Reports confirm that 198 of these recruits joined combat units, while 42 entered combat support roles, aligning with the statement that most enlisted in combat positions."
+      "reasoning": "On March 18, 2026, Ukrainian defense manufacturers signed four cooperation agreements in Madrid. Three of these agreements were specifically with the Spanish engineering and technology group Sener Aerospace & Defence, focusing on collaboration in the missile and air defense sectors. This information is corroborated by multiple reputable sources, including the official website of the President of Ukraine. ([president.gov.ua](https://www.president.gov.ua/en/news/prezident-zustrivsya-z-kerivnictvom-ispanskoyi-grupi-sener-s-103421?utm_source=openai))"
     },
     {
-      "claim": "The military calls off strikes targeting terrorists due to potential civilian collateral damage.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "The resolution passed by the International Association of Genocide Scholars (IAGS) on Israel is nothing short of deceitful, disgraceful malpractice. A military that calls off strikes targeting terrorists due to potential civilian collateral damage, sends prior warning of",
-      "tweet_url": "https://twitter.com/gantzbe/status/1962567104181236060",
+      "claim": "Ukraine is grateful for the PURL program, which allows them to purchase Patriot missiles from the United States.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "Зустрівся з Генеральним секретарем НАТО Марком Рютте. Обговорили багато різних тем, але передусім посилення ППО та захист наших людей від російських атак. Ми дуже вдячні за програму PURL, завдяки якій можемо купувати в Америки ракети для «петріотів». Будемо працювати над",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2033995819637215311",
       "domain": "military",
-      "reasoning": "The claim that the military calls off strikes targeting terrorists due to potential civilian collateral damage is partially accurate. The Israeli Defense Forces (IDF) have been known to issue warnings to civilians prior to airstrikes, aiming to minimize civilian casualties. For instance, during operations in Lebanon in 2024, the IDF provided evacuation warnings to residents before conducting airstrikes. However, there have been instances where the IDF proceeded with strikes that resulted in significant civilian casualties, even after issuing warnings. Notably, the 2025 strikes on Nasser Hospital in Gaza led to over 20 civilian deaths, including journalists and medical staff, despite prior warnings. This indicates that while the IDF does take measures to avoid civilian harm, it does not consistently call off strikes solely due to potential civilian collateral damage."
+      "reasoning": "The PURL (Prioritized Ukraine Requirements List) program is a U.S.-NATO initiative that enables Ukraine to purchase American-made weapons, including Patriot missiles, funded by partner countries. Ukrainian President Volodymyr Zelenskyy has confirmed that Ukraine has received significant funding through PURL, with the first aid packages including missiles for Patriot systems. NATO Secretary General Mark Rutte stated that approximately 75% of Patriot missile deliveries to Ukraine have been facilitated through PURL. Therefore, the claim that Ukraine is grateful for the PURL program, which allows them to purchase Patriot missiles from the United States, is accurate."
+    },
+    {
+      "claim": "Ukraine has developed drones that can shoot down Russian fighter jets from the sea and boats that can carry other drones and strike targets on land.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "We started with simple kamikaze sea drones. Then we built drones with turrets that can shoot down helicopters. Now we have drones that can shoot down Russian fighter jets from the sea. We have developed boats that carry other drones. We also have boats that strike targets on land",
+      "tweet_url": "https://twitter.com/ZelenskyyUa/status/2033989157421265362",
+      "domain": "military",
+      "reasoning": "In May 2025, Ukraine's Defense Intelligence agency (HUR) confirmed that a Ukrainian maritime drone successfully shot down a Russian Su-30 fighter jet over the Black Sea near Novorossiysk, marking the first known instance of a combat aircraft being destroyed by a sea-based drone. Additionally, Ukraine has developed boats capable of carrying other drones and striking land targets, demonstrating significant advancements in their naval drone capabilities."
     }
   ],
-  "generated_at": "2026-04-04T08:13:17.223Z"
+  "generated_at": "2026-04-05T08:15:09.270Z"
 }
