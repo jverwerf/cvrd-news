@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attack Casualties",
-    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, intensifying the ongoing conflict between Israel and Iran. This incident is part of a broader pattern of retaliatory actions and military engagements between the two countries. The attack has heightened concerns about regional stability and the potential for further escalation of conflict in the Middle East.",
+    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, further escalating tensions between Israel and Iran. This incident is part of a series of retaliatory actions and military engagements between the two nations. The attack has raised concerns about regional stability and the potential for further conflict in the Middle East.",
     "severity": "major",
     "detected_at": "2026-04-04T19:00:07.128Z",
-    "last_updated": "2026-04-04T23:01:07.749Z",
+    "last_updated": "2026-04-05T01:00:37.713Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications extend beyond Israel and Iran, involving global powers with vested interests in the region's resources and political landscape.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing outrage over the loss of life and others justifying the attack as a necessary measure against Iran's nuclear ambitions. Memes and conspiracy theories are circulating, suggesting hidden alliances and ulterior motives behind the attack, with some users speculating about the involvement of other nations in the conflict.",
-    "image_prompt": "A dramatic editorial photo of a smoldering industrial complex at dawn, with dark smoke billowing into a red-tinted sky, symbolizing the tension and destruction. In the foreground, a lone figure stands silhouetted, representing the human cost of geopolitical conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications of these attacks extend beyond Israel and Iran, involving global powers with vested interests in the region's resources and political landscape.",
+    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing outrage over the loss of life and others justifying the attack as a necessary measure against Iran's nuclear ambitions. Memes and conspiracy theories are circulating, suggesting hidden alliances and questioning the timing of the attack in relation to recent diplomatic talks.",
+    "image_prompt": "A dramatic editorial photo of a smoldering industrial complex at dawn, with dark smoke billowing into a red-tinted sky, symbolizing the volatile and fiery nature of geopolitical conflicts.",
     "sources": [
       {
         "name": "BBC",
@@ -33,11 +33,25 @@
         "duration": 188
       },
       {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=jqrC5b0OZe4",
+        "embed_id": "jqrC5b0OZe4",
+        "title": "Mass Casualties After Iran Strikes Arad & Dimona | Israel Under Fire",
+        "duration": 106
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=ERROs9KioAI",
+        "embed_id": "ERROs9KioAI",
+        "title": "Latest Update: Iran war escalates, US troops deployed, oil prices crash",
+        "duration": 1407
+      },
+      {
         "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
+        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
+        "embed_id": "2039812338820255793",
+        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
+        "author": "TadhgHickey"
       },
       {
         "platform": "reddit",
@@ -65,15 +79,29 @@
         "title": "US-Israel Strike Iran: Bushehr Nuke Plant, Khuzestan Petrochemical Zone Hit | Middle East War",
         "channel": "MIRROR NOW",
         "duration": 188
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=jqrC5b0OZe4",
+        "embed_id": "jqrC5b0OZe4",
+        "title": "Mass Casualties After Iran Strikes Arad & Dimona | Israel Under Fire",
+        "channel": "Al Jazeera English",
+        "duration": 106
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=ERROs9KioAI",
+        "embed_id": "ERROs9KioAI",
+        "title": "Latest Update: Iran war escalates, US troops deployed, oil prices crash",
+        "channel": "Al Jazeera English",
+        "duration": 1407
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/warfareanalysis/status/2039874952044728446",
-        "embed_id": "2039874952044728446",
-        "title": "⚡️About an hour ago, Iran launched a missile attack on Israel.\n\nVideo compilation from different locations where impacts or shrapnel were reported.\n\nN",
-        "author": "warfareanalysis"
+        "url": "https://x.com/TadhgHickey/status/2039812338820255793",
+        "embed_id": "2039812338820255793",
+        "title": "USrael just carried out a terrorist attack in Karaj, Iran. It was a notorious 'double tap' attack on civilian infrastructure which murdered medical pe",
+        "author": "TadhgHickey"
       },
       {
         "platform": "reddit",
@@ -92,217 +120,6 @@
         "url": "https://reddit.com/r/politics/comments/1sc8v65/bolton_trump_likely_in_panic_mode_after_iran/",
         "embed_id": "1sc8v65",
         "title": "Bolton: Trump likely in ‘panic mode’ after Iran attacks US fighter jets"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-04.png"
-  },
-  {
-    "topic": "Iran Strike Near Nuclear Facility",
-    "summary": "A strike near Iran's Bushehr nuclear facility resulted in the death of a security guard and damage to a nearby building. The incident has raised concerns about the safety of nuclear sites in the Middle East. The origins and motivations behind the attack are currently unknown, complicating the geopolitical tensions in the region.",
-    "severity": "major",
-    "detected_at": "2026-04-04T11:00:07.183Z",
-    "last_updated": "2026-04-04T23:02:17.902Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential involvement of external state actors or proxy groups that benefit from destabilizing Iran's nuclear capabilities. The focus remains on the immediate security implications rather than the broader geopolitical chess game involving regional powers and their interests in Iran's nuclear program.",
-    "social_summary": "Social media is buzzing with speculation about the attack's origins, with some users blaming foreign intelligence agencies while others suggest internal sabotage. Memes and conspiracy theories are circulating, with hashtags like #IranStrike and #NuclearThreat trending, reflecting public anxiety and distrust.",
-    "image_prompt": "A dramatic, symbolic image of a cracked globe with a nuclear symbol, set against a backdrop of a desert landscape at dusk, with shadows of figures in the foreground representing unseen forces.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/4/iaea-says-projectile-hits-near-irans-bushehr-nuclear-plant-killing-one?traffic_source=rss",
-        "lean": "center",
-        "title": "Projectile hits near Iran’s Bushehr nuclear plant, killing one: IAEA"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=SJHc9d6zX2U",
-        "embed_id": "SJHc9d6zX2U",
-        "title": "Airstrikes hit near Iranian nuclear facility after US warplanes shot down",
-        "duration": 186
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/VigilantFox/status/2034420943464886377",
-        "embed_id": "2034420943464886377",
-        "title": "REPORT: A missile strike near Iran’s Bushehr nuclear facility has triggered a Russian evacuation, and Moscow is now warning Israel it may have crossed",
-        "author": "VigilantFox"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
-        "embed_id": "1sbjb2a",
-        "title": "Open letter to our Government - What are our values?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PublicFreakout/comments/1sbuafc/usisraeli_doubletap_strike_on_the_b1_bridge/",
-        "embed_id": "1sbuafc",
-        "title": "US/Israeli double-tap strike on the B1 bridge happened while Iranians were celebrating ‘Day of Nature’ and while families were out and about in the ar"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TimesNow/comments/1sbo0p3/another_us_jet_lost_a10_warthog_attack_plane/",
-        "embed_id": "1sbo0p3",
-        "title": "Another US Jet Lost: A-10 Warthog Attack Plane Crashes Near Strait of Hormuz After Iran F-15 'Strike'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1sbeuc4/13_us_bases_in_middle_east_nearly_uninhabitable/",
-        "embed_id": "1sbeuc4",
-        "title": "13 U.S. Bases in Middle East Nearly Uninhabitable After Iran Missile Strikes — CENTCOM Forced to Disperse Troops as War Reshapes American Force Postur"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/pwnhub/comments/1sbopkg/irans_strikes_on_oracle_facilities_put_cloud/",
-        "embed_id": "1sbopkg",
-        "title": "Iran's Strikes on Oracle Facilities Put Cloud Infrastructure Security on the Map"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ProIran/comments/1sbip5b/iaeas_silence_makes_it_complicit_in_usisraeli/",
-        "embed_id": "1sbip5b",
-        "title": "IAEA’s silence makes it complicit in US-Israeli attacks on Iran’s nuclear facilities: AEOI"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sc74ho/usisraeli_strike_on_irans_bushehr_nuclear_plant/",
-        "embed_id": "1sc74ho",
-        "title": "US-Israeli strike on Iran's Bushehr nuclear plant kills 1, injures 5"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sc8vyy/irans_foreign_minister_warns_attacks_on_nuclear/",
-        "embed_id": "1sc8vyy",
-        "title": "Iran’s foreign minister warns attacks on nuclear facilities will “end life” in Gulf cities"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
-        "embed_id": "1sc7leu",
-        "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
-        "embed_id": "1sc82wy",
-        "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1scj3qe/nuclear_plants_must_never_be_attacked_says/",
-        "embed_id": "1scj3qe",
-        "title": "Nuclear Plants 'Must Never Be Attacked,' Says Watchdog as Iran Reports US-Israeli Strike at Bushehr Facility"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1scjctt/the_problem_of_taking_hormuz/",
-        "embed_id": "1scjctt",
-        "title": "The problem of taking Hormuz"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/navy/comments/1sckhxa/wsj_top_aides_have_privately_made_the_case_to/",
-        "embed_id": "1sckhxa",
-        "title": "WSJ: Top aides have privately made the case to President Trump in recent days that Iran’s power-generating facilities and bridges are legitimate milit"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=SJHc9d6zX2U",
-        "embed_id": "SJHc9d6zX2U",
-        "title": "Airstrikes hit near Iranian nuclear facility after US warplanes shot down",
-        "channel": "LiveNOW from FOX",
-        "duration": 186
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/VigilantFox/status/2034420943464886377",
-        "embed_id": "2034420943464886377",
-        "title": "REPORT: A missile strike near Iran’s Bushehr nuclear facility has triggered a Russian evacuation, and Moscow is now warning Israel it may have crossed",
-        "author": "VigilantFox"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1sbjb2a/open_letter_to_our_government_what_are_our_values/",
-        "embed_id": "1sbjb2a",
-        "title": "Open letter to our Government - What are our values?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PublicFreakout/comments/1sbuafc/usisraeli_doubletap_strike_on_the_b1_bridge/",
-        "embed_id": "1sbuafc",
-        "title": "US/Israeli double-tap strike on the B1 bridge happened while Iranians were celebrating ‘Day of Nature’ and while families were out and about in the ar"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/TimesNow/comments/1sbo0p3/another_us_jet_lost_a10_warthog_attack_plane/",
-        "embed_id": "1sbo0p3",
-        "title": "Another US Jet Lost: A-10 Warthog Attack Plane Crashes Near Strait of Hormuz After Iran F-15 'Strike'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/geopolitics/comments/1sbeuc4/13_us_bases_in_middle_east_nearly_uninhabitable/",
-        "embed_id": "1sbeuc4",
-        "title": "13 U.S. Bases in Middle East Nearly Uninhabitable After Iran Missile Strikes — CENTCOM Forced to Disperse Troops as War Reshapes American Force Postur"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/pwnhub/comments/1sbopkg/irans_strikes_on_oracle_facilities_put_cloud/",
-        "embed_id": "1sbopkg",
-        "title": "Iran's Strikes on Oracle Facilities Put Cloud Infrastructure Security on the Map"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/ProIran/comments/1sbip5b/iaeas_silence_makes_it_complicit_in_usisraeli/",
-        "embed_id": "1sbip5b",
-        "title": "IAEA’s silence makes it complicit in US-Israeli attacks on Iran’s nuclear facilities: AEOI"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sc74ho/usisraeli_strike_on_irans_bushehr_nuclear_plant/",
-        "embed_id": "1sc74ho",
-        "title": "US-Israeli strike on Iran's Bushehr nuclear plant kills 1, injures 5"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sc8vyy/irans_foreign_minister_warns_attacks_on_nuclear/",
-        "embed_id": "1sc8vyy",
-        "title": "Iran’s foreign minister warns attacks on nuclear facilities will “end life” in Gulf cities"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/BreakingPoints/comments/1sc7leu/trump_netanyahu_have_hit_one_of_irans_main/",
-        "embed_id": "1sc7leu",
-        "title": "Trump &amp; Netanyahu have hit one of Iran's main petrochemical hub: the Mahshahr petrochemical zone. The Bushehr nuclear plant was also struck (Iran'"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PublicFreakout/comments/1sc82wy/iranian_families_forced_to_flee_as_they_were/",
-        "embed_id": "1sc82wy",
-        "title": "Iranian families forced to flee as they were celebrating 'Day of Nature' after US/Israeli airstrike on B1 Bridge. At least 8 killed and 95 injured"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/politics/comments/1scj3qe/nuclear_plants_must_never_be_attacked_says/",
-        "embed_id": "1scj3qe",
-        "title": "Nuclear Plants 'Must Never Be Attacked,' Says Watchdog as Iran Reports US-Israeli Strike at Bushehr Facility"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/StockMarket/comments/1scjctt/the_problem_of_taking_hormuz/",
-        "embed_id": "1scjctt",
-        "title": "The problem of taking Hormuz"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/navy/comments/1sckhxa/wsj_top_aides_have_privately_made_the_case_to/",
-        "embed_id": "1sckhxa",
-        "title": "WSJ: Top aides have privately made the case to President Trump in recent days that Iran’s power-generating facilities and bridges are legitimate milit"
       }
     ],
     "image_file": "/images/breaking_2026-04-04.png"
