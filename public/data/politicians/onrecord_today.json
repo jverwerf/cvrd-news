@@ -1,108 +1,108 @@
 {
-  "headline": "Marco Rubio on domestic: 62.4% Truthful",
+  "headline": "בני גנץ - Benny Gantz on military: 73.1% Truthful",
   "person": {
-    "handle": "marcorubio",
-    "name": "Marco Rubio",
-    "role": "U.S. Secretary of State",
-    "photo": "/data/politicians/photo_marcorubio.png"
+    "handle": "gantzbe",
+    "name": "בני גנץ - Benny Gantz",
+    "role": "Minister of Defense",
+    "photo": "/data/politicians/photo_gantzbe.png"
   },
-  "story_topic": "Pam Bondi's Ouster as Attorney General",
-  "search_keyword": "domestic",
-  "topic_score": 62.4,
-  "overall_score": 68.7,
-  "matching_claims": 43,
-  "editorial": "Marco Rubio, now the U.S. Secretary of State, is no stranger to provocative statements. As Pam Bondi's ouster as Attorney General rattles Washington, Rubio's recent claim that a non-citizen student illegally voted in Michigan and his vote will still be counted stands out. This assertion is indeed true, yet highlights a complex picture of election integrity issues without offering the whole story.\n\nRubio's track record on domestic matters, especially regarding immigration and electoral integrity, is peppered with partially accurate claims. For instance, his statement about Hispanics voting primarily to avoid military conflicts and protect against criminal migrants was labeled \"Somewhat Misleading.\" Similarly, his account of a wanted killer from El Salvador entering the U.S. and committing murder was also marked as \"Somewhat Misleading.\"\n\nOverall, Rubio's truthfulness score is a middling 68.7, with 43 of his 134 checked claims rated as true. However, with 23 claims deemed misleading and 5 outright false, his pattern reveals a penchant for blending fact with fiction, often skewing data to support a narrative.\n\nFor readers, Rubio's claims are a reminder to critically assess political statements, especially when they intersect with today's hot-button issues.",
+  "story_topic": "U.S. Fighter Jet Shot Down in Iran",
+  "search_keyword": "military",
+  "topic_score": 73.1,
+  "overall_score": 78.3,
+  "matching_claims": 59,
+  "editorial": "As the world holds its breath over the recent downing of a U.S. fighter jet in Iran, Israeli Defense Minister Benny Gantz finds himself in the midst of a military storm of his own making. Gantz, a key figure in Israel's defense apparatus, has been scrutinized for his claims regarding military operations in Israel and its borders. His assertion that Israeli soldiers are taking control of points in Lebanon has been verified as true, yet his broader narratives often waver in accuracy.\n\nGantz's track record on military claims is a mixed battlefield. His statement about reservists facing cuts to processing days post-service aligns with recent reports, earning it a true verdict. However, his claim of Israel conducting bombings \"of hundreds and thousands of tons\" is deemed somewhat misleading, raising eyebrows about the precision of his military narrative. His assertion about hostages and border terrorists, debunked as false, further complicates his image as a reliable source on defense matters.\n\nWith an overall truthfulness score of 78.3 and a topic-specific score of 73.1, Gantz's statements are more often true than not. Yet, the pattern of inaccuracies suggests a tendency to amplify threats and achievements—a common tactic in defense rhetoric. Out of 209 claims, 102 have been rated true, with 11 misleading and 7 false, indicating a need for cautious interpretation of his declarations.\n\nFor those watching the skies and borders, Gantz's mixed messages underscore the importance of discerning fact from embellishment in times of crisis.",
   "matched_tweets": [
     {
-      "claim": "Hispanics voted to lower the high cost of living, keep their kids from being sent to fight a war, and protect their families from criminal illegal migrants.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Why are so many in the media shocked that hispanics voted to lower the high cost of living, keep their kids from being sent to fight a war & protect their families from criminal illegal migrants who rob, rape and/or murder people in America?",
-      "tweet_url": "https://twitter.com/marcorubio/status/1854319437412700626",
-      "domain": "domestic",
-      "reasoning": "The claim suggests that Hispanics voted primarily to address the high cost of living, avoid military conflicts, and protect against criminal illegal migrants. While economic concerns were significant for Hispanic voters in the 2024 election, with many expressing worries about the cost of living and "
+      "claim": "During the time when our children were drafted into reserves, there were 251 hostages in Gaza, there were terrorists in the border area, and the fate of the State of Israel was in question for the first time since its establishment.",
+      "verdict": "FALSE",
+      "score": 0,
+      "tweet_text": "יאיר, צר לי על העובדה שבזמן שהילדים של כולנו גויסו למילואים, שבעזה היו 251 חטופים, שבעוטף עדיין היו מחבלים ושגורלה של מדינת ישראל עמד לראשונה בסימן שאלה מאז הקמתה - בחרת לשבת בחוץ ולעשות שיקולים פוליטיים. יש רגעים שגם מפוליטיקאים מותר לדרוש מנהיגות אחרת. לא את הקריירה הפוליטית",
+      "tweet_url": "https://twitter.com/gantzbe/status/2035802525157531822",
+      "domain": "military",
+      "reasoning": "The claim states that during the time when children were drafted into reserves, there were 251 hostages in Gaza, terrorists in the border area, and the fate of the State of Israel was in question for the first time since its establishment. However, as of January 26, 2026, all hostages had been returned from Gaza to Israel, and the remains of the last hostage were recovered on that date. Therefore, by March 22, 2026, there were no hostages remaining in Gaza. Additionally, while there have been incidents involving terrorists near the border, such as the elimination of three terrorists in northern Gaza on March 10, 2026, these do not indicate a situation where the fate of the State of Israel was in question. Therefore, the claim is false."
     },
     {
-      "claim": "A non-citizen from China voted in Michigan and the vote will still be counted.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "A non-citizen from China voted in Michigan While now facing charges THE VOTE WILL STILL BE COUNTED!",
-      "tweet_url": "https://twitter.com/marcorubio/status/1853113579609727340",
-      "domain": "domestic",
-      "reasoning": "A Chinese national, Haoxiang Gao, illegally registered and voted in Michigan's 2024 election. He was charged with false claims to register or vote and voting by aliens. While Michigan law mandates counting all cast ballots, including those later found illegal, such instances are extremely rare. In t"
-    },
-    {
-      "claim": "A non-citizen student illegally voted in Michigan and the vote will still be counted.",
+      "claim": "Israeli soldiers are taking control of points in Lebanon while the Knesset is engaged in divisive legislation.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "A non-citizen student illegally voted in Michigan this weekend Even though the student now faces charges, THE VOTE WILL STILL BE COUNTED!",
-      "tweet_url": "https://twitter.com/marcorubio/status/1851991917036228620",
-      "domain": "domestic",
-      "reasoning": "A non-U.S. citizen student at the University of Michigan illegally registered and voted in the 2024 general election. Despite facing felony charges, the vote was counted because Michigan law does not provide a mechanism to retrieve and void ballots once they are cast. This incident underscores the r"
+      "tweet_text": "השתגענו? אני נמצא בצפון, יש פה תושבים חזקים, שנשארים בבתים, שומרים על הילדים שלהם. פגשתי לוחמים שיצאו מהבית ולא יודעים מתי יחזרו. ובזמן שכולנו עומדים מאחורי כוחות הביטחון וכל אזרחי ישראל בחזית - הכנסת עוסקת בחקיקה שקורעת אותנו? לוחמי צה\"ל משתלטים על נקודות בלבנון, ובכנסת הולכים",
+      "tweet_url": "https://twitter.com/gantzbe/status/2029187080966836604",
+      "domain": "military",
+      "reasoning": "The claim that Israeli soldiers are taking control of points in Lebanon is accurate. On March 3, 2026, Israeli Defense Minister Israel Katz announced that the Israel Defense Forces (IDF) were authorized to advance and take control of additional strategic positions in Lebanon to prevent attacks on Israeli border communities. Concurrently, the Knesset has been advancing controversial legislation, including a law instituting the death penalty for Palestinians convicted of killing Israelis in nationalistic attacks, which has been criticized for being discriminatory and in violation of international standards. Therefore, the claim is substantiated by current events."
     },
     {
-      "claim": "Federal agencies knew a rooftop sniper was a significant vulnerability at Trump's outdoor rallies and the Secret Service failed to address it.",
+      "claim": "Netanyahu failed in his responsibility for the security of Israeli citizens on October 7th.",
       "verdict": "TRUE",
       "score": 1,
-      "tweet_text": "Even before the attempted assassination of Trump, federal agencies knew a rooftop sniper was a significant vulnerability at his outdoor rallies and Secret Service failed to address it",
-      "tweet_url": "https://twitter.com/marcorubio/status/1816113955292450898",
-      "domain": "domestic",
-      "reasoning": "Prior to the attempted assassination of former President Donald Trump at a July 2024 rally in Butler, Pennsylvania, federal agencies, including the Secret Service, were aware that the rooftop of the AGR International building posed a significant security vulnerability due to its clear line of sight "
+      "tweet_text": "ממה אתה מפחד, נתניהו? כמו גנב בלילה בחרת ציטוטים שנוחים לך, כאלה שמתאימים לסיפור שאתה מנסה למכור. על יכולות שיווק אפשר לפרגן - בזה אתה מצטיין. אבל אתה לא איש שיווק - אתה ראש ממשלת ישראל. וביום הארור של ה־7/10 אתה ישבת בכיסא ונשאת באחריות העליונה לביטחונם של אזרחי ישראל - וכשלת.",
+      "tweet_url": "https://twitter.com/gantzbe/status/2019737193854517291",
+      "domain": "military",
+      "reasoning": "The claim that Prime Minister Benjamin Netanyahu failed in his responsibility for the security of Israeli citizens on October 7, 2023, is supported by multiple sources. The Israeli military's investigation acknowledged a 'complete failure' in preventing the Hamas attack, citing underestimation of Hamas' capabilities and intelligence shortcomings. Despite these findings, Netanyahu has consistently denied personal responsibility, attributing the failures to intelligence agencies and previous government decisions. Opposition leaders, such as Yair Lapid, have accused Netanyahu of blocking comprehensive investigations into the attack, further suggesting a failure in leadership responsibility."
     },
     {
-      "claim": "A wanted killer from El Salvador crossed the border and was released into the U.S. by Biden, and was arrested in Maryland for murdering a mother of 5.",
+      "claim": "We conducted bombings of hundreds and thousands of tons on terrorist targets before the ground entry and after evacuating the population.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "In 2023 a wanted killer fled El Salvador to America by crossing Biden’s open border & was released into our country by Biden Last night he was arrested in Maryland for the murder of a mother of 5",
-      "tweet_url": "https://twitter.com/marcorubio/status/1802123145391849689",
-      "domain": "domestic",
-      "reasoning": "The claim that a wanted killer from El Salvador crossed the border and was released into the U.S. by the Biden administration, later committing a murder in Maryland, is partially accurate but lacks crucial context. In 2023, Victor Martinez-Hernandez, a fugitive from El Salvador, illegally entered th"
+      "tweet_text": "הנזק בעלילת הדם של נתניהו שאני סיכנתי חיילי גולני הוא לא הפגיעה הפוליטית בי אלא הפגיעה באמון של חיילי צה\"ל ובמפקדים ששולחים אותם לקרב. זה מה שהוא עשה שוב. אנחנו שומרים על החיילים שלנו וביצענו הפצצות במאות ואלפי טונות על יעדי טרור לפני הכניסה הקרקעית ואחרי פינוי אוכלוסייה. מבחינה",
+      "tweet_url": "https://twitter.com/gantzbe/status/2016799492872208498",
+      "domain": "military",
+      "reasoning": "The claim that Israel conducted bombings of hundreds and thousands of tons on terrorist targets before ground entry and after evacuating the population is partially accurate. Israel did carry out extensive airstrikes prior to ground operations, reportedly dropping over 70,000 tonnes of bombs on Gaza by 2024. However, evidence indicates that these bombings often occurred in areas where civilians were present, even after evacuation orders. Analyses by CNN, The New York Times, and Sky News found that Israel bombed areas it had previously designated as safe zones for civilians. Therefore, while the bombings targeted terrorist sites, the assertion that they occurred only after evacuating the population is misleading, as many civilians remained in these areas during the strikes."
     },
     {
-      "claim": "The Biden Administration is allowing dangerous gang members to enter the country.",
+      "claim": "Reservists are being told that their processing and organization days after long service are being cut.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "מילואימניקים מדווחים לי בשעות האחרונות שהוחלט לקצץ להם את ימי העיבוד וההתארגנות אחרי שירות ארוך של חודשים. זו שערוריה שאין כדוגמתה. במקום לגייס את החרדים ולהקל על מי שנושאים בנטל - מכבידים. על מי אתם עושים סיבוב? על מי שמתייצבים ל-100 ימים? לחודשיים? בעולם שבו אנחנו חיים, אם יש",
+      "tweet_url": "https://twitter.com/gantzbe/status/2020788229583012071",
+      "domain": "military",
+      "reasoning": "The claim that reservists are being informed about cuts to their processing and organization days after extended service is accurate. Recent reports indicate that the Israel Defense Forces (IDF) have implemented directives reducing post-deployment processing days and preparation periods for reservists. These changes have led to significant backlash from reservist commanders and senior officers, who warn that such reductions could undermine operational preparedness and the mental resilience of soldiers after prolonged periods of service. The IDF's decision to cut these essential recovery and organization days aligns with the claim made in the tweet."
+    },
+    {
+      "claim": "Terrorists outside Gaza broke the ceasefire and participated in attacks against our soldiers.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "המחבלים שמחוץ לעיר עזה שברו את הפסקת האש, וחלקם השתתפו במתקפות נגד החיילים שלנו. אסור לתת להם לצאת מהמנהרות ולהתארגן מחדש - בטח לא כשיש לנו עדיין חטופים חללים בעזה. אחרת - חזרנו ל-6 באוקטובר.",
+      "tweet_url": "https://twitter.com/gantzbe/status/1985289231787319560",
+      "domain": "military",
+      "reasoning": "The claim that terrorists outside Gaza broke the ceasefire and participated in attacks against Israeli soldiers is supported by multiple reports. Between November 22 and November 26, 2025, Palestinian terrorists violated the Gaza ceasefire 14 times, including an incident on November 22 where an armed terrorist used a humanitarian aid route to fire at Israeli troops. Additionally, from November 13 to November 21, there were at least eight ceasefire violations involving attacks on Israeli soldiers. These incidents confirm that the ceasefire was breached by terrorists outside Gaza who engaged in attacks against Israeli forces."
+    },
+    {
+      "claim": "The coalition deal does not include actual recruitment for military service.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "עוד “חוק גיוס” בלי גיוס. עוד דיל קואליציוני על הגב של הילדים שלנו. ביטחון ישראל לא אמור להיות קלף פוליטי. תתביישו.",
+      "tweet_url": "https://twitter.com/gantzbe/status/1983244000837456292",
+      "domain": "military",
+      "reasoning": "The claim that the coalition deal does not include actual recruitment for military service is accurate. Despite various legislative efforts and proposals aimed at addressing the conscription of ultra-Orthodox (haredi) men into the Israel Defense Forces (IDF), no effective measures have been implemented to enforce their enlistment. For instance, a bill proposed in November 2025 was criticized for its broad definitions and weak sanctions, making it unlikely to significantly increase haredi recruitment. Additionally, the bill allowed for non-military service roles and included broad definitions of 'haredi,' further diluting its impact. These factors indicate that the coalition agreements and legislative actions have not resulted in substantial recruitment for military service."
+    },
+    {
+      "claim": "The IDF has needed more soldiers for two years, and this situation will not change.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "I have been warning the Biden Administration for months that we are being invaded by dangerous gang members and yet they keep letting them in.",
-      "tweet_url": "https://twitter.com/marcorubio/status/1798340209584877752",
-      "domain": "domestic",
-      "reasoning": "The claim that the Biden Administration is allowing dangerous gang members to enter the country has some basis, as reports indicate that gang-affiliated individuals have entered the U.S. during this administration. For instance, a House Judiciary Committee report highlighted that the Department of H"
+      "tweet_text": "יש שתי אפשרויות: או שח״כ ביסמוט וחבריו לקואליציה חושבים שהביאו את השלום ולא צריך עוד חיילים, או שהם פשוט משחקים בביטחון המדינה והאינטרס הלאומי בשביל פוליטיקה זולה. צה״ל חייב עוד חיילים כבר שנתיים, וזה לא הולך להשתנות. גיוס חרדים זה לא משחק פוליטי - זהו צו השעה. זה האינטרס",
+      "tweet_url": "https://twitter.com/gantzbe/status/1978878276018766011",
+      "domain": "military",
+      "reasoning": "The claim that the IDF has needed more soldiers for two years and that this situation will not change is partially accurate. In 2023 and 2024, the IDF experienced a surge in recruitment, with combat units receiving more soldiers than anticipated, sometimes over 20% more than expected. However, by early 2026, the IDF acknowledged inefficiencies in manpower management, admitting to unnecessary recruitment of thousands of reservists and initiating plans to reduce the number of reservists. This indicates that while there was a need for more soldiers in the past two years, the situation is evolving, and the assertion that the need 'will not change' lacks nuance."
     },
     {
-      "claim": "There are terrorists inside of America who entered via Biden's open border.",
+      "claim": "Yesterday, 240 Haredim enlisted in the IDF, most of them in combat roles.",
+      "verdict": "TRUE",
+      "score": 1,
+      "tweet_text": "אתמול התגייסו 240 חרדים לצה״ל, רובם לקרבי. זה עדיין לא מספיק, במיוחד בזמן מלחמה - אבל זו התחלה שמראה שהדברים משתנים. בציבור החרדי יש יותר ויותר צעירים שרוצים להיות חלק מברית המשרתים. הם מבינים שזה לא נגד התורה - להפך, זו מצווה. לחבר’ה שהתגייסו אני אומר - תמשיכו, אתם פורצי הדרך",
+      "tweet_url": "https://twitter.com/gantzbe/status/1962923130491699340",
+      "domain": "military",
+      "reasoning": "The claim that 240 Haredim enlisted in the IDF on September 1, 2025, with most in combat roles, is accurate. Reports confirm that 198 of these recruits joined combat units, while 42 entered combat support roles, aligning with the statement that most enlisted in combat positions."
+    },
+    {
+      "claim": "The military calls off strikes targeting terrorists due to potential civilian collateral damage.",
       "verdict": "SOMEWHAT MISLEADING",
       "score": 0.65,
-      "tweet_text": "Read between the lines of the recent and numerous urgent warnings from the FBI director It’s not just possible, it is almost certain we now have terrorists inside of America who entered via Biden’s open border #FoxNews",
-      "tweet_url": "https://twitter.com/marcorubio/status/1792571876847374572",
-      "domain": "domestic",
-      "reasoning": "FBI Director Christopher Wray has expressed concerns about known or suspected terrorists using fake identification to cross the southern border, indicating that such individuals have entered the U.S. ([newsweek.com](https://www.newsweek.com/terrorists-using-fake-ids-cross-border-raises-red-flags-fbi"
-    },
-    {
-      "claim": "We have had 11 million illegal immigrants come in under 3 years of Biden.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "11million illegal immigrants? That was 10 years ago. Now we have had that many come in under 3 years of Biden and we are unfortunately going to have to do something dramatic about it",
-      "tweet_url": "https://twitter.com/marcorubio/status/1792334339428298850",
-      "domain": "domestic",
-      "reasoning": "The claim that 11 million illegal immigrants have entered the U.S. under President Biden over three years is an overstatement. U.S. Customs and Border Protection (CBP) data indicates approximately 7.3 million encounters at the southwest border from January 2021 to early 2024. However, 'encounters' i"
-    },
-    {
-      "claim": "Hundreds of thousands of American students are facing safety issues and disruptions in their education due to violent antisemitic leftist mobs.",
-      "verdict": "MISLEADING",
-      "score": 0.35,
-      "tweet_text": "Hundreds of thousands of American students are having their safety endangered and their education disrupted by violent antisemitic leftist mobs Where is our President?",
-      "tweet_url": "https://twitter.com/marcorubio/status/1786002075744158072",
-      "domain": "domestic",
-      "reasoning": "While there were instances of antisemitic incidents and disruptions on American campuses in 2024, the claim that 'hundreds of thousands of American students' faced safety issues and educational disruptions due to 'violent antisemitic leftist mobs' is an exaggeration. Specific events, such as the dis"
-    },
-    {
-      "claim": "The foreign aid bill provided over $3.5 billion to help bring migrants from the Middle East to America.",
-      "verdict": "SOMEWHAT MISLEADING",
-      "score": 0.65,
-      "tweet_text": "Not only did the “foreign aid” bill that passed yesterday do nothing about the mass migration invasion of America, it provided over $3.5 billion to help bring migrants from the Middle East to America",
-      "tweet_url": "https://twitter.com/marcorubio/status/1783146713777070084",
-      "domain": "domestic",
-      "reasoning": "The claim that the foreign aid bill provided over $3.5 billion to help bring migrants from the Middle East to America is partially accurate but lacks context. The $95 billion aid package signed into law in April 2024 did include $3.5 billion allocated to the Department of State for expanding migrati"
+      "tweet_text": "The resolution passed by the International Association of Genocide Scholars (IAGS) on Israel is nothing short of deceitful, disgraceful malpractice. A military that calls off strikes targeting terrorists due to potential civilian collateral damage, sends prior warning of",
+      "tweet_url": "https://twitter.com/gantzbe/status/1962567104181236060",
+      "domain": "military",
+      "reasoning": "The claim that the military calls off strikes targeting terrorists due to potential civilian collateral damage is partially accurate. The Israeli Defense Forces (IDF) have been known to issue warnings to civilians prior to airstrikes, aiming to minimize civilian casualties. For instance, during operations in Lebanon in 2024, the IDF provided evacuation warnings to residents before conducting airstrikes. However, there have been instances where the IDF proceeded with strikes that resulted in significant civilian casualties, even after issuing warnings. Notably, the 2025 strikes on Nasser Hospital in Gaza led to over 20 civilian deaths, including journalists and medical staff, despite prior warnings. This indicates that while the IDF does take measures to avoid civilian harm, it does not consistently call off strikes solely due to potential civilian collateral damage."
     }
   ],
-  "generated_at": "2026-04-03T15:50:58.677Z"
+  "generated_at": "2026-04-04T08:13:17.223Z"
 }

@@ -1,15 +1,15 @@
 [
   {
     "topic": "Iran Attack Casualties",
-    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, further escalating tensions between Israel and Iran. This incident is part of a series of retaliatory actions and military engagements between the two nations. The attack has raised concerns about regional stability and the potential for further conflict in the Middle East.",
+    "summary": "An attack on Iran's petrochemical hub has resulted in the deaths of five individuals, escalating tensions between Israel and Iran. This incident is part of a series of retaliatory actions and military engagements between the two nations. The attack has raised concerns about regional stability and the potential for further conflict in the Middle East.",
     "severity": "major",
     "detected_at": "2026-04-04T19:00:07.128Z",
-    "last_updated": "2026-04-05T01:00:37.713Z",
+    "last_updated": "2026-04-05T05:01:01.168Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
     "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these attacks. The petrochemical industry is a significant part of Iran's economy, and targeting it is a strategic move to weaken Iran's financial stability. Additionally, the geopolitical implications of these attacks extend beyond Israel and Iran, involving global powers with vested interests in the region's resources and political landscape.",
-    "social_summary": "Social media is buzzing with polarized opinions, with some users expressing outrage over the loss of life and others justifying the attack as a necessary measure against Iran's nuclear ambitions. Memes and conspiracy theories are circulating, suggesting hidden alliances and questioning the timing of the attack in relation to recent diplomatic talks.",
-    "image_prompt": "A dramatic editorial photo of a smoldering industrial complex at dawn, with dark smoke billowing into a red-tinted sky, symbolizing the volatile and fiery nature of geopolitical conflicts.",
+    "social_summary": "Social media is buzzing with polarized reactions. Some users are sharing memes that trivialize the conflict, while others are spreading conspiracy theories about foreign powers orchestrating the attacks. Hashtags calling for peace and de-escalation are trending, but so are those demanding retaliation and justice for the victims.",
+    "image_prompt": "A dramatic editorial photo of a smoldering petrochemical plant at dusk, with dark smoke billowing into the sky, symbolizing the tension and unrest in the Middle East. In the foreground, a lone figure stands silhouetted, representing the human cost of geopolitical conflicts.",
     "sources": [
       {
         "name": "BBC",
@@ -31,13 +31,6 @@
         "embed_id": "2TkadNX3nuw",
         "title": "US-Israel Strike Iran: Bushehr Nuke Plant, Khuzestan Petrochemical Zone Hit | Middle East War",
         "duration": 188
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=jqrC5b0OZe4",
-        "embed_id": "jqrC5b0OZe4",
-        "title": "Mass Casualties After Iran Strikes Arad & Dimona | Israel Under Fire",
-        "duration": 106
       },
       {
         "platform": "youtube",
@@ -79,13 +72,6 @@
         "title": "US-Israel Strike Iran: Bushehr Nuke Plant, Khuzestan Petrochemical Zone Hit | Middle East War",
         "channel": "MIRROR NOW",
         "duration": 188
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=jqrC5b0OZe4",
-        "embed_id": "jqrC5b0OZe4",
-        "title": "Mass Casualties After Iran Strikes Arad & Dimona | Israel Under Fire",
-        "channel": "Al Jazeera English",
-        "duration": 106
       },
       {
         "url": "https://www.youtube.com/watch?v=ERROs9KioAI",
