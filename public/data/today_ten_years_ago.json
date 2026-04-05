@@ -1,51 +1,51 @@
 {
-  "date_last_year": "2016-04-04",
-  "date_generated": "2026-04-04T08:08:09.902Z",
-  "summary": "April 4, 2016, was marked by two major events that captured global attention. The Panama Papers leak, unveiled by the ICIJ and *Süddeutsche Zeitung*, exposed the use of offshore tax havens by numerous high-profile individuals, leading to widespread outrage and calls for reform. Meanwhile, in the world of sports, the Villanova Wildcats won the NCAA Men's Basketball Championship in a thrilling game against the North Carolina Tar Heels, highlighted by a last-second three-pointer. These stories underscored significant developments in both international finance and American sports history.",
+  "date_last_year": "2016-04-05",
+  "date_generated": "2026-04-05T07:44:39.893Z",
+  "summary": "April 5, 2016, was marked by significant events in both the political and sports arenas. In the U.S., the Wisconsin presidential primaries were a key focus, with Senator Ted Cruz leading over Donald Trump among Republicans, and Bernie Sanders narrowly ahead of Hillary Clinton on the Democratic side. Meanwhile, in sports, Villanova University clinched the NCAA men's basketball championship in a dramatic finish against the University of North Carolina, thanks to a buzzer-beating three-pointer by Kris Jenkins. These stories captured the nation's attention, reflecting pivotal moments in the 2016 presidential race and college basketball history.",
   "stories": [
     {
-      "headline": "Panama Papers Leak Exposes Global Tax Evasion",
-      "summary": "The Panama Papers, a massive leak of 11.5 million documents from Mossack Fonseca, revealed how politicians, business leaders, and celebrities used offshore tax havens to hide wealth and evade taxes. The leak, published by the ICIJ and *Süddeutsche Zeitung*, led to global outrage, investigations, and policy changes. The documents detailed over 214,000 offshore companies, implicating numerous high-profile individuals.",
+      "headline": "Wisconsin Primaries: Cruz Leads, Sanders Narrowly Ahead",
+      "summary": "The Wisconsin primaries were crucial in the 2016 U.S. presidential race. Senator Ted Cruz led Donald Trump by five points among Republicans, while Bernie Sanders had a slight edge over Hillary Clinton among Democrats. Despite Sanders' recent wins, Clinton maintained a delegate lead. The results were seen as pivotal for both parties' nominations.",
       "youtube_queries": [
-        "Panama Papers leak 2016 global impact",
-        "Mossack Fonseca Panama Papers scandal 2016",
-        "ICIJ Panama Papers investigation 2016"
+        "Wisconsin primaries Ted Cruz Donald Trump April 2016",
+        "Bernie Sanders Hillary Clinton Wisconsin primary 2016",
+        "Wisconsin primary results analysis April 2016"
       ],
-      "category": "world",
+      "category": "politics",
       "videos": [
         {
-          "id": "_byreniNl2Y",
-          "title": "\"Panama Papers\" leak causes major global fallout",
-          "channel": "CBS News",
-          "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+          "id": "96Ncv1DNIk8",
+          "title": "Donald Trump Faces Big Setback in Wisconsin",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
         },
         {
-          "id": "k2APYPjTWZ8",
-          "title": "The Panama Papers, explained with piggy banks",
-          "channel": "Vox",
-          "thumbnail": "https://i.ytimg.com/vi/k2APYPjTWZ8/hqdefault.jpg"
+          "id": "oyQ9Q3OOnlc",
+          "title": "Ted Cruz goes after Donald Trump's lead in Wisconsin",
+          "channel": "Fox News",
+          "thumbnail": "https://i.ytimg.com/vi/oyQ9Q3OOnlc/maxresdefault.jpg"
         },
         {
-          "id": "nEngOAzk0fM",
-          "title": "Panama Papers: Mossack Fonseca leak reveals elite&#39;s tax havens - BBC News",
-          "channel": "BBC News",
-          "thumbnail": "https://i.ytimg.com/vi/nEngOAzk0fM/hqdefault.jpg"
+          "id": "CB1FIzk_ZSo",
+          "title": "Ted Cruz Scores Victory Over Donald Trump in Wisconsin",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/CB1FIzk_ZSo/hqdefault.jpg"
         }
       ],
       "video": {
-        "id": "_byreniNl2Y",
-        "title": "\"Panama Papers\" leak causes major global fallout",
-        "channel": "CBS News",
-        "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+        "id": "96Ncv1DNIk8",
+        "title": "Donald Trump Faces Big Setback in Wisconsin",
+        "channel": "ABC News",
+        "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
       }
     },
     {
       "headline": "Villanova Wins NCAA Title with Buzzer-Beater",
-      "summary": "On April 4, 2016, the Villanova Wildcats won the NCAA Men's Basketball Championship by defeating the North Carolina Tar Heels 77–74. The game ended with a dramatic buzzer-beating three-pointer by Kris Jenkins, securing Villanova's first national title since 1985. This thrilling finish is celebrated as one of the most memorable moments in college basketball history.",
+      "summary": "Villanova University won the NCAA men's basketball championship in a dramatic game against the University of North Carolina. The game was tied in the final seconds after a three-pointer by Marcus Paige of North Carolina. Villanova's Kris Jenkins then scored a three-pointer at the buzzer, securing a 77-74 victory and the championship title.",
       "youtube_queries": [
         "Villanova vs North Carolina NCAA final 2016 highlights",
-        "Kris Jenkins buzzer beater 2016 NCAA championship",
-        "Villanova Wildcats 2016 NCAA championship game recap"
+        "Kris Jenkins buzzer beater NCAA championship 2016",
+        "Villanova NCAA championship victory April 2016"
       ],
       "category": "sports",
       "videos": [
@@ -66,22 +66,22 @@
   ],
   "videos": [
     {
-      "id": "_byreniNl2Y",
-      "title": "\"Panama Papers\" leak causes major global fallout",
-      "channel": "CBS News",
-      "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+      "id": "96Ncv1DNIk8",
+      "title": "Donald Trump Faces Big Setback in Wisconsin",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
     },
     {
-      "id": "k2APYPjTWZ8",
-      "title": "The Panama Papers, explained with piggy banks",
-      "channel": "Vox",
-      "thumbnail": "https://i.ytimg.com/vi/k2APYPjTWZ8/hqdefault.jpg"
+      "id": "oyQ9Q3OOnlc",
+      "title": "Ted Cruz goes after Donald Trump's lead in Wisconsin",
+      "channel": "Fox News",
+      "thumbnail": "https://i.ytimg.com/vi/oyQ9Q3OOnlc/maxresdefault.jpg"
     },
     {
-      "id": "nEngOAzk0fM",
-      "title": "Panama Papers: Mossack Fonseca leak reveals elite&#39;s tax havens - BBC News",
-      "channel": "BBC News",
-      "thumbnail": "https://i.ytimg.com/vi/nEngOAzk0fM/hqdefault.jpg"
+      "id": "CB1FIzk_ZSo",
+      "title": "Ted Cruz Scores Victory Over Donald Trump in Wisconsin",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/CB1FIzk_ZSo/hqdefault.jpg"
     },
     {
       "id": "LWQNCe9a7v4",

@@ -1,75 +1,105 @@
 {
-  "date_last_year": "2025-04-04",
-  "date_generated": "2026-04-04T08:05:53.109Z",
-  "summary": "April 4, 2025, was marked by significant global events impacting both economic and political landscapes. The announcement of new U.S. tariffs by President Donald Trump led to a dramatic plunge in global financial markets, with Wall Street alone losing approximately $2.5 trillion in value. This move heightened fears of escalating trade tensions and drew international criticism. Meanwhile, in South Korea, the Constitutional Court upheld the impeachment of President Yoon Suk Yeol, following his controversial declaration of martial law. This decision ended Yoon's presidency and initiated a period of political transition in the country.",
+  "date_last_year": "2025-04-05",
+  "date_generated": "2026-04-05T07:42:33.110Z",
+  "summary": "April 5, 2025, was marked by significant global unrest and geopolitical tensions. Massive protests erupted worldwide against U.S. tariffs and policies, with over 1,400 demonstrations across the United States and retaliatory tariffs from countries like China. Meanwhile, the Middle East saw an escalation in conflict involving Israel, Iran, and the United States, with renewed military operations leading to numerous casualties. These events highlighted the day's themes of international discord and domestic dissent.",
   "stories": [
     {
-      "headline": "Global Markets Plunge Due to New U.S. Tariffs",
-      "summary": "On April 4, 2025, global financial markets experienced significant turmoil following the announcement of new tariffs by President Donald Trump. The tariffs targeted a wide range of imported goods, leading to a sharp decline in stock markets worldwide, with Wall Street losing approximately $2.5 trillion in value. Investors reacted negatively, fearing escalating trade tensions and potential economic repercussions. The move also drew international criticism, with leaders expressing concerns over the impact on global trade and economic stability.",
+      "headline": "Global Protests Erupt Against U.S. Tariffs and Policies",
+      "summary": "Massive protests took place globally in response to the U.S. government's new tariffs and policies. In the U.S., over 1,400 'Hands Off' protests were organized by pro-democracy and pro-worker groups across all 50 states, with significant gatherings in major cities. Internationally, countries like China imposed retaliatory tariffs on U.S. goods, raising fears of a global trade war. These demonstrations reflected widespread concerns over civil liberties and social programs.",
       "youtube_queries": [
-        "Global market reaction to US tariffs April 4 2025",
-        "Impact of Trump's tariffs on global economy April 4 2025",
-        "Wall Street losses due to US tariffs April 4 2025"
+        "Global protests against US tariffs April 5 2025",
+        "US Hands Off protests April 5 2025",
+        "China retaliatory tariffs on US goods April 5 2025"
       ],
-      "category": "markets",
+      "category": "world",
       "videos": [
         {
-          "id": "gxL-2avxwqs",
-          "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+          "id": "oZo_v5awxjY",
+          "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
           "channel": "ABC News",
-          "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
+          "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
         },
         {
-          "id": "6DxUsfObDss",
-          "title": "PBS News Hour full episode, April 4, 2025",
-          "channel": "PBS NewsHour",
-          "thumbnail": "https://i.ytimg.com/vi/6DxUsfObDss/hqdefault.jpg"
-        },
-        {
-          "id": "rVYW7AkyEqU",
-          "title": "CBC News: The National | Global stock market meltdown continues",
-          "channel": "CBC News: The National",
-          "thumbnail": "https://i.ytimg.com/vi/rVYW7AkyEqU/hqdefault.jpg"
+          "id": "otaw4YilRBQ",
+          "title": "Global National: April 5, 2025 | &quot;Hands off&quot; protests worldwide in response to Trump’s trade war",
+          "channel": "Global News",
+          "thumbnail": "https://i.ytimg.com/vi/otaw4YilRBQ/hqdefault.jpg"
         }
       ],
       "video": {
-        "id": "gxL-2avxwqs",
-        "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+        "id": "oZo_v5awxjY",
+        "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
         "channel": "ABC News",
-        "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
+        "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
       }
     },
     {
-      "headline": "Impeachment of South Korean President Upheld",
-      "summary": "On April 4, 2025, South Korea's Constitutional Court unanimously upheld the impeachment of President Yoon Suk Yeol. The impeachment was in response to Yoon's declaration of martial law, a move that had sparked widespread protests and political unrest across the country. The court's decision effectively ended Yoon's presidency, leading to a period of political transition in South Korea.",
+      "headline": "Middle East Conflict Escalates Amidst Tensions",
+      "summary": "The Middle East saw a significant escalation in conflict involving Israel, Iran, and the United States. Israeli forces resumed ground operations in northern Gaza, resulting in at least 25 fatalities in Khan Younis. Tensions rose further as reports emerged of Israeli soldiers firing on paramedics near Rafah, causing multiple casualties among aid workers. This escalation has heightened regional tensions and drawn international concern.",
       "youtube_queries": [
-        "South Korea Constitutional Court impeachment decision April 4 2025",
-        "Yoon Suk Yeol impeachment and martial law April 4 2025",
-        "Political transition in South Korea post-impeachment April 4 2025"
+        "Middle East conflict escalation April 5 2025",
+        "Israeli ground operations in Gaza April 5 2025",
+        "Iran Israel US tensions April 5 2025"
       ],
-      "category": "politics",
-      "videos": [],
-      "video": null
+      "category": "world",
+      "videos": [
+        {
+          "id": "UztPrVTRp6o",
+          "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
+        },
+        {
+          "id": "ZUwSExAdw34",
+          "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/ZUwSExAdw34/maxresdefault.jpg"
+        },
+        {
+          "id": "e02xgbVm3tw",
+          "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "UztPrVTRp6o",
+        "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
+        "channel": "BBC News",
+        "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
+      }
     }
   ],
   "videos": [
     {
-      "id": "gxL-2avxwqs",
-      "title": "ABC World News Tonight with David Muir Full Broadcast - April 4, 2025",
+      "id": "oZo_v5awxjY",
+      "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
       "channel": "ABC News",
-      "thumbnail": "https://i.ytimg.com/vi/gxL-2avxwqs/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
     },
     {
-      "id": "6DxUsfObDss",
-      "title": "PBS News Hour full episode, April 4, 2025",
-      "channel": "PBS NewsHour",
-      "thumbnail": "https://i.ytimg.com/vi/6DxUsfObDss/hqdefault.jpg"
+      "id": "otaw4YilRBQ",
+      "title": "Global National: April 5, 2025 | &quot;Hands off&quot; protests worldwide in response to Trump’s trade war",
+      "channel": "Global News",
+      "thumbnail": "https://i.ytimg.com/vi/otaw4YilRBQ/hqdefault.jpg"
     },
     {
-      "id": "rVYW7AkyEqU",
-      "title": "CBC News: The National | Global stock market meltdown continues",
-      "channel": "CBC News: The National",
-      "thumbnail": "https://i.ytimg.com/vi/rVYW7AkyEqU/hqdefault.jpg"
+      "id": "UztPrVTRp6o",
+      "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
+      "channel": "BBC News",
+      "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
+    },
+    {
+      "id": "ZUwSExAdw34",
+      "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
+      "channel": "Al Jazeera English",
+      "thumbnail": "https://i.ytimg.com/vi/ZUwSExAdw34/maxresdefault.jpg"
+    },
+    {
+      "id": "e02xgbVm3tw",
+      "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
+      "channel": "Al Jazeera English",
+      "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
     }
   ]
 }
