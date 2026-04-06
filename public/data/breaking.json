@@ -1,5 +1,148 @@
 [
   {
+    "topic": "Iran University Bombing",
+    "summary": "A bombing at Iran's top university has resulted in at least 34 casualties, occurring amidst heightened tensions and military actions involving the United States and Israel. This incident represents a significant escalation in the ongoing conflict between Iran and its adversaries. The attack has drawn international attention and condemnation, further complicating diplomatic relations in the region.",
+    "severity": "critical",
+    "detected_at": "2026-04-06T09:00:09.645Z",
+    "last_updated": "2026-04-06T09:00:09.646Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential internal political dynamics within Iran that be influencing these events. The focus remains on external actors, but internal dissent or power struggles is playing a role in how Iran is responding to these attacks. Additionally, the economic implications of continued conflict, such as impacts on global oil markets, are not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users blaming Western imperialism for the attack, while others see it as a justified response to Iranian aggression. Conspiracy theories are circulating, suggesting false flag operations or covert operations by intelligence agencies. Memes and hashtags are trending, reflecting the deep divisions in public opinion on the issue.",
+    "image_prompt": "A dramatic editorial photo of a university campus in ruins, with symbolic elements like scattered books and a broken clock tower, under a stormy sky, capturing the chaos and tension of the moment.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/6/irans-top-university-bombed-as-us-israel-intensify-attacks-34-killed?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran’s top university bombed as US, Israel intensify attacks; 34 killed"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=goMwjkteEoU",
+        "embed_id": "goMwjkteEoU",
+        "title": "Iran threatens retaliatory attacks on US-Israeli universities in the region",
+        "duration": 304
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
+        "embed_id": "f20WG4pvHME",
+        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
+        "duration": 180
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/ashoswai/status/2040356757361311752",
+        "embed_id": "2040356757361311752",
+        "title": "Despite all the bombing, Iran still has not closed down its universities - Iran has only shifted all university courses to virtual learning. Education",
+        "author": "ashoswai"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Chellaney/status/2038144128647827698",
+        "embed_id": "2038144128647827698",
+        "title": "The bombing of the premier Iran University of Science and Technology in downtown Tehran was not collateral damage but a deliberate attempt to impede t",
+        "author": "Chellaney"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskBrits/comments/1sdfpv1/whys_there_widespread_support_from_my_fellow_left/",
+        "embed_id": "1sdfpv1",
+        "title": "Why’s there widespread support from my fellow left wingers for the Iranian regime?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/OpenAussie/comments/1sddwmn/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddwmn",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AustralianPolitics/comments/1sddu00/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddu00",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sd2at6/trump_to_iran_open_the_fuin_strait_or_face/",
+        "embed_id": "1sd2at6",
+        "title": "Trump to Iran: \"Open the Fu***In' Strait\" or face bombing Tuesday"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/aussie/comments/1sddw4f/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddw4f",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=goMwjkteEoU",
+        "embed_id": "goMwjkteEoU",
+        "title": "Iran threatens retaliatory attacks on US-Israeli universities in the region",
+        "channel": "Al Jazeera English",
+        "duration": 304
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
+        "embed_id": "f20WG4pvHME",
+        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
+        "channel": "Al Jazeera English",
+        "duration": 180
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/ashoswai/status/2040356757361311752",
+        "embed_id": "2040356757361311752",
+        "title": "Despite all the bombing, Iran still has not closed down its universities - Iran has only shifted all university courses to virtual learning. Education",
+        "author": "ashoswai"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Chellaney/status/2038144128647827698",
+        "embed_id": "2038144128647827698",
+        "title": "The bombing of the premier Iran University of Science and Technology in downtown Tehran was not collateral damage but a deliberate attempt to impede t",
+        "author": "Chellaney"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AskBrits/comments/1sdfpv1/whys_there_widespread_support_from_my_fellow_left/",
+        "embed_id": "1sdfpv1",
+        "title": "Why’s there widespread support from my fellow left wingers for the Iranian regime?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/OpenAussie/comments/1sddwmn/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddwmn",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/AustralianPolitics/comments/1sddu00/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddu00",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/worldnews/comments/1sd2at6/trump_to_iran_open_the_fuin_strait_or_face/",
+        "embed_id": "1sd2at6",
+        "title": "Trump to Iran: \"Open the Fu***In' Strait\" or face bombing Tuesday"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/aussie/comments/1sddw4f/albaneses_chosen_this_moment_to_jettison_his/",
+        "embed_id": "1sddw4f",
+        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-06.png"
+  },
+  {
     "topic": "Airstrikes on Iran",
     "summary": "Recent airstrikes on Iran have resulted in over 25 casualties, heightening tensions in the Middle East. These strikes coincide with an impending deadline related to the Strait of Hormuz, initially set by former President Trump, which has raised fears of escalating conflict in the region.",
     "severity": "critical",
