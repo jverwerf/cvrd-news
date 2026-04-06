@@ -1,5 +1,194 @@
 [
   {
+    "topic": "Airstrikes on Iran",
+    "summary": "Recent airstrikes on Iran have resulted in over 25 casualties, heightening tensions in the Middle East. These strikes coincide with an impending deadline related to the Strait of Hormuz, initially set by former President Trump, which has raised fears of escalating conflict in the region.",
+    "severity": "critical",
+    "detected_at": "2026-04-06T07:00:09.671Z",
+    "last_updated": "2026-04-06T07:00:09.671Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Right-leaning media is framing the airstrikes as a necessary action to curb Iran's aggressive posturing and ensure the security of the Strait of Hormuz. They emphasize the importance of maintaining a strong stance against Iran to prevent further destabilization in the Middle East and protect global oil supply routes.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic interests tied to the Strait of Hormuz, a critical chokepoint for global oil shipments. The focus on military action overshadows the underlying economic motivations and the influence of defense contractors who benefit from prolonged regional instability. Additionally, the role of regional allies and their strategic interests in the conflict remains underexplored.",
+    "social_summary": "Social media is buzzing with polarized reactions, with some users supporting the airstrikes as a necessary measure against a hostile regime, while others decry them as reckless warmongering. Conspiracy theories about ulterior motives, such as control over oil resources, are gaining traction, alongside memes criticizing the cyclical nature of Middle Eastern conflicts.",
+    "image_prompt": "A dramatic editorial photo of a silhouetted fighter jet soaring over a vast desert landscape at dusk, with the faint outline of an oil tanker in the distance, symbolizing the intersection of military power and economic interests.",
+    "sources": [
+      {
+        "name": "NY Post",
+        "url": "https://nypost.com/2026/04/06/world-news/us-israeli-airstrikes-batter-iran-as-trumps-strait-of-hormuz-deadline-looms/",
+        "lean": "right",
+        "title": "US, Israeli airstrikes batter Iran as Trump&#8217;s Strait of Hormuz deadline looms"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=j4Ff73zUOhc",
+        "embed_id": "j4Ff73zUOhc",
+        "title": "US Airstrikes Continue to Eliminate Iranian Targets",
+        "duration": 145
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=MHsw5RtR9ZE",
+        "embed_id": "MHsw5RtR9ZE",
+        "title": "Iran’s Tallest Bridge Destroyed in US-Israeli Airstrikes",
+        "duration": 123
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=iOj8Vssogi0",
+        "embed_id": "iOj8Vssogi0",
+        "title": "Heavy US-Israeli air strike hits western Iran, causing huge blast wave",
+        "duration": 30
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/SuppressedNws1/status/2040984772806062188",
+        "embed_id": "2040984772806062188",
+        "title": "⚡️🇺🇸🇮🇷NOW: Black smoke can be seen over Azadi Square in Tehran, Iran, following U.S Israeli airstrikes on areas North of Mehrabad Airport. https:/",
+        "author": "SuppressedNws1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BabakTaghvaee1/status/2040900303638380629",
+        "embed_id": "2040900303638380629",
+        "title": "BREAKING: As a result of U.S. Air Force airstrikes on the ammunition depot of the 192nd Independent Armored Brigade of the Iranian Army Ground Force i",
+        "author": "BabakTaghvaee1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/RealBababanaras/status/2040643716436853238",
+        "embed_id": "2040643716436853238",
+        "title": "BREAKING : After rescuing the second F-15 pilot from Southwestern Iran, U.S. and Israeli Airforce launched a fresh wave of airstrikes using bunker bus",
+        "author": "RealBababanaras"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MonitorX99800/status/2040565658333655478",
+        "embed_id": "2040565658333655478",
+        "title": "🇺🇸🇮🇷🇮🇱⚡- US/Israeli airstrikes on the IRIB channel in Dehdasht, Iran. Multiple casualties have been reported.",
+        "author": "MonitorX99800"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2040498910100103602",
+        "embed_id": "2040498910100103602",
+        "title": "The IDF confirms airstrikes on petrochemical facilities in southern Iran, used to produce materials for ballistic missiles.\n\nThe military says the att",
+        "author": "Osint613"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BeckettUnite/status/2040496565077307694",
+        "embed_id": "2040496565077307694",
+        "title": "Video of 🇺🇸 &amp; 🇮🇱 airstrikes on the B1 bridge in northern Alborz province of Iran 🇮🇷\n\nAt least 13 people murdered &amp; 90 wounded\n\nThis is a",
+        "author": "BeckettUnite"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdggaz/the_cloud_is_now_a_combat_zone_irgc_targets_18_us/",
+        "embed_id": "1sdggaz",
+        "title": "The Cloud is Now a Combat Zone: IRGC Targets 18 U.S. Tech Giants with \"Kinetic\" Strikes. Is Your Data Center Next?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/indianmuslims/comments/1sd4br2/indian_hindus_cannot_comprehend_muslim_ummah/",
+        "embed_id": "1sd4br2",
+        "title": "Indian Hindus cannot comprehend Muslim Ummah solidarity because their religion simply does not have an equivalent — and that explains a lot."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/newsPH/comments/1sd0yi1/on_this_day_of_celebration_let_us_abandon_every/",
+        "embed_id": "1sd0yi1",
+        "title": "‘On this day of celebration, let us abandon every desire for conflict, domination and power’"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=j4Ff73zUOhc",
+        "embed_id": "j4Ff73zUOhc",
+        "title": "US Airstrikes Continue to Eliminate Iranian Targets",
+        "channel": "New York Post",
+        "duration": 145
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=MHsw5RtR9ZE",
+        "embed_id": "MHsw5RtR9ZE",
+        "title": "Iran’s Tallest Bridge Destroyed in US-Israeli Airstrikes",
+        "channel": "New York Post",
+        "duration": 123
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=iOj8Vssogi0",
+        "embed_id": "iOj8Vssogi0",
+        "title": "Heavy US-Israeli air strike hits western Iran, causing huge blast wave",
+        "channel": "Al Jazeera English",
+        "duration": 30
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/SuppressedNws1/status/2040984772806062188",
+        "embed_id": "2040984772806062188",
+        "title": "⚡️🇺🇸🇮🇷NOW: Black smoke can be seen over Azadi Square in Tehran, Iran, following U.S Israeli airstrikes on areas North of Mehrabad Airport. https:/",
+        "author": "SuppressedNws1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BabakTaghvaee1/status/2040900303638380629",
+        "embed_id": "2040900303638380629",
+        "title": "BREAKING: As a result of U.S. Air Force airstrikes on the ammunition depot of the 192nd Independent Armored Brigade of the Iranian Army Ground Force i",
+        "author": "BabakTaghvaee1"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/RealBababanaras/status/2040643716436853238",
+        "embed_id": "2040643716436853238",
+        "title": "BREAKING : After rescuing the second F-15 pilot from Southwestern Iran, U.S. and Israeli Airforce launched a fresh wave of airstrikes using bunker bus",
+        "author": "RealBababanaras"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MonitorX99800/status/2040565658333655478",
+        "embed_id": "2040565658333655478",
+        "title": "🇺🇸🇮🇷🇮🇱⚡- US/Israeli airstrikes on the IRIB channel in Dehdasht, Iran. Multiple casualties have been reported.",
+        "author": "MonitorX99800"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/Osint613/status/2040498910100103602",
+        "embed_id": "2040498910100103602",
+        "title": "The IDF confirms airstrikes on petrochemical facilities in southern Iran, used to produce materials for ballistic missiles.\n\nThe military says the att",
+        "author": "Osint613"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BeckettUnite/status/2040496565077307694",
+        "embed_id": "2040496565077307694",
+        "title": "Video of 🇺🇸 &amp; 🇮🇱 airstrikes on the B1 bridge in northern Alborz province of Iran 🇮🇷\n\nAt least 13 people murdered &amp; 90 wounded\n\nThis is a",
+        "author": "BeckettUnite"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdggaz/the_cloud_is_now_a_combat_zone_irgc_targets_18_us/",
+        "embed_id": "1sdggaz",
+        "title": "The Cloud is Now a Combat Zone: IRGC Targets 18 U.S. Tech Giants with \"Kinetic\" Strikes. Is Your Data Center Next?"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/indianmuslims/comments/1sd4br2/indian_hindus_cannot_comprehend_muslim_ummah/",
+        "embed_id": "1sd4br2",
+        "title": "Indian Hindus cannot comprehend Muslim Ummah solidarity because their religion simply does not have an equivalent — and that explains a lot."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/newsPH/comments/1sd0yi1/on_this_day_of_celebration_let_us_abandon_every/",
+        "embed_id": "1sd0yi1",
+        "title": "‘On this day of celebration, let us abandon every desire for conflict, domination and power’"
+      }
+    ],
+    "image_file": "/images/breaking_2026-04-06.png"
+  },
+  {
     "topic": "US-Iran Tensions Escalate",
     "summary": "The United States and Iran are experiencing heightened tensions after a US military operation successfully rescued an American airman from Iranian territory. President Trump has issued stern warnings to Iran, threatening to target key Iranian infrastructure if provocations continue. This development has increased concerns about the possibility of military conflict between the two nations.",
     "severity": "critical",
