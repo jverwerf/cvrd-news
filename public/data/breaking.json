@@ -1,44 +1,30 @@
 [
   {
-    "topic": "Iran Conflict Escalation",
-    "summary": "A joint military operation by the United States and Israel in Iran resulted in the deaths of five individuals. The operation aimed to rescue a US pilot, further straining relations between Iran and the US-Israel alliance. This incident has intensified fears of escalating conflict in the region.",
+    "topic": "US-Iran Tensions Escalate",
+    "summary": "Tensions between the United States and Iran have intensified after a US military operation successfully rescued an American airman who was downed within Iranian territory. In response, President Trump has issued stern warnings, threatening to target Iranian infrastructure if further provocations occur. This development has raised concerns about the possibility of military conflict between the two nations.",
     "severity": "critical",
-    "detected_at": "2026-04-05T11:00:07.514Z",
-    "last_updated": "2026-04-05T23:01:06.259Z",
+    "detected_at": "2026-04-06T01:00:06.239Z",
+    "last_updated": "2026-04-06T01:00:06.239Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is emphasizing the necessity of the operation to protect American lives and uphold national security. They are framing the incident as a justified response to Iranian aggression and a demonstration of the US-Israel alliance's strength. The narrative underscores the importance of standing firm against Iran's provocations.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this operation, particularly how it affects US relations with other Middle Eastern countries. The financial and strategic interests of defense contractors in prolonged regional conflicts are also not being discussed. Additionally, the potential impact on global oil markets and economic stability is being overlooked.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the operation as a necessary defense measure, while others condemn it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the operation, such as influencing upcoming elections or distracting from domestic issues.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing different countries, symbolizing the strategic maneuvers and tensions in the Middle East.",
-    "sources": [
-      {
-        "name": "Fox News",
-        "url": "https://www.foxnews.com/sports/yankees-legend-reggie-jackson-criticizes-pete-hegseths-leadership-amid-iran-conflict",
-        "lean": "right",
-        "title": "Yankees legend Reggie Jackson criticizes Pete Hegseth&apos;s leadership amid Iran conflict"
-      }
-    ],
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects US relations with other Middle Eastern countries and global powers like Russia and China. The economic interests tied to military actions, such as defense contracts and oil market fluctuations, are also being overlooked. This incident is a catalyst for shifts in regional alliances and economic strategies.",
+    "social_summary": "Social media is ablaze with polarized opinions, with some users praising the US military's efficiency and others condemning the potential for war. Memes mocking the situation as a 'real-life action movie' are circulating, while conspiracy theories suggest ulterior motives behind the rescue mission, such as distracting from domestic issues or influencing upcoming elections.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing the US and Iran in a tense standoff, under a stormy sky symbolizing impending conflict.",
+    "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
-        "embed_id": "JtfO20JSjbU",
-        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-        "duration": 244
+        "url": "https://www.youtube.com/watch?v=6mP2EFtObO0",
+        "embed_id": "6mP2EFtObO0",
+        "title": "US, Iran tensions escalate as attacks hit bases and embassies",
+        "duration": 186
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "duration": 1470
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
-        "embed_id": "Ghs03B9lkrw",
-        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
-        "duration": 1114
+        "url": "https://www.youtube.com/watch?v=PYR4lF9pb-k",
+        "embed_id": "PYR4lF9pb-k",
+        "title": "Hundreds of U.S. special forces deployed as tensions escalate with Iran",
+        "duration": 123
       },
       {
         "platform": "youtube",
@@ -48,44 +34,53 @@
         "duration": 404
       },
       {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16338",
-        "embed_id": "France24_en/16338",
-        "title": "Inside the race to rescue a downed US airman in Iran\nPresident Donald Trump on Sunday hailed a daring rescue of a downed US airman in central Iran, bu",
-        "author": "france24_en"
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=9FfwHd9cJ_E",
+        "embed_id": "9FfwHd9cJ_E",
+        "title": "DEVELOPING: Iran tensions ESCALATE after 2 new incidents",
+        "duration": 373
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=JOuCgpfcNk0",
+        "embed_id": "JOuCgpfcNk0",
+        "title": "President to address nation as U.S.-Iran tensions escalate",
+        "duration": 123
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=9BZigFsgbqs",
+        "embed_id": "9BZigFsgbqs",
+        "title": "U.S.-Iran tensions escalate: Fresh airstrikes, ground invasion fears, and global warnings",
+        "duration": 169
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=yD2QMwVTgaY",
+        "embed_id": "yD2QMwVTgaY",
+        "title": "US military shoots down Iranian drone as tensions escalate",
+        "duration": 526
       },
       {
         "platform": "x",
-        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
-        "embed_id": "2040261458072678904",
-        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
-        "author": "JDunlap1974"
+        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
+        "embed_id": "2040257053852369339",
+        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
+        "author": "FirstSquawk"
       },
       {
         "platform": "x",
-        "url": "https://x.com/defense_civil25/status/2040434971211374972",
-        "embed_id": "2040434971211374972",
-        "title": "🚨Update: Iran has 48 hours to surrender and immediately open the strait or the US will continue to bomb Iran! Major escalation of the conflict is com",
-        "author": "defense_civil25"
+        "url": "https://x.com/FalconUpdatesHQ/status/2040079211898257634",
+        "embed_id": "2040079211898257634",
+        "title": "BREAKING 🚨\n\n🤯 🇺🇸 🇮🇱 🇮🇷 Big claim by Iranian media: a US F-15E jet was downed over southern Iran.\n\n🔺 Tasnim says the pilot ejected and may hav",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
-        "embed_id": "2040433934022987888",
-        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/sadcringe/comments/1sctz9m/holy_war/",
-        "embed_id": "1sctz9m",
-        "title": "Holy war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LetsDiscussThis/comments/1scdwdq/donald_trump_warns_all_hell_will_rain_down_as_he/",
-        "embed_id": "1scdwdq",
-        "title": "Donald Trump warns 'All Hell' will rain down as he gives Iran deadline"
+        "url": "https://x.com/FalconUpdatesHQ/status/2039701661091078399",
+        "embed_id": "2039701661091078399",
+        "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "reddit",
@@ -95,32 +90,25 @@
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdc7vp/we_got_him_daring_48hour_extraction_of_the_downed/",
-        "embed_id": "1sdc7vp",
-        "title": "\"WE GOT HIM!\" Daring 48-Hour Extraction of the Downed F-15E Colonel from Behind Enemy Lines in Iran"
+        "url": "https://reddit.com/r/conservativeterrorism/comments/1sd854t/i_am_blowing_up_everything_donald_trump_sets/",
+        "embed_id": "1sd854t",
+        "title": "“I am blowing up everything”: Donald Trump sets 32-hour deadline as tensions quietly escalate"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=JtfO20JSjbU",
-        "embed_id": "JtfO20JSjbU",
-        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-        "channel": "Bloomberg Television",
-        "duration": 244
+        "url": "https://www.youtube.com/watch?v=6mP2EFtObO0",
+        "embed_id": "6mP2EFtObO0",
+        "title": "US, Iran tensions escalate as attacks hit bases and embassies",
+        "channel": "Click On Detroit | Local 4 | WDIV",
+        "duration": 186
       },
       {
-        "url": "https://www.youtube.com/watch?v=ZUwSExAdw34",
-        "embed_id": "ZUwSExAdw34",
-        "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-        "channel": "Al Jazeera English",
-        "duration": 1470
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=Ghs03B9lkrw",
-        "embed_id": "Ghs03B9lkrw",
-        "title": "“Many Will Die:” Military Expert Warns of Iran Escalation Trap | Amanpour and Company",
-        "channel": "Amanpour and Company",
-        "duration": 1114
+        "url": "https://www.youtube.com/watch?v=PYR4lF9pb-k",
+        "embed_id": "PYR4lF9pb-k",
+        "title": "Hundreds of U.S. special forces deployed as tensions escalate with Iran",
+        "channel": "CBS Miami",
+        "duration": 123
       },
       {
         "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
@@ -128,48 +116,57 @@
         "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
         "channel": "Fox News",
         "duration": 404
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=9FfwHd9cJ_E",
+        "embed_id": "9FfwHd9cJ_E",
+        "title": "DEVELOPING: Iran tensions ESCALATE after 2 new incidents",
+        "channel": "Fox News",
+        "duration": 373
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=JOuCgpfcNk0",
+        "embed_id": "JOuCgpfcNk0",
+        "title": "President to address nation as U.S.-Iran tensions escalate",
+        "channel": "CBS TEXAS",
+        "duration": 123
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=9BZigFsgbqs",
+        "embed_id": "9BZigFsgbqs",
+        "title": "U.S.-Iran tensions escalate: Fresh airstrikes, ground invasion fears, and global warnings",
+        "channel": "CBS Miami",
+        "duration": 169
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=yD2QMwVTgaY",
+        "embed_id": "yD2QMwVTgaY",
+        "title": "US military shoots down Iranian drone as tensions escalate",
+        "channel": "LiveNOW from FOX",
+        "duration": 526
       }
     ],
     "social_clips": [
       {
-        "platform": "telegram",
-        "url": "https://t.me/France24_en/16338",
-        "embed_id": "France24_en/16338",
-        "title": "Inside the race to rescue a downed US airman in Iran\nPresident Donald Trump on Sunday hailed a daring rescue of a downed US airman in central Iran, bu",
-        "author": "france24_en"
+        "platform": "x",
+        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
+        "embed_id": "2040257053852369339",
+        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
+        "author": "FirstSquawk"
       },
       {
         "platform": "x",
-        "url": "https://x.com/JDunlap1974/status/2040261458072678904",
-        "embed_id": "2040261458072678904",
-        "title": "🚨🚨BREAKING: Key Iranian Commander Taken Out.\n\nIsrael says it has eliminated a key figure tied to Iran’s missile program, marking another escalation ",
-        "author": "JDunlap1974"
+        "url": "https://x.com/FalconUpdatesHQ/status/2040079211898257634",
+        "embed_id": "2040079211898257634",
+        "title": "BREAKING 🚨\n\n🤯 🇺🇸 🇮🇱 🇮🇷 Big claim by Iranian media: a US F-15E jet was downed over southern Iran.\n\n🔺 Tasnim says the pilot ejected and may hav",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "x",
-        "url": "https://x.com/defense_civil25/status/2040434971211374972",
-        "embed_id": "2040434971211374972",
-        "title": "🚨Update: Iran has 48 hours to surrender and immediately open the strait or the US will continue to bomb Iran! Major escalation of the conflict is com",
-        "author": "defense_civil25"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/WarMonitor3/status/2040433934022987888",
-        "embed_id": "2040433934022987888",
-        "title": "Iran has 48 hours to open the strait of it looks like a major escalation of the conflict is coming...",
-        "author": "WarMonitor3"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/sadcringe/comments/1sctz9m/holy_war/",
-        "embed_id": "1sctz9m",
-        "title": "Holy war"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/LetsDiscussThis/comments/1scdwdq/donald_trump_warns_all_hell_will_rain_down_as_he/",
-        "embed_id": "1scdwdq",
-        "title": "Donald Trump warns 'All Hell' will rain down as he gives Iran deadline"
+        "url": "https://x.com/FalconUpdatesHQ/status/2039701661091078399",
+        "embed_id": "2039701661091078399",
+        "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
+        "author": "FalconUpdatesHQ"
       },
       {
         "platform": "reddit",
@@ -179,12 +176,11 @@
       },
       {
         "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdc7vp/we_got_him_daring_48hour_extraction_of_the_downed/",
-        "embed_id": "1sdc7vp",
-        "title": "\"WE GOT HIM!\" Daring 48-Hour Extraction of the Downed F-15E Colonel from Behind Enemy Lines in Iran"
+        "url": "https://reddit.com/r/conservativeterrorism/comments/1sd854t/i_am_blowing_up_everything_donald_trump_sets/",
+        "embed_id": "1sd854t",
+        "title": "“I am blowing up everything”: Donald Trump sets 32-hour deadline as tensions quietly escalate"
       }
     ],
-    "image_file": "/images/breaking_2026-04-05.png",
-    "x_posted": true
+    "image_file": "/images/breaking_2026-04-06.png"
   }
 ]
