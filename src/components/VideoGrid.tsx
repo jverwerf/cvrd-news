@@ -42,8 +42,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
       allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: `/api/x-video?id=${c.embed_id}&thumb=1`, duration: (c as any).duration, relevance: (c as any).relevance });
-    } else if (c.platform === 'telegram' && c.embed_id) {
-      allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: c.embed_id ? `/api/tg-video?post=${c.embed_id}&thumb=1` : storyImage, duration: (c as any).duration || 30, relevance: (c as any).relevance });
+    } else if (c.platform === 'telegram' && c.embed_id && (c as any).duration) {
+      allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: c.embed_id ? `/api/tg-video?post=${c.embed_id}&thumb=1` : storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     }
   }
 
@@ -337,8 +337,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     poster={`/api/tg-video?post=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-cover"
                     muted playsInline controls
-                    onEnded={() => nextRef.current()}
-                    onError={() => nextRef.current()} />
+                    onEnded={() => nextRef.current()} />
                 )}
               </>
             ) : (

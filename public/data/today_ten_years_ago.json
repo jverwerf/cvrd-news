@@ -1,93 +1,93 @@
 {
-  "date_last_year": "2016-04-05",
-  "date_generated": "2026-04-05T07:44:39.893Z",
-  "summary": "April 5, 2016, was marked by significant events in both the political and sports arenas. In the U.S., the Wisconsin presidential primaries were a key focus, with Senator Ted Cruz leading over Donald Trump among Republicans, and Bernie Sanders narrowly ahead of Hillary Clinton on the Democratic side. Meanwhile, in sports, Villanova University clinched the NCAA men's basketball championship in a dramatic finish against the University of North Carolina, thanks to a buzzer-beating three-pointer by Kris Jenkins. These stories captured the nation's attention, reflecting pivotal moments in the 2016 presidential race and college basketball history.",
+  "date_last_year": "2016-04-06",
+  "date_generated": "2026-04-06T07:50:27.477Z",
+  "summary": "On April 6, 2016, significant developments unfolded in both the corporate and legal arenas. Pharmaceutical giants Pfizer and Allergan called off their $160 billion merger following new U.S. Treasury regulations aimed at preventing tax inversions. This decision marked a major shift in corporate strategies concerning tax liabilities. Meanwhile, in a landmark legal case, former Massey Energy CEO Don Blankenship was sentenced to one year in prison for his role in the 2010 Upper Big Branch mine disaster, highlighting the accountability of corporate executives for safety violations. These stories underscored the impact of regulatory changes and legal accountability on corporate practices.",
   "stories": [
     {
-      "headline": "Wisconsin Primaries: Cruz Leads, Sanders Narrowly Ahead",
-      "summary": "The Wisconsin primaries were crucial in the 2016 U.S. presidential race. Senator Ted Cruz led Donald Trump by five points among Republicans, while Bernie Sanders had a slight edge over Hillary Clinton among Democrats. Despite Sanders' recent wins, Clinton maintained a delegate lead. The results were seen as pivotal for both parties' nominations.",
+      "headline": "Pfizer, Allergan Scrap $160 Billion Merger",
+      "summary": "Pfizer Inc. and Allergan PLC terminated their $160 billion merger after the U.S. Treasury introduced new rules to curb tax inversions. The merger would have allowed Pfizer to relocate to Ireland for tax benefits, but the new regulations reduced the financial incentives. Both companies mutually agreed to abandon the deal, marking a significant shift in corporate tax strategy.",
       "youtube_queries": [
-        "Wisconsin primaries Ted Cruz Donald Trump April 2016",
-        "Bernie Sanders Hillary Clinton Wisconsin primary 2016",
-        "Wisconsin primary results analysis April 2016"
+        "Pfizer Allergan merger cancellation April 2016",
+        "US Treasury tax inversion rules impact 2016",
+        "Pfizer Allergan merger tax inversion April 2016"
       ],
-      "category": "politics",
+      "category": "markets",
       "videos": [
         {
-          "id": "96Ncv1DNIk8",
-          "title": "Donald Trump Faces Big Setback in Wisconsin",
-          "channel": "ABC News",
-          "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
+          "id": "T6JMX4OU7JM",
+          "title": "President Obama addresses new rules to deter tax inversions",
+          "channel": "PBS NewsHour",
+          "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
         },
         {
-          "id": "oyQ9Q3OOnlc",
-          "title": "Ted Cruz goes after Donald Trump's lead in Wisconsin",
-          "channel": "Fox News",
-          "thumbnail": "https://i.ytimg.com/vi/oyQ9Q3OOnlc/maxresdefault.jpg"
+          "id": "LFcSf1_2h-A",
+          "title": "Pfizer-Allergan merger collapses",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/LFcSf1_2h-A/hqdefault.jpg"
         },
         {
-          "id": "CB1FIzk_ZSo",
-          "title": "Ted Cruz Scores Victory Over Donald Trump in Wisconsin",
-          "channel": "ABC News",
-          "thumbnail": "https://i.ytimg.com/vi/CB1FIzk_ZSo/hqdefault.jpg"
+          "id": "9y9H9fjHT4Y",
+          "title": "New Obama Administration tax rules reportedly kills Pfizer-Allergan deal",
+          "channel": "Fox Business",
+          "thumbnail": "https://i.ytimg.com/vi/9y9H9fjHT4Y/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "96Ncv1DNIk8",
-        "title": "Donald Trump Faces Big Setback in Wisconsin",
-        "channel": "ABC News",
-        "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
+        "id": "T6JMX4OU7JM",
+        "title": "President Obama addresses new rules to deter tax inversions",
+        "channel": "PBS NewsHour",
+        "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
       }
     },
     {
-      "headline": "Villanova Wins NCAA Title with Buzzer-Beater",
-      "summary": "Villanova University won the NCAA men's basketball championship in a dramatic game against the University of North Carolina. The game was tied in the final seconds after a three-pointer by Marcus Paige of North Carolina. Villanova's Kris Jenkins then scored a three-pointer at the buzzer, securing a 77-74 victory and the championship title.",
+      "headline": "Ex-Massey CEO Sentenced for Mine Disaster",
+      "summary": "Don Blankenship, former CEO of Massey Energy, received a one-year prison sentence for conspiring to violate mine safety standards, leading to the 2010 Upper Big Branch mine disaster that killed 29 miners. This case marked a rare instance of a top executive being held criminally accountable for workplace safety violations. The sentencing was seen as a pivotal moment in corporate accountability.",
       "youtube_queries": [
-        "Villanova vs North Carolina NCAA final 2016 highlights",
-        "Kris Jenkins buzzer beater NCAA championship 2016",
-        "Villanova NCAA championship victory April 2016"
+        "Don Blankenship sentencing Upper Big Branch 2016",
+        "Massey Energy CEO prison sentence April 2016",
+        "Mine safety violations Don Blankenship 2016"
       ],
-      "category": "sports",
+      "category": "world",
       "videos": [
         {
-          "id": "LWQNCe9a7v4",
-          "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
-          "channel": "Bleacher Report",
-          "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
+          "id": "VF4jMAArbOc",
+          "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
+          "channel": "Associated Press",
+          "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "LWQNCe9a7v4",
-        "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
-        "channel": "Bleacher Report",
-        "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
+        "id": "VF4jMAArbOc",
+        "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
+        "channel": "Associated Press",
+        "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
       }
     }
   ],
   "videos": [
     {
-      "id": "96Ncv1DNIk8",
-      "title": "Donald Trump Faces Big Setback in Wisconsin",
-      "channel": "ABC News",
-      "thumbnail": "https://i.ytimg.com/vi/96Ncv1DNIk8/hqdefault.jpg"
+      "id": "T6JMX4OU7JM",
+      "title": "President Obama addresses new rules to deter tax inversions",
+      "channel": "PBS NewsHour",
+      "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
     },
     {
-      "id": "oyQ9Q3OOnlc",
-      "title": "Ted Cruz goes after Donald Trump's lead in Wisconsin",
-      "channel": "Fox News",
-      "thumbnail": "https://i.ytimg.com/vi/oyQ9Q3OOnlc/maxresdefault.jpg"
+      "id": "LFcSf1_2h-A",
+      "title": "Pfizer-Allergan merger collapses",
+      "channel": "Al Jazeera English",
+      "thumbnail": "https://i.ytimg.com/vi/LFcSf1_2h-A/hqdefault.jpg"
     },
     {
-      "id": "CB1FIzk_ZSo",
-      "title": "Ted Cruz Scores Victory Over Donald Trump in Wisconsin",
-      "channel": "ABC News",
-      "thumbnail": "https://i.ytimg.com/vi/CB1FIzk_ZSo/hqdefault.jpg"
+      "id": "9y9H9fjHT4Y",
+      "title": "New Obama Administration tax rules reportedly kills Pfizer-Allergan deal",
+      "channel": "Fox Business",
+      "thumbnail": "https://i.ytimg.com/vi/9y9H9fjHT4Y/maxresdefault.jpg"
     },
     {
-      "id": "LWQNCe9a7v4",
-      "title": "Final 2 Minutes of Villanova vs. North Carolina | 2016 National Championship",
-      "channel": "Bleacher Report",
-      "thumbnail": "https://i.ytimg.com/vi/LWQNCe9a7v4/maxresdefault.jpg"
+      "id": "VF4jMAArbOc",
+      "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
+      "channel": "Associated Press",
+      "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
     }
   ]
 }

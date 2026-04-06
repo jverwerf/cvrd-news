@@ -1,105 +1,75 @@
 {
-  "date_last_year": "2025-04-05",
-  "date_generated": "2026-04-05T07:42:33.110Z",
-  "summary": "April 5, 2025, was marked by significant global unrest and geopolitical tensions. Massive protests erupted worldwide against U.S. tariffs and policies, with over 1,400 demonstrations across the United States and retaliatory tariffs from countries like China. Meanwhile, the Middle East saw an escalation in conflict involving Israel, Iran, and the United States, with renewed military operations leading to numerous casualties. These events highlighted the day's themes of international discord and domestic dissent.",
+  "date_last_year": "2025-04-06",
+  "date_generated": "2026-04-06T07:32:40.459Z",
+  "summary": "April 6, 2025, was marked by significant global events, particularly in the economic and cultural spheres. The U.S. implemented new tariffs under President Donald Trump, causing a ripple effect in global markets, with major indices like the S&P 500 and Taiwan's Taiex experiencing sharp declines. This move sparked protests across the United States and raised concerns about the future of international trade. Additionally, the day was somber with the deaths of notable figures such as actor Jay North and drummer Clem Burke, leading to widespread tributes and reflections on their contributions to the entertainment industry.",
   "stories": [
     {
-      "headline": "Global Protests Erupt Against U.S. Tariffs and Policies",
-      "summary": "Massive protests took place globally in response to the U.S. government's new tariffs and policies. In the U.S., over 1,400 'Hands Off' protests were organized by pro-democracy and pro-worker groups across all 50 states, with significant gatherings in major cities. Internationally, countries like China imposed retaliatory tariffs on U.S. goods, raising fears of a global trade war. These demonstrations reflected widespread concerns over civil liberties and social programs.",
+      "headline": "Global Markets Plunge Amid New U.S. Tariffs",
+      "summary": "The U.S. introduced a 10% tariff on all imports, effective April 5, 2025, causing significant disruptions in global financial markets. The S&P 500 fell nearly 6%, and Taiwan's Taiex index dropped over 9.7%. Protests erupted across the U.S., with analysts warning of potential long-term impacts on global trade norms.",
       "youtube_queries": [
-        "Global protests against US tariffs April 5 2025",
-        "US Hands Off protests April 5 2025",
-        "China retaliatory tariffs on US goods April 5 2025"
+        "Impact of April 2025 U.S. tariffs on global markets",
+        "Protests in U.S. over new tariffs April 6, 2025",
+        "Analysis of U.S. tariff policy April 2025"
       ],
-      "category": "world",
+      "category": "markets",
       "videos": [
         {
-          "id": "oZo_v5awxjY",
-          "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
-          "channel": "ABC News",
-          "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
+          "id": "UuPx4VazAvY",
+          "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
+          "channel": "CNBC Awaaz.",
+          "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
         },
         {
-          "id": "otaw4YilRBQ",
-          "title": "Global National: April 5, 2025 | &quot;Hands off&quot; protests worldwide in response to Trump’s trade war",
-          "channel": "Global News",
-          "thumbnail": "https://i.ytimg.com/vi/otaw4YilRBQ/hqdefault.jpg"
+          "id": "dn7sWfDo3go",
+          "title": "What Economists Got Wrong on Tariffs",
+          "channel": "Bloomberg Originals",
+          "thumbnail": "https://i.ytimg.com/vi/dn7sWfDo3go/maxresdefault.jpg"
+        },
+        {
+          "id": "v1JV5-0nqLI",
+          "title": "Trump Sparks Chaos with NEW Tariffs",
+          "channel": "Global News Update",
+          "thumbnail": "https://i.ytimg.com/vi/v1JV5-0nqLI/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "oZo_v5awxjY",
-        "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
-        "channel": "ABC News",
-        "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
+        "id": "UuPx4VazAvY",
+        "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
+        "channel": "CNBC Awaaz.",
+        "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
       }
     },
     {
-      "headline": "Middle East Conflict Escalates Amidst Tensions",
-      "summary": "The Middle East saw a significant escalation in conflict involving Israel, Iran, and the United States. Israeli forces resumed ground operations in northern Gaza, resulting in at least 25 fatalities in Khan Younis. Tensions rose further as reports emerged of Israeli soldiers firing on paramedics near Rafah, causing multiple casualties among aid workers. This escalation has heightened regional tensions and drawn international concern.",
+      "headline": "Entertainment World Mourns Jay North, Clem Burke",
+      "summary": "April 6, 2025, saw the deaths of Jay North, famed for his role in 'Dennis the Menace,' and Clem Burke, the drummer for Blondie. North passed away at 73, while Burke died at 70. Their deaths prompted tributes from fans and peers, highlighting their lasting impact on television and music.",
       "youtube_queries": [
-        "Middle East conflict escalation April 5 2025",
-        "Israeli ground operations in Gaza April 5 2025",
-        "Iran Israel US tensions April 5 2025"
+        "Tributes to Jay North April 2025",
+        "Clem Burke's legacy in music April 2025",
+        "Impact of Jay North and Clem Burke's deaths April 2025"
       ],
-      "category": "world",
-      "videos": [
-        {
-          "id": "UztPrVTRp6o",
-          "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
-          "channel": "BBC News",
-          "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
-        },
-        {
-          "id": "ZUwSExAdw34",
-          "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/ZUwSExAdw34/maxresdefault.jpg"
-        },
-        {
-          "id": "e02xgbVm3tw",
-          "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "UztPrVTRp6o",
-        "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
-        "channel": "BBC News",
-        "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
-      }
+      "category": "trending",
+      "videos": [],
+      "video": null
     }
   ],
   "videos": [
     {
-      "id": "oZo_v5awxjY",
-      "title": "ABC World News Tonight with David Muir Full Broadcast - April 5, 2025",
-      "channel": "ABC News",
-      "thumbnail": "https://i.ytimg.com/vi/oZo_v5awxjY/hqdefault.jpg"
+      "id": "UuPx4VazAvY",
+      "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
+      "channel": "CNBC Awaaz.",
+      "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
     },
     {
-      "id": "otaw4YilRBQ",
-      "title": "Global National: April 5, 2025 | &quot;Hands off&quot; protests worldwide in response to Trump’s trade war",
-      "channel": "Global News",
-      "thumbnail": "https://i.ytimg.com/vi/otaw4YilRBQ/hqdefault.jpg"
+      "id": "dn7sWfDo3go",
+      "title": "What Economists Got Wrong on Tariffs",
+      "channel": "Bloomberg Originals",
+      "thumbnail": "https://i.ytimg.com/vi/dn7sWfDo3go/maxresdefault.jpg"
     },
     {
-      "id": "UztPrVTRp6o",
-      "title": "Iran War escalates as Yemen's Houthis attack Israel and threaten Red Sea | BBC News",
-      "channel": "BBC News",
-      "thumbnail": "https://i.ytimg.com/vi/UztPrVTRp6o/maxresdefault.jpg"
-    },
-    {
-      "id": "ZUwSExAdw34",
-      "title": "Latest update: The Iran war escalates as Houthis join the fight; US-Israel strikes intensify .",
-      "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/ZUwSExAdw34/maxresdefault.jpg"
-    },
-    {
-      "id": "e02xgbVm3tw",
-      "title": "Live update: Iran missiles hit Israel. Nuclear city | US strikes Iran, middle east war escalates",
-      "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/e02xgbVm3tw/maxresdefault.jpg"
+      "id": "v1JV5-0nqLI",
+      "title": "Trump Sparks Chaos with NEW Tariffs",
+      "channel": "Global News Update",
+      "thumbnail": "https://i.ytimg.com/vi/v1JV5-0nqLI/maxresdefault.jpg"
     }
   ]
 }
