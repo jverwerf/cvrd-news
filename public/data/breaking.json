@@ -1,15 +1,15 @@
 [
   {
     "topic": "US-Iran Tensions Escalate",
-    "summary": "Tensions between the United States and Iran have intensified after a US military operation successfully rescued an American airman who was downed within Iranian territory. In response, President Trump has issued stern warnings, threatening to target Iranian infrastructure if further provocations occur. This development has raised concerns about the possibility of military conflict between the two nations.",
+    "summary": "Tensions between the United States and Iran have escalated following a US military operation that rescued an American airman from Iranian territory. President Trump has responded with strong warnings, threatening to target Iranian infrastructure if there are further provocations. This situation has heightened fears of a potential military conflict between the two countries.",
     "severity": "critical",
     "detected_at": "2026-04-06T01:00:06.239Z",
-    "last_updated": "2026-04-06T01:00:06.239Z",
+    "last_updated": "2026-04-06T03:01:15.699Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects US relations with other Middle Eastern countries and global powers like Russia and China. The economic interests tied to military actions, such as defense contracts and oil market fluctuations, are also being overlooked. This incident is a catalyst for shifts in regional alliances and economic strategies.",
-    "social_summary": "Social media is ablaze with polarized opinions, with some users praising the US military's efficiency and others condemning the potential for war. Memes mocking the situation as a 'real-life action movie' are circulating, while conspiracy theories suggest ulterior motives behind the rescue mission, such as distracting from domestic issues or influencing upcoming elections.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set in a desert landscape, with pieces representing the US and Iran in a tense standoff, under a stormy sky symbolizing impending conflict.",
+    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects US relations with other Middle Eastern countries and global oil markets. The focus remains on immediate military threats rather than the long-term strategic consequences, such as the impact on international alliances and economic stability in the region.",
+    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the US military's swift action and others condemning the potential for escalation into war. Memes and conspiracy theories abound, suggesting ulterior motives behind the rescue operation, including accusations of it being a pretext for military intervention.",
+    "image_prompt": "A dramatic editorial photo of a chessboard with pieces representing the US and Iran, set against a backdrop of a stormy sky, symbolizing the tense geopolitical standoff.",
     "sources": [],
     "clips": [
       {
@@ -63,13 +63,6 @@
       },
       {
         "platform": "x",
-        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
-        "embed_id": "2040257053852369339",
-        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
-        "author": "FirstSquawk"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/FalconUpdatesHQ/status/2040079211898257634",
         "embed_id": "2040079211898257634",
         "title": "BREAKING 🚨\n\n🤯 🇺🇸 🇮🇱 🇮🇷 Big claim by Iranian media: a US F-15E jet was downed over southern Iran.\n\n🔺 Tasnim says the pilot ejected and may hav",
@@ -81,6 +74,27 @@
         "embed_id": "2039701661091078399",
         "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
         "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2040839565536276900",
+        "embed_id": "2040839565536276900",
+        "title": "BREAKING 🚨\n\n⚡️🇮🇷 Iran struck Gulf energy facilities repeatedly over 48 hours, Al Arabiya reports.\n\n🇮🇷 Days ago, FM Abbas Araghchi called neighbor",
+        "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2039951842952790281",
+        "embed_id": "2039951842952790281",
+        "title": "BREAKING 🚨\n\n🇰🇼 Kuwait oil refinery damaged in an Iranian drone attack\n\n⚡️🔺Iran also warns of strikes on regional energy and telecom firms if the U",
+        "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/rkmtimes/status/2039706873168064859",
+        "embed_id": "2039706873168064859",
+        "title": "JUST IN🇮🇷❌🇺🇸🇮🇱🔥 Over 70+ US/Israeli fighter jets has conducted large-scale airstrikes across Iran, destroyed multiple refineries, and undergrou",
+        "author": "rkmtimes"
       },
       {
         "platform": "reddit",
@@ -149,13 +163,6 @@
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
-        "embed_id": "2040257053852369339",
-        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
-        "author": "FirstSquawk"
-      },
-      {
-        "platform": "x",
         "url": "https://x.com/FalconUpdatesHQ/status/2040079211898257634",
         "embed_id": "2040079211898257634",
         "title": "BREAKING 🚨\n\n🤯 🇺🇸 🇮🇱 🇮🇷 Big claim by Iranian media: a US F-15E jet was downed over southern Iran.\n\n🔺 Tasnim says the pilot ejected and may hav",
@@ -167,6 +174,27 @@
         "embed_id": "2039701661091078399",
         "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
         "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2040839565536276900",
+        "embed_id": "2040839565536276900",
+        "title": "BREAKING 🚨\n\n⚡️🇮🇷 Iran struck Gulf energy facilities repeatedly over 48 hours, Al Arabiya reports.\n\n🇮🇷 Days ago, FM Abbas Araghchi called neighbor",
+        "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/FalconUpdatesHQ/status/2039951842952790281",
+        "embed_id": "2039951842952790281",
+        "title": "BREAKING 🚨\n\n🇰🇼 Kuwait oil refinery damaged in an Iranian drone attack\n\n⚡️🔺Iran also warns of strikes on regional energy and telecom firms if the U",
+        "author": "FalconUpdatesHQ"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/rkmtimes/status/2039706873168064859",
+        "embed_id": "2039706873168064859",
+        "title": "JUST IN🇮🇷❌🇺🇸🇮🇱🔥 Over 70+ US/Israeli fighter jets has conducted large-scale airstrikes across Iran, destroyed multiple refineries, and undergrou",
+        "author": "rkmtimes"
       },
       {
         "platform": "reddit",
