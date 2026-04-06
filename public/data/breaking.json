@@ -1,5 +1,135 @@
 [
   {
+    "topic": "Iran Intel Chief Killed",
+    "summary": "Iran's intelligence chief has been reportedly killed in a joint operation by the US and Israel. This development has heightened tensions in the Middle East, particularly in light of recent threats exchanged between Iran and the US over the strategic Strait of Hormuz. The incident is part of a broader pattern of escalating hostilities in the region.",
+    "severity": "critical",
+    "detected_at": "2026-04-06T11:00:11.016Z",
+    "last_updated": "2026-04-06T11:00:11.016Z",
+    "left_narrative": "Not enough coverage yet — check back soon.",
+    "right_narrative": "Not enough coverage yet — check back soon.",
+    "what_they_arent_telling_you": "Neither side is addressing the potential long-term geopolitical consequences of this assassination. The focus remains on immediate military and political reactions, ignoring how this shifts alliances or influence Iran's internal politics. Additionally, the economic implications, particularly concerning oil markets and global trade routes through the Strait of Hormuz, are not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting this is a precursor to a larger conflict. Memes are circulating that depict the US and Israel as aggressive players in a geopolitical chess game, while others question the timing and motives behind the operation. Hashtags related to World War III and Middle East tensions are trending.",
+    "image_prompt": "A shadowy figure standing at the edge of a turbulent sea, with storm clouds gathering overhead and distant silhouettes of warships on the horizon, symbolizing geopolitical tension and uncertainty.",
+    "sources": [
+      {
+        "name": "Al Jazeera",
+        "url": "https://www.aljazeera.com/news/2026/4/6/irans-top-university-bombed-as-us-israel-intensify-attacks-34-killed?traffic_source=rss",
+        "lean": "center",
+        "title": "Iran’s top university bombed as US, Israel intensify attacks; 34 killed"
+      }
+    ],
+    "clips": [
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=80_t7kTa8M4",
+        "embed_id": "80_t7kTa8M4",
+        "title": "Iran threatens ‘devastating’ retaliation; IRGC intelligence chief ‘killed’ | DW News"
+      },
+      {
+        "platform": "youtube",
+        "url": "https://www.youtube.com/watch?v=GlfTMsCC7qU",
+        "embed_id": "GlfTMsCC7qU",
+        "title": "BREAKING: Iran&#39;s intel chief KILLED in US, Israeli strikes",
+        "duration": 731
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/zerohedge/status/2034250490062446855",
+        "embed_id": "2034250490062446855",
+        "title": "Iran Intel Chief Killed As Israel Grants IDF 'Free Hand' To Eliminate Leaders; Trump Muses Tehran Could Be 'Finished Off' https://t.co/FjxujYqwMq",
+        "author": "zerohedge"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2032970029524987997",
+        "embed_id": "2032970029524987997",
+        "title": "🇺🇸🇮🇷 Iran's military Intel Head, Abdollah Jalali Nasab, was eliminated.\n\nThe guy had just replaced the last chief killed 2 weeks ago.\n\nThat now-em",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85999",
+        "embed_id": "intelslava/85999",
+        "title": "🇺🇸🇮🇱🇮🇷⚡️The head of the IRGC's intelligence service, Majid Hademi, was killed today in attacks by the US and Israel, according to Iranian media.",
+        "author": "intelslava"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NSDQ420/comments/1sd0u0x/we_got_him/",
+        "embed_id": "1sd0u0x",
+        "title": "🚨“WE GOT HIM!\""
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1sdug5m/another_upper_echelon_irgc_member_has_been_killed/",
+        "embed_id": "1sdug5m",
+        "title": "Another upper echelon IRGC member has been killed"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sdt8jw/unless_arahgchi_says_it_probably_its_100_bullshit/",
+        "embed_id": "1sdt8jw",
+        "title": "Unless Arahgchi says it, probably it’s 100% bullshit"
+      }
+    ],
+    "youtube_videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=80_t7kTa8M4",
+        "embed_id": "80_t7kTa8M4",
+        "title": "Iran threatens ‘devastating’ retaliation; IRGC intelligence chief ‘killed’ | DW News",
+        "channel": "DW News"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=GlfTMsCC7qU",
+        "embed_id": "GlfTMsCC7qU",
+        "title": "BREAKING: Iran&#39;s intel chief KILLED in US, Israeli strikes",
+        "channel": "Fox News",
+        "duration": 731
+      }
+    ],
+    "social_clips": [
+      {
+        "platform": "x",
+        "url": "https://x.com/zerohedge/status/2034250490062446855",
+        "embed_id": "2034250490062446855",
+        "title": "Iran Intel Chief Killed As Israel Grants IDF 'Free Hand' To Eliminate Leaders; Trump Muses Tehran Could Be 'Finished Off' https://t.co/FjxujYqwMq",
+        "author": "zerohedge"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/MarioNawfal/status/2032970029524987997",
+        "embed_id": "2032970029524987997",
+        "title": "🇺🇸🇮🇷 Iran's military Intel Head, Abdollah Jalali Nasab, was eliminated.\n\nThe guy had just replaced the last chief killed 2 weeks ago.\n\nThat now-em",
+        "author": "MarioNawfal"
+      },
+      {
+        "platform": "telegram",
+        "url": "https://t.me/intelslava/85999",
+        "embed_id": "intelslava/85999",
+        "title": "🇺🇸🇮🇱🇮🇷⚡️The head of the IRGC's intelligence service, Majid Hademi, was killed today in attacks by the US and Israel, according to Iranian media.",
+        "author": "intelslava"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/NSDQ420/comments/1sd0u0x/we_got_him/",
+        "embed_id": "1sd0u0x",
+        "title": "🚨“WE GOT HIM!\""
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/PERSIAN/comments/1sdug5m/another_upper_echelon_irgc_member_has_been_killed/",
+        "embed_id": "1sdug5m",
+        "title": "Another upper echelon IRGC member has been killed"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/UAE/comments/1sdt8jw/unless_arahgchi_says_it_probably_its_100_bullshit/",
+        "embed_id": "1sdt8jw",
+        "title": "Unless Arahgchi says it, probably it’s 100% bullshit"
+      }
+    ]
+  },
+  {
     "topic": "Iran University Bombing",
     "summary": "A bombing at Iran's top university has resulted in at least 34 casualties, occurring amidst heightened tensions and military actions involving the United States and Israel. This incident represents a significant escalation in the ongoing conflict between Iran and its adversaries. The attack has drawn international attention and condemnation, further complicating diplomatic relations in the region.",
     "severity": "critical",
@@ -140,7 +270,8 @@
         "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
       }
     ],
-    "image_file": "/images/breaking_2026-04-06.png"
+    "image_file": "/images/breaking_2026-04-06.png",
+    "x_posted": true
   },
   {
     "topic": "Airstrikes on Iran",
@@ -329,7 +460,8 @@
         "title": "‘On this day of celebration, let us abandon every desire for conflict, domination and power’"
       }
     ],
-    "image_file": "/images/breaking_2026-04-06.png"
+    "image_file": "/images/breaking_2026-04-06.png",
+    "x_posted": true
   },
   {
     "topic": "US-Iran Tensions Escalate",
@@ -527,6 +659,7 @@
         "title": "“I am blowing up everything”: Donald Trump sets 32-hour deadline as tensions quietly escalate"
       }
     ],
-    "image_file": "/images/breaking_2026-04-06.png"
+    "image_file": "/images/breaking_2026-04-06.png",
+    "x_posted": true
   }
 ]
