@@ -337,7 +337,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     poster={`/api/tg-video?post=${active.embed_id}&thumb=1`}
                     className="w-full h-full object-cover"
                     muted playsInline controls
-                    onEnded={() => nextRef.current()} />
+                    onEnded={() => nextRef.current()}
+                    onError={() => nextRef.current()} />
                 )}
               </>
             ) : (

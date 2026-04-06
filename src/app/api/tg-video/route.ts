@@ -17,8 +17,9 @@ export async function GET(req: NextRequest) {
     });
     const html = await resp.text();
 
-    // Find the block for this specific post
-    const postBlock = html.split(`data-post="${post}"`)[1];
+    // Find the block for this specific post (cut at next post boundary)
+    const afterPost = html.split(`data-post="${post}"`)[1];
+    const postBlock = afterPost?.split(/data-post="/)[0];
     if (!postBlock) {
       // Fallback: try og:image for thumbnail from direct URL
       if (wantThumb) {
