@@ -16,13 +16,18 @@ const CATEGORIES = [
 ];
 
 
+function cleanDate(dateStr: string): string {
+  // Strip suffixes like "_engagement" from dates
+  return dateStr.replace(/_.*$/, '');
+}
+
 function formatDate(dateStr: string): string {
-  const d = new Date(dateStr + 'T12:00:00');
+  const d = new Date(cleanDate(dateStr) + 'T12:00:00');
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
 function formatDateDay(dateStr: string): string {
-  const d = new Date(dateStr + 'T12:00:00');
+  const d = new Date(cleanDate(dateStr) + 'T12:00:00');
   return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 }
 
@@ -31,7 +36,7 @@ function getYear(dateStr: string): string {
 }
 
 function formatDateFull(dateStr: string): string {
-  const d = new Date(dateStr + 'T12:00:00');
+  const d = new Date(cleanDate(dateStr) + 'T12:00:00');
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 }
 
@@ -432,12 +437,8 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                 <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                   <p className="text-[13px] text-[#ccc] leading-[1.7] italic">
                     {selectedDate
-                      ? thread.entries
-                          .filter(e => e.date.startsWith(getYear(selectedDate)))
-                          .map(e => e.summary)
-                          .filter(Boolean)
-                          .join(' ')
-                        || thread.summary
+                      ? (thread.entries.find(e => e.date === selectedDate)?.summary
+                        || thread.summary)
                       : thread.summary}
                   </p>
                 </div>
