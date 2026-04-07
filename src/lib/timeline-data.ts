@@ -83,21 +83,15 @@ function loadTimelineFile(filename: string): TimelineThreadsOutput | null {
 }
 
 export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null> {
-  const detected = loadTimelineFile('timeline_threads.json');
-  const archive = loadTimelineFile('timeline_archive.json');
-
-  if (!detected && !archive) return null;
-
-  // Merge: archive threads take precedence over detected threads on ID conflicts
-  const archiveIds = new Set((archive?.threads || []).map(t => t.id));
-  const detectedFiltered = (detected?.threads || []).filter(t => !archiveIds.has(t.id));
-  const merged = [...(archive?.threads || []), ...detectedFiltered];
+  // Thread detector now merges archive into timeline_threads.json — single source of truth
+  const data = loadTimelineFile('timeline_threads.json');
+  if (!data) return null;
 
   // Filter out threads with no entries
-  const threads = merged.filter(t => t.entries.length >= 2);
+  const threads = data.threads.filter(t => t.entries.length >= 2);
 
   return {
-    generated_at: detected?.generated_at || archive?.generated_at || new Date().toISOString(),
+    generated_at: data.generated_at,
     threads,
   };
 }

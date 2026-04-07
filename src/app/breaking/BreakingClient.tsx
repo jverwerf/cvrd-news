@@ -38,7 +38,7 @@ function toNarrativeGap(b: any): NarrativeGap {
     right_narrative: b.right_narrative || '',
     what_they_arent_telling_you: b.what_they_arent_telling_you || '',
     social_summary: b.social_summary || '',
-    image_file: b.image_file || undefined,
+    image_file: undefined,
     image_prompt: b.image_prompt || '',
     sources: (b.sources || []).map((s: any) => ({
       name: s.name, url: s.url, lean: s.lean, title: s.title,

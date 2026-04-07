@@ -1,75 +1,117 @@
 {
   "date_last_year": "2025-04-06",
-  "date_generated": "2026-04-06T07:32:40.459Z",
-  "summary": "April 6, 2025, was marked by significant global events, particularly in the economic and cultural spheres. The U.S. implemented new tariffs under President Donald Trump, causing a ripple effect in global markets, with major indices like the S&P 500 and Taiwan's Taiex experiencing sharp declines. This move sparked protests across the United States and raised concerns about the future of international trade. Additionally, the day was somber with the deaths of notable figures such as actor Jay North and drummer Clem Burke, leading to widespread tributes and reflections on their contributions to the entertainment industry.",
+  "date_generated": "2026-04-06T08:38:47.613Z",
+  "summary": "April 6, 2025, was marked by significant global economic and cultural events. The U.S. implemented new tariffs under President Donald Trump, causing a major downturn in global financial markets. The S&P 500 and Taiwan's Taiex index experienced sharp declines, and protests erupted across the United States. Additionally, the world mourned the loss of notable figures, including actor Jay North and drummer Clem Burke, both of whom left lasting legacies in their respective fields. These events underscored the day's impact on both economic and cultural fronts.",
   "stories": [
     {
-      "headline": "Global Markets Plunge Amid New U.S. Tariffs",
-      "summary": "The U.S. introduced a 10% tariff on all imports, effective April 5, 2025, causing significant disruptions in global financial markets. The S&P 500 fell nearly 6%, and Taiwan's Taiex index dropped over 9.7%. Protests erupted across the U.S., with analysts warning of potential long-term impacts on global trade norms.",
+      "headline": "Global Markets Plunge Over U.S. Tariffs",
+      "summary": "The U.S. imposed a 10% tariff on all imports, leading to significant market turmoil. The S&P 500 fell nearly 6%, and Taiwan's Taiex index dropped over 9.7%. Protests erupted across the U.S., with analysts warning of disrupted global trade norms. This policy shift has sparked widespread concern about the future of international trade.",
       "youtube_queries": [
-        "Impact of April 2025 U.S. tariffs on global markets",
-        "Protests in U.S. over new tariffs April 6, 2025",
-        "Analysis of U.S. tariff policy April 2025"
+        "trump tariffs market crash",
+        "us tariffs protests",
+        "CNBC market reaction tariffs"
       ],
       "category": "markets",
       "videos": [
         {
-          "id": "UuPx4VazAvY",
-          "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
-          "channel": "CNBC Awaaz.",
-          "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
+          "id": "HpnnZhGk5jw",
+          "title": "&#39;Trump wants to crash the dollar&#39;",
+          "channel": "LBC",
+          "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
         },
         {
-          "id": "dn7sWfDo3go",
-          "title": "What Economists Got Wrong on Tariffs",
-          "channel": "Bloomberg Originals",
-          "thumbnail": "https://i.ytimg.com/vi/dn7sWfDo3go/maxresdefault.jpg"
+          "id": "CHk_FgAN3lE",
+          "title": "Stock markets react negatively to Trump's tariffs threats over Greenland",
+          "channel": "CBS News",
+          "thumbnail": "https://i.ytimg.com/vi/CHk_FgAN3lE/maxresdefault.jpg"
         },
         {
-          "id": "v1JV5-0nqLI",
-          "title": "Trump Sparks Chaos with NEW Tariffs",
-          "channel": "Global News Update",
-          "thumbnail": "https://i.ytimg.com/vi/v1JV5-0nqLI/maxresdefault.jpg"
+          "id": "fOVz_1kzfvA",
+          "title": "Stocks hit session lows as President Trump threatens 'massive' tariff hike on China",
+          "channel": "CNBC Television",
+          "thumbnail": "https://i.ytimg.com/vi/fOVz_1kzfvA/maxresdefault.jpg"
         }
       ],
       "video": {
-        "id": "UuPx4VazAvY",
-        "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
-        "channel": "CNBC Awaaz.",
-        "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
+        "id": "HpnnZhGk5jw",
+        "title": "&#39;Trump wants to crash the dollar&#39;",
+        "channel": "LBC",
+        "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
       }
     },
     {
-      "headline": "Entertainment World Mourns Jay North, Clem Burke",
-      "summary": "April 6, 2025, saw the deaths of Jay North, famed for his role in 'Dennis the Menace,' and Clem Burke, the drummer for Blondie. North passed away at 73, while Burke died at 70. Their deaths prompted tributes from fans and peers, highlighting their lasting impact on television and music.",
+      "headline": "Cultural Icons Jay North and Clem Burke Pass Away",
+      "summary": "April 6, 2025, saw the deaths of actor Jay North and drummer Clem Burke. Jay North, famed for his role in 'Dennis the Menace,' died at 73. Clem Burke, known for his work with Blondie, passed away at 70. Their contributions to entertainment and music have left a lasting impact on their industries.",
       "youtube_queries": [
-        "Tributes to Jay North April 2025",
-        "Clem Burke's legacy in music April 2025",
-        "Impact of Jay North and Clem Burke's deaths April 2025"
+        "Jay North death news",
+        "Clem Burke Blondie tribute",
+        "BBC Jay North Clem Burke"
       ],
       "category": "trending",
-      "videos": [],
-      "video": null
+      "videos": [
+        {
+          "id": "Mq7sdeB9Q_g",
+          "title": "‘Dennis the Menace’ actor Jay North dies",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/Mq7sdeB9Q_g/hqdefault.jpg"
+        },
+        {
+          "id": "1UKkDS0I-nQ",
+          "title": "&#39;Dennis the Menace&#39; star Jay North dies at age 73",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/1UKkDS0I-nQ/hqdefault.jpg"
+        },
+        {
+          "id": "or_MDJnmihc",
+          "title": "Defendant collapses in court after guilty verdict",
+          "channel": "CBS News",
+          "thumbnail": "https://i.ytimg.com/vi/or_MDJnmihc/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "Mq7sdeB9Q_g",
+        "title": "‘Dennis the Menace’ actor Jay North dies",
+        "channel": "ABC News",
+        "thumbnail": "https://i.ytimg.com/vi/Mq7sdeB9Q_g/hqdefault.jpg"
+      }
     }
   ],
   "videos": [
     {
-      "id": "UuPx4VazAvY",
-      "title": "Biggest Impact of Tariff Hike Explained | Global Trade War 2025 |",
-      "channel": "CNBC Awaaz.",
-      "thumbnail": "https://i.ytimg.com/vi/UuPx4VazAvY/hqdefault.jpg"
+      "id": "HpnnZhGk5jw",
+      "title": "&#39;Trump wants to crash the dollar&#39;",
+      "channel": "LBC",
+      "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
     },
     {
-      "id": "dn7sWfDo3go",
-      "title": "What Economists Got Wrong on Tariffs",
-      "channel": "Bloomberg Originals",
-      "thumbnail": "https://i.ytimg.com/vi/dn7sWfDo3go/maxresdefault.jpg"
+      "id": "CHk_FgAN3lE",
+      "title": "Stock markets react negatively to Trump's tariffs threats over Greenland",
+      "channel": "CBS News",
+      "thumbnail": "https://i.ytimg.com/vi/CHk_FgAN3lE/maxresdefault.jpg"
     },
     {
-      "id": "v1JV5-0nqLI",
-      "title": "Trump Sparks Chaos with NEW Tariffs",
-      "channel": "Global News Update",
-      "thumbnail": "https://i.ytimg.com/vi/v1JV5-0nqLI/maxresdefault.jpg"
+      "id": "fOVz_1kzfvA",
+      "title": "Stocks hit session lows as President Trump threatens 'massive' tariff hike on China",
+      "channel": "CNBC Television",
+      "thumbnail": "https://i.ytimg.com/vi/fOVz_1kzfvA/maxresdefault.jpg"
+    },
+    {
+      "id": "Mq7sdeB9Q_g",
+      "title": "‘Dennis the Menace’ actor Jay North dies",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/Mq7sdeB9Q_g/hqdefault.jpg"
+    },
+    {
+      "id": "1UKkDS0I-nQ",
+      "title": "&#39;Dennis the Menace&#39; star Jay North dies at age 73",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/1UKkDS0I-nQ/hqdefault.jpg"
+    },
+    {
+      "id": "or_MDJnmihc",
+      "title": "Defendant collapses in court after guilty verdict",
+      "channel": "CBS News",
+      "thumbnail": "https://i.ytimg.com/vi/or_MDJnmihc/hqdefault.jpg"
     }
   ]
 }

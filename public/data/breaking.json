@@ -1,665 +1,175 @@
 [
   {
-    "topic": "Iran Intel Chief Killed",
-    "summary": "Iran's intelligence chief has been reportedly killed in a joint operation by the US and Israel. This development has heightened tensions in the Middle East, particularly in light of recent threats exchanged between Iran and the US over the strategic Strait of Hormuz. The incident is part of a broader pattern of escalating hostilities in the region.",
-    "severity": "critical",
-    "detected_at": "2026-04-06T11:00:11.016Z",
-    "last_updated": "2026-04-06T11:00:11.016Z",
+    "topic": "Escalation in Gaza Conflict",
+    "summary": "The conflict in Gaza has intensified as Israeli airstrikes resulted in the deaths of ten individuals. This escalation is part of the ongoing hostilities between Israeli forces and Hamas, as well as other militia groups. The situation has heightened fears of further instability and violence in the region, drawing international attention and concern.",
+    "severity": "major",
+    "detected_at": "2026-04-06T21:00:09.150Z",
+    "last_updated": "2026-04-07T05:00:40.936Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential long-term geopolitical consequences of this assassination. The focus remains on immediate military and political reactions, ignoring how this shifts alliances or influence Iran's internal politics. Additionally, the economic implications, particularly concerning oil markets and global trade routes through the Strait of Hormuz, are not being thoroughly examined.",
-    "social_summary": "Social media is ablaze with speculation and conspiracy theories, with some users suggesting this is a precursor to a larger conflict. Memes are circulating that depict the US and Israel as aggressive players in a geopolitical chess game, while others question the timing and motives behind the operation. Hashtags related to World War III and Middle East tensions are trending.",
-    "image_prompt": "A shadowy figure standing at the edge of a turbulent sea, with storm clouds gathering overhead and distant silhouettes of warships on the horizon, symbolizing geopolitical tension and uncertainty.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/6/irans-top-university-bombed-as-us-israel-intensify-attacks-34-killed?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran’s top university bombed as US, Israel intensify attacks; 34 killed"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=80_t7kTa8M4",
-        "embed_id": "80_t7kTa8M4",
-        "title": "Iran threatens ‘devastating’ retaliation; IRGC intelligence chief ‘killed’ | DW News"
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GlfTMsCC7qU",
-        "embed_id": "GlfTMsCC7qU",
-        "title": "BREAKING: Iran&#39;s intel chief KILLED in US, Israeli strikes",
-        "duration": 731
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/zerohedge/status/2034250490062446855",
-        "embed_id": "2034250490062446855",
-        "title": "Iran Intel Chief Killed As Israel Grants IDF 'Free Hand' To Eliminate Leaders; Trump Muses Tehran Could Be 'Finished Off' https://t.co/FjxujYqwMq",
-        "author": "zerohedge"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2032970029524987997",
-        "embed_id": "2032970029524987997",
-        "title": "🇺🇸🇮🇷 Iran's military Intel Head, Abdollah Jalali Nasab, was eliminated.\n\nThe guy had just replaced the last chief killed 2 weeks ago.\n\nThat now-em",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85999",
-        "embed_id": "intelslava/85999",
-        "title": "🇺🇸🇮🇱🇮🇷⚡️The head of the IRGC's intelligence service, Majid Hademi, was killed today in attacks by the US and Israel, according to Iranian media.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NSDQ420/comments/1sd0u0x/we_got_him/",
-        "embed_id": "1sd0u0x",
-        "title": "🚨“WE GOT HIM!\""
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1sdug5m/another_upper_echelon_irgc_member_has_been_killed/",
-        "embed_id": "1sdug5m",
-        "title": "Another upper echelon IRGC member has been killed"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sdt8jw/unless_arahgchi_says_it_probably_its_100_bullshit/",
-        "embed_id": "1sdt8jw",
-        "title": "Unless Arahgchi says it, probably it’s 100% bullshit"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=80_t7kTa8M4",
-        "embed_id": "80_t7kTa8M4",
-        "title": "Iran threatens ‘devastating’ retaliation; IRGC intelligence chief ‘killed’ | DW News",
-        "channel": "DW News"
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=GlfTMsCC7qU",
-        "embed_id": "GlfTMsCC7qU",
-        "title": "BREAKING: Iran&#39;s intel chief KILLED in US, Israeli strikes",
-        "channel": "Fox News",
-        "duration": 731
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/zerohedge/status/2034250490062446855",
-        "embed_id": "2034250490062446855",
-        "title": "Iran Intel Chief Killed As Israel Grants IDF 'Free Hand' To Eliminate Leaders; Trump Muses Tehran Could Be 'Finished Off' https://t.co/FjxujYqwMq",
-        "author": "zerohedge"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MarioNawfal/status/2032970029524987997",
-        "embed_id": "2032970029524987997",
-        "title": "🇺🇸🇮🇷 Iran's military Intel Head, Abdollah Jalali Nasab, was eliminated.\n\nThe guy had just replaced the last chief killed 2 weeks ago.\n\nThat now-em",
-        "author": "MarioNawfal"
-      },
-      {
-        "platform": "telegram",
-        "url": "https://t.me/intelslava/85999",
-        "embed_id": "intelslava/85999",
-        "title": "🇺🇸🇮🇱🇮🇷⚡️The head of the IRGC's intelligence service, Majid Hademi, was killed today in attacks by the US and Israel, according to Iranian media.",
-        "author": "intelslava"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/NSDQ420/comments/1sd0u0x/we_got_him/",
-        "embed_id": "1sd0u0x",
-        "title": "🚨“WE GOT HIM!\""
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PERSIAN/comments/1sdug5m/another_upper_echelon_irgc_member_has_been_killed/",
-        "embed_id": "1sdug5m",
-        "title": "Another upper echelon IRGC member has been killed"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/UAE/comments/1sdt8jw/unless_arahgchi_says_it_probably_its_100_bullshit/",
-        "embed_id": "1sdt8jw",
-        "title": "Unless Arahgchi says it, probably it’s 100% bullshit"
-      }
-    ]
-  },
-  {
-    "topic": "Iran University Bombing",
-    "summary": "A bombing at Iran's top university has resulted in at least 34 casualties, occurring amidst heightened tensions and military actions involving the United States and Israel. This incident represents a significant escalation in the ongoing conflict between Iran and its adversaries. The attack has drawn international attention and condemnation, further complicating diplomatic relations in the region.",
-    "severity": "critical",
-    "detected_at": "2026-04-06T09:00:09.645Z",
-    "last_updated": "2026-04-06T09:00:09.646Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the potential internal political dynamics within Iran that be influencing these events. The focus remains on external actors, but internal dissent or power struggles is playing a role in how Iran is responding to these attacks. Additionally, the economic implications of continued conflict, such as impacts on global oil markets, are not being thoroughly examined.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users blaming Western imperialism for the attack, while others see it as a justified response to Iranian aggression. Conspiracy theories are circulating, suggesting false flag operations or covert operations by intelligence agencies. Memes and hashtags are trending, reflecting the deep divisions in public opinion on the issue.",
-    "image_prompt": "A dramatic editorial photo of a university campus in ruins, with symbolic elements like scattered books and a broken clock tower, under a stormy sky, capturing the chaos and tension of the moment.",
-    "sources": [
-      {
-        "name": "Al Jazeera",
-        "url": "https://www.aljazeera.com/news/2026/4/6/irans-top-university-bombed-as-us-israel-intensify-attacks-34-killed?traffic_source=rss",
-        "lean": "center",
-        "title": "Iran’s top university bombed as US, Israel intensify attacks; 34 killed"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=goMwjkteEoU",
-        "embed_id": "goMwjkteEoU",
-        "title": "Iran threatens retaliatory attacks on US-Israeli universities in the region",
-        "duration": 304
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
-        "embed_id": "f20WG4pvHME",
-        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
-        "duration": 180
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/ashoswai/status/2040356757361311752",
-        "embed_id": "2040356757361311752",
-        "title": "Despite all the bombing, Iran still has not closed down its universities - Iran has only shifted all university courses to virtual learning. Education",
-        "author": "ashoswai"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Chellaney/status/2038144128647827698",
-        "embed_id": "2038144128647827698",
-        "title": "The bombing of the premier Iran University of Science and Technology in downtown Tehran was not collateral damage but a deliberate attempt to impede t",
-        "author": "Chellaney"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskBrits/comments/1sdfpv1/whys_there_widespread_support_from_my_fellow_left/",
-        "embed_id": "1sdfpv1",
-        "title": "Why’s there widespread support from my fellow left wingers for the Iranian regime?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1sddwmn/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddwmn",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AustralianPolitics/comments/1sddu00/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddu00",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sd2at6/trump_to_iran_open_the_fuin_strait_or_face/",
-        "embed_id": "1sd2at6",
-        "title": "Trump to Iran: \"Open the Fu***In' Strait\" or face bombing Tuesday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/aussie/comments/1sddw4f/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddw4f",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=goMwjkteEoU",
-        "embed_id": "goMwjkteEoU",
-        "title": "Iran threatens retaliatory attacks on US-Israeli universities in the region",
-        "channel": "Al Jazeera English",
-        "duration": 304
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=f20WG4pvHME",
-        "embed_id": "f20WG4pvHME",
-        "title": "Iranian academic describes US-Israeli attacks on Iran’s universities | AJ #shorts",
-        "channel": "Al Jazeera English",
-        "duration": 180
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/ashoswai/status/2040356757361311752",
-        "embed_id": "2040356757361311752",
-        "title": "Despite all the bombing, Iran still has not closed down its universities - Iran has only shifted all university courses to virtual learning. Education",
-        "author": "ashoswai"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Chellaney/status/2038144128647827698",
-        "embed_id": "2038144128647827698",
-        "title": "The bombing of the premier Iran University of Science and Technology in downtown Tehran was not collateral damage but a deliberate attempt to impede t",
-        "author": "Chellaney"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AskBrits/comments/1sdfpv1/whys_there_widespread_support_from_my_fellow_left/",
-        "embed_id": "1sdfpv1",
-        "title": "Why’s there widespread support from my fellow left wingers for the Iranian regime?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/OpenAussie/comments/1sddwmn/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddwmn",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/AustralianPolitics/comments/1sddu00/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddu00",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/worldnews/comments/1sd2at6/trump_to_iran_open_the_fuin_strait_or_face/",
-        "embed_id": "1sd2at6",
-        "title": "Trump to Iran: \"Open the Fu***In' Strait\" or face bombing Tuesday"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/aussie/comments/1sddw4f/albaneses_chosen_this_moment_to_jettison_his/",
-        "embed_id": "1sddw4f",
-        "title": "Albanese’s chosen this moment to jettison his political caution. It’s a major gamble"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-06.png",
-    "x_posted": true
-  },
-  {
-    "topic": "Airstrikes on Iran",
-    "summary": "Recent airstrikes on Iran have resulted in over 25 casualties, heightening tensions in the Middle East. These strikes coincide with an impending deadline related to the Strait of Hormuz, initially set by former President Trump, which has raised fears of escalating conflict in the region.",
-    "severity": "critical",
-    "detected_at": "2026-04-06T07:00:09.671Z",
-    "last_updated": "2026-04-06T07:00:09.671Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Right-leaning media is framing the airstrikes as a necessary action to curb Iran's aggressive posturing and ensure the security of the Strait of Hormuz. They emphasize the importance of maintaining a strong stance against Iran to prevent further destabilization in the Middle East and protect global oil supply routes.",
-    "what_they_arent_telling_you": "Neither side is addressing the economic interests tied to the Strait of Hormuz, a critical chokepoint for global oil shipments. The focus on military action overshadows the underlying economic motivations and the influence of defense contractors who benefit from prolonged regional instability. Additionally, the role of regional allies and their strategic interests in the conflict remains underexplored.",
-    "social_summary": "Social media is buzzing with polarized reactions, with some users supporting the airstrikes as a necessary measure against a hostile regime, while others decry them as reckless warmongering. Conspiracy theories about ulterior motives, such as control over oil resources, are gaining traction, alongside memes criticizing the cyclical nature of Middle Eastern conflicts.",
-    "image_prompt": "A dramatic editorial photo of a silhouetted fighter jet soaring over a vast desert landscape at dusk, with the faint outline of an oil tanker in the distance, symbolizing the intersection of military power and economic interests.",
-    "sources": [
-      {
-        "name": "NY Post",
-        "url": "https://nypost.com/2026/04/06/world-news/us-israeli-airstrikes-batter-iran-as-trumps-strait-of-hormuz-deadline-looms/",
-        "lean": "right",
-        "title": "US, Israeli airstrikes batter Iran as Trump&#8217;s Strait of Hormuz deadline looms"
-      }
-    ],
-    "clips": [
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=j4Ff73zUOhc",
-        "embed_id": "j4Ff73zUOhc",
-        "title": "US Airstrikes Continue to Eliminate Iranian Targets",
-        "duration": 145
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=MHsw5RtR9ZE",
-        "embed_id": "MHsw5RtR9ZE",
-        "title": "Iran’s Tallest Bridge Destroyed in US-Israeli Airstrikes",
-        "duration": 123
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=iOj8Vssogi0",
-        "embed_id": "iOj8Vssogi0",
-        "title": "Heavy US-Israeli air strike hits western Iran, causing huge blast wave",
-        "duration": 30
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/SuppressedNws1/status/2040984772806062188",
-        "embed_id": "2040984772806062188",
-        "title": "⚡️🇺🇸🇮🇷NOW: Black smoke can be seen over Azadi Square in Tehran, Iran, following U.S Israeli airstrikes on areas North of Mehrabad Airport. https:/",
-        "author": "SuppressedNws1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BabakTaghvaee1/status/2040900303638380629",
-        "embed_id": "2040900303638380629",
-        "title": "BREAKING: As a result of U.S. Air Force airstrikes on the ammunition depot of the 192nd Independent Armored Brigade of the Iranian Army Ground Force i",
-        "author": "BabakTaghvaee1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/RealBababanaras/status/2040643716436853238",
-        "embed_id": "2040643716436853238",
-        "title": "BREAKING : After rescuing the second F-15 pilot from Southwestern Iran, U.S. and Israeli Airforce launched a fresh wave of airstrikes using bunker bus",
-        "author": "RealBababanaras"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MonitorX99800/status/2040565658333655478",
-        "embed_id": "2040565658333655478",
-        "title": "🇺🇸🇮🇷🇮🇱⚡- US/Israeli airstrikes on the IRIB channel in Dehdasht, Iran. Multiple casualties have been reported.",
-        "author": "MonitorX99800"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2040498910100103602",
-        "embed_id": "2040498910100103602",
-        "title": "The IDF confirms airstrikes on petrochemical facilities in southern Iran, used to produce materials for ballistic missiles.\n\nThe military says the att",
-        "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BeckettUnite/status/2040496565077307694",
-        "embed_id": "2040496565077307694",
-        "title": "Video of 🇺🇸 &amp; 🇮🇱 airstrikes on the B1 bridge in northern Alborz province of Iran 🇮🇷\n\nAt least 13 people murdered &amp; 90 wounded\n\nThis is a",
-        "author": "BeckettUnite"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdggaz/the_cloud_is_now_a_combat_zone_irgc_targets_18_us/",
-        "embed_id": "1sdggaz",
-        "title": "The Cloud is Now a Combat Zone: IRGC Targets 18 U.S. Tech Giants with \"Kinetic\" Strikes. Is Your Data Center Next?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/indianmuslims/comments/1sd4br2/indian_hindus_cannot_comprehend_muslim_ummah/",
-        "embed_id": "1sd4br2",
-        "title": "Indian Hindus cannot comprehend Muslim Ummah solidarity because their religion simply does not have an equivalent — and that explains a lot."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/newsPH/comments/1sd0yi1/on_this_day_of_celebration_let_us_abandon_every/",
-        "embed_id": "1sd0yi1",
-        "title": "‘On this day of celebration, let us abandon every desire for conflict, domination and power’"
-      }
-    ],
-    "youtube_videos": [
-      {
-        "url": "https://www.youtube.com/watch?v=j4Ff73zUOhc",
-        "embed_id": "j4Ff73zUOhc",
-        "title": "US Airstrikes Continue to Eliminate Iranian Targets",
-        "channel": "New York Post",
-        "duration": 145
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=MHsw5RtR9ZE",
-        "embed_id": "MHsw5RtR9ZE",
-        "title": "Iran’s Tallest Bridge Destroyed in US-Israeli Airstrikes",
-        "channel": "New York Post",
-        "duration": 123
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=iOj8Vssogi0",
-        "embed_id": "iOj8Vssogi0",
-        "title": "Heavy US-Israeli air strike hits western Iran, causing huge blast wave",
-        "channel": "Al Jazeera English",
-        "duration": 30
-      }
-    ],
-    "social_clips": [
-      {
-        "platform": "x",
-        "url": "https://x.com/SuppressedNws1/status/2040984772806062188",
-        "embed_id": "2040984772806062188",
-        "title": "⚡️🇺🇸🇮🇷NOW: Black smoke can be seen over Azadi Square in Tehran, Iran, following U.S Israeli airstrikes on areas North of Mehrabad Airport. https:/",
-        "author": "SuppressedNws1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BabakTaghvaee1/status/2040900303638380629",
-        "embed_id": "2040900303638380629",
-        "title": "BREAKING: As a result of U.S. Air Force airstrikes on the ammunition depot of the 192nd Independent Armored Brigade of the Iranian Army Ground Force i",
-        "author": "BabakTaghvaee1"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/RealBababanaras/status/2040643716436853238",
-        "embed_id": "2040643716436853238",
-        "title": "BREAKING : After rescuing the second F-15 pilot from Southwestern Iran, U.S. and Israeli Airforce launched a fresh wave of airstrikes using bunker bus",
-        "author": "RealBababanaras"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/MonitorX99800/status/2040565658333655478",
-        "embed_id": "2040565658333655478",
-        "title": "🇺🇸🇮🇷🇮🇱⚡- US/Israeli airstrikes on the IRIB channel in Dehdasht, Iran. Multiple casualties have been reported.",
-        "author": "MonitorX99800"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/Osint613/status/2040498910100103602",
-        "embed_id": "2040498910100103602",
-        "title": "The IDF confirms airstrikes on petrochemical facilities in southern Iran, used to produce materials for ballistic missiles.\n\nThe military says the att",
-        "author": "Osint613"
-      },
-      {
-        "platform": "x",
-        "url": "https://x.com/BeckettUnite/status/2040496565077307694",
-        "embed_id": "2040496565077307694",
-        "title": "Video of 🇺🇸 &amp; 🇮🇱 airstrikes on the B1 bridge in northern Alborz province of Iran 🇮🇷\n\nAt least 13 people murdered &amp; 90 wounded\n\nThis is a",
-        "author": "BeckettUnite"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/PLNewsGroup/comments/1sdggaz/the_cloud_is_now_a_combat_zone_irgc_targets_18_us/",
-        "embed_id": "1sdggaz",
-        "title": "The Cloud is Now a Combat Zone: IRGC Targets 18 U.S. Tech Giants with \"Kinetic\" Strikes. Is Your Data Center Next?"
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/indianmuslims/comments/1sd4br2/indian_hindus_cannot_comprehend_muslim_ummah/",
-        "embed_id": "1sd4br2",
-        "title": "Indian Hindus cannot comprehend Muslim Ummah solidarity because their religion simply does not have an equivalent — and that explains a lot."
-      },
-      {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/newsPH/comments/1sd0yi1/on_this_day_of_celebration_let_us_abandon_every/",
-        "embed_id": "1sd0yi1",
-        "title": "‘On this day of celebration, let us abandon every desire for conflict, domination and power’"
-      }
-    ],
-    "image_file": "/images/breaking_2026-04-06.png",
-    "x_posted": true
-  },
-  {
-    "topic": "US-Iran Tensions Escalate",
-    "summary": "The United States and Iran are experiencing heightened tensions after a US military operation successfully rescued an American airman from Iranian territory. President Trump has issued stern warnings to Iran, threatening to target key Iranian infrastructure if provocations continue. This development has increased concerns about the possibility of military conflict between the two nations.",
-    "severity": "critical",
-    "detected_at": "2026-04-06T01:00:06.239Z",
-    "last_updated": "2026-04-06T05:00:55.131Z",
-    "left_narrative": "Not enough coverage yet — check back soon.",
-    "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the broader geopolitical implications of this incident, particularly how it affects US relations with other Middle Eastern countries and global oil markets. The focus remains on immediate military threats rather than the long-term strategic consequences, such as the potential for destabilizing the region further or impacting international alliances and economic interests.",
-    "social_summary": "Social media is ablaze with polarized reactions, with some users praising the US military's decisive action and others criticizing it as reckless warmongering. Memes and conspiracy theories are circulating, suggesting ulterior motives behind the rescue operation, such as distracting from domestic issues or influencing upcoming elections. Hashtags like #NoWarWithIran and #StandWithTrump are trending, reflecting the divided public opinion.",
-    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a desert landscape, with pieces representing the US and Iran in a tense standoff, symbolizing the strategic and precarious nature of the situation.",
+    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and political motivations that perpetuate the conflict. The arms trade and international political alliances play a significant role in sustaining the hostilities. Additionally, the humanitarian impact on civilians, including access to basic necessities and medical care, is often overshadowed by the focus on military actions.",
+    "social_summary": "Social media is ablaze with polarized opinions, with hashtags supporting both sides trending. Memes and viral videos depict the conflict in starkly contrasting lights, often oversimplifying the complex situation. Conspiracy theories about foreign powers manipulating the conflict for their own gain are also circulating widely.",
+    "image_prompt": "A dramatic editorial photo of a shattered hourglass, with sand spilling over a map of the Gaza region, symbolizing the relentless passage of time amidst ongoing conflict.",
     "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=6mP2EFtObO0",
-        "embed_id": "6mP2EFtObO0",
-        "title": "US, Iran tensions escalate as attacks hit bases and embassies",
-        "duration": 186
+        "url": "https://www.youtube.com/watch?v=cUb77oyTD_M",
+        "embed_id": "cUb77oyTD_M",
+        "title": "Biden tells Israel: De-escalate Gaza conflict - BBC News",
+        "duration": 1155
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=PYR4lF9pb-k",
-        "embed_id": "PYR4lF9pb-k",
-        "title": "Hundreds of U.S. special forces deployed as tensions escalate with Iran",
-        "duration": 123
+        "url": "https://www.youtube.com/watch?v=f0pRIv0mrEM",
+        "embed_id": "f0pRIv0mrEM",
+        "title": "Israel vows to escalate war with new plan to ‘conquer’ Gaza",
+        "duration": 175
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
-        "embed_id": "GiNqawXBaF8",
-        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
-        "duration": 404
+        "url": "https://www.youtube.com/watch?v=piu8A7iMP3c",
+        "embed_id": "piu8A7iMP3c",
+        "title": "Hamas warns of ‘dangerous escalation’ in Gaza strip after Israeli strikes",
+        "duration": 30
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=9FfwHd9cJ_E",
-        "embed_id": "9FfwHd9cJ_E",
-        "title": "DEVELOPING: Iran tensions ESCALATE after 2 new incidents",
-        "duration": 373
+        "url": "https://www.youtube.com/watch?v=76sy-iZRaR8",
+        "embed_id": "76sy-iZRaR8",
+        "title": "Israel rejects Biden call to ‘de-escalate’ Gaza conflict",
+        "duration": 358
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=JOuCgpfcNk0",
-        "embed_id": "JOuCgpfcNk0",
-        "title": "President to address nation as U.S.-Iran tensions escalate",
-        "duration": 123
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=9BZigFsgbqs",
-        "embed_id": "9BZigFsgbqs",
-        "title": "U.S.-Iran tensions escalate: Fresh airstrikes, ground invasion fears, and global warnings",
-        "duration": 169
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=yD2QMwVTgaY",
-        "embed_id": "yD2QMwVTgaY",
-        "title": "US military shoots down Iranian drone as tensions escalate",
-        "duration": 526
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=eTmOELIgs9M",
-        "embed_id": "eTmOELIgs9M",
-        "title": "US troops mobilise amid Iran tensions | This Is America",
-        "duration": 1663
+        "url": "https://www.youtube.com/watch?v=cfCODaSViS0",
+        "embed_id": "cfCODaSViS0",
+        "title": "Escalation of Conflict in Gaza: Israeli Strikes and Growing Civil Unrest",
+        "duration": 179
       },
       {
         "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2039701661091078399",
-        "embed_id": "2039701661091078399",
-        "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
-        "author": "FalconUpdatesHQ"
+        "url": "https://x.com/MFA_China/status/1968280940192620884",
+        "embed_id": "1968280940192620884",
+        "title": "China strongly opposes Israel’s ramping up of military operations in #Gaza.\n\nWe condemn all moves that harm civilians and violate international law an",
+        "author": "MFA_China"
       },
       {
         "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2039951842952790281",
-        "embed_id": "2039951842952790281",
-        "title": "BREAKING 🚨\n\n🇰🇼 Kuwait oil refinery damaged in an Iranian drone attack\n\n⚡️🔺Iran also warns of strikes on regional energy and telecom firms if the U",
-        "author": "FalconUpdatesHQ"
+        "url": "https://x.com/SuppressedNws/status/1953980736224043171",
+        "embed_id": "1953980736224043171",
+        "title": "⚡️🇨🇦🇮🇱JUST IN: Canada’s PM condemns Israel’s decision:\n\nCanada condemns Israel’s decision to “further escalate the conflict in Gaza” adding that “",
+        "author": "SuppressedNws"
       },
       {
         "platform": "x",
-        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
-        "embed_id": "2040257053852369339",
-        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
-        "author": "FirstSquawk"
+        "url": "https://x.com/rtenews/status/1874165554292154549",
+        "embed_id": "1874165554292154549",
+        "title": "The Catholic Archbishop of Armagh and Primate of All Ireland has described the war in Gaza as emblematic of failure by the international community to ",
+        "author": "rtenews"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1sd3qpx/mass_protests_erupted_in_basra_and_baghdad/",
-        "embed_id": "1sd3qpx",
-        "title": "Mass protests erupted in Basra and Baghdad against the US presence as the US‑Israel‑Iran conflict escalates. At least 108 have died, Iraq closed the S"
+        "platform": "x",
+        "url": "https://x.com/JosepBorrellF/status/1839136453072187878",
+        "embed_id": "1839136453072187878",
+        "title": "At the UNSC, I said what is happening in southern #Lebanon cannot be separated from what is happening in Gaza\n \nEscalation is not a solution, because ",
+        "author": "JosepBorrellF"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conservativeterrorism/comments/1sd854t/i_am_blowing_up_everything_donald_trump_sets/",
-        "embed_id": "1sd854t",
-        "title": "“I am blowing up everything”: Donald Trump sets 32-hour deadline as tensions quietly escalate"
+        "platform": "x",
+        "url": "https://x.com/AssalRad/status/1839023782494875907",
+        "embed_id": "1839023782494875907",
+        "title": "Pentagon says “conflict has been contained to Gaza”\n\nQ: You don’t want escalation, but where do you draw the line\n\nSingh: We want diplomatic resolutio",
+        "author": "AssalRad"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BeckettUnite/status/1825624118345015653",
+        "embed_id": "1825624118345015653",
+        "title": "Blinken claims the US 🇺🇸 is on a “global mission” to prevent escalation to a wider regional conflict but stand ready to “defend Israel”\n\nIsrael 🇮🇱",
+        "author": "BeckettUnite"
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=6mP2EFtObO0",
-        "embed_id": "6mP2EFtObO0",
-        "title": "US, Iran tensions escalate as attacks hit bases and embassies",
-        "channel": "Click On Detroit | Local 4 | WDIV",
-        "duration": 186
+        "url": "https://www.youtube.com/watch?v=cUb77oyTD_M",
+        "embed_id": "cUb77oyTD_M",
+        "title": "Biden tells Israel: De-escalate Gaza conflict - BBC News",
+        "channel": "BBC News",
+        "duration": 1155
       },
       {
-        "url": "https://www.youtube.com/watch?v=PYR4lF9pb-k",
-        "embed_id": "PYR4lF9pb-k",
-        "title": "Hundreds of U.S. special forces deployed as tensions escalate with Iran",
-        "channel": "CBS Miami",
-        "duration": 123
+        "url": "https://www.youtube.com/watch?v=f0pRIv0mrEM",
+        "embed_id": "f0pRIv0mrEM",
+        "title": "Israel vows to escalate war with new plan to ‘conquer’ Gaza",
+        "channel": "WRAL",
+        "duration": 175
       },
       {
-        "url": "https://www.youtube.com/watch?v=GiNqawXBaF8",
-        "embed_id": "GiNqawXBaF8",
-        "title": "'THRESHOLD of open conflict’: GRAVE warning issued on US, Iran escalation",
-        "channel": "Fox News",
-        "duration": 404
+        "url": "https://www.youtube.com/watch?v=piu8A7iMP3c",
+        "embed_id": "piu8A7iMP3c",
+        "title": "Hamas warns of ‘dangerous escalation’ in Gaza strip after Israeli strikes",
+        "channel": "WPLG Local 10",
+        "duration": 30
       },
       {
-        "url": "https://www.youtube.com/watch?v=9FfwHd9cJ_E",
-        "embed_id": "9FfwHd9cJ_E",
-        "title": "DEVELOPING: Iran tensions ESCALATE after 2 new incidents",
-        "channel": "Fox News",
-        "duration": 373
+        "url": "https://www.youtube.com/watch?v=76sy-iZRaR8",
+        "embed_id": "76sy-iZRaR8",
+        "title": "Israel rejects Biden call to ‘de-escalate’ Gaza conflict",
+        "channel": "Channel 4 News",
+        "duration": 358
       },
       {
-        "url": "https://www.youtube.com/watch?v=JOuCgpfcNk0",
-        "embed_id": "JOuCgpfcNk0",
-        "title": "President to address nation as U.S.-Iran tensions escalate",
-        "channel": "CBS TEXAS",
-        "duration": 123
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=9BZigFsgbqs",
-        "embed_id": "9BZigFsgbqs",
-        "title": "U.S.-Iran tensions escalate: Fresh airstrikes, ground invasion fears, and global warnings",
-        "channel": "CBS Miami",
-        "duration": 169
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=yD2QMwVTgaY",
-        "embed_id": "yD2QMwVTgaY",
-        "title": "US military shoots down Iranian drone as tensions escalate",
-        "channel": "LiveNOW from FOX",
-        "duration": 526
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=eTmOELIgs9M",
-        "embed_id": "eTmOELIgs9M",
-        "title": "US troops mobilise amid Iran tensions | This Is America",
-        "channel": "Al Jazeera English",
-        "duration": 1663
+        "url": "https://www.youtube.com/watch?v=cfCODaSViS0",
+        "embed_id": "cfCODaSViS0",
+        "title": "Escalation of Conflict in Gaza: Israeli Strikes and Growing Civil Unrest",
+        "channel": "GC News",
+        "duration": 179
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2039701661091078399",
-        "embed_id": "2039701661091078399",
-        "title": "🚨 BREAKING: 🇺🇸 🇮🇱 After Trump’s address, US &amp; Israel launch large-scale airstrikes across 🇮🇷 Iran.\n\n🇮🇷 Over 70 fighter jets reportedly in",
-        "author": "FalconUpdatesHQ"
+        "url": "https://x.com/MFA_China/status/1968280940192620884",
+        "embed_id": "1968280940192620884",
+        "title": "China strongly opposes Israel’s ramping up of military operations in #Gaza.\n\nWe condemn all moves that harm civilians and violate international law an",
+        "author": "MFA_China"
       },
       {
         "platform": "x",
-        "url": "https://x.com/FalconUpdatesHQ/status/2039951842952790281",
-        "embed_id": "2039951842952790281",
-        "title": "BREAKING 🚨\n\n🇰🇼 Kuwait oil refinery damaged in an Iranian drone attack\n\n⚡️🔺Iran also warns of strikes on regional energy and telecom firms if the U",
-        "author": "FalconUpdatesHQ"
+        "url": "https://x.com/SuppressedNws/status/1953980736224043171",
+        "embed_id": "1953980736224043171",
+        "title": "⚡️🇨🇦🇮🇱JUST IN: Canada’s PM condemns Israel’s decision:\n\nCanada condemns Israel’s decision to “further escalate the conflict in Gaza” adding that “",
+        "author": "SuppressedNws"
       },
       {
         "platform": "x",
-        "url": "https://x.com/FirstSquawk/status/2040257053852369339",
-        "embed_id": "2040257053852369339",
-        "title": "Iran Rejects US Proposal For 48-Hour Ceasefire As Tensions Escalate: Report",
-        "author": "FirstSquawk"
+        "url": "https://x.com/rtenews/status/1874165554292154549",
+        "embed_id": "1874165554292154549",
+        "title": "The Catholic Archbishop of Armagh and Primate of All Ireland has described the war in Gaza as emblematic of failure by the international community to ",
+        "author": "rtenews"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/IndiaTodayGlobalLIVE/comments/1sd3qpx/mass_protests_erupted_in_basra_and_baghdad/",
-        "embed_id": "1sd3qpx",
-        "title": "Mass protests erupted in Basra and Baghdad against the US presence as the US‑Israel‑Iran conflict escalates. At least 108 have died, Iraq closed the S"
+        "platform": "x",
+        "url": "https://x.com/JosepBorrellF/status/1839136453072187878",
+        "embed_id": "1839136453072187878",
+        "title": "At the UNSC, I said what is happening in southern #Lebanon cannot be separated from what is happening in Gaza\n \nEscalation is not a solution, because ",
+        "author": "JosepBorrellF"
       },
       {
-        "platform": "reddit",
-        "url": "https://reddit.com/r/conservativeterrorism/comments/1sd854t/i_am_blowing_up_everything_donald_trump_sets/",
-        "embed_id": "1sd854t",
-        "title": "“I am blowing up everything”: Donald Trump sets 32-hour deadline as tensions quietly escalate"
+        "platform": "x",
+        "url": "https://x.com/AssalRad/status/1839023782494875907",
+        "embed_id": "1839023782494875907",
+        "title": "Pentagon says “conflict has been contained to Gaza”\n\nQ: You don’t want escalation, but where do you draw the line\n\nSingh: We want diplomatic resolutio",
+        "author": "AssalRad"
+      },
+      {
+        "platform": "x",
+        "url": "https://x.com/BeckettUnite/status/1825624118345015653",
+        "embed_id": "1825624118345015653",
+        "title": "Blinken claims the US 🇺🇸 is on a “global mission” to prevent escalation to a wider regional conflict but stand ready to “defend Israel”\n\nIsrael 🇮🇱",
+        "author": "BeckettUnite"
       }
-    ],
-    "image_file": "/images/breaking_2026-04-06.png",
-    "x_posted": true
+    ]
   }
 ]
