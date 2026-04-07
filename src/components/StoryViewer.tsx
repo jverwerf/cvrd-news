@@ -361,48 +361,41 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       ) : (
         /* STORY MODE: Cards → Cover The News banner → Picture → Dashboard → Content */
         <>
-          {/* 1. STORY CARDS — horizontal scroll with arrows */}
-          <div className="pt-4 pb-3" style={{ background: '#1e2a3a' }}>
+          {/* 1. STORY CARDS — same layout as brief */}
+          <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4 px-6 md:px-12">Today&apos;s Top Stories</h2>
             <div className="relative flex items-center gap-0">
-              <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -180, behavior: 'smooth' })}
+              <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
-              <div id="story-cards" className="flex gap-2 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
-                <button onClick={() => setCurrentIdx(-1)}
-                  className="shrink-0 w-[120px] rounded-lg overflow-hidden cursor-pointer text-left"
-                  style={{ background: '#253545', border: '2px solid transparent', opacity: 0.6 }}>
-                  <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                    <img src="/logo3.png" alt="" style={{ height: '22px', opacity: 0.4 }} />
-                  </div>
-                  <div className="p-1.5">
-                    <p className="text-[9px] text-white font-bold">Home</p>
-                  </div>
-                </button>
-                {stories.map((s, i) => (
-                  <button key={i} onClick={() => setCurrentIdx(i)}
-                    className="shrink-0 w-[180px] md:w-[200px] rounded-lg overflow-hidden cursor-pointer text-left transition-transform hover:scale-[1.02]"
+              <div id="story-cards" className="flex gap-3 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+                {stories.slice(0, 5).map((s, i) => (
+                  <a key={i} href={`/story/${topicToSlug(s.topic)}`}
+                    onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
+                    className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                     style={{
                       background: '#253545',
-                      border: i === currentIdx ? '2px solid #2563eb' : '2px solid #2a3a4a',
-                      opacity: i === currentIdx ? 1 : 0.7,
+                      border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a',
                     }}>
                     {s.image_file && (
                       <div className="h-28 overflow-hidden" style={{
                         backgroundImage: `url(${s.image_file})`,
                         backgroundSize: 'cover', backgroundPosition: 'center',
                       }}>
-                        <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.6) 100%)' }} />
+                        <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
                       </div>
                     )}
-                    <div className="p-1.5">
-                      <span className="text-[7px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                      <p className="text-[9px] text-white font-medium leading-snug line-clamp-2 mt-0.5">{s.topic}</p>
+                    <div className="p-2.5">
+                      <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
+                      <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                        {s.topic}
+                      </p>
                     </div>
-                  </button>
+                  </a>
                 ))}
               </div>
-              <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: 180, behavior: 'smooth' })}
+              <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
               </button>
