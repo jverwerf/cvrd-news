@@ -370,9 +370,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </button>
               <div id="story-cards" className="flex gap-2 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
                 <button onClick={() => setCurrentIdx(-1)}
-                  className="shrink-0 w-[100px] rounded-lg overflow-hidden cursor-pointer text-left"
+                  className="shrink-0 w-[120px] rounded-lg overflow-hidden cursor-pointer text-left"
                   style={{ background: '#253545', border: '2px solid transparent', opacity: 0.6 }}>
-                  <div className="h-16 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                  <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
                     <img src="/logo3.png" alt="" style={{ height: '22px', opacity: 0.4 }} />
                   </div>
                   <div className="p-1.5">
@@ -381,14 +381,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 </button>
                 {stories.map((s, i) => (
                   <button key={i} onClick={() => setCurrentIdx(i)}
-                    className="shrink-0 w-[140px] md:w-[160px] rounded-lg overflow-hidden cursor-pointer text-left transition-transform hover:scale-[1.02]"
+                    className="shrink-0 w-[180px] md:w-[200px] rounded-lg overflow-hidden cursor-pointer text-left transition-transform hover:scale-[1.02]"
                     style={{
                       background: '#253545',
                       border: i === currentIdx ? '2px solid #2563eb' : '2px solid #2a3a4a',
                       opacity: i === currentIdx ? 1 : 0.7,
                     }}>
                     {s.image_file && (
-                      <div className="h-20 overflow-hidden" style={{
+                      <div className="h-28 overflow-hidden" style={{
                         backgroundImage: `url(${s.image_file})`,
                         backgroundSize: 'cover', backgroundPosition: 'center',
                       }}>
