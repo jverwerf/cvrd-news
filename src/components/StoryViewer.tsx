@@ -370,6 +370,22 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
               <div id="story-cards" className="flex gap-3 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+                <a href="/" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
+                  className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                  style={{
+                    background: '#253545',
+                    border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
+                  }}>
+                  <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                    <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                  </div>
+                  <div className="p-2.5">
+                    <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
+                    <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                      {sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}
+                    </p>
+                  </div>
+                </a>
                 {stories.slice(0, 5).map((s, i) => (
                   <a key={i} href={`/story/${topicToSlug(s.topic)}`}
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
