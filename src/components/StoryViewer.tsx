@@ -165,7 +165,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
             <div className="flex-1 min-w-0">
               <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                On Air: <span className="text-[#666]">{stories[0]?.topic || 'Live'}</span>
+                On Air: <span className="text-[#666]">{sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}</span>
               </h1>
             </div>
             <button onClick={() => setCurrentIdx(0)}
