@@ -136,9 +136,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-[#666]" />
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
-              <div id="brief-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+              <div id="brief-cards" className="flex gap-3 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
                 {stories.slice(0, 5).map((s, i) => (
                   <a key={i} href={`/story/${topicToSlug(s.topic)}`}
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
@@ -163,7 +163,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </div>
               <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-[#666]" />
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
               </button>
             </div>
           </div>
@@ -366,9 +366,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -180, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-[#666]" />
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
-              <div id="story-cards" className="flex gap-2 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+              <div id="story-cards" className="flex gap-2 overflow-x-auto flex-1 justify-center" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
                 <button onClick={() => setCurrentIdx(-1)}
                   className="shrink-0 w-[100px] rounded-lg overflow-hidden cursor-pointer text-left"
                   style={{ background: '#253545', border: '2px solid transparent', opacity: 0.6 }}>
@@ -404,7 +404,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </div>
               <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: 180, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-[#666]" />
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
               </button>
             </div>
           </div>
@@ -500,7 +500,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <button onClick={() => {
             document.getElementById('story-thumbstrip')?.scrollBy({ left: -200, behavior: 'smooth' });
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-white" />
           </button>
           <div id="story-thumbstrip" className="flex gap-1 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
             {/* Daily Brief thumbnail */}
@@ -542,7 +542,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <button onClick={() => {
             document.getElementById('story-thumbstrip')?.scrollBy({ left: 200, behavior: 'smooth' });
           }} className="shrink-0 px-1 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-white" />
           </button>
         </div>
       )}
