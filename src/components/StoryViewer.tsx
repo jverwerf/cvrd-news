@@ -86,6 +86,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     what_they_arent_telling_you: resolvedBrief?.what_they_arent_telling_you || stories.slice(0, 3).map(s => s.what_they_arent_telling_you).filter(Boolean).join(' '),
     social_summary: resolvedBrief?.social_summary || stories.slice(0, 3).map(s => s.social_summary).filter(Boolean).join(' '),
     image_prompt: '',
+    image_file: (resolvedBrief as any)?.image_file || undefined,
     youtube_videos: bestYT,
     social_clips: bestSocial,
     sources: uniqueSources,
@@ -376,9 +377,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     background: '#253545',
                     border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
                   }}>
-                  <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                    <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
-                  </div>
+                  {briefStory.image_file ? (
+                    <div className="h-28 overflow-hidden" style={{
+                      backgroundImage: `url(${briefStory.image_file})`,
+                      backgroundSize: 'cover', backgroundPosition: 'center',
+                    }}>
+                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    </div>
+                  ) : (
+                    <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                      <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                    </div>
+                  )}
                   <div className="p-2.5">
                     <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
                     <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
