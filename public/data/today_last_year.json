@@ -1,118 +1,33 @@
 {
   "date_last_year": "2025-04-07",
-  "date_generated": "2026-04-07T07:48:22.712Z",
-  "summary": "On April 7, 2025, the world witnessed significant geopolitical and economic upheaval. In the Middle East, tensions escalated as Israel, Iran, and the United States intensified military operations, with Israel's actions along the Gaza border and Iran's attacks on Gulf fuel tankers raising international concerns. Meanwhile, the global economy was rattled by new U.S. tariffs under President Donald Trump, leading to sharp declines in Asian and European stock markets and pushing the S&P 500 into bear market territory. These developments highlighted the interconnectedness of global politics and economics, with potential long-term implications for international stability.",
-  "youtube_title": "Middle East Tensions & U.S. Tariffs Shake Global Markets",
+  "date_generated": "2026-04-07T19:53:06.173Z",
+  "summary": "On April 7, 2025, global financial markets experienced significant turmoil following the implementation of new U.S. tariffs by President Donald Trump. This led to sharp declines in major indices across Asia, Europe, and the U.S., raising concerns about a potential economic downturn. Meanwhile, the Mid-South region of the United States was devastated by severe storms and flooding, resulting in at least 20 deaths and widespread displacement. These events highlighted the far-reaching impacts of both economic policies and natural disasters.",
+  "youtube_title": "U.S. Tariffs Shake Markets & Mid-South Floods Devastate",
   "stories": [
     {
-      "headline": "Middle East Conflict Escalates Amid Tensions",
-      "summary": "The conflict in the Middle East intensified as Israel, Iran, and the U.S. continued military operations. Israel's destruction of homes along the Gaza border to create a 'kill zone' raised legal concerns. Meanwhile, Iranian forces attacked fuel tankers in the Gulf, escalating regional tensions and causing significant fires.",
+      "headline": "U.S. Tariffs Trigger Global Market Chaos",
+      "summary": "President Donald Trump's new tariffs caused significant declines in global financial markets. Asian markets were hit hard, with Japan's Nikkei 225 and the Shanghai Composite Index both dropping over 7%. European markets also suffered, with Germany's DAX and London's FTSE seeing substantial losses. The U.S. S&P 500 neared bear market territory, raising fears of an economic downturn.",
       "youtube_queries": [
-        "Middle East conflict escalation",
-        "Israel Iran US tensions",
-        "Middle East conflict CNN"
-      ],
-      "category": "world",
-      "videos": [
-        {
-          "id": "JtfO20JSjbU",
-          "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-          "channel": "Bloomberg Television",
-          "thumbnail": "https://i.ytimg.com/vi/JtfO20JSjbU/maxresdefault.jpg"
-        },
-        {
-          "id": "bqwddkCN7tg",
-          "title": "U.S. and Israel expand war with Iran with joint air, sea, and land operations as Tehran hits back",
-          "channel": "NBC News",
-          "thumbnail": "https://i.ytimg.com/vi/bqwddkCN7tg/maxresdefault.jpg"
-        },
-        {
-          "id": "w2FoG5s1WGQ",
-          "title": "Iran is now making twice as much oil money since war began | Fareed's Take",
-          "channel": "CNN",
-          "thumbnail": "https://i.ytimg.com/vi/w2FoG5s1WGQ/maxresdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "JtfO20JSjbU",
-        "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-        "channel": "Bloomberg Television",
-        "thumbnail": "https://i.ytimg.com/vi/JtfO20JSjbU/maxresdefault.jpg"
-      }
-    },
-    {
-      "headline": "U.S. Tariffs Trigger Global Market Turmoil",
-      "summary": "The global economy faced turmoil as new U.S. tariffs led to sharp declines in Asian and European stock markets. The S&P 500 entered bear market territory, dropping 20% from its peak. This rapid decline, reminiscent of the COVID-19 crash, raised fears of a recession, with financial institutions predicting economic downturns.",
-      "youtube_queries": [
-        "US tariffs market crash",
-        "global market turmoil tariffs",
-        "US tariffs CNBC"
+        "trump tariffs market crash",
+        "global market turmoil CNBC",
+        "stock market reaction tariffs"
       ],
       "category": "markets",
-      "videos": [
-        {
-          "id": "HpnnZhGk5jw",
-          "title": "&#39;Trump wants to crash the dollar&#39;",
-          "channel": "LBC",
-          "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
-        },
-        {
-          "id": "uPJj1FfVZaY",
-          "title": "Is Trump right to shrug off the stock market crash? | About That",
-          "channel": "CBC News",
-          "thumbnail": "https://i.ytimg.com/vi/uPJj1FfVZaY/hqdefault.jpg"
-        },
-        {
-          "id": "CHk_FgAN3lE",
-          "title": "Stock markets react negatively to Trump's tariffs threats over Greenland",
-          "channel": "CBS News",
-          "thumbnail": "https://i.ytimg.com/vi/CHk_FgAN3lE/maxresdefault.jpg"
-        }
+      "videos": [],
+      "video": null
+    },
+    {
+      "headline": "Severe Flooding Ravages Mid-South States",
+      "summary": "Relentless storms caused severe flooding across the Mid-South, resulting in at least 20 fatalities. States from Arkansas to Kentucky were affected, with western Tennessee particularly hard-hit. The flooding led to significant displacement and damage, with some towns left almost entirely underwater.",
+      "youtube_queries": [
+        "Mid-South flooding disaster",
+        "storm damage Tennessee Fox",
+        "Arkansas Kentucky floods"
       ],
-      "video": {
-        "id": "HpnnZhGk5jw",
-        "title": "&#39;Trump wants to crash the dollar&#39;",
-        "channel": "LBC",
-        "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
-      }
+      "category": "world",
+      "videos": [],
+      "video": null
     }
   ],
-  "videos": [
-    {
-      "id": "JtfO20JSjbU",
-      "title": "Iran War: US Troop Buildup in Middle East Spurs Escalation Concern",
-      "channel": "Bloomberg Television",
-      "thumbnail": "https://i.ytimg.com/vi/JtfO20JSjbU/maxresdefault.jpg"
-    },
-    {
-      "id": "bqwddkCN7tg",
-      "title": "U.S. and Israel expand war with Iran with joint air, sea, and land operations as Tehran hits back",
-      "channel": "NBC News",
-      "thumbnail": "https://i.ytimg.com/vi/bqwddkCN7tg/maxresdefault.jpg"
-    },
-    {
-      "id": "w2FoG5s1WGQ",
-      "title": "Iran is now making twice as much oil money since war began | Fareed's Take",
-      "channel": "CNN",
-      "thumbnail": "https://i.ytimg.com/vi/w2FoG5s1WGQ/maxresdefault.jpg"
-    },
-    {
-      "id": "HpnnZhGk5jw",
-      "title": "&#39;Trump wants to crash the dollar&#39;",
-      "channel": "LBC",
-      "thumbnail": "https://i.ytimg.com/vi/HpnnZhGk5jw/hqdefault.jpg"
-    },
-    {
-      "id": "uPJj1FfVZaY",
-      "title": "Is Trump right to shrug off the stock market crash? | About That",
-      "channel": "CBC News",
-      "thumbnail": "https://i.ytimg.com/vi/uPJj1FfVZaY/hqdefault.jpg"
-    },
-    {
-      "id": "CHk_FgAN3lE",
-      "title": "Stock markets react negatively to Trump's tariffs threats over Greenland",
-      "channel": "CBS News",
-      "thumbnail": "https://i.ytimg.com/vi/CHk_FgAN3lE/maxresdefault.jpg"
-    }
-  ]
+  "videos": []
 }

@@ -1,117 +1,32 @@
 {
   "date_last_year": "2016-04-07",
-  "date_generated": "2026-04-07T07:52:22.507Z",
-  "summary": "April 7, 2016, was marked by two major news stories that captured global attention. The Panama Papers revelations exposed the offshore financial dealings of numerous high-profile individuals, leading to widespread outrage and calls for investigations into tax evasion and money laundering. Meanwhile, in the United States, the Wisconsin presidential primaries results were a focal point, with Ted Cruz and Bernie Sanders securing victories in their respective parties. These events had significant implications for international politics and the U.S. presidential race, influencing public discourse and political strategies.",
+  "date_generated": "2026-04-07T19:53:22.076Z",
+  "summary": "On April 7, 2016, the political landscape in the United States was charged as the Democratic presidential primary race heated up in New York. Hillary Clinton and Bernie Sanders exchanged sharp criticisms, each questioning the other's qualifications for the presidency. Meanwhile, the music world mourned the loss of Merle Haggard, a legendary country music artist who passed away on his 79th birthday. Haggard's death marked the end of an era for country music, as he left behind a legacy of influential hits and a profound impact on the genre.",
   "stories": [
     {
-      "headline": "Panama Papers Leak Exposes Global Financial Secrets",
-      "summary": "The Panama Papers, a massive leak of 11.5 million documents from the law firm Mossack Fonseca, revealed the offshore financial activities of numerous politicians, celebrities, and business leaders. The documents exposed over 214,000 offshore companies, sparking global outrage and prompting investigations into tax evasion and money laundering. The revelations highlighted the widespread use of tax havens and the need for greater financial transparency.",
+      "headline": "Democratic Primary Heats Up in New York",
+      "summary": "As the Democratic presidential primary approached in New York, tensions rose between Hillary Clinton and Bernie Sanders. Clinton questioned Sanders' qualifications, while Sanders criticized Clinton's support for trade agreements and campaign finance positions. Both candidates sought to gain momentum ahead of the April 19 primary, following Sanders' recent series of victories.",
       "youtube_queries": [
-        "Panama Papers leak 2016 global impact",
-        "Mossack Fonseca Panama Papers investigation 2016",
-        "Panama Papers tax evasion scandal 2016"
-      ],
-      "category": "world",
-      "videos": [
-        {
-          "id": "_byreniNl2Y",
-          "title": "\"Panama Papers\" leak causes major global fallout",
-          "channel": "CBS News",
-          "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
-        },
-        {
-          "id": "g9i2YOf7F20",
-          "title": "Panama Papers: El Salvador raids Mossack Fonseca office",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/g9i2YOf7F20/hqdefault.jpg"
-        },
-        {
-          "id": "qiXVpyvRzV4",
-          "title": "Panama Papers: Government to comply with investigations",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/qiXVpyvRzV4/hqdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "_byreniNl2Y",
-        "title": "\"Panama Papers\" leak causes major global fallout",
-        "channel": "CBS News",
-        "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
-      }
-    },
-    {
-      "headline": "Cruz, Sanders Win Wisconsin Primaries, Shake Up Race",
-      "summary": "In the Wisconsin presidential primaries, Ted Cruz won the Republican contest, defeating Donald Trump and John Kasich, while Bernie Sanders triumphed over Hillary Clinton in the Democratic primary. These victories were pivotal, as they influenced the momentum of the candidates leading up to their party conventions. The results highlighted the competitive nature of the 2016 U.S. presidential race and the shifting dynamics within both parties.",
-      "youtube_queries": [
-        "Wisconsin primary results 2016 Cruz Sanders",
-        "Ted Cruz victory Wisconsin primary 2016 analysis",
-        "Bernie Sanders Wisconsin primary win 2016 impact"
+        "Hillary Clinton Bernie Sanders New York primary 2016",
+        "Democratic primary New York Clinton Sanders April 2016",
+        "Clinton Sanders qualifications debate New York 2016"
       ],
       "category": "politics",
-      "videos": [
-        {
-          "id": "xjDHabWwu9E",
-          "title": "How the Wisconsin results could shake up the 2016 race",
-          "channel": "Fox News",
-          "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
-        },
-        {
-          "id": "kJq5FW1K3Eg",
-          "title": "Ted Cruz Projected to Win Wisconsin Primary",
-          "channel": "ABC News",
-          "thumbnail": "https://i.ytimg.com/vi/kJq5FW1K3Eg/hqdefault.jpg"
-        },
-        {
-          "id": "w_-xV49VMKE",
-          "title": "Analysis of Ted Cruz&#39;s big win over Donald Trump in Wisconsin",
-          "channel": "CBS News",
-          "thumbnail": "https://i.ytimg.com/vi/w_-xV49VMKE/hqdefault.jpg"
-        }
+      "videos": [],
+      "video": null
+    },
+    {
+      "headline": "Country Legend Merle Haggard Dies at 79",
+      "summary": "Merle Haggard, a towering figure in country music, passed away on his 79th birthday after battling pneumonia. Over his six-decade career, Haggard achieved 38 number-one hits and influenced countless musicians. His songs like 'Okie from Muskogee' and 'Mama Tried' remain iconic. Fellow musicians, including Willie Nelson, paid tribute to his legacy.",
+      "youtube_queries": [
+        "Merle Haggard death tribute April 2016",
+        "Merle Haggard legacy country music April 2016",
+        "Merle Haggard influence on music industry 2016"
       ],
-      "video": {
-        "id": "xjDHabWwu9E",
-        "title": "How the Wisconsin results could shake up the 2016 race",
-        "channel": "Fox News",
-        "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
-      }
+      "category": "world",
+      "videos": [],
+      "video": null
     }
   ],
-  "videos": [
-    {
-      "id": "_byreniNl2Y",
-      "title": "\"Panama Papers\" leak causes major global fallout",
-      "channel": "CBS News",
-      "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
-    },
-    {
-      "id": "g9i2YOf7F20",
-      "title": "Panama Papers: El Salvador raids Mossack Fonseca office",
-      "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/g9i2YOf7F20/hqdefault.jpg"
-    },
-    {
-      "id": "qiXVpyvRzV4",
-      "title": "Panama Papers: Government to comply with investigations",
-      "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/qiXVpyvRzV4/hqdefault.jpg"
-    },
-    {
-      "id": "xjDHabWwu9E",
-      "title": "How the Wisconsin results could shake up the 2016 race",
-      "channel": "Fox News",
-      "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
-    },
-    {
-      "id": "kJq5FW1K3Eg",
-      "title": "Ted Cruz Projected to Win Wisconsin Primary",
-      "channel": "ABC News",
-      "thumbnail": "https://i.ytimg.com/vi/kJq5FW1K3Eg/hqdefault.jpg"
-    },
-    {
-      "id": "w_-xV49VMKE",
-      "title": "Analysis of Ted Cruz&#39;s big win over Donald Trump in Wisconsin",
-      "channel": "CBS News",
-      "thumbnail": "https://i.ytimg.com/vi/w_-xV49VMKE/hqdefault.jpg"
-    }
-  ]
+  "videos": []
 }
