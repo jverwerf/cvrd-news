@@ -1,93 +1,117 @@
 {
-  "date_last_year": "2016-04-06",
-  "date_generated": "2026-04-06T07:50:27.477Z",
-  "summary": "On April 6, 2016, significant developments unfolded in both the corporate and legal arenas. Pharmaceutical giants Pfizer and Allergan called off their $160 billion merger following new U.S. Treasury regulations aimed at preventing tax inversions. This decision marked a major shift in corporate strategies concerning tax liabilities. Meanwhile, in a landmark legal case, former Massey Energy CEO Don Blankenship was sentenced to one year in prison for his role in the 2010 Upper Big Branch mine disaster, highlighting the accountability of corporate executives for safety violations. These stories underscored the impact of regulatory changes and legal accountability on corporate practices.",
+  "date_last_year": "2016-04-07",
+  "date_generated": "2026-04-07T07:52:22.507Z",
+  "summary": "April 7, 2016, was marked by two major news stories that captured global attention. The Panama Papers revelations exposed the offshore financial dealings of numerous high-profile individuals, leading to widespread outrage and calls for investigations into tax evasion and money laundering. Meanwhile, in the United States, the Wisconsin presidential primaries results were a focal point, with Ted Cruz and Bernie Sanders securing victories in their respective parties. These events had significant implications for international politics and the U.S. presidential race, influencing public discourse and political strategies.",
   "stories": [
     {
-      "headline": "Pfizer, Allergan Scrap $160 Billion Merger",
-      "summary": "Pfizer Inc. and Allergan PLC terminated their $160 billion merger after the U.S. Treasury introduced new rules to curb tax inversions. The merger would have allowed Pfizer to relocate to Ireland for tax benefits, but the new regulations reduced the financial incentives. Both companies mutually agreed to abandon the deal, marking a significant shift in corporate tax strategy.",
+      "headline": "Panama Papers Leak Exposes Global Financial Secrets",
+      "summary": "The Panama Papers, a massive leak of 11.5 million documents from the law firm Mossack Fonseca, revealed the offshore financial activities of numerous politicians, celebrities, and business leaders. The documents exposed over 214,000 offshore companies, sparking global outrage and prompting investigations into tax evasion and money laundering. The revelations highlighted the widespread use of tax havens and the need for greater financial transparency.",
       "youtube_queries": [
-        "Pfizer Allergan merger cancellation April 2016",
-        "US Treasury tax inversion rules impact 2016",
-        "Pfizer Allergan merger tax inversion April 2016"
-      ],
-      "category": "markets",
-      "videos": [
-        {
-          "id": "T6JMX4OU7JM",
-          "title": "President Obama addresses new rules to deter tax inversions",
-          "channel": "PBS NewsHour",
-          "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
-        },
-        {
-          "id": "LFcSf1_2h-A",
-          "title": "Pfizer-Allergan merger collapses",
-          "channel": "Al Jazeera English",
-          "thumbnail": "https://i.ytimg.com/vi/LFcSf1_2h-A/hqdefault.jpg"
-        },
-        {
-          "id": "9y9H9fjHT4Y",
-          "title": "New Obama Administration tax rules reportedly kills Pfizer-Allergan deal",
-          "channel": "Fox Business",
-          "thumbnail": "https://i.ytimg.com/vi/9y9H9fjHT4Y/maxresdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "T6JMX4OU7JM",
-        "title": "President Obama addresses new rules to deter tax inversions",
-        "channel": "PBS NewsHour",
-        "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
-      }
-    },
-    {
-      "headline": "Ex-Massey CEO Sentenced for Mine Disaster",
-      "summary": "Don Blankenship, former CEO of Massey Energy, received a one-year prison sentence for conspiring to violate mine safety standards, leading to the 2010 Upper Big Branch mine disaster that killed 29 miners. This case marked a rare instance of a top executive being held criminally accountable for workplace safety violations. The sentencing was seen as a pivotal moment in corporate accountability.",
-      "youtube_queries": [
-        "Don Blankenship sentencing Upper Big Branch 2016",
-        "Massey Energy CEO prison sentence April 2016",
-        "Mine safety violations Don Blankenship 2016"
+        "Panama Papers leak 2016 global impact",
+        "Mossack Fonseca Panama Papers investigation 2016",
+        "Panama Papers tax evasion scandal 2016"
       ],
       "category": "world",
       "videos": [
         {
-          "id": "VF4jMAArbOc",
-          "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
-          "channel": "Associated Press",
-          "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
+          "id": "_byreniNl2Y",
+          "title": "\"Panama Papers\" leak causes major global fallout",
+          "channel": "CBS News",
+          "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+        },
+        {
+          "id": "g9i2YOf7F20",
+          "title": "Panama Papers: El Salvador raids Mossack Fonseca office",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/g9i2YOf7F20/hqdefault.jpg"
+        },
+        {
+          "id": "qiXVpyvRzV4",
+          "title": "Panama Papers: Government to comply with investigations",
+          "channel": "Al Jazeera English",
+          "thumbnail": "https://i.ytimg.com/vi/qiXVpyvRzV4/hqdefault.jpg"
         }
       ],
       "video": {
-        "id": "VF4jMAArbOc",
-        "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
-        "channel": "Associated Press",
-        "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
+        "id": "_byreniNl2Y",
+        "title": "\"Panama Papers\" leak causes major global fallout",
+        "channel": "CBS News",
+        "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
+      }
+    },
+    {
+      "headline": "Cruz, Sanders Win Wisconsin Primaries, Shake Up Race",
+      "summary": "In the Wisconsin presidential primaries, Ted Cruz won the Republican contest, defeating Donald Trump and John Kasich, while Bernie Sanders triumphed over Hillary Clinton in the Democratic primary. These victories were pivotal, as they influenced the momentum of the candidates leading up to their party conventions. The results highlighted the competitive nature of the 2016 U.S. presidential race and the shifting dynamics within both parties.",
+      "youtube_queries": [
+        "Wisconsin primary results 2016 Cruz Sanders",
+        "Ted Cruz victory Wisconsin primary 2016 analysis",
+        "Bernie Sanders Wisconsin primary win 2016 impact"
+      ],
+      "category": "politics",
+      "videos": [
+        {
+          "id": "xjDHabWwu9E",
+          "title": "How the Wisconsin results could shake up the 2016 race",
+          "channel": "Fox News",
+          "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
+        },
+        {
+          "id": "kJq5FW1K3Eg",
+          "title": "Ted Cruz Projected to Win Wisconsin Primary",
+          "channel": "ABC News",
+          "thumbnail": "https://i.ytimg.com/vi/kJq5FW1K3Eg/hqdefault.jpg"
+        },
+        {
+          "id": "w_-xV49VMKE",
+          "title": "Analysis of Ted Cruz&#39;s big win over Donald Trump in Wisconsin",
+          "channel": "CBS News",
+          "thumbnail": "https://i.ytimg.com/vi/w_-xV49VMKE/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "xjDHabWwu9E",
+        "title": "How the Wisconsin results could shake up the 2016 race",
+        "channel": "Fox News",
+        "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
       }
     }
   ],
   "videos": [
     {
-      "id": "T6JMX4OU7JM",
-      "title": "President Obama addresses new rules to deter tax inversions",
-      "channel": "PBS NewsHour",
-      "thumbnail": "https://i.ytimg.com/vi/T6JMX4OU7JM/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFMgVShlMA8=&rs=AOn4CLA287qOX_U1fnxQG9vSzkkV16jkxg"
+      "id": "_byreniNl2Y",
+      "title": "\"Panama Papers\" leak causes major global fallout",
+      "channel": "CBS News",
+      "thumbnail": "https://i.ytimg.com/vi/_byreniNl2Y/hqdefault.jpg"
     },
     {
-      "id": "LFcSf1_2h-A",
-      "title": "Pfizer-Allergan merger collapses",
+      "id": "g9i2YOf7F20",
+      "title": "Panama Papers: El Salvador raids Mossack Fonseca office",
       "channel": "Al Jazeera English",
-      "thumbnail": "https://i.ytimg.com/vi/LFcSf1_2h-A/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/g9i2YOf7F20/hqdefault.jpg"
     },
     {
-      "id": "9y9H9fjHT4Y",
-      "title": "New Obama Administration tax rules reportedly kills Pfizer-Allergan deal",
-      "channel": "Fox Business",
-      "thumbnail": "https://i.ytimg.com/vi/9y9H9fjHT4Y/maxresdefault.jpg"
+      "id": "qiXVpyvRzV4",
+      "title": "Panama Papers: Government to comply with investigations",
+      "channel": "Al Jazeera English",
+      "thumbnail": "https://i.ytimg.com/vi/qiXVpyvRzV4/hqdefault.jpg"
     },
     {
-      "id": "VF4jMAArbOc",
-      "title": "Ex-Coal CEO Sentenced for Deadly Mine Blast",
-      "channel": "Associated Press",
-      "thumbnail": "https://i.ytimg.com/vi/VF4jMAArbOc/maxresdefault.jpg"
+      "id": "xjDHabWwu9E",
+      "title": "How the Wisconsin results could shake up the 2016 race",
+      "channel": "Fox News",
+      "thumbnail": "https://i.ytimg.com/vi/xjDHabWwu9E/maxresdefault.jpg"
+    },
+    {
+      "id": "kJq5FW1K3Eg",
+      "title": "Ted Cruz Projected to Win Wisconsin Primary",
+      "channel": "ABC News",
+      "thumbnail": "https://i.ytimg.com/vi/kJq5FW1K3Eg/hqdefault.jpg"
+    },
+    {
+      "id": "w_-xV49VMKE",
+      "title": "Analysis of Ted Cruz&#39;s big win over Donald Trump in Wisconsin",
+      "channel": "CBS News",
+      "thumbnail": "https://i.ytimg.com/vi/w_-xV49VMKE/hqdefault.jpg"
     }
   ]
 }
