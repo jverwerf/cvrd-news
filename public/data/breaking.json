@@ -1,174 +1,176 @@
 [
   {
-    "topic": "Escalation in Gaza Conflict",
-    "summary": "The conflict in Gaza has seen a significant escalation with recent Israeli airstrikes leading to the deaths of ten individuals. This development is part of the ongoing hostilities between Israeli forces and Hamas, along with other militia groups. The situation has raised fears of increased instability and violence in the region, attracting international attention and concern.",
-    "severity": "major",
-    "detected_at": "2026-04-06T21:00:09.150Z",
-    "last_updated": "2026-04-07T07:00:21.164Z",
+    "topic": "Iran War Escalation",
+    "summary": "Tensions in the Middle East are rising as President Trump has issued a stern warning to Iran, suggesting that the entire country face severe repercussions if a diplomatic agreement is not achieved by the impending deadline. Concurrently, Israel has made threats concerning Iranian infrastructure, signaling a potential escalation in military activities. These developments have heightened fears of a broader conflict in the region.",
+    "severity": "critical",
+    "detected_at": "2026-04-07T09:00:15.753Z",
+    "last_updated": "2026-04-07T09:00:15.753Z",
     "left_narrative": "Not enough coverage yet — check back soon.",
     "right_narrative": "Not enough coverage yet — check back soon.",
-    "what_they_arent_telling_you": "Neither side is addressing the underlying economic and humanitarian crises that fuel the conflict. The blockade on Gaza and the lack of economic opportunities contribute to the cycle of violence. Additionally, the role of international arms sales and military aid in perpetuating the conflict is often overlooked, as both sides receive significant external support that sustains their military capabilities.",
-    "social_summary": "Social media is ablaze with polarized reactions, with hashtags supporting both sides trending. Memes and viral videos depict the conflict in starkly different lights, often oversimplifying the complex situation. Conspiracy theories about foreign powers manipulating the conflict for geopolitical gain are also circulating widely.",
-    "image_prompt": "A dramatic editorial photo of a shattered hourglass on a sandy landscape, symbolizing the passage of time and the fragility of peace in a conflict-ridden region.",
+    "what_they_arent_telling_you": "Neither side is addressing the economic motivations behind these tensions, particularly how sanctions and oil market dynamics are influencing geopolitical strategies. The focus remains on military threats and political posturing, while the underlying economic interests, such as control over oil routes and regional dominance, are largely ignored. Additionally, the role of other global powers in either exacerbating or mitigating these tensions is not being thoroughly examined.",
+    "social_summary": "Social media is ablaze with polarized opinions, with some users expressing support for Trump's hardline stance, while others criticize it as reckless warmongering. Memes mocking the situation as a 'reality TV show' are circulating, alongside conspiracy theories suggesting ulterior motives tied to the upcoming U.S. elections. Hashtags like #NoWarWithIran and #StandWithIsrael are trending, reflecting the divided public sentiment.",
+    "image_prompt": "A dramatic editorial photo of a chessboard set against a backdrop of a desert landscape, with pieces representing different countries' flags, symbolizing the strategic geopolitical maneuvers in the Middle East.",
     "sources": [],
     "clips": [
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=cUb77oyTD_M",
-        "embed_id": "cUb77oyTD_M",
-        "title": "Biden tells Israel: De-escalate Gaza conflict - BBC News",
-        "duration": 1155
+        "url": "https://www.youtube.com/watch?v=95-0xb8V4RU",
+        "embed_id": "95-0xb8V4RU",
+        "title": "Iran war on verge of escalation as Trump and Tehran exchange threats"
       },
       {
         "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=f0pRIv0mrEM",
-        "embed_id": "f0pRIv0mrEM",
-        "title": "Israel vows to escalate war with new plan to ‘conquer’ Gaza",
-        "duration": 175
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=piu8A7iMP3c",
-        "embed_id": "piu8A7iMP3c",
-        "title": "Hamas warns of ‘dangerous escalation’ in Gaza strip after Israeli strikes",
-        "duration": 30
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=76sy-iZRaR8",
-        "embed_id": "76sy-iZRaR8",
-        "title": "Israel rejects Biden call to ‘de-escalate’ Gaza conflict",
-        "duration": 358
-      },
-      {
-        "platform": "youtube",
-        "url": "https://www.youtube.com/watch?v=cfCODaSViS0",
-        "embed_id": "cfCODaSViS0",
-        "title": "Escalation of Conflict in Gaza: Israeli Strikes and Growing Civil Unrest",
-        "duration": 179
+        "url": "https://www.youtube.com/watch?v=j5mgSmH33kk",
+        "embed_id": "j5mgSmH33kk",
+        "title": "Trump brushes off war-crime concerns as he threatens escalation against Iran | Power &amp; Politics",
+        "duration": 672
       },
       {
         "platform": "x",
-        "url": "https://x.com/MFA_China/status/1968280940192620884",
-        "embed_id": "1968280940192620884",
-        "title": "China strongly opposes Israel’s ramping up of military operations in #Gaza.\n\nWe condemn all moves that harm civilians and violate international law an",
-        "author": "MFA_China"
+        "url": "https://x.com/MOSSADil/status/2041332551491449071",
+        "embed_id": "2041332551491449071",
+        "title": "‼️ NEW REPORT:\nReports indicate over 100 U.S. and Israeli fighter jets are currently striking IRGC targets across Iran in what appears to be the most ",
+        "author": "MOSSADil"
       },
       {
         "platform": "x",
-        "url": "https://x.com/SuppressedNws/status/1953980736224043171",
-        "embed_id": "1953980736224043171",
-        "title": "⚡️🇨🇦🇮🇱JUST IN: Canada’s PM condemns Israel’s decision:\n\nCanada condemns Israel’s decision to “further escalate the conflict in Gaza” adding that “",
-        "author": "SuppressedNws"
+        "url": "https://x.com/AJENews/status/2041244699634069996",
+        "embed_id": "2041244699634069996",
+        "title": "BREAKING: Escalation in war on Iran will not achieve ceasefire and peace, says European Council President Antonio Costa\n\n🔴 LIVE updates: https://t.co",
+        "author": "AJENews"
       },
       {
         "platform": "x",
-        "url": "https://x.com/rtenews/status/1874165554292154549",
-        "embed_id": "1874165554292154549",
-        "title": "The Catholic Archbishop of Armagh and Primate of All Ireland has described the war in Gaza as emblematic of failure by the international community to ",
-        "author": "rtenews"
+        "url": "https://x.com/iyad_elbaghdadi/status/2041229436482187583",
+        "embed_id": "2041229436482187583",
+        "title": "Overall assessment of the war\n- Conflict is on an escalation/attrition path with no realistic short‑term off‑ramp.\n- Iran sees the situation as existe",
+        "author": "iyad_elbaghdadi"
       },
       {
         "platform": "x",
-        "url": "https://x.com/JosepBorrellF/status/1839136453072187878",
-        "embed_id": "1839136453072187878",
-        "title": "At the UNSC, I said what is happening in southern #Lebanon cannot be separated from what is happening in Gaza\n \nEscalation is not a solution, because ",
-        "author": "JosepBorrellF"
+        "url": "https://x.com/iihtishamm/status/2041034520456270286",
+        "embed_id": "2041034520456270286",
+        "title": "U.S., Iran &amp; mediators discuss a 45-day ceasefire. Deal in next 48 hrs unlikely, but seen as last chance to prevent major war escalation. https://",
+        "author": "iihtishamm"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/AssalRad/status/1839023782494875907",
-        "embed_id": "1839023782494875907",
-        "title": "Pentagon says “conflict has been contained to Gaza”\n\nQ: You don’t want escalation, but where do you draw the line\n\nSingh: We want diplomatic resolutio",
-        "author": "AssalRad"
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16353",
+        "embed_id": "France24_en/16353",
+        "title": "Middle East war live: Trump’s Iran ultimatum enters final 24 hours amid escalation fears\nUS President Donald Trump on Monday expanded his threat again",
+        "author": "france24_en"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/BeckettUnite/status/1825624118345015653",
-        "embed_id": "1825624118345015653",
-        "title": "Blinken claims the US 🇺🇸 is on a “global mission” to prevent escalation to a wider regional conflict but stand ready to “defend Israel”\n\nIsrael 🇮🇱",
-        "author": "BeckettUnite"
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TheRightCantMeme/comments/1sdvcim/this_meme_speedruns_every_iraq_war_lie_in_one/",
+        "embed_id": "1sdvcim",
+        "title": "This meme speedruns every Iraq War lie in one image, just remapped to Iran."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1sdy69g/iran_war_a_total_system_failure_congress_fails_to/",
+        "embed_id": "1sdy69g",
+        "title": "Iran War: A Total System Failure, Congress Fails to Act"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProgressiveHQ/comments/1sefvpu/articles_of_impeachment_being_filed_today_for/",
+        "embed_id": "1sefvpu",
+        "title": "Articles of impeachment being filed today for Pete Hegseth"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Economics/comments/1se7opn/oil_rises_as_trump_threatens_imminent_escalation/",
+        "embed_id": "1se7opn",
+        "title": "Oil Rises as Trump Threatens Imminent Escalation in Iran War"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Political_Revolution/comments/1sej16p/trumps_war_on_iran_started_without_congressional/",
+        "embed_id": "1sej16p",
+        "title": "Trump’s war on Iran started without congressional approval on February 28th, 2026. This war has been unnecessary, costly, and detrimental to humanity."
       }
     ],
     "youtube_videos": [
       {
-        "url": "https://www.youtube.com/watch?v=cUb77oyTD_M",
-        "embed_id": "cUb77oyTD_M",
-        "title": "Biden tells Israel: De-escalate Gaza conflict - BBC News",
-        "channel": "BBC News",
-        "duration": 1155
+        "url": "https://www.youtube.com/watch?v=95-0xb8V4RU",
+        "embed_id": "95-0xb8V4RU",
+        "title": "Iran war on verge of escalation as Trump and Tehran exchange threats",
+        "channel": "PBS NewsHour"
       },
       {
-        "url": "https://www.youtube.com/watch?v=f0pRIv0mrEM",
-        "embed_id": "f0pRIv0mrEM",
-        "title": "Israel vows to escalate war with new plan to ‘conquer’ Gaza",
-        "channel": "WRAL",
-        "duration": 175
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=piu8A7iMP3c",
-        "embed_id": "piu8A7iMP3c",
-        "title": "Hamas warns of ‘dangerous escalation’ in Gaza strip after Israeli strikes",
-        "channel": "WPLG Local 10",
-        "duration": 30
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=76sy-iZRaR8",
-        "embed_id": "76sy-iZRaR8",
-        "title": "Israel rejects Biden call to ‘de-escalate’ Gaza conflict",
-        "channel": "Channel 4 News",
-        "duration": 358
-      },
-      {
-        "url": "https://www.youtube.com/watch?v=cfCODaSViS0",
-        "embed_id": "cfCODaSViS0",
-        "title": "Escalation of Conflict in Gaza: Israeli Strikes and Growing Civil Unrest",
-        "channel": "GC News",
-        "duration": 179
+        "url": "https://www.youtube.com/watch?v=j5mgSmH33kk",
+        "embed_id": "j5mgSmH33kk",
+        "title": "Trump brushes off war-crime concerns as he threatens escalation against Iran | Power &amp; Politics",
+        "channel": "CBC News",
+        "duration": 672
       }
     ],
     "social_clips": [
       {
         "platform": "x",
-        "url": "https://x.com/MFA_China/status/1968280940192620884",
-        "embed_id": "1968280940192620884",
-        "title": "China strongly opposes Israel’s ramping up of military operations in #Gaza.\n\nWe condemn all moves that harm civilians and violate international law an",
-        "author": "MFA_China"
+        "url": "https://x.com/MOSSADil/status/2041332551491449071",
+        "embed_id": "2041332551491449071",
+        "title": "‼️ NEW REPORT:\nReports indicate over 100 U.S. and Israeli fighter jets are currently striking IRGC targets across Iran in what appears to be the most ",
+        "author": "MOSSADil"
       },
       {
         "platform": "x",
-        "url": "https://x.com/SuppressedNws/status/1953980736224043171",
-        "embed_id": "1953980736224043171",
-        "title": "⚡️🇨🇦🇮🇱JUST IN: Canada’s PM condemns Israel’s decision:\n\nCanada condemns Israel’s decision to “further escalate the conflict in Gaza” adding that “",
-        "author": "SuppressedNws"
+        "url": "https://x.com/AJENews/status/2041244699634069996",
+        "embed_id": "2041244699634069996",
+        "title": "BREAKING: Escalation in war on Iran will not achieve ceasefire and peace, says European Council President Antonio Costa\n\n🔴 LIVE updates: https://t.co",
+        "author": "AJENews"
       },
       {
         "platform": "x",
-        "url": "https://x.com/rtenews/status/1874165554292154549",
-        "embed_id": "1874165554292154549",
-        "title": "The Catholic Archbishop of Armagh and Primate of All Ireland has described the war in Gaza as emblematic of failure by the international community to ",
-        "author": "rtenews"
+        "url": "https://x.com/iyad_elbaghdadi/status/2041229436482187583",
+        "embed_id": "2041229436482187583",
+        "title": "Overall assessment of the war\n- Conflict is on an escalation/attrition path with no realistic short‑term off‑ramp.\n- Iran sees the situation as existe",
+        "author": "iyad_elbaghdadi"
       },
       {
         "platform": "x",
-        "url": "https://x.com/JosepBorrellF/status/1839136453072187878",
-        "embed_id": "1839136453072187878",
-        "title": "At the UNSC, I said what is happening in southern #Lebanon cannot be separated from what is happening in Gaza\n \nEscalation is not a solution, because ",
-        "author": "JosepBorrellF"
+        "url": "https://x.com/iihtishamm/status/2041034520456270286",
+        "embed_id": "2041034520456270286",
+        "title": "U.S., Iran &amp; mediators discuss a 45-day ceasefire. Deal in next 48 hrs unlikely, but seen as last chance to prevent major war escalation. https://",
+        "author": "iihtishamm"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/AssalRad/status/1839023782494875907",
-        "embed_id": "1839023782494875907",
-        "title": "Pentagon says “conflict has been contained to Gaza”\n\nQ: You don’t want escalation, but where do you draw the line\n\nSingh: We want diplomatic resolutio",
-        "author": "AssalRad"
+        "platform": "telegram",
+        "url": "https://t.me/France24_en/16353",
+        "embed_id": "France24_en/16353",
+        "title": "Middle East war live: Trump’s Iran ultimatum enters final 24 hours amid escalation fears\nUS President Donald Trump on Monday expanded his threat again",
+        "author": "france24_en"
       },
       {
-        "platform": "x",
-        "url": "https://x.com/BeckettUnite/status/1825624118345015653",
-        "embed_id": "1825624118345015653",
-        "title": "Blinken claims the US 🇺🇸 is on a “global mission” to prevent escalation to a wider regional conflict but stand ready to “defend Israel”\n\nIsrael 🇮🇱",
-        "author": "BeckettUnite"
+        "platform": "reddit",
+        "url": "https://reddit.com/r/TheRightCantMeme/comments/1sdvcim/this_meme_speedruns_every_iraq_war_lie_in_one/",
+        "embed_id": "1sdvcim",
+        "title": "This meme speedruns every Iraq War lie in one image, just remapped to Iran."
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/conspiracy/comments/1sdy69g/iran_war_a_total_system_failure_congress_fails_to/",
+        "embed_id": "1sdy69g",
+        "title": "Iran War: A Total System Failure, Congress Fails to Act"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/ProgressiveHQ/comments/1sefvpu/articles_of_impeachment_being_filed_today_for/",
+        "embed_id": "1sefvpu",
+        "title": "Articles of impeachment being filed today for Pete Hegseth"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Economics/comments/1se7opn/oil_rises_as_trump_threatens_imminent_escalation/",
+        "embed_id": "1se7opn",
+        "title": "Oil Rises as Trump Threatens Imminent Escalation in Iran War"
+      },
+      {
+        "platform": "reddit",
+        "url": "https://reddit.com/r/Political_Revolution/comments/1sej16p/trumps_war_on_iran_started_without_congressional/",
+        "embed_id": "1sej16p",
+        "title": "Trump’s war on Iran started without congressional approval on February 28th, 2026. This war has been unnecessary, costly, and detrimental to humanity."
       }
     ]
   }

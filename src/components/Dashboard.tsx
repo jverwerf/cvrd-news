@@ -832,6 +832,34 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
             ↓ Open below
           </button>
         )}
+        {(() => {
+          const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
+          if (!embedId) return null;
+          let url = '';
+          let label = '';
+          if (current.type === 'video') {
+            url = `https://www.youtube.com/watch?v=${embedId}`;
+            label = 'YouTube';
+          } else if (current.platform === 'x') {
+            url = `https://x.com/i/status/${embedId}`;
+            label = '𝕏';
+          } else if (current.platform === 'tiktok') {
+            url = `https://www.tiktok.com/@/video/${embedId}`;
+            label = 'TikTok';
+          } else if (current.platform === 'telegram') {
+            url = `https://t.me/${embedId}`;
+            label = 'Telegram';
+          }
+          if (!url) return null;
+          return (
+            <button onClick={(e) => {
+              e.stopPropagation();
+              window.open(url, '_blank', 'noopener');
+            }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: platformColors[current.platform || ''] || 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer' }}>
+              ↗ Go to {label}
+            </button>
+          );
+        })()}
         </div>
       </div>}
 
