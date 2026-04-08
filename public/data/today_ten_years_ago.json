@@ -1,32 +1,93 @@
 {
   "date_last_year": "2016-04-08",
-  "date_generated": "2026-04-08T00:46:52.827Z",
-  "summary": "On April 8, 2016, global headlines were dominated by two major stories. Pope Francis released 'Amoris Laetitia,' a document urging the Catholic Church to adopt a more inclusive approach towards divorced and remarried Catholics, while maintaining traditional teachings on marriage. This marked a significant moment in religious discourse, highlighting the Pope's call for compassion and understanding. Meanwhile, in the U.S., the Democratic primary race saw heightened tensions as Bernie Sanders and Hillary Clinton exchanged criticisms over each other's qualifications for the presidency. This exchange underscored the competitive nature of the 2016 presidential race, reflecting the intense political climate of the time.",
+  "date_generated": "2026-04-08T08:06:05.843Z",
+  "summary": "April 8, 2016, was marked by significant developments in both religious and technological spheres. Pope Francis released the apostolic exhortation 'Amoris Laetitia,' which addressed the complexities of family life and marriage, advocating for a more compassionate approach towards divorced and remarried Catholics. This document sparked discussions about the Catholic Church's evolving stance on family issues. Meanwhile, SpaceX achieved a historic milestone by successfully landing the first-stage booster of its Falcon 9 rocket on a drone ship in the Atlantic Ocean, marking a major advancement in reusable rocket technology and reducing the costs of space exploration.",
   "stories": [
     {
-      "headline": "Pope Francis Calls for Inclusion of Divorced Catholics",
-      "summary": "Pope Francis released 'Amoris Laetitia,' advocating for a more compassionate approach towards divorced and remarried Catholics. The document emphasized support over judgment, while reaffirming traditional marriage teachings. The Pope also called for the protection of gays and lesbians from discrimination, though he upheld the Church's stance against same-sex marriage recognition.",
+      "headline": "Pope Francis Releases 'Amoris Laetitia'",
+      "summary": "Pope Francis published 'Amoris Laetitia,' an apostolic exhortation focusing on family life and marriage within the Catholic Church. The document emphasized compassion and understanding, particularly for divorced and remarried Catholics, suggesting a more inclusive approach to their participation in church sacraments. This release sparked widespread discussion about the Church's evolving stance on family issues.",
       "youtube_queries": [
-        "Pope Francis Amoris Laetitia 2016",
-        "Catholic Church divorce inclusion 2016",
+        "Pope Francis Amoris Laetitia 2016 Catholic Church",
+        "Amoris Laetitia impact on Catholic families 2016",
         "Pope Francis family life document 2016"
       ],
       "category": "world",
-      "videos": [],
-      "video": null
+      "videos": [
+        {
+          "id": "_TBu5Qovw_8",
+          "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
+          "channel": "euronews",
+          "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "_TBu5Qovw_8",
+        "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
+        "channel": "euronews",
+        "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
+      }
     },
     {
-      "headline": "Sanders and Clinton Clash in Democratic Primary Race",
-      "summary": "The Democratic primary race heated up as Bernie Sanders and Hillary Clinton exchanged criticisms over each other's qualifications for the presidency. Sanders questioned Clinton's readiness, prompting a defense from the White House. He later moderated his stance, acknowledging Clinton's experience, marking a significant escalation in the campaign.",
+      "headline": "SpaceX Achieves Historic Rocket Landing",
+      "summary": "SpaceX successfully launched its Falcon 9 rocket from Cape Canaveral, Florida, on a mission to deliver cargo to the International Space Station. The company achieved a groundbreaking milestone by landing the rocket's first-stage booster on an autonomous drone ship in the Atlantic Ocean. This marked the first successful sea landing of an orbital rocket, a significant advancement in reusable rocket technology.",
       "youtube_queries": [
-        "Bernie Sanders Hillary Clinton qualifications debate 2016",
-        "Democratic primary race tensions April 2016",
-        "Sanders Clinton exchange qualifications 2016"
+        "SpaceX Falcon 9 first sea landing 2016",
+        "SpaceX reusable rocket technology breakthrough 2016",
+        "Historic SpaceX rocket landing April 2016"
       ],
-      "category": "politics",
-      "videos": [],
-      "video": null
+      "category": "world",
+      "videos": [
+        {
+          "id": "lEr9cPpuAx8",
+          "title": "SpaceX lands rocket at sea, makes history",
+          "channel": "The Verge",
+          "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+        },
+        {
+          "id": "sYmQQn_ZSys",
+          "title": "CRS-8 | First Stage Landing on Droneship",
+          "channel": "SpaceX",
+          "thumbnail": "https://i.ytimg.com/vi/sYmQQn_ZSys/hqdefault.jpg"
+        },
+        {
+          "id": "7pUAydjne5M",
+          "title": "CRS-8 Dragon Hosted Webcast",
+          "channel": "SpaceX",
+          "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "lEr9cPpuAx8",
+        "title": "SpaceX lands rocket at sea, makes history",
+        "channel": "The Verge",
+        "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+      }
     }
   ],
-  "videos": []
+  "videos": [
+    {
+      "id": "_TBu5Qovw_8",
+      "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
+      "channel": "euronews",
+      "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
+    },
+    {
+      "id": "lEr9cPpuAx8",
+      "title": "SpaceX lands rocket at sea, makes history",
+      "channel": "The Verge",
+      "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+    },
+    {
+      "id": "sYmQQn_ZSys",
+      "title": "CRS-8 | First Stage Landing on Droneship",
+      "channel": "SpaceX",
+      "thumbnail": "https://i.ytimg.com/vi/sYmQQn_ZSys/hqdefault.jpg"
+    },
+    {
+      "id": "7pUAydjne5M",
+      "title": "CRS-8 Dragon Hosted Webcast",
+      "channel": "SpaceX",
+      "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg"
+    }
+  ]
 }

@@ -1,33 +1,82 @@
 {
   "date_last_year": "2025-04-08",
-  "date_generated": "2026-04-08T00:46:38.570Z",
-  "summary": "On April 8, 2025, global headlines were dominated by two major stories. The U.S.-China trade war escalated as President Donald Trump announced a 50% additional tariff on Chinese imports, leading to a total of 104% tariffs. This move was a response to China's 34% tariffs on U.S. goods, causing global market volatility. Meanwhile, the Israel-Gaza conflict intensified, with Israeli forces killing at least 58 Palestinians, including children, over a 24-hour period. The United Nations reported severe humanitarian impacts, and calls for independent investigations into the deaths of medics and rescue workers were made.",
-  "youtube_title": "U.S.-China Tariff War & Israel-Gaza Conflict Escalate",
+  "date_generated": "2026-04-08T08:04:39.665Z",
+  "summary": "April 8, 2025, was marked by two tragic events. In Santo Domingo, a nightclub roof collapse during a concert by Rubby Pérez resulted in 231 deaths, including the singer, and over 200 injuries. This disaster led to national mourning and raised concerns about building safety standards in the Dominican Republic. Meanwhile, severe weather, including tornadoes and flash flooding, ravaged parts of the United States, causing at least 25 fatalities and significant damage, particularly in the Midwest and Southern regions. These incidents highlighted the urgent need for improved infrastructure resilience and climate change mitigation strategies.",
+  "youtube_title": "Santo Domingo Tragedy & U.S. Storms Devastate Communities",
   "stories": [
     {
-      "headline": "U.S. Slaps 104% Tariffs on China Amid Trade War",
-      "summary": "The United States imposed a 50% additional tariff on Chinese imports, raising the total tariffs to 104%. This decision by President Donald Trump was a countermeasure to China's 34% tariffs on U.S. goods. The escalating trade tensions caused global market volatility, with stock markets experiencing declines and concerns about economic repercussions.",
+      "headline": "Nightclub Roof Collapse Kills 231 in Santo Domingo",
+      "summary": "During a concert by merengue singer Rubby Pérez in Santo Domingo, the nightclub roof collapsed, killing at least 231 people, including Pérez, and injuring over 200 others. This incident is one of the deadliest structural failures in recent history, prompting national mourning and an investigation into building safety standards in the Dominican Republic.",
       "youtube_queries": [
-        "us china trade war tariffs",
-        "trump china tariffs CNBC",
-        "market reaction to tariffs"
-      ],
-      "category": "markets",
-      "videos": [],
-      "video": null
-    },
-    {
-      "headline": "Israel-Gaza Conflict Escalates, 58 Palestinians Killed",
-      "summary": "The conflict between Israel and Gaza intensified, with Israeli forces killing at least 58 Palestinians, including children, in a 24-hour period. The United Nations reported that Israeli attacks were causing significant casualties among children. The Palestine Red Crescent Society called for an independent investigation into the deaths of 15 medics and rescue workers by Israeli military forces.",
-      "youtube_queries": [
-        "israel gaza conflict escalation",
-        "gaza conflict UN report",
-        "israel gaza violence BBC"
+        "Santo Domingo nightclub collapse",
+        "Rubby Pérez concert tragedy",
+        "BBC Santo Domingo roof collapse"
       ],
       "category": "world",
-      "videos": [],
-      "video": null
+      "videos": [
+        {
+          "id": "rpF6RXVrTAs",
+          "title": "Sickening moment roof collapses at Dominican Republic nightclub",
+          "channel": "New York Post",
+          "thumbnail": "https://i.ytimg.com/vi/rpF6RXVrTAs/hqdefault.jpg"
+        },
+        {
+          "id": "cjCT0GDaSMc",
+          "title": "At least 98 people killed in Dominican Republic nightclub collapse | BBC News",
+          "channel": "BBC News",
+          "thumbnail": "https://i.ytimg.com/vi/cjCT0GDaSMc/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "rpF6RXVrTAs",
+        "title": "Sickening moment roof collapses at Dominican Republic nightclub",
+        "channel": "New York Post",
+        "thumbnail": "https://i.ytimg.com/vi/rpF6RXVrTAs/hqdefault.jpg"
+      }
+    },
+    {
+      "headline": "Severe Weather Hits U.S., 25 Dead in Storms",
+      "summary": "Severe weather, including tornadoes and flash flooding, swept through parts of the United States, resulting in at least 25 deaths. The storms caused widespread damage to homes and infrastructure, particularly in the Midwest and Southern regions. Emergency services were deployed to assist affected communities, highlighting the increasing frequency of extreme weather events.",
+      "youtube_queries": [
+        "US tornadoes flash flooding",
+        "Midwest storm damage",
+        "CNN severe weather USA"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "12xNwOU9OaY",
+          "title": "Violent storms cut through the South and Midwest",
+          "channel": "AP Archive",
+          "thumbnail": "https://i.ytimg.com/vi/12xNwOU9OaY/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "12xNwOU9OaY",
+        "title": "Violent storms cut through the South and Midwest",
+        "channel": "AP Archive",
+        "thumbnail": "https://i.ytimg.com/vi/12xNwOU9OaY/hqdefault.jpg"
+      }
     }
   ],
-  "videos": []
+  "videos": [
+    {
+      "id": "rpF6RXVrTAs",
+      "title": "Sickening moment roof collapses at Dominican Republic nightclub",
+      "channel": "New York Post",
+      "thumbnail": "https://i.ytimg.com/vi/rpF6RXVrTAs/hqdefault.jpg"
+    },
+    {
+      "id": "cjCT0GDaSMc",
+      "title": "At least 98 people killed in Dominican Republic nightclub collapse | BBC News",
+      "channel": "BBC News",
+      "thumbnail": "https://i.ytimg.com/vi/cjCT0GDaSMc/hqdefault.jpg"
+    },
+    {
+      "id": "12xNwOU9OaY",
+      "title": "Violent storms cut through the South and Midwest",
+      "channel": "AP Archive",
+      "thumbnail": "https://i.ytimg.com/vi/12xNwOU9OaY/hqdefault.jpg"
+    }
+  ]
 }
