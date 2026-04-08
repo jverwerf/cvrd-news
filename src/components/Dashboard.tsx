@@ -80,12 +80,11 @@ export function Dashboard({
     }
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      // Telegram + X videos (with duration) + TikTok for sports/trending in center player
-      const isFanCat = story.category === 'sports' || story.category === 'trending';
+      // Telegram + X videos (with duration) + TikTok in center player
       if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
-      } else if (c.platform === 'tiktok' && isFanCat && c.embed_id && /^\d+$/.test(c.embed_id)) {
-        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 90, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
+      } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
+        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
       }
     }
   }
