@@ -131,9 +131,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       {/* BRIEF MODE: cards → brief banner → summary → dashboard → video picks */}
       {isBrief ? (
         <>
-          {/* 1. TODAY'S TOP STORIES — horizontal scroll row */}
+          {/* 1. Story cards — horizontal scroll row */}
           <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
-            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4 px-6 md:px-12">Today&apos;s Top Stories</h2>
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
@@ -362,9 +361,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       ) : (
         /* STORY MODE: Cards → Cover The News banner → Picture → Dashboard → Content */
         <>
-          {/* 1. STORY CARDS — same layout as brief */}
+          {/* 1. Story cards — same layout as brief */}
           <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
-            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4 px-6 md:px-12">Today&apos;s Top Stories</h2>
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
