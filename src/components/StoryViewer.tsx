@@ -164,7 +164,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </p>
                   </div>
                 </a>
-                {stories.slice(0, 5).map((s, i) => (
+                {stories.map((s, i) => (
                   <a key={i} href={`/story/${topicToSlug(s.topic)}`}
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
                     className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
@@ -419,7 +419,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </p>
                   </div>
                 </a>
-                {stories.slice(0, 5).map((s, i) => (
+                {stories.map((s, i) => (
                   <a key={i} href={`/story/${topicToSlug(s.topic)}`}
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
                     className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
