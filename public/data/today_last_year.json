@@ -1,28 +1,28 @@
 {
-  "date_last_year": "2025-04-07",
-  "date_generated": "2026-04-07T19:53:06.173Z",
-  "summary": "On April 7, 2025, global financial markets experienced significant turmoil following the implementation of new U.S. tariffs by President Donald Trump. This led to sharp declines in major indices across Asia, Europe, and the U.S., raising concerns about a potential economic downturn. Meanwhile, the Mid-South region of the United States was devastated by severe storms and flooding, resulting in at least 20 deaths and widespread displacement. These events highlighted the far-reaching impacts of both economic policies and natural disasters.",
-  "youtube_title": "U.S. Tariffs Shake Markets & Mid-South Floods Devastate",
+  "date_last_year": "2025-04-08",
+  "date_generated": "2026-04-08T00:46:38.570Z",
+  "summary": "On April 8, 2025, global headlines were dominated by two major stories. The U.S.-China trade war escalated as President Donald Trump announced a 50% additional tariff on Chinese imports, leading to a total of 104% tariffs. This move was a response to China's 34% tariffs on U.S. goods, causing global market volatility. Meanwhile, the Israel-Gaza conflict intensified, with Israeli forces killing at least 58 Palestinians, including children, over a 24-hour period. The United Nations reported severe humanitarian impacts, and calls for independent investigations into the deaths of medics and rescue workers were made.",
+  "youtube_title": "U.S.-China Tariff War & Israel-Gaza Conflict Escalate",
   "stories": [
     {
-      "headline": "U.S. Tariffs Trigger Global Market Chaos",
-      "summary": "President Donald Trump's new tariffs caused significant declines in global financial markets. Asian markets were hit hard, with Japan's Nikkei 225 and the Shanghai Composite Index both dropping over 7%. European markets also suffered, with Germany's DAX and London's FTSE seeing substantial losses. The U.S. S&P 500 neared bear market territory, raising fears of an economic downturn.",
+      "headline": "U.S. Slaps 104% Tariffs on China Amid Trade War",
+      "summary": "The United States imposed a 50% additional tariff on Chinese imports, raising the total tariffs to 104%. This decision by President Donald Trump was a countermeasure to China's 34% tariffs on U.S. goods. The escalating trade tensions caused global market volatility, with stock markets experiencing declines and concerns about economic repercussions.",
       "youtube_queries": [
-        "trump tariffs market crash",
-        "global market turmoil CNBC",
-        "stock market reaction tariffs"
+        "us china trade war tariffs",
+        "trump china tariffs CNBC",
+        "market reaction to tariffs"
       ],
       "category": "markets",
       "videos": [],
       "video": null
     },
     {
-      "headline": "Severe Flooding Ravages Mid-South States",
-      "summary": "Relentless storms caused severe flooding across the Mid-South, resulting in at least 20 fatalities. States from Arkansas to Kentucky were affected, with western Tennessee particularly hard-hit. The flooding led to significant displacement and damage, with some towns left almost entirely underwater.",
+      "headline": "Israel-Gaza Conflict Escalates, 58 Palestinians Killed",
+      "summary": "The conflict between Israel and Gaza intensified, with Israeli forces killing at least 58 Palestinians, including children, in a 24-hour period. The United Nations reported that Israeli attacks were causing significant casualties among children. The Palestine Red Crescent Society called for an independent investigation into the deaths of 15 medics and rescue workers by Israeli military forces.",
       "youtube_queries": [
-        "Mid-South flooding disaster",
-        "storm damage Tennessee Fox",
-        "Arkansas Kentucky floods"
+        "israel gaza conflict escalation",
+        "gaza conflict UN report",
+        "israel gaza violence BBC"
       ],
       "category": "world",
       "videos": [],

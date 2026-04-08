@@ -1,29 +1,29 @@
 {
-  "date_last_year": "2016-04-07",
-  "date_generated": "2026-04-07T19:53:22.076Z",
-  "summary": "On April 7, 2016, the political landscape in the United States was charged as the Democratic presidential primary race heated up in New York. Hillary Clinton and Bernie Sanders exchanged sharp criticisms, each questioning the other's qualifications for the presidency. Meanwhile, the music world mourned the loss of Merle Haggard, a legendary country music artist who passed away on his 79th birthday. Haggard's death marked the end of an era for country music, as he left behind a legacy of influential hits and a profound impact on the genre.",
+  "date_last_year": "2016-04-08",
+  "date_generated": "2026-04-08T00:46:52.827Z",
+  "summary": "On April 8, 2016, global headlines were dominated by two major stories. Pope Francis released 'Amoris Laetitia,' a document urging the Catholic Church to adopt a more inclusive approach towards divorced and remarried Catholics, while maintaining traditional teachings on marriage. This marked a significant moment in religious discourse, highlighting the Pope's call for compassion and understanding. Meanwhile, in the U.S., the Democratic primary race saw heightened tensions as Bernie Sanders and Hillary Clinton exchanged criticisms over each other's qualifications for the presidency. This exchange underscored the competitive nature of the 2016 presidential race, reflecting the intense political climate of the time.",
   "stories": [
     {
-      "headline": "Democratic Primary Heats Up in New York",
-      "summary": "As the Democratic presidential primary approached in New York, tensions rose between Hillary Clinton and Bernie Sanders. Clinton questioned Sanders' qualifications, while Sanders criticized Clinton's support for trade agreements and campaign finance positions. Both candidates sought to gain momentum ahead of the April 19 primary, following Sanders' recent series of victories.",
+      "headline": "Pope Francis Calls for Inclusion of Divorced Catholics",
+      "summary": "Pope Francis released 'Amoris Laetitia,' advocating for a more compassionate approach towards divorced and remarried Catholics. The document emphasized support over judgment, while reaffirming traditional marriage teachings. The Pope also called for the protection of gays and lesbians from discrimination, though he upheld the Church's stance against same-sex marriage recognition.",
       "youtube_queries": [
-        "Hillary Clinton Bernie Sanders New York primary 2016",
-        "Democratic primary New York Clinton Sanders April 2016",
-        "Clinton Sanders qualifications debate New York 2016"
+        "Pope Francis Amoris Laetitia 2016",
+        "Catholic Church divorce inclusion 2016",
+        "Pope Francis family life document 2016"
       ],
-      "category": "politics",
+      "category": "world",
       "videos": [],
       "video": null
     },
     {
-      "headline": "Country Legend Merle Haggard Dies at 79",
-      "summary": "Merle Haggard, a towering figure in country music, passed away on his 79th birthday after battling pneumonia. Over his six-decade career, Haggard achieved 38 number-one hits and influenced countless musicians. His songs like 'Okie from Muskogee' and 'Mama Tried' remain iconic. Fellow musicians, including Willie Nelson, paid tribute to his legacy.",
+      "headline": "Sanders and Clinton Clash in Democratic Primary Race",
+      "summary": "The Democratic primary race heated up as Bernie Sanders and Hillary Clinton exchanged criticisms over each other's qualifications for the presidency. Sanders questioned Clinton's readiness, prompting a defense from the White House. He later moderated his stance, acknowledging Clinton's experience, marking a significant escalation in the campaign.",
       "youtube_queries": [
-        "Merle Haggard death tribute April 2016",
-        "Merle Haggard legacy country music April 2016",
-        "Merle Haggard influence on music industry 2016"
+        "Bernie Sanders Hillary Clinton qualifications debate 2016",
+        "Democratic primary race tensions April 2016",
+        "Sanders Clinton exchange qualifications 2016"
       ],
-      "category": "world",
+      "category": "politics",
       "videos": [],
       "video": null
     }
