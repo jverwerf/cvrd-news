@@ -444,7 +444,7 @@ export function Dashboard({
             <>
               {overrideVideo.type === 'youtube' && (
                 <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://www.youtube-nocookie.com/embed/${overrideVideo.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0`}
+                  src={`https://www.youtube.com/embed/${overrideVideo.embed_id}?autoplay=1&mute=1&enablejsapi=1&rel=0`}
                   className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
@@ -488,7 +488,7 @@ export function Dashboard({
           )}
           {!overrideVideo && current?.type === 'youtube' && current.embed_id && (
             <iframe key={current.embed_id} ref={ytPlayerRef}
-              src={`https://www.youtube-nocookie.com/embed/${current.embed_id}?autoplay=${noAutoPlay ? 0 : 1}&mute=1&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
+              src={`https://www.youtube.com/embed/${current.embed_id}?autoplay=${noAutoPlay ? 0 : 1}&mute=1&enablejsapi=1&rel=0&disablekb=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
               onLoad={() => {
                 const win = ytPlayerRef.current?.contentWindow;
                 if (!win) return;

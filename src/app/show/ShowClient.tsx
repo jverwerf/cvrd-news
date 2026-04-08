@@ -49,7 +49,7 @@ export function ShowClient({ episodes }: { episodes: Episode[] }) {
               <div className="aspect-video">
                 <iframe
                   key={active.embedId}
-                  src={`https://www.youtube-nocookie.com/embed/${active.embedId}?rel=0`}
+                  src={`https://www.youtube.com/embed/${active.embedId}?rel=0`}
                   className="w-full h-full"
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
