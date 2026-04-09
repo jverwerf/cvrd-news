@@ -222,7 +222,18 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             </div>
             <div className="mt-5 pt-5" style={{ borderTop: '1px solid #2a3a4a' }}>
               <p className="text-[13px] text-[#bbb] leading-[1.75] italic">
-                {score.name} scores {score.overall_score}% based on {score.verified_claims} verifiable claims. {score.true_count} true, {score.somewhat_misleading_count || 0} somewhat misleading, {score.misleading_count} misleading, {score.false_count} false.
+                {score.name} scores {score.overall_score}% based on {score.verified_claims} verifiable claims
+                {' '}&mdash; {score.true_count} true, {score.somewhat_misleading_count || 0} somewhat misleading, {score.misleading_count} misleading{score.false_count > 0 ? `, ${score.false_count} false` : ''}.
+                {' '}{(() => {
+                  const top = Object.entries(score.domains || {}).sort((a: any, b: any) => b[1].count - a[1].count)[0];
+                  if (!top) return '';
+                  return `Most active on ${top[0].replace(/_/g, ' ')} (${(top[1] as any).count} claims, ${(top[1] as any).score}% accurate).`;
+                })()}
+                {' '}{(() => {
+                  const wildest = claims.filter(c => c.verdict === 'FALSE' || c.verdict === 'MISLEADING').sort((a, b) => a.score - b.score)[0];
+                  if (!wildest) return '';
+                  return `Wildest claim: "${wildest.claim.length > 120 ? wildest.claim.substring(0, 117) + '...' : wildest.claim}" — rated ${wildest.verdict.toLowerCase()}.`;
+                })()}
                 {score.pending_count > 0 ? ` ${score.pending_count} claims are pending verification.` : ''}
               </p>
             </div>
