@@ -48,13 +48,20 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     const ytList = s.youtube_videos || [];
     if (ytList.length > 0) bestYT.push(ytList[0]);
 
-    // Best 2 social clips per story
+    // Best 3 social clips per story — 1 TikTok + 1 X/Telegram + 1 any
     const social = (s.social_clips || []).filter(c => c.embed_id);
-    const videoClips = social.filter(c => c.platform === 'tiktok' || c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration));
-    const picked = videoClips.slice(0, 2);
-    if (picked.length < 2) {
-      const remaining = social.filter(c => !picked.includes(c));
-      picked.push(...remaining.slice(0, 2 - picked.length));
+    const picked: typeof social = [];
+    const tt = social.find(c => c.platform === 'tiktok');
+    if (tt) picked.push(tt);
+    const xOrTg = social.find(c => !picked.includes(c) && (c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration)));
+    if (xOrTg) picked.push(xOrTg);
+    if (picked.length < 3) {
+      const remaining = social.filter(c => !picked.includes(c) && (c.platform === 'tiktok' || c.platform === 'telegram' || (c.platform === 'x' && (c as any).duration)));
+      picked.push(...remaining.slice(0, 3 - picked.length));
+    }
+    if (picked.length < 3) {
+      const rest = social.filter(c => !picked.includes(c));
+      picked.push(...rest.slice(0, 3 - picked.length));
     }
     bestSocial.push(...picked);
   }
