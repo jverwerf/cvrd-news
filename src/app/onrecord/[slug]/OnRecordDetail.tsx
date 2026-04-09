@@ -346,19 +346,49 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             </div>
             <div className="mt-5 pt-5" style={{ borderTop: '1px solid #2a3a4a' }}>
               <p className="text-[13px] text-[#bbb] leading-[1.75] italic">
-                {score.name} scores {score.overall_score}% based on {score.verified_claims} verifiable claims
-                {' '}&mdash; {score.true_count} true, {score.somewhat_misleading_count || 0} somewhat misleading, {score.misleading_count} misleading{score.false_count > 0 ? `, ${score.false_count} false` : ''}.
-                {' '}{(() => {
-                  const top = Object.entries(score.domains || {}).sort((a: any, b: any) => b[1].count - a[1].count)[0];
-                  if (!top) return '';
-                  return `Most active on ${top[0].replace(/_/g, ' ')} (${(top[1] as any).count} claims, ${(top[1] as any).score}% accurate).`;
-                })()}
-                {' '}{(() => {
+                {(() => {
+                  const s = score;
+                  const total = s.verified_claims;
+                  const topDomain = Object.entries(s.domains || {}).sort((a: any, b: any) => b[1].count - a[1].count)[0];
                   const wildest = claims.filter(c => c.verdict === 'FALSE' || c.verdict === 'MISLEADING').sort((a, b) => a.score - b.score)[0];
-                  if (!wildest) return '';
-                  return `Wildest claim: "${wildest.claim.length > 120 ? wildest.claim.substring(0, 117) + '...' : wildest.claim}" — rated ${wildest.verdict.toLowerCase()}.`;
+
+                  // Build majority verdict phrase
+                  const counts = [
+                    { label: 'true', n: s.true_count },
+                    { label: 'somewhat misleading', n: s.somewhat_misleading_count || 0 },
+                    { label: 'misleading', n: s.misleading_count },
+                    { label: 'false', n: s.false_count },
+                  ].filter(c => c.n > 0).sort((a, b) => b.n - a.n);
+                  const top = counts[0];
+                  const majorityPct = Math.round((top.n / total) * 100);
+
+                  let text = `Out of ${total} verifiable claims, `;
+                  if (majorityPct >= 50) {
+                    text += `the majority (${majorityPct}%) were rated ${top.label}`;
+                  } else {
+                    text += `${top.n} were rated ${top.label}`;
+                  }
+                  if (counts.length > 1) {
+                    text += `, with ${counts.slice(1).map(c => `${c.n} ${c.label}`).join(' and ')}`;
+                  }
+                  text += '.';
+
+                  if (topDomain) {
+                    const d = topDomain[1] as any;
+                    text += ` ${s.name} talks most about ${topDomain[0].replace(/_/g, ' ')}, where ${d.score}% of ${d.count} claims held up.`;
+                  }
+
+                  if (wildest) {
+                    const claimText = wildest.claim.length > 100 ? wildest.claim.substring(0, 97) + '...' : wildest.claim;
+                    text += ` Their wildest miss? "${claimText}"`;
+                  }
+
+                  if (s.pending_count > 0) {
+                    text += ` ${s.pending_count} claims are still pending verification.`;
+                  }
+
+                  return text;
                 })()}
-                {score.pending_count > 0 ? ` ${score.pending_count} claims are pending verification.` : ''}
               </p>
             </div>
             {/* Share row */}
