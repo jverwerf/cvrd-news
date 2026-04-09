@@ -435,13 +435,13 @@ export default function PoliticiansPage() {
                   <div className="max-w-[250px]">
                     <ScoreMeter score={current.overall_score} />
                   </div>
-                  <div className="flex gap-3 mt-3 text-[10px]">
-                    <span style={{ color: '#60a5fa' }}>{current.true_count} true</span>
-                    <span style={{ color: '#f59e0b' }}>{current.somewhat_misleading_count} somewhat</span>
-                    <span style={{ color: '#daa520' }}>{current.misleading_count} misleading</span>
-                    <span style={{ color: '#f87171' }}>{current.false_count} false</span>
+                  <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-3 text-[10px]">
+                    {current.true_count > 0 && <span style={{ color: '#60a5fa' }}>{current.true_count} true</span>}
+                    {current.somewhat_misleading_count > 0 && <span style={{ color: '#f59e0b' }}>{current.somewhat_misleading_count} somewhat</span>}
+                    {current.misleading_count > 0 && <span style={{ color: '#daa520' }}>{current.misleading_count} misleading</span>}
+                    {current.false_count > 0 && <span style={{ color: '#f87171' }}>{current.false_count} false</span>}
                   </div>
-                  <p className="text-[11px] text-white/25 mt-2">{current.verified_claims} claims · ±{current.confidence_interval}%</p>
+                  <p className="text-[10px] text-white/25 mt-1">{current.verified_claims} claims</p>
                   <Link href={`/onrecord/${current.name?.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-') || current.handle}`}
                     className="mt-3 inline-block px-4 py-1.5 rounded-full text-[10px] font-semibold text-white transition-colors hover:opacity-90 self-start"
                     style={{ background: '#b8860b' }}>
