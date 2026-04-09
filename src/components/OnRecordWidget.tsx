@@ -52,7 +52,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
           <Link key={i} href={`/onrecord/${nameToSlug(m.name)}?q=${m.search_keyword}`}
             className="flex items-center gap-3 p-2.5 rounded-md transition-colors hover:opacity-80"
             style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-            <img src={`/data/politicians/photo_${m.handle}.png`} alt={m.name}
+            <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${m.handle}.png`} alt={m.name}
               className="w-8 h-8 rounded-full object-cover shrink-0"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
             <div className="flex-1 min-w-0">

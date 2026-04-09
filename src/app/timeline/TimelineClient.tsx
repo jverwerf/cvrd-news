@@ -67,7 +67,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
 
   const filtered = (filter === 'all' ? catchMeUpThreads : catchMeUpThreads.filter(t => t.category === filter))
     .filter(t => !search || t.title.toLowerCase().includes(search.toLowerCase()) ||
-      t.entries.some(e => e.topic.toLowerCase().includes(search.toLowerCase())));
+      t.entries.some(e => (e.topic || '').toLowerCase().includes(search.toLowerCase())));
 
   return (
     <>

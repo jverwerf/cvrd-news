@@ -104,7 +104,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
       }}>
       {p && (
         <div key={p.handle} style={{ opacity: 0 }}>
-          <img src={`/data/politicians/photo_${p.handle}.png`} alt={p.name}
+          <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${p.handle}.png`} alt={p.name}
             className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
             style={{ opacity: 0.6 }}
             onLoad={(e) => { (e.target as HTMLImageElement).parentElement!.style.opacity = '1'; (e.target as HTMLImageElement).parentElement!.style.transition = 'opacity 0.5s ease'; }}
@@ -160,10 +160,10 @@ export default function PoliticiansPage() {
 
   useEffect(() => {
     // Load all politicians from manifest
-    fetch('/data/politicians/manifest.json').then(r => r.ok ? r.json() : null).then(manifest => {
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json`).then(r => r.ok ? r.json() : null).then(manifest => {
       const handles: string[] = manifest?.handles || [];
       return Promise.all(handles.map(h =>
-        fetch(`/data/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
+        fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
       ));
     }).then(results => {
       const valid = (results || []).filter(Boolean);
@@ -177,7 +177,7 @@ export default function PoliticiansPage() {
       }
     });
     // Load editorial
-    fetch('/data/politicians/onrecord_today.json').then(r => r.ok ? r.json() : null).then(data => {
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/onrecord_today.json`).then(r => r.ok ? r.json() : null).then(data => {
       setEditorial(data);
       if (data?.person?.handle) setEditorialHandle(data.person.handle);
     }).catch(() => {});
@@ -427,7 +427,7 @@ export default function PoliticiansPage() {
           <div className="col-span-2 rounded-xl overflow-hidden flex" style={{ background: '#0a0f18' }}>
             {current ? (
               <>
-                <img src={`/data/politicians/photo_${current.handle}.png`} alt={current.name}
+                <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${current.handle}.png`} alt={current.name}
                   className="h-full object-cover" style={{ width: '40%' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 p-5 flex flex-col justify-center" style={{ borderLeft: '1px solid #2a3a4a' }}>

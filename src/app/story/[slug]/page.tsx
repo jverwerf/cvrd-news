@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { StoryPage } from "@/components/StoryPage";
+import { LiveBanner } from "@/components/LiveBanner";
+import { getDailyGaps } from "@/lib/data";
 
 export const dynamic = 'force-dynamic';
 
@@ -83,6 +85,12 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   const { story, date, otherStories } = result;
 
+  const data = await getDailyGaps();
+  const allStories = data?.top_narratives || [];
+  const top10 = allStories.filter((s: any) => s.is_top_story).length >= 10
+    ? allStories.filter((s: any) => s.is_top_story)
+    : allStories.slice(0, 10);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -127,6 +135,8 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
             </div>
           </div>
         </div>
+
+        <LiveBanner stories={top10} liveData={data?.live_data} />
       </div>
 
       {/* CVRD puzzle logo */}

@@ -41,16 +41,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const categories = ['world', 'politics', 'markets', 'sports', 'trending'];
 
-  // Timeline threads
+  // Timeline threads (from Blob)
   let threadEntries: MetadataRoute.Sitemap = [];
   try {
-    const fs = await import('fs');
-    const path = await import('path');
-    const dataDir = path.resolve(process.cwd(), 'public/data');
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
     for (const file of ['timeline_threads.json', 'timeline_archive.json']) {
-      const fp = path.join(dataDir, file);
-      if (!fs.existsSync(fp)) continue;
-      const data = JSON.parse(fs.readFileSync(fp, 'utf-8'));
+      const resp = await fetch(`${blobBase}/data/${file}`, { cache: 'no-store' });
+      if (!resp.ok) continue;
+      const data = await resp.json();
       for (const thread of (data.threads || [])) {
         threadEntries.push({
           url: `${baseUrl}/timeline/${thread.id}`,
@@ -62,16 +60,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   } catch {}
 
-  // On Record politicians
+  // On Record politicians (from Blob)
   let politicianEntries: MetadataRoute.Sitemap = [];
   try {
-    const fs = await import('fs');
-    const path = await import('path');
-    const politicianDir = path.resolve(process.cwd(), 'public/data/politicians');
-    if (fs.existsSync(politicianDir)) {
-      const scores = fs.readdirSync(politicianDir).filter((f: string) => f.startsWith('score_') && f.endsWith('.json'));
-      for (const file of scores) {
-        const data = JSON.parse(fs.readFileSync(path.join(politicianDir, file), 'utf-8'));
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+    const manifestResp = await fetch(`${blobBase}/politicians/manifest.json`, { cache: 'no-store' });
+    if (manifestResp.ok) {
+      const manifest = await manifestResp.json();
+      for (const handle of (manifest.handles || [])) {
+        const scoreResp = await fetch(`${blobBase}/politicians/score_${handle}.json`, { cache: 'no-store' });
+        if (!scoreResp.ok) continue;
+        const data = await scoreResp.json();
         const slug = (data.name || '').toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
         if (slug) {
           politicianEntries.push({

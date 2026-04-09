@@ -88,12 +88,12 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     // Load politician handles dynamically from manifest
-    fetch('/data/politicians/manifest.json')
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json`)
       .then(r => r.ok ? r.json() : { handles: HANDLES })
       .then(manifest => {
         const handles = manifest.handles || HANDLES;
         return Promise.all(handles.map((h: string) =>
-          fetch(`/data/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
+          fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
         ));
       })
       .then(results => {
@@ -297,7 +297,7 @@ export default function LeaderboardPage() {
                 ...serif,
                 color: rank === 0 ? '#daa520' : rank === 1 ? '#a8a8a8' : rank === 2 ? '#cd7f32' : 'rgba(255,255,255,0.25)',
               }}>{rank + 1}</span>
-              <img src={`/data/politicians/photo_${p.handle}.png`} alt={p.name}
+              <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${p.handle}.png`} alt={p.name}
                 className="w-10 h-10 rounded-full object-cover shrink-0"
                 style={{ border: '2px solid #253545' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
