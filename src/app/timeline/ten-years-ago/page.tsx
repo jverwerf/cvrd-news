@@ -113,42 +113,42 @@ export default async function TenYearsAgoPage() {
         </div>
       </div>
 
-      {/* Hero image first */}
-      {tenYearsAgo.image_file && (
-        <div className="h-48 md:h-64 overflow-hidden" style={{
-          backgroundImage: `url(${tenYearsAgo.image_file})`,
-          backgroundSize: 'cover', backgroundPosition: 'center',
-        }}>
-          <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(30,42,58,0.8) 100%)' }} />
+      {/* Hero image with title overlaid */}
+      <div className="relative overflow-hidden" style={{
+        height: '35vh', minHeight: '200px',
+        backgroundImage: tenYearsAgo.image_file ? `url(${tenYearsAgo.image_file})` : undefined,
+        backgroundSize: 'cover', backgroundPosition: 'center',
+        background: tenYearsAgo.image_file ? undefined : '#253545',
+      }}>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(30,42,58,0.95) 100%)' }} />
+        <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 pb-6">
+          <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] mb-2 block">10 Years Ago Today</span>
+          <h1 className="text-[28px] md:text-[40px] text-white leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+            {dateStr}
+          </h1>
+          {tenYearsAgo.title && <p className="text-[14px] text-white/60 mt-2">{tenYearsAgo.title}</p>}
         </div>
-      )}
-
-      {/* Banner after image */}
-      <div className="px-6 md:px-12 py-4" style={{ background: '#f5f5f5' }}>
-        <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">10 Years Ago Today</span>
-        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em] mt-1" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          {dateStr}
-        </h1>
-        {tenYearsAgo.title && <p className="text-[14px] text-[#666] mt-1">{tenYearsAgo.title}</p>}
-      </div>
-
-      <div className="px-6 md:px-12 py-6 max-w-4xl">
-        <p className="text-[15px] text-[#ccc] leading-[1.8]">{tenYearsAgo.summary}</p>
       </div>
 
       {tenYearsAgo.stories && tenYearsAgo.stories.length > 0 && (
-        <div className="px-6 md:px-12 pb-6 max-w-4xl">
-          <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Stories</h2>
+        <>
+        <div className="px-6 md:px-12 py-2" style={{ background: '#f5f5f5' }}>
+          <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+            {tenYearsAgo.stories.map(s => s.headline).join(' & ')}
+          </h2>
+        </div>
+        <div className="px-6 md:px-12 py-6 max-w-4xl">
           <div className="space-y-3">
             {tenYearsAgo.stories.map((s, i) => (
               <div key={i} className="rounded-lg p-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: '#60a5fa' }}>{s.category || 'news'}</span>
-                <h3 className="text-[15px] text-white font-medium mt-0.5">{s.headline}</h3>
-                <p className="text-[12px] text-[#999] leading-[1.5] mt-1">{s.summary}</p>
+                <h3 className="text-[15px] font-medium mt-0.5" style={{ color: '#daa520' }}>{s.headline}</h3>
+                <p className="text-[13px] text-[#ccc] leading-[1.7] mt-2">{s.summary}</p>
               </div>
             ))}
           </div>
         </div>
+        </>
       )}
 
       {tenYearsAgo.videos.length > 0 && (
