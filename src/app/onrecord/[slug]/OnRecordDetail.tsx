@@ -126,6 +126,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
             {[
+              { label: 'Breaking', slug: '/breaking' },
               { label: 'On Record', slug: '/onrecord' },
               { label: 'Timeline', slug: '/timeline' },
               { label: 'Daily Pick', slug: '/' },
@@ -256,7 +257,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                   }
 
                   if (wildest) {
-                    const claimText = wildest.claim.length > 100 ? wildest.claim.substring(0, 97) + '...' : wildest.claim;
+                    const claimText = wildest.claim;
                     const firstName = s.name?.split(' ')[0] || 'Their';
                     text += ` ${firstName}'s wildest miss? "${claimText}"`;
                   }
