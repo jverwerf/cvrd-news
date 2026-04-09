@@ -63,130 +63,6 @@ function ScoreMeter({ score }: { score: number }) {
   );
 }
 
-function TruthOverTime({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas || claims.length < 3) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const container = canvas.parentElement;
-    if (!container) return;
-    const W = container.clientWidth - 50;
-    const H = 180;
-    const dpr = window.devicePixelRatio || 1;
-    canvas.width = (W + 50) * dpr;
-    canvas.height = (H + 35) * dpr;
-    canvas.style.width = (W + 50) + 'px';
-    canvas.style.height = (H + 35) + 'px';
-    ctx.scale(dpr, dpr);
-
-    const sorted = [...claims].sort((a, b) => new Date(a.tweet_date).getTime() - new Date(b.tweet_date).getTime());
-    const minDate = new Date(sorted[0].tweet_date).getTime();
-    const maxDate = new Date(sorted[sorted.length - 1].tweet_date).getTime();
-    const dateRange = maxDate - minDate || 1;
-
-    // Rolling average (window of 5)
-    const windowSize = Math.min(5, sorted.length);
-    const points: { x: number; y: number; avg: number }[] = [];
-    for (let i = 0; i < sorted.length; i++) {
-      const start = Math.max(0, i - windowSize + 1);
-      const w = sorted.slice(start, i + 1);
-      const avg = w.reduce((s, c) => s + c.score, 0) / w.length;
-      const x = 36 + ((new Date(sorted[i].tweet_date).getTime() - minDate) / dateRange) * W;
-      const y = 8 + (1 - avg) * H;
-      points.push({ x, y, avg });
-    }
-
-    // Grid lines
-    ctx.strokeStyle = '#1a2a3a';
-    ctx.lineWidth = 1;
-    [0, 0.25, 0.5, 0.75, 1].forEach(v => {
-      const y = 8 + (1 - v) * H;
-      ctx.beginPath();
-      ctx.moveTo(36, y);
-      ctx.lineTo(36 + W, y);
-      ctx.stroke();
-      ctx.fillStyle = '#555';
-      ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
-      ctx.textAlign = 'right';
-      ctx.fillText(Math.round(v * 100) + '%', 32, y + 3);
-    });
-
-    // Date labels
-    const seenMonths = new Set<string>();
-    sorted.forEach(c => {
-      const d = new Date(c.tweet_date);
-      const key = d.getFullYear() + '-' + d.getMonth();
-      if (!seenMonths.has(key)) {
-        seenMonths.add(key);
-        const x = 36 + ((d.getTime() - minDate) / dateRange) * W;
-        ctx.fillStyle = '#555';
-        ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
-        ctx.textAlign = 'center';
-        ctx.fillText(d.toLocaleDateString('en-US', { month: 'short', year: '2-digit' }), x, H + 24);
-      }
-    });
-
-    // Area fill
-    ctx.beginPath();
-    ctx.moveTo(points[0].x, H + 8);
-    points.forEach(p => ctx.lineTo(p.x, p.y));
-    ctx.lineTo(points[points.length - 1].x, H + 8);
-    ctx.closePath();
-    const grad = ctx.createLinearGradient(0, 0, 0, H + 8);
-    grad.addColorStop(0, 'rgba(218, 165, 32, 0.2)');
-    grad.addColorStop(1, 'rgba(218, 165, 32, 0)');
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Line
-    ctx.beginPath();
-    ctx.strokeStyle = '#daa520';
-    ctx.lineWidth = 2.5;
-    ctx.lineJoin = 'round';
-    points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-    ctx.stroke();
-
-    // Dots
-    points.forEach(p => {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
-      ctx.fillStyle = '#daa520';
-      ctx.fill();
-    });
-
-    // Average line
-    const avgY = 8 + (1 - overallScore / 100) * H;
-    ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = 'rgba(96, 165, 250, 0.3)';
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(36, avgY);
-    ctx.lineTo(36 + W, avgY);
-    ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = 'rgba(96, 165, 250, 0.5)';
-    ctx.font = '9px -apple-system, BlinkMacSystemFont, sans-serif';
-    ctx.textAlign = 'left';
-    ctx.fillText('avg ' + overallScore + '%', 36 + W + 4, avgY + 3);
-  }, [claims, overallScore]);
-
-  if (claims.length < 3) return null;
-
-  return (
-    <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-      <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-        <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">Truth Over Time</span>
-        <span className="text-[11px] text-[#777]">Rolling average across {claims.length} claims</span>
-      </div>
-      <canvas ref={canvasRef} />
-    </div>
-  );
-}
-
 export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   score: any; verified: any; allPoliticians: any[]; slug: string;
 }) {
@@ -449,39 +325,25 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           <div className="w-full flex items-center justify-center p-1"><AdBanner /></div>
         </div>
 
-        {/* TRUTH OVER TIME */}
-        <TruthOverTime claims={claims} overallScore={score.overall_score} />
-
-        {/* DOMAIN BREAKDOWN — BAR CHART */}
+        {/* DOMAIN BREAKDOWN */}
         <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
           <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-            <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">Accuracy by Topic</span>
+            <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">By Topic</span>
             <span className="text-[11px] text-[#777]">{domainEntries.length - 1} categories</span>
             {domainFilter && (
               <button onClick={() => setDomainFilter(null)} className="text-[9px] ml-auto cursor-pointer hover:text-[#999] transition-colors" style={{ color: '#daa520', background: 'none', border: 'none' }}>Clear filter ×</button>
             )}
           </div>
-          <div className="space-y-2">
-            {domainEntries.map(([domain, d]) => {
-              const isActive = domainFilter === domain || (domain === 'all' && !domainFilter);
-              const barColor = d.score >= 80 ? '#60a5fa' : d.score >= 60 ? '#f59e0b' : d.score >= 40 ? '#daa520' : '#f87171';
-              return (
-                <button key={domain} onClick={() => setDomainFilter(domain === 'all' ? null : domainFilter === domain ? null : domain)}
-                  className="flex items-center gap-3 w-full text-left cursor-pointer transition-all rounded px-1 -mx-1 py-1"
-                  style={{ background: isActive ? 'rgba(184,134,11,0.1)' : 'transparent', border: 'none' }}>
-                  <span className="text-[12px] capitalize w-[100px] shrink-0 text-right" style={{ color: isActive ? '#daa520' : '#999' }}>
-                    {domain.replace(/_/g, ' ')}
-                  </span>
-                  <div className="flex-1 h-[24px] rounded-md overflow-hidden" style={{ background: '#152030' }}>
-                    <div className="h-full rounded-md flex items-center pl-2.5 transition-all duration-700"
-                      style={{ width: `${Math.max(d.score, 4)}%`, background: barColor }}>
-                      <span className="text-[10px] font-semibold text-white whitespace-nowrap">{d.score}%</span>
-                    </div>
-                  </div>
-                  <span className="text-[10px] text-[#777] w-[60px] text-right shrink-0">{d.count} claims</span>
-                </button>
-              );
-            })}
+          <div className="space-y-0">
+            {domainEntries.map(([domain, d]) => (
+              <button key={domain} onClick={() => setDomainFilter(domain === 'all' ? null : domainFilter === domain ? null : domain)}
+                className="flex items-center py-1.5 gap-3 w-full text-left cursor-pointer transition-colors rounded px-1 -mx-1"
+                style={{ background: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? 'rgba(184,134,11,0.1)' : 'transparent', border: 'none' }}>
+                <span className="text-[12px] capitalize flex-1" style={{ color: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? '#daa520' : '#bbb' }}>{domain.replace(/_/g, ' ')}</span>
+                <span className="text-[10px] text-[#777]">{d.count} claims</span>
+                <span className="text-[12px] font-semibold w-12 text-right" style={{ color: d.score >= 60 ? '#60a5fa' : d.score >= 40 ? '#daa520' : '#f87171' }}>{d.score}%</span>
+              </button>
+            ))}
           </div>
         </div>
 
