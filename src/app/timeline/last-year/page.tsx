@@ -92,16 +92,28 @@ export default async function LastYearPage() {
         {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
       </div>
 
-      {/* Banner */}
-      <div className="px-6 md:px-12 py-4" style={{ background: '#f5f5f5' }}>
-        <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">1 Year Ago Today</span>
-        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em] mt-1" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          {dateStr}
-        </h1>
-        {lastYear.title && <p className="text-[14px] text-[#666] mt-1">{lastYear.title}</p>}
+      {/* CVRD puzzle logo */}
+      <div className="fixed left-1/2 pointer-events-none" style={{ top: '51px', transform: 'translateX(-50%)', zIndex: 101, filter: 'drop-shadow(0 0 15px rgba(0,0,0,0.4))' }}>
+        <div className="flex gap-[1px]">
+          {['C','V','R','D'].map((letter, i) => (
+            <div key={letter} style={{
+              width: 26, height: 26,
+              background: i % 2 === 0 ? '#1a2a3a' : '#253545',
+              borderRadius: 2,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontFamily: 'Georgia, serif', fontSize: 13, fontWeight: 700,
+              color: '#e0e0e0',
+              clipPath: i === 0
+                ? 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%)'
+                : i === 3
+                ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)'
+                : 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)',
+            }}>{letter}</div>
+          ))}
+        </div>
       </div>
 
-      {/* Hero image */}
+      {/* Hero image first */}
       {lastYear.image_file && (
         <div className="h-48 md:h-64 overflow-hidden" style={{
           backgroundImage: `url(${lastYear.image_file})`,
@@ -110,6 +122,15 @@ export default async function LastYearPage() {
           <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(30,42,58,0.8) 100%)' }} />
         </div>
       )}
+
+      {/* Banner after image */}
+      <div className="px-6 md:px-12 py-4" style={{ background: '#f5f5f5' }}>
+        <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">1 Year Ago Today</span>
+        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em] mt-1" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+          {dateStr}
+        </h1>
+        {lastYear.title && <p className="text-[14px] text-[#666] mt-1">{lastYear.title}</p>}
+      </div>
 
       {/* Summary */}
       <div className="px-6 md:px-12 py-6 max-w-4xl">
