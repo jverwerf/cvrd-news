@@ -262,9 +262,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                     text += ` ${firstName}'s wildest miss? "${claimText}"`;
                   }
 
-                  if (s.pending_count > 0) {
-                    text += ` ${s.pending_count} claims are still pending verification.`;
-                  }
 
                   return text;
                 })()}
