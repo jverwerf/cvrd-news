@@ -114,131 +114,94 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
         </div>
       </div>
 
-      {/* LAST YEAR TODAY */}
-      {lastYear && lastYear.summary && (() => {
-        const lastYearDate = new Date(lastYear.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        const shareUrl = 'https://cvrdnews.com/timeline';
-        const shareText = `Last Year Today — ${lastYearDate}\n\n${lastYear.summary.substring(0, 120)}...`;
-        return (
-          <>
-            {/* White banner */}
-            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
-              <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Last Year Today</span>
-              <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                {lastYearDate}
-              </h2>
-            </div>
-
-            {/* Content in card */}
-            <div className="px-6 md:px-12 pt-5 pb-8">
-              <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                {/* Summary */}
-                <div className="p-5 pb-4">
-                  <p className="text-[14px] text-[#ccc] leading-[1.8]">{lastYear.summary}</p>
-                </div>
-
-                {/* Videos — inside card */}
-                {lastYear.videos.length > 0 && (
-                  <div className="px-5 pb-4">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {lastYear.videos.map((v, i) => (
-                        <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                          <div style={{ aspectRatio: '16/9' }}>
-                            <iframe
-                              src={`https://www.youtube.com/embed/${v.id}`}
-                              className="w-full h-full"
-                              style={{ border: 'none' }}
-                              allowFullScreen
-                              loading="lazy"
-                            />
-                          </div>
-                          <div className="p-2.5">
-                            <p className="text-[11px] text-white font-medium leading-snug line-clamp-2">{v.title}</p>
-                            <span className="text-[9px] text-[#555] mt-0.5 block">{v.channel}</span>
-                          </div>
-                        </div>
-                      ))}
+      {/* ON THIS DAY — 1 Year + 10 Years in one banner */}
+      {(lastYear?.summary || tenYearsAgo?.summary) && (
+        <>
+          <div className="px-6 md:px-12 py-2 flex items-center gap-3 mt-2" style={{ background: '#f5f5f5' }}>
+            <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+              On This Day
+            </h2>
+          </div>
+          <div className="px-6 md:px-12 pt-2 pb-2">
+            <div className="grid grid-cols-1 gap-3">
+              {lastYear && lastYear.summary && (() => {
+                const lastYearDate = new Date(lastYear.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                const imgSrc = lastYear.image_file || (lastYear.videos?.[0] ? `https://img.youtube.com/vi/${lastYear.videos[0].id}/mqdefault.jpg` : null);
+                const storySummaries = (lastYear.stories || []).slice(0, 2).map(s => s.headline).join('. ') + '.';
+                return (
+                  <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                    <div className="flex">
+                      {imgSrc && (
+                        <div className="w-[140px] shrink-0 overflow-hidden" style={{ backgroundImage: `url(${imgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: 120 }} />
+                      )}
+                      <a href="/timeline/last-year" className="flex-1 p-3 min-w-0 group">
+                        <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">1 Year Ago — {lastYearDate}</span>
+                        <h3 className="text-[13px] text-white font-medium leading-snug mt-1 group-hover:text-[#60a5fa] transition-colors line-clamp-1" style={serif}>{lastYear.title || lastYear.stories?.[0]?.headline || 'This Day Last Year'}</h3>
+                        <p className="text-[10px] text-[#999] leading-[1.4] line-clamp-2 mt-0.5">{storySummaries || lastYear.summary.split('. ').slice(0, 2).join('. ') + '.'}</p>
+                      </a>
+                      {lastYear.videos.length > 0 && (
+                        <a href="/timeline/last-year" className="flex gap-1 p-2 shrink-0">
+                          {lastYear.videos.slice(0, 3).map((v, i) => (
+                            <div key={i} className="w-[100px] rounded overflow-hidden relative group/vid cursor-pointer" style={{ background: '#1e2a3a' }}>
+                              <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt="" className="w-full h-[56px] object-cover" />
+                              <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover/vid:opacity-100 transition-opacity">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                              </div>
+                              <p className="text-[7px] text-[#999] px-1 py-0.5 line-clamp-1">{v.channel}</p>
+                            </div>
+                          ))}
+                        </a>
+                      )}
                     </div>
                   </div>
-                )}
-
-                {/* Share row */}
-                <div className="px-5 pb-4">
-                  <ShareBar text={shareText} url={shareUrl} />
-                </div>
-              </div>
-            </div>
-          </>
-        );
-      })()}
-
-      {/* TEN YEARS AGO TODAY */}
-      {tenYearsAgo && tenYearsAgo.summary && (() => {
-        const tenYearsDate = new Date(tenYearsAgo.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-        const shareUrl = 'https://cvrdnews.com/timeline';
-        const shareText = `10 Years Ago Today — ${tenYearsDate}\n\n${tenYearsAgo.summary.substring(0, 120)}...`;
-        return (
-          <>
-            {/* White banner */}
-            <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
-              <span className="text-[9px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">10 Years Ago Today</span>
-              <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                {tenYearsDate}
-              </h2>
-            </div>
-
-            {/* Content in card */}
-            <div className="px-6 md:px-12 pt-5 pb-8">
-              <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                {/* Summary */}
-                <div className="p-5 pb-4">
-                  <p className="text-[14px] text-[#ccc] leading-[1.8]">{tenYearsAgo.summary}</p>
-                </div>
-
-                {/* Videos — inside card */}
-                {tenYearsAgo.videos.length > 0 && (
-                  <div className="px-5 pb-4">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {tenYearsAgo.videos.map((v, i) => (
-                        <div key={i} className="rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                          <div style={{ aspectRatio: '16/9' }}>
-                            <iframe
-                              src={`https://www.youtube.com/embed/${v.id}`}
-                              className="w-full h-full"
-                              style={{ border: 'none' }}
-                              allowFullScreen
-                              loading="lazy"
-                            />
-                          </div>
-                          <div className="p-2.5">
-                            <p className="text-[11px] text-white font-medium leading-snug line-clamp-2">{v.title}</p>
-                            <span className="text-[9px] text-[#555] mt-0.5 block">{v.channel}</span>
-                          </div>
-                        </div>
-                      ))}
+                );
+              })()}
+              {tenYearsAgo && tenYearsAgo.summary && (() => {
+                const tenYearsDate = new Date(tenYearsAgo.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                const imgSrc = tenYearsAgo.image_file || (tenYearsAgo.videos?.[0] ? `https://img.youtube.com/vi/${tenYearsAgo.videos[0].id}/mqdefault.jpg` : null);
+                const storySummaries = (tenYearsAgo.stories || []).slice(0, 2).map(s => s.headline).join('. ') + '.';
+                return (
+                  <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                    <div className="flex">
+                      {imgSrc && (
+                        <div className="w-[140px] shrink-0 overflow-hidden" style={{ backgroundImage: `url(${imgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center', minHeight: 120 }} />
+                      )}
+                      <a href="/timeline/ten-years-ago" className="flex-1 p-3 min-w-0 group">
+                        <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">10 Years Ago — {tenYearsDate}</span>
+                        <h3 className="text-[13px] text-white font-medium leading-snug mt-1 group-hover:text-[#60a5fa] transition-colors line-clamp-1" style={serif}>{tenYearsAgo.title || tenYearsAgo.stories?.[0]?.headline || 'This Day 10 Years Ago'}</h3>
+                        <p className="text-[10px] text-[#999] leading-[1.4] line-clamp-2 mt-0.5">{storySummaries || tenYearsAgo.summary.split('. ').slice(0, 2).join('. ') + '.'}</p>
+                      </a>
+                      {tenYearsAgo.videos.length > 0 && (
+                        <a href="/timeline/ten-years-ago" className="flex gap-1 p-2 shrink-0">
+                          {tenYearsAgo.videos.slice(0, 3).map((v, i) => (
+                            <div key={i} className="w-[100px] rounded overflow-hidden relative group/vid cursor-pointer" style={{ background: '#1e2a3a' }}>
+                              <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt="" className="w-full h-[56px] object-cover" />
+                              <div className="absolute inset-0 flex items-center justify-center opacity-80 group-hover/vid:opacity-100 transition-opacity">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                              </div>
+                              <p className="text-[7px] text-[#999] px-1 py-0.5 line-clamp-1">{v.channel}</p>
+                            </div>
+                          ))}
+                        </a>
+                      )}
                     </div>
                   </div>
-                )}
-
-                {/* Share row */}
-                <div className="px-5 pb-4">
-                  <ShareBar text={shareText} url={shareUrl} />
-                </div>
-              </div>
+                );
+              })()}
             </div>
-          </>
-        );
-      })()}
+          </div>
+        </>
+      )}
 
       {/* WHITE BANNER — Catch Me Up */}
-      <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
-        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+      <div className="px-6 md:px-12 py-2 flex items-center gap-3 mt-2" style={{ background: '#f5f5f5' }}>
+        <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
           Catch Me Up
-        </h1>
+        </h2>
       </div>
 
       {/* Search + Thread list */}
-      <div className="px-4 md:px-8 pt-5 pb-4 max-w-5xl mx-auto">
+      <div className="px-6 md:px-12 pt-5 pb-4">
         <div className="flex items-center gap-3 mb-5">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full shrink-0"
             style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', minWidth: 180 }}>
@@ -281,33 +244,48 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
           })()}
         </div>
 
-        <div className="space-y-4">
-        <div>
+        <div className="space-y-3">
+        <div className="space-y-3">
         {filtered.map(thread => {
           const latestEntry = thread.entries[thread.entries.length - 1];
           const catColor = categoryColor(thread.category);
+          const allVids = thread.entries.flatMap(e => e.youtube_videos || []);
+          const seenVids = new Set<string>();
+          const vids = allVids.filter((v: any) => { const id = v.embed_id || v.id; if (seenVids.has(id)) return false; seenVids.add(id); return true; }).slice(0, 3);
           return (
             <a key={thread.id} href={`/timeline/${thread.id}`}
               className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <div className="flex">
+              <div className="flex" style={{ minHeight: 120 }}>
                 {(thread.image_file || latestEntry?.image_file) && (
-                  <div className="w-36 md:w-48 shrink-0 overflow-hidden" style={{
+                  <div className="w-[140px] shrink-0 overflow-hidden" style={{
                     backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
                     backgroundSize: 'cover', backgroundPosition: 'center',
-                    minHeight: 90,
                   }} />
                 )}
-                <div className="flex-1 px-4 py-3 flex flex-col justify-center min-w-0">
+                <div className="flex-1 p-3 flex flex-col justify-center min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>{thread.category}</span>
+                    <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: catColor }}>{thread.category}</span>
                     <span className="text-[9px] text-[#666]">{formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}</span>
                   </div>
-                  <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
+                  <h2 className="text-[13px] text-white font-medium leading-snug mb-0.5 group-hover:text-[#60a5fa] transition-colors line-clamp-1" style={serif}>
                     {thread.title}
                   </h2>
-                  <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">{thread.summary}</p>
+                  <p className="text-[10px] text-[#999] leading-[1.4] line-clamp-2">{thread.summary}</p>
                 </div>
+                {vids.length > 0 && (
+                  <div className="flex gap-1 p-2 shrink-0 items-center">
+                    {vids.map((v: any, i: number) => (
+                      <div key={i} className="w-[100px] rounded overflow-hidden relative" style={{ background: '#1e2a3a' }}>
+                        <img src={`https://img.youtube.com/vi/${v.embed_id || v.id}/mqdefault.jpg`} alt="" className="w-full h-[56px] object-cover" />
+                        <div className="absolute inset-0 flex items-center justify-center opacity-80">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                        <p className="text-[7px] text-[#999] px-1 py-0.5 line-clamp-1">{v.channel || ''}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </a>
           );

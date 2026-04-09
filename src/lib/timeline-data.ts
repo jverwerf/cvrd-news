@@ -59,6 +59,9 @@ export type TodayLastYearData = {
   date_last_year: string;
   date_generated: string;
   summary: string;
+  title?: string;
+  image_file?: string;
+  stories?: { headline: string; summary: string; category?: string }[];
   videos: LastYearVideo[];
 };
 
