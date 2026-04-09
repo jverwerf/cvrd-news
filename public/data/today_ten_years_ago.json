@@ -1,39 +1,17 @@
 {
-  "date_last_year": "2016-04-08",
-  "date_generated": "2026-04-08T08:06:05.843Z",
-  "summary": "April 8, 2016, was marked by significant developments in both religious and technological spheres. Pope Francis released the apostolic exhortation 'Amoris Laetitia,' which addressed the complexities of family life and marriage, advocating for a more compassionate approach towards divorced and remarried Catholics. This document sparked discussions about the Catholic Church's evolving stance on family issues. Meanwhile, SpaceX achieved a historic milestone by successfully landing the first-stage booster of its Falcon 9 rocket on a drone ship in the Atlantic Ocean, marking a major advancement in reusable rocket technology and reducing the costs of space exploration.",
+  "date_last_year": "2016-04-09",
+  "date_generated": "2026-04-09T10:33:04.127Z",
+  "summary": "April 9, 2016, was marked by two significant events. SpaceX achieved a historic milestone by successfully landing the first-stage booster of its Falcon 9 rocket on a drone ship, paving the way for more cost-effective space travel. Meanwhile, in Europe, Belgian authorities made a crucial arrest in the investigation of the Paris and Brussels terrorist attacks, capturing Mohamed Abrini, a key suspect. These stories highlighted advancements in technology and significant developments in global security efforts.",
+  "title": "SpaceX Lands Rocket on Drone Ship, Makes History",
+  "image_file": "/images/story_2016-04-09_202.png",
   "stories": [
     {
-      "headline": "Pope Francis Releases 'Amoris Laetitia'",
-      "summary": "Pope Francis published 'Amoris Laetitia,' an apostolic exhortation focusing on family life and marriage within the Catholic Church. The document emphasized compassion and understanding, particularly for divorced and remarried Catholics, suggesting a more inclusive approach to their participation in church sacraments. This release sparked widespread discussion about the Church's evolving stance on family issues.",
+      "headline": "SpaceX Lands Rocket on Drone Ship, Makes History",
+      "summary": "On April 8, 2016, SpaceX launched its Falcon 9 rocket from Cape Canaveral, Florida, on a mission to the International Space Station. The mission's first-stage booster successfully landed on an autonomous drone ship in the Atlantic Ocean, marking a major milestone in reusable rocket technology. This achievement is expected to significantly reduce the costs associated with space travel, making it more accessible in the future.",
       "youtube_queries": [
-        "Pope Francis Amoris Laetitia 2016 Catholic Church",
-        "Amoris Laetitia impact on Catholic families 2016",
-        "Pope Francis family life document 2016"
-      ],
-      "category": "world",
-      "videos": [
-        {
-          "id": "_TBu5Qovw_8",
-          "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
-          "channel": "euronews",
-          "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
-        }
-      ],
-      "video": {
-        "id": "_TBu5Qovw_8",
-        "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
-        "channel": "euronews",
-        "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
-      }
-    },
-    {
-      "headline": "SpaceX Achieves Historic Rocket Landing",
-      "summary": "SpaceX successfully launched its Falcon 9 rocket from Cape Canaveral, Florida, on a mission to deliver cargo to the International Space Station. The company achieved a groundbreaking milestone by landing the rocket's first-stage booster on an autonomous drone ship in the Atlantic Ocean. This marked the first successful sea landing of an orbital rocket, a significant advancement in reusable rocket technology.",
-      "youtube_queries": [
-        "SpaceX Falcon 9 first sea landing 2016",
+        "SpaceX Falcon 9 drone ship landing April 2016",
         "SpaceX reusable rocket technology breakthrough 2016",
-        "Historic SpaceX rocket landing April 2016"
+        "SpaceX Falcon 9 historic landing April 2016"
       ],
       "category": "world",
       "videos": [
@@ -41,7 +19,8 @@
           "id": "lEr9cPpuAx8",
           "title": "SpaceX lands rocket at sea, makes history",
           "channel": "The Verge",
-          "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+          "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg",
+          "transcript": "0:08 SpaceX has finally done it!\n0:10 After launching its Falcon 9 into space, the\ncompany successfully landed the majority of\n0:14 the rocket on a floating drone ship at sea.\n0:17 It’s the second time SpaceX has landed its\nrocket post-launch, and the first time the\n0:21 company has pulled off an ocean landing.\n0:23 This is another big milestone for SpaceX.\n0:26 In December, the company made history when\nit successfully landed its Falcon 9 for the\n0:30 first time at a ground-based landing site\nat Cape Canaveral, Florida.\n0:34 Sure Blue Origin has also launched and landed\nits own rocket, but that vehicle can’t really\n0:38 be compared to the Falcon 9.\n0:40 And now SpaceX has shown it is capable of\nlanding its rockets both on solid ground and\n0:45 at sea.\n0:46 But why land on a floating drone ship when\nyou can land on land?\n0:49 It’s definitely easier to touch down a rocket\non a large, expanse of ground, rather than\n0:54 a ship floating on moving water.\n0:56 Plus, all the previous times S..."
         },
         {
           "id": "sYmQQn_ZSys",
@@ -53,29 +32,65 @@
           "id": "7pUAydjne5M",
           "title": "CRS-8 Dragon Hosted Webcast",
           "channel": "SpaceX",
-          "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg"
+          "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg",
+          "transcript": "0:02 [Music]\n0:06 foreign\n0:14 [Applause]\n0:15 [Music]\n0:21 [Applause]\n0:29 [Music]\n0:33 it's 4 25 PM Eastern Standard Time on\n0:37 Friday April 8 2016. you're looking at a\n0:40 live shot of Falcon 9 at space launch\n0:43 complex 40 in Cape Canaveral Florida\n0:46 my name is Kate Tice and I am a process\n0:48 Improvement engineer here at SpaceX\n0:50 streaming to you live from our mission\n0:52 control center located in Hawthorne\n0:54 California welcome to the first SpaceX\n0:57 dragon mission of 2016. today's flight\n1:00 of the upgraded Falcon 9 rocket is\n1:02 launching from space launch complex 40\n1:04 in Cape Canaveral Florida and it will be\n1:06 setting Dragon Sports for the\n1:08 International Space Station under NASA's\n1:10 Commercial resupply Services contract\n1:12 this is the eighth SpaceX cargo mission\n1:14 to the ISS our capsule is filled with\n1:17 resupply articles and experiments for\n1:19 the ISS astronauts also a board is beam\n1:22 an inflatable module or habitat that\n1:24 will b..."
         }
       ],
       "video": {
         "id": "lEr9cPpuAx8",
         "title": "SpaceX lands rocket at sea, makes history",
         "channel": "The Verge",
-        "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+        "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg",
+        "transcript": "0:08 SpaceX has finally done it!\n0:10 After launching its Falcon 9 into space, the\ncompany successfully landed the majority of\n0:14 the rocket on a floating drone ship at sea.\n0:17 It’s the second time SpaceX has landed its\nrocket post-launch, and the first time the\n0:21 company has pulled off an ocean landing.\n0:23 This is another big milestone for SpaceX.\n0:26 In December, the company made history when\nit successfully landed its Falcon 9 for the\n0:30 first time at a ground-based landing site\nat Cape Canaveral, Florida.\n0:34 Sure Blue Origin has also launched and landed\nits own rocket, but that vehicle can’t really\n0:38 be compared to the Falcon 9.\n0:40 And now SpaceX has shown it is capable of\nlanding its rockets both on solid ground and\n0:45 at sea.\n0:46 But why land on a floating drone ship when\nyou can land on land?\n0:49 It’s definitely easier to touch down a rocket\non a large, expanse of ground, rather than\n0:54 a ship floating on moving water.\n0:56 Plus, all the previous times S..."
+      }
+    },
+    {
+      "headline": "Key Suspect in Paris, Brussels Attacks Arrested",
+      "summary": "On April 8, 2016, Belgian authorities arrested Mohamed Abrini, a suspect linked to the Paris and Brussels terrorist attacks. Abrini was identified as the 'man in the hat' from the Brussels airport surveillance footage. His arrest was a significant breakthrough in the investigation of these attacks, which had caused numerous casualties and heightened security concerns across Europe.",
+      "youtube_queries": [
+        "Mohamed Abrini arrest Brussels Paris attacks 2016",
+        "Belgian police arrest Paris attacks suspect April 2016",
+        "Brussels bombing suspect Mohamed Abrini captured 2016"
+      ],
+      "category": "world",
+      "videos": [
+        {
+          "id": "SPaqFDB-SiE",
+          "title": "Brussels suspect Mohamed  Abrini arrested",
+          "channel": "CNN",
+          "thumbnail": "https://i.ytimg.com/vi/SPaqFDB-SiE/hqdefault.jpg",
+          "transcript": "0:00 BELIEVED TO HAVE CARRIED OUT \n0:02 BOTH THE ATTACKS IN PAIR AND I \n0:05 SAY -- IN PARIS AND BRUSSELS.\n0:09 TWO MEN BELIEVED TO BE THE MOST \n0:12 WANTED AND DANGEROUS SUSPECTS.\n0:15 ONE IS 31-YEAR-OLD MOHAMED \n0:18 ABRINI, IT'S REPORTED THAT HE \n0:19 COULD BE THE SO-CALLED MAN IN \n0:21 WHITE.\n0:22 THE THIRD ATTACKER AT THE \n0:23 BRUSSELS AIRPORT.\n0:25 SEEN IN THIS FOOTAGE, WALKING \n0:27 NEXT TO THE TWO SUICIDE BOMBERS.\n0:29 BUT PROSECUTORS ARE NOT YET \n0:30 READY TO MAKE THE LINK.\n0:31 >> AT THE MOMENT, THE \n0:34 INVESTIGATORS ARE VERIFYING \n0:35 WHETHER ABRINI CAN BE POSITIVELY\n0:42 IDENTIFIED AS THE THIRD PERSON \n0:44 PRESENT DURING THE ATTACKS ■IN \n0:46 BRUSSELS THE SO-CALLED MAN IN \n0:47 THE HAT.\n0:48 >>> THAT MAN SLIPPED AWAY AND \n0:50 WAS SEEN IN THIS SURVEILLANCE \n0:52 FOOTAGE MAKING HIS WAY THROUGH \n0:53 BRUSSELS AFTER THE ATTACKS.\n0:56 BUT MOHAMED ABRINI IS STILL \n0:59 BELIEVED TO HAVE PLAYED A ROLE \n1:00 IN THE PARIS ASSAULTS.\n1:01 >> BEFORE THE ATTACKS HE \n1:03 TRANSPORT..."
+        },
+        {
+          "id": "n_d_c63ADA0",
+          "title": "&#39;Man in hat&#39; identified in Brussels terror attacks",
+          "channel": "CNN",
+          "thumbnail": "https://i.ytimg.com/vi/n_d_c63ADA0/hqdefault.jpg",
+          "transcript": "0:04 >>> WELCOME BACK.\n0:05 BREAKING NEWS IN BELGIUM.\n0:07 AUTHORITIES SAY NOW THEY HAVE \n0:09 THE THIRD SUSPECT FROM THE \n0:12 BRUSSELS AIRPORT BOMBING THAT \n0:13 LED TO THE DEATHS OF 30 PEOPLE.\n0:15 THE BOMBING THAT TOOK PLACE \n0:17 THERE AT THE AIRPORT AS WELL AS \n0:18 IN THE SUBWAY.\n0:19 THE THIRD SUSPECT, THE PERSON \n0:21 CIRCLED THERE, THE MAN IN THE \n0:24 HAT, MOHAMED ABRINI, ARRESTED IN\n0:26 RECENT RAIDS, NOW ADMITTING \n0:28 ACCORDING TO BRUSSELS \n0:28 AUTHORITIES TO BE THE MAN IN THE\n0:31 HAT.\n0:32 WE CONTINUE OUR COVERAGE WITH \n0:33 CNN INTELLIGENCE EXPERT BOB BAER\n0:37 AND FREDERIK PLEITGEN.\n0:39 FRED, BACK TO YOU ON THE DETAILS\n0:42 THAT WE ARE NOW LEARNING.\n0:43 AUTHORITIES ARE REVEALING HE \n0:44 ADMITS TO BEING THE MAN IN THE \n0:46 HAT, IN THE TRENCHCOAT, UNDER \n0:48 WHAT CIRCUMSTANCES DID THE \n0:51 ADMISSION COME?\n0:52 >> Reporter: IT WAS INTERESTING,\n0:53 FREDRICKA.\n0:53 WHEN WE SPOKE TO THE FEDERAL \n0:56 PROSECUTOR A COUPLE MINUTES AGO,\n0:58 HE REALLY MADE A POINT TO T..."
+        },
+        {
+          "id": "lZSdAvcGZEg",
+          "title": "Attentats de Paris : Mohamed Abrini, suspect-clé, interpellé en Belgique",
+          "channel": "FRANCE 24",
+          "thumbnail": "https://i.ytimg.com/vi/lZSdAvcGZEg/hqdefault.jpg"
+        }
+      ],
+      "video": {
+        "id": "SPaqFDB-SiE",
+        "title": "Brussels suspect Mohamed  Abrini arrested",
+        "channel": "CNN",
+        "thumbnail": "https://i.ytimg.com/vi/SPaqFDB-SiE/hqdefault.jpg",
+        "transcript": "0:00 BELIEVED TO HAVE CARRIED OUT \n0:02 BOTH THE ATTACKS IN PAIR AND I \n0:05 SAY -- IN PARIS AND BRUSSELS.\n0:09 TWO MEN BELIEVED TO BE THE MOST \n0:12 WANTED AND DANGEROUS SUSPECTS.\n0:15 ONE IS 31-YEAR-OLD MOHAMED \n0:18 ABRINI, IT'S REPORTED THAT HE \n0:19 COULD BE THE SO-CALLED MAN IN \n0:21 WHITE.\n0:22 THE THIRD ATTACKER AT THE \n0:23 BRUSSELS AIRPORT.\n0:25 SEEN IN THIS FOOTAGE, WALKING \n0:27 NEXT TO THE TWO SUICIDE BOMBERS.\n0:29 BUT PROSECUTORS ARE NOT YET \n0:30 READY TO MAKE THE LINK.\n0:31 >> AT THE MOMENT, THE \n0:34 INVESTIGATORS ARE VERIFYING \n0:35 WHETHER ABRINI CAN BE POSITIVELY\n0:42 IDENTIFIED AS THE THIRD PERSON \n0:44 PRESENT DURING THE ATTACKS ■IN \n0:46 BRUSSELS THE SO-CALLED MAN IN \n0:47 THE HAT.\n0:48 >>> THAT MAN SLIPPED AWAY AND \n0:50 WAS SEEN IN THIS SURVEILLANCE \n0:52 FOOTAGE MAKING HIS WAY THROUGH \n0:53 BRUSSELS AFTER THE ATTACKS.\n0:56 BUT MOHAMED ABRINI IS STILL \n0:59 BELIEVED TO HAVE PLAYED A ROLE \n1:00 IN THE PARIS ASSAULTS.\n1:01 >> BEFORE THE ATTACKS HE \n1:03 TRANSPORT..."
       }
     }
   ],
   "videos": [
     {
-      "id": "_TBu5Qovw_8",
-      "title": "Pope Francis urges more compassion towards &#39;imperfect&#39; Catholics in family life",
-      "channel": "euronews",
-      "thumbnail": "https://i.ytimg.com/vi/_TBu5Qovw_8/hqdefault.jpg"
-    },
-    {
       "id": "lEr9cPpuAx8",
       "title": "SpaceX lands rocket at sea, makes history",
       "channel": "The Verge",
-      "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/lEr9cPpuAx8/hqdefault.jpg",
+      "transcript": "0:08 SpaceX has finally done it!\n0:10 After launching its Falcon 9 into space, the\ncompany successfully landed the majority of\n0:14 the rocket on a floating drone ship at sea.\n0:17 It’s the second time SpaceX has landed its\nrocket post-launch, and the first time the\n0:21 company has pulled off an ocean landing.\n0:23 This is another big milestone for SpaceX.\n0:26 In December, the company made history when\nit successfully landed its Falcon 9 for the\n0:30 first time at a ground-based landing site\nat Cape Canaveral, Florida.\n0:34 Sure Blue Origin has also launched and landed\nits own rocket, but that vehicle can’t really\n0:38 be compared to the Falcon 9.\n0:40 And now SpaceX has shown it is capable of\nlanding its rockets both on solid ground and\n0:45 at sea.\n0:46 But why land on a floating drone ship when\nyou can land on land?\n0:49 It’s definitely easier to touch down a rocket\non a large, expanse of ground, rather than\n0:54 a ship floating on moving water.\n0:56 Plus, all the previous times S..."
     },
     {
       "id": "sYmQQn_ZSys",
@@ -87,9 +102,28 @@
       "id": "7pUAydjne5M",
       "title": "CRS-8 Dragon Hosted Webcast",
       "channel": "SpaceX",
-      "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg"
+      "thumbnail": "https://i.ytimg.com/vi/7pUAydjne5M/hqdefault.jpg",
+      "transcript": "0:02 [Music]\n0:06 foreign\n0:14 [Applause]\n0:15 [Music]\n0:21 [Applause]\n0:29 [Music]\n0:33 it's 4 25 PM Eastern Standard Time on\n0:37 Friday April 8 2016. you're looking at a\n0:40 live shot of Falcon 9 at space launch\n0:43 complex 40 in Cape Canaveral Florida\n0:46 my name is Kate Tice and I am a process\n0:48 Improvement engineer here at SpaceX\n0:50 streaming to you live from our mission\n0:52 control center located in Hawthorne\n0:54 California welcome to the first SpaceX\n0:57 dragon mission of 2016. today's flight\n1:00 of the upgraded Falcon 9 rocket is\n1:02 launching from space launch complex 40\n1:04 in Cape Canaveral Florida and it will be\n1:06 setting Dragon Sports for the\n1:08 International Space Station under NASA's\n1:10 Commercial resupply Services contract\n1:12 this is the eighth SpaceX cargo mission\n1:14 to the ISS our capsule is filled with\n1:17 resupply articles and experiments for\n1:19 the ISS astronauts also a board is beam\n1:22 an inflatable module or habitat that\n1:24 will b..."
+    },
+    {
+      "id": "SPaqFDB-SiE",
+      "title": "Brussels suspect Mohamed  Abrini arrested",
+      "channel": "CNN",
+      "thumbnail": "https://i.ytimg.com/vi/SPaqFDB-SiE/hqdefault.jpg",
+      "transcript": "0:00 BELIEVED TO HAVE CARRIED OUT \n0:02 BOTH THE ATTACKS IN PAIR AND I \n0:05 SAY -- IN PARIS AND BRUSSELS.\n0:09 TWO MEN BELIEVED TO BE THE MOST \n0:12 WANTED AND DANGEROUS SUSPECTS.\n0:15 ONE IS 31-YEAR-OLD MOHAMED \n0:18 ABRINI, IT'S REPORTED THAT HE \n0:19 COULD BE THE SO-CALLED MAN IN \n0:21 WHITE.\n0:22 THE THIRD ATTACKER AT THE \n0:23 BRUSSELS AIRPORT.\n0:25 SEEN IN THIS FOOTAGE, WALKING \n0:27 NEXT TO THE TWO SUICIDE BOMBERS.\n0:29 BUT PROSECUTORS ARE NOT YET \n0:30 READY TO MAKE THE LINK.\n0:31 >> AT THE MOMENT, THE \n0:34 INVESTIGATORS ARE VERIFYING \n0:35 WHETHER ABRINI CAN BE POSITIVELY\n0:42 IDENTIFIED AS THE THIRD PERSON \n0:44 PRESENT DURING THE ATTACKS ■IN \n0:46 BRUSSELS THE SO-CALLED MAN IN \n0:47 THE HAT.\n0:48 >>> THAT MAN SLIPPED AWAY AND \n0:50 WAS SEEN IN THIS SURVEILLANCE \n0:52 FOOTAGE MAKING HIS WAY THROUGH \n0:53 BRUSSELS AFTER THE ATTACKS.\n0:56 BUT MOHAMED ABRINI IS STILL \n0:59 BELIEVED TO HAVE PLAYED A ROLE \n1:00 IN THE PARIS ASSAULTS.\n1:01 >> BEFORE THE ATTACKS HE \n1:03 TRANSPORT..."
+    },
+    {
+      "id": "n_d_c63ADA0",
+      "title": "&#39;Man in hat&#39; identified in Brussels terror attacks",
+      "channel": "CNN",
+      "thumbnail": "https://i.ytimg.com/vi/n_d_c63ADA0/hqdefault.jpg",
+      "transcript": "0:04 >>> WELCOME BACK.\n0:05 BREAKING NEWS IN BELGIUM.\n0:07 AUTHORITIES SAY NOW THEY HAVE \n0:09 THE THIRD SUSPECT FROM THE \n0:12 BRUSSELS AIRPORT BOMBING THAT \n0:13 LED TO THE DEATHS OF 30 PEOPLE.\n0:15 THE BOMBING THAT TOOK PLACE \n0:17 THERE AT THE AIRPORT AS WELL AS \n0:18 IN THE SUBWAY.\n0:19 THE THIRD SUSPECT, THE PERSON \n0:21 CIRCLED THERE, THE MAN IN THE \n0:24 HAT, MOHAMED ABRINI, ARRESTED IN\n0:26 RECENT RAIDS, NOW ADMITTING \n0:28 ACCORDING TO BRUSSELS \n0:28 AUTHORITIES TO BE THE MAN IN THE\n0:31 HAT.\n0:32 WE CONTINUE OUR COVERAGE WITH \n0:33 CNN INTELLIGENCE EXPERT BOB BAER\n0:37 AND FREDERIK PLEITGEN.\n0:39 FRED, BACK TO YOU ON THE DETAILS\n0:42 THAT WE ARE NOW LEARNING.\n0:43 AUTHORITIES ARE REVEALING HE \n0:44 ADMITS TO BEING THE MAN IN THE \n0:46 HAT, IN THE TRENCHCOAT, UNDER \n0:48 WHAT CIRCUMSTANCES DID THE \n0:51 ADMISSION COME?\n0:52 >> Reporter: IT WAS INTERESTING,\n0:53 FREDRICKA.\n0:53 WHEN WE SPOKE TO THE FEDERAL \n0:56 PROSECUTOR A COUPLE MINUTES AGO,\n0:58 HE REALLY MADE A POINT TO T..."
+    },
+    {
+      "id": "lZSdAvcGZEg",
+      "title": "Attentats de Paris : Mohamed Abrini, suspect-clé, interpellé en Belgique",
+      "channel": "FRANCE 24",
+      "thumbnail": "https://i.ytimg.com/vi/lZSdAvcGZEg/hqdefault.jpg"
     }
-  ],
-  "title": "Pope Francis Releases 'Amoris Laetitia'",
-  "image_file": "/images/story_2026-04-09_202.png"
+  ]
 }
