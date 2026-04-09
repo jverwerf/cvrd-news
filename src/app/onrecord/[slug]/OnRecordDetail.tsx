@@ -251,12 +251,14 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
 
                   if (topDomain) {
                     const d = topDomain[1] as any;
-                    text += ` ${s.name} talks most about ${topDomain[0].replace(/_/g, ' ')}, where ${d.score}% of ${d.count} claims held up.`;
+                    const firstName = s.name?.split(' ')[0] || s.name;
+                    text += ` ${firstName} talks most about ${topDomain[0].replace(/_/g, ' ')}, where ${d.score}% of ${d.count} claims held up.`;
                   }
 
                   if (wildest) {
                     const claimText = wildest.claim.length > 100 ? wildest.claim.substring(0, 97) + '...' : wildest.claim;
-                    text += ` Their wildest miss? "${claimText}"`;
+                    const firstName = s.name?.split(' ')[0] || 'Their';
+                    text += ` ${firstName}'s wildest miss? "${claimText}"`;
                   }
 
                   if (s.pending_count > 0) {
