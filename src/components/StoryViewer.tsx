@@ -849,19 +849,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {(() => {
                 const allSrc = [...leftSources, ...centerSources, ...rightSources];
-                const grouped: Record<string, typeof allSrc> = {};
-                for (const s of allSrc) { if (!grouped[s.name]) grouped[s.name] = []; grouped[s.name].push(s); }
-                const entries = Object.entries(grouped);
-                const third = Math.ceil(entries.length / 3);
-                return [entries.slice(0, third), entries.slice(third, third * 2), entries.slice(third * 2)].map((col, ci) => (
-                  <div key={ci} className="space-y-0">
-                    {col.map(([name, articles]) => (
-                      <div key={name} className="text-[12px] py-1 flex items-center gap-1.5">
-                        <span className="text-[10px] text-[#777] shrink-0">+</span>
-                        <span className="text-[#bbb]">{name} {articles.length > 1 && <span className="text-[10px] text-[#777]">({articles.length})</span>}</span>
-                      </div>
-                    ))}
-                  </div>
+                const third = Math.ceil(allSrc.length / 3);
+                return [allSrc.slice(0, third), allSrc.slice(third, third * 2), allSrc.slice(third * 2)].map((col, ci) => (
+                  <SourceColumn key={ci} label={ci === 0 ? 'Media' : ci === 1 ? 'Coverage' : 'More'} sources={col} color="#999" dotColor="#999" />
                 ));
               })()}
             </div>
@@ -919,8 +909,10 @@ function SourceColumn({ label, sources, color, dotColor }: {
   const [expanded, setExpanded] = useState<string | null>(null);
   const grouped: Record<string, { name: string; url: string; title?: string }[]> = {};
   for (const s of sources) {
-    if (!grouped[s.name]) grouped[s.name] = [];
-    grouped[s.name].push(s);
+    // Extract outlet name — strip article title after " — " or " - "
+    const outlet = s.name.split(/\s[—–-]\s/)[0].trim() || s.name;
+    if (!grouped[outlet]) grouped[outlet] = [];
+    grouped[outlet].push(s);
   }
 
   return (
