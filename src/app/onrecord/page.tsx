@@ -158,18 +158,15 @@ export default function PoliticiansPage() {
   const [editorial, setEditorial] = useState<any>(null);
   const [editorialHandle, setEditorialHandle] = useState<string | null>(null);
 
-  const HANDLES = [
-    'realDonaldTrump', 'AOC', 'JDVance', 'marcorubio', 'BernieSanders',
-    'GovRonDeSantis', 'tedcruz', 'VivekGRamaswamy', 'SpeakerJohnson',
-    'AliVelshi', 'AnnCoulter', 'HakeemJeffries', 'MattGaetz', 'RandPaul', 'SenSchumer',
-  ];
-
   useEffect(() => {
-    // Load all score files
-    Promise.all(HANDLES.map(h =>
-      fetch(`/data/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
-    )).then(results => {
-      const valid = results.filter(Boolean);
+    // Load all politicians from manifest
+    fetch('/data/politicians/manifest.json').then(r => r.ok ? r.json() : null).then(manifest => {
+      const handles: string[] = manifest?.handles || [];
+      return Promise.all(handles.map(h =>
+        fetch(`/data/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
+      ));
+    }).then(results => {
+      const valid = (results || []).filter(Boolean);
       setScores(valid);
       // Set tile 0 to the On Record Today politician
       if (editorialHandle && valid.length > 0) {
