@@ -222,7 +222,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             </div>
             <div className="mt-5 pt-5" style={{ borderTop: '1px solid #2a3a4a' }}>
               <p className="text-[13px] text-[#bbb] leading-[1.75] italic">
-                {score.name} scores {score.overall_score}% (±{score.confidence_interval}%) based on {score.verified_claims} verifiable claims. {score.true_count} true, {score.somewhat_misleading_count || 0} somewhat misleading, {score.misleading_count} misleading, {score.false_count} false.
+                {score.name} scores {score.overall_score}% based on {score.verified_claims} verifiable claims. {score.true_count} true, {score.somewhat_misleading_count || 0} somewhat misleading, {score.misleading_count} misleading, {score.false_count} false.
                 {score.pending_count > 0 ? ` ${score.pending_count} claims are pending verification.` : ''}
               </p>
             </div>
