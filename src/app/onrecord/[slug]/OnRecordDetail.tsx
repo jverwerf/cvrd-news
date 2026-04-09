@@ -125,8 +125,13 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
       <div className="sticky top-0" style={{ zIndex: 100, background: '#1e2a3a' }}>
         <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
           <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
+            <a href="/breaking"
+              className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors"
+              style={{ background: 'rgba(220,38,38,0.15)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)' }}>
+              <span className="inline-block w-1.5 h-1.5 rounded-full mr-1 animate-pulse" style={{ background: '#ef4444' }} />
+              Breaking
+            </a>
             {[
-              { label: 'Breaking', slug: '/breaking' },
               { label: 'On Record', slug: '/onrecord' },
               { label: 'Timeline', slug: '/timeline' },
               { label: 'Daily Pick', slug: '/' },
