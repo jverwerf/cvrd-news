@@ -73,123 +73,44 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
     <>
       <style dangerouslySetInnerHTML={{ __html: TIMELINE_SCROLL_CSS }} />
 
-      {/* MOST RECENT STORIES — sorted by last activity */}
-      <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a' }}>
-        <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-4">Most Recent Stories</h2>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-          {recentThreads.slice(0, 10).map((t, i) => (
-            <a key={t.id} href={`/timeline/${t.id}`}
-              className="text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              {(t.image_file || t.entries[t.entries.length - 1]?.image_file) && (
-                <div className="h-28 overflow-hidden" style={{
-                  backgroundImage: `url(${t.image_file || t.entries[t.entries.length - 1].image_file})`,
-                  backgroundSize: 'cover', backgroundPosition: 'center',
-                }}>
-                  <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                </div>
-              )}
-              <div className="p-2.5">
-                <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: categoryColor(t.category) }}>{t.category}</span>
-                <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                  {t.title}
-                </p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </div>
 
-      {/* WHITE BANNER — Catch Me Up */}
-      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-          Catch Me Up
-        </h1>
-      </div>
-
-      {/* Search + Thread list */}
-      <div className="px-4 md:px-8 pt-5 pb-4 max-w-5xl mx-auto">
-        {/* Search + Category filters — same row */}
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-full shrink-0"
-            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', minWidth: 180 }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
-            <input
-              type="text"
-              placeholder="Search threads..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
-              style={{ background: 'transparent', border: 'none' }}
-            />
-            {search && (
-              <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
-                ×
-              </button>
-            )}
-          </div>
-          {(() => {
-            const activeCats = new Set(threads.map(t => t.category));
-            const visibleCats = CATEGORIES.filter(c => c.value === 'all' || activeCats.has(c.value));
-            if (visibleCats.length <= 2) return null;
-            return (
-              <div className="flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-                {visibleCats.map(cat => (
-                  <button key={cat.value} onClick={() => { setFilter(cat.value); setExpandedId(null); }}
-                    className="shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-full transition-colors cursor-pointer"
-                    style={{
-                      background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#253545',
-                      color: filter === cat.value ? '#daa520' : '#999',
-                      border: `1px solid ${filter === cat.value ? 'rgba(218,165,32,0.3)' : '#2a3a4a'}`,
-                    }}>
-                    {cat.label}
-                  </button>
-                ))}
-              </div>
-            );
-          })()}
-        </div>
-
-        <div className="space-y-4">
-        <div style={{ maxHeight: 340, overflowY: 'auto', scrollbarWidth: 'thin', scrollbarColor: '#daa520 transparent' }}>
-        {filtered.map(thread => {
-          const latestEntry = thread.entries[thread.entries.length - 1];
-          const catColor = categoryColor(thread.category);
-          return (
-            <a key={thread.id} href={`/timeline/${thread.id}`}
-              className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
-              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <div className="flex">
-                {(thread.image_file || latestEntry?.image_file) && (
-                  <div className="w-36 md:w-48 shrink-0 overflow-hidden" style={{
-                    backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
+      {/* MOST RECENT STORIES — horizontal scroll like Daily Pick */}
+      <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+        <div className="relative flex items-center gap-0">
+          <button onClick={() => document.getElementById('timeline-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
+            className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
+          </button>
+          <div id="timeline-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+            {recentThreads.slice(0, 15).map((t) => (
+              <a key={t.id} href={`/timeline/${t.id}`}
+                className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {(t.image_file || t.entries[t.entries.length - 1]?.image_file) ? (
+                  <div className="h-28 overflow-hidden" style={{
+                    backgroundImage: `url(${t.image_file || t.entries[t.entries.length - 1].image_file})`,
                     backgroundSize: 'cover', backgroundPosition: 'center',
-                    minHeight: 90,
-                  }} />
-                )}
-                <div className="flex-1 px-4 py-3 flex flex-col justify-center min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>{thread.category}</span>
-                    <span className="text-[9px] text-[#666]">{formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}</span>
+                  }}>
+                    <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
                   </div>
-                  <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
-                    {thread.title}
-                  </h2>
-                  <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">{thread.summary}</p>
+                ) : (
+                  <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                    <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                  </div>
+                )}
+                <div className="p-2.5">
+                  <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: categoryColor(t.category) }}>{t.category}</span>
+                  <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                    {t.title}
+                  </p>
                 </div>
-              </div>
-            </a>
-          );
-        })}
-        </div>
-
-        {filtered.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-[#666] text-[13px]">No threads found.</p>
+              </a>
+            ))}
           </div>
-        )}
+          <button onClick={() => document.getElementById('timeline-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
+            className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
+          </button>
         </div>
       </div>
 
@@ -308,6 +229,98 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
           </>
         );
       })()}
+
+      {/* WHITE BANNER — Catch Me Up */}
+      <div className="px-6 md:px-12 py-3 flex items-center gap-3 mt-3" style={{ background: '#f5f5f5' }}>
+        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+          Catch Me Up
+        </h1>
+      </div>
+
+      {/* Search + Thread list */}
+      <div className="px-4 md:px-8 pt-5 pb-4 max-w-5xl mx-auto">
+        <div className="flex items-center gap-3 mb-5">
+          <div className="flex items-center gap-2 px-4 py-2 rounded-full shrink-0"
+            style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', minWidth: 180 }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input
+              type="text"
+              placeholder="Search threads..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
+              style={{ background: 'transparent', border: 'none' }}
+            />
+            {search && (
+              <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
+                ×
+              </button>
+            )}
+          </div>
+          {(() => {
+            const activeCats = new Set(threads.map(t => t.category));
+            const visibleCats = CATEGORIES.filter(c => c.value === 'all' || activeCats.has(c.value));
+            if (visibleCats.length <= 2) return null;
+            return (
+              <div className="flex items-center gap-2 overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
+                {visibleCats.map(cat => (
+                  <button key={cat.value} onClick={() => { setFilter(cat.value); setExpandedId(null); }}
+                    className="shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-full transition-colors cursor-pointer"
+                    style={{
+                      background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#253545',
+                      color: filter === cat.value ? '#daa520' : '#999',
+                      border: `1px solid ${filter === cat.value ? 'rgba(218,165,32,0.3)' : '#2a3a4a'}`,
+                    }}>
+                    {cat.label}
+                  </button>
+                ))}
+              </div>
+            );
+          })()}
+        </div>
+
+        <div className="space-y-4">
+        <div>
+        {filtered.map(thread => {
+          const latestEntry = thread.entries[thread.entries.length - 1];
+          const catColor = categoryColor(thread.category);
+          return (
+            <a key={thread.id} href={`/timeline/${thread.id}`}
+              className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
+              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div className="flex">
+                {(thread.image_file || latestEntry?.image_file) && (
+                  <div className="w-36 md:w-48 shrink-0 overflow-hidden" style={{
+                    backgroundImage: `url(${thread.image_file || latestEntry.image_file})`,
+                    backgroundSize: 'cover', backgroundPosition: 'center',
+                    minHeight: 90,
+                  }} />
+                )}
+                <div className="flex-1 px-4 py-3 flex flex-col justify-center min-w-0">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>{thread.category}</span>
+                    <span className="text-[9px] text-[#666]">{formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}</span>
+                  </div>
+                  <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em] mb-1 group-hover:text-[#daa520] transition-colors" style={serif}>
+                    {thread.title}
+                  </h2>
+                  <p className="text-[11px] text-[#888] leading-[1.5] line-clamp-1">{thread.summary}</p>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+        </div>
+
+        {filtered.length === 0 && (
+          <div className="text-center py-16">
+            <p className="text-[#666] text-[13px]">No threads found.</p>
+          </div>
+        )}
+        </div>
+      </div>
 
     </>
   );
