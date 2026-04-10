@@ -7,6 +7,7 @@ import { VideoGrid } from "./VideoGrid";
 import { Tweet } from 'react-tweet';
 import type { NarrativeGap, DailyBrief } from "../lib/data";
 import { motion, AnimatePresence } from "framer-motion";
+import { OnRecordWidget } from "./OnRecordWidget";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -66,6 +67,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     bestSocial.push(...picked);
   }
 
+  // Aggregate onrecord_matches across all stories for the brief (deduped by handle)
+  const allOnrecordMatches: any[] = [];
+  const seenHandles = new Set<string>();
+  for (const s of stories) {
+    for (const m of (s as any).onrecord_matches || []) {
+      if (!seenHandles.has(m.handle)) {
+        seenHandles.add(m.handle);
+        allOnrecordMatches.push(m);
+      }
+    }
+  }
+
   // Merge all sources from all stories for the brief
   const allSources = stories.flatMap(s => s.sources || []);
   const uniqueSources: typeof allSources = [];
@@ -95,7 +108,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     youtube_videos: bestYT,
     social_clips: bestSocial,
     sources: uniqueSources,
-  };
+    onrecord_matches: allOnrecordMatches,
+  } as any;
 
   // Curated stories for Daily Brief dashboard — 1 YT + 2 social per story
   const briefStories: NarrativeGap[] = stories.map(s => ({
@@ -112,6 +126,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const [dashExpanded, setDashExpanded] = useState(false);
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
+  const [timelineThreads, setTimelineThreads] = useState<{ id: string; title: string; image_file?: string }[]>([]);
+
+  useEffect(() => {
+    fetch('/data/timeline_threads.json').then(r => r.json()).then(d => setTimelineThreads(d.threads || [])).catch(() => {});
+  }, []);
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
 
@@ -691,6 +710,37 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
           )}
         </div></>}
+
+        {/* TIMELINE — thread this story explicitly belongs to */}
+        {(() => {
+          const threadId = (story as any).thread_id;
+          const threadTitle = (story as any).thread_title;
+          if (!threadId) return null;
+          const thread = timelineThreads.find(t => t.id === threadId);
+          const title = thread?.title || threadTitle;
+          const image = thread?.image_file;
+          if (!title) return null;
+          return (
+            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
+              </div>
+              <a href={`/timeline?thread=${threadId}`}
+                className="flex items-center gap-3 p-2.5 rounded-md transition-opacity hover:opacity-80"
+                style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                {image && <img src={image} alt={title} className="w-10 h-10 rounded object-cover shrink-0" />}
+                <span className="text-[12px] text-white font-semibold leading-[1.3]">{title}</span>
+                <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          );
+        })()}
+
+        {/* ON RECORD — politician matches */}
+        {(story as any).onrecord_matches?.length > 0 && (
+          <OnRecordWidget matches={(story as any).onrecord_matches} />
+        )}
 
         {/* X POSTS — hide in brief mode (The Social Wire shown above) */}
         {!isBrief && (() => {

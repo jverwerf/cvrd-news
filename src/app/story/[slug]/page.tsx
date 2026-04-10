@@ -86,16 +86,30 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   const { story, date, otherStories } = result;
 
-  // Match timeline threads to this story
-  const timelineData = await getTimelineThreads();
-  const storyText = `${story.topic} ${story.summary || ''}`.toLowerCase();
-  const matchedTimelines = (timelineData?.threads || [])
-    .filter(t => {
-      const keywords = t.title.toLowerCase().split(/\s+/);
-      return keywords.filter(k => k.length > 3 && storyText.includes(k)).length >= 2;
-    })
-    .map(t => ({ id: t.id, title: t.title, image_file: t.image_file }))
-    .slice(0, 3);
+  // Enrich onrecord_matches with role from blob score files
+  const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+  const onrecordMatches: any[] = (story as any).onrecord_matches || [];
+  if (onrecordMatches.length > 0) {
+    await Promise.all(onrecordMatches.map(async (m: any) => {
+      try {
+        const resp = await fetch(`${BLOB_BASE}/politicians/score_${m.handle}.json`, { cache: 'no-store' });
+        if (resp.ok) {
+          const s = await resp.json();
+          m.role = s.role || null;
+          m.overall_score = s.overall_score ?? null;
+        }
+      } catch {}
+    }));
+  }
+
+  // Look up the thread this story explicitly belongs to (stamped by thread-detector)
+  const threadId = (story as any).thread_id;
+  let matchedTimelines: { id: string; title: string; image_file?: string }[] = [];
+  if (threadId) {
+    const timelineData = await getTimelineThreads();
+    const thread = (timelineData?.threads || []).find((t: any) => t.id === threadId);
+    if (thread) matchedTimelines = [{ id: thread.id, title: thread.title, image_file: thread.image_file }];
+  }
 
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
@@ -178,11 +192,13 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
         <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
         <div className="flex items-center justify-center gap-4">
+          <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
+          <span className="text-[#555]">·</span>
+          <a href="/contact" className="text-[11px] text-[#888] hover:text-white transition-colors">Contact</a>
+          <span className="text-[#555]">·</span>
           <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
           <span className="text-[#555]">·</span>
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
-          <span className="text-[#555]">·</span>
-          <span className="text-[11px] text-[#666]">info@cvrdnews.com</span>
         </div>
       </footer>
     </div>

@@ -7,7 +7,7 @@ import { LiveBanner } from "@/components/LiveBanner";
 type ScoredClaim = {
   tweet_id: string; tweet_text: string; tweet_date: string; tweet_url: string;
   claim: string; claim_type: string; domain: string; score: number; verdict: string;
-  reasoning: string; used_web_search: boolean;
+  reasoning: string; used_web_search: boolean; resolved_from_pending?: boolean; verified_at?: string;
 };
 type PendingClaim = {
   tweet_id: string; tweet_text: string; tweet_date: string; tweet_url: string;
@@ -63,16 +63,213 @@ function ScoreMeter({ score }: { score: number }) {
   );
 }
 
+function DonutChart({ score }: { score: any }) {
+  const r = 90, strokeW = 34, cx = 140, cy = 110;
+  const circ = 2 * Math.PI * r;
+  const segments = [
+    { key: 'true', label: 'True', count: score.true_count || 0, color: '#60a5fa' },
+    { key: 'somewhat', label: 'Somewhat', count: score.somewhat_misleading_count || 0, color: '#f59e0b' },
+    { key: 'misleading', label: 'Misleading', count: score.misleading_count || 0, color: '#daa520' },
+    { key: 'false', label: 'False', count: score.false_count || 0, color: '#f87171' },
+  ];
+  const total = segments.reduce((s, x) => s + x.count, 0) || 1;
+  let offset = 0;
+  const arcs = segments.map(seg => {
+    const frac = seg.count / total;
+    const arc = { ...seg, offset, frac, dash: frac * circ, gap: (1 - frac) * circ };
+    offset += frac;
+    return arc;
+  });
+
+  return (
+    <div className="flex flex-col items-center w-full">
+      <svg width="280" height="220" viewBox="0 0 280 220">
+        {/* track */}
+        <circle cx={cx} cy={cy} r={r} fill="none" stroke="#1e2a3a" strokeWidth={strokeW} />
+        {arcs.map(seg => (
+          <circle key={seg.key} cx={cx} cy={cy} r={r} fill="none"
+            stroke={seg.color} strokeWidth={strokeW}
+            strokeDasharray={`${seg.dash} ${seg.gap}`}
+            strokeDashoffset={-(seg.offset * circ - circ / 4)}
+            style={{ transition: 'stroke-dasharray 0.6s ease' }} />
+        ))}
+        <text x={cx} y={cy - 6} textAnchor="middle" fill="white" fontSize="28" fontWeight="700" fontFamily="Georgia, serif">{score.overall_score}</text>
+        <text x={cx} y={cy + 14} textAnchor="middle" fill="#777" fontSize="9" letterSpacing="0.08em">% truthful</text>
+      </svg>
+      {/* Legend */}
+      <div className="w-full space-y-1.5 px-2">
+        {segments.map(seg => {
+          const pct = total > 0 ? Math.round((seg.count / total) * 100) : 0;
+          return (
+            <div key={seg.key} className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full shrink-0" style={{ background: seg.color }} />
+              <span className="text-[11px] text-[#bbb] flex-1">{seg.label}</span>
+              <span className="text-[10px] text-[#777]">{pct}%</span>
+              <span className="text-[12px] font-bold text-white w-8 text-right" style={serif}>{seg.count}</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
+  const viewW = 640;
+  const barH = 110;
+  const lineH = 90;
+  const gapH = 28;
+  const bottomPad = 20;
+  const totalSvgH = barH + gapH + lineH + bottomPad;
+
+  // Group by month
+  const byMonth: Record<string, ScoredClaim[]> = {};
+  for (const c of claims) {
+    const m = (c.tweet_date || '').substring(0, 7);
+    if (!m) continue;
+    (byMonth[m] = byMonth[m] || []).push(c);
+  }
+  const months = Object.keys(byMonth).sort();
+  if (months.length === 0) return null;
+
+  const barW = Math.min(70, (viewW - 40) / months.length - 6);
+  const barSpacing = (viewW - 40) / months.length;
+  const barCenters = months.map((_, i) => 30 + i * barSpacing + barSpacing / 2);
+
+  const verdictOrder = ['TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'];
+  const verdictColors: Record<string, string> = { TRUE: '#60a5fa', 'SOMEWHAT MISLEADING': '#f59e0b', MISLEADING: '#daa520', FALSE: '#f87171' };
+
+  const maxCount = Math.max(...months.map(m => byMonth[m].length), 1);
+
+  // Bar chart
+  const bars = months.map((m, i) => {
+    const cls = byMonth[m];
+    const total = cls.length;
+    const x = barCenters[i] - barW / 2;
+    let curY = barH;
+    const stacks = verdictOrder.map(v => {
+      const count = cls.filter(c => c.verdict === v).length;
+      const h = (count / maxCount) * (barH - 10);
+      curY -= h;
+      return { v, count, h, y: curY };
+    }).filter(s => s.h > 0);
+    const barTop = stacks.length > 0 ? stacks[stacks.length - 1].y : barH;
+    return { m, x, total, stacks, barTop };
+  });
+
+  // % truthful per month
+  const monthScores = months.map(m => {
+    const cls = byMonth[m];
+    if (!cls.length) return 0;
+    return Math.round((cls.reduce((s, c) => s + c.score, 0) / cls.length) * 100);
+  });
+
+  const lineTop = barH + gapH;
+  const lineBottom = lineTop + lineH - 10;
+  const scoreToY = (s: number) => lineBottom - (s / 100) * (lineBottom - lineTop);
+
+  const linePoints = months.map((_, i) => `${barCenters[i]},${scoreToY(monthScores[i])}`).join(' ');
+  const areaPoints = [
+    `${barCenters[0]},${lineBottom}`,
+    ...months.map((_, i) => `${barCenters[i]},${scoreToY(monthScores[i])}`),
+    `${barCenters[months.length - 1]},${lineBottom}`,
+  ].join(' ');
+
+  const aspectRatio = totalSvgH / viewW;
+
+  return (
+    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: 220 }}>
+      <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
+        viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="truthGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#daa520" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="#daa520" stopOpacity="0.03" />
+            </linearGradient>
+          </defs>
+
+          {/* Bar chart */}
+          {bars.map((d, i) => (
+            <g key={d.m}>
+              {d.stacks.map(s => (
+                <rect key={s.v} x={d.x} y={s.y} width={barW} height={s.h} fill={verdictColors[s.v]} rx={1} opacity={0.85} />
+              ))}
+              {/* Count label on top of bar */}
+              <text x={d.x + barW / 2} y={Math.max(d.barTop - 2, 7)} textAnchor="middle" fill="#666" fontSize="6">{d.total}</text>
+              {/* Month label */}
+              {(months.length <= 8 || i % Math.ceil(months.length / 8) === 0 || i === months.length - 1) && (
+                <text x={barCenters[i]} y={barH + 12} textAnchor="middle" fill="#3a4a5a" fontSize="6">
+                  {new Date(d.m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{d.m.slice(2, 4)}
+                </text>
+              )}
+            </g>
+          ))}
+
+          {/* Legend */}
+          {verdictOrder.map((v, i) => (
+            <g key={v} transform={`translate(${i * 62 + 20}, ${barH + 18})`}>
+              <circle cx={4} cy={4} r={3} fill={verdictColors[v]} />
+              <text x={10} y={7} fill="#3a4a5a" fontSize="6">{v === 'SOMEWHAT MISLEADING' ? 'Somewhat' : v === 'TRUE' ? 'True' : v === 'MISLEADING' ? 'Misleading' : 'False'}</text>
+            </g>
+          ))}
+
+          {/* % TRUTHFUL label */}
+          <text x={0} y={lineTop - 8} fill="#555" fontSize="6" fontWeight="600" letterSpacing="0.12em" style={{ textTransform: 'uppercase' } as any}>% Truthful</text>
+
+          {/* 50% reference */}
+          <line x1={0} y1={scoreToY(50)} x2={viewW} y2={scoreToY(50)} stroke="#253545" strokeWidth={1} strokeDasharray="4 3" />
+          <text x={3} y={scoreToY(50) - 3} fill="#3a4a5a" fontSize="6" textAnchor="start">50%</text>
+
+          {/* All-time reference */}
+          <line x1={0} y1={scoreToY(overallScore)} x2={viewW} y2={scoreToY(overallScore)} stroke="#60a5fa" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
+          <text x={3} y={scoreToY(overallScore) - 3} fill="#60a5fa" fontSize="6" textAnchor="start" opacity={0.7}>All-time {overallScore}%</text>
+
+          {/* Area + line */}
+          {months.length > 1 && <polygon points={areaPoints} fill="url(#truthGrad)" />}
+          {months.length > 1 && (
+            <polyline points={linePoints} fill="none" stroke="#daa520" strokeWidth={1.5} strokeLinejoin="round" strokeLinecap="round" />
+          )}
+
+          {/* Dots */}
+          {months.map((_, i) => (
+            <circle key={i} cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={2.5} fill="#daa520" stroke="#1e2a3a" strokeWidth={1} />
+          ))}
+
+          {/* Latest score label */}
+          <text
+            x={Math.min(barCenters[months.length - 1], viewW - 20)}
+            y={scoreToY(monthScores[months.length - 1]) - 6}
+            textAnchor="end"
+            fill="#daa520" fontSize="7" fontWeight="600" letterSpacing="0.04em">
+            {monthScores[months.length - 1]}%
+          </text>
+
+          {/* X-axis labels on line chart */}
+          {months.map((m, i) => {
+            const showLabel = months.length <= 8 || i % Math.ceil(months.length / 8) === 0 || i === months.length - 1;
+            if (!showLabel) return null;
+            return (
+              <text key={m} x={barCenters[i]} y={lineBottom + 13} textAnchor="middle" fill="#3a4a5a" fontSize="6">
+                {new Date(m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{m.slice(2, 4)}
+              </text>
+            );
+          })}
+        </svg>
+    </div>
+  );
+}
+
 export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   score: any; verified: any; allPoliticians: any[]; slug: string;
 }) {
   const [filter, setFilter] = useState<'all' | 'TRUE' | 'SOMEWHAT MISLEADING' | 'MISLEADING' | 'FALSE'>('all');
   const [domainFilter, setDomainFilter] = useState<string | null>(null);
   const [claimSearch, setClaimSearch] = useState('');
+  const [resolvedLimit, setResolvedLimit] = useState(3);
+  const [pendingLimit, setPendingLimit] = useState(3);
+  const [claimLimit, setClaimLimit] = useState(5);
   const [stories, setStories] = useState<any[]>([]);
   const [liveData, setLiveData] = useState<any[]>();
-
-  // URL ?q= parameter ignored — let users filter themselves
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -87,33 +284,30 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
 
   const claims: ScoredClaim[] = verified?.scored_claims || [];
   const pending: PendingClaim[] = verified?.pending_claims || [];
+  const resolved = claims.filter(c => c.resolved_from_pending);
 
   const searchFiltered = claims.filter(c => {
     if (domainFilter && c.domain !== domainFilter) return false;
     if (claimSearch) {
       const q = claimSearch.toLowerCase();
-      const searchable = `${c.claim} ${c.tweet_text} ${c.reasoning} ${c.domain}`.toLowerCase();
-      if (!searchable.includes(q)) return false;
+      if (!`${c.claim} ${c.tweet_text} ${c.reasoning} ${c.domain}`.toLowerCase().includes(q)) return false;
     }
     return true;
   });
 
-  const filtered = searchFiltered.filter(c => {
-    if (filter !== 'all' && c.verdict !== filter) return false;
-    return true;
-  });
+  const filtered = searchFiltered.filter(c => filter === 'all' || c.verdict === filter);
 
   const searchScore = claimSearch && searchFiltered.length > 0
     ? Math.round((searchFiltered.reduce((sum, c) => sum + c.score, 0) / searchFiltered.length) * 1000) / 10
     : null;
 
-  const domainEntries: [string, { score: number; count: number; true: number; somewhat_misleading: number; misleading: number; false: number }][] = [
-    ['all', { score: score.overall_score, count: score.verified_claims, true: score.true_count, somewhat_misleading: score.somewhat_misleading_count || 0, misleading: score.misleading_count, false: score.false_count }],
+  const domainEntries: [string, { score: number; count: number }][] = [
+    ['all', { score: score.overall_score, count: score.verified_claims }],
     ...Object.entries(score.domains || {}).sort((a, b) => {
       if (a[0] === 'other') return 1;
       if (b[0] === 'other') return -1;
       return a[0].localeCompare(b[0]);
-    }) as [string, { score: number; count: number; true: number; somewhat_misleading: number; misleading: number; false: number }][],
+    }) as [string, { score: number; count: number }][],
   ];
 
   const shareUrl = `https://cvrdnews.com/onrecord/${slug}`;
@@ -149,7 +343,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                 {cat.label}
               </a>
             ))}
-            {/* Icons pill — inline after categories */}
             <div className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
               style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
               <a href="/tv" className="flex items-center" style={{ color: 'rgba(255,255,255,0.5)', transform: 'translateY(-1px)' }}>
@@ -189,7 +382,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         </div>
       </div>
 
-      <div className="px-6 md:px-12 pb-10 pt-5">
+      <div className="px-4 md:px-8 pb-10 pt-5 max-w-5xl mx-auto">
 
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 mb-3">
@@ -200,95 +393,70 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         </div>
 
         {/* HERO CARD */}
-        <div className="flex items-center gap-3 max-w-3xl mx-auto mb-6">
-          {/* Prev arrow */}
+        <div className="flex items-center gap-3 mb-6">
           {(() => {
             const currentIdx = allPoliticians.findIndex((p: any) => p.handle === score.handle);
             const prev = allPoliticians[currentIdx - 1] || allPoliticians[allPoliticians.length - 1];
-            const next = allPoliticians[currentIdx + 1] || allPoliticians[0];
-            return (
-              <>
-                {prev && prev.handle !== score.handle ? (
-                  <Link href={`/onrecord/${nameToSlug(prev.name)}`}
-                    className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-opacity hover:opacity-100"
-                    style={{ background: '#253545', border: '1px solid #2a3a4a', opacity: 0.6 }} title={prev.name}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
-                  </Link>
-                ) : <div className="shrink-0 w-8" />}
-              </>
-            );
+            return prev && prev.handle !== score.handle ? (
+              <Link href={`/onrecord/${nameToSlug(prev.name)}`}
+                className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-opacity hover:opacity-100"
+                style={{ background: '#253545', border: '1px solid #2a3a4a', opacity: 0.6 }} title={prev.name}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
+              </Link>
+            ) : <div className="shrink-0 w-8" />;
           })()}
           <div className="flex-1 flex flex-col md:flex-row rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
             <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${score.handle}.png`} alt={score.name}
-              className="w-full md:w-auto md:max-w-[320px]" style={{ display: 'block', objectFit: 'cover' }}
+              className="w-full md:w-auto md:max-w-[280px]" style={{ display: 'block', objectFit: 'cover' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
-          <div className="p-6 flex flex-col justify-center flex-1" style={{ borderLeft: '1px solid #2a3a4a' }}>
-            <div className="max-w-[300px] mx-auto w-full">
-              <ScoreMeter score={score.overall_score} />
-            </div>
-            <div className="mt-5 pt-5" style={{ borderTop: '1px solid #2a3a4a' }}>
-              <p className="text-[13px] text-[#bbb] leading-[1.75] italic">
-                {(() => {
-                  const s = score;
-                  const total = s.verified_claims;
-                  const topDomain = Object.entries(s.domains || {}).sort((a: any, b: any) => b[1].count - a[1].count)[0];
-                  const wildest = claims.filter(c => c.verdict === 'FALSE' || c.verdict === 'MISLEADING').sort((a, b) => a.score - b.score)[0];
-
-                  // Build majority verdict phrase
-                  const counts = [
-                    { label: 'true', n: s.true_count },
-                    { label: 'somewhat misleading', n: s.somewhat_misleading_count || 0 },
-                    { label: 'misleading', n: s.misleading_count },
-                    { label: 'false', n: s.false_count },
-                  ].filter(c => c.n > 0).sort((a, b) => b.n - a.n);
-                  const top = counts[0];
-                  const majorityPct = Math.round((top.n / total) * 100);
-
-                  let text = `Out of ${total} verifiable claims, `;
-                  if (majorityPct >= 50) {
-                    text += `the majority (${majorityPct}%) were rated ${top.label}`;
-                  } else {
-                    text += `${top.n} were rated ${top.label}`;
-                  }
-                  if (counts.length > 1) {
-                    text += `, with ${counts.slice(1).map(c => `${c.n} ${c.label}`).join(' and ')}`;
-                  }
-                  text += '.';
-
-                  if (topDomain) {
-                    const d = topDomain[1] as any;
-                    const firstName = s.name?.split(' ')[0] || s.name;
-                    text += ` ${firstName} talks most about ${topDomain[0].replace(/_/g, ' ')}, where ${d.score}% of ${d.count} claims held up.`;
-                  }
-
-                  if (wildest) {
-                    const claimText = wildest.claim;
-                    const firstName = s.name?.split(' ')[0] || 'Their';
-                    text += ` ${firstName}'s wildest miss? "${claimText}"`;
-                  }
-
-
-                  return text;
-                })()}
-              </p>
-            </div>
-            {/* Share row */}
-            <div className="mt-4 pt-3 flex items-center gap-1.5" style={{ borderTop: '1px solid #2a3a4a' }}>
-              <span className="text-[8px] uppercase tracking-[0.12em] text-[#555] shrink-0 mr-1">Share</span>
-              {[
-                { svg: <span className="text-[11px] font-bold text-white/50">𝕏</span>, href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${score.name} scores ${score.overall_score}% on CVRD On Record`)}&url=${encodeURIComponent(shareUrl)}` },
-                { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff4500" opacity={0.5}><circle cx="12" cy="12" r="12"/></svg>, href: `https://www.reddit.com/submit?title=${encodeURIComponent(`${score.name}: ${score.overall_score}% Truthful`)}&url=${encodeURIComponent(shareUrl)}` },
-                { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366" opacity={0.5}><path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.13 1.6 5.93L0 24l6.26-1.64A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>, href: `https://wa.me/?text=${encodeURIComponent(`${score.name} scores ${score.overall_score}%\n\n${shareUrl}`)}` },
-                { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0088cc" opacity={0.5}><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37z"/></svg>, href: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`${score.name}: ${score.overall_score}%`)}` },
-                { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#1877F2" opacity={0.5}><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>, href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}` },
-                { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" opacity={0.5}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}` },
-              ].map((s, j) => (
-                <a key={j} href={s.href} target="_blank" rel="noreferrer" className="p-1.5 rounded transition-opacity hover:opacity-100 opacity-70">{s.svg}</a>
-              ))}
+            <div className="p-6 flex flex-col justify-center flex-1" style={{ borderLeft: '1px solid #2a3a4a' }}>
+              <div className="max-w-[300px] mx-auto w-full">
+                <ScoreMeter score={score.overall_score} />
+              </div>
+              <div className="mt-5 pt-5" style={{ borderTop: '1px solid #2a3a4a' }}>
+                <p className="text-[13px] text-[#bbb] leading-[1.75] italic">
+                  {(() => {
+                    const s = score;
+                    const total = s.verified_claims;
+                    const topDomain = Object.entries(s.domains || {}).sort((a: any, b: any) => b[1].count - a[1].count)[0];
+                    const wildest = claims.filter(c => c.verdict === 'FALSE' || c.verdict === 'MISLEADING').sort((a, b) => a.score - b.score)[0];
+                    const counts = [
+                      { label: 'true', n: s.true_count },
+                      { label: 'somewhat misleading', n: s.somewhat_misleading_count || 0 },
+                      { label: 'misleading', n: s.misleading_count },
+                      { label: 'false', n: s.false_count },
+                    ].filter(c => c.n > 0).sort((a, b) => b.n - a.n);
+                    const top = counts[0];
+                    if (!top) return '';
+                    const majorityPct = Math.round((top.n / total) * 100);
+                    let text = `Out of ${total} verifiable claims, `;
+                    text += majorityPct >= 50 ? `the majority (${majorityPct}%) were rated ${top.label}` : `${top.n} were rated ${top.label}`;
+                    if (counts.length > 1) text += `, with ${counts.slice(1).map(c => `${c.n} ${c.label}`).join(' and ')}`;
+                    text += '.';
+                    if (topDomain) {
+                      const d = topDomain[1] as any;
+                      text += ` ${(s.name?.split(' ')[0] || s.name)} talks most about ${topDomain[0].replace(/_/g, ' ')}, where ${d.score}% of ${d.count} claims held up.`;
+                    }
+                    if (wildest) text += ` ${(s.name?.split(' ')[0] || 'Their')}'s wildest miss? "${wildest.claim}"`;
+                    return text;
+                  })()}
+                </p>
+              </div>
+              <div className="mt-4 pt-3 flex items-center gap-1.5" style={{ borderTop: '1px solid #2a3a4a' }}>
+                <span className="text-[8px] uppercase tracking-[0.12em] text-[#555] shrink-0 mr-1">Share</span>
+                {[
+                  { svg: <span className="text-[11px] font-bold text-white/50">𝕏</span>, href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${score.name} scores ${score.overall_score}% on CVRD On Record`)}&url=${encodeURIComponent(shareUrl)}` },
+                  { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#ff4500" opacity={0.5}><circle cx="12" cy="12" r="12"/></svg>, href: `https://www.reddit.com/submit?title=${encodeURIComponent(`${score.name}: ${score.overall_score}% Truthful`)}&url=${encodeURIComponent(shareUrl)}` },
+                  { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#25D366" opacity={0.5}><path d="M12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.13 1.6 5.93L0 24l6.26-1.64A11.93 11.93 0 0012 24c6.63 0 12-5.37 12-12S18.63 0 12 0z"/></svg>, href: `https://wa.me/?text=${encodeURIComponent(`${score.name}: ${score.overall_score}%\n\n${shareUrl}`)}` },
+                  { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0088cc" opacity={0.5}><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37z"/></svg>, href: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`${score.name}: ${score.overall_score}%`)}` },
+                  { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#1877F2" opacity={0.5}><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>, href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}` },
+                  { svg: <svg width="12" height="12" viewBox="0 0 24 24" fill="#0A66C2" opacity={0.5}><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}` },
+                ].map((s, j) => (
+                  <a key={j} href={s.href} target="_blank" rel="noreferrer" className="p-1.5 rounded transition-opacity hover:opacity-100 opacity-70">{s.svg}</a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-          {/* Next arrow */}
           {(() => {
             const currentIdx = allPoliticians.findIndex((p: any) => p.handle === score.handle);
             const next = allPoliticians[currentIdx + 1] || allPoliticians[0];
@@ -302,24 +470,19 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           })()}
         </div>
 
-        {/* TRUE / SOMEWHAT MISLEADING / MISLEADING / FALSE */}
-        <div className="grid grid-cols-4 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
-          <div className="py-4 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: '#60a5fa' }}>True</span>
-            <p className="text-[22px] text-white font-bold mt-1" style={serif}>{score.true_count}</p>
-          </div>
-          <div className="py-4 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: '#f59e0b' }}>Somewhat</span>
-            <p className="text-[22px] text-white font-bold mt-1" style={serif}>{score.somewhat_misleading_count || 0}</p>
-          </div>
-          <div className="py-4 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Misleading</span>
-            <p className="text-[22px] text-white font-bold mt-1" style={serif}>{score.misleading_count}</p>
-          </div>
-          <div className="py-4 px-3 text-center">
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: '#f87171' }}>False</span>
-            <p className="text-[22px] text-white font-bold mt-1" style={serif}>{score.false_count}</p>
-          </div>
+        {/* TRUE / SOMEWHAT / MISLEADING / FALSE counts */}
+        <div className="grid grid-cols-4 gap-0 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+          {[
+            { label: 'True', count: score.true_count, color: '#60a5fa' },
+            { label: 'Somewhat', count: score.somewhat_misleading_count || 0, color: '#f59e0b' },
+            { label: 'Misleading', count: score.misleading_count, color: '#daa520' },
+            { label: 'False', count: score.false_count, color: '#f87171' },
+          ].map((item, i) => (
+            <div key={item.label} className="py-4 px-3 text-center" style={{ borderRight: i < 3 ? '1px solid #2a3a4a' : 'none' }}>
+              <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: item.color }}>{item.label}</span>
+              <p className="text-[22px] text-white font-bold mt-1" style={serif}>{item.count}</p>
+            </div>
+          ))}
         </div>
 
         {/* AD */}
@@ -330,27 +493,107 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           <div className="w-full flex items-center justify-center p-1"><AdBanner /></div>
         </div>
 
-        {/* DOMAIN BREAKDOWN */}
-        <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-          <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-            <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">By Topic</span>
-            <span className="text-[11px] text-[#777]">{domainEntries.length - 1} categories</span>
-            {domainFilter && (
-              <button onClick={() => setDomainFilter(null)} className="text-[9px] ml-auto cursor-pointer hover:text-[#999] transition-colors" style={{ color: '#daa520', background: 'none', border: 'none' }}>Clear filter ×</button>
+        {/* ANALYTICS — Claims Over Time + Verdict Breakdown */}
+        {claims.length > 0 && (
+          <div className="rounded-lg mb-6 overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            <div className="flex items-center gap-2 px-5 pt-4 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+              <span className="text-[10px] font-bold text-[#777] uppercase tracking-[0.12em]">Analytics</span>
+            </div>
+            <div className="flex flex-col md:flex-row md:items-stretch">
+              <div className="flex-1 p-5 flex flex-col" style={{ borderRight: '1px solid #2a3a4a' }}>
+                <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Claims Over Time</p>
+                <div className="flex-1 min-h-0"><TimelineChart claims={claims} overallScore={score.overall_score} /></div>
+              </div>
+              <div className="p-5 flex flex-col shrink-0 md:w-[300px]">
+                <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Verdict Breakdown</p>
+                <div className="flex-1 flex items-center justify-center"><DonutChart score={score} /></div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* RECENTLY VERIFIED PROMISES */}
+        {resolved.length > 0 && (() => (
+          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid rgba(96,165,250,0.2)' }}>
+            <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span className="text-[10px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Verified Promises</span>
+              <span className="text-[11px] text-[#777]">{resolved.length} resolved</span>
+            </div>
+            <div className="space-y-2">
+              {resolved.slice(0, resolvedLimit).map((c, i) => (
+                <div key={c.tweet_id + '-' + i} className="p-3 rounded-md" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[9px] font-bold uppercase tracking-wider shrink-0 mt-0.5" style={{ color: verdictColor(c.verdict) }}>{verdictLabel(c.verdict)}</span>
+                  </div>
+                  <p className="text-[13px] text-[#ccc] leading-[1.6] mt-1">{c.claim}</p>
+                  <p className="text-[12px] text-[#888] leading-[1.5] mt-1">{c.reasoning}</p>
+                  <div className="flex items-center gap-2 mt-1.5 text-[9px] text-[#555]">
+                    <span>{fmtDate(c.tweet_date)}</span>
+                    {c.verified_at && <><span>&middot;</span><span style={{ color: '#60a5fa' }}>Resolved {fmtDate(c.verified_at)}</span></>}
+                  </div>
+                </div>
+              ))}
+            </div>
+            {resolved.length > resolvedLimit && (
+              <button onClick={() => setResolvedLimit(resolved.length)} className="mt-3 w-full py-2 text-[11px] font-semibold rounded-md cursor-pointer transition-colors hover:opacity-80" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', color: '#60a5fa' }}>
+                Show {resolved.length - resolvedLimit} more
+              </button>
+            )}
+            {resolvedLimit > 3 && (
+              <button onClick={() => setResolvedLimit(3)} className="mt-1 w-full py-1.5 text-[10px] cursor-pointer transition-colors hover:opacity-70" style={{ background: 'none', border: 'none', color: '#444' }}>
+                Show less
+              </button>
             )}
           </div>
-          <div className="space-y-0">
-            {domainEntries.map(([domain, d]) => (
-              <button key={domain} onClick={() => setDomainFilter(domain === 'all' ? null : domainFilter === domain ? null : domain)}
-                className="flex items-center py-1.5 gap-3 w-full text-left cursor-pointer transition-colors rounded px-1 -mx-1"
-                style={{ background: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? 'rgba(184,134,11,0.1)' : 'transparent', border: 'none' }}>
-                <span className="text-[12px] capitalize flex-1" style={{ color: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? '#daa520' : '#bbb' }}>{domain.replace(/_/g, ' ')}</span>
-                <span className="text-[10px] text-[#777]">{d.count} claims</span>
-                <span className="text-[12px] font-semibold w-12 text-right" style={{ color: d.score >= 60 ? '#60a5fa' : d.score >= 40 ? '#daa520' : '#f87171' }}>{d.score}%</span>
+        ))()}
+
+        {/* OPEN PROMISES */}
+        {pending.length > 0 && (
+          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Open Promises</span>
+              <span className="text-[11px] text-[#777]">{pending.length} being tracked</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {pending.slice(0, pendingLimit).map((c, i) => (
+                <div key={c.tweet_id + '-' + i} className="rounded-md overflow-hidden flex flex-col" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                  <div className="p-3 flex flex-col gap-2">
+                    <p className="text-[12px] text-[#ccc] leading-[1.5]">{c.claim}</p>
+                    <div className="flex items-center gap-2 text-[9px] text-[#555]">
+                      <span>{fmtDate(c.tweet_date)}</span>
+                      {c.deadline && c.deadline !== 'TBD' && <><span>&middot;</span><span style={{ color: '#daa520' }}>Due {c.deadline}</span></>}
+                    </div>
+                  </div>
+                  {c.tweet_id && (
+                    <div className="relative w-full mt-auto" style={{ height: 220 }}>
+                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.tweet_id}&theme=dark&dnt=true`}
+                        className="absolute" style={{ border: 'none', top: -8, left: -8, right: -8, bottom: -8, width: 'calc(100% + 16px)', height: 'calc(100% + 16px)' }} loading="lazy" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+            {pending.length > pendingLimit && (
+              <button onClick={() => setPendingLimit(pending.length)} className="mt-3 w-full py-2 text-[11px] font-semibold rounded-md cursor-pointer transition-colors hover:opacity-80" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', color: '#daa520' }}>
+                Show {pending.length - pendingLimit} more
               </button>
-            ))}
+            )}
+            {pendingLimit > 3 && (
+              <button onClick={() => setPendingLimit(3)} className="mt-1 w-full py-1.5 text-[10px] cursor-pointer transition-colors hover:opacity-70" style={{ background: 'none', border: 'none', color: '#444' }}>
+                Show less
+              </button>
+            )}
           </div>
-        </div>
+        )}
 
         {/* VERIFIED CLAIMS */}
         <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -360,13 +603,35 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             <span className="text-[11px] text-[#777] ml-auto">{filtered.length} shown</span>
           </div>
 
+          {/* Domain filter */}
+          <div className="rounded-md p-3 mb-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-[9px] font-bold text-[#666] uppercase tracking-[0.1em]">By Topic</span>
+              <span className="text-[10px] text-[#555]">{domainEntries.length - 1} categories</span>
+              {domainFilter && (
+                <button onClick={() => { setDomainFilter(null); setClaimLimit(5); }} className="text-[9px] ml-auto cursor-pointer hover:text-[#999] transition-colors" style={{ color: '#daa520', background: 'none', border: 'none' }}>Clear filter ×</button>
+              )}
+            </div>
+            <div className="space-y-0">
+              {domainEntries.map(([domain, d]) => (
+                <button key={domain} onClick={() => { setDomainFilter(domain === 'all' ? null : domainFilter === domain ? null : domain); setClaimLimit(5); }}
+                  className="flex items-center py-1.5 gap-3 w-full text-left cursor-pointer transition-colors rounded px-1 -mx-1"
+                  style={{ background: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? 'rgba(184,134,11,0.1)' : 'transparent', border: 'none' }}>
+                  <span className="text-[12px] capitalize flex-1" style={{ color: (domainFilter === domain || (domain === 'all' && !domainFilter)) ? '#daa520' : '#bbb' }}>{domain.replace(/_/g, ' ')}</span>
+                  <span className="text-[10px] text-[#777]">{d.count} claims</span>
+                  <span className="text-[12px] font-semibold w-12 text-right" style={{ color: d.score >= 60 ? '#60a5fa' : d.score >= 40 ? '#daa520' : '#f87171' }}>{d.score}%</span>
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Claim search */}
           <div className="flex items-center gap-2 mb-3 px-3 py-2 rounded-md" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
             </svg>
             <input type="text" placeholder="Search claims... e.g. iran, economy, border" value={claimSearch}
-              onChange={(e) => setClaimSearch(e.target.value)}
+              onChange={(e) => { setClaimSearch(e.target.value); setClaimLimit(5); }}
               className="flex-1 text-[11px] text-white/80 placeholder-white/20 outline-none"
               style={{ background: 'transparent', border: 'none' }} />
             {claimSearch && (
@@ -387,31 +652,21 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                 </div>
                 <div className="max-w-[300px] mx-auto mb-3"><ScoreMeter score={searchScore!} /></div>
                 <div className="grid grid-cols-4 gap-0 rounded-md overflow-hidden" style={{ background: '#253545' }}>
-                  <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-                    <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#60a5fa' }}>True</span>
-                    <p className="text-[18px] text-white font-bold" style={serif}>{trueC}</p>
-                  </div>
-                  <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-                    <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#f59e0b' }}>Somewhat</span>
-                    <p className="text-[18px] text-white font-bold" style={serif}>{somewhatC}</p>
-                  </div>
-                  <div className="py-2 px-3 text-center" style={{ borderRight: '1px solid #2a3a4a' }}>
-                    <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#daa520' }}>Misleading</span>
-                    <p className="text-[18px] text-white font-bold" style={serif}>{misleadC}</p>
-                  </div>
-                  <div className="py-2 px-3 text-center">
-                    <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: '#f87171' }}>False</span>
-                    <p className="text-[18px] text-white font-bold" style={serif}>{falseC}</p>
-                  </div>
+                  {[{ label: 'True', count: trueC, color: '#60a5fa' }, { label: 'Somewhat', count: somewhatC, color: '#f59e0b' }, { label: 'Misleading', count: misleadC, color: '#daa520' }, { label: 'False', count: falseC, color: '#f87171' }].map((item, idx) => (
+                    <div key={item.label} className="py-2 px-3 text-center" style={{ borderRight: idx < 3 ? '1px solid #2a3a4a' : 'none' }}>
+                      <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: item.color }}>{item.label}</span>
+                      <p className="text-[18px] text-white font-bold" style={serif}>{item.count}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             );
           })()}
 
           {/* Filter tabs */}
-          <div className="flex gap-2 mb-4">
+          <div className="flex gap-2 mb-4 flex-wrap">
             {(['all', 'TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'] as const).map(f => (
-              <button key={f} onClick={() => setFilter(f)}
+              <button key={f} onClick={() => { setFilter(f); setClaimLimit(5); }}
                 className="text-[10px] font-bold uppercase tracking-[0.08em] px-2.5 py-1 rounded-full transition-colors cursor-pointer"
                 style={{
                   background: filter === f ? 'rgba(184,134,11,0.15)' : 'transparent',
@@ -425,7 +680,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
 
           {/* Claims list */}
           <div className="space-y-3">
-            {filtered.map((c, i) => (
+            {filtered.slice(0, claimLimit).map((c, i) => (
               <div key={c.tweet_id + '-' + i} className="rounded-lg p-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <div className="flex gap-2.5">
                   <span className="text-[12px] font-bold mt-0.5 shrink-0 w-5 text-right" style={{ color: verdictColor(c.verdict) }}>{i + 1}.</span>
@@ -433,7 +688,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                     <span className="text-[9px] font-bold uppercase tracking-wider" style={{ color: verdictColor(c.verdict) }}>{verdictLabel(c.verdict)}</span>
                     <p className="text-[13px] text-[#ccc] leading-[1.6] mt-0.5">{c.claim}</p>
                     <p className="text-[12px] text-[#888] leading-[1.6] mt-1.5">{c.reasoning}</p>
-
                     {c.tweet_id && (
                       <div className="mt-2 flex gap-3 items-start flex-wrap md:flex-nowrap">
                         <div className="shrink-0 rounded-md overflow-hidden relative" style={{ background: '#253545', border: '1px solid #2a3a4a', height: 200, width: 350, maxWidth: '100%' }}>
@@ -450,8 +704,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                               { label: 'TG', svg: <svg width="11" height="11" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37z"/></svg>, href: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(`${score.name}: "${c.claim}" — ${c.verdict}`)}` },
                               { label: 'FB', svg: <svg width="11" height="11" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12c0-6.627-5.373-12-12-12S0 5.373 0 12c0 5.99 4.388 10.954 10.125 11.854V15.47H7.078V12h3.047V9.356c0-3.007 1.792-4.668 4.533-4.668 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.875V12h3.328l-.532 3.469h-2.796v8.385C19.612 22.954 24 17.99 24 12z"/></svg>, href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}` },
                               { label: 'LI', svg: <svg width="11" height="11" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>, href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}` },
-                              { label: 'Threads', svg: <svg width="11" height="11" viewBox="0 0 24 24" fill="#fff" opacity={0.5}><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.59 12c.025 3.083.717 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.96-.065-1.187.408-2.281 1.332-3.08.857-.74 2.063-1.182 3.39-1.246.927-.044 1.813.06 2.647.306l.053-.265c.231-1.148.084-2.078-.437-2.762-.544-.715-1.465-1.1-2.593-1.084-1.593.023-2.727.637-3.467 1.033l-.096.053-.924-1.685.122-.067c.928-.51 2.395-1.265 4.39-1.293h.044c1.616-.02 2.95.525 3.855 1.576.753.876 1.133 2.059.96 3.437.792.326 1.476.784 2.036 1.37 1.033 1.08 1.532 2.555 1.443 4.265-.105 2.028-1.066 3.793-2.862 5.254C17.677 23.276 15.252 23.977 12.186 24z"/></svg>, href: `https://www.threads.net/intent/post?text=${encodeURIComponent(`${score.name}: "${c.claim}" — ${c.verdict}\n\n${shareUrl}`)}` },
-                              { label: 'Bluesky', svg: <svg width="11" height="11" viewBox="0 0 24 24" fill="#0085ff"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/></svg>, href: `https://bsky.app/intent/compose?text=${encodeURIComponent(`${score.name}: "${c.claim}" — ${c.verdict}\n\n${shareUrl}`)}` },
                             ].map((s, j) => (
                               <a key={j} href={s.href} target="_blank" rel="noreferrer"
                                 className="flex items-center justify-center w-8 h-8 rounded transition-opacity hover:opacity-100"
@@ -463,7 +715,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                         </div>
                       </div>
                     )}
-
                     <div className="flex items-center gap-2 mt-2 text-[9px] text-[#555]">
                       <span>{fmtDate(c.tweet_date)}</span>
                       <span>&middot;</span>
@@ -475,37 +726,23 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
               </div>
             ))}
           </div>
+          {filtered.length > claimLimit && (
+            <button onClick={() => setClaimLimit(c => c + 10)} className="mt-4 w-full py-2 text-[11px] font-semibold rounded-md cursor-pointer transition-colors hover:opacity-80" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', color: '#daa520' }}>
+              Show {Math.min(10, filtered.length - claimLimit)} more of {filtered.length - claimLimit} remaining
+            </button>
+          )}
+          {claimLimit > 5 && (
+            <button onClick={() => setClaimLimit(5)} className="mt-1 w-full py-1.5 text-[10px] cursor-pointer transition-colors hover:opacity-70" style={{ background: 'none', border: 'none', color: '#444' }}>
+              Show less
+            </button>
+          )}
         </div>
-
-        {/* PENDING */}
-        {pending.length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-            <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-              <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">Pending Verification</span>
-              <span className="text-[11px] text-[#777]">{pending.length} awaiting deadline</span>
-            </div>
-            <div className="space-y-0">
-              {pending.map((c, i) => (
-                <div key={c.tweet_id + '-' + i} className="py-2">
-                  <p className="text-[12px] text-[#bbb]">{c.claim}</p>
-                  <div className="flex items-center gap-2 mt-1 text-[9px] text-[#555]">
-                    <span>{fmtDate(c.tweet_date)}</span>
-                    <span>&middot;</span>
-                    <span>Deadline: {c.deadline || 'TBD'}</span>
-                    <span>&middot;</span>
-                    <a href={c.tweet_url} target="_blank" rel="noopener noreferrer" className="hover:text-[#999]" style={{ color: '#777' }}>view tweet &rarr;</a>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
 
         {/* METHODOLOGY */}
         <div className="p-5 rounded-lg text-center" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <p className="text-[11px] text-[#777] leading-relaxed">
             Score based on {score.verified_claims} verifiable claims. Each claim verified using AI with web search.
-            TRUE = 100% · MISLEADING = 50% · FALSE = 0%. Confidence: ±{score.confidence_interval}%.
+            TRUE = 100% · SOMEWHAT MISLEADING = 65% · MISLEADING = 35% · FALSE = 0%. Confidence: ±{score.confidence_interval}%.
           </p>
           <Link href="/onrecord" className="inline-block px-5 py-2 rounded-full text-[12px] font-semibold text-white transition-colors hover:opacity-90 mt-3" style={{ background: '#b8860b' }}>
             View all records
