@@ -620,9 +620,8 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
   }
 
   const YEAR_W_COLLAPSED = 200;
-  const YEAR_W_EXPANDED = 99999; // no cap — scrolls horizontally if needed
+  const YEAR_W_EXPANDED = 600;
   const YEAR_GAP = 20;
-  const MIN_THUMB_W = 80; // minimum thumbnail width for readability
 
   // Flatten all entries with their year for the scrollbar
   const allEntries = dates.map(d => ({ date: d, year: getYear(d) }));
@@ -792,17 +791,17 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
 
   return (
     <div>
-      <div ref={scrollRef} className="overflow-x-auto timeline-scroll" style={{ scrollBehavior: 'smooth' }}>
+      <div ref={scrollRef}>
         <div className="flex min-w-max" style={{ gap: YEAR_GAP, paddingRight: 40 }}>
         {yearGroups.map((yg) => {
           const isOpen = openYears.has(yg.year);
           const startIdx = globalIdx;
           const count = yg.dates.length;
           const gap = 4;
-          // Expanded width scales with entry count — each entry gets at least MIN_THUMB_W, scrolls if needed
-          const expandedW = isOpen ? Math.max(YEAR_W_COLLAPSED, count * MIN_THUMB_W + (count - 1) * gap) : YEAR_W_COLLAPSED;
+          // Expanded width scales with entry count — min 200px, each entry ~120px, capped at 600
+          const expandedW = isOpen ? Math.min(YEAR_W_EXPANDED, Math.max(YEAR_W_COLLAPSED, count * 120 + (count - 1) * gap)) : YEAR_W_COLLAPSED;
           const activeW = expandedW;
-          const thumbW = Math.max(MIN_THUMB_W, Math.floor((activeW - (count - 1) * gap) / count));
+          const thumbW = Math.floor((activeW - (count - 1) * gap) / count);
           globalIdx += count;
 
           return (
