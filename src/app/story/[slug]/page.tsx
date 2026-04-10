@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { StoryPage } from "@/components/StoryPage";
 import { LiveBanner } from "@/components/LiveBanner";
 import { getDailyGaps } from "@/lib/data";
+import { getTimelineThreads } from "@/lib/timeline-data";
 
 export const dynamic = 'force-dynamic';
 
@@ -85,6 +86,17 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   const { story, date, otherStories } = result;
 
+  // Match timeline threads to this story
+  const timelineData = await getTimelineThreads();
+  const storyText = `${story.topic} ${story.summary || ''}`.toLowerCase();
+  const matchedTimelines = (timelineData?.threads || [])
+    .filter(t => {
+      const keywords = t.title.toLowerCase().split(/\s+/);
+      return keywords.filter(k => k.length > 3 && storyText.includes(k)).length >= 2;
+    })
+    .map(t => ({ id: t.id, title: t.title, image_file: t.image_file }))
+    .slice(0, 3);
+
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
   const top10 = allStories.filter((s: any) => s.is_top_story).length >= 10
@@ -96,7 +108,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
     '@type': 'NewsArticle',
     headline: story.topic,
     description: (story.summary || '').slice(0, 200),
-    image: story.image_file ? [`https://cvrdnews.com${story.image_file}`] : [],
+    image: story.image_file ? [story.image_file.startsWith('http') ? story.image_file : `https://cvrdnews.com${story.image_file}`] : [],
     datePublished: date,
     dateModified: date,
     author: { '@type': 'Organization', name: 'CVRD News', url: 'https://cvrdnews.com' },
@@ -160,7 +172,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
         </div>
       </div>
 
-      <StoryPage story={story} date={date} otherStories={otherStories} />
+      <StoryPage story={story} date={date} otherStories={otherStories} matchedTimelines={matchedTimelines} />
 
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />

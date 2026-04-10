@@ -5,14 +5,16 @@ import { VideoGrid } from "./VideoGrid";
 import { Dashboard } from "./Dashboard";
 import { Tweet } from 'react-tweet';
 import { OnRecordWidget } from "./OnRecordWidget";
+import { MentionedSection } from "./MentionedSection";
 import type { NarrativeGap } from "../lib/data";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
-export function StoryPage({ story, date, otherStories }: {
+export function StoryPage({ story, date, otherStories, matchedTimelines }: {
   story: NarrativeGap;
   date: string;
   otherStories: NarrativeGap[];
+  matchedTimelines?: { id: string; title: string; image_file?: string }[];
 }) {
   const clips = story.social_clips || [];
   const ytVids = story.youtube_videos || [];
@@ -144,6 +146,17 @@ export function StoryPage({ story, date, otherStories }: {
             </div>
           )}
         </div>
+
+        {/* MENTIONED — people + timelines */}
+        <MentionedSection
+          people={((story as any).people || []).map((p: any) => ({
+            ...p,
+            handle: ((story as any).onrecord_matches || []).find((m: any) =>
+              m.name.toLowerCase().includes(p.name.split(' ').pop()?.toLowerCase() || '')
+            )?.handle,
+          }))}
+          timelines={matchedTimelines}
+        />
 
         {/* ON RECORD — politician matches */}
         {(story as any).onrecord_matches?.length > 0 && (
