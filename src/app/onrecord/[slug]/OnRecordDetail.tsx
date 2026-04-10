@@ -507,7 +507,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                 <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Claims Over Time</p>
                 <div className="flex-1 min-h-0"><TimelineChart claims={claims} overallScore={score.overall_score} /></div>
               </div>
-              <div className="p-5 flex flex-col shrink-0 md:w-[300px]">
+              <div className="flex-1 p-5 flex flex-col">
                 <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Verdict Breakdown</p>
                 <div className="flex-1 flex items-center justify-center"><DonutChart score={score} /></div>
               </div>
