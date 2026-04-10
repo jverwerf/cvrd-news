@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
+import { track } from "@vercel/analytics";
 
 // ─── Assets ────────────────────────────────────────────────────────────────
 
@@ -376,17 +377,19 @@ export function HorizontalAdBanner() {
   const [src, setSrc] = useState(() => MM_LANDSCAPE[Math.floor(Math.random() * MM_LANDSCAPE.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_LANDSCAPE, prev)), []);
 
+  useEffect(() => {
+    if (visible) track('ad_impression', { brand, placement: 'horizontal' });
+  }, [brand, visible]);
+
   return (
-    <div style={{ width: '100%', minHeight: 90 }}>
+    <div style={{ width: '100%', minHeight: 90 }} onClick={() => track('ad_click', { brand, placement: 'horizontal' })}>
       <div style={{ height: 90, opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
         {brand === 'migraineme' && (
           <a href="https://migraineme.app" target="_blank" rel="noreferrer"
-            className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
+            style={{ display: 'block', width: '100%', height: 90, position: 'relative', overflow: 'hidden', borderRadius: 8, textDecoration: 'none' }}>
             <video key={src} src={src} autoPlay muted playsInline onEnded={onEnded}
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
-            <div className="absolute inset-0 flex items-center justify-between px-5"
-              style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
               <div className="flex items-center gap-3">
                 <img src="/ads/migraineme_logo.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
                 <div>
@@ -414,8 +417,12 @@ export function TileAdBanner() {
   const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_PORTRAIT, prev)), []);
 
+  useEffect(() => {
+    if (visible) track('ad_impression', { brand, placement: 'tile' });
+  }, [brand, visible]);
+
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" onClick={() => track('ad_click', { brand, placement: 'tile' })}>
       <div className="w-full h-full" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
         {brand === 'hausctrl' && <HausCtrlTile />}
         {brand === 'andlane'  && <AndlaneTile />}
