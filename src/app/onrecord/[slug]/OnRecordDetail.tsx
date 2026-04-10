@@ -121,10 +121,10 @@ function DonutChart({ score }: { score: any }) {
 
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
   const viewW = 900;
-  const barH = 160;
-  const lineH = 110;
-  const gapH = 52;
-  const bottomPad = 20;
+  const barH = 240;
+  const lineH = 150;
+  const gapH = 70;
+  const bottomPad = 30;
   const totalSvgH = barH + gapH + lineH + bottomPad;
 
   // Group by month
@@ -510,7 +510,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
               <span className="text-[10px] font-bold text-[#777] uppercase tracking-[0.12em]">Analytics</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-stretch">
-              <div className="flex-1 min-w-0 p-5 flex flex-col overflow-hidden" style={{ borderRight: '1px solid #2a3a4a' }}>
+              <div className="flex-1 min-w-0 p-5 flex flex-col" style={{ borderRight: '1px solid #2a3a4a' }}>
                 <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Claims Over Time</p>
                 <div className="flex-1 min-h-0"><TimelineChart claims={claims} overallScore={score.overall_score} /></div>
               </div>
