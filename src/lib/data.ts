@@ -51,32 +51,46 @@ export interface DailyReport {
 
 export async function getDailyGaps(): Promise<DailyReport | null> {
   const dateStr = new Date().toISOString().split('T')[0];
+  const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
-  // Try engine output first (local dev), then public/data fallback (Vercel)
+  // 1. Local engine output (dev)
   const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/daily_gaps_${dateStr}.json`);
-  const publicPath = path.resolve(process.cwd(), `public/data/daily_gaps_${dateStr}.json`);
-  // Also try latest file in public/data if today's doesn't exist
-  const publicDataDir = path.resolve(process.cwd(), 'public/data');
-
-  let dataPath: string | null = null;
   if (fs.existsSync(enginePath)) {
-    dataPath = enginePath;
-  } else if (fs.existsSync(publicPath)) {
-    dataPath = publicPath;
-  } else if (fs.existsSync(publicDataDir)) {
-    // Find the most recent file
+    try {
+      const report = JSON.parse(fs.readFileSync(enginePath, 'utf8')) as DailyReport;
+      return postProcess(report);
+    } catch { /* fall through */ }
+  }
+
+  // 2. Blob (production) — daily_gaps no longer committed to git
+  if (BLOB_BASE) {
+    try {
+      const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${dateStr}.json`, { next: { revalidate: 3600 } });
+      if (resp.ok) {
+        const report = await resp.json() as DailyReport;
+        return postProcess(report);
+      }
+    } catch { /* fall through */ }
+  }
+
+  // 3. Local public/data fallback (transitional)
+  const publicDataDir = path.resolve(process.cwd(), 'public/data');
+  if (fs.existsSync(publicDataDir)) {
     const files = fs.readdirSync(publicDataDir).filter(f => f.startsWith('daily_gaps_')).sort().reverse();
-    if (files.length > 0) dataPath = path.join(publicDataDir, files[0]);
+    if (files.length > 0) {
+      try {
+        const report = JSON.parse(fs.readFileSync(path.join(publicDataDir, files[0]), 'utf8')) as DailyReport;
+        return postProcess(report);
+      } catch { /* fall through */ }
+    }
   }
 
-  if (!dataPath) {
-    console.error("No data file found");
-    return null;
-  }
+  console.error("No data file found");
+  return null;
+}
 
+async function postProcess(report: DailyReport): Promise<DailyReport | null> {
   try {
-    const fileContents = fs.readFileSync(dataPath, 'utf8');
-    const report = JSON.parse(fileContents) as DailyReport;
 
     // Filter out clips that failed to download in the video pipeline
     for (const story of report.top_narratives) {
