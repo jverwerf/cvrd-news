@@ -505,7 +505,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
               <span className="text-[10px] font-bold text-[#777] uppercase tracking-[0.12em]">Analytics</span>
             </div>
             <div className="flex flex-col md:flex-row md:items-stretch">
-              <div className="flex-1 p-5 flex flex-col" style={{ borderRight: '1px solid #2a3a4a' }}>
+              <div className="flex-1 min-w-0 p-5 flex flex-col overflow-hidden" style={{ borderRight: '1px solid #2a3a4a' }}>
                 <p className="text-[9px] font-semibold text-[#555] uppercase tracking-[0.12em] mb-4">Claims Over Time</p>
                 <div className="flex-1 min-h-0"><TimelineChart claims={claims} overallScore={score.overall_score} /></div>
               </div>
