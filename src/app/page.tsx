@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 3600; // 1 hour — daily pipeline runs at 7am
 
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";

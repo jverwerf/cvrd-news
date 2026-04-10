@@ -1,3 +1,5 @@
+export const revalidate = 86400; // 24 hours — timeline content is static
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTimelineThread, getTimelineThreads } from "@/lib/timeline-data";

@@ -5,7 +5,7 @@ import { LiveBanner } from "@/components/LiveBanner";
 import { getDailyGaps } from "@/lib/data";
 import { getTimelineThreads } from "@/lib/timeline-data";
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // 24 hours — stories don't change once published
 
 import fs from 'fs';
 import path from 'path';
@@ -92,7 +92,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   if (onrecordMatches.length > 0) {
     await Promise.all(onrecordMatches.map(async (m: any) => {
       try {
-        const resp = await fetch(`${BLOB_BASE}/politicians/score_${m.handle}.json`, { cache: 'no-store' });
+        const resp = await fetch(`${BLOB_BASE}/politicians/score_${m.handle}.json`, { next: { revalidate: 86400 } });
         if (resp.ok) {
           const s = await resp.json();
           m.role = s.role || null;

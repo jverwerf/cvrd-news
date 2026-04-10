@@ -6,7 +6,7 @@ const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
 async function fetchJson(url: string): Promise<any | null> {
   try {
-    const resp = await fetch(url, { cache: 'no-store' });
+    const resp = await fetch(url, { next: { revalidate: 3600 } });
     if (!resp.ok) return null;
     return resp.json();
   } catch { return null; }
