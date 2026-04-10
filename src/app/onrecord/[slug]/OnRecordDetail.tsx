@@ -96,16 +96,21 @@ function DonutChart({ score }: { score: any }) {
         <text x={cx} y={cy - 6} textAnchor="middle" fill="white" fontSize="28" fontWeight="700" fontFamily="Georgia, serif">{score.overall_score}</text>
         <text x={cx} y={cy + 14} textAnchor="middle" fill="#777" fontSize="9" letterSpacing="0.08em">% truthful</text>
       </svg>
-      {/* Legend */}
-      <div className="w-full space-y-1.5 px-2">
+      {/* Legend with bars */}
+      <div className="w-full space-y-2.5 px-2 mt-2">
         {segments.map(seg => {
           const pct = total > 0 ? Math.round((seg.count / total) * 100) : 0;
           return (
-            <div key={seg.key} className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full shrink-0" style={{ background: seg.color }} />
-              <span className="text-[11px] text-[#bbb] flex-1">{seg.label}</span>
-              <span className="text-[10px] text-[#777]">{pct}%</span>
-              <span className="text-[12px] font-bold text-white w-8 text-right" style={serif}>{seg.count}</span>
+            <div key={seg.key}>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="w-2 h-2 rounded-full shrink-0" style={{ background: seg.color }} />
+                <span className="text-[11px] text-[#bbb] flex-1">{seg.label}</span>
+                <span className="text-[10px] text-[#777]">{pct}%</span>
+                <span className="text-[12px] font-bold text-white w-8 text-right" style={serif}>{seg.count}</span>
+              </div>
+              <div className="h-1.5 rounded-full w-full" style={{ background: '#1e2a3a' }}>
+                <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, background: seg.color, opacity: 0.8 }} />
+              </div>
             </div>
           );
         })}
@@ -179,7 +184,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
   return (
     <div style={{ overflowX: 'auto', scrollbarWidth: 'none' }}>
-      <div style={{ position: 'relative', minWidth: 900, height: 440 }}>
+      <div style={{ position: 'relative', minWidth: 900, paddingBottom: `${aspectRatio * 100}%` }}>
       <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
         viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
           <defs>
