@@ -24,7 +24,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
   const BLOB = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
   return (
-    <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+    <div className="rounded-lg p-4 mb-6 min-w-0 w-full" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
       <div className="flex items-center gap-2 mb-3">
         <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: 'rgba(184,134,11,0.2)' }}>
           <span className="text-[6px] font-bold" style={{ color: '#b8860b' }}>!</span>
@@ -32,7 +32,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
         <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
       </div>
 
-      <div className="flex gap-3 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none' }}>
+      <div className="flex gap-3 overflow-x-auto pb-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {matches.map((m, i) => (
           <Link
             key={i}
