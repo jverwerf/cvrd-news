@@ -21,15 +21,38 @@ function verdictColor(v: string) { return v === 'TRUE' ? '#60a5fa' : v === 'SOME
 function fmtDate(d: string) { try { return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); } catch { return d; } }
 function nameToSlug(name: string) { return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''); }
 
+const MIGRAINEME_ADS = [
+  '/ads/MigraineMe_Commercial_AI.mp4',
+  '/ads/MigraineMe_Commercial_Automated_Triggers.mp4',
+  '/ads/MigraineMe_Commercial_Community_Cartoon.mp4',
+  '/ads/MigraineMe_Commercial_Community_Realistic.mp4',
+  '/ads/MigraineMe_Commercial_Gauge.mp4',
+  '/ads/MigraineMe_Commercial_Nutrition.mp4',
+];
+
 function AdBanner() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => { try { ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({}); } catch {} }, []);
+  const [src] = useState(() => MIGRAINEME_ADS[Math.floor(Math.random() * MIGRAINEME_ADS.length)]);
   return (
-    <div ref={ref} className="w-full">
-      <ins className="adsbygoogle" style={{ display: 'block', width: '100%' }}
-        data-ad-client="ca-pub-2572735826517528" data-ad-slot="8292849831"
-        data-ad-format="horizontal" data-full-width-responsive="true" />
-    </div>
+    <a href="https://migraineme.app" target="_blank" rel="noreferrer"
+      className="w-full block relative overflow-hidden rounded-lg no-underline"
+      style={{ minHeight: '90px' }}>
+      <video key={src} src={src} autoPlay muted loop playsInline
+        className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 flex items-center justify-between px-5"
+        style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
+        <div className="flex items-center gap-3">
+          <img src="/ads/migraineme_logo.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
+          <div>
+            <p className="text-white font-bold text-[13px] leading-tight">MigraineMe</p>
+            <p className="text-white/60 text-[11px]">AI-powered migraine tracking</p>
+          </div>
+        </div>
+        <span className="shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold text-white"
+          style={{ background: '#E879A0' }}>
+          Free Download
+        </span>
+      </div>
+    </a>
   );
 }
 
@@ -125,6 +148,17 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   const gapH = 70;
   const bottomPad = 30;
   const totalSvgH = barH + gapH + lineH + bottomPad;
+  const MIN_BAR_SLOT = 44;
+
+  const containerRef = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [containerW, setContainerW] = useState(900);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const ro = new ResizeObserver(e => setContainerW(e[0].contentRect.width));
+    ro.observe(containerRef.current);
+    return () => ro.disconnect();
+  }, []);
 
   // Group by month
   const byMonth: Record<string, ScoredClaim[]> = {};
@@ -136,11 +170,13 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   const months = Object.keys(byMonth).sort();
   if (months.length === 0) return null;
 
-  // Always fill the available panel width
-  const viewW = 900;
+  const minChartW = months.length * MIN_BAR_SLOT + 60;
+  const viewW = Math.max(containerW, minChartW);
+  const needsScroll = minChartW > containerW;
   const barSpacing = (viewW - 60) / months.length;
   const barW = Math.min(36, barSpacing - 6);
   const barCenters = months.map((_, i) => 40 + i * barSpacing + barSpacing / 2);
+  const scroll = (dir: number) => scrollRef.current?.scrollBy({ left: dir * 200, behavior: 'smooth' });
 
   const verdictOrder = ['TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'];
   const verdictColors: Record<string, string> = { TRUE: '#60a5fa', 'SOMEWHAT MISLEADING': '#f59e0b', MISLEADING: '#daa520', FALSE: '#f87171' };
@@ -181,12 +217,16 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
     `${barCenters[months.length - 1]},${lineBottom}`,
   ].join(' ');
 
-  const aspectRatio = totalSvgH / viewW;
-
   return (
-    <div style={{ position: 'relative', width: '100%', height: totalSvgH }}>
-      <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
-        viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="none">
+    <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
+      {needsScroll && <>
+        <button onClick={() => scroll(-1)} style={{ position: 'absolute', left: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>‹</button>
+        <button onClick={() => scroll(1)} style={{ position: 'absolute', right: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>›</button>
+      </>}
+      <div ref={scrollRef} style={{ overflowX: needsScroll ? 'auto' : 'visible', scrollbarWidth: 'none', marginLeft: needsScroll ? 30 : 0, marginRight: needsScroll ? 30 : 0 }}>
+        <div style={{ position: 'relative', width: viewW, height: totalSvgH }}>
+          <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
+            viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="none">
           <defs>
             <linearGradient id="truthGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#daa520" stopOpacity="0.25" />
@@ -260,7 +300,9 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
               </text>
             );
           })}
-      </svg>
+          </svg>
+        </div>
+      </div>
     </div>
   );
 }
