@@ -24,6 +24,19 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 }) {
   // -1 = Daily Brief, 0+ = individual story
   const [currentIdx, setCurrentIdx] = useState(-1);
+  const [subEmail, setSubEmail] = useState('');
+  const [subStatus, setSubStatus] = useState<'idle' | 'loading' | 'done'>('idle');
+
+  const handleSubscribe = async () => {
+    if (!subEmail.includes('@') || subStatus !== 'idle') return;
+    setSubStatus('loading');
+    try {
+      await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: subEmail }) });
+      setSubStatus('done');
+    } catch {
+      setSubStatus('idle');
+    }
+  };
 
   if (!stories || stories.length === 0) {
     return <div className="py-20 text-center"><p className="text-[#999]">No stories available.</p></div>;
@@ -225,6 +238,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 On Air: <span className="text-[#666]">{sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}</span>
               </h1>
             </div>
+            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+              className="shrink-0 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+              style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
+              ♥ Buy us a coffee
+            </a>
             <button onClick={() => setCurrentIdx(0)}
               className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
@@ -266,6 +284,21 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 Cover The News
               </h1>
             </div>
+            {subStatus === 'done' ? (
+              <span className="shrink-0 text-[10px] font-medium text-[#1e2a3a]">Subscribed ✓</span>
+            ) : (
+              <div className="shrink-0 hidden sm:flex items-center gap-1">
+                <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                  className="text-[10px] px-2 py-1 rounded-full outline-none"
+                  style={{ background: 'white', border: '1px solid #e5e5e5', color: '#1e2a3a', width: 130 }} />
+                <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                  className="px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+                  style={{ background: '#1e2a3a', color: 'white', border: 'none', cursor: 'pointer' }}>
+                  {subStatus === 'loading' ? '…' : 'Subscribe'}
+                </button>
+              </div>
+            )}
             <button onClick={() => setCurrentIdx(0)}
               className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
@@ -487,6 +520,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 On Air: <span className="text-[#666]">{story.topic}</span>
               </h1>
             </div>
+            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+              className="shrink-0 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+              style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
+              ♥ Buy us a coffee
+            </a>
             <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
               <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
@@ -527,6 +565,21 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 Cover The News
               </h1>
             </div>
+            {subStatus === 'done' ? (
+              <span className="shrink-0 text-[10px] font-medium text-[#1e2a3a]">Subscribed ✓</span>
+            ) : (
+              <div className="shrink-0 hidden sm:flex items-center gap-1">
+                <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                  className="text-[10px] px-2 py-1 rounded-full outline-none"
+                  style={{ background: 'white', border: '1px solid #e5e5e5', color: '#1e2a3a', width: 130 }} />
+                <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                  className="px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+                  style={{ background: '#1e2a3a', color: 'white', border: 'none', cursor: 'pointer' }}>
+                  {subStatus === 'loading' ? '…' : 'Subscribe'}
+                </button>
+              </div>
+            )}
             <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
               <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />

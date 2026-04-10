@@ -19,6 +19,15 @@ export async function getBreakingData(): Promise<any[] | null> {
       (s: any) => Date.now() - new Date(s.detected_at).getTime() < 12 * 60 * 60 * 1000
     );
 
+    // Clean up Blob if some stories expired
+    if (valid.length !== items.length) {
+      if (valid.length === 0) {
+        await deleteBreakingData();
+      } else {
+        await saveBreakingData(valid);
+      }
+    }
+
     return valid.length > 0 ? valid : null;
   } catch {
     return null;

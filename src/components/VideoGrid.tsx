@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import { VideoGridAdBanner } from "./AdBanners";
 import { Tweet } from 'react-tweet';
 
 type VideoItem = {
@@ -236,14 +237,14 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     setVideosSinceAd(prev => {
       const newCount = prev + 1;
       if (newCount >= AD_INTERVAL) {
-        // Show ad for 5 seconds
+        // Show ad for 8 seconds (matches MigraineMe commercial duration)
         setShowingAd(true);
         stopPolling();
         stopTimer();
         adTimerRef.current = setTimeout(() => {
           setShowingAd(false);
           afterAd();
-        }, 5000);
+        }, 8000);
         return 0; // reset counter
       }
       afterAd();
@@ -298,9 +299,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             {showingAd ? (
               <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
                 <div className="absolute top-2 right-3 z-10">
-                  <span className="text-[9px] text-white/30 font-medium">Ad · Resuming in 5s</span>
+                  <span className="text-[9px] text-white/30 font-medium">Ad · Resuming in 8s</span>
                 </div>
-                <VideoAdSlot />
+                <VideoGridAdBanner />
               </div>
             ) : playing ? (
               <>
@@ -486,22 +487,5 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   );
 }
 
-function VideoAdSlot() {
-  useEffect(() => {
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    } catch {}
-  }, []);
 
-  return (
-    <div className="w-full h-full flex items-center justify-center p-4">
-      <ins className="adsbygoogle"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client="ca-pub-2572735826517528"
-        data-ad-slot="8292849831"
-        data-ad-format="fluid"
-        data-full-width-responsive="false" />
-    </div>
-  );
-}
 
