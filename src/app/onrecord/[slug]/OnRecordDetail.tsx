@@ -115,7 +115,7 @@ function DonutChart({ score }: { score: any }) {
 }
 
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
-  const viewW = 640;
+  const viewW = 900;
   const barH = 160;
   const lineH = 110;
   const gapH = 52;
