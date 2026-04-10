@@ -37,7 +37,8 @@ function AdBanner() {
       className="w-full block relative overflow-hidden rounded-lg no-underline"
       style={{ minHeight: '90px' }}>
       <video key={src} src={src} autoPlay muted loop playsInline
-        className="absolute inset-0 w-full h-full object-cover" />
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
       <div className="absolute inset-0 flex items-center justify-between px-5"
         style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
         <div className="flex items-center gap-3">
@@ -145,8 +146,8 @@ function DonutChart({ score }: { score: any }) {
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
   const barH = 240;
   const lineH = 150;
-  const gapH = 70;
-  const bottomPad = 30;
+  const gapH = 42;
+  const bottomPad = 14;
   const totalSvgH = barH + gapH + lineH + bottomPad;
   const MIN_BAR_SLOT = 44;
 
@@ -218,13 +219,13 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   ].join(' ');
 
   return (
-    <div ref={containerRef} style={{ position: 'relative', width: '100%' }}>
+    <div ref={containerRef} style={{ position: 'relative', width: '100%', height: '100%', minHeight: totalSvgH }}>
       {needsScroll && <>
         <button onClick={() => scroll(-1)} style={{ position: 'absolute', left: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>‹</button>
         <button onClick={() => scroll(1)} style={{ position: 'absolute', right: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>›</button>
       </>}
-      <div ref={scrollRef} style={{ overflowX: needsScroll ? 'auto' : 'visible', scrollbarWidth: 'none', marginLeft: needsScroll ? 30 : 0, marginRight: needsScroll ? 30 : 0 }}>
-        <div style={{ position: 'relative', width: viewW, height: totalSvgH }}>
+      <div ref={scrollRef} style={{ overflowX: needsScroll ? 'auto' : 'visible', scrollbarWidth: 'none', marginLeft: needsScroll ? 30 : 0, marginRight: needsScroll ? 30 : 0, height: '100%' }}>
+        <div style={{ position: 'relative', width: viewW, height: '100%', minHeight: totalSvgH }}>
           <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
             viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="none">
           <defs>
@@ -241,10 +242,10 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
                 <rect key={s.v} x={d.x} y={s.y} width={barW} height={s.h} fill={verdictColors[s.v]} rx={1} opacity={0.85} />
               ))}
               {/* Count label on top of bar */}
-              <text x={d.x + barW / 2} y={Math.max(d.barTop - 2, 7)} textAnchor="middle" fill="#666" fontSize="6">{d.total}</text>
+              <text x={d.x + barW / 2} y={Math.max(d.barTop - 4, 12)} textAnchor="middle" fill="#888" fontSize="11">{d.total}</text>
               {/* Month label */}
-              {(months.length <= 8 || i % Math.ceil(months.length / 8) === 0 || i === months.length - 1) && (
-                <text x={barCenters[i]} y={barH + 12} textAnchor="middle" fill="#3a4a5a" fontSize="6">
+              {(months.length <= 12 || i % Math.ceil(months.length / 12) === 0 || i === months.length - 1) && (
+                <text x={barCenters[i]} y={barH + 16} textAnchor="middle" fill="#4a5a6a" fontSize="11">
                   {new Date(d.m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{d.m.slice(2, 4)}
                 </text>
               )}
@@ -253,49 +254,49 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
           {/* Legend */}
           {verdictOrder.map((v, i) => (
-            <g key={v} transform={`translate(${i * 62 + 20}, ${barH + 18})`}>
-              <circle cx={4} cy={4} r={3} fill={verdictColors[v]} />
-              <text x={10} y={7} fill="#3a4a5a" fontSize="6">{v === 'SOMEWHAT MISLEADING' ? 'Somewhat' : v === 'TRUE' ? 'True' : v === 'MISLEADING' ? 'Misleading' : 'False'}</text>
+            <g key={v} transform={`translate(${i * 110 + 20}, ${barH + 22})`}>
+              <circle cx={5} cy={5} r={5} fill={verdictColors[v]} />
+              <text x={14} y={9} fill="#6a7a8a" fontSize="11">{v === 'SOMEWHAT MISLEADING' ? 'Somewhat' : v === 'TRUE' ? 'True' : v === 'MISLEADING' ? 'Misleading' : 'False'}</text>
             </g>
           ))}
 
           {/* % TRUTHFUL label */}
-          <text x={0} y={lineTop - 8} fill="#555" fontSize="6" fontWeight="600" letterSpacing="0.12em" style={{ textTransform: 'uppercase' } as any}>% Truthful</text>
+          <text x={0} y={lineTop - 10} fill="#666" fontSize="11" fontWeight="600" letterSpacing="0.10em">% TRUTHFUL</text>
 
           {/* 50% reference */}
-          <line x1={0} y1={scoreToY(50)} x2={viewW} y2={scoreToY(50)} stroke="#253545" strokeWidth={1} strokeDasharray="4 3" />
-          <text x={3} y={scoreToY(50) - 3} fill="#3a4a5a" fontSize="6" textAnchor="start">50%</text>
+          <line x1={0} y1={scoreToY(50)} x2={viewW} y2={scoreToY(50)} stroke="#253545" strokeWidth={1.5} strokeDasharray="5 4" />
+          <text x={4} y={scoreToY(50) - 5} fill="#4a5a6a" fontSize="11" textAnchor="start">50%</text>
 
           {/* All-time reference */}
-          <line x1={0} y1={scoreToY(overallScore)} x2={viewW} y2={scoreToY(overallScore)} stroke="#60a5fa" strokeWidth={1} strokeDasharray="4 3" opacity={0.5} />
-          <text x={3} y={scoreToY(overallScore) - 3} fill="#60a5fa" fontSize="6" textAnchor="start" opacity={0.7}>All-time {overallScore}%</text>
+          <line x1={0} y1={scoreToY(overallScore)} x2={viewW} y2={scoreToY(overallScore)} stroke="#60a5fa" strokeWidth={1.5} strokeDasharray="5 4" opacity={0.5} />
+          <text x={4} y={scoreToY(overallScore) - 5} fill="#60a5fa" fontSize="11" textAnchor="start" opacity={0.8}>All-time {overallScore}%</text>
 
           {/* Area + line */}
           {months.length > 1 && <polygon points={areaPoints} fill="url(#truthGrad)" />}
           {months.length > 1 && (
-            <polyline points={linePoints} fill="none" stroke="#daa520" strokeWidth={1.5} strokeLinejoin="round" strokeLinecap="round" />
+            <polyline points={linePoints} fill="none" stroke="#daa520" strokeWidth={2.5} strokeLinejoin="round" strokeLinecap="round" />
           )}
 
           {/* Dots */}
           {months.map((_, i) => (
-            <circle key={i} cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={2.5} fill="#daa520" stroke="#1e2a3a" strokeWidth={1} />
+            <circle key={i} cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={4} fill="#daa520" stroke="#1e2a3a" strokeWidth={1.5} />
           ))}
 
           {/* Latest score label */}
           <text
             x={Math.min(barCenters[months.length - 1], viewW - 20)}
-            y={scoreToY(monthScores[months.length - 1]) - 6}
+            y={scoreToY(monthScores[months.length - 1]) - 8}
             textAnchor="end"
-            fill="#daa520" fontSize="7" fontWeight="600" letterSpacing="0.04em">
+            fill="#daa520" fontSize="12" fontWeight="600" letterSpacing="0.04em">
             {monthScores[months.length - 1]}%
           </text>
 
           {/* X-axis labels on line chart */}
           {months.map((m, i) => {
-            const showLabel = months.length <= 8 || i % Math.ceil(months.length / 8) === 0 || i === months.length - 1;
+            const showLabel = months.length <= 12 || i % Math.ceil(months.length / 12) === 0 || i === months.length - 1;
             if (!showLabel) return null;
             return (
-              <text key={m} x={barCenters[i]} y={lineBottom + 13} textAnchor="middle" fill="#3a4a5a" fontSize="6">
+              <text key={m} x={barCenters[i]} y={lineBottom + 14} textAnchor="middle" fill="#4a5a6a" fontSize="11">
                 {new Date(m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{m.slice(2, 4)}
               </text>
             );
