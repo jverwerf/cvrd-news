@@ -1,25 +1,48 @@
 "use client";
 
 import { useState, useCallback, useEffect, useRef } from "react";
+
+let _pauseCycling = false;
+
+const CHIP: React.CSSProperties = {
+  fontFamily: "'DM Mono', monospace",
+  fontSize: 7,
+  padding: '1.5px 6px',
+  borderRadius: 3,
+  border: '1px solid rgba(255,255,255,0.08)',
+  background: 'rgba(255,255,255,0.03)',
+  color: 'rgba(255,255,255,0.35)',
+  whiteSpace: 'nowrap',
+  flexShrink: 0,
+  letterSpacing: '0.04em',
+};
+
+function useTopStory() {
+  const [topic, setTopic] = useState<string | null>(null);
+  useEffect(() => {
+    fetch('/api/top-story').then(r => r.json()).then(d => setTopic(d.topic ?? null)).catch(() => {});
+  }, []);
+  return topic;
+}
 import { track } from "@vercel/analytics";
 
 // ─── Assets ────────────────────────────────────────────────────────────────
 
 const MM_LANDSCAPE = [
-  '/ads/MigraineMe_Commercial_AI.mp4',
-  '/ads/MigraineMe_Commercial_Automated_Triggers.mp4',
-  '/ads/MigraineMe_Commercial_Community_Cartoon.mp4',
-  '/ads/MigraineMe_Commercial_Community_Realistic.mp4',
-  '/ads/MigraineMe_Commercial_Gauge.mp4',
-  '/ads/MigraineMe_Commercial_Nutrition.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_AI-KVzRlYpHriH1NtOfyDioeWDrhHh74O.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Automated_Triggers-u7y4k9DQZfv1W3sCDKRwUCGCnFCFEo.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Cartoon-zdFCQbzkjBqHAp1D8bGrf1EJTWuyyz.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Realistic-JaalDRSDRwvUIY0dnyPUs6e7AcFLjD.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Gauge-GwMrbJGRwuN54g0TXgIRjzZp5cQtVi.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Nutrition-azGPKc9ZCWgISSWWSUxKIq0mKhAbeI.mp4',
 ];
 
 const MM_PORTRAIT = [
-  '/ads/MigraineMe_Commercial_AI_Standing_1.mp4',
-  '/ads/MigraineMe_Commercial_Automated_Triggers_Standing.mp4',
-  '/ads/MigraineMe_Commercial_Community_Standing.mp4',
-  '/ads/MigraineMe_Commercial_Gauge_Standing_1.mp4',
-  '/ads/MigraineMe_Commercial_Nutrition_Standing_1.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_AI_Standing_1-5Ja7B2RPJ8PmKI5uYwgMPWqV0hUELR.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Automated_Triggers_Standing-eDbhoLIko5Z3Nmz31eZyA2E335XitQ.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Standing-cd9qIjeQHcQpMtSDHMKnKOqEqmPrFY.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Gauge_Standing_1-Di5z3BZgSVMAWShJFIu5ZW3DHAT9lt.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Nutrition_Standing_1-iYBCp0cYiHJjwXulsmjYVlJLwsZWeP.mp4',
 ];
 
 const HAUS_SERVICES = [
@@ -41,14 +64,15 @@ function pickNext<T>(arr: T[], current: T): T {
   return arr[(idx + 1) % arr.length];
 }
 
-type Brand = 'migraineme' | 'hausctrl' | 'andlane';
-const BRAND_ORDER: Brand[] = ['migraineme', 'hausctrl', 'andlane'];
+type Brand = 'migraineme' | 'newsletter' | 'kofi';
+const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 
 function useCyclingBrand(ms = 60000) {
   const [idx, setIdx] = useState(() => Math.floor(Math.random() * BRAND_ORDER.length));
   const [visible, setVisible] = useState(true);
   useEffect(() => {
     const t = setInterval(() => {
+      if (_pauseCycling) return;
       setVisible(false);
       setTimeout(() => { setIdx(i => (i + 1) % BRAND_ORDER.length); setVisible(true); }, 400);
     }, ms);
@@ -110,6 +134,7 @@ function useCircuit(ref: React.RefObject<HTMLCanvasElement | null>, w: number, h
     }
     let rafId: number;
     function draw() {
+      if (!ctx) return;
       ctx.clearRect(0, 0, w, h);
       for (const p of paths) {
         p.p += p.spd; if (p.p > 1.4) p.p = -0.3;
@@ -195,7 +220,7 @@ function MigraineStaticTile() {
     <a href="https://migraineme.app" target="_blank" rel="noreferrer"
       className="w-full h-full flex flex-col items-center justify-center gap-2 rounded-lg text-center no-underline"
       style={{ background: 'linear-gradient(135deg, #2d0b4e 0%, #1a0630 100%)' }}>
-      <img src="/ads/migraineme_logo.png" alt="MigraineMe" className="w-10 h-10 object-contain" />
+      <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/migraineme_logo-O5wAPkK8shHu9KXtDeUvCyWbwpvRTW.png" alt="MigraineMe" className="w-10 h-10 object-contain" />
       <div>
         <p className="text-white font-bold text-[11px] leading-tight">MigraineMe</p>
         <p className="text-white/50 text-[9px] leading-snug mt-0.5">AI migraine tracking</p>
@@ -226,7 +251,7 @@ function AndlaneHorizontal() {
       <canvas ref={canvasRef} style={{ position: 'absolute', right: 0, top: 0, width: 260, height: 90, pointerEvents: 'none', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 35%)', maskImage: 'linear-gradient(to right, transparent 0%, black 35%)' }} />
       {/* left: logo + divider + copy */}
       <div className="flex items-center relative z-10 flex-shrink-0" style={{ gap: 8 }}>
-        <img src="/ads/andlane_logo.png" alt="Andlane" style={{ height: 144, maxWidth: 170, objectFit: 'contain', flexShrink: 0 }} />
+        <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/andlane_logo-E8ZnpFBFTq3FGzA9AYDvREd4knuzNY.png" alt="Andlane" style={{ height: 144, maxWidth: 170, objectFit: 'contain', flexShrink: 0 }} />
         <div style={{ width: 1, height: 40, background: 'rgba(42,37,32,0.12)', flexShrink: 0 }} />
         <div>
           <div style={{ fontFamily: "'Caveat', cursive", fontSize: 12, color: '#1a7a6e', lineHeight: 1, marginBottom: 3, whiteSpace: 'nowrap' }}>
@@ -266,7 +291,7 @@ function AndlaneTile() {
       {/* logo section */}
       <div className="relative flex items-center justify-center overflow-hidden" style={{ flex: '0 0 80px', ...GRID_BG }}>
         <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)', maskImage: 'linear-gradient(to right, transparent 0%, black 40%, black 60%, transparent 100%)' }} />
-        <img src="/ads/andlane_logo.png" alt="Andlane" className="relative z-10" style={{ width: '110%', height: 'auto', objectFit: 'contain' }} />
+        <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/andlane_logo-E8ZnpFBFTq3FGzA9AYDvREd4knuzNY.png" alt="Andlane" className="relative z-10" style={{ width: '110%', height: 'auto', objectFit: 'contain' }} />
       </div>
       {/* text section */}
       <div className="flex flex-col items-center justify-center text-center" style={{ flex: 1, borderTop: '1px solid rgba(42,37,32,0.08)', padding: '5px 8px 14px', gap: 3 }}>
@@ -306,7 +331,7 @@ function HausCtrlHorizontal() {
       </div>
       {/* left: logo + divider + copy */}
       <div className="flex items-center relative z-10 flex-shrink-0" style={{ gap: 8 }}>
-        <img src="/ads/hausctrl_logo.png" alt="HausCtrl" style={{ height: 144, maxWidth: 170, objectFit: 'contain', flexShrink: 0 }} />
+        <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/hausctrl_logo-Ynu7hmslS0dK1ZoAy2a8nWh7tbaQoA.png" alt="HausCtrl" style={{ height: 144, maxWidth: 170, objectFit: 'contain', flexShrink: 0 }} />
         <div style={{ width: 1, height: 40, background: 'rgba(42,37,32,0.12)', flexShrink: 0 }} />
         <div>
           <div className="flex items-center" style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#0e8a6e', lineHeight: 1, marginBottom: 3, gap: 5, whiteSpace: 'nowrap' }}>
@@ -347,7 +372,7 @@ function HausCtrlTile() {
         <div style={{ position: 'absolute', right: -10, top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
           <ThermoSVG size={90} opacity={0.15} />
         </div>
-        <img src="/ads/hausctrl_logo.png" alt="HausCtrl" className="relative z-10" style={{ width: '110%', height: 'auto', objectFit: 'contain' }} />
+        <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/hausctrl_logo-Ynu7hmslS0dK1ZoAy2a8nWh7tbaQoA.png" alt="HausCtrl" className="relative z-10" style={{ width: '110%', height: 'auto', objectFit: 'contain' }} />
       </div>
       {/* text section */}
       <div className="flex flex-col items-center justify-center text-center" style={{ flex: 1, borderTop: '1px solid rgba(42,37,32,0.08)', padding: '5px 8px 14px', gap: 3 }}>
@@ -367,11 +392,174 @@ function HausCtrlTile() {
   );
 }
 
+// ─── Newsletter components ───────────────────────────────────────────────────
+
+const NEWSLETTER_CHIPS = ['𝕏', 'social pulse', 'reddit', 'tiktok', 'telegram', 'on record', 'timeline'];
+const SEP: React.CSSProperties = { width: 1, height: 12, background: 'rgba(255,255,255,0.08)', flexShrink: 0, margin: '0 2px' };
+
+function NewsletterForm({ direction, onFocus, onBlur }: { direction: 'row' | 'col'; onFocus: () => void; onBlur: () => void }) {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email) return;
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      setStatus(res.ok ? 'success' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  }
+
+  if (status === 'success') return (
+    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: direction === 'row' ? 13 : 11, color: '#fff', fontWeight: 600, textAlign: 'center', padding: direction === 'col' ? '8px 0' : undefined }}>
+      You&apos;re in ✓
+    </div>
+  );
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: direction === 'col' ? 'column' : 'row', gap: direction === 'col' ? 5 : 7 }}>
+      <input
+        type="email" value={email} placeholder="your@email.com"
+        onChange={e => setEmail(e.target.value)}
+        onFocus={onFocus} onBlur={onBlur}
+        style={direction === 'row'
+          ? { height: 34, width: 162, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '0 11px', fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#fff', outline: 'none' }
+          : { width: '100%', height: 26, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 4, padding: '0 8px', fontFamily: "'DM Sans', sans-serif", fontSize: 9, color: '#fff', outline: 'none' }}
+      />
+      <button type="submit" disabled={status === 'loading'}
+        style={direction === 'row'
+          ? { height: 34, padding: '0 14px', background: '#fff', border: 'none', borderRadius: 4, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 11, color: '#1e2a3a', cursor: 'pointer', whiteSpace: 'nowrap' }
+          : { width: '100%', height: 26, background: '#fff', border: 'none', borderRadius: 4, fontFamily: "'DM Sans', sans-serif", fontWeight: 600, fontSize: 9, color: '#1e2a3a', cursor: 'pointer' }}>
+        {status === 'loading' ? '...' : 'Subscribe'}
+      </button>
+    </form>
+  );
+}
+
+function NewsletterHorizontal({ topic }: { topic: string | null }) {
+  const pause = () => { _pauseCycling = true; };
+  const resume = () => { _pauseCycling = false; };
+  const headline = topic || 'Both sides of every story — daily';
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'stretch', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.07)' }}>
+      {/* Wordmark */}
+      <div style={{ flexShrink: 0, background: '#1e2a3a', display: 'flex', alignItems: 'center', padding: '0 18px 0 20px', gap: 12, borderRight: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 17, letterSpacing: '-0.04em', color: '#fff', whiteSpace: 'nowrap' }}>
+          CVRD<span style={{ color: 'rgba(255,255,255,0.3)' }}>.</span>
+        </div>
+        <div style={{ width: 1, height: 32, background: 'rgba(255,255,255,0.09)', flexShrink: 0 }} />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: 'italic', fontSize: 14, color: '#fff', lineHeight: 1, whiteSpace: 'nowrap' }}>Daily Pick</div>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, fontWeight: 300, color: 'rgba(255,255,255,0.3)', letterSpacing: '0.1em', textTransform: 'uppercase' as const, whiteSpace: 'nowrap' }}>newsletter</div>
+        </div>
+      </div>
+      {/* Middle */}
+      <div style={{ flex: 1, background: '#19232f', display: 'flex', alignItems: 'stretch', padding: '0 20px', overflow: 'hidden', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+        {/* Left col: eyebrow + lr chips */}
+        <div style={{ flexShrink: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 5, paddingRight: 12 }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.25)', whiteSpace: 'nowrap' }}>today&apos;s story</div>
+          <div style={{ display: 'flex', gap: 3 }}>
+            {['◀ left', 'right ▶'].map(l => <span key={l} style={CHIP}>{l}</span>)}
+          </div>
+        </div>
+        {/* Shared vertical rule */}
+        <div style={{ width: 1, background: 'rgba(255,255,255,0.08)', flexShrink: 0, margin: '16px 14px' }} />
+        {/* Right col: headline + chips */}
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 5, minWidth: 0 }}>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 13, color: 'rgba(255,255,255,0.85)', lineHeight: 1.25, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{headline}</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 4, overflow: 'hidden' }}>
+            {NEWSLETTER_CHIPS.map((c, i) => (
+              <span key={c} style={CHIP}>{c}{i === 4 && <span style={SEP} />}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* Form */}
+      <div style={{ flexShrink: 0, background: '#1e2a3a', display: 'flex', alignItems: 'center', padding: '0 18px' }}>
+        <NewsletterForm direction="row" onFocus={pause} onBlur={resume} />
+      </div>
+    </div>
+  );
+}
+
+function NewsletterTile({ topic: _ }: { topic: string | null }) {
+  const pause = () => { _pauseCycling = true; };
+  const resume = () => { _pauseCycling = false; };
+
+  return (
+    <div className="w-full h-full" style={{ background: '#1e2a3a', borderRadius: 10, border: '1px solid rgba(255,255,255,0.07)', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      <div style={{ flexShrink: 0, padding: '10px 12px 9px', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
+        <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 11, letterSpacing: '-0.03em', color: '#fff' }}>
+          CVRD<span style={{ color: 'rgba(255,255,255,0.3)' }}>.</span>
+        </div>
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '6px 10px', gap: 4 }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 7.5, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.3)' }}>newsletter</div>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: 'italic', fontSize: 15, color: '#fff', lineHeight: 1.1 }}>Daily Pick</div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 2 }}>
+          {['◀ left', 'right ▶', ...NEWSLETTER_CHIPS].map(c => <span key={c} style={{ ...CHIP, fontSize: 7, padding: '1.5px 5px' }}>{c}</span>)}
+        </div>
+      </div>
+      <div style={{ flexShrink: 0, padding: '7px 10px 11px', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <NewsletterForm direction="col" onFocus={pause} onBlur={resume} />
+      </div>
+    </div>
+  );
+}
+
+// ─── Ko-fi components ────────────────────────────────────────────────────────
+
+function KofiHorizontal() {
+  return (
+    <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 24px', borderRadius: 8, background: '#1e2a3a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+        <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 17, letterSpacing: '-0.04em', color: '#fff' }}>
+          CVRD<span style={{ color: 'rgba(255,255,255,0.3)' }}>.</span>
+        </div>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: 'italic', fontSize: 13, color: 'rgba(255,255,255,0.6)', lineHeight: 1 }}>
+          Independent news, built different. Help us keep it that way.
+        </div>
+      </div>
+      <div style={{ flexShrink: 0, display: 'flex', alignItems: 'center', gap: 8, padding: '8px 16px', borderRadius: 24, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', fontFamily: "'DM Sans', sans-serif", fontSize: 12, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
+        ♥ Buy us a coffee
+      </div>
+    </a>
+  );
+}
+
+function KofiTile() {
+  return (
+    <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+      className="w-full h-full flex flex-col items-center justify-center gap-3 no-underline"
+      style={{ background: '#1e2a3a', borderRadius: 10, border: '1px solid rgba(255,255,255,0.07)', padding: '16px 12px' }}>
+      <div style={{ fontFamily: "'DM Sans', sans-serif", fontWeight: 700, fontSize: 13, letterSpacing: '-0.03em', color: '#fff', textAlign: 'center' as const }}>
+        CVRD<span style={{ color: 'rgba(255,255,255,0.3)' }}>.</span>
+      </div>
+      <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: 'italic', fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.3, textAlign: 'center' as const }}>
+        Independent & ad-free.<br />Help us stay that way.
+      </div>
+      <div style={{ padding: '7px 14px', borderRadius: 20, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: '#fff' }}>
+        ♥ Buy us a coffee
+      </div>
+    </a>
+  );
+}
+
 // ─── Public components ───────────────────────────────────────────────────────
 
 /** Wide horizontal banner (~90px tall) */
 export function HorizontalAdBanner() {
   const { brand, visible } = useCyclingBrand();
+  const topic = useTopStory();
   const [src, setSrc] = useState(() => MM_LANDSCAPE[Math.floor(Math.random() * MM_LANDSCAPE.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_LANDSCAPE, prev)), []);
 
@@ -389,7 +577,7 @@ export function HorizontalAdBanner() {
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
             <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
               <div className="flex items-center gap-3">
-                <img src="/ads/migraineme_logo.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
+                <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/migraineme_logo-O5wAPkK8shHu9KXtDeUvCyWbwpvRTW.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
                 <div>
                   <p className="text-white font-bold text-[13px] leading-tight">MigraineMe</p>
                   <p className="text-white/60 text-[11px]">AI-powered migraine tracking</p>
@@ -401,8 +589,8 @@ export function HorizontalAdBanner() {
             </div>
           </a>
         )}
-        {brand === 'hausctrl' && <HausCtrlHorizontal />}
-        {brand === 'andlane'  && <AndlaneHorizontal />}
+        {brand === 'newsletter'  && <NewsletterHorizontal topic={topic} />}
+        {brand === 'kofi'        && <KofiHorizontal />}
       </div>
     </div>
   );
@@ -411,6 +599,7 @@ export function HorizontalAdBanner() {
 /** Square tile — Dashboard, On Record grid */
 export function TileAdBanner() {
   const { brand, visible } = useCyclingBrand();
+  const topic = useTopStory();
   const [showVideo] = useState(() => Math.random() < 0.67);
   const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_PORTRAIT, prev)), []);
@@ -422,8 +611,8 @@ export function TileAdBanner() {
   return (
     <div className="w-full h-full" onClick={() => track('ad_click', { brand, placement: 'tile' })}>
       <div className="w-full h-full" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
-        {brand === 'hausctrl' && <HausCtrlTile />}
-        {brand === 'andlane'  && <AndlaneTile />}
+        {brand === 'newsletter' && <NewsletterTile topic={topic} />}
+        {brand === 'kofi'       && <KofiTile />}
         {brand === 'migraineme' && (showVideo ? (
           <a href="https://migraineme.app" target="_blank" rel="noreferrer"
             className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
