@@ -220,8 +220,7 @@ function AndlaneHorizontal() {
   };
   return (
     <a href="https://andlane.co.uk" target="_blank" rel="noreferrer"
-      className="w-full h-full flex items-center justify-between rounded-lg no-underline relative overflow-hidden"
-      style={{ ...GRID_BG, minHeight: '90px', padding: '0 18px', border: '1.5px solid rgba(42,37,32,0.10)', boxShadow: '2px 4px 20px rgba(42,37,32,0.08)' }}>
+      style={{ ...GRID_BG, display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 18px', borderRadius: 8, border: '1.5px solid rgba(42,37,32,0.10)', boxShadow: '2px 4px 20px rgba(42,37,32,0.08)', textDecoration: 'none', position: 'relative', overflow: 'hidden' }}>
       <style>{ANIM_CSS}</style>
       {/* circuit canvas — right zone only, fades out left */}
       <canvas ref={canvasRef} style={{ position: 'absolute', right: 0, top: 0, width: 260, height: 90, pointerEvents: 'none', WebkitMaskImage: 'linear-gradient(to right, transparent 0%, black 35%)', maskImage: 'linear-gradient(to right, transparent 0%, black 35%)' }} />
@@ -295,8 +294,7 @@ function HausCtrlHorizontal() {
   };
   return (
     <a href="https://hausctrl.co.uk" target="_blank" rel="noreferrer"
-      className="w-full h-full flex items-center justify-between rounded-lg no-underline relative overflow-hidden"
-      style={{ ...GRID_BG, minHeight: '90px', padding: '0 18px', border: '1.5px solid rgba(42,37,32,0.10)', boxShadow: '2px 4px 20px rgba(42,37,32,0.08)' }}>
+      style={{ ...GRID_BG, display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 18px', borderRadius: 8, border: '1.5px solid rgba(42,37,32,0.10)', boxShadow: '2px 4px 20px rgba(42,37,32,0.08)', textDecoration: 'none', position: 'relative', overflow: 'hidden' }}>
       <style>{ANIM_CSS}</style>
       {/* thermostat sketch */}
       <div style={{ position: 'absolute', right: 185, top: '50%', transform: 'translateY(-50%) scale(0.8)', transformOrigin: 'right center', pointerEvents: 'none' }}>

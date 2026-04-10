@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { HorizontalAdBanner } from "./AdBanners";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { VideoGrid } from "./VideoGrid";
@@ -931,8 +932,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div className="flex items-center justify-between px-3 py-1.5">
             <span className="text-[7px] text-white/20 uppercase tracking-wider">Sponsored</span>
           </div>
-          <div className="w-full flex items-center justify-center p-2" style={{ minHeight: '90px' }}>
-            <StoryAdSlot />
+          <div style={{ height: 90 }}>
+            <HorizontalAdBanner />
           </div>
         </div>
       </div>
@@ -940,22 +941,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   );
 }
 
-function StoryAdSlot() {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    try { ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({}); } catch {}
-  }, []);
-  return (
-    <div ref={ref} className="w-full">
-      <ins className="adsbygoogle"
-        style={{ display: 'block', width: '100%' }}
-        data-ad-client="ca-pub-2572735826517528"
-        data-ad-slot="8292849831"
-        data-ad-format="horizontal"
-        data-full-width-responsive="true" />
-    </div>
-  );
-}
 
 function SourceColumn({ label, sources, color, dotColor }: {
   label: string;

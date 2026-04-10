@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { LiveBanner } from "@/components/LiveBanner";
+import { HorizontalAdBanner } from "@/components/AdBanners";
 
 type ScoredClaim = {
   tweet_id: string; tweet_text: string; tweet_date: string; tweet_url: string;
@@ -20,42 +21,6 @@ function verdictLabel(v: string) { return v === 'TRUE' ? 'True' : v === 'SOMEWHA
 function verdictColor(v: string) { return v === 'TRUE' ? '#60a5fa' : v === 'SOMEWHAT MISLEADING' ? '#f59e0b' : v === 'MISLEADING' ? '#daa520' : '#f87171'; }
 function fmtDate(d: string) { try { return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); } catch { return d; } }
 function nameToSlug(name: string) { return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''); }
-
-const MIGRAINEME_ADS = [
-  '/ads/MigraineMe_Commercial_AI.mp4',
-  '/ads/MigraineMe_Commercial_Automated_Triggers.mp4',
-  '/ads/MigraineMe_Commercial_Community_Cartoon.mp4',
-  '/ads/MigraineMe_Commercial_Community_Realistic.mp4',
-  '/ads/MigraineMe_Commercial_Gauge.mp4',
-  '/ads/MigraineMe_Commercial_Nutrition.mp4',
-];
-
-function AdBanner() {
-  const [src] = useState(() => MIGRAINEME_ADS[Math.floor(Math.random() * MIGRAINEME_ADS.length)]);
-  return (
-    <a href="https://migraineme.app" target="_blank" rel="noreferrer"
-      className="w-full block relative overflow-hidden rounded-lg no-underline"
-      style={{ minHeight: '90px' }}>
-      <video key={src} src={src} autoPlay muted loop playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
-      <div className="absolute inset-0 flex items-center justify-between px-5"
-        style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
-        <div className="flex items-center gap-3">
-          <img src="/ads/migraineme_logo.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
-          <div>
-            <p className="text-white font-bold text-[13px] leading-tight">MigraineMe</p>
-            <p className="text-white/60 text-[11px]">AI-powered migraine tracking</p>
-          </div>
-        </div>
-        <span className="shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold text-white"
-          style={{ background: '#E879A0' }}>
-          Free Download
-        </span>
-      </div>
-    </a>
-  );
-}
 
 function ScoreMeter({ score }: { score: number }) {
   const lines = 80;
@@ -146,7 +111,7 @@ function DonutChart({ score }: { score: any }) {
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
   const barH = 240;
   const lineH = 150;
-  const gapH = 42;
+  const gapH = 65;
   const bottomPad = 14;
   const totalSvgH = barH + gapH + lineH + bottomPad;
   const MIN_BAR_SLOT = 44;
@@ -171,12 +136,12 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   const months = Object.keys(byMonth).sort();
   if (months.length === 0) return null;
 
-  const minChartW = months.length * MIN_BAR_SLOT + 60;
+  const minChartW = months.length * MIN_BAR_SLOT + 30;
   const viewW = Math.max(containerW, minChartW);
   const needsScroll = minChartW > containerW;
-  const barSpacing = (viewW - 60) / months.length;
+  const barSpacing = (viewW - 30) / months.length;
   const barW = Math.min(36, barSpacing - 6);
-  const barCenters = months.map((_, i) => 40 + i * barSpacing + barSpacing / 2);
+  const barCenters = months.map((_, i) => 10 + i * barSpacing + barSpacing / 2);
   const scroll = (dir: number) => scrollRef.current?.scrollBy({ left: dir * 200, behavior: 'smooth' });
 
   const verdictOrder = ['TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'];
@@ -219,14 +184,14 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   ].join(' ');
 
   return (
-    <div ref={containerRef} style={{ position: 'relative', width: '100%', height: '100%', minHeight: totalSvgH }}>
+    <div ref={containerRef} style={{ position: 'relative', width: '100%', height: totalSvgH }}>
       {needsScroll && <>
         <button onClick={() => scroll(-1)} style={{ position: 'absolute', left: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>‹</button>
         <button onClick={() => scroll(1)} style={{ position: 'absolute', right: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.9)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>›</button>
       </>}
-      <div ref={scrollRef} style={{ overflowX: needsScroll ? 'auto' : 'visible', scrollbarWidth: 'none', marginLeft: needsScroll ? 30 : 0, marginRight: needsScroll ? 30 : 0, height: '100%' }}>
-        <div style={{ position: 'relative', width: viewW, height: '100%', minHeight: totalSvgH }}>
-          <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
+      <div ref={scrollRef} style={{ overflowX: needsScroll ? 'auto' : 'visible', scrollbarWidth: 'none', marginLeft: needsScroll ? 30 : 0, marginRight: needsScroll ? 30 : 0, height: totalSvgH }}>
+        <div style={{ position: 'relative', width: viewW, height: totalSvgH }}>
+          <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height={totalSvgH}
             viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="none">
           <defs>
             <linearGradient id="truthGrad" x1="0" y1="0" x2="0" y2="1">
@@ -254,7 +219,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
           {/* Legend */}
           {verdictOrder.map((v, i) => (
-            <g key={v} transform={`translate(${i * 110 + 20}, ${barH + 22})`}>
+            <g key={v} transform={`translate(${i * Math.min(95, Math.floor((viewW - 10) / 4)) + 10}, ${barH + 22})`}>
               <circle cx={5} cy={5} r={5} fill={verdictColors[v]} />
               <text x={14} y={9} fill="#6a7a8a" fontSize="11">{v === 'SOMEWHAT MISLEADING' ? 'Somewhat' : v === 'TRUE' ? 'True' : v === 'MISLEADING' ? 'Misleading' : 'False'}</text>
             </g>
@@ -539,7 +504,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           <div className="absolute top-1.5 right-2 z-10">
             <span className="text-[7px] font-medium text-white/20 uppercase tracking-wider">Sponsored</span>
           </div>
-          <div className="w-full flex items-center justify-center p-1"><AdBanner /></div>
+          <div style={{ height: 90 }}><HorizontalAdBanner /></div>
         </div>
 
         {/* ANALYTICS — Claims Over Time + Verdict Breakdown */}
@@ -787,16 +752,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           )}
         </div>
 
-        {/* METHODOLOGY */}
-        <div className="p-5 rounded-lg text-center" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-          <p className="text-[11px] text-[#777] leading-relaxed">
-            Score based on {score.verified_claims} verifiable claims. Each claim verified using AI with web search.
-            TRUE = 100% · SOMEWHAT MISLEADING = 65% · MISLEADING = 35% · FALSE = 0%. Confidence: ±{score.confidence_interval}%.
-          </p>
-          <Link href="/onrecord" className="inline-block px-5 py-2 rounded-full text-[12px] font-semibold text-white transition-colors hover:opacity-90 mt-3" style={{ background: '#b8860b' }}>
-            View all records
-          </Link>
-        </div>
       </div>
 
       {/* FOOTER */}
