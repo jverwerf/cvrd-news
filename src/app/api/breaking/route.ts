@@ -39,7 +39,7 @@ export async function GET() {
       Date.now() - new Date(s.detected_at).getTime() < 12 * 60 * 60 * 1000
     );
 
-    return NextResponse.json(active);
+    return NextResponse.json(active, { headers: { 'Cache-Control': 's-maxage=30, stale-while-revalidate=60' } });
   } catch (e: any) {
     return NextResponse.json({ status: 'error', message: e.message?.substring(0, 80) });
   }

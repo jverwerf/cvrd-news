@@ -1,14 +1,15 @@
-import { put, list, del } from '@vercel/blob';
+import { put, del } from '@vercel/blob';
 
 const BLOB_KEY = 'breaking.json';
 
+// URL is deterministic — addRandomSuffix: false means no list() needed
+function breakingUrl() {
+  return `${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/${BLOB_KEY}`;
+}
+
 export async function getBreakingData(): Promise<any[] | null> {
   try {
-    const { blobs } = await list({ prefix: BLOB_KEY });
-    const blob = blobs.find(b => b.pathname === BLOB_KEY);
-    if (!blob) return null;
-
-    const resp = await fetch(blob.url, { cache: 'no-store' });
+    const resp = await fetch(breakingUrl(), { cache: 'no-store' });
     if (!resp.ok) return null;
 
     const data = await resp.json();
@@ -35,7 +36,6 @@ export async function getBreakingData(): Promise<any[] | null> {
 }
 
 export async function saveBreakingData(stories: any[]): Promise<void> {
-  // Sort most recent first, cap at 5
   const sorted = stories
     .sort((a, b) => new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime())
     .slice(0, 5);
@@ -50,17 +50,13 @@ export async function saveBreakingData(stories: any[]): Promise<void> {
 
 export async function deleteBreakingData(): Promise<void> {
   try {
-    const { blobs } = await list({ prefix: BLOB_KEY });
-    for (const blob of blobs) {
-      await del(blob.url);
-    }
+    await del(breakingUrl());
   } catch {}
 }
 
 export async function hasBreakingData(): Promise<boolean> {
   const data = await getBreakingData();
   if (!data || data.length === 0) return false;
-  // Show breaking nav if at least one story has 3+ clips (YouTube + social)
   return data.some((s: any) => {
     const videoCount = (s.youtube_videos || []).length + (s.social_clips || []).length;
     return videoCount >= 3;

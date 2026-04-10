@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400; // 24h — sitemap only needs daily refresh
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://cvrdnews.com';
@@ -46,7 +46,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
     for (const file of ['timeline_threads.json', 'timeline_archive.json']) {
-      const resp = await fetch(`${blobBase}/data/${file}`, { cache: 'no-store' });
+      const resp = await fetch(`${blobBase}/data/${file}`, { next: { revalidate: 86400 } });
       if (!resp.ok) continue;
       const data = await resp.json();
       for (const thread of (data.threads || [])) {
@@ -64,11 +64,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let politicianEntries: MetadataRoute.Sitemap = [];
   try {
     const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
-    const manifestResp = await fetch(`${blobBase}/politicians/manifest.json`, { cache: 'no-store' });
+    const manifestResp = await fetch(`${blobBase}/politicians/manifest.json`, { next: { revalidate: 86400 } });
     if (manifestResp.ok) {
       const manifest = await manifestResp.json();
       for (const handle of (manifest.handles || [])) {
-        const scoreResp = await fetch(`${blobBase}/politicians/score_${handle}.json`, { cache: 'no-store' });
+        const scoreResp = await fetch(`${blobBase}/politicians/score_${handle}.json`, { next: { revalidate: 86400 } });
         if (!scoreResp.ok) continue;
         const data = await scoreResp.json();
         const slug = (data.name || '').toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
