@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { LiveBanner } from "@/components/LiveBanner";
+import { TileAdBanner } from "@/components/AdBanners";
 
 type PoliticianScore = {
   handle: string;
@@ -76,17 +77,7 @@ function ScoreMeter({ score }: { score: number }) {
 }
 
 function AdSlot({ adKey }: { adKey: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    try { ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({}); } catch {}
-  }, [adKey]);
-  return (
-    <div ref={ref} className="w-full h-full">
-      <ins className="adsbygoogle" style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client="ca-pub-2572735826517528" data-ad-slot="8292849831"
-        data-ad-format="fluid" data-full-width-responsive="false" />
-    </div>
-  );
+  return <TileAdBanner key={adKey} />;
 }
 
 function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adKey, isSearching }: {
@@ -124,11 +115,9 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
 
       {/* Ad overlay */}
       {showAd && (
-        <div className="absolute inset-0 z-30 rounded-lg overflow-hidden animate-[fadeIn_1s_ease-in-out]" style={{ background: '#1a2535' }}>
-          <div className="absolute top-1.5 right-2 z-10">
-            <span className="text-[7px] font-medium text-white/20 uppercase tracking-wider">Sponsored</span>
-          </div>
-          <div className="w-full h-full flex items-center justify-center p-1">
+        <div className="absolute inset-0 z-30 rounded-lg overflow-hidden animate-[fadeIn_1s_ease-in-out]">
+          <span className="absolute top-1.5 right-2 z-10 text-[7px] font-medium uppercase tracking-wider" style={{ color: 'rgba(0,0,0,0.3)', pointerEvents: 'none' }}>Sponsored</span>
+          <div className="w-full h-full">
             <AdSlot adKey={adKey} />
           </div>
         </div>
@@ -605,11 +594,13 @@ export default function PoliticiansPage() {
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
         <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
         <div className="flex items-center justify-center gap-4">
+          <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
+          <span className="text-[#555]">·</span>
+          <a href="/contact" className="text-[11px] text-[#888] hover:text-white transition-colors">Contact</a>
+          <span className="text-[#555]">·</span>
           <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
           <span className="text-[#555]">·</span>
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
-          <span className="text-[#555]">·</span>
-          <span className="text-[11px] text-[#666]">info@cvrdnews.com</span>
         </div>
       </footer>
     </div>

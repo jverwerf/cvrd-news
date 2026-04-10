@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import { TileAdBanner } from "./AdBanners";
 import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
 
@@ -894,13 +895,10 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
 
       {/* Ad overlay — fades in/out over this tile when selected */}
       {showAd && (
-        <div className="absolute inset-0 z-30 rounded-xl overflow-hidden animate-[fadeIn_1s_ease-in-out]"
-          style={{ background: '#1a2535' }}>
-          <div className="absolute top-1.5 right-2 z-10">
-            <span className="text-[7px] font-medium text-white/20 uppercase tracking-wider">Sponsored</span>
-          </div>
-          <div className="w-full h-full flex items-center justify-center p-1">
-            <AdSlot key={adKey} />
+        <div className="absolute inset-0 z-30 rounded-xl overflow-hidden animate-[fadeIn_1s_ease-in-out]">
+          <span className="absolute top-1.5 right-2 z-10 text-[7px] font-medium uppercase tracking-wider" style={{ color: 'rgba(0,0,0,0.3)', pointerEvents: 'none' }}>Sponsored</span>
+          <div className="w-full h-full">
+            <TileAdBanner key={adKey} />
           </div>
         </div>
       )}
@@ -908,27 +906,6 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   );
 }
 
-/** Mounts a fresh AdSense ad — unmounts cleanly when removed */
-function AdSlot() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    try {
-      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    } catch {}
-  }, []);
-
-  return (
-    <div ref={ref} className="w-full h-full">
-      <ins className="adsbygoogle"
-        style={{ display: 'block', width: '100%', height: '100%' }}
-        data-ad-client="ca-pub-2572735826517528"
-        data-ad-slot="8292849831"
-        data-ad-format="fluid"
-        data-full-width-responsive="false" />
-    </div>
-  );
-}
 
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item }: { item: TileContent }) {

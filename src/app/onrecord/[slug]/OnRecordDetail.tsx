@@ -500,11 +500,11 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         </div>
 
         {/* AD */}
-        <div className="relative mb-6 rounded-lg overflow-hidden" style={{ background: '#1a2535', minHeight: 90 }}>
-          <div className="absolute top-1.5 right-2 z-10">
-            <span className="text-[7px] font-medium text-white/20 uppercase tracking-wider">Sponsored</span>
+        <div className="mb-6">
+          <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
+          <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
+            <HorizontalAdBanner />
           </div>
-          <div style={{ height: 90 }}><HorizontalAdBanner /></div>
         </div>
 
         {/* ANALYTICS — Claims Over Time + Verdict Breakdown */}

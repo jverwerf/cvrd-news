@@ -37,14 +37,14 @@ const ANDLANE_SERVICES = [
 ];
 
 function pickNext<T>(arr: T[], current: T): T {
-  const others = arr.filter(v => v !== current);
-  return others[Math.floor(Math.random() * others.length)];
+  const idx = arr.indexOf(current);
+  return arr[(idx + 1) % arr.length];
 }
 
 type Brand = 'migraineme' | 'hausctrl' | 'andlane';
 const BRAND_ORDER: Brand[] = ['migraineme', 'hausctrl', 'andlane'];
 
-function useCyclingBrand(ms = 10000) {
+function useCyclingBrand(ms = 60000) {
   const [idx, setIdx] = useState(() => Math.floor(Math.random() * BRAND_ORDER.length));
   const [visible, setVisible] = useState(true);
   useEffect(() => {
@@ -380,8 +380,8 @@ export function HorizontalAdBanner() {
   }, [brand, visible]);
 
   return (
-    <div style={{ width: '100%', minHeight: 90 }} onClick={() => track('ad_click', { brand, placement: 'horizontal' })}>
-      <div style={{ height: 90, opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
+    <div style={{ width: '100%', height: 90 }} onClick={() => track('ad_click', { brand, placement: 'horizontal' })}>
+      <div style={{ width: '100%', height: '100%', opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
         {brand === 'migraineme' && (
           <a href="https://migraineme.app" target="_blank" rel="noreferrer"
             style={{ display: 'block', width: '100%', height: 90, position: 'relative', overflow: 'hidden', borderRadius: 8, textDecoration: 'none' }}>

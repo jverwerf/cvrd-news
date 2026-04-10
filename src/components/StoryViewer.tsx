@@ -928,11 +928,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
 
         {/* AD — below all articles */}
-        <div className="mt-6 rounded-lg overflow-hidden" style={{ background: '#1a2535', border: '1px solid #2a3a4a' }}>
-          <div className="flex items-center justify-between px-3 py-1.5">
-            <span className="text-[7px] text-white/20 uppercase tracking-wider">Sponsored</span>
-          </div>
-          <div style={{ height: 90 }}>
+        <div className="mt-6">
+          <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
+          <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
             <HorizontalAdBanner />
           </div>
         </div>
