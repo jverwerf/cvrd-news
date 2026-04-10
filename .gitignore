@@ -42,3 +42,5 @@ next-env.d.ts
 public/videos/*.mp4
 public/videos/
 public/ads/
+public/data/politicians/
+public/images/
