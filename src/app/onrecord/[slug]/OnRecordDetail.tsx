@@ -184,7 +184,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
   return (
     <div style={{ overflowX: 'auto', scrollbarWidth: 'none' }}>
-      <div style={{ position: 'relative', minWidth: 900, paddingBottom: `${aspectRatio * 100}%` }}>
+      <div style={{ position: 'relative', minWidth: 900, height: totalSvgH }}>
       <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
         viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
           <defs>
