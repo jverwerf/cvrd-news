@@ -178,7 +178,8 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   const aspectRatio = totalSvgH / viewW;
 
   return (
-    <div style={{ position: 'relative', width: '100%', height: '100%', minHeight: 220 }}>
+    <div style={{ overflowX: 'auto', height: '100%', minHeight: 220, scrollbarWidth: 'none' }}>
+      <div style={{ position: 'relative', minWidth: 560, height: '100%' }}>
       <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
         viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
           <defs>
@@ -255,6 +256,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
             );
           })}
         </svg>
+      </div>
     </div>
   );
 }
@@ -755,11 +757,13 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
         <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
         <div className="flex items-center justify-center gap-4">
+          <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
+          <span className="text-[#555]">&middot;</span>
+          <a href="/contact" className="text-[11px] text-[#888] hover:text-white transition-colors">Contact</a>
+          <span className="text-[#555]">&middot;</span>
           <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
           <span className="text-[#555]">&middot;</span>
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
-          <span className="text-[#555]">&middot;</span>
-          <span className="text-[11px] text-[#666]">info@cvrdnews.com</span>
         </div>
       </footer>
     </div>
