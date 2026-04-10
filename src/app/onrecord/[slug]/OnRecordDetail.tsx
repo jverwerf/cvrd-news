@@ -136,11 +136,10 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
   const months = Object.keys(byMonth).sort();
   if (months.length === 0) return null;
 
-  // Dynamic width: 50px per month, min 600px
-  const barSlot = 50;
-  const viewW = Math.max(months.length * barSlot + 60, 600);
-  const barW = Math.min(32, barSlot - 10);
-  const barSpacing = barSlot;
+  // Always fill the available panel width
+  const viewW = 900;
+  const barSpacing = (viewW - 60) / months.length;
+  const barW = Math.min(36, barSpacing - 6);
   const barCenters = months.map((_, i) => 40 + i * barSpacing + barSpacing / 2);
 
   const verdictOrder = ['TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'];
@@ -184,18 +183,10 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
   const aspectRatio = totalSvgH / viewW;
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const scroll = (dir: number) => scrollRef.current?.scrollBy({ left: dir * 200, behavior: 'smooth' });
-
   return (
-    <div style={{ position: 'relative' }}>
-      {/* Scroll arrows */}
-      <button onClick={() => scroll(-1)} style={{ position: 'absolute', left: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.85)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
-      <button onClick={() => scroll(1)} style={{ position: 'absolute', right: 0, top: '40%', zIndex: 10, background: 'rgba(30,42,58,0.85)', border: '1px solid #2a3a4a', borderRadius: 6, color: '#aaa', width: 26, height: 36, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
-      <div ref={scrollRef} style={{ overflowX: 'auto', scrollbarWidth: 'none', marginLeft: 30, marginRight: 30 }}>
-        <div style={{ position: 'relative', width: viewW, height: totalSvgH }}>
-        <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
-          viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
+    <div style={{ position: 'relative', width: '100%', height: totalSvgH }}>
+      <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
+        viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="none">
           <defs>
             <linearGradient id="truthGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#daa520" stopOpacity="0.25" />
@@ -269,9 +260,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
               </text>
             );
           })}
-        </svg>
-        </div>
-      </div>
+      </svg>
     </div>
   );
 }
