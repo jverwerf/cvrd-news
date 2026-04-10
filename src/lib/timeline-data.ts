@@ -82,7 +82,7 @@ async function loadTimelineFile(filename: string): Promise<TimelineThreadsOutput
   // 2. Blob (production)
   if (BLOB_BASE) {
     try {
-      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { cache: 'no-store' });
+      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { next: { revalidate: 86400 } });
       if (resp.ok) return await resp.json() as TimelineThreadsOutput;
     } catch { /* fall through */ }
   }
@@ -126,7 +126,7 @@ async function loadLastYearFile(filename: string): Promise<TodayLastYearData | n
 
   if (BLOB_BASE) {
     try {
-      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { cache: 'no-store' });
+      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { next: { revalidate: 86400 } });
       if (resp.ok) return await resp.json() as TodayLastYearData;
     } catch {}
   }

@@ -143,7 +143,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const [timelineThreads, setTimelineThreads] = useState<{ id: string; title: string; image_file?: string }[]>([]);
 
   useEffect(() => {
-    fetch('/data/timeline_threads.json').then(r => r.json()).then(d => setTimelineThreads(d.threads || [])).catch(() => {});
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+    fetch(`${blobBase}/data/timeline_threads.json`).then(r => r.json()).then(d => setTimelineThreads(d.threads || [])).catch(() => {});
   }, []);
   const isBrief = currentIdx === -1;
   const story = isBrief ? briefStory : stories[currentIdx];
