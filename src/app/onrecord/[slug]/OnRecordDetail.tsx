@@ -116,9 +116,9 @@ function DonutChart({ score }: { score: any }) {
 
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
   const viewW = 640;
-  const barH = 110;
-  const lineH = 90;
-  const gapH = 28;
+  const barH = 160;
+  const lineH = 110;
+  const gapH = 52;
   const bottomPad = 20;
   const totalSvgH = barH + gapH + lineH + bottomPad;
 
@@ -179,7 +179,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
   return (
     <div style={{ overflowX: 'auto', scrollbarWidth: 'none' }}>
-      <div style={{ position: 'relative', minWidth: 900, height: 380 }}>
+      <div style={{ position: 'relative', minWidth: 900, height: 440 }}>
       <svg style={{ position: 'absolute', top: 0, left: 0 }} width="100%" height="100%"
         viewBox={`0 0 ${viewW} ${totalSvgH}`} preserveAspectRatio="xMidYMid meet">
           <defs>
