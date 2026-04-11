@@ -130,16 +130,18 @@ export default async function TenYearsAgoPage() {
         </div>
       </div>
 
-      {tenYearsAgo.stories && tenYearsAgo.stories.length > 0 && (
+      {tenYearsAgo.stories && tenYearsAgo.stories.filter((s: any) => (s.videos || []).length > 0).length > 0 && (() => {
+        const activeStories = tenYearsAgo.stories.filter((s: any) => (s.videos || []).length > 0);
+        return (
         <>
         <div className="px-6 md:px-12 py-2" style={{ background: '#f5f5f5' }}>
           <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-            {tenYearsAgo.stories.map(s => s.headline).join(' & ')}
+            {activeStories.map((s: any) => s.headline).join(' & ')}
           </h2>
         </div>
         <div className="px-6 md:px-12 py-6 max-w-4xl">
           <div className="space-y-3">
-            {tenYearsAgo.stories.map((s, i) => (
+            {activeStories.map((s: any, i: number) => (
               <div key={i} className="rounded-lg p-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: '#60a5fa' }}>{s.category || 'news'}</span>
                 <h3 className="text-[15px] font-medium mt-0.5" style={{ color: '#daa520' }}>{s.headline}</h3>
@@ -149,7 +151,8 @@ export default async function TenYearsAgoPage() {
           </div>
         </div>
         </>
-      )}
+        );
+      })()}
 
       {tenYearsAgo.videos.length > 0 && (
         <div className="px-6 md:px-12 pb-8 max-w-4xl">
