@@ -27,7 +27,7 @@ try {
   return new NextResponse(html, {
     headers: {
       'Content-Type': 'text/html',
-      'Cache-Control': 'no-cache, no-store',
+      'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600',
     },
   });
 }
