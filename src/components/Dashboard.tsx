@@ -415,6 +415,9 @@ export function Dashboard({
     return () => { cancelled = true; clearTimeout(initial); };
   }, []);
 
+  const activeType = overrideVideo?.type || current?.type;
+  const needsExtraHeight = activeType === 'x' || activeType === 'tiktok';
+
   return (
     <section style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
       <div className={`h-full grid ${compact ? 'grid-rows-2' : 'grid-rows-3'} grid-cols-4 gap-1`}>
@@ -427,7 +430,7 @@ export function Dashboard({
         {/* ROW 2 */}
         <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} />
 
-        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a' }}
+        <div className={`col-span-2 flex flex-col rounded-xl overflow-hidden ${needsExtraHeight ? 'row-span-2' : ''}`} style={{ background: '#0a0a0a' }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -653,10 +656,11 @@ export function Dashboard({
 
         <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} />
 
-        {/* ROW 3 — hidden when compact */}
-        {!compact && [6, 7, 8, 9].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
-        ))}
+        {/* ROW 3 — hidden when compact; tiles 7+8 hidden when center needs extra height */}
+        {!compact && [6, 7, 8, 9].map(i => {
+          if (needsExtraHeight && (i === 7 || i === 8)) return null;
+          return <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />;
+        })}
       </div>
     </section>
   );
