@@ -515,7 +515,7 @@ export function Dashboard({
               src={`/api/tt-video?id=${current.embed_id}`}
               poster={current.thumbnail || `/api/tt-video?id=${current.embed_id}&thumb=1`}
               className="w-full h-full absolute inset-0 object-contain"
-              autoPlay={false} controls muted={!unmuted} playsInline
+              autoPlay muted={!unmuted} playsInline
               onEnded={() => setCurrentIdx(p => (p + 1) % playlist.length)}
               onLoadedMetadata={(e) => setDuration((e.target as HTMLVideoElement).duration)}
               style={{ background: '#000' }} />
@@ -529,7 +529,7 @@ export function Dashboard({
             <video key={current.embed_id}
               src={`/api/x-video?id=${current.embed_id}`}
               className="w-full h-full absolute inset-0 object-contain"
-              autoPlay={false} controls muted={!unmuted} playsInline
+              autoPlay muted={!unmuted} playsInline
               onEnded={next}
               style={{ background: '#000' }} />
           )}
@@ -543,7 +543,7 @@ export function Dashboard({
               src={`/api/tg-video?post=${current.embed_id}`}
               poster={`/api/tg-video?post=${current.embed_id}&thumb=1`}
               className="w-full h-full absolute inset-0 object-contain"
-              autoPlay={false} controls muted={!unmuted} playsInline
+              autoPlay muted={!unmuted} playsInline
               onEnded={next}
               style={{ background: '#000' }} />
           )}
