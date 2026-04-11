@@ -449,21 +449,28 @@ export function Dashboard({
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {overrideVideo.type === 'x' && (
-                <video key={`override-${overrideVideo.embed_id}`}
-                  src={`/api/x-video?id=${overrideVideo.embed_id}`}
-                  className="w-full h-full absolute inset-0 object-contain"
-                  autoPlay muted playsInline style={{ background: '#000' }} />
+                <VideoThumb
+                  thumbSrc={`/api/x-video?id=${overrideVideo.embed_id}&thumb=1`}
+                  url={overrideVideo.url || `https://x.com/i/web/status/${overrideVideo.embed_id}`}
+                  badge="𝕏" badgeColor="#000"
+                  label={overrideVideo.title}
+                />
               )}
               {overrideVideo.type === 'telegram' && (
-                <video key={`override-${overrideVideo.embed_id}`}
-                  src={`/api/tg-video?post=${overrideVideo.embed_id}`}
-                  className="w-full h-full absolute inset-0 object-contain"
-                  autoPlay muted playsInline style={{ background: '#000' }} />
+                <VideoThumb
+                  thumbSrc={`/api/tg-video?post=${overrideVideo.embed_id}&thumb=1`}
+                  url={overrideVideo.url || `https://t.me/${overrideVideo.embed_id}`}
+                  badge="Telegram" badgeColor="#0088cc"
+                  label={overrideVideo.title}
+                />
               )}
               {overrideVideo.type === 'tiktok' && (
-                <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://www.tiktok.com/embed/v2/${overrideVideo.embed_id}`}
-                  className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+                <VideoThumb
+                  thumbSrc={`/api/tt-video?id=${overrideVideo.embed_id}&thumb=1`}
+                  url={overrideVideo.url || `https://www.tiktok.com/@_/video/${overrideVideo.embed_id}`}
+                  badge="TikTok" badgeColor="#fe2c55"
+                  label={overrideVideo.title}
+                />
               )}
               {/* X button to exit override */}
               <button onClick={() => setOverrideVideo(null)}
@@ -511,14 +518,12 @@ export function Dashboard({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {!overrideVideo && current?.type === 'tiktok' && current.embed_id && (
-            <video key={current.embed_id}
-              src={`/api/tt-video?id=${current.embed_id}`}
-              poster={current.thumbnail || `/api/tt-video?id=${current.embed_id}&thumb=1`}
-              className="w-full h-full absolute inset-0 object-contain"
-              autoPlay muted={!unmuted} playsInline
-              onEnded={() => setCurrentIdx(p => (p + 1) % playlist.length)}
-              onLoadedMetadata={(e) => setDuration((e.target as HTMLVideoElement).duration)}
-              style={{ background: '#000' }} />
+            <VideoThumb
+              thumbSrc={current.thumbnail || `/api/tt-video?id=${current.embed_id}&thumb=1`}
+              url={current.url || `https://www.tiktok.com/@_/video/${current.embed_id}`}
+              badge="TikTok" badgeColor="#fe2c55"
+              label={current.videoTitle || current.channel}
+            />
           )}
           {!overrideVideo && current?.type === 'reels' && current.embed_id && (
             <iframe key={current.embed_id}
@@ -526,12 +531,12 @@ export function Dashboard({
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           {!overrideVideo && current?.type === 'x' && current.embed_id && current.duration && (
-            <video key={current.embed_id}
-              src={`/api/x-video?id=${current.embed_id}`}
-              className="w-full h-full absolute inset-0 object-contain"
-              autoPlay muted={!unmuted} playsInline
-              onEnded={next}
-              style={{ background: '#000' }} />
+            <VideoThumb
+              thumbSrc={`/api/x-video?id=${current.embed_id}&thumb=1`}
+              url={current.url || `https://x.com/i/web/status/${current.embed_id}`}
+              badge="𝕏" badgeColor="#000"
+              label={current.videoTitle || current.channel}
+            />
           )}
           {!overrideVideo && current?.type === 'x' && current.embed_id && !current.duration && (
             <iframe key={current.embed_id}
@@ -539,13 +544,12 @@ export function Dashboard({
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           {!overrideVideo && current?.type === 'telegram' && current.embed_id && (
-            <video key={current.embed_id}
-              src={`/api/tg-video?post=${current.embed_id}`}
-              poster={`/api/tg-video?post=${current.embed_id}&thumb=1`}
-              className="w-full h-full absolute inset-0 object-contain"
-              autoPlay muted={!unmuted} playsInline
-              onEnded={next}
-              style={{ background: '#000' }} />
+            <VideoThumb
+              thumbSrc={`/api/tg-video?post=${current.embed_id}&thumb=1`}
+              url={current.url || `https://t.me/${current.embed_id}`}
+              badge="Telegram" badgeColor="#0088cc"
+              label={current.videoTitle || current.channel}
+            />
           )}
           </div>
           {/* CONTROLS BAR — below video (hidden in TV mode) */}
@@ -565,6 +569,7 @@ export function Dashboard({
                   .clip-thumb:hover { width: 200px !important; opacity: 1 !important; }
                   .clip-thumb:hover .clip-thumb-img { height: 50px !important; }
                   .clip-thumb:hover .clip-thumb-label { font-size: 9px !important; }
+                  @keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
                 `}</style>
                 <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
                   {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
@@ -907,6 +912,38 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
 }
 
 
+function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
+  thumbSrc: string; url?: string; badge: string; badgeColor: string; label?: string;
+}) {
+  return (
+    <div className="w-full h-full relative overflow-hidden"
+      style={{ background: '#111', cursor: url ? 'pointer' : 'default' }}
+      onClick={() => url && window.open(url, '_blank', 'noopener,noreferrer')}>
+      <img src={thumbSrc} className="absolute inset-0 w-full h-full object-cover"
+        style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
+        onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }} />
+      <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
+      {url && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full flex items-center justify-center"
+            style={{ background: 'rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.85)' }}>
+            <div className="w-0 h-0 ml-[3px]"
+              style={{ borderTop: '8px solid transparent', borderBottom: '8px solid transparent', borderLeft: '14px solid white' }} />
+          </div>
+        </div>
+      )}
+      <div className="absolute top-2 left-2 z-10">
+        <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: badgeColor }}>{badge}</span>
+      </div>
+      {label && (
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)' }}>
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{label}</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item }: { item: TileContent }) {
   const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
@@ -931,22 +968,13 @@ function TileContentRenderer({ item }: { item: TileContent }) {
     );
   }
   if (item.type === 'social' && item.platform === 'x' && item.embedId && item.duration) {
-    // X video tweet — play as native video
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
-        <video
-          src={`/api/x-video?id=${item.embedId}`}
-          poster={`/api/x-video?id=${item.embedId}&thumb=1`}
-          className="w-full h-full object-cover"
-          autoPlay muted playsInline loop
-        />
-        <div className="absolute top-2 left-2 z-10">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
-        </div>
-      </div>
+      <VideoThumb
+        thumbSrc={`/api/x-video?id=${item.embedId}&thumb=1`}
+        url={item.url || `https://x.com/i/web/status/${item.embedId}`}
+        badge="𝕏" badgeColor="#000"
+        label={item.clipLabel || item.topic}
+      />
     );
   }
   if (item.type === 'social' && item.platform === 'x' && item.embedId) {
@@ -975,38 +1003,22 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   }
   if (item.type === 'social' && item.platform === 'tiktok' && item.embedId && /^\d+$/.test(item.embedId)) {
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
-        <video
-          src={`/api/tt-video?id=${item.embedId}`}
-          className="w-full h-full object-cover"
-          autoPlay muted playsInline loop
-        />
-        <div className="absolute top-2 left-2 z-10">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#fe2c55' }}>TikTok</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
-        </div>
-      </div>
+      <VideoThumb
+        thumbSrc={`/api/tt-video?id=${item.embedId}&thumb=1`}
+        url={item.url || `https://www.tiktok.com/@_/video/${item.embedId}`}
+        badge="TikTok" badgeColor="#fe2c55"
+        label={item.clipLabel || item.topic}
+      />
     );
   }
   if (item.type === 'social' && item.platform === 'telegram' && item.embedId && item.duration) {
-    // Telegram video post — native video with thumbnail poster
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#000' }}>
-        <video
-          src={`/api/tg-video?post=${item.embedId}`}
-          poster={item.image || `/api/tg-video?post=${item.embedId}&thumb=1`}
-          className="w-full h-full object-cover"
-          autoPlay muted playsInline loop
-        />
-        <div className="absolute top-2 left-2 z-10">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#0088cc' }}>Telegram</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
-        </div>
-      </div>
+      <VideoThumb
+        thumbSrc={item.image || `/api/tg-video?post=${item.embedId}&thumb=1`}
+        url={item.url || `https://t.me/${item.embedId}`}
+        badge="Telegram" badgeColor="#0088cc"
+        label={item.clipLabel || item.topic}
+      />
     );
   }
   if (item.type === 'social') {
