@@ -29,9 +29,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           .replace(/-+/g, '-')
           .replace(/^-|-$/g, '')
           .slice(0, 80);
+        const storyDate = new Date(date);
         storyEntries.push({
           url: `${baseUrl}/story/${slug}`,
-          lastModified: new Date(date),
+          lastModified: isNaN(storyDate.getTime()) ? new Date() : storyDate,
           changeFrequency: 'weekly',
           priority: 0.7,
         });
@@ -50,9 +51,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       if (!resp.ok) continue;
       const data = await resp.json();
       for (const thread of (data.threads || [])) {
+        const threadDate = new Date(thread.last_seen);
         threadEntries.push({
           url: `${baseUrl}/timeline/${thread.id}`,
-          lastModified: new Date(thread.last_seen),
+          lastModified: isNaN(threadDate.getTime()) ? new Date() : threadDate,
           changeFrequency: 'weekly',
           priority: 0.7,
         });
