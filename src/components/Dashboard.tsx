@@ -30,6 +30,7 @@ type TileContent = {
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
+  url?: string;
   isFresh?: boolean; // < 15 min old — tile should freeze
   duration?: number; // has video if set
 };
@@ -60,7 +61,7 @@ export function Dashboard({
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   // Drag-to-center: override video from tile drag
-  const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string } | null>(null);
+  const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string; url?: string } | null>(null);
   const [dropHighlight, setDropHighlight] = useState(false);
 
   // Build playlist — anchor first, then ALL videos from all stories
@@ -216,6 +217,7 @@ export function Dashboard({
     const idx = playlist.findIndex(p => p.embed_id === embedId);
     if (idx >= 0) {
       setCurrentIdx(idx);
+      setOverrideVideo(null);
     }
   };
 
@@ -430,7 +432,7 @@ export function Dashboard({
         {/* ROW 2 */}
         <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} />
 
-        <div className={`col-span-2 flex flex-col rounded-xl overflow-hidden ${needsExtraHeight ? 'row-span-2' : ''}`} style={{ background: '#0a0a0a' }}
+        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', ...(needsExtraHeight ? { gridRow: 'span 2 / span 2' } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {

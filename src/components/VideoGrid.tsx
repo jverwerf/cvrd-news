@@ -325,11 +325,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   </div>
                 )}
                 {active.type === 'x' && (
-                  <div className="w-full h-full relative overflow-hidden" style={{ background: '#111', cursor: 'pointer' }}
-                    onClick={() => window.open(active.url || `https://x.com/i/web/status/${active.embed_id}`, '_blank', 'noopener,noreferrer')}>
-                    <img src={`/api/x-video?id=${active.embed_id}&thumb=1`} className="absolute inset-0 w-full h-full object-cover"
-                      style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }} />
-                    <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
+                  <div className="w-full h-full overflow-hidden" style={{ background: '#15202b' }}>
+                    <iframe key={active.embed_id}
+                      src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark&dnt=true`}
+                      style={{ border: 'none', width: '100%', height: '100%', transform: 'scale(1.45)', transformOrigin: 'top center' }} allowFullScreen />
                   </div>
                 )}
                 {active.type === 'telegram' && (
@@ -421,7 +420,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
         )}
         <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
           {items.map((item, i) => (
-            <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(false); stopPolling(); stopTimer(); }}
+            <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
               className="rounded overflow-hidden transition-all group shrink-0 cursor-pointer"
               style={{
                 width: '240px',
