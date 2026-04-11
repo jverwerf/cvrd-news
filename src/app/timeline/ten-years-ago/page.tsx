@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400;
 
 import { getTodayTenYearsAgo } from "@/lib/timeline-data";
 import { getDailyGaps } from "@/lib/data";

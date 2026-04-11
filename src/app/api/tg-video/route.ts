@@ -33,7 +33,7 @@ export async function GET(req: NextRequest) {
           });
           if (thumbResp.ok) {
             return new NextResponse(thumbResp.body, {
-              headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, max-age=86400' },
+              headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600' },
             });
           }
         }
@@ -50,7 +50,7 @@ export async function GET(req: NextRequest) {
         });
         if (thumbResp.ok) {
           return new NextResponse(thumbResp.body, {
-            headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, max-age=86400' },
+            headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600' },
           });
         }
       }
@@ -66,7 +66,7 @@ export async function GET(req: NextRequest) {
         });
         if (thumbResp.ok) {
           return new NextResponse(thumbResp.body, {
-            headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, max-age=86400' },
+            headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600' },
           });
         }
       }
@@ -93,7 +93,7 @@ export async function GET(req: NextRequest) {
     const contentLength = videoResp.headers.get('content-length');
     const headers: Record<string, string> = {
       'Content-Type': 'video/mp4',
-      'Cache-Control': 'public, max-age=3600',
+      'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600',
       'Accept-Ranges': 'bytes',
     };
     if (contentLength) headers['Content-Length'] = contentLength;
