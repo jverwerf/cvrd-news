@@ -328,7 +328,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   <div className="w-full h-full overflow-hidden" style={{ background: '#15202b' }}>
                     <iframe key={active.embed_id}
                       src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark&dnt=true`}
-                      style={{ border: 'none', width: '100%', height: '100%', transform: 'scale(1.45)', transformOrigin: 'top center' }} allowFullScreen />
+                      style={{ border: 'none', width: '100%', height: '100%' }} allowFullScreen />
                   </div>
                 )}
                 {active.type === 'telegram' && (
