@@ -329,11 +329,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     onClick={() => window.open(active.url || `https://x.com/i/web/status/${active.embed_id}`, '_blank', 'noopener,noreferrer')}>
                     <img src={`/api/x-video?id=${active.embed_id}&thumb=1`} className="absolute inset-0 w-full h-full object-cover"
                       style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }} />
-                    <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.2)' }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.85)' }}>
-                        <div className="w-0 h-0 ml-1" style={{ borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderLeft: '16px solid white' }} />
-                      </div>
-                    </div>
+                    <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 )}
                 {active.type === 'telegram' && (
@@ -341,11 +337,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                     onClick={() => window.open(active.url || `https://t.me/${active.embed_id}`, '_blank', 'noopener,noreferrer')}>
                     <img src={`/api/tg-video?post=${active.embed_id}&thumb=1`} className="absolute inset-0 w-full h-full object-cover"
                       style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }} />
-                    <div className="absolute inset-0 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.2)' }}>
-                      <div className="w-14 h-14 rounded-full flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.85)' }}>
-                        <div className="w-0 h-0 ml-1" style={{ borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderLeft: '16px solid white' }} />
-                      </div>
-                    </div>
+                    <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 )}
               </>

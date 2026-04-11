@@ -923,15 +923,6 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
         style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
         onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }} />
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
-      {url && (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-12 h-12 rounded-full flex items-center justify-center"
-            style={{ background: 'rgba(0,0,0,0.6)', border: '2px solid rgba(255,255,255,0.85)' }}>
-            <div className="w-0 h-0 ml-[3px]"
-              style={{ borderTop: '8px solid transparent', borderBottom: '8px solid transparent', borderLeft: '14px solid white' }} />
-          </div>
-        </div>
-      )}
       <div className="absolute top-2 left-2 z-10">
         <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: badgeColor }}>{badge}</span>
       </div>
