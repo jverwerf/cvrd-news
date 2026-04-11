@@ -79,13 +79,14 @@ export function Dashboard({
       if ((v as any).download_failed) continue;
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
     }
-    for (const c of (story.social_clips || [])) {
-      if ((c as any).download_failed || !c.embed_id) continue;
-      // Telegram + X videos (with duration) + TikTok in center player
-      if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
-        playlist.push({ type: c.platform as any, embed_id: c.embed_id, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
-      } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
-        playlist.push({ type: 'tiktok', embed_id: c.embed_id, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
+    if (!tvMode) {
+      for (const c of (story.social_clips || [])) {
+        if ((c as any).download_failed || !c.embed_id) continue;
+        if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
+          playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
+        } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
+          playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
+        }
       }
     }
   }
@@ -449,12 +450,9 @@ export function Dashboard({
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {overrideVideo.type === 'x' && (
-                <VideoThumb
-                  thumbSrc={`/api/x-video?id=${overrideVideo.embed_id}&thumb=1`}
-                  url={overrideVideo.url || `https://x.com/i/web/status/${overrideVideo.embed_id}`}
-                  badge="𝕏" badgeColor="#000"
-                  label={overrideVideo.title}
-                />
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://platform.twitter.com/embed/Tweet.html?id=${overrideVideo.embed_id}&theme=dark&dnt=true`}
+                  className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
               )}
               {overrideVideo.type === 'telegram' && (
                 <VideoThumb
@@ -465,12 +463,9 @@ export function Dashboard({
                 />
               )}
               {overrideVideo.type === 'tiktok' && (
-                <VideoThumb
-                  thumbSrc={`/api/tt-video?id=${overrideVideo.embed_id}&thumb=1`}
-                  url={overrideVideo.url || `https://www.tiktok.com/@_/video/${overrideVideo.embed_id}`}
-                  badge="TikTok" badgeColor="#fe2c55"
-                  label={overrideVideo.title}
-                />
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://www.tiktok.com/embed/v2/${overrideVideo.embed_id}`}
+                  className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
               )}
               {/* X button to exit override */}
               <button onClick={() => setOverrideVideo(null)}
@@ -518,29 +513,18 @@ export function Dashboard({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {!overrideVideo && current?.type === 'tiktok' && current.embed_id && (
-            <VideoThumb
-              thumbSrc={current.thumbnail || `/api/tt-video?id=${current.embed_id}&thumb=1`}
-              url={current.url || `https://www.tiktok.com/@_/video/${current.embed_id}`}
-              badge="TikTok" badgeColor="#fe2c55"
-              label={current.videoTitle || current.channel}
-            />
+            <iframe key={current.embed_id}
+              src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
+              className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
           )}
           {!overrideVideo && current?.type === 'reels' && current.embed_id && (
             <iframe key={current.embed_id}
               src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
-          {!overrideVideo && current?.type === 'x' && current.embed_id && current.duration && (
-            <VideoThumb
-              thumbSrc={`/api/x-video?id=${current.embed_id}&thumb=1`}
-              url={current.url || `https://x.com/i/web/status/${current.embed_id}`}
-              badge="𝕏" badgeColor="#000"
-              label={current.videoTitle || current.channel}
-            />
-          )}
-          {!overrideVideo && current?.type === 'x' && current.embed_id && !current.duration && (
+          {!overrideVideo && current?.type === 'x' && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=light`}
+              src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=dark&dnt=true`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
           )}
           {!overrideVideo && current?.type === 'telegram' && current.embed_id && (
