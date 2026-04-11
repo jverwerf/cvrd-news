@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /tile
+Disallow: /test-tg
 
 Sitemap: https://cvrdnews.com/sitemap.xml
