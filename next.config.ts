@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
       { protocol: 'https', hostname: '*.public.blob.vercel-storage.com' },
     ],
   },
+  async headers() {
+    const CDN_CACHE = 'public, s-maxage=86400, stale-while-revalidate=3600';
+    return [
+      { source: '/api/yt-tile', headers: [{ key: 'Cache-Control', value: CDN_CACHE }] },
+      { source: '/api/tg-video', headers: [{ key: 'Cache-Control', value: CDN_CACHE }] },
+      { source: '/api/x-video', headers: [{ key: 'Cache-Control', value: CDN_CACHE }] },
+      { source: '/api/tt-video', headers: [{ key: 'Cache-Control', value: CDN_CACHE }] },
+    ];
+  },
   async rewrites() {
     return [
       // Serve old /images/* paths from Blob (backwards compat with existing JSON data)
