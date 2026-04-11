@@ -64,13 +64,16 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
 
   // 2. Blob (production) — daily_gaps no longer committed to git
   if (BLOB_BASE) {
-    try {
-      const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${dateStr}.json`, { next: { revalidate: 3600 } });
-      if (resp.ok) {
-        const report = await resp.json() as DailyReport;
-        return postProcess(report);
-      }
-    } catch { /* fall through */ }
+    const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    for (const date of [dateStr, yesterdayStr]) {
+      try {
+        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 3600 } });
+        if (resp.ok) {
+          const report = await resp.json() as DailyReport;
+          return postProcess(report);
+        }
+      } catch { /* fall through */ }
+    }
   }
 
   // 3. Local public/data fallback (transitional)
