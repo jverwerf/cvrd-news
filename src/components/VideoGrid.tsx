@@ -68,6 +68,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   const [activeIdx, setActiveIdx] = useState(-1); // -1 = no video selected, thumbnails only
   const [playing, setPlaying] = useState(false);
+  const [xEmbedHeight, setXEmbedHeight] = useState<number | null>(null);
   const [videosSinceAd, setVideosSinceAd] = useState(0);
   const [showingAd, setShowingAd] = useState(false);
   const adTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -225,6 +226,20 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     return () => { window.removeEventListener('message', handler); };
   }, [activeIdx]);
 
+  // Listen for Twitter embed resize messages → dynamic height for X player
+  useEffect(() => {
+    if (active?.type !== 'x') { setXEmbedHeight(null); return; }
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        const h = data?.['twttr.embed']?.height || data?.params?.height || data?.height;
+        if (typeof h === 'number' && h > 100) setXEmbedHeight(h);
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [active?.type, active?.embed_id]);
+
   // Calculate overall progress — based on which video we're on
   useEffect(() => {
     if (items.length === 0) return;
@@ -296,7 +311,11 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
         <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px] mx-auto">
-          <div className="aspect-video bg-[#111] relative">
+          <div className={active?.type === 'x' || active?.type === 'tiktok' ? 'relative' : 'aspect-video bg-[#111] relative'}
+            style={
+              active?.type === 'x' ? { height: xEmbedHeight ? `${xEmbedHeight}px` : '600px', background: '#15202b' } :
+              active?.type === 'tiktok' ? { height: '620px', background: '#ffffff' } : {}
+            }>
             {showingAd ? (
               <div className="w-full h-full flex flex-col items-center justify-center relative" style={{ background: '#111' }}>
                 <div className="absolute top-2 right-3 z-10">
@@ -315,7 +334,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                 {active.type === 'tiktok' && (
                   <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
                     <iframe key={active.embed_id} src={`https://www.tiktok.com/embed/v2/${active.embed_id}`}
-                      style={{ border: 'none', width: '330px', height: '100%' }} allowFullScreen allow="encrypted-media" />
+                      style={{ border: 'none', width: '340px', height: '620px' }} allowFullScreen allow="encrypted-media" />
                   </div>
                 )}
                 {active.type === 'reels' && (
@@ -325,10 +344,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   </div>
                 )}
                 {active.type === 'x' && (
-                  <div className="w-full h-full overflow-hidden" style={{ background: '#15202b' }}>
+                  <div className="w-full h-full overflow-auto flex justify-center" style={{ background: '#15202b' }}>
                     <iframe key={active.embed_id}
                       src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark&dnt=true`}
-                      style={{ border: 'none', width: '100%', height: '100%' }} allowFullScreen />
+                      style={{ border: 'none', width: '100%', maxWidth: '550px', height: xEmbedHeight ? `${xEmbedHeight}px` : '600px' }} allowFullScreen />
                   </div>
                 )}
                 {active.type === 'telegram' && (
