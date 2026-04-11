@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { put, list } from '@vercel/blob';
 
 export async function GET(req: NextRequest) {
   const videoId = req.nextUrl.searchParams.get('id') || '';
@@ -11,8 +12,14 @@ export async function GET(req: NextRequest) {
   try {
     const tiktokUrl = `https://www.tiktok.com/@_/video/${videoId}`;
 
-    // Thumbnail via oEmbed
+    // Thumbnail via oEmbed — cached in Vercel Blob by date
     if (wantThumb) {
+      const dateStr = new Date().toISOString().split('T')[0];
+      const blobPath = `thumbnails/tt-${videoId}-${dateStr}.jpg`;
+      try {
+        const { blobs } = await list({ prefix: `thumbnails/tt-${videoId}-${dateStr}`, limit: 1 });
+        if (blobs.length > 0) return NextResponse.redirect(blobs[0].url, { status: 302 });
+      } catch {}
       try {
         const resp = await fetch(`https://www.tiktok.com/oembed?url=${tiktokUrl}`, { signal: AbortSignal.timeout(5000) });
         if (resp.ok) {
@@ -22,9 +29,9 @@ export async function GET(req: NextRequest) {
               headers: { 'User-Agent': 'Mozilla/5.0 (compatible; CVRD/1.0)' },
             });
             if (thumbResp.ok) {
-              return new NextResponse(thumbResp.body, {
-                headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600' },
-              });
+              const buffer = await thumbResp.arrayBuffer();
+              const blob = await put(blobPath, buffer, { access: 'public', addRandomSuffix: false, contentType: 'image/jpeg' });
+              return NextResponse.redirect(blob.url, { status: 302 });
             }
           }
         }

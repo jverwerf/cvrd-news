@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
+const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+
 export type NarrativeGap = {
   topic: string;
   category?: 'world' | 'politics' | 'markets' | 'sports' | 'trending';
@@ -51,7 +53,6 @@ export interface DailyReport {
 
 export async function getDailyGaps(): Promise<DailyReport | null> {
   const dateStr = new Date().toISOString().split('T')[0];
-  const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
   // 1. Local engine output (dev)
   const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/daily_gaps_${dateStr}.json`);
@@ -105,11 +106,15 @@ async function postProcess(report: DailyReport): Promise<DailyReport | null> {
       }
     }
 
-    // Use YouTube embed for the daily briefing (too large for Vercel static hosting)
-    const ytDailyPath = path.resolve(process.cwd(), 'public/data/youtube_daily.txt');
-    if (fs.existsSync(ytDailyPath)) {
-      const ytId = fs.readFileSync(ytDailyPath, 'utf8').trim();
-      if (ytId) report.video_url = `https://www.youtube.com/embed/${ytId}`;
+    // Use YouTube embed for the daily briefing — read from Blob (no git push needed)
+    if (BLOB_BASE) {
+      try {
+        const ytResp = await fetch(`${BLOB_BASE}/data/youtube_daily.txt`, { next: { revalidate: 3600 } });
+        if (ytResp.ok) {
+          const ytId = (await ytResp.text()).trim();
+          if (ytId) report.video_url = `https://www.youtube.com/embed/${ytId}`;
+        }
+      } catch {}
     }
 
     // Fetch live data (markets, crypto, earthquakes, wiki trending)

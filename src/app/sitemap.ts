@@ -5,38 +5,40 @@ export const revalidate = 86400; // 24h — sitemap only needs daily refresh
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://cvrdnews.com';
 
-  // Generate story slugs from today's data without importing filesystem-heavy stories.ts
-  // This avoids bundling all of public/data into the serverless function
+  // Generate story slugs from Blob (no git push required)
   let storyEntries: MetadataRoute.Sitemap = [];
   try {
-    const fs = await import('fs');
-    const path = await import('path');
-    const dataDir = path.resolve(process.cwd(), 'public/data');
-    const files = fs.readdirSync(dataDir)
-      .filter((f: string) => f.startsWith('daily_gaps_') && f.endsWith('.json'))
-      .sort()
-      .slice(-7); // last 7 days only
-
-    for (const f of files) {
-      const date = f.replace('daily_gaps_', '').replace('.json', '');
-      const data = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf-8'));
-      for (const story of (data.top_narratives || [])) {
-        const slug = story.topic
-          .toLowerCase()
-          .replace(/['']/g, '')
-          .replace(/[^a-z0-9\s-]/g, '')
-          .replace(/\s+/g, '-')
-          .replace(/-+/g, '-')
-          .replace(/^-|-$/g, '')
-          .slice(0, 80);
-        const storyDate = new Date(date);
-        storyEntries.push({
-          url: `${baseUrl}/story/${slug}`,
-          lastModified: isNaN(storyDate.getTime()) ? new Date() : storyDate,
-          changeFrequency: 'weekly',
-          priority: 0.7,
-        });
-      }
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+    const dates: string[] = [];
+    for (let i = 0; i < 7; i++) {
+      dates.push(new Date(Date.now() - i * 86400000).toISOString().split('T')[0]);
+    }
+    const seen = new Set<string>();
+    for (const date of dates) {
+      try {
+        const resp = await fetch(`${blobBase}/data/daily_gaps_${date}.json`, { next: { revalidate: 86400 } });
+        if (!resp.ok) continue;
+        const data = await resp.json();
+        for (const story of (data.top_narratives || [])) {
+          const slug = story.topic
+            .toLowerCase()
+            .replace(/['']/g, '')
+            .replace(/[^a-z0-9\s-]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-')
+            .replace(/^-|-$/g, '')
+            .slice(0, 80);
+          if (seen.has(slug)) continue;
+          seen.add(slug);
+          const storyDate = new Date(date);
+          storyEntries.push({
+            url: `${baseUrl}/story/${slug}`,
+            lastModified: isNaN(storyDate.getTime()) ? new Date() : storyDate,
+            changeFrequency: 'weekly',
+            priority: 0.7,
+          });
+        }
+      } catch {}
     }
   } catch {}
 

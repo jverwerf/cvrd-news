@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { put, list } from '@vercel/blob';
 
 export async function GET(req: NextRequest) {
   const tweetId = req.nextUrl.searchParams.get('id') || '';
@@ -23,17 +24,29 @@ export async function GET(req: NextRequest) {
       return new NextResponse('No video in this tweet', { status: 404 });
     }
 
-    // Return thumbnail if requested
+    // Return thumbnail if requested — cached in Vercel Blob by date
     if (wantThumb) {
+      const dateStr = new Date().toISOString().split('T')[0];
+      const blobPath = `thumbnails/x-${tweetId}-${dateStr}.jpg`;
+      try {
+        const { blobs } = await list({ prefix: `thumbnails/x-${tweetId}-${dateStr}`, limit: 1 });
+        if (blobs.length > 0) return NextResponse.redirect(blobs[0].url, { status: 302 });
+      } catch {}
       const thumbUrl = video.media_url_https || media.find((m: any) => m.media_url_https)?.media_url_https;
       if (thumbUrl) {
         const thumbResp = await fetch(thumbUrl, {
           headers: { 'User-Agent': 'Mozilla/5.0 (compatible; CVRD/1.0)' },
         });
         if (thumbResp.ok) {
-          return new NextResponse(thumbResp.body, {
-            headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400, stale-while-revalidate=3600' },
-          });
+          try {
+            const buffer = await thumbResp.arrayBuffer();
+            const blob = await put(blobPath, buffer, { access: 'public', addRandomSuffix: false, contentType: 'image/jpeg' });
+            return NextResponse.redirect(blob.url, { status: 302 });
+          } catch {
+            return new NextResponse(thumbResp.body, {
+              headers: { 'Content-Type': 'image/jpeg', 'Cache-Control': 'public, s-maxage=86400' },
+            });
+          }
         }
       }
       return new NextResponse('No thumbnail', { status: 404 });

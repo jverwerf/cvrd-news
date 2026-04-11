@@ -7,36 +7,64 @@ import { getTimelineThreads } from "@/lib/timeline-data";
 
 export const revalidate = 86400; // 24 hours — stories don't change once published
 
-import fs from 'fs';
-import path from 'path';
-
 function topicToSlug(topic: string): string {
   return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 }
 
 async function getStory(slug: string) {
-  const dataDir = path.resolve(process.cwd(), 'public/data');
-  if (!fs.existsSync(dataDir)) return null;
+  const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
-  const files = fs.readdirSync(dataDir)
-    .filter(f => f.startsWith('daily_gaps_') && f.endsWith('.json'))
-    .sort()
-    .reverse();
-
-  for (const f of files) {
-    const date = f.replace('daily_gaps_', '').replace('.json', '');
-    try {
-      const data = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf-8'));
-      for (const story of (data.top_narratives || [])) {
-        if (topicToSlug(story.topic) === slug) {
-          const otherStories = (data.top_narratives || [])
-            .filter((s: any) => topicToSlug(s.topic) !== slug)
-            .slice(0, 5);
-          return { story, date, otherStories };
-        }
-      }
-    } catch {}
+  // Build list of dates to check: today + last 7 days
+  const dates: string[] = [];
+  for (let i = 0; i < 7; i++) {
+    dates.push(new Date(Date.now() - i * 86400000).toISOString().split('T')[0]);
   }
+
+  // Search Blob (production)
+  if (BLOB_BASE) {
+    for (const date of dates) {
+      try {
+        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 86400 } });
+        if (!resp.ok) continue;
+        const data = await resp.json();
+        for (const story of (data.top_narratives || [])) {
+          if (topicToSlug(story.topic) === slug) {
+            const otherStories = (data.top_narratives || [])
+              .filter((s: any) => topicToSlug(s.topic) !== slug)
+              .slice(0, 5);
+            return { story, date, otherStories };
+          }
+        }
+      } catch {}
+    }
+  }
+
+  // Fallback: local public/data (dev only)
+  try {
+    const fs = await import('fs');
+    const path = await import('path');
+    const dataDir = path.resolve(process.cwd(), 'public/data');
+    if (fs.existsSync(dataDir)) {
+      const files = fs.readdirSync(dataDir)
+        .filter((f: string) => f.startsWith('daily_gaps_') && f.endsWith('.json'))
+        .sort().reverse();
+      for (const f of files) {
+        const date = f.replace('daily_gaps_', '').replace('.json', '');
+        try {
+          const data = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf-8'));
+          for (const story of (data.top_narratives || [])) {
+            if (topicToSlug(story.topic) === slug) {
+              const otherStories = (data.top_narratives || [])
+                .filter((s: any) => topicToSlug(s.topic) !== slug)
+                .slice(0, 5);
+              return { story, date, otherStories };
+            }
+          }
+        } catch {}
+      }
+    }
+  } catch {}
+
   return null;
 }
 
