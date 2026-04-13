@@ -186,7 +186,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       {isBrief ? (
         <>
           {/* 1. Story cards — horizontal scroll row */}
-          <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+          <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
@@ -199,18 +199,17 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     background: '#253545',
                     border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
                   }}>
-                  {briefStory.image_file ? (
-                    <div className="h-28 overflow-hidden" style={{
-                      backgroundImage: `url(${briefStory.image_file})`,
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                    }}>
-                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                    </div>
-                  ) : (
-                    <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                      <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
-                    </div>
-                  )}
+                  <div className="relative overflow-hidden" style={{ height: 112, background: '#1a1a2e' }}>
+                    {briefStory.image_file && (
+                      <img src={briefStory.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    {!briefStory.image_file && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                      </div>
+                    )}
+                  </div>
                   <div className="p-2.5">
                     <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
                     <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
@@ -222,16 +221,17 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   <a key={i} href={`/story/${topicToSlug(s.topic)}`}
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
                     className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-                    style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                    <div className="h-28 overflow-hidden" style={{
-                      backgroundImage: s.image_file ? `url(${s.image_file})` : 'none',
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                      background: s.image_file ? undefined : '#152030',
-                    }}>
-                      {s.image_file
-                        ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                        : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
-                      }
+                    style={{ background: '#253545', border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a' }}>
+                    <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
+                      {s.image_file && (
+                        <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                      )}
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                      {!s.image_file && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
+                        </div>
+                      )}
                     </div>
                     <div className="p-2.5">
                       <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
@@ -249,27 +249,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
           </div>
 
-          {/* 2. ON AIR BANNER */}
-          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                On Air: <span className="text-[#666]">{sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}</span>
-              </h1>
-            </div>
-            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
-              className="shrink-0 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
-              style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
-              ♥ Buy us a coffee
-            </a>
-            <button onClick={() => setCurrentIdx(0)}
-              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-            </button>
-          </div>
-
           {/* 3. ON AIR — COMPACT DASHBOARD */}
-          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
             <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
               <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
                 <ErrorBoundary>
@@ -295,41 +276,91 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             )}
           </div>
 
-          {/* 4. COVER THE NEWS BANNER */}
-          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                Cover The News
-              </h1>
+          {/* 4+5. PICTURE HEADER (brief image) with coffee + arrows overlaid */}
+          {briefStory.image_file ? (
+            <div className="relative overflow-hidden" style={{
+              height: '30vh', minHeight: '220px',
+              backgroundImage: `url(${briefStory.image_file})`,
+              backgroundSize: 'cover', backgroundPosition: 'center',
+            }}>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
+              <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+                <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(218,165,32,0.4)', color: '#fff' }}>
+                  Daily Brief
+                </span>
+                <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+                  Today&apos;s Top Stories
+                </h1>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between gap-2">
+                <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
+                  style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
+                  ♥ Buy us a coffee
+                </a>
+                <div className="flex items-center gap-2 ml-auto">
+                  {subStatus === 'done' ? (
+                    <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+                  ) : (
+                    <div className="flex items-center gap-1.5">
+                      <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                        onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                        className="text-[10px] px-2 py-1 rounded-full outline-none"
+                        style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
+                      <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                        className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                        style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
+                        <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                      </button>
+                    </div>
+                  )}
+                  <button onClick={prev} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                    style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+                  </button>
+                  <button onClick={next} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                    style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
+                  </button>
+                </div>
+              </div>
             </div>
-            {subStatus === 'done' ? (
-              <span className="shrink-0 text-[10px] font-medium text-[#1e2a3a]">Subscribed ✓</span>
-            ) : (
-              <div className="shrink-0 hidden sm:flex items-center gap-1">
-                <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
-                  className="text-[10px] px-2 py-1 rounded-full outline-none"
-                  style={{ background: 'white', border: '1px solid #e5e5e5', color: '#1e2a3a', width: 130 }} />
-                <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
-                  className="px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
-                  style={{ background: '#1e2a3a', color: 'white', border: 'none', cursor: 'pointer' }}>
-                  {subStatus === 'loading' ? '…' : 'Subscribe'}
+          ) : (
+            <div className="px-6 md:px-12 py-2 flex items-center justify-between gap-2" style={{ borderTop: '1px solid #2a3a4a' }}>
+              <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+                className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
+                style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
+                ♥ Buy us a coffee
+              </a>
+              <div className="flex items-center gap-2 ml-auto">
+                {subStatus === 'done' ? (
+                  <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+                ) : (
+                  <div className="flex items-center gap-1.5">
+                    <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                      className="text-[10px] px-2 py-1 rounded-full outline-none"
+                      style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', color: '#e2e8f0', width: 130 }} />
+                    <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                      className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                      style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
+                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                    </button>
+                  </div>
+                )}
+                <button onClick={prev} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+                </button>
+                <button onClick={next} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
                 </button>
               </div>
-            )}
-            <button onClick={prev}
-              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
-            </button>
-            <button onClick={() => setCurrentIdx(0)}
-              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-            </button>
-          </div>
+            </div>
+          )}
 
-          {/* 5. SUMMARY + LEFT/RIGHT + MISSING + SOCIAL PULSE */}
+          {/* 5b. SUMMARY + LEFT/RIGHT + MISSING + SOCIAL PULSE */}
           <div className="px-6 md:px-12 pt-5 pb-4" style={{ background: '#1e2a3a' }}>
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
             <div className="mb-5 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -575,7 +606,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         /* STORY MODE: Cards → Cover The News banner → Picture → Dashboard → Content */
         <>
           {/* 1. Story cards — same layout as brief */}
-          <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+          <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
                 className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
@@ -588,18 +619,17 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     background: '#253545',
                     border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
                   }}>
-                  {briefStory.image_file ? (
-                    <div className="h-28 overflow-hidden" style={{
-                      backgroundImage: `url(${briefStory.image_file})`,
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                    }}>
-                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                    </div>
-                  ) : (
-                    <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                      <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
-                    </div>
-                  )}
+                  <div className="relative overflow-hidden" style={{ height: 112, background: '#1a1a2e' }}>
+                    {briefStory.image_file && (
+                      <img src={briefStory.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    {!briefStory.image_file && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                      </div>
+                    )}
+                  </div>
                   <div className="p-2.5">
                     <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
                     <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
@@ -641,30 +671,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
           </div>
 
-          {/* 2. ON AIR BANNER */}
-          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                On Air: <span className="text-[#666]">{story.topic}</span>
-              </h1>
-            </div>
-            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
-              className="shrink-0 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
-              style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
-              ♥ Buy us a coffee
-            </a>
-            <button onClick={prev} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
-            </button>
-            <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-            </button>
-          </div>
-
           {/* 3. COMPACT DASHBOARD */}
-          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
             <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
               <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
                 <ErrorBoundary>
@@ -690,47 +698,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             )}
           </div>
 
-          {/* 4. COVER THE NEWS BANNER */}
-          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
-            <div className="flex-1 min-w-0">
-              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-                Cover The News
-              </h1>
-            </div>
-            {subStatus === 'done' ? (
-              <span className="shrink-0 text-[10px] font-medium text-[#1e2a3a]">Subscribed ✓</span>
-            ) : (
-              <div className="shrink-0 hidden sm:flex items-center gap-1">
-                <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
-                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
-                  className="text-[10px] px-2 py-1 rounded-full outline-none"
-                  style={{ background: 'white', border: '1px solid #e5e5e5', color: '#1e2a3a', width: 130 }} />
-                <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
-                  className="px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
-                  style={{ background: '#1e2a3a', color: 'white', border: 'none', cursor: 'pointer' }}>
-                  {subStatus === 'loading' ? '…' : 'Subscribe'}
-                </button>
-              </div>
-            )}
-            <button onClick={prev}
-              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
-            </button>
-            <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-            </button>
-          </div>
-
-          {/* 5. PICTURE HEADER */}
+          {/* 4+5. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
           {story.image_file && (
             <div className="relative overflow-hidden" style={{
               height: '30vh', minHeight: '220px',
               backgroundImage: `url(${story.image_file})`,
               backgroundSize: 'cover', backgroundPosition: 'center',
             }}>
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%, rgba(0,0,0,0.3) 100%)' }} />
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
               <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
                 {story.category && (
                   <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
@@ -740,6 +715,28 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
                   {story.topic}
                 </h1>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between">
+                <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
+                  style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
+                  ♥ Buy us a coffee
+                </a>
+                {subStatus === 'done' ? (
+                  <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+                ) : (
+                  <div className="flex items-center gap-1.5">
+                    <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                      className="text-[10px] px-2 py-1 rounded-full outline-none"
+                      style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
+                    <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                      className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                      style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
+                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           )}
@@ -805,11 +802,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       )}
 
       {/* BANNER with navigation — hide (now in story mode section above) */}
-      {false && <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
+      {false && <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{}}>
         {!isBrief && (
           <button onClick={prev} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-            style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
+            style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
           </button>
         )}
         <div className="flex-1 min-w-0">
@@ -825,8 +822,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         </div>
         <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+          style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
         </button>
       </div>}
 

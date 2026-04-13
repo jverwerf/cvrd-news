@@ -62,10 +62,10 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
     <div style={{ position: 'relative', overflow: 'hidden', opacity: visible ? 1 : 0, transition: 'opacity 0.28s ease' }}>
       {/* background */}
       {imgUrl
-        ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.3)' }} />
+        ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.55)' }} />
         : <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category)}22 0%, ${C.panelDark} 100%)` }} />
       }
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.6) 50%, rgba(30,42,58,0.4) 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.55) 45%, rgba(30,42,58,0.1) 100%)' }} />
 
       <div style={{ position: 'relative', padding: '36px 28px 16px' }}>
         {/* category + source count + read more */}

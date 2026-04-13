@@ -6,6 +6,12 @@ export default async function TVPage({ searchParams }: { searchParams: Promise<{
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
 
+  let isBreaking = false;
+  try {
+    const { hasBreakingData } = await import('@/lib/breaking-store');
+    isBreaking = await hasBreakingData();
+  } catch {}
+
   if (!data || allStories.length === 0) {
     return (
       <div className="h-screen flex items-center justify-center" style={{ background: '#000000' }}>
@@ -14,5 +20,5 @@ export default async function TVPage({ searchParams }: { searchParams: Promise<{
     );
   }
 
-  return <TVClient allStories={allStories} videoUrl={data.video_url} videoDate={data.date} initialChannel={channel} />;
+  return <TVClient allStories={allStories} videoUrl={data.video_url} videoDate={data.date} initialChannel={channel} isBreaking={isBreaking} />;
 }

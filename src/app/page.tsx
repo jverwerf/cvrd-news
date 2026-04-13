@@ -348,16 +348,16 @@ export default async function Home() {
 
         <SiteNav isBreaking={isBreaking} />
 
-        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 40px' }}>
+        {/* ── HERO — full bleed ─────────────────────────── */}
+        {stories.length > 0 && (
+          <div style={{ overflow: 'hidden' }}>
+            <HeroCarousel stories={stories} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+          </div>
+        )}
 
-          {/* ── HERO ──────────────────────────────────────── */}
-          {stories.length > 0 ? (
-            <div style={{ margin: '-20px -16px 16px' }}>
-              <div style={{ overflow: 'hidden' }}>
-                <HeroCarousel stories={stories} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
-              </div>
-            </div>
-          ) : (
+        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '16px 16px 40px' }}>
+
+          {stories.length === 0 && (
             <div style={{ marginBottom: 24, padding: '60px 24px', borderRadius: 10, background: C.panel, textAlign: 'center', border: `1px solid ${C.border}` }}>
               <p style={{ color: C.dim, fontFamily: mono, fontSize: 11 }}>Today's stories loading...</p>
             </div>
@@ -369,18 +369,18 @@ export default async function Home() {
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
               gap: 16, marginBottom: 16, textDecoration: 'none',
               padding: '11px 18px', borderRadius: 6,
-              background: 'rgba(239,68,68,0.07)',
-              border: '1px solid rgba(239,68,68,0.22)',
+              background: 'rgba(153,27,27,0.12)',
+              border: '1px solid rgba(153,27,27,0.35)',
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ef4444', flexShrink: 0 }} className="live-dot" />
-                <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', color: '#f87171', flexShrink: 0, textTransform: 'uppercase' }}>Breaking</span>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#991b1b', flexShrink: 0 }} className="live-dot" />
+                <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', color: '#dc2626', flexShrink: 0, textTransform: 'uppercase' }}>Breaking</span>
                 <span style={{ width: 1, height: 12, background: 'rgba(239,68,68,0.3)', flexShrink: 0 }} />
                 <span style={{ fontFamily: serif, fontSize: 15, color: 'rgba(226,232,240,0.85)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                   {(breakingStories[0] as any).topic}
                 </span>
               </div>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#f87171', flexShrink: 0 }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#dc2626', flexShrink: 0 }}>
                 Live coverage
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
               </span>
@@ -452,7 +452,7 @@ export default async function Home() {
                 };
                 const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
                 return (
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
                     {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
                     {[
                       { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },

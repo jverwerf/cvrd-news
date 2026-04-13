@@ -83,8 +83,8 @@ export function TvTile({ channelNum, label, sub, href, thumbs, isLive = false, i
             <span style={{
               position: 'absolute', top: 6, right: 6,
               width: 4, height: 4, borderRadius: '50%',
-              background: '#ef4444',
-              boxShadow: '0 0 4px rgba(239,68,68,0.8)',
+              background: '#991b1b',
+              boxShadow: '0 0 4px rgba(153,27,27,0.8)',
               animation: 'blink 1.3s ease-in-out infinite',
               display: 'inline-block',
             }} />

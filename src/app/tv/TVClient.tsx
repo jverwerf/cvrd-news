@@ -4,9 +4,10 @@ import { useState, useEffect, useRef } from "react";
 import type { NarrativeGap } from "@/lib/data";
 import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { SiteNav } from "@/components/SiteNav";
 
 const CHANNELS = [
-  { id: 'breaking', label: 'Breaking', sub: 'Live updates', color: '#ef4444' },
+  { id: 'breaking', label: 'Breaking', sub: 'Live updates', color: '#991b1b' },
   { id: 'daily', label: 'Daily Pick', sub: 'Today\'s top stories', color: '#3b82f6' },
   { id: 'world', label: 'World', sub: 'Global affairs', color: '#60a5fa' },
   { id: 'politics', label: 'Politics', sub: 'Left. Right. Uncovered.', color: '#818cf8' },
@@ -20,11 +21,13 @@ export function TVClient({
   videoUrl,
   videoDate,
   initialChannel,
+  isBreaking = false,
 }: {
   allStories: NarrativeGap[];
   videoUrl?: string;
   videoDate?: string;
   initialChannel?: string;
+  isBreaking?: boolean;
 }) {
   const [activeChannel, setActiveChannel] = useState<string | null>(
     CHANNELS.find(ch => ch.id === initialChannel) ? (initialChannel ?? null) : null
@@ -78,26 +81,7 @@ export function TVClient({
 
         <div style={{ position: 'relative', zIndex: 2, height: '100%', display: 'flex', flexDirection: 'column' }}>
 
-          {/* Top bar — signal indicator + time */}
-          <div style={{
-            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-            padding: '24px 40px 0',
-            opacity: entered ? 1 : 0,
-            transform: entered ? 'translateY(0)' : 'translateY(-10px)',
-            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-          }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <div style={{
-                width: 6, height: 6, borderRadius: '50%', background: '#22c55e',
-                boxShadow: '0 0 8px rgba(34,197,94,0.6)',
-                animation: 'tvPulse 2s ease-in-out infinite',
-              }} />
-              <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.25)', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 500 }}>
-                Live Signal
-              </span>
-            </div>
-            <TVClock />
-          </div>
+          <SiteNav isBreaking={isBreaking} />
 
           {/* Center content */}
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 0, paddingBottom: '40px' }}>
@@ -175,17 +159,6 @@ export function TVClient({
                       }} />
                     )}
 
-                    {/* Count badge */}
-                    {count > 0 && (
-                      <div style={{
-                        position: 'absolute', top: isFocused ? 16 : 12, right: isFocused ? 20 : 12,
-                        fontSize: 10, fontWeight: 600, color: isFocused ? ch.color : 'rgba(255,255,255,0.15)',
-                        fontVariantNumeric: 'tabular-nums',
-                        transition: 'all 0.3s ease',
-                      }}>
-                        {count}
-                      </div>
-                    )}
 
                     {/* Channel number */}
                     <span style={{
@@ -470,7 +443,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
     return (
       <div style={{ background: '#000', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <p style={{ color: '#666', fontSize: 16 }}>No breaking news right now.</p>
-        <button onClick={onBack} style={{ color: '#ef4444', fontSize: 13, marginTop: 16, background: 'none', border: 'none', cursor: 'pointer' }}>
+        <button onClick={onBack} style={{ color: '#dc2626', fontSize: 13, marginTop: 16, background: 'none', border: 'none', cursor: 'pointer' }}>
           ← Back to channels
         </button>
       </div>
@@ -520,7 +493,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
             <button key={i} onClick={() => setCurrentStoryIdx(i)}
               style={{
                 width: i === currentStoryIdx ? 14 : 6, height: 6, borderRadius: 3,
-                background: i === currentStoryIdx ? '#ef4444' : 'rgba(255,255,255,0.3)',
+                background: i === currentStoryIdx ? '#991b1b' : 'rgba(255,255,255,0.3)',
                 border: 'none', cursor: 'pointer', transition: 'all 0.3s ease',
               }} />
           ))}

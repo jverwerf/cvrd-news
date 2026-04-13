@@ -81,10 +81,10 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
             <a href="/breaking" style={{
               display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
               padding: '4px 10px', borderRadius: 4, textDecoration: 'none',
-              background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.25)',
-              fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#f87171',
+              background: 'rgba(153,27,27,0.15)', border: '1px solid rgba(153,27,27,0.35)',
+              fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#dc2626',
             }}>
-              <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', display: 'inline-block' }} className="live-dot" />
+              <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#991b1b', display: 'inline-block' }} className="live-dot" />
               BREAKING
             </a>
           )}
