@@ -7,7 +7,7 @@ import { getTimelineThreads } from '@/lib/timeline-data';
 import type { NarrativeGap } from '@/lib/data';
 import type { TimelineThread } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
-import { Dashboard } from '@/components/Dashboard';
+import { HeroCarousel } from './home/HeroCarousel';
 import { TvTile } from './home/TvTile';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
 
@@ -73,60 +73,6 @@ function PlayIcon({ size = 10 }: { size?: number }) {
 }
 
 
-// ── Hero ──────────────────────────────────────────────────────────
-function HeroStory({ story }: { story: NarrativeGap }) {
-  const slug = toSlug(story.topic);
-  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
-  const img = story.image_file;
-  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
-  const vids = story.youtube_videos ?? [];
-  const totalSources = (vids.length) + (story.social_clips?.length ?? 0);
-
-  return (
-    <div style={{ position: 'relative', overflow: 'hidden' }}>
-      {/* background */}
-      {imgUrl
-        ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.3)' }} />
-        : <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category)}22 0%, ${C.panelDark} 100%)` }} />
-      }
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.6) 50%, rgba(30,42,58,0.4) 100%)' }} />
-
-      <div style={{ position: 'relative', padding: '36px 28px 28px' }}>
-        {/* category + source count */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
-            {catLabel(story.category)}
-          </span>
-          {totalSources > 0 && (
-            <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dim }}>
-              {totalSources} sources covering this
-            </span>
-          )}
-        </div>
-
-        {/* headline */}
-        <a href={`/story/${slug}`} style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontFamily: serif, fontSize: 'clamp(22px, 3.2vw, 34px)', lineHeight: 1.2, color: C.text, marginBottom: 8, maxWidth: 760, fontWeight: 400 }}>
-            {story.topic}
-          </h1>
-        </a>
-
-        {/* summary */}
-        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: C.dim, maxWidth: 660, marginBottom: 8 }}>
-          {story.summary?.slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
-        </p>
-
-        {/* dashboard tiles */}
-        {(vids.length > 0 || (story.social_clips?.length ?? 0) > 0) && (
-          <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 20 }}>
-            <Dashboard stories={[story]} tilesOnly={true} />
-          </div>
-        )}
-
-      </div>
-    </div>
-  );
-}
 
 // ── Story card ────────────────────────────────────────────────────
 function StoryCard({ story }: { story: NarrativeGap }) {
@@ -175,7 +121,7 @@ function StoryCard({ story }: { story: NarrativeGap }) {
 // ── Section header ────────────────────────────────────────────────
 function SectionHeader({ label, blurb, href, hrefText }: { label: string; blurb?: string; href: string; hrefText: string }) {
   return (
-    <div style={{ marginBottom: 14 }}>
+    <div style={{ marginBottom: 10 }}>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: blurb ? 4 : 0 }}>
         <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 400, color: C.text, margin: 0 }}>{label}</h2>
         <a href={href} style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
@@ -370,7 +316,6 @@ export default async function Home() {
     ? allStories.filter(s => s.is_top_story)
     : allStories.slice(0, 10);
 
-  const heroStory  = stories[0];
   const gridStories = stories.slice(1, 5);
   const allThreads  = threadData?.threads ?? [];
   const threadCount = allThreads.length;
@@ -403,19 +348,13 @@ export default async function Home() {
 
         <SiteNav isBreaking={isBreaking} />
 
-        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 60px' }}>
+        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 40px' }}>
 
           {/* ── HERO ──────────────────────────────────────── */}
-          {heroStory ? (
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
-                <a href={`/story/${toSlug(heroStory.topic)}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
-                  Read the full story
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                </a>
-              </div>
-              <div style={{ borderRadius: 10, overflow: 'hidden', border: `1px solid ${C.border}` }}>
-                <HeroStory story={heroStory} />
+          {stories.length > 0 ? (
+            <div style={{ margin: '-20px -16px 16px' }}>
+              <div style={{ overflow: 'hidden' }}>
+                <HeroCarousel stories={stories} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
               </div>
             </div>
           ) : (
@@ -428,7 +367,7 @@ export default async function Home() {
           {isBreaking && breakingStories && breakingStories.length > 0 && (
             <a href="/breaking" style={{
               display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              gap: 16, marginBottom: 28, textDecoration: 'none',
+              gap: 16, marginBottom: 16, textDecoration: 'none',
               padding: '11px 18px', borderRadius: 6,
               background: 'rgba(239,68,68,0.07)',
               border: '1px solid rgba(239,68,68,0.22)',
@@ -450,7 +389,7 @@ export default async function Home() {
 
           {/* ── ON RECORD ─────────────────────────────────── */}
           {onRecordData && (
-            <div style={{ marginBottom: 32 }}>
+            <div style={{ marginBottom: 20 }}>
               <SectionHeader
                 label="On Record"
                 blurb={`Today: ${onRecordData.story_topic}`}
@@ -463,7 +402,7 @@ export default async function Home() {
 
           {/* ── STORY SCROLL ──────────────────────────────── */}
           {stories.length > 1 && (
-            <div style={{ marginBottom: 32, padding: '0 16px' }}>
+            <div style={{ marginBottom: 20, padding: '0 16px' }}>
               <SectionHeader
                 label="Today's Pick"
                 blurb={`${stories.length} stories today — each one sourced from outlets across the political spectrum`}
@@ -479,7 +418,7 @@ export default async function Home() {
 
           {/* ── TIMELINE ──────────────────────────────────── */}
           {recentThread && (
-            <div style={{ marginBottom: 32 }}>
+            <div style={{ marginBottom: 20 }}>
               <SectionHeader
                 label="Timeline"
                 blurb={`Following ${threadCount} developing stories — tracking how each narrative evolves day by day`}
@@ -491,7 +430,7 @@ export default async function Home() {
           )}
 
           {/* ── WATCH ─────────────────────────────────────── */}
-          <div style={{ marginBottom: 32 }}>
+          <div style={{ marginBottom: 20 }}>
             <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
             <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
               <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
