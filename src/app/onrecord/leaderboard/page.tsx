@@ -73,6 +73,7 @@ export default function LeaderboardPage() {
   const [professionFilter, setProfessionFilter] = useState('all');
   const [alignmentFilter, setAlignmentFilter] = useState('all');
   const [search, setSearch] = useState('');
+  const [isBreaking, setIsBreaking] = useState(false);
 
   useEffect(() => {
     // Load politician handles dynamically from manifest
@@ -88,6 +89,12 @@ export default function LeaderboardPage() {
         setScores(results.filter(Boolean));
       })
       .catch(() => {});
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).then(data => {
+      if (data && Array.isArray(data) && data.length > 0) setIsBreaking(true);
+    }).catch(() => {});
   }, []);
 
   // Derive available countries from selected region
@@ -148,7 +155,7 @@ export default function LeaderboardPage() {
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
-      <SiteNav isBreaking={false} />
+      <SiteNav isBreaking={isBreaking} />
 
       {/* VIEW TOGGLE + SEARCH — same row */}
       <div className="flex items-center gap-2 px-4 md:px-12 py-2" style={{ background: '#1e2a3a' }}>

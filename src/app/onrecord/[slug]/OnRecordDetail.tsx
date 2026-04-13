@@ -282,6 +282,13 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   const [resolvedLimit, setResolvedLimit] = useState(3);
   const [pendingLimit, setPendingLimit] = useState(3);
   const [claimLimit, setClaimLimit] = useState(5);
+  const [isBreaking, setIsBreaking] = useState(false);
+
+  useEffect(() => {
+    fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).then(data => {
+      if (data && Array.isArray(data) && data.length > 0) setIsBreaking(true);
+    }).catch(() => {});
+  }, []);
 
   const claims: ScoredClaim[] = verified?.scored_claims || [];
   const pending: PendingClaim[] = verified?.pending_claims || [];
@@ -316,7 +323,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
-      <SiteNav isBreaking={false} />
+      <SiteNav isBreaking={isBreaking} />
 
       <div className="px-4 md:px-8 pb-10 pt-5 max-w-5xl mx-auto">
 
