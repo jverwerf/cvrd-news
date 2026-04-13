@@ -466,7 +466,26 @@ export default async function Home() {
 
         <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 60px' }}>
 
-          {/* ── BREAKING FEATURED (very first if live) ────── */}
+          {/* ── HERO ──────────────────────────────────────── */}
+          {heroStory ? (
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+                <a href={`/story/${toSlug(heroStory.topic)}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
+                  Read the full story
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+                </a>
+              </div>
+              <div style={{ borderRadius: 10, overflow: 'hidden', border: `1px solid ${C.border}` }}>
+                <HeroStory story={heroStory} />
+              </div>
+            </div>
+          ) : (
+            <div style={{ marginBottom: 24, padding: '60px 24px', borderRadius: 10, background: C.panel, textAlign: 'center', border: `1px solid ${C.border}` }}>
+              <p style={{ color: C.dim, fontFamily: mono, fontSize: 11 }}>Today's stories loading...</p>
+            </div>
+          )}
+
+          {/* ── BREAKING FEATURED ─────────────────────────── */}
           {isBreaking && breakingStories && breakingStories.length > 0 && (
             <div style={{ marginBottom: 32 }}>
               <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14 }}>
@@ -493,25 +512,6 @@ export default async function Home() {
                   </div>
                 </div>
               </a>
-            </div>
-          )}
-
-          {/* ── HERO ──────────────────────────────────────── */}
-          {heroStory ? (
-            <div style={{ marginBottom: 24 }}>
-              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
-                <a href={`/story/${toSlug(heroStory.topic)}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
-                  Read the full story
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                </a>
-              </div>
-              <div style={{ borderRadius: 10, overflow: 'hidden', border: `1px solid ${C.border}` }}>
-                <HeroStory story={heroStory} />
-              </div>
-            </div>
-          ) : (
-            <div style={{ marginBottom: 24, padding: '60px 24px', borderRadius: 10, background: C.panel, textAlign: 'center', border: `1px solid ${C.border}` }}>
-              <p style={{ color: C.dim, fontFamily: mono, fontSize: 11 }}>Today's stories loading...</p>
             </div>
           )}
 
