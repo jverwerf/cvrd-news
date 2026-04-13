@@ -40,6 +40,15 @@ function formatDateFull(dateStr: string): string {
   return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
 }
 
+function getMonth(dateStr: string): string {
+  return cleanDate(dateStr).substring(0, 7); // "YYYY-MM"
+}
+
+function formatMonthLabel(monthKey: string): string {
+  const d = new Date(monthKey + '-01T12:00:00');
+  return d.toLocaleDateString('en-US', { month: 'short' });
+}
+
 function categoryColor(cat: string): string {
   switch (cat) {
     case 'world': return '#60a5fa';
@@ -189,7 +198,6 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
                 <div className="flex-1 p-3 flex flex-col justify-center min-w-0">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: catColor }}>{thread.category}</span>
-                    <span className="text-[9px] text-[#666]">{formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}</span>
                   </div>
                   <h2 className="text-[13px] text-white font-medium leading-snug mb-0.5 group-hover:text-[#60a5fa] transition-colors line-clamp-1" style={serif}>
                     {thread.title}
@@ -272,7 +280,13 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
     ? (allYtVids.find(v => v.embed_id === bestVideoId) || allYtVids[0] || null)
     : allYtVids[0] || null;
 
-  const xClips = allSocialClips.filter(c => c.platform === 'x' && c.embed_id);
+  const seenXIds = new Set<string>();
+  const xClips = allSocialClips.filter(c => {
+    if (c.platform !== 'x' || !c.embed_id) return false;
+    if (seenXIds.has(c.embed_id)) return false;
+    seenXIds.add(c.embed_id);
+    return true;
+  });
   const allSources = selectedEntries.flatMap(e => e.sources || []);
   // Dedupe sources by URL
   const seenUrls = new Set<string>();
@@ -299,9 +313,6 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
             <div className="flex items-center gap-2 mb-1">
               <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>
                 {thread.category}
-              </span>
-              <span className="text-[9px] text-[#666]">
-                {formatDate(thread.first_seen)} — {formatDate(thread.last_seen)}
               </span>
             </div>
 
@@ -383,9 +394,10 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                       </h3>
                     </div>
                     <div className="mb-3 mt-3">
-                      {[...new Set(selectedEntries.map(e => e.summary))].map((s, i) => (
-                        <p key={i} className="text-[13px] text-[#bbb] leading-[1.7] mb-2 last:mb-0">{s}</p>
-                      ))}
+                      {(() => {
+                        const best = [...selectedEntries].sort((a, b) => b.summary.length - a.summary.length)[0]?.summary;
+                        return best ? <p className="text-[13px] text-[#bbb] leading-[1.7]">{best}</p> : null;
+                      })()}
                     </div>
                     <div className="mb-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
@@ -530,40 +542,61 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
   onSelect: (date: string, scrollToContent?: boolean) => void;
 }) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const scrollSyncLock = useRef(false);
+  const hasInteracted = useRef(false);
 
-  // Group dates by year
-  const yearGroups: { year: string; dates: string[] }[] = [];
+  // Group dates by year → month
+  type MonthGroup = { month: string; dates: string[] };
+  type YearGroup = { year: string; monthGroups: MonthGroup[] };
+  const yearGroups: YearGroup[] = [];
   for (const date of dates) {
     const y = getYear(date);
+    const m = getMonth(date);
     if (yearGroups.length === 0 || yearGroups[yearGroups.length - 1].year !== y) {
-      yearGroups.push({ year: y, dates: [date] });
+      yearGroups.push({ year: y, monthGroups: [{ month: m, dates: [date] }] });
     } else {
-      yearGroups[yearGroups.length - 1].dates.push(date);
+      const yg = yearGroups[yearGroups.length - 1];
+      if (yg.monthGroups[yg.monthGroups.length - 1].month !== m) {
+        yg.monthGroups.push({ month: m, dates: [date] });
+      } else {
+        yg.monthGroups[yg.monthGroups.length - 1].dates.push(date);
+      }
     }
   }
 
   const YEAR_W_COLLAPSED = 200;
-  const YEAR_W_EXPANDED = 600;
   const YEAR_GAP = 20;
+  const MONTH_W_COLLAPSED = 100;
+  const MONTH_GAP = 10;
+  const THUMB_W = 60;
+  const THUMB_H = 70;
+  const THUMB_GAP = 4;
 
-  // Flatten all entries with their year for the scrollbar
-  const allEntries = dates.map(d => ({ date: d, year: getYear(d) }));
+  const monthExpandedW = (count: number) => count * THUMB_W + (count - 1) * THUMB_GAP;
 
-  // Active entry index drives everything: scrollbar position, year opening, timeline scroll
-  // If only 1 year, auto-open it by selecting the first entry
+  const calcYearW = (yg: YearGroup, openMonths: Set<string>, isOpen: boolean): number => {
+    if (!isOpen) return YEAR_W_COLLAPSED;
+    if (yg.monthGroups.length === 1) return monthExpandedW(yg.monthGroups[0].dates.length);
+    const sum = yg.monthGroups.reduce((acc, mg) =>
+      acc + (openMonths.has(mg.month) ? monthExpandedW(mg.dates.length) : MONTH_W_COLLAPSED), 0);
+    return sum + (yg.monthGroups.length - 1) * MONTH_GAP;
+  };
+
+  // Flat list for indexing
+  const allEntries = dates.map(d => ({ date: d, year: getYear(d), month: getMonth(d) }));
+
   const uniqueYears = [...new Set(allEntries.map(e => e.year))];
   const [activeIdx, setActiveIdx] = useState(uniqueYears.length === 1 ? 0 : -1);
   const activeYear = activeIdx >= 0 ? (allEntries[activeIdx]?.year || '') : '';
+  const activeMonth = activeIdx >= 0 ? (allEntries[activeIdx]?.month || '') : '';
   const openYears = new Set(activeYear ? [activeYear] : []);
+  const openMonths = new Set(activeMonth ? [activeMonth] : []);
 
-
-  // Navigate to an entry: set active, open its year, select it, scroll timeline
   const goToEntry = (idx: number) => {
     hasInteracted.current = true;
     const clamped = Math.max(0, Math.min(allEntries.length - 1, idx));
     setActiveIdx(clamped);
-    onSelect(allEntries[clamped].date); // load summary + video below
-    // Scroll the timeline to center this entry's thumbnail after year transition
+    onSelect(allEntries[clamped].date);
     setTimeout(() => {
       const date = allEntries[clamped].date;
       const el = scrollRef.current?.querySelector(`[data-date="${date}"]`);
@@ -579,30 +612,32 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     }, 450);
   };
 
-  // Click year label to jump to first entry in that year
   const jumpToYear = (year: string) => {
     const currentYear = activeIdx >= 0 ? allEntries[activeIdx]?.year : '';
     const yearEntries = allEntries.filter(e => e.year === year);
     if (yearEntries.length === 0) return;
-    // Going to a smaller/earlier year → pick last entry; going to bigger/later year → pick first
     const goingLeft = year < currentYear;
     const targetDate = goingLeft ? yearEntries[yearEntries.length - 1].date : yearEntries[0].date;
     const idx = allEntries.findIndex(e => e.date === targetDate && e.year === year);
     if (idx >= 0) goToEntry(idx);
   };
 
+  const jumpToMonth = (month: string) => {
+    const currentMonth = activeIdx >= 0 ? allEntries[activeIdx]?.month : '';
+    const monthEntries = allEntries.filter(e => e.month === month);
+    if (monthEntries.length === 0) return;
+    const goingLeft = month < currentMonth;
+    const targetDate = goingLeft ? monthEntries[monthEntries.length - 1].date : monthEntries[0].date;
+    const idx = allEntries.findIndex(e => e.date === targetDate);
+    if (idx >= 0) goToEntry(idx);
+  };
 
-  // Scroll to selected date thumbnail
   useEffect(() => {
     if (!scrollRef.current || !selectedDate) return;
     const el = scrollRef.current.querySelector(`[data-date="${selectedDate}"]`);
     if (el) el.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
   }, [selectedDate]);
 
-  // Sync activeIdx when user scrolls the timeline directly
-  // Only start syncing after user has interacted (clicked a year/entry)
-  const scrollSyncLock = useRef(false);
-  const hasInteracted = useRef(false);
   useEffect(() => {
     const container = scrollRef.current?.closest('.timeline-scroll') as HTMLElement | null;
     if (!container) return;
@@ -613,7 +648,6 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
       const contRect = container.getBoundingClientRect();
       const centerX = contRect.left + contRect.width / 2;
 
-      // Find the thumbnail closest to viewport center
       const thumbEls = scrollRef.current?.querySelectorAll('[data-date]');
       if (!thumbEls) return;
       let closestIdx = -1;
@@ -622,16 +656,12 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
       for (const el of thumbEls) {
         const rect = el.getBoundingClientRect();
         const dist = Math.abs(rect.left + rect.width / 2 - centerX);
-        if (dist < closestDist) {
-          closestDist = dist;
-          closestIdx = entryCount;
-        }
+        if (dist < closestDist) { closestDist = dist; closestIdx = entryCount; }
         entryCount++;
       }
 
-      // Map the DOM index to our allEntries index by matching dates
       if (closestIdx >= 0 && closestIdx < dates.length) {
-        const closestDate = dates[closestIdx]; // dates array is sorted
+        const closestDate = dates[closestIdx];
         const entryIdx = allEntries.findIndex(e => e.date === closestDate);
         if (entryIdx >= 0 && entryIdx !== activeIdx) {
           setActiveIdx(entryIdx);
@@ -644,7 +674,6 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     return () => container.removeEventListener('scroll', onScroll);
   }, [activeIdx, dates.length]);
 
-  // Drag on the scrollbar track to scrub through entries
   const handleBarDrag = (e: React.MouseEvent | React.TouchEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -654,20 +683,15 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     scrollSyncLock.current = true;
 
     const scrub = (clientX: number) => {
-      // Convert mouse X to a position in the scroll content
       const contRect = container.getBoundingClientRect();
       const contentX = clientX - contRect.left + container.scrollLeft;
 
-      // Find which thumbnail is closest to this content X
       const thumbEls = scrollRef.current?.querySelectorAll('[data-date]');
       if (!thumbEls) return;
       let closestIdx = 0;
       let closestDist = Infinity;
       let idx = 0;
       for (const el of thumbEls) {
-        const elLeft = (el as HTMLElement).offsetLeft;
-        const elW = (el as HTMLElement).offsetWidth;
-        // offsetLeft is relative to offsetParent, need to walk up to scrollRef
         const rect = el.getBoundingClientRect();
         const elCenterInContent = rect.left - contRect.left + container.scrollLeft + rect.width / 2;
         const dist = Math.abs(elCenterInContent - contentX);
@@ -676,7 +700,6 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
       }
       if (closestIdx < allEntries.length) {
         setActiveIdx(closestIdx);
-        // Scroll to keep the entry visible
         const date = allEntries[closestIdx]?.date;
         const el = scrollRef.current?.querySelector(`[data-date="${date}"]`);
         if (el) {
@@ -693,10 +716,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     const startX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     scrub(startX);
 
-    const onMove = (me: MouseEvent | TouchEvent) => {
-      const cx = 'touches' in me ? me.touches[0].clientX : me.clientX;
-      scrub(cx);
-    };
+    const onMove = (me: MouseEvent | TouchEvent) => { scrub('touches' in me ? me.touches[0].clientX : me.clientX); };
     const onEnd = () => {
       scrollSyncLock.current = false;
       document.removeEventListener('mousemove', onMove);
@@ -710,162 +730,211 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
     document.addEventListener('touchend', onEnd);
   };
 
-  let globalIdx = 0;
+  // Reusable entry card (topic above, date below — consistent for all cards)
+  const EntryCard = ({ date }: { date: string }) => {
+    const dayEntries = grouped[date];
+    const isSelected = date === selectedDate;
+    const topic = dayEntries[0]?.topic || '';
+    return (
+      <div key={date} data-date={date} className="flex flex-col items-center" style={{ width: THUMB_W }}>
+        <div className="text-center overflow-hidden w-full" style={{ height: 22, marginBottom: 2 }}>
+          <p className="text-[7px] leading-tight line-clamp-2 px-0.5" style={{ color: isSelected ? '#daa520' : '#bbb' }}>{topic}</p>
+        </div>
+        <button onClick={(e) => { e.stopPropagation(); onSelect(date); }}
+          className="w-full rounded overflow-hidden cursor-pointer"
+          style={{
+            height: THUMB_H,
+            border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)',
+            opacity: isSelected ? 1 : 0.7,
+            boxShadow: isSelected ? '0 2px 8px rgba(218,165,32,0.4)' : 'none',
+            position: 'relative',
+            transition: 'all 0.25s ease',
+          }}>
+          {dayEntries[0]?.image_file
+            ? <img src={dayEntries[0].image_file} alt="" className="w-full h-full object-cover" />
+            : <div className="w-full h-full" style={{ background: '#2a3a4a' }} />}
+        </button>
+        <div className="text-center" style={{ height: 14, marginTop: 3 }}>
+          <span className="text-[7px] whitespace-nowrap font-semibold block" style={{ color: isSelected ? '#daa520' : '#777' }}>{formatDateDay(date)}</span>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <div>
       <div ref={scrollRef}>
         <div className="flex min-w-max" style={{ gap: YEAR_GAP, paddingRight: 40 }}>
-        {yearGroups.map((yg) => {
-          const isOpen = openYears.has(yg.year);
-          const startIdx = globalIdx;
-          const count = yg.dates.length;
-          const gap = 4;
-          // Expanded width scales with entry count — min 200px, each entry ~120px, capped at 600
-          const expandedW = isOpen ? Math.min(YEAR_W_EXPANDED, Math.max(YEAR_W_COLLAPSED, count * 120 + (count - 1) * gap)) : YEAR_W_COLLAPSED;
-          const activeW = expandedW;
-          const thumbW = Math.floor((activeW - (count - 1) * gap) / count);
-          globalIdx += count;
+          {yearGroups.map((yg) => {
+            const isOpen = openYears.has(yg.year);
+            const allYearDates = yg.monthGroups.flatMap(mg => mg.dates);
+            const count = allYearDates.length;
+            const showMonthLevel = yg.monthGroups.length > 1;
+            const activeW = calcYearW(yg, openMonths, isOpen);
+            const collapsedThumbW = Math.max(4, Math.floor((YEAR_W_COLLAPSED - (count - 1) * THUMB_GAP) / count));
 
-          return (
-            <div key={yg.year} data-year={yg.year}
-              className="shrink-0 cursor-pointer"
-              style={{ width: activeW, transition: 'width 0.4s ease' }}
-              onClick={() => jumpToYear(yg.year)}>
+            return (
+              <div key={yg.year} data-year={yg.year}
+                className="shrink-0 cursor-pointer"
+                style={{ width: activeW, transition: 'width 0.4s ease' }}
+                onClick={() => jumpToYear(yg.year)}>
 
-              {/* Year + bracket */}
-              <div className="text-center mb-1.5">
-                <span className="font-bold text-[#daa520]" style={{ fontSize: isOpen ? 14 : 11, transition: 'font-size 0.3s' }}>{yg.year}</span>
-              </div>
-              <div className="flex items-start mb-1.5 mx-1">
-                <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
-                <div className="flex-1" style={{ height: 2, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'opacity 0.3s' }} />
-                <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
-              </div>
+                {/* Year label + bracket */}
+                <div className="text-center mb-1.5">
+                  <span className="font-bold text-[#daa520]" style={{ fontSize: isOpen ? 14 : 11, transition: 'font-size 0.3s' }}>{yg.year}</span>
+                </div>
+                <div className="flex items-start mb-1.5 mx-1">
+                  <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
+                  <div className="flex-1" style={{ height: 2, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'opacity 0.3s' }} />
+                  <div style={{ width: 2, height: isOpen ? 10 : 6, background: '#daa520', opacity: isOpen ? 0.6 : 0.3, transition: 'all 0.3s' }} />
+                </div>
 
-              {/* Collapsed: cropped thumbnails row — fixed width based on collapsed size */}
-              <div className="flex overflow-hidden rounded" style={{ gap, height: isOpen ? 0 : 70, opacity: isOpen ? 0 : 0.75, transition: 'all 0.3s ease' }}>
-                {yg.dates.map((date, di) => {
-                  const thumb = grouped[date]?.[0]?.image_file;
-                  const collapsedThumbW = Math.floor((YEAR_W_COLLAPSED - (count - 1) * gap) / count);
-                  return (
-                    <div key={di} className="overflow-hidden rounded" style={{ width: collapsedThumbW, height: 70, flexShrink: 0 }}>
-                      {thumb ? <img src={thumb} alt="" className="w-full h-full object-cover" /> : <div className="w-full h-full" style={{ background: '#2a3a4a' }} />}
-                    </div>
-                  );
-                })}
-              </div>
-
-              {/* Expanded: full thumbnails with labels */}
-              <div style={{ maxHeight: isOpen ? 500 : 0, opacity: isOpen ? 1 : 0, overflow: isOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
-                <div className="flex" style={{ gap, padding: '8px 6px' }}>
-                  {yg.dates.map((date, di) => {
-                    const dayEntries = grouped[date];
-                    const isSelected = date === selectedDate;
-                    const isEven = (startIdx + di) % 2 === 0;
-                    const topic = dayEntries[0]?.topic || '';
-
+                {/* Year collapsed: mini strip of all thumbs */}
+                <div className="flex overflow-hidden rounded" style={{ gap: THUMB_GAP, height: isOpen ? 0 : THUMB_H, opacity: isOpen ? 0 : 0.75, transition: 'all 0.3s ease' }}>
+                  {allYearDates.map((date, di) => {
+                    const thumb = grouped[date]?.[0]?.image_file;
                     return (
-                      <div key={date} data-date={date} className="flex flex-col items-center" style={{ width: thumbW }}>
-                        {/* Top: even=topic, odd=date+dot */}
-                        <div className="text-center overflow-hidden flex flex-col justify-end" style={{ height: 22, marginBottom: 2 }}>
-                          {isEven ? (
-                            <p className="text-[7px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
-                          ) : (
-                            <>
-                              <span className="text-[7px] whitespace-nowrap font-semibold block" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
-                              <div className="mx-auto" style={{ width: 5, height: 5, borderRadius: '50%', background: isSelected ? '#daa520' : '#e0e0e0', marginTop: 1 }} />
-                            </>
-                          )}
-                        </div>
-
-                        {/* Thumbnail — selected entry pops up bigger */}
-                        <button onClick={(e) => { e.stopPropagation(); onSelect(date); }}
-                          className="w-full rounded overflow-hidden cursor-pointer"
-                          style={{
-                            height: 70,
-                            border: isSelected ? '2px solid #daa520' : '1px solid rgba(255,255,255,0.1)',
-                            opacity: isSelected ? 1 : 0.7,
-                            transform: 'scale(1)',
-                            boxShadow: isSelected ? '0 2px 8px rgba(218,165,32,0.4)' : 'none',
-                            zIndex: 1,
-                            position: 'relative',
-                            transition: 'all 0.25s ease',
-                          }}>
-                          {dayEntries[0]?.image_file ? (
-                            <img src={dayEntries[0].image_file} alt="" className="w-full h-full object-cover" />
-                          ) : (
-                            <div className="w-full h-full" style={{ background: '#2a3a4a' }} />
-                          )}
-                        </button>
-
-                        {/* Bottom: even=dot+date, odd=topic */}
-                        <div className="text-center overflow-hidden" style={{ height: 22, marginTop: 2 }}>
-                          {isEven ? (
-                            <>
-                              <div className="mx-auto" style={{ width: 5, height: 5, borderRadius: '50%', background: isSelected ? '#daa520' : '#e0e0e0', marginBottom: 1 }} />
-                              <span className="text-[7px] whitespace-nowrap font-semibold block" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{formatDateDay(date)}</span>
-                            </>
-                          ) : (
-                            <p className="text-[7px] leading-tight line-clamp-1" style={{ color: isSelected ? '#daa520' : '#e0e0e0' }}>{topic}</p>
-                          )}
-                        </div>
+                      <div key={di} className="overflow-hidden rounded" style={{ width: collapsedThumbW, height: THUMB_H, flexShrink: 0 }}>
+                        {thumb ? <img src={thumb} alt="" className="w-full h-full object-cover" /> : <div className="w-full h-full" style={{ background: '#2a3a4a' }} />}
                       </div>
                     );
                   })}
                 </div>
+
+                {/* Year expanded */}
+                <div style={{ maxHeight: isOpen ? 1000 : 0, opacity: isOpen ? 1 : 0, overflow: isOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
+                  {!showMonthLevel ? (
+                    // Single month — render entries directly
+                    <div className="flex" style={{ gap: THUMB_GAP, padding: '8px 0' }}>
+                      {yg.monthGroups[0].dates.map((date) => <EntryCard key={date} date={date} />)}
+                    </div>
+                  ) : (
+                    // Multiple months — show month groups
+                    <div className="flex" style={{ gap: MONTH_GAP, padding: '4px 0' }}>
+                      {yg.monthGroups.map((mg) => {
+                        const isMonthOpen = openMonths.has(mg.month);
+                        const mCount = mg.dates.length;
+                        const mW = isMonthOpen ? monthExpandedW(mCount) : MONTH_W_COLLAPSED;
+                        const collapsedMThumbW = Math.max(4, Math.floor((MONTH_W_COLLAPSED - (mCount - 1) * THUMB_GAP) / mCount));
+
+                        return (
+                          <div key={mg.month}
+                            className="shrink-0 cursor-pointer"
+                            style={{ width: mW, transition: 'width 0.4s ease' }}
+                            onClick={(e) => { e.stopPropagation(); jumpToMonth(mg.month); }}>
+
+                            {/* Month label + bracket */}
+                            <div className="text-center mb-1">
+                              <span className="font-semibold text-[#daa520]" style={{ fontSize: isMonthOpen ? 11 : 9, opacity: isMonthOpen ? 0.9 : 0.55, transition: 'all 0.3s' }}>
+                                {formatMonthLabel(mg.month)}
+                              </span>
+                            </div>
+                            <div className="flex items-start mb-1 mx-0.5">
+                              <div style={{ width: 1, height: isMonthOpen ? 7 : 4, background: '#daa520', opacity: isMonthOpen ? 0.5 : 0.2, transition: 'all 0.3s' }} />
+                              <div className="flex-1" style={{ height: 1, background: '#daa520', opacity: isMonthOpen ? 0.5 : 0.2, transition: 'opacity 0.3s' }} />
+                              <div style={{ width: 1, height: isMonthOpen ? 7 : 4, background: '#daa520', opacity: isMonthOpen ? 0.5 : 0.2, transition: 'all 0.3s' }} />
+                            </div>
+
+                            {/* Month collapsed: mini strip */}
+                            <div className="flex overflow-hidden rounded" style={{ gap: THUMB_GAP, height: isMonthOpen ? 0 : THUMB_H, opacity: isMonthOpen ? 0 : 0.75, transition: 'all 0.3s ease' }}>
+                              {mg.dates.map((date, di) => {
+                                const thumb = grouped[date]?.[0]?.image_file;
+                                return (
+                                  <div key={di} className="overflow-hidden rounded" style={{ width: collapsedMThumbW, height: THUMB_H, flexShrink: 0 }}>
+                                    {thumb ? <img src={thumb} alt="" className="w-full h-full object-cover" /> : <div className="w-full h-full" style={{ background: '#2a3a4a' }} />}
+                                  </div>
+                                );
+                              })}
+                            </div>
+
+                            {/* Month expanded: full entry cards */}
+                            <div style={{ maxHeight: isMonthOpen ? 500 : 0, opacity: isMonthOpen ? 1 : 0, overflow: isMonthOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
+                              <div className="flex" style={{ gap: THUMB_GAP, padding: '8px 0' }}>
+                                {mg.dates.map((date) => <EntryCard key={date} date={date} />)}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
 
-      {/* ═══ SCROLLBAR — full content width, dots below thumbnails, draggable ═══ */}
-      <div className="relative mt-3 flex min-w-max" style={{ height: 14, gap: YEAR_GAP, paddingRight: 40 }}
-        onMouseDown={handleBarDrag} onTouchStart={handleBarDrag}>
-        {yearGroups.map((yg) => {
-          const isOpen = openYears.has(yg.year);
-          const count = yg.dates.length;
-          const gap = 4;
-          const yearW = isOpen ? Math.min(YEAR_W_EXPANDED, Math.max(YEAR_W_COLLAPSED, count * 120 + (count - 1) * gap)) : YEAR_W_COLLAPSED;
-          const thumbW = Math.floor((yearW - (count - 1) * gap) / count);
-          const startIdx = allEntries.findIndex(e => e.year === yg.year);
+        {/* ═══ SCROLLBAR — full content width, dots align with thumbnails, draggable ═══ */}
+        <div className="relative mt-3 flex min-w-max" style={{ height: 14, gap: YEAR_GAP, paddingRight: 40 }}
+          onMouseDown={handleBarDrag} onTouchStart={handleBarDrag}>
+          {yearGroups.map((yg) => {
+            const isOpen = openYears.has(yg.year);
+            const allYearDates = yg.monthGroups.flatMap(mg => mg.dates);
+            const count = allYearDates.length;
+            const showMonthLevel = yg.monthGroups.length > 1;
+            const yearW = calcYearW(yg, openMonths, isOpen);
+            const startIdx = allEntries.findIndex(e => e.year === yg.year);
+            const collapsedThumbW = Math.max(4, Math.floor((YEAR_W_COLLAPSED - (count - 1) * THUMB_GAP) / count));
 
-          return (
-            <div key={yg.year} className="shrink-0 relative" style={{ width: yearW, transition: 'width 0.4s ease' }}>
-              {/* Track line */}
-              <div style={{
-                position: 'absolute', top: '50%', left: 0, width: '100%',
-                height: isOpen ? 4 : 2, transform: 'translateY(-50%)',
-                background: isOpen ? 'rgba(218,165,32,0.3)' : 'rgba(218,165,32,0.12)',
-                borderRadius: 2, transition: 'height 0.2s, background 0.2s',
-              }} />
-              {/* Entry dots — positioned to align with thumbnails above */}
-              {yg.dates.map((_, di) => {
-                const entryIdx = startIdx + di;
-                const isActive = entryIdx === activeIdx;
-                // Center of each thumbnail: offset from year start
-                const dotX = di * (thumbW + gap) + thumbW / 2;
-                return (
-                  <div key={di}
-                    onClick={(e) => { e.stopPropagation(); goToEntry(entryIdx); }}
-                    style={{
-                      position: 'absolute', left: dotX, top: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: isActive ? 8 : 3, height: isActive ? 8 : 3,
-                      borderRadius: '50%',
-                      background: isActive ? '#daa520' : 'rgba(218,165,32,0.35)',
-                      boxShadow: isActive ? '0 0 6px rgba(218,165,32,0.5)' : 'none',
-                      transition: 'all 0.15s', cursor: 'pointer', zIndex: isActive ? 10 : 1,
-                    }}
-                  />
-                );
-              })}
-            </div>
-          );
-        })}
+            // Compute dot positions
+            const dots: { dotX: number; entryIdx: number }[] = [];
+            if (!isOpen) {
+              allYearDates.forEach((_, di) => {
+                dots.push({ dotX: di * (collapsedThumbW + THUMB_GAP) + collapsedThumbW / 2, entryIdx: startIdx + di });
+              });
+            } else if (!showMonthLevel) {
+              allYearDates.forEach((_, di) => {
+                dots.push({ dotX: di * (THUMB_W + THUMB_GAP) + THUMB_W / 2, entryIdx: startIdx + di });
+              });
+            } else {
+              let monthX = 0;
+              let localDi = 0;
+              for (const mg of yg.monthGroups) {
+                const isMonthOpen = openMonths.has(mg.month);
+                const mCount = mg.dates.length;
+                const mW = isMonthOpen ? monthExpandedW(mCount) : MONTH_W_COLLAPSED;
+                const collapsedMThumbW = Math.max(4, Math.floor((MONTH_W_COLLAPSED - (mCount - 1) * THUMB_GAP) / mCount));
+                mg.dates.forEach((_, di) => {
+                  const dotX = isMonthOpen
+                    ? monthX + di * (THUMB_W + THUMB_GAP) + THUMB_W / 2
+                    : monthX + di * (collapsedMThumbW + THUMB_GAP) + collapsedMThumbW / 2;
+                  dots.push({ dotX, entryIdx: startIdx + localDi + di });
+                });
+                localDi += mCount;
+                monthX += mW + MONTH_GAP;
+              }
+            }
+
+            return (
+              <div key={yg.year} className="shrink-0 relative" style={{ width: yearW, transition: 'width 0.4s ease' }}>
+                <div style={{
+                  position: 'absolute', top: '50%', left: 0, width: '100%',
+                  height: isOpen ? 4 : 2, transform: 'translateY(-50%)',
+                  background: isOpen ? 'rgba(218,165,32,0.3)' : 'rgba(218,165,32,0.12)',
+                  borderRadius: 2, transition: 'height 0.2s, background 0.2s',
+                }} />
+                {dots.map(({ dotX, entryIdx }) => {
+                  const isActive = entryIdx === activeIdx;
+                  return (
+                    <div key={entryIdx}
+                      onClick={(e) => { e.stopPropagation(); goToEntry(entryIdx); }}
+                      style={{
+                        position: 'absolute', left: dotX, top: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: isActive ? 8 : 3, height: isActive ? 8 : 3,
+                        borderRadius: '50%',
+                        background: isActive ? '#daa520' : 'rgba(218,165,32,0.35)',
+                        boxShadow: isActive ? '0 0 6px rgba(218,165,32,0.5)' : 'none',
+                        transition: 'all 0.15s', cursor: 'pointer', zIndex: isActive ? 10 : 1,
+                      }}
+                    />
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
@@ -967,10 +1036,54 @@ function ShareBar({ text, url }: { text: string; url: string }) {
 // ── Group entries by date ──
 
 function groupByDate(entries: ThreadEntry[]): Record<string, ThreadEntry[]> {
-  const grouped: Record<string, ThreadEntry[]> = {};
+  // First pass: bucket by date
+  const raw: Record<string, ThreadEntry[]> = {};
   for (const entry of entries) {
-    if (!grouped[entry.date]) grouped[entry.date] = [];
-    grouped[entry.date].push(entry);
+    if (!raw[entry.date]) raw[entry.date] = [];
+    raw[entry.date].push(entry);
   }
-  return grouped;
+
+  // Second pass: within each date, merge only entries with the SAME topic
+  // (pipeline duplicate runs) — different topics on the same date stay separate
+  const merged: Record<string, ThreadEntry[]> = {};
+  for (const [date, dayEntries] of Object.entries(raw)) {
+    // Group by topic
+    const byTopic: Record<string, ThreadEntry[]> = {};
+    for (const entry of dayEntries) {
+      const key = (entry.topic || '').trim().toLowerCase();
+      if (!byTopic[key]) byTopic[key] = [];
+      byTopic[key].push(entry);
+    }
+
+    merged[date] = Object.values(byTopic).map(topicEntries => {
+      if (topicEntries.length === 1) return topicEntries[0];
+
+      // Multiple entries for the same date+topic: merge them
+      const base = [...topicEntries].sort((a, b) => b.summary.length - a.summary.length)[0];
+
+      const seenVids = new Set<string>();
+      const youtube_videos = topicEntries.flatMap(e => e.youtube_videos || []).filter(v => {
+        const id = v.embed_id || (v as any).id;
+        if (!id || seenVids.has(id)) return false;
+        seenVids.add(id); return true;
+      });
+
+      const seenClips = new Set<string>();
+      const social_clips = topicEntries.flatMap(e => e.social_clips || []).filter(c => {
+        const key = `${c.platform}:${c.embed_id || c.url}`;
+        if (seenClips.has(key)) return false;
+        seenClips.add(key); return true;
+      });
+
+      const seenUrls = new Set<string>();
+      const sources = topicEntries.flatMap(e => e.sources || []).filter(s => {
+        if (seenUrls.has(s.url)) return false;
+        seenUrls.add(s.url); return true;
+      });
+
+      return { ...base, youtube_videos, social_clips, sources };
+    });
+  }
+
+  return merged;
 }
