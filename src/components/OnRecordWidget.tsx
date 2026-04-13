@@ -49,7 +49,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
   };
 
   return (
-    <div className="rounded-lg p-4 mb-6 min-w-0 w-full" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
+    <div className="mb-6 min-w-0 w-full">
       <div className="flex items-center gap-2 mb-3">
         <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: 'rgba(184,134,11,0.2)' }}>
           <span className="text-[6px] font-bold" style={{ color: '#b8860b' }}>!</span>
@@ -57,6 +57,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
         <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
       </div>
 
+      <div className="rounded-lg p-4" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
       <div className="relative">
         {/* Left arrow */}
         {canLeft && (
@@ -117,6 +118,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
             </Link>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

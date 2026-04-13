@@ -257,7 +257,7 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
+                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
               </div>
               <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
                 <div className="flex flex-wrap gap-2">
@@ -291,6 +291,25 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
             </div>
           );
         })()}
+
+        {/* TIKTOK */}
+        {tiktokClips.filter(c => c.embed_id).length > 0 && (
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+              <span className="text-[11px] font-bold text-[#ccc] uppercase tracking-[0.12em]">TikTok</span>
+            </div>
+            <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {tiktokClips.filter(c => c.embed_id).map((c, i) => (
+                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px] w-full" style={{ border: 'none' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* ALL ARTICLES */}
         <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>

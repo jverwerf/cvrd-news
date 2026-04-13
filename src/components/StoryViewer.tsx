@@ -16,6 +16,18 @@ function topicToSlug(topic: string): string {
   return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 }
 
+function toBullets(text: string): string[] {
+  const raw = text.split(/\.\s+(?=[A-Z])/).map((s, i, arr) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
+  const merged: string[] = [];
+  let acc = '';
+  for (const part of raw) {
+    acc = acc ? acc + ' ' + part : part;
+    if (acc.length >= 80) { merged.push(acc); acc = ''; }
+  }
+  if (acc) merged.push(acc);
+  return merged;
+}
+
 export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   stories: NarrativeGap[];
   videoUrl?: string;
@@ -321,7 +333,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div className="px-6 md:px-12 pt-5 pb-4" style={{ background: '#1e2a3a' }}>
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
             <div className="mb-5 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+              {toBullets(story.summary).length > 1 ? (
+                <ul className="space-y-1.5 list-none pl-0 m-0">
+                  {toBullets(story.summary).map((s, i) => (
+                    <li key={i} className="flex gap-2 text-[13px] text-[#ccc] leading-[1.6]">
+                      <span className="text-[#daa520] shrink-0">•</span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+              )}
             </div>
 
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Our Pick of Videos</h2>
@@ -340,7 +363,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
                   </span>
                 </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+                {toBullets(story.left_narrative).length > 1 ? (
+                  <ul className="space-y-1.5 list-none pl-0 m-0">
+                    {toBullets(story.left_narrative).map((s, i) => (
+                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <span className="text-[#60a5fa] shrink-0">•</span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+                )}
               </div>
               {story.center_narrative && (
                 <div className="py-4 px-4 border-b" style={{ borderColor: '#2a3a4a' }}>
@@ -352,7 +386,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
                     </span>
                   </div>
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+                  {toBullets(story.center_narrative!).length > 1 ? (
+                    <ul className="space-y-1.5 list-none pl-0 m-0">
+                      {toBullets(story.center_narrative!).map((s, i) => (
+                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                          <span className="text-[#a3a3a3] shrink-0">•</span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+                  )}
                 </div>
               )}
               <div className="py-4 px-4">
@@ -364,7 +409,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
                   </span>
                 </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+                {toBullets(story.right_narrative).length > 1 ? (
+                  <ul className="space-y-1.5 list-none pl-0 m-0">
+                    {toBullets(story.right_narrative).map((s, i) => (
+                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <span className="text-[#f87171] shrink-0">•</span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+                )}
               </div>
             </div>
 
@@ -375,7 +431,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Blindspots</span>
                 </div>
                 <div className="p-5 rounded-lg mb-5" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+                  {toBullets(story.what_they_arent_telling_you).length > 1 ? (
+                    <ul className="space-y-1.5 list-none pl-0 m-0">
+                      {toBullets(story.what_they_arent_telling_you).map((s, i) => (
+                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                          <span className="text-[#daa520] shrink-0">•</span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+                  )}
                 </div>
               </div>
             )}
@@ -387,21 +454,18 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                 </div>
                 <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                  {(() => {
-                    const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
-                    return bullets.length > 1 ? (
-                      <ul className="space-y-1.5 list-none pl-0 m-0">
-                        {bullets.map((s: string, i: number) => (
-                          <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
-                            <span className="text-[#daa520] shrink-0">•</span>
-                            <span>{s}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : (
-                      <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
-                    );
-                  })()}
+                  {toBullets(story.social_summary).length > 1 ? (
+                    <ul className="space-y-1.5 list-none pl-0 m-0">
+                      {toBullets(story.social_summary).map((s, i) => (
+                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                          <span className="text-[#daa520] shrink-0">•</span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                  )}
                 </div>
               </div>
             )}
@@ -410,73 +474,78 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           {/* CURATED SOCIAL — GPT-picked best tweets/reddit/telegram */}
           {resolvedBrief?.curated_social && resolvedBrief.curated_social.length > 0 && (
             <div className="px-6 md:px-12 pb-3" style={{ background: '#1e2a3a' }}>
-              <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Social Wire</h2>
 
-              {/* Tweets */}
+              {/* Tweets — 𝕏 logo is the section header */}
               {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).length > 0 && (
-                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[16px] font-bold text-white">𝕏</span>
+                    <span className="text-[18px] font-bold text-white leading-none">𝕏</span>
                   </div>
-                  <div className="grid grid-cols-4 gap-2">
-                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).map((c: any, i: number) => (
-                      <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
-                        <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                            style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                    <div className="grid grid-cols-4 gap-2">
+                      {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).map((c: any, i: number) => (
+                        <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
+                          <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                            <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                              style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
 
-              {/* Telegram */}
+              {/* Telegram — logo outside card */}
               {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').length > 0 && (
-                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
                     <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').map((c: any, i: number) => (
-                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                        <div className="flex items-start gap-2">
-                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
-                          <div className="min-w-0">
-                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
-                            <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {resolvedBrief.curated_social.filter((p: any) => p.platform === 'telegram').map((c: any, i: number) => (
+                        <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                          className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                          style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <div className="flex items-start gap-2">
+                            <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
+                            <div className="min-w-0">
+                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                              <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+                            </div>
                           </div>
-                        </div>
-                      </a>
-                    ))}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
 
-              {/* Reddit */}
+              {/* Reddit — logo outside card */}
               {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').length > 0 && (
-                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
+                <div className="mb-4">
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                     <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').map((c: any, i: number) => (
-                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                        <div className="flex items-start gap-2">
-                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
-                          <div className="min-w-0">
-                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
-                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').map((c: any, i: number) => (
+                        <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                          className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                          style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <div className="flex items-start gap-2">
+                            <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
+                            <div className="min-w-0">
+                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                              <span className="text-[10px] text-[#666] mt-1 block">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                            </div>
                           </div>
-                        </div>
-                      </a>
-                    ))}
+                        </a>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
