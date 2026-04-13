@@ -112,7 +112,7 @@ function HeroStory({ story }: { story: NarrativeGap }) {
         </a>
 
         {/* summary */}
-        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: C.dim, maxWidth: 660, marginBottom: 20 }}>
+        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: C.dim, maxWidth: 660, marginBottom: 8 }}>
           {story.summary?.slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
         </p>
 
