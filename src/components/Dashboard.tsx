@@ -427,7 +427,7 @@ export function Dashboard({
       <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
         <div className="h-full grid grid-cols-4 gap-1">
           {[0, 1, 2, 3].map(i => (
-            <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+            <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={true} />
           ))}
         </div>
       </section>
