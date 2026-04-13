@@ -42,6 +42,7 @@ export function Dashboard({
   tvMode,
   noAutoPlay,
   compact,
+  tilesOnly,
 }: {
   stories: NarrativeGap[];
   videoUrl?: string;
@@ -49,6 +50,7 @@ export function Dashboard({
   tvMode?: boolean;
   noAutoPlay?: boolean;
   compact?: boolean;
+  tilesOnly?: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const ytPlayerRef = useRef<HTMLIFrameElement>(null);
@@ -419,6 +421,18 @@ export function Dashboard({
 
   const activeType = overrideVideo?.type || current?.type;
   const needsExtraHeight = activeType === 'x' || activeType === 'tiktok';
+
+  if (tilesOnly) {
+    return (
+      <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
+        <div className="h-full grid grid-cols-4 gap-1">
+          {[0, 1, 2, 3].map(i => (
+            <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+          ))}
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>

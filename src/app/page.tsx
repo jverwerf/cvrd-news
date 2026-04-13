@@ -1,153 +1,620 @@
-export const revalidate = 3600; // 1 hour — daily pipeline runs at 7am
+export const revalidate = 3600;
 
-import type { Metadata } from "next";
-import { getDailyGaps } from "@/lib/data";
+import fs from 'fs';
+import path from 'path';
+import { getDailyGaps } from '@/lib/data';
+import { getTimelineThreads } from '@/lib/timeline-data';
+import type { NarrativeGap } from '@/lib/data';
+import type { TimelineThread } from '@/lib/timeline-data';
+import { StoryScroll } from './home/StoryScroll';
+import { Dashboard } from '@/components/Dashboard';
+import { TvTile } from './home/TvTile';
 
-export async function generateMetadata(): Promise<Metadata> {
-  const data = await getDailyGaps();
-  const stories = (data?.top_narratives || []).filter((s: any) => s.is_top_story).slice(0, 6);
-  const topics = stories.map((s: any) => s.topic).join('. ');
-  const desc = topics ? `Today: ${topics}` : 'Daily news from 36+ sources across the political spectrum.';
-  return {
-    title: 'CVRD News — Your Streaming Platform to Cover the News',
-    description: desc.slice(0, 160),
-    openGraph: {
-      title: 'CVRD News — Every Side of Every Story',
-      description: desc.slice(0, 200),
-      url: 'https://cvrdnews.com',
-      images: stories[0]?.image_file ? [{ url: `https://cvrdnews.com${stories[0].image_file}` }] : [{ url: 'https://cvrdnews.com/logo_new.jpg' }],
-    },
-    alternates: { canonical: '/' },
+// ── helpers ──────────────────────────────────────────────────────
+function toSlug(topic: string) {
+  return topic.toLowerCase()
+    .replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
+}
+
+function ytThumb(id: string) {
+  return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+}
+
+function catColor(cat?: string) {
+  const map: Record<string, string> = {
+    world: '#1d4ed8', politics: '#7c3aed', markets: '#047857',
+    trending: '#b45309', sports: '#0e7490',
   };
+  return map[cat ?? ''] ?? '#374151';
 }
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { LiveBanner } from "@/components/LiveBanner";
-import { StoryViewer } from "@/components/StoryViewer";
+function catLabel(cat?: string) {
+  const map: Record<string, string> = {
+    world: 'World', politics: 'Politics', markets: 'Markets',
+    trending: 'Trending', sports: 'Sports',
+  };
+  return map[cat ?? ''] ?? 'News';
+}
 
-const ALL_CATS = [
-  { label: 'On Record', slug: '/onrecord' },
-  { label: 'Timeline', slug: '/timeline' },
-  { label: 'Daily Pick', slug: '/' },
-  { label: 'World', slug: '/world' },
-  { label: 'Politics', slug: '/politics' },
-  { label: 'Markets', slug: '/markets' },
-  { label: 'Trending', slug: '/trending' },
-  { label: 'Sports', slug: '/sports' },
-];
-
-async function hasBreakingNews(): Promise<boolean> {
+async function getOnRecordToday(): Promise<any | null> {
   try {
-    const { hasBreakingData } = await import('@/lib/breaking-store');
-    return await hasBreakingData();
-  } catch { return false; }
+    const dir = path.resolve(process.cwd(), 'public/data');
+    if (!fs.existsSync(dir)) return null;
+    const files = fs.readdirSync(dir)
+      .filter(f => f.startsWith('onrecord_today_') && f.endsWith('.json'))
+      .sort().reverse();
+    if (!files.length) return null;
+    return JSON.parse(fs.readFileSync(path.join(dir, files[0]), 'utf8'));
+  } catch { return null; }
 }
 
-export default async function Home() {
-  const data = await getDailyGaps();
-  const allStories = data?.top_narratives || [];
-  const isBreaking = await hasBreakingNews();
 
-  const top10 = allStories.filter(s => s.is_top_story).length >= 10
+// ── palette ───────────────────────────────────────────────────────
+const C = {
+  bg: '#1e2a3a', panel: '#253545', panelDark: '#1a2535',
+  gold: '#daa520', goldDim: 'rgba(218,165,32,0.14)', goldBorder: 'rgba(218,165,32,0.25)',
+  left: '#60a5fa', leftDim: 'rgba(96,165,250,0.12)',
+  right: '#f87171', rightDim: 'rgba(248,113,113,0.12)',
+  text: '#e2e8f0', dim: '#7a8fa6', dimmer: '#4a5a6a',
+  border: 'rgba(255,255,255,0.07)',
+};
+const serif = `'Instrument Serif', Georgia, serif`;
+const mono  = `'DM Mono', monospace`;
+
+// ── components ────────────────────────────────────────────────────
+
+function CvrdLogo({ size = 22 }: { size?: number }) {
+  return (
+    <div style={{ display: 'flex', gap: 1 }}>
+      {['C','V','R','D'].map((l, i) => (
+        <div key={l} style={{
+          width: size, height: size, borderRadius: 2,
+          background: i % 2 === 0 ? '#1a2a3a' : '#253545',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: 'Georgia, serif', fontSize: size * 0.48, fontWeight: 700, color: '#e0e0e0',
+          clipPath: i === 0
+            ? 'polygon(0 0,100% 0,100% 40%,110% 40%,110% 60%,100% 60%,100% 100%,0 100%)'
+            : i === 3
+            ? 'polygon(0 0,100% 0,100% 100%,0 100%,0 60%,-10% 60%,-10% 40%,0 40%)'
+            : 'polygon(0 0,100% 0,100% 40%,110% 40%,110% 60%,100% 60%,100% 100%,0 100%,0 60%,-10% 60%,-10% 40%,0 40%)',
+        }}>{l}</div>
+      ))}
+    </div>
+  );
+}
+
+function PlayIcon({ size = 10 }: { size?: number }) {
+  return (
+    <svg width={size} height={size * 1.2} viewBox="0 0 10 12" fill="rgba(255,255,255,0.9)">
+      <polygon points="0,0 10,6 0,12" />
+    </svg>
+  );
+}
+
+function NavBar({ isBreaking }: { isBreaking: boolean }) {
+  const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+  return (
+    <nav style={{
+      position: 'sticky', top: 0, zIndex: 100,
+      background: C.panelDark, borderBottom: `1px solid ${C.border}`,
+      padding: '0 20px', height: 48,
+      display: 'flex', alignItems: 'center', gap: 16,
+    }}>
+      <a href="/" style={{ display: 'flex', gap: 1, textDecoration: 'none', flexShrink: 0 }}>
+        <CvrdLogo size={22} />
+      </a>
+
+      <div style={{ display: 'flex', gap: 2, overflowX: 'auto', flex: 1 }} className="hide-scroll">
+        {isBreaking && (
+          <a href="/breaking" style={{
+            display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
+            padding: '4px 10px', borderRadius: 4, textDecoration: 'none',
+            background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.25)',
+            fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#f87171',
+          }}>
+            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', display: 'inline-block' }} className="live-dot" />
+            BREAKING
+          </a>
+        )}
+        {[['Daily Pick','/'],['On Record','/onrecord'],['Timeline','/timeline'],['TV','/tv']].map(([label, href]) => (
+          <a key={href} href={href} style={{
+            padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
+            fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
+            color: 'rgba(226,232,240,0.6)',
+          }} className="nav-pill">{label}</a>
+        ))}
+      </div>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+        <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer"
+          style={{ color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center' }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+        <span style={{ fontFamily: mono, fontSize: 9, color: C.dimmer }}>{today}</span>
+      </div>
+    </nav>
+  );
+}
+
+// ── Hero ──────────────────────────────────────────────────────────
+function HeroStory({ story }: { story: NarrativeGap }) {
+  const slug = toSlug(story.topic);
+  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+  const img = story.image_file;
+  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
+  const vids = story.youtube_videos ?? [];
+  const totalSources = (vids.length) + (story.social_clips?.length ?? 0);
+
+  return (
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* background */}
+      {imgUrl
+        ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.3)' }} />
+        : <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category)}22 0%, ${C.panelDark} 100%)` }} />
+      }
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.6) 50%, rgba(30,42,58,0.4) 100%)' }} />
+
+      <div style={{ position: 'relative', padding: '36px 28px 28px' }}>
+        {/* category + source count */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+          <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
+            {catLabel(story.category)}
+          </span>
+          {totalSources > 0 && (
+            <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dim }}>
+              {totalSources} sources covering this
+            </span>
+          )}
+        </div>
+
+        {/* headline */}
+        <a href={`/story/${slug}`} style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontFamily: serif, fontSize: 'clamp(22px, 3.2vw, 34px)', lineHeight: 1.2, color: C.text, marginBottom: 8, maxWidth: 760, fontWeight: 400 }}>
+            {story.topic}
+          </h1>
+        </a>
+
+        {/* summary */}
+        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: C.dim, maxWidth: 660, marginBottom: 20 }}>
+          {story.summary?.slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
+        </p>
+
+        {/* dashboard tiles */}
+        {(vids.length > 0 || (story.social_clips?.length ?? 0) > 0) && (
+          <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 20 }}>
+            <Dashboard stories={[story]} tilesOnly={true} />
+          </div>
+        )}
+
+      </div>
+    </div>
+  );
+}
+
+// ── Story card ────────────────────────────────────────────────────
+function StoryCard({ story }: { story: NarrativeGap }) {
+  const slug = toSlug(story.topic);
+  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+  const img = story.image_file;
+  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
+  const vids = story.youtube_videos ?? [];
+  const firstVid = vids[0];
+
+  return (
+    <a href={`/story/${slug}`} style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: C.panel, borderRadius: 8, overflow: 'hidden', border: `1px solid ${C.border}` }} className="story-card">
+      {/* thumb: prefer story image, fall back to yt thumb */}
+      <div style={{ height: 110, position: 'relative', flexShrink: 0, overflow: 'hidden' }}>
+        {(imgUrl || firstVid)
+          ? <img
+              src={imgUrl ?? ytThumb(firstVid.embed_id)}
+              alt=""
+              style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
+            />
+          : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
+        }
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(37,53,69,0.9) 0%, transparent 55%)' }} />
+        <span style={{ position: 'absolute', top: 7, left: 8, padding: '2px 7px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 8, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
+          {catLabel(story.category)}
+        </span>
+        {vids.length > 0 && (
+          <span style={{ position: 'absolute', bottom: 7, right: 8, display: 'flex', alignItems: 'center', gap: 3, fontFamily: mono, fontSize: 8, color: 'rgba(255,255,255,0.6)' }}>
+            <PlayIcon size={6} />
+            {vids.length} video{vids.length !== 1 ? 's' : ''}
+          </span>
+        )}
+      </div>
+
+      {/* text */}
+      <div style={{ padding: '11px 13px', flex: 1, display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <h3 style={{ fontFamily: serif, fontSize: 14, lineHeight: 1.35, color: C.text, fontWeight: 400, margin: 0 }}>
+          {story.topic}
+        </h3>
+
+      </div>
+    </a>
+  );
+}
+
+// ── Section header ────────────────────────────────────────────────
+function SectionHeader({ label, blurb, href, hrefText }: { label: string; blurb?: string; href: string; hrefText: string }) {
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: blurb ? 4 : 0 }}>
+        <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 400, color: C.text, margin: 0 }}>{label}</h2>
+        <a href={href} style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+          {hrefText}
+          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+        </a>
+      </div>
+      {blurb && <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dim, margin: 0 }}>{blurb}</p>}
+    </div>
+  );
+}
+
+// ── On Record card ────────────────────────────────────────────────
+function OnRecordStrip({ data }: { data: any }) {
+  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+  const person = data?.person;
+  const photoUrl = person?.handle
+    ? `${blobBase}/politicians/photo_${person.handle}.png`
+    : null;
+  const score: number = data?.overall_score ?? data?.topic_score ?? 0;
+  const scoreColor = score >= 70 ? '#4ade80' : score >= 50 ? C.gold : score >= 35 ? '#f97316' : '#f87171';
+  const latestClaim = data?.matched_tweets?.[0];
+  const verdictColor = (v: string) => v === 'TRUE' ? '#4ade80' : v === 'FALSE' ? '#f87171' : C.gold;
+
+  return (
+    <a href="/onrecord" style={{ textDecoration: 'none', display: 'block' }}>
+      <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel">
+
+        {/* LEFT — photo */}
+        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }}>
+          {photoUrl && (
+            <img src={photoUrl} alt={person?.name}
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.85 }} />
+          )}
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(37,53,69,0.95) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,37,53,0.9) 0%, transparent 50%)' }} />
+          <div style={{ position: 'absolute', bottom: 14, left: 14 }}>
+            <div style={{ fontFamily: serif, fontSize: 17, color: '#fff', lineHeight: 1.2 }}>{person?.name}</div>
+            <div style={{ fontFamily: mono, fontSize: 9, color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', marginTop: 4 }}>{person?.role}</div>
+          </div>
+        </div>
+
+        {/* RIGHT — content */}
+        <div style={{ flex: 1, padding: '22px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+
+          {/* what is this */}
+          <div style={{ marginBottom: 18 }}>
+            <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.gold, marginBottom: 8 }}>
+              On Record
+            </div>
+            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.55, color: C.text, margin: 0, maxWidth: 520, fontWeight: 400 }}>
+              Today we're covering{' '}
+              <span style={{ fontStyle: 'italic' }}>{data?.story_topic}</span>
+              {' '}and checking{' '}
+              <span style={{ fontStyle: 'italic' }}>{person?.name}</span>
+              's public claims for truthfulness.
+            </p>
+          </div>
+
+          {/* score row */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
+            <div>
+              <div style={{ fontFamily: serif, fontSize: 38, fontWeight: 700, color: scoreColor, lineHeight: 1 }}>{score}%</div>
+              <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: C.dim, textTransform: 'uppercase', marginTop: 3 }}>
+                truthfulness score — {data?.matching_claims ?? 0} claims verified
+              </div>
+            </div>
+            <div style={{ flex: 1, maxWidth: 200, height: 5, borderRadius: 3, background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
+              <div style={{ width: `${score}%`, height: '100%', background: scoreColor, opacity: 0.8, borderRadius: 3 }} />
+            </div>
+          </div>
+
+          {/* latest claim */}
+          {latestClaim && (
+            <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: 14 }}>
+              <div style={{ fontFamily: mono, fontSize: 8.5, letterSpacing: '0.1em', color: C.dim, textTransform: 'uppercase', marginBottom: 8 }}>
+                Latest claim on {data?.story_topic}
+              </div>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16 }}>
+                <div style={{ fontFamily: serif, fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.55, color: 'rgba(226,232,240,0.8)' }}>
+                  "{latestClaim.claim?.slice(0, 160)}{(latestClaim.claim?.length ?? 0) > 160 ? '...' : ''}"
+                </div>
+                <span style={{ flexShrink: 0, display: 'inline-block', padding: '4px 10px', borderRadius: 4, background: `${verdictColor(latestClaim.verdict)}15`, border: `1px solid ${verdictColor(latestClaim.verdict)}35`, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: verdictColor(latestClaim.verdict), alignSelf: 'center' }}>
+                  {latestClaim.verdict}
+                </span>
+              </div>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </a>
+  );
+}
+
+// ── Timeline strip (mirrors OnRecordStrip) ────────────────────────
+function TimelineStrip({ thread }: { thread: TimelineThread }) {
+  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+  const img = thread.image_file ?? thread.entries[0]?.image_file;
+  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
+  // Entries newest-first
+  const sorted = [...thread.entries].sort((a, b) => b.date.localeCompare(a.date));
+  const latest = sorted[0];
+  const older  = sorted.slice(1, 5); // up to 4 previous entries
+
+  return (
+    <a href={`/timeline#${thread.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+      <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel">
+
+        {/* LEFT — image */}
+        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }}>
+          {imgUrl
+            ? <img src={imgUrl} alt={thread.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.8 }} />
+            : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(thread.category)}30, ${C.panelDark})` }} />
+          }
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(37,53,69,0.95) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,37,53,0.9) 0%, transparent 50%)' }} />
+          <div style={{ position: 'absolute', bottom: 14, left: 14 }}>
+            <span style={{ display: 'inline-block', padding: '2px 7px', borderRadius: 3, background: catColor(thread.category), fontFamily: mono, fontSize: 8, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
+              {catLabel(thread.category)}
+            </span>
+          </div>
+        </div>
+
+        {/* RIGHT — content */}
+        <div style={{ flex: 1, padding: '22px 24px', display: 'flex', flexDirection: 'column' }}>
+
+          {/* header */}
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.gold, marginBottom: 8 }}>
+              Timeline · Recently Updated
+            </div>
+            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.4, color: C.text, margin: 0, fontWeight: 400 }}>
+              {thread.title}
+            </p>
+          </div>
+
+          {/* latest entry */}
+          {latest && (
+            <div style={{ marginBottom: 16, paddingBottom: 16, borderBottom: `1px solid ${C.border}` }}>
+              <div style={{ fontFamily: mono, fontSize: 8.5, letterSpacing: '0.1em', color: C.gold, textTransform: 'uppercase', marginBottom: 6 }}>
+                Latest · {latest.date}
+              </div>
+              <div style={{ fontFamily: serif, fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.55, color: 'rgba(226,232,240,0.85)' }}>
+                "{latest.summary?.slice(0, 180)}{(latest.summary?.length ?? 0) > 180 ? '...' : ''}"
+              </div>
+            </div>
+          )}
+
+          {/* older entries mini-timeline */}
+          {older.length > 0 && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 0, position: 'relative' }}>
+              {older.map((entry, i) => (
+                <div key={entry.date + i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', paddingBottom: i < older.length - 1 ? 10 : 0 }}>
+                  {/* timeline line + dot */}
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', flexShrink: 0, paddingTop: 3 }}>
+                    <div style={{ width: 5, height: 5, borderRadius: '50%', background: C.dimmer, flexShrink: 0 }} />
+                    {i < older.length - 1 && <div style={{ width: 1, flex: 1, background: C.border, minHeight: 18, marginTop: 3 }} />}
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: mono, fontSize: 8, letterSpacing: '0.08em', color: C.dimmer, marginBottom: 2 }}>{entry.date}</div>
+                    <div style={{ fontFamily: mono, fontSize: 10, color: C.dim, lineHeight: 1.4 }}>
+                      {entry.summary?.slice(0, 100)}{(entry.summary?.length ?? 0) > 100 ? '...' : ''}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </a>
+  );
+}
+
+// ── PAGE ──────────────────────────────────────────────────────────
+export default async function Home() {
+  const [data, threadData, onRecordData, breakingStories] = await Promise.all([
+    getDailyGaps(),
+    getTimelineThreads(),
+    getOnRecordToday(),
+    import('@/lib/breaking-store').then(m => m.getBreakingData()).catch(() => null),
+  ]);
+  const isBreaking = (breakingStories?.length ?? 0) > 0;
+
+  const allStories = data?.top_narratives ?? [];
+  const stories = allStories.filter(s => s.is_top_story).length >= 5
     ? allStories.filter(s => s.is_top_story)
     : allStories.slice(0, 10);
 
-  const stories = top10;
+  const heroStory  = stories[0];
+  const gridStories = stories.slice(1, 5);
+  const allThreads  = threadData?.threads ?? [];
+  const threadCount = allThreads.length;
+  // Most recently updated thread first
+  const recentThread = [...allThreads].sort((a, b) => b.last_seen.localeCompare(a.last_seen))[0] ?? null;
+  const videoUrl   = data?.video_url;
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+        .live-dot { animation: blink 1.3s ease-in-out infinite; }
+        .hide-scroll { scrollbar-width: none; }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .nav-pill:hover { color: rgba(226,232,240,0.9) !important; background: rgba(255,255,255,0.05); }
+        .story-card:hover { border-color: rgba(218,165,32,0.3) !important; }
+        .hover-panel:hover { border-color: rgba(218,165,32,0.2) !important; }
+        .vid-thumb:hover img { opacity: 1 !important; }
+        @media (max-width: 700px) {
+          .story-grid { grid-template-columns: 1fr 1fr !important; }
+          .hero-vids   { flex-wrap: wrap; }
+          .hero-vids a div { width: 160px !important; height: 90px !important; }
+        }
+        @media (max-width: 440px) {
+          .story-grid { grid-template-columns: 1fr !important; }
+        }
+      `}} />
 
-      {!data || !data.top_narratives ? (
-        <div className="flex items-center justify-center min-h-screen">
-          <p className="text-[#999]">No stories today.</p>
-        </div>
-      ) : (
-        <>
-          {/* NAV + BANNER — same as category pages */}
-          <div className="sticky top-0" style={{ zIndex: 100 }}>
-            <div className="relative" style={{ background: '#1e2a3a' }}>
-              <div className="h-12 flex items-center overflow-x-auto" style={{ scrollbarWidth: 'none' }}>
-                <div className="flex items-center gap-2 px-3 md:gap-3 md:px-4 md:mx-auto">
-                  {isBreaking && (
-                    <a href="/breaking"
-                      className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors"
-                      style={{ background: 'rgba(220,38,38,0.15)', color: '#f87171', border: '1px solid rgba(220,38,38,0.3)' }}>
-                      <span className="inline-block w-1.5 h-1.5 rounded-full mr-1 animate-pulse" style={{ background: '#ef4444' }} />
-                      Breaking
-                    </a>
-                  )}
-                  {ALL_CATS.map((cat) => (
-                    <a key={cat.slug} href={cat.slug}
-                      className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
-                      style={{
-                        background: cat.slug === '/' ? 'rgba(255,255,255,0.2)' : 'transparent',
-                        color: cat.slug === '/' ? '#fff' : 'rgba(255,255,255,0.85)',
-                      }}>
-                      {cat.label}
-                    </a>
-                  ))}
-                  {/* Icons pill — inline after Sports */}
-                  <div className="shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
-                    <a href="/tv" className="flex items-center" style={{ color: 'rgba(255,255,255,0.5)', transform: 'translateY(-1px)' }}>
-                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
-                      </svg>
-                    </a>
-                    <span style={{ width: '1px', height: '12px', background: 'rgba(255,255,255,0.25)', display: 'block' }} />
-                    <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer" className="flex items-center transition-opacity hover:opacity-80"
-                      title="CVRD on YouTube" style={{ color: 'rgba(255,255,255,0.5)' }}>
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                    </a>
+      <div style={{ background: C.bg, color: C.text, minHeight: '100vh', fontFamily: "'DM Sans', system-ui, sans-serif" }}>
+
+        <NavBar isBreaking={isBreaking} />
+
+        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 60px' }}>
+
+          {/* ── BREAKING FEATURED (very first if live) ────── */}
+          {isBreaking && breakingStories && breakingStories.length > 0 && (
+            <div style={{ marginBottom: 32 }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#ef4444', flexShrink: 0 }} className="live-dot" />
+                  <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 400, color: '#f87171', margin: 0 }}>Breaking Now</h2>
+                </div>
+                <a href="/breaking" style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#f87171', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+                  Open dashboard
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+                </a>
+              </div>
+              <a href="/breaking" style={{ textDecoration: 'none', display: 'block', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(239,68,68,0.3)' }} className="story-card">
+                <div style={{ height: 180, position: 'relative', overflow: 'hidden' }}>
+                  <Dashboard stories={breakingStories as any} tilesOnly={true} noAutoPlay={false} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,10,10,0.7) 0%, transparent 60%)', pointerEvents: 'none' }} />
+                  <div style={{ position: 'absolute', bottom: 12, left: 14, pointerEvents: 'none' }}>
+                    <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: 'rgba(248,113,113,0.8)', marginBottom: 4 }}>
+                      {breakingStories.length} {breakingStories.length === 1 ? 'story' : 'stories'} · live dashboard open
+                    </div>
+                    <div style={{ fontFamily: serif, fontSize: 15, color: '#f87171' }}>
+                      {(breakingStories[0] as any).topic}
+                    </div>
                   </div>
                 </div>
+              </a>
+            </div>
+          )}
+
+          {/* ── HERO ──────────────────────────────────────── */}
+          {heroStory ? (
+            <div style={{ marginBottom: 24 }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+                <a href={`/story/${toSlug(heroStory.topic)}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
+                  Read the full story
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+                </a>
+              </div>
+              <div style={{ borderRadius: 10, overflow: 'hidden', border: `1px solid ${C.border}` }}>
+                <HeroStory story={heroStory} />
               </div>
             </div>
+          ) : (
+            <div style={{ marginBottom: 24, padding: '60px 24px', borderRadius: 10, background: C.panel, textAlign: 'center', border: `1px solid ${C.border}` }}>
+              <p style={{ color: C.dim, fontFamily: mono, fontSize: 11 }}>Today's stories loading...</p>
+            </div>
+          )}
 
-            <LiveBanner stories={stories} liveData={data.live_data} />
-          </div>
+          {/* ── ON RECORD ─────────────────────────────────── */}
+          {onRecordData && (
+            <div style={{ marginBottom: 32 }}>
+              <SectionHeader
+                label="On Record"
+                blurb={`Today: ${onRecordData.story_topic}`}
+                href="/onrecord"
+                hrefText="All politicians"
+              />
+              <OnRecordStrip data={onRecordData} />
+            </div>
+          )}
 
-          {/* CVRD puzzle logo */}
-          <div className="fixed left-1/2 pointer-events-none" style={{ top: '51px', transform: 'translateX(-50%)', zIndex: 101, filter: 'drop-shadow(0 0 15px rgba(0,0,0,0.4))' }}>
-            <div className="flex gap-[1px]">
-              {['C','V','R','D'].map((letter, i) => (
-                <div key={letter} style={{
-                  width: 26, height: 26,
-                  background: i % 2 === 0 ? '#1a2a3a' : '#253545',
-                  borderRadius: 2,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'Georgia, serif', fontSize: 13, fontWeight: 700,
-                  color: '#e0e0e0',
-                  clipPath: i === 0
-                    ? 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%)'
-                    : i === 3
-                    ? 'polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)'
-                    : 'polygon(0 0, 100% 0, 100% 40%, 110% 40%, 110% 60%, 100% 60%, 100% 100%, 0 100%, 0 60%, -10% 60%, -10% 40%, 0 40%)',
-                }}>{letter}</div>
-              ))}
+          {/* ── STORY SCROLL ──────────────────────────────── */}
+          {stories.length > 1 && (
+            <div style={{ marginBottom: 32, padding: '0 16px' }}>
+              <SectionHeader
+                label="Today's Pick"
+                blurb={`${stories.length} stories today — each one sourced from outlets across the political spectrum`}
+                href="/"
+                hrefText="All stories"
+              />
+              <StoryScroll
+                stories={stories.slice(1)}
+                blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
+              />
+            </div>
+          )}
+
+          {/* ── TIMELINE ──────────────────────────────────── */}
+          {recentThread && (
+            <div style={{ marginBottom: 32 }}>
+              <SectionHeader
+                label="Timeline"
+                blurb={`Following ${threadCount} developing stories — tracking how each narrative evolves day by day`}
+                href="/timeline"
+                hrefText={`All ${threadCount} threads`}
+              />
+              <TimelineStrip thread={recentThread} />
+            </div>
+          )}
+
+          {/* ── WATCH ─────────────────────────────────────── */}
+          <div style={{ marginBottom: 32 }}>
+            <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
+            <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
+              <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
+                Every story we cover comes with video clips from across the web. CVRD TV streams all of them in one non-stop loop across channels — Daily Pick, World, Politics, Markets, Sports, and Trending. Open it on a second screen, or cast it to your TV and let it run.
+              </p>
+              <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dim, margin: '0 0 20px', lineHeight: 1.6 }}>
+                Clips from YouTube, TikTok, Instagram Reels, X, and Telegram — all in one place.
+              </p>
+              {(() => {
+                const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+                const thumb = (s: any) => {
+                  if (s.image_file) return s.image_file.startsWith('http') ? s.image_file : `${blobBase}${s.image_file}`;
+                  if (s.youtube_videos?.[0]) return `https://img.youtube.com/vi/${s.youtube_videos[0].embed_id}/mqdefault.jpg`;
+                  return null;
+                };
+                const thumbsFor = (cat: string | null) => {
+                  const src = cat ? allStories.filter(s => s.category === cat) : allStories.slice(0, 10);
+                  return src.map(thumb).filter(Boolean) as string[];
+                };
+                const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
+                return (
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+                    {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
+                    {[
+                      { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/',         cat: null,       ms: 4700 },
+                      { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/world',    cat: 'world',    ms: 3600 },
+                      { num: isBreaking ? '04' : '03', label: 'Politics',   sub: 'Left & right',      href: '/politics', cat: 'politics', ms: 5200 },
+                      { num: isBreaking ? '05' : '04', label: 'Markets',    sub: 'Economy & crypto',  href: '/markets',  cat: 'markets',  ms: 4100 },
+                      { num: isBreaking ? '06' : '05', label: 'Sports',     sub: 'Beyond the score',  href: '/sports',   cat: 'sports',   ms: 3900 },
+                      { num: isBreaking ? '07' : '06', label: 'Trending',   sub: 'What the web says', href: '/trending', cat: 'trending', ms: 5800 },
+                    ].map(ch => (
+                      <TvTile key={ch.href} channelNum={`CH${ch.num}`} label={ch.label} sub={ch.sub} href={ch.href} thumbs={thumbsFor(ch.cat)} interval={ch.ms} />
+                    ))}
+                    <TvTile channelNum="YT" label="YouTube" sub="Shorts + full shows" href="https://www.youtube.com/@cvrdnews" thumbs={thumbsFor(null)} interval={4400} />
+                  </div>
+                );
+              })()}
+              <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
             </div>
           </div>
 
-          {/* 4. STORY VIEWER — Dashboard with arrows + full story content */}
-          <ErrorBoundary>
-            <StoryViewer stories={stories} videoUrl={data.video_url} videoDate={data.date} dailyBrief={data.daily_brief} />
-          </ErrorBoundary>
+        </main>
 
-          {/* FOOTER */}
-          <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
-            <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
-            <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
-            <div className="flex items-center justify-center gap-4">
-              <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
-              <span className="text-[#555]">·</span>
-              <a href="/contact" className="text-[11px] text-[#888] hover:text-white transition-colors">Contact</a>
-              <span className="text-[#555]">·</span>
-              <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
-              <span className="text-[#555]">·</span>
-              <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
-            </div>
-          </footer>
-        </>
-      )}
-    </div>
+        {/* ── FOOTER ──────────────────────────────────────── */}
+        <footer style={{ borderTop: `1px solid ${C.border}`, padding: '20px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12, maxWidth: 1120, margin: '0 auto' }}>
+          <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dimmer, textTransform: 'uppercase' }}>
+            Your streaming platform to cover the news
+          </span>
+          <div style={{ display: 'flex', gap: 16 }}>
+            {[['About','/about'],['Contact','/contact'],['Terms','/terms'],['Privacy','/privacy']].map(([l,h]) => (
+              <a key={l} href={h} style={{ fontSize: 11, color: C.dimmer, textDecoration: 'none' }}>{l}</a>
+            ))}
+          </div>
+        </footer>
+
+      </div>
+    </>
   );
 }
