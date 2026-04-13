@@ -1,7 +1,8 @@
 import { getDailyGaps } from "@/lib/data";
 import { TVClient } from "./TVClient";
 
-export default async function TVPage() {
+export default async function TVPage({ searchParams }: { searchParams: Promise<{ channel?: string }> }) {
+  const { channel } = await searchParams;
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
 
@@ -13,5 +14,5 @@ export default async function TVPage() {
     );
   }
 
-  return <TVClient allStories={allStories} videoUrl={data.video_url} videoDate={data.date} />;
+  return <TVClient allStories={allStories} videoUrl={data.video_url} videoDate={data.date} initialChannel={channel} />;
 }

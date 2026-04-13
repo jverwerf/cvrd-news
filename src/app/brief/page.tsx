@@ -6,24 +6,11 @@ import { LiveBanner } from "@/components/LiveBanner";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { StoryViewer } from "@/components/StoryViewer";
 
-const CATEGORY_META: Record<string, { title: string; description: string }> = {
-  'world': { title: 'World News', description: 'World news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
-  'politics': { title: 'Politics', description: 'Political news without the spin. Coverage from left, right, and international outlets so you get the full picture.' },
-  'markets': { title: 'Markets', description: 'Financial markets and economic news. Stocks, oil, jobs, inflation — analysis from every angle.' },
-  'sports': { title: 'Sports', description: 'Sports news from every angle. Football, basketball, soccer, F1, UFC, transfers, results, and the stories behind the game.' },
-  'trending': { title: 'Trending', description: 'What everyone is talking about. Viral moments, entertainment, sports, and the stories shaping the conversation right now.' },
+export const metadata: Metadata = {
+  title: 'Daily Pick',
+  description: "Today's top 10 stories from across the political spectrum — every angle, every source, no spin.",
+  openGraph: { title: 'Daily Pick | CVRD News', description: "Today's top 10 stories from across the political spectrum." },
 };
-
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
-  const { category } = await params;
-  const meta = CATEGORY_META[category];
-  if (!meta) return {};
-  return {
-    title: meta.title,
-    description: meta.description,
-    openGraph: { title: `${meta.title} | CVRD News`, description: meta.description },
-  };
-}
 
 const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'world': { label: 'World', slug: 'world' },
@@ -33,10 +20,7 @@ const CATEGORIES: Record<string, { label: string; slug: string }> = {
   'sports': { label: 'Sports', slug: 'sports' },
 };
 
-const ALL_CATS = Object.values(CATEGORIES);
-
-export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category } = await params;
+export default async function BriefPage() {
   const data = await getDailyGaps();
   const allStories = data?.top_narratives || [];
 
@@ -46,18 +30,9 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     isBreaking = await hasBreakingData();
   } catch {}
 
-  const cat = CATEGORIES[category];
-  if (!cat) {
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-[#999]">Category not found.</p>
-      </div>
-    );
-  }
-
-  const filtered = allStories.filter(s => s.category === category);
-  const untagged = allStories.filter(s => !s.category);
-  const displayStories = filtered.length > 0 ? filtered : untagged;
+  const displayStories = allStories.filter(s => s.is_top_story).length >= 5
+    ? allStories.filter(s => s.is_top_story)
+    : allStories.slice(0, 10);
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
@@ -80,8 +55,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                 <a key={c.slug} href={`/${c.slug}`}
                   className="shrink-0 px-2.5 py-1.5 text-[11px] md:text-[13px] font-semibold rounded-full transition-colors whitespace-nowrap"
                   style={{
-                    background: c.slug === category ? 'rgba(255,255,255,0.2)' : 'transparent',
-                    color: c.slug === category ? '#fff' : 'rgba(255,255,255,0.85)',
+                    background: c.slug === 'brief' ? 'rgba(255,255,255,0.2)' : 'transparent',
+                    color: c.slug === 'brief' ? '#fff' : 'rgba(255,255,255,0.85)',
                   }}>
                   {c.label}
                 </a>
@@ -132,11 +107,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       {/* STORY VIEWER */}
       {displayStories.length > 0 ? (
         <ErrorBoundary>
-          <StoryViewer stories={displayStories} dailyBrief={data?.category_briefs?.[category]} />
+          <StoryViewer stories={displayStories} dailyBrief={data?.daily_brief} />
         </ErrorBoundary>
       ) : (
         <div className="max-w-[1280px] mx-auto px-6 py-20 text-center">
-          <p className="text-[#999]">No {cat.label.toLowerCase()} stories today.</p>
+          <p className="text-[#999]">No stories today yet — check back soon.</p>
         </div>
       )}
 

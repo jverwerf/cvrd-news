@@ -19,12 +19,16 @@ export function TVClient({
   allStories,
   videoUrl,
   videoDate,
+  initialChannel,
 }: {
   allStories: NarrativeGap[];
   videoUrl?: string;
   videoDate?: string;
+  initialChannel?: string;
 }) {
-  const [activeChannel, setActiveChannel] = useState<string | null>(null);
+  const [activeChannel, setActiveChannel] = useState<string | null>(
+    CHANNELS.find(ch => ch.id === initialChannel) ? (initialChannel ?? null) : null
+  );
   const [focusedIdx, setFocusedIdx] = useState(0);
   const [entered, setEntered] = useState(false);
 

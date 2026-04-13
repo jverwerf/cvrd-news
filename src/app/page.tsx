@@ -9,6 +9,7 @@ import type { TimelineThread } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
 import { Dashboard } from '@/components/Dashboard';
 import { TvTile } from './home/TvTile';
+import { SiteNav, SiteFooter } from '@/components/SiteNav';
 
 // ── helpers ──────────────────────────────────────────────────────
 function toSlug(topic: string) {
@@ -63,26 +64,6 @@ const mono  = `'DM Mono', monospace`;
 
 // ── components ────────────────────────────────────────────────────
 
-function CvrdLogo({ size = 22 }: { size?: number }) {
-  return (
-    <div style={{ display: 'flex', gap: 1 }}>
-      {['C','V','R','D'].map((l, i) => (
-        <div key={l} style={{
-          width: size, height: size, borderRadius: 2,
-          background: i % 2 === 0 ? '#1a2a3a' : '#253545',
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: 'Georgia, serif', fontSize: size * 0.48, fontWeight: 700, color: '#e0e0e0',
-          clipPath: i === 0
-            ? 'polygon(0 0,100% 0,100% 40%,110% 40%,110% 60%,100% 60%,100% 100%,0 100%)'
-            : i === 3
-            ? 'polygon(0 0,100% 0,100% 100%,0 100%,0 60%,-10% 60%,-10% 40%,0 40%)'
-            : 'polygon(0 0,100% 0,100% 40%,110% 40%,110% 60%,100% 60%,100% 100%,0 100%,0 60%,-10% 60%,-10% 40%,0 40%)',
-        }}>{l}</div>
-      ))}
-    </div>
-  );
-}
-
 function PlayIcon({ size = 10 }: { size?: number }) {
   return (
     <svg width={size} height={size * 1.2} viewBox="0 0 10 12" fill="rgba(255,255,255,0.9)">
@@ -91,52 +72,6 @@ function PlayIcon({ size = 10 }: { size?: number }) {
   );
 }
 
-function NavBar({ isBreaking }: { isBreaking: boolean }) {
-  const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
-  return (
-    <nav style={{
-      position: 'sticky', top: 0, zIndex: 100,
-      background: C.panelDark, borderBottom: `1px solid ${C.border}`,
-      padding: '0 20px', height: 48,
-      display: 'flex', alignItems: 'center', gap: 16,
-    }}>
-      <a href="/" style={{ display: 'flex', gap: 1, textDecoration: 'none', flexShrink: 0 }}>
-        <CvrdLogo size={22} />
-      </a>
-
-      <div style={{ display: 'flex', gap: 2, overflowX: 'auto', flex: 1 }} className="hide-scroll">
-        {isBreaking && (
-          <a href="/breaking" style={{
-            display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
-            padding: '4px 10px', borderRadius: 4, textDecoration: 'none',
-            background: 'rgba(239,68,68,0.12)', border: '1px solid rgba(239,68,68,0.25)',
-            fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#f87171',
-          }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', display: 'inline-block' }} className="live-dot" />
-            BREAKING
-          </a>
-        )}
-        {[['Daily Pick','/'],['On Record','/onrecord'],['Timeline','/timeline'],['TV','/tv']].map(([label, href]) => (
-          <a key={href} href={href} style={{
-            padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
-            fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
-            color: 'rgba(226,232,240,0.6)',
-          }} className="nav-pill">{label}</a>
-        ))}
-      </div>
-
-      <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
-        <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer"
-          style={{ color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center' }}>
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-          </svg>
-        </a>
-        <span style={{ fontFamily: mono, fontSize: 9, color: C.dimmer }}>{today}</span>
-      </div>
-    </nav>
-  );
-}
 
 // ── Hero ──────────────────────────────────────────────────────────
 function HeroStory({ story }: { story: NarrativeGap }) {
@@ -462,7 +397,7 @@ export default async function Home() {
 
       <div style={{ background: C.bg, color: C.text, minHeight: '100vh', fontFamily: "'DM Sans', system-ui, sans-serif" }}>
 
-        <NavBar isBreaking={isBreaking} />
+        <SiteNav isBreaking={isBreaking} />
 
         <main style={{ maxWidth: 1120, margin: '0 auto', padding: '20px 16px 60px' }}>
 
@@ -583,12 +518,12 @@ export default async function Home() {
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
                     {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
                     {[
-                      { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/',         cat: null,       ms: 4700 },
-                      { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/world',    cat: 'world',    ms: 3600 },
-                      { num: isBreaking ? '04' : '03', label: 'Politics',   sub: 'Left & right',      href: '/politics', cat: 'politics', ms: 5200 },
-                      { num: isBreaking ? '05' : '04', label: 'Markets',    sub: 'Economy & crypto',  href: '/markets',  cat: 'markets',  ms: 4100 },
-                      { num: isBreaking ? '06' : '05', label: 'Sports',     sub: 'Beyond the score',  href: '/sports',   cat: 'sports',   ms: 3900 },
-                      { num: isBreaking ? '07' : '06', label: 'Trending',   sub: 'What the web says', href: '/trending', cat: 'trending', ms: 5800 },
+                      { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
+                      { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
+                      { num: isBreaking ? '04' : '03', label: 'Politics',   sub: 'Left & right',      href: '/tv?channel=politics', cat: 'politics', ms: 5200 },
+                      { num: isBreaking ? '05' : '04', label: 'Markets',    sub: 'Economy & crypto',  href: '/tv?channel=markets',  cat: 'markets',  ms: 4100 },
+                      { num: isBreaking ? '06' : '05', label: 'Sports',     sub: 'Beyond the score',  href: '/tv?channel=sports',   cat: 'sports',   ms: 3900 },
+                      { num: isBreaking ? '07' : '06', label: 'Trending',   sub: 'What the web says', href: '/tv?channel=trending', cat: 'trending', ms: 5800 },
                     ].map(ch => (
                       <TvTile key={ch.href} channelNum={`CH${ch.num}`} label={ch.label} sub={ch.sub} href={ch.href} thumbs={thumbsFor(ch.cat)} interval={ch.ms} />
                     ))}
@@ -602,17 +537,7 @@ export default async function Home() {
 
         </main>
 
-        {/* ── FOOTER ──────────────────────────────────────── */}
-        <footer style={{ borderTop: `1px solid ${C.border}`, padding: '20px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: 12, maxWidth: 1120, margin: '0 auto' }}>
-          <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dimmer, textTransform: 'uppercase' }}>
-            Your streaming platform to cover the news
-          </span>
-          <div style={{ display: 'flex', gap: 16 }}>
-            {[['About','/about'],['Contact','/contact'],['Terms','/terms'],['Privacy','/privacy']].map(([l,h]) => (
-              <a key={l} href={h} style={{ fontSize: 11, color: C.dimmer, textDecoration: 'none' }}>{l}</a>
-            ))}
-          </div>
-        </footer>
+        <SiteFooter />
 
       </div>
     </>

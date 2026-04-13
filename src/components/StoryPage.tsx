@@ -9,6 +9,22 @@ import { MentionedSection } from "./MentionedSection";
 import type { NarrativeGap } from "../lib/data";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
+const mono = "'DM Mono', monospace";
+
+function catColor(cat?: string) {
+  const map: Record<string, string> = {
+    world: '#1d4ed8', politics: '#7c3aed', markets: '#047857',
+    trending: '#b45309', sports: '#0e7490',
+  };
+  return map[cat ?? ''] ?? '#374151';
+}
+function catLabel(cat?: string) {
+  const map: Record<string, string> = {
+    world: 'World', politics: 'Politics', markets: 'Markets',
+    trending: 'Trending', sports: 'Sports',
+  };
+  return map[cat ?? ''] ?? 'News';
+}
 
 export function StoryPage({ story, date, otherStories, matchedTimelines }: {
   story: NarrativeGap;
@@ -33,42 +49,57 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
 
   const topicToSlug = (t: string) => t.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 
+  const totalSources = ytVids.length + clips.filter(c => c.embed_id).length;
+
   const [telegramExpanded, setTelegramExpanded] = useState(false);
   const [redditExpanded, setRedditExpanded] = useState(false);
 
   return (
     <div>
-      {/* HERO IMAGE */}
-      {story.image_file && (
-        <div className="relative overflow-hidden" style={{
-          height: '45vh', minHeight: '320px',
-          backgroundImage: `url(${story.image_file})`,
-          backgroundSize: 'cover', backgroundPosition: 'center',
-        }}>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.6) 100%)' }} />
-        </div>
-      )}
+      {/* HERO — matches homepage HeroStory exactly */}
+      <div style={{ position: 'relative', overflow: 'hidden' }}>
+        {/* background image */}
+        {story.image_file ? (
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${story.image_file})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.3)' }} />
+        ) : (
+          <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category as string)}22 0%, #1a2535 100%)` }} />
+        )}
+        {/* gradient overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.6) 50%, rgba(30,42,58,0.4) 100%)' }} />
 
-      {/* TITLE BAR */}
-      <div className="px-4 md:px-6 py-3" style={{ background: '#f5f5f5' }}>
-        <div className="flex items-center gap-2 mb-1">
-          {story.category && (
-            <a href={`/${story.category}`}
-              className="text-[10px] font-bold text-[#3b82f6] bg-[#3b82f6]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0 hover:bg-[#3b82f6]/20 transition-colors">
-              {story.category}
-            </a>
+        <div style={{ position: 'relative', padding: '36px 28px 28px' }}>
+          {/* category + source count */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
+            {story.category && (
+              <a href={`/${story.category}`} style={{ textDecoration: 'none' }}>
+                <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category as string), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
+                  {catLabel(story.category as string)}
+                </span>
+              </a>
+            )}
+            {totalSources > 0 && (
+              <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#7a8fa6' }}>
+                {totalSources} sources covering this
+              </span>
+            )}
+          </div>
+
+          {/* headline */}
+          <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(22px, 3.2vw, 34px)', lineHeight: 1.2, color: '#e2e8f0', marginBottom: 8, maxWidth: 760, fontWeight: 400 }}>
+            {story.topic}
+          </h1>
+
+          {/* summary */}
+          <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: '#7a8fa6', maxWidth: 660, marginBottom: 20 }}>
+            {(story.summary || '').slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
+          </p>
+
+          {/* dashboard tiles */}
+          {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+            <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 20 }}>
+              <Dashboard stories={[story]} tilesOnly={true} />
+            </div>
           )}
-          <span className="text-[10px] text-[#999]">{new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-        </div>
-        <h1 className="text-[22px] md:text-[28px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
-          {story.topic}
-        </h1>
-      </div>
-
-      {/* ON AIR — DASHBOARD */}
-      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
-        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
-          <Dashboard stories={[story]} videoUrl={undefined} videoDate={undefined} />
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 
-export const revalidate = 86400; // 24h — sitemap only needs daily refresh
+export const dynamic = 'force-dynamic'; // Generate at request time, not build time
+export const revalidate = 3600; // Cache for 1h after first request
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://cvrdnews.com';
