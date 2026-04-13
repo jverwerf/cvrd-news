@@ -424,34 +424,28 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── BREAKING FEATURED ─────────────────────────── */}
+          {/* ── BREAKING BANNER ───────────────────────────── */}
           {isBreaking && breakingStories && breakingStories.length > 0 && (
-            <div style={{ marginBottom: 32 }}>
-              <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 14 }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#ef4444', flexShrink: 0 }} className="live-dot" />
-                  <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 400, color: '#f87171', margin: 0 }}>Breaking Now</h2>
-                </div>
-                <a href="/breaking" style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#f87171', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
-                  Open dashboard
-                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                </a>
+            <a href="/breaking" style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              gap: 16, marginBottom: 28, textDecoration: 'none',
+              padding: '11px 18px', borderRadius: 6,
+              background: 'rgba(239,68,68,0.07)',
+              border: '1px solid rgba(239,68,68,0.22)',
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
+                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#ef4444', flexShrink: 0 }} className="live-dot" />
+                <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', color: '#f87171', flexShrink: 0, textTransform: 'uppercase' }}>Breaking</span>
+                <span style={{ width: 1, height: 12, background: 'rgba(239,68,68,0.3)', flexShrink: 0 }} />
+                <span style={{ fontFamily: serif, fontSize: 15, color: 'rgba(226,232,240,0.85)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  {(breakingStories[0] as any).topic}
+                </span>
               </div>
-              <a href="/breaking" style={{ textDecoration: 'none', display: 'block', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(239,68,68,0.3)' }} className="story-card">
-                <div style={{ height: 180, position: 'relative', overflow: 'hidden' }}>
-                  <Dashboard stories={breakingStories as any} tilesOnly={true} noAutoPlay={false} />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(20,10,10,0.7) 0%, transparent 60%)', pointerEvents: 'none' }} />
-                  <div style={{ position: 'absolute', bottom: 12, left: 14, pointerEvents: 'none' }}>
-                    <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: 'rgba(248,113,113,0.8)', marginBottom: 4 }}>
-                      {breakingStories.length} {breakingStories.length === 1 ? 'story' : 'stories'} · live dashboard open
-                    </div>
-                    <div style={{ fontFamily: serif, fontSize: 15, color: '#f87171' }}>
-                      {(breakingStories[0] as any).topic}
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#f87171', flexShrink: 0 }}>
+                Live coverage
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+              </span>
+            </a>
           )}
 
           {/* ── ON RECORD ─────────────────────────────────── */}
