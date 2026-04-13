@@ -9,6 +9,7 @@ export type NarrativeGap = {
   is_top_story?: boolean;
   summary: string;
   left_narrative: string;
+  center_narrative?: string;
   right_narrative: string;
   what_they_arent_telling_you: string;
   social_summary?: string;
@@ -33,6 +34,7 @@ export type LiveItem = {
 export type DailyBrief = {
   summary: string;
   left_narrative: string;
+  center_narrative?: string;
   right_narrative: string;
   what_they_arent_telling_you: string;
   social_summary: string;
