@@ -145,7 +145,7 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
-                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Blindspots</span>
                 </div>
                 <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                   {sentences.length > 1 ? (
@@ -166,7 +166,21 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                         <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                       </div>
-                      <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                      {(() => {
+                        const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
+                        return bullets.length > 1 ? (
+                          <ul className="space-y-1.5 list-none pl-0 m-0">
+                            {bullets.map((s: string, i: number) => (
+                              <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                                <span className="text-[#daa520] shrink-0">•</span>
+                                <span>{s}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                        );
+                      })()}
                     </div>
                   )}
                 </div>

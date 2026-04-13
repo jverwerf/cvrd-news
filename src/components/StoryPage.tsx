@@ -33,6 +33,9 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
 
   const topicToSlug = (t: string) => t.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 
+  const [telegramExpanded, setTelegramExpanded] = useState(false);
+  const [redditExpanded, setRedditExpanded] = useState(false);
+
   return (
     <div>
       {/* HERO IMAGE */}
@@ -123,7 +126,7 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
-            <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
+            <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Blindspots</span>
           </div>
           <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
             {sentences.length > 1 ? (
@@ -146,7 +149,21 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
                   </svg>
                   <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                 </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                {(() => {
+                  const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
+                  return bullets.length > 1 ? (
+                    <ul className="space-y-1.5 list-none pl-0 m-0">
+                      {bullets.map((s: string, i: number) => (
+                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                          <span className="text-[#daa520] shrink-0">•</span>
+                          <span>{s}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                  );
+                })()}
               </div>
             )}
           </div>
@@ -191,31 +208,51 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
         )}
 
         {/* TELEGRAM TEXT POSTS */}
-        {telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
-          <div>
-            <div className="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-              <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
-            </div>
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-              <div className="flex flex-wrap gap-2">
-                {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
-                  <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
-                    style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
-                    <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
-                    <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
-                  </a>
-                ))}
+        {(() => {
+          const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
+          if (tgClips.length === 0) return null;
+          const visibleTg = telegramExpanded ? tgClips : tgClips.slice(0, 9);
+          return (
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
+              </div>
+              <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+                <div className="flex flex-wrap gap-2">
+                  {visibleTg.map((c, i) => (
+                    <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                      style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
+                      <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
+                      <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                    </a>
+                  ))}
+                </div>
+                {tgClips.length > 9 && !telegramExpanded && (
+                  <button onClick={() => setTelegramExpanded(true)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show {tgClips.length - 9} more
+                  </button>
+                )}
+                {telegramExpanded && tgClips.length > 9 && (
+                  <button onClick={() => setTelegramExpanded(false)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show less
+                  </button>
+                )}
               </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* REDDIT */}
         {redditClips.length > 0 && (() => {
           const seen = new Set<string>();
           const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
+          const visibleReddit = redditExpanded ? unique : unique.slice(0, 9);
           return (
             <div>
               <div className="flex items-center gap-2 mb-3">
@@ -224,7 +261,7 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
               </div>
               <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
                 <div className="flex flex-wrap gap-2">
-                  {unique.map((c, i) => {
+                  {visibleReddit.map((c, i) => {
                     const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ');
                     return (
                       <a key={i} href={c.url} target="_blank" rel="noreferrer"
@@ -236,6 +273,20 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
                     );
                   })}
                 </div>
+                {unique.length > 9 && !redditExpanded && (
+                  <button onClick={() => setRedditExpanded(true)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show {unique.length - 9} more
+                  </button>
+                )}
+                {redditExpanded && unique.length > 9 && (
+                  <button onClick={() => setRedditExpanded(false)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show less
+                  </button>
+                )}
               </div>
             </div>
           );
