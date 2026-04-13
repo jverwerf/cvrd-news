@@ -6,12 +6,15 @@ import { usePathname } from 'next/navigation';
 const mono = `'DM Mono', monospace`;
 
 const CATEGORY_STRIP = [
+  { label: 'Daily Cover', href: '/brief' },
   { label: 'World', href: '/world' },
   { label: 'Politics', href: '/politics' },
   { label: 'Markets', href: '/markets' },
   { label: 'Trending', href: '/trending' },
   { label: 'Sports', href: '/sports' },
 ];
+
+const CATEGORY_PATHS = new Set(['/brief', '/world', '/politics', '/markets', '/trending', '/sports']);
 
 export function CvrdLogo({ size = 22 }: { size?: number }) {
   return (
@@ -42,7 +45,7 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
   }, []);
 
   const isOnTV = pathname === '/tv' || (pathname?.startsWith('/tv/') ?? false);
-  const isOnBrief = pathname === '/brief';
+  const showCategoryStrip = CATEGORY_PATHS.has(pathname ?? '');
 
   const active = (href: string): boolean => {
     if (href === '/brief') return pathname === '/brief';
@@ -102,15 +105,15 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
           )}
 
           {/* Main nav items */}
-          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline'],['TV','/tv']] as [string,string][]).map(([label, href]) => {
+          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline']] as [string,string][]).map(([label, href]) => {
             const isAct = active(href);
             return (
               <a key={href} href={href} style={{
-                padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
+                padding: '4px 10px', textDecoration: 'none', flexShrink: 0,
                 fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
                 color: isAct ? 'rgba(226,232,240,0.95)' : 'rgba(226,232,240,0.6)',
-                background: isAct ? 'rgba(255,255,255,0.1)' : 'transparent',
-                border: `1px solid ${isAct ? 'rgba(255,255,255,0.15)' : 'transparent'}`,
+                borderBottom: `1.5px solid ${isAct ? 'rgba(226,232,240,0.55)' : 'transparent'}`,
+                paddingBottom: '3px',
               }} className="nav-pill">{label}</a>
             );
           })}
@@ -127,8 +130,8 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
         </div>
       </nav>
 
-      {/* Category strip — only on Daily Cover (/brief) */}
-      {isOnBrief && (
+      {/* Category strip — visible on /brief and all category pages */}
+      {showCategoryStrip && (
         <div style={{
           position: 'sticky', top: 48, zIndex: 99,
           background: '#1a2535', borderBottom: '1px solid rgba(255,255,255,0.05)',
@@ -136,13 +139,18 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
           display: 'flex', alignItems: 'center', gap: 2,
           overflowX: 'auto',
         }} className="hide-scroll">
-          {CATEGORY_STRIP.map(cat => (
-            <a key={cat.href} href={cat.href} style={{
-              padding: '3px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
-              fontFamily: mono, fontSize: 9, letterSpacing: '0.08em',
-              color: 'rgba(226,232,240,0.5)',
-            }} className="nav-pill">{cat.label}</a>
-          ))}
+          {CATEGORY_STRIP.map(cat => {
+            const isCatActive = pathname === cat.href;
+            return (
+              <a key={cat.href} href={cat.href} style={{
+                padding: '3px 10px', textDecoration: 'none', flexShrink: 0,
+                fontFamily: mono, fontSize: 9, letterSpacing: '0.08em',
+                color: isCatActive ? 'rgba(226,232,240,0.9)' : 'rgba(226,232,240,0.45)',
+                borderBottom: `1.5px solid ${isCatActive ? 'rgba(226,232,240,0.55)' : 'transparent'}`,
+                paddingBottom: '2px',
+              }} className="nav-pill">{cat.label}</a>
+            );
+          })}
         </div>
       )}
     </>
