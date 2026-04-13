@@ -1,29 +1,29 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { VideoGrid } from "./VideoGrid";
+import { useState } from "react";
+import { HorizontalAdBanner } from "./AdBanners";
 import { Dashboard } from "./Dashboard";
-import { Tweet } from 'react-tweet';
+import { ErrorBoundary } from "./ErrorBoundary";
+import { VideoGrid } from "./VideoGrid";
 import { OnRecordWidget } from "./OnRecordWidget";
-import { MentionedSection } from "./MentionedSection";
 import type { NarrativeGap } from "../lib/data";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
-const mono = "'DM Mono', monospace";
 
-function catColor(cat?: string) {
-  const map: Record<string, string> = {
-    world: '#1d4ed8', politics: '#7c3aed', markets: '#047857',
-    trending: '#b45309', sports: '#0e7490',
-  };
-  return map[cat ?? ''] ?? '#374151';
+function topicToSlug(topic: string): string {
+  return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 }
-function catLabel(cat?: string) {
-  const map: Record<string, string> = {
-    world: 'World', politics: 'Politics', markets: 'Markets',
-    trending: 'Trending', sports: 'Sports',
-  };
-  return map[cat ?? ''] ?? 'News';
+
+function toBullets(text: string): string[] {
+  const raw = text.split(/\.\s+(?=[A-Z])/).map((s, i, arr) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
+  const merged: string[] = [];
+  let acc = '';
+  for (const part of raw) {
+    acc = acc ? acc + ' ' + part : part;
+    if (acc.length >= 80) { merged.push(acc); acc = ''; }
+  }
+  if (acc) merged.push(acc);
+  return merged;
 }
 
 export function StoryPage({ story, date, otherStories, matchedTimelines }: {
@@ -32,6 +32,25 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
   otherStories: NarrativeGap[];
   matchedTimelines?: { id: string; title: string; image_file?: string }[];
 }) {
+  const [dashExpanded, setDashExpanded] = useState(false);
+  const [tweetsExpanded, setTweetsExpanded] = useState(false);
+  const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
+  const [telegramExpanded, setTelegramExpanded] = useState(false);
+  const [redditExpanded, setRedditExpanded] = useState(false);
+  const [subEmail, setSubEmail] = useState('');
+  const [subStatus, setSubStatus] = useState<'idle' | 'loading' | 'done'>('idle');
+
+  const handleSubscribe = async () => {
+    if (!subEmail.includes('@') || subStatus !== 'idle') return;
+    setSubStatus('loading');
+    try {
+      await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: subEmail }) });
+      setSubStatus('done');
+    } catch {
+      setSubStatus('idle');
+    }
+  };
+
   const clips = story.social_clips || [];
   const ytVids = story.youtube_videos || [];
   const sources = story.sources || [];
@@ -47,63 +66,194 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
     ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
     .filter(s => s.trim().length > 20) || [];
 
-  const topicToSlug = (t: string) => t.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
-
-  const totalSources = ytVids.length + clips.filter(c => c.embed_id).length;
-
-  const [telegramExpanded, setTelegramExpanded] = useState(false);
-  const [redditExpanded, setRedditExpanded] = useState(false);
+  const prev = () => {
+    if (otherStories.length > 0) {
+      window.location.href = `/story/${topicToSlug(otherStories[otherStories.length - 1].topic)}`;
+    }
+  };
+  const next = () => {
+    if (otherStories.length > 0) {
+      window.location.href = `/story/${topicToSlug(otherStories[0].topic)}`;
+    }
+  };
 
   return (
     <div>
-      {/* HERO — matches homepage HeroStory exactly */}
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
-        {/* background image */}
-        {story.image_file ? (
-          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${story.image_file})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.3)' }} />
-        ) : (
-          <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category as string)}22 0%, #1a2535 100%)` }} />
-        )}
-        {/* gradient overlay */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.6) 50%, rgba(30,42,58,0.4) 100%)' }} />
-
-        <div style={{ position: 'relative', padding: '36px 28px 28px' }}>
-          {/* category + source count */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-            {story.category && (
-              <a href={`/${story.category}`} style={{ textDecoration: 'none' }}>
-                <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category as string), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
-                  {catLabel(story.category as string)}
-                </span>
+      {/* 1. Story cards — horizontal scroll row */}
+      <div className="pt-6 pb-4" style={{ background: '#1e2a3a' }}>
+        <div className="relative flex items-center gap-0">
+          <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
+            className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
+          </button>
+          <div id="story-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+            <a href="/"
+              className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
+                <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+              </div>
+              <div className="p-2.5">
+                <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">Daily</span>
+                <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                  Daily Pick
+                </p>
+              </div>
+            </a>
+            <a href="#"
+              className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+              style={{ background: '#253545', border: '2px solid #2563eb' }}>
+              <div className="h-28 overflow-hidden" style={{
+                backgroundImage: story.image_file ? `url(${story.image_file})` : 'none',
+                backgroundSize: 'cover', backgroundPosition: 'center',
+                background: story.image_file ? undefined : '#152030',
+              }}>
+                {story.image_file
+                  ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                  : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
+                }
+              </div>
+              <div className="p-2.5">
+                <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{story.category || 'News'}</span>
+                <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                  {story.topic}
+                </p>
+              </div>
+            </a>
+            {otherStories.map((s, i) => (
+              <a key={i} href={`/story/${topicToSlug(s.topic)}`}
+                className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                <div className="h-28 overflow-hidden" style={{
+                  backgroundImage: s.image_file ? `url(${s.image_file})` : 'none',
+                  backgroundSize: 'cover', backgroundPosition: 'center',
+                  background: s.image_file ? undefined : '#152030',
+                }}>
+                  {s.image_file
+                    ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
+                  }
+                </div>
+                <div className="p-2.5">
+                  <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
+                  <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                    {s.topic}
+                  </p>
+                </div>
               </a>
-            )}
-            {totalSources > 0 && (
-              <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#7a8fa6' }}>
-                {totalSources} sources covering this
-              </span>
-            )}
+            ))}
           </div>
-
-          {/* headline */}
-          <h1 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 'clamp(22px, 3.2vw, 34px)', lineHeight: 1.2, color: '#e2e8f0', marginBottom: 8, maxWidth: 760, fontWeight: 400 }}>
-            {story.topic}
-          </h1>
-
-          {/* summary */}
-          <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: '#7a8fa6', maxWidth: 660, marginBottom: 20 }}>
-            {(story.summary || '').slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
-          </p>
-
-          {/* dashboard tiles */}
-          {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-            <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginBottom: 20 }}>
-              <Dashboard stories={[story]} tilesOnly={true} />
-            </div>
-          )}
+          <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
+            className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
+          </button>
         </div>
       </div>
 
-      {/* CONTENT */}
+      {/* 2. ON AIR BANNER */}
+      <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+            On Air: <span className="text-[#666]">{story.topic}</span>
+          </h1>
+        </div>
+        <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+          className="shrink-0 flex items-center gap-1 px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+          style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
+          ♥ Buy us a coffee
+        </a>
+        <button onClick={prev} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
+        </button>
+        <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+        </button>
+      </div>
+
+      {/* 3. COMPACT DASHBOARD */}
+      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a' }}>
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+          <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+            <ErrorBoundary>
+              <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
+            </ErrorBoundary>
+            {!dashExpanded && (
+              <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                <button onClick={() => setDashExpanded(true)}
+                  className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                  style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                  Expand Dashboard
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+        {dashExpanded && (
+          <button onClick={() => setDashExpanded(false)}
+            className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+            style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+            Collapse Dashboard
+          </button>
+        )}
+      </div>
+
+      {/* 4. COVER THE NEWS BANNER */}
+      <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
+        <div className="flex-1 min-w-0">
+          <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+            Cover The News
+          </h1>
+        </div>
+        {subStatus === 'done' ? (
+          <span className="shrink-0 text-[10px] font-medium text-[#1e2a3a]">Subscribed ✓</span>
+        ) : (
+          <div className="shrink-0 hidden sm:flex items-center gap-1">
+            <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+              onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+              className="text-[10px] px-2 py-1 rounded-full outline-none"
+              style={{ background: 'white', border: '1px solid #e5e5e5', color: '#1e2a3a', width: 130 }} />
+            <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+              className="px-3 py-1 rounded-full text-[10px] font-medium hover:opacity-70 transition-opacity whitespace-nowrap"
+              style={{ background: '#1e2a3a', color: 'white', border: 'none', cursor: 'pointer' }}>
+              {subStatus === 'loading' ? '…' : 'Subscribe'}
+            </button>
+          </div>
+        )}
+        <button onClick={prev}
+          className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
+        </button>
+        <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+        </button>
+      </div>
+
+      {/* 5. PICTURE HEADER */}
+      {story.image_file && (
+        <div className="relative overflow-hidden" style={{
+          height: '30vh', minHeight: '220px',
+          backgroundImage: `url(${story.image_file})`,
+          backgroundSize: 'cover', backgroundPosition: 'center',
+        }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%, rgba(0,0,0,0.3) 100%)' }} />
+          <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+            {story.category && (
+              <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
+                {story.category}
+              </span>
+            )}
+            <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+              {story.topic}
+            </h1>
+          </div>
+        </div>
+      )}
+
+      {/* FULL CONTENT */}
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
         {/* SUMMARY */}
@@ -121,39 +271,46 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           </div>
         )}
 
-        {/* LEFT vs RIGHT (or Media vs Fans for sports) */}
-        {(story.left_narrative || story.right_narrative) && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
-            {story.left_narrative && (
-              <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
-                <div className="flex items-center gap-2 mb-3">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="15 18 9 12 15 6"/>
-                  </svg>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
-                    {((story as any).category === 'sports' || (story as any).category === 'trending') ? 'Media' : 'Left'}
-                  </span>
-                </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
-              </div>
-            )}
-            {story.right_narrative && (
-              <div className="pl-4 py-4 pr-4">
-                <div className="flex items-center gap-2 mb-3">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={((story as any).category === 'sports' || (story as any).category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="9 18 15 12 9 6"/>
-                  </svg>
-                  <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: ((story as any).category === 'sports' || (story as any).category === 'trending') ? '#34d399' : '#f87171' }}>
-                    {((story as any).category === 'sports' || (story as any).category === 'trending') ? 'Fans' : 'Right'}
-                  </span>
-                </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
-              </div>
-            )}
+        {/* LEFT vs CENTER vs RIGHT */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
+          <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa' }}>
+                {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
+              </span>
+            </div>
+            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
           </div>
-        )}
+          {story.center_narrative && (
+            <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3' }}>
+                  {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
+                </span>
+              </div>
+              <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+            </div>
+          )}
+          <div className="py-4 px-4">
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171' }}>
+                {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
+              </span>
+            </div>
+            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+          </div>
+        </div>
 
-        {/* UNFILTERED */}
+        {/* BLINDSPOTS */}
         <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
@@ -172,44 +329,55 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
             ) : (
               <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
             )}
-            {story.social_summary && (
-              <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
-                <div className="flex items-center gap-2 mb-2">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                  </svg>
-                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
-                </div>
-                {(() => {
-                  const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
-                  return bullets.length > 1 ? (
-                    <ul className="space-y-1.5 list-none pl-0 m-0">
-                      {bullets.map((s: string, i: number) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
-                          <span className="text-[#daa520] shrink-0">•</span>
-                          <span>{s}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
-                  );
-                })()}
-              </div>
-            )}
           </div>
         </div>
 
-        {/* MENTIONED — people + timelines */}
-        <MentionedSection
-          people={((story as any).people || []).map((p: any) => ({
-            ...p,
-            handle: ((story as any).onrecord_matches || []).find((m: any) =>
-              m.name.toLowerCase().includes(p.name.split(' ').pop()?.toLowerCase() || '')
-            )?.handle,
-          }))}
-          timelines={matchedTimelines}
-        />
+        {/* SOCIAL PULSE */}
+        {story.social_summary && (
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+            </div>
+            <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              {(() => {
+                const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
+                return bullets.length > 1 ? (
+                  <ul className="space-y-1.5 list-none pl-0 m-0">
+                    {bullets.map((s: string, i: number) => (
+                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <span className="text-[#daa520] shrink-0">•</span>
+                        <span>{s}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                );
+              })()}
+            </div>
+          </div>
+        )}
+
+        {/* TIMELINE — thread this story belongs to */}
+        {matchedTimelines && matchedTimelines.length > 0 && (() => {
+          const thread = matchedTimelines[0];
+          return (
+            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
+              </div>
+              <a href={`/timeline?thread=${thread.id}`}
+                className="flex items-center gap-3 p-2.5 rounded-md transition-opacity hover:opacity-80"
+                style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                {thread.image_file && <img src={thread.image_file} alt={thread.title} className="w-10 h-10 rounded object-cover shrink-0" />}
+                <span className="text-[12px] text-white font-semibold leading-[1.3]">{thread.title}</span>
+                <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+              </a>
+            </div>
+          );
+        })()}
 
         {/* ON RECORD — politician matches */}
         {(story as any).onrecord_matches?.length > 0 && (
@@ -217,26 +385,82 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
         )}
 
         {/* X POSTS */}
-        {xClips.filter(c => !(c as any).duration).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-[16px] font-bold text-white">𝕏</span>
-              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]"></span>
-            </div>
-            <div className="grid grid-cols-4 gap-2">
-              {xClips.filter(c => !(c as any).duration).map((c, i) => (
-                c.embed_id ? (
-                  <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
-                    <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                        style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+        {(() => {
+          const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
+          if (textTweets.length === 0) return null;
+          const visibleTweets = tweetsExpanded ? textTweets : textTweets.slice(0, 6);
+          return (
+            <div data-section="x-posts" className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[16px] font-bold text-white">𝕏</span>
+              </div>
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                <div className="grid grid-cols-4 gap-2">
+                  {visibleTweets.map((c, i) => (
+                    <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
+                      <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                          style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                      </div>
                     </div>
-                  </div>
-                ) : null
-              ))}
+                  ))}
+                </div>
+                {textTweets.length > 6 && !tweetsExpanded && (
+                  <button onClick={() => setTweetsExpanded(true)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show {textTweets.length - 6} more tweets
+                  </button>
+                )}
+                {tweetsExpanded && textTweets.length > 6 && (
+                  <button onClick={() => setTweetsExpanded(false)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show less
+                  </button>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
+
+        {/* TIKTOK */}
+        {(() => {
+          const allTiktoks = tiktokClips.filter(c => c.embed_id);
+          if (allTiktoks.length === 0) return null;
+          const visibleTiktoks = tiktoksExpanded ? allTiktoks : allTiktoks.slice(0, 6);
+          return (
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-[16px]">♪</span>
+                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
+              </div>
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {visibleTiktoks.map((c, i) => (
+                    <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                      <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px]" style={{ border: 'none', width: '100%' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+                {allTiktoks.length > 6 && !tiktoksExpanded && (
+                  <button onClick={() => setTiktoksExpanded(true)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show {allTiktoks.length - 6} more TikToks
+                  </button>
+                )}
+                {tiktoksExpanded && allTiktoks.length > 6 && (
+                  <button onClick={() => setTiktoksExpanded(false)}
+                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                    Show less
+                  </button>
+                )}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* TELEGRAM TEXT POSTS */}
         {(() => {
@@ -244,19 +468,24 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           if (tgClips.length === 0) return null;
           const visibleTg = telegramExpanded ? tgClips : tgClips.slice(0, 9);
           return (
-            <div>
+            <div data-section="telegram">
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
                 <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
               </div>
               <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-                <div className="flex flex-wrap gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {visibleTg.map((c, i) => (
                     <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
-                      style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
-                      <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
-                      <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                      className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                      style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                      <div className="flex items-start gap-2">
+                        <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
+                        <div className="min-w-0">
+                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                          <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+                        </div>
+                      </div>
                     </a>
                   ))}
                 </div>
@@ -279,6 +508,23 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           );
         })()}
 
+        {/* REELS */}
+        {reelsClips.filter(c => c.embed_id).length > 0 && (
+          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[16px]">◎</span>
+              <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reels</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+              {reelsClips.filter(c => c.embed_id).map((c, i) => (
+                <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
+                  <iframe src={`https://www.instagram.com/reel/${c.embed_id}/embed`} className="h-[480px]" style={{ border: 'none', width: '100%' }} allowFullScreen />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* REDDIT */}
         {redditClips.length > 0 && (() => {
           const seen = new Set<string>();
@@ -288,18 +534,23 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
             <div>
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
+                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit Discussions</span>
               </div>
-              <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-                <div className="flex flex-wrap gap-2">
+              <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                   {visibleReddit.map((c, i) => {
-                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ');
+                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
                     return (
                       <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
-                        style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
-                        <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{title}</span>
-                        <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                        <div className="flex items-start gap-2">
+                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
+                          <div className="min-w-0">
+                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{title}</p>
+                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                          </div>
+                        </div>
                       </a>
                     );
                   })}
@@ -323,82 +574,55 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           );
         })()}
 
-        {/* TIKTOK */}
-        {tiktokClips.filter(c => c.embed_id).length > 0 && (
-          <div className="mb-6">
-            <div className="flex items-center gap-2 mb-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
-              <span className="text-[11px] font-bold text-[#ccc] uppercase tracking-[0.12em]">TikTok</span>
-            </div>
-            <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {tiktokClips.filter(c => c.embed_id).map((c, i) => (
-                  <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                    <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px] w-full" style={{ border: 'none' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ALL ARTICLES */}
-        <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+        {/* DIVE DEEPER */}
+        <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3 mt-1">Dive Deeper</h2>
+        <div className="rounded-lg p-4" style={{ background: '#253545' }}>
           <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
             <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
             <span className="text-[11px] text-[#777]">{sources.length} sources</span>
-            {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
-            {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
-            {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
+            {!(story.category === 'sports' || story.category === 'trending') && <>
+              {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
+              {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
+              {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
+            </>}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {leftSources.length > 0 && <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />}
-            {centerSources.length > 0 && <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />}
-            {rightSources.length > 0 && <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />}
-          </div>
+          {(story.category === 'sports' || story.category === 'trending') ? (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {(() => {
+                const allSrc = [...leftSources, ...centerSources, ...rightSources];
+                const third = Math.ceil(allSrc.length / 3);
+                return [allSrc.slice(0, third), allSrc.slice(third, third * 2), allSrc.slice(third * 2)].map((col, ci) => (
+                  <SourceColumn key={ci} label={ci === 0 ? 'Media' : ci === 1 ? 'Coverage' : 'More'} sources={col} color="#999" dotColor="#999" />
+                ));
+              })()}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {leftSources.length > 0 && (
+                <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />
+              )}
+              {centerSources.length > 0 && (
+                <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />
+              )}
+              {rightSources.length > 0 && (
+                <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />
+              )}
+            </div>
+          )}
         </div>
 
-        {/* MORE STORIES */}
-        {otherStories.length > 0 && (
-          <div className="mt-8">
-            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">More from {new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-              {otherStories.map((s, i) => (
-                <a key={i} href={`/story/${topicToSlug(s.topic)}`}
-                  className="text-left rounded-lg overflow-hidden group transition-transform hover:scale-[1.02] block"
-                  style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                  {s.image_file && (
-                    <div className="h-24 overflow-hidden" style={{
-                      backgroundImage: `url(${s.image_file})`,
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                    }}>
-                      <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                    </div>
-                  )}
-                  <div className="p-2.5">
-                    <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                    <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                      {s.topic}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
+        {/* AD — below all articles */}
+        <div className="mt-6">
+          <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
+          <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
+            <HorizontalAdBanner />
           </div>
-        )}
-
-        {/* CTA */}
-        <div className="mt-8 p-5 rounded-lg text-center" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-          <p className="text-[13px] text-[#999] mb-2">Want the full picture on every story?</p>
-          <a href="/brief" className="inline-block px-5 py-2 rounded-full text-[12px] font-semibold text-white transition-colors hover:opacity-90"
-            style={{ background: '#b8860b' }}>
-            Stream all stories at CVRD
-          </a>
         </div>
       </div>
     </div>
   );
 }
+
 
 function SourceColumn({ label, sources, color, dotColor }: {
   label: string;
@@ -409,8 +633,10 @@ function SourceColumn({ label, sources, color, dotColor }: {
   const [expanded, setExpanded] = useState<string | null>(null);
   const grouped: Record<string, { name: string; url: string; title?: string }[]> = {};
   for (const s of sources) {
-    if (!grouped[s.name]) grouped[s.name] = [];
-    grouped[s.name].push(s);
+    // Extract outlet name — strip article title after " — " or " - "
+    const outlet = s.name.split(/\s[—–-]\s/)[0].trim() || s.name;
+    if (!grouped[outlet]) grouped[outlet] = [];
+    grouped[outlet].push(s);
   }
 
   return (

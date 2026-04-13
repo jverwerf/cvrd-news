@@ -250,9 +250,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
 
           {/* 2. ON AIR BANNER */}
-          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
             <div className="flex-1 min-w-0">
-              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
                 On Air: <span className="text-[#666]">{sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}</span>
               </h1>
             </div>
@@ -262,9 +262,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               ♥ Buy us a coffee
             </a>
             <button onClick={() => setCurrentIdx(0)}
-              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
             </button>
           </div>
 
@@ -296,9 +296,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
 
           {/* 4. COVER THE NEWS BANNER */}
-          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
             <div className="flex-1 min-w-0">
-              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
                 Cover The News
               </h1>
             </div>
@@ -318,14 +318,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </div>
             )}
             <button onClick={prev}
-              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
             </button>
             <button onClick={() => setCurrentIdx(0)}
-              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
             </button>
           </div>
 
@@ -642,13 +642,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
 
           {/* 2. ON AIR BANNER */}
-          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-            <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
-              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
-            </button>
+          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
             <div className="flex-1 min-w-0">
-              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
                 On Air: <span className="text-[#666]">{story.topic}</span>
               </h1>
             </div>
@@ -657,9 +653,13 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               style={{ background: 'white', color: '#1e2a3a', border: '1px solid #e5e5e5' }}>
               ♥ Buy us a coffee
             </a>
-            <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+            <button onClick={prev} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
+            </button>
+            <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
             </button>
           </div>
 
@@ -691,9 +691,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
 
           {/* 4. COVER THE NEWS BANNER */}
-          <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+          <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
             <div className="flex-1 min-w-0">
-              <h1 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
+              <h1 className="text-[15px] md:text-[17px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={serif}>
                 Cover The News
               </h1>
             </div>
@@ -713,13 +713,13 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </div>
             )}
             <button onClick={prev}
-              className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+              className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
             </button>
-            <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+            <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
               style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-              <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
             </button>
           </div>
 
@@ -805,11 +805,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       )}
 
       {/* BANNER with navigation — hide (now in story mode section above) */}
-      {false && <div className="px-4 md:px-6 py-2.5 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
+      {false && <div className="px-4 md:px-6 py-1 flex items-center gap-2" style={{ background: '#f5f5f5' }}>
         {!isBrief && (
-          <button onClick={prev} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+          <button onClick={prev} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
             style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-            <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#1e2a3a]" />
+            <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-[#1e2a3a]" />
           </button>
         )}
         <div className="flex-1 min-w-0">
@@ -824,9 +824,9 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </h1>
           </div>
         </div>
-        <button onClick={next} className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
+        <button onClick={next} className="shrink-0 w-7 h-7 rounded-full flex items-center justify-center hover:bg-black/10 transition-colors"
           style={{ border: '1px solid #ddd', cursor: 'pointer', background: 'white' }}>
-          <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[7px] border-l-[#1e2a3a]" />
+          <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
         </button>
       </div>}
 
