@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { LiveBanner } from "@/components/LiveBanner";
 import { HorizontalAdBanner } from "@/components/AdBanners";
 import { SiteNav } from "@/components/SiteNav";
 
@@ -74,8 +73,6 @@ export default function LeaderboardPage() {
   const [professionFilter, setProfessionFilter] = useState('all');
   const [alignmentFilter, setAlignmentFilter] = useState('all');
   const [search, setSearch] = useState('');
-  const [liveData, setLiveData] = useState<any[]>();
-  const [stories, setStories] = useState<any[]>([]);
 
   useEffect(() => {
     // Load politician handles dynamically from manifest
@@ -91,15 +88,6 @@ export default function LeaderboardPage() {
         setScores(results.filter(Boolean));
       })
       .catch(() => {});
-
-    const today = new Date().toISOString().split('T')[0];
-    fetch(`/data/daily_gaps_${today}.json`).then(r => r.ok ? r.json() : null).then(data => {
-      if (data?.top_narratives) setStories(data.top_narratives);
-      if (data?.live_data) setLiveData(data.live_data);
-    }).catch(() => {});
-    fetch('/api/live').then(r => r.ok ? r.json() : null).then(data => {
-      if (data) setLiveData(data);
-    }).catch(() => {});
   }, []);
 
   // Derive available countries from selected region
@@ -161,7 +149,6 @@ export default function LeaderboardPage() {
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={false} />
-      <LiveBanner stories={stories} liveData={liveData} />
 
       {/* VIEW TOGGLE + SEARCH — same row */}
       <div className="flex items-center gap-2 px-4 md:px-12 py-2" style={{ background: '#1e2a3a' }}>

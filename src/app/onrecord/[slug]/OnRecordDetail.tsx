@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { LiveBanner } from "@/components/LiveBanner";
 import { HorizontalAdBanner } from "@/components/AdBanners";
 import { SiteNav } from "@/components/SiteNav";
 
@@ -283,19 +282,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   const [resolvedLimit, setResolvedLimit] = useState(3);
   const [pendingLimit, setPendingLimit] = useState(3);
   const [claimLimit, setClaimLimit] = useState(5);
-  const [stories, setStories] = useState<any[]>([]);
-  const [liveData, setLiveData] = useState<any[]>();
-
-  useEffect(() => {
-    const today = new Date().toISOString().split('T')[0];
-    fetch(`/data/daily_gaps_${today}.json`).then(r => r.ok ? r.json() : null).then(data => {
-      if (data?.top_narratives) setStories(data.top_narratives);
-      if (data?.live_data) setLiveData(data.live_data);
-    }).catch(() => {});
-    fetch('/api/live').then(r => r.ok ? r.json() : null).then(data => {
-      if (data) setLiveData(data);
-    }).catch(() => {});
-  }, []);
 
   const claims: ScoredClaim[] = verified?.scored_claims || [];
   const pending: PendingClaim[] = verified?.pending_claims || [];
@@ -331,7 +317,6 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={false} />
-      <LiveBanner stories={stories} liveData={liveData} />
 
       <div className="px-4 md:px-8 pb-10 pt-5 max-w-5xl mx-auto">
 

@@ -1,8 +1,17 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 const mono = `'DM Mono', monospace`;
+
+const CATEGORY_STRIP = [
+  { label: 'World', href: '/world' },
+  { label: 'Politics', href: '/politics' },
+  { label: 'Markets', href: '/markets' },
+  { label: 'Trending', href: '/trending' },
+  { label: 'Sports', href: '/sports' },
+];
 
 export function CvrdLogo({ size = 22 }: { size?: number }) {
   return (
@@ -26,9 +35,22 @@ export function CvrdLogo({ size = 22 }: { size?: number }) {
 
 export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
   const [today, setToday] = useState('');
+  const pathname = usePathname();
+
   useEffect(() => {
     setToday(new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase());
   }, []);
+
+  const isOnTV = pathname === '/tv' || (pathname?.startsWith('/tv/') ?? false);
+  const isOnBrief = pathname === '/brief';
+
+  const active = (href: string): boolean => {
+    if (href === '/brief') return pathname === '/brief';
+    if (href === '/onrecord') return pathname === '/onrecord' || (pathname?.startsWith('/onrecord/') ?? false);
+    if (href === '/timeline') return pathname === '/timeline' || (pathname?.startsWith('/timeline/') ?? false);
+    if (href === '/tv') return isOnTV;
+    return false;
+  };
 
   return (
     <>
@@ -37,8 +59,9 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
         .live-dot { animation: blink 1.3s ease-in-out infinite; }
         .hide-scroll { scrollbar-width: none; }
         .hide-scroll::-webkit-scrollbar { display: none; }
-        .nav-pill:hover { color: rgba(226,232,240,0.9) !important; background: rgba(255,255,255,0.05); }
+        .nav-pill:hover { color: rgba(226,232,240,0.9) !important; background: rgba(255,255,255,0.07) !important; }
       `}</style>
+
       <nav style={{
         position: 'sticky', top: 0, zIndex: 100,
         background: '#1a2535', borderBottom: '1px solid rgba(255,255,255,0.07)',
@@ -50,6 +73,7 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
         </a>
 
         <div style={{ display: 'flex', gap: 2, overflowX: 'auto', flex: 1 }} className="hide-scroll">
+          {/* Breaking pill */}
           {isBreaking && (
             <a href="/breaking" style={{
               display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
@@ -61,13 +85,35 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
               BREAKING
             </a>
           )}
-          {[['Daily Pick','/brief'],['On Record','/onrecord'],['Timeline','/timeline'],['TV','/tv']].map(([label, href]) => (
-            <a key={href} href={href} style={{
-              padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
-              fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
-              color: 'rgba(226,232,240,0.6)',
-            }} className="nav-pill">{label}</a>
-          ))}
+
+          {/* TV pill — visible on non-TV pages as a discovery CTA */}
+          {!isOnTV && (
+            <a href="/tv" style={{
+              display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
+              padding: '4px 10px', borderRadius: 4, textDecoration: 'none',
+              background: 'rgba(59,130,246,0.1)', border: '1px solid rgba(59,130,246,0.2)',
+              fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: '#60a5fa',
+            }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/>
+              </svg>
+              TV
+            </a>
+          )}
+
+          {/* Main nav items */}
+          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline'],['TV','/tv']] as [string,string][]).map(([label, href]) => {
+            const isAct = active(href);
+            return (
+              <a key={href} href={href} style={{
+                padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
+                fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
+                color: isAct ? 'rgba(226,232,240,0.95)' : 'rgba(226,232,240,0.6)',
+                background: isAct ? 'rgba(255,255,255,0.1)' : 'transparent',
+                border: `1px solid ${isAct ? 'rgba(255,255,255,0.15)' : 'transparent'}`,
+              }} className="nav-pill">{label}</a>
+            );
+          })}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
@@ -80,6 +126,25 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
           {today && <span style={{ fontFamily: mono, fontSize: 9, color: '#4a5a6a' }}>{today}</span>}
         </div>
       </nav>
+
+      {/* Category strip — only on Daily Cover (/brief) */}
+      {isOnBrief && (
+        <div style={{
+          position: 'sticky', top: 48, zIndex: 99,
+          background: '#1a2535', borderBottom: '1px solid rgba(255,255,255,0.05)',
+          padding: '0 20px', height: 36,
+          display: 'flex', alignItems: 'center', gap: 2,
+          overflowX: 'auto',
+        }} className="hide-scroll">
+          {CATEGORY_STRIP.map(cat => (
+            <a key={cat.href} href={cat.href} style={{
+              padding: '3px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
+              fontFamily: mono, fontSize: 9, letterSpacing: '0.08em',
+              color: 'rgba(226,232,240,0.5)',
+            }} className="nav-pill">{cat.label}</a>
+          ))}
+        </div>
+      )}
     </>
   );
 }

@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTimelineThread, getTimelineThreads } from "@/lib/timeline-data";
 import { getDailyGaps } from "@/lib/data";
-import { LiveBanner } from "@/components/LiveBanner";
 import { SiteNav } from "@/components/SiteNav";
 import { ThreadDetail } from "./ThreadDetail";
 
@@ -45,7 +44,6 @@ export default async function TimelineThreadPage({ params }: { params: Promise<{
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
       <SiteNav isBreaking={isBreaking} />
-      {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
 
       {/* Hero image */}
       {thread.image_file && (

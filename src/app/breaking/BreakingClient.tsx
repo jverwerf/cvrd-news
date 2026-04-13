@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { HeroStory } from "@/components/HeroStory";
 import { Dashboard } from "@/components/Dashboard";
-import { LiveBanner } from "@/components/LiveBanner";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
@@ -83,7 +82,6 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={true} />
-      <LiveBanner stories={allStories} />
 
       {/* ALL BREAKING STORIES */}
       {allStories.map((story, i) => {

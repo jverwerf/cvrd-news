@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { LiveBanner } from "@/components/LiveBanner";
 import { TileAdBanner } from "@/components/AdBanners";
 import { SiteNav } from "@/components/SiteNav";
 
@@ -130,8 +129,6 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
 export default function PoliticiansPage() {
   const [scores, setScores] = useState<PoliticianScore[]>([]);
   const [selected, setSelected] = useState<number>(0);
-  const [stories, setStories] = useState<any[]>([]);
-  const [liveData, setLiveData] = useState<any[]>();
   const [search, setSearch] = useState('');
   const [isBreaking, setIsBreaking] = useState(true);
   const [editorial, setEditorial] = useState<any>(null);
@@ -155,21 +152,13 @@ export default function PoliticiansPage() {
         }
       }
     });
-    // Load editorial
-    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/onrecord_today.json`).then(r => r.ok ? r.json() : null).then(data => {
+    // Load editorial — no-store so we always get today's version, not a CDN-cached copy
+    const todayKey = new Date().toISOString().split('T')[0];
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/onrecord_today.json?d=${todayKey}`, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(data => {
       setEditorial(data);
       if (data?.person?.handle) setEditorialHandle(data.person.handle);
     }).catch(() => {});
 
-    // Load daily stories for LiveBanner
-    const today = new Date().toISOString().split('T')[0];
-    fetch(`/data/daily_gaps_${today}.json`).then(r => r.ok ? r.json() : null).then(data => {
-      if (data?.top_narratives) setStories(data.top_narratives);
-      if (data?.live_data) setLiveData(data.live_data);
-    }).catch(() => {});
-    fetch('/api/live').then(r => r.ok ? r.json() : null).then(data => {
-      if (data) setLiveData(data);
-    }).catch(() => {});
     // Check breaking — same 3-clip minimum as homepage
     fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).then(data => {
       if (data && Array.isArray(data) && data.length > 0) {
@@ -284,7 +273,6 @@ export default function PoliticiansPage() {
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={isBreaking} />
-      <LiveBanner stories={stories} liveData={liveData} />
 
       {/* VIEW TOGGLE + SEARCH PILL — same line */}
       <div className="relative flex items-center px-2 py-2" style={{ background: '#1e2a3a', minHeight: 40 }}>

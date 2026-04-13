@@ -2,7 +2,6 @@ export const revalidate = 86400;
 
 import { getTodayLastYear } from "@/lib/timeline-data";
 import { getDailyGaps } from "@/lib/data";
-import { LiveBanner } from "@/components/LiveBanner";
 import { SiteNav } from "@/components/SiteNav";
 import type { Metadata } from "next";
 
@@ -41,7 +40,6 @@ export default async function LastYearPage() {
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={isBreaking} />
-      {data && <LiveBanner stories={allStories} liveData={data.live_data} />}
 
       {/* Hero image with title overlaid */}
       <div className="relative overflow-hidden" style={{

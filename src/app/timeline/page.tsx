@@ -3,7 +3,6 @@ export const revalidate = 86400; // 24 hours — timeline content is static
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
 import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo } from "@/lib/timeline-data";
-import { LiveBanner } from "@/components/LiveBanner";
 import { SiteNav } from "@/components/SiteNav";
 import { TimelineContent } from "./TimelineClient";
 
@@ -60,7 +59,6 @@ export default async function TimelinePage() {
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
 
       <SiteNav isBreaking={isBreaking} />
-      {data && <LiveBanner stories={top10} liveData={data.live_data} />}
 
       {/* JSON-LD structured data for search engines */}
       {threadData && threadData.threads.length > 0 && (
