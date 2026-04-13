@@ -390,7 +390,7 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
         {/* CTA */}
         <div className="mt-8 p-5 rounded-lg text-center" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
           <p className="text-[13px] text-[#999] mb-2">Want the full picture on every story?</p>
-          <a href="/" className="inline-block px-5 py-2 rounded-full text-[12px] font-semibold text-white transition-colors hover:opacity-90"
+          <a href="/brief" className="inline-block px-5 py-2 rounded-full text-[12px] font-semibold text-white transition-colors hover:opacity-90"
             style={{ background: '#b8860b' }}>
             Stream all stories at CVRD
           </a>

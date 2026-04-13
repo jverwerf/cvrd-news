@@ -31,7 +31,7 @@ const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 const ALL_CATS = [
   { label: 'On Record', slug: '/onrecord' },
   { label: 'Timeline', slug: '/timeline' },
-  { label: 'Daily Pick', slug: '/' },
+  { label: 'Daily Pick', slug: '/brief' },
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },

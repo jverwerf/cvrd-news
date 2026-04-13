@@ -10,7 +10,7 @@ import type { NarrativeGap } from "@/lib/data";
 const ALL_CATS = [
   { label: 'On Record', slug: '/onrecord' },
   { label: 'Timeline', slug: '/timeline' },
-  { label: 'Daily Pick', slug: '/' },
+  { label: 'Daily Pick', slug: '/brief' },
   { label: 'World', slug: '/world' },
   { label: 'Politics', slug: '/politics' },
   { label: 'Markets', slug: '/markets' },
@@ -83,7 +83,7 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
         <div className="text-center">
           <p className="text-white/50 mb-2">Breaking news is being verified...</p>
           <p className="text-white/30 text-[12px]">Stories appear once we have enough video sources.</p>
-          <a href="/" className="text-[13px] text-[#3b82f6] mt-4 inline-block">← Back to Daily Pick</a>
+          <a href="/brief" className="text-[13px] text-[#3b82f6] mt-4 inline-block">← Back to Daily Pick</a>
         </div>
       </div>
     );

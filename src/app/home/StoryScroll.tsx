@@ -109,7 +109,7 @@ export function StoryScroll({ stories, blobBase }: { stories: StoryItem[]; blobB
         })}
 
         {/* trailing "all stories" tile */}
-        <a href="/" style={{ width: 120, flexShrink: 0, textDecoration: 'none' }}>
+        <a href="/brief" style={{ width: 120, flexShrink: 0, textDecoration: 'none' }}>
           <div style={{ height: '100%', minHeight: 180, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, gap: 8 }} className="story-card">
             <div style={{ width: 32, height: 32, borderRadius: '50%', border: `1px solid rgba(218,165,32,0.3)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>

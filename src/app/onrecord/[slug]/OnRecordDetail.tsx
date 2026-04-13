@@ -342,7 +342,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             {[
               { label: 'On Record', slug: '/onrecord' },
               { label: 'Timeline', slug: '/timeline' },
-              { label: 'Daily Pick', slug: '/' },
+              { label: 'Daily Pick', slug: '/brief' },
               { label: 'World', slug: '/world' }, { label: 'Politics', slug: '/politics' },
               { label: 'Markets', slug: '/markets' }, { label: 'Trending', slug: '/trending' },
               { label: 'Sports', slug: '/sports' },

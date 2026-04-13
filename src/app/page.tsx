@@ -469,7 +469,7 @@ export default async function Home() {
               <SectionHeader
                 label="Today's Pick"
                 blurb={`${stories.length} stories today — each one sourced from outlets across the political spectrum`}
-                href="/"
+                href="/brief"
                 hrefText="All stories"
               />
               <StoryScroll

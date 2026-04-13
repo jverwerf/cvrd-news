@@ -193,7 +193,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
               <div id="brief-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
-                <a href="/" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
+                <a href="/brief" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
                   className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                   style={{
                     background: '#253545',
@@ -582,7 +582,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
               </button>
               <div id="story-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
-                <a href="/" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
+                <a href="/brief" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
                   className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                   style={{
                     background: '#253545',
