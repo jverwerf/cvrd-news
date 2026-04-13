@@ -114,6 +114,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     category: sharedCategory,
     summary: resolvedBrief?.summary || `Today's top stories: ${stories.slice(0, 5).map(s => s.topic).join('. ')}. Plus ${stories.length - 5} more stories covering ${[...new Set(stories.map(s => s.category).filter(Boolean))].join(', ')}.`,
     left_narrative: resolvedBrief?.left_narrative || stories.slice(0, 3).map(s => s.left_narrative).filter(Boolean).join(' '),
+    center_narrative: resolvedBrief?.center_narrative || stories.slice(0, 3).map(s => s.center_narrative).filter(Boolean).join(' ') || undefined,
     right_narrative: resolvedBrief?.right_narrative || stories.slice(0, 3).map(s => s.right_narrative).filter(Boolean).join(' '),
     what_they_arent_telling_you: resolvedBrief?.what_they_arent_telling_you || stories.slice(0, 3).map(s => s.what_they_arent_telling_you).filter(Boolean).join(' '),
     social_summary: resolvedBrief?.social_summary || stories.slice(0, 3).map(s => s.social_summary).filter(Boolean).join(' '),
@@ -208,14 +209,16 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
                     className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
                     style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                    {s.image_file && (
-                      <div className="h-28 overflow-hidden" style={{
-                        backgroundImage: `url(${s.image_file})`,
-                        backgroundSize: 'cover', backgroundPosition: 'center',
-                      }}>
-                        <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                      </div>
-                    )}
+                    <div className="h-28 overflow-hidden" style={{
+                      backgroundImage: s.image_file ? `url(${s.image_file})` : 'none',
+                      backgroundSize: 'cover', backgroundPosition: 'center',
+                      background: s.image_file ? undefined : '#152030',
+                    }}>
+                      {s.image_file
+                        ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                        : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
+                      }
+                    </div>
                     <div className="p-2.5">
                       <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
                       <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
@@ -311,7 +314,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           <div className="px-6 md:px-12 pt-5 pb-4" style={{ background: '#1e2a3a' }}>
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
             <div className="mb-5 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <p className="text-[15px] text-[#ccc] leading-[1.75] italic">{story.summary}</p>
+              <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
             </div>
 
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Our Pick of Videos</h2>
@@ -320,8 +323,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
 
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative Gap</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-5" style={{ background: '#253545' }}>
-              <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
+            <div className="grid grid-cols-1 gap-0 rounded-lg mb-5" style={{ background: '#253545' }}>
+              <div className="py-4 px-4 border-b" style={{ borderColor: '#2a3a4a' }}>
                 <div className="flex items-center gap-2 mb-3">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="15 18 9 12 15 6"/>
@@ -332,6 +335,19 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 </div>
                 <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
               </div>
+              {story.center_narrative && (
+                <div className="py-4 px-4 border-b" style={{ borderColor: '#2a3a4a' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3' }}>
+                      {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
+                    </span>
+                  </div>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+                </div>
+              )}
               <div className="py-4 px-4">
                 <div className="flex items-center gap-2 mb-3">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -346,22 +362,26 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
 
             {story.what_they_arent_telling_you && (
-              <div className="p-5 rounded-lg mb-5" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <div>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
                   <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
                 </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+                <div className="p-5 rounded-lg mb-5" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+                </div>
               </div>
             )}
 
             {story.social_summary && (
-              <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                <div className="flex items-center gap-2 mb-2">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                   <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
                 </div>
-                <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
+                <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                </div>
               </div>
             )}
           </div>
@@ -417,7 +437,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
               {/* Reddit */}
               {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').length > 0 && (
-                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                <div className="rounded-lg p-4 mb-4" style={{ background: '#253545' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                     <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
@@ -435,6 +455,25 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                           </div>
                         </div>
                       </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* TikTok */}
+              {resolvedBrief.curated_social.filter((p: any) => p.platform === 'tiktok' && p.embed_id).length > 0 && (
+                <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+                    <span className="text-[11px] font-bold text-[#ccc] uppercase tracking-[0.12em]">TikTok</span>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    {resolvedBrief.curated_social.filter((p: any) => p.platform === 'tiktok' && p.embed_id).map((c: any, i: number) => (
+                      <div key={i} className="rounded-lg overflow-hidden" style={{ background: '#1e2a3a' }}>
+                        <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`}
+                          className="w-full" style={{ border: 'none', height: 320 }}
+                          sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -486,14 +525,16 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       background: '#253545',
                       border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a',
                     }}>
-                    {s.image_file && (
-                      <div className="h-28 overflow-hidden" style={{
-                        backgroundImage: `url(${s.image_file})`,
-                        backgroundSize: 'cover', backgroundPosition: 'center',
-                      }}>
-                        <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                      </div>
-                    )}
+                    <div className="h-28 overflow-hidden" style={{
+                      backgroundImage: s.image_file ? `url(${s.image_file})` : 'none',
+                      backgroundSize: 'cover', backgroundPosition: 'center',
+                      background: s.image_file ? undefined : '#152030',
+                    }}>
+                      {s.image_file
+                        ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                        : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
+                      }
+                    </div>
                     <div className="p-2.5">
                       <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
                       <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
@@ -700,8 +741,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
       <div className={`px-6 md:px-12 pb-10 ${isBrief ? 'pt-0' : 'pt-5'}`} style={{ background: '#1e2a3a' }}>
 
         {/* SUMMARY — hide in brief mode */}
-        {!isBrief && <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-          <p className="text-[15px] text-[#ccc] leading-[1.75] italic">{story.summary}</p>
+        {!isBrief && <div className="mb-6">
+          <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
+          <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+          </div>
         </div>}
 
         {/* VIDEO GRID — hide in brief mode (Our Pick of Videos shown above) */}
@@ -711,8 +755,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
         )}
 
-        {/* LEFT vs RIGHT + UNFILTERED + SOCIAL PULSE — hide in brief mode */}
-        {!isBrief && <><div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
+        {/* LEFT vs CENTER vs RIGHT + UNFILTERED + SOCIAL PULSE — hide in brief mode */}
+        {!isBrief && <><div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
           <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
             <div className="flex items-center gap-2 mb-3">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -724,6 +768,19 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
             <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
           </div>
+          {story.center_narrative && (
+            <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
+              <div className="flex items-center gap-2 mb-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                </svg>
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: (story.category === 'sports' || story.category === 'trending') ? '#c084fc' : '#a3a3a3' }}>
+                  {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
+                </span>
+              </div>
+              <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+            </div>
+          )}
           <div className="py-4 px-4">
             <div className="flex items-center gap-2 mb-3">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={(story.category === 'sports' || story.category === 'trending') ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -738,33 +795,38 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         </div>
 
         {/* UNFILTERED */}
-        <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+        <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
             <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
           </div>
-          {sentences.length > 1 ? (
-            <div className="space-y-2.5">
-              {sentences.map((s, i) => (
-                <div key={i} className="flex gap-2.5">
-                  <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
-          )}
-          {story.social_summary && (
-            <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
-              <div className="flex items-center gap-2 mb-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+          <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            {sentences.length > 1 ? (
+              <div className="space-y-2.5">
+                {sentences.map((s, i) => (
+                  <div key={i} className="flex gap-2.5">
+                    <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                    <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                  </div>
+                ))}
               </div>
-              <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
+            ) : (
+              <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+            )}
+          </div>
+        </div>
+        {story.social_summary && (
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
             </div>
-          )}
-        </div></>}
+            <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+            </div>
+          </div>
+        )}
+        </>}
 
         {/* TIMELINE — thread this story explicitly belongs to */}
         {(() => {
@@ -803,10 +865,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           if (textTweets.length === 0) return null;
           const visibleTweets = tweetsExpanded ? textTweets : textTweets.slice(0, 6);
           return (
-            <div data-section="x-posts" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div data-section="x-posts" className="mb-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[16px] font-bold text-white">𝕏</span>
               </div>
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
               <div className="grid grid-cols-4 gap-2">
                 {visibleTweets.map((c, i) => (
                   <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
@@ -831,6 +894,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   Show less
                 </button>
               )}
+              </div>
             </div>
           );
         })()}
@@ -841,11 +905,12 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           if (allTiktoks.length === 0) return null;
           const visibleTiktoks = tiktoksExpanded ? allTiktoks : allTiktoks.slice(0, 6);
           return (
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div className="mb-6">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-[16px]">♪</span>
                 <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
               </div>
+              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                 {visibleTiktoks.map((c, i) => (
                   <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
@@ -867,31 +932,34 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   Show less
                 </button>
               )}
+              </div>
             </div>
           );
         })()}
 
         {/* TELEGRAM TEXT POSTS — hide in brief mode */}
         {!isBrief && telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
-          <div data-section="telegram" className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+          <div data-section="telegram">
             <div className="flex items-center gap-2 mb-3">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
               <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
-                <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                  className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                  <div className="flex items-start gap-2">
-                    <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
-                    <div className="min-w-0">
-                      <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
-                      <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
+                  <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                    className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                    <div className="flex items-start gap-2">
+                      <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
+                      <div className="min-w-0">
+                        <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                        <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              ))}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -918,28 +986,30 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           const seen = new Set<string>();
           const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
           return (
-            <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
+            <div>
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                 <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit Discussions</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                {unique.map((c, i) => {
-                  const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                  return (
-                    <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                      style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                      <div className="flex items-start gap-2">
-                        <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
-                        <div className="min-w-0">
-                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{title}</p>
-                          <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+              <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                  {unique.map((c, i) => {
+                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                    return (
+                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
+                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                        <div className="flex items-start gap-2">
+                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
+                          <div className="min-w-0">
+                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{title}</p>
+                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                          </div>
                         </div>
-                      </div>
-                    </a>
-                  );
-                })}
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           );

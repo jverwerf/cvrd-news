@@ -73,8 +73,11 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
 
         {/* SUMMARY */}
-        <div className="mb-6 p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-          <p className="text-[15px] text-[#ccc] leading-[1.75] italic">{story.summary}</p>
+        <div className="mb-6">
+          <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
+          <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+          </div>
         </div>
 
         {/* VIDEO GRID */}
@@ -117,34 +120,36 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
         )}
 
         {/* UNFILTERED */}
-        <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+        <div>
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
             <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Missing in the Media</span>
           </div>
-          {sentences.length > 1 ? (
-            <div className="space-y-2.5">
-              {sentences.map((s, i) => (
-                <div key={i} className="flex gap-2.5">
-                  <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
-          )}
-          {story.social_summary && (
-            <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
-              <div className="flex items-center gap-2 mb-2">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-                <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+          <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            {sentences.length > 1 ? (
+              <div className="space-y-2.5">
+                {sentences.map((s, i) => (
+                  <div key={i} className="flex gap-2.5">
+                    <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
+                    <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                  </div>
+                ))}
               </div>
-              <p className="text-[13px] text-[#bbb] leading-[1.6] italic">{story.social_summary}</p>
-            </div>
-          )}
+            ) : (
+              <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+            )}
+            {story.social_summary && (
+              <div className="mt-4 pt-4" style={{ borderTop: '1px solid #2a3a4a' }}>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                  <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Social Pulse</span>
+                </div>
+                <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* MENTIONED — people + timelines */}
@@ -187,20 +192,22 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
 
         {/* TELEGRAM TEXT POSTS */}
         {telegramClips.filter(c => c.embed_id && !c.duration).length > 0 && (
-          <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+          <div>
             <div className="flex items-center gap-2 mb-3">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
               <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
             </div>
-            <div className="flex flex-wrap gap-2">
-              {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
-                <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
-                  style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
-                  <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
-                  <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
-                </a>
-              ))}
+            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+              <div className="flex flex-wrap gap-2">
+                {telegramClips.filter(c => c.embed_id && !c.duration).map((c, i) => (
+                  <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                    style={{ background: 'rgba(0,136,204,0.15)', border: '1px solid rgba(0,136,204,0.3)' }}>
+                    <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{c.title}</span>
+                    <span className="text-[9px] text-[#0088cc] shrink-0">@{c.author}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}
@@ -210,23 +217,25 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           const seen = new Set<string>();
           const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
           return (
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+            <div>
               <div className="flex items-center gap-2 mb-3">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
                 <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {unique.map((c, i) => {
-                  const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ');
-                  return (
-                    <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
-                      style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
-                      <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{title}</span>
-                      <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
-                    </a>
-                  );
-                })}
+              <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
+                <div className="flex flex-wrap gap-2">
+                  {unique.map((c, i) => {
+                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ');
+                    return (
+                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full hover:opacity-80 transition-opacity"
+                        style={{ background: 'rgba(255,69,0,0.15)', border: '1px solid rgba(255,69,0,0.3)' }}>
+                        <span className="text-[11px] text-[#bbb] truncate max-w-[250px]">{title}</span>
+                        <span className="text-[9px] text-[#ff4500] shrink-0">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           );
