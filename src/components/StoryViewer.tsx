@@ -352,7 +352,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               <VideoGrid youtubeVideos={bestYT} socialClips={bestSocial} storyImage={undefined} storyIndex={0} />
             </div>
 
-            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative Gap</h2>
+            <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative</h2>
             <div className="grid grid-cols-1 gap-0 rounded-lg mb-5" style={{ background: '#253545' }}>
               <div className="py-4 px-4 border-b" style={{ borderColor: '#2a3a4a' }}>
                 <div className="flex items-center gap-2 mb-3">

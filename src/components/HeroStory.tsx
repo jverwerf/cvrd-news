@@ -112,7 +112,7 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
 
               {/* THE NARRATIVE GAP */}
               {(story.left_narrative || story.right_narrative) && (<>
-                <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative Gap</h2>
+                <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative</h2>
                 <div className="grid grid-cols-2 gap-0 rounded-lg" style={{ background: '#253545' }}>
                   {story.left_narrative && (
                     <div className="pr-4 py-4 px-4" style={{ borderRight: '1px solid #2a3a4a' }}>
