@@ -64,6 +64,35 @@ const mono  = `'DM Mono', monospace`;
 
 // ── components ────────────────────────────────────────────────────
 
+// Fixed heights so there's no random/hydration mismatch in a server component
+const WAVE_HEIGHTS = [58,42,72,55,80,63,48,76,60,85,70,44,66,82,54,71,59,77,50,88,64,73,53,81,61,46,74,66,49,72,83,54,67,76,58,87,51,71,44,63];
+
+function ScoreWave({ score }: { score: number }) {
+  return (
+    <div>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 3 }}>
+        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#f87171', opacity: 0.7 }}>Less truthful</span>
+        <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60a5fa', opacity: 0.7 }}>More truthful</span>
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: 1.5, height: 28 }}>
+        {WAVE_HEIGHTS.map((h, i) => {
+          const pct = (i / WAVE_HEIGHTS.length) * 100;
+          const barColor = pct < 35 ? '#f87171' : pct < 55 ? '#daa520' : '#60a5fa';
+          const active = pct <= score;
+          return (
+            <div key={i} style={{
+              flex: 1, borderRadius: 2,
+              height: `${h}%`,
+              background: active ? barColor : 'rgba(255,255,255,0.06)',
+              opacity: active ? 0.75 : 0.25,
+            }} />
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function PlayIcon({ size = 10 }: { size?: number }) {
   return (
     <svg width={size} height={size * 1.2} viewBox="0 0 10 12" fill="rgba(255,255,255,0.9)">
@@ -186,15 +215,15 @@ function OnRecordStrip({ data }: { data: any }) {
           </div>
 
           {/* score row */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 18 }}>
-            <div>
+          <div style={{ marginBottom: 18 }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 4 }}>
               <div style={{ fontFamily: serif, fontSize: 38, fontWeight: 700, color: scoreColor, lineHeight: 1 }}>{score}%</div>
-              <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: C.dim, textTransform: 'uppercase', marginTop: 3 }}>
-                truthfulness score — {data?.matching_claims ?? 0} claims verified
+              <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: C.dim, textTransform: 'uppercase' }}>
+                {data?.matching_claims ?? 0} claims verified
               </div>
             </div>
-            <div style={{ flex: 1, maxWidth: 200, height: 5, borderRadius: 3, background: 'rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-              <div style={{ width: `${score}%`, height: '100%', background: scoreColor, opacity: 0.8, borderRadius: 3 }} />
+            <div style={{ maxWidth: 260 }}>
+              <ScoreWave score={score} />
             </div>
           </div>
 

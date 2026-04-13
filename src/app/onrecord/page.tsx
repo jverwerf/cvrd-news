@@ -311,7 +311,7 @@ export default function PoliticiansPage() {
       </div>
 
       {/* DASHBOARD GRID */}
-      <section style={{ height: 'calc(100vh - 112px)', overflow: 'hidden' }}>
+      <section style={{ height: 'calc(100vh - 112px)', overflow: 'hidden', borderBottom: '1px solid #2a3a4a' }}>
         <div className="h-full grid grid-rows-3 grid-cols-4 gap-1 p-1">
 
           {/* ROW 1 — tiles 0-3 */}
@@ -384,23 +384,22 @@ export default function PoliticiansPage() {
       {/* ON RECORD TODAY — editorial section */}
       {editorial && (
         <>
-          {/* White banner */}
-          <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-            <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em] shrink-0">On Record Today</span>
-            <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-none tracking-[-0.02em]" style={serif}>
-              {editorial.person.name}
-            </h2>
-          </div>
-
         <div className="px-6 md:px-12 py-8" style={{ background: '#1e2a3a' }}>
 
             {/* Editorial card */}
             <div className="rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
 
+              {/* Card header — On Record Today + name */}
+              <div className="px-5 pt-4 pb-3 flex items-center gap-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                <span className="text-[9px] font-bold text-[#daa520] uppercase tracking-[0.12em] shrink-0">On Record Today</span>
+                <span className="text-[#2a3a4a]">·</span>
+                <span className="text-[16px] text-white leading-none" style={serif}>{editorial.person.name}</span>
+              </div>
+
               {/* Top — photo + headline + meter */}
               <div className="flex flex-col md:flex-row">
                 <img src={editorial.person.photo} alt={editorial.person.name}
-                  className="w-full md:w-48 h-48 md:h-auto object-cover"
+                  className="w-full md:w-48 h-48 md:h-auto object-cover object-top"
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 p-5" style={{ borderLeft: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-2">
@@ -415,8 +414,6 @@ export default function PoliticiansPage() {
                   <p className="text-[11px] text-white/30 mb-3">
                     {editorial.person.role} · {editorial.matching_claims} claims on &ldquo;{editorial.search_keyword}&rdquo; · {editorial.overall_score}% overall
                   </p>
-
-                  {/* Mini meter */}
                   {editorial.topic_score !== null && (
                     <div className="max-w-[200px]">
                       <div className="flex justify-between mb-0.5 text-[7px] uppercase tracking-[0.15em]">
