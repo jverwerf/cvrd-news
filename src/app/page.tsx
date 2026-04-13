@@ -199,9 +199,13 @@ function OnRecordStrip({ data }: { data: any }) {
   const scoreColor = score >= 70 ? '#4ade80' : score >= 50 ? C.gold : score >= 35 ? '#f97316' : '#f87171';
   const latestClaim = data?.matched_tweets?.[0];
   const verdictColor = (v: string) => v === 'TRUE' ? '#4ade80' : v === 'FALSE' ? '#f87171' : C.gold;
+  const personSlug = person?.name
+    ? person.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+    : null;
+  const href = personSlug ? `/onrecord/${personSlug}` : '/onrecord';
 
   return (
-    <a href="/onrecord" style={{ textDecoration: 'none', display: 'block' }}>
+    <a href={href} style={{ textDecoration: 'none', display: 'block' }}>
       <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel">
 
         {/* LEFT — photo */}
