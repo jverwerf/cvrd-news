@@ -109,11 +109,11 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
             const isAct = active(href);
             return (
               <a key={href} href={href} style={{
-                padding: '4px 10px', textDecoration: 'none', flexShrink: 0,
+                padding: '4px 10px', borderRadius: 4, textDecoration: 'none', flexShrink: 0,
                 fontFamily: mono, fontSize: 9.5, letterSpacing: '0.08em',
                 color: isAct ? 'rgba(226,232,240,0.95)' : 'rgba(226,232,240,0.6)',
-                borderBottom: `1.5px solid ${isAct ? 'rgba(226,232,240,0.55)' : 'transparent'}`,
-                paddingBottom: '3px',
+                background: isAct ? 'rgba(255,255,255,0.1)' : 'transparent',
+                border: `1px solid ${isAct ? 'rgba(255,255,255,0.15)' : 'transparent'}`,
               }} className="nav-pill">{label}</a>
             );
           })}
