@@ -60,19 +60,9 @@ export default async function TimelineThreadPage({ params }: { params: Promise<{
             <h1 className="text-[28px] md:text-[40px] text-white leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
               {thread.title}
             </h1>
-            <p className="text-[12px] text-white/50 mt-2">
-              {thread.first_seen} — {thread.last_seen} · {thread.entries.length} events · {thread.days_covered} days covered
-            </p>
           </div>
         </div>
       )}
-
-      {/* White banner with title */}
-      <div className="px-6 md:px-12 py-2" style={{}}>
-        <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
-          {thread.title}
-        </h2>
-      </div>
 
       {/* Content */}
       <ThreadDetail thread={thread} />

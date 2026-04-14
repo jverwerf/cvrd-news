@@ -298,7 +298,28 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   const seenUrls = new Set<string>();
   const sources = allSources.filter(s => { if (seenUrls.has(s.url)) return false; seenUrls.add(s.url); return true; });
 
+  const selectedYear = selectedDate ? getYear(selectedDate) : null;
+  const yearSummary = selectedYear
+    ? (() => {
+        const yearEntries = dates.filter(d => getYear(d) === selectedYear).flatMap(d => grouped[d] || []);
+        return [...yearEntries].sort((a, b) => b.summary.length - a.summary.length)[0]?.summary || thread.summary;
+      })()
+    : thread.summary;
+
   return (
+    <>
+    {isExpanded && (
+      <div className="tl-split-layout rounded-lg mb-3" style={{ display: 'block', background: '#1e2a3a', border: '1px solid #2a3a4a', padding: '14px 18px' }}>
+        <AnimatePresence mode="wait">
+          <motion.div key={selectedYear || '__default'} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }}>
+            <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'block', marginBottom: 6 }}>
+              {selectedYear ? `What Happened in ${selectedYear}` : 'How Did We Get Here'}
+            </span>
+            <p style={{ fontSize: 13, color: '#ccc', lineHeight: 1.7, fontStyle: 'italic' }}>{yearSummary}</p>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    )}
     <article className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
 
       {/* COLLAPSED — image left, content right */}
@@ -376,20 +397,8 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
 
               {/* ── RIGHT: Content ── */}
               <div ref={contentRef} style={{ flex: 1, minWidth: 0, padding: '14px 20px', overflowY: 'auto', height: '100%' }}>
-
-                {/* Default: thread summary */}
-                {(!selectedDate || selectedEntries.length === 0) && (
-                  <>
-                    <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'block', marginBottom: 8 }}>
-                      How Did We Get Here
-                    </span>
-                    <p style={{ fontSize: 13, color: '#ccc', lineHeight: 1.7, fontStyle: 'italic' }}>{thread.summary}</p>
-                  </>
-                )}
-
-                {/* Selected entry */}
                 <AnimatePresence mode="wait">
-                  {selectedDate && selectedEntries.length > 0 && (
+                  {selectedDate && selectedEntries.length > 0 ? (
                     <motion.div
                       key={selectedDate}
                       initial={{ opacity: 0, y: 8 }}
@@ -408,7 +417,6 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                         </h3>
                       </div>
 
-                      {/* Best summary */}
                       {(() => {
                         const best = [...selectedEntries].sort((a, b) => b.summary.length - a.summary.length)[0]?.summary;
                         return best ? <p style={{ fontSize: 13, color: '#bbb', lineHeight: 1.7 }}>{best}</p> : null;
@@ -456,9 +464,18 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                         url={`https://cvrdnews.com/timeline`}
                       />
                     </motion.div>
+                  ) : (
+                    <motion.div
+                      key="__empty"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <p style={{ fontSize: 13, color: '#555', fontStyle: 'italic' }}>Select a date from the timeline.</p>
+                    </motion.div>
                   )}
                 </AnimatePresence>
-
               </div>
             </div>
           {/* ═══ MOBILE ACCORDION ═══ */}
@@ -470,6 +487,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
         )}
       </AnimatePresence>
     </article>
+    </>
   );
 }
 
