@@ -308,6 +308,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
 
   return (
     <>
+    <style dangerouslySetInnerHTML={{ __html: TIMELINE_SCROLL_CSS }} />
     {isExpanded && (
       <div className="rounded-lg mb-3" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', padding: '14px 18px' }}>
         <AnimatePresence mode="wait">
