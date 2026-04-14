@@ -1006,7 +1006,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         })()}
 
         {/* TIKTOK — before Telegram */}
-        {(() => {
+        {!isBrief && (() => {
           const allTiktoks = tiktokClips.filter(c => c.embed_id);
           if (allTiktoks.length === 0) return null;
           const visibleTiktoks = tiktoksExpanded ? allTiktoks : allTiktoks.slice(0, 6);
