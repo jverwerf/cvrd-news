@@ -443,7 +443,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                           <div className="flex items-center gap-2 mb-3">
                             <span className="text-[16px] font-bold text-white">&#x1D54F;</span>
                           </div>
-                          <div className="grid grid-cols-4 gap-2">
+                          <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                             {xClips.slice(0, 6).map((c, i) => (
                               <div key={i} className="rounded overflow-hidden relative" style={{ background: '#253545', height: 90 }}>
                                 <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>

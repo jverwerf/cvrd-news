@@ -207,7 +207,7 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                   <span className="text-[16px] font-bold text-white">𝕏</span>
                   <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">What people are saying</span>
                 </div>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                   {xClips.filter(c => !(c as any).duration).map((c, i) => (
                     c.embed_id ? (
                       <div key={`x-${i}`} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
