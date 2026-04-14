@@ -27,13 +27,14 @@ async function getStory(slug: string) {
         const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 86400 } });
         if (!resp.ok) continue;
         const data = await resp.json();
-        for (const story of (data.top_narratives || [])) {
-          if (topicToSlug(story.topic) === slug) {
-            const otherStories = (data.top_narratives || [])
-              .filter((s: any) => topicToSlug(s.topic) !== slug)
-              .slice(0, 5);
-            return { story, date, otherStories };
-          }
+        const all = data.top_narratives || [];
+        const idx = all.findIndex((s: any) => topicToSlug(s.topic) === slug);
+        if (idx !== -1) {
+          const story = all[idx];
+          const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
+          const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
+          const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
+          return { story, date, otherStories, prevStory, nextStory };
         }
       } catch {}
     }
@@ -52,13 +53,14 @@ async function getStory(slug: string) {
         const date = f.replace('daily_gaps_', '').replace('.json', '');
         try {
           const data = JSON.parse(fs.readFileSync(path.join(dataDir, f), 'utf-8'));
-          for (const story of (data.top_narratives || [])) {
-            if (topicToSlug(story.topic) === slug) {
-              const otherStories = (data.top_narratives || [])
-                .filter((s: any) => topicToSlug(s.topic) !== slug)
-                .slice(0, 5);
-              return { story, date, otherStories };
-            }
+          const all = data.top_narratives || [];
+          const idx = all.findIndex((s: any) => topicToSlug(s.topic) === slug);
+          if (idx !== -1) {
+            const story = all[idx];
+            const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
+            const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
+            const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
+            return { story, date, otherStories, prevStory, nextStory };
           }
         } catch {}
       }
@@ -101,7 +103,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   const result = await getStory(slug);
   if (!result) notFound();
 
-  const { story, date, otherStories } = result;
+  const { story, date, otherStories, prevStory, nextStory } = result;
 
   // Enrich onrecord_matches with role from blob score files
   const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
@@ -147,7 +149,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteNav isBreaking={isBreaking} />
-      <StoryPage story={story} date={date} otherStories={otherStories} matchedTimelines={matchedTimelines} />
+      <StoryPage story={story} date={date} otherStories={otherStories} prevStory={prevStory} nextStory={nextStory} matchedTimelines={matchedTimelines} />
       <SiteFooter />
     </div>
   );

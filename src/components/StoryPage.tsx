@@ -26,10 +26,12 @@ function toBullets(text: string): string[] {
   return merged;
 }
 
-export function StoryPage({ story, date, otherStories, matchedTimelines }: {
+export function StoryPage({ story, date, otherStories, prevStory, nextStory, matchedTimelines }: {
   story: NarrativeGap;
   date: string;
   otherStories: NarrativeGap[];
+  prevStory?: NarrativeGap;
+  nextStory?: NarrativeGap;
   matchedTimelines?: { id: string; title: string; image_file?: string }[];
 }) {
   const [dashExpanded, setDashExpanded] = useState(false);
@@ -67,14 +69,10 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
     .filter(s => s.trim().length > 20) || [];
 
   const prev = () => {
-    if (otherStories.length > 0) {
-      window.location.href = `/story/${topicToSlug(otherStories[otherStories.length - 1].topic)}`;
-    }
+    if (prevStory) window.location.href = `/story/${topicToSlug(prevStory.topic)}`;
   };
   const next = () => {
-    if (otherStories.length > 0) {
-      window.location.href = `/story/${topicToSlug(otherStories[0].topic)}`;
-    }
+    if (nextStory) window.location.href = `/story/${topicToSlug(nextStory.topic)}`;
   };
 
   return (
