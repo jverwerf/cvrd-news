@@ -65,9 +65,9 @@ const TIMELINE_SCROLL_CSS = `
   .tl-card-vids { display: none !important; }
   .tl-main-video { display: none !important; }
   .tl-x-embeds { display: none !important; }
-  .tl-split-layout { flex-direction: column !important; }
-  .tl-split-left { width: 100% !important; border-right: none !important; border-bottom: 1px solid #2a3a4a !important; }
-  .tl-vlist { max-height: 260px !important; }
+  .tl-split-layout { flex-direction: column !important; height: auto !important; }
+  .tl-split-left { width: 100% !important; height: auto !important; border-right: none !important; border-bottom: 1px solid #2a3a4a !important; }
+  .tl-vlist { flex: none !important; max-height: 260px !important; }
 }
 `;
 
@@ -359,11 +359,11 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
             className="overflow-hidden"
           >
             {/* ═══ SPLIT LAYOUT: timeline left, content right ═══ */}
-            <div className="tl-split-layout" style={{ display: 'flex', minHeight: 280 }}>
+            <div className="tl-split-layout" style={{ display: 'flex', height: 400 }}>
 
               {/* ── LEFT: Vertical Timeline ── */}
-              <div className="tl-split-left" style={{ width: 220, flexShrink: 0, borderRight: '1px solid #2a3a4a' }}>
-                <div style={{ padding: '12px 12px 4px' }}>
+              <div className="tl-split-left" style={{ width: 220, flexShrink: 0, borderRight: '1px solid #2a3a4a', display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ padding: '12px 12px 4px', flexShrink: 0 }}>
                   <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Timeline</span>
                 </div>
                 <VerticalTimeline
@@ -375,7 +375,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </div>
 
               {/* ── RIGHT: Content ── */}
-              <div ref={contentRef} style={{ flex: 1, minWidth: 0, padding: '14px 20px', overflowY: 'auto' }}>
+              <div ref={contentRef} style={{ flex: 1, minWidth: 0, padding: '14px 20px', overflowY: 'auto', height: '100%' }}>
 
                 {/* Default: thread summary */}
                 {(!selectedDate || selectedEntries.length === 0) && (
@@ -495,7 +495,7 @@ function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
   }
 
   return (
-    <div className="tl-vlist" style={{ overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
+    <div className="tl-vlist" style={{ flex: 1, minHeight: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
       {yearGroups.map((yg) => (
         <div key={yg.year}>
           {/* Year separator */}
