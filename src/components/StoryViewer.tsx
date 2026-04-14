@@ -513,7 +513,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     <span className="text-[18px] font-bold text-white leading-none">𝕏</span>
                   </div>
                   <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                    <div className="grid grid-cols-4 gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                       {resolvedBrief.curated_social.filter((p: any) => p.platform === 'x' && p.embed_id).map((c: any, i: number) => (
                         <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
                           <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
@@ -976,7 +976,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <span className="text-[16px] font-bold text-white">𝕏</span>
               </div>
               <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                 {visibleTweets.map((c, i) => (
                   <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
                     <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
