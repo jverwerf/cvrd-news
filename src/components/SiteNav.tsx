@@ -38,7 +38,7 @@ export function CvrdLogo({ size = 22 }: { size?: number }) {
 
 let _cachedIssueDate: string | null = null;
 
-export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
+export function SiteNav({ isBreaking, storyMeta }: { isBreaking: boolean; storyMeta?: { index: number; total: number; category?: string } }) {
   const [lastIssue, setLastIssue] = useState('');
   const pathname = usePathname();
 
@@ -63,10 +63,10 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
   }, []);
 
   const isOnTV = pathname === '/tv' || (pathname?.startsWith('/tv/') ?? false);
-  const showCategoryStrip = CATEGORY_PATHS.has(pathname ?? '');
+  const showCategoryStrip = CATEGORY_PATHS.has(pathname ?? '') || !!storyMeta;
 
   const active = (href: string): boolean => {
-    if (href === '/brief') return pathname === '/brief';
+    if (href === '/brief') return pathname === '/brief' || !!storyMeta;
     if (href === '/onrecord') return pathname === '/onrecord' || (pathname?.startsWith('/onrecord/') ?? false);
     if (href === '/timeline') return pathname === '/timeline' || (pathname?.startsWith('/timeline/') ?? false);
     if (href === '/tv') return isOnTV;
@@ -167,7 +167,9 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
           overflowX: 'auto',
         }} className="hide-scroll">
           {CATEGORY_STRIP.map(cat => {
-            const isCatActive = pathname === cat.href;
+            const isCatActive = storyMeta
+              ? (storyMeta.category ? cat.href === `/${storyMeta.category}` : cat.href === '/brief')
+              : pathname === cat.href;
             return (
               <a key={cat.href} href={cat.href} style={{
                 padding: '3px 10px', textDecoration: 'none', flexShrink: 0,
@@ -178,6 +180,13 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
               }} className="nav-pill">{cat.label}</a>
             );
           })}
+          {storyMeta && (
+            <span style={{
+              marginLeft: 'auto', flexShrink: 0, fontFamily: mono,
+              fontSize: 9, letterSpacing: '0.08em', color: 'rgba(226,232,240,0.3)',
+              paddingRight: 4,
+            }}>{storyMeta.index} / {storyMeta.total}</span>
+          )}
         </div>
       )}
     </>

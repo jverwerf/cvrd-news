@@ -572,15 +572,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
             </>}
           </div>
           {(story.category === 'sports' || story.category === 'trending') ? (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {(() => {
-                const allSrc = [...leftSources, ...centerSources, ...rightSources];
-                const third = Math.ceil(allSrc.length / 3);
-                return [allSrc.slice(0, third), allSrc.slice(third, third * 2), allSrc.slice(third * 2)].map((col, ci) => (
-                  <SourceColumn key={ci} label={ci === 0 ? 'Media' : ci === 1 ? 'Coverage' : 'More'} sources={col} color="#999" dotColor="#999" />
-                ));
-              })()}
-            </div>
+            <SourceColumn label="Sources" sources={[...leftSources, ...centerSources, ...rightSources]} color="#999" dotColor="#999" />
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {leftSources.length > 0 && (
@@ -619,7 +611,10 @@ function SourceColumn({ label, sources, color, dotColor }: {
   const grouped: Record<string, { name: string; url: string; title?: string }[]> = {};
   for (const s of sources) {
     // Extract outlet name — strip article title after " — " or " - "
-    const outlet = s.name.split(/\s[—–-]\s/)[0].trim() || s.name;
+    const hasSep = /\s[—–-]\s/.test(s.name);
+    const outlet = hasSep ? s.name.split(/\s[—–-]\s/)[0].trim()
+      : (s.name.length < 40 && !/[?!]/.test(s.name)) ? s.name
+      : (() => { try { return new URL(s.url).hostname.replace(/^www\./, ''); } catch { return s.name; } })();
     if (!grouped[outlet]) grouped[outlet] = [];
     grouped[outlet].push(s);
   }
@@ -636,7 +631,7 @@ function SourceColumn({ label, sources, color, dotColor }: {
             <button onClick={() => setExpanded(expanded === name ? null : name)}
               className="w-full text-left text-[12px] py-1 transition-colors hover:opacity-70 cursor-pointer flex items-center gap-1.5">
               <span className="text-[10px] text-[#777] shrink-0">{expanded === name ? '−' : '+'}</span>
-              <span className="flex-1 text-[#bbb]">{name} {articles.length > 1 && <span className="text-[10px] text-[#777]">({articles.length})</span>}</span>
+              <span className="flex-1 text-[#bbb]">{name}{articles.length > 1 && <span className="text-[10px] text-[#777] ml-1">({articles.length})</span>}</span>
             </button>
             {expanded === name && (
               <div className="pl-5 mb-1 space-y-0.5">

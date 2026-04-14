@@ -34,7 +34,7 @@ async function getStory(slug: string) {
           const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
           const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
           const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
-          return { story, date, otherStories, prevStory, nextStory };
+          return { story, date, otherStories, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
         }
       } catch {}
     }
@@ -60,7 +60,7 @@ async function getStory(slug: string) {
             const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
             const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
             const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
-            return { story, date, otherStories, prevStory, nextStory };
+            return { story, date, otherStories, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
           }
         } catch {}
       }
@@ -103,7 +103,9 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   const result = await getStory(slug);
   if (!result) notFound();
 
-  const { story, date, otherStories, prevStory, nextStory } = result;
+  const { story, date, otherStories, prevStory, nextStory, storyIndex, storyCount } = result;
+  const today = new Date().toISOString().split('T')[0];
+  const isToday = date === today;
 
   // Enrich onrecord_matches with role from blob score files
   const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
@@ -148,7 +150,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <SiteNav isBreaking={isBreaking} />
+      <SiteNav isBreaking={isBreaking} storyMeta={isToday ? { index: storyIndex + 1, total: storyCount, category: (story as any).category } : undefined} />
       <StoryPage story={story} date={date} otherStories={otherStories} prevStory={prevStory} nextStory={nextStory} matchedTimelines={matchedTimelines} />
       <SiteFooter />
     </div>
