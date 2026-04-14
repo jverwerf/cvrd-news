@@ -645,15 +645,16 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       background: '#253545',
                       border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a',
                     }}>
-                    <div className="h-28 overflow-hidden" style={{
-                      backgroundImage: s.image_file ? `url(${s.image_file})` : 'none',
-                      backgroundSize: 'cover', backgroundPosition: 'center',
-                      background: s.image_file ? undefined : '#152030',
-                    }}>
-                      {s.image_file
-                        ? <div className="w-full h-full" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                        : <div className="w-full h-full flex items-center justify-center"><img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} /></div>
-                      }
+                    <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
+                      {s.image_file && (
+                        <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                      )}
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                      {!s.image_file && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
+                        </div>
+                      )}
                     </div>
                     <div className="p-2.5">
                       <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
