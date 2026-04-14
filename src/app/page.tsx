@@ -39,6 +39,13 @@ function catLabel(cat?: string) {
 }
 
 async function getOnRecordToday(): Promise<any | null> {
+  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL;
+  if (blobBase) {
+    try {
+      const resp = await fetch(`${blobBase}/politicians/onrecord_today.json`, { next: { revalidate: 3600 } });
+      if (resp.ok) return await resp.json();
+    } catch {}
+  }
   try {
     const dir = path.resolve(process.cwd(), 'public/data');
     if (!fs.existsSync(dir)) return null;
