@@ -341,7 +341,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             const currentIdx = allPoliticians.findIndex((p: any) => p.handle === score.handle);
             const prev = allPoliticians[currentIdx - 1] || allPoliticians[allPoliticians.length - 1];
             return prev && prev.handle !== score.handle ? (
-              <Link href={`/onrecord/${nameToSlug(prev.name)}`}
+              <Link href={`/onrecord/${prev.name ? nameToSlug(prev.name) : prev.handle}`}
                 className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-opacity hover:opacity-100"
                 style={{ background: '#253545', border: '1px solid #2a3a4a', opacity: 0.6 }} title={prev.name}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
@@ -404,7 +404,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             const currentIdx = allPoliticians.findIndex((p: any) => p.handle === score.handle);
             const next = allPoliticians[currentIdx + 1] || allPoliticians[0];
             return next && next.handle !== score.handle ? (
-              <Link href={`/onrecord/${nameToSlug(next.name)}`}
+              <Link href={`/onrecord/${next.name ? nameToSlug(next.name) : next.handle}`}
                 className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-opacity hover:opacity-100"
                 style={{ background: '#253545', border: '1px solid #2a3a4a', opacity: 0.6 }} title={next.name}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
