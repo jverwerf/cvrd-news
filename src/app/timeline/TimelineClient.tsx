@@ -359,7 +359,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
             className="overflow-hidden"
           >
             {/* ═══ SPLIT LAYOUT: timeline left, content right ═══ */}
-            <div className="tl-split-layout" style={{ display: 'flex', height: 600 }}>
+            <div className="tl-split-layout" style={{ display: 'flex', height: 600, flexShrink: 0 }}>
 
               {/* ── LEFT: Vertical Timeline ── */}
               <div className="tl-split-left" style={{ width: 220, flexShrink: 0, borderRight: '1px solid #2a3a4a', display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -462,7 +462,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </div>
             </div>
           {/* ═══ MOBILE ACCORDION ═══ */}
-          <div className="tl-mobile-accordion">
+          <div className="tl-mobile-accordion" style={{ display: 'none' }}>
             <MobileAccordion grouped={grouped} dates={dates} />
           </div>
 
