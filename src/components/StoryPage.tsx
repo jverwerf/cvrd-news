@@ -112,7 +112,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
               ) : (
                 <div className="flex items-center gap-1.5">
-                  <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                  <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
                     className="text-[10px] px-2 py-1 rounded-full outline-none"
                     style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
