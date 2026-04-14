@@ -182,101 +182,10 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   return (
     <div>
-      {/* BRIEF MODE: cards → brief banner → summary → dashboard → video picks */}
+      {/* BRIEF MODE: image → dashboard → cards → summary → video picks */}
       {isBrief ? (
         <>
-          {/* 1. Story cards — horizontal scroll row */}
-          <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
-            <div className="relative flex items-center gap-0">
-              <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
-                className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
-              </button>
-              <div id="brief-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
-                <a href="/brief" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
-                  className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-                  style={{
-                    background: '#253545',
-                    border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
-                  }}>
-                  <div className="relative overflow-hidden" style={{ height: 112, background: '#1a1a2e' }}>
-                    {briefStory.image_file && (
-                      <img src={briefStory.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                    )}
-                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                    {!briefStory.image_file && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
-                      </div>
-                    )}
-                  </div>
-                  <div className="p-2.5">
-                    <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
-                    <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                      {sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}
-                    </p>
-                  </div>
-                </a>
-                {stories.map((s, i) => (
-                  <a key={i} href={`/story/${topicToSlug(s.topic)}`}
-                    onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
-                    className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-                    style={{ background: '#253545', border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a' }}>
-                    <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
-                      {s.image_file && (
-                        <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                      )}
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                      {!s.image_file && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
-                        </div>
-                      )}
-                    </div>
-                    <div className="p-2.5">
-                      <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                      <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                        {s.topic}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-              <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
-                className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
-              </button>
-            </div>
-          </div>
-
-          {/* 3. ON AIR — COMPACT DASHBOARD */}
-          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
-            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
-              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
-                <ErrorBoundary>
-                  <Dashboard key="dash-brief" stories={[briefStory]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
-                </ErrorBoundary>
-                {!dashExpanded && (
-                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
-                    <button onClick={() => setDashExpanded(true)}
-                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                      Expand Dashboard
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-            {dashExpanded && (
-              <button onClick={() => setDashExpanded(false)}
-                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                Collapse Dashboard
-              </button>
-            )}
-          </div>
-
-          {/* 4+5. PICTURE HEADER (brief image) with coffee + arrows overlaid */}
+          {/* 1. PICTURE HEADER (brief image) with coffee + arrows overlaid */}
           {briefStory.image_file ? (
             <div className="relative overflow-hidden" style={{
               height: '30vh', minHeight: '220px',
@@ -291,6 +200,11 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
                   Today&apos;s Top Stories
                 </h1>
+                {briefStory.summary && (
+                  <p className="text-[12px] text-white/70 leading-snug mt-1.5 line-clamp-3" style={{ maxWidth: 480 }}>
+                    {briefStory.summary.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ')}
+                  </p>
+                )}
               </div>
               <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between gap-2">
                 <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
@@ -359,6 +273,97 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </div>
             </div>
           )}
+
+          {/* 2. ON AIR — COMPACT DASHBOARD */}
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+                <ErrorBoundary>
+                  <Dashboard key="dash-brief" stories={[briefStory]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
+                </ErrorBoundary>
+                {!dashExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                    <button onClick={() => setDashExpanded(true)}
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Expand Dashboard
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            {dashExpanded && (
+              <button onClick={() => setDashExpanded(false)}
+                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                Collapse Dashboard
+              </button>
+            )}
+          </div>
+
+          {/* 3. Story cards — horizontal scroll row */}
+          <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
+            <div className="relative flex items-center gap-0">
+              <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
+                className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
+              </button>
+              <div id="brief-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
+                <a href="/brief" onClick={(e) => { e.preventDefault(); setCurrentIdx(-1); }}
+                  className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                  style={{
+                    background: '#253545',
+                    border: currentIdx === -1 ? '2px solid #2563eb' : '1px solid #2a3a4a',
+                  }}>
+                  <div className="relative overflow-hidden" style={{ height: 112, background: '#1a1a2e' }}>
+                    {briefStory.image_file && (
+                      <img src={briefStory.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    {!briefStory.image_file && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-2.5">
+                    <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">{sharedCategory ? sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1) : 'Daily'}</span>
+                    <p className="text-[11px] text-white font-medium leading-snug mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                      {sharedCategory ? `${sharedCategory.charAt(0).toUpperCase() + sharedCategory.slice(1)} Brief` : 'Daily Pick'}
+                    </p>
+                  </div>
+                </a>
+                {stories.map((s, i) => (
+                  <a key={i} href={`/story/${topicToSlug(s.topic)}`}
+                    onClick={(e) => { e.preventDefault(); setCurrentIdx(i); }}
+                    className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                    style={{ background: '#253545', border: i === currentIdx ? '2px solid #2563eb' : '1px solid #2a3a4a' }}>
+                    <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
+                      {s.image_file && (
+                        <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                      )}
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                      {!s.image_file && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-2.5">
+                      <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
+                      <p className="text-[11px] text-white font-medium leading-snug line-clamp-3 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                        {s.topic}
+                      </p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <button onClick={() => document.getElementById('brief-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
+                className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-l-[6px] border-l-white" />
+              </button>
+            </div>
+          </div>
 
           {/* 5b. SUMMARY + LEFT/RIGHT + MISSING + SOCIAL PULSE */}
           <div className="px-6 md:px-12 pt-5 pb-4" style={{ background: '#1e2a3a' }}>
@@ -543,7 +548,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                           <div className="flex items-start gap-2">
                             <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
                             <div className="min-w-0">
-                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{c.title}</p>
                               <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
                             </div>
                           </div>
@@ -570,7 +575,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                           <div className="flex items-start gap-2">
                             <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
                             <div className="min-w-0">
-                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{c.title}</p>
                               <span className="text-[10px] text-[#666] mt-1 block">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                             </div>
                           </div>
@@ -603,9 +608,84 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           )}
         </>
       ) : (
-        /* STORY MODE: Cards → Cover The News banner → Picture → Dashboard → Content */
+        /* STORY MODE: Image → Dashboard → Cards → Content */
         <>
-          {/* 1. Story cards — same layout as brief */}
+          {/* 1. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
+          {story.image_file && (
+            <div className="relative overflow-hidden" style={{
+              height: '30vh', minHeight: '220px',
+              backgroundImage: `url(${story.image_file})`,
+              backgroundSize: 'cover', backgroundPosition: 'center',
+            }}>
+              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
+              <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+                {story.category && (
+                  <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
+                    {story.category}
+                  </span>
+                )}
+                <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+                  {story.topic}
+                </h1>
+                {story.summary && (
+                  <p className="text-[12px] text-white/70 leading-snug mt-1.5 line-clamp-3" style={{ maxWidth: 480 }}>
+                    {story.summary.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ')}
+                  </p>
+                )}
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between">
+                <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
+                  style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
+                  ♥ Buy us a coffee
+                </a>
+                {subStatus === 'done' ? (
+                  <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+                ) : (
+                  <div className="flex items-center gap-1.5">
+                    <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                      onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                      className="text-[10px] px-2 py-1 rounded-full outline-none"
+                      style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
+                    <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                      className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                      style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
+                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
+
+          {/* 2. COMPACT DASHBOARD */}
+          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
+            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+                <ErrorBoundary>
+                  <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
+                </ErrorBoundary>
+                {!dashExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                    <button onClick={() => setDashExpanded(true)}
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                      Expand Dashboard
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            {dashExpanded && (
+              <button onClick={() => setDashExpanded(false)}
+                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                Collapse Dashboard
+              </button>
+            )}
+          </div>
+
+          {/* 3. Story cards */}
           <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
             <div className="relative flex items-center gap-0">
               <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
@@ -658,7 +738,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </div>
                     <div className="p-2.5">
                       <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                      <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                      <p className="text-[11px] text-white font-medium leading-snug line-clamp-3 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
                         {s.topic}
                       </p>
                     </div>
@@ -671,76 +751,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               </button>
             </div>
           </div>
-
-          {/* 3. COMPACT DASHBOARD */}
-          <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
-            <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
-              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
-                <ErrorBoundary>
-                  <Dashboard key={`dash-${currentIdx}`} stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
-                </ErrorBoundary>
-                {!dashExpanded && (
-                  <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
-                    <button onClick={() => setDashExpanded(true)}
-                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                      Expand Dashboard
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-            {dashExpanded && (
-              <button onClick={() => setDashExpanded(false)}
-                className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                Collapse Dashboard
-              </button>
-            )}
-          </div>
-
-          {/* 4+5. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
-          {story.image_file && (
-            <div className="relative overflow-hidden" style={{
-              height: '30vh', minHeight: '220px',
-              backgroundImage: `url(${story.image_file})`,
-              backgroundSize: 'cover', backgroundPosition: 'center',
-            }}>
-              <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
-              <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
-                {story.category && (
-                  <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
-                    {story.category}
-                  </span>
-                )}
-                <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
-                  {story.topic}
-                </h1>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between">
-                <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
-                  className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
-                  style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
-                  ♥ Buy us a coffee
-                </a>
-                {subStatus === 'done' ? (
-                  <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
-                ) : (
-                  <div className="flex items-center gap-1.5">
-                    <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
-                      onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
-                      className="text-[10px] px-2 py-1 rounded-full outline-none"
-                      style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
-                    <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
-                      className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                      style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
-                      <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-                    </button>
-                  </div>
-                )}
-              </div>
-            </div>
-          )}
         </>
       )}
 
@@ -788,7 +798,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   backgroundSize: 'cover', backgroundPosition: 'center',
                 }}>
                   <div className="absolute inset-0 flex items-end p-1" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
-                    <span className="story-thumb-label text-[7px] text-white font-medium leading-tight line-clamp-2" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
+                    <span className="story-thumb-label text-[7px] text-white font-medium leading-tight line-clamp-3" style={{ transition: 'font-size 0.3s ease' }}>{s.topic}</span>
                   </div>
                 </div>
               </button>
@@ -1064,7 +1074,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                       <div className="flex items-start gap-2">
                         <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
                         <div className="min-w-0">
-                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
+                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{c.title}</p>
                           <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
                         </div>
                       </div>
@@ -1129,7 +1139,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                         <div className="flex items-start gap-2">
                           <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
                           <div className="min-w-0">
-                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{title}</p>
+                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{title}</p>
                             <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                           </div>
                         </div>

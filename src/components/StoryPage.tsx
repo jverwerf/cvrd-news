@@ -79,7 +79,95 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
 
   return (
     <div>
-      {/* 1. Story cards — horizontal scroll row */}
+      {/* 1. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
+      {story.image_file && (
+        <div className="relative overflow-hidden" style={{
+          height: '30vh', minHeight: '220px',
+          backgroundImage: `url(${story.image_file})`,
+          backgroundSize: 'cover', backgroundPosition: 'center',
+        }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
+          <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+            {story.category && (
+              <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
+                {story.category}
+              </span>
+            )}
+            <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+              {story.topic}
+            </h1>
+            {story.summary && (
+              <p className="text-[12px] text-white/70 leading-snug mt-1.5 line-clamp-3" style={{ maxWidth: 480 }}>
+                {story.summary.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ')}
+              </p>
+            )}
+          </div>
+          {/* coffee + subscribe + nav arrows pinned to bottom of image */}
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between gap-2">
+            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+              className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
+              style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
+              ♥ Buy us a coffee
+            </a>
+            <div className="flex items-center gap-2 ml-auto">
+              {subStatus === 'done' ? (
+                <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+              ) : (
+                <div className="flex items-center gap-1.5">
+                  <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                    className="text-[10px] px-2 py-1 rounded-full outline-none"
+                    style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
+                  <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                    className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                    style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
+                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                  </button>
+                </div>
+              )}
+              <button onClick={prev}
+                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+              </button>
+              <button onClick={next}
+                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 2. COMPACT DASHBOARD */}
+      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
+        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+          <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
+            <ErrorBoundary>
+              <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
+            </ErrorBoundary>
+            {!dashExpanded && (
+              <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
+                <button onClick={() => setDashExpanded(true)}
+                  className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                  style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
+                  Expand Dashboard
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+        {dashExpanded && (
+          <button onClick={() => setDashExpanded(false)}
+            className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+            style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+            Collapse Dashboard
+          </button>
+        )}
+      </div>
+
+      {/* 3. Story cards — horizontal scroll row */}
       <div className="px-6 md:px-12 pt-6 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
         <div className="relative flex items-center gap-0">
           <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: -220, behavior: 'smooth' })}
@@ -151,89 +239,6 @@ export function StoryPage({ story, date, otherStories, matchedTimelines }: {
           </button>
         </div>
       </div>
-
-      {/* 3. COMPACT DASHBOARD */}
-      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderBottom: '1px solid #2a3a4a' }}>
-        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
-          <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
-            <ErrorBoundary>
-              <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
-            </ErrorBoundary>
-            {!dashExpanded && (
-              <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
-                <button onClick={() => setDashExpanded(true)}
-                  className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                  style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                  Expand Dashboard
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-        {dashExpanded && (
-          <button onClick={() => setDashExpanded(false)}
-            className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-            style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-            Collapse Dashboard
-          </button>
-        )}
-      </div>
-
-      {/* 4+5. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
-      {story.image_file && (
-        <div className="relative overflow-hidden" style={{
-          height: '30vh', minHeight: '220px',
-          backgroundImage: `url(${story.image_file})`,
-          backgroundSize: 'cover', backgroundPosition: 'center',
-        }}>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
-          <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
-            {story.category && (
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
-                {story.category}
-              </span>
-            )}
-            <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
-              {story.topic}
-            </h1>
-          </div>
-          {/* coffee + subscribe + nav arrows pinned to bottom of image */}
-          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between gap-2">
-            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
-              className="flex items-center gap-1.5 text-[10px] font-medium hover:opacity-70 transition-opacity"
-              style={{ color: '#daa520', textDecoration: 'none' }}>
-              ♥ Buy us a coffee
-            </a>
-            <div className="flex items-center gap-2 ml-auto">
-              {subStatus === 'done' ? (
-                <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
-              ) : (
-                <div className="flex items-center gap-1.5">
-                  <input type="email" placeholder="your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
-                    className="text-[10px] px-2 py-1 rounded-full outline-none"
-                    style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
-                  <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
-                    className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                    style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
-                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-                  </button>
-                </div>
-              )}
-              <button onClick={prev}
-                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
-              </button>
-              <button onClick={next}
-                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* FULL CONTENT */}
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
