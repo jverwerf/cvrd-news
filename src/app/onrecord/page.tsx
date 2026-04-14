@@ -289,7 +289,7 @@ export default function PoliticiansPage() {
             </svg>
           </a>
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-1.5 rounded-full"
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-1.5 rounded-full or-search-pill"
           style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', minWidth: 280 }}>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -333,10 +333,10 @@ export default function PoliticiansPage() {
             {current ? (
               <>
                 <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${current.handle}.png`} alt={current.name}
-                  className="h-full object-cover" style={{ width: '40%' }}
+                  className="h-full object-cover or-center-img" style={{ width: '40%' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
-                <div className="flex-1 p-5 flex flex-col justify-center" style={{ borderLeft: '1px solid #2a3a4a' }}>
-                  <h2 className="text-[20px] text-white mb-3" style={serif}>{current.name}</h2>
+                <div className="flex-1 p-5 flex flex-col justify-center or-center-content" style={{ borderLeft: '1px solid #2a3a4a' }}>
+                  <h2 className="text-[20px] text-white mb-3 or-center-name" style={serif}>{current.name}</h2>
                   <div className="max-w-[250px]">
                     <ScoreMeter score={current.overall_score} />
                   </div>
@@ -346,8 +346,8 @@ export default function PoliticiansPage() {
                     {current.misleading_count > 0 && <span style={{ color: '#daa520' }}>{current.misleading_count} misleading</span>}
                     {current.false_count > 0 && <span style={{ color: '#f87171' }}>{current.false_count} false</span>}
                   </div>
-                  <p className="text-[10px] text-white/25 mt-1">{current.verified_claims} claims</p>
-                  <Link href={`/onrecord/${current.name?.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-') || current.handle}`}
+                  <p className="text-[10px] text-white/25 mt-1 or-center-vclaims">{current.verified_claims} claims</p>
+                  <Link href={`/onrecord/${current.name?.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-') || current.handle}`}
                     className="mt-3 inline-block px-4 py-1.5 rounded-full text-[10px] font-semibold text-white transition-colors hover:opacity-90 self-start"
                     style={{ background: '#b8860b' }}>
                     View records →
@@ -379,6 +379,13 @@ export default function PoliticiansPage() {
       <style>{`
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes tileTransition { 0% { opacity: 0; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
+        @media (max-width: 600px) {
+          .or-search-pill { position: static !important; transform: none !important; flex: 1 !important; min-width: 0 !important; margin-left: 8px !important; }
+          .or-center-img { display: none !important; }
+          .or-center-content { padding: 10px !important; border-left: none !important; justify-content: flex-start !important; }
+          .or-center-name { font-size: 14px !important; margin-bottom: 6px !important; }
+          .or-center-vclaims { display: none !important; }
+        }
       `}</style>
 
       {/* ON RECORD TODAY — editorial section */}

@@ -61,8 +61,8 @@ export default async function LastYearPage() {
       {/* Stories */}
       {lastYear.stories && lastYear.stories.length > 0 && (
         <>
-        <div className="px-6 md:px-12 py-2" style={{ background: '#f5f5f5' }}>
-          <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+        <div className="px-6 md:px-12 py-2" style={{}}>
+          <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
             {lastYear.stories.map(s => s.headline).join(' & ')}
           </h2>
         </div>

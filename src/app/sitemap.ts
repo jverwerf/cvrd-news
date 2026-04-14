@@ -76,7 +76,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const scoreResp = await fetch(`${blobBase}/politicians/score_${handle}.json`, { next: { revalidate: 86400 } });
         if (!scoreResp.ok) continue;
         const data = await scoreResp.json();
-        const slug = (data.name || '').toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+        const slug = (data.name || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
         if (slug) {
           politicianEntries.push({
             url: `${baseUrl}/onrecord/${slug}`,

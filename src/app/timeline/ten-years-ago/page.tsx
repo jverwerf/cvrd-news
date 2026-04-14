@@ -62,8 +62,8 @@ export default async function TenYearsAgoPage() {
         const activeStories = tenYearsAgo.stories.filter((s: any) => (s.videos || []).length > 0);
         return (
         <>
-        <div className="px-6 md:px-12 py-2" style={{ background: '#f5f5f5' }}>
-          <h2 className="text-[16px] md:text-[18px] text-[#1e2a3a] leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
+        <div className="px-6 md:px-12 py-2" style={{}}>
+          <h2 className="text-[16px] md:text-[18px] text-white leading-tight tracking-[-0.02em]" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
             {activeStories.map((s: any) => s.headline).join(' & ')}
           </h2>
         </div>

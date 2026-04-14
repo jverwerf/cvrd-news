@@ -23,7 +23,7 @@ async function getAllScores(): Promise<any[]> {
 
 function findBySlugInScores(scores: any[], slug: string): { score: any } | null {
   for (const score of scores) {
-    const nameSlug = (score.name || '').toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+    const nameSlug = (score.name || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
     if (nameSlug === slug || score.handle === slug) return { score };
   }
   return null;

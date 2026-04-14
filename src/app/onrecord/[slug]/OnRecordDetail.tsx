@@ -20,7 +20,7 @@ const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 function verdictLabel(v: string) { return v === 'TRUE' ? 'True' : v === 'SOMEWHAT MISLEADING' ? 'Somewhat Misleading' : v === 'MISLEADING' ? 'Misleading' : 'False'; }
 function verdictColor(v: string) { return v === 'TRUE' ? '#60a5fa' : v === 'SOMEWHAT MISLEADING' ? '#f59e0b' : v === 'MISLEADING' ? '#daa520' : '#f87171'; }
 function fmtDate(d: string) { try { return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); } catch { return d; } }
-function nameToSlug(name: string) { return name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''); }
+function nameToSlug(name: string) { return name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, ''); }
 
 function ScoreMeter({ score }: { score: number }) {
   const lines = 80;

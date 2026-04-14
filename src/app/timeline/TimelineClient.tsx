@@ -61,8 +61,13 @@ function categoryColor(cat: string): string {
 }
 
 const TIMELINE_SCROLL_CSS = `
-.timeline-scroll { overflow-x: scroll !important; overflow-y: hidden !important; scrollbar-width: none !important; -ms-overflow-style: none !important; }
+.timeline-scroll { overflow-x: scroll !important; overflow-y: hidden !important; scrollbar-width: none !important; -ms-overflow-style: none !important; touch-action: pan-x !important; -webkit-overflow-scrolling: touch !important; }
 .timeline-scroll::-webkit-scrollbar { display: none !important; }
+@media (max-width: 600px) {
+  .tl-card-vids { display: none !important; }
+  .tl-main-video { display: none !important; }
+  .tl-x-embeds { display: none !important; }
+}
 `;
 
 export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null; tenYearsAgo?: TodayLastYearData | null }) {
@@ -205,7 +210,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
                   <p className="text-[10px] text-[#999] leading-[1.4] line-clamp-2">{thread.summary}</p>
                 </div>
                 {vids.length > 0 && (
-                  <div className="flex gap-1 p-2 shrink-0 items-center">
+                  <div className="flex gap-1 p-2 shrink-0 items-center tl-card-vids">
                     {vids.map((v: any, i: number) => (
                       <div key={i} className="w-[100px] rounded overflow-hidden relative" style={{ background: '#1e2a3a' }}>
                         <img src={`https://img.youtube.com/vi/${v.embed_id || v.id}/mqdefault.jpg`} alt="" className="w-full h-[56px] object-cover" />
@@ -371,7 +376,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               </div>
 
               {/* ═══ HORIZONTAL TIMELINE — scrollable independently ═══ */}
-              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
+              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <HorizontalTimeline
                   grouped={grouped}
                   dates={dates}
@@ -402,7 +407,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                     <div className="mb-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
                     {mainYtVideo && (
-                      <div className="flex justify-center mb-4">
+                      <div className="flex justify-center mb-4 tl-main-video">
                         <div className="w-full max-w-[560px] rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
                           <iframe
                             key={mainYtVideo.embed_id}
@@ -431,7 +436,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                   >
                     {/* X */}
                     {xClips.length > 0 && (
-                      <div className="rounded-lg p-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                      <div className="rounded-lg p-4 tl-x-embeds" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                         <div className="flex items-center gap-2 mb-3">
                           <span className="text-[16px] font-bold text-white">&#x1D54F;</span>
                         </div>

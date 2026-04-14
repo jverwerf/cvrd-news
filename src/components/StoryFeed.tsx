@@ -56,9 +56,9 @@ function StoryCard({ story, index }: { story: NarrativeGap; index: number }) {
     <article id={`story-${index + 1}`} className="overflow-hidden">
 
       {/* 1. WHITE BANNER — story title */}
-      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: '#f5f5f5' }}>
-        <span className="text-[10px] font-bold text-[#1e2a3a] bg-[#1e2a3a]/10 px-2 py-0.5 rounded uppercase tracking-[0.1em]">Story {index + 1}</span>
-        <h2 className="text-[18px] md:text-[22px] text-[#1e2a3a] leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
+      <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{}}>
+        <span className="text-[10px] font-bold text-[#daa520] px-2 py-0.5 rounded uppercase tracking-[0.1em]">Story {index + 1}</span>
+        <h2 className="text-[18px] md:text-[22px] text-white leading-tight tracking-[-0.02em] flex-1 truncate" style={serif}>
           {story.topic}
         </h2>
       </div>

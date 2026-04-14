@@ -63,6 +63,10 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
         .hide-scroll { scrollbar-width: none; }
         .hide-scroll::-webkit-scrollbar { display: none; }
         .nav-pill:hover { color: rgba(226,232,240,0.9) !important; background: rgba(255,255,255,0.07) !important; }
+        @media (max-width: 600px) {
+          .nav-logo { display: none !important; }
+          .nav-right { display: none !important; }
+        }
       `}</style>
 
       <nav style={{
@@ -71,7 +75,7 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
         padding: '0 20px', height: 48,
         display: 'flex', alignItems: 'center', gap: 16,
       }}>
-        <a href="/" style={{ display: 'flex', gap: 1, textDecoration: 'none', flexShrink: 0 }}>
+        <a href="/" style={{ display: 'flex', gap: 1, textDecoration: 'none', flexShrink: 0 }} className="nav-logo">
           <CvrdLogo size={22} />
         </a>
 
@@ -119,7 +123,7 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
           })}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }} className="nav-right">
           <a href="https://www.youtube.com/@cvrdnews" target="_blank" rel="noreferrer"
             style={{ color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center' }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">

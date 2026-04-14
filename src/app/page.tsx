@@ -8,6 +8,7 @@ import type { NarrativeGap } from '@/lib/data';
 import type { TimelineThread } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
 import { HeroCarousel } from './home/HeroCarousel';
+import { TimelineCarousel } from './home/TimelineCarousel';
 import { TvTile } from './home/TvTile';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
 
@@ -175,21 +176,21 @@ function OnRecordStrip({ data }: { data: any }) {
   const latestClaim = data?.matched_tweets?.[0];
   const verdictColor = (v: string) => v === 'TRUE' ? '#4ade80' : v === 'FALSE' ? '#f87171' : C.gold;
   const personSlug = person?.name
-    ? person.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+    ? person.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
     : null;
   const href = personSlug ? `/onrecord/${personSlug}` : '/onrecord';
 
   return (
     <a href={href} style={{ textDecoration: 'none', display: 'block' }}>
-      <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel">
+      <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel strip-card">
 
         {/* LEFT — photo */}
-        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }}>
+        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }} className="strip-photo">
           {photoUrl && (
             <img src={photoUrl} alt={person?.name}
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.85 }} />
           )}
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(37,53,69,0.95) 100%)' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(37,53,69,0.95) 100%)' }} className="strip-photo-fade-r" />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,37,53,0.9) 0%, transparent 50%)' }} />
           <div style={{ position: 'absolute', bottom: 14, left: 14 }}>
             <div style={{ fontFamily: serif, fontSize: 17, color: '#fff', lineHeight: 1.2 }}>{person?.name}</div>
@@ -198,7 +199,7 @@ function OnRecordStrip({ data }: { data: any }) {
         </div>
 
         {/* RIGHT — content */}
-        <div style={{ flex: 1, padding: '22px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+        <div style={{ flex: 1, padding: '22px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }} className="strip-right">
 
           {/* what is this */}
           <div style={{ marginBottom: 18 }}>
@@ -346,10 +347,10 @@ export default async function Home() {
     : allStories.slice(0, 10);
 
   const gridStories = stories.slice(1, 5);
-  const allThreads  = threadData?.threads ?? [];
-  const threadCount = allThreads.length;
-  // Most recently updated thread first
-  const recentThread = [...allThreads].sort((a, b) => b.last_seen.localeCompare(a.last_seen))[0] ?? null;
+  const allThreads   = threadData?.threads ?? [];
+  const threadCount  = allThreads.length;
+  // Most recently updated first
+  const sortedThreads = [...allThreads].sort((a, b) => b.last_seen.localeCompare(a.last_seen));
   const videoUrl   = data?.video_url;
 
   return (
@@ -370,6 +371,14 @@ export default async function Home() {
         }
         @media (max-width: 440px) {
           .story-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 600px) {
+          .strip-card { flex-direction: column !important; min-height: 0 !important; }
+          .strip-photo { width: 100% !important; height: 150px !important; flex-shrink: 0 !important; }
+          .strip-photo-fade-r { display: none !important; }
+          .strip-right { padding: 14px 16px !important; }
+          .section-pad { padding-left: 0 !important; padding-right: 0 !important; }
+          .breaking-live { display: none !important; }
         }
       `}} />
 
@@ -409,7 +418,7 @@ export default async function Home() {
                   {(breakingStories[0] as any).topic}
                 </span>
               </div>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#dc2626', flexShrink: 0 }}>
+              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#dc2626', flexShrink: 0 }} className="breaking-live">
                 Live coverage
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
               </span>
@@ -431,7 +440,7 @@ export default async function Home() {
 
           {/* ── STORY SCROLL ──────────────────────────────── */}
           {stories.length > 1 && (
-            <div style={{ marginBottom: 20, padding: '0 16px' }}>
+            <div style={{ marginBottom: 20, padding: '0 16px' }} className="section-pad">
               <SectionHeader
                 label="Today's Pick"
                 blurb={`${stories.length} stories today — each one sourced from outlets across the political spectrum`}
@@ -446,7 +455,7 @@ export default async function Home() {
           )}
 
           {/* ── TIMELINE ──────────────────────────────────── */}
-          {recentThread && (
+          {sortedThreads.length > 0 && (
             <div style={{ marginBottom: 20 }}>
               <SectionHeader
                 label="Timeline"
@@ -454,7 +463,7 @@ export default async function Home() {
                 href="/timeline"
                 hrefText={`All ${threadCount} threads`}
               />
-              <TimelineStrip thread={recentThread} />
+              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
             </div>
           )}
 
