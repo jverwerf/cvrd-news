@@ -65,6 +65,9 @@ const TIMELINE_SCROLL_CSS = `
   .tl-card-vids { display: none !important; }
   .tl-main-video { display: none !important; }
   .tl-x-embeds { display: none !important; }
+  .tl-split-layout { flex-direction: column !important; }
+  .tl-split-left { width: 100% !important; border-right: none !important; border-bottom: 1px solid #2a3a4a !important; }
+  .tl-vlist { max-height: 260px !important; }
 }
 `;
 
@@ -355,26 +358,14 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pt-2 pb-5">
+            {/* ═══ SPLIT LAYOUT: timeline left, content right ═══ */}
+            <div className="tl-split-layout" style={{ display: 'flex', minHeight: 280 }}>
 
-              {/* HOW DID WE GET HERE / WHAT HAPPENED IN [YEAR] */}
-              <div className="px-5">
-                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">
-                  {selectedDate ? `What Happened in ${getYear(selectedDate)}` : 'How Did We Get Here'}
-                </span>
-                <div className="p-4 rounded-lg mb-5" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                  <p className="text-[13px] text-[#ccc] leading-[1.7] italic">
-                    {selectedDate
-                      ? (thread.entries.find(e => e.date === selectedDate)?.summary
-                        || thread.summary)
-                      : thread.summary}
-                  </p>
+              {/* ── LEFT: Vertical Timeline ── */}
+              <div className="tl-split-left" style={{ width: 220, flexShrink: 0, borderRight: '1px solid #2a3a4a' }}>
+                <div style={{ padding: '12px 12px 4px' }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em' }}>Timeline</span>
                 </div>
-                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
-              </div>
-
-              {/* ═══ VERTICAL TIMELINE ═══ */}
-              <div className="mx-5 rounded-lg" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <VerticalTimeline
                   grouped={grouped}
                   dates={dates}
@@ -382,152 +373,155 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                   onSelect={handleSelectDate}
                 />
               </div>
-              <div className="mx-5 my-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
-              {/* Summary + video — outside scroll container */}
-              <div className="px-5" ref={contentRef}>
-                {selectedEntries.length > 0 && (
+              {/* ── RIGHT: Content ── */}
+              <div ref={contentRef} style={{ flex: 1, minWidth: 0, padding: '14px 20px', overflowY: 'auto' }}>
+
+                {/* Default: thread summary */}
+                {(!selectedDate || selectedEntries.length === 0) && (
                   <>
-                    <div className="mb-2">
-                      <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">
-                        {formatDateFull(selectedDate!)}
-                      </span>
-                      <h3 className="text-[17px] text-white leading-snug mt-1" style={serif}>
-                        {selectedEntries[0].topic}
-                      </h3>
-                    </div>
-                    <div className="mb-3 mt-3">
+                    <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'block', marginBottom: 8 }}>
+                      How Did We Get Here
+                    </span>
+                    <p style={{ fontSize: 13, color: '#ccc', lineHeight: 1.7, fontStyle: 'italic' }}>{thread.summary}</p>
+                  </>
+                )}
+
+                {/* Selected entry */}
+                <AnimatePresence mode="wait">
+                  {selectedDate && selectedEntries.length > 0 && (
+                    <motion.div
+                      key={selectedDate}
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -8 }}
+                      transition={{ duration: 0.2 }}
+                      className="space-y-4"
+                    >
+                      {/* Date + topic */}
+                      <div>
+                        <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                          {formatDateFull(selectedDate)}
+                        </span>
+                        <h3 style={{ fontSize: 17, color: '#fff', lineHeight: 1.3, marginTop: 4, ...serif }}>
+                          {selectedEntries[0].topic}
+                        </h3>
+                      </div>
+
+                      {/* Best summary */}
                       {(() => {
                         const best = [...selectedEntries].sort((a, b) => b.summary.length - a.summary.length)[0]?.summary;
-                        return best ? <p className="text-[13px] text-[#bbb] leading-[1.7]">{best}</p> : null;
+                        return best ? <p style={{ fontSize: 13, color: '#bbb', lineHeight: 1.7 }}>{best}</p> : null;
                       })()}
-                    </div>
-                    <div className="mb-4" style={{ borderBottom: '1px solid #2a3a4a' }} />
 
-                    {mainYtVideo && (
-                      <div className="flex justify-center mb-4 tl-main-video">
-                        <div className="w-full max-w-[560px] rounded-lg overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                      <div style={{ borderBottom: '1px solid #2a3a4a' }} />
+
+                      {/* YouTube */}
+                      {mainYtVideo && (
+                        <div className="tl-main-video" style={{ borderRadius: 8, overflow: 'hidden', aspectRatio: '16/9' }}>
                           <iframe
                             key={mainYtVideo.embed_id}
                             src={`https://www.youtube.com/embed/${mainYtVideo.embed_id}`}
-                            className="w-full h-full"
-                            style={{ border: 'none' }}
+                            style={{ width: '100%', height: '100%', border: 'none' }}
                             allowFullScreen
                           />
                         </div>
-                      </div>
-                    )}
-                  </>
-                )}
-              </div>
+                      )}
 
-              {/* ═══ SELECTED DAY CONTENT ═══ */}
-              <AnimatePresence mode="wait">
-                {selectedEntries.length > 0 && (
-                  <motion.div
-                    key={selectedDate}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.25 }}
-                    className="space-y-4"
-                  >
-                    {/* X */}
-                    {xClips.length > 0 && (
-                      <div className="rounded-lg p-4 tl-x-embeds" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-[16px] font-bold text-white">&#x1D54F;</span>
-                        </div>
-                        <div className="grid grid-cols-4 gap-2">
-                          {xClips.slice(0, 6).map((c, i) => (
-                            <div key={i} className="rounded overflow-hidden relative" style={{ background: '#253545', height: 90 }}>
-                              <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                                <iframe
-                                  src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                                  style={{ border: 'none', width: '100%', height: '100%' }}
-                                  loading="lazy"
-                                />
+                      {/* X embeds */}
+                      {xClips.length > 0 && (
+                        <div className="rounded-lg p-4 tl-x-embeds" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[16px] font-bold text-white">&#x1D54F;</span>
+                          </div>
+                          <div className="grid grid-cols-4 gap-2">
+                            {xClips.slice(0, 6).map((c, i) => (
+                              <div key={i} className="rounded overflow-hidden relative" style={{ background: '#253545', height: 90 }}>
+                                <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                                  <iframe
+                                    src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                                    style={{ border: 'none', width: '100%', height: '100%' }}
+                                    loading="lazy"
+                                  />
+                                </div>
                               </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Sources */}
+                      {sources.length > 0 && (() => {
+                        const leftS = sources.filter(s => s.lean === 'left');
+                        const rightS = sources.filter(s => s.lean === 'right');
+                        const centerS = sources.filter(s => !s.lean || s.lean === 'center');
+                        return (
+                          <div className="rounded-lg p-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                            <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                              <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
+                              <span className="text-[11px] text-[#777]">{sources.length} sources</span>
+                              {leftS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftS.length} left</span></span>}
+                              {rightS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightS.length} right</span></span>}
+                              {centerS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerS.length} center</span></span>}
                             </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* SOURCES — grouped by lean */}
-                    {sources.length > 0 && (() => {
-                      const leftS = sources.filter(s => s.lean === 'left');
-                      const rightS = sources.filter(s => s.lean === 'right');
-                      const centerS = sources.filter(s => !s.lean || s.lean === 'center');
-                      return (
-                        <div className="rounded-lg p-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                          <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-                            <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
-                            <span className="text-[11px] text-[#777]">{sources.length} sources</span>
-                            {leftS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftS.length} left</span></span>}
-                            {rightS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightS.length} right</span></span>}
-                            {centerS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerS.length} center</span></span>}
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                              {leftS.length > 0 && (
+                                <div>
+                                  <div className="flex items-center gap-1.5 mb-2">
+                                    <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
+                                    <span className="text-[9px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
+                                  </div>
+                                  {leftS.map((s, j) => (
+                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
+                                      className="block text-[11px] text-[#888] hover:text-[#60a5fa] transition-colors py-0.5 truncate">
+                                      {s.name}
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                              {centerS.length > 0 && (
+                                <div>
+                                  <div className="flex items-center gap-1.5 mb-2">
+                                    <span className="w-[5px] h-[5px] rounded-full bg-[#999]" />
+                                    <span className="text-[9px] font-bold text-[#999] uppercase tracking-[0.12em]">Center</span>
+                                  </div>
+                                  {centerS.map((s, j) => (
+                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
+                                      className="block text-[11px] text-[#888] hover:text-[#ccc] transition-colors py-0.5 truncate">
+                                      {s.name}
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                              {rightS.length > 0 && (
+                                <div>
+                                  <div className="flex items-center gap-1.5 mb-2">
+                                    <span className="w-[5px] h-[5px] rounded-full bg-[#f87171]" />
+                                    <span className="text-[9px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
+                                  </div>
+                                  {rightS.map((s, j) => (
+                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
+                                      className="block text-[11px] text-[#888] hover:text-[#f87171] transition-colors py-0.5 truncate">
+                                      {s.name}
+                                    </a>
+                                  ))}
+                                </div>
+                              )}
+                            </div>
                           </div>
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            {leftS.length > 0 && (
-                              <div>
-                                <div className="flex items-center gap-1.5 mb-2">
-                                  <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
-                                  <span className="text-[9px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
-                                </div>
-                                {leftS.map((s, j) => (
-                                  <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                    className="block text-[11px] text-[#888] hover:text-[#60a5fa] transition-colors py-0.5 truncate">
-                                    {s.name}
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                            {centerS.length > 0 && (
-                              <div>
-                                <div className="flex items-center gap-1.5 mb-2">
-                                  <span className="w-[5px] h-[5px] rounded-full bg-[#999]" />
-                                  <span className="text-[9px] font-bold text-[#999] uppercase tracking-[0.12em]">Center</span>
-                                </div>
-                                {centerS.map((s, j) => (
-                                  <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                    className="block text-[11px] text-[#888] hover:text-[#ccc] transition-colors py-0.5 truncate">
-                                    {s.name}
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                            {rightS.length > 0 && (
-                              <div>
-                                <div className="flex items-center gap-1.5 mb-2">
-                                  <span className="w-[5px] h-[5px] rounded-full bg-[#f87171]" />
-                                  <span className="text-[9px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
-                                </div>
-                                {rightS.map((s, j) => (
-                                  <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                    className="block text-[11px] text-[#888] hover:text-[#f87171] transition-colors py-0.5 truncate">
-                                    {s.name}
-                                  </a>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })()}
+                        );
+                      })()}
 
-                    {/* Share */}
-                    <div className="px-4 pb-3 pt-1">
+                      {/* Share */}
                       <ShareBar
                         text={`${thread.title} — tracked by CVRD\n\n${thread.summary.substring(0, 120)}...`}
                         url={`https://cvrdnews.com/timeline`}
                       />
-                    </div>
-                  </motion.div>
-                )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-              </AnimatePresence>
-
+              </div>
             </div>
           </motion.div>
         )}
@@ -563,7 +557,7 @@ function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
   }
 
   return (
-    <div style={{ maxHeight: 280, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
+    <div className="tl-vlist" style={{ overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
       {yearGroups.map((yg) => (
         <div key={yg.year}>
           {/* Year separator */}
