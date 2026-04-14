@@ -61,13 +61,13 @@ function categoryColor(cat: string): string {
 }
 
 const TIMELINE_SCROLL_CSS = `
+.tl-mobile-accordion { display: none; }
 @media (max-width: 600px) {
   .tl-card-vids { display: none !important; }
   .tl-main-video { display: none !important; }
   .tl-x-embeds { display: none !important; }
-  .tl-split-layout { flex-direction: column !important; height: auto !important; }
-  .tl-split-left { width: 100% !important; height: auto !important; border-right: none !important; border-bottom: 1px solid #2a3a4a !important; }
-  .tl-vlist { flex: none !important; max-height: 260px !important; }
+  .tl-split-layout { display: none !important; }
+  .tl-mobile-accordion { display: block !important; }
 }
 `;
 
@@ -461,6 +461,11 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
 
               </div>
             </div>
+          {/* ═══ MOBILE ACCORDION ═══ */}
+          <div className="tl-mobile-accordion">
+            <MobileAccordion grouped={grouped} dates={dates} />
+          </div>
+
           </motion.div>
         )}
       </AnimatePresence>
@@ -494,8 +499,18 @@ function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
     }
   }
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const selectedBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const btn = selectedBtnRef.current;
+    if (!container || !btn) return;
+    container.scrollTo({ top: btn.offsetTop - container.offsetTop, behavior: 'smooth' });
+  }, [selectedDate]);
+
   return (
-    <div className="tl-vlist" style={{ flex: 1, minHeight: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
+    <div ref={containerRef} className="tl-vlist" style={{ flex: 1, minHeight: 0, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
       {yearGroups.map((yg) => (
         <div key={yg.year}>
           {/* Year separator */}
@@ -522,6 +537,7 @@ function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
                 return (
                   <button
                     key={date}
+                    ref={isSelected ? selectedBtnRef : null}
                     onClick={() => onSelect(date)}
                     style={{
                       display: 'flex', alignItems: 'center', gap: 10,
@@ -551,6 +567,81 @@ function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
           ))}
         </div>
       ))}
+    </div>
+  );
+}
+
+// ── Mobile Accordion (phone expanded view) ──
+
+function MobileAccordion({ grouped, dates }: {
+  grouped: Record<string, ThreadEntry[]>;
+  dates: string[];
+}) {
+  const [openDate, setOpenDate] = useState<string | null>(null);
+
+  return (
+    <div>
+      {[...dates].reverse().map((date) => {
+        const entries = grouped[date];
+        const isOpen = openDate === date;
+        const topic = entries[0]?.topic || '';
+        const thumb = entries[0]?.image_file;
+        const best = [...entries].sort((a, b) => b.summary.length - a.summary.length)[0]?.summary;
+        const ytVideo = entries.flatMap(e => e.youtube_videos || []).find(v => v.embed_id);
+
+        return (
+          <div key={date} style={{ borderBottom: '1px solid #2a3a4a' }}>
+
+            {/* Row header */}
+            <button
+              onClick={() => setOpenDate(isOpen ? null : date)}
+              style={{
+                display: 'flex', alignItems: 'center', gap: 12,
+                width: '100%', padding: '11px 14px',
+                background: isOpen ? 'rgba(218,165,32,0.07)' : 'transparent',
+                border: 'none',
+                borderLeft: isOpen ? '3px solid #daa520' : '3px solid transparent',
+                cursor: 'pointer', textAlign: 'left',
+              }}>
+              {thumb && (
+                <div style={{ width: 60, height: 48, borderRadius: 5, overflow: 'hidden', flexShrink: 0 }}>
+                  <img src={thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: isOpen ? 1 : 0.7 }} />
+                </div>
+              )}
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <span style={{ display: 'block', fontSize: 9, fontWeight: 700, color: '#daa520', letterSpacing: '0.1em', marginBottom: 3 }}>
+                  {formatDateFull(date)}
+                </span>
+                <span style={{ display: 'block', fontSize: 14, color: isOpen ? '#fff' : '#ccc', lineHeight: 1.3, ...serif }}>
+                  {topic}
+                </span>
+              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                style={{ flexShrink: 0, transform: isOpen ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }}>
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            {/* Expanded content */}
+            {isOpen && (
+              <div style={{ padding: '4px 14px 16px 14px', borderLeft: '3px solid #daa520' }}>
+                {best && (
+                  <p style={{ fontSize: 13, color: '#bbb', lineHeight: 1.7, marginBottom: ytVideo ? 14 : 0 }}>{best}</p>
+                )}
+                {ytVideo && (
+                  <div style={{ borderRadius: 8, overflow: 'hidden', aspectRatio: '16/9' }}>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${ytVideo.embed_id}`}
+                      style={{ width: '100%', height: '100%', border: 'none' }}
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 }
