@@ -63,10 +63,13 @@ function categoryColor(cat: string): string {
 const TIMELINE_SCROLL_CSS = `
 .timeline-scroll { overflow-x: scroll !important; overflow-y: hidden !important; scrollbar-width: none !important; -ms-overflow-style: none !important; touch-action: pan-x !important; -webkit-overflow-scrolling: touch !important; }
 .timeline-scroll::-webkit-scrollbar { display: none !important; }
+.tl-vertical { display: none !important; }
 @media (max-width: 600px) {
   .tl-card-vids { display: none !important; }
   .tl-main-video { display: none !important; }
   .tl-x-embeds { display: none !important; }
+  .tl-horizontal { display: none !important; }
+  .tl-vertical { display: block !important; }
 }
 `;
 
@@ -375,9 +378,19 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                 <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em] block mb-2">Timeline</span>
               </div>
 
-              {/* ═══ HORIZONTAL TIMELINE — scrollable independently ═══ */}
-              <div className="mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+              {/* ═══ HORIZONTAL TIMELINE — desktop ═══ */}
+              <div className="tl-horizontal mx-5 rounded-lg p-4 timeline-scroll" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
                 <HorizontalTimeline
+                  grouped={grouped}
+                  dates={dates}
+                  selectedDate={selectedDate}
+                  onSelect={handleSelectDate}
+                />
+              </div>
+
+              {/* ═══ VERTICAL TIMELINE — mobile only ═══ */}
+              <div className="tl-vertical mx-5 rounded-lg" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
+                <VerticalTimeline
                   grouped={grouped}
                   dates={dates}
                   selectedDate={selectedDate}
@@ -940,6 +953,99 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
           })}
         </div>
       </div>
+    </div>
+  );
+}
+
+// ── Vertical Timeline (mobile) ──
+
+function VerticalTimeline({ grouped, dates, selectedDate, onSelect }: {
+  grouped: Record<string, ThreadEntry[]>;
+  dates: string[];
+  selectedDate: string | null;
+  onSelect: (date: string, scrollToContent?: boolean) => void;
+}) {
+  type MonthGroup = { month: string; dates: string[] };
+  type YearGroup = { year: string; monthGroups: MonthGroup[] };
+  const yearGroups: YearGroup[] = [];
+  for (const date of dates) {
+    const y = getYear(date);
+    const m = getMonth(date);
+    if (yearGroups.length === 0 || yearGroups[yearGroups.length - 1].year !== y) {
+      yearGroups.push({ year: y, monthGroups: [{ month: m, dates: [date] }] });
+    } else {
+      const yg = yearGroups[yearGroups.length - 1];
+      if (yg.monthGroups[yg.monthGroups.length - 1].month !== m) {
+        yg.monthGroups.push({ month: m, dates: [date] });
+      } else {
+        yg.monthGroups[yg.monthGroups.length - 1].dates.push(date);
+      }
+    }
+  }
+
+  const selectedRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    selectedRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, [selectedDate]);
+
+  return (
+    <div style={{ maxHeight: 280, overflowY: 'auto', overflowX: 'hidden', scrollbarWidth: 'none' }}>
+      {yearGroups.map((yg) => (
+        <div key={yg.year}>
+          {/* Year separator */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 12px 4px' }}>
+            <div style={{ flex: 1, height: 1, background: '#daa520', opacity: 0.25 }} />
+            <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', opacity: 0.7, letterSpacing: '0.1em' }}>{yg.year}</span>
+            <div style={{ flex: 1, height: 1, background: '#daa520', opacity: 0.25 }} />
+          </div>
+
+          {yg.monthGroups.map((mg) => (
+            <div key={mg.month}>
+              {yg.monthGroups.length > 1 && (
+                <div style={{ padding: '4px 12px 2px' }}>
+                  <span style={{ fontSize: 9, fontWeight: 600, color: '#daa520', opacity: 0.5, textTransform: 'uppercase', letterSpacing: '0.12em' }}>
+                    {formatMonthLabel(mg.month)}
+                  </span>
+                </div>
+              )}
+              {mg.dates.map((date) => {
+                const entries = grouped[date];
+                const isSelected = date === selectedDate;
+                const topic = entries?.[0]?.topic || '';
+                const thumb = entries?.[0]?.image_file;
+                return (
+                  <button
+                    key={date}
+                    ref={isSelected ? selectedRef : null}
+                    onClick={() => onSelect(date, true)}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: 10,
+                      width: '100%', padding: '7px 12px',
+                      background: isSelected ? 'rgba(218,165,32,0.1)' : 'transparent',
+                      border: 'none',
+                      borderLeft: isSelected ? '3px solid #daa520' : '3px solid transparent',
+                      cursor: 'pointer', textAlign: 'left',
+                    }}>
+                    <div style={{ width: 52, height: 38, borderRadius: 4, overflow: 'hidden', flexShrink: 0, border: isSelected ? '1px solid rgba(218,165,32,0.5)' : '1px solid rgba(255,255,255,0.06)' }}>
+                      {thumb
+                        ? <img src={thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: isSelected ? 1 : 0.65 }} />
+                        : <div style={{ width: '100%', height: '100%', background: '#2a3a4a' }} />}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <span style={{ display: 'block', fontSize: 8, fontWeight: 600, color: isSelected ? '#daa520' : '#666', marginBottom: 2 }}>
+                        {formatDateDay(date)}
+                      </span>
+                      <span style={{ display: 'block', fontSize: 11, color: isSelected ? '#fff' : '#aaa', lineHeight: 1.35, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                        {topic}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
