@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const mono = `'DM Mono', monospace`;
 
 const CATEGORY_STRIP = [
-  { label: 'Daily Pick', href: '/brief' },
+  { label: 'Top Stories', href: '/brief' },
   { label: 'World', href: '/world' },
   { label: 'Politics', href: '/politics' },
   { label: 'Markets', href: '/markets' },
