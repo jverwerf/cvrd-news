@@ -359,7 +359,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
             className="overflow-hidden"
           >
             {/* ═══ SPLIT LAYOUT: timeline left, content right ═══ */}
-            <div className="tl-split-layout" style={{ display: 'flex', height: 400 }}>
+            <div className="tl-split-layout" style={{ display: 'flex', height: 600 }}>
 
               {/* ── LEFT: Vertical Timeline ── */}
               <div className="tl-split-left" style={{ width: 220, flexShrink: 0, borderRight: '1px solid #2a3a4a', display: 'flex', flexDirection: 'column', height: '100%' }}>
