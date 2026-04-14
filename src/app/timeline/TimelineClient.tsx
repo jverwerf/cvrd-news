@@ -807,7 +807,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                 </div>
 
                 {/* Year expanded */}
-                <div style={{ maxHeight: isOpen ? 1000 : 0, opacity: isOpen ? 1 : 0, overflow: isOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
+                <div style={{ maxHeight: isOpen ? 1000 : 0, opacity: isOpen ? 1 : 0, overflow: 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
                   {!showMonthLevel ? (
                     // Single month — render entries directly
                     <div className="flex" style={{ gap: THUMB_GAP, padding: '8px 0' }}>
@@ -853,7 +853,7 @@ function HorizontalTimeline({ grouped, dates, selectedDate, onSelect }: {
                             </div>
 
                             {/* Month expanded: full entry cards */}
-                            <div style={{ maxHeight: isMonthOpen ? 500 : 0, opacity: isMonthOpen ? 1 : 0, overflow: isMonthOpen ? 'visible' : 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
+                            <div style={{ maxHeight: isMonthOpen ? 500 : 0, opacity: isMonthOpen ? 1 : 0, overflow: 'hidden', transition: 'max-height 0.4s ease, opacity 0.4s ease' }}>
                               <div className="flex" style={{ gap: THUMB_GAP, padding: '8px 0' }}>
                                 {mg.dates.map((date) => <EntryCard key={date} date={date} />)}
                               </div>
