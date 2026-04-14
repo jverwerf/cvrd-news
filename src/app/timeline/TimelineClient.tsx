@@ -450,68 +450,6 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
                         </div>
                       )}
 
-                      {/* Sources */}
-                      {sources.length > 0 && (() => {
-                        const leftS = sources.filter(s => s.lean === 'left');
-                        const rightS = sources.filter(s => s.lean === 'right');
-                        const centerS = sources.filter(s => !s.lean || s.lean === 'center');
-                        return (
-                          <div className="rounded-lg p-4" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                            <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-                              <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
-                              <span className="text-[11px] text-[#777]">{sources.length} sources</span>
-                              {leftS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftS.length} left</span></span>}
-                              {rightS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightS.length} right</span></span>}
-                              {centerS.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerS.length} center</span></span>}
-                            </div>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                              {leftS.length > 0 && (
-                                <div>
-                                  <div className="flex items-center gap-1.5 mb-2">
-                                    <span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" />
-                                    <span className="text-[9px] font-bold text-[#60a5fa] uppercase tracking-[0.12em]">Left</span>
-                                  </div>
-                                  {leftS.map((s, j) => (
-                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                      className="block text-[11px] text-[#888] hover:text-[#60a5fa] transition-colors py-0.5 truncate">
-                                      {s.name}
-                                    </a>
-                                  ))}
-                                </div>
-                              )}
-                              {centerS.length > 0 && (
-                                <div>
-                                  <div className="flex items-center gap-1.5 mb-2">
-                                    <span className="w-[5px] h-[5px] rounded-full bg-[#999]" />
-                                    <span className="text-[9px] font-bold text-[#999] uppercase tracking-[0.12em]">Center</span>
-                                  </div>
-                                  {centerS.map((s, j) => (
-                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                      className="block text-[11px] text-[#888] hover:text-[#ccc] transition-colors py-0.5 truncate">
-                                      {s.name}
-                                    </a>
-                                  ))}
-                                </div>
-                              )}
-                              {rightS.length > 0 && (
-                                <div>
-                                  <div className="flex items-center gap-1.5 mb-2">
-                                    <span className="w-[5px] h-[5px] rounded-full bg-[#f87171]" />
-                                    <span className="text-[9px] font-bold text-[#f87171] uppercase tracking-[0.12em]">Right</span>
-                                  </div>
-                                  {rightS.map((s, j) => (
-                                    <a key={j} href={s.url} target="_blank" rel="noreferrer"
-                                      className="block text-[11px] text-[#888] hover:text-[#f87171] transition-colors py-0.5 truncate">
-                                      {s.name}
-                                    </a>
-                                  ))}
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      })()}
-
                       {/* Share */}
                       <ShareBar
                         text={`${thread.title} — tracked by CVRD\n\n${thread.summary.substring(0, 120)}...`}
