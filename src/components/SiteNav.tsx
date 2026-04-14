@@ -36,12 +36,30 @@ export function CvrdLogo({ size = 22 }: { size?: number }) {
   );
 }
 
+let _cachedIssueDate: string | null = null;
+
 export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
-  const [today, setToday] = useState('');
+  const [lastIssue, setLastIssue] = useState('');
   const pathname = usePathname();
 
   useEffect(() => {
-    setToday(new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase());
+    if (_cachedIssueDate !== null) { setLastIssue(_cachedIssueDate); return; }
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL;
+    if (!blobBase) return;
+    (async () => {
+      for (let i = 0; i < 5; i++) {
+        const date = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
+        try {
+          const resp = await fetch(`${blobBase}/data/daily_gaps_${date}.json`, { method: 'HEAD' });
+          if (resp.ok) {
+            const d = new Date(date + 'T12:00:00');
+            _cachedIssueDate = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+            setLastIssue(_cachedIssueDate);
+            break;
+          }
+        } catch {}
+      }
+    })();
   }, []);
 
   const isOnTV = pathname === '/tv' || (pathname?.startsWith('/tv/') ?? false);
@@ -130,7 +148,12 @@ export function SiteNav({ isBreaking }: { isBreaking: boolean }) {
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
             </svg>
           </a>
-          {today && <span style={{ fontFamily: mono, fontSize: 9, color: '#4a5a6a' }}>{today}</span>}
+          {lastIssue && (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 2 }}>
+              <span style={{ fontFamily: mono, fontSize: 7, letterSpacing: '0.12em', color: '#3a4a5a', borderBottom: '1px solid #2a3a4a', paddingBottom: 2 }}>LAST ISSUE</span>
+              <span style={{ fontFamily: mono, fontSize: 9, color: '#4a5a6a' }}>{lastIssue}</span>
+            </div>
+          )}
         </div>
       </nav>
 
