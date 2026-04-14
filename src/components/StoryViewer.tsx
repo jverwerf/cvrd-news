@@ -654,7 +654,29 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                     </button>
                   </div>
                 )}
+                <button onClick={prev} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+                </button>
+                <button onClick={next} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
+                </button>
               </div>
+            </div>
+          )}
+
+          {/* Fallback nav bar when no image */}
+          {!story.image_file && (
+            <div className="px-6 md:px-12 py-2 flex items-center justify-end gap-2" style={{ borderTop: '1px solid #2a3a4a' }}>
+              <button onClick={prev} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+              </button>
+              <button onClick={next} className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                style={{ border: '1px solid #2a3a4a', cursor: 'pointer', background: '#1e2a3a' }}>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
+              </button>
             </div>
           )}
 
