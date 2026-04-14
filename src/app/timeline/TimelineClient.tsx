@@ -309,7 +309,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
   return (
     <>
     {isExpanded && (
-      <div className="tl-split-layout rounded-lg mb-3" style={{ display: 'block', background: '#1e2a3a', border: '1px solid #2a3a4a', padding: '14px 18px' }}>
+      <div className="rounded-lg mb-3" style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', padding: '14px 18px' }}>
         <AnimatePresence mode="wait">
           <motion.div key={selectedYear || '__default'} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }}>
             <span style={{ fontSize: 10, fontWeight: 700, color: '#daa520', textTransform: 'uppercase', letterSpacing: '0.12em', display: 'block', marginBottom: 6 }}>
