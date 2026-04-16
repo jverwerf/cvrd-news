@@ -405,48 +405,24 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── LEFT (70%): BREAKING + ON RECORD  |  RIGHT (30%): TODAY'S PICK ── */}
+          {/* ── BREAKING (left) | TODAY'S PICK (right) ── */}
           <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
 
-            {/* LEFT column */}
-            <div style={{ flex: 7, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
-              {isBreaking && (
-                <div>
-                  <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
-                  <BreakingCard
-                    breakingItems={breakingStories ?? []}
-                    liveItems={liveStories ?? []}
-                    vertical
-                  />
-                </div>
-              )}
-              {onRecordData && (
-                <div>
-                  <SectionHeader
-                    label="On Record"
-                    blurb={`Today: ${onRecordData.story_topic}`}
-                    href="/onrecord"
-                    hrefText="All politicians"
-                  />
-                  <OnRecordStrip data={onRecordData} />
-                </div>
-              )}
-              {sortedThreads.length > 0 && (
-                <div>
-                  <SectionHeader
-                    label="Timeline"
-                    blurb={`Following ${threadCount} developing stories`}
-                    href="/timeline"
-                    hrefText={`All ${threadCount} threads`}
-                  />
-                  <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
-                </div>
-              )}
-            </div>
+            {/* Breaking column */}
+            {isBreaking && (
+              <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
+                <BreakingCard
+                  breakingItems={breakingStories ?? []}
+                  liveItems={liveStories ?? []}
+                  vertical
+                />
+              </div>
+            )}
 
-            {/* RIGHT column */}
+            {/* Today's Pick column */}
             {stories.length > 1 && (
-              <div style={{ flex: 3, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+              <div style={{ flex: isBreaking ? 4 : 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                 <SectionHeader
                   label="Today's Pick"
                   href="/brief"
@@ -462,6 +438,32 @@ export default async function Home() {
             )}
 
           </div>
+
+          {/* ── ON RECORD (full width) ── */}
+          {onRecordData && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader
+                label="On Record"
+                blurb={`Today: ${onRecordData.story_topic}`}
+                href="/onrecord"
+                hrefText="All politicians"
+              />
+              <OnRecordStrip data={onRecordData} />
+            </div>
+          )}
+
+          {/* ── TIMELINE (full width) ── */}
+          {sortedThreads.length > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader
+                label="Timeline"
+                blurb={`Following ${threadCount} developing stories`}
+                href="/timeline"
+                hrefText={`All ${threadCount} threads`}
+              />
+              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+            </div>
+          )}
 
 
           {/* ── WATCH ─────────────────────────────────────── */}

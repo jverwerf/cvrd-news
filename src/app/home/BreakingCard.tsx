@@ -77,7 +77,14 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
 
   return (
     <>
-      <style>{`@keyframes breakingThumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }`}</style>
+      <style>{`
+        @keyframes breakingThumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+        @media (max-width: 600px) {
+          .bk-card { position: relative !important; height: 140px !important; }
+          .bk-tile { position: absolute !important; inset: 0 !important; width: 100% !important; }
+          .bk-content { position: absolute !important; bottom: 0 !important; left: 0 !important; right: 0 !important; padding: 8px 10px !important; background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 70%, transparent 100%) !important; }
+        }
+      `}</style>
       <div style={{ display: 'flex', flexDirection: vertical ? 'column' : 'row', gap: 10, marginBottom: vertical ? 0 : 20 }}>
         {items.map((story, i) => {
           const tile = getFirstTile(story);
@@ -86,7 +93,7 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
           const isBreaking = story._kind === 'breaking';
 
           return (
-            <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} style={{
+            <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} className="bk-card" style={{
               flex: 1, display: 'flex', flexDirection: 'row', textDecoration: 'none', minWidth: 0,
               borderRadius: 10, overflow: 'hidden',
               background: '#1e2d3d',
@@ -96,7 +103,7 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
             }}>
 
               {/* LEFT: LIVE TILE */}
-              <div style={{ position: 'relative', width: 200, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
+              <div className="bk-tile" style={{ position: 'relative', width: 200, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
                 {tile ? (
                   <LiveTile tile={tile} />
                 ) : (
@@ -113,7 +120,7 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
               </div>
 
               {/* RIGHT: CONTENT */}
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '9px 11px 9px 10px', minWidth: 0, justifyContent: 'space-between' }}>
+              <div className="bk-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '9px 11px 9px 10px', minWidth: 0, justifyContent: 'space-between' }}>
                 {/* badge + time */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 5 }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
