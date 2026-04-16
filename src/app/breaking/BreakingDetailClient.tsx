@@ -77,7 +77,6 @@ function toBullets(text: string): string[] {
 export default function BreakingDetailClient({ story, raw, type }: {
   story: NarrativeGap; raw: any; type: 'breaking' | 'live';
 }) {
-  const [open, setOpen] = useState(false);
   const ytVids = story.youtube_videos || [];
   const clips = story.social_clips || [];
   const sources = story.sources || [];
@@ -172,24 +171,10 @@ export default function BreakingDetailClient({ story, raw, type }: {
         {/* ── COVER THE NEWS ────────────────────────────── */}
         <main style={{ maxWidth: 1120, margin: '0 auto', padding: '24px 16px 40px' }}>
 
-          <button
-            onClick={() => setOpen(!open)}
-            className="w-full py-2.5 text-[11px] font-semibold rounded-md mb-6 transition-colors cursor-pointer uppercase tracking-[0.1em]"
-            style={{
-              fontFamily: mono,
-              color: open ? '#999' : C.gold,
-              background: open ? C.panel : '#253040',
-              border: `1px solid ${open ? '#3a4a5a' : 'rgba(184,134,11,0.3)'}`,
-            }}>
-            {open ? 'Collapse' : 'Cover the news'}
-          </button>
-
-          {open && <>
-
-          {/* Full dashboard (playable) */}
+          {/* Full dashboard (playable, no auto-play) */}
           <div style={{ borderRadius: 10, overflow: 'hidden', marginBottom: 24 }}>
             <ErrorBoundary>
-              <Dashboard stories={[story]} videoUrl={raw?.breaking_short_url || undefined} />
+              <Dashboard stories={[story]} videoUrl={raw?.breaking_short_url || undefined} noAutoPlay />
             </ErrorBoundary>
           </div>
 
@@ -199,8 +184,6 @@ export default function BreakingDetailClient({ story, raw, type }: {
               <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={undefined} storyIndex={0} />
             </div>
           )}
-
-          </>}
 
           {/* NARRATIVES */}
           {(story.left_narrative || story.center_narrative || story.right_narrative) && (
