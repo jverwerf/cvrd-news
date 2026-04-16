@@ -165,12 +165,6 @@ export default function BreakingDetailClient({ story, raw, type }: {
               </p>
             )}
 
-            {/* Dashboard tiles */}
-            {totalClips > 0 && (
-              <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginTop: 14 }}>
-                <Dashboard stories={[story]} videoUrl={raw?.breaking_short_url || undefined} tilesOnly={true} />
-              </div>
-            )}
           </div>
         </div>
 
