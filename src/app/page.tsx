@@ -405,11 +405,9 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── BREAKING (left) | TODAY'S PICK (right) ── */}
-          <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
-
-            {/* Breaking column */}
-            {isBreaking && (
+          {/* ── BREAKING (left) | TODAY'S PICK (right, vertical) — only when breaking ── */}
+          {isBreaking && (
+            <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
               <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                 <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
                 <BreakingCard
@@ -418,26 +416,31 @@ export default async function Home() {
                   vertical
                 />
               </div>
-            )}
+              {stories.length > 1 && (
+                <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                  <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
+                  <StoryScroll
+                    stories={allStories.slice(1)}
+                    blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
+                    vertical
+                    dividerAfter={stories.length - 1}
+                  />
+                </div>
+              )}
+            </div>
+          )}
 
-            {/* Today's Pick column */}
-            {stories.length > 1 && (
-              <div style={{ flex: isBreaking ? 4 : 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                <SectionHeader
-                  label="Today's Pick"
-                  href="/brief"
-                  hrefText="All stories"
-                />
-                <StoryScroll
-                  stories={allStories.slice(1)}
-                  blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
-                  vertical
-                  dividerAfter={stories.length - 1}
-                />
-              </div>
-            )}
-
-          </div>
+          {/* ── TODAY'S PICK — horizontal row when no breaking ── */}
+          {!isBreaking && stories.length > 1 && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
+              <StoryScroll
+                stories={allStories.slice(1)}
+                blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
+                dividerAfter={stories.length - 1}
+              />
+            </div>
+          )}
 
           {/* ── ON RECORD (full width) ── */}
           {onRecordData && (
