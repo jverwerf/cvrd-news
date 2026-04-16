@@ -214,7 +214,7 @@ function OnRecordStrip({ data }: { data: any }) {
             <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.gold, marginBottom: 8 }}>
               On Record
             </div>
-            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.55, color: C.text, margin: 0, maxWidth: 520, fontWeight: 400 }}>
+            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.55, color: C.text, margin: 0, maxWidth: 520, fontWeight: 400 }} className="strip-main-text">
               Today we're covering{' '}
               <span style={{ fontStyle: 'italic' }}>{data?.story_topic}</span>
               {' '}and checking{' '}
@@ -226,7 +226,7 @@ function OnRecordStrip({ data }: { data: any }) {
           {/* score row */}
           <div style={{ marginBottom: 18 }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginBottom: 4 }}>
-              <div style={{ fontFamily: serif, fontSize: 38, fontWeight: 700, color: scoreColor, lineHeight: 1 }}>{score}%</div>
+              <div style={{ fontFamily: serif, fontSize: 38, fontWeight: 700, color: scoreColor, lineHeight: 1 }} className="strip-score-num">{score}%</div>
               <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: C.dim, textTransform: 'uppercase' }}>
                 {data?.matching_claims ?? 0} claims verified
               </div>
@@ -284,7 +284,7 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
             <div style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', textTransform: 'uppercase', color: C.gold, marginBottom: 8 }}>
               Timeline · Recently Updated
             </div>
-            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.4, color: C.text, margin: 0, fontWeight: 400 }}>
+            <p style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.4, color: C.text, margin: 0, fontWeight: 400 }} className="strip-title-text">
               {thread.title}
             </p>
           </div>
@@ -379,6 +379,10 @@ export default async function Home() {
           .strip-right { padding: 14px 16px !important; }
           .section-pad { padding-left: 0 !important; padding-right: 0 !important; }
           .breaking-live { display: none !important; }
+          .home-cols { flex-direction: column !important; }
+          .strip-main-text { font-size: 13px !important; line-height: 1.45 !important; }
+          .strip-score-num { font-size: 26px !important; }
+          .strip-title-text { font-size: 13px !important; }
         }
       `}} />
 
@@ -402,7 +406,7 @@ export default async function Home() {
           )}
 
           {/* ── LEFT (70%): BREAKING + ON RECORD  |  RIGHT (30%): TODAY'S PICK ── */}
-          <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }}>
+          <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
 
             {/* LEFT column */}
             <div style={{ flex: 7, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
