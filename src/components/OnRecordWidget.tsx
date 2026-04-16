@@ -57,7 +57,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
         <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
       </div>
 
-      <div className="rounded-lg p-4" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
+      <div className="rounded-lg p-4" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden', height: 'var(--card-h, auto)' }}>
       <div className="relative">
         {/* Left arrow */}
         {canLeft && (
@@ -89,7 +89,7 @@ export function OnRecordWidget({ matches }: { matches: OnRecordMatch[] }) {
               className="shrink-0 flex flex-col items-center rounded-xl p-4 transition-opacity hover:opacity-80"
               style={{
                 background: '#253545',
-                border: '1px solid rgba(184,134,11,0.35)',
+                border: 'none',
                 width: 140,
               }}
             >

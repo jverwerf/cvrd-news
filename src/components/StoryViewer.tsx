@@ -136,6 +136,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
     social_clips: bestSocial,
     sources: uniqueSources,
     onrecord_matches: allOnrecordMatches,
+    thread_ids: [...new Set(stories.map(s => (s as any).thread_id).filter(Boolean))],
   } as any;
 
   // Curated stories for Daily Brief dashboard — 1 YT + 2 social per story
@@ -179,6 +180,52 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const sentences = story.what_they_arent_telling_you
     ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
     .filter(s => s.trim().length > 20) || [];
+
+  // Collect timeline threads: single for story mode, multiple for brief mode
+  const threadIds: string[] = (story as any).thread_ids || ((story as any).thread_id ? [(story as any).thread_id] : []);
+  const resolvedThreads = threadIds
+    .map(id => timelineThreads.find(t => t.id === id))
+    .filter(Boolean) as typeof timelineThreads;
+  const hasTimeline = resolvedThreads.length > 0;
+  const hasOnRecord = (story as any).onrecord_matches?.length > 0;
+
+  const timelineOnRecordBlock = (hasTimeline || hasOnRecord) ? (
+    <div className={`grid grid-cols-1 ${hasTimeline && hasOnRecord ? 'md:grid-cols-2' : ''} gap-4 mb-4`} style={{ '--card-h': '180px' } as React.CSSProperties}>
+      {hasTimeline && (
+        <div>
+          <div className="flex items-center gap-2 mb-3">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+            <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
+          </div>
+          <div className="rounded-lg relative" style={{ background: '#253545', border: '1px solid #2a3a4a', height: 'var(--card-h)', overflow: 'hidden' }}>
+            <div className="flex flex-col gap-0 h-full overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#3a4a5a #253545' }}>
+              {resolvedThreads.map((t, i) => (
+                <a key={t.id} href={`/timeline?thread=${t.id}`}
+                  className="flex items-center gap-3 p-3 transition-opacity hover:opacity-80 shrink-0"
+                  style={{ textDecoration: 'none', borderTop: i > 0 ? '1px solid #2a3a4a' : undefined }}>
+                  {t.image_file && <img src={t.image_file} alt={t.title} className="w-10 h-10 rounded object-cover shrink-0" />}
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[12px] text-white font-semibold leading-[1.3]">{t.title}</p>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      {(t as any).is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
+                      {(t as any).days_covered && <span className="text-[9px] text-[#666]">{(t as any).days_covered} days tracked</span>}
+                    </div>
+                  </div>
+                  <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </a>
+              ))}
+            </div>
+            {resolvedThreads.length > 3 && (
+              <div className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none" style={{ background: 'linear-gradient(to top, #253545, transparent)' }} />
+            )}
+          </div>
+        </div>
+      )}
+      {hasOnRecord && (
+        <OnRecordWidget matches={(story as any).onrecord_matches} />
+      )}
+    </div>
+  ) : null;
 
   return (
     <div>
@@ -372,14 +419,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
               {toBullets(story.summary).length > 1 ? (
                 <ul className="space-y-1.5 list-none pl-0 m-0">
                   {toBullets(story.summary).map((s, i) => (
-                    <li key={i} className="flex gap-2 text-[13px] text-[#ccc] leading-[1.6]">
+                    <li key={i} className="flex gap-2 text-[11px] text-[#ccc] leading-[1.55]">
                       <span className="text-[#daa520] shrink-0">•</span>
                       <span>{s}</span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+                <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.summary}</p>
               )}
             </div>
 
@@ -387,6 +434,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <div className="mb-5">
               <VideoGrid youtubeVideos={bestYT} socialClips={bestSocial} storyImage={undefined} storyIndex={0} />
             </div>
+
+            {timelineOnRecordBlock}
 
             <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">The Narrative</h2>
             <div className="grid grid-cols-1 gap-0 rounded-lg mb-5" style={{ background: '#253545' }}>
@@ -402,14 +451,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {toBullets(story.left_narrative).length > 1 ? (
                   <ul className="space-y-1.5 list-none pl-0 m-0">
                     {toBullets(story.left_narrative).map((s, i) => (
-                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                      <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                         <span className="text-[#60a5fa] shrink-0">•</span>
                         <span>{s}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+                  <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.left_narrative}</p>
                 )}
               </div>
               {story.center_narrative && (
@@ -425,14 +474,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   {toBullets(story.center_narrative!).length > 1 ? (
                     <ul className="space-y-1.5 list-none pl-0 m-0">
                       {toBullets(story.center_narrative!).map((s, i) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                           <span className="text-[#a3a3a3] shrink-0">•</span>
                           <span>{s}</span>
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+                    <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.center_narrative}</p>
                   )}
                 </div>
               )}
@@ -448,14 +497,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {toBullets(story.right_narrative).length > 1 ? (
                   <ul className="space-y-1.5 list-none pl-0 m-0">
                     {toBullets(story.right_narrative).map((s, i) => (
-                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                      <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                         <span className="text-[#f87171] shrink-0">•</span>
                         <span>{s}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+                  <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.right_narrative}</p>
                 )}
               </div>
             </div>
@@ -470,14 +519,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   {toBullets(story.what_they_arent_telling_you).length > 1 ? (
                     <ul className="space-y-1.5 list-none pl-0 m-0">
                       {toBullets(story.what_they_arent_telling_you).map((s, i) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                           <span className="text-[#daa520] shrink-0">•</span>
                           <span>{s}</span>
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.what_they_arent_telling_you}</p>
+                    <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.what_they_arent_telling_you}</p>
                   )}
                 </div>
               </div>
@@ -493,14 +542,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   {toBullets(story.social_summary).length > 1 ? (
                     <ul className="space-y-1.5 list-none pl-0 m-0">
                       {toBullets(story.social_summary).map((s, i) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                        <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                           <span className="text-[#daa520] shrink-0">•</span>
                           <span>{s}</span>
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                    <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.social_summary}</p>
                   )}
                 </div>
               </div>
@@ -871,7 +920,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         {!isBrief && <div className="mb-6">
           <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
           <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-            <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+            <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.summary}</p>
           </div>
         </div>}
 
@@ -881,6 +930,8 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={currentIdx + 1} />
           </div>
         )}
+
+        {!isBrief && timelineOnRecordBlock}
 
         {/* LEFT vs CENTER vs RIGHT + UNFILTERED + SOCIAL PULSE — hide in brief mode */}
         {!isBrief && <><div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
@@ -893,7 +944,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
               </span>
             </div>
-            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+            <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.left_narrative}</p>
           </div>
           {story.center_narrative && (
             <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
@@ -905,7 +956,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                   {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
                 </span>
               </div>
-              <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+              <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.center_narrative}</p>
             </div>
           )}
           <div className="py-4 px-4">
@@ -917,7 +968,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
               </span>
             </div>
-            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+            <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.right_narrative}</p>
           </div>
         </div>
 
@@ -933,12 +984,12 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 {sentences.map((s, i) => (
                   <div key={i} className="flex gap-2.5">
                     <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                    <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                    <p className="text-[11px] text-[#ccc] leading-[1.55]">{s}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+              <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.what_they_arent_telling_you}</p>
             )}
           </div>
         </div>
@@ -954,14 +1005,14 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                 return bullets.length > 1 ? (
                   <ul className="space-y-1.5 list-none pl-0 m-0">
                     {bullets.map((s: string, i: number) => (
-                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                      <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                         <span className="text-[#daa520] shrink-0">•</span>
                         <span>{s}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                  <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.social_summary}</p>
                 );
               })()}
             </div>
@@ -969,36 +1020,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         )}
         </>}
 
-        {/* TIMELINE — thread this story explicitly belongs to */}
-        {(() => {
-          const threadId = (story as any).thread_id;
-          const threadTitle = (story as any).thread_title;
-          if (!threadId) return null;
-          const thread = timelineThreads.find(t => t.id === threadId);
-          const title = thread?.title || threadTitle;
-          const image = thread?.image_file;
-          if (!title) return null;
-          return (
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <div className="flex items-center gap-2 mb-3">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
-              </div>
-              <a href={`/timeline?thread=${threadId}`}
-                className="flex items-center gap-3 p-2.5 rounded-md transition-opacity hover:opacity-80"
-                style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                {image && <img src={image} alt={title} className="w-10 h-10 rounded object-cover shrink-0" />}
-                <span className="text-[12px] text-white font-semibold leading-[1.3]">{title}</span>
-                <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </a>
-            </div>
-          );
-        })()}
-
-        {/* ON RECORD — politician matches */}
-        {(story as any).onrecord_matches?.length > 0 && (
-          <OnRecordWidget matches={(story as any).onrecord_matches} />
-        )}
 
         {/* X POSTS — hide in brief mode (The Social Wire shown above) */}
         {!isBrief && (() => {

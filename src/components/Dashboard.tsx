@@ -52,8 +52,10 @@ export function Dashboard({
   compact?: boolean;
   tilesOnly?: boolean;
 }) {
+  const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const ytPlayerRef = useRef<HTMLIFrameElement>(null);
+  const [inView, setInView] = useState(true);
   const [unmuted, setUnmuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [progress, setProgress] = useState(0);
@@ -61,6 +63,15 @@ export function Dashboard({
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Pause tiles when Dashboard is not in view
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting), { threshold: 0.1 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   // Drag-to-center: override video from tile drag
   const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string; url?: string } | null>(null);
@@ -374,7 +385,7 @@ export function Dashboard({
   const tileOffsets = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
     pool.length > 0 ? Math.floor((i / 10) * pool.length) % pool.length : 0
   );
-  const tileIsFrozen = tileOffsets.map(offset => shouldFreeze && (pool[offset]?.isFresh || false));
+  const tileIsFrozen = tileOffsets.map(offset => !inView || (shouldFreeze && (pool[offset]?.isFresh || false)));
 
   // Roaming ad: randomly picks a tile position, shows ad for 30s, hides for 90s, moves to new position
   const TILE_POSITIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // all tile indices
@@ -435,18 +446,26 @@ export function Dashboard({
   }
 
   return (
-    <section style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
-      <div className={`h-full grid ${compact ? 'grid-rows-2' : 'grid-rows-3'} grid-cols-4 gap-1`}>
+    <section ref={sectionRef} style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
+      <style>{`
+        @media (max-width: 600px) {
+          .dash-side-tile { display: none !important; }
+          .dash-center { grid-column: span 4 / span 4 !important; }
+          .dash-compact .dash-top-tile { display: none !important; }
+          .dash-compact .dash-center { grid-row: 1 / -1 !important; }
+        }
+      `}</style>
+      <div className={`h-full grid ${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4 gap-1`}>
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-top-tile" />
         ))}
 
         {/* ROW 2 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} />
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />
 
-        <div className="col-span-2 flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', ...(needsExtraHeight ? { gridRow: 'span 2 / span 2' } : {}) }}
+        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', ...(needsExtraHeight ? { gridRow: 'span 2 / span 2' } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -670,7 +689,7 @@ export function Dashboard({
           </div>
         </div>
 
-        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} />
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />
 
         {/* ROW 3 — hidden when compact; tiles 7+8 hidden when center needs extra height */}
         {!compact && [6, 7, 8, 9].map(i => {
@@ -688,7 +707,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId, onPlayInCenter, tvMode }: {
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId, onPlayInCenter, tvMode, className }: {
   pool: TileContent[];
   startOffset: number;
   delay: number;
@@ -699,9 +718,11 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   skipEmbedId?: string;
   onPlayInCenter?: (video: { type: string; embed_id: string; title: string }) => void;
   tvMode?: boolean;
+  className?: string;
 }) {
   const [currentIdx, setCurrentIdx] = useState(startOffset);
   const [prevIdx, setPrevIdx] = useState(-1);
+  const [tapped, setTapped] = useState(false);
   const poolRef = useRef(pool);
   const skipRef = useRef(skipEmbedId);
   poolRef.current = pool;
@@ -783,7 +804,8 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
           document.querySelector('[data-section="telegram"]')?.scrollIntoView({ behavior: 'smooth' });
         }
       }}
-      className="relative rounded-xl overflow-hidden group cursor-pointer block">
+      onClick={() => setTapped(t => !t)}
+      className={`relative rounded-xl overflow-hidden group cursor-pointer block${className ? ` ${className}` : ''}`}>
 
       {frozen && (
         <div className="absolute top-2 right-2 z-20">
@@ -806,11 +828,11 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
       }} />
 
       {/* Hover overlay with actions (hidden in TV mode) */}
-      {!tvMode && <div className="absolute inset-0 z-20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
-        style={{ background: 'rgba(0,0,0,0.5)' }}>
+      {!tvMode && <div className={`tile-actions absolute inset-0 z-20 ${tapped ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100 transition-opacity flex flex-col items-center justify-between`}
+        style={{ background: 'rgba(0,0,0,0.5)', padding: '0 0 6px' }}>
+        <div />
         <div className="flex flex-col items-stretch gap-1.5 w-24">
         {(current.type === 'video' || (current.type === 'social' && current.duration)) && (
-          <>
             <button onClick={(e) => {
               e.stopPropagation();
               const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
@@ -819,6 +841,10 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
             }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(37,99,235,0.8)', border: 'none', cursor: 'pointer' }}>
               ▶ Play in center
             </button>
+        )}
+        </div>
+        <div className="flex flex-col items-stretch gap-1.5 w-24">
+        {(current.type === 'video' || (current.type === 'social' && current.duration)) && (
             <button onClick={(e) => {
               e.stopPropagation();
               const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
@@ -830,7 +856,6 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
             }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(255,255,255,0.2)', border: 'none', cursor: 'pointer' }}>
               ↓ Open below
             </button>
-          </>
         )}
         {current.type === 'social' && !current.duration && (
           <button onClick={(e) => {

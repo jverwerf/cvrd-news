@@ -40,7 +40,7 @@ export type StoryItem = {
   youtube_videos?: { embed_id: string; channel?: string }[];
 };
 
-export function StoryScroll({ stories, blobBase, vertical, dividerAfter }: { stories: StoryItem[]; blobBase: string; vertical?: boolean; dividerAfter?: number }) {
+export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedHeight }: { stories: StoryItem[]; blobBase: string; vertical?: boolean; dividerAfter?: number; cappedHeight?: number }) {
   const ref = useRef<HTMLDivElement>(null);
 
   function scroll(dir: 'left' | 'right' | 'up' | 'down') {
@@ -52,7 +52,7 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter }: { sto
   }
 
   if (vertical) return (
-    <div style={{ position: 'relative', flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+    <div style={{ position: 'relative', ...(cappedHeight ? {} : { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }) }}>
       <button onClick={() => scroll('up')} aria-label="Scroll up" style={{
         position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)',
         zIndex: 10, width: 32, height: 32, borderRadius: '50%',
@@ -67,7 +67,8 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter }: { sto
         display: 'flex', flexDirection: 'column', gap: 10,
         overflowY: 'auto', flex: 1, minHeight: 0, paddingRight: 2,
         scrollbarWidth: 'none',
-      }} className="hide-scroll">
+        ...(cappedHeight ? { maxHeight: cappedHeight } : {}),
+      }} className="hide-scroll pick-scroll">
         {stories.map((story, idx) => {
           const slug = toSlug(story.topic);
           const img = story.image_file;

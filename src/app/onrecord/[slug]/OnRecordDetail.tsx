@@ -348,7 +348,7 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
               </Link>
             ) : <div className="shrink-0 w-8" />;
           })()}
-          <div className="flex-1 flex flex-col md:flex-row rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+          <div data-section="top-card" className="flex-1 flex flex-col md:flex-row rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
             <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${score.handle}.png`} alt={score.name}
               className="w-full md:w-auto md:max-w-[280px]" style={{ display: 'block', objectFit: 'cover' }}
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />

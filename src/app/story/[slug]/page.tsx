@@ -33,8 +33,9 @@ async function getStory(slug: string) {
           const story = all[idx];
           const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
           const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
-          const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
-          return { story, date, otherStories, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
+          const allStories = all.slice(0, 10);
+          const dailyPickImage = data.daily_brief?.image_file || '';
+          return { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
         }
       } catch {}
     }
@@ -59,8 +60,9 @@ async function getStory(slug: string) {
             const story = all[idx];
             const prevStory = idx > 0 ? all[idx - 1] : all[all.length - 1];
             const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
-            const otherStories = all.filter((s: any) => topicToSlug(s.topic) !== slug).slice(0, 5);
-            return { story, date, otherStories, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
+            const allStories = all.slice(0, 10);
+            const dailyPickImage = data.daily_brief?.image_file || '';
+            return { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
           }
         } catch {}
       }
@@ -103,7 +105,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   const result = await getStory(slug);
   if (!result) notFound();
 
-  const { story, date, otherStories, prevStory, nextStory, storyIndex, storyCount } = result;
+  const { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex, storyCount } = result;
   const today = new Date().toISOString().split('T')[0];
   const isToday = date === today;
 
@@ -125,11 +127,11 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   // Look up the thread this story explicitly belongs to (stamped by thread-detector)
   const threadId = (story as any).thread_id;
-  let matchedTimelines: { id: string; title: string; image_file?: string }[] = [];
+  let matchedTimelines: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[] = [];
   if (threadId) {
     const timelineData = await getTimelineThreads();
     const thread = (timelineData?.threads || []).find((t: any) => t.id === threadId);
-    if (thread) matchedTimelines = [{ id: thread.id, title: thread.title, image_file: thread.image_file }];
+    if (thread) matchedTimelines = [{ id: thread.id, title: thread.title, image_file: thread.image_file, summary: thread.summary, days_covered: thread.days_covered, is_active: thread.is_active }];
   }
 
   const isBreaking = await import('@/lib/breaking-store').then(m => m.hasBreakingData()).catch(() => false);
@@ -151,7 +153,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <SiteNav isBreaking={isBreaking} storyMeta={isToday ? { index: storyIndex + 1, total: storyCount, category: (story as any).category } : undefined} />
-      <StoryPage story={story} date={date} otherStories={otherStories} prevStory={prevStory} nextStory={nextStory} matchedTimelines={matchedTimelines} />
+      <StoryPage story={story} date={date} allStories={allStories} dailyPickImage={dailyPickImage} prevStory={prevStory} nextStory={nextStory} matchedTimelines={matchedTimelines} />
       <SiteFooter />
     </div>
   );

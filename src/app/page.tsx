@@ -193,7 +193,7 @@ function OnRecordStrip({ data }: { data: any }) {
       <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, overflow: 'hidden', display: 'flex', minHeight: 220 }} className="hover-panel strip-card">
 
         {/* LEFT — photo */}
-        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }} className="strip-photo">
+        <div style={{ width: 200, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }} className="strip-photo onrecord-photo">
           {photoUrl && (
             <img src={photoUrl} alt={person?.name}
               style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', opacity: 0.85 }} />
@@ -372,9 +372,17 @@ export default async function Home() {
         @media (max-width: 440px) {
           .story-grid { grid-template-columns: 1fr !important; }
         }
+        @media (min-width: 601px) {
+          .timeline-strip-wrap .strip-card { flex-direction: column !important; min-height: 0 !important; }
+          .timeline-strip-wrap .strip-photo { width: 100% !important; height: 200px !important; flex-shrink: 0 !important; }
+          .timeline-strip-wrap .strip-photo-fade-r { display: none !important; }
+          .timeline-strip-wrap .strip-right { padding: 16px 20px !important; }
+        }
         @media (max-width: 600px) {
-          .strip-card { flex-direction: column !important; min-height: 0 !important; }
+          .pick-scroll { max-height: none !important; }
+          .strip-card { flex-direction: column !important; min-height: auto !important; overflow: visible !important; }
           .strip-photo { width: 100% !important; height: 150px !important; flex-shrink: 0 !important; }
+          .onrecord-photo { height: 400px !important; }
           .strip-photo-fade-r { display: none !important; }
           .strip-right { padding: 14px 16px !important; }
           .section-pad { padding-left: 0 !important; padding-right: 0 !important; }
@@ -405,17 +413,44 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── BREAKING (left) | TODAY'S PICK (right, vertical) — only when breaking ── */}
+          {/* ── BREAKING (left) | TODAY'S PICK + ON RECORD + TIMELINE (right) ── */}
           {isBreaking && (
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
-              <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
-                <BreakingCard
-                  breakingItems={breakingStories ?? []}
-                  liveItems={liveStories ?? []}
-                  vertical
-                />
+              {/* Left: Breaking + On Record + Timeline stacked */}
+              <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
+                <div>
+                  <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
+                  <BreakingCard
+                    breakingItems={breakingStories ?? []}
+                    liveItems={liveStories ?? []}
+                    vertical
+                  />
+                </div>
+                {onRecordData && (
+                  <div>
+                    <SectionHeader
+                      label="On Record"
+                      blurb={`Today: ${onRecordData.story_topic}`}
+                      href="/onrecord"
+                      hrefText="All politicians"
+                    />
+                    <OnRecordStrip data={onRecordData} />
+                  </div>
+                )}
+                {sortedThreads.length > 0 && (
+                  <div className="timeline-strip-wrap">
+                    <SectionHeader
+                      label="Timeline"
+                      blurb={`Following ${threadCount} developing stories`}
+                      href="/timeline"
+                      hrefText={`All ${threadCount} threads`}
+                    />
+                    <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+                  </div>
+                )}
               </div>
+
+              {/* Right: Today's Pick + Watch */}
               {stories.length > 1 && (
                 <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                   <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
@@ -424,7 +459,50 @@ export default async function Home() {
                     blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
                     vertical
                     dividerAfter={stories.length - 1}
+                    cappedHeight={600}
                   />
+                  {/* Watch — below Today's Pick; marginTop clears the down-scroll arrow */}
+                  <div style={{ marginTop: 28 }}>
+                    <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
+                    <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
+                      <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
+                        Every story we cover comes with video clips from across the web. CVRD TV streams all of them in one non-stop loop across channels — Daily Pick, World, Politics, Markets, Sports, and Trending. Open it on a second screen, or cast it to your TV and let it run.
+                      </p>
+                      <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dim, margin: '0 0 20px', lineHeight: 1.6 }}>
+                        Clips from YouTube, TikTok, Instagram Reels, X, and Telegram — all in one place.
+                      </p>
+                      {(() => {
+                        const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
+                        const thumb = (s: any) => {
+                          if (s.image_file) return s.image_file.startsWith('http') ? s.image_file : `${blobBase}${s.image_file}`;
+                          if (s.youtube_videos?.[0]) return `https://img.youtube.com/vi/${s.youtube_videos[0].embed_id}/mqdefault.jpg`;
+                          return null;
+                        };
+                        const thumbsFor = (cat: string | null) => {
+                          const src = cat ? allStories.filter(s => s.category === cat) : allStories.slice(0, 10);
+                          return src.map(thumb).filter(Boolean) as string[];
+                        };
+                        const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
+                        return (
+                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
+                            <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />
+                            {[
+                              { num: '02', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
+                              { num: '03', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
+                              { num: '04', label: 'Politics',   sub: 'Left & right',      href: '/tv?channel=politics', cat: 'politics', ms: 5200 },
+                              { num: '05', label: 'Markets',    sub: 'Economy & crypto',  href: '/tv?channel=markets',  cat: 'markets',  ms: 4100 },
+                              { num: '06', label: 'Sports',     sub: 'Beyond the score',  href: '/tv?channel=sports',   cat: 'sports',   ms: 3900 },
+                              { num: '07', label: 'Trending',   sub: 'What the web says', href: '/tv?channel=trending', cat: 'trending', ms: 5800 },
+                            ].map(ch => (
+                              <TvTile key={ch.href} channelNum={`CH${ch.num}`} label={ch.label} sub={ch.sub} href={ch.href} thumbs={thumbsFor(ch.cat)} interval={ch.ms} />
+                            ))}
+                            <TvTile channelNum="YT" label="YouTube" sub="Shorts + full shows" href="https://www.youtube.com/@cvrdnews" thumbs={thumbsFor(null)} interval={4400} />
+                          </div>
+                        );
+                      })()}
+                      <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
@@ -442,35 +520,8 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── ON RECORD (full width) ── */}
-          {onRecordData && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="On Record"
-                blurb={`Today: ${onRecordData.story_topic}`}
-                href="/onrecord"
-                hrefText="All politicians"
-              />
-              <OnRecordStrip data={onRecordData} />
-            </div>
-          )}
-
-          {/* ── TIMELINE (full width) ── */}
-          {sortedThreads.length > 0 && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="Timeline"
-                blurb={`Following ${threadCount} developing stories`}
-                href="/timeline"
-                hrefText={`All ${threadCount} threads`}
-              />
-              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
-            </div>
-          )}
-
-
-          {/* ── WATCH ─────────────────────────────────────── */}
-          <div style={{ marginBottom: 20 }}>
+          {/* ── WATCH — right after Today's Pick (non-breaking only; breaking puts it in the right column) ─── */}
+          {!isBreaking && <div style={{ marginBottom: 20 }}>
             <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
             <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
               <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
@@ -510,7 +561,33 @@ export default async function Home() {
               })()}
               <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
             </div>
-          </div>
+          </div>}
+
+          {/* ── ON RECORD — full width when no breaking ── */}
+          {!isBreaking && onRecordData && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader
+                label="On Record"
+                blurb={`Today: ${onRecordData.story_topic}`}
+                href="/onrecord"
+                hrefText="All politicians"
+              />
+              <OnRecordStrip data={onRecordData} />
+            </div>
+          )}
+
+          {/* ── TIMELINE — full width when no breaking ── */}
+          {!isBreaking && sortedThreads.length > 0 && (
+            <div style={{ marginBottom: 20 }} className="timeline-strip-wrap">
+              <SectionHeader
+                label="Timeline"
+                blurb={`Following ${threadCount} developing stories`}
+                href="/timeline"
+                hrefText={`All ${threadCount} threads`}
+              />
+              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+            </div>
+          )}
 
           <HorizontalAdBanner />
 

@@ -26,13 +26,14 @@ function toBullets(text: string): string[] {
   return merged;
 }
 
-export function StoryPage({ story, date, otherStories, prevStory, nextStory, matchedTimelines }: {
+export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, nextStory, matchedTimelines }: {
   story: NarrativeGap;
   date: string;
-  otherStories: NarrativeGap[];
+  allStories: NarrativeGap[];
+  dailyPickImage?: string;
   prevStory?: NarrativeGap;
   nextStory?: NarrativeGap;
-  matchedTimelines?: { id: string; title: string; image_file?: string }[];
+  matchedTimelines?: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[];
 }) {
   const [dashExpanded, setDashExpanded] = useState(false);
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
@@ -140,7 +141,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
 
       {/* 2. COMPACT DASHBOARD */}
       <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
-        <div className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+        <div data-section="story-dashboard" className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
           <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
             <ErrorBoundary>
               <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
@@ -173,11 +174,18 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
             <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[6px] border-r-white" />
           </button>
           <div id="story-cards" className="flex gap-3 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
-            <a href="/"
+            <a href="/brief"
               className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <div className="h-28 flex items-center justify-center" style={{ background: '#1a1a2e' }}>
-                <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+              <div className="relative overflow-hidden" style={{ height: 112, background: '#1a1a2e' }}>
+                {dailyPickImage ? (
+                  <img src={dailyPickImage} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }} />
+                ) : (
+                  <div className="h-full flex items-center justify-center">
+                    <img src="/logo3.png" alt="" style={{ height: '32px', opacity: 0.5 }} />
+                  </div>
+                )}
+                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
               </div>
               <div className="p-2.5">
                 <span className="text-[8px] font-bold text-[#daa520] uppercase tracking-[0.1em]">Daily</span>
@@ -186,50 +194,32 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 </p>
               </div>
             </a>
-            <a href="#"
-              className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-              style={{ background: '#253545', border: '2px solid #2563eb' }}>
-              <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
-                {story.image_file && (
-                  <img src={story.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                )}
-                <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                {!story.image_file && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
+            {allStories.map((s, i) => {
+              const isActive = topicToSlug(s.topic) === topicToSlug(story.topic);
+              return (
+                <a key={i} href={isActive ? '#' : `/story/${topicToSlug(s.topic)}`}
+                  className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
+                  style={{ background: '#253545', border: isActive ? '2px solid #2563eb' : '1px solid #2a3a4a' }}>
+                  <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
+                    {s.image_file && (
+                      <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+                    )}
+                    <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
+                    {!s.image_file && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-              <div className="p-2.5">
-                <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{story.category || 'News'}</span>
-                <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                  {story.topic}
-                </p>
-              </div>
-            </a>
-            {otherStories.map((s, i) => (
-              <a key={i} href={`/story/${topicToSlug(s.topic)}`}
-                className="shrink-0 w-[180px] md:w-[200px] text-left rounded-lg overflow-hidden group cursor-pointer transition-transform hover:scale-[1.02] block"
-                style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                <div className="relative overflow-hidden" style={{ height: 112, background: '#152030' }}>
-                  {s.image_file && (
-                    <img src={s.image_file} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
-                  )}
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%)' }} />
-                  {!s.image_file && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <img src="/logo3.png" alt="" style={{ height: '28px', opacity: 0.2 }} />
-                    </div>
-                  )}
-                </div>
-                <div className="p-2.5">
-                  <span className="text-[8px] font-bold text-[#3b82f6] uppercase tracking-[0.1em]">{s.category || 'News'}</span>
-                  <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
-                    {s.topic}
-                  </p>
-                </div>
-              </a>
-            ))}
+                  <div className="p-2.5">
+                    <span className="text-[8px] font-bold uppercase tracking-[0.1em]" style={{ color: isActive ? '#3b82f6' : '#3b82f6' }}>{s.category || 'News'}</span>
+                    <p className="text-[11px] text-white font-medium leading-snug line-clamp-2 mt-0.5 group-hover:text-[#60a5fa] transition-colors">
+                      {s.topic}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
           </div>
           <button onClick={() => document.getElementById('story-cards')?.scrollBy({ left: 220, behavior: 'smooth' })}
             className="shrink-0 px-2 hover:opacity-70" style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
@@ -245,7 +235,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
         <div className="mb-6">
           <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3">Summary</h2>
           <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-            <p className="text-[13px] text-[#ccc] leading-[1.65]">{story.summary}</p>
+            <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.summary}</p>
           </div>
         </div>
 
@@ -255,6 +245,51 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
             <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
           </div>
         )}
+
+        {/* TIMELINE + ON RECORD — side by side when both exist, full width otherwise */}
+        {(() => {
+          const threads = matchedTimelines || [];
+          const hasTimeline = threads.length > 0;
+          const hasOnRecord = (story as any).onrecord_matches?.length > 0;
+          if (!hasTimeline && !hasOnRecord) return null;
+          return (
+            <div className={`grid grid-cols-1 ${hasTimeline && hasOnRecord ? 'md:grid-cols-2' : ''} gap-4 mb-4`} style={{ '--card-h': '180px' } as React.CSSProperties}>
+              {hasTimeline && (
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                    <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
+                  </div>
+                  <div className="rounded-lg relative" style={{ background: '#253545', border: '1px solid #2a3a4a', height: 'var(--card-h)', overflow: 'hidden' }}>
+                    <div className="flex flex-col gap-0 h-full overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#3a4a5a #253545' }}>
+                      {threads.map((t, i) => (
+                        <a key={t.id} href={`/timeline?thread=${t.id}`}
+                          className="flex items-center gap-3 p-3 transition-opacity hover:opacity-80 shrink-0"
+                          style={{ textDecoration: 'none', borderTop: i > 0 ? '1px solid #2a3a4a' : undefined }}>
+                          {t.image_file && <img src={t.image_file} alt={t.title} className="w-10 h-10 rounded object-cover shrink-0" />}
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[12px] text-white font-semibold leading-[1.3]">{t.title}</p>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              {t.is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
+                              {t.days_covered && <span className="text-[9px] text-[#666]">{t.days_covered} days tracked</span>}
+                            </div>
+                          </div>
+                          <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                        </a>
+                      ))}
+                    </div>
+                    {threads.length > 3 && (
+                      <div className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none" style={{ background: 'linear-gradient(to top, #253545, transparent)' }} />
+                    )}
+                  </div>
+                </div>
+              )}
+              {hasOnRecord && (
+                <OnRecordWidget matches={(story as any).onrecord_matches} />
+              )}
+            </div>
+          );
+        })()}
 
         {/* LEFT vs CENTER vs RIGHT */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-lg mb-6" style={{ background: '#253545' }}>
@@ -267,7 +302,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 {(story.category === 'sports' || story.category === 'trending') ? 'Media' : 'Left'}
               </span>
             </div>
-            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.left_narrative}</p>
+            <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.left_narrative}</p>
           </div>
           {story.center_narrative && (
             <div className="py-4 px-4 md:border-r md:border-b-0 border-b" style={{ borderColor: '#2a3a4a' }}>
@@ -279,7 +314,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                   {(story.category === 'sports' || story.category === 'trending') ? 'Analysts' : 'Center'}
                 </span>
               </div>
-              <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.center_narrative}</p>
+              <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.center_narrative}</p>
             </div>
           )}
           <div className="py-4 px-4">
@@ -291,7 +326,7 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 {(story.category === 'sports' || story.category === 'trending') ? 'Fans' : 'Right'}
               </span>
             </div>
-            <p className="text-[13px] text-[#bbb] leading-[1.65]">{story.right_narrative}</p>
+            <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.right_narrative}</p>
           </div>
         </div>
 
@@ -307,12 +342,12 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 {sentences.map((s, i) => (
                   <div key={i} className="flex gap-2.5">
                     <span className="text-[12px] font-bold text-[#daa520] mt-0.5 shrink-0 w-4 text-right">{i + 1}.</span>
-                    <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                    <p className="text-[11px] text-[#ccc] leading-[1.55]">{s}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+              <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.what_they_arent_telling_you}</p>
             )}
           </div>
         </div>
@@ -330,44 +365,20 @@ export function StoryPage({ story, date, otherStories, prevStory, nextStory, mat
                 return bullets.length > 1 ? (
                   <ul className="space-y-1.5 list-none pl-0 m-0">
                     {bullets.map((s: string, i: number) => (
-                      <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
+                      <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
                         <span className="text-[#daa520] shrink-0">•</span>
                         <span>{s}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                  <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.social_summary}</p>
                 );
               })()}
             </div>
           </div>
         )}
 
-        {/* TIMELINE — thread this story belongs to */}
-        {matchedTimelines && matchedTimelines.length > 0 && (() => {
-          const thread = matchedTimelines[0];
-          return (
-            <div className="rounded-lg p-4 mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-              <div className="flex items-center gap-2 mb-3">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-                <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
-              </div>
-              <a href={`/timeline?thread=${thread.id}`}
-                className="flex items-center gap-3 p-2.5 rounded-md transition-opacity hover:opacity-80"
-                style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                {thread.image_file && <img src={thread.image_file} alt={thread.title} className="w-10 h-10 rounded object-cover shrink-0" />}
-                <span className="text-[12px] text-white font-semibold leading-[1.3]">{thread.title}</span>
-                <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-              </a>
-            </div>
-          );
-        })()}
-
-        {/* ON RECORD — politician matches */}
-        {(story as any).onrecord_matches?.length > 0 && (
-          <OnRecordWidget matches={(story as any).onrecord_matches} />
-        )}
 
         {/* X POSTS */}
         {(() => {
