@@ -356,8 +356,11 @@ function StoryContent({ story }: { story: NarrativeGap }) {
   );
 }
 
-export default function BreakingClient({ initialData }: { initialData: any[] }) {
+type LiveNowItem = any;
+
+export default function BreakingClient({ initialData, initialLiveNow }: { initialData: any[]; initialLiveNow: LiveNowItem[] }) {
   const [breakingItems, setBreakingItems] = useState<any[]>(initialData);
+  const [liveNowItems, setLiveNowItems] = useState<LiveNowItem[]>(initialLiveNow);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -370,6 +373,13 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
           setBreakingItems(items);
         })
         .catch(() => {});
+      fetch('/api/live-now/data')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data || (Array.isArray(data) && data.length === 0)) return;
+          setLiveNowItems(Array.isArray(data) ? data : [data]);
+        })
+        .catch(() => {});
     }, 120000);
     return () => clearInterval(interval);
   }, []);
@@ -378,8 +388,12 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
     const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter(c => c.duration).length;
     return videoClips >= 3;
   });
+  const liveStories = liveNowItems.map(toNarrativeGap).filter(s => {
+    const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter(c => c.duration).length;
+    return videoClips >= 3;
+  });
 
-  if (allStories.length === 0) {
+  if (allStories.length === 0 && liveStories.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}>
         <div className="text-center">
@@ -399,12 +413,10 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
       {allStories.map((story, i) => {
         const b = breakingItems.find((bi: any) => bi.topic === story.topic) || breakingItems[i];
         return (
-          <div key={i} style={{ borderBottom: i < allStories.length - 1 ? '2px solid #2a3a4a' : 'none' }}>
+          <div key={i} style={{ borderBottom: '2px solid #2a3a4a' }}>
             {/* BREAKING HEADER */}
             <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
-              <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse uppercase tracking-[0.05em]">
-                {i === 0 ? 'LIVE' : 'BREAKING'}
-              </span>
+              <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse uppercase tracking-[0.05em]">BREAKING</span>
               <span className="text-[15px] text-white font-bold flex-1 truncate" style={serif}>
                 {b.topic}
               </span>
@@ -414,6 +426,30 @@ export default function BreakingClient({ initialData }: { initialData: any[] }) 
             {/* DASHBOARD */}
             <ErrorBoundary>
               <Dashboard stories={[story]} videoUrl={b.breaking_short_url || undefined} />
+            </ErrorBoundary>
+
+            {/* INLINE CONTENT */}
+            <StoryContent story={story} />
+          </div>
+        );
+      })}
+
+      {liveStories.map((story, i) => {
+        const item = liveNowItems.find((li: any) => (li.topic || li.title) === story.topic) || liveNowItems[i];
+        return (
+          <div key={`live-${i}`} style={{ borderBottom: '2px solid #2a3a4a' }}>
+            {/* LIVE HEADER */}
+            <div className="px-6 md:px-12 py-3 flex items-center gap-3" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)' }}>
+              <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded uppercase tracking-[0.05em]">LIVE</span>
+              <span className="text-[15px] text-white font-bold flex-1 truncate" style={serif}>
+                {story.topic}
+              </span>
+              {item?.detected_at && <span className="text-[10px] text-white/60 shrink-0">{timeAgo(item.detected_at)}</span>}
+            </div>
+
+            {/* DASHBOARD */}
+            <ErrorBoundary>
+              <Dashboard stories={[story]} />
             </ErrorBoundary>
 
             {/* INLINE CONTENT */}

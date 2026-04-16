@@ -8,9 +8,12 @@ import type { NarrativeGap } from '@/lib/data';
 import type { TimelineThread } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
 import { HeroCarousel } from './home/HeroCarousel';
+import { BreakingCard } from './home/BreakingCard';
 import { TimelineCarousel } from './home/TimelineCarousel';
 import { TvTile } from './home/TvTile';
+import { RollingClaim } from './home/RollingClaim';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
+import { HorizontalAdBanner } from '@/components/AdBanners';
 
 // ── helpers ──────────────────────────────────────────────────────
 function toSlug(topic: string) {
@@ -180,8 +183,6 @@ function OnRecordStrip({ data }: { data: any }) {
     : null;
   const score: number = data?.overall_score ?? data?.topic_score ?? 0;
   const scoreColor = score >= 70 ? '#4ade80' : score >= 50 ? C.gold : score >= 35 ? '#f97316' : '#f87171';
-  const latestClaim = data?.matched_tweets?.[0];
-  const verdictColor = (v: string) => v === 'TRUE' ? '#4ade80' : v === 'FALSE' ? '#f87171' : C.gold;
   const personSlug = person?.name
     ? person.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
     : null;
@@ -235,21 +236,9 @@ function OnRecordStrip({ data }: { data: any }) {
             </div>
           </div>
 
-          {/* latest claim */}
-          {latestClaim && (
-            <div style={{ borderTop: `1px solid ${C.border}`, paddingTop: 14 }}>
-              <div style={{ fontFamily: mono, fontSize: 8.5, letterSpacing: '0.1em', color: C.dim, textTransform: 'uppercase', marginBottom: 8 }}>
-                Latest claim on {data?.story_topic}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 16 }}>
-                <div style={{ fontFamily: serif, fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.55, color: 'rgba(226,232,240,0.8)' }}>
-                  "{latestClaim.claim?.slice(0, 160)}{(latestClaim.claim?.length ?? 0) > 160 ? '...' : ''}"
-                </div>
-                <span style={{ flexShrink: 0, display: 'inline-block', padding: '4px 10px', borderRadius: 4, background: `${verdictColor(latestClaim.verdict)}15`, border: `1px solid ${verdictColor(latestClaim.verdict)}35`, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: verdictColor(latestClaim.verdict), alignSelf: 'center' }}>
-                  {latestClaim.verdict}
-                </span>
-              </div>
-            </div>
+          {/* rolling claims */}
+          {(data?.matched_tweets?.length ?? 0) > 0 && (
+            <RollingClaim tweets={data.matched_tweets} topic={data.story_topic} />
           )}
         </div>
 
@@ -340,13 +329,17 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
 
 // ── PAGE ──────────────────────────────────────────────────────────
 export default async function Home() {
-  const [data, threadData, onRecordData, breakingStories] = await Promise.all([
+  const [data, threadData, onRecordData, breakingStories, liveStories] = await Promise.all([
     getDailyGaps(),
     getTimelineThreads(),
     getOnRecordToday(),
     import('@/lib/breaking-store').then(m => m.getBreakingData()).catch(() => null),
+    import('@/lib/live-now-store').then(m => m.getLiveNowData()).catch(() => null),
   ]);
-  const isBreaking = (breakingStories?.length ?? 0) > 0;
+  const hasClips = (s: any) =>
+    (s.youtube_videos || []).length + (s.social_clips || []).filter((c: any) => c.duration).length >= 3;
+  const isBreaking =
+    (breakingStories ?? []).some(hasClips) || (liveStories ?? []).some(hasClips);
 
   const allStories = data?.top_narratives ?? [];
   const stories = allStories.filter(s => s.is_top_story).length >= 5
@@ -408,71 +401,64 @@ export default async function Home() {
             </div>
           )}
 
-          {/* ── BREAKING BANNER ───────────────────────────── */}
-          {isBreaking && breakingStories && breakingStories.length > 0 && (
-            <a href="/breaking" style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              gap: 16, marginBottom: 16, textDecoration: 'none',
-              padding: '11px 18px', borderRadius: 6,
-              background: 'rgba(153,27,27,0.12)',
-              border: '1px solid rgba(153,27,27,0.35)',
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, minWidth: 0 }}>
-                <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#991b1b', flexShrink: 0 }} className="live-dot" />
-                <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.14em', color: '#dc2626', flexShrink: 0, textTransform: 'uppercase' }}>Breaking</span>
-                <span style={{ width: 1, height: 12, background: 'rgba(239,68,68,0.3)', flexShrink: 0 }} />
-                <span style={{ fontFamily: serif, fontSize: 15, color: 'rgba(226,232,240,0.85)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {(breakingStories[0] as any).topic}
-                </span>
+          {/* ── LEFT (70%): BREAKING + ON RECORD  |  RIGHT (30%): TODAY'S PICK ── */}
+          <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }}>
+
+            {/* LEFT column */}
+            <div style={{ flex: 7, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
+              {isBreaking && (
+                <div>
+                  <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
+                  <BreakingCard
+                    breakingItems={breakingStories ?? []}
+                    liveItems={liveStories ?? []}
+                    vertical
+                  />
+                </div>
+              )}
+              {onRecordData && (
+                <div>
+                  <SectionHeader
+                    label="On Record"
+                    blurb={`Today: ${onRecordData.story_topic}`}
+                    href="/onrecord"
+                    hrefText="All politicians"
+                  />
+                  <OnRecordStrip data={onRecordData} />
+                </div>
+              )}
+              {sortedThreads.length > 0 && (
+                <div>
+                  <SectionHeader
+                    label="Timeline"
+                    blurb={`Following ${threadCount} developing stories`}
+                    href="/timeline"
+                    hrefText={`All ${threadCount} threads`}
+                  />
+                  <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+                </div>
+              )}
+            </div>
+
+            {/* RIGHT column */}
+            {stories.length > 1 && (
+              <div style={{ flex: 3, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                <SectionHeader
+                  label="Today's Pick"
+                  href="/brief"
+                  hrefText="All stories"
+                />
+                <StoryScroll
+                  stories={allStories.slice(1)}
+                  blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
+                  vertical
+                  dividerAfter={stories.length - 1}
+                />
               </div>
-              <span style={{ display: 'flex', alignItems: 'center', gap: 4, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#dc2626', flexShrink: 0 }} className="breaking-live">
-                Live coverage
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-              </span>
-            </a>
-          )}
+            )}
 
-          {/* ── ON RECORD ─────────────────────────────────── */}
-          {onRecordData && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="On Record"
-                blurb={`Today: ${onRecordData.story_topic}`}
-                href="/onrecord"
-                hrefText="All politicians"
-              />
-              <OnRecordStrip data={onRecordData} />
-            </div>
-          )}
+          </div>
 
-          {/* ── STORY SCROLL ──────────────────────────────── */}
-          {stories.length > 1 && (
-            <div style={{ marginBottom: 20, padding: '0 16px' }} className="section-pad">
-              <SectionHeader
-                label="Today's Pick"
-                blurb={`${stories.length} stories today — each one sourced from outlets across the political spectrum`}
-                href="/brief"
-                hrefText="All stories"
-              />
-              <StoryScroll
-                stories={stories.slice(1)}
-                blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
-              />
-            </div>
-          )}
-
-          {/* ── TIMELINE ──────────────────────────────────── */}
-          {sortedThreads.length > 0 && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="Timeline"
-                blurb={`Following ${threadCount} developing stories — tracking how each narrative evolves day by day`}
-                href="/timeline"
-                hrefText={`All ${threadCount} threads`}
-              />
-              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
-            </div>
-          )}
 
           {/* ── WATCH ─────────────────────────────────────── */}
           <div style={{ marginBottom: 20 }}>
@@ -516,6 +502,8 @@ export default async function Home() {
               <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
             </div>
           </div>
+
+          <HorizontalAdBanner />
 
         </main>
 
