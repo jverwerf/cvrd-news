@@ -996,30 +996,16 @@ function TileContentRenderer({ item }: { item: TileContent }) {
     );
   }
   if (item.type === 'social' && item.platform === 'x' && item.embedId) {
-    // X text tweet — iframe with scroll animation
     return (
-      <div className="w-full h-full relative overflow-hidden" style={{ background: '#1e2a3a' }}>
-        <iframe
-          src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
-          className="absolute"
-          style={{
-            border: 'none', pointerEvents: 'none',
-            left: '-8px', width: 'calc(100% + 16px)',
-            height: '200%', top: '0',
-            animation: 'xScrollDown 50s ease-in-out infinite alternate',
-          }}
-          loading="lazy"
-        />
-        <div className="absolute top-2 left-2 z-10">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#1d9bf0' }}>𝕏</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
-        </div>
-      </div>
+      <VideoThumb
+        thumbSrc={`/api/x-video?id=${item.embedId}&thumb=1`}
+        url={item.url || `https://x.com/i/web/status/${item.embedId}`}
+        badge="𝕏" badgeColor="#000"
+        label={item.clipLabel || item.topic}
+      />
     );
   }
-  if (item.type === 'social' && item.platform === 'tiktok' && item.embedId && /^\d+$/.test(item.embedId)) {
+  if (item.type === 'social' && item.platform === 'tiktok' && item.embedId) {
     return (
       <VideoThumb
         thumbSrc={`/api/tt-video?id=${item.embedId}&thumb=1`}
@@ -1047,7 +1033,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
             style={{ background: platformColors[item.platform || 'x'] }}>
             {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : item.platform === 'reddit' ? 'Reddit' : 'Reels'}
           </span>
-          <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-5">{item.clipLabel}</p>
+          <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-3">{item.clipLabel}</p>
         </div>
         <p className="text-[9px] text-white/40 truncate">{item.topic}</p>
       </div>
