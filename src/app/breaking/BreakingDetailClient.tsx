@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { VideoGrid } from "@/components/VideoGrid";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
 
@@ -178,12 +177,6 @@ export default function BreakingDetailClient({ story, raw, type }: {
             </ErrorBoundary>
           </div>
 
-          {/* VIDEO GRID */}
-          {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-            <div className="mb-8" data-section="videogrid">
-              <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={undefined} storyIndex={0} />
-            </div>
-          )}
 
           {/* NARRATIVES */}
           {(story.left_narrative || story.center_narrative || story.right_narrative) && (
