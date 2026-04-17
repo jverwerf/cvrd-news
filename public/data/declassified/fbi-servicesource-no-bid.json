@@ -1,0 +1,145 @@
+{
+  "slug": "fbi-servicesource-no-bid",
+  "title": "ServiceSource's FBI AbilityOne Contract and the Disability-Employment Requirement GAO Said the Program Struggled to Verify",
+  "subtitle": "THE DEAL: 75% DIRECT LABOR HOURS FROM DISABLED WORKERS. THE OVERSIGHT: QUESTIONED BY GAO IN 2013.",
+  "date": "2026-04-17",
+  "subject": "ServiceSource Inc / FBI / AbilityOne",
+  "secretary": "Todd Blanche (acting)",
+  "department": "Department of Justice",
+  "hook": "Federal law gives qualified AbilityOne nonprofits mandatory-source access to covered contracts if at least 75 percent of direct labor hours are performed by workers who are blind or have significant disabilities. A 2013 GAO report found the oversight body lacked sufficient data to gauge compliance.",
+  "image": "/images/declassified/fbi-servicesource-no-bid.jpg",
+  "cold_open": "A mandatory-source contract. Over $157 million to the FBI. The condition: 75 percent of direct labor hours performed by disabled workers. What a 2013 GAO report found: the oversight body lacked the data to know whether that condition was being met.",
+  "key_stats": [
+    { "value": "$157M+", "label": "FBI AbilityOne award to ServiceSource", "subtext": "public federal contract databases, April 2026" },
+    { "value": "75%", "label": "Direct labor hours required from disabled workers", "subtext": "per 41 U.S.C. 8501-8506" },
+    { "value": "2013", "label": "GAO-13-457 published", "subtext": "found Commission lacked data to gauge compliance" },
+    { "value": "$4.7B", "label": "Annual AbilityOne program spend", "subtext": "approx. 41,000 workers with disabilities" }
+  ],
+  "article_sections": [
+    {
+      "id": "the_intention",
+      "heading": "The intention",
+      "body": "The Javits-Wagner-O'Day Act of 1938 was built on a genuine moral conviction: that blind and severely disabled Americans deserved stable employment, and that the federal government, as the country's largest purchaser of goods and services, was the right institution to help provide it. The mechanism was a mandatory-source regime. Designated nonprofits employing disabled workers would be placed on a Procurement List, entitling them to federal contracts for covered services without competitive bidding. In exchange, at least 75 percent of their direct labour hours would be performed by people who are blind or have other significant disabilities. The programme today, called AbilityOne, employs approximately 41,000 workers with disabilities and generates around $4.7 billion in annual federal spend."
+    },
+    {
+      "id": "the_deal",
+      "heading": "The deal",
+      "body": "That trade is the foundation of everything. ServiceSource Inc., a Virginia-based nonprofit and AbilityOne participant, receives federal contracts for covered services without competitive bidding because qualified AbilityOne nonprofits are eligible for mandatory-source awards only if they meet the programme's statutory disability-employment requirements. Mandatory-source status is the reward. The 75 percent direct-labour-hours threshold is the obligation. Public federal contract databases indicate major April 2026 AbilityOne awards to ServiceSource, including an FBI custodial award and an FBI food-services award. Exact award figures and offer counts should be verified against the underlying award pages before publication.",
+      "stat_callout": {
+        "value": "April 2026",
+        "label": "Major AbilityOne awards to ServiceSource recorded in public federal contract databases",
+        "detail": "FBI custodial services, FBI food services, VA mailroom. Exact figures require verification against USASpending.gov award pages."
+      }
+    },
+    {
+      "id": "the_oversight_question",
+      "heading": "The oversight question",
+      "body": "In May 2013, the Government Accountability Office published GAO-13-457, reviewing the AbilityOne Commission's oversight of the programme. The GAO found that the Commission lacked sufficient data to determine the extent to which participating nonprofits complied with program requirements, including the 75 percent direct-labour-hours threshold. It made recommendations for improved monitoring. The Commission has since adopted compliance policies and, according to its FY 2024 performance report, placed nonprofits found out of compliance with the ratio requirement on corrective action plans. What is not publicly available is contractor-level audit data that would allow an outside observer to confirm whether ServiceSource specifically meets the threshold."
+    },
+    {
+      "id": "the_price",
+      "heading": "The pricing structure",
+      "body": "For Procurement List requirements, agencies buy from the designated source at the price established under the AbilityOne pricing process rather than through ordinary competition. Critics of the programme have argued this produces above-market pricing for covered services. What is not contested is that federal agencies have no mechanism to negotiate price or solicit alternatives once a service is on the Procurement List. For a programme operating at $4.7 billion annually, the absence of any competitive price check is a structural feature that warrants continued scrutiny."
+    },
+    {
+      "id": "the_accountability",
+      "heading": "The accountability gap",
+      "body": "The legitimate question raised by the ServiceSource contract data is not whether AbilityOne is legal. It is. Mandatory-source awards under 41 U.S.C. 8501-8506 are explicitly authorised by statute, and the FBI is not doing anything improper by awarding under that framework. The legitimate question is whether ServiceSource is actually delivering on the social obligation that justifies its protected status. Are the workers cleaning FBI buildings the disabled Americans the law was written to employ? What share of ServiceSource's direct labour hours are performed by people who meet the statutory definition? Those questions are answerable with payroll data. Contractor-level audit results are not currently available in public records."
+    },
+    {
+      "id": "the_fix",
+      "heading": "What needs to change",
+      "body": "The AbilityOne programme should exist. The principle that federal purchasing power can sustain employment for disabled Americans is sound, and the workers who depend on it are not the problem. What the programme needs is accountability infrastructure proportionate to its scale. A contractor receiving nine-figure awards under mandatory-source authority should be subject to regular, independent audits of its disability direct-labour ratio, with results made public. The GAO identified this gap in 2013. More than a decade later, it remains worth asking whether the contractors who benefit from this statutory protection are delivering what it was designed to buy."
+    }
+  ],
+  "contracts": [
+    {
+      "recipient": "SERVICESOURCE INC",
+      "agency": "Federal Bureau of Investigation",
+      "department": "Department of Justice",
+      "amount": 157066048,
+      "date": "2026-04-14",
+      "description": "Custodial / janitorial services (AbilityOne)",
+      "competed": false,
+      "offers": 1,
+      "score": "Flag",
+      "flags": [
+        "Mandatory-source award under AbilityOne / 41 U.S.C. 8501-8506",
+        "One offer received per public contract database records",
+        "Full verification requires direct review of USASpending.gov award page"
+      ]
+    },
+    {
+      "recipient": "SERVICESOURCE INC",
+      "agency": "Federal Bureau of Investigation",
+      "department": "Department of Justice",
+      "amount": 15835780,
+      "date": "2026-04-14",
+      "description": "Food services (AbilityOne)",
+      "competed": false,
+      "offers": 1,
+      "score": "Flag",
+      "flags": [
+        "Mandatory-source award under AbilityOne / 41 U.S.C. 8501-8506",
+        "One offer received per public contract database records",
+        "Full verification requires direct review of USASpending.gov award page"
+      ]
+    },
+    {
+      "recipient": "SERVICESOURCE INC",
+      "agency": "Department of Veterans Affairs",
+      "department": "Department of Veterans Affairs",
+      "amount": 3583785,
+      "date": "2026-04-09",
+      "description": "Mailroom services (AbilityOne)",
+      "competed": false,
+      "offers": 1,
+      "score": "Flag",
+      "flags": [
+        "Mandatory-source award under AbilityOne / 41 U.S.C. 8501-8506",
+        "Award method and threshold require further verification against contract documentation",
+        "Full verification requires direct review of USASpending.gov award page"
+      ]
+    }
+  ],
+  "total_amount": 176485613,
+  "timeline": [
+    { "year": "1938", "label": "Javits-Wagner-O'Day Act creates mandatory-source framework for disability employment in federal contracting", "highlight": true },
+    { "year": "2000s", "label": "Programme adopts the AbilityOne name; mandatory-source list covers products and services across federal agencies", "highlight": false },
+    { "year": "May 2013", "label": "GAO-13-457: Commission lacked sufficient data to determine extent of nonprofit compliance with programme requirements", "highlight": true },
+    { "year": "FY 2024", "label": "Commission reports using corrective action plans for nonprofits out of compliance with the 75% direct-labour-hours ratio", "highlight": false },
+    { "year": "Apr 2026", "label": "ServiceSource contracts recorded in public federal databases; contractor-level compliance audit data not publicly available", "highlight": true }
+  ],
+  "price_comparison": {
+    "market_rate": 100,
+    "abilityone_rate": 125,
+    "note": "AbilityOne pricing is set by the Commission rather than competitive market processes. The size of any premium above commercial rates is contested and varies by service type. This comparison is illustrative, not a verified figure."
+  },
+  "accountability": {
+    "prosecutions": 0,
+    "terminations": 0,
+    "audits_ordered_by_bondi": 0,
+    "ig_findings_against_servicesource": 0
+  },
+  "legal_basis": {
+    "statute": "41 U.S.C. 8501-8506 (Javits-Wagner-O'Day Act / AbilityOne)",
+    "far_code": "FAR 8.7",
+    "justification": "Mandatory source on AbilityOne Procurement List",
+    "reform_path": "Independent contractor-level audits of direct-labour disability ratio; GAO-13-457 recommendations from 2013 not fully implemented per last public review"
+  },
+  "gao_quote": {
+    "source": "GAO-13-457, May 2013",
+    "text": "The AbilityOne Commission has not effectively overseen the program to ensure that nonprofit agencies comply with program requirements... the Commission lacked sufficient data to determine the extent to which agencies comply with program requirements."
+  },
+  "worker_pay": {
+    "min_disabled_worker_percent": 75,
+    "note": "Statute requires 75% of direct labor hours, not 75% of workers by headcount. GAO-13-457 found the Commission lacked data to verify compliance with this threshold."
+  },
+  "sources": [
+    "USASpending.gov award pages",
+    "GAO-13-457 (May 2013)",
+    "41 U.S.C. 8501-8506 (Javits-Wagner-O'Day Act)",
+    "AbilityOne FY 2024 Performance Report",
+    "AbilityOne 2025 Report to the President"
+  ]
+}

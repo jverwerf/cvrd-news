@@ -485,7 +485,7 @@ export default async function Home() {
                         const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
                         return (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                            <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />
+                            <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/tv?channel=breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />
                             {[
                               { num: '02', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
                               { num: '03', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
@@ -544,7 +544,7 @@ export default async function Home() {
                 const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
                 return (
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                    {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
+                    {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/tv?channel=breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
                     {[
                       { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
                       { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },

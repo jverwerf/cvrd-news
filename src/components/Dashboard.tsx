@@ -616,7 +616,7 @@ export function Dashboard({
       </div>
 
       {/* Clip strip — right side */}
-      <div className="dash-clip-strip" style={{ width: 200, flexShrink: 0, background: '#1e2a3a', borderLeft: 'none', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      {!tvMode && <div className="dash-clip-strip" style={{ width: 200, flexShrink: 0, background: '#1e2a3a', borderLeft: 'none', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
 
         <div style={{ flex: 1, overflowY: 'auto', scrollbarWidth: 'none' }}>
           {playlist.map((clip, idx) => {
@@ -678,7 +678,7 @@ export function Dashboard({
             );
           })}
         </div>
-      </div>
+      </div>}
     </section>
   );
 }

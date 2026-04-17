@@ -69,6 +69,7 @@ export function SiteNav({ isBreaking, storyMeta }: { isBreaking: boolean; storyM
     if (href === '/brief') return pathname === '/brief' || !!storyMeta;
     if (href === '/onrecord') return pathname === '/onrecord' || (pathname?.startsWith('/onrecord/') ?? false);
     if (href === '/timeline') return pathname === '/timeline' || (pathname?.startsWith('/timeline/') ?? false);
+    if (href === '/declassified') return pathname === '/declassified' || (pathname?.startsWith('/declassified/') ?? false);
     if (href === '/tv') return isOnTV;
     return false;
   };
@@ -111,8 +112,8 @@ export function SiteNav({ isBreaking, storyMeta }: { isBreaking: boolean; storyM
             </a>
           )}
 
-          {/* TV pill — visible on non-TV pages as a discovery CTA */}
-          {!isOnTV && (
+          {/* TV pill */}
+          {(
             <a href="/tv" style={{
               display: 'flex', alignItems: 'center', gap: 5, flexShrink: 0,
               padding: '4px 10px', borderRadius: 4, textDecoration: 'none',
@@ -127,7 +128,7 @@ export function SiteNav({ isBreaking, storyMeta }: { isBreaking: boolean; storyM
           )}
 
           {/* Main nav items */}
-          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline']] as [string,string][]).map(([label, href]) => {
+          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline'],['Declassified','/declassified']] as [string,string][]).map(([label, href]) => {
             const isAct = active(href);
             return (
               <a key={href} href={href} style={{

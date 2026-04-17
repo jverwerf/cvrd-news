@@ -1,0 +1,81 @@
+{
+  "slug": "pentagon-audit-failure",
+  "title": "The Pentagon Has Not Received a Clean Audit Opinion in Seven Consecutive Years. Every Year, Independent Auditors Say They Cannot Obtain Sufficient Evidence to Form One.",
+  "subtitle": "SEVEN CONSECUTIVE DISCLAIMERS OF OPINION. FY2018 THROUGH FY2024.",
+  "date": "2026-04-13",
+  "subject": "Department of Defense / Financial Audit",
+  "secretary": "Pete Hegseth",
+  "department": "Department of Defense",
+  "hook": "Since the Pentagon's first full department-wide audit in FY2018, independent auditors have issued a disclaimer of opinion every year — meaning they could not obtain sufficient evidence to form any opinion on its financial statements. As of FY2024, that record stands at seven consecutive disclaimers.",
+  "image": "/images/declassified/pentagon-audit-failure.jpg",
+  "cold_open": "The Chief Financial Officers Act of 1990 required federal agencies to produce auditable financial statements. The Department of Defense has tried for seven fiscal years to comply. Seven times, independent auditors have said they cannot form an opinion on whether those statements are accurate.",
+  "key_stats": [
+    { "value": "7", "label": "Consecutive disclaimers of opinion", "subtext": "FY2018 through FY2024, DoD consolidated financial statements" },
+    { "value": "1990", "label": "CFO Act enacted", "subtext": "required annual audited financial statements for major federal agencies" },
+    { "value": "FY2018", "label": "First full department-wide audit", "subtext": "DoD had never undergone a full financial audit before" },
+    { "value": "~1,600", "label": "Auditors deployed in FY2023", "subtext": "approximately, per DoD FY2023 Agency Financial Report; included nearly 700 site visits" }
+  ],
+  "article_sections": [
+    {
+      "id": "the_requirement",
+      "heading": "The requirement",
+      "body": "The Chief Financial Officers Act of 1990 (Public Law 101-576) required major federal agencies to produce annual financial statements subject to independent audit. Subsequent legislation and OMB directives reinforced and extended that obligation, and Congress, through a series of National Defense Authorization Acts, pressed the Department of Defense specifically to achieve department-wide audit readiness — ultimately targeting FY2017. The rationale was straightforward: the federal government's largest agency, responsible for a substantial share of the national budget, should be able to account for what it spends and what it holds. The Department of Defense had never undergone a full department-wide financial statement audit before FY2018."
+    },
+    {
+      "id": "what_a_disclaimer_means",
+      "heading": "What a disclaimer of opinion means",
+      "body": "Independent auditors issue four types of opinions on financial statements. An unqualified opinion means the statements are presented fairly. A qualified opinion means the statements are mostly accurate with specific exceptions. An adverse opinion means the statements are materially misstated. A disclaimer of opinion means auditors could not obtain sufficient appropriate audit evidence to form any opinion at all. The DoD has received a disclaimer of opinion on its consolidated financial statements in every year since FY2018. The auditors are not saying the numbers are wrong. They are saying they could not obtain sufficient appropriate evidence to support an opinion."
+    },
+    {
+      "id": "the_record",
+      "heading": "The record",
+      "body": "The DoD Inspector General, working with independent public accounting firms contracted to conduct the audit, has reported a disclaimer of opinion on the DoD's consolidated financial statements for FY2018, FY2019, FY2020, FY2021, FY2022, FY2023, and FY2024. Each year, the audit produces a report documenting the material weaknesses and significant deficiencies that prevented auditors from forming an opinion. Common recurring findings have included inadequate financial management systems, incomplete or unsupported transaction records, and property and equipment that cannot be independently verified. These findings are documented in the DoD Inspector General's annual independent auditor's report."
+    },
+    {
+      "id": "partial_progress",
+      "heading": "Progress and remaining gaps",
+      "body": "The record is not uniformly static. The DoD audit programme covers individual military departments and defense agencies separately, and some components have made documented progress. Certain agencies within the DoD have received clean or improved audit opinions on portions of their financial statements. The DoD's own Financial Improvement and Audit Remediation plan tracks remediation efforts across components. What has not changed is the consolidated result: the department as a whole has not achieved an unqualified opinion. Progress at the component level has not yet been sufficient to produce a clean consolidated audit across the full department."
+    },
+    {
+      "id": "why_it_matters",
+      "heading": "Why it matters",
+      "body": "The Department of Defense manages a reported balance sheet of several trillion dollars in assets, including military equipment, real property, and financial instruments. For seven consecutive years, auditors have been unable to obtain sufficient appropriate evidence to support an opinion on the consolidated financial statements. This matters for congressional oversight: legislators allocating hundreds of billions of dollars annually in defence spending cannot rely on those statements to verify whether the resources are accounted for correctly. It matters for efficiency: financial systems that cannot be audited make it harder to identify waste, error, or loss. And it matters as a matter of record: DoD has not yet achieved an auditable department-wide set of consolidated financial statements in the seven years the full-scope audit has been attempted."
+    },
+    {
+      "id": "the_fix",
+      "heading": "What would need to change",
+      "body": "The DoD's audit problems are primarily a financial systems and records problem, not a fraud problem. Decades of legacy IT systems, inconsistent record-keeping across military components, and the sheer scale of DoD's global operations have created a situation where financial data exists in forms that auditors cannot independently verify. The remediation path requires sustained investment in financial management systems, consistent records disciplines across all components, and stable leadership commitment to audit readiness over multiple budget cycles. The audit programme itself is a necessary step: the findings each year document specific deficiencies that need to be resolved. Seven years without a clean opinion is the record. Whether FY2025 or FY2026 changes that will depend on whether the remediation investments made in recent years prove sufficient."
+    }
+  ],
+  "timeline": [
+    { "year": "1990", "label": "Chief Financial Officers Act (Public Law 101-576) requires annual audited financial statements for major federal agencies", "highlight": true },
+    { "year": "2010", "label": "Congress sets target for DoD audit readiness; subsequent NDAAs advance the deadline to FY2017", "highlight": false },
+    { "year": "FY2018", "label": "First full department-wide DoD financial statement audit conducted. Result: disclaimer of opinion", "highlight": true },
+    { "year": "FY2019-FY2022", "label": "Four consecutive disclaimers of opinion. Recurring findings: financial management systems, transaction records, property verification", "highlight": false },
+    { "year": "FY2023", "label": "Sixth consecutive disclaimer of opinion. Some individual components show progress; consolidated result unchanged", "highlight": true },
+    { "year": "FY2024", "label": "Seventh consecutive disclaimer of opinion. DoD Financial Improvement and Audit Remediation plan ongoing", "highlight": true }
+  ],
+  "gao_quote": {
+    "source": "DoD Inspector General, Independent Auditor's Report, FY2023",
+    "text": "We were unable to obtain sufficient appropriate audit evidence to express an opinion on the Department of Defense's consolidated financial statements as of and for the years ended September 30, 2023 and 2022. Accordingly, we do not express an opinion on these financial statements."
+  },
+  "legal_basis": {
+    "statute": "31 U.S.C. 3515 (Chief Financial Officers Act of 1990, as amended)",
+    "requirement": "Annual audited financial statements for agencies listed in 31 U.S.C. 901(b)",
+    "audit_type": "Disclaimer of opinion (cannot obtain sufficient audit evidence to form an opinion)",
+    "reform_path": "Financial management system modernisation; records remediation across all DoD components; sustained multi-year FIAR plan execution"
+  },
+  "accountability": {
+    "clean_opinions_consolidated": 0,
+    "consecutive_disclaimers": 7,
+    "components_with_progress": "Some individual DoD components have received improved opinions on portions of their financial statements",
+    "remediation_status": "DoD Financial Improvement and Audit Remediation (FIAR) plan ongoing"
+  },
+  "sources": [
+    "DoD Inspector General, Independent Auditor's Report, FY2023",
+    "DoD Inspector General, Independent Auditor's Report, FY2024",
+    "31 U.S.C. 3515 (Chief Financial Officers Act of 1990)",
+    "Public Law 101-576 (CFO Act of 1990)",
+    "DoD Financial Improvement and Audit Remediation (FIAR) Plan"
+  ]
+}

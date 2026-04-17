@@ -1,0 +1,107 @@
+{
+  "slug": "va-oracle-health-ehrm",
+  "title": "The VA Sole-Sourced Its Core EHR Modernization Contract to Cerner. GAO Reported $9.4 Billion Obligated. After Patient Safety Events, It Halted Deployments in 2023.",
+  "subtitle": "SOLE SOURCE. $9.4 BILLION. HALTED.",
+  "date": "2026-04-12",
+  "subject": "Oracle Health / VA / Doug Collins",
+  "secretary": "Doug Collins",
+  "department": "Department of Veterans Affairs",
+  "hook": "In May 2018, the VA bypassed competition and awarded Cerner a sole-source contract for its entire electronic health record system. GAO reported $9.4 billion obligated by March 2023. After the VA's own Inspector General documented patient safety events at deployed sites, VA halted all future deployments in April 2023.",
+  "image": "/images/declassified/va-oracle-health-ehrm.jpg",
+  "cold_open": "A sole-source contract. No competitive bidding. The justification: only Cerner could deliver a system compatible with the Department of Defense's records. GAO reported $9.4 billion obligated by March 2023. By April 2023, after the VA's own Inspector General documented patient safety events at live sites, the VA halted all future deployments.",
+  "key_stats": [
+    { "value": "$9.4B", "label": "Obligated on EHRM through March 2023", "subtext": "per GAO; VA-Cerner/Oracle Health sole-source contract, no competitive bidding from inception" },
+    { "value": "May 2018", "label": "Sole-source contract awarded to Cerner", "subtext": "FAR 6.302-1 — only one responsible source. Per VA OIG." },
+    { "value": "5", "label": "VA sites live when deployments were halted", "subtext": "April 2023: VA paused all future go-lives. GAO confirmed five sites using the system at time of pause." },
+    { "value": "April 2023", "label": "VA halted all future EHRM deployments", "subtext": "After OIG-documented patient safety events at deployed sites; improvements required before further go-lives" }
+  ],
+  "article_sections": [
+    {
+      "id": "the_rule",
+      "heading": "The rule",
+      "body": "The Federal Acquisition Regulation permits agencies to bypass competitive bidding under a set of defined exceptions. FAR 6.302-1 authorises a sole-source award when only one responsible source exists and no other supplies or services will satisfy the agency's requirements. Agencies that invoke FAR 6.302-1 are required to prepare a written Justification and Approval documenting why competition is not feasible. The rule is a legitimate statutory tool, designed for cases where competition is genuinely impossible. What it removes is the price discipline and independent evaluation that competitive bidding would otherwise provide. For a programme of this scale, the absence of that check is itself worth scrutiny."
+    },
+    {
+      "id": "the_contract",
+      "heading": "The contract",
+      "body": "In May 2018, the Department of Veterans Affairs awarded a 10-year, sole-source contract to Cerner Corporation for an Electronic Health Record Modernisation programme, known as EHRM. The VA's Justification and Approval cited FAR 6.302-1, asserting Cerner as the only responsible source capable of meeting the requirement. A central rationale was interoperability: the Department of Defense had already selected Cerner for its own EHR programme, MHS GENESIS, and the VA argued that using the same system would enable seamless record-sharing between DoD and VA facilities. In June 2022, Oracle Corporation completed its acquisition of Cerner, and the VA contract transitioned to Oracle Health. GAO reported that VA had obligated approximately $9.4 billion on EHRM from FY2020 through March 2023.",
+      "stat_callout": {
+        "value": "$9.4B",
+        "label": "EHRM obligations reported by GAO through March 2023",
+        "detail": "Source: GAO EHRM oversight reports. Sole-source contract from inception — no competitive award at any stage of the programme."
+      }
+    },
+    {
+      "id": "the_deployment_record",
+      "heading": "The deployment record",
+      "body": "The VA originally planned to deploy the new EHR across more than 140 VA medical centres over the contract period. The first go-live occurred at Mann-Grandstaff VA Medical Center in Spokane, Washington, in October 2020. Subsequent deployments proceeded on a limited schedule, and clinical staff at deployed sites reported significant workflow disruptions. By April 2023, when the VA halted all future go-live events, GAO confirmed that only five VA sites were using the system. The VA announced it would focus on improving performance at those sites before resuming deployments. As of April 2026, the Federal EHR is live at ten VA medical centres. VA reporting indicates that deployments in Michigan are back on track, with additional go-lives scheduled through 2026. Against an original target of more than 140 sites, ten live deployments after eight years represents a programme still well behind its original schedule."
+    },
+    {
+      "id": "the_safety_record",
+      "heading": "The patient safety record",
+      "body": "The VA Office of Inspector General conducted multiple reviews of EHRM implementation outcomes. OIG testimony in September 2022 indicated the OIG had reviewed whether the new EHR resulted in patient harm at deployed sites. The OIG documented patient safety events that reviewers determined were potentially related to EHR-associated issues. OIG testimony in February 2024 referenced an upcoming OIG report on an appointment-scheduling failure that contributed to the death of a patient. The OIG also found that clinical staff at deployed facilities experienced significant difficulties navigating the new system during patient care, and that certain medication and alert workflows created conditions for error. The OIG issued remediation recommendations, and VA leadership concurred. Whether those recommendations have been fully implemented is documented in subsequent OIG follow-up work."
+    },
+    {
+      "id": "why_it_matters",
+      "heading": "Why it matters",
+      "body": "The central problem with the EHRM programme is not that Oracle Health is a bad company or that electronic health record modernisation is the wrong goal. The Veterans Health Information Systems and Technology Architecture, known as VistA, which the new system replaces, is genuinely outdated. The problem is that a procurement conducted without competition, at a scale of billions of dollars, has produced a system that was paused after five sites deployed, criticised by the agency's own Inspector General for patient safety failures, and is still well below its original deployment target eight years into the contract. Congressional oversight has been substantial: the House Committee on Veterans' Affairs has held multiple hearings. The GAO has issued reports. The OIG has made recommendations. No public competitive re-evaluation of the sole-source determination has been announced, based on available congressional and programme records."
+    },
+    {
+      "id": "the_fix",
+      "heading": "What needs to change",
+      "body": "The VA does not need to abandon EHR modernisation. VistA's limitations are real, and the long-term case for a modern, interoperable record system serving veterans is sound. What the current programme requires is accountability proportionate to its scale and its record. First, the continuing sole-source justification should be reviewed: the original DoD-compatibility rationale was written in 2018, before years of documented performance failures. The landscape has changed. Second, the OIG's patient safety recommendations should be independently verified as implemented before each new deployment. Third, Congress has appropriated the funds. The VA owes its oversight committees a clear public account of what $9.4 billion has delivered, what the path to full deployment looks like, and what it will cost to reach the original scope. Eight years in, that account has not been given."
+    }
+  ],
+  "contracts": [
+    {
+      "recipient": "ORACLE HEALTH (FMR. CERNER CORPORATION)",
+      "agency": "Department of Veterans Affairs",
+      "department": "Department of Veterans Affairs",
+      "amount": 9420000000,
+      "date": "2018-05-01",
+      "description": "Electronic Health Record Modernisation (EHRM) — sole source, FAR 6.302-1",
+      "competed": false,
+      "offers": 1,
+      "score": "Flag",
+      "flags": [
+        "Sole-source award under FAR 6.302-1 — only one responsible source determination",
+        "Original contract to Cerner Corporation (May 2018); transitioned to Oracle Health after June 2022 acquisition",
+        "Amount per GAO: approximately $9.4 billion obligated FY2020 through March 2023"
+      ]
+    }
+  ],
+  "total_amount": 9420000000,
+  "timeline": [
+    { "year": "2017", "label": "VA initiates EHRM programme to replace VistA with the same Oracle Cerner system being deployed by DoD (MHS GENESIS).", "highlight": false },
+    { "year": "May 2018", "label": "VA awards sole-source 10-year contract to Cerner Corporation under FAR 6.302-1. No competitive bidding.", "highlight": true },
+    { "year": "Oct 2020", "label": "First go-live: Mann-Grandstaff VA Medical Center, Spokane, Washington. Clinical staff report workflow disruptions after deployment.", "highlight": false },
+    { "year": "2021-2022", "label": "VA OIG conducts multiple reviews of EHRM outcomes. OIG documents patient safety events at deployed sites.", "highlight": false },
+    { "year": "June 2022", "label": "Oracle Corporation acquires Cerner. VA contract transitions to Oracle Health. Sole-source terms unchanged.", "highlight": true },
+    { "year": "Apr 2023", "label": "VA halts all future EHRM go-live events. GAO confirms five sites live at time of pause. VA cites need for improvements.", "highlight": true },
+    { "year": "Apr 2026", "label": "Federal EHR live at 10 VA medical centres. Michigan deployments back on track; additional 2026 go-lives scheduled. Programme remains well below original 140+ site target.", "highlight": false }
+  ],
+  "gao_quote": {
+    "source": "GAO, EHRM programme oversight; VA OIG congressional testimony, September 2022 and February 2024",
+    "text": "VA had obligated approximately $9.4 billion on EHRM from FY2020 through March 2023. At the time of the April 2023 deployment halt, GAO confirmed five VA sites were using the system. OIG testimony documented patient safety events at deployed sites, including a scheduling failure that contributed to a patient death."
+  },
+  "legal_basis": {
+    "statute": "41 U.S.C. 3304(a)(1); implemented at FAR 6.302-1",
+    "audit_type": "Sole-source award — only one responsible source determination; written Justification and Approval required",
+    "reform_path": "Review of continuing FAR 6.302-1 justification given changed programme environment; OIG recommendation verification before each new deployment; full congressional accounting of $9.4B obligated vs. deliverables"
+  },
+  "accountability": {
+    "competitive_awards": 0,
+    "gao_obligated_through_march_2023": "$9.4 billion (FY2020-March 2023)",
+    "sites_live_at_pause": "5 (GAO-confirmed, April 2023)",
+    "sites_live_april_2026": "10 VA medical centres",
+    "oig_safety_findings": "Patient safety events documented at deployed sites, including deaths; OIG issued remediation recommendations"
+  },
+  "sources": [
+    "GAO EHRM programme oversight reports",
+    "VA OIG congressional testimony, September 2022 and February 2024",
+    "VA OIG EHRM patient safety reviews",
+    "FAR 6.302-1 (41 U.S.C. 3304(a)(1))",
+    "VA EHRM programme public deployment schedule",
+    "House Committee on Veterans' Affairs EHRM hearing records"
+  ]
+}

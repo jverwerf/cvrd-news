@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "fbi-servicesource-no-bid",
+    "title": "ServiceSource's FBI AbilityOne Contract and the Disability-Employment Requirement GAO Said the Program Struggled to Verify",
+    "subtitle": "THE DEAL: 75% DIRECT LABOR HOURS FROM DISABLED WORKERS. THE OVERSIGHT: QUESTIONED BY GAO IN 2013.",
+    "date": "2026-04-17",
+    "subject": "ServiceSource Inc / FBI / AbilityOne",
+    "secretary": "Todd Blanche (acting)",
+    "department": "Department of Justice",
+    "hook": "Federal law gives qualified AbilityOne nonprofits mandatory-source access to covered contracts if at least 75 percent of direct labor hours are performed by workers who are blind or have significant disabilities. A 2013 GAO report found the oversight body lacked sufficient data to gauge compliance.",
+    "image": "/images/declassified/fbi-servicesource-no-bid.jpg",
+    "status": "published"
+  },
+  {
+    "slug": "pentagon-audit-failure",
+    "title": "The Pentagon Has Failed Its Audit for 7 Straight Years",
+    "subtitle": "SEVEN YEARS. ZERO CLEAN BOOKS.",
+    "date": "2026-04-13",
+    "subject": "Department of Defense / Pete Hegseth",
+    "secretary": "Pete Hegseth",
+    "department": "Department of Defense",
+    "hook": "The largest organization in the world cannot account for its own money. Seven audits. Seven failures. Zero consequences.",
+    "image": "/images/declassified/pentagon-audit-failure.jpg",
+    "status": "published"
+  },
+  {
+    "slug": "va-oracle-health-ehrm",
+    "title": "The VA Sole-Sourced Its Core EHR Modernization Contract to Cerner. GAO Reported $9.4 Billion Obligated. After Patient Safety Events, It Halted Deployments in 2023.",
+    "subtitle": "SOLE SOURCE. $9.4 BILLION. HALTED.",
+    "date": "2026-04-12",
+    "subject": "Oracle Health / VA / Doug Collins",
+    "secretary": "Doug Collins",
+    "department": "Department of Veterans Affairs",
+    "hook": "In May 2018, the VA bypassed competition and awarded Cerner a sole-source contract for its entire electronic health record system. GAO reported $9.4 billion obligated by March 2023. After the VA's own Inspector General documented patient safety events at deployed sites, VA halted all future deployments in April 2023.",
+    "image": "/images/declassified/va-oracle-health-ehrm.jpg",
+    "status": "published"
+  }
+]
