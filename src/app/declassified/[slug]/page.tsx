@@ -83,7 +83,7 @@ export default async function DeclassifiedStoryPage({ params }: { params: Promis
 
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.text }}>
-      <SiteNav isBreaking={false} />
+      <SiteNav isBreaking={true} />
 
       {/* Article header */}
       <div style={{ borderBottom: `1px solid ${C.border}`, position: 'relative', overflow: 'hidden' }}>
