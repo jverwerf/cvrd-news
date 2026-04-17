@@ -46,4 +46,5 @@ public/data/politicians/
 public/data/timeline_threads.json
 public/data/timeline_archive.json
 public/data/daily_gaps_*.json
-public/images/
+public/images/story/
+public/images/thumbnails/
