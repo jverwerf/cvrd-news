@@ -174,7 +174,7 @@ export default function BreakingDetailClient({ story, raw, type }: {
           {/* Full dashboard (playable, no auto-play) */}
           <div style={{ borderRadius: 10, overflow: 'hidden', marginBottom: 24 }}>
             <ErrorBoundary>
-              <Dashboard stories={[story]} videoUrl={raw?.breaking_short_url || undefined} noAutoPlay />
+              <Dashboard stories={[story]} videoUrl={raw?.breaking_short_url || undefined} />
             </ErrorBoundary>
           </div>
 
