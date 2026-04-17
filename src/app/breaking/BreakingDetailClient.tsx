@@ -212,21 +212,21 @@ export default function BreakingDetailClient({ story, raw, type }: {
           {story.what_they_arent_telling_you && (
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-3">
-                <span style={{ color: C.gold, fontWeight: 700, fontSize: 13, lineHeight: 1, marginRight: 4 }}>--</span>
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em]" style={{ fontFamily: mono, color: C.gold }}>Blindspots</span>
+                <span className="text-[#daa520] font-bold text-[13px] leading-none mr-1">—</span>
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ fontFamily: mono, color: C.gold }}>Blindspots</span>
               </div>
-              <div className="p-5 rounded-lg" style={{ background: C.panel, border: `1px solid ${C.border}` }}>
+              <div className="p-5 rounded-lg mb-6" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 {sentences.length > 1 ? (
                   <div className="space-y-2.5">
                     {sentences.map((s, i) => (
                       <div key={i} className="flex gap-2.5">
                         <span className="text-[12px] font-bold mt-0.5 shrink-0 w-4 text-right" style={{ color: C.gold }}>{i + 1}.</span>
-                        <p className="text-[13px] text-[#ccc] leading-[1.6]">{s}</p>
+                        <p className="text-[11px] text-[#ccc] leading-[1.55]">{s}</p>
                       </div>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-[13px] text-[#ccc] leading-[1.6]">{story.what_they_arent_telling_you}</p>
+                  <p className="text-[11px] text-[#ccc] leading-[1.55]">{story.what_they_arent_telling_you}</p>
                 )}
               </div>
             </div>
@@ -236,23 +236,23 @@ export default function BreakingDetailClient({ story, raw, type }: {
           {story.social_summary && (
             <div className="mb-8">
               <div className="flex items-center gap-2 mb-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                <span className="text-[10px] font-bold uppercase tracking-[0.14em]" style={{ fontFamily: mono, color: C.gold }}>Social Pulse</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ fontFamily: mono, color: C.gold }}>Social Pulse</span>
               </div>
-              <div className="p-5 rounded-lg" style={{ background: C.panel, border: `1px solid ${C.border}` }}>
+              <div className="p-5 rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 {(() => {
                   const bullets = story.social_summary.split(/\.\s+(?=[A-Z])/).map((s: string, i: number, arr: string[]) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
                   return bullets.length > 1 ? (
                     <ul className="space-y-1.5 list-none pl-0 m-0">
                       {bullets.map((s: string, i: number) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-[#bbb] leading-[1.6]">
-                          <span className="shrink-0" style={{ color: C.gold }}>*</span>
+                        <li key={i} className="flex gap-2 text-[11px] text-[#bbb] leading-[1.55]">
+                          <span className="text-[#daa520] shrink-0">•</span>
                           <span>{s}</span>
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-[13px] text-[#bbb] leading-[1.6]">{story.social_summary}</p>
+                    <p className="text-[11px] text-[#bbb] leading-[1.55]">{story.social_summary}</p>
                   );
                 })()}
               </div>
