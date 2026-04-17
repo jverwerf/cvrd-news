@@ -111,15 +111,15 @@ function StoryCard({ story, now, scrollable }: { story: any; now: number; scroll
 
 function LiveRow({ stories, now }: { stories: any[]; now: number }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', gap: 10, overflowX: 'auto', scrollbarWidth: 'none' as any }}>
+    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 10 }}>
       {stories.map((story, i) => {
         const tile = getFirstTile(story);
         const mins = Math.round((now - new Date(story.detected_at).getTime()) / 60000);
         const ago = mins < 60 ? `${mins}m ago` : `${Math.round(mins / 60)}h ago`;
 
         return (
-          <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} style={{
-            flex: 1, minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
+          <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} className="live-item" style={{
+            flex: '1 1 calc(33.333% - 7px)', maxWidth: 'calc(33.333% - 7px)', minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
             borderRadius: 10, overflow: 'hidden',
             background: '#1e2d3d',
             border: '1px solid rgba(220,38,38,0.18)',
@@ -187,6 +187,7 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
           @media (max-width: 600px) {
             .bk-card { height: 120px !important; }
             .bk-tile { width: 140px !important; }
+            .live-item { flex: 1 1 100% !important; max-width: 100% !important; }
           }
         `}</style>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>

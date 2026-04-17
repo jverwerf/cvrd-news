@@ -67,7 +67,7 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
       }
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.55) 45%, rgba(30,42,58,0.1) 100%)' }} />
 
-      <div style={{ position: 'relative', padding: '36px 28px 16px' }}>
+      <div style={{ position: 'relative', padding: '36px 28px 16px', maxWidth: 1120, margin: '0 auto' }}>
         {/* category + source count + read more */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
           <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
