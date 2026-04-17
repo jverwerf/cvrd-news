@@ -15,6 +15,7 @@ type PlaylistItem = {
   duration?: number;
   videoTitle?: string;
   thumbnail?: string;
+  isSocial?: boolean;
 };
 
 type TileContent = {
@@ -57,6 +58,7 @@ export function Dashboard({
   const ytPlayerRef = useRef<HTMLIFrameElement>(null);
   const [inView, setInView] = useState(true);
   const [unmuted, setUnmuted] = useState(false);
+  const [showVolSlider, setShowVolSlider] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -93,14 +95,15 @@ export function Dashboard({
       if ((v as any).download_failed) continue;
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
     }
-    if (!tvMode) {
-      for (const c of (story.social_clips || [])) {
-        if ((c as any).download_failed || !c.embed_id) continue;
-        if ((c.platform === 'telegram' || c.platform === 'x') && c.duration) {
-          playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: c.duration, videoTitle: c.title || c.author || c.platform });
-        } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
-          playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: c.duration || 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail });
-        }
+  }
+  // Social clips below YT — auto-advance after 60s
+  for (const [i, story] of stories.entries()) {
+    for (const c of (story.social_clips || [])) {
+      if ((c as any).download_failed || !c.embed_id) continue;
+      if ((c.platform === 'x' || c.platform === 'telegram') && c.duration) {
+        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || c.platform, isSocial: true });
+      } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
+        playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail, isSocial: true });
       }
     }
   }
@@ -446,16 +449,17 @@ export function Dashboard({
   }
 
   return (
-    <section ref={sectionRef} style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden' }}>
+    <section ref={sectionRef} style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden', display: 'flex' }}>
       <style>{`
         @media (max-width: 600px) {
           .dash-side-tile { display: none !important; }
           .dash-center { grid-column: span 4 / span 4 !important; }
           .dash-compact .dash-top-tile { display: none !important; }
           .dash-compact .dash-center { grid-row: 1 / -1 !important; }
+          .dash-clip-strip { display: none !important; }
         }
       `}</style>
-      <div className={`h-full grid ${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4 gap-1`}>
+      <div className={`h-full grid ${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4 gap-1 flex-1 min-w-0`}>
 
         {/* ROW 1 */}
         {[0, 1, 2, 3].map(i => (
@@ -573,119 +577,32 @@ export function Dashboard({
               label={current.videoTitle || current.channel}
             />
           )}
+          {/* Volume overlay — bottom-right corner of video */}
+          <div className="absolute bottom-2 right-2 z-20 flex items-center gap-1.5 px-2 py-1 rounded-full"
+            style={{ background: 'rgba(0,0,0,0.55)', pointerEvents: 'auto' }}>
+            <button onClick={toggleSound} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                {unmuted && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
+                {!unmuted && <><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></>}
+              </svg>
+            </button>
+            <input type="range" min="0" max="1" step="0.05"
+              value={unmuted ? volume : 0}
+              style={{ width: 60, accentColor: 'white', cursor: 'pointer' }}
+              onChange={(e) => {
+                const vol = parseFloat(e.target.value);
+                setVolume(vol > 0 ? vol : volume);
+                setUnmuted(vol > 0);
+                const centerPlayer = document.querySelector('.col-span-2');
+                if (centerPlayer) centerPlayer.querySelectorAll('video').forEach(v => { v.volume = vol; v.muted = vol === 0; });
+                const ytFrame = ytPlayerRef.current;
+                if (ytFrame?.contentWindow) {
+                  ytFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: vol === 0 ? 'mute' : 'unMute' }), '*');
+                  ytFrame.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [Math.round(vol * 100)] }), '*');
+                }
+              }} />
           </div>
-          {/* CONTROLS BAR — below video (hidden in TV mode) */}
-          <div className="px-2 py-1 bg-[#111] shrink-0" style={tvMode ? { display: 'none' } : {}}>
-
-
-            {/* Controls row */}
-            <div className="flex items-center gap-2">
-              {/* Clip thumbnails */}
-              <div className="flex items-center gap-0.5 flex-1 min-w-0">
-                <button className="shrink-0 px-1 hover:opacity-70"
-                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: -150, behavior: 'smooth' }); }}
-                  style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[5px] border-r-[#666]" />
-                </button>
-                <style>{`
-                  .clip-thumb:hover { width: 200px !important; opacity: 1 !important; }
-                  .clip-thumb:hover .clip-thumb-img { height: 50px !important; }
-                  .clip-thumb:hover .clip-thumb-label { font-size: 9px !important; }
-                  @keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-                `}</style>
-                <div id="clip-timebar" className="flex gap-0.5 overflow-x-auto flex-1 items-end" style={{ scrollbarWidth: 'none' }}>
-                  {currentBoundary && Array.from({ length: currentBoundary.end - currentBoundary.start + 1 }, (_, ci) => {
-                    const clipIdx = currentBoundary.start + ci;
-                    const clip = playlist[clipIdx];
-                    const isActiveClip = clipIdx === currentIdx;
-                    const thumb = clip?.type === 'youtube' && clip?.embed_id
-                      ? `https://img.youtube.com/vi/${clip.embed_id}/default.jpg`
-                      : clip?.type === 'telegram' && clip?.embed_id
-                      ? `/api/tg-video?post=${clip.embed_id}&thumb=1`
-                      : clip?.type === 'x' && clip?.embed_id
-                      ? `/api/x-video?id=${clip.embed_id}&thumb=1`
-                      : null;
-                    return (
-                      <div key={ci} data-active={isActiveClip ? 'true' : undefined}
-                        className="clip-thumb rounded cursor-pointer overflow-hidden shrink-0"
-                        style={{
-                          width: '80px',
-                          border: isActiveClip ? '1.5px solid #22c55e' : '1.5px solid transparent',
-                          opacity: isActiveClip ? 1 : 0.75,
-                          transition: 'width 0.3s ease, opacity 0.2s ease',
-                        }}
-                        onClick={(e) => { setCurrentIdx(clipIdx); (e.currentTarget as HTMLElement).scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' }); }}>
-                        <div className="clip-thumb-img relative overflow-hidden" style={{
-                          height: '28px', transition: 'height 0.3s ease',
-                          backgroundImage: thumb ? `url(${thumb})` : 'linear-gradient(135deg, #0f2b1a, #1b4b32)',
-                          backgroundSize: 'cover', backgroundPosition: 'center',
-                        }}>
-                          <div className="absolute inset-0 flex items-end px-1 pb-0.5" style={{ background: 'linear-gradient(to bottom, transparent 10%, rgba(0,0,0,0.8) 100%)' }}>
-                            <span className="clip-thumb-label text-[6px] text-white font-medium leading-tight truncate" style={{ transition: 'font-size 0.3s ease' }}>
-                              {clip?.videoTitle || clip?.channel || `Clip ${ci + 1}`}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-                <button className="shrink-0 px-1 hover:opacity-70"
-                  onClick={() => { const el = document.getElementById('clip-timebar'); if (el) el.scrollBy({ left: 150, behavior: 'smooth' }); }}
-                  style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
-                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[5px] border-l-[#666]" />
-                </button>
-              </div>
-
-              <button onClick={prevItem} className="p-0.5 hover:opacity-60 shrink-0" title="Previous clip">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
-              </button>
-              <span className="text-[7px] text-white/40 font-mono shrink-0">{clipInStory}/{clipsInStory}</span>
-              <button onClick={next} className="p-0.5 hover:opacity-60 shrink-0" title="Next clip">
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
-              </button>
-
-              {/* Volume — click to toggle, hover to show slider */}
-              <div className="relative shrink-0 group/vol" style={{ zIndex: 50 }}>
-                <button onClick={toggleSound} className="p-1">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-                    {unmuted && <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />}
-                    {!unmuted && <><line x1="23" y1="9" x2="17" y2="15" /><line x1="17" y1="9" x2="23" y2="15" /></>}
-                  </svg>
-                </button>
-                <div className="absolute left-1/2 -translate-x-1/2 hidden group-hover/vol:flex flex-col items-center px-3 pt-3 pb-1 rounded-lg"
-                  style={{ background: 'rgba(0,0,0,0.9)', bottom: '100%' }}>
-                  <input type="range" min="0" max="1" step="0.05"
-                    value={unmuted ? volume : 0}
-                    className="h-24 shrink-0"
-                    style={{ accentColor: 'white', writingMode: 'vertical-lr', direction: 'rtl', width: '10px', cursor: 'pointer' }}
-                    onChange={(e) => {
-                      const vol = parseFloat(e.target.value);
-                      setVolume(vol > 0 ? vol : volume);
-                      setUnmuted(vol > 0);
-                      // Control ALL video elements in center player
-                      const centerPlayer = document.querySelector('.col-span-2');
-                      if (centerPlayer) {
-                        centerPlayer.querySelectorAll('video').forEach(v => {
-                          v.volume = vol;
-                          v.muted = vol === 0;
-                        });
-                      }
-                      // Control YouTube iframe
-                      const ytFrame = ytPlayerRef.current;
-                      if (ytFrame?.contentWindow) {
-                        ytFrame.contentWindow.postMessage(JSON.stringify({
-                          event: 'command', func: vol === 0 ? 'mute' : 'unMute',
-                        }), '*');
-                        ytFrame.contentWindow.postMessage(JSON.stringify({
-                          event: 'command', func: 'setVolume', args: [Math.round(vol * 100)],
-                        }), '*');
-                      }
-                    }} />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -696,6 +613,71 @@ export function Dashboard({
           if (needsExtraHeight && (i === 7 || i === 8)) return null;
           return <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />;
         })}
+      </div>
+
+      {/* Clip strip — right side */}
+      <div className="dash-clip-strip" style={{ width: 200, flexShrink: 0, background: '#1e2a3a', borderLeft: 'none', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+
+        <div style={{ flex: 1, overflowY: 'auto', scrollbarWidth: 'none' }}>
+          {playlist.map((clip, idx) => {
+            const isActive = idx === currentIdx;
+            const thumb = clip.type === 'youtube' && clip.embed_id
+              ? `https://img.youtube.com/vi/${clip.embed_id}/mqdefault.jpg`
+              : clip.type === 'x' && clip.embed_id
+              ? `/api/x-video?id=${clip.embed_id}&thumb=1`
+              : clip.type === 'telegram' && clip.embed_id
+              ? `/api/tg-video?post=${clip.embed_id}&thumb=1`
+              : clip.thumbnail;
+            const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#ee1d52', anchor: '#22c55e' };
+            const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', anchor: 'CVRD' };
+            const isFirstSocial = clip.isSocial && !playlist[idx - 1]?.isSocial;
+            const storyBoundary = storyBoundaries.find(b => idx >= b.start && idx <= b.end);
+            const isFirstInStory = !clip.isSocial && storyBoundary?.start === idx;
+            return (
+              <div key={idx}>
+                {isFirstSocial && (
+                  <div style={{ padding: '8px 10px 4px', fontSize: 8, fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase', display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.08)' }} />
+                    more
+                    <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.08)' }} />
+                  </div>
+                )}
+                {isFirstInStory && storyBoundary?.topic && (
+                  <div style={{ padding: '6px 10px 2px', fontSize: 8, fontWeight: 700, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.2)', textTransform: 'uppercase' }}>
+                    {storyBoundary.topic.slice(0, 30)}
+                  </div>
+                )}
+                <button onClick={() => setCurrentIdx(idx)} style={{
+                  width: '100%', padding: '6px 8px', display: 'flex', gap: 7, alignItems: 'flex-start',
+                  background: isActive ? 'rgba(34,197,94,0.12)' : 'transparent',
+                  border: 'none', cursor: 'pointer', textAlign: 'left',
+                }}>
+                  <div style={{ width: 56, height: 32, flexShrink: 0, borderRadius: 3, overflow: 'hidden', background: '#1a1a1a', position: 'relative' }}>
+                    {thumb
+                      ? <img src={thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                      : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: (PLATFORM_COLOR[clip.type] ?? '#333') + '22' }}>
+                          <span style={{ fontSize: 9, fontWeight: 700, color: PLATFORM_COLOR[clip.type] ?? '#666' }}>{PLATFORM_LABEL[clip.type] ?? clip.type}</span>
+                        </div>
+                    }
+                    {isActive && (
+                      <div style={{ position: 'absolute', inset: 0, background: 'rgba(34,197,94,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <span style={{ fontSize: 10, color: '#22c55e' }}>▶</span>
+                      </div>
+                    )}
+                  </div>
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <p style={{ margin: 0, fontSize: 9, color: isActive ? '#86efac' : 'rgba(255,255,255,0.6)', fontWeight: isActive ? 600 : 400, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                      {clip.videoTitle || clip.channel || `Clip ${idx + 1}`}
+                    </p>
+                    <p style={{ margin: '2px 0 0', fontSize: 8, color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                      {PLATFORM_LABEL[clip.type] ?? clip.type}
+                    </p>
+                  </div>
+                </button>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
@@ -944,13 +926,21 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
 function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
   thumbSrc: string; url?: string; badge: string; badgeColor: string; label?: string;
 }) {
+  const [failed, setFailed] = useState(false);
   return (
     <div className="w-full h-full relative overflow-hidden"
-      style={{ background: '#111', cursor: url ? 'pointer' : 'default' }}
+      style={{ background: '#1e2a3a', cursor: url ? 'pointer' : 'default' }}
       onClick={() => url && window.open(url, '_blank', 'noopener,noreferrer')}>
-      <img src={thumbSrc} className="absolute inset-0 w-full h-full object-cover"
-        style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
-        onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }} />
+      {!failed && (
+        <img src={thumbSrc} className="absolute inset-0 w-full h-full object-cover"
+          style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
+          onError={() => setFailed(true)} />
+      )}
+      {failed && label && (
+        <div className="absolute inset-0 flex items-center justify-center p-4">
+          <p className="text-[12px] text-white/70 text-center leading-snug line-clamp-5">{label}</p>
+        </div>
+      )}
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
       <div className="absolute top-2 left-2 z-10">
         <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: badgeColor }}>{badge}</span>
@@ -969,10 +959,18 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
 
   if (item.type === 'video') {
+    const videoId = item.image.match(/\/vi\/([^/]+)/)?.[1] || '';
     return (
       <div className="w-full h-full relative overflow-hidden">
+        <img
+          src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
+          onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
+          alt=""
+        />
         <iframe
-          src={`/api/yt-tile?v=${item.image.match(/\/vi\/([^/]+)/)?.[1]}`}
+          src={`/api/yt-tile?v=${videoId}`}
           className="absolute"
           style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
           allow="autoplay"
@@ -1058,6 +1056,10 @@ function TileContentRenderer({ item }: { item: TileContent }) {
   if (item.image) {
     return <Image src={item.image} alt={item.topic} fill className="object-cover" />;
   }
-  return <div className="w-full h-full bg-[#1a1a1a]" />;
+  return (
+    <div className="w-full h-full flex items-center justify-center p-3" style={{ background: '#1e2a3a' }}>
+      <p className="text-[11px] text-white/40 text-center leading-snug line-clamp-4">{item.topic}</p>
+    </div>
+  );
 }
 

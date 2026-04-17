@@ -1,10 +1,22 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import type { NarrativeGap } from "@/lib/data";
 import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav } from "@/components/SiteNav";
+
+interface QueuedClip {
+  id: string;
+  embed_id: string;
+  platform: 'youtube' | 'x' | 'telegram' | 'tiktok' | 'reels';
+  storyTopic: string;
+  url: string;
+  title?: string;
+  channel?: string;
+  duration?: number;
+  thumbnail?: string;
+}
 
 const CHANNELS = [
   { id: 'breaking', label: 'Breaking', sub: 'Live updates', color: '#991b1b' },
@@ -221,9 +233,6 @@ export function TVClient({
           </div>
         </div>
 
-        {/* Auto-refresh */}
-        <meta httpEquiv="refresh" content="300" />
-
         <style>{`
           @keyframes tvPulse {
             0%, 100% { opacity: 1; }
@@ -245,52 +254,104 @@ export function TVClient({
   // ── Dashboard view ──
   const stories = getStories(activeChannel);
   const channel = CHANNELS.find(c => c.id === activeChannel)!;
+  return <ChannelTV stories={stories} channel={channel} onBack={() => setActiveChannel(null)} />;
+}
+
+function ChannelTV({ stories, channel, onBack }: {
+  stories: NarrativeGap[];
+  channel: { id: string; label: string; color: string };
+  onBack: () => void;
+}) {
+  const clips: QueuedClip[] = [];
+  for (const story of stories) {
+    for (const v of (story.youtube_videos || [])) {
+      if (!v.embed_id) continue;
+      clips.push({ id: `${story.topic}::yt::${v.embed_id}`, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: (v as any).title || v.channel || '', channel: v.channel, duration: v.duration });
+    }
+    for (const c of (story.social_clips || [])) {
+      if (!c.embed_id || !c.duration) continue;
+      clips.push({ id: `${story.topic}::${c.platform}::${c.embed_id}`, embed_id: c.embed_id, platform: c.platform as QueuedClip['platform'], storyTopic: story.topic, url: c.url || '', title: c.title || (c as any).author || '', channel: (c as any).author, duration: c.duration, thumbnail: (c as any).thumbnail });
+    }
+  }
+
+  const [queue, setQueue] = useState<QueuedClip[]>(clips);
+  const [playedIds, setPlayedIds] = useState<Set<string>>(new Set());
+
+  const advance = useCallback(() => {
+    setQueue(q => {
+      if (q.length === 0) return q;
+      const [cur, ...rest] = q;
+      setPlayedIds(p => new Set([...p, cur.id]));
+      return [...rest, cur];
+    });
+  }, []);
+
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data.event === 'infoDelivery' && data.info?.playerState === 0) advance();
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [advance]);
+
+  const currentClip = queue[0] ?? null;
+  const currentStory = currentClip ? stories.find(s => s.topic === currentClip.storyTopic) ?? null : null;
+  const upcoming = queue.slice(1);
+
   return (
-    <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
+    <div style={{ background: '#000', height: '100vh', overflow: 'hidden', display: 'flex' }}>
       {/* Ghost logo */}
       <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 top-1/2 pointer-events-none"
-        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08, filter: 'drop-shadow(0 0 20px rgba(0,0,0,0.3))' }} />
+        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08 }} />
 
-      {/* Top bar */}
-      <div className="fixed top-0 left-0 right-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100 }}>
-        <button
-          onClick={() => setActiveChannel(null)}
-          className="shrink-0 px-4 h-full flex items-center gap-2 hover:bg-white/5 transition-colors"
-          style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}
-        >
-          <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>←</span>
-          <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.05em', color: channel.color }}>
-            {channel.label}
-          </span>
-        </button>
-        <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.08)' }} />
-        <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-8 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
-            {[...stories, ...stories, ...stories].map((s, i) => (
-              <span key={i} className="flex items-center gap-2 shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full" style={{ background: channel.color }} />
-                <span className="text-[12px] text-white/70 font-medium">{s.topic}</span>
-                <span className="text-[#333] ml-2">&middot;</span>
-              </span>
-            ))}
+      {/* Dashboard */}
+      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        <div className="fixed top-0 left-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100, right: 220 }}>
+          <button onClick={onBack} className="shrink-0 px-4 h-full flex items-center gap-2 hover:bg-white/5 transition-colors"
+            style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}>
+            <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>←</span>
+            <span style={{ fontSize: 11, fontWeight: 600, letterSpacing: '0.05em', color: channel.color }}>{channel.label}</span>
+          </button>
+          <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.08)' }} />
+          <div className="flex-1 overflow-hidden">
+            <div className="flex items-center gap-8 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
+              {[...stories, ...stories, ...stories].map((s, i) => (
+                <span key={i} className="flex items-center gap-2 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full" style={{ background: channel.color }} />
+                  <span className="text-[12px] text-white/70 font-medium">{s.topic}</span>
+                  <span className="text-[#333] ml-2">&middot;</span>
+                </span>
+              ))}
+            </div>
           </div>
+        </div>
+        <div style={{ paddingTop: '40px', height: '100vh' }}>
+          <ErrorBoundary>
+            <Dashboard key={currentClip?.id} stories={currentStory ? [currentStory] : stories} tvMode />
+          </ErrorBoundary>
         </div>
       </div>
 
-      <div style={{ paddingTop: '40px', height: '100vh' }}>
-        <ErrorBoundary>
-          <Dashboard
-            stories={stories}
-            tvMode
-          />
-        </ErrorBoundary>
+      {/* Queue strip */}
+      <div style={{ width: 220, flexShrink: 0, background: '#0d0d0d', borderLeft: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden', zIndex: 100 }}>
+        <div style={{ padding: '10px 12px 6px', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', flexShrink: 0 }}>
+          Up next · {upcoming.length}
+        </div>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+          {currentClip && <ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} />}
+          {upcoming.map((clip, i) => (
+            <ClipTile key={clip.id} clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1}
+              onClick={() => setQueue(q => { const idx = q.findIndex(c => c.id === clip.id); if (idx <= 0) return q; return [q[idx], ...q.slice(0, idx), ...q.slice(idx + 1)]; })}
+            />
+          ))}
+        </div>
       </div>
 
       <style>{`
-        @keyframes ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
+        @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-33.333%); } }
       `}</style>
     </div>
   );
@@ -341,105 +402,118 @@ function HeadlinePreview({ stories, channelId, color, entered }: {
   );
 }
 
-/** Breaking TV — auto-cycles through breaking stories, polls for new ones */
-function BreakingTV({ onBack }: { onBack: () => void }) {
-  const [breakingStories, setBreakingStories] = useState<NarrativeGap[]>([]);
-  const [currentStoryIdx, setCurrentStoryIdx] = useState(0);
-  const [playedIds, setPlayedIds] = useState<Set<string>>(new Set());
-  const [nowPlaying, setNowPlaying] = useState('');
-  const [lastStoryCount, setLastStoryCount] = useState(0);
-
-  // Convert breaking data to NarrativeGap
-  const toNarrativeGap = (b: any): NarrativeGap => {
-    const ytVideos = (b.youtube_videos || []).length > 0
-      ? b.youtube_videos
-      : (b.clips || []).filter((c: any) => c.platform === 'youtube' && c.embed_id)
-          .map((c: any) => ({ url: c.url || '', embed_id: c.embed_id, channel: c.title || 'Breaking', duration: c.duration, title: c.title }));
-    const socialClips = (b.social_clips || []).length > 0
-      ? b.social_clips
-      : (b.clips || []).filter((c: any) => c.platform !== 'youtube' && c.embed_id)
-          .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, duration: c.duration }));
-    return {
-      topic: b.topic, summary: b.summary || '', left_narrative: b.left_narrative || '',
-      right_narrative: b.right_narrative || '', what_they_arent_telling_you: b.what_they_arent_telling_you || '',
-      image_prompt: '', image_file: b.image_file, youtube_videos: ytVideos, social_clips: socialClips,
-      sources: b.sources || [],
-    };
+function toNarrativeGap(b: any): NarrativeGap {
+  const ytVideos = (b.youtube_videos || []).length > 0
+    ? b.youtube_videos
+    : (b.clips || []).filter((c: any) => c.platform === 'youtube' && c.embed_id)
+        .map((c: any) => ({ url: c.url || '', embed_id: c.embed_id, channel: c.title || 'Breaking', duration: c.duration, title: c.title }));
+  const socialClips = (b.social_clips || []).length > 0
+    ? b.social_clips
+    : (b.clips || []).filter((c: any) => c.platform !== 'youtube' && c.embed_id)
+        .map((c: any) => ({ platform: c.platform, url: c.url || '', embed_id: c.embed_id, title: c.title, author: c.author, duration: c.duration }));
+  return {
+    topic: b.topic || '', summary: b.summary || '', left_narrative: b.left_narrative || '',
+    center_narrative: b.center_narrative || '', right_narrative: b.right_narrative || '',
+    what_they_arent_telling_you: b.what_they_arent_telling_you || '',
+    image_prompt: '', image_file: b.image_file, youtube_videos: ytVideos, social_clips: socialClips,
+    sources: b.sources || [],
   };
+}
 
-  // Fetch breaking data
-  const fetchBreaking = () => {
+/** Breaking TV — queue-based live TV player */
+function BreakingTV({ onBack }: { onBack: () => void }) {
+  const [tvState, setTvState] = useState<{ queue: QueuedClip[]; playedIds: Set<string> }>({ queue: [], playedIds: new Set() });
+  const [rawStories, setRawStories] = useState<any[]>([]);
+  const knownIdsRef = useRef<Set<string>>(new Set());
+  const ytPlayerRef = useRef<HTMLIFrameElement>(null);
+
+  const currentClip = tvState.queue[0] ?? null;
+  const currentStory: NarrativeGap | null = (() => {
+    if (!currentClip) return null;
+    const raw = rawStories.find(s => s.topic === currentClip.storyTopic);
+    return raw ? toNarrativeGap(raw) : null;
+  })();
+
+  const advance = useCallback(() => {
+    setTvState(s => {
+      if (s.queue.length === 0) return s;
+      const [current, ...rest] = s.queue;
+      return { queue: [...rest, current], playedIds: new Set([...s.playedIds, current.id]) };
+    });
+  }, []);
+
+  const fetchAndSync = useCallback(() => {
     fetch('/api/breaking/data')
       .then(r => r.ok ? r.json() : null)
       .then(data => {
         if (!data) return;
-        const items = Array.isArray(data) ? data : [data];
-        // Only show stories with 3+ video clips (same rule as /breaking page)
-        const stories = items.map(toNarrativeGap).filter(s => {
-          const ytCount = (s.youtube_videos || []).length;
-          const videoClips = (s.social_clips || []).filter(c => c.duration).length;
-          return ytCount + videoClips >= 3;
+        const items: any[] = Array.isArray(data) ? data : [data];
+        const activeTopics = new Set(items.map(s => s.topic));
+        setRawStories(items);
+
+        const newClips: QueuedClip[] = [];
+        for (const story of items) {
+          for (const v of (story.youtube_videos || [])) {
+            if (!v.embed_id) continue;
+            const id = `${story.topic}::yt::${v.embed_id}`;
+            if (!knownIdsRef.current.has(id)) {
+              knownIdsRef.current.add(id);
+              newClips.push({ id, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: v.title || v.channel || '', channel: v.channel, duration: v.duration });
+            }
+          }
+          for (const c of (story.social_clips || [])) {
+            if (!c.embed_id || !c.duration) continue;
+            const id = `${story.topic}::${c.platform}::${c.embed_id}`;
+            if (!knownIdsRef.current.has(id)) {
+              knownIdsRef.current.add(id);
+              newClips.push({ id, embed_id: c.embed_id, platform: c.platform, storyTopic: story.topic, url: c.url || '', title: c.title || c.author || '', channel: c.author, duration: c.duration, thumbnail: c.thumbnail });
+            }
+          }
+        }
+
+        setTvState(s => {
+          const currentPlaying = s.queue[0];
+          const upcomingFiltered = s.queue.slice(1).filter(c => activeTopics.has(c.storyTopic));
+          return {
+            queue: [...(currentPlaying ? [currentPlaying] : []), ...newClips, ...upcomingFiltered],
+            playedIds: s.playedIds,
+          };
         });
-        setBreakingStories(stories);
-
-        // If new story appeared, jump to it
-        if (items.length > lastStoryCount && lastStoryCount > 0) {
-          setCurrentStoryIdx(0); // newest is first
-        }
-        setLastStoryCount(items.length);
-
-        // Update now playing
-        if (stories.length > 0) {
-          setNowPlaying(stories[0].topic);
-        }
       })
       .catch(() => {});
-  };
-
-  // Initial fetch + poll every 2 min
-  useEffect(() => {
-    fetchBreaking();
-    const interval = setInterval(fetchBreaking, 120000);
-    return () => clearInterval(interval);
   }, []);
 
-  // Auto-rotate stories every 3 min
   useEffect(() => {
-    if (breakingStories.length <= 1) return;
-    const t = setInterval(() => {
-      setCurrentStoryIdx(p => (p + 1) % breakingStories.length);
-    }, 180000);
-    return () => clearInterval(t);
-  }, [breakingStories.length]);
+    fetchAndSync();
+    const interval = setInterval(fetchAndSync, 120000);
+    return () => clearInterval(interval);
+  }, [fetchAndSync]);
 
-  // Update now playing label
+  // YouTube end detection
   useEffect(() => {
-    if (breakingStories[currentStoryIdx]) {
-      setNowPlaying(breakingStories[currentStoryIdx].topic);
-    }
-  }, [currentStoryIdx, breakingStories]);
-
-  // Build curated story — prioritize unplayed clips
-  const currentBreaking = breakingStories[currentStoryIdx];
-  const curatedStory: NarrativeGap | null = currentBreaking ? (() => {
-    const allYT = currentBreaking.youtube_videos || [];
-    const allSocial = currentBreaking.social_clips || [];
-    // Sort: unplayed first
-    const sortByPlayed = <T extends { embed_id?: string }>(arr: T[]) =>
-      [...arr].sort((a, b) => {
-        const aPlayed = playedIds.has(a.embed_id || '');
-        const bPlayed = playedIds.has(b.embed_id || '');
-        if (aPlayed === bPlayed) return 0;
-        return aPlayed ? 1 : -1;
-      });
-    return {
-      ...currentBreaking,
-      youtube_videos: sortByPlayed(allYT),
-      social_clips: sortByPlayed(allSocial),
+    const handler = (e: MessageEvent) => {
+      if (ytPlayerRef.current && e.source !== ytPlayerRef.current.contentWindow) return;
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data.event === 'infoDelivery' && data.info?.playerState === 0) advance();
+      } catch {}
     };
-  })() : null;
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
+  }, [advance]);
 
-  if (breakingStories.length === 0) {
+  // Duration-based timer for non-YouTube clips
+  useEffect(() => {
+    if (!currentClip || currentClip.platform === 'youtube') return;
+    const dur = (currentClip.duration || 60) * 1000;
+    const t = setTimeout(advance, dur);
+    return () => clearTimeout(t);
+  }, [currentClip?.id, advance]);
+
+  const { queue, playedIds } = tvState;
+  const upcoming = queue.slice(1);
+
+  if (queue.length === 0) {
     return (
       <div style={{ background: '#000', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <p style={{ color: '#666', fontSize: 16 }}>No breaking news right now.</p>
@@ -451,75 +525,113 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div style={{ background: '#000000', height: '100vh', overflow: 'hidden', cursor: 'none' }}>
-      {/* Ghost logo */}
-      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 top-1/2 pointer-events-none"
-        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08 }} />
+    <div style={{ background: '#0a0a0a', height: '100vh', overflow: 'hidden', display: 'flex' }}>
 
-      {/* Top bar — red breaking style */}
-      <div className="fixed top-0 left-0 right-0 h-10 flex items-center overflow-hidden" style={{ background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)', zIndex: 100 }}>
-        <button onClick={onBack}
-          className="shrink-0 px-4 h-full flex items-center gap-2 hover:bg-white/5 transition-colors"
-          style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}>
-          <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>←</span>
-          <span className="text-[10px] font-bold text-white bg-red-600 px-2 py-0.5 rounded animate-pulse">LIVE</span>
-        </button>
-        <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.15)' }} />
-
-        {/* Now Playing */}
-        <div className="shrink-0 px-3 flex items-center gap-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-[11px] text-white font-semibold">{nowPlaying}</span>
-        </div>
-
-        <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.15)' }} />
-
-        {/* Ticker */}
-        <div className="flex-1 overflow-hidden">
-          <div className="flex items-center gap-8 animate-[ticker_240s_linear_infinite] whitespace-nowrap pl-4">
-            {[...breakingStories, ...breakingStories, ...breakingStories].map((s, i) => (
-              <span key={i} className="flex items-center gap-2 shrink-0">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500" />
-                <span className="text-[12px] text-white/70 font-medium">{s.topic}</span>
-                <span className="text-white/20 ml-2">&middot;</span>
-              </span>
-            ))}
+      {/* Dashboard — main view */}
+      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+        {/* Top bar */}
+        <div style={{ height: 40, flexShrink: 0, background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)', display: 'flex', alignItems: 'center', zIndex: 10 }}>
+          <button onClick={onBack} style={{ padding: '0 16px', height: '100%', display: 'flex', alignItems: 'center', gap: 8, background: 'none', border: 'none', cursor: 'pointer' }}>
+            <span style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>←</span>
+            <span style={{ fontSize: 10, fontWeight: 700, color: '#fff', background: '#dc2626', padding: '2px 6px', borderRadius: 3 }}>LIVE</span>
+          </button>
+          <div style={{ width: 1, height: 20, background: 'rgba(255,255,255,0.15)' }} />
+          <div style={{ padding: '0 12px', display: 'flex', alignItems: 'center', gap: 6 }}>
+            <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#f87171', display: 'inline-block', animation: 'tvPulse 2s infinite' }} />
+            <span style={{ fontSize: 11, fontWeight: 600, color: '#fff', maxWidth: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              {currentClip?.storyTopic ?? ''}
+            </span>
           </div>
         </div>
 
-        {/* Story indicator */}
-        <div className="shrink-0 px-3 flex items-center gap-1">
-          {breakingStories.map((_, i) => (
-            <button key={i} onClick={() => setCurrentStoryIdx(i)}
-              style={{
-                width: i === currentStoryIdx ? 14 : 6, height: 6, borderRadius: 3,
-                background: i === currentStoryIdx ? '#991b1b' : 'rgba(255,255,255,0.3)',
-                border: 'none', cursor: 'pointer', transition: 'all 0.3s ease',
-              }} />
+        {currentStory && (
+          <div style={{ flex: 1, overflow: 'hidden' }}>
+            <ErrorBoundary>
+              <Dashboard key={currentClip?.id} stories={[currentStory]} tvMode />
+            </ErrorBoundary>
+          </div>
+        )}
+      </div>
+
+      {/* Queue strip — right */}
+      <div style={{ width: 220, flexShrink: 0, background: '#0d0d0d', borderLeft: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <div style={{ padding: '10px 12px 6px', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', flexShrink: 0 }}>
+          Up next · {upcoming.length}
+        </div>
+        <div style={{ flex: 1, overflowY: 'auto' }}>
+          {currentClip && <ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} />}
+          {upcoming.map((clip, i) => (
+            <ClipTile key={clip.id} clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1}
+              onClick={() => setTvState(s => {
+                const idx = s.queue.findIndex(c => c.id === clip.id);
+                if (idx <= 0) return s;
+                return { ...s, queue: [s.queue[idx], ...s.queue.slice(0, idx), ...s.queue.slice(idx + 1)] };
+              })}
+            />
           ))}
         </div>
       </div>
 
-      {/* Dashboard */}
-      {curatedStory && (
-        <div style={{ paddingTop: '40px', height: '100vh' }}>
-          <ErrorBoundary>
-            <Dashboard
-              key={`breaking-${currentStoryIdx}`}
-              stories={[curatedStory]}
-              tvMode
-            />
-          </ErrorBoundary>
-        </div>
-      )}
-
       <style>{`
-        @keyframes ticker {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-33.333%); }
-        }
+        @keyframes tvPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
       `}</style>
     </div>
+  );
+}
+
+function ClipTile({ clip, state, played, index, onClick }: {
+  clip: QueuedClip;
+  state: 'playing' | 'queued';
+  played?: boolean;
+  index?: number;
+  onClick: () => void;
+}) {
+  const thumb = clip.platform === 'youtube'
+    ? `https://img.youtube.com/vi/${clip.embed_id}/mqdefault.jpg`
+    : clip.thumbnail;
+
+  const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#000', reels: '#e1306c' };
+  const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', reels: 'IG' };
+
+  return (
+    <button onClick={onClick} style={{
+      width: '100%', padding: '8px 10px', display: 'flex', gap: 8, alignItems: 'flex-start',
+      background: state === 'playing' ? 'rgba(153,27,27,0.2)' : 'transparent',
+      borderLeft: state === 'playing' ? '2px solid #991b1b' : '2px solid transparent',
+      border: 'none', cursor: state === 'queued' ? 'pointer' : 'default',
+      opacity: played ? 0.4 : 1,
+      transition: 'all 0.2s ease',
+      textAlign: 'left',
+    }}>
+      {/* Thumbnail */}
+      <div style={{ width: 64, height: 36, flexShrink: 0, borderRadius: 3, overflow: 'hidden', background: '#1a1a1a', position: 'relative' }}>
+        {thumb
+          ? <img src={thumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          : <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: PLATFORM_COLOR[clip.platform] + '22' }}>
+              <span style={{ fontSize: 10, fontWeight: 700, color: PLATFORM_COLOR[clip.platform] }}>{PLATFORM_LABEL[clip.platform]}</span>
+            </div>
+        }
+        {state === 'playing' && (
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(153,27,27,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ fontSize: 10, color: '#fff', fontWeight: 700 }}>▶</span>
+          </div>
+        )}
+        {index !== undefined && (
+          <div style={{ position: 'absolute', bottom: 2, right: 2, fontSize: 8, color: 'rgba(255,255,255,0.6)', fontWeight: 600 }}>{index}</div>
+        )}
+      </div>
+      {/* Info */}
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <p style={{ margin: 0, fontSize: 10, color: state === 'playing' ? '#fca5a5' : played ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.7)', fontWeight: 600, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+          {clip.storyTopic}
+        </p>
+        {clip.title && (
+          <p style={{ margin: '2px 0 0', fontSize: 9, color: 'rgba(255,255,255,0.3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {clip.title}
+          </p>
+        )}
+      </div>
+    </button>
   );
 }
 

@@ -113,7 +113,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                 <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
               ) : (
                 <div className="flex items-center gap-1.5">
-                  <input type="email" placeholder="Subscribe to newsletter: your@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                  <input type="email" placeholder="Subscribe to newsletter: verwerft.j@gmail.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
                     onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
                     className="text-[10px] px-2 py-1 rounded-full outline-none"
                     style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
@@ -141,7 +141,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
 
       {/* 2. COMPACT DASHBOARD */}
       <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
-        <div data-section="story-dashboard" className="rounded-xl overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+        <div data-section="story-dashboard" className="rounded-xl overflow-hidden">
           <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
             <ErrorBoundary>
               <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />

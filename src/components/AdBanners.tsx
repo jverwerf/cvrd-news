@@ -545,7 +545,7 @@ function KofiTile() {
         CVRD<span style={{ color: 'rgba(255,255,255,0.3)' }}>.</span>
       </div>
       <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: 'italic', fontSize: 12, color: 'rgba(255,255,255,0.55)', lineHeight: 1.3, textAlign: 'center' as const }}>
-        Independent & ad-free.<br />Help us stay that way.
+        Independent news, built different.<br />Help us keep it that way.
       </div>
       <div style={{ padding: '7px 14px', borderRadius: 20, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', fontFamily: "'DM Sans', sans-serif", fontSize: 11, fontWeight: 600, color: '#fff' }}>
         ♥ Buy us a coffee
