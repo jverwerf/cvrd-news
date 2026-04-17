@@ -119,7 +119,7 @@ function LiveRow({ stories, now }: { stories: any[]; now: number }) {
 
         return (
           <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} className="live-item" style={{
-            flex: '1 1 calc(33.333% - 7px)', maxWidth: 'calc(33.333% - 7px)', minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
+            flex: '1 1 calc(33.333% - 7px)', minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
             borderRadius: 10, overflow: 'hidden',
             background: '#1e2d3d',
             border: '1px solid rgba(220,38,38,0.18)',
