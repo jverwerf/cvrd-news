@@ -278,9 +278,18 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
     const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter(c => c.duration).length;
     return videoClips >= 3;
   });
+
+  const topicWords = (t: string) => t.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(/\s+/).filter(Boolean);
+  const isSameStory = (a: string, b: string) => {
+    const aw = topicWords(a); const bw = topicWords(b);
+    const shorter = aw.length <= bw.length ? aw : bw;
+    const longer = aw.length <= bw.length ? bw : aw;
+    return shorter.filter(w => longer.includes(w)).length / shorter.length >= 0.7;
+  };
+  const breakingTopics = allStories.map(s => s.topic || '');
   const liveStories = liveNowItems.map(toNarrativeGap).filter(s => {
-    const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter(c => c.duration).length;
-    return videoClips >= 3;
+    const videoClips = (s.youtube_videos || []).length + (s.social_clips || []).filter((c: any) => c.duration).length;
+    return videoClips >= 3 && !breakingTopics.some(bt => isSameStory(s.topic || '', bt));
   });
 
   if (allStories.length === 0 && liveStories.length === 0) {

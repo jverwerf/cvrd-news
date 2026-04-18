@@ -48,10 +48,18 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     }
   }
 
+  // Dedup by embed_id — same clip can appear in both youtube_videos and social_clips
+  const seenIds = new Set<string>();
+  const dedupedItems = allItems.filter(item => {
+    if (seenIds.has(item.embed_id)) return false;
+    seenIds.add(item.embed_id);
+    return true;
+  });
+
   // Interleave by platform for variety — don't clump all YouTube then all TikTok
   // Split by platform, then round-robin pick from each
   const byPlatform: Record<string, VideoItem[]> = {};
-  for (const item of allItems) {
+  for (const item of dedupedItems) {
     const key = item.type;
     if (!byPlatform[key]) byPlatform[key] = [];
     byPlatform[key].push(item);

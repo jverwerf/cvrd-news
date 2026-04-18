@@ -172,7 +172,20 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
     (s.youtube_videos || []).length + (s.social_clips || []).filter((c: any) => c.duration).length >= 3;
 
   const breaking = breakingItems.filter(hasClips).map(s => ({ ...s, _kind: 'breaking' as const }));
-  const live = liveItems.filter(hasClips).map(s => ({ ...s, _kind: 'live' as const }));
+
+  const topicWords = (t: string) => t.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(/\s+/).filter(Boolean);
+  const isSameStory = (liveTopic: string, breakingTopic: string) => {
+    const bWords = topicWords(breakingTopic);
+    const lWords = topicWords(liveTopic);
+    const shorter = bWords.length <= lWords.length ? bWords : lWords;
+    const longer = bWords.length <= lWords.length ? lWords : bWords;
+    const matches = shorter.filter(w => longer.includes(w)).length;
+    return matches / shorter.length >= 0.7;
+  };
+  const breakingTopics = breaking.map(s => s.topic || '');
+  const live = liveItems.filter(hasClips)
+    .filter(s => !breakingTopics.some(bt => isSameStory(s.topic || '', bt)))
+    .map(s => ({ ...s, _kind: 'live' as const }));
 
   if (breaking.length === 0 && live.length === 0) return null;
 
