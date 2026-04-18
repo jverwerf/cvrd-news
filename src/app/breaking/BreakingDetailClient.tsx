@@ -178,8 +178,12 @@ export default function BreakingDetailClient({ story, raw, type }: {
           </div>
 
 
-          {/* NARRATIVES */}
-          {(story.left_narrative || story.center_narrative || story.right_narrative) && (
+          {/* NARRATIVES — hide if none have real content */}
+          {(story.left_narrative || story.center_narrative || story.right_narrative) && !(
+            (!story.left_narrative || story.left_narrative.startsWith('No coverage')) &&
+            (!story.center_narrative || story.center_narrative.startsWith('No coverage')) &&
+            (!story.right_narrative || story.right_narrative.startsWith('No coverage'))
+          ) && (
             <div className="mb-8">
               <h2 className="text-[10px] font-bold uppercase tracking-[0.14em] mb-3" style={{ fontFamily: mono, color: C.gold }}>Narratives</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-lg" style={{ background: C.panel }}>

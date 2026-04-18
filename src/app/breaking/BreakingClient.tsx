@@ -326,7 +326,7 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
         <SiteNav isBreaking={true} />
 
         {/* ── HERO: first breaking story (full bleed) ─────── */}
-        {heroStory && (
+        {heroStory && (<>
           <a href={`/breaking/${heroSlug}`} style={{ textDecoration: 'none', display: 'block' }}>
             <div style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer' }}>
               {/* Background */}
@@ -387,7 +387,30 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
               </div>
             </div>
           </a>
-        )}
+
+          {/* X text tweets below hero */}
+          {(() => {
+            const xText = (heroStory.social_clips ?? []).filter((c: any) => c.platform === 'x' && !c.duration && c.embed_id);
+            if (xText.length === 0) return null;
+            return (
+              <div style={{ maxWidth: 1120, margin: '0 auto', padding: '0 16px 20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+                  <span style={{ fontFamily: mono, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: C.dim }}>𝕏 REACTIONS</span>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 8 }}>
+                  {xText.slice(0, 8).map((c: any, i: number) => (
+                    <div key={i} style={{ borderRadius: 8, overflow: 'hidden', position: 'relative', background: C.panelDark, height: 90 }}>
+                      <div style={{ position: 'absolute', top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                          style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
+        </>)}
 
         {/* ── GRID: remaining stories ────────────────────── */}
         <main style={{ maxWidth: 1120, margin: '0 auto', padding: '28px 16px 40px' }}>
