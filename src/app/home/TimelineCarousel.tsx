@@ -18,6 +18,13 @@ function catColor(cat?: string) {
   };
   return map[cat ?? ''] ?? '#374151';
 }
+function truncateAtSentence(text: string, max: number): string {
+  if (!text || text.length <= max) return text;
+  const cut = text.slice(0, max);
+  const lastPeriod = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
+  return lastPeriod > max * 0.4 ? cut.slice(0, lastPeriod + 1) + '...' : cut + '...';
+}
+
 function catLabel(cat?: string) {
   const map: Record<string, string> = {
     world: 'World', politics: 'Politics', markets: 'Markets',
@@ -107,7 +114,7 @@ export function TimelineCarousel({ threads, blobBase }: { threads: TimelineThrea
                   Latest · {latest.date}
                 </div>
                 <div style={{ fontFamily: serif, fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.55, color: 'rgba(226,232,240,0.85)' }}>
-                  "{latest.summary?.slice(0, 180)}{(latest.summary?.length ?? 0) > 180 ? '...' : ''}"
+                  "{truncateAtSentence(latest.summary ?? '', 180)}"
                 </div>
               </div>
             )}
@@ -124,7 +131,7 @@ export function TimelineCarousel({ threads, blobBase }: { threads: TimelineThrea
                     <div>
                       <div style={{ fontFamily: mono, fontSize: 8, letterSpacing: '0.08em', color: C.dimmer, marginBottom: 2 }}>{entry.date}</div>
                       <div style={{ fontFamily: mono, fontSize: 10, color: C.dim, lineHeight: 1.4 }}>
-                        {entry.summary?.slice(0, 100)}{(entry.summary?.length ?? 0) > 100 ? '...' : ''}
+                        {truncateAtSentence(entry.summary ?? '', 100)}
                       </div>
                     </div>
                   </div>
