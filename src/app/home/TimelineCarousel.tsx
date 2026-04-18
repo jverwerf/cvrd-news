@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { TimelineThread } from '@/lib/timeline-data';
 
 const C = {
@@ -22,7 +22,10 @@ function truncateAtSentence(text: string, max: number): string {
   if (!text || text.length <= max) return text;
   const cut = text.slice(0, max);
   const lastPeriod = Math.max(cut.lastIndexOf('. '), cut.lastIndexOf('! '), cut.lastIndexOf('? '));
-  return lastPeriod > max * 0.4 ? cut.slice(0, lastPeriod + 1) + '...' : cut + '...';
+  if (lastPeriod > max * 0.4) return cut.slice(0, lastPeriod + 1) + '...';
+  // No sentence break — cut at last word boundary
+  const lastSpace = cut.lastIndexOf(' ');
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut) + '...';
 }
 
 function catLabel(cat?: string) {
@@ -35,6 +38,13 @@ function catLabel(cat?: string) {
 
 export function TimelineCarousel({ threads, blobBase }: { threads: TimelineThread[]; blobBase: string }) {
   const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    if (threads.length < 2) return;
+    const t = setInterval(() => setIdx(i => (i + 1) % threads.length), 8000);
+    return () => clearInterval(t);
+  }, [threads.length]);
+
   if (!threads.length) return null;
 
   const thread = threads[idx];
