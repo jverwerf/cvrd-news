@@ -13,6 +13,7 @@ import { TimelineCarousel } from './home/TimelineCarousel';
 import { TvTile } from './home/TvTile';
 import { RollingClaim } from './home/RollingClaim';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
+import { editorialSlug } from '@/lib/onrecord-slug';
 import { HorizontalAdBanner } from '@/components/AdBanners';
 
 // ── helpers ──────────────────────────────────────────────────────
@@ -183,10 +184,11 @@ function OnRecordStrip({ data }: { data: any }) {
     : null;
   const score: number = data?.overall_score ?? data?.topic_score ?? 0;
   const scoreColor = score >= 70 ? '#4ade80' : score >= 50 ? C.gold : score >= 35 ? '#f97316' : '#f87171';
-  const personSlug = person?.name
-    ? person.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+  const edDate = (data?.generated_at || '').slice(0, 10);
+  const edSlug = edDate && person?.handle
+    ? editorialSlug(edDate, person.handle, data?.search_keyword)
     : null;
-  const href = personSlug ? `/onrecord/${personSlug}` : '/onrecord';
+  const href = edSlug ? `/onrecord/today/${edSlug}` : '/onrecord/today';
 
   return (
     <a href={href} style={{ textDecoration: 'none', display: 'block' }}>

@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { HorizontalAdBanner } from "@/components/AdBanners";
 import { SiteNav } from "@/components/SiteNav";
+import type { ArchiveEntry } from "@/lib/onrecord-slug";
 
 type ScoredClaim = {
   tweet_id: string; tweet_text: string; tweet_date: string; tweet_url: string;
@@ -211,7 +212,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
               {/* Month label */}
               {(months.length <= 12 || i % Math.ceil(months.length / 12) === 0 || i === months.length - 1) && (
                 <text x={barCenters[i]} y={barH + 16} textAnchor="middle" fill="#4a5a6a" fontSize="11">
-                  {new Date(d.m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{d.m.slice(2, 4)}
+                  {new Date(d.m + '-02').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                 </text>
               )}
             </g>
@@ -242,9 +243,17 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
             <polyline points={linePoints} fill="none" stroke="#daa520" strokeWidth={2.5} strokeLinejoin="round" strokeLinecap="round" />
           )}
 
-          {/* Dots */}
+          {/* Dots + per-point % labels */}
           {months.map((_, i) => (
-            <circle key={i} cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={4} fill="#daa520" stroke="#1e2a3a" strokeWidth={1.5} />
+            <g key={i}>
+              <circle cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={4} fill="#daa520" stroke="#1e2a3a" strokeWidth={1.5} />
+              {i !== months.length - 1 && (
+                <text x={barCenters[i]} y={scoreToY(monthScores[i]) - 8} textAnchor="middle"
+                  fill="#daa520" fontSize="10" fontWeight="600" opacity={0.75}>
+                  {monthScores[i]}%
+                </text>
+              )}
+            </g>
           ))}
 
           {/* Latest score label */}
@@ -262,7 +271,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
             if (!showLabel) return null;
             return (
               <text key={m} x={barCenters[i]} y={lineBottom + 14} textAnchor="middle" fill="#4a5a6a" fontSize="11">
-                {new Date(m + '-02').toLocaleDateString('en-US', { month: 'short' }).slice(0, 3)}'{m.slice(2, 4)}
+                {new Date(m + '-02').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </text>
             );
           })}
@@ -283,12 +292,26 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
   const [pendingLimit, setPendingLimit] = useState(3);
   const [claimLimit, setClaimLimit] = useState(5);
   const [isBreaking, setIsBreaking] = useState(false);
+  const [featuredEditorials, setFeaturedEditorials] = useState<ArchiveEntry[]>([]);
 
   useEffect(() => {
     fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).then(data => {
       if (data && Array.isArray(data) && data.length > 0) setIsBreaking(true);
     }).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+    if (!blobBase || !score?.handle) return;
+    fetch(`${blobBase}/politicians/onrecord_archive.json?t=${Date.now()}`)
+      .then(r => r.ok ? r.json() : null)
+      .then((entries: ArchiveEntry[] | null) => {
+        if (!Array.isArray(entries)) return;
+        const mine = entries.filter(e => e.handle === score.handle)
+          .sort((a, b) => b.date.localeCompare(a.date));
+        setFeaturedEditorials(mine);
+      }).catch(() => {});
+  }, [score?.handle]);
 
   const claims: ScoredClaim[] = verified?.scored_claims || [];
   const pending: PendingClaim[] = verified?.pending_claims || [];
@@ -427,6 +450,43 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             </div>
           ))}
         </div>
+
+        {/* FEATURED ON RECORD */}
+        {featuredEditorials.length > 0 && (
+          <div className="rounded-lg mb-6 overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+            <div className="flex items-center gap-2 px-5 pt-4 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2l2.39 7.36H22l-6.2 4.5L18.18 21 12 16.5 5.82 21l2.38-7.14L2 9.36h7.61L12 2z"/>
+              </svg>
+              <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Featured On Record</span>
+              <span className="text-[11px] text-[#777]">{featuredEditorials.length} editorial{featuredEditorials.length > 1 ? 's' : ''}</span>
+            </div>
+            <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {featuredEditorials.slice(0, 6).map(ed => (
+                <Link key={ed.slug} href={`/onrecord/today/${ed.slug}`}
+                  className="block rounded-md p-3 transition-opacity hover:opacity-90"
+                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', textDecoration: 'none' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-[8px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>
+                      {fmtDate(ed.date)}
+                    </span>
+                    {ed.story_topic && (
+                      <span className="text-[8px] font-bold uppercase tracking-[0.1em] px-1.5 py-0.5 rounded"
+                        style={{ color: '#daa520', background: 'rgba(184,134,11,0.1)' }}>
+                        {ed.story_topic}
+                      </span>
+                    )}
+                  </div>
+                  <h3 className="text-[14px] text-white leading-tight tracking-[-0.01em] line-clamp-2" style={serif}>
+                    {ed.search_keyword
+                      ? `On ${ed.search_keyword.charAt(0).toUpperCase() + ed.search_keyword.slice(1)}: ${ed.topic_score ?? ed.overall_score}% Truthful`
+                      : ed.headline}
+                  </h3>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* AD */}
         <div className="mb-6">

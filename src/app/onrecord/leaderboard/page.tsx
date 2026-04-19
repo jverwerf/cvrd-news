@@ -158,8 +158,8 @@ export default function LeaderboardPage() {
       <SiteNav isBreaking={isBreaking} />
 
       {/* VIEW TOGGLE + SEARCH — same row */}
-      <div className="flex items-center gap-2 px-4 md:px-12 py-2" style={{ background: '#1e2a3a' }}>
-        <div className="inline-flex items-center gap-1.5 px-1.5 rounded-full shrink-0"
+      <div className="or-pills-row flex items-center gap-2 px-4 md:px-12 py-2" style={{ background: '#1e2a3a' }}>
+        <div className="or-toggle-pill inline-flex items-center gap-1.5 px-1.5 rounded-full shrink-0"
           style={{ background: 'rgba(184,134,11,0.1)', border: '1px solid rgba(184,134,11,0.3)', height: 32 }}>
           <a href="/onrecord" className="flex items-center p-1.5 rounded-full transition-colors hover:bg-[rgba(184,134,11,0.2)]">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b8860b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
@@ -172,7 +172,7 @@ export default function LeaderboardPage() {
             </svg>
           </span>
         </div>
-        <div className="flex items-center gap-2 px-3 py-1 rounded-full flex-1"
+        <div className="or-search-pill flex items-center gap-2 px-3 py-1 rounded-full flex-1"
           style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', maxWidth: 280 }}>
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -311,6 +311,14 @@ export default function LeaderboardPage() {
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
         </div>
       </footer>
+      <style>{`
+        .or-pills-row { flex-direction: column; align-items: stretch; gap: 8px; }
+        .or-search-pill { order: 1; flex: 0 0 auto; width: 100%; align-self: center; }
+        .or-toggle-pill { order: 2; align-self: flex-start; }
+        @media (max-width: 600px) {
+          .or-search-pill { max-width: none !important; align-self: stretch; }
+        }
+      `}</style>
     </div>
   );
 }
