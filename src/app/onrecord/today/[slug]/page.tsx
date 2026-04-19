@@ -69,9 +69,21 @@ export default async function OnRecordTodayBySlug({ params }: { params: Promise<
   const shareUrl = `https://cvrdnews.com/onrecord/today/${slug}`;
   const shareFirstPara = (editorial.editorial || '').split('\n\n')[0] || '';
 
-  // deterministic heights for SSR/hydration match
-  const meterLines = 40;
-  const meterHeights = Array.from({ length: meterLines }, (_, i) => 30 + ((i * 2654435761) % 50));
+  // deterministic heights for SSR/hydration match (mulberry32 PRNG)
+  const meterLines = 80;
+  const meterHeights = Array.from({ length: meterLines }, (_, i) => {
+    let t = (i + 1) + 0x6D2B79F5;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    const r = ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    return 40 + r * 40;
+  });
+  const displayScore = editorial.topic_score ?? editorial.overall_score ?? 0;
+  const tweets = editorial.matched_tweets || [];
+  const trueN = tweets.filter((t: any) => t.verdict === 'TRUE').length;
+  const somewhatN = tweets.filter((t: any) => t.verdict === 'SOMEWHAT MISLEADING').length;
+  const misleadN = tweets.filter((t: any) => t.verdict === 'MISLEADING').length;
+  const falseN = tweets.filter((t: any) => t.verdict === 'FALSE').length;
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
@@ -103,32 +115,45 @@ export default async function OnRecordTodayBySlug({ params }: { params: Promise<
               <h1 className="text-[22px] md:text-[26px] text-white leading-tight tracking-[-0.02em] mb-1" style={serif}>
                 {editorial.search_keyword ? `On ${editorial.search_keyword.charAt(0).toUpperCase() + editorial.search_keyword.slice(1)}: ${editorial.topic_score ?? editorial.overall_score}% Truthful` : editorial.headline}
               </h1>
-              <p className="text-[11px] text-white/30 mb-3">
+              <p className="text-[11px] text-white/30 mb-4">
                 {editorial.person.role}
                 {editorial.search_keyword && <> · {editorial.matching_claims} claims on &ldquo;{editorial.search_keyword}&rdquo;</>}
                 {editorial.overall_score != null && <> · {editorial.overall_score}% overall</>}
               </p>
-              {editorial.topic_score != null && (
-                <div className="max-w-[200px]">
-                  <div className="flex justify-between mb-0.5 text-[7px] uppercase tracking-[0.15em]">
-                    <span style={{ color: '#f87171' }}>Less truthful</span>
-                    <span style={{ color: '#60a5fa' }}>More truthful</span>
-                  </div>
-                  <div className="flex items-end gap-[1px] h-5">
-                    {Array.from({ length: meterLines }).map((_, i) => {
-                      const pct = (i / meterLines) * 100;
-                      const color = pct < 35 ? '#f87171' : pct < 55 ? '#daa520' : '#60a5fa';
-                      return (
-                        <div key={i} className="flex-1 rounded-sm" style={{
-                          height: `${meterHeights[i]}%`,
-                          background: pct <= (editorial.topic_score || 0) ? color : '#1e2a3a',
-                          opacity: pct <= (editorial.topic_score || 0) ? 0.7 : 0.2,
-                        }} />
-                      );
-                    })}
-                  </div>
+              <div className="max-w-[320px]">
+                <div className="mb-1 text-center">
+                  <span className="text-[28px] text-white font-bold" style={serif}>{displayScore}</span>
+                  <span className="text-[10px] text-[#777]">%</span>
                 </div>
-              )}
+                <div className="flex justify-between mb-1 text-[8px] uppercase tracking-[0.15em]">
+                  <span style={{ color: '#f87171' }}>Less truthful</span>
+                  <span style={{ color: '#60a5fa' }}>More truthful</span>
+                </div>
+                <div className="relative h-10 flex items-end gap-[2px]">
+                  {Array.from({ length: meterLines }).map((_, i) => {
+                    const pct = (i / meterLines) * 100;
+                    const isMarker = Math.abs(pct - displayScore) < (100 / meterLines);
+                    const color = pct < 35 ? '#f87171' : pct < 55 ? '#daa520' : '#60a5fa';
+                    return (
+                      <div key={i} className="flex-1 rounded-sm" style={{
+                        height: isMarker ? '100%' : `${meterHeights[i]}%`,
+                        background: isMarker ? '#fff' : pct <= displayScore ? color : '#3a4a5a',
+                        opacity: isMarker ? 1 : pct <= displayScore ? 0.7 : 0.35,
+                      }} />
+                    );
+                  })}
+                </div>
+                {tweets.length > 0 && (
+                  <div className="mt-3 flex items-center justify-center gap-3 text-[10px] flex-wrap">
+                    {trueN > 0 && <span><span className="font-bold" style={{ color: '#60a5fa' }}>{trueN}</span> <span className="text-[#777]">true</span></span>}
+                    {somewhatN > 0 && <span><span className="font-bold" style={{ color: '#f59e0b' }}>{somewhatN}</span> <span className="text-[#777]">somewhat</span></span>}
+                    {misleadN > 0 && <span><span className="font-bold" style={{ color: '#daa520' }}>{misleadN}</span> <span className="text-[#777]">misleading</span></span>}
+                    {falseN > 0 && <span><span className="font-bold" style={{ color: '#f87171' }}>{falseN}</span> <span className="text-[#777]">false</span></span>}
+                    <span className="text-[#555]">·</span>
+                    <span className="text-[#555]">{tweets.length} claims</span>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
 
