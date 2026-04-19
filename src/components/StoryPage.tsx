@@ -26,7 +26,7 @@ function toBullets(text: string): string[] {
   return merged;
 }
 
-export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, nextStory, matchedTimelines }: {
+export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, nextStory, matchedTimelines, slugBase = '/story' }: {
   story: NarrativeGap;
   date: string;
   allStories: NarrativeGap[];
@@ -34,6 +34,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   prevStory?: NarrativeGap;
   nextStory?: NarrativeGap;
   matchedTimelines?: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[];
+  slugBase?: string;
 }) {
   const [dashExpanded, setDashExpanded] = useState(false);
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
@@ -70,10 +71,10 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
     .filter(s => s.trim().length > 20) || [];
 
   const prev = () => {
-    if (prevStory) window.location.href = `/story/${topicToSlug(prevStory.topic)}`;
+    if (prevStory) window.location.href = `${slugBase}/${topicToSlug(prevStory.topic)}`;
   };
   const next = () => {
-    if (nextStory) window.location.href = `/story/${topicToSlug(nextStory.topic)}`;
+    if (nextStory) window.location.href = `${slugBase}/${topicToSlug(nextStory.topic)}`;
   };
 
   return (
