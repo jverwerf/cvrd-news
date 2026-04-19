@@ -44,6 +44,8 @@ export function Dashboard({
   noAutoPlay,
   compact,
   tilesOnly,
+  onEnd,
+  startEmbedId,
 }: {
   stories: NarrativeGap[];
   videoUrl?: string;
@@ -52,6 +54,8 @@ export function Dashboard({
   noAutoPlay?: boolean;
   compact?: boolean;
   tilesOnly?: boolean;
+  onEnd?: () => void;
+  startEmbedId?: string;
 }) {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -124,6 +128,11 @@ export function Dashboard({
   }
 
   const [currentIdx, setCurrentIdx] = useState(0);
+  useEffect(() => {
+    if (!startEmbedId) return;
+    const idx = playlist.findIndex(p => p.embed_id === startEmbedId);
+    if (idx > 0) setCurrentIdx(idx);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const current = playlist[currentIdx];
 
   // Determine which story group we're in
@@ -191,7 +200,11 @@ export function Dashboard({
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) {
-          setCurrentIdx(p => (p + 1) % playlist.length);
+          if (onEnd) {
+            onEnd();
+          } else {
+            setCurrentIdx(p => (p + 1) % playlist.length);
+          }
         }
       } catch {}
     };
@@ -577,8 +590,8 @@ export function Dashboard({
               label={current.videoTitle || current.channel}
             />
           )}
-          {/* Volume overlay — bottom-right corner of video */}
-          <div className="absolute bottom-2 right-2 z-20 flex items-center gap-1.5 px-2 py-1 rounded-full"
+          {/* Volume overlay — bottom-left corner of video */}
+          <div className="absolute bottom-2 left-2 z-20 flex items-center gap-1.5 px-2 py-1 rounded-full"
             style={{ background: 'rgba(0,0,0,0.55)', pointerEvents: 'auto' }}>
             <button onClick={toggleSound} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', padding: 0 }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
