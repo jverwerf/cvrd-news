@@ -80,10 +80,11 @@ export default async function OnRecordTodayBySlug({ params }: { params: Promise<
   });
   const displayScore = editorial.topic_score ?? editorial.overall_score ?? 0;
   const tweets = editorial.matched_tweets || [];
-  const trueN = tweets.filter((t: any) => t.verdict === 'TRUE').length;
-  const somewhatN = tweets.filter((t: any) => t.verdict === 'SOMEWHAT MISLEADING').length;
-  const misleadN = tweets.filter((t: any) => t.verdict === 'MISLEADING').length;
-  const falseN = tweets.filter((t: any) => t.verdict === 'FALSE').length;
+  const trueN = editorial.topic_true_count ?? tweets.filter((t: any) => t.verdict === 'TRUE').length;
+  const somewhatN = editorial.topic_somewhat_count ?? tweets.filter((t: any) => t.verdict === 'SOMEWHAT MISLEADING').length;
+  const misleadN = editorial.topic_misleading_count ?? tweets.filter((t: any) => t.verdict === 'MISLEADING').length;
+  const falseN = editorial.topic_false_count ?? tweets.filter((t: any) => t.verdict === 'FALSE').length;
+  const totalN = editorial.matching_claims ?? tweets.length;
 
   return (
     <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
@@ -143,14 +144,14 @@ export default async function OnRecordTodayBySlug({ params }: { params: Promise<
                     );
                   })}
                 </div>
-                {tweets.length > 0 && (
+                {totalN > 0 && (
                   <div className="mt-3 flex items-center justify-center gap-3 text-[10px] flex-wrap">
                     {trueN > 0 && <span><span className="font-bold" style={{ color: '#60a5fa' }}>{trueN}</span> <span className="text-[#777]">true</span></span>}
                     {somewhatN > 0 && <span><span className="font-bold" style={{ color: '#f59e0b' }}>{somewhatN}</span> <span className="text-[#777]">somewhat</span></span>}
                     {misleadN > 0 && <span><span className="font-bold" style={{ color: '#daa520' }}>{misleadN}</span> <span className="text-[#777]">misleading</span></span>}
                     {falseN > 0 && <span><span className="font-bold" style={{ color: '#f87171' }}>{falseN}</span> <span className="text-[#777]">false</span></span>}
                     <span className="text-[#555]">·</span>
-                    <span className="text-[#555]">{tweets.length} claims</span>
+                    <span className="text-[#555]">{totalN} claims</span>
                   </div>
                 )}
               </div>
