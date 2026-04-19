@@ -279,42 +279,6 @@ export default function PoliticiansPage() {
 
       <SiteNav isBreaking={isBreaking} />
 
-      {/* VIEW TOGGLE + SEARCH PILL — same line */}
-      <div className="or-pills-row relative flex items-center px-2 py-2" style={{ background: '#1e2a3a', minHeight: 40 }}>
-        <div className="or-toggle-pill inline-flex items-center gap-1.5 px-1.5 rounded-full shrink-0"
-          style={{ background: 'rgba(184,134,11,0.1)', border: '1px solid rgba(184,134,11,0.3)', height: 32 }}>
-          <span className="flex items-center p-1.5 rounded-full" style={{ background: 'rgba(184,134,11,0.3)' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
-            </svg>
-          </span>
-          <a href="/onrecord/leaderboard" className="flex items-center p-1.5 rounded-full transition-colors hover:bg-[rgba(184,134,11,0.2)]">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b8860b" strokeWidth="2" strokeLinecap="round" style={{ opacity: 0.5 }}>
-              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="16" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/>
-            </svg>
-          </a>
-        </div>
-        <div className="or-search-pill flex items-center gap-2 px-4 py-1.5 rounded-full"
-          style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-          </svg>
-          <input
-            type="text"
-            placeholder="Search leaders, parties, officials..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
-            style={{ background: 'transparent', border: 'none' }}
-          />
-          {search && (
-            <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
-              ×
-            </button>
-          )}
-        </div>
-      </div>
-
       {/* EDITORIAL HERO — compact bar at top */}
       {editorial && (() => {
         const edDate = (editorial.generated_at || '').slice(0, 10);
@@ -358,6 +322,42 @@ export default function PoliticiansPage() {
         </div>
         );
       })()}
+
+      {/* VIEW TOGGLE + SEARCH PILL — same row, below the hero card */}
+      <div className="or-pills-row relative flex items-center gap-2 px-3 py-2" style={{ background: '#1e2a3a', minHeight: 40 }}>
+        <div className="or-toggle-pill inline-flex items-center gap-1.5 px-1.5 rounded-full shrink-0"
+          style={{ background: 'rgba(184,134,11,0.1)', border: '1px solid rgba(184,134,11,0.3)', height: 32 }}>
+          <span className="flex items-center p-1.5 rounded-full" style={{ background: 'rgba(184,134,11,0.3)' }}>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+            </svg>
+          </span>
+          <a href="/onrecord/leaderboard" className="flex items-center p-1.5 rounded-full transition-colors hover:bg-[rgba(184,134,11,0.2)]">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b8860b" strokeWidth="2" strokeLinecap="round" style={{ opacity: 0.5 }}>
+              <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="16" y2="12"/><line x1="3" y1="18" x2="11" y2="18"/>
+            </svg>
+          </a>
+        </div>
+        <div className="or-search-pill flex items-center gap-2 px-4 py-1.5 rounded-full flex-1"
+          style={{ background: 'rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.1)', height: 32 }}>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input
+            type="text"
+            placeholder="Search leaders, parties, officials..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="flex-1 text-[11px] text-white/80 placeholder-white/25 outline-none"
+            style={{ background: 'transparent', border: 'none' }}
+          />
+          {search && (
+            <button onClick={() => setSearch('')} className="text-[10px] text-white/30 hover:text-white/60 cursor-pointer" style={{ background: 'none', border: 'none' }}>
+              ×
+            </button>
+          )}
+        </div>
+      </div>
 
       {/* DASHBOARD GRID */}
       <section style={{ height: 'calc(100vh - 220px)', overflow: 'hidden', borderBottom: '1px solid #2a3a4a' }}>
@@ -428,11 +428,7 @@ export default function PoliticiansPage() {
       <style>{`
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         @keyframes tileTransition { 0% { opacity: 0; transform: scale(1.05); } 100% { opacity: 1; transform: scale(1); } }
-        .or-pills-row { flex-direction: column; align-items: stretch; gap: 8px; }
-        .or-search-pill { order: 1; flex: 0 0 auto; min-width: 0; margin-left: 0; width: 100%; max-width: 420px; align-self: center; }
-        .or-toggle-pill { order: 2; align-self: flex-start; }
         @media (max-width: 600px) {
-          .or-search-pill { max-width: none; align-self: stretch; }
           .or-center-img { display: none !important; }
           .or-center-content { padding: 10px !important; border-left: none !important; justify-content: flex-start !important; }
           .or-center-name { font-size: 14px !important; margin-bottom: 6px !important; }

@@ -311,14 +311,6 @@ export default function LeaderboardPage() {
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
         </div>
       </footer>
-      <style>{`
-        .or-pills-row { flex-direction: column; align-items: stretch; gap: 8px; }
-        .or-search-pill { order: 1; flex: 0 0 auto; width: 100%; align-self: center; }
-        .or-toggle-pill { order: 2; align-self: flex-start; }
-        @media (max-width: 600px) {
-          .or-search-pill { max-width: none !important; align-self: stretch; }
-        }
-      `}</style>
     </div>
   );
 }
