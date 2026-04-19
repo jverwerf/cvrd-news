@@ -74,7 +74,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     }
   }
 
-  const [activeIdx, setActiveIdx] = useState(-1); // -1 = no video selected, thumbnails only
+  const [activeIdx, setActiveIdx] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [xEmbedHeight, setXEmbedHeight] = useState<number | null>(null);
   const [videosSinceAd, setVideosSinceAd] = useState(0);
