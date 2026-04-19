@@ -128,6 +128,7 @@ export function Dashboard({
   }
 
   const [currentIdx, setCurrentIdx] = useState(0);
+  const [stripHidden, setStripHidden] = useState(true);
   useEffect(() => {
     if (!startEmbedId) return;
     const idx = playlist.findIndex(p => p.embed_id === startEmbedId);
@@ -629,9 +630,17 @@ export function Dashboard({
       </div>
 
       {/* Clip strip — right side */}
-      {!tvMode && <div className="dash-clip-strip" style={{ width: 200, flexShrink: 0, background: '#1e2a3a', borderLeft: 'none', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      {!tvMode && <div className="dash-clip-strip" style={{ width: stripHidden ? 20 : 200, flexShrink: 0, background: '#1e2a3a', borderLeft: 'none', display: 'flex', flexDirection: 'column', overflow: 'hidden', position: 'relative', transition: 'width 0.25s ease' }}>
 
-        <div style={{ flex: 1, overflowY: 'auto', scrollbarWidth: 'none' }}>
+        <button onClick={() => setStripHidden(h => !h)}
+          aria-label={stripHidden ? 'Show clip list' : 'Hide clip list'}
+          style={{ position: 'absolute', top: 8, left: 4, zIndex: 5, width: 16, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0, background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 4, cursor: 'pointer', color: 'rgba(255,255,255,0.7)' }}>
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            {stripHidden ? <polyline points="15 18 9 12 15 6"/> : <polyline points="9 18 15 12 9 6"/>}
+          </svg>
+        </button>
+
+        <div style={{ flex: 1, overflowY: 'auto', scrollbarWidth: 'none', display: stripHidden ? 'none' : 'block' }}>
           {playlist.map((clip, idx) => {
             const isActive = idx === currentIdx;
             const thumb = clip.type === 'youtube' && clip.embed_id
