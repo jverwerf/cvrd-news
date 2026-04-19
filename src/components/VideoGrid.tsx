@@ -314,7 +314,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   const closePlayer = () => { setActiveIdx(-1); setPlaying(false); setCurrentTime(0); setDuration(0); stopPolling(); stopTimer(); };
 
   return (
-    <div className="mb-6">
+    <div className="mb-6 w-full max-w-full overflow-hidden">
       <style>{`@keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }`}</style>
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
@@ -435,7 +435,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       )}
 
       {/* THUMBNAILS — always visible */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 w-full min-w-0">
         {/* Left arrow */}
         {items.length > 6 && (
           <button onClick={() => {
@@ -445,7 +445,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
             <div className="w-0 h-0 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent border-r-[7px] border-r-[#666]" />
           </button>
         )}
-        <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1.5 overflow-x-auto flex-1" style={{ scrollbarWidth: 'none' }}>
+        <div id={`thumbs-${storyIndex}-${items[0]?.embed_id}`} className="flex gap-1.5 overflow-x-auto flex-1 min-w-0" style={{ scrollbarWidth: 'none' }}>
           {items.map((item, i) => (
             <button key={i} onClick={() => { setActiveIdx(i); setCurrentTime(0); setDuration(0); setPlaying(true); stopPolling(); stopTimer(); }}
               className="rounded overflow-hidden transition-all group shrink-0 cursor-pointer"

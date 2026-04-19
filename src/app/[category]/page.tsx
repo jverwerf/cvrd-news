@@ -1,10 +1,8 @@
-export const revalidate = 3600; // 1 hour — daily pipeline runs at 7am
+export const revalidate = 3600;
 
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
-import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { StoryViewer } from "@/components/StoryViewer";
-import { SiteNav } from "@/components/SiteNav";
+import BriefLayout from "@/components/BriefLayout";
 
 const CATEGORY_META: Record<string, { title: string; description: string }> = {
   'world': { title: 'World News', description: 'World news from 36+ international sources. Conflicts, diplomacy, and global events — every side of every story.' },
@@ -25,15 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   };
 }
 
-const CATEGORIES: Record<string, { label: string; slug: string }> = {
-  'world': { label: 'World', slug: 'world' },
-  'politics': { label: 'Politics', slug: 'politics' },
-  'markets': { label: 'Markets', slug: 'markets' },
-  'trending': { label: 'Trending', slug: 'trending' },
-  'sports': { label: 'Sports', slug: 'sports' },
-};
-
-const ALL_CATS = Object.values(CATEGORIES);
+const CATEGORIES = ['world', 'politics', 'markets', 'trending', 'sports'] as const;
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params;
@@ -46,11 +36,10 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     isBreaking = await hasBreakingData();
   } catch {}
 
-  const cat = CATEGORIES[category];
-  if (!cat) {
+  if (!CATEGORIES.includes(category as typeof CATEGORIES[number])) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <p className="text-[#999]">Category not found.</p>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+        <p style={{ color: '#7a8fa6' }}>Category not found.</p>
       </div>
     );
   }
@@ -60,34 +49,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const displayStories = filtered.length > 0 ? filtered : untagged;
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
-
-      <SiteNav isBreaking={isBreaking} />
-
-      {/* STORY VIEWER */}
-      {displayStories.length > 0 ? (
-        <ErrorBoundary>
-          <StoryViewer stories={displayStories} dailyBrief={data?.category_briefs?.[category]} />
-        </ErrorBoundary>
-      ) : (
-        <div className="max-w-[1280px] mx-auto px-6 py-20 text-center">
-          <p className="text-[#999]">No {cat.label.toLowerCase()} stories today.</p>
-        </div>
-      )}
-
-      <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
-        <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
-        <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
-        <div className="flex items-center justify-center gap-4">
-          <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
-          <span className="text-[#555]">·</span>
-          <a href="/contact" className="text-[11px] text-[#888] hover:text-white transition-colors">Contact</a>
-          <span className="text-[#555]">·</span>
-          <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
-          <span className="text-[#555]">·</span>
-          <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
-        </div>
-      </footer>
-    </div>
+    <BriefLayout
+      stories={displayStories}
+      date={data?.date || ""}
+      isBreaking={isBreaking}
+      category={category}
+    />
   );
 }
