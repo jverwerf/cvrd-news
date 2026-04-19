@@ -77,16 +77,27 @@ export default function LeaderboardPage() {
 
   useEffect(() => {
     // Load politician handles dynamically from manifest
-    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json`)
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json?t=${Date.now()}`, { cache: 'no-store' })
       .then(r => r.ok ? r.json() : { handles: HANDLES })
       .then(manifest => {
         const handles = manifest.handles || HANDLES;
+        const v = encodeURIComponent(manifest.updated || '');
         return Promise.all(handles.map((h: string) =>
-          fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
+          fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json?v=${v}`).then(r => r.ok ? r.json() : null).catch(() => null)
         ));
       })
       .then(results => {
-        setScores(results.filter(Boolean));
+        const valid = results.filter(Boolean) as PoliticianScore[];
+        const byName = new Map<string, PoliticianScore>();
+        for (const s of valid) {
+          const key = (s.name || s.handle || '').trim().toLowerCase();
+          if (!key) continue;
+          const existing = byName.get(key);
+          if (!existing || (s.verified_claims || 0) > (existing.verified_claims || 0)) {
+            byName.set(key, s);
+          }
+        }
+        setScores([...byName.values()]);
       })
       .catch(() => {});
   }, []);

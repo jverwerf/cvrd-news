@@ -141,10 +141,11 @@ export default function PoliticiansPage() {
 
   useEffect(() => {
     // Load all politicians from manifest
-    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json`).then(r => r.ok ? r.json() : null).then(manifest => {
+    fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/manifest.json?t=${Date.now()}`, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(manifest => {
       const handles: string[] = manifest?.handles || [];
+      const v = encodeURIComponent(manifest?.updated || '');
       return Promise.all(handles.map(h =>
-        fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json`).then(r => r.ok ? r.json() : null).catch(() => null)
+        fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/score_${h}.json?v=${v}`).then(r => r.ok ? r.json() : null).catch(() => null)
       ));
     }).then(results => {
       const valid = (results || []).filter(Boolean);
