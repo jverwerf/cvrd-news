@@ -127,10 +127,17 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
     return () => ro.disconnect();
   }, []);
 
-  // Group by month
+  // Group by month — handles both ISO ("2025-09-08T...") and Twitter raw ("Tue Nov 18 ... 2025")
+  const toMonthKey = (td: string): string => {
+    if (!td) return '';
+    if (/^\d{4}-\d{2}/.test(td)) return td.substring(0, 7);
+    const dt = new Date(td);
+    if (isNaN(dt.getTime())) return '';
+    return `${dt.getUTCFullYear()}-${String(dt.getUTCMonth() + 1).padStart(2, '0')}`;
+  };
   const byMonth: Record<string, ScoredClaim[]> = {};
   for (const c of claims) {
-    const m = (c.tweet_date || '').substring(0, 7);
+    const m = toMonthKey(c.tweet_date || '');
     if (!m) continue;
     (byMonth[m] = byMonth[m] || []).push(c);
   }
