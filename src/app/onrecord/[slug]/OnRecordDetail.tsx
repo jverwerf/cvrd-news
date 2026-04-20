@@ -112,8 +112,8 @@ function DonutChart({ score }: { score: any }) {
 function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overallScore: number }) {
   const barH = 240;
   const lineH = 150;
-  const gapH = 65;
-  const bottomPad = 14;
+  const gapH = 80;
+  const bottomPad = 40;
   const totalSvgH = barH + gapH + lineH + bottomPad;
   const MIN_BAR_SLOT = 44;
 
@@ -141,15 +141,15 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
     if (!m) continue;
     (byMonth[m] = byMonth[m] || []).push(c);
   }
-  const months = Object.keys(byMonth).sort();
+  const months = Object.keys(byMonth).sort().reverse();
   if (months.length === 0) return null;
 
-  const minChartW = months.length * MIN_BAR_SLOT + 30;
+  const minChartW = months.length * MIN_BAR_SLOT + 70;
   const viewW = Math.max(containerW, minChartW);
   const needsScroll = minChartW > containerW;
-  const barSpacing = (viewW - 30) / months.length;
+  const barSpacing = (viewW - 60) / months.length;
   const barW = Math.min(36, barSpacing - 6);
-  const barCenters = months.map((_, i) => 10 + i * barSpacing + barSpacing / 2);
+  const barCenters = months.map((_, i) => 40 + i * barSpacing + barSpacing / 2);
   const scroll = (dir: number) => scrollRef.current?.scrollBy({ left: dir * 200, behavior: 'smooth' });
 
   const verdictOrder = ['TRUE', 'SOMEWHAT MISLEADING', 'MISLEADING', 'FALSE'];
@@ -218,18 +218,11 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
               <text x={d.x + barW / 2} y={Math.max(d.barTop - 4, 12)} textAnchor="middle" fill="#888" fontSize="11">{d.total}</text>
               {/* Month label */}
               {(months.length <= 12 || i % Math.ceil(months.length / 12) === 0 || i === months.length - 1) && (
-                <text x={barCenters[i]} y={barH + 16} textAnchor="middle" fill="#4a5a6a" fontSize="11">
+                <text x={barCenters[i]} y={barH + 14} textAnchor="end" fill="#4a5a6a" fontSize="11"
+                  transform={`rotate(-40, ${barCenters[i]}, ${barH + 14})`}>
                   {new Date(d.m + '-02').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
                 </text>
               )}
-            </g>
-          ))}
-
-          {/* Legend */}
-          {verdictOrder.map((v, i) => (
-            <g key={v} transform={`translate(${i * Math.min(95, Math.floor((viewW - 10) / 4)) + 10}, ${barH + 22})`}>
-              <circle cx={5} cy={5} r={5} fill={verdictColors[v]} />
-              <text x={14} y={9} fill="#6a7a8a" fontSize="11">{v === 'SOMEWHAT MISLEADING' ? 'Somewhat' : v === 'TRUE' ? 'True' : v === 'MISLEADING' ? 'Misleading' : 'False'}</text>
             </g>
           ))}
 
@@ -254,7 +247,7 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
           {months.map((_, i) => (
             <g key={i}>
               <circle cx={barCenters[i]} cy={scoreToY(monthScores[i])} r={4} fill="#daa520" stroke="#1e2a3a" strokeWidth={1.5} />
-              {i !== months.length - 1 && (
+              {i !== 0 && (
                 <text x={barCenters[i]} y={scoreToY(monthScores[i]) - 8} textAnchor="middle"
                   fill="#daa520" fontSize="10" fontWeight="600" opacity={0.75}>
                   {monthScores[i]}%
@@ -265,11 +258,11 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
 
           {/* Latest score label */}
           <text
-            x={Math.min(barCenters[months.length - 1], viewW - 20)}
-            y={scoreToY(monthScores[months.length - 1]) - 8}
-            textAnchor="end"
+            x={Math.max(barCenters[0], 20)}
+            y={scoreToY(monthScores[0]) - 8}
+            textAnchor="start"
             fill="#daa520" fontSize="12" fontWeight="600" letterSpacing="0.04em">
-            {monthScores[months.length - 1]}%
+            {monthScores[0]}%
           </text>
 
           {/* X-axis labels on line chart */}
@@ -277,7 +270,8 @@ function TimelineChart({ claims, overallScore }: { claims: ScoredClaim[]; overal
             const showLabel = months.length <= 12 || i % Math.ceil(months.length / 12) === 0 || i === months.length - 1;
             if (!showLabel) return null;
             return (
-              <text key={m} x={barCenters[i]} y={lineBottom + 14} textAnchor="middle" fill="#4a5a6a" fontSize="11">
+              <text key={m} x={barCenters[i]} y={lineBottom + 14} textAnchor="end" fill="#4a5a6a" fontSize="11"
+                transform={`rotate(-45, ${barCenters[i]}, ${lineBottom + 14})`}>
                 {new Date(m + '-02').toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
               </text>
             );
