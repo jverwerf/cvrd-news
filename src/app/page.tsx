@@ -416,18 +416,20 @@ export default async function Home() {
           )}
 
           {/* ── BREAKING (left) | TODAY'S PICK + ON RECORD + TIMELINE (right) ── */}
-          {isBreaking && (
+          {stories.length > 0 && (
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
-              {/* Left: Breaking + On Record + Timeline stacked */}
+              {/* Left: Breaking (when live) + On Record + Timeline stacked */}
               <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
-                <div>
-                  <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
-                  <BreakingCard
-                    breakingItems={breakingStories ?? []}
-                    liveItems={liveStories ?? []}
-                    vertical
-                  />
-                </div>
+                {isBreaking && (
+                  <div>
+                    <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
+                    <BreakingCard
+                      breakingItems={breakingStories ?? []}
+                      liveItems={liveStories ?? []}
+                      vertical
+                    />
+                  </div>
+                )}
                 {onRecordData && (
                   <div>
                     <SectionHeader
@@ -487,14 +489,14 @@ export default async function Home() {
                         const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
                         return (
                           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                            <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/tv?channel=breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />
+                            {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/tv?channel=breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
                             {[
-                              { num: '02', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
-                              { num: '03', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
-                              { num: '04', label: 'Politics',   sub: 'Left & right',      href: '/tv?channel=politics', cat: 'politics', ms: 5200 },
-                              { num: '05', label: 'Markets',    sub: 'Economy & crypto',  href: '/tv?channel=markets',  cat: 'markets',  ms: 4100 },
-                              { num: '06', label: 'Sports',     sub: 'Beyond the score',  href: '/tv?channel=sports',   cat: 'sports',   ms: 3900 },
-                              { num: '07', label: 'Trending',   sub: 'What the web says', href: '/tv?channel=trending', cat: 'trending', ms: 5800 },
+                              { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
+                              { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
+                              { num: isBreaking ? '04' : '03', label: 'Politics',   sub: 'Left & right',      href: '/tv?channel=politics', cat: 'politics', ms: 5200 },
+                              { num: isBreaking ? '05' : '04', label: 'Markets',    sub: 'Economy & crypto',  href: '/tv?channel=markets',  cat: 'markets',  ms: 4100 },
+                              { num: isBreaking ? '06' : '05', label: 'Sports',     sub: 'Beyond the score',  href: '/tv?channel=sports',   cat: 'sports',   ms: 3900 },
+                              { num: isBreaking ? '07' : '06', label: 'Trending',   sub: 'What the web says', href: '/tv?channel=trending', cat: 'trending', ms: 5800 },
                             ].map(ch => (
                               <TvTile key={ch.href} channelNum={`CH${ch.num}`} label={ch.label} sub={ch.sub} href={ch.href} thumbs={thumbsFor(ch.cat)} interval={ch.ms} />
                             ))}
@@ -507,87 +509,6 @@ export default async function Home() {
                   </div>
                 </div>
               )}
-            </div>
-          )}
-
-          {/* ── TODAY'S PICK — horizontal row when no breaking ── */}
-          {!isBreaking && stories.length > 1 && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
-              <StoryScroll
-                stories={allStories.slice(1)}
-                blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
-                dividerAfter={stories.length - 1}
-              />
-            </div>
-          )}
-
-          {/* ── WATCH — right after Today's Pick (non-breaking only; breaking puts it in the right column) ─── */}
-          {!isBreaking && <div style={{ marginBottom: 20 }}>
-            <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
-            <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
-              <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
-                Every story we cover comes with video clips from across the web. CVRD TV streams all of them in one non-stop loop across channels — Daily Pick, World, Politics, Markets, Sports, and Trending. Open it on a second screen, or cast it to your TV and let it run.
-              </p>
-              <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dim, margin: '0 0 20px', lineHeight: 1.6 }}>
-                Clips from YouTube, TikTok, Instagram Reels, X, and Telegram — all in one place.
-              </p>
-              {(() => {
-                const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
-                const thumb = (s: any) => {
-                  if (s.image_file) return s.image_file.startsWith('http') ? s.image_file : `${blobBase}${s.image_file}`;
-                  if (s.youtube_videos?.[0]) return `https://img.youtube.com/vi/${s.youtube_videos[0].embed_id}/mqdefault.jpg`;
-                  return null;
-                };
-                const thumbsFor = (cat: string | null) => {
-                  const src = cat ? allStories.filter(s => s.category === cat) : allStories.slice(0, 10);
-                  return src.map(thumb).filter(Boolean) as string[];
-                };
-                const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];
-                return (
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
-                    {isBreaking && <TvTile channelNum="CH01" label="Breaking" sub="Live updates" href="/tv?channel=breaking" thumbs={breakingThumbs} isLive={true} interval={3100} />}
-                    {[
-                      { num: isBreaking ? '02' : '01', label: 'Daily Pick', sub: "Today's top 10",    href: '/tv?channel=daily',    cat: null,       ms: 4700 },
-                      { num: isBreaking ? '03' : '02', label: 'World',      sub: 'Global affairs',    href: '/tv?channel=world',    cat: 'world',    ms: 3600 },
-                      { num: isBreaking ? '04' : '03', label: 'Politics',   sub: 'Left & right',      href: '/tv?channel=politics', cat: 'politics', ms: 5200 },
-                      { num: isBreaking ? '05' : '04', label: 'Markets',    sub: 'Economy & crypto',  href: '/tv?channel=markets',  cat: 'markets',  ms: 4100 },
-                      { num: isBreaking ? '06' : '05', label: 'Sports',     sub: 'Beyond the score',  href: '/tv?channel=sports',   cat: 'sports',   ms: 3900 },
-                      { num: isBreaking ? '07' : '06', label: 'Trending',   sub: 'What the web says', href: '/tv?channel=trending', cat: 'trending', ms: 5800 },
-                    ].map(ch => (
-                      <TvTile key={ch.href} channelNum={`CH${ch.num}`} label={ch.label} sub={ch.sub} href={ch.href} thumbs={thumbsFor(ch.cat)} interval={ch.ms} />
-                    ))}
-                    <TvTile channelNum="YT" label="YouTube" sub="Shorts + full shows" href="https://www.youtube.com/@cvrdnews" thumbs={thumbsFor(null)} interval={4400} />
-                  </div>
-                );
-              })()}
-              <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
-            </div>
-          </div>}
-
-          {/* ── ON RECORD — full width when no breaking ── */}
-          {!isBreaking && onRecordData && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="On Record"
-                blurb={`Today: ${onRecordData.story_topic}`}
-                href="/onrecord"
-                hrefText="All politicians"
-              />
-              <OnRecordStrip data={onRecordData} />
-            </div>
-          )}
-
-          {/* ── TIMELINE — full width when no breaking ── */}
-          {!isBreaking && sortedThreads.length > 0 && (
-            <div style={{ marginBottom: 20 }} className="timeline-strip-wrap">
-              <SectionHeader
-                label="Timeline"
-                blurb={`Following ${threadCount} developing stories`}
-                href="/timeline"
-                hrefText={`All ${threadCount} threads`}
-              />
-              <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
             </div>
           )}
 
