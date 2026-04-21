@@ -268,10 +268,6 @@ function ChannelTV({ stories, channel, onBack }: {
       if (!v.embed_id) continue;
       clips.push({ id: `${story.topic}::yt::${v.embed_id}`, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: (v as any).title || v.channel || '', channel: v.channel, duration: v.duration });
     }
-    for (const c of (story.social_clips || [])) {
-      if (!c.embed_id || !c.duration) continue;
-      clips.push({ id: `${story.topic}::${c.platform}::${c.embed_id}`, embed_id: c.embed_id, platform: c.platform as QueuedClip['platform'], storyTopic: story.topic, url: c.url || '', title: c.title || (c as any).author || '', channel: (c as any).author, duration: c.duration, thumbnail: (c as any).thumbnail });
-    }
   }
 
   const [queue, setQueue] = useState<QueuedClip[]>(clips);
@@ -425,7 +421,6 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   const [tvState, setTvState] = useState<{ queue: QueuedClip[]; playedIds: Set<string> }>({ queue: [], playedIds: new Set() });
   const [rawStories, setRawStories] = useState<any[]>([]);
   const knownIdsRef = useRef<Set<string>>(new Set());
-  const ytPlayerRef = useRef<HTMLIFrameElement>(null);
 
   const currentClip = tvState.queue[0] ?? null;
   const currentStory: NarrativeGap | null = (() => {
@@ -443,44 +438,39 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   }, []);
 
   const fetchAndSync = useCallback(() => {
-    fetch('/api/breaking/data')
-      .then(r => r.ok ? r.json() : null)
-      .then(data => {
-        if (!data) return;
-        const items: any[] = Array.isArray(data) ? data : [data];
-        const activeTopics = new Set(items.map(s => s.topic));
-        setRawStories(items);
+    Promise.all([
+      fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/live-now/data').then(r => r.ok ? r.json() : null).catch(() => null),
+    ]).then(([breakingData, liveData]) => {
+      const breakingItems: any[] = breakingData ? (Array.isArray(breakingData) ? breakingData : [breakingData]) : [];
+      const liveItems: any[] = liveData ? (Array.isArray(liveData) ? liveData : [liveData]) : [];
+      const items = [...breakingItems, ...liveItems];
+      if (items.length === 0) return;
 
-        const newClips: QueuedClip[] = [];
-        for (const story of items) {
-          for (const v of (story.youtube_videos || [])) {
-            if (!v.embed_id) continue;
-            const id = `${story.topic}::yt::${v.embed_id}`;
-            if (!knownIdsRef.current.has(id)) {
-              knownIdsRef.current.add(id);
-              newClips.push({ id, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: v.title || v.channel || '', channel: v.channel, duration: v.duration });
-            }
-          }
-          for (const c of (story.social_clips || [])) {
-            if (!c.embed_id || !c.duration) continue;
-            const id = `${story.topic}::${c.platform}::${c.embed_id}`;
-            if (!knownIdsRef.current.has(id)) {
-              knownIdsRef.current.add(id);
-              newClips.push({ id, embed_id: c.embed_id, platform: c.platform, storyTopic: story.topic, url: c.url || '', title: c.title || c.author || '', channel: c.author, duration: c.duration, thumbnail: c.thumbnail });
-            }
+      const activeTopics = new Set(items.map(s => s.topic));
+      setRawStories(items);
+
+      const newClips: QueuedClip[] = [];
+      for (const story of items) {
+        for (const v of (story.youtube_videos || [])) {
+          if (!v.embed_id) continue;
+          const id = `${story.topic}::yt::${v.embed_id}`;
+          if (!knownIdsRef.current.has(id)) {
+            knownIdsRef.current.add(id);
+            newClips.push({ id, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: v.title || v.channel || '', channel: v.channel, duration: v.duration });
           }
         }
+      }
 
-        setTvState(s => {
-          const currentPlaying = s.queue[0];
-          const upcomingFiltered = s.queue.slice(1).filter(c => activeTopics.has(c.storyTopic));
-          return {
-            queue: [...(currentPlaying ? [currentPlaying] : []), ...newClips, ...upcomingFiltered],
-            playedIds: s.playedIds,
-          };
-        });
-      })
-      .catch(() => {});
+      setTvState(s => {
+        const currentPlaying = s.queue[0];
+        const upcomingFiltered = s.queue.slice(1).filter(c => activeTopics.has(c.storyTopic));
+        return {
+          queue: [...(currentPlaying ? [currentPlaying] : []), ...newClips, ...upcomingFiltered],
+          playedIds: s.playedIds,
+        };
+      });
+    });
   }, []);
 
   useEffect(() => {
@@ -489,26 +479,6 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
     return () => clearInterval(interval);
   }, [fetchAndSync]);
 
-  // YouTube end detection
-  useEffect(() => {
-    const handler = (e: MessageEvent) => {
-      if (ytPlayerRef.current && e.source !== ytPlayerRef.current.contentWindow) return;
-      try {
-        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
-        if (data.event === 'infoDelivery' && data.info?.playerState === 0) advance();
-      } catch {}
-    };
-    window.addEventListener('message', handler);
-    return () => window.removeEventListener('message', handler);
-  }, [advance]);
-
-  // Duration-based timer for non-YouTube clips
-  useEffect(() => {
-    if (!currentClip || currentClip.platform === 'youtube') return;
-    const dur = (currentClip.duration || 60) * 1000;
-    const t = setTimeout(advance, dur);
-    return () => clearTimeout(t);
-  }, [currentClip?.id, advance]);
 
   const { queue, playedIds } = tvState;
   const upcoming = queue.slice(1);
@@ -547,7 +517,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
         {currentStory && (
           <div style={{ flex: 1, overflow: 'hidden' }}>
             <ErrorBoundary>
-              <Dashboard key={currentClip?.id} stories={[currentStory]} tvMode />
+              <Dashboard key={currentClip?.id} stories={[currentStory]} tvMode onEnd={advance} startEmbedId={currentClip?.embed_id} />
             </ErrorBoundary>
           </div>
         )}

@@ -54,10 +54,25 @@ export async function deleteBreakingData(): Promise<void> {
   } catch {}
 }
 
+async function getLiveNowData(): Promise<any[] | null> {
+  try {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/live-now.json`, { cache: 'no-store' });
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    const items = Array.isArray(data) ? data : [data];
+    const valid = items.filter(
+      (s: any) => Date.now() - new Date(s.detected_at).getTime() < 12 * 60 * 60 * 1000
+    );
+    return valid.length > 0 ? valid : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function hasBreakingData(): Promise<boolean> {
-  const data = await getBreakingData();
-  if (!data || data.length === 0) return false;
-  return data.some((s: any) => {
+  const [breaking, live] = await Promise.all([getBreakingData(), getLiveNowData()]);
+  const all = [...(breaking || []), ...(live || [])];
+  return all.some((s: any) => {
     const videoCount = (s.youtube_videos || []).length + (s.social_clips || []).length;
     return videoCount >= 3;
   });

@@ -199,21 +199,31 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
           </div>
           <div className="rounded-lg relative" style={{ background: '#253545', border: '1px solid #2a3a4a', height: 'var(--card-h)', overflow: 'hidden' }}>
             <div className="flex flex-col gap-0 h-full overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#3a4a5a #253545' }}>
-              {resolvedThreads.map((t, i) => (
-                <a key={t.id} href={`/timeline?thread=${t.id}`}
-                  className="flex items-center gap-3 p-3 transition-opacity hover:opacity-80 shrink-0"
-                  style={{ textDecoration: 'none', borderTop: i > 0 ? '1px solid #2a3a4a' : undefined }}>
-                  {t.image_file && <img src={t.image_file} alt={t.title} className="w-10 h-10 rounded object-cover shrink-0" />}
-                  <div className="min-w-0 flex-1">
-                    <p className="text-[12px] text-white font-semibold leading-[1.3]">{t.title}</p>
-                    <div className="flex items-center gap-2 mt-0.5">
-                      {(t as any).is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
-                      {(t as any).days_covered && <span className="text-[9px] text-[#666]">{(t as any).days_covered} days tracked</span>}
+              {(() => {
+                const n = resolvedThreads.length;
+                const imgSize = n === 1 ? 'w-20 h-20' : n === 2 ? 'w-14 h-14' : 'w-10 h-10';
+                const titleSize = n === 1 ? 'text-[15px]' : n === 2 ? 'text-[13px]' : 'text-[12px]';
+                const summaryClamp = n === 1 ? 4 : n === 2 ? 2 : 0;
+                const summarySize = n === 1 ? 'text-[13px]' : 'text-[12px]';
+                return resolvedThreads.map((t, i) => (
+                  <a key={t.id} href={`/timeline?thread=${t.id}`}
+                    className="flex items-start gap-3 p-3 transition-opacity hover:opacity-80 flex-1 min-h-[60px]"
+                    style={{ textDecoration: 'none', borderTop: i > 0 ? '1px solid #2a3a4a' : undefined }}>
+                    {t.image_file && <img src={t.image_file} alt={t.title} className={`${imgSize} rounded object-cover shrink-0`} />}
+                    <div className="min-w-0 flex-1">
+                      <p className={`${titleSize} text-white font-semibold leading-[1.3]`}>{t.title}</p>
+                      {summaryClamp > 0 && (t as any).summary && (
+                        <p className="text-[11px] text-[#ccc] leading-[1.55] mt-1.5" style={{ display: '-webkit-box', WebkitLineClamp: summaryClamp, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{(t as any).summary}</p>
+                      )}
+                      <div className="flex items-center gap-2 mt-0.5">
+                        {(t as any).is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
+                        {(t as any).days_covered && <span className="text-[9px] text-[#666]">{(t as any).days_covered} days tracked</span>}
+                      </div>
                     </div>
-                  </div>
-                  <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                </a>
-              ))}
+                    <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                  </a>
+                ));
+              })()}
             </div>
             {resolvedThreads.length > 3 && (
               <div className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none" style={{ background: 'linear-gradient(to top, #253545, transparent)' }} />

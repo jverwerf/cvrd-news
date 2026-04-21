@@ -14,6 +14,10 @@ function topicToSlug(topic: string): string {
   return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 }
 
+function nameToSlug(name: string) {
+  return name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
 function toBullets(text: string): string[] {
   const raw = text.split(/\.\s+(?=[A-Z])/).map((s, i, arr) => i < arr.length - 1 ? s + '.' : s).filter(Boolean);
   const merged: string[] = [];
@@ -41,6 +45,8 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
   const [telegramExpanded, setTelegramExpanded] = useState(false);
   const [redditExpanded, setRedditExpanded] = useState(false);
+  const [expandedTweet, setExpandedTweet] = useState<string | null>(null);
+  const [expandedTiktok, setExpandedTiktok] = useState<string | null>(null);
   const [subEmail, setSubEmail] = useState('');
   const [subStatus, setSubStatus] = useState<'idle' | 'loading' | 'done'>('idle');
 
@@ -196,7 +202,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   const paras = story.social_summary.split(/\n\s*\n/).filter(p => p.trim().length > 0);
                   const finalParas = paras.length > 0 ? paras : [story.social_summary];
                   return (
-                    <section>
+                    <section className="mb-6">
                       <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">In Social Media</h2>
                       {finalParas.map((p, i) => (
                         <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
@@ -204,9 +210,168 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                     </section>
                   );
                 })()}
+                {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+                  <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
+                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+                  </div>
+                )}
+
+                {/* TELEGRAM + REDDIT — combined card, 3 columns mixed */}
+                {(() => {
+                  const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
+                  const seen = new Set<string>();
+                  const uniqueReddit = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
+
+                  if (tgClips.length === 0 && uniqueReddit.length === 0) return null;
+
+                  type TextItem = { kind: 'telegram' | 'reddit'; url: string; title: string; meta: string };
+                  const mixed: TextItem[] = [];
+                  const max = Math.max(tgClips.length, uniqueReddit.length);
+                  for (let i = 0; i < max; i++) {
+                    if (tgClips[i]) mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
+                    if (uniqueReddit[i]) {
+                      const c = uniqueReddit[i];
+                      const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                      mixed.push({ kind: 'reddit', url: c.url, title, meta: `r/${c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}` });
+                    }
+                  }
+
+                  const previewCount = 9;
+                  const visible = telegramExpanded ? mixed : mixed.slice(0, previewCount);
+
+                  return (
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Discussions</span>
+                      </div>
+                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                          {visible.map((item, i) => {
+                            const metaColor = item.kind === 'telegram' ? '#0088cc' : '#ff4500';
+                            const logo = item.kind === 'telegram' ? (
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                            ) : (
+                              <svg width="14" height="14" viewBox="0 0 24 24" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="12" fill="#FF4500"/><path d="M19.93 12.24c0-.97-.78-1.75-1.75-1.75-.47 0-.89.19-1.21.49-1.19-.86-2.85-1.41-4.67-1.49l.8-3.75 2.6.55c.03.66.57 1.19 1.24 1.19.69 0 1.25-.56 1.25-1.25S17.63 5 16.94 5c-.49 0-.91.28-1.11.69l-2.91-.62a.33.33 0 00-.23.04.32.32 0 00-.14.2l-.88 4.18c-1.87.06-3.54.6-4.75 1.49a1.73 1.73 0 00-1.21-.49c-.97 0-1.75.78-1.75 1.75 0 .71.43 1.33 1.04 1.61-.03.18-.04.35-.04.53 0 2.69 3.13 4.87 7 4.87s7-2.18 7-4.87c0-.18-.01-.36-.04-.53.61-.28 1.04-.9 1.04-1.61zM7 13.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25S7 14.19 7 13.5zm8.37 3.5c-.74.74-2.14.8-2.5.8h-.01c-.37 0-1.77-.05-2.5-.8a.271.271 0 010-.38c.1-.1.27-.1.38 0 .46.46 1.46.63 2.13.63h.01c.67 0 1.67-.17 2.13-.63.1-.1.27-.1.38 0 .09.1.09.28-.02.38zm-.12-2.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" fill="#fff"/></svg>
+                            );
+                            return (
+                              <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
+                                className="rounded-lg p-3 hover:opacity-80 transition-opacity block">
+                                <div className="flex items-start gap-2">
+                                  {logo}
+                                  <div className="min-w-0">
+                                    <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{item.title}</p>
+                                    <span className="text-[10px] mt-1 block" style={{ color: metaColor }}>{item.meta}</span>
+                                  </div>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                        {mixed.length > previewCount && (
+                          <button onClick={() => setTelegramExpanded(!telegramExpanded)}
+                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                            {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* X + TIKTOK — combined card, 3 columns mixed */}
+                {(() => {
+                  const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
+                  const allTiktoks = tiktokClips.filter(c => c.embed_id);
+                  if (textTweets.length === 0 && allTiktoks.length === 0) return null;
+
+                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string }> = [];
+                  const max = Math.max(textTweets.length, allTiktoks.length);
+                  for (let i = 0; i < max; i++) {
+                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id! });
+                    if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
+                  }
+
+                  const previewCount = 3;
+                  const visible = tweetsExpanded ? mixed : mixed.slice(0, previewCount);
+
+                  return (
+                    <div className="mb-6">
+                      <div className="flex items-center gap-1.5 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Socials</span>
+                        <span className="text-[14px] font-bold text-white">𝕏</span>
+                        <span className="text-[11px]" style={{ color: '#daa520' }}>+</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+                      </div>
+                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                          {visible.map((item, i) => {
+                            const isExp = item.kind === 'x' ? expandedTweet === item.embedId : expandedTiktok === item.embedId;
+                            const toggleExp = () => {
+                              if (item.kind === 'x') setExpandedTweet(isExp ? null : item.embedId);
+                              else setExpandedTiktok(isExp ? null : item.embedId);
+                            };
+                            return (
+                              <div key={`${item.kind}-${item.embedId}-${i}`}
+                                className={`rounded overflow-hidden relative group ${isExp ? 'md:col-span-3' : ''}`}
+                                style={{ background: '#1e2a3a', height: isExp ? 620 : 420 }}>
+                                {item.kind === 'x' ? (
+                                  <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
+                                    style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                                ) : (
+                                  <iframe src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
+                                    style={{ border: 'none', width: '100%', height: '100%' }}
+                                    sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                                )}
+                                <button onClick={toggleExp}
+                                  className="absolute top-2 right-2 w-7 h-7 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                  style={{ background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
+                                  aria-label={isExp ? 'Collapse' : 'Expand'}>
+                                  {isExp ? (
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                  ) : (
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                  )}
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {mixed.length > previewCount && (
+                          <button onClick={() => setTweetsExpanded(!tweetsExpanded)}
+                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                            {tweetsExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
               </div>
 
-              <aside className="rounded-lg self-start" style={{ background: '#253545', border: '1px solid #2a3a4a', flex: '0 0 320px', width: 320 }}>
+              <div className="flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
+              <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (
+                  <div className="py-4 px-4 grid grid-cols-2 gap-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                    <CoverageLever
+                      title="Volume"
+                      subtitle="amounts"
+                      mode="count"
+                      left={leftSources.length}
+                      center={centerSources.length}
+                      right={rightSources.length}
+                    />
+                    <CoverageLever
+                      title="Saturation"
+                      subtitle="vs outlets tracked"
+                      mode="percent"
+                      left={leftSources.length}
+                      center={centerSources.length}
+                      right={rightSources.length}
+                    />
+                  </div>
+                )}
                 <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -243,191 +408,102 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   <p className="text-[11px] text-white leading-[1.55]">{story.right_narrative}</p>
                 </div>
               </aside>
-            </div>
-          );
-        })()}
-
-        {/* VIDEO GRID */}
-        {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-          <div className="mb-5 w-full max-w-full overflow-hidden" data-section="videogrid">
-            <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
-          </div>
-        )}
-
-        {/* TIMELINE + ON RECORD — side by side when both exist, full width otherwise */}
-        {(() => {
-          const threads = matchedTimelines || [];
-          const hasTimeline = threads.length > 0;
-          const hasOnRecord = (story as any).onrecord_matches?.length > 0;
-          if (!hasTimeline && !hasOnRecord) return null;
-          return (
-            <div className={`grid grid-cols-1 ${hasTimeline && hasOnRecord ? 'md:grid-cols-2' : ''} gap-4 mb-4`} style={{ '--card-h': '180px' } as React.CSSProperties}>
-              {hasTimeline && (
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-                    <span className="text-[10px] font-bold text-[#daa520] uppercase tracking-[0.12em]">Timeline</span>
-                  </div>
-                  <div className="rounded-lg relative" style={{ background: '#253545', border: '1px solid #2a3a4a', height: 'var(--card-h)', overflow: 'hidden' }}>
-                    <div className="flex flex-col gap-0 h-full overflow-y-auto" style={{ scrollbarWidth: 'thin', scrollbarColor: '#3a4a5a #253545' }}>
-                      {(() => {
-                        const n = threads.length;
-                        const imgSize = n === 1 ? 'w-20 h-20' : n === 2 ? 'w-14 h-14' : 'w-10 h-10';
-                        const titleSize = n === 1 ? 'text-[15px]' : n === 2 ? 'text-[13px]' : 'text-[12px]';
-                        const summaryClamp = n === 1 ? 4 : n === 2 ? 2 : 0;
-                        const summarySize = n === 1 ? 'text-[13px]' : 'text-[12px]';
-                        return threads.map((t, i) => (
-                          <a key={t.id} href={`/timeline?thread=${t.id}`}
-                            className="flex items-start gap-3 p-3 transition-opacity hover:opacity-80 flex-1 min-h-[60px]"
-                            style={{ textDecoration: 'none', borderTop: i > 0 ? '1px solid #2a3a4a' : undefined }}>
-                            {t.image_file && <img src={t.image_file} alt={t.title} className={`${imgSize} rounded object-cover shrink-0`} />}
-                            <div className="min-w-0 flex-1">
-                              <p className={`${titleSize} text-white font-semibold leading-[1.3]`}>{t.title}</p>
-                              {summaryClamp > 0 && t.summary && (
-                                <p className="text-[11px] text-[#ccc] leading-[1.55] mt-1.5" style={{ display: '-webkit-box', WebkitLineClamp: summaryClamp, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{t.summary}</p>
-                              )}
-                              <div className="flex items-center gap-2 mt-0.5">
-                                {t.is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
-                                {t.days_covered && <span className="text-[9px] text-[#666]">{t.days_covered} days tracked</span>}
-                              </div>
-                            </div>
-                            <svg className="ml-auto shrink-0" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-                          </a>
-                        ));
-                      })()}
+              {(() => {
+                const threads = matchedTimelines || [];
+                if (threads.length === 0) return null;
+                return (
+                  <div className="rounded-lg py-4 px-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+                      <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Timeline</span>
                     </div>
-                    {threads.length > 3 && (
-                      <div className="absolute bottom-0 left-0 right-0 h-6 pointer-events-none" style={{ background: 'linear-gradient(to top, #253545, transparent)' }} />
+                    <div className="flex flex-col gap-3">
+                      {threads.map((t) => (
+                        <a key={t.id} href={`/timeline?thread=${t.id}`}
+                          className="flex items-start gap-2 hover:opacity-80 transition-opacity"
+                          style={{ textDecoration: 'none' }}>
+                          {t.image_file && <img src={t.image_file} alt={t.title} className="w-12 h-12 rounded object-cover shrink-0" />}
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[12px] text-white font-semibold leading-[1.3]">{t.title}</p>
+                            {t.summary && (
+                              <p className="text-[10px] text-[#ccc] leading-[1.5] mt-1" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{t.summary}</p>
+                            )}
+                            <div className="flex items-center gap-2 mt-1">
+                              {t.is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
+                              {t.days_covered && <span className="text-[9px] text-[#666]">{t.days_covered}d tracked</span>}
+                            </div>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+              {(story as any).onrecord_matches?.length > 0 && (() => {
+                const BLOB = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+                const onMatches = (story as any).onrecord_matches;
+                return (
+                  <div className="rounded-lg py-4 px-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: 'rgba(184,134,11,0.2)' }}>
+                        <span className="text-[6px] font-bold" style={{ color: '#b8860b' }}>!</span>
+                      </div>
+                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
+                    </div>
+                    <div className="flex flex-col gap-3">
+                      {onMatches.map((m: any, i: number) => (
+                        <a key={i} href={`/onrecord/${nameToSlug(m.name)}?q=${m.search_keyword}`}
+                          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+                          style={{ textDecoration: 'none' }}>
+                          <div className="relative shrink-0">
+                            <img src={`${BLOB}/politicians/photo_${m.handle}.png`} alt={m.name}
+                              className="w-10 h-10 rounded-full object-cover"
+                              style={{ border: '2px solid rgba(184,134,11,0.5)' }}
+                              onError={(e) => { (e.target as HTMLImageElement).src = '/logo3.png'; (e.target as HTMLImageElement).style.opacity = '0.3'; }} />
+                            {m.overall_score != null && (
+                              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold"
+                                style={{ background: '#1e2a3a', border: '1px solid rgba(184,134,11,0.4)', color: '#daa520' }}>
+                                {m.overall_score}
+                              </div>
+                            )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[12px] font-semibold leading-[1.2]" style={{ ...serif, color: '#daa520' }}>{m.name}</p>
+                            {m.role && <p className="text-[9px] text-[#666] leading-[1.2] mt-0.5">{m.role}</p>}
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+              {sources.length > 0 && (
+                <div className="rounded-lg py-4 px-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Dive Deeper</span>
+                    <span className="text-[10px] text-[#6a7a8a]">({sources.length})</span>
+                  </div>
+                  {!(story.category === 'sports' || story.category === 'trending') && (
+                    <div className="flex items-center gap-3 mb-3 pb-3 flex-wrap" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                      {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#1d4ed8' }} /><span className="text-[10px]" style={{ color: '#60a5fa' }}>{leftSources.length} left</span></span>}
+                      {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#777' }} /><span className="text-[10px] text-[#999]">{centerSources.length} center</span></span>}
+                      {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#b91c1c' }} /><span className="text-[10px]" style={{ color: '#f87171' }}>{rightSources.length} right</span></span>}
+                    </div>
+                  )}
+                  <div className="flex flex-col gap-4">
+                    {(story.category === 'sports' || story.category === 'trending') ? (
+                      <SourceColumn label="Sources" sources={[...leftSources, ...centerSources, ...rightSources]} color="#999" dotColor="#999" />
+                    ) : (
+                      <>
+                        {leftSources.length > 0 && <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />}
+                        {centerSources.length > 0 && <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />}
+                        {rightSources.length > 0 && <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />}
+                      </>
                     )}
                   </div>
                 </div>
               )}
-              {hasOnRecord && (
-                <OnRecordWidget matches={(story as any).onrecord_matches} />
-              )}
-            </div>
-          );
-        })()}
-
-        {/* X POSTS */}
-        {(() => {
-          const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
-          if (textTweets.length === 0) return null;
-          const visibleTweets = tweetsExpanded ? textTweets : textTweets.slice(0, 6);
-          return (
-            <div data-section="x-posts" className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[16px] font-bold text-white">𝕏</span>
-              </div>
-              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
-                  {visibleTweets.map((c, i) => (
-                    <div key={i} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
-                      <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                          style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                {textTweets.length > 6 && !tweetsExpanded && (
-                  <button onClick={() => setTweetsExpanded(true)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show {textTweets.length - 6} more tweets
-                  </button>
-                )}
-                {tweetsExpanded && textTweets.length > 6 && (
-                  <button onClick={() => setTweetsExpanded(false)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show less
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })()}
-
-        {/* TIKTOK */}
-        {(() => {
-          const allTiktoks = tiktokClips.filter(c => c.embed_id);
-          if (allTiktoks.length === 0) return null;
-          const visibleTiktoks = tiktoksExpanded ? allTiktoks : allTiktoks.slice(0, 6);
-          return (
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-[16px]">♪</span>
-                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">TikTok</span>
-              </div>
-              <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {visibleTiktoks.map((c, i) => (
-                    <div key={i} className="rounded-md overflow-hidden flex justify-center" style={{ background: '#1e2a3a' }}>
-                      <iframe src={`https://www.tiktok.com/embed/v2/${c.embed_id}`} className="h-[480px]" style={{ border: 'none', width: '100%' }} sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
-                    </div>
-                  ))}
-                </div>
-                {allTiktoks.length > 6 && !tiktoksExpanded && (
-                  <button onClick={() => setTiktoksExpanded(true)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show {allTiktoks.length - 6} more TikToks
-                  </button>
-                )}
-                {tiktoksExpanded && allTiktoks.length > 6 && (
-                  <button onClick={() => setTiktoksExpanded(false)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show less
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })()}
-
-        {/* TELEGRAM TEXT POSTS */}
-        {(() => {
-          const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
-          if (tgClips.length === 0) return null;
-          const visibleTg = telegramExpanded ? tgClips : tgClips.slice(0, 9);
-          return (
-            <div data-section="telegram">
-              <div className="flex items-center gap-2 mb-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0088cc"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                <span className="text-[11px] font-bold text-[#0088cc] uppercase tracking-[0.12em]">Telegram</span>
-              </div>
-              <div className="rounded-lg p-4 mb-6" style={{ background: '#253545' }}>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {visibleTg.map((c, i) => (
-                    <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                      className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                      style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                      <div className="flex items-start gap-2">
-                        <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#0088cc' }} />
-                        <div className="min-w-0">
-                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{c.title}</p>
-                          <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
-                        </div>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-                {tgClips.length > 9 && !telegramExpanded && (
-                  <button onClick={() => setTelegramExpanded(true)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show {tgClips.length - 9} more
-                  </button>
-                )}
-                {telegramExpanded && tgClips.length > 9 && (
-                  <button onClick={() => setTelegramExpanded(false)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show less
-                  </button>
-                )}
               </div>
             </div>
           );
@@ -450,84 +526,6 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           </div>
         )}
 
-        {/* REDDIT */}
-        {redditClips.length > 0 && (() => {
-          const seen = new Set<string>();
-          const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
-          const visibleReddit = redditExpanded ? unique : unique.slice(0, 9);
-          return (
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit Discussions</span>
-              </div>
-              <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {visibleReddit.map((c, i) => {
-                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                    return (
-                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                        <div className="flex items-start gap-2">
-                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
-                          <div className="min-w-0">
-                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{title}</p>
-                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
-                          </div>
-                        </div>
-                      </a>
-                    );
-                  })}
-                </div>
-                {unique.length > 9 && !redditExpanded && (
-                  <button onClick={() => setRedditExpanded(true)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show {unique.length - 9} more
-                  </button>
-                )}
-                {redditExpanded && unique.length > 9 && (
-                  <button onClick={() => setRedditExpanded(false)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show less
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })()}
-
-        {/* DIVE DEEPER */}
-        <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3 mt-1">Dive Deeper</h2>
-        <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-          <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
-            <span className="text-[10px] font-bold text-[#999] uppercase tracking-[0.12em]">All Articles</span>
-            <span className="text-[11px] text-[#777]">{sources.length} sources</span>
-            {!(story.category === 'sports' || story.category === 'trending') && <>
-              {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#1d4ed8]" /><span className="text-[10px] text-[#1d4ed8]">{leftSources.length} left</span></span>}
-              {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#777]" /><span className="text-[10px] text-[#777]">{centerSources.length} center</span></span>}
-              {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full bg-[#b91c1c]" /><span className="text-[10px] text-[#b91c1c]">{rightSources.length} right</span></span>}
-            </>}
-          </div>
-          {(story.category === 'sports' || story.category === 'trending') ? (
-            <SourceColumn label="Sources" sources={[...leftSources, ...centerSources, ...rightSources]} color="#999" dotColor="#999" />
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {leftSources.length > 0 && (
-                <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />
-              )}
-              {centerSources.length > 0 && (
-                <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />
-              )}
-              {rightSources.length > 0 && (
-                <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />
-              )}
-            </div>
-          )}
-        </div>
-
         {/* AD — below all articles */}
         <div className="mt-6">
           <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
@@ -536,10 +534,85 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           </div>
         </div>
       </div>
+
     </div>
   );
 }
 
+
+const FEED_TOTALS = { left: 23, center: 72, right: 15 };
+
+function CoverageLever({
+  title, subtitle, mode, left, center, right,
+}: {
+  title: string;
+  subtitle: string;
+  mode: 'count' | 'percent';
+  left: number;
+  center: number;
+  right: number;
+}) {
+  const lVal = mode === 'count' ? left : (left / FEED_TOTALS.left) * 100;
+  const cVal = mode === 'count' ? center : (center / FEED_TOTALS.center) * 100;
+  const rVal = mode === 'count' ? right : (right / FEED_TOTALS.right) * 100;
+
+  const fmt = (v: number) => mode === 'count' ? `${Math.round(v)}` : `${v.toFixed(0)}%`;
+
+  // Marker position: weighted centroid across L (0%), C (50%), R (100%).
+  // Center pulls toward middle so L-only or R-only doesn't slam the edge.
+  const total = lVal + cVal + rVal;
+  const pos = total === 0 ? 50 : ((lVal * 0 + cVal * 50 + rVal * 100) / total);
+
+  return (
+    <div>
+      <div className="mb-2 leading-tight">
+        <div className="text-[9px] font-bold text-[#bbb] uppercase tracking-[0.18em]">{title}</div>
+        <div className="text-[8px] text-[#daa520] uppercase tracking-[0.12em] mt-0.5">{subtitle}</div>
+      </div>
+
+      {/* Track with triangle pointer sitting above */}
+      <div className="relative" style={{ height: 22 }}>
+        {/* triangle pointer (points down at the track) */}
+        <div
+          style={{
+            position: 'absolute',
+            left: `calc(${pos}% - 5px)`,
+            top: 2,
+            width: 0,
+            height: 0,
+            borderLeft: '5px solid transparent',
+            borderRight: '5px solid transparent',
+            borderTop: '7px solid #e2e8f0',
+            filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.4))',
+            transition: 'left 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+          }}
+        />
+        {/* track */}
+        <div
+          className="absolute left-0 right-0"
+          style={{
+            top: 13,
+            height: 3,
+            background: 'linear-gradient(to right, #60a5fa 0%, #60a5fa 14%, #a3a3a3 44%, #a3a3a3 56%, #f87171 86%, #f87171 100%)',
+            borderRadius: 1,
+          }}
+        />
+        {/* center tick */}
+        <div
+          className="absolute"
+          style={{ left: 'calc(50% - 1px)', top: 10, width: 2, height: 9, background: '#4a5a6a' }}
+        />
+      </div>
+
+      {/* Numbers row */}
+      <div className="flex justify-between items-center mt-2">
+        <span className="text-[11px] font-mono text-[#60a5fa] leading-none">{fmt(lVal)}</span>
+        <span className="text-[11px] font-mono text-[#a3a3a3] leading-none">{fmt(cVal)}</span>
+        <span className="text-[11px] font-mono text-[#f87171] leading-none">{fmt(rVal)}</span>
+      </div>
+    </div>
+  );
+}
 
 function SourceColumn({ label, sources, color, dotColor }: {
   label: string;
