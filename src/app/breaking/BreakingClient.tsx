@@ -59,6 +59,22 @@ function ytThumb(id: string) {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 }
 
+function CoverageStrip({ story }: { story: NarrativeGap }) {
+  if ((story as any).category === 'sports' || (story as any).category === 'trending') return null;
+  const sources = story.sources ?? [];
+  const left = sources.filter(s => s.lean === 'left').length;
+  const right = sources.filter(s => s.lean === 'right').length;
+  const center = sources.filter(s => !s.lean || s.lean === 'center').length;
+  if (left + center + right === 0) return null;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: mono, fontSize: 9 }}>
+      {left > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#1d4ed8' }} /><span style={{ color: '#60a5fa' }}>{left}</span></span>}
+      {center > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#999' }} /><span style={{ color: '#bbb' }}>{center}</span></span>}
+      {right > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{right}</span></span>}
+    </div>
+  );
+}
+
 /* ── Badge ──────────────────────────────────────────────────────── */
 function Badge({ type, pulse }: { type: 'breaking' | 'live'; pulse?: boolean }) {
   return (
@@ -128,6 +144,7 @@ function StoryCard({ story, raw, type, tall }: {
                 {totalClips} clips
               </span>
             )}
+            <CoverageStrip story={story} />
             <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.gold, marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 4 }}>
               Follow live
               <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
@@ -178,6 +195,7 @@ function StoryStrip({ story, raw, type, reverse }: {
                 {totalClips} clips
               </span>
             )}
+            <CoverageStrip story={story} />
             <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.gold, display: 'flex', alignItems: 'center', gap: 4 }}>
               Follow live
               <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
@@ -304,17 +322,21 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
     );
   }
 
-  // Hero = first breaking story
-  const heroStory = allStories[0];
-  const heroRaw = heroStory ? breakingItems.find((bi: any) => bi.topic === heroStory.topic) || breakingItems[0] : null;
+  // Hero = first breaking; fall back to first live when no breaking
+  const heroFromBreaking = allStories.length > 0;
+  const heroStory = heroFromBreaking ? allStories[0] : liveStories[0];
+  const heroType: 'breaking' | 'live' = heroFromBreaking ? 'breaking' : 'live';
+  const heroRaws = heroFromBreaking ? breakingItems : liveNowItems;
+  const heroRaw = heroStory ? heroRaws.find((bi: any) => bi.topic === heroStory.topic) || heroRaws[0] : null;
   const heroSlug = heroStory ? toSlug(heroStory.topic) : '';
   const heroYtVids = heroStory?.youtube_videos ?? [];
   const heroFirstThumb = heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null;
   const heroTotalSources = heroStory ? (heroStory.sources ?? []).length : 0;
   const heroTotalClips = heroStory ? heroYtVids.length + (heroStory.social_clips ?? []).filter(c => c.duration).length : 0;
 
-  // Remaining breaking stories for the grid
-  const gridBreaking = allStories.slice(1);
+  // Remaining stories for the grid
+  const gridBreaking = heroFromBreaking ? allStories.slice(1) : allStories;
+  const gridLive = heroFromBreaking ? liveStories : liveStories.slice(1);
 
   return (
     <>
@@ -354,7 +376,7 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
               <div style={{ position: 'relative', padding: '52px 28px 20px', maxWidth: 1120, margin: '0 auto' }}>
                 {/* Badge row */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }} className="hero-meta-row">
-                  <Badge type="breaking" pulse />
+                  <Badge type={heroType} pulse />
                   {heroRaw?.detected_at && (
                     <span style={{ fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.dim }}>
                       {timeAgo(heroRaw.detected_at)}
@@ -365,6 +387,7 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
                       {heroTotalSources} sources covering this
                     </span>
                   )}
+                  <CoverageStrip story={heroStory} />
                   <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.gold, marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 4 }}>
                     Follow live
                     <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
@@ -431,10 +454,10 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
             </div>
           )}
 
-          {liveStories.length > 0 && (
+          {gridLive.length > 0 && (
             <div style={{ marginBottom: 36 }}>
-              <SectionHeader label="Live" count={liveStories.length} />
-              <StoryGrid stories={liveStories} raws={liveNowItems} type="live" />
+              <SectionHeader label="Live" count={gridLive.length} />
+              <StoryGrid stories={gridLive} raws={liveNowItems} type="live" />
             </div>
           )}
 

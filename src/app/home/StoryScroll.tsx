@@ -37,8 +37,31 @@ export type StoryItem = {
   topic: string;
   category?: string;
   image_file?: string;
+  summary?: string;
   youtube_videos?: { embed_id: string; channel?: string }[];
+  sources?: { lean?: string }[];
 };
+
+function coverageCounts(story: StoryItem) {
+  const sources = story.sources ?? [];
+  const left = sources.filter(s => s.lean === 'left').length;
+  const right = sources.filter(s => s.lean === 'right').length;
+  const center = sources.filter(s => !s.lean || s.lean === 'center').length;
+  return { left, center, right };
+}
+
+function CoverageStrip({ story }: { story: StoryItem }) {
+  if (story.category === 'sports' || story.category === 'trending') return null;
+  const { left, center, right } = coverageCounts(story);
+  if (left + center + right === 0) return null;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: mono, fontSize: 8.5, marginTop: 4 }}>
+      {left > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: 4, height: 4, borderRadius: '50%', background: '#1d4ed8' }} /><span style={{ color: '#60a5fa' }}>{left}</span></span>}
+      {center > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: 4, height: 4, borderRadius: '50%', background: '#999' }} /><span style={{ color: '#bbb' }}>{center}</span></span>}
+      {right > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: 4, height: 4, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{right}</span></span>}
+    </div>
+  );
+}
 
 export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedHeight }: { stories: StoryItem[]; blobBase: string; vertical?: boolean; dividerAfter?: number; cappedHeight?: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -86,7 +109,7 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
               )}
               <a key={story.topic} href={`/story/${slug}`} style={{
                 textDecoration: 'none', flexShrink: 0,
-                display: 'flex', flexDirection: 'row', height: 72,
+                display: 'flex', flexDirection: 'row', minHeight: 110,
                 background: C.panel, borderRadius: 8, overflow: 'hidden',
                 border: `1px solid ${C.border}`,
               }} className="story-card">
@@ -100,10 +123,16 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                     {catLabel(story.category)}
                   </span>
                 </div>
-                <div style={{ padding: '9px 11px', flex: 1, display: 'flex', alignItems: 'center' }}>
-                  <h3 style={{ fontFamily: serif, fontSize: 12.5, lineHeight: 1.35, color: C.text, fontWeight: 400, margin: 0 }}>
+                <div style={{ padding: '10px 12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0 }}>
+                  <h3 style={{ fontFamily: serif, fontSize: 13, lineHeight: 1.3, color: C.text, fontWeight: 400, margin: 0 }}>
                     {story.topic}
                   </h3>
+                  {story.summary && (
+                    <p style={{ fontFamily: mono, fontSize: 10, lineHeight: 1.45, color: C.dim, margin: '4px 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {story.summary}
+                    </p>
+                  )}
+                  <CoverageStrip story={story} />
                 </div>
               </a>
             </>
@@ -184,6 +213,7 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                 <h3 style={{ fontFamily: serif, fontSize: 14, lineHeight: 1.35, color: C.text, fontWeight: 400, margin: 0 }}>
                   {story.topic}
                 </h3>
+                <CoverageStrip story={story} />
               </div>
             </a>
           );

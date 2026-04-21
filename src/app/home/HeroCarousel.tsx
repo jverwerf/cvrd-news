@@ -57,6 +57,11 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
   const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
   const vids = story.youtube_videos ?? [];
   const totalSources = vids.length + (story.social_clips?.length ?? 0);
+  const articleSources = story.sources ?? [];
+  const leftCount = articleSources.filter(s => s.lean === 'left').length;
+  const rightCount = articleSources.filter(s => s.lean === 'right').length;
+  const centerCount = articleSources.filter(s => !s.lean || s.lean === 'center').length;
+  const showCoverage = story.category !== 'sports' && story.category !== 'trending' && (leftCount + centerCount + rightCount) > 0;
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', opacity: visible ? 1 : 0, transition: 'opacity 0.28s ease' }}>
@@ -77,6 +82,13 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
             <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dim }}>
               {totalSources} sources covering this
             </span>
+          )}
+          {showCoverage && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: mono, fontSize: 9 }}>
+              {leftCount > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#1d4ed8' }} /><span style={{ color: '#60a5fa' }}>{leftCount}</span></span>}
+              {centerCount > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#999' }} /><span style={{ color: '#bbb' }}>{centerCount}</span></span>}
+              {rightCount > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{rightCount}</span></span>}
+            </div>
           )}
           <a href={`/story/${slug}`} style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
             Read the full story

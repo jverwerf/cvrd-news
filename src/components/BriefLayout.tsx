@@ -43,6 +43,22 @@ function ytThumb(id: string) {
   return `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 }
 
+function CoverageStrip({ story }: { story: NarrativeGap }) {
+  if (story.category === 'sports' || story.category === 'trending') return null;
+  const sources = story.sources ?? [];
+  const left = sources.filter(s => s.lean === 'left').length;
+  const right = sources.filter(s => s.lean === 'right').length;
+  const center = sources.filter(s => !s.lean || s.lean === 'center').length;
+  if (left + center + right === 0) return null;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontFamily: mono, fontSize: 9 }}>
+      {left > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#1d4ed8' }} /><span style={{ color: '#60a5fa' }}>{left}</span></span>}
+      {center > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#999' }} /><span style={{ color: '#bbb' }}>{center}</span></span>}
+      {right > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{right}</span></span>}
+    </div>
+  );
+}
+
 function Badge({ label, pulse }: { label: string; pulse?: boolean }) {
   return (
     <span
@@ -133,6 +149,7 @@ function StoryCard({ story, tall }: { story: NarrativeGap; tall?: boolean }) {
                 {totalClips} clips
               </span>
             )}
+            <CoverageStrip story={story} />
             <span
               style={{
                 fontFamily: mono,
@@ -211,6 +228,7 @@ function StoryStrip({ story, reverse }: { story: NarrativeGap; reverse?: boolean
                 {totalClips} clips
               </span>
             )}
+            <CoverageStrip story={story} />
             <span
               style={{
                 fontFamily: mono,
@@ -368,6 +386,7 @@ export default function BriefLayout({
                     {heroTotalSources} sources covering this
                   </span>
                 )}
+                <CoverageStrip story={heroStory} />
                 <span
                   style={{
                     fontFamily: mono,

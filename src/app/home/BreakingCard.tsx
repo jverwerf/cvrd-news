@@ -17,6 +17,24 @@ function toSlug(topic: string) {
     .replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
 }
 
+function Coverage({ story, size = 'md' }: { story: any; size?: 'sm' | 'md' }) {
+  if (story.category === 'sports' || story.category === 'trending') return null;
+  const sources = story.sources ?? [];
+  const left = sources.filter((s: any) => s.lean === 'left').length;
+  const right = sources.filter((s: any) => s.lean === 'right').length;
+  const center = sources.filter((s: any) => !s.lean || s.lean === 'center').length;
+  if (left + center + right === 0) return null;
+  const dot = size === 'sm' ? 4 : 5;
+  const fs = size === 'sm' ? 7.5 : 9;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: size === 'sm' ? 5 : 7, fontFamily: "'DM Mono', monospace", fontSize: fs }}>
+      {left > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: dot, height: dot, borderRadius: '50%', background: '#1d4ed8' }} /><span style={{ color: '#60a5fa' }}>{left}</span></span>}
+      {center > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: dot, height: dot, borderRadius: '50%', background: '#999' }} /><span style={{ color: '#bbb' }}>{center}</span></span>}
+      {right > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 2 }}><span style={{ width: dot, height: dot, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{right}</span></span>}
+    </div>
+  );
+}
+
 function getFirstTile(story: any): TileInfo | null {
   for (const v of (story.youtube_videos || [])) {
     if (!v.embed_id) continue;
@@ -94,6 +112,7 @@ function StoryCard({ story, now, scrollable }: { story: any; now: number; scroll
               {isBreaking ? 'Breaking' : 'Live'}
             </span>
           </div>
+          <Coverage story={story} />
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7.5, color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>{ago}</span>
         </div>
         <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 13.5, lineHeight: 1.3, color: 'rgba(255,255,255,0.92)', margin: '0 0 5px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
@@ -143,6 +162,7 @@ function LiveRow({ stories, now }: { stories: any[]; now: number }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 4 }}>
                 <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 5px #ef4444' }} />
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, letterSpacing: '0.14em', color: '#ef4444', textTransform: 'uppercase' }}>Live</span>
+                <Coverage story={story} size="sm" />
                 <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>{ago}</span>
               </div>
               <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 11.5, lineHeight: 1.2, color: 'rgba(255,255,255,0.92)', margin: '0 0 3px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
