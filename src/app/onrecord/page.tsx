@@ -165,18 +165,18 @@ export default function PoliticiansPage() {
       if (data?.person?.handle) setEditorialHandle(data.person.handle);
     }).catch(() => {});
 
-    // Check breaking — same 3-clip minimum as homepage
-    fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).then(data => {
-      if (data && Array.isArray(data) && data.length > 0) {
-        const hasEnoughClips = data.some((s: any) => {
-          const videoCount = (s.youtube_videos || []).length +
-            (s.social_clips || []).filter((c: any) => c.platform !== 'reddit' && c.duration).length;
-          return videoCount >= 3;
-        });
-        setIsBreaking(hasEnoughClips);
-      } else {
-        setIsBreaking(false);
-      }
+    // Check breaking + live — same 3-clip minimum as homepage
+    const hasEnoughClips = (list: any): boolean =>
+      Array.isArray(list) && list.some((s: any) => {
+        const videoCount = (s.youtube_videos || []).length +
+          (s.social_clips || []).filter((c: any) => c.platform !== 'reddit' && c.duration).length;
+        return videoCount >= 3;
+      });
+    Promise.all([
+      fetch('/api/breaking/data').then(r => r.ok ? r.json() : null).catch(() => null),
+      fetch('/api/live-now/data').then(r => r.ok ? r.json() : null).catch(() => null),
+    ]).then(([breaking, live]) => {
+      setIsBreaking(hasEnoughClips(breaking) || hasEnoughClips(live));
     }).catch(() => setIsBreaking(false));
   }, []);
 
