@@ -135,7 +135,7 @@ export default function PoliticiansPage() {
   const [scores, setScores] = useState<PoliticianScore[]>([]);
   const [selected, setSelected] = useState<number>(0);
   const [search, setSearch] = useState('');
-  const [isBreaking, setIsBreaking] = useState(true);
+  const [isBreaking, setIsBreaking] = useState(false);
   const [editorial, setEditorial] = useState<any>(null);
   const [editorialHandle, setEditorialHandle] = useState<string | null>(null);
 
@@ -165,11 +165,11 @@ export default function PoliticiansPage() {
       if (data?.person?.handle) setEditorialHandle(data.person.handle);
     }).catch(() => {});
 
-    // Check breaking + live — same 3-clip minimum as homepage
+    // Check breaking + live — same gate as /breaking render (YT + social-with-duration >= 3)
     const hasEnoughClips = (list: any): boolean =>
       Array.isArray(list) && list.some((s: any) => {
         const videoCount = (s.youtube_videos || []).length +
-          (s.social_clips || []).filter((c: any) => c.platform !== 'reddit' && c.duration).length;
+          (s.social_clips || []).filter((c: any) => c.duration).length;
         return videoCount >= 3;
       });
     Promise.all([

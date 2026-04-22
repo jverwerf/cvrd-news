@@ -73,7 +73,7 @@ export async function hasBreakingData(): Promise<boolean> {
   const [breaking, live] = await Promise.all([getBreakingData(), getLiveNowData()]);
   const all = [...(breaking || []), ...(live || [])];
   return all.some((s: any) => {
-    const videoCount = (s.youtube_videos || []).length + (s.social_clips || []).length;
+    const videoCount = (s.youtube_videos || []).length + (s.social_clips || []).filter((c: any) => c.duration).length;
     return videoCount >= 3;
   });
 }

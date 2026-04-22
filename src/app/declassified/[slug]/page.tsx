@@ -81,9 +81,12 @@ export default async function DeclassifiedStoryPage({ params }: { params: Promis
 
   const maxAmount = ep.contracts?.length ? Math.max(...ep.contracts.map(c => c.amount)) : 0;
 
+  const { hasBreakingData } = await import('@/lib/breaking-store');
+  const isBreaking = await hasBreakingData().catch(() => false);
+
   return (
     <div style={{ background: C.bg, minHeight: '100vh', color: C.text }}>
-      <SiteNav isBreaking={true} />
+      <SiteNav isBreaking={isBreaking} />
 
       {/* Article header */}
       <div style={{ borderBottom: `1px solid ${C.border}`, position: 'relative', overflow: 'hidden' }}>

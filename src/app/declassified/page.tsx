@@ -40,9 +40,12 @@ export default async function DeclassifiedPage() {
   const past = episodes.slice(1);
   const issueNo = String(episodes.length).padStart(2, '0');
 
+  const { hasBreakingData } = await import('@/lib/breaking-store');
+  const isBreaking = await hasBreakingData().catch(() => false);
+
   return (
     <div style={{ background: '#1e2a3a', minHeight: '100vh', color: '#e2e8f0' }}>
-      <SiteNav isBreaking={true} />
+      <SiteNav isBreaking={isBreaking} />
 
       {/* ── MAGAZINE COVER HERO ── */}
       <div style={{
