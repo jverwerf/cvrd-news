@@ -181,176 +181,8 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           const summaryParas = (story.summary || '').split(/\n\s*\n/).filter(p => p.trim().length > 0);
           const blindspotParas = sentences.length > 0 ? sentences : (story.what_they_arent_telling_you ? [story.what_they_arent_telling_you] : []);
           const isSportsish = story.category === 'sports' || story.category === 'trending';
-          return (
-            <div className="flex flex-col md:flex-row gap-8 mb-8">
-              <div className="flex-1 min-w-0">
-                <section className="mb-8">
-                  <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Across Outlets</h2>
-                  {summaryParas.map((p, i) => (
-                    <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                  ))}
-                </section>
-                {story.what_they_arent_telling_you && (
-                  <section className="pl-5 mb-8" style={{ borderLeft: '2px solid #daa520' }}>
-                    <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Blindspots</h2>
-                    {blindspotParas.map((p, i) => (
-                      <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                    ))}
-                  </section>
-                )}
-                {story.social_summary && (() => {
-                  const paras = story.social_summary.split(/\n\s*\n/).filter(p => p.trim().length > 0);
-                  const finalParas = paras.length > 0 ? paras : [story.social_summary];
-                  return (
-                    <section className="mb-6">
-                      <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">In Social Media</h2>
-                      {finalParas.map((p, i) => (
-                        <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                      ))}
-                    </section>
-                  );
-                })()}
-                {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-                  <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
-                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
-                  </div>
-                )}
-
-                {/* TELEGRAM + REDDIT — combined card, 3 columns mixed */}
-                {(() => {
-                  const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
-                  const seen = new Set<string>();
-                  const uniqueReddit = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
-
-                  if (tgClips.length === 0 && uniqueReddit.length === 0) return null;
-
-                  type TextItem = { kind: 'telegram' | 'reddit'; url: string; title: string; meta: string };
-                  const mixed: TextItem[] = [];
-                  const max = Math.max(tgClips.length, uniqueReddit.length);
-                  for (let i = 0; i < max; i++) {
-                    if (tgClips[i]) mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
-                    if (uniqueReddit[i]) {
-                      const c = uniqueReddit[i];
-                      const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                      mixed.push({ kind: 'reddit', url: c.url, title, meta: `r/${c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}` });
-                    }
-                  }
-
-                  const previewCount = 9;
-                  const visible = telegramExpanded ? mixed : mixed.slice(0, previewCount);
-
-                  return (
-                    <div className="mb-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Discussions</span>
-                      </div>
-                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {visible.map((item, i) => {
-                            const metaColor = item.kind === 'telegram' ? '#0088cc' : '#ff4500';
-                            const logo = item.kind === 'telegram' ? (
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                            ) : (
-                              <svg width="14" height="14" viewBox="0 0 24 24" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="12" fill="#FF4500"/><path d="M19.93 12.24c0-.97-.78-1.75-1.75-1.75-.47 0-.89.19-1.21.49-1.19-.86-2.85-1.41-4.67-1.49l.8-3.75 2.6.55c.03.66.57 1.19 1.24 1.19.69 0 1.25-.56 1.25-1.25S17.63 5 16.94 5c-.49 0-.91.28-1.11.69l-2.91-.62a.33.33 0 00-.23.04.32.32 0 00-.14.2l-.88 4.18c-1.87.06-3.54.6-4.75 1.49a1.73 1.73 0 00-1.21-.49c-.97 0-1.75.78-1.75 1.75 0 .71.43 1.33 1.04 1.61-.03.18-.04.35-.04.53 0 2.69 3.13 4.87 7 4.87s7-2.18 7-4.87c0-.18-.01-.36-.04-.53.61-.28 1.04-.9 1.04-1.61zM7 13.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25S7 14.19 7 13.5zm8.37 3.5c-.74.74-2.14.8-2.5.8h-.01c-.37 0-1.77-.05-2.5-.8a.271.271 0 010-.38c.1-.1.27-.1.38 0 .46.46 1.46.63 2.13.63h.01c.67 0 1.67-.17 2.13-.63.1-.1.27-.1.38 0 .09.1.09.28-.02.38zm-.12-2.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" fill="#fff"/></svg>
-                            );
-                            return (
-                              <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
-                                className="rounded-lg p-3 hover:opacity-80 transition-opacity block">
-                                <div className="flex items-start gap-2">
-                                  {logo}
-                                  <div className="min-w-0">
-                                    <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{item.title}</p>
-                                    <span className="text-[10px] mt-1 block" style={{ color: metaColor }}>{item.meta}</span>
-                                  </div>
-                                </div>
-                              </a>
-                            );
-                          })}
-                        </div>
-                        {mixed.length > previewCount && (
-                          <button onClick={() => setTelegramExpanded(!telegramExpanded)}
-                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                            {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })()}
-
-                {/* X + TIKTOK — combined card, 3 columns mixed */}
-                {(() => {
-                  const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
-                  const allTiktoks = tiktokClips.filter(c => c.embed_id);
-                  if (textTweets.length === 0 && allTiktoks.length === 0) return null;
-
-                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string }> = [];
-                  const max = Math.max(textTweets.length, allTiktoks.length);
-                  for (let i = 0; i < max; i++) {
-                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id! });
-                    if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
-                  }
-
-                  const previewCount = 3;
-                  const visible = tweetsExpanded ? mixed : mixed.slice(0, previewCount);
-
-                  return (
-                    <div className="mb-6">
-                      <div className="flex items-center gap-1.5 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Socials</span>
-                        <span className="text-[14px] font-bold text-white">𝕏</span>
-                        <span className="text-[11px]" style={{ color: '#daa520' }}>+</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
-                      </div>
-                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {visible.map((item, i) => {
-                            const isExp = item.kind === 'x' ? expandedTweet === item.embedId : expandedTiktok === item.embedId;
-                            const toggleExp = () => {
-                              if (item.kind === 'x') setExpandedTweet(isExp ? null : item.embedId);
-                              else setExpandedTiktok(isExp ? null : item.embedId);
-                            };
-                            return (
-                              <div key={`${item.kind}-${item.embedId}-${i}`}
-                                className={`rounded overflow-hidden relative group ${isExp ? 'md:col-span-3' : ''}`}
-                                style={{ background: '#1e2a3a', height: isExp ? 620 : 420 }}>
-                                {item.kind === 'x' ? (
-                                  <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
-                                    style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
-                                ) : (
-                                  <iframe src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
-                                    style={{ border: 'none', width: '100%', height: '100%' }}
-                                    sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
-                                )}
-                                <button onClick={toggleExp}
-                                  className="absolute top-2 right-2 w-7 h-7 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                                  style={{ background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
-                                  aria-label={isExp ? 'Collapse' : 'Expand'}>
-                                  {isExp ? (
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                  ) : (
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                  )}
-                                </button>
-                              </div>
-                            );
-                          })}
-                        </div>
-                        {mixed.length > previewCount && (
-                          <button onClick={() => setTweetsExpanded(!tweetsExpanded)}
-                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                            {tweetsExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })()}
-              </div>
-
-              <div className="flex flex-col gap-4 self-center md:self-start" style={{ flex: '0 0 320px', width: 320 }}>
+          const rightColumn = (
+            <>
               <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (
                   <div className="py-4 px-4 grid grid-cols-2 gap-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
@@ -504,6 +336,181 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   </div>
                 </div>
               )}
+            </>
+          );
+          return (
+            <div className="flex flex-col md:flex-row gap-8 mb-8">
+              <div className="flex-1 min-w-0">
+                <section className="mb-8">
+                  <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Across Outlets</h2>
+                  {summaryParas.map((p, i) => (
+                    <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                  ))}
+                </section>
+                {story.what_they_arent_telling_you && (
+                  <section className="pl-5 mb-8" style={{ borderLeft: '2px solid #daa520' }}>
+                    <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Blindspots</h2>
+                    {blindspotParas.map((p, i) => (
+                      <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                    ))}
+                  </section>
+                )}
+                {story.social_summary && (() => {
+                  const paras = story.social_summary.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+                  const finalParas = paras.length > 0 ? paras : [story.social_summary];
+                  return (
+                    <section className="mb-6">
+                      <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">In Social Media</h2>
+                      {finalParas.map((p, i) => (
+                        <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                      ))}
+                    </section>
+                  );
+                })()}
+                {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+                  <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
+                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+                  </div>
+                )}
+
+                <div className="md:hidden flex flex-col gap-4 mb-6">{rightColumn}</div>
+
+                {/* TELEGRAM + REDDIT — combined card, 3 columns mixed */}
+                {(() => {
+                  const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
+                  const seen = new Set<string>();
+                  const uniqueReddit = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
+
+                  if (tgClips.length === 0 && uniqueReddit.length === 0) return null;
+
+                  type TextItem = { kind: 'telegram' | 'reddit'; url: string; title: string; meta: string };
+                  const mixed: TextItem[] = [];
+                  const max = Math.max(tgClips.length, uniqueReddit.length);
+                  for (let i = 0; i < max; i++) {
+                    if (tgClips[i]) mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
+                    if (uniqueReddit[i]) {
+                      const c = uniqueReddit[i];
+                      const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
+                      mixed.push({ kind: 'reddit', url: c.url, title, meta: `r/${c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}` });
+                    }
+                  }
+
+                  const previewCount = 9;
+                  const visible = telegramExpanded ? mixed : mixed.slice(0, previewCount);
+
+                  return (
+                    <div className="mb-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Discussions</span>
+                      </div>
+                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                          {visible.map((item, i) => {
+                            const metaColor = item.kind === 'telegram' ? '#0088cc' : '#ff4500';
+                            const logo = item.kind === 'telegram' ? (
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                            ) : (
+                              <svg width="14" height="14" viewBox="0 0 24 24" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="12" fill="#FF4500"/><path d="M19.93 12.24c0-.97-.78-1.75-1.75-1.75-.47 0-.89.19-1.21.49-1.19-.86-2.85-1.41-4.67-1.49l.8-3.75 2.6.55c.03.66.57 1.19 1.24 1.19.69 0 1.25-.56 1.25-1.25S17.63 5 16.94 5c-.49 0-.91.28-1.11.69l-2.91-.62a.33.33 0 00-.23.04.32.32 0 00-.14.2l-.88 4.18c-1.87.06-3.54.6-4.75 1.49a1.73 1.73 0 00-1.21-.49c-.97 0-1.75.78-1.75 1.75 0 .71.43 1.33 1.04 1.61-.03.18-.04.35-.04.53 0 2.69 3.13 4.87 7 4.87s7-2.18 7-4.87c0-.18-.01-.36-.04-.53.61-.28 1.04-.9 1.04-1.61zM7 13.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25S7 14.19 7 13.5zm8.37 3.5c-.74.74-2.14.8-2.5.8h-.01c-.37 0-1.77-.05-2.5-.8a.271.271 0 010-.38c.1-.1.27-.1.38 0 .46.46 1.46.63 2.13.63h.01c.67 0 1.67-.17 2.13-.63.1-.1.27-.1.38 0 .09.1.09.28-.02.38zm-.12-2.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" fill="#fff"/></svg>
+                            );
+                            return (
+                              <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
+                                className="rounded-lg p-3 hover:opacity-80 transition-opacity block">
+                                <div className="flex items-start gap-2">
+                                  {logo}
+                                  <div className="min-w-0">
+                                    <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{item.title}</p>
+                                    <span className="text-[10px] mt-1 block" style={{ color: metaColor }}>{item.meta}</span>
+                                  </div>
+                                </div>
+                              </a>
+                            );
+                          })}
+                        </div>
+                        {mixed.length > previewCount && (
+                          <button onClick={() => setTelegramExpanded(!telegramExpanded)}
+                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                            {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+
+                {/* X + TIKTOK — combined card, 3 columns mixed */}
+                {(() => {
+                  const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
+                  const allTiktoks = tiktokClips.filter(c => c.embed_id);
+                  if (textTweets.length === 0 && allTiktoks.length === 0) return null;
+
+                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string }> = [];
+                  const max = Math.max(textTweets.length, allTiktoks.length);
+                  for (let i = 0; i < max; i++) {
+                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id! });
+                    if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
+                  }
+
+                  const previewCount = 3;
+                  const visible = tweetsExpanded ? mixed : mixed.slice(0, previewCount);
+
+                  return (
+                    <div className="mb-6">
+                      <div className="flex items-center gap-1.5 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Socials</span>
+                        <span className="text-[14px] font-bold text-white">𝕏</span>
+                        <span className="text-[11px]" style={{ color: '#daa520' }}>+</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+                      </div>
+                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                          {visible.map((item, i) => {
+                            const isExp = item.kind === 'x' ? expandedTweet === item.embedId : expandedTiktok === item.embedId;
+                            const toggleExp = () => {
+                              if (item.kind === 'x') setExpandedTweet(isExp ? null : item.embedId);
+                              else setExpandedTiktok(isExp ? null : item.embedId);
+                            };
+                            return (
+                              <div key={`${item.kind}-${item.embedId}-${i}`}
+                                className={`rounded overflow-hidden relative group ${isExp ? 'md:col-span-3' : ''}`}
+                                style={{ background: '#1e2a3a', height: isExp ? 620 : 420 }}>
+                                {item.kind === 'x' ? (
+                                  <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
+                                    style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                                ) : (
+                                  <iframe src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
+                                    style={{ border: 'none', width: '100%', height: '100%' }}
+                                    sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                                )}
+                                <button onClick={toggleExp}
+                                  className="absolute top-2 right-2 w-7 h-7 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                  style={{ background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
+                                  aria-label={isExp ? 'Collapse' : 'Expand'}>
+                                  {isExp ? (
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                  ) : (
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                  )}
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                        {mixed.length > previewCount && (
+                          <button onClick={() => setTweetsExpanded(!tweetsExpanded)}
+                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                            {tweetsExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              <div className="hidden md:flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
+                {rightColumn}
               </div>
             </div>
           );
