@@ -390,6 +390,7 @@ export default async function Home() {
           .section-pad { padding-left: 0 !important; padding-right: 0 !important; }
           .breaking-live { display: none !important; }
           .home-cols { flex-direction: column !important; }
+          .home-col-right { width: 100% !important; max-width: 480px !important; align-self: center !important; }
           .strip-main-text { font-size: 13px !important; line-height: 1.45 !important; }
           .strip-score-num { font-size: 26px !important; }
           .strip-title-text { font-size: 13px !important; }
@@ -456,7 +457,7 @@ export default async function Home() {
 
               {/* Right: Today's Pick + Watch */}
               {stories.length > 1 && (
-                <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }} className="home-col-right">
                   <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
                   <StoryScroll
                     stories={allStories.slice(1)}
