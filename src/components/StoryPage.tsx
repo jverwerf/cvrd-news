@@ -350,7 +350,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                 })()}
               </div>
 
-              <div className="flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
+              <div className="flex flex-col gap-4 self-center md:self-start" style={{ flex: '0 0 320px', width: 320 }}>
               <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
                 {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (
                   <div className="py-4 px-4 grid grid-cols-2 gap-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
