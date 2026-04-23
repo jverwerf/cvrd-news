@@ -4,6 +4,7 @@ import { getBreakingData, hasBreakingData } from '@/lib/breaking-store';
 import { getLiveNowData } from '@/lib/live-now-store';
 import { StoryPage } from '@/components/StoryPage';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
+import { getTimelineThreads } from '@/lib/timeline-data';
 import type { NarrativeGap } from '@/lib/data';
 
 export const dynamic = 'force-dynamic';
@@ -122,6 +123,14 @@ export default async function BreakingStoryPage({ params }: { params: Promise<{ 
   const { story, date, allStories, prevStory, nextStory } = result;
   const isBreaking = await hasBreakingData().catch(() => false);
 
+  const threadId = (story as any).thread_id;
+  let matchedTimelines: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[] = [];
+  if (threadId) {
+    const timelineData = await getTimelineThreads();
+    const thread = (timelineData?.threads || []).find((t: any) => t.id === threadId);
+    if (thread) matchedTimelines = [{ id: thread.id, title: thread.title, image_file: thread.image_file, summary: thread.summary, days_covered: thread.days_covered, is_active: thread.is_active }];
+  }
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
@@ -145,6 +154,7 @@ export default async function BreakingStoryPage({ params }: { params: Promise<{ 
         allStories={allStories}
         prevStory={prevStory}
         nextStory={nextStory}
+        matchedTimelines={matchedTimelines}
         slugBase="/breaking"
       />
       <SiteFooter />
