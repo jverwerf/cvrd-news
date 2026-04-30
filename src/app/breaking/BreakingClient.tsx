@@ -97,7 +97,7 @@ function StoryCard({ story, raw, type, tall }: {
 }) {
   const slug = toSlug(story.topic);
   const ytVids = story.youtube_videos ?? [];
-  const firstThumb = ytVids[0] ? ytThumb(ytVids[0].embed_id) : null;
+  const firstThumb = story.image_file || (ytVids[0] ? ytThumb(ytVids[0].embed_id) : null);
   const totalClips = ytVids.length + (story.social_clips ?? []).filter(c => c.duration).length;
 
   return (
@@ -330,7 +330,7 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
   const heroRaw = heroStory ? heroRaws.find((bi: any) => bi.topic === heroStory.topic) || heroRaws[0] : null;
   const heroSlug = heroStory ? toSlug(heroStory.topic) : '';
   const heroYtVids = heroStory?.youtube_videos ?? [];
-  const heroFirstThumb = heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null;
+  const heroFirstThumb = heroStory?.image_file || (heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null);
   const heroTotalSources = heroStory ? (heroStory.sources ?? []).length : 0;
   const heroTotalClips = heroStory ? heroYtVids.length + (heroStory.social_clips ?? []).filter(c => c.duration).length : 0;
 

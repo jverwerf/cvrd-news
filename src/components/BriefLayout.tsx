@@ -88,7 +88,7 @@ function Badge({ label, pulse }: { label: string; pulse?: boolean }) {
 function StoryCard({ story, tall }: { story: NarrativeGap; tall?: boolean }) {
   const slug = toSlug(story.topic);
   const ytVids = story.youtube_videos ?? [];
-  const firstThumb = ytVids[0] ? ytThumb(ytVids[0].embed_id) : story.image_file || null;
+  const firstThumb = story.image_file || (ytVids[0] ? ytThumb(ytVids[0].embed_id) : null);
   const totalClips = ytVids.length + (story.social_clips ?? []).filter((c) => c.duration).length;
 
   return (
@@ -307,7 +307,7 @@ export default function BriefLayout({
 
   const heroStory = stories[0];
   const heroYtVids = heroStory.youtube_videos ?? [];
-  const heroFirstThumb = heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : heroStory.image_file || null;
+  const heroFirstThumb = heroStory.image_file || (heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null);
   const heroSlug = toSlug(heroStory.topic);
   const heroTotalClips = heroYtVids.length + (heroStory.social_clips ?? []).filter((c) => c.duration).length;
   const heroTotalSources = (heroStory.sources ?? []).length;
