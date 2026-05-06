@@ -483,7 +483,7 @@ export function Dashboard({
         {/* ROW 2 */}
         <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />
 
-        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', ...(needsExtraHeight ? { gridRow: 'span 2 / span 2' } : {}) }}
+        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: 'span 2 / span 2' }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -622,11 +622,10 @@ export function Dashboard({
 
         <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />
 
-        {/* ROW 3 — hidden when compact; tiles 7+8 hidden when center needs extra height */}
-        {!compact && [6, 7, 8, 9].map(i => {
-          if (needsExtraHeight && (i === 7 || i === 8)) return null;
-          return <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />;
-        })}
+        {/* ROW 3 — hidden when compact; tiles 7+8 always hidden because center spans 2 rows */}
+        {!compact && [6, 9].map(i => (
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+        ))}
       </div>
 
       {/* Clip strip — right side */}
