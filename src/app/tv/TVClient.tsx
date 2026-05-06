@@ -299,10 +299,6 @@ function ChannelTV({ stories, channel, onBack }: {
 
   return (
     <div style={{ background: '#000', height: '100vh', overflow: 'hidden', display: 'flex' }}>
-      {/* Ghost logo */}
-      <img src="/logo3.png" alt="CVRD" className="fixed left-1/2 top-1/2 pointer-events-none"
-        style={{ transform: 'translate(-50%, -50%)', height: '300px', zIndex: 101, opacity: 0.08 }} />
-
       {/* Dashboard */}
       <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
         <div className="fixed top-0 left-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100, right: 220 }}>
@@ -326,7 +322,7 @@ function ChannelTV({ stories, channel, onBack }: {
         </div>
         <div style={{ paddingTop: '40px', height: '100vh' }}>
           <ErrorBoundary>
-            <Dashboard key={currentClip?.id} stories={currentStory ? [currentStory] : stories} tvMode />
+            <Dashboard key={currentClip?.id} stories={currentStory ? [currentStory] : stories} tvMode startEmbedId={currentClip?.embed_id} />
           </ErrorBoundary>
         </div>
       </div>
@@ -592,14 +588,12 @@ function ClipTile({ clip, state, played, index, onClick }: {
       </div>
       {/* Info */}
       <div style={{ flex: 1, minWidth: 0 }}>
-        <p style={{ margin: 0, fontSize: 10, color: state === 'playing' ? '#fca5a5' : played ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.7)', fontWeight: 600, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
-          {clip.storyTopic}
+        <p style={{ margin: 0, fontSize: 10, color: state === 'playing' ? '#fca5a5' : played ? 'rgba(255,255,255,0.35)' : 'rgba(255,255,255,0.85)', fontWeight: 600, lineHeight: 1.3, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+          {clip.title || clip.channel || clip.storyTopic}
         </p>
-        {clip.title && (
-          <p style={{ margin: '2px 0 0', fontSize: 9, color: 'rgba(255,255,255,0.3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-            {clip.title}
-          </p>
-        )}
+        <p style={{ margin: '2px 0 0', fontSize: 9, color: 'rgba(255,255,255,0.3)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          {clip.channel && clip.title ? `${clip.channel} · ${clip.storyTopic}` : clip.storyTopic}
+        </p>
       </div>
     </button>
   );
