@@ -16,7 +16,10 @@ type PlaylistItem = {
   videoTitle?: string;
   thumbnail?: string;
   isSocial?: boolean;
+  lean?: 'left' | 'right' | 'center';
 };
+
+const LEAN_COLOR: Record<string, string> = { left: '#1d4ed8', right: '#b91c1c', center: '#a3a3a3' };
 
 type TileContent = {
   type: 'image' | 'video' | 'social';
@@ -98,7 +101,7 @@ export function Dashboard({
   for (const [i, story] of stories.entries()) {
     for (const v of (story.youtube_videos || [])) {
       if ((v as any).download_failed) continue;
-      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
+      playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, lean: v.lean, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
     }
   }
   // Social clips below YT — auto-advance after 60s
@@ -485,7 +488,7 @@ export function Dashboard({
         {/* ROW 2 */}
         <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />
 
-        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: 'span 2 / span 2' }}
+        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: 'span 2 / span 2', ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -686,6 +689,9 @@ export function Dashboard({
                       <div style={{ position: 'absolute', inset: 0, background: 'rgba(34,197,94,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <span style={{ fontSize: 10, color: '#22c55e' }}>▶</span>
                       </div>
+                    )}
+                    {clip.lean && (
+                      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 2, background: LEAN_COLOR[clip.lean] }} />
                     )}
                   </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
@@ -999,20 +1005,24 @@ function TileContentRenderer({ item }: { item: TileContent }) {
           allow="autoplay"
           loading="lazy"
         />
-        <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
+        <div className="absolute top-2 left-2 z-10">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
-          {item.videoLean && (
-            <span
+        </div>
+        {item.videoLean && (
+          <>
+            <div
+              aria-hidden
+              className="absolute bottom-0 left-0 right-0 z-10 pointer-events-none"
+              style={{ height: 24, background: `linear-gradient(to top, ${LEAN_COLOR[item.videoLean]}55, transparent)` }}
+            />
+            <div
               aria-label={`${item.videoLean}-leaning outlet`}
               title={`${item.videoLean}-leaning outlet`}
-              className="w-2 h-2 rounded-full"
-              style={{
-                background: item.videoLean === 'left' ? '#1d4ed8' : item.videoLean === 'right' ? '#b91c1c' : '#a3a3a3',
-                boxShadow: '0 0 0 1.5px rgba(0,0,0,0.6)',
-              }}
+              className="absolute bottom-0 left-0 right-0 z-10"
+              style={{ height: 4, background: LEAN_COLOR[item.videoLean], boxShadow: `0 0 8px ${LEAN_COLOR[item.videoLean]}` }}
             />
-          )}
-        </div>
+          </>
+        )}
         <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
           <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
         </div>
