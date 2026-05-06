@@ -17,7 +17,7 @@ export type NarrativeGap = {
   image_prompt?: string;
   image_file?: string;
   social_clips?: { platform: 'x' | 'tiktok' | 'reels' | 'reddit' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[];
-  youtube_videos?: { url: string; embed_id: string; channel?: string; duration?: number }[];
+  youtube_videos?: { url: string; embed_id: string; channel?: string; lean?: 'left' | 'right' | 'center'; duration?: number }[];
   people?: { name: string; role?: string; image_url?: string }[];
   sources?: { name: string; url: string; lean?: 'left' | 'right' | 'center'; title?: string }[];
 };

@@ -26,6 +26,7 @@ type TileContent = {
   sources: { name: string; lean?: string }[];
   playlistIdx?: number;
   channel?: string;
+  videoLean?: 'left' | 'right' | 'center';
   // Social clip info
   platform?: 'x' | 'tiktok' | 'reels' | 'telegram' | 'reddit';
   embedId?: string;
@@ -282,6 +283,7 @@ export function Dashboard({
         image: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`,
         topic: story.topic, index: i + 1, sources: story.sources || [],
         channel: v.channel,
+        videoLean: v.lean,
         videoTitle: (v as any).title || v.channel || '',
         isFresh: !!(v as any)._breaking,
       });
@@ -997,8 +999,19 @@ function TileContentRenderer({ item }: { item: TileContent }) {
           allow="autoplay"
           loading="lazy"
         />
-        <div className="absolute top-2 left-2 z-10">
+        <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#f00' }}>YouTube</span>
+          {item.videoLean && (
+            <span
+              aria-label={`${item.videoLean}-leaning outlet`}
+              title={`${item.videoLean}-leaning outlet`}
+              className="w-2 h-2 rounded-full"
+              style={{
+                background: item.videoLean === 'left' ? '#1d4ed8' : item.videoLean === 'right' ? '#b91c1c' : '#a3a3a3',
+                boxShadow: '0 0 0 1.5px rgba(0,0,0,0.6)',
+              }}
+            />
+          )}
         </div>
         <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
           <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.videoTitle || item.channel}</p>
