@@ -128,7 +128,7 @@ export function SiteNav({ isBreaking, storyMeta }: { isBreaking: boolean; storyM
           )}
 
           {/* Main nav items */}
-          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline'],['Declassified','/declassified']] as [string,string][]).map(([label, href]) => {
+          {([['Daily Cover','/brief'],['On Record','/onrecord'],['Timeline','/timeline']] as [string,string][]).map(([label, href]) => {
             const isAct = active(href);
             return (
               <a key={href} href={href} style={{
