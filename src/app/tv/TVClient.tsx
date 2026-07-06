@@ -270,15 +270,50 @@ function ChannelTV({ stories, channel, onBack }: {
     }
   }
 
-  const [queue, setQueue] = useState<QueuedClip[]>(clips);
-  const [playedIds, setPlayedIds] = useState<Set<string>>(new Set());
+  // survive page reloads: played + dead clip ids persist per channel/day.
+  // The queue itself is rebuilt fresh from server data on every load, so NEW
+  // videos always join automatically — resume only reorders (unplayed first)
+  // and drops clips that previously errored (private/unavailable).
+  const storeKey = `cvrd-tv-${channel.id}-${new Date().toISOString().slice(0, 10)}`;
+  const readStore = () => {
+    try { return JSON.parse(sessionStorage.getItem(storeKey) || "{}"); } catch { return {}; }
+  };
+  const [queue, setQueue] = useState<QueuedClip[]>(() => {
+    const st = readStore();
+    const played = new Set<string>(st.played || []);
+    const dead = new Set<string>(st.dead || []);
+    const alive = clips.filter(c => !dead.has(c.id));
+    return [...alive.filter(c => !played.has(c.id)), ...alive.filter(c => played.has(c.id))];
+  });
+  const [playedIds, setPlayedIds] = useState<Set<string>>(() => new Set(readStore().played || []));
+  const persist = (played: Set<string>, dead?: Set<string>) => {
+    try {
+      const st = readStore();
+      sessionStorage.setItem(storeKey, JSON.stringify({
+        played: [...played], dead: dead ? [...dead] : (st.dead || []) }));
+    } catch {}
+  };
 
   const advance = useCallback(() => {
     setQueue(q => {
       if (q.length === 0) return q;
       const [cur, ...rest] = q;
-      setPlayedIds(p => new Set([...p, cur.id]));
+      setPlayedIds(p => { const n = new Set([...p, cur.id]); persist(n); return n; });
       return [...rest, cur];
+    });
+  }, []);
+
+  const skipDead = useCallback(() => {
+    setQueue(q => {
+      if (q.length === 0) return q;
+      const [cur, ...rest] = q;
+      try {
+        const st = readStore();
+        const dead = new Set<string>(st.dead || []);
+        dead.add(cur.id);
+        sessionStorage.setItem(storeKey, JSON.stringify({ played: st.played || [], dead: [...dead] }));
+      } catch {}
+      return rest;   // dead clips leave the queue entirely
     });
   }, []);
 
@@ -287,11 +322,12 @@ function ChannelTV({ stories, channel, onBack }: {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'infoDelivery' && data.info?.playerState === 0) advance();
+        if (data.event === 'onError') skipDead();   // private/unavailable → drop and move on
       } catch {}
     };
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
-  }, [advance]);
+  }, [advance, skipDead]);
 
   const currentClip = queue[0] ?? null;
   const currentStory = currentClip ? stories.find(s => s.topic === currentClip.storyTopic) ?? null : null;
