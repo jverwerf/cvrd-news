@@ -450,7 +450,15 @@ function toNarrativeGap(b: any): NarrativeGap {
 
 /** Breaking TV — queue-based live TV player */
 function BreakingTV({ onBack }: { onBack: () => void }) {
-  const [tvState, setTvState] = useState<{ queue: QueuedClip[]; playedIds: Set<string> }>({ queue: [], playedIds: new Set() });
+  // same reload-resilience as channel TV: played/dead ids persist per day
+  const bStoreKey = `cvrd-tv-breaking-${new Date().toISOString().slice(0, 10)}`;
+  const bRead = () => { try { return JSON.parse(sessionStorage.getItem(bStoreKey) || "{}"); } catch { return {}; } };
+  const bPersist = (played: Iterable<string>, dead: Iterable<string>) => {
+    try { sessionStorage.setItem(bStoreKey, JSON.stringify({ played: [...played], dead: [...dead] })); } catch {}
+  };
+  const deadRef = useRef<Set<string>>(new Set(bRead().dead || []));
+  const [tvState, setTvState] = useState<{ queue: QueuedClip[]; playedIds: Set<string> }>(
+    { queue: [], playedIds: new Set(bRead().played || []) });
   const [rawStories, setRawStories] = useState<any[]>([]);
   const knownIdsRef = useRef<Set<string>>(new Set());
 
@@ -465,8 +473,30 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
     setTvState(s => {
       if (s.queue.length === 0) return s;
       const [current, ...rest] = s.queue;
-      return { queue: [...rest, current], playedIds: new Set([...s.playedIds, current.id]) };
+      const played = new Set([...s.playedIds, current.id]);
+      bPersist(played, deadRef.current);
+      return { queue: [...rest, current], playedIds: played };
     });
+  }, []);
+
+  // private/unavailable clips leave the queue for the day
+  useEffect(() => {
+    const handler = (e: MessageEvent) => {
+      try {
+        const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        if (data.event === 'onError') {
+          setTvState(s => {
+            if (s.queue.length === 0) return s;
+            const [current, ...rest] = s.queue;
+            deadRef.current.add(current.id);
+            bPersist(s.playedIds, deadRef.current);
+            return { queue: rest, playedIds: s.playedIds };
+          });
+        }
+      } catch {}
+    };
+    window.addEventListener('message', handler);
+    return () => window.removeEventListener('message', handler);
   }, []);
 
   const fetchAndSync = useCallback(() => {
@@ -495,10 +525,14 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
       }
 
       setTvState(s => {
+        const fresh = newClips.filter(c => !deadRef.current.has(c.id));
         const currentPlaying = s.queue[0];
-        const upcomingFiltered = s.queue.slice(1).filter(c => activeTopics.has(c.storyTopic));
+        const upcomingFiltered = s.queue.slice(1).filter(c => activeTopics.has(c.storyTopic) && !deadRef.current.has(c.id));
+        // resume after a reload: already-played clips go behind unplayed ones
+        const unplayed = fresh.filter(c => !s.playedIds.has(c.id));
+        const replayed = fresh.filter(c => s.playedIds.has(c.id));
         return {
-          queue: [...(currentPlaying ? [currentPlaying] : []), ...newClips, ...upcomingFiltered],
+          queue: [...(currentPlaying ? [currentPlaying] : []), ...unplayed, ...upcomingFiltered, ...replayed],
           playedIds: s.playedIds,
         };
       });
