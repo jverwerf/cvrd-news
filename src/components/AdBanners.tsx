@@ -29,20 +29,15 @@ import { track } from "@vercel/analytics";
 // ─── Assets ────────────────────────────────────────────────────────────────
 
 const MM_LANDSCAPE = [
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_AI-KVzRlYpHriH1NtOfyDioeWDrhHh74O.mp4',
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Automated_Triggers-u7y4k9DQZfv1W3sCDKRwUCGCnFCFEo.mp4',
   'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Cartoon-zdFCQbzkjBqHAp1D8bGrf1EJTWuyyz.mp4',
   'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Realistic-JaalDRSDRwvUIY0dnyPUs6e7AcFLjD.mp4',
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Gauge-GwMrbJGRwuN54g0TXgIRjzZp5cQtVi.mp4',
   'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Nutrition-azGPKc9ZCWgISSWWSUxKIq0mKhAbeI.mp4',
 ];
 
 const MM_PORTRAIT = [
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_AI_Standing_1-5Ja7B2RPJ8PmKI5uYwgMPWqV0hUELR.mp4',
   'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Automated_Triggers_Standing-eDbhoLIko5Z3Nmz31eZyA2E335XitQ.mp4',
   'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Community_Standing-cd9qIjeQHcQpMtSDHMKnKOqEqmPrFY.mp4',
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Gauge_Standing_1-Di5z3BZgSVMAWShJFIu5ZW3DHAT9lt.mp4',
-  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Nutrition_Standing_1-iYBCp0cYiHJjwXulsmjYVlJLwsZWeP.mp4',
+  'https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/MigraineMe_Commercial_Insights_Standing.mp4',
 ];
 
 const HAUS_SERVICES = [
