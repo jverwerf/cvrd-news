@@ -31,7 +31,7 @@ type TileContent = {
   channel?: string;
   videoLean?: 'left' | 'right' | 'center';
   // Social clip info
-  platform?: 'x' | 'tiktok' | 'reels' | 'telegram' | 'reddit';
+  platform?: 'x' | 'tiktok' | 'reels' | 'telegram';
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
@@ -308,7 +308,7 @@ export function Dashboard({
           type: 'social',
           image: thumbImg,
           topic: story.topic, index: i + 1, sources: story.sources || [],
-          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram' | 'reddit',
+          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram',
           embedId: c.embed_id,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
@@ -792,7 +792,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   const prev = prevIdx >= 0 ? pool[prevIdx % pool.length] : null;
   const isVideo = current.type === 'video';
   const isSocial = current.type === 'social';
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
   const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
@@ -985,7 +985,7 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
 
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item }: { item: TileContent }) {
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', reddit: '#ff4500' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
 
   if (item.type === 'video') {
     const videoId = item.image.match(/\/vi\/([^/]+)/)?.[1] || '';
@@ -1088,7 +1088,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         <div>
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
             style={{ background: platformColors[item.platform || 'x'] }}>
-            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : item.platform === 'reddit' ? 'Reddit' : 'Reels'}
+            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : 'Reels'}
           </span>
           <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-3">{item.clipLabel}</p>
         </div>

@@ -30,7 +30,6 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
   const xClips = clips.filter(c => c.platform === 'x');
   const tiktokClips = clips.filter(c => c.platform === 'tiktok');
   const reelsClips = clips.filter(c => c.platform === 'reels');
-  const redditClips = clips.filter(c => c.platform === 'reddit');
   const leftSources = sources.filter(s => s.lean === 'left');
   const rightSources = sources.filter(s => s.lean === 'right');
   const centerSources = sources.filter(s => !s.lean || s.lean === 'center');
@@ -251,43 +250,6 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                   </div>
                 </div>
               )}
-              {redditClips.length > 0 && (() => {
-                const seen = new Set<string>();
-                const unique = redditClips.filter(c => {
-                  if (seen.has(c.url)) return false;
-                  seen.add(c.url);
-                  return true;
-                });
-                const valid = unique.filter(c => {
-                  const t = (c.title || '').toLowerCase();
-                  return !t.includes('removed by') && !t.includes('[deleted]') && !t.includes('[removed]');
-                });
-                if (valid.length === 0) return null;
-                return (
-                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                    <div className="flex items-center gap-2 mb-3">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                      <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit discussions</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-2">
-                      {valid.map((c, i) => {
-                        const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                        const subreddit = c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit';
-                        return (
-                          <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                            className="flex items-start gap-2.5 p-3 rounded-md hover:bg-[#2a3a4a] transition-colors group" style={{ background: '#1e2a3a' }}>
-                            <span className="w-[8px] h-[8px] rounded-full bg-[#ff4500] shrink-0 mt-1" />
-                            <div className="flex-1 min-w-0">
-                              <p className="text-[12px] text-[#bbb] group-hover:text-white leading-[1.4] line-clamp-2 font-medium">{title}</p>
-                              <span className="text-[10px] text-[#777] mt-1 block">r/{subreddit}</span>
-                            </div>
-                          </a>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              })()}
 
               {/* ALL ARTICLES — grouped by source */}
               <div className="rounded-lg p-4" style={{ background: '#253545' }}>
@@ -383,8 +345,8 @@ function SourceGroup({ sources, hoverColor }: { sources: { name: string; url: st
 }
 
 function SocialLink({ clip }: { clip: NonNullable<NarrativeGap['social_clips']>[number] }) {
-  const colors: Record<string, string> = { x: '#111', tiktok: '#fe2c55', reels: '#c026d3', reddit: '#ff4500' };
-  const names: Record<string, string> = { x: 'X', tiktok: 'tiktok', reels: 'reels', reddit: 'reddit' };
+  const colors: Record<string, string> = { x: '#111', tiktok: '#fe2c55', reels: '#c026d3' };
+  const names: Record<string, string> = { x: 'X', tiktok: 'tiktok', reels: 'reels' };
   return (
     <a href={clip.url} target="_blank" rel="noreferrer"
       className="flex items-center gap-2.5 px-3 py-2.5 rounded-md hover:bg-[#2a3a4a] transition-colors group border border-transparent hover:border-[#3a4a5a]">

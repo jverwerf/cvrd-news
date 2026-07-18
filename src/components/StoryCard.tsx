@@ -13,10 +13,9 @@ export function StoryCard({ story, index }: { story: NarrativeGap; index: number
   const xClips = story.social_clips?.filter(c => c.platform === 'x') || [];
   const tiktokClips = story.social_clips?.filter(c => c.platform === 'tiktok') || [];
   const reelsClips = story.social_clips?.filter(c => c.platform === 'reels') || [];
-  const redditClips = story.social_clips?.filter(c => c.platform === 'reddit') || [];
   const ytVids = story.youtube_videos || [];
   const sources = story.sources || [];
-  const totalEvidence = xClips.length + tiktokClips.length + reelsClips.length + redditClips.length + ytVids.length;
+  const totalEvidence = xClips.length + tiktokClips.length + reelsClips.length + ytVids.length;
 
   const sentences = story.what_they_arent_telling_you
     ?.split(/(?<=\.)\s+/).filter(s => s.trim().length > 0) || [];
@@ -159,8 +158,8 @@ export function StoryCard({ story, index }: { story: NarrativeGap; index: number
                 </div>
               )}
 
-              {/* SOCIAL EVIDENCE — X, TikTok, Reels, Reddit */}
-              {(xClips.length > 0 || tiktokClips.length > 0 || reelsClips.length > 0 || redditClips.length > 0) && (
+              {/* SOCIAL EVIDENCE — X, TikTok, Reels */}
+              {(xClips.length > 0 || tiktokClips.length > 0 || reelsClips.length > 0) && (
                 <div className="pl-10">
                   <h4 className="text-[11px] font-semibold text-[#737373] uppercase tracking-wider mb-3">
                     Social Evidence
@@ -218,22 +217,6 @@ export function StoryCard({ story, index }: { story: NarrativeGap; index: number
                     </div>
                   )}
 
-                  {/* Reddit threads */}
-                  {redditClips.length > 0 && (
-                    <div>
-                      <span className="text-[11px] text-[#737373] mb-2 block">Reddit ({redditClips.length})</span>
-                      <div className="space-y-1">
-                        {redditClips.map((c, i) => (
-                          <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-[#1a1a1a] transition-colors group">
-                            <span className="text-orange-500 text-sm">⬡</span>
-                            <span className="text-sm text-[#a3a3a3] group-hover:text-white truncate flex-1">{c.title || c.url}</span>
-                            <ExternalLink size={12} className="text-[#737373] shrink-0" />
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               )}
 

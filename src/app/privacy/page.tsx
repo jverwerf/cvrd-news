@@ -25,7 +25,7 @@ export default function Privacy() {
           <p>CVRD News does not sell, rent, or share personal data with third parties for marketing purposes.</p>
 
           <h2 className="text-xl font-bold mt-6">3. Third-Party Services</h2>
-          <p>The CVRD News Platform embeds content from third-party platforms including YouTube, TikTok, Instagram, X/Twitter, and Reddit. When this embedded content is displayed on CVRD News, these platforms may collect data according to their own privacy policies:</p>
+          <p>The CVRD News Platform embeds content from third-party platforms including YouTube, TikTok, Instagram, and X/Twitter. When this embedded content is displayed on CVRD News, these platforms may collect data according to their own privacy policies:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>YouTube: <a href="https://policies.google.com/privacy" className="text-blue-600 underline">Google Privacy Policy</a></li>
             <li>TikTok: <a href="https://www.tiktok.com/legal/privacy-policy" className="text-blue-600 underline">TikTok Privacy Policy</a></li>

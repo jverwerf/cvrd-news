@@ -21,7 +21,7 @@ export default function Terms() {
           </ul>
 
           <h2 className="text-xl font-bold mt-6">3. Content and Intellectual Property</h2>
-          <p>CVRD News aggregates content from third-party sources including news outlets, social media platforms (YouTube, TikTok, Instagram, X/Twitter, Reddit), and user-generated content. We attribute all sources and use content under fair use for news commentary, criticism, and reporting purposes. All embedded content remains the property of its original creators.</p>
+          <p>CVRD News aggregates content from third-party sources including news outlets, social media platforms (YouTube, TikTok, Instagram, X/Twitter), and user-generated content. We attribute all sources and use content under fair use for news commentary, criticism, and reporting purposes. All embedded content remains the property of its original creators.</p>
           <p>Original CVRD News content (anchor scripts, video production, analysis) is owned by CVRD News and protected by copyright.</p>
 
           <h2 className="text-xl font-bold mt-6">4. Third-Party Platforms</h2>

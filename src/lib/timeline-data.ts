@@ -13,7 +13,7 @@ export type ThreadEntry = {
   right_narrative?: string;
   what_they_arent_telling_you: string;
   image_file?: string;
-  social_clips?: { platform: 'x' | 'tiktok' | 'reels' | 'reddit' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[];
+  social_clips?: { platform: 'x' | 'tiktok' | 'reels' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[];
   youtube_videos?: { url: string; embed_id: string; channel?: string; duration?: number }[];
   sources?: { name: string; url: string; lean?: 'left' | 'right' | 'center'; title?: string }[];
   short_video?: string;

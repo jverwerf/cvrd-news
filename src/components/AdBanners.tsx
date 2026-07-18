@@ -389,7 +389,7 @@ function HausCtrlTile() {
 
 // ─── Newsletter components ───────────────────────────────────────────────────
 
-const NEWSLETTER_CHIPS = ['𝕏', 'social pulse', 'reddit', 'tiktok', 'telegram', 'on record', 'timeline'];
+const NEWSLETTER_CHIPS = ['𝕏', 'social pulse', 'tiktok', 'telegram', 'on record', 'timeline'];
 const SEP: React.CSSProperties = { width: 1, height: 12, background: 'rgba(255,255,255,0.08)', flexShrink: 0, margin: '0 2px' };
 
 function NewsletterForm({ direction, onFocus, onBlur }: { direction: 'row' | 'col'; onFocus: () => void; onBlur: () => void }) {

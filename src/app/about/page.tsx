@@ -28,7 +28,7 @@ export default function About() {
           <section>
             <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>What is CVRD News?</h2>
             <p>
-              CVRD News is an independent news intelligence platform built to show you every side of every story. We monitor over 36 news sources across the political spectrum — from mainstream broadcasters and national newspapers to Reddit threads, X posts, YouTube commentary, and Telegram channels — and surface the gaps that individual outlets leave behind.
+              CVRD News is an independent news intelligence platform built to show you every side of every story. We monitor over 36 news sources across the political spectrum — from mainstream broadcasters and national newspapers to X posts, YouTube commentary, and Telegram channels — and surface the gaps that individual outlets leave behind.
             </p>
             <p className="mt-3">
               Every day, CVRD News produces a structured briefing on the top stories that matter: what the left is saying, what the right is saying, and what neither side is telling you. We do not take political sides. We surface all of them.
@@ -48,7 +48,7 @@ export default function About() {
           <section>
             <h2 className="text-xl font-bold mb-3" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>How It Works</h2>
             <p>
-              Each day, our intelligence pipeline ingests data from a curated set of sources across five categories: World, Politics, Markets, Trending, and Sports. Sources include major RSS feeds from left-leaning, right-leaning, and centrist outlets, as well as signals from Reddit, X/Twitter, YouTube, Telegram, and Google Trends.
+              Each day, our intelligence pipeline ingests data from a curated set of sources across five categories: World, Politics, Markets, Trending, and Sports. Sources include major RSS feeds from left-leaning, right-leaning, and centrist outlets, as well as signals from X/Twitter, YouTube, Telegram, and Google Trends.
             </p>
             <p className="mt-3">
               This raw data is analyzed to detect the stories generating the most divergent coverage — where mainstream outlets and unfiltered social channels tell fundamentally different stories. The output is a daily briefing of the 10 most significant narrative gaps, each with sourced left and right perspectives and an editorial note on what is missing from both.

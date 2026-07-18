@@ -50,8 +50,8 @@ export function LiveBanner({ stories, liveData: initialLiveData }: { stories: Na
   // Social clips from stories
   for (const story of stories) {
     for (const clip of (story.social_clips || []).slice(0, 2)) {
-      const platformLabel = clip.platform === 'x' ? '𝕏' : clip.platform === 'tiktok' ? 'TikTok' : clip.platform === 'reels' ? 'Reels' : 'Reddit';
-      const platformColor = clip.platform === 'x' ? '#a3a3a3' : clip.platform === 'tiktok' ? '#fe2c55' : clip.platform === 'reels' ? '#e1306c' : '#ff4500';
+      const platformLabel = clip.platform === 'x' ? '𝕏' : clip.platform === 'tiktok' ? 'TikTok' : clip.platform === 'reels' ? 'Reels' : 'Telegram';
+      const platformColor = clip.platform === 'x' ? '#a3a3a3' : clip.platform === 'tiktok' ? '#fe2c55' : clip.platform === 'reels' ? '#e1306c' : '#0088cc';
       entries.push({
         category: platformLabel,
         color: platformColor,

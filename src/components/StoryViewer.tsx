@@ -65,7 +65,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   // Build curated Daily Brief story — best picks from all stories
   const bestYT: { url: string; embed_id: string; channel?: string; duration?: number }[] = [];
-  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'reddit' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
+  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
 
   // For sports/trending: include TikTok and prioritize it. For other categories: exclude TikTok.
   const isFanCategory = stories.some(s => s.category === 'sports' || s.category === 'trending');
@@ -155,7 +155,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
   const [telegramExpanded, setTelegramExpanded] = useState(false);
-  const [redditExpanded, setRedditExpanded] = useState(false);
   const [timelineThreads, setTimelineThreads] = useState<{ id: string; title: string; image_file?: string }[]>([]);
 
   useEffect(() => {
@@ -172,7 +171,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
   const xClips = clips.filter(c => c.platform === 'x');
   const tiktokClips = clips.filter(c => c.platform === 'tiktok');
   const reelsClips = clips.filter(c => c.platform === 'reels');
-  const redditClips = clips.filter(c => c.platform === 'reddit');
   const telegramClips = clips.filter(c => c.platform === 'telegram');
   const leftSources = sources.filter(s => s.lean === 'left');
   const rightSources = sources.filter(s => s.lean === 'right');
@@ -566,7 +564,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             )}
           </div>
 
-          {/* CURATED SOCIAL — GPT-picked best tweets/reddit/telegram */}
+          {/* CURATED SOCIAL — GPT-picked best tweets/telegram */}
           {resolvedBrief?.curated_social && resolvedBrief.curated_social.length > 0 && (
             <div className="px-6 md:px-12 pb-3" style={{ background: '#1e2a3a' }}>
 
@@ -609,33 +607,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
                             <div className="min-w-0">
                               <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{c.title}</p>
                               <span className="text-[10px] text-[#0088cc] mt-1 block">@{c.author}</span>
-                            </div>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Reddit — logo outside card */}
-              {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').length > 0 && (
-                <div className="mb-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                    <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit</span>
-                  </div>
-                  <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                      {resolvedBrief.curated_social.filter((p: any) => p.platform === 'reddit').map((c: any, i: number) => (
-                        <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                          className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                          style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                          <div className="flex items-start gap-2">
-                            <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
-                            <div className="min-w-0">
-                              <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{c.title}</p>
-                              <span className="text-[10px] text-[#666] mt-1 block">r/{c.url?.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
                             </div>
                           </div>
                         </a>
@@ -1171,55 +1142,6 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
             </div>
           </div>
         )}
-
-        {/* REDDIT — hide in brief mode */}
-        {!isBrief && redditClips.length > 0 && (() => {
-          const seen = new Set<string>();
-          const unique = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
-          const visibleReddit = redditExpanded ? unique : unique.slice(0, 9);
-          return (
-            <div>
-              <div className="flex items-center gap-2 mb-3">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#ff4500"><circle cx="12" cy="12" r="12"/><path d="M15.7 12.7c0-.6-.5-1-1-1s-1 .4-1 1c0 .5.4 1 1 1 .5 0 1-.5 1-1zm-5.4 0c0-.6-.5-1-1-1-.6 0-1 .4-1 1 0 .5.4 1 1 1 .5 0 1-.5 1-1zm2.7 2.7c-.7.7-2 .8-2.7.8h-.1c-.7 0-1.7-.1-2.4-.8-.1-.1-.3-.1-.4 0-.1.1-.1.3 0 .4.8.8 2 1 2.8 1h.1c.8 0 2-.2 2.8-1 .1-.1.1-.3 0-.4-.1-.1-.3-.1-.4 0z" fill="white"/></svg>
-                <span className="text-[11px] font-bold text-[#999] uppercase tracking-[0.12em]">Reddit Discussions</span>
-              </div>
-              <div className="rounded-lg p-4 mb-3" style={{ background: '#253545' }}>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  {visibleReddit.map((c, i) => {
-                    const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                    return (
-                      <a key={i} href={c.url} target="_blank" rel="noreferrer"
-                        className="rounded-lg p-3 hover:opacity-80 transition-opacity block"
-                        style={{ background: '#1e2a3a', border: '1px solid #2a3a4a' }}>
-                        <div className="flex items-start gap-2">
-                          <span className="w-[6px] h-[6px] rounded-full mt-1.5 shrink-0" style={{ background: '#ff4500' }} />
-                          <div className="min-w-0">
-                            <p className="text-[12px] text-[#ccc] leading-snug line-clamp-3">{title}</p>
-                            <span className="text-[10px] text-[#666] mt-1 block">r/{c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}</span>
-                          </div>
-                        </div>
-                      </a>
-                    );
-                  })}
-                </div>
-                {unique.length > 9 && !redditExpanded && (
-                  <button onClick={() => setRedditExpanded(true)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show {unique.length - 9} more
-                  </button>
-                )}
-                {redditExpanded && unique.length > 9 && (
-                  <button onClick={() => setRedditExpanded(false)}
-                    className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                    style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                    Show less
-                  </button>
-                )}
-              </div>
-            </div>
-          );
-        })()}
 
         {/* DIVE DEEPER */}
         <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.15em] mb-3 mt-1">Dive Deeper</h2>

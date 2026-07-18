@@ -44,7 +44,6 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
   const [telegramExpanded, setTelegramExpanded] = useState(false);
-  const [redditExpanded, setRedditExpanded] = useState(false);
   const [expandedTweet, setExpandedTweet] = useState<string | null>(null);
   const [expandedTiktok, setExpandedTiktok] = useState<string | null>(null);
   const [subEmail, setSubEmail] = useState('');
@@ -67,7 +66,6 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   const xClips = clips.filter(c => c.platform === 'x');
   const tiktokClips = clips.filter(c => c.platform === 'tiktok');
   const reelsClips = clips.filter(c => c.platform === 'reels');
-  const redditClips = clips.filter(c => c.platform === 'reddit');
   const telegramClips = clips.filter(c => c.platform === 'telegram');
   const leftSources = sources.filter(s => s.lean === 'left');
   const rightSources = sources.filter(s => s.lean === 'right');
@@ -375,24 +373,16 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
 
                 <div className="md:hidden flex flex-col gap-4 mb-6">{rightColumn}</div>
 
-                {/* TELEGRAM + REDDIT — combined card, 3 columns mixed */}
+                {/* TELEGRAM — text discussions card, 3 columns */}
                 {(() => {
                   const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
-                  const seen = new Set<string>();
-                  const uniqueReddit = redditClips.filter(c => { if (seen.has(c.url)) return false; seen.add(c.url); return true; });
 
-                  if (tgClips.length === 0 && uniqueReddit.length === 0) return null;
+                  if (tgClips.length === 0) return null;
 
-                  type TextItem = { kind: 'telegram' | 'reddit'; url: string; title: string; meta: string };
+                  type TextItem = { kind: 'telegram'; url: string; title: string; meta: string };
                   const mixed: TextItem[] = [];
-                  const max = Math.max(tgClips.length, uniqueReddit.length);
-                  for (let i = 0; i < max; i++) {
-                    if (tgClips[i]) mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
-                    if (uniqueReddit[i]) {
-                      const c = uniqueReddit[i];
-                      const title = c.title || c.url.replace(/.*\/comments\/\w+\//, '').replace(/\/$/, '').replace(/_/g, ' ').replace(/^\w/, (ch: string) => ch.toUpperCase());
-                      mixed.push({ kind: 'reddit', url: c.url, title, meta: `r/${c.url.match(/\/r\/(\w+)/)?.[1] || 'reddit'}` });
-                    }
+                  for (let i = 0; i < tgClips.length; i++) {
+                    mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
                   }
 
                   const previewCount = 9;
@@ -406,11 +396,9 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                       <div className="rounded-lg p-4" style={{ background: '#253545' }}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
                           {visible.map((item, i) => {
-                            const metaColor = item.kind === 'telegram' ? '#0088cc' : '#ff4500';
-                            const logo = item.kind === 'telegram' ? (
+                            const metaColor = '#0088cc';
+                            const logo = (
                               <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                            ) : (
-                              <svg width="14" height="14" viewBox="0 0 24 24" className="mt-0.5 shrink-0"><circle cx="12" cy="12" r="12" fill="#FF4500"/><path d="M19.93 12.24c0-.97-.78-1.75-1.75-1.75-.47 0-.89.19-1.21.49-1.19-.86-2.85-1.41-4.67-1.49l.8-3.75 2.6.55c.03.66.57 1.19 1.24 1.19.69 0 1.25-.56 1.25-1.25S17.63 5 16.94 5c-.49 0-.91.28-1.11.69l-2.91-.62a.33.33 0 00-.23.04.32.32 0 00-.14.2l-.88 4.18c-1.87.06-3.54.6-4.75 1.49a1.73 1.73 0 00-1.21-.49c-.97 0-1.75.78-1.75 1.75 0 .71.43 1.33 1.04 1.61-.03.18-.04.35-.04.53 0 2.69 3.13 4.87 7 4.87s7-2.18 7-4.87c0-.18-.01-.36-.04-.53.61-.28 1.04-.9 1.04-1.61zM7 13.5c0-.69.56-1.25 1.25-1.25s1.25.56 1.25 1.25-.56 1.25-1.25 1.25S7 14.19 7 13.5zm8.37 3.5c-.74.74-2.14.8-2.5.8h-.01c-.37 0-1.77-.05-2.5-.8a.271.271 0 010-.38c.1-.1.27-.1.38 0 .46.46 1.46.63 2.13.63h.01c.67 0 1.67-.17 2.13-.63.1-.1.27-.1.38 0 .09.1.09.28-.02.38zm-.12-2.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z" fill="#fff"/></svg>
                             );
                             return (
                               <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
