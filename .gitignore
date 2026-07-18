@@ -48,3 +48,7 @@ public/data/timeline_archive.json
 public/data/daily_gaps_*.json
 public/images/story/
 public/images/thumbnails/
+
+# macOS AppleDouble junk (exFAT drive)
+._*
+**/._*
