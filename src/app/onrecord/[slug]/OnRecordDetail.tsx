@@ -497,9 +497,11 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
                     )}
                   </div>
                   <h3 className="text-[14px] text-white leading-tight tracking-[-0.01em] line-clamp-2" style={serif}>
-                    {ed.search_keyword
-                      ? `On ${ed.search_keyword.charAt(0).toUpperCase() + ed.search_keyword.slice(1)}: ${ed.topic_score ?? ed.overall_score}% Truthful`
-                      : ed.headline}
+                    {(() => {
+                      if (!ed.search_keyword) return ed.headline;
+                      const kw = ed.search_keyword.replace(/_/g, ' ');
+                      return `On ${kw.charAt(0).toUpperCase() + kw.slice(1)}: ${ed.topic_score ?? ed.overall_score}% Truthful`;
+                    })()}
                   </h3>
                 </Link>
               ))}
