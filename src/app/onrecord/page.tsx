@@ -9,6 +9,9 @@ import { editorialSlug } from "@/lib/onrecord-slug";
 type PoliticianScore = {
   handle: string;
   name: string;
+  photo_credit?: string;
+  photo_license?: string;
+  photo_credit_url?: string;
   overall_score: number;
   confidence_interval: number;
   verified_claims: number;
@@ -101,6 +104,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
       {p && (
         <div key={p.handle} style={{ opacity: 0 }}>
           <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${p.handle}.png`} alt={p.name}
+            title={p.photo_credit ? `Photo: ${p.photo_credit} / ${p.photo_license}` : undefined}
             className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
             style={{ opacity: 0.6 }}
             onLoad={(e) => { (e.target as HTMLImageElement).parentElement!.style.opacity = '1'; (e.target as HTMLImageElement).parentElement!.style.transition = 'opacity 0.5s ease'; }}
@@ -383,6 +387,7 @@ export default function PoliticiansPage() {
             {current ? (
               <>
                 <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${current.handle}.png`} alt={current.name}
+                  title={current.photo_credit ? `Photo: ${current.photo_credit} / ${current.photo_license}` : undefined}
                   className="h-full object-cover or-center-img" style={{ width: '40%' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 p-5 flex flex-col justify-center or-center-content" style={{ borderLeft: '1px solid #2a3a4a' }}>

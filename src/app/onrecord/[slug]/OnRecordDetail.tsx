@@ -382,9 +382,18 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
             ) : <div className="shrink-0 w-8" />;
           })()}
           <div data-section="top-card" className="flex-1 flex flex-col md:flex-row rounded-lg overflow-hidden" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-            <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${score.handle}.png`} alt={score.name}
-              className="w-full md:w-auto md:max-w-[280px]" style={{ display: 'block', objectFit: 'cover' }}
-              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
+            <div className="relative w-full md:w-auto md:max-w-[280px] shrink-0">
+              <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${score.handle}.png`} alt={score.name}
+                className="w-full h-full" style={{ display: 'block', objectFit: 'cover' }}
+                onError={(e) => { ((e.target as HTMLImageElement).parentElement as HTMLElement).style.display = 'none'; }} />
+              {score.photo_credit && (
+                <a href={score.photo_credit_url || '#'} target="_blank" rel="noreferrer"
+                  className="absolute bottom-0 right-0 px-1.5 py-0.5 text-[9px] leading-tight"
+                  style={{ background: 'rgba(0,0,0,0.55)', color: '#8a9aab' }}>
+                  Photo: {score.photo_credit} / {score.photo_license}
+                </a>
+              )}
+            </div>
             <div className="p-6 flex flex-col justify-center flex-1" style={{ borderLeft: '1px solid #2a3a4a' }}>
               <div className="max-w-[300px] mx-auto w-full">
                 <ScoreMeter score={score.overall_score} />

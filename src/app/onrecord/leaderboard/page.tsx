@@ -8,6 +8,9 @@ import { SiteNav } from "@/components/SiteNav";
 type PoliticianScore = {
   handle: string;
   name: string;
+  photo_credit?: string;
+  photo_license?: string;
+  photo_credit_url?: string;
   overall_score: number;
   confidence_interval: number;
   verified_claims: number;
@@ -251,6 +254,7 @@ export default function LeaderboardPage() {
                 color: rank === 0 ? '#daa520' : rank === 1 ? '#a8a8a8' : rank === 2 ? '#cd7f32' : 'rgba(255,255,255,0.25)',
               }}>{rank + 1}</span>
               <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${p.handle}.png`} alt={p.name}
+                title={p.photo_credit ? `Photo: ${p.photo_credit} / ${p.photo_license}` : undefined}
                 className="w-10 h-10 rounded-full object-cover shrink-0"
                 style={{ border: '2px solid #253545' }}
                 onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
