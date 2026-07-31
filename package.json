@@ -16,6 +16,7 @@
     "lucide-react": "^0.577.0",
     "next": "16.1.6",
     "openai": "^6.32.0",
+    "postprocessing": "^6.35.6",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react": "19.2.3",
@@ -24,6 +25,7 @@
     "replicate": "^1.4.0",
     "resend": "^6.10.0",
     "tailwind-merge": "^3.5.0",
+    "three": "^0.160.0",
     "youtube-transcript": "^1.3.0"
   },
   "devDependencies": {
@@ -31,6 +33,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/three": "^0.160.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
     "tailwindcss": "^4",

@@ -2,10 +2,17 @@
 
 import type { TimelineThread } from "@/lib/timeline-data";
 import { ThreadCard } from "../TimelineClient";
+import { RidePromo } from "@/components/RidePromo";
 
-export function ThreadDetail({ thread }: { thread: TimelineThread }) {
+export function ThreadDetail({ thread, hasRide }: { thread: TimelineThread; hasRide?: boolean }) {
   return (
     <div className="max-w-5xl mx-auto px-4 md:px-8 py-6">
+      {hasRide && (
+        <div className="mb-6">
+          <RidePromo slug={thread.id} count={thread.entries.length} />
+        </div>
+      )}
+
       <ThreadCard
         thread={thread}
         isExpanded={true}

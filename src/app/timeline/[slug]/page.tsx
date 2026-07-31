@@ -3,6 +3,7 @@ export const revalidate = 86400; // 24 hours — timeline content is static
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTimelineThread, getTimelineThreads } from "@/lib/timeline-data";
+import { hasRide } from "@/lib/ride-data";
 import { getDailyGaps } from "@/lib/data";
 import { SiteNav } from "@/components/SiteNav";
 import { ThreadDetail } from "./ThreadDetail";
@@ -32,10 +33,11 @@ async function hasBreakingNews(): Promise<boolean> {
 
 export default async function TimelineThreadPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [thread, data, isBreaking] = await Promise.all([
+  const [thread, data, isBreaking, ride] = await Promise.all([
     getTimelineThread(slug),
     getDailyGaps(),
     hasBreakingNews(),
+    hasRide(slug),
   ]);
   if (!thread) notFound();
 
@@ -65,7 +67,7 @@ export default async function TimelineThreadPage({ params }: { params: Promise<{
       )}
 
       {/* Content */}
-      <ThreadDetail thread={thread} />
+      <ThreadDetail thread={thread} hasRide={ride} />
 
       {/* Footer */}
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>

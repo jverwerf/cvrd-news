@@ -1,5 +1,7 @@
 "use client";
 
+import { RidePromo } from "@/components/RidePromo";
+import { RideInline } from "@/components/RideInline";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { TimelineThread, ThreadEntry, TodayLastYearData } from "@/lib/timeline-data";
@@ -71,7 +73,24 @@ const TIMELINE_SCROLL_CSS = `
 }
 `;
 
-export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null; tenYearsAgo?: TodayLastYearData | null }) {
+export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo, rideSlugs = [] }: { threads: TimelineThread[]; generatedAt: string; lastYear?: TodayLastYearData | null; tenYearsAgo?: TodayLastYearData | null; rideSlugs?: string[] }) {
+  const featuredRide = [...threads]
+    .filter(t => rideSlugs.includes(t.id))
+    .sort((a, b) => b.last_seen.localeCompare(a.last_seen))[0] || null;
+
+  // Watch is the point of the page now, but reading it is still a first-class
+  // way to use it, so it is a mode rather than a replacement.
+  const [mode, setMode] = useState<'watch' | 'read'>('watch');
+  const [playing, setPlaying] = useState<string | null>(null);
+  useEffect(() => {
+    const saved = typeof window !== 'undefined' ? window.localStorage.getItem('cvrd-timeline-mode') : null;
+    if (saved === 'read' || saved === 'watch') setMode(saved);
+  }, []);
+  const chooseMode = (m: 'watch' | 'read') => {
+    setMode(m);
+    setPlaying(null);
+    try { window.localStorage.setItem('cvrd-timeline-mode', m); } catch {}
+  };
   const [filter, setFilter] = useState('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [search, setSearch] = useState('');
@@ -191,6 +210,22 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
           const seenVids = new Set<string>();
           const vids = allVids.filter((v: any) => { const id = v.embed_id || v.id; if (seenVids.has(id)) return false; seenVids.add(id); return true; }).slice(0, 3);
           return (
+            rideSlugs.includes(thread.id) ? (
+            <div key={thread.id} className="rounded-lg overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+              <RideInline
+                slug={thread.id}
+                title={thread.title}
+                count={thread.entries.length}
+                active={playing === thread.id}
+                onPlay={() => setPlaying(thread.id)}
+                height={260}
+                image={thread.image_file || latestEntry?.image_file}
+                clips={vids.map((v: any) => v.embed_id || v.id).filter(Boolean).slice(0, 3)}
+                dates={thread.entries.map(e => e.date)}
+                summary={thread.summary}
+              />
+            </div>
+            ) : (
             <a key={thread.id} href={`/timeline/${thread.id}`}
               className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
               style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
@@ -225,6 +260,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
                 )}
               </div>
             </a>
+            )
           );
         })}
         </div>
@@ -243,11 +279,12 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo }:
 
 // ── Thread Card ──
 
-export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
+export function ThreadCard({ thread, isExpanded, onToggle, onHover, hasRide }: {
   thread: TimelineThread;
   isExpanded: boolean;
   onToggle: () => void;
   onHover: () => void;
+  hasRide?: boolean;
 }) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);
@@ -342,6 +379,9 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover }: {
               <span className="text-[9px] font-bold uppercase tracking-[0.12em]" style={{ color: catColor }}>
                 {thread.category}
               </span>
+              {hasRide && !isExpanded && (
+                <span className="ml-auto pl-2"><RidePromo slug={thread.id} count={thread.entries.length} size="chip" /></span>
+              )}
             </div>
 
             <a href={`/timeline/${thread.id}`} onClick={(e) => e.stopPropagation()}

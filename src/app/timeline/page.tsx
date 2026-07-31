@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
 import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo } from "@/lib/timeline-data";
 import { SiteNav } from "@/components/SiteNav";
+import { getRideSlugs } from "@/lib/ride-data";
 import { TimelineContent } from "./TimelineClient";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -49,6 +50,9 @@ export default async function TimelinePage() {
     getTodayTenYearsAgo(),
     hasBreakingNews(),
   ]);
+
+  // which threads have a ride built for them — cheap HEADs, cached like everything else
+  const rideSlugs = await getRideSlugs();
 
   const allStories = data?.top_narratives || [];
   const top10 = allStories.filter(s => s.is_top_story).length >= 10
@@ -104,7 +108,7 @@ export default async function TimelinePage() {
         </div>
       ) : (
         <>
-          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} tenYearsAgo={tenYearsData} />
+          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} tenYearsAgo={tenYearsData} rideSlugs={rideSlugs} />
 
           {/* Server-rendered content for SEO — visually hidden, crawlable */}
           <div className="sr-only" aria-hidden="false">

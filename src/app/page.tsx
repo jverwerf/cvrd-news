@@ -10,6 +10,8 @@ import { StoryScroll } from './home/StoryScroll';
 import { HeroCarousel } from './home/HeroCarousel';
 import { BreakingCard } from './home/BreakingCard';
 import { TimelineCarousel } from './home/TimelineCarousel';
+import { TimelineHomeCard } from '@/components/TimelineHomeCard';
+import { getRideSlugs } from '@/lib/ride-data';
 import { TvTile } from './home/TvTile';
 import { RollingClaim } from './home/RollingClaim';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
@@ -353,6 +355,10 @@ export default async function Home() {
   const threadCount  = allThreads.length;
   // Most recently updated first
   const sortedThreads = [...allThreads].sort((a, b) => b.last_seen.localeCompare(a.last_seen));
+
+  // the most recently moved thread that has a ride built for it leads the block
+  const homeThreads = sortedThreads.slice(0, 8);
+  const homeRideSlugs = await getRideSlugs();
   const videoUrl   = data?.video_url;
 
   return (
@@ -449,7 +455,7 @@ export default async function Home() {
                       href="/timeline"
                       hrefText={`All ${threadCount} threads`}
                     />
-                    <TimelineCarousel threads={sortedThreads} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
+                    <TimelineHomeCard threads={homeThreads} rideSlugs={homeRideSlugs} />
                   </div>
                 )}
               </div>
