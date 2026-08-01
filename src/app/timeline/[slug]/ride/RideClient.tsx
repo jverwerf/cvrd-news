@@ -412,6 +412,14 @@ function buildRide(opts: any): () => void {
     const c = chapterAt[idx];
     return c !== undefined ? (CHAPTERS[c].start ?? 14) : 14;
   };
+  // The end of the VERIFIED window. These are rolling broadcasts covering
+  // several stories; outside [start, end] the same clip is a different
+  // subject, so the player is never allowed to wander past it.
+  const endFor = (idx: number) => {
+    const c = chapterAt[idx];
+    const end = c !== undefined ? CHAPTERS[c].end : undefined;
+    return typeof end === 'number' && end > startFor(idx) ? end : startFor(idx) + 75;
+  };
 
   // A YT.Player built without a video id loads an invalid embed that never fires
   // onReady, so it can never be told what to show. Seed each one from a stop
@@ -777,13 +785,18 @@ function buildRide(opts: any): () => void {
     key.position.set(posTmp.x, posTmp.y + 4, posTmp.z);
     stripeTex.offset.x -= dt * (0.1 + rush * 0.8);
 
-    // ~once a second: clips loop natively (playlist+setLoop), so the only
-    // guard left is unpausing a player the embed paused on its own — a
-    // paused panel with YouTube chrome must never sit on screen mid-ride.
-    if ((endGuard = (endGuard + 1) % 30) === 0 && playing) {
+    // Twice a second: keep every clip inside its verified window (before the
+    // native loop can even fire), and unpause any player the embed paused on
+    // its own — YouTube chrome must never sit on screen mid-ride.
+    if ((endGuard = (endGuard + 1) % 15) === 0) {
       players.forEach((pl) => {
         if (!pl.ready || pl.stop < 0) return;
-        try { if (pl.player?.getPlayerState?.() === 2) pl.player.playVideo?.(); } catch {}
+        try {
+          const t = pl.player?.getCurrentTime?.() || 0;
+          const from = startFor(pl.stop), to = endFor(pl.stop);
+          if (t > to - 0.4 || t < from - 4) { pl.player.seekTo(from, true); pl.player.playVideo?.(); }
+          if (playing && pl.player?.getPlayerState?.() === 2) pl.player.playVideo?.();
+        } catch {}
       });
     }
 
