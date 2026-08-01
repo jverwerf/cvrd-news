@@ -11,6 +11,7 @@ import { HeroCarousel } from './home/HeroCarousel';
 import { BreakingCard } from './home/BreakingCard';
 import { TimelineCarousel } from './home/TimelineCarousel';
 import { TimelineHomeCard } from '@/components/TimelineHomeCard';
+import TheDivide from '@/components/TheDivide';
 import { getRideSlugs } from '@/lib/ride-data';
 import { TvTile } from './home/TvTile';
 import { RollingClaim } from './home/RollingClaim';
@@ -458,6 +459,15 @@ export default async function Home() {
                     <TimelineHomeCard threads={homeThreads} rideSlugs={homeRideSlugs} />
                   </div>
                 )}
+                <div>
+                  <SectionHeader
+                    label="The Divide"
+                    blurb="The same story, opposite feeds"
+                    href="/brief"
+                    hrefText="All stories"
+                  />
+                  <TheDivide stories={allStories} />
+                </div>
               </div>
 
               {/* Right: Today's Pick + Watch */}

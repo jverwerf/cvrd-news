@@ -183,8 +183,14 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           const rightColumn = (
             <>
               <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (
-                  <div className="py-4 px-4 grid grid-cols-2 gap-3" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (() => {
+                  const tweetLeans = xClips.filter(c => !(c as any).duration && (c as any).lean);
+                  const tL = tweetLeans.filter(c => (c as any).lean === 'left').length;
+                  const tC = tweetLeans.filter(c => (c as any).lean === 'center').length;
+                  const tR = tweetLeans.filter(c => (c as any).lean === 'right').length;
+                  const hasSocial = tL + tC + tR > 0;
+                  return (
+                  <div className={`py-4 px-4 grid ${hasSocial ? 'grid-cols-3' : 'grid-cols-2'} gap-3`} style={{ borderBottom: '1px solid #2a3a4a' }}>
                     <CoverageLever
                       title="Volume"
                       subtitle="amounts"
@@ -201,8 +207,19 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                       center={centerSources.length}
                       right={rightSources.length}
                     />
+                    {hasSocial && (
+                      <CoverageLever
+                        title="Social"
+                        subtitle="tweet takes"
+                        mode="count"
+                        left={tL}
+                        center={tC}
+                        right={tR}
+                      />
+                    )}
                   </div>
-                )}
+                  );
+                })()}
                 <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
