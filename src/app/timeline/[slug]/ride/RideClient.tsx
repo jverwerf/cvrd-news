@@ -403,7 +403,9 @@ function buildRide(opts: any): () => void {
 
   const videoFor = (idx: number) => {
     const c = chapterAt[idx];
-    if (c !== undefined && CHAPTERS[c].v) return CHAPTERS[c].v;
+    // A chapter stop shows its VERIFIED clip or its still — never a borrowed
+    // neighbour clip on the centre panel. Ordinary stops may borrow freely.
+    if (c !== undefined) return CHAPTERS[c].v;
     return STOPS[idx]?.v;
   };
   const startFor = (idx: number) => {
@@ -731,7 +733,7 @@ function buildRide(opts: any): () => void {
 
   // ── frame loop ───────────────────────────────────────────
   const clock = new THREE.Clock();
-  let bank = 0, settle = 0, nearest = -1, raf = 0;
+  let bank = 0, settle = 0, nearest = -1, raf = 0, endGuard = 0;
 
   function frame() {
     raf = requestAnimationFrame(frame);
@@ -771,6 +773,19 @@ function buildRide(opts: any): () => void {
 
     key.position.set(posTmp.x, posTmp.y + 4, posTmp.z);
     stripeTex.offset.x -= dt * (0.1 + rush * 0.8);
+
+    // ~once a second, pull any clip that is about to end back to its start
+    // second — the ENDED event alone leaves the end-card visible for a beat.
+    if ((endGuard = (endGuard + 1) % 30) === 0) {
+      players.forEach((pl) => {
+        if (!pl.ready || pl.stop < 0) return;
+        try {
+          const d = pl.player?.getDuration?.() || 0;
+          const t = pl.player?.getCurrentTime?.() || 0;
+          if (d > 1 && d - t < 1.4) { pl.player.seekTo(startFor(pl.stop), true); pl.player.playVideo?.(); }
+        } catch {}
+      });
+    }
 
     const approx = Math.round((head * TOTAL_Z) / SPACING);
     if (approx !== nearest && STOPS[approx]) { nearest = approx; onDate(STOPS[approx].d); }
