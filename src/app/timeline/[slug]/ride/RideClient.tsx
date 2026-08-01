@@ -794,7 +794,13 @@ function buildRide(opts: any): () => void {
         try {
           const t = pl.player?.getCurrentTime?.() || 0;
           const from = startFor(pl.stop), to = endFor(pl.stop);
-          if (t > to - 0.4 || t < from - 4) { pl.player.seekTo(from, true); pl.player.playVideo?.(); }
+          // cooldown: getCurrentTime reads stale during the buffer after a
+          // seek, and re-seeking on stale reads thrashes the player into a
+          // paused state with its chrome up
+          if ((t > to - 0.4 || t < from - 4) && Date.now() - (pl.lastSeekAt || 0) > 3000) {
+            pl.lastSeekAt = Date.now();
+            pl.player.seekTo(from, true); pl.player.playVideo?.();
+          }
           if (playing && pl.player?.getPlayerState?.() === 2) pl.player.playVideo?.();
         } catch {}
       });
