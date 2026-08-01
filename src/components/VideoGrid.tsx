@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { VideoGridAdBanner } from "./AdBanners";
 import { Tweet } from 'react-tweet';
+import TweetFactCheck, { type FactCheckData } from "./TweetFactCheck";
 
 type VideoItem = {
   type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit' | 'telegram';
@@ -12,6 +13,7 @@ type VideoItem = {
   thumbnail?: string;
   duration?: number;
   relevance?: number;
+  fact_check?: FactCheckData;
 };
 
 export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }: {
@@ -42,7 +44,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
     } else if (c.platform === 'reels' && c.embed_id) {
       allItems.push({ type: 'reels', embed_id: c.embed_id, url: c.url, label: c.title || `Reels @${(c as any).author || ''}`.trim(), thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     } else if (c.platform === 'x' && c.embed_id && (c as any).duration) {
-      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: `/api/x-video?id=${c.embed_id}&thumb=1`, duration: (c as any).duration, relevance: (c as any).relevance });
+      allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: `/api/x-video?id=${c.embed_id}&thumb=1`, duration: (c as any).duration, relevance: (c as any).relevance, fact_check: (c as any).fact_check });
     } else if (c.platform === 'telegram' && c.embed_id && (c as any).duration) {
       allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: c.embed_id ? `/api/tg-video?post=${c.embed_id}&thumb=1` : storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     }
@@ -352,10 +354,13 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   </div>
                 )}
                 {active.type === 'x' && (
-                  <div className="w-full h-full overflow-auto flex justify-center" style={{ background: '#15202b' }}>
+                  <div className="w-full h-full overflow-auto flex flex-col items-center" style={{ background: '#15202b' }}>
                     <iframe key={active.embed_id}
                       src={`https://platform.twitter.com/embed/Tweet.html?id=${active.embed_id}&theme=dark&dnt=true`}
                       style={{ border: 'none', width: '100%', maxWidth: '550px', height: xEmbedHeight ? `${xEmbedHeight}px` : '600px' }} allowFullScreen />
+                    <div className="w-full" style={{ maxWidth: '550px' }}>
+                      <TweetFactCheck fc={active.fact_check} compact />
+                    </div>
                   </div>
                 )}
                 {active.type === 'telegram' && (

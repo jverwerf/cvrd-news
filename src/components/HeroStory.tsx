@@ -9,6 +9,7 @@ import { VideoGrid } from "./VideoGrid";
 import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { OnRecordWidget } from "./OnRecordWidget";
+import TweetFactCheck from "./TweetFactCheck";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -209,11 +210,14 @@ export function HeroStory({ story, hideBanner, storyIndex = 1 }: { story: Narrat
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
                   {xClips.filter(c => !(c as any).duration).map((c, i) => (
                     c.embed_id ? (
-                      <div key={`x-${i}`} className="rounded overflow-hidden relative" style={{ background: '#1e2a3a', height: 90 }}>
-                        <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                            style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                      <div key={`x-${i}`} className="rounded overflow-hidden">
+                        <div className="relative" style={{ background: '#1e2a3a', height: 90 }}>
+                          <div className="absolute" style={{ top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+                            <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                              style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                          </div>
                         </div>
+                        <TweetFactCheck fc={c.fact_check} compact />
                       </div>
                     ) : <div key={`x-${i}`}><SocialLink clip={c} /></div>
                   ))}

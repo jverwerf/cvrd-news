@@ -6,7 +6,8 @@ import { Dashboard } from "./Dashboard";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { VideoGrid } from "./VideoGrid";
 import { OnRecordWidget } from "./OnRecordWidget";
-import type { NarrativeGap } from "../lib/data";
+import type { NarrativeGap, FactCheck } from "../lib/data";
+import TweetFactCheck from "./TweetFactCheck";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
 
@@ -432,10 +433,10 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   const allTiktoks = tiktokClips.filter(c => c.embed_id);
                   if (textTweets.length === 0 && allTiktoks.length === 0) return null;
 
-                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string }> = [];
+                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string; factCheck?: FactCheck }> = [];
                   const max = Math.max(textTweets.length, allTiktoks.length);
                   for (let i = 0; i < max; i++) {
-                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id! });
+                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id!, factCheck: textTweets[i].fact_check });
                     if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
                   }
 
@@ -460,11 +461,16 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                             };
                             return (
                               <div key={`${item.kind}-${item.embedId}-${i}`}
-                                className={`rounded overflow-hidden relative group ${isExp ? 'md:col-span-3' : ''}`}
+                                className={`rounded overflow-hidden relative group flex flex-col ${isExp ? 'md:col-span-3' : ''}`}
                                 style={{ background: '#1e2a3a', height: isExp ? 620 : 420 }}>
                                 {item.kind === 'x' ? (
-                                  <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
-                                    style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                                  <>
+                                    <div className="flex-1 min-h-0">
+                                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
+                                        style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                                    </div>
+                                    <TweetFactCheck fc={item.factCheck} compact />
+                                  </>
                                 ) : (
                                   <iframe src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
                                     style={{ border: 'none', width: '100%', height: '100%' }}

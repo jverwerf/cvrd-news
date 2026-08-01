@@ -3,6 +3,14 @@ import path from 'path';
 
 const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
+export type FactCheck = {
+  claim?: string;
+  verdict: 'TRUE' | 'SOMEWHAT MISLEADING' | 'MISLEADING' | 'FALSE' | 'UNSURE' | 'NO CLAIM';
+  reasoning?: string;
+  sources?: string[];
+  checked_at?: string;
+};
+
 export type NarrativeGap = {
   topic: string;
   category?: 'world' | 'politics' | 'markets' | 'sports' | 'trending';
@@ -16,7 +24,7 @@ export type NarrativeGap = {
   evidence_url?: string;
   image_prompt?: string;
   image_file?: string;
-  social_clips?: { platform: 'x' | 'tiktok' | 'reels' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[];
+  social_clips?: { platform: 'x' | 'tiktok' | 'reels' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number; fact_check?: FactCheck }[];
   youtube_videos?: { url: string; embed_id: string; channel?: string; lean?: 'left' | 'right' | 'center'; duration?: number }[];
   people?: { name: string; role?: string; image_url?: string }[];
   sources?: { name: string; url: string; lean?: 'left' | 'right' | 'center'; title?: string }[];
@@ -39,7 +47,7 @@ export type DailyBrief = {
   what_they_arent_telling_you: string;
   social_summary: string;
   image_prompt?: string;
-  curated_social?: { platform: string; embed_id?: string; title?: string; author?: string; url: string; story?: string }[];
+  curated_social?: { platform: string; embed_id?: string; title?: string; author?: string; url: string; story?: string; fact_check?: FactCheck }[];
 };
 
 export interface DailyReport {
