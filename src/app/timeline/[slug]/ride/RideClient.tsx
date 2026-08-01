@@ -32,7 +32,11 @@ export function RideClient({ ride, compact, expandHref }: {
     if (!box || !compact) return;      // full view shows it all; nothing to scroll
     const word = box.querySelector<HTMLElement>(`[data-w="${Math.max(0, said - 1)}"]`);
     if (!word) return;
-    const target = Math.max(0, word.offsetTop - box.clientHeight / 2 + word.offsetHeight / 2);
+    // Snap to whole lines: a box cut mid-glyph reads as broken, so the scroll
+    // position is always a multiple of the line height.
+    const lineH = word.offsetHeight;
+    const raw = word.offsetTop - box.clientHeight / 2 + word.offsetHeight / 2;
+    const target = Math.max(0, Math.round(raw / lineH) * lineH);
     box.scrollTo({ top: target, behavior: "smooth" });
   }, [said]);
 
