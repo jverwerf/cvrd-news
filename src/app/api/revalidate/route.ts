@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ ok: false }, { status: 401 });
   }
   const tag = req.nextUrl.searchParams.get('tag') || 'daily-gaps';
-  revalidateTag(tag);
+  revalidateTag(tag, 'max');
   revalidatePath('/', 'layout');
   return NextResponse.json({ ok: true, tag, at: new Date().toISOString() });
 }
