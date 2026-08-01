@@ -779,7 +779,9 @@ function buildRide(opts: any): () => void {
     if (ytReady && (chapter !== lastAssigned || firstAssign)) {
       lastAssigned = chapter; firstAssign = false;
       const want: number[] = [];
-      if (CHAPTERS[chapter].v) want.push(CHAPTERS[chapter].i);
+      // The chapter stop always gets its panel playing when the stop has ANY
+      // clip: borrowed scenery runs muted; only a verified chapter.v may speak.
+      if (CHAPTERS[chapter].v || STOPS[CHAPTERS[chapter].i]?.v) want.push(CHAPTERS[chapter].i);
       [chapter + 1, chapter - 1, chapter + 2].forEach((n) => {
         if (n < 0 || n >= CHAPTERS.length || want.length >= PLAYER_COUNT) return;
         if (CHAPTERS[n].v && !want.includes(CHAPTERS[n].i)) want.push(CHAPTERS[n].i);
