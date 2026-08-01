@@ -792,6 +792,17 @@ function buildRide(opts: any): () => void {
       players.forEach((pl) => {
         if (!pl.ready || pl.stop < 0) return;
         try {
+          // a reassigned player can silently keep playing its OLD video if the
+          // new load fails — the "recycled clip" bug. Verify what is actually
+          // playing and re-load (behind the poster) until it is the right one.
+          const wantId = videoFor(pl.stop);
+          const gotId = pl.player?.getVideoData?.()?.video_id;
+          pl.badVideo = !!(wantId && gotId && gotId !== wantId);
+          if (pl.badVideo && Date.now() - (pl.lastLoadFix || 0) > 4000) {
+            pl.lastLoadFix = Date.now();
+            pl.player.loadPlaylist({ playlist: [wantId], index: 0, startSeconds: startFor(pl.stop) });
+            pl.player.setLoop?.(true); pl.player.mute?.();
+          }
           const t = pl.player?.getCurrentTime?.() || 0;
           const from = startFor(pl.stop), to = endFor(pl.stop);
           // cooldown: getCurrentTime reads stale during the buffer after a
@@ -905,7 +916,7 @@ function buildRide(opts: any): () => void {
         pl.poster.style.backgroundImage = `url(https://i.ytimg.com/vi/${owned}/mqdefault.jpg)`;
         pl.posterId = owned;
       }
-      pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 ? "0" : "1";
+      pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 && !pl.badVideo ? "0" : "1";
       pl.obj.visible = hasVideo;
       host.mesh.visible = !hasVideo;                      // still holds it until a clip is loaded
       host.edge.visible = !hasVideo;
