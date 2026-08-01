@@ -29,10 +29,11 @@ export type RidePayload = {
   chapters: RideChapter[];
 };
 
-export async function getRide(slug: string): Promise<RidePayload | null> {
+export async function getRide(slug: string, mode?: 'full'): Promise<RidePayload | null> {
   if (!BLOB_BASE) return null;
+  const file = mode === 'full' ? `${slug}-full.json` : `${slug}.json`;
   try {
-    const resp = await fetch(`${BLOB_BASE}/data/ride/${slug}.json`, { next: { revalidate: 3600 } });
+    const resp = await fetch(`${BLOB_BASE}/data/ride/${file}`, { next: { revalidate: 3600 } });
     if (!resp.ok) return null;
     return (await resp.json()) as RidePayload;
   } catch {

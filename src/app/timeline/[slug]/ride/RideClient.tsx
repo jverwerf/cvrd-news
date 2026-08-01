@@ -116,15 +116,25 @@ export function RideClient({ ride, compact, expandHref }: {
           <div style={{ fontSize: 11, color: "#E0A94E", fontFamily: "ui-monospace, monospace" }}>
             {pad(chapter + 1)} / {pad(ride.chapters.length)}
           </div>
-          <div className="flex gap-1 justify-end" style={{ marginTop: 10 }}>
-            {ride.chapters.map((_, i) => (
-              <span key={i} style={{
-                width: 16, height: i === chapter ? 3 : 1,
-                background: i === chapter ? "#E0A94E" : i < chapter ? "rgba(224,169,78,0.5)" : "rgba(230,236,239,0.22)",
-                transition: "all 400ms ease",
+          {ride.chapters.length <= 20 ? (
+            <div className="flex gap-1 justify-end" style={{ marginTop: 10 }}>
+              {ride.chapters.map((_, i) => (
+                <span key={i} style={{
+                  width: 16, height: i === chapter ? 3 : 1,
+                  background: i === chapter ? "#E0A94E" : i < chapter ? "rgba(224,169,78,0.5)" : "rgba(230,236,239,0.22)",
+                  transition: "all 400ms ease",
+                }} />
+              ))}
+            </div>
+          ) : (
+            // the full story has hundreds of chapters: one bar, not a dash per chapter
+            <div style={{ marginTop: 10, marginLeft: "auto", width: 150, height: 2, background: "rgba(230,236,239,0.18)" }}>
+              <div style={{
+                width: `${((chapter + 1) / ride.chapters.length) * 100}%`, height: "100%",
+                background: "#E0A94E", transition: "width 400ms ease",
               }} />
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
 
