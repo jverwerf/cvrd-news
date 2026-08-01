@@ -563,6 +563,11 @@ function buildRide(opts: any): () => void {
   const FADE_MS = 3000;
 
   function soundBite(done: () => void) {
+    // Sound-bite privilege belongs only to a clip the builder VERIFIED for
+    // this chapter (chapter.v). A borrowed neighbour clip may be on the panel
+    // as scenery, but it never gets the floor — unverified footage speaking
+    // over the story is worse than a quiet beat.
+    if (!CHAPTERS[chapter].v) { timer = setTimeout(done, 1200); return; }
     const pl = players.find((p) => p.stop === CHAPTERS[chapter].i && p.player?.unMute);
     if (!pl) { timer = setTimeout(done, 700); return; }
 
