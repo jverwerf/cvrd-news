@@ -462,6 +462,9 @@ function buildRide(opts: any): () => void {
           autoplay: 1, mute: 1, controls: 0, disablekb: 1, fs: 0,
           modestbranding: 1, rel: 0, iv_load_policy: 3, playsinline: 1,
           start: startFor(pl.seed),
+          // single-video playlist + loop: the clip repeats seamlessly, so no
+          // end card and no paused/buffering chrome ever reaches the screen
+          loop: 1, playlist: videoFor(pl.seed),
         },
         // index 0 keeps the opening clip; the rest are told what to show as
         // soon as they are ready, so no two sit on the same video
@@ -774,16 +777,13 @@ function buildRide(opts: any): () => void {
     key.position.set(posTmp.x, posTmp.y + 4, posTmp.z);
     stripeTex.offset.x -= dt * (0.1 + rush * 0.8);
 
-    // ~once a second, pull any clip that is about to end back to its start
-    // second — the ENDED event alone leaves the end-card visible for a beat.
-    if ((endGuard = (endGuard + 1) % 30) === 0) {
+    // ~once a second: clips loop natively (playlist+setLoop), so the only
+    // guard left is unpausing a player the embed paused on its own — a
+    // paused panel with YouTube chrome must never sit on screen mid-ride.
+    if ((endGuard = (endGuard + 1) % 30) === 0 && playing) {
       players.forEach((pl) => {
         if (!pl.ready || pl.stop < 0) return;
-        try {
-          const d = pl.player?.getDuration?.() || 0;
-          const t = pl.player?.getCurrentTime?.() || 0;
-          if (d > 1 && d - t < 1.4) { pl.player.seekTo(startFor(pl.stop), true); pl.player.playVideo?.(); }
-        } catch {}
+        try { if (pl.player?.getPlayerState?.() === 2) pl.player.playVideo?.(); } catch {}
       });
     }
 
@@ -824,7 +824,8 @@ function buildRide(opts: any): () => void {
       if (!pl.ready || pl.wanted < 0 || pl.wanted === pl.loaded) return;
       const id = videoFor(pl.wanted);
       if (!id) return;
-      pl.player?.loadVideoById?.({ videoId: id, startSeconds: startFor(pl.wanted) });
+      pl.player?.loadPlaylist?.({ playlist: [id], index: 0, startSeconds: startFor(pl.wanted) });
+      pl.player?.setLoop?.(true);
       pl.player?.mute?.();
       pl.loaded = pl.wanted;
       pl.loadedAt = performance.now();
@@ -838,7 +839,8 @@ function buildRide(opts: any): () => void {
       if (state === -1 || state === 5 || state === undefined) {
         pl.retried = true;
         try {
-          pl.player.loadVideoById({ videoId: videoFor(pl.loaded), startSeconds: startFor(pl.loaded) });
+          pl.player.loadPlaylist({ playlist: [videoFor(pl.loaded)], index: 0, startSeconds: startFor(pl.loaded) });
+          pl.player.setLoop(true);
           pl.player.mute();
           pl.player.playVideo();
         } catch {}
