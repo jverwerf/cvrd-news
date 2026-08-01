@@ -78,7 +78,7 @@ export async function getDailyGaps(): Promise<DailyReport | null> {
     const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
     for (const date of [dateStr, yesterdayStr]) {
       try {
-        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 3600 } });
+        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 300, tags: ['daily-gaps'] } });
         if (resp.ok) {
           const report = await resp.json() as DailyReport;
           return postProcess(report);

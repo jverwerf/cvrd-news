@@ -5,7 +5,7 @@ import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import { getDailyGaps } from "@/lib/data";
 import { getTimelineThreads } from "@/lib/timeline-data";
 
-export const revalidate = 3600; // 1 hour — fact-checks and tweet curation update stories during the day
+export const revalidate = 300; // engine pings /api/revalidate on publish; this is just the fallback
 
 function topicToSlug(topic: string): string {
   return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
@@ -24,7 +24,7 @@ async function getStory(slug: string) {
   if (BLOB_BASE) {
     for (const date of dates) {
       try {
-        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 3600 } });
+        const resp = await fetch(`${BLOB_BASE}/data/daily_gaps_${date}.json`, { next: { revalidate: 300, tags: ['daily-gaps'] } });
         if (!resp.ok) continue;
         const data = await resp.json();
         const all = data.top_narratives || [];
