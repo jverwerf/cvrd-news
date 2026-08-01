@@ -427,6 +427,15 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   );
                 })()}
 
+              </div>
+
+              <div className="hidden md:flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
+                {rightColumn}
+              </div>
+            </div>
+          );
+        })()}
+
                 {/* X + TIKTOK — combined card, 3 columns mixed */}
                 {(() => {
                   const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
@@ -440,7 +449,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                     if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
                   }
 
-                  const previewCount = 3;
+                  const previewCount = 6;
                   const visible = tweetsExpanded ? mixed : mixed.slice(0, previewCount);
 
                   return (
@@ -452,7 +461,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
                       </div>
                       <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                           {visible.map((item, i) => {
                             const isExp = item.kind === 'x' ? expandedTweet === item.embedId : expandedTiktok === item.embedId;
                             const toggleExp = () => {
@@ -461,8 +470,8 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                             };
                             return (
                               <div key={`${item.kind}-${item.embedId}-${i}`}
-                                className={`rounded overflow-hidden relative group flex flex-col ${isExp ? 'md:col-span-3' : ''}`}
-                                style={{ background: '#1e2a3a', height: isExp ? 620 : 420 }}>
+                                className={`rounded overflow-hidden relative group flex flex-col ${isExp ? 'sm:col-span-2 lg:col-span-3' : ''}`}
+                                style={{ background: '#1e2a3a', height: isExp ? 900 : 620 }}>
                                 {item.kind === 'x' ? (
                                   <>
                                     <div className="flex-1 min-h-0">
@@ -501,14 +510,6 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                     </div>
                   );
                 })()}
-              </div>
-
-              <div className="hidden md:flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
-                {rightColumn}
-              </div>
-            </div>
-          );
-        })()}
 
         {/* REELS */}
         {reelsClips.filter(c => c.embed_id).length > 0 && (
