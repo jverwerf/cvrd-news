@@ -33,7 +33,7 @@ export async function getRide(slug: string, mode?: 'full'): Promise<RidePayload 
   if (!BLOB_BASE) return null;
   const file = mode === 'full' ? `${slug}-full.json` : `${slug}.json`;
   try {
-    const resp = await fetch(`${BLOB_BASE}/data/ride/${file}`, { next: { revalidate: 3600 } });
+    const resp = await fetch(`${BLOB_BASE}/data/ride/${file}`, { next: { revalidate: 300 } });
     if (!resp.ok) return null;
     return (await resp.json()) as RidePayload;
   } catch {
@@ -48,7 +48,7 @@ export async function getRide(slug: string, mode?: 'full'): Promise<RidePayload 
 export async function getRideSlugs(): Promise<string[]> {
   if (!BLOB_BASE) return [];
   try {
-    const resp = await fetch(`${BLOB_BASE}/data/ride/index.json`, { next: { revalidate: 3600 } });
+    const resp = await fetch(`${BLOB_BASE}/data/ride/index.json`, { next: { revalidate: 300 } });
     if (!resp.ok) return [];
     const json = await resp.json();
     return Array.isArray(json?.slugs) ? json.slugs : [];

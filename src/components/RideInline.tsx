@@ -41,7 +41,9 @@ export function RideInline({ slug, title, count, active, onPlay, height = 300, i
   useEffect(() => {
     if (!active || ride) return;
     let dead = false;
-    fetch(`${BLOB}/data/ride/${slug}.json`)
+    // no-cache: always revalidate — a rebuilt ride must never play cached
+    // captions against fresh voice (or vice versa)
+    fetch(`${BLOB}/data/ride/${slug}.json`, { cache: 'no-cache' })
       .then(r => r.ok ? r.json() : null)
       .then(j => { if (!dead) setRide(j); })
       .catch(() => {});
