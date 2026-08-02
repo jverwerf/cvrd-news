@@ -492,6 +492,9 @@ function buildRide(opts: any): () => void {
               e.target.seekTo(startFor(pl.stop), true);
               e.target.playVideo();
             } else if (e.data === window.YT.PlayerState.PAUSED && playing) {
+              // mute first: autoplay policy silently refuses play() on an
+              // unmuted player (soundBite unmutes them), leaving it paused
+              e.target.mute();
               e.target.playVideo();
             }
           },
@@ -588,6 +591,9 @@ function buildRide(opts: any): () => void {
     if (!CHAPTERS[chapter].v) { timer = setTimeout(done, 1200); return; }
     const pl = players.find((p) => p.stop === CHAPTERS[chapter].i && p.player?.unMute);
     if (!pl) { timer = setTimeout(done, 700); return; }
+    // an ad or a wedged buffer holds the floor right now — unmuting would put
+    // ad audio (or silence) on the recording, so keep the beat quiet instead
+    if (pl.stalled) { timer = setTimeout(done, 1200); return; }
 
     // The clip has been running muted underneath the narration, so the playhead
     // is a long way past the second that was chosen for it — often with only a
@@ -817,7 +823,20 @@ function buildRide(opts: any): () => void {
             pl.lastSeekAt = Date.now();
             pl.player.seekTo(from, true); pl.player.playVideo?.();
           }
-          if (playing && pl.player?.getPlayerState?.() === 2) pl.player.playVideo?.();
+          if (playing && pl.player?.getPlayerState?.() === 2) { pl.player.mute?.(); pl.player.playVideo?.(); }
+          // Ad/stall detector: a mid-roll ad reports "playing" while
+          // getCurrentTime stays frozen on the content position — the only
+          // reliable tell the iframe API gives. A frozen clock also covers
+          // buffering wedges. pl.stalled puts the poster back up and denies
+          // the sound bite until real playback moves again.
+          const state = pl.player?.getPlayerState?.();
+          if (state === 1 && Math.abs(t - (pl.lastT ?? -1)) < 0.05) {
+            if (!pl.stallSince) pl.stallSince = Date.now();
+          } else {
+            pl.stallSince = 0;
+          }
+          pl.lastT = t;
+          pl.stalled = !!(pl.stallSince && Date.now() - pl.stallSince > 2500);
         } catch {}
       });
     }
@@ -926,7 +945,7 @@ function buildRide(opts: any): () => void {
         pl.poster.style.backgroundImage = `url(https://i.ytimg.com/vi/${owned}/mqdefault.jpg)`;
         pl.posterId = owned;
       }
-      pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 && !pl.badVideo ? "0" : "1";
+      pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 && !pl.badVideo && !pl.stalled ? "0" : "1";
       pl.obj.visible = hasVideo && !(stillChapter && !mine && settle > 0.55);
       host.mesh.visible = !hasVideo;                      // still holds it until a clip is loaded
       host.edge.visible = !hasVideo;
