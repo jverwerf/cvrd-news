@@ -5,7 +5,7 @@ import path from 'path';
 import { getDailyGaps } from '@/lib/data';
 import { getTimelineThreads } from '@/lib/timeline-data';
 import type { NarrativeGap } from '@/lib/data';
-import type { TimelineThread } from '@/lib/timeline-data';
+import type { TimelineThread, ThreadEntry } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
 import { HeroCarousel } from './home/HeroCarousel';
 import { BreakingCard } from './home/BreakingCard';
@@ -358,7 +358,22 @@ export default async function Home() {
   const sortedThreads = [...allThreads].sort((a, b) => b.last_seen.localeCompare(a.last_seen));
 
   // the most recently moved thread that has a ride built for it leads the block
-  const homeThreads = sortedThreads.slice(0, 8);
+  // TimelineHomeCard only renders id/title/summary/one image/entry dates/first 3
+  // clips per thread — full entries are ~10MB of serialized homepage payload.
+  const homeThreads = sortedThreads.slice(0, 8).map(t => {
+    let clipsKept = 0;
+    const entries = t.entries.map((e, i) => {
+      const slim: Partial<ThreadEntry> = { date: e.date };
+      if (i === t.entries.length - 1) slim.image_file = e.image_file;
+      if (clipsKept < 3 && e.youtube_videos?.length) {
+        const keep = e.youtube_videos.slice(0, 3 - clipsKept);
+        slim.youtube_videos = keep.map(v => ({ url: v.url, embed_id: v.embed_id }));
+        clipsKept += keep.length;
+      }
+      return slim as ThreadEntry;
+    });
+    return { ...t, entries, gap_days: [] } as TimelineThread;
+  });
   const homeRideSlugs = await getRideSlugs();
   const videoUrl   = data?.video_url;
 
