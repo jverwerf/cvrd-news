@@ -453,74 +453,120 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           );
         })()}
 
-                {/* X + TIKTOK — combined card, 3 columns mixed */}
+                {/* THE DIVIDE — X + TikTok in the homepage Divide layout: three
+                    lean columns for tweets (fact-check strip on top of each
+                    card), TikToks in their own row below (they carry no lean
+                    tag, so they get a neutral strip instead of a fake side). */}
                 {(() => {
                   const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
                   const allTiktoks = tiktokClips.filter(c => c.embed_id);
                   if (textTweets.length === 0 && allTiktoks.length === 0) return null;
 
-                  const mixed: Array<{ kind: 'x' | 'tiktok'; embedId: string; factCheck?: FactCheck }> = [];
-                  const max = Math.max(textTweets.length, allTiktoks.length);
-                  for (let i = 0; i < max; i++) {
-                    if (textTweets[i]) mixed.push({ kind: 'x', embedId: textTweets[i].embed_id!, factCheck: textTweets[i].fact_check });
-                    if (allTiktoks[i]) mixed.push({ kind: 'tiktok', embedId: allTiktoks[i].embed_id! });
+                  const sides = [
+                    { key: 'left' as const, label: '◀ From the left', color: '#60a5fa' },
+                    { key: 'center' as const, label: 'From the center', color: '#a3a3a3' },
+                    { key: 'right' as const, label: 'From the right ▶', color: '#f87171' },
+                  ];
+                  const byLean = { left: [] as typeof textTweets, center: [] as typeof textTweets, right: [] as typeof textTweets };
+                  for (const t of textTweets) {
+                    const lean = (t as any).lean;
+                    byLean[lean === 'left' || lean === 'right' ? lean as 'left' | 'right' : 'center'].push(t);
                   }
 
-                  const previewCount = 6;
-                  const visible = tweetsExpanded ? mixed : mixed.slice(0, previewCount);
+                  const expandBtn = (isExp: boolean, toggleExp: () => void) => (
+                    <button onClick={toggleExp}
+                      className="absolute bottom-2 right-2 w-7 h-7 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
+                      aria-label={isExp ? 'Collapse' : 'Expand'}>
+                      {isExp ? (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                      ) : (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                      )}
+                    </button>
+                  );
+
+                  const tweetTile = (t: typeof textTweets[number], color: string) => {
+                    const embedId = t.embed_id!;
+                    const isExp = expandedTweet === embedId;
+                    return (
+                      <div key={`x-${embedId}`} className="rounded overflow-hidden relative group flex flex-col"
+                        style={{ background: '#1e2a3a', border: `1px solid ${color}33` }}>
+                        <TweetFactCheck fc={t.fact_check} compact />
+                        <div className="relative" style={{ height: isExp ? 900 : 460 }}>
+                          <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${embedId}&theme=dark&dnt=true`}
+                            scrolling="no" style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
+                          {!isExp && <div className="absolute inset-x-0 bottom-0 h-10" style={{ background: 'linear-gradient(transparent, #1e2a3a)', pointerEvents: 'none' }} />}
+                        </div>
+                        {expandBtn(isExp, () => setExpandedTweet(isExp ? null : embedId))}
+                      </div>
+                    );
+                  };
+
+                  const perColPreview = 2;
+                  const tiktokPreview = 3;
+                  const hidden = sides.reduce((n, s) => n + Math.max(0, byLean[s.key].length - perColPreview), 0)
+                    + Math.max(0, allTiktoks.length - tiktokPreview);
 
                   return (
                     <div className="mb-6">
-                      <div className="flex items-center gap-1.5 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Socials</span>
-                        <span className="text-[14px] font-bold text-white">𝕏</span>
-                        <span className="text-[11px]" style={{ color: '#daa520' }}>+</span>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+                      <div className="flex items-baseline gap-2 mb-3">
+                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>The Divide</span>
+                        <span className="text-[10px] text-[#667]">The same story, opposite feeds</span>
                       </div>
                       <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {visible.map((item, i) => {
-                            const isExp = item.kind === 'x' ? expandedTweet === item.embedId : expandedTiktok === item.embedId;
-                            const toggleExp = () => {
-                              if (item.kind === 'x') setExpandedTweet(isExp ? null : item.embedId);
-                              else setExpandedTiktok(isExp ? null : item.embedId);
-                            };
-                            return (
-                              <div key={`${item.kind}-${item.embedId}-${i}`}
-                                className={`rounded overflow-hidden relative group flex flex-col ${isExp ? 'sm:col-span-2 lg:col-span-3' : ''}`}
-                                style={{ background: '#1e2a3a', height: isExp ? 900 : 620 }}>
-                                {item.kind === 'x' ? (
-                                  <>
-                                    <div className="flex-1 min-h-0">
-                                      <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${item.embedId}&theme=dark&dnt=true`}
-                                        style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
-                                    </div>
-                                    <TweetFactCheck fc={item.factCheck} compact />
-                                  </>
-                                ) : (
-                                  <iframe src={`https://www.tiktok.com/embed/v2/${item.embedId}`}
-                                    style={{ border: 'none', width: '100%', height: '100%' }}
-                                    sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                        {textTweets.length > 0 && (
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            {sides.map(side => (
+                              <div key={side.key} className="flex flex-col gap-4 min-w-0">
+                                <div className="px-2 py-1 rounded text-[9px] font-bold uppercase tracking-[0.14em]"
+                                  style={{ color: side.color, background: `${side.color}14`, border: `1px solid ${side.color}33` }}>
+                                  {side.label}
+                                </div>
+                                {(tweetsExpanded ? byLean[side.key] : byLean[side.key].slice(0, perColPreview)).map(t => tweetTile(t, side.color))}
+                                {byLean[side.key].length === 0 && (
+                                  <div className="text-[10px] italic px-1" style={{ color: '#667' }}>No posts from this side yet.</div>
                                 )}
-                                <button onClick={toggleExp}
-                                  className="absolute top-2 right-2 w-7 h-7 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                                  style={{ background: 'rgba(0,0,0,0.65)', border: '1px solid rgba(255,255,255,0.15)', cursor: 'pointer' }}
-                                  aria-label={isExp ? 'Collapse' : 'Expand'}>
-                                  {isExp ? (
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                  ) : (
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                  )}
-                                </button>
                               </div>
-                            );
-                          })}
-                        </div>
-                        {mixed.length > previewCount && (
-                          <button onClick={() => setTweetsExpanded(!tweetsExpanded)}
+                            ))}
+                          </div>
+                        )}
+                        {allTiktoks.length > 0 && (
+                          <div className={textTweets.length > 0 ? 'mt-4' : ''}>
+                            <div className="px-2 py-1 rounded text-[9px] font-bold uppercase tracking-[0.14em] mb-4 flex items-center gap-1.5"
+                              style={{ color: '#daa520', background: '#daa52014', border: '1px solid #daa52033' }}>
+                              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005.8 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.84-.1z"/></svg>
+                              From TikTok
+                            </div>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                              {(tweetsExpanded ? allTiktoks : allTiktoks.slice(0, tiktokPreview)).map(c => {
+                                const embedId = c.embed_id!;
+                                const isExp = expandedTiktok === embedId;
+                                return (
+                                  <div key={`tiktok-${embedId}`} className="rounded overflow-hidden relative group flex flex-col"
+                                    style={{ background: '#1e2a3a', border: '1px solid #daa52033', height: isExp ? 900 : 620 }}>
+                                    <iframe src={`https://www.tiktok.com/embed/v2/${embedId}`}
+                                      style={{ border: 'none', width: '100%', height: '100%' }}
+                                      sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
+                                    {expandBtn(isExp, () => setExpandedTiktok(isExp ? null : embedId))}
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        )}
+                        {hidden > 0 && !tweetsExpanded && (
+                          <button onClick={() => setTweetsExpanded(true)}
                             className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
                             style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                            {tweetsExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                            {`Show ${hidden} more`}
+                          </button>
+                        )}
+                        {tweetsExpanded && (
+                          <button onClick={() => setTweetsExpanded(false)}
+                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                            Show less
                           </button>
                         )}
                       </div>

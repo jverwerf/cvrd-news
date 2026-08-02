@@ -25,12 +25,14 @@ function SidePanel({ clip, side }: { clip: Clip; side: 'left' | 'center' | 'righ
       <div className="px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]" style={{ color, background: `${color}14` }}>
         {side === 'left' ? '◀ From the left' : side === 'right' ? 'From the right ▶' : 'From the center'}
       </div>
-      <div className="relative" style={{ height: 230 }}>
-        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${clip.embed_id}&theme=dark&dnt=true`}
-          style={{ border: 'none', width: '100%', height: '100%', pointerEvents: 'none' }} loading="lazy" tabIndex={-1} />
-      </div>
-      <div style={{ pointerEvents: 'none' }}>
+      {/* interactive island inside the story link: expand must not navigate */}
+      <div onClick={e => { e.preventDefault(); e.stopPropagation(); }}>
         <TweetFactCheck fc={(clip as any).fact_check} compact />
+      </div>
+      <div className="relative flex-1" style={{ minHeight: 230 }}>
+        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${clip.embed_id}&theme=dark&dnt=true`}
+          scrolling="no" style={{ border: 'none', width: '100%', height: '100%', minHeight: 230, pointerEvents: 'none' }} loading="lazy" tabIndex={-1} />
+        <div className="absolute inset-x-0 bottom-0 h-8" style={{ background: 'linear-gradient(transparent, #1e2a3a)', pointerEvents: 'none' }} />
       </div>
     </div>
   );
