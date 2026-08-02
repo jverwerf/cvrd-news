@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
+import type { CSSProperties } from "react";
 import type { NarrativeGap } from "@/lib/data";
 import { Dashboard } from "@/components/Dashboard";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -257,6 +258,109 @@ export function TVClient({
   return <ChannelTV stories={stories} channel={channel} onBack={() => setActiveChannel(null)} />;
 }
 
+/** TV layout prefs — orientation + queue visibility, persisted across sessions */
+function useTVLayout() {
+  const [orientation, setOrientation] = useState<'landscape' | 'portrait'>('landscape');
+  const [queueHidden, setQueueHidden] = useState(false);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('cvrd-tv-orientation');
+      if (saved === 'portrait' || saved === 'landscape') setOrientation(saved);
+      else if (window.innerHeight > window.innerWidth) setOrientation('portrait');
+      if (localStorage.getItem('cvrd-tv-queue-hidden') === '1') setQueueHidden(true);
+    } catch {}
+  }, []);
+
+  const toggleOrientation = useCallback(() => {
+    setOrientation(o => {
+      const next = o === 'landscape' ? 'portrait' : 'landscape';
+      try { localStorage.setItem('cvrd-tv-orientation', next); } catch {}
+      return next;
+    });
+  }, []);
+
+  const toggleQueue = useCallback(() => {
+    setQueueHidden(h => {
+      try { localStorage.setItem('cvrd-tv-queue-hidden', h ? '0' : '1'); } catch {}
+      return !h;
+    });
+  }, []);
+
+  return { orientation, queueHidden, toggleOrientation, toggleQueue };
+}
+
+function TVControls({ portrait, queueHidden, onToggleOrientation, onToggleQueue }: {
+  portrait: boolean;
+  queueHidden: boolean;
+  onToggleOrientation: () => void;
+  onToggleQueue: () => void;
+}) {
+  const btn: CSSProperties = {
+    background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)',
+    borderRadius: 4, width: 26, height: 22, display: 'flex', alignItems: 'center',
+    justifyContent: 'center', cursor: 'pointer', padding: 0,
+  };
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '0 10px', marginLeft: 'auto', flexShrink: 0 }}>
+      <button onClick={onToggleOrientation} title={portrait ? 'Switch to landscape layout' : 'Switch to portrait layout'}
+        style={{ ...btn, color: 'rgba(255,255,255,0.6)' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          {portrait ? <rect x="3" y="7" width="18" height="10" rx="2" /> : <rect x="7" y="3" width="10" height="18" rx="2" />}
+        </svg>
+      </button>
+      <button onClick={onToggleQueue} title={queueHidden ? 'Show up next' : 'Hide up next'}
+        style={{ ...btn, color: queueHidden ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.7)' }}>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <line x1="15" y1="3" x2="15" y2="21" />
+        </svg>
+      </button>
+    </div>
+  );
+}
+
+/** Up-next queue — vertical side strip in landscape, horizontal bottom strip in portrait */
+function QueueStrip({ portrait, currentClip, upcoming, playedIds, onSelect }: {
+  portrait: boolean;
+  currentClip: QueuedClip | null;
+  upcoming: QueuedClip[];
+  playedIds: Set<string>;
+  onSelect: (clipId: string) => void;
+}) {
+  const header = (
+    <div style={{ padding: '10px 12px 6px', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', flexShrink: 0 }}>
+      Up next · {upcoming.length}
+    </div>
+  );
+  if (portrait) {
+    return (
+      <div style={{ height: 124, flexShrink: 0, background: '#0d0d0d', borderTop: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden', zIndex: 100 }}>
+        {header}
+        <div style={{ flex: 1, display: 'flex', overflowX: 'auto', overflowY: 'hidden' }}>
+          {currentClip && <div style={{ width: 210, flexShrink: 0 }}><ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} /></div>}
+          {upcoming.map((clip, i) => (
+            <div key={clip.id} style={{ width: 210, flexShrink: 0 }}>
+              <ClipTile clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1} onClick={() => onSelect(clip.id)} />
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div style={{ width: 220, flexShrink: 0, background: '#0d0d0d', borderLeft: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden', zIndex: 100 }}>
+      {header}
+      <div style={{ flex: 1, overflowY: 'auto' }}>
+        {currentClip && <ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} />}
+        {upcoming.map((clip, i) => (
+          <ClipTile key={clip.id} clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1} onClick={() => onSelect(clip.id)} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ChannelTV({ stories, channel, onBack }: {
   stories: NarrativeGap[];
   channel: { id: string; label: string; color: string };
@@ -333,11 +437,14 @@ function ChannelTV({ stories, channel, onBack }: {
   const currentStory = currentClip ? stories.find(s => s.topic === currentClip.storyTopic) ?? null : null;
   const upcoming = queue.slice(1);
 
+  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout();
+  const portrait = orientation === 'portrait';
+
   return (
-    <div style={{ background: '#000', height: '100vh', overflow: 'hidden', display: 'flex' }}>
+    <div style={{ background: '#000', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: portrait ? 'column' : 'row' }}>
       {/* Dashboard */}
-      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
-        <div className="fixed top-0 left-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100, right: 220 }}>
+      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+        <div className="fixed top-0 left-0 h-10 flex items-center overflow-hidden" style={{ background: '#111', zIndex: 100, right: portrait || queueHidden ? 0 : 220 }}>
           <button onClick={onBack} className="shrink-0 px-4 h-full flex items-center gap-2 hover:bg-white/5 transition-colors"
             style={{ cursor: 'pointer', border: 'none', background: 'transparent' }}>
             <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14 }}>←</span>
@@ -355,28 +462,21 @@ function ChannelTV({ stories, channel, onBack }: {
               ))}
             </div>
           </div>
+          <TVControls portrait={portrait} queueHidden={queueHidden} onToggleOrientation={toggleOrientation} onToggleQueue={toggleQueue} />
         </div>
-        <div style={{ paddingTop: '40px', height: '100vh' }}>
+        <div style={{ paddingTop: '40px', flex: 1, minHeight: 0 }}>
           <ErrorBoundary>
-            <Dashboard key={currentClip?.id} stories={currentStory ? [currentStory] : stories} tvMode startEmbedId={currentClip?.embed_id} />
+            <Dashboard key={currentClip?.id} stories={currentStory ? [currentStory] : stories} tvMode orientation={orientation} startEmbedId={currentClip?.embed_id} />
           </ErrorBoundary>
         </div>
       </div>
 
       {/* Queue strip */}
-      <div style={{ width: 220, flexShrink: 0, background: '#0d0d0d', borderLeft: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden', zIndex: 100 }}>
-        <div style={{ padding: '10px 12px 6px', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', flexShrink: 0 }}>
-          Up next · {upcoming.length}
-        </div>
-        <div style={{ flex: 1, overflowY: 'auto' }}>
-          {currentClip && <ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} />}
-          {upcoming.map((clip, i) => (
-            <ClipTile key={clip.id} clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1}
-              onClick={() => setQueue(q => { const idx = q.findIndex(c => c.id === clip.id); if (idx <= 0) return q; return [q[idx], ...q.slice(0, idx), ...q.slice(idx + 1)]; })}
-            />
-          ))}
-        </div>
-      </div>
+      {!queueHidden && (
+        <QueueStrip portrait={portrait} currentClip={currentClip} upcoming={upcoming} playedIds={playedIds}
+          onSelect={(clipId) => setQueue(q => { const idx = q.findIndex(c => c.id === clipId); if (idx <= 0) return q; return [q[idx], ...q.slice(0, idx), ...q.slice(idx + 1)]; })}
+        />
+      )}
 
       <style>{`
         @keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-33.333%); } }
@@ -549,6 +649,9 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   const { queue, playedIds } = tvState;
   const upcoming = queue.slice(1);
 
+  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout();
+  const portrait = orientation === 'portrait';
+
   if (queue.length === 0) {
     return (
       <div style={{ background: '#000', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -561,10 +664,10 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   }
 
   return (
-    <div style={{ background: '#0a0a0a', height: '100vh', overflow: 'hidden', display: 'flex' }}>
+    <div style={{ background: '#0a0a0a', height: '100vh', overflow: 'hidden', display: 'flex', flexDirection: portrait ? 'column' : 'row' }}>
 
       {/* Dashboard — main view */}
-      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column', minHeight: 0 }}>
         {/* Top bar */}
         <div style={{ height: 40, flexShrink: 0, background: 'linear-gradient(to right, #7f1d1d, #991b1b, #7f1d1d)', display: 'flex', alignItems: 'center', zIndex: 10 }}>
           <button onClick={onBack} style={{ padding: '0 16px', height: '100%', display: 'flex', alignItems: 'center', gap: 8, background: 'none', border: 'none', cursor: 'pointer' }}>
@@ -578,35 +681,28 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
               {currentClip?.storyTopic ?? ''}
             </span>
           </div>
+          <TVControls portrait={portrait} queueHidden={queueHidden} onToggleOrientation={toggleOrientation} onToggleQueue={toggleQueue} />
         </div>
 
         {currentStory && (
           <div style={{ flex: 1, overflow: 'hidden' }}>
             <ErrorBoundary>
-              <Dashboard key={currentClip?.id} stories={[currentStory]} tvMode onEnd={advance} startEmbedId={currentClip?.embed_id} />
+              <Dashboard key={currentClip?.id} stories={[currentStory]} tvMode orientation={orientation} onEnd={advance} startEmbedId={currentClip?.embed_id} />
             </ErrorBoundary>
           </div>
         )}
       </div>
 
-      {/* Queue strip — right */}
-      <div style={{ width: 220, flexShrink: 0, background: '#0d0d0d', borderLeft: '1px solid #1a1a1a', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-        <div style={{ padding: '10px 12px 6px', fontSize: 9, fontWeight: 700, letterSpacing: '0.12em', color: 'rgba(255,255,255,0.25)', textTransform: 'uppercase', flexShrink: 0 }}>
-          Up next · {upcoming.length}
-        </div>
-        <div style={{ flex: 1, overflowY: 'auto' }}>
-          {currentClip && <ClipTile clip={currentClip} state="playing" played={false} onClick={() => {}} />}
-          {upcoming.map((clip, i) => (
-            <ClipTile key={clip.id} clip={clip} state="queued" played={playedIds.has(clip.id)} index={i + 1}
-              onClick={() => setTvState(s => {
-                const idx = s.queue.findIndex(c => c.id === clip.id);
-                if (idx <= 0) return s;
-                return { ...s, queue: [s.queue[idx], ...s.queue.slice(0, idx), ...s.queue.slice(idx + 1)] };
-              })}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Queue strip */}
+      {!queueHidden && (
+        <QueueStrip portrait={portrait} currentClip={currentClip} upcoming={upcoming} playedIds={playedIds}
+          onSelect={(clipId) => setTvState(s => {
+            const idx = s.queue.findIndex(c => c.id === clipId);
+            if (idx <= 0) return s;
+            return { ...s, queue: [s.queue[idx], ...s.queue.slice(0, idx), ...s.queue.slice(idx + 1)] };
+          })}
+        />
+      )}
 
       <style>{`
         @keyframes tvPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
