@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 const FEATURES = [
-  ["Every side of the day's top stories", "What the left is saying, what the right is saying, and what neither side is telling you."],
+  ["Every side of the day's top stories", "What the left, the center, and the right are each saying — side by side."],
   ["Fact-check verdicts", "Claims traced to primary sources and rated True, Somewhat True, Misleading, or False."],
   ["On Record truth scores", "How truthful the politicians in today's news have been, tracked over time."],
   ["The threads that moved", "Long-running stories updated today, plus what happened on this day last year and ten years ago."],

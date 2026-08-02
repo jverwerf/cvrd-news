@@ -11,7 +11,7 @@ function welcomeHtml(email: string): string {
     <div style="font-size:12px;color:#7a8fa6;margin-top:6px;letter-spacing:0.08em;text-transform:uppercase;">The news, unfiltered</div>
   </div>
   <div style="padding:32px;color:#333;font-size:15px;line-height:1.7;">
-    <p style="margin:0 0 16px;"><strong>You're in.</strong> Every morning you'll get the day's biggest stories built from 36+ outlets across the political spectrum: what the left is saying, what the right is saying, and what neither side is telling you.</p>
+    <p style="margin:0 0 16px;"><strong>You're in.</strong> Every morning you'll get the day's biggest stories built from 36+ outlets across the political spectrum: what the left, the center, and the right are each saying — side by side.</p>
     <p style="margin:0 0 16px;">Each edition also brings fact-check verdicts, On Record truth scores for the politicians in the news, and the long-running story threads that moved.</p>
     <p style="margin:0 0 24px;">While you wait for tomorrow's edition:</p>
     <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 8px;"><tr><td style="background:#daa520;border-radius:6px;">
