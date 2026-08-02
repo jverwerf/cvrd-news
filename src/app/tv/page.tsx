@@ -1,6 +1,8 @@
 import { getDailyGaps } from "@/lib/data";
 import { TVClient } from "./TVClient";
 
+export const metadata = { alternates: { canonical: "/tv" } };
+
 export default async function TVPage({ searchParams }: { searchParams: Promise<{ channel?: string }> }) {
   const { channel } = await searchParams;
   const data = await getDailyGaps();

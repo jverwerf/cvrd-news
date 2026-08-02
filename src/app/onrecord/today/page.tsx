@@ -3,6 +3,8 @@ export const revalidate = 600;
 import { redirect, notFound } from 'next/navigation';
 import { editorialSlug, type ArchiveEntry } from '@/lib/onrecord-slug';
 
+export const metadata = { alternates: { canonical: "/onrecord/today" } };
+
 const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
 async function getLatestSlug(): Promise<string | null> {

@@ -47,6 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const ep = await getEpisode(slug);
   if (!ep) return { title: 'Not Found' };
   return {
+    alternates: { canonical: `/declassified/${slug}` },
     title: `${ep.title} | Declassified`,
     description: ep.hook,
     openGraph: { title: ep.title, description: ep.hook, url: `https://cvrdnews.com/declassified/${slug}` },

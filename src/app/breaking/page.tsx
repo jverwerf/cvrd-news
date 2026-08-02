@@ -3,6 +3,8 @@ import { getBreakingData } from "@/lib/breaking-store";
 import { getLiveNowData } from "@/lib/live-now-store";
 import BreakingClient from "./BreakingClient";
 
+export const metadata = { alternates: { canonical: "/breaking" } };
+
 export const dynamic = 'force-dynamic';
 
 export default async function BreakingPage() {

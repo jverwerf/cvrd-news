@@ -1,3 +1,5 @@
+export const metadata = { alternates: { canonical: "/terms" } };
+
 export default function Terms() {
   return (
     <div className="min-h-screen py-16 px-6" style={{ background: '#1e2a3a' }}>

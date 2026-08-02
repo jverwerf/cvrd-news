@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   creator: "CVRD News",
   publisher: "CVRD News",
   metadataBase: new URL("https://cvrdnews.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
     locale: "en_US",

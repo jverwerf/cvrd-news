@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const meta = CATEGORY_META[category];
   if (!meta) return {};
   return {
+    alternates: { canonical: `/${category}` },
     title: meta.title,
     description: meta.description,
     openGraph: { title: `${meta.title} | CVRD News`, description: meta.description },

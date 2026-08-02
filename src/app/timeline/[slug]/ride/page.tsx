@@ -14,6 +14,7 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const ride = await getRide(slug, full ? "full" : undefined);
   if (!ride) return {};
   return {
+    alternates: { canonical: `/timeline/${slug}/ride` },
     title: `${full ? "Full story" : "Ride the thread"} — ${ride.title}`,
     description: full
       ? `Every one of the ${ride.stops.length} developments on this thread, narrated.`

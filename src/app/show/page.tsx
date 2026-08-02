@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { ShowClient } from './ShowClient';
 
+export const metadata = { alternates: { canonical: "/show" } };
+
 type Episode = {
   date: string;
   videoUrl: string;

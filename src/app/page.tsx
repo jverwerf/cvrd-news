@@ -19,6 +19,8 @@ import { SiteNav, SiteFooter } from '@/components/SiteNav';
 import { editorialSlug } from '@/lib/onrecord-slug';
 import { HorizontalAdBanner } from '@/components/AdBanners';
 
+export const metadata = { alternates: { canonical: "/" } };
+
 // ── helpers ──────────────────────────────────────────────────────
 function toSlug(topic: string) {
   return topic.toLowerCase()

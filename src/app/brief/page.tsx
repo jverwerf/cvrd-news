@@ -5,6 +5,7 @@ import { getDailyGaps } from "@/lib/data";
 import BriefLayout from "@/components/BriefLayout";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/brief" },
   title: 'Daily Pick',
   description: "Today's top 10 stories from across the political spectrum — every angle, every source, no spin.",
   openGraph: { title: 'Daily Pick | CVRD News', description: "Today's top 10 stories from across the political spectrum." },

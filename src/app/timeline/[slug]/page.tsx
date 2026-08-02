@@ -13,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const thread = await getTimelineThread(slug);
   if (!thread) return {};
   return {
+    alternates: { canonical: `/timeline/${slug}` },
     title: thread.title,
     description: thread.summary.substring(0, 160),
     openGraph: {

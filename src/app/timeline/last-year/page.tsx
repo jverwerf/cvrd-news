@@ -6,6 +6,7 @@ import { SiteNav } from "@/components/SiteNav";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/timeline/last-year" },
   title: "1 Year Ago Today | CVRD Timeline",
   description: "What happened exactly one year ago today — news stories, videos, and context.",
 };

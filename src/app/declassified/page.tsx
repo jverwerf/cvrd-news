@@ -3,6 +3,7 @@ import { SiteNav } from '@/components/SiteNav';
 import { PastIssues } from './EpisodeList';
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/declassified" },
   title: 'Declassified — Saturday Investigation | CVRD',
   description: 'Every Saturday, CVRD investigates one story the government would rather you not read. Data-driven. Source-backed. No spin.',
   openGraph: {
