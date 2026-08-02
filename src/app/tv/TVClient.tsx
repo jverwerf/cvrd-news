@@ -258,27 +258,29 @@ export function TVClient({
   return <ChannelTV stories={stories} channel={channel} onBack={() => setActiveChannel(null)} />;
 }
 
-/** TV layout prefs — orientation + queue visibility, persisted across sessions */
+/** TV layout — orientation follows the window shape live; the toggle is a
+ *  session-only override. Queue visibility persists across sessions. */
 function useTVLayout() {
-  const [orientation, setOrientation] = useState<'landscape' | 'portrait'>('landscape');
+  const [override, setOverride] = useState<'landscape' | 'portrait' | null>(null);
+  const [auto, setAuto] = useState<'landscape' | 'portrait'>('landscape');
   const [queueHidden, setQueueHidden] = useState(false);
 
   useEffect(() => {
+    const detect = () => setAuto(window.innerHeight > window.innerWidth ? 'portrait' : 'landscape');
+    detect();
+    window.addEventListener('resize', detect);
     try {
-      const saved = localStorage.getItem('cvrd-tv-orientation');
-      if (saved === 'portrait' || saved === 'landscape') setOrientation(saved);
-      else if (window.innerHeight > window.innerWidth) setOrientation('portrait');
+      localStorage.removeItem('cvrd-tv-orientation'); // stale key from persisted-orientation version
       if (localStorage.getItem('cvrd-tv-queue-hidden') === '1') setQueueHidden(true);
     } catch {}
+    return () => window.removeEventListener('resize', detect);
   }, []);
 
-  const toggleOrientation = useCallback(() => {
-    setOrientation(o => {
-      const next = o === 'landscape' ? 'portrait' : 'landscape';
-      try { localStorage.setItem('cvrd-tv-orientation', next); } catch {}
-      return next;
-    });
-  }, []);
+  const orientation = override ?? auto;
+
+  const toggleOrientation = () => {
+    setOverride(orientation === 'landscape' ? 'portrait' : 'landscape');
+  };
 
   const toggleQueue = useCallback(() => {
     setQueueHidden(h => {

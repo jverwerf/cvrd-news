@@ -469,7 +469,9 @@ export function Dashboard({
     );
   }
 
-  // Portrait TV layout: 2-col grid, full-width tall center player, single tile row on top
+  // Portrait TV layout: same 8-tile wall as landscape, redistributed for a tall
+  // screen — 3 tiles top, portrait-aspect player with 2 side tiles in the right
+  // column, 3 tiles bottom
   const portraitTV = !!tvMode && orientation === 'portrait';
 
   return (
@@ -484,17 +486,17 @@ export function Dashboard({
           .dash-clip-strip { display: none !important; }
         }
       `}</style>
-      <div className={`h-full grid ${portraitTV ? 'grid-rows-5 grid-cols-2 dash-portrait' : `${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4`} gap-1 flex-1 min-w-0`}>
+      <div className={`h-full grid ${portraitTV ? 'grid-rows-4 grid-cols-3 dash-portrait' : `${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4`} gap-1 flex-1 min-w-0`}>
 
         {/* ROW 1 */}
-        {(portraitTV ? [0, 1] : [0, 1, 2, 3]).map(i => (
+        {(portraitTV ? [0, 1, 2] : [0, 1, 2, 3]).map(i => (
           <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-top-tile" />
         ))}
 
         {/* ROW 2 */}
-        {!portraitTV && <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />}
+        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
 
-        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: portraitTV ? 'span 4 / span 4' : 'span 2 / span 2', ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
+        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: portraitTV ? '2 / span 2' : 'span 2 / span 2', ...(portraitTV ? { gridColumn: '1 / span 2' } : {}), ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -631,11 +633,11 @@ export function Dashboard({
           </div>
         </div>
 
-        {!portraitTV && <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className="dash-side-tile" />}
+        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
 
         {/* ROW 3 — hidden when compact; tiles 7+8 always hidden because center spans 2 rows */}
-        {!compact && !portraitTV && [6, 9].map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[6, 1.5, 3.5, 5.5][i - 6]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+        {!compact && (portraitTV ? [6, 9, 3] : [6, 9]).map(i => (
+          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={({ 6: 6, 9: 5.5, 3: 1 } as Record<number, number>)[i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
         ))}
       </div>
 
