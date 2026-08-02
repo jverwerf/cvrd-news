@@ -520,7 +520,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                       <div key={`tiktok-${embedId}`} className="rounded overflow-hidden relative group flex flex-col"
                         style={{ background: '#1e2a3a', border: `1px solid ${color}33`, height: isExp ? 900 : 620 }}>
                         <iframe src={`https://www.tiktok.com/embed/v2/${embedId}`}
-                          style={{ border: 'none', width: '100%', height: '100%' }}
+                          scrolling="no" style={{ border: 'none', width: '100%', height: '100%' }}
                           sandbox="allow-scripts allow-same-origin allow-popups allow-presentation" loading="lazy" />
                         {expandBtn(isExp, () => setExpandedTiktok(isExp ? null : embedId))}
                       </div>
