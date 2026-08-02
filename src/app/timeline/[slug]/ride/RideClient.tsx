@@ -483,10 +483,15 @@ function buildRide(opts: any): () => void {
             e.target.mute();
             e.target.playVideo();
           },
-          // never let one rest on its end card — that is where the chrome lives
+          // never let one rest on its end card — that is where the chrome lives.
+          // PAUSED gets the same treatment, instantly: the 15-frame poll below
+          // leaves the paused overlay ("More videos") on screen long enough to
+          // be filmed, and a browser can pause an occluded embed at any moment.
           onStateChange: (e: any) => {
             if (e.data === window.YT.PlayerState.ENDED) {
               e.target.seekTo(startFor(pl.stop), true);
+              e.target.playVideo();
+            } else if (e.data === window.YT.PlayerState.PAUSED && playing) {
               e.target.playVideo();
             }
           },
@@ -909,6 +914,11 @@ function buildRide(opts: any): () => void {
       // Visible as soon as a clip is ASSIGNED, not once it has loaded: a hidden
       // CSS3D element is out of the DOM, so gating on load never resolves.
       const hasVideo = pl.stop >= 0 && !!videoFor(pl.stop);
+      // A still-card chapter has no footage that matches its narration. While
+      // the camera is settled on one, the floating side panels are the only
+      // footage in shot and their borrowed clips read as THIS chapter's story —
+      // hide them until the ride moves on.
+      const stillChapter = !CHAPTERS[chapter].v;
       // Keep the cover in step with whatever stop this player owns, whether it
       // was seeded with it or told to load it, then lift it once it is running.
       const owned = hasVideo ? videoFor(pl.stop) : null;
@@ -917,7 +927,7 @@ function buildRide(opts: any): () => void {
         pl.posterId = owned;
       }
       pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 && !pl.badVideo ? "0" : "1";
-      pl.obj.visible = hasVideo;
+      pl.obj.visible = hasVideo && !(stillChapter && !mine && settle > 0.55);
       host.mesh.visible = !hasVideo;                      // still holds it until a clip is loaded
       host.edge.visible = !hasVideo;
     });
