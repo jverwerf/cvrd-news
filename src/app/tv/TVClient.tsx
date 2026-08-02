@@ -48,6 +48,19 @@ export function TVClient({
   const [focusedIdx, setFocusedIdx] = useState(0);
   const [entered, setEntered] = useState(false);
 
+  // Channel lives in the URL so a page reload (TV browsers reload tabs under
+  // memory pressure, and the ErrorBoundary offers Refresh) restores the channel
+  // instead of dropping back to the landing screen.
+  const selectChannel = useCallback((id: string | null) => {
+    setActiveChannel(id);
+    try {
+      const url = new URL(window.location.href);
+      if (id) url.searchParams.set('channel', id);
+      else url.searchParams.delete('channel');
+      window.history.replaceState(null, '', url.toString());
+    } catch {}
+  }, []);
+
   // Staggered reveal on mount
   useEffect(() => {
     const t = setTimeout(() => setEntered(true), 100);
@@ -63,12 +76,12 @@ export function TVClient({
       } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
         setFocusedIdx(p => Math.max(p - 1, 0));
       } else if (e.key === 'Enter' || e.key === ' ') {
-        setActiveChannel(CHANNELS[focusedIdx].id);
+        selectChannel(CHANNELS[focusedIdx].id);
       }
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [activeChannel, focusedIdx]);
+  }, [activeChannel, focusedIdx, selectChannel]);
 
   const getStories = (channelId: string) => {
     if (channelId === 'daily') {
@@ -142,7 +155,7 @@ export function TVClient({
                 return (
                   <button
                     key={ch.id}
-                    onClick={() => setActiveChannel(ch.id)}
+                    onClick={() => selectChannel(ch.id)}
                     onMouseEnter={() => setFocusedIdx(i)}
                     className="tv-channel-btn"
                     style={{
@@ -249,13 +262,13 @@ export function TVClient({
 
   // ── Breaking TV ──
   if (activeChannel === 'breaking') {
-    return <BreakingTV onBack={() => setActiveChannel(null)} />;
+    return <BreakingTV onBack={() => selectChannel(null)} />;
   }
 
   // ── Dashboard view ──
   const stories = getStories(activeChannel);
   const channel = CHANNELS.find(c => c.id === activeChannel)!;
-  return <ChannelTV stories={stories} channel={channel} onBack={() => setActiveChannel(null)} />;
+  return <ChannelTV stories={stories} channel={channel} onBack={() => selectChannel(null)} />;
 }
 
 /** TV layout — orientation follows the window shape live; the toggle is a
@@ -400,7 +413,18 @@ function ChannelTV({ stories, channel, onBack }: {
     } catch {}
   };
 
+  // YouTube can deliver several playerState-0 / onError messages for one event;
+  // without this guard the queue head gets popped twice and clips are skipped.
+  const lastPopRef = useRef(0);
+  const popGuard = () => {
+    const now = Date.now();
+    if (now - lastPopRef.current < 1500) return false;
+    lastPopRef.current = now;
+    return true;
+  };
+
   const advance = useCallback(() => {
+    if (!popGuard()) return;
     setQueue(q => {
       if (q.length === 0) return q;
       const [cur, ...rest] = q;
@@ -410,6 +434,7 @@ function ChannelTV({ stories, channel, onBack }: {
   }, []);
 
   const skipDead = useCallback(() => {
+    if (!popGuard()) return;
     setQueue(q => {
       if (q.length === 0) return q;
       const [cur, ...rest] = q;
@@ -476,7 +501,13 @@ function ChannelTV({ stories, channel, onBack }: {
       {/* Queue strip */}
       {!queueHidden && (
         <QueueStrip portrait={portrait} currentClip={currentClip} upcoming={upcoming} playedIds={playedIds}
-          onSelect={(clipId) => setQueue(q => { const idx = q.findIndex(c => c.id === clipId); if (idx <= 0) return q; return [q[idx], ...q.slice(0, idx), ...q.slice(idx + 1)]; })}
+          onSelect={(clipId) => setQueue(q => {
+            const idx = q.findIndex(c => c.id === clipId);
+            if (idx <= 0) return q;
+            // jump to the picked clip, keep playing forward in the same order;
+            // the skipped-over clips move to the back instead of playing next
+            return [q[idx], ...q.slice(idx + 1), ...q.slice(0, idx)];
+          })}
         />
       )}
 
@@ -571,7 +602,17 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
     return raw ? toNarrativeGap(raw) : null;
   })();
 
+  // same duplicate-message guard as channel TV
+  const bLastPopRef = useRef(0);
+  const bPopGuard = () => {
+    const now = Date.now();
+    if (now - bLastPopRef.current < 1500) return false;
+    bLastPopRef.current = now;
+    return true;
+  };
+
   const advance = useCallback(() => {
+    if (!bPopGuard()) return;
     setTvState(s => {
       if (s.queue.length === 0) return s;
       const [current, ...rest] = s.queue;
@@ -587,6 +628,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
         if (data.event === 'onError') {
+          if (!bPopGuard()) return;
           setTvState(s => {
             if (s.queue.length === 0) return s;
             const [current, ...rest] = s.queue;
@@ -701,7 +743,8 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
           onSelect={(clipId) => setTvState(s => {
             const idx = s.queue.findIndex(c => c.id === clipId);
             if (idx <= 0) return s;
-            return { ...s, queue: [s.queue[idx], ...s.queue.slice(0, idx), ...s.queue.slice(idx + 1)] };
+            // jump forward in the same order; skipped clips go to the back
+            return { ...s, queue: [s.queue[idx], ...s.queue.slice(idx + 1), ...s.queue.slice(0, idx)] };
           })}
         />
       )}
