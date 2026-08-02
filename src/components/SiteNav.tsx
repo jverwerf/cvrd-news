@@ -207,7 +207,7 @@ export function SiteFooter() {
         Your streaming platform to cover the news
       </span>
       <div style={{ display: 'flex', gap: 16 }}>
-        {[['About','/about'],['Contact','/contact'],['Terms','/terms'],['Privacy','/privacy']].map(([l,h]) => (
+        {[['About','/about'],['How We Work','/how-we-work'],['Contact','/contact'],['Terms','/terms'],['Privacy','/privacy']].map(([l,h]) => (
           <a key={l} href={h} style={{ fontSize: 11, color: '#4a5a6a', textDecoration: 'none' }}>{l}</a>
         ))}
       </div>
