@@ -476,15 +476,6 @@ export default async function Home() {
                     <TimelineHomeCard threads={homeThreads} rideSlugs={homeRideSlugs} />
                   </div>
                 )}
-                <div>
-                  <SectionHeader
-                    label="The Divide"
-                    blurb="The same story, opposite feeds"
-                    href="/brief"
-                    hrefText="All stories"
-                  />
-                  <TheDivide stories={allStories} />
-                </div>
               </div>
 
               {/* Right: Today's Pick + Watch */}
@@ -542,6 +533,19 @@ export default async function Home() {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* ── THE DIVIDE — full-width so all three leans sit side by side ── */}
+          {stories.length > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader
+                label="The Divide"
+                blurb="The same story, opposite feeds"
+                href="/brief"
+                hrefText="All stories"
+              />
+              <TheDivide stories={allStories} />
             </div>
           )}
 
