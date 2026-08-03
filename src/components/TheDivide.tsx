@@ -22,7 +22,9 @@ function pickSides(story: NarrativeGap): { left: Clip; center?: Clip; right: Cli
   // the slide runs left VS right only.
   const usedAuthors = new Set([author(left), author(right)].filter(Boolean));
   const usedIds = new Set([left.embed_id, right.embed_id]);
-  const center = texts.find(c => (c as any).lean === 'center' && !usedIds.has(c.embed_id) && (!author(c) || !usedAuthors.has(author(c))));
+  // Trending runs Media VS Fans only — no center column.
+  const center = story.category === 'trending' ? undefined
+    : texts.find(c => (c as any).lean === 'center' && !usedIds.has(c.embed_id) && (!author(c) || !usedAuthors.has(author(c))));
   return { left, center, right };
 }
 

@@ -463,7 +463,11 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   if (textTweets.length === 0 && allTiktoks.length === 0) return null;
 
                   const fan = story.category === 'sports' || story.category === 'trending';
-                  const sides = fan ? [
+                  // Trending has no Analyst side — Media VS Fans only.
+                  const sides = story.category === 'trending' ? [
+                    { key: 'left' as const, label: '◀ Media', color: '#f59e0b' },
+                    { key: 'right' as const, label: 'Fans ▶', color: '#34d399' },
+                  ] : fan ? [
                     { key: 'left' as const, label: '◀ Media', color: '#f59e0b' },
                     { key: 'center' as const, label: 'Analysts', color: '#c084fc' },
                     { key: 'right' as const, label: 'Fans ▶', color: '#34d399' },
@@ -476,7 +480,8 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   const byLean = { left: [] as DivideItem[], center: [] as DivideItem[], right: [] as DivideItem[] };
                   for (const t of textTweets) {
                     const lean = (t as any).lean;
-                    byLean[lean === 'left' || lean === 'right' ? lean as 'left' | 'right' : 'center'].push({ kind: 'x', clip: t });
+                    const fallbackCol = story.category === 'trending' ? 'left' : 'center';
+                    byLean[lean === 'left' || lean === 'right' ? lean as 'left' | 'right' : fallbackCol].push({ kind: 'x', clip: t });
                   }
                   // TikToks whose caption earned a lean tag sit in the columns;
                   // the rest stay in a neutral row rather than get a fake side.
