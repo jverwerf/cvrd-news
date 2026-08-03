@@ -45,8 +45,10 @@ function tileKey(item: TileContent): string {
   return item.embedId || item.image?.match(/\/vi\/([^/]+)/)?.[1] || `${item.type}:${item.image || item.topic}`;
 }
 
-/** Live map of tile slot → content key, shared by all tiles of one Dashboard */
-type TileRegistry = { claims: Map<number, string> };
+/** Shared by every tile of one Dashboard: what each slot is showing, so two
+ *  tiles never land on the same clip, plus the clips whose media failed to load
+ *  so nothing picks them up again. */
+type TileRegistry = { claims: Map<number, string>; bad: Set<string> };
 
 export function Dashboard({
   stories,
@@ -426,7 +428,7 @@ export function Dashboard({
   const pool = (tweetTakeover && textTweets.length >= 10) ? textTweets : videoPool;
 
   // Tiles coordinate through this so no two show the same clip at once
-  const tileRegistryRef = useRef<TileRegistry>({ claims: new Map() });
+  const tileRegistryRef = useRef<TileRegistry>({ claims: new Map(), bad: new Set() });
 
   // Freezing logic for fresh/breaking content
   const freshCount = pool.filter(t => t.isFresh).length;
@@ -812,6 +814,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
     for (let step = 1; step <= len; step++) {
       const idx = (fromIdx + step) % len;
       const item = poolRef.current[idx];
+      if (registry?.bad.has(tileKey(item))) continue;
       const embedId = item.type === 'video'
         ? item.image.match(/\/vi\/([^/]+)/)?.[1] || ''
         : item.embedId || '';
@@ -823,27 +826,63 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
     return best;
   };
 
-  // Publish what this tile is showing; resolve a duplicated start item once on
-  // mount (mount effects run in slot order, so earlier tiles claim first)
+  // Move to the next clip and claim it right away. Claiming inside the timer
+  // rather than in an effect is what keeps two tiles apart: a sibling rotating
+  // in the same tick sees the claim before it chooses.
+  const advance = () => {
+    const len = poolRef.current.length;
+    if (len === 0) return;
+    const fromIdx = idxRef.current;
+    const nextIdx = getNextIdx(fromIdx);
+    idxRef.current = nextIdx;
+    registry?.claims.set(slot, tileKey(poolRef.current[nextIdx % len]));
+    setPrevIdx(fromIdx);
+    setCurrentIdx(nextIdx);
+  };
+
+  // A clip whose thumbnail will not load is dead weight — remember it so no
+  // tile shows it again, and move on instead of sitting on a blank tile.
+  const handleMediaFail = () => {
+    const len = poolRef.current.length;
+    if (!registry || len === 0) return;
+    registry.bad.add(tileKey(poolRef.current[idxRef.current % len]));
+    if (registry.bad.size < len) advance();
+  };
+
+  // Publish what this tile starts on. Start offsets are already spread evenly
+  // across the pool, so there is no reshuffle here; that reshuffle is what put
+  // two tiles on one clip whenever a layout change remounted every tile.
   useEffect(() => {
     if (!registry) return;
     const len = poolRef.current.length;
     if (len === 0) return;
-    const startItem = poolRef.current[startOffset % len];
-    let idx = startOffset % len;
-    for (const [s, k] of registry.claims) {
-      if (s !== slot && k === tileKey(startItem)) { idx = getNextIdx(startOffset); break; }
-    }
-    if (idx !== startOffset % len) setCurrentIdx(idx);
-    registry.claims.set(slot, tileKey(poolRef.current[idx]));
+    registry.claims.set(slot, tileKey(poolRef.current[idxRef.current % len]));
     return () => { registry.claims.delete(slot); };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Re-publish the claim whenever the tile or the pool moves, and settle a
+  // collision when the pool itself is swapped underneath us (videos to tweets
+  // and back) — indices carry over, so two tiles can land on one item. Only
+  // move when the alternative is genuinely free, otherwise a pool smaller than
+  // the tile wall would send tiles chasing each other.
   useEffect(() => {
-    if (!registry) return;
-    const item = pool[currentIdx % pool.length];
-    if (item) registry.claims.set(slot, tileKey(item));
+    if (!registry || pool.length === 0) return;
+    const claimed = new Set<string>();
+    for (const [s, k] of registry.claims) if (s !== slot) claimed.add(k);
+    const key = tileKey(pool[currentIdx % pool.length]);
+    if (claimed.has(key)) {
+      const nextIdx = getNextIdx(currentIdx);
+      const nextKey = tileKey(pool[nextIdx % pool.length]);
+      if (!claimed.has(nextKey)) {
+        idxRef.current = nextIdx;
+        registry.claims.set(slot, nextKey);
+        setCurrentIdx(nextIdx);
+        return;
+      }
+    }
+    registry.claims.set(slot, key);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIdx, pool, registry, slot]);
 
   useEffect(() => {
@@ -852,15 +891,13 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
     let cancelled = false;
     let timer: ReturnType<typeof setTimeout>;
 
-    const schedule = (idx: number) => {
-      const item = poolRef.current[idx % poolRef.current.length];
+    const schedule = () => {
+      const item = poolRef.current[idxRef.current % poolRef.current.length];
       const baseDuration = item.type === 'video' ? 16000 : 8000;
       timer = setTimeout(() => {
         if (cancelled) return;
-        const nextIdx = getNextIdx(idx);
-        setPrevIdx(idx);
-        setCurrentIdx(nextIdx);
-        schedule(nextIdx);
+        advance();
+        schedule();
       }, baseDuration + delay * 600);
     };
 
@@ -868,11 +905,8 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
     const firstItem = poolRef.current[idxRef.current % poolRef.current.length];
     timer = setTimeout(() => {
       if (cancelled) return;
-      const fromIdx = idxRef.current;
-      const nextIdx = getNextIdx(fromIdx);
-      setPrevIdx(fromIdx);
-      setCurrentIdx(nextIdx);
-      schedule(nextIdx);
+      advance();
+      schedule();
     }, (firstItem.type === 'video' ? 8000 : 4000) + delay * 800);
 
     return () => { cancelled = true; clearTimeout(timer); };
@@ -920,7 +954,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
 
       {/* Current item */}
       <div className="absolute inset-0">
-        <TileContentRenderer item={current} />
+        <TileContentRenderer item={current} onMediaFail={handleMediaFail} />
       </div>
 
       {/* Glass emboss overlay */}
@@ -1043,8 +1077,8 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
 }
 
 
-function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
-  thumbSrc: string; url?: string; badge: string; badgeColor: string; label?: string;
+function VideoThumb({ thumbSrc, url, badge, badgeColor, label, onFail }: {
+  thumbSrc: string; url?: string; badge: string; badgeColor: string; label?: string; onFail?: () => void;
 }) {
   const [failed, setFailed] = useState(false);
   return (
@@ -1054,12 +1088,7 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
       {!failed && (
         <img src={thumbSrc} className="absolute inset-0 w-full h-full object-cover"
           style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
-          onError={() => setFailed(true)} />
-      )}
-      {failed && label && (
-        <div className="absolute inset-0 flex items-center justify-center p-4">
-          <p className="text-[12px] text-white/70 text-center leading-snug line-clamp-5">{label}</p>
-        </div>
+          onError={() => { setFailed(true); onFail?.(); }} />
       )}
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
       <div className="absolute top-2 left-2 z-10">
@@ -1075,7 +1104,7 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label }: {
 }
 
 /** Renders tile content — shared between PoolTile and AdTile */
-function TileContentRenderer({ item }: { item: TileContent }) {
+function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMediaFail?: () => void }) {
   const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
 
   if (item.type === 'video') {
@@ -1086,7 +1115,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
           src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
           className="absolute inset-0 w-full h-full object-cover"
           style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
-          onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
+          onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; onMediaFail?.(); }}
           alt=""
         />
         <iframe
@@ -1127,6 +1156,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         url={item.url || `https://x.com/i/web/status/${item.embedId}`}
         badge="𝕏" badgeColor="#000"
         label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
       />
     );
   }
@@ -1160,6 +1190,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         url={item.url || `https://www.tiktok.com/@_/video/${item.embedId}`}
         badge="TikTok" badgeColor="#fe2c55"
         label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
       />
     );
   }
@@ -1170,6 +1201,7 @@ function TileContentRenderer({ item }: { item: TileContent }) {
         url={item.url || `https://t.me/${item.embedId}`}
         badge="Telegram" badgeColor="#0088cc"
         label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
       />
     );
   }
