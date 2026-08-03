@@ -484,6 +484,12 @@ export function Dashboard({
   const activeType = overrideVideo?.type || current?.type;
   const needsExtraHeight = activeType === 'x' || activeType === 'tiktok';
 
+  // Standalone dashboards (story pages) get the same landscape/portrait choice
+  // as TV — but only when uncollapsed; TV keeps driving its own orientation prop
+  const [userOrientation, setUserOrientation] = useState<'landscape' | 'portrait' | null>(null);
+  const showOrientationToggle = !tvMode && !compact && !tilesOnly && orientation === undefined;
+  const effectiveOrientation = orientation ?? (showOrientationToggle ? userOrientation : null) ?? 'landscape';
+
   if (tilesOnly) {
     return (
       <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
@@ -496,10 +502,10 @@ export function Dashboard({
     );
   }
 
-  // Portrait TV layout: same 8-tile wall as landscape, redistributed for a tall
+  // Portrait layout: same 8-tile wall as landscape, redistributed for a tall
   // screen — 3 tiles top, portrait-aspect player with 2 side tiles in the right
   // column, 3 tiles bottom
-  const portraitTV = !!tvMode && orientation === 'portrait';
+  const portraitTV = effectiveOrientation === 'portrait';
 
   return (
     <section ref={sectionRef} style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden', display: 'flex' }}>
@@ -657,6 +663,17 @@ export function Dashboard({
                 }
               }} />
           </div>
+          {/* Landscape/portrait toggle — same control as TV mode's top bar */}
+          {showOrientationToggle && (
+            <button onClick={() => setUserOrientation(portraitTV ? 'landscape' : 'portrait')}
+              title={portraitTV ? 'Switch to landscape layout' : 'Switch to portrait layout'}
+              className="absolute bottom-2 z-20 flex items-center justify-center rounded-full"
+              style={{ left: 110, width: 26, height: 26, background: 'rgba(0,0,0,0.55)', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.7)' }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                {portraitTV ? <rect x="3" y="7" width="18" height="10" rx="2" /> : <rect x="7" y="3" width="10" height="18" rx="2" />}
+              </svg>
+            </button>
+          )}
           </div>
         </div>
 
