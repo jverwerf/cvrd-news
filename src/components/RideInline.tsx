@@ -22,7 +22,7 @@ const RideClient = dynamic(() => import("@/app/timeline/[slug]/ride/RideClient")
  * player is ever live on the page — a WebGL scene plus five YouTube players per
  * row would flatten a laptop — so the list hands the live slot around.
  */
-export function RideInline({ slug, title, count, active, onPlay, height = 300, image, clips = [], dates = [], summary, narrow, canPlay = true }: {
+export function RideInline({ slug, title, count, active, onPlay, height = 300, image, clips = [], dates = [], summary, narrow, canPlay = true, metaLabel }: {
   slug: string;
   title: string;
   count: number;
@@ -35,6 +35,8 @@ export function RideInline({ slug, title, count, active, onPlay, height = 300, i
   summary?: string;   // what the thread is actually about
   narrow?: boolean;   // stacked, for a half-width column
   canPlay?: boolean;  // false when this thread has no timeline built yet
+  metaLabel?: string; // replaces the development count when what it IS matters
+                      // more than how big it is
 }) {
   const [ride, setRide] = useState<RidePayload | null>(null);
 
@@ -81,7 +83,7 @@ export function RideInline({ slug, title, count, active, onPlay, height = 300, i
         <div className="min-w-0 flex flex-col">
           <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 25, color: '#fff', lineHeight: 1.1 }}>{title}</div>
           <div style={{ marginTop: 5, fontSize: 10, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(230,236,239,0.5)', fontFamily: 'ui-monospace, monospace' }}>
-            {count} developments · {span}
+            {metaLabel || `${count} developments · ${span}`}
           </div>
           {summary && (
             <p style={{

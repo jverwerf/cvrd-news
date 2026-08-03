@@ -132,7 +132,7 @@ export function TVClient({
               opacity: entered ? 1 : 0,
               transition: 'opacity 1s ease 0.5s',
             }}>
-              Your streaming platform to cover the news
+              Watch it. Read it. Check it.
             </p>
 
             {/* Channel strip — horizontal, editorial */}

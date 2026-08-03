@@ -19,7 +19,7 @@ export default function About() {
           <h1 className="text-4xl font-bold text-white mb-3" style={{ fontFamily: "'Instrument Serif', Georgia, serif" }}>
             About CVRD News
           </h1>
-          <p className="text-[#aaa] text-[15px]">Your streaming platform to cover the news</p>
+          <p className="text-[#aaa] text-[15px]">Watch it. Read it. Check it.</p>
         </div>
 
         {/* Main card */}

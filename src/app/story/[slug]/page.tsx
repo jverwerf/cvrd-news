@@ -127,11 +127,30 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   // Look up the thread this story explicitly belongs to (stamped by thread-detector)
   const threadId = (story as any).thread_id;
-  let matchedTimelines: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[] = [];
+  let matchedTimelines: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean; entryCount?: number; dates?: string[]; clips?: string[]; canPlay?: boolean }[] = [];
   if (threadId) {
     const timelineData = await getTimelineThreads();
     const thread = (timelineData?.threads || []).find((t: any) => t.id === threadId);
-    if (thread) matchedTimelines = [{ id: thread.id, title: thread.title, image_file: thread.image_file, summary: thread.summary, days_covered: thread.days_covered, is_active: thread.is_active }];
+    if (thread) {
+      // Everything RideInline needs to offer the thread as a playable story:
+      // the dates it spans, the first few clips that ride the line, and whether
+      // a ride was actually built for it (no ride → read-only card).
+      const entries = thread.entries || [];
+      const clips = entries
+        .flatMap((e: any) => e.youtube_videos || [])
+        .map((v: any) => v.embed_id || v.id)
+        .filter(Boolean)
+        .slice(0, 3);
+      const { hasRide } = await import('@/lib/ride-data');
+      matchedTimelines = [{
+        id: thread.id, title: thread.title, image_file: thread.image_file, summary: thread.summary,
+        days_covered: thread.days_covered, is_active: thread.is_active,
+        entryCount: entries.length,
+        dates: entries.map((e: any) => e.date),
+        clips,
+        canPlay: await hasRide(thread.id).catch(() => false),
+      }];
+    }
   }
 
   const isBreaking = await import('@/lib/breaking-store').then(m => m.hasBreakingData()).catch(() => false);

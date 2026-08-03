@@ -145,7 +145,7 @@ export default async function TimelinePage() {
       {/* FOOTER */}
       <footer className="py-10 text-center" style={{ borderTop: '1px solid #2a3a4a' }}>
         <img src="/logo3.png" alt="CVRD News" className="h-36 mx-auto mb-4 opacity-30" />
-        <span className="text-[11px] text-[#666] block mb-3">Your streaming platform to cover the news</span>
+        <span className="text-[11px] text-[#666] block mb-3">Watch it. Read it. Check it.</span>
         <div className="flex items-center justify-center gap-4">
           <a href="/about" className="text-[11px] text-[#888] hover:text-white transition-colors">About</a>
           <span className="text-[#555]">·</span>

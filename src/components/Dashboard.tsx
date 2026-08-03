@@ -50,6 +50,22 @@ function tileKey(item: TileContent): string {
  *  so nothing picks them up again. */
 type TileRegistry = { claims: Map<number, string>; bad: Set<string> };
 
+/** Social embeds are narrow by nature: a tweet lays out at ~550px, a TikTok at
+ *  ~325. Stretched across the player they hug the left edge with dead space
+ *  beside them, so they get centred at their natural width instead. */
+const EMBED_MAX: Record<string, number> = { x: 550, tiktok: 325, reels: 400, telegram: 420 };
+
+function CenteredEmbed({ type, children }: { type: string; children: React.ReactNode }) {
+  return (
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="relative h-full w-full" style={{ maxWidth: EMBED_MAX[type] || 550 }}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+
 export function Dashboard({
   stories,
   videoUrl,
@@ -57,6 +73,7 @@ export function Dashboard({
   tvMode,
   noAutoPlay,
   compact,
+  heroPlayer,
   tilesOnly,
   onEnd,
   startEmbedId,
@@ -68,6 +85,9 @@ export function Dashboard({
   tvMode?: boolean;
   noAutoPlay?: boolean;
   compact?: boolean;
+  /** Story-page band layout: one big player with three tiles stacked beside it,
+   *  so the wall shares the row with the Divide and Timeline cards. */
+  heroPlayer?: boolean;
   tilesOnly?: boolean;
   onEnd?: () => void;
   startEmbedId?: string;
@@ -435,13 +455,14 @@ export function Dashboard({
   const shouldFreeze = freshCount > 0 && freshCount <= 10;
 
   // Each tile gets a starting offset into the pool — cycles through ALL items
-  const tileOffsets = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(i =>
-    pool.length > 0 ? Math.floor((i / 10) * pool.length) % pool.length : 0
+  const SLOTS = 12;
+  const tileOffsets = Array.from({ length: SLOTS }, (_, i) =>
+    pool.length > 0 ? Math.floor((i / SLOTS) * pool.length) % pool.length : 0
   );
   const tileIsFrozen = tileOffsets.map(offset => !inView || (shouldFreeze && (pool[offset]?.isFresh || false)));
 
   // Roaming ad: randomly picks a tile position, shows ad for 30s, hides for 90s, moves to new position
-  const TILE_POSITIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]; // all tile indices
+  const TILE_POSITIONS = Array.from({ length: 12 }, (_, i) => i); // all tile indices
   const [adPosition, setAdPosition] = useState(-1); // -1 = no ad showing
   const [adKey, setAdKey] = useState(0); // force fresh ad mount
 
@@ -508,6 +529,9 @@ export function Dashboard({
   // screen — 3 tiles top, portrait-aspect player with 2 side tiles in the right
   // column, 3 tiles bottom
   const portraitTV = effectiveOrientation === 'portrait';
+  // heroPlayer only makes sense on the landscape story-page band; TV and
+  // portrait keep the full wall.
+  const heroLayout = !!heroPlayer && !tvMode && !portraitTV;
 
   return (
     <section ref={sectionRef} style={{ background: '#1e2a3a', height: compact ? '100%' : tvMode ? '100%' : 'calc(100vh - 122px)', overflow: 'hidden', display: 'flex' }}>
@@ -518,20 +542,25 @@ export function Dashboard({
           .dash-portrait .dash-center { grid-column: span 2 / span 2 !important; }
           .dash-compact .dash-top-tile { display: none !important; }
           .dash-compact .dash-center { grid-row: 1 / -1 !important; }
+          .dash-hero .dash-hero-tile { display: none !important; }
+          .dash-hero .dash-center { grid-column: 1 / -1 !important; }
           .dash-clip-strip { display: none !important; }
         }
       `}</style>
-      <div className={`h-full grid ${portraitTV ? 'grid-rows-4 grid-cols-3 dash-portrait' : `${compact ? 'grid-rows-2 dash-compact' : 'grid-rows-3'} grid-cols-4`} gap-1 flex-1 min-w-0`}>
+      <div className={`h-full grid ${portraitTV ? 'grid-rows-4 grid-cols-3 dash-portrait' : heroLayout ? 'grid-rows-3 grid-cols-4 dash-hero' : `${compact ? 'grid-rows-2 dash-compact' : tvMode ? 'grid-rows-3' : 'grid-rows-4'} grid-cols-4`} gap-1 flex-1 min-w-0`}>
 
-        {/* ROW 1 */}
-        {(portraitTV ? [0, 1, 2] : [0, 1, 2, 3]).map(i => (
+        {/* ROW 1 — in hero layout the three tiles stack in the far-right column
+            beside the player instead of running across the top */}
+        {(portraitTV ? [0, 1, 2] : heroLayout ? [] : [0, 1, 2, 3]).map(i => (
           <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-top-tile" />
         ))}
 
         {/* ROW 2 */}
+        {!heroLayout && (
         <PoolTile slot={4} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
+        )}
 
-        <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: portraitTV ? '2 / span 2' : 'span 2 / span 2', ...(portraitTV ? { gridColumn: '1 / span 2' } : {}), ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
+        <div className={`${heroLayout ? '' : 'col-span-2 '}dash-center flex flex-col rounded-xl overflow-hidden`} style={{ background: '#0a0a0a', gridRow: heroLayout ? '1 / span 3' : portraitTV ? '2 / span 2' : 'span 2 / span 2', ...(heroLayout ? { gridColumn: '1 / span 3' } : portraitTV ? { gridColumn: '1 / span 2' } : {}), ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
           onDragLeave={() => setDropHighlight(false)}
           onDrop={(e) => {
@@ -554,22 +583,26 @@ export function Dashboard({
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {overrideVideo.type === 'x' && (
-                <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://platform.twitter.com/embed/Tweet.html?id=${overrideVideo.embed_id}&theme=dark&dnt=true`}
-                  className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+                <CenteredEmbed type="x">
+                  <iframe key={`override-${overrideVideo.embed_id}`}
+                    src={`https://platform.twitter.com/embed/Tweet.html?id=${overrideVideo.embed_id}&theme=dark&dnt=true`}
+                    className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+                </CenteredEmbed>
               )}
               {overrideVideo.type === 'telegram' && (
-                <VideoThumb
+                <CenteredEmbed type="telegram"><VideoThumb
                   thumbSrc={`/api/tg-video?post=${overrideVideo.embed_id}&thumb=1`}
                   url={overrideVideo.url || `https://t.me/${overrideVideo.embed_id}`}
                   badge="Telegram" badgeColor="#0088cc"
                   label={overrideVideo.title}
-                />
+                /></CenteredEmbed>
               )}
               {overrideVideo.type === 'tiktok' && (
-                <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://www.tiktok.com/embed/v2/${overrideVideo.embed_id}`}
-                  className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+                <CenteredEmbed type="tiktok">
+                  <iframe key={`override-${overrideVideo.embed_id}`}
+                    src={`https://www.tiktok.com/embed/v2/${overrideVideo.embed_id}`}
+                    className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+                </CenteredEmbed>
               )}
               {/* X button to exit override */}
               <button onClick={() => setOverrideVideo(null)}
@@ -617,27 +650,33 @@ export function Dashboard({
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {!overrideVideo && current?.type === 'tiktok' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
-              className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+            <CenteredEmbed type="tiktok">
+              <iframe key={current.embed_id}
+                src={`https://www.tiktok.com/embed/v2/${current.embed_id}`}
+                className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
+            </CenteredEmbed>
           )}
           {!overrideVideo && current?.type === 'reels' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
-              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+            <CenteredEmbed type="reels">
+              <iframe key={current.embed_id}
+                src={`https://www.instagram.com/reel/${current.embed_id}/embed`}
+                className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+            </CenteredEmbed>
           )}
           {!overrideVideo && current?.type === 'x' && current.embed_id && (
-            <iframe key={current.embed_id}
-              src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=dark&dnt=true`}
-              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+            <CenteredEmbed type="x">
+              <iframe key={current.embed_id}
+                src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=dark&dnt=true`}
+                className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
+            </CenteredEmbed>
           )}
           {!overrideVideo && current?.type === 'telegram' && current.embed_id && (
-            <VideoThumb
+            <CenteredEmbed type="telegram"><VideoThumb
               thumbSrc={`/api/tg-video?post=${current.embed_id}&thumb=1`}
               url={current.url || `https://t.me/${current.embed_id}`}
               badge="Telegram" badgeColor="#0088cc"
               label={current.videoTitle || current.channel}
-            />
+            /></CenteredEmbed>
           )}
           {/* Volume overlay — bottom-left corner of video */}
           <div className="absolute bottom-2 left-2 z-20 flex items-center gap-1.5 px-2 py-1 rounded-full"
@@ -679,11 +718,23 @@ export function Dashboard({
           </div>
         </div>
 
+        {!heroLayout && (
         <PoolTile slot={5} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
+        )}
 
-        {/* ROW 3 — hidden when compact; tiles 7+8 always hidden because center spans 2 rows */}
-        {!compact && (portraitTV ? [6, 9, 3] : [6, 9]).map(i => (
+        {/* Hero layout: the three tiles that share the row with the player */}
+        {heroLayout && [0, 1, 2].map(i => (
+          <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-hero-tile" />
+        ))}
+
+        {/* ROW 3 — the player's other flank; hidden when compact */}
+        {!compact && !heroLayout && (portraitTV ? [6, 9, 3] : [6, 9]).map(i => (
           <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={({ 6: 6, 9: 5.5, 3: 1 } as Record<number, number>)[i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+        ))}
+
+        {/* ROW 4 — closes the wall under the player, so expanded is a full ring */}
+        {!compact && !heroLayout && !portraitTV && !tvMode && [7, 8, 10, 11].map((i, n) => (
+          <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[4.5, 2.5, 6.5, 1.5][n]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
         ))}
       </div>
 

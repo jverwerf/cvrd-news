@@ -8,8 +8,13 @@ import { VideoGrid } from "./VideoGrid";
 import { OnRecordWidget } from "./OnRecordWidget";
 import type { NarrativeGap, FactCheck } from "../lib/data";
 import TweetFactCheck from "./TweetFactCheck";
+import { RideInline } from "./RideInline";
 
 const serif = { fontFamily: "'Instrument Serif', Georgia, serif" };
+
+const PILL_W = 210;
+const BAND_H = 520;
+const BAND_MIN = 520;
 
 function topicToSlug(topic: string): string {
   return topic.toLowerCase().replace(/['']/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').slice(0, 80);
@@ -31,6 +36,142 @@ function toBullets(text: string): string[] {
   return merged;
 }
 
+type Thread = {
+  id: string; title: string; image_file?: string; summary?: string;
+  days_covered?: number; is_active?: boolean;
+  entryCount?: number; dates?: string[]; clips?: string[]; canPlay?: boolean;
+};
+
+/** Slim header shown above whichever block has taken over the band, so the
+ *  collapsed thing you came from is still one click away. */
+function BandBar({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button onClick={onClick}
+      className="w-full mb-3 py-2 px-3 flex items-center gap-2 rounded-md hover:text-white transition-colors text-[11px] font-bold uppercase tracking-[0.12em] text-[#8a9aaa]"
+      style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6" /></svg>
+      {label}
+    </button>
+  );
+}
+
+/** THE DIVIDE card — the actual opposing posts side by side, each with the
+ *  fact check strip it earned. Same three sides as the full Divide below
+ *  (trending runs Media VS Fans, so it has no middle). Each column scrolls
+ *  through every post on that side. No meters here: the coverage levers
+ *  already live in the article rail. */
+function DivideCard({ story, xClips, onOpen }: { story: NarrativeGap; xClips: NarrativeGap['social_clips']; onOpen: () => void }) {
+  const tweets = (xClips || []).filter(c => !c.duration && c.embed_id);
+  if (tweets.length === 0) return null;
+  const fan = story.category === 'sports' || story.category === 'trending';
+  // trending has no middle column, so those posts fall in with the first side
+  const fallback: 'left' | 'center' = story.category === 'trending' ? 'left' : 'center';
+  const byLean: Record<'left' | 'center' | 'right', typeof tweets> = { left: [], center: [], right: [] };
+  for (const t of tweets) byLean[t.lean === 'left' || t.lean === 'right' ? t.lean : fallback].push(t);
+
+  const sides = [
+    { key: 'left' as const, label: fan ? '◀ Media' : '◀ From the left', color: fan ? '#f59e0b' : '#60a5fa' },
+    ...(story.category === 'trending' ? [] : [{ key: 'center' as const, label: fan ? 'Analysts' : 'From the center', color: fan ? '#c084fc' : '#a3a3a3' }]),
+    { key: 'right' as const, label: fan ? 'Fans ▶' : 'From the right ▶', color: fan ? '#34d399' : '#f87171' },
+  ];
+  if (byLean.left.length === 0 && byLean.right.length === 0) return null;
+
+  return (
+    <div className="rounded-lg p-3 flex flex-col min-h-0 flex-1"
+      style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+      <style>{`
+        .divide-col-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+        .divide-col-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
+      `}</style>
+      <div className="flex items-baseline gap-2 mb-2 shrink-0">
+        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>The Divide</span>
+        <span className="text-[10px] text-[#667]">the same story, opposite feeds</span>
+        <button onClick={onOpen} className="text-[10px] font-semibold ml-auto hover:opacity-80 transition-opacity"
+          style={{ color: '#daa520', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>Open ›</button>
+      </div>
+      <div className="flex gap-2 min-h-0 flex-1">
+        {sides.map(side => (
+          <div key={side.key} className="flex-1 min-w-0 flex flex-col rounded-md overflow-hidden"
+            style={{ background: '#1e2a3a', border: `1px solid ${side.color}33` }}>
+            <div className="px-1.5 py-1 text-[8px] font-bold uppercase tracking-[0.1em] shrink-0 truncate flex items-center justify-between gap-1"
+              style={{ color: side.color, background: `${side.color}14` }}>
+              <span className="truncate">{side.label}</span>
+              {byLean[side.key].length > 1 && <span style={{ opacity: 0.7 }}>{byLean[side.key].length}</span>}
+            </div>
+            {/* every post on this side, scrolled rather than truncated */}
+            <div className="flex-1 min-h-0 overflow-y-auto divide-col-scroll">
+              {byLean[side.key].length === 0 && (
+                <p className="text-[9px] italic p-2" style={{ color: '#667' }}>No posts from this side yet.</p>
+              )}
+              {byLean[side.key].map(c => (
+                <div key={c.embed_id} style={{ borderBottom: '1px solid #2a3a4a' }}>
+                  <TweetFactCheck fc={c.fact_check} compact />
+                  {/* the embed needs ~285px to lay out its own header, so it is
+                      rendered at that width and scaled down into the column */}
+                  <div className="relative overflow-hidden" style={{ height: 210 }}>
+                    <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
+                      scrolling="no" loading="lazy" tabIndex={-1}
+                      style={{ border: 'none', width: '164%', height: '164%', transformOrigin: 'top left', transform: 'scale(0.61)', pointerEvents: 'none' }} />
+                    <div className="absolute inset-x-0 bottom-0 h-6" style={{ background: 'linear-gradient(transparent, #1e2a3a)', pointerEvents: 'none' }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** TIMELINE — the thread this story belongs to, offered ready to play. Renders
+ *  only when the story was actually stamped into a thread. */
+function TimelineCard({ threads, onPlay }: { threads: Thread[]; onPlay: () => void }) {
+  if (threads.length === 0) return null;
+  const t = threads[0];
+  return (
+    <div className="rounded-lg overflow-hidden shrink-0" style={{ border: '1px solid #2a3a4a' }}>
+      <RideInline
+        slug={t.id}
+        title={t.title}
+        count={t.entryCount || t.days_covered || 0}
+        active={false}
+        onPlay={onPlay}
+        metaLabel="How we got here"
+        height={212}
+        narrow
+        canPlay={t.canPlay !== false}
+        image={t.image_file}
+        clips={t.clips || []}
+        dates={t.dates || []}
+      />
+    </div>
+  );
+}
+
+/** Timeline taking over the band: the ride itself, playing full width. */
+function TimelineRow({ threads }: { threads: Thread[] }) {
+  if (threads.length === 0) return null;
+  const t = threads[0];
+  return (
+    <div className="rounded-lg overflow-hidden" style={{ border: '1px solid #2a3a4a' }}>
+      <RideInline
+        slug={t.id}
+        title={t.title}
+        count={t.entryCount || t.days_covered || 0}
+        active
+        onPlay={() => {}}
+        height={520}
+        canPlay={t.canPlay !== false}
+        image={t.image_file}
+        clips={t.clips || []}
+        dates={t.dates || []}
+        summary={t.summary}
+      />
+    </div>
+  );
+}
+
 export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, nextStory, matchedTimelines, slugBase = '/story' }: {
   story: NarrativeGap;
   date: string;
@@ -38,10 +179,17 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   dailyPickImage?: string;
   prevStory?: NarrativeGap;
   nextStory?: NarrativeGap;
-  matchedTimelines?: { id: string; title: string; image_file?: string; summary?: string; days_covered?: number; is_active?: boolean }[];
+  matchedTimelines?: Thread[];
   slugBase?: string;
 }) {
-  const [dashExpanded, setDashExpanded] = useState(false);
+  // The top band holds three things: the video wall, the Divide and the
+  // Timeline. Collapsed they share one row; opening any one of them gives it a
+  // full-width row of its own and shrinks the other two to header bars.
+  // breaking pages open on the full wall: the footage IS the story there
+  const [bandView, setBandView] = useState<'collapsed' | 'dash' | 'timeline'>(
+    slugBase === '/breaking' ? 'dash' : 'collapsed'
+  );
+  const dashExpanded = bandView === 'dash';
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
   const [telegramExpanded, setTelegramExpanded] = useState(false);
@@ -82,387 +230,10 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
     if (nextStory) window.location.href = `${slugBase}/${topicToSlug(nextStory.topic)}`;
   };
 
-  return (
-    <div>
-      {/* 1. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
-      {story.image_file && (
-        <div className="relative overflow-hidden" style={{
-          height: '30vh', minHeight: '220px',
-          backgroundImage: `url(${story.image_file})`,
-          backgroundSize: 'cover', backgroundPosition: 'center',
-        }}>
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
-          <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
-            {story.category && (
-              <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
-                {story.category}
-              </span>
-            )}
-            <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
-              {story.topic}
-            </h1>
-            {story.summary && (
-              <p className="text-[12px] text-white/70 leading-snug mt-1.5 line-clamp-3" style={{ maxWidth: 480 }}>
-                {story.summary.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ')}
-              </p>
-            )}
-          </div>
-          {/* coffee + subscribe + nav arrows pinned to bottom of image */}
-          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-center justify-between gap-2">
-            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
-              className="flex items-center gap-1.5 text-[10px] font-semibold hover:opacity-80 transition-opacity"
-              style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', padding: '3px 10px', borderRadius: 999 }}>
-              ♥ Buy us a coffee
-            </a>
-            <div className="flex items-center gap-2 ml-auto">
-              {subStatus === 'done' ? (
-                <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
-              ) : (
-                <div className="flex items-center gap-1.5">
-                  <input type="email" placeholder="Newsletter: you@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
-                    onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
-                    className="text-[10px] px-2 py-1 rounded-full outline-none"
-                    style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: 130 }} />
-                  <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
-                    className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                    style={{ background: '#daa520', border: 'none', cursor: 'pointer' }}>
-                    <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
-                  </button>
-                </div>
-              )}
-              <button onClick={prev}
-                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
-              </button>
-              <button onClick={next}
-                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
-                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
-                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* 2. COMPACT DASHBOARD — skipped for stories that made the section on
-             reporting alone. With no footage the dashboard is an empty wall, so
-             the page goes straight to the article and whatever clips exist show
-             in the video grid further down. */}
-      {!(story as { no_footage?: boolean }).no_footage && (
-      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
-        <div data-section="story-dashboard" className="rounded-xl overflow-hidden">
-          <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
-            <ErrorBoundary>
-              <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} />
-            </ErrorBoundary>
-            {!dashExpanded && (
-              <div className="absolute inset-x-0 bottom-0 h-20 flex items-end justify-center pb-3" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))' }}>
-                <button onClick={() => setDashExpanded(true)}
-                  className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
-                  style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)' }}>
-                  Expand Dashboard
-                </button>
-              </div>
-            )}
-          </div>
-        </div>
-        {dashExpanded && (
-          <button onClick={() => setDashExpanded(false)}
-            className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-            style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-            Collapse Dashboard
-          </button>
-        )}
-      </div>
-      )}
-
-      {/* FULL CONTENT */}
-      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
-
-        {/* ARTICLE BODY (Across Outlets + Blindspots stacked) | LEFT/CENTER/RIGHT aside */}
-        {(() => {
-          const summaryParas = (story.summary || '').split(/\n\s*\n/).filter(p => p.trim().length > 0);
-          const blindspotParas = sentences.length > 0 ? sentences : (story.what_they_arent_telling_you ? [story.what_they_arent_telling_you] : []);
-          const isSportsish = story.category === 'sports' || story.category === 'trending';
-          const rightColumn = (
-            <>
-              <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (() => {
-                  const tweetLeans = xClips.filter(c => !(c as any).duration && (c as any).lean);
-                  const tL = tweetLeans.filter(c => (c as any).lean === 'left').length;
-                  const tC = tweetLeans.filter(c => (c as any).lean === 'center').length;
-                  const tR = tweetLeans.filter(c => (c as any).lean === 'right').length;
-                  const hasSocial = tL + tC + tR > 0;
-                  return (
-                  <div className={`py-4 px-4 grid ${hasSocial ? 'grid-cols-3' : 'grid-cols-2'} gap-3`} style={{ borderBottom: '1px solid #2a3a4a' }}>
-                    <CoverageLever
-                      title="Volume"
-                      subtitle="amounts"
-                      mode="count"
-                      left={leftSources.length}
-                      center={centerSources.length}
-                      right={rightSources.length}
-                    />
-                    <CoverageLever
-                      title="Saturation"
-                      subtitle="vs outlets tracked"
-                      mode="percent"
-                      left={leftSources.length}
-                      center={centerSources.length}
-                      right={rightSources.length}
-                    />
-                    {hasSocial && (
-                      <CoverageLever
-                        title="Social"
-                        subtitle="tweet takes"
-                        mode="count"
-                        left={tL}
-                        center={tC}
-                        right={tR}
-                      />
-                    )}
-                  </div>
-                  );
-                })()}
-                <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
-                  <div className="flex items-center gap-2 mb-3">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="15 18 9 12 15 6"/>
-                    </svg>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#f59e0b' : '#60a5fa' }}>
-                      {isSportsish ? 'Media' : 'Left'}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-white leading-[1.55]">{story.left_narrative}</p>
-                </div>
-                {story.center_narrative && (
-                  <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
-                    <div className="flex items-center gap-2 mb-3">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#c084fc' : '#a3a3a3'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-                      </svg>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#c084fc' : '#a3a3a3' }}>
-                        {isSportsish ? 'Analysts' : 'Center'}
-                      </span>
-                    </div>
-                    <p className="text-[11px] text-white leading-[1.55]">{story.center_narrative}</p>
-                  </div>
-                )}
-                <div className="py-4 px-4">
-                  <div className="flex items-center gap-2 mb-3">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 18 15 12 9 6"/>
-                    </svg>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#34d399' : '#f87171' }}>
-                      {isSportsish ? 'Fans' : 'Right'}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-white leading-[1.55]">{story.right_narrative}</p>
-                </div>
-              </aside>
-              {(() => {
-                const threads = matchedTimelines || [];
-                if (threads.length === 0) return null;
-                return (
-                  <div className="rounded-lg py-4 px-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                    <div className="flex items-center gap-2 mb-3">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Timeline</span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      {threads.map((t) => (
-                        <a key={t.id} href={`/timeline?thread=${t.id}`}
-                          className="flex items-start gap-2 hover:opacity-80 transition-opacity"
-                          style={{ textDecoration: 'none' }}>
-                          {t.image_file && <img src={t.image_file} alt={t.title} className="w-12 h-12 rounded object-cover shrink-0" />}
-                          <div className="min-w-0 flex-1">
-                            <p className="text-[12px] text-white font-semibold leading-[1.3]">{t.title}</p>
-                            {t.summary && (
-                              <p className="text-[10px] text-[#ccc] leading-[1.5] mt-1" style={{ display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{t.summary}</p>
-                            )}
-                            <div className="flex items-center gap-2 mt-1">
-                              {t.is_active && <span className="text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded" style={{ background: 'rgba(239,68,68,0.15)', color: '#ef4444' }}>Active</span>}
-                              {t.days_covered && <span className="text-[9px] text-[#666]">{t.days_covered}d tracked</span>}
-                            </div>
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })()}
-              {(story as any).onrecord_matches?.length > 0 && (() => {
-                const BLOB = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
-                const onMatches = (story as any).onrecord_matches;
-                return (
-                  <div className="rounded-lg py-4 px-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
-                    <div className="flex items-center gap-2 mb-3">
-                      <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: 'rgba(184,134,11,0.2)' }}>
-                        <span className="text-[6px] font-bold" style={{ color: '#b8860b' }}>!</span>
-                      </div>
-                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      {onMatches.map((m: any, i: number) => (
-                        <a key={i} href={`/onrecord/${nameToSlug(m.name)}?q=${m.search_keyword}`}
-                          className="flex items-center gap-3 transition-opacity hover:opacity-80"
-                          style={{ textDecoration: 'none' }}>
-                          <div className="relative shrink-0">
-                            <img src={`${BLOB}/politicians/photo_${m.handle}.png`} alt={m.name}
-                              className="w-10 h-10 rounded-full object-cover"
-                              style={{ border: '2px solid rgba(184,134,11,0.5)' }}
-                              onError={(e) => { (e.target as HTMLImageElement).src = '/logo3.png'; (e.target as HTMLImageElement).style.opacity = '0.3'; }} />
-                            {m.overall_score != null && (
-                              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold"
-                                style={{ background: '#1e2a3a', border: '1px solid rgba(184,134,11,0.4)', color: '#daa520' }}>
-                                {m.overall_score}
-                              </div>
-                            )}
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <p className="text-[12px] font-semibold leading-[1.2]" style={{ ...serif, color: '#daa520' }}>{m.name}</p>
-                            {m.role && <p className="text-[9px] text-[#666] leading-[1.2] mt-0.5">{m.role}</p>}
-                          </div>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })()}
-              {sources.length > 0 && (
-                <div className="rounded-lg py-4 px-4" style={{ background: '#253545' }}>
-                  <div className="flex items-center gap-2 mb-2">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Dive Deeper</span>
-                    <span className="text-[10px] text-[#6a7a8a]">({sources.length})</span>
-                  </div>
-                  {!(story.category === 'sports' || story.category === 'trending') && (
-                    <div className="flex items-center gap-3 mb-3 pb-3 flex-wrap" style={{ borderBottom: '1px solid #2a3a4a' }}>
-                      {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#1d4ed8' }} /><span className="text-[10px]" style={{ color: '#60a5fa' }}>{leftSources.length} left</span></span>}
-                      {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#777' }} /><span className="text-[10px] text-[#999]">{centerSources.length} center</span></span>}
-                      {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#b91c1c' }} /><span className="text-[10px]" style={{ color: '#f87171' }}>{rightSources.length} right</span></span>}
-                    </div>
-                  )}
-                  <div className="flex flex-col gap-4">
-                    {(story.category === 'sports' || story.category === 'trending') ? (
-                      <SourceColumn label="Sources" sources={[...leftSources, ...centerSources, ...rightSources]} color="#999" dotColor="#999" />
-                    ) : (
-                      <>
-                        {leftSources.length > 0 && <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />}
-                        {centerSources.length > 0 && <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />}
-                        {rightSources.length > 0 && <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />}
-                      </>
-                    )}
-                  </div>
-                </div>
-              )}
-            </>
-          );
-          return (
-            <div className="flex flex-col md:flex-row gap-8 mb-8">
-              <div className="flex-1 min-w-0">
-                <section className="mb-8">
-                  <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Across Outlets</h2>
-                  {summaryParas.map((p, i) => (
-                    <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                  ))}
-                </section>
-                {story.what_they_arent_telling_you && (
-                  <section className="pl-5 mb-8" style={{ borderLeft: '2px solid #daa520' }}>
-                    <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Blindspots</h2>
-                    {blindspotParas.map((p, i) => (
-                      <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                    ))}
-                  </section>
-                )}
-                {story.social_summary && (() => {
-                  const paras = story.social_summary.split(/\n\s*\n/).filter(p => p.trim().length > 0);
-                  const finalParas = paras.length > 0 ? paras : [story.social_summary];
-                  return (
-                    <section className="mb-6">
-                      <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">In Social Media</h2>
-                      {finalParas.map((p, i) => (
-                        <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
-                      ))}
-                    </section>
-                  );
-                })()}
-                {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
-                  <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
-                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
-                  </div>
-                )}
-
-                <div className="md:hidden flex flex-col gap-4 mb-6">{rightColumn}</div>
-
-                {/* TELEGRAM — text discussions card, 3 columns */}
-                {(() => {
-                  const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
-
-                  if (tgClips.length === 0) return null;
-
-                  type TextItem = { kind: 'telegram'; url: string; title: string; meta: string };
-                  const mixed: TextItem[] = [];
-                  for (let i = 0; i < tgClips.length; i++) {
-                    mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
-                  }
-
-                  const previewCount = 9;
-                  const visible = telegramExpanded ? mixed : mixed.slice(0, previewCount);
-
-                  return (
-                    <div className="mb-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Discussions</span>
-                      </div>
-                      <div className="rounded-lg p-4" style={{ background: '#253545' }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                          {visible.map((item, i) => {
-                            const metaColor = '#0088cc';
-                            const logo = (
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
-                            );
-                            return (
-                              <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
-                                className="rounded-lg p-3 hover:opacity-80 transition-opacity block">
-                                <div className="flex items-start gap-2">
-                                  {logo}
-                                  <div className="min-w-0">
-                                    <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{item.title}</p>
-                                    <span className="text-[10px] mt-1 block" style={{ color: metaColor }}>{item.meta}</span>
-                                  </div>
-                                </div>
-                              </a>
-                            );
-                          })}
-                        </div>
-                        {mixed.length > previewCount && (
-                          <button onClick={() => setTelegramExpanded(!telegramExpanded)}
-                            className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
-                            style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
-                            {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })()}
-
-              </div>
-
-              <div className="hidden md:flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
-                {rightColumn}
-              </div>
-            </div>
-          );
-        })()}
-
-                {/* THE DIVIDE — X + TikTok in the homepage Divide layout: three
-                    lean columns for tweets (fact-check strip on top of each
-                    card), TikToks in their own row below (they carry no lean
-                    tag, so they get a neutral strip instead of a fake side). */}
-                {(() => {
+  /* THE DIVIDE — X + TikTok in the homepage Divide layout: three lean columns
+     for tweets (fact-check strip on top of each card), TikToks in their own row
+     below. Built here as a value so the band can hoist it into its own row. */
+  const divideBlock = (() => {
                   const textTweets = xClips.filter(c => !(c as any).duration && c.embed_id);
                   const allTiktoks = tiktokClips.filter(c => c.embed_id);
                   if (textTweets.length === 0 && allTiktoks.length === 0) return null;
@@ -548,7 +319,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                     + Math.max(0, plainTiktoks.length - tiktokPreview);
 
                   return (
-                    <div className="mb-6">
+                    <div className="mb-6 scroll-mt-24" data-section="divide">
                       <div className="flex items-baseline gap-2 mb-3">
                         <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>The Divide</span>
                         <span className="text-[10px] text-[#667]">The same story, opposite feeds</span>
@@ -600,7 +371,386 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                       </div>
                     </div>
                   );
+  })();
+
+  return (
+    <div>
+      {/* 1. PICTURE HEADER with coffee/subscribe overlaid at bottom */}
+      {story.image_file && (
+        <div className="relative overflow-hidden" style={{
+          height: 160, minHeight: 160,
+          backgroundImage: `url(${story.image_file})`,
+          backgroundSize: 'cover', backgroundPosition: 'center',
+        }}>
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 50%, rgba(0,0,0,0.75) 100%)' }} />
+          <div className="absolute top-0 left-0 px-6 md:px-12 pt-5">
+            {story.category && (
+              <span className="text-[10px] font-bold uppercase tracking-[0.12em] px-2 py-0.5 rounded mb-2 inline-block" style={{ background: 'rgba(37,99,235,0.5)', color: '#fff' }}>
+                {story.category}
+              </span>
+            )}
+            <h1 className="text-[24px] md:text-[28px] text-white leading-tight tracking-[-0.02em]" style={serif}>
+              {story.topic}
+            </h1>
+            {story.summary && (
+              <p className="text-[12px] text-white/70 leading-snug mt-1.5 line-clamp-3" style={{ maxWidth: 480 }}>
+                {story.summary.split(/(?<=[.!?])\s+/).slice(0, 2).join(' ')}
+              </p>
+            )}
+          </div>
+          {/* newsletter with the coffee pill under it, top right corner; the
+              bottom bar is left to the story arrows alone */}
+          <div className="absolute top-0 right-0 px-6 md:px-12 pt-5 flex flex-col items-end gap-1.5" style={{ width: 'auto' }}>
+            {subStatus === 'done' ? (
+              <span className="text-[10px] font-medium text-[#daa520]">Subscribed ✓</span>
+            ) : (
+              // one pill: wide enough for the whole placeholder, send arrow inside it
+              <div className="relative flex items-center" style={{ width: PILL_W }}>
+                <input type="email" placeholder="Newsletter: you@email.com" value={subEmail} onChange={e => setSubEmail(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && handleSubscribe()}
+                  className="text-[10px] rounded-full outline-none"
+                  style={{ background: 'rgba(30,42,58,0.8)', border: '1px solid rgba(42,58,74,0.8)', color: '#e2e8f0', width: '100%', height: 28, padding: '0 32px 0 12px' }} />
+                <button onClick={handleSubscribe} disabled={subStatus === 'loading'}
+                  aria-label="Subscribe"
+                  className="absolute right-[3px] w-[22px] h-[22px] rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                  style={{ background: '#daa520', border: 'none', cursor: 'pointer', padding: 0 }}>
+                  <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-[#1e2a3a]" />
+                </button>
+              </div>
+            )}
+            <a href="https://ko-fi.com/cvrdnews" target="_blank" rel="noreferrer"
+              className="flex items-center justify-center gap-1.5 text-[10px] font-semibold shrink-0 hover:opacity-80 transition-opacity"
+              style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', borderRadius: 999, width: PILL_W, height: 28 }}>
+              ♥ Buy us a coffee
+            </a>
+          </div>
+          {/* story arrows, bottom right */}
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-end justify-end gap-2">
+            <button onClick={prev}
+                className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+                style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+                <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-r-[6px] border-r-white" />
+              </button>
+            <button onClick={next}
+              className="w-7 h-7 rounded-full flex items-center justify-center hover:opacity-70 transition-opacity"
+              style={{ border: '1px solid rgba(255,255,255,0.3)', cursor: 'pointer', background: 'rgba(30,42,58,0.6)' }}>
+              <div className="w-0 h-0 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent border-l-[6px] border-l-white" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* 2. COMPACT DASHBOARD — skipped for stories that made the section on
+             reporting alone. With no footage the dashboard is an empty wall, so
+             the page goes straight to the article and whatever clips exist show
+             in the video grid further down. */}
+      {!(story as { no_footage?: boolean }).no_footage && (
+      <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
+
+        {/* DASHBOARD — full-width row when it owns the band, otherwise it shares
+            the row with the Divide and Timeline cards on the right */}
+        {bandView !== 'timeline' && (
+          <div className="flex flex-col lg:flex-row gap-3">
+            <div data-section="story-dashboard" className="rounded-xl overflow-hidden flex-1 min-w-0">
+              <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : BAND_H, minHeight: dashExpanded ? undefined : BAND_MIN, transition: 'height 0.4s ease' }}>
+                <ErrorBoundary>
+                  <Dashboard key="dash-story" stories={[story]} videoUrl={undefined} videoDate={undefined} compact={!dashExpanded} heroPlayer={!dashExpanded} />
+                </ErrorBoundary>
+                {!dashExpanded && (
+                  <div className="absolute inset-x-0 bottom-0 h-16 flex items-end justify-center pb-2" style={{ background: 'linear-gradient(to bottom, transparent, rgba(0,0,0,0.8))', pointerEvents: 'none' }}>
+                    <button onClick={() => setBandView('dash')}
+                      className="px-4 py-2 rounded-full text-[11px] font-semibold text-white transition-all hover:scale-105"
+                      style={{ background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.25)', cursor: 'pointer', backdropFilter: 'blur(8px)', pointerEvents: 'auto' }}>
+                      Expand Dashboard
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+            {!dashExpanded && (
+              <div className="w-full lg:w-[560px] shrink-0 flex flex-col gap-2" style={{ height: BAND_H, minHeight: BAND_MIN }}>
+                <DivideCard story={story} xClips={xClips}
+                  onOpen={() => document.querySelector('[data-section="divide"]')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} />
+                <TimelineCard threads={matchedTimelines || []} onPlay={() => setBandView('timeline')} />
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* TIMELINE owning the band */}
+        {bandView === 'timeline' && (
+          <div>
+            <BandBar label="Dashboard" onClick={() => setBandView('collapsed')} />
+            <TimelineRow threads={matchedTimelines || []} />
+          </div>
+        )}
+
+        {/* breaking has no collapsed state to go back to */}
+        {bandView !== 'collapsed' && slugBase !== '/breaking' && (
+          <button onClick={() => setBandView('collapsed')}
+            className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+            style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+            {bandView === 'dash' ? 'Collapse Dashboard' : 'Close Timeline'}
+          </button>
+        )}
+      </div>
+      )}
+
+      {/* FULL CONTENT */}
+      <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
+
+        {/* ARTICLE BODY (Across Outlets + Blindspots stacked) | LEFT/CENTER/RIGHT aside */}
+        {(() => {
+          const summaryParas = (story.summary || '').split(/\n\s*\n/).filter(p => p.trim().length > 0);
+          const blindspotParas = sentences.length > 0 ? sentences : (story.what_they_arent_telling_you ? [story.what_they_arent_telling_you] : []);
+          const isSportsish = story.category === 'sports' || story.category === 'trending';
+          const rightColumn = (
+            <>
+              <aside className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                {!isSportsish && (leftSources.length + centerSources.length + rightSources.length) > 0 && (() => {
+                  const tweetLeans = xClips.filter(c => !(c as any).duration && (c as any).lean);
+                  const tL = tweetLeans.filter(c => (c as any).lean === 'left').length;
+                  const tC = tweetLeans.filter(c => (c as any).lean === 'center').length;
+                  const tR = tweetLeans.filter(c => (c as any).lean === 'right').length;
+                  const hasSocial = tL + tC + tR > 0;
+                  return (
+                  <div className={`py-4 px-4 grid ${hasSocial ? 'grid-cols-3' : 'grid-cols-2'} gap-3`} style={{ borderBottom: '1px solid #2a3a4a' }}>
+                    <CoverageLever
+                      title="News"
+                      subtitle="amounts"
+                      mode="count"
+                      left={leftSources.length}
+                      center={centerSources.length}
+                      right={rightSources.length}
+                    />
+                    <CoverageLever
+                      title="Saturation"
+                      subtitle="vs outlets tracked"
+                      mode="percent"
+                      left={leftSources.length}
+                      center={centerSources.length}
+                      right={rightSources.length}
+                    />
+                    {hasSocial && (
+                      <CoverageLever
+                        title="Tweet"
+                        subtitle="amounts"
+                        mode="count"
+                        left={tL}
+                        center={tC}
+                        right={tR}
+                      />
+                    )}
+                  </div>
+                  );
                 })()}
+                <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#f59e0b' : '#60a5fa'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#f59e0b' : '#60a5fa' }}>
+                      {isSportsish ? 'Media' : 'Left'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-white leading-[1.55]">{story.left_narrative}</p>
+                </div>
+                {story.center_narrative && (
+                  <div className="py-4 px-4" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#c084fc' : '#a3a3a3'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                      </svg>
+                      <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#c084fc' : '#a3a3a3' }}>
+                        {isSportsish ? 'Analysts' : 'Center'}
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-white leading-[1.55]">{story.center_narrative}</p>
+                  </div>
+                )}
+                <div className="py-4 px-4">
+                  <div className="flex items-center gap-2 mb-3">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={isSportsish ? '#34d399' : '#f87171'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: isSportsish ? '#34d399' : '#f87171' }}>
+                      {isSportsish ? 'Fans' : 'Right'}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-white leading-[1.55]">{story.right_narrative}</p>
+                </div>
+              </aside>
+              {/* the thread now lives in the band at the top of the page, played
+                  rather than linked, so the rail no longer repeats it */}
+              {(story as any).onrecord_matches?.length > 0 && (() => {
+                const BLOB = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
+                const onMatches = (story as any).onrecord_matches;
+                return (
+                  <div className="rounded-lg py-4 px-4" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ background: 'rgba(184,134,11,0.2)' }}>
+                        <span className="text-[6px] font-bold" style={{ color: '#b8860b' }}>!</span>
+                      </div>
+                      <span className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.12em]">On Record</span>
+                    </div>
+                    {/* the score is meaningless without saying what it measures */}
+                    <p className="text-[10px] text-[#667] mb-3">check how truthful these people are</p>
+                    <div className="flex flex-col gap-3">
+                      {onMatches.map((m: any, i: number) => (
+                        <a key={i} href={`/onrecord/${nameToSlug(m.name)}?q=${m.search_keyword}`}
+                          className="flex items-center gap-3 transition-opacity hover:opacity-80"
+                          style={{ textDecoration: 'none' }}>
+                          <div className="relative shrink-0">
+                            <img src={`${BLOB}/politicians/photo_${m.handle}.png`} alt={m.name}
+                              className="w-10 h-10 rounded-full object-cover"
+                              style={{ border: '2px solid rgba(184,134,11,0.5)' }}
+                              onError={(e) => { (e.target as HTMLImageElement).src = '/logo3.png'; (e.target as HTMLImageElement).style.opacity = '0.3'; }} />
+                            {m.overall_score != null && (
+                              <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full flex items-center justify-center text-[8px] font-bold"
+                                style={{ background: '#1e2a3a', border: '1px solid rgba(184,134,11,0.4)', color: '#daa520' }}>
+                                {m.overall_score}
+                              </div>
+                            )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-[12px] font-semibold leading-[1.2]" style={{ ...serif, color: '#daa520' }}>{m.name}</p>
+                            {m.role && <p className="text-[9px] text-[#666] leading-[1.2] mt-0.5">{m.role}</p>}
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
+              {sources.length > 0 && (
+                <div className="rounded-lg py-4 px-4" style={{ background: '#253545' }}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#daa520" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Dive Deeper</span>
+                    <span className="text-[10px] text-[#6a7a8a]">({sources.length})</span>
+                  </div>
+                  {!(story.category === 'sports' || story.category === 'trending') && (
+                    <div className="flex items-center gap-3 mb-3 pb-3 flex-wrap" style={{ borderBottom: '1px solid #2a3a4a' }}>
+                      {leftSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#1d4ed8' }} /><span className="text-[10px]" style={{ color: '#60a5fa' }}>{leftSources.length} left</span></span>}
+                      {centerSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#777' }} /><span className="text-[10px] text-[#999]">{centerSources.length} center</span></span>}
+                      {rightSources.length > 0 && <span className="flex items-center gap-1"><span className="w-[5px] h-[5px] rounded-full" style={{ background: '#b91c1c' }} /><span className="text-[10px]" style={{ color: '#f87171' }}>{rightSources.length} right</span></span>}
+                    </div>
+                  )}
+                  <div className="flex flex-col gap-4">
+                    {(story.category === 'sports' || story.category === 'trending') ? (
+                      <SourceColumn label="Sources" sources={[...leftSources, ...centerSources, ...rightSources]} color="#999" dotColor="#999" />
+                    ) : (
+                      <>
+                        {leftSources.length > 0 && <SourceColumn label="Left" sources={leftSources} color="#60a5fa" dotColor="#1d4ed8" />}
+                        {centerSources.length > 0 && <SourceColumn label="Center" sources={centerSources} color="#999" dotColor="#999" />}
+                        {rightSources.length > 0 && <SourceColumn label="Right" sources={rightSources} color="#f87171" dotColor="#f87171" />}
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+              {/* DISCUSSIONS — a rail card now, one item per row */}
+      {(() => {
+        const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
+
+        if (tgClips.length === 0) return null;
+
+        type TextItem = { kind: 'telegram'; url: string; title: string; meta: string };
+        const mixed: TextItem[] = [];
+        for (let i = 0; i < tgClips.length; i++) {
+          mixed.push({ kind: 'telegram', url: tgClips[i].url, title: tgClips[i].title || '', meta: `@${tgClips[i].author}` });
+        }
+
+        const previewCount = 5;
+        const visible = telegramExpanded ? mixed : mixed.slice(0, previewCount);
+
+        return (
+          <div className="mb-6">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>Discussions</span>
+            </div>
+            <div className="rounded-lg p-4" style={{ background: '#253545' }}>
+              <div className="grid grid-cols-1 gap-2">
+                {visible.map((item, i) => {
+                  const metaColor = '#0088cc';
+                  const logo = (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#0088cc" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                  );
+                  return (
+                    <a key={`${item.kind}-${i}`} href={item.url} target="_blank" rel="noreferrer"
+                      className="rounded-lg py-1.5 hover:opacity-80 transition-opacity block">
+                      <div className="flex items-start gap-2">
+                        {logo}
+                        <div className="min-w-0">
+                          <p className="text-[12px] text-[#ccc] leading-snug line-clamp-2">{item.title}</p>
+                          <span className="text-[10px] mt-1 block" style={{ color: metaColor }}>{item.meta}</span>
+                        </div>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+              {mixed.length > previewCount && (
+                <button onClick={() => setTelegramExpanded(!telegramExpanded)}
+                  className="w-full mt-3 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
+                  style={{ background: '#1e2a3a', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
+                  {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
+                </button>
+              )}
+            </div>
+          </div>
+        );
+      })()}
+            </>
+          );
+          return (
+            <div className="flex flex-col md:flex-row gap-8 mb-8">
+              <div className="flex-1 min-w-0">
+                <section className="mb-8">
+                  <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Across Outlets</h2>
+                  {summaryParas.map((p, i) => (
+                    <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                  ))}
+                </section>
+                {story.what_they_arent_telling_you && (
+                  <section className="pl-5 mb-8" style={{ borderLeft: '2px solid #daa520' }}>
+                    <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">Blindspots</h2>
+                    {blindspotParas.map((p, i) => (
+                      <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                    ))}
+                  </section>
+                )}
+                {story.social_summary && (() => {
+                  const paras = story.social_summary.split(/\n\s*\n/).filter(p => p.trim().length > 0);
+                  const finalParas = paras.length > 0 ? paras : [story.social_summary];
+                  return (
+                    <section className="mb-6">
+                      <h2 className="text-[11px] font-bold text-[#daa520] uppercase tracking-[0.18em] mb-4">In Social Media</h2>
+                      {finalParas.map((p, i) => (
+                        <p key={i} className="text-[13px] text-white leading-[1.75] mb-4 last:mb-0">{p}</p>
+                      ))}
+                    </section>
+                  );
+                })()}
+                {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
+                  <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
+                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+                  </div>
+                )}
+
+                {divideBlock}
+
+                <div className="md:hidden flex flex-col gap-4 mb-6">{rightColumn}</div>
+
+              </div>
+
+              <div className="hidden md:flex flex-col gap-4 self-start" style={{ flex: '0 0 320px', width: 320 }}>
+                {rightColumn}
+              </div>
+            </div>
+          );
+        })()}
+
 
         {/* REELS */}
         {reelsClips.filter(c => c.embed_id).length > 0 && (
@@ -658,7 +808,9 @@ function CoverageLever({
 
   return (
     <div>
-      <div className="mb-2 leading-tight">
+      {/* fixed height: "vs outlets tracked" wraps to two lines and would drop
+          its own track below the other two */}
+      <div className="mb-2 leading-tight" style={{ height: 32 }}>
         <div className="text-[9px] font-bold text-[#bbb] uppercase tracking-[0.18em]">{title}</div>
         <div className="text-[8px] text-[#daa520] uppercase tracking-[0.12em] mt-0.5">{subtitle}</div>
       </div>

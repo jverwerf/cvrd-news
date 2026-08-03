@@ -204,7 +204,7 @@ export function SiteFooter() {
       maxWidth: 1120, margin: '0 auto',
     }}>
       <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#4a5a6a', textTransform: 'uppercase' }}>
-        Your streaming platform to cover the news
+        Watch it. Read it. Check it.
       </span>
       <div style={{ display: 'flex', gap: 16 }}>
         {[['About','/about'],['How We Work','/how-we-work'],['Newsletter','/newsletter'],['Contact','/contact'],['Terms','/terms'],['Privacy','/privacy']].map(([l,h]) => (
