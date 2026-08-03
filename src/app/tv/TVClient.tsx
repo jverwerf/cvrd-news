@@ -47,6 +47,9 @@ export function TVClient({
   );
   const [focusedIdx, setFocusedIdx] = useState(0);
   const [entered, setEntered] = useState(false);
+  // Layout choice lives here so the landing-screen picker and the in-channel
+  // toggle share it; null = follow the window shape
+  const [layoutOverride, setLayoutOverride] = useState<'landscape' | 'portrait' | null>(null);
 
   // Channel lives in the URL so a page reload (TV browsers reload tabs under
   // memory pressure, and the ErrorBoundary offers Refresh) restores the channel
@@ -241,6 +244,7 @@ export function TVClient({
             <a href="/" style={{ fontSize: 10, color: 'rgba(255,255,255,0.2)', letterSpacing: '0.1em', textDecoration: 'none' }}>
               ← Back to cvrdnews.com
             </a>
+            <LayoutPicker value={layoutOverride} onChange={setLayoutOverride} />
             <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.12)', letterSpacing: '0.05em' }}>
               ← → Navigate &middot; Enter to select
             </span>
@@ -262,19 +266,51 @@ export function TVClient({
 
   // ── Breaking TV ──
   if (activeChannel === 'breaking') {
-    return <BreakingTV onBack={() => selectChannel(null)} />;
+    return <BreakingTV onBack={() => selectChannel(null)} layoutOverride={layoutOverride} setLayoutOverride={setLayoutOverride} />;
   }
 
   // ── Dashboard view ──
   const stories = getStories(activeChannel);
   const channel = CHANNELS.find(c => c.id === activeChannel)!;
-  return <ChannelTV stories={stories} channel={channel} onBack={() => selectChannel(null)} />;
+  return <ChannelTV stories={stories} channel={channel} onBack={() => selectChannel(null)} layoutOverride={layoutOverride} setLayoutOverride={setLayoutOverride} />;
 }
 
-/** TV layout — orientation follows the window shape live; the toggle is a
- *  session-only override. Queue visibility persists across sessions. */
-function useTVLayout() {
-  const [override, setOverride] = useState<'landscape' | 'portrait' | null>(null);
+/** Landing-screen layout choice — Auto follows the window shape */
+function LayoutPicker({ value, onChange }: {
+  value: 'landscape' | 'portrait' | null;
+  onChange: (v: 'landscape' | 'portrait' | null) => void;
+}) {
+  const options = [
+    { v: null, label: 'Auto' },
+    { v: 'landscape' as const, label: 'Landscape' },
+    { v: 'portrait' as const, label: 'Portrait' },
+  ];
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <span style={{ fontSize: 10, color: 'rgba(255,255,255,0.12)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Layout</span>
+      <div style={{ display: 'flex', gap: 2, background: 'rgba(255,255,255,0.03)', borderRadius: 4, padding: 2 }}>
+        {options.map(o => (
+          <button key={o.label} onClick={() => onChange(o.v)} style={{
+            fontSize: 10, letterSpacing: '0.05em', padding: '4px 10px', borderRadius: 3,
+            background: value === o.v ? 'rgba(255,255,255,0.1)' : 'transparent',
+            color: value === o.v ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.3)',
+            border: 'none', cursor: 'pointer', transition: 'all 0.2s ease',
+          }}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/** TV layout — orientation follows the window shape live unless the user
+ *  picked one (landing-screen picker or in-channel toggle, shared state).
+ *  Queue visibility persists across sessions. */
+function useTVLayout(
+  override: 'landscape' | 'portrait' | null,
+  setOverride: (v: 'landscape' | 'portrait' | null) => void,
+) {
   const [auto, setAuto] = useState<'landscape' | 'portrait'>('landscape');
   const [queueHidden, setQueueHidden] = useState(false);
 
@@ -376,10 +412,12 @@ function QueueStrip({ portrait, currentClip, upcoming, playedIds, onSelect }: {
   );
 }
 
-function ChannelTV({ stories, channel, onBack }: {
+function ChannelTV({ stories, channel, onBack, layoutOverride, setLayoutOverride }: {
   stories: NarrativeGap[];
   channel: { id: string; label: string; color: string };
   onBack: () => void;
+  layoutOverride: 'landscape' | 'portrait' | null;
+  setLayoutOverride: (v: 'landscape' | 'portrait' | null) => void;
 }) {
   const clips: QueuedClip[] = [];
   for (const story of stories) {
@@ -464,7 +502,7 @@ function ChannelTV({ stories, channel, onBack }: {
   const currentStory = currentClip ? stories.find(s => s.topic === currentClip.storyTopic) ?? null : null;
   const upcoming = queue.slice(1);
 
-  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout();
+  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout(layoutOverride, setLayoutOverride);
   const portrait = orientation === 'portrait';
 
   return (
@@ -582,7 +620,11 @@ function toNarrativeGap(b: any): NarrativeGap {
 }
 
 /** Breaking TV — queue-based live TV player */
-function BreakingTV({ onBack }: { onBack: () => void }) {
+function BreakingTV({ onBack, layoutOverride, setLayoutOverride }: {
+  onBack: () => void;
+  layoutOverride: 'landscape' | 'portrait' | null;
+  setLayoutOverride: (v: 'landscape' | 'portrait' | null) => void;
+}) {
   // same reload-resilience as channel TV: played/dead ids persist per day
   const bStoreKey = `cvrd-tv-breaking-${new Date().toISOString().slice(0, 10)}`;
   const bRead = () => { try { return JSON.parse(sessionStorage.getItem(bStoreKey) || "{}"); } catch { return {}; } };
@@ -693,7 +735,7 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
   const { queue, playedIds } = tvState;
   const upcoming = queue.slice(1);
 
-  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout();
+  const { orientation, queueHidden, toggleOrientation, toggleQueue } = useTVLayout(layoutOverride, setLayoutOverride);
   const portrait = orientation === 'portrait';
 
   if (queue.length === 0) {
