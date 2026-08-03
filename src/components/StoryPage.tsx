@@ -462,7 +462,12 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   const allTiktoks = tiktokClips.filter(c => c.embed_id);
                   if (textTweets.length === 0 && allTiktoks.length === 0) return null;
 
-                  const sides = [
+                  const fan = story.category === 'sports' || story.category === 'trending';
+                  const sides = fan ? [
+                    { key: 'left' as const, label: '◀ Media', color: '#f59e0b' },
+                    { key: 'center' as const, label: 'Analysts', color: '#c084fc' },
+                    { key: 'right' as const, label: 'Fans ▶', color: '#34d399' },
+                  ] : [
                     { key: 'left' as const, label: '◀ From the left', color: '#60a5fa' },
                     { key: 'center' as const, label: 'From the center', color: '#a3a3a3' },
                     { key: 'right' as const, label: 'From the right ▶', color: '#f87171' },
@@ -550,7 +555,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                                 {(tweetsExpanded ? byLean[side.key] : byLean[side.key].slice(0, perColPreview)).map(it =>
                                   it.kind === 'x' ? tweetTile(it.clip, side.color) : tiktokTile(it.clip, side.color))}
                                 {byLean[side.key].length === 0 && (
-                                  <div className="text-[10px] italic px-1" style={{ color: '#667' }}>No posts from this side yet.</div>
+                                  <div className="text-[10px] italic px-1" style={{ color: '#667' }}>{(story.category === 'sports' || story.category === 'trending') ? 'No posts here yet.' : 'No posts from this side yet.'}</div>
                                 )}
                               </div>
                             ))}
