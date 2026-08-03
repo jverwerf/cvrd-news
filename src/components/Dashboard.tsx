@@ -40,6 +40,14 @@ type TileContent = {
   duration?: number; // has video if set
 };
 
+/** Content identity for a tile — used to keep the same clip off two tiles at once */
+function tileKey(item: TileContent): string {
+  return item.embedId || item.image?.match(/\/vi\/([^/]+)/)?.[1] || `${item.type}:${item.image || item.topic}`;
+}
+
+/** Live map of tile slot → content key, shared by all tiles of one Dashboard */
+type TileRegistry = { claims: Map<number, string> };
+
 export function Dashboard({
   stories,
   videoUrl,
@@ -115,6 +123,16 @@ export function Dashboard({
       } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
         playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail, isSocial: true });
       }
+    }
+  }
+  // The same clip can be attached to several stories — keep only its first
+  // appearance so the loop never replays a video
+  {
+    const seen = new Set<string>();
+    for (let i = 0; i < playlist.length; i++) {
+      const id = playlist[i].embed_id;
+      if (!id) continue;
+      if (seen.has(id)) { playlist.splice(i, 1); i--; } else seen.add(id);
     }
   }
 
@@ -344,7 +362,13 @@ export function Dashboard({
   } else if (currentStoryIdx === 0) {
     // Playing the anchor/daily briefing — show ALL videos from ALL stories
     // This shows the source material used in the briefing
-    linkedContent = Object.values(storyLinked).flat();
+    const seen = new Set<string>();
+    linkedContent = Object.values(storyLinked).flat().filter(t => {
+      const k = tileKey(t);
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
   }
 
   // Build text tweet pool for tweet takeover mode
@@ -400,6 +424,9 @@ export function Dashboard({
   // If no linked content, fall back to default tiles
   const videoPool = linkedContent.length > 0 ? linkedContent : defaultTiles;
   const pool = (tweetTakeover && textTweets.length >= 10) ? textTweets : videoPool;
+
+  // Tiles coordinate through this so no two show the same clip at once
+  const tileRegistryRef = useRef<TileRegistry>({ claims: new Map() });
 
   // Freezing logic for fresh/breaking content
   const freshCount = pool.filter(t => t.isFresh).length;
@@ -462,7 +489,7 @@ export function Dashboard({
       <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
         <div className="h-full grid grid-cols-4 gap-1">
           {[0, 1, 2, 3].map(i => (
-            <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={true} />
+            <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={true} />
           ))}
         </div>
       </section>
@@ -490,11 +517,11 @@ export function Dashboard({
 
         {/* ROW 1 */}
         {(portraitTV ? [0, 1, 2] : [0, 1, 2, 3]).map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-top-tile" />
+          <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} className="dash-top-tile" />
         ))}
 
         {/* ROW 2 */}
-        <PoolTile pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
+        <PoolTile slot={4} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[4]} delay={5} frozen={tileIsFrozen[4]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 4} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
 
         <div className="col-span-2 dash-center flex flex-col rounded-xl overflow-hidden" style={{ background: '#0a0a0a', gridRow: portraitTV ? '2 / span 2' : 'span 2 / span 2', ...(portraitTV ? { gridColumn: '1 / span 2' } : {}), ...(current?.lean ? { boxShadow: `inset 0 0 0 3px ${LEAN_COLOR[current.lean]}` } : {}) }}
           onDragOver={(e) => { e.preventDefault(); setDropHighlight(true); }}
@@ -633,11 +660,11 @@ export function Dashboard({
           </div>
         </div>
 
-        <PoolTile pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
+        <PoolTile slot={5} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[5]} delay={3} frozen={tileIsFrozen[5]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === 5} adKey={adKey} tvMode={tvMode} className={portraitTV ? undefined : "dash-side-tile"} />
 
         {/* ROW 3 — hidden when compact; tiles 7+8 always hidden because center spans 2 rows */}
         {!compact && (portraitTV ? [6, 9, 3] : [6, 9]).map(i => (
-          <PoolTile key={i} pool={pool} startOffset={tileOffsets[i]} delay={({ 6: 6, 9: 5.5, 3: 1 } as Record<number, number>)[i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
+          <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={({ 6: 6, 9: 5.5, 3: 1 } as Record<number, number>)[i]} frozen={tileIsFrozen[i]} onTileClick={handleTileClick} skipEmbedId={current?.embed_id} onPlayInCenter={setOverrideVideo} showAd={adPosition === i} adKey={adKey} tvMode={tvMode} />
         ))}
       </div>
 
@@ -726,7 +753,7 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
 
-function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId, onPlayInCenter, tvMode, className }: {
+function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey, skipEmbedId, onPlayInCenter, tvMode, className, slot, registry }: {
   pool: TileContent[];
   startOffset: number;
   delay: number;
@@ -738,31 +765,69 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   onPlayInCenter?: (video: { type: string; embed_id: string; title: string }) => void;
   tvMode?: boolean;
   className?: string;
+  slot: number;
+  registry?: TileRegistry;
 }) {
   const [currentIdx, setCurrentIdx] = useState(startOffset);
   const [prevIdx, setPrevIdx] = useState(-1);
   const [tapped, setTapped] = useState(false);
   const poolRef = useRef(pool);
   const skipRef = useRef(skipEmbedId);
+  const idxRef = useRef(currentIdx);
   poolRef.current = pool;
   skipRef.current = skipEmbedId;
+  idxRef.current = currentIdx;
 
-  // Helper: find next index that isn't the currently playing center video
+  // Helper: next index whose content no other tile is showing and that isn't
+  // the center player's video. When the pool is too small for every tile to be
+  // unique, fall back to the item the fewest other tiles are showing.
   const getNextIdx = (fromIdx: number) => {
     const len = poolRef.current.length;
-    let next = (fromIdx + 1) % len;
-    // Skip items matching the center player's video (max 1 skip to avoid infinite loop)
-    if (skipRef.current && len > 2) {
-      const item = poolRef.current[next];
+    if (len === 0) return 0;
+    const others = new Map<string, number>();
+    if (registry) {
+      for (const [s, k] of registry.claims) {
+        if (s !== slot) others.set(k, (others.get(k) || 0) + 1);
+      }
+    }
+    let best = (fromIdx + 1) % len;
+    let bestCount = Infinity;
+    for (let step = 1; step <= len; step++) {
+      const idx = (fromIdx + step) % len;
+      const item = poolRef.current[idx];
       const embedId = item.type === 'video'
         ? item.image.match(/\/vi\/([^/]+)/)?.[1] || ''
         : item.embedId || '';
-      if (embedId === skipRef.current) {
-        next = (next + 1) % len;
-      }
+      if (skipRef.current && len > 2 && embedId === skipRef.current) continue;
+      const count = others.get(tileKey(item)) || 0;
+      if (count === 0) return idx;
+      if (count < bestCount) { bestCount = count; best = idx; }
     }
-    return next;
+    return best;
   };
+
+  // Publish what this tile is showing; resolve a duplicated start item once on
+  // mount (mount effects run in slot order, so earlier tiles claim first)
+  useEffect(() => {
+    if (!registry) return;
+    const len = poolRef.current.length;
+    if (len === 0) return;
+    const startItem = poolRef.current[startOffset % len];
+    let idx = startOffset % len;
+    for (const [s, k] of registry.claims) {
+      if (s !== slot && k === tileKey(startItem)) { idx = getNextIdx(startOffset); break; }
+    }
+    if (idx !== startOffset % len) setCurrentIdx(idx);
+    registry.claims.set(slot, tileKey(poolRef.current[idx]));
+    return () => { registry.claims.delete(slot); };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (!registry) return;
+    const item = pool[currentIdx % pool.length];
+    if (item) registry.claims.set(slot, tileKey(item));
+  }, [currentIdx, pool, registry, slot]);
 
   useEffect(() => {
     if (frozen || pool.length <= 1) return;
@@ -783,11 +848,12 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
     };
 
     // Initial delay before first rotation
-    const firstItem = poolRef.current[startOffset % poolRef.current.length];
+    const firstItem = poolRef.current[idxRef.current % poolRef.current.length];
     timer = setTimeout(() => {
       if (cancelled) return;
-      const nextIdx = (startOffset + 1) % poolRef.current.length;
-      setPrevIdx(startOffset);
+      const fromIdx = idxRef.current;
+      const nextIdx = getNextIdx(fromIdx);
+      setPrevIdx(fromIdx);
       setCurrentIdx(nextIdx);
       schedule(nextIdx);
     }, (firstItem.type === 'video' ? 8000 : 4000) + delay * 800);
