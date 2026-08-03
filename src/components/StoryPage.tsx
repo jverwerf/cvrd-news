@@ -145,7 +145,11 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
         </div>
       )}
 
-      {/* 2. COMPACT DASHBOARD */}
+      {/* 2. COMPACT DASHBOARD — skipped for stories that made the section on
+             reporting alone. With no footage the dashboard is an empty wall, so
+             the page goes straight to the article and whatever clips exist show
+             in the video grid further down. */}
+      {!(story as { no_footage?: boolean }).no_footage && (
       <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
         <div data-section="story-dashboard" className="rounded-xl overflow-hidden">
           <div className="relative" style={{ height: dashExpanded ? 'calc(100vh - 120px)' : '420px', transition: 'height 0.4s ease' }}>
@@ -171,6 +175,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           </button>
         )}
       </div>
+      )}
 
       {/* FULL CONTENT */}
       <div className="px-6 md:px-12 pb-10 pt-5" style={{ background: '#1e2a3a' }}>
