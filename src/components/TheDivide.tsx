@@ -18,10 +18,10 @@ function pickSides(story: NarrativeGap): { left: Clip; center?: Clip; right: Cli
   return left && right ? { left, center, right } : null;
 }
 
-function SidePanel({ clip, side }: { clip: Clip; side: 'left' | 'center' | 'right' }) {
+function SidePanel({ clip, side, className }: { clip: Clip; side: 'left' | 'center' | 'right'; className?: string }) {
   const color = side === 'left' ? '#60a5fa' : side === 'right' ? '#f87171' : '#a3a3a3';
   return (
-    <div className="flex-1 min-w-0 flex flex-col rounded-md overflow-hidden" style={{ background: '#1e2a3a', border: `1px solid ${color}33` }}>
+    <div className={`flex-1 min-w-0 flex flex-col rounded-md overflow-hidden ${className ?? ''}`} style={{ background: '#1e2a3a', border: `1px solid ${color}33` }}>
       <div className="px-2 py-1 text-[9px] font-bold uppercase tracking-[0.14em]" style={{ color, background: `${color}14` }}>
         {side === 'left' ? '◀ From the left' : side === 'right' ? 'From the right ▶' : 'From the center'}
       </div>
@@ -61,17 +61,19 @@ export default function TheDivide({ stories, slugBase = '/story' }: { stories: N
         style={{ scrollSnapType: 'x mandatory', scrollbarWidth: 'none' }}>
         {slides.map(({ story, sides }, i) => (
           <a key={i} href={`${slugBase}/${topicToSlug(story.topic)}`}
-            className="shrink-0 rounded-lg p-3 block hover:opacity-90 transition-opacity"
+            className="@container shrink-0 rounded-lg p-3 block hover:opacity-90 transition-opacity"
             style={{ width: sides.center ? 'min(100%, 780px)' : 'min(100%, 560px)', scrollSnapAlign: 'start', background: '#253545', border: '1px solid #2a3a4a', textDecoration: 'none' }}>
             <p className="text-[12px] font-semibold text-white leading-snug mb-2 line-clamp-1">{story.topic}</p>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <SidePanel clip={sides.left} side="left" />
-              <div className="hidden sm:flex items-center text-[13px] font-black self-center shrink-0" style={{ color: '#daa520' }}>VS</div>
+            {/* Tweet embeds need ~240px each: 3-up only when the card fits it,
+                left VS right + center below at mid widths, stacked when narrow */}
+            <div className="flex flex-wrap gap-2">
+              <SidePanel clip={sides.left} side="left" className="order-1 basis-full @min-[540px]:basis-0" />
+              <div className="order-2 hidden @min-[540px]:flex items-center text-[13px] font-black self-center shrink-0" style={{ color: '#daa520' }}>VS</div>
               {sides.center && (<>
-                <SidePanel clip={sides.center} side="center" />
-                <div className="hidden sm:flex items-center text-[13px] font-black self-center shrink-0" style={{ color: '#daa520' }}>VS</div>
+                <SidePanel clip={sides.center} side="center" className="order-2 @min-[540px]:order-6 @min-[760px]:order-3 basis-full @min-[760px]:basis-0" />
+                <div className="order-4 hidden @min-[760px]:flex items-center text-[13px] font-black self-center shrink-0" style={{ color: '#daa520' }}>VS</div>
               </>)}
-              <SidePanel clip={sides.right} side="right" />
+              <SidePanel clip={sides.right} side="right" className="order-3 @min-[760px]:order-5 basis-full @min-[540px]:basis-0" />
             </div>
           </a>
         ))}
