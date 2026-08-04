@@ -802,8 +802,8 @@ export function Dashboard({
           {showOrientationToggle && (
             <button onClick={() => setUserOrientation(portraitTV ? 'landscape' : 'portrait')}
               title={portraitTV ? 'Switch to landscape layout' : 'Switch to portrait layout'}
-              className="absolute bottom-2 z-20 flex items-center justify-center rounded-full"
-              style={{ left: 110, width: 26, height: 26, background: 'rgba(0,0,0,0.55)', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.7)' }}>
+              className="absolute top-2 z-20 flex items-center justify-center rounded-full"
+              style={{ right: overrideVideo ? 44 : 8, width: 26, height: 26, background: 'rgba(0,0,0,0.55)', border: 'none', cursor: 'pointer', color: 'rgba(255,255,255,0.7)' }}>
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 {portraitTV ? <rect x="3" y="7" width="18" height="10" rx="2" /> : <rect x="7" y="3" width="10" height="18" rx="2" />}
               </svg>
@@ -1356,26 +1356,59 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
       />
     );
   }
+  // DM and Rumble tiles get the same live muted preview the YouTube tiles
+  // have: thumbnail underneath, autoplaying muted embed on top, no pointer
+  // events so clicks land on the tile, not the player.
   if (item.type === 'social' && item.platform === 'dailymotion' && item.embedId) {
     return (
-      <VideoThumb
-        thumbSrc={item.image || `https://www.dailymotion.com/thumbnail/video/${item.embedId}`}
-        url={item.url || `https://www.dailymotion.com/video/${item.embedId}`}
-        badge="DM" badgeColor="#0066dc"
-        label={item.clipLabel || item.topic}
-        onFail={onMediaFail}
-      />
+      <div className="w-full h-full relative overflow-hidden">
+        <img
+          src={item.image || `https://www.dailymotion.com/thumbnail/video/${item.embedId}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
+          alt=""
+        />
+        <iframe
+          src={`https://geo.dailymotion.com/player.html?video=${item.embedId}&autoplay=true&mute=true&controls=false`}
+          className="absolute"
+          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
+          allow="autoplay"
+          loading="lazy"
+        />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#0066dc' }}>DM</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
+      </div>
     );
   }
   if (item.type === 'social' && item.platform === 'rumble' && item.embedId) {
     return (
-      <VideoThumb
-        thumbSrc={item.image || ''}
-        url={item.url || `https://rumble.com/embed/${item.embedId}/`}
-        badge="Rumble" badgeColor="#85c742"
-        label={item.clipLabel || item.topic}
-        onFail={onMediaFail}
-      />
+      <div className="w-full h-full relative overflow-hidden">
+        {item.image && (
+          <img
+            src={item.image}
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
+            alt=""
+          />
+        )}
+        <iframe
+          src={`https://rumble.com/embed/${item.embedId}/?autoplay=2`}
+          className="absolute"
+          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
+          allow="autoplay"
+          loading="lazy"
+        />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#85c742' }}>Rumble</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
+      </div>
     );
   }
   if (item.type === 'social') {
