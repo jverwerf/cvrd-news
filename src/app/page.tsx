@@ -9,7 +9,6 @@ import type { TimelineThread, ThreadEntry } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
 import { HeroCarousel } from './home/HeroCarousel';
 import { BreakingCard } from './home/BreakingCard';
-import { TimelineCarousel } from './home/TimelineCarousel';
 import { TimelineHomeCard } from '@/components/TimelineHomeCard';
 import TheDivide from '@/components/TheDivide';
 import { getRideSlugs } from '@/lib/ride-data';
@@ -18,6 +17,8 @@ import { RollingClaim } from './home/RollingClaim';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
 import { editorialSlug } from '@/lib/onrecord-slug';
 import { HorizontalAdBanner } from '@/components/AdBanners';
+import { toSentence } from '@/lib/text';
+import { CONTENT_MAX, CONTENT_GUTTER } from '@/lib/layout';
 
 export const metadata = { alternates: { canonical: "/" } };
 
@@ -69,12 +70,15 @@ async function getOnRecordToday(): Promise<any | null> {
 
 // ── palette ───────────────────────────────────────────────────────
 const C = {
-  bg: '#1e2a3a', panel: '#253545', panelDark: '#1a2535',
+  bg: '#3f5a80', panel: '#1e2d3d', panelDark: '#1a2535',
   gold: '#daa520', goldDim: 'rgba(218,165,32,0.14)', goldBorder: 'rgba(218,165,32,0.25)',
   left: '#60a5fa', leftDim: 'rgba(96,165,250,0.12)',
   right: '#f87171', rightDim: 'rgba(248,113,113,0.12)',
   text: '#e2e8f0', dim: '#7a8fa6', dimmer: '#4a5a6a',
   border: 'rgba(255,255,255,0.07)',
+  // muted tones that sit directly on `bg` need to be lighter than the in-card
+  // `dim`/`dimmer`, which are tuned against the much darker panel fills
+  dimOnField: '#c5d3e3', dimmerOnField: '#a3b4c9',
 };
 const serif = `'Instrument Serif', Georgia, serif`;
 const mono  = `'DM Mono', monospace`;
@@ -142,9 +146,6 @@ function StoryCard({ story }: { story: NarrativeGap }) {
           : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
         }
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(37,53,69,0.9) 0%, transparent 55%)' }} />
-        <span style={{ position: 'absolute', top: 7, left: 8, padding: '2px 7px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 8, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
-          {catLabel(story.category)}
-        </span>
         {vids.length > 0 && (
           <span style={{ position: 'absolute', bottom: 7, right: 8, display: 'flex', alignItems: 'center', gap: 3, fontFamily: mono, fontSize: 8, color: 'rgba(255,255,255,0.6)' }}>
             <PlayIcon size={6} />
@@ -165,17 +166,20 @@ function StoryCard({ story }: { story: NarrativeGap }) {
 }
 
 // ── Section header ────────────────────────────────────────────────
+// No section title: each block already announces itself (red BREAKING chips,
+// the ON RECORD label, the lean columns, the TV sets). The `label` is kept as
+// the accessible name for the region rather than being drawn on the page.
 function SectionHeader({ label, blurb, href, hrefText }: { label: string; blurb?: string; href: string; hrefText: string }) {
   return (
-    <div style={{ marginBottom: 10 }}>
-      <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: blurb ? 4 : 0 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 19, fontWeight: 400, color: C.text, margin: 0 }}>{label}</h2>
-        <a href={href} style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
-          {hrefText}
-          <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-        </a>
-      </div>
-      {blurb && <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dim, margin: 0 }}>{blurb}</p>}
+    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, marginBottom: 10 }}>
+      <h2 className="sr-only">{label}</h2>
+      {blurb
+        ? <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dimOnField, margin: 0, minWidth: 0 }}>{blurb}</p>
+        : <span />}
+      <a href={href} style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+        {hrefText}
+        <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+      </a>
     </div>
   );
 }
@@ -276,11 +280,6 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
           }
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, transparent 60%, rgba(37,53,69,0.95) 100%)' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(26,37,53,0.9) 0%, transparent 50%)' }} />
-          <div style={{ position: 'absolute', bottom: 14, left: 14 }}>
-            <span style={{ display: 'inline-block', padding: '2px 7px', borderRadius: 3, background: catColor(thread.category), fontFamily: mono, fontSize: 8, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
-              {catLabel(thread.category)}
-            </span>
-          </div>
         </div>
 
         {/* RIGHT — content */}
@@ -303,7 +302,7 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
                 Latest · {latest.date}
               </div>
               <div style={{ fontFamily: serif, fontStyle: 'italic', fontSize: 13.5, lineHeight: 1.55, color: 'rgba(226,232,240,0.85)' }}>
-                "{latest.summary?.slice(0, 180)}{(latest.summary?.length ?? 0) > 180 ? '...' : ''}"
+                "{toSentence(latest.summary, 180)}"
               </div>
             </div>
           )}
@@ -321,7 +320,7 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
                   <div>
                     <div style={{ fontFamily: mono, fontSize: 8, letterSpacing: '0.08em', color: C.dimmer, marginBottom: 2 }}>{entry.date}</div>
                     <div style={{ fontFamily: mono, fontSize: 10, color: C.dim, lineHeight: 1.4 }}>
-                      {entry.summary?.slice(0, 100)}{(entry.summary?.length ?? 0) > 100 ? '...' : ''}
+                      {toSentence(entry.summary, 100)}
                     </div>
                   </div>
                 </div>
@@ -431,7 +430,7 @@ export default async function Home() {
           </div>
         )}
 
-        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '16px 16px 40px' }}>
+        <main style={{ maxWidth: CONTENT_MAX, margin: '0 auto', padding: `16px ${CONTENT_GUTTER}px 40px` }}>
 
           {stories.length === 0 && (
             <div style={{ marginBottom: 24, padding: '60px 24px', borderRadius: 10, background: C.panel, textAlign: 'center', border: `1px solid ${C.border}` }}>
@@ -454,15 +453,15 @@ export default async function Home() {
                     />
                   </div>
                 )}
-                {onRecordData && (
+                {stories.length > 0 && (
                   <div>
                     <SectionHeader
-                      label="On Record"
-                      blurb={`Today: ${onRecordData.story_topic}`}
-                      href="/onrecord"
-                      hrefText="All politicians"
+                      label="The Divide"
+                      blurb="The same story, opposite feeds"
+                      href="/brief"
+                      hrefText="All stories"
                     />
-                    <OnRecordStrip data={onRecordData} />
+                    <TheDivide stories={allStories} row columnHeight={420} tweetHeight={250} tweetScale={0.62} />
                   </div>
                 )}
                 {sortedThreads.length > 0 && (
@@ -478,7 +477,7 @@ export default async function Home() {
                 )}
               </div>
 
-              {/* Right: Today's Pick + Watch */}
+              {/* Right: Today's Pick + On Record + Watch */}
               {stories.length > 1 && (
                 <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                   <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
@@ -487,9 +486,21 @@ export default async function Home() {
                     blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
                     vertical
                     dividerAfter={stories.length - 1}
-                    cappedHeight={600}
+                    cappedHeight={780}
                   />
-                  {/* Watch — below Today's Pick; marginTop clears the down-scroll arrow */}
+                  {/* On Record — between Today's Pick and Watch; marginTop
+                      clears Today's Pick's down-scroll arrow */}
+                  {onRecordData && (
+                    <div style={{ marginTop: 28 }}>
+                      <SectionHeader
+                        label="On Record"
+                        blurb={`Today: ${onRecordData.story_topic}`}
+                        href="/onrecord"
+                        hrefText="All politicians"
+                      />
+                      <OnRecordStrip data={onRecordData} />
+                    </div>
+                  )}
                   <div style={{ marginTop: 28 }}>
                     <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
                     <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
@@ -533,19 +544,6 @@ export default async function Home() {
                   </div>
                 </div>
               )}
-            </div>
-          )}
-
-          {/* ── THE DIVIDE — full-width so all three leans sit side by side ── */}
-          {stories.length > 0 && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader
-                label="The Divide"
-                blurb="The same story, opposite feeds"
-                href="/brief"
-                hrefText="All stories"
-              />
-              <TheDivide stories={allStories} />
             </div>
           )}
 

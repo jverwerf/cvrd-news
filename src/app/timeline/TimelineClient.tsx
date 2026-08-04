@@ -120,7 +120,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo, r
                   || null;
                 const storySummaries = (lastYear.stories || []).slice(0, 2).map(s => s.headline).join('. ') + '.';
                 return (
-                  <a href="/timeline/last-year" className="rounded-lg overflow-hidden block group" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <a href="/timeline/last-year" className="rounded-lg overflow-hidden block group" style={{ background: '#1e2d3d', border: '1px solid #2a3a4a' }}>
                     {imgSrc && (
                       <div style={{ width: '100%', height: 140, backgroundImage: `url(${imgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                     )}
@@ -140,7 +140,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo, r
                   || null;
                 const storySummaries = (tenYearsAgo.stories || []).slice(0, 2).map(s => s.headline).join('. ') + '.';
                 return (
-                  <a href="/timeline/ten-years-ago" className="rounded-lg overflow-hidden block group" style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+                  <a href="/timeline/ten-years-ago" className="rounded-lg overflow-hidden block group" style={{ background: '#1e2d3d', border: '1px solid #2a3a4a' }}>
                     {imgSrc && (
                       <div style={{ width: '100%', height: 140, backgroundImage: `url(${imgSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                     )}
@@ -189,7 +189,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo, r
                   <button key={cat.value} onClick={() => { setFilter(cat.value); setExpandedId(null); }}
                     className="shrink-0 px-3 py-1.5 text-[11px] font-semibold rounded-full transition-colors cursor-pointer"
                     style={{
-                      background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#253545',
+                      background: filter === cat.value ? 'rgba(218,165,32,0.15)' : '#1e2d3d',
                       color: filter === cat.value ? '#daa520' : '#999',
                       border: `1px solid ${filter === cat.value ? 'rgba(218,165,32,0.3)' : '#2a3a4a'}`,
                     }}>
@@ -228,7 +228,7 @@ export function TimelineContent({ threads, generatedAt, lastYear, tenYearsAgo, r
             ) : (
             <a key={thread.id} href={`/timeline/${thread.id}`}
               className="rounded-lg overflow-hidden block group transition-all hover:opacity-90"
-              style={{ background: '#253545', border: '1px solid #2a3a4a' }}>
+              style={{ background: '#1e2d3d', border: '1px solid #2a3a4a' }}>
               <div className="flex" style={{ minHeight: 120 }}>
                 {(thread.image_file || latestEntry?.image_file) && (
                   <div className="w-[140px] shrink-0 overflow-hidden" style={{
@@ -358,7 +358,7 @@ export function ThreadCard({ thread, isExpanded, onToggle, onHover, hasRide }: {
         </AnimatePresence>
       </div>
     )}
-    <article className="rounded-lg" style={{ background: '#253545', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
+    <article className="rounded-lg" style={{ background: '#1e2d3d', border: '1px solid #2a3a4a', overflow: 'hidden' }}>
 
       {/* COLLAPSED — image left, content right */}
       <button onClick={onToggle} className="w-full text-left cursor-pointer group">
@@ -745,7 +745,7 @@ function TimelineThumb({ date, entries, isSelected, onSelect }: {
         </div>
       ) : (
         <div className="w-full h-full rounded-lg flex items-center justify-center" style={{
-          background: isSelected ? 'rgba(218,165,32,0.15)' : '#253545',
+          background: isSelected ? 'rgba(218,165,32,0.15)' : '#1e2d3d',
           border: isSelected ? '2px solid #daa520' : '2px solid #2a3a4a',
           transition: 'all 0.2s',
         }}>

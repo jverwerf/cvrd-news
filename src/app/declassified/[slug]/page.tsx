@@ -65,7 +65,7 @@ function formatDate(d: string) {
 }
 
 const C = {
-  bg: '#1e2a3a', panel: '#253545', border: '#2a3a4a',
+  bg: '#3f5a80', panel: '#1e2d3d', border: '#2a3a4a',
   gold: '#daa520', goldFaint: 'rgba(218,165,32,0.15)',
   text: '#e2e8f0', dim: '#7a8fa6', dimFaint: 'rgba(122,143,166,0.4)',
   red: '#ef4444', green: '#22c55e',

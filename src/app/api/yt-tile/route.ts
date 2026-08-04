@@ -4,13 +4,15 @@ export async function GET(req: NextRequest) {
   const v = req.nextUrl.searchParams.get('v') || '';
   if (!v) return new NextResponse('Missing video ID', { status: 400 });
 
-  const thumb = `https://img.youtube.com/vi/${v}/hqdefault.jpg`;
-
+  // Deliberately a plain embed rather than the YouTube IFrame API. The API was
+  // tried here to detect embed-blocked videos, but the anti-framebusting
+  // overrides below stop its events ever reaching us, so the player never
+  // reported playback and every tile stayed on its still frame.
   const html = `<!DOCTYPE html>
 <html><head><meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 *{margin:0;padding:0}
-body,html{width:100%;height:100%;overflow:hidden}
+body,html{width:100%;height:100%;overflow:hidden;background:transparent}
 iframe{position:absolute;top:-50%;left:-50%;width:200%;height:200%;border:none}
 </style>
 <script>

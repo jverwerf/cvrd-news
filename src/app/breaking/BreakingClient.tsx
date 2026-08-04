@@ -2,16 +2,19 @@
 
 import { useEffect, useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
+import { HeroDuo, BODY } from "@/components/HeroDuo";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
+import { toSentence } from '@/lib/text';
+import { CONTENT_MAX, CONTENT_GUTTER } from '@/lib/layout';
 
 const serif = "'Instrument Serif', Georgia, serif";
 const mono = "'DM Mono', monospace";
 const sans = "'DM Sans', system-ui, sans-serif";
 
 const C = {
-  bg: '#1e2a3a', panel: '#253545', panelDark: '#1a2535',
+  bg: '#3f5a80', panel: '#1e2d3d', panelDark: '#1a2535',
   gold: '#daa520', goldBorder: 'rgba(218,165,32,0.25)',
   text: '#e2e8f0', dim: '#7a8fa6', dimmer: '#4a5a6a',
   border: 'rgba(255,255,255,0.07)',
@@ -43,6 +46,7 @@ function toNarrativeGap(b: any): NarrativeGap {
     social_clips: socialClips,
   };
 }
+
 
 function timeAgo(dateStr: string): string {
   const mins = Math.round((Date.now() - new Date(dateStr).getTime()) / 60000);
@@ -134,7 +138,7 @@ function StoryCard({ story, raw, type, tall }: {
             {story.topic}
           </h3>
           {story.summary && (
-            <p style={{ fontFamily: sans, fontSize: 12, lineHeight: 1.6, color: C.dim, margin: 0 }}>
+            <p style={{ ...BODY, color: C.dim, margin: 0 }}>
               {story.summary.slice(0, tall ? 140 : 90)}{story.summary.length > (tall ? 140 : 90) ? '...' : ''}
             </p>
           )}
@@ -185,7 +189,7 @@ function StoryStrip({ story, raw, type, reverse }: {
             {story.topic}
           </h3>
           {story.summary && (
-            <p style={{ fontFamily: sans, fontSize: 13, lineHeight: 1.65, color: C.dim, margin: 0, maxWidth: 480 }}>
+            <p style={{ ...BODY, color: C.dim, margin: 0, maxWidth: 480 }}>
               {story.summary.slice(0, 180)}{story.summary.length > 180 ? '...' : ''}
             </p>
           )}
@@ -215,53 +219,39 @@ function StoryStrip({ story, raw, type, reverse }: {
 }
 
 /* ── Section header ──────────────────────────────────────────────── */
-function SectionHeader({ label, count }: { label: string; count?: number }) {
-  return (
-    <div style={{ marginBottom: 14, display: 'flex', alignItems: 'baseline', gap: 10 }}>
-      <h2 style={{ fontFamily: serif, fontSize: 21, fontWeight: 400, color: C.text, margin: 0 }}>{label}</h2>
-      {count !== undefined && (
-        <span style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.1em', color: C.dim }}>
-          {count} {count === 1 ? 'story' : 'stories'}
-        </span>
-      )}
-    </div>
-  );
+// No visible title: the red BREAKING and LIVE chips on the cards already say
+// which block is which. The label stays as the region's accessible name.
+function SectionHeader({ label }: { label: string; count?: number }) {
+  return <h2 className="sr-only">{label}</h2>;
 }
 
-/* ── Lay out stories with mixed horizontal/vertical rhythm ──────── */
-function StoryGrid({ stories, raws, type }: {
-  stories: NarrativeGap[]; raws: any[]; type: 'breaking' | 'live';
-}) {
-  const getRaw = (s: NarrativeGap, i: number) =>
-    raws.find((r: any) => (r.topic || r.title) === s.topic) || raws[i];
+/* ── Fit as many blocks as the box allows ────────────────────────── */
+// Renders whichever leading blocks fit the container in full and drops the
+// rest, so a fixed-height panel fills itself rather than being cut mid-sentence
+// or scrolled. Measures with everything mounted, then trims.
+/* ── Lay out stories two-up, with a lone leftover run full width ── */
+type GridItem = { story: NarrativeGap; raw: any; type: 'breaking' | 'live' };
 
-  const elements: React.ReactNode[] = [];
-  let i = 0;
-  let block = 0;
-
-  while (i < stories.length) {
-    const remaining = stories.length - i;
-
-    if (block % 2 === 0 && remaining >= 2) {
-      // 2-wide card row
-      elements.push(
-        <div key={`row2-${i}`} style={{ display: 'flex', gap: 16 }} className="card-row">
-          <StoryCard story={stories[i]} raw={getRaw(stories[i], i)} type={type} tall />
-          <StoryCard story={stories[i + 1]} raw={getRaw(stories[i + 1], i + 1)} type={type} tall />
-        </div>
-      );
-      i += 2;
-    } else {
-      // Full-width horizontal strip (text + tiles)
-      elements.push(
-        <StoryStrip key={`strip-${i}`} story={stories[i]} raw={getRaw(stories[i], i)} type={type} reverse={block % 4 === 3} />
-      );
-      i++;
+function StoryGrid({ items }: { items: GridItem[] }) {
+  const rows: React.ReactNode[] = [];
+  // Pair stories side by side; an odd one left at the end gets the full-width
+  // strip rather than sitting alone in a half-width column.
+  for (let i = 0; i < items.length; i += 2) {
+    const a = items[i];
+    const b = items[i + 1];
+    if (!b) {
+      rows.push(<StoryStrip key={`strip-${i}`} story={a.story} raw={a.raw} type={a.type} />);
+      break;
     }
-    block++;
+    rows.push(
+      <div key={`row-${i}`} style={{ display: 'flex', gap: 4 }} className="card-row">
+        <StoryCard story={a.story} raw={a.raw} type={a.type} tall />
+        <StoryCard story={b.story} raw={b.raw} type={b.type} tall />
+      </div>
+    );
   }
 
-  return <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>{elements}</div>;
+  return <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>{rows}</div>;
 }
 
 type LiveNowItem = any;
@@ -269,6 +259,7 @@ type LiveNowItem = any;
 export default function BreakingClient({ initialData, initialLiveNow }: { initialData: any[]; initialLiveNow: LiveNowItem[] }) {
   const [breakingItems, setBreakingItems] = useState<any[]>(initialData);
   const [liveNowItems, setLiveNowItems] = useState<LiveNowItem[]>(initialLiveNow);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -334,9 +325,17 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
   const heroTotalSources = heroStory ? (heroStory.sources ?? []).length : 0;
   const heroTotalClips = heroStory ? heroYtVids.length + (heroStory.social_clips ?? []).filter(c => c.duration).length : 0;
 
-  // Remaining stories for the grid
-  const gridBreaking = heroFromBreaking ? allStories.slice(1) : allStories;
-  const gridLive = heroFromBreaking ? liveStories : liveStories.slice(1);
+  const rawFor = (pool: any[], story: NarrativeGap, i: number) =>
+    pool.find((r: any) => (r.topic || r.title) === story.topic) || pool[i];
+
+  // Breaking first, then live, in one ordered list. The hero takes the top two
+  // and the grid gets everything after them.
+  const allItems: GridItem[] = [
+    ...allStories.map((story, i) => ({ story, raw: rawFor(breakingItems, story, i), type: 'breaking' as const })),
+    ...liveStories.map((story, i) => ({ story, raw: rawFor(liveNowItems, story, i), type: 'live' as const })),
+  ];
+  const heroItems = allItems.slice(0, 2);
+  const gridItems: GridItem[] = allItems.slice(2);
 
   return (
     <>
@@ -344,12 +343,19 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
         .live-dot { animation: blink 1.3s ease-in-out infinite; }
         .hover-panel:hover { border-color: rgba(218,165,32,0.25) !important; }
+        .hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+        .hide-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
         @media (max-width: 700px) {
           .card-row { flex-direction: column !important; }
           .strip-row { flex-direction: column !important; }
           .strip-text { padding: 16px 18px !important; }
           .strip-tiles { min-height: 160px !important; }
           .hero-meta-row { flex-wrap: wrap; }
+          .hero-row { flex-direction: column !important; height: auto !important; }
+          .hero-slab { width: 100% !important; padding: 14px 16px !important; }
+          .hero-row { flex-direction: column !important; }
+          .hero-unit { flex-direction: column !important; }
+          .hero-tiles { flex: none !important; width: 100% !important; height: 320px !important; }
         }
       `}} />
 
@@ -358,74 +364,26 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
 
         {/* ── HERO: first breaking story (full bleed) ─────── */}
         {heroStory && (<>
-          <a href={`/breaking/${heroSlug}`} style={{ textDecoration: 'none', display: 'block' }}>
-            <div style={{ position: 'relative', overflow: 'hidden', cursor: 'pointer' }}>
-              {/* Background */}
-              {heroFirstThumb ? (
-                <div style={{
-                  position: 'absolute', inset: 0,
-                  backgroundImage: `url(${heroFirstThumb})`,
-                  backgroundSize: 'cover', backgroundPosition: 'center',
-                  filter: 'brightness(0.35) blur(2px)',
-                }} />
-              ) : (
-                <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, #7f1d1d22, ${C.panelDark})` }} />
-              )}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.45) 55%, rgba(30,42,58,0.1) 100%)' }} />
-
-              <div style={{ position: 'relative', padding: '52px 28px 20px', maxWidth: 1120, margin: '0 auto' }}>
-                {/* Badge row */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 18 }} className="hero-meta-row">
-                  <Badge type={heroType} pulse />
-                  {heroRaw?.detected_at && (
-                    <span style={{ fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.dim }}>
-                      {timeAgo(heroRaw.detected_at)}
-                    </span>
-                  )}
-                  {heroTotalSources > 0 && (
-                    <span style={{ fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.dim }}>
-                      {heroTotalSources} sources covering this
-                    </span>
-                  )}
-                  <CoverageStrip story={heroStory} />
-                  <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.gold, marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 4 }}>
-                    Follow live
-                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-                  </span>
-                </div>
-
-                {/* Headline */}
-                <h1 style={{
-                  fontFamily: serif, fontSize: 'clamp(26px, 3.8vw, 42px)',
-                  lineHeight: 1.12, color: C.text, fontWeight: 400,
-                  margin: '0 0 14px', maxWidth: 760,
-                }}>
-                  {heroStory.topic}
-                </h1>
-
-                {/* Summary */}
-                {heroStory.summary && (
-                  <p style={{ fontFamily: sans, fontSize: 14, lineHeight: 1.7, color: C.dim, maxWidth: 660, margin: '0 0 8px' }}>
-                    {heroStory.summary.slice(0, 240)}{heroStory.summary.length > 240 ? '...' : ''}
-                  </p>
-                )}
-
-                {/* Dashboard tiles */}
-                {heroTotalClips > 0 && (
-                  <div style={{ height: 180, borderRadius: 10, overflow: 'hidden', marginTop: 14 }}>
-                    <Dashboard stories={[heroStory]} videoUrl={heroRaw?.breaking_short_url || undefined} tilesOnly={true} />
-                  </div>
-                )}
-              </div>
-            </div>
-          </a>
+          <div style={{ padding: `20px ${CONTENT_GUTTER}px 4px`, maxWidth: CONTENT_MAX, margin: '0 auto' }}>
+            <HeroDuo
+              bgThumb={heroFirstThumb}
+              items={heroItems.map((item, i) => ({
+                story: item.story,
+                href: `/breaking/${toSlug(item.story.topic)}`,
+                badge: <Badge type={item.type} pulse />,
+                meta: item.raw?.detected_at ? timeAgo(item.raw.detected_at) : undefined,
+                readLabel: 'Follow live',
+                videoUrl: i === 0 ? (heroRaw?.breaking_short_url || undefined) : undefined,
+              }))}
+            />
+          </div>
 
           {/* X text tweets below hero */}
           {(() => {
             const xText = (heroStory.social_clips ?? []).filter((c: any) => c.platform === 'x' && !c.duration && c.embed_id);
             if (xText.length === 0) return null;
             return (
-              <div style={{ maxWidth: 1120, margin: '0 auto', padding: '0 16px 20px' }}>
+              <div style={{ maxWidth: CONTENT_MAX, margin: '0 auto', padding: `4px ${CONTENT_GUTTER}px 4px` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                   <span style={{ fontFamily: mono, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: C.dim }}>𝕏 REACTIONS</span>
                 </div>
@@ -445,20 +403,15 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
         </>)}
 
         {/* ── GRID: remaining stories ────────────────────── */}
-        <main style={{ maxWidth: 1120, margin: '0 auto', padding: '28px 16px 40px' }}>
+        <main style={{ maxWidth: CONTENT_MAX, margin: '0 auto', padding: `4px ${CONTENT_GUTTER}px 32px` }}>
 
-          {gridBreaking.length > 0 && (
-            <div style={{ marginBottom: 36 }}>
-              <SectionHeader label="More Breaking" count={gridBreaking.length} />
-              <StoryGrid stories={gridBreaking} raws={breakingItems} type="breaking" />
-            </div>
-          )}
-
-          {gridLive.length > 0 && (
-            <div style={{ marginBottom: 36 }}>
-              <SectionHeader label="Live" count={gridLive.length} />
-              <StoryGrid stories={gridLive} raws={liveNowItems} type="live" />
-            </div>
+          {/* Breaking and live share one grid so they pair up across the row;
+              each card carries its own BREAKING or LIVE chip. */}
+          {gridItems.length > 0 && (
+            <>
+              <SectionHeader label="More breaking and live" />
+              <StoryGrid items={gridItems} />
+            </>
           )}
 
         </main>

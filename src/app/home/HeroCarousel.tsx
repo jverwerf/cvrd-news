@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Dashboard } from "@/components/Dashboard";
 import type { NarrativeGap } from "@/lib/data";
+import { toSentence } from '@/lib/text';
+import { CONTENT_MAX, CONTENT_GUTTER } from '@/lib/layout';
 
 const serif = "'Instrument Serif', Georgia, serif";
 const mono = "'DM Mono', monospace";
@@ -32,6 +34,14 @@ function toSlug(topic: string) {
 }
 
 const CYCLE_MS = 2 * 60 * 1000;
+
+const TILE_ROW_H = 180;
+const PAD_BOTTOM = 12;
+
+// Opaque over the headline block in the top-left corner, fading out across and
+// down so the photo is fully sharp on the right.
+const HERO_BLUR_MASK =
+  'radial-gradient(135% 115% at 0% 18%, #000 0%, #000 32%, rgba(0,0,0,0.55) 52%, transparent 74%)';
 
 export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; blobBase: string }) {
   const [idx, setIdx] = useState(0);
@@ -63,23 +73,47 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
   const centerCount = articleSources.filter(s => !s.lean || s.lean === 'center').length;
   const showCoverage = story.category !== 'sports' && story.category !== 'trending' && (leftCount + centerCount + rightCount) > 0;
 
+  // The tile row is TILE_ROW_H tall with PAD_BOTTOM of padding beneath it, so
+  // cutting the image band this far up from the bottom lands it on the tiles'
+  // horizontal midline.
+  const hasTiles = vids.length > 0 || (story.social_clips?.length ?? 0) > 0;
+  const imageBandBottom = hasTiles ? TILE_ROW_H / 2 + PAD_BOTTOM : 0;
+
   return (
     <div style={{ position: 'relative', overflow: 'hidden', opacity: visible ? 1 : 0, transition: 'opacity 0.28s ease' }}>
-      {/* background */}
-      {imgUrl
-        ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.55)' }} />
-        : <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category)}22 0%, ${C.panelDark} 100%)` }} />
-      }
-      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.55) 45%, rgba(30,42,58,0.1) 100%)' }} />
+      {/* Background image band. It stops level with the middle of the video tile
+          row below, so the tiles straddle the edge: top half over the photo,
+          bottom half over the page field. */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: imageBandBottom, overflow: 'hidden' }}>
+        {imgUrl
+          ? <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center', filter: 'brightness(0.95) saturate(1.08)' }} />
+          : <div style={{ position: 'absolute', inset: 0, background: `linear-gradient(135deg, ${catColor(story.category)}22 0%, ${C.panelDark} 100%)` }} />
+        }
+        {/* A blurred copy of the same photo, masked so it is solid behind the
+            headline at top left and gone by the right-hand side. CSS cannot
+            ramp a filter across an element, so the ramp lives in the mask.
+            Scaled up slightly so the blur's soft edges stay off-screen. */}
+        {imgUrl && (
+          <div style={{
+            position: 'absolute', inset: 0,
+            backgroundImage: `url(${imgUrl})`, backgroundSize: 'cover', backgroundPosition: 'center',
+            filter: 'brightness(0.95) saturate(1.08) blur(16px)',
+            transform: 'scale(1.08)',
+            WebkitMaskImage: HERO_BLUR_MASK,
+            maskImage: HERO_BLUR_MASK,
+          }} />
+        )}
+        {/* light bottom darkening for text legibility — kept weak so the cut edge stays crisp */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(16,24,38,0.55) 0%, rgba(16,24,38,0.18) 34%, rgba(16,24,38,0) 62%)' }} />
+        {/* soft left scrim so the headline block stays readable on bright photos */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg, rgba(10,14,20,0.55) 0%, rgba(10,14,20,0.25) 38%, rgba(10,14,20,0) 62%)' }} />
+      </div>
 
-      <div style={{ position: 'relative', padding: '36px 28px 16px', maxWidth: 1120, margin: '0 auto' }}>
+      <div style={{ position: 'relative', padding: `18px ${CONTENT_GUTTER}px ${PAD_BOTTOM}px`, maxWidth: CONTENT_MAX, margin: '0 auto' }}>
         {/* category + source count + read more */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 14 }}>
-          <span style={{ display: 'inline-block', padding: '3px 9px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 9, letterSpacing: '0.12em', color: '#fff', textTransform: 'uppercase' }}>
-            {catLabel(story.category)}
-          </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
           {totalSources > 0 && (
-            <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.dim }}>
+            <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: 'rgba(226,232,240,0.8)', textShadow: '0 1px 2px rgba(0,0,0,0.7)' }}>
               {totalSources} sources covering this
             </span>
           )}
@@ -98,14 +132,14 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
 
         {/* headline */}
         <a href={`/story/${slug}`} style={{ textDecoration: 'none' }}>
-          <h1 style={{ fontFamily: serif, fontSize: 'clamp(22px, 3.2vw, 34px)', lineHeight: 1.2, color: C.text, marginBottom: 8, maxWidth: 760, fontWeight: 400 }}>
+          <h1 style={{ fontFamily: serif, fontSize: 'clamp(18px, 2.4vw, 26px)', lineHeight: 1.18, color: '#fff', marginBottom: 5, maxWidth: 760, fontWeight: 400, textShadow: '0 1px 3px rgba(0,0,0,0.6), 0 2px 18px rgba(0,0,0,0.45)' }}>
             {story.topic}
           </h1>
         </a>
 
         {/* summary */}
-        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 13, lineHeight: 1.7, color: C.dim, maxWidth: 660, marginBottom: 8 }}>
-          {story.summary?.slice(0, 200)}{(story.summary?.length ?? 0) > 200 ? '...' : ''}
+        <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 12, lineHeight: 1.55, color: 'rgba(226,232,240,0.88)', maxWidth: 620, marginBottom: 6, textShadow: '0 1px 2px rgba(0,0,0,0.6)' }}>
+          {toSentence(story.summary, 130)}
         </p>
 
         {/* dashboard tiles + indicators */}
@@ -125,7 +159,7 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
                 ))}
               </div>
             )}
-            <div style={{ height: 180, borderRadius: 10, overflow: 'hidden' }}>
+            <div style={{ height: TILE_ROW_H, borderRadius: 10, overflow: 'hidden' }}>
               <Dashboard stories={[story]} tilesOnly={true} />
             </div>
           </div>

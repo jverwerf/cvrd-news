@@ -1,11 +1,16 @@
 'use client';
 
 import { useRef } from 'react';
+import { Fragment } from 'react';
+import { getStoryTiles, StoryTile } from './StoryTile';
+import { toSentence } from '@/lib/text';
 
 const C = {
-  panel: '#253545', panelDark: '#1a2535',
+  panel: '#1e2d3d', panelDark: '#1a2535',
   gold: '#daa520', border: 'rgba(255,255,255,0.07)',
   text: '#e2e8f0', dim: '#7a8fa6', dimmer: '#4a5a6a',
+  // sits on the page field, not on a panel — needs to be lighter than `dimmer`
+  dimmerOnField: '#a3b4c9',
 };
 const serif = `'Instrument Serif', Georgia, serif`;
 const mono  = `'DM Mono', monospace`;
@@ -39,6 +44,7 @@ export type StoryItem = {
   image_file?: string;
   summary?: string;
   youtube_videos?: { embed_id: string; channel?: string }[];
+  social_clips?: { embed_id?: string; platform?: string; duration?: number }[];
   sources?: { lean?: string }[];
 };
 
@@ -98,44 +104,44 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
           const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
           const vids = story.youtube_videos ?? [];
           const firstVid = vids[0];
+          const tiles = getStoryTiles(story);
           return (
-            <>
+            <Fragment key={story.topic}>
               {dividerAfter !== undefined && idx === dividerAfter && (
                 <div key={`divider-${idx}`} style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, padding: '2px 0' }}>
-                  <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.07)' }} />
-                  <span style={{ fontFamily: mono, fontSize: 7.5, letterSpacing: '0.1em', color: C.dimmer, textTransform: 'uppercase', flexShrink: 0 }}>More stories</span>
-                  <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.07)' }} />
+                  <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.16)' }} />
+                  <span style={{ fontFamily: mono, fontSize: 7.5, letterSpacing: '0.1em', color: C.dimmerOnField, textTransform: 'uppercase', flexShrink: 0 }}>More stories</span>
+                  <div style={{ flex: 1, height: 1, background: 'rgba(255,255,255,0.16)' }} />
                 </div>
               )}
               <a key={story.topic} href={`/story/${slug}`} style={{
                 textDecoration: 'none', flexShrink: 0,
-                display: 'flex', flexDirection: 'row', minHeight: 110,
+                display: 'flex', flexDirection: 'row', minHeight: 152,
                 background: C.panel, borderRadius: 8, overflow: 'hidden',
                 border: `1px solid ${C.border}`,
               }} className="story-card">
-                <div style={{ width: 96, flexShrink: 0, position: 'relative', overflow: 'hidden' }}>
-                  {(imgUrl || firstVid)
-                    ? <img src={imgUrl ?? ytThumb(firstVid.embed_id)} alt=""
-                        style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.75 }} />
-                    : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
+                <div style={{ width: 240, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }}>
+                  {tiles.length
+                    ? <StoryTile tiles={tiles} badge="sm" cycleMs={12500 + (idx % 5) * 1900} />
+                    : (imgUrl || firstVid)
+                      ? <img src={imgUrl ?? ytThumb(firstVid.embed_id)} alt=""
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.75 }} />
+                      : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                   }
-                  <span style={{ position: 'absolute', top: 5, left: 5, padding: '1px 5px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 7, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
-                    {catLabel(story.category)}
-                  </span>
                 </div>
-                <div style={{ padding: '10px 12px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0 }}>
-                  <h3 style={{ fontFamily: serif, fontSize: 13, lineHeight: 1.3, color: C.text, fontWeight: 400, margin: 0 }}>
+                <div style={{ padding: '14px 18px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0 }}>
+                  <h3 style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.25, color: C.text, fontWeight: 400, margin: 0 }}>
                     {story.topic}
                   </h3>
                   {story.summary && (
-                    <p style={{ fontFamily: mono, fontSize: 10, lineHeight: 1.45, color: C.dim, margin: '4px 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                      {story.summary}
+                    <p style={{ fontFamily: mono, fontSize: 11, lineHeight: 1.5, color: C.dim, margin: '6px 0 0', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {toSentence(story.summary, 132)}
                     </p>
                   )}
                   <CoverageStrip story={story} />
                 </div>
               </a>
-            </>
+            </Fragment>
           );
         })}
         <a href="/brief" style={{ textDecoration: 'none', flexShrink: 0 }}>
@@ -198,9 +204,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                   : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                 }
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(37,53,69,0.9) 0%, transparent 55%)' }} />
-                <span style={{ position: 'absolute', top: 7, left: 8, padding: '2px 7px', borderRadius: 3, background: catColor(story.category), fontFamily: mono, fontSize: 8, letterSpacing: '0.1em', color: '#fff', textTransform: 'uppercase' }}>
-                  {catLabel(story.category)}
-                </span>
                 {vids.length > 0 && (
                   <span style={{ position: 'absolute', bottom: 7, right: 8, display: 'flex', alignItems: 'center', gap: 3, fontFamily: mono, fontSize: 8, color: 'rgba(255,255,255,0.6)' }}>
                     <svg width="6" height="8" viewBox="0 0 6 8" fill="currentColor"><polygon points="0,0 6,4 0,8" /></svg>

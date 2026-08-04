@@ -97,7 +97,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
     <button onClick={() => p && onSelect()}
       className="relative rounded-lg overflow-hidden transition-all duration-700 cursor-pointer group"
       style={{
-        background: '#253545',
+        background: '#1e2d3d',
         border: isSelected && p ? '2px solid #b8860b' : '2px solid transparent',
         opacity: p ? 1 : 0.3,
       }}>
@@ -280,7 +280,7 @@ export default function PoliticiansPage() {
     : scores[0];
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <div className="min-h-screen" style={{ background: '#3f5a80' }}>
 
       <SiteNav isBreaking={isBreaking} />
 
@@ -295,7 +295,7 @@ export default function PoliticiansPage() {
         <div className="px-3 pb-2">
           <Link href={edHref}
             className="flex items-center gap-4 rounded-xl overflow-hidden hover:opacity-95 transition-opacity"
-            style={{ background: '#253545', border: '1px solid #2a3a4a', textDecoration: 'none' }}>
+            style={{ background: '#1e2d3d', border: '1px solid #2a3a4a', textDecoration: 'none' }}>
             <img src={editorial.person.photo} alt={editorial.person.name}
               className="h-20 w-20 object-cover object-top shrink-0"
               onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
@@ -329,7 +329,7 @@ export default function PoliticiansPage() {
       })()}
 
       {/* VIEW TOGGLE + SEARCH PILL — same row, below the hero card */}
-      <div className="or-pills-row relative flex items-center gap-2 px-3 py-2" style={{ background: '#1e2a3a', minHeight: 40 }}>
+      <div className="or-pills-row relative flex items-center gap-2 px-3 py-2" style={{ background: '#3f5a80', minHeight: 40 }}>
         <div className="or-toggle-pill inline-flex items-center gap-1.5 px-1.5 rounded-full shrink-0"
           style={{ background: 'rgba(184,134,11,0.1)', border: '1px solid rgba(184,134,11,0.3)', height: 32 }}>
           <span className="flex items-center p-1.5 rounded-full" style={{ background: 'rgba(184,134,11,0.3)' }}>

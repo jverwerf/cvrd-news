@@ -45,7 +45,7 @@ export default async function DeclassifiedPage() {
   const isBreaking = await hasBreakingData().catch(() => false);
 
   return (
-    <div style={{ background: '#1e2a3a', minHeight: '100vh', color: '#e2e8f0' }}>
+    <div style={{ background: '#3f5a80', minHeight: '100vh', color: '#e2e8f0' }}>
       <SiteNav isBreaking={isBreaking} />
 
       {/* ── MAGAZINE COVER HERO ── */}

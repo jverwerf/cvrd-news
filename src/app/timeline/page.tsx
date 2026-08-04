@@ -60,7 +60,7 @@ export default async function TimelinePage() {
     : allStories.slice(0, 10);
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <div className="min-h-screen" style={{ background: '#3f5a80' }}>
 
       <SiteNav isBreaking={isBreaking} />
 
@@ -101,7 +101,7 @@ export default async function TimelinePage() {
             <p className="text-[#999] text-[15px] mb-2">No active threads yet.</p>
             <p className="text-[#666] text-[12px]">Threads appear when stories span multiple days.</p>
             <a href="/brief" className="inline-block mt-6 px-4 py-2 text-[12px] font-semibold rounded-md"
-              style={{ background: '#253545', color: '#daa520', border: '1px solid rgba(184,134,11,0.3)' }}>
+              style={{ background: '#1e2d3d', color: '#daa520', border: '1px solid rgba(184,134,11,0.3)' }}>
               Back to today's stories
             </a>
           </div>

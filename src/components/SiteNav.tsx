@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { CONTENT_MAX } from '@/lib/layout';
 
 const mono = `'DM Mono', monospace`;
 
@@ -201,7 +202,7 @@ export function SiteFooter() {
       padding: '20px',
       display: 'flex', flexWrap: 'wrap', alignItems: 'center',
       justifyContent: 'space-between', gap: 12,
-      maxWidth: 1120, margin: '0 auto',
+      maxWidth: CONTENT_MAX, margin: '0 auto',
     }}>
       <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: '#4a5a6a', textTransform: 'uppercase' }}>
         Watch it. Read it. Check it.

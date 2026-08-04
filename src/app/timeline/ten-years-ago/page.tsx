@@ -38,7 +38,7 @@ export default async function TenYearsAgoPage() {
   const dateStr = new Date(tenYearsAgo.date_last_year + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <div className="min-h-screen" style={{ background: '#3f5a80' }}>
 
       <SiteNav isBreaking={isBreaking} />
 

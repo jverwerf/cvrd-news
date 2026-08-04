@@ -39,7 +39,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   if (!CATEGORIES.includes(category as typeof CATEGORIES[number])) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ background: '#1e2a3a' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#3f5a80' }}>
         <p style={{ color: '#7a8fa6' }}>Category not found.</p>
       </div>
     );

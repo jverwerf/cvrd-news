@@ -317,7 +317,6 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   return (
     <div className="mb-6 w-full max-w-full overflow-hidden">
-      <style>{`@keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }`}</style>
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
         <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px] mx-auto">

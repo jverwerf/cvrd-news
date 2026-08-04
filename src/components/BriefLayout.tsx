@@ -1,17 +1,20 @@
 "use client";
 
 import { Dashboard } from "@/components/Dashboard";
+import { HeroDuo } from "@/components/HeroDuo";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
+import { toSentence } from '@/lib/text';
+import { CONTENT_MAX, CONTENT_GUTTER } from "@/lib/layout";
 
 const serif = "'Instrument Serif', Georgia, serif";
 const mono = "'DM Mono', monospace";
 const sans = "'DM Sans', system-ui, sans-serif";
 
 const C = {
-  bg: "#1e2a3a",
-  panel: "#253545",
+  bg: "#3f5a80",
+  panel: "#1e2d3d",
   panelDark: "#1a2535",
   gold: "#daa520",
   text: "#e2e8f0",
@@ -312,7 +315,8 @@ export default function BriefLayout({
   const heroTotalClips = heroYtVids.length + (heroStory.social_clips ?? []).filter((c) => c.duration).length;
   const heroTotalSources = (heroStory.sources ?? []).length;
 
-  const restStories = stories.filter((s) => s.topic !== heroStory.topic);
+  const heroStories = stories.slice(0, 2);
+  const restStories = stories.slice(2);
 
   const badgeLabel = category ? CATEGORY_LABEL[category] || category : "Today's Brief";
 
@@ -330,6 +334,7 @@ export default function BriefLayout({
           .strip-text { padding: 16px 18px !important; }
           .strip-tiles { min-height: 160px !important; }
           .hero-meta-row { flex-wrap: wrap; }
+          .hero-article { column-count: 1 !important; }
         }
       `,
         }}
@@ -341,111 +346,18 @@ export default function BriefLayout({
           storyMeta={{ index: 0, total: stories.length, category }}
         />
 
-        <a href={`/story/${heroSlug}`} style={{ textDecoration: "none", display: "block" }}>
-          <div style={{ position: "relative", overflow: "hidden", cursor: "pointer" }}>
-            {heroFirstThumb ? (
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  backgroundImage: `url(${heroFirstThumb})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  filter: "brightness(0.35) blur(2px)",
-                }}
-              />
-            ) : (
-              <div
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: `linear-gradient(135deg, ${C.gold}22, ${C.panelDark})`,
-                }}
-              />
-            )}
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to top, rgba(30,42,58,1) 0%, rgba(30,42,58,0.45) 55%, rgba(30,42,58,0.1) 100%)",
-              }}
-            />
+        <div style={{ padding: `20px ${CONTENT_GUTTER}px 4px`, maxWidth: CONTENT_MAX, margin: "0 auto" }}>
+          <HeroDuo
+            bgThumb={heroFirstThumb}
+            items={heroStories.map((story) => ({
+              story,
+              href: `/story/${toSlug(story.topic)}`,
+              meta: dateLabel,
+            }))}
+          />
+        </div>
 
-            <div style={{ position: "relative", padding: "52px 28px 28px", maxWidth: 1120, margin: "0 auto" }}>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}
-                className="hero-meta-row"
-              >
-                <Badge label={badgeLabel} pulse />
-                <span style={{ fontFamily: mono, fontSize: 10, letterSpacing: "0.1em", color: C.dim }}>
-                  {dateLabel}
-                </span>
-                {heroTotalSources > 0 && (
-                  <span style={{ fontFamily: mono, fontSize: 10, letterSpacing: "0.1em", color: C.dim }}>
-                    {heroTotalSources} sources covering this
-                  </span>
-                )}
-                <CoverageStrip story={heroStory} />
-                <span
-                  style={{
-                    fontFamily: mono,
-                    fontSize: 9,
-                    letterSpacing: "0.1em",
-                    color: C.gold,
-                    marginLeft: "auto",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 4,
-                  }}
-                >
-                  Read
-                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </span>
-              </div>
-
-              <h1
-                style={{
-                  fontFamily: serif,
-                  fontSize: "clamp(26px, 3.8vw, 42px)",
-                  lineHeight: 1.12,
-                  color: C.text,
-                  fontWeight: 400,
-                  margin: "0 0 14px",
-                  maxWidth: 760,
-                }}
-              >
-                {heroStory.topic}
-              </h1>
-
-              {heroStory.summary && (
-                <p
-                  style={{
-                    fontFamily: sans,
-                    fontSize: 14,
-                    lineHeight: 1.7,
-                    color: C.dim,
-                    maxWidth: 660,
-                    margin: "0 0 8px",
-                  }}
-                >
-                  {heroStory.summary.slice(0, 240)}
-                  {heroStory.summary.length > 240 ? "..." : ""}
-                </p>
-              )}
-
-              {heroTotalClips > 0 && (
-                <div style={{ height: 180, borderRadius: 10, overflow: "hidden", marginTop: 14 }}>
-                  <Dashboard stories={[heroStory]} tilesOnly={true} />
-                </div>
-              )}
-            </div>
-          </div>
-        </a>
-
-        <main style={{ maxWidth: 1120, margin: "0 auto", padding: "28px 16px 40px" }}>
+        <main style={{ maxWidth: CONTENT_MAX, margin: "0 auto", padding: `28px ${CONTENT_GUTTER}px 40px` }}>
           {restStories.length > 0 && <StoryGrid stories={restStories} />}
         </main>
 

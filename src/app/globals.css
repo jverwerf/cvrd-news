@@ -50,3 +50,16 @@
   margin: 0 !important;
 }
 
+
+/* Slow drift for still tile thumbnails (social clips with no playable embed) */
+@keyframes breakingThumbZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* Slow drift for tile thumbnails (Dashboard tiles, VideoGrid). Lives here, not
+   in a component, because Dashboard uses it on pages VideoGrid never renders on. */
+@keyframes thumbZoom {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}

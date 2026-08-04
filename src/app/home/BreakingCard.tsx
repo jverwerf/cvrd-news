@@ -1,15 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
-type TileInfo = {
-  platform: 'youtube' | 'telegram' | 'x' | 'tiktok';
-  embedId: string;
-  thumbUrl: string;
-  badge: string;
-  badgeColor: string;
-  title: string;
-};
+import { getStoryTiles, StoryTile } from "./StoryTile";
+import { toSentence } from '@/lib/text';
 
 function toSlug(topic: string) {
   return topic.toLowerCase()
@@ -35,49 +28,8 @@ function Coverage({ story, size = 'md' }: { story: any; size?: 'sm' | 'md' }) {
   );
 }
 
-function getFirstTile(story: any): TileInfo | null {
-  for (const v of (story.youtube_videos || [])) {
-    if (!v.embed_id) continue;
-    return { platform: 'youtube', embedId: v.embed_id, thumbUrl: `https://img.youtube.com/vi/${v.embed_id}/hqdefault.jpg`, badge: 'YT', badgeColor: '#cc0000', title: v.title || v.channel || story.topic };
-  }
-  for (const c of (story.social_clips || [])) {
-    if (!c.embed_id) continue;
-    const isVideo = (c.platform === 'x' || c.platform === 'telegram') && c.duration;
-    if (!isVideo) continue;
-    if (c.platform === 'telegram') return { platform: 'telegram', embedId: c.embed_id, thumbUrl: `/api/tg-video?post=${c.embed_id}&thumb=1`, badge: 'TG', badgeColor: '#0088cc', title: c.title || story.topic };
-    if (c.platform === 'x') return { platform: 'x', embedId: c.embed_id, thumbUrl: `/api/x-video?id=${c.embed_id}&thumb=1`, badge: '𝕏', badgeColor: '#1a1a1a', title: c.title || story.topic };
-  }
-  return null;
-}
-
-function LiveTile({ tile }: { tile: TileInfo }) {
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {tile.platform === 'youtube' ? (
-        <iframe
-          src={`/api/yt-tile?v=${tile.embedId}`}
-          style={{ position: 'absolute', border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
-          allow="autoplay"
-          loading="lazy"
-        />
-      ) : (
-        <img
-          src={tile.thumbUrl}
-          alt=""
-          style={{
-            position: 'absolute', inset: 0, width: '100%', height: '100%',
-            objectFit: 'cover', opacity: 0.9,
-            animation: 'breakingThumbZoom 8s ease-in-out infinite alternate',
-            transformOrigin: 'center',
-          }}
-        />
-      )}
-    </div>
-  );
-}
-
 function StoryCard({ story, now, scrollable }: { story: any; now: number; scrollable?: boolean }) {
-  const tile = getFirstTile(story);
+  const tiles = getStoryTiles(story);
   const mins = Math.round((now - new Date(story.detected_at).getTime()) / 60000);
   const ago = mins < 60 ? `${mins}m ago` : `${Math.round(mins / 60)}h ago`;
   const isBreaking = story._kind === 'breaking';
@@ -92,26 +44,18 @@ function StoryCard({ story, now, scrollable }: { story: any; now: number; scroll
       height: 150,
     }}>
       <div className="bk-tile" style={{ position: 'relative', width: 200, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
-        {tile ? (
-          <LiveTile tile={tile} />
+        {tiles.length ? (
+          <StoryTile tiles={tiles} badge="sm" />
         ) : (
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(127,29,29,0.4) 0%, #111d2b 100%)' }} />
         )}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(145deg, rgba(120,160,220,0.12) 0%, rgba(30,42,58,0.04) 40%, rgba(0,0,0,0.18) 100%)', boxShadow: 'inset 1px 1px 1px rgba(255,255,255,0.07), inset -1px -1px 2px rgba(0,0,0,0.25)' }} />
-        {tile && (
-          <div style={{ position: 'absolute', bottom: 6, left: 7, zIndex: 10 }}>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, fontWeight: 700, color: '#fff', background: tile.badgeColor, padding: '2px 5px', borderRadius: 3, letterSpacing: '0.04em' }}>{tile.badge}</span>
-          </div>
-        )}
       </div>
       <div className="bk-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '9px 11px 9px 10px', minWidth: 0, justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 5 }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', flexShrink: 0, boxShadow: '0 0 5px #ef4444' }} />
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7.5, letterSpacing: '0.14em', color: '#ef4444', textTransform: 'uppercase' }}>
-              {isBreaking ? 'Breaking' : 'Live'}
-            </span>
-          </div>
+          <span style={{ flexShrink: 0, fontFamily: "'DM Mono', monospace", fontSize: 7.5, letterSpacing: '0.14em', color: '#ef4444', textTransform: 'uppercase' }}>
+            {isBreaking ? 'Breaking' : 'Live'}
+          </span>
           <Coverage story={story} />
           <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7.5, color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>{ago}</span>
         </div>
@@ -120,7 +64,7 @@ function StoryCard({ story, now, scrollable }: { story: any; now: number; scroll
         </p>
         {story.summary && (
           <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 10.5, lineHeight: 1.55, color: 'rgba(203,213,225,0.5)', margin: 0, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
-            {story.summary}
+            {toSentence(story.summary, 150)}
           </p>
         )}
       </div>
@@ -128,56 +72,101 @@ function StoryCard({ story, now, scrollable }: { story: any; now: number; scroll
   );
 }
 
-function LiveRow({ stories, now }: { stories: any[]; now: number }) {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: 10 }}>
-      {stories.map((story, i) => {
-        const tile = getFirstTile(story);
-        const mins = Math.round((now - new Date(story.detected_at).getTime()) / 60000);
-        const ago = mins < 60 ? `${mins}m ago` : `${Math.round(mins / 60)}h ago`;
+function timeAgo(story: any, now: number) {
+  const mins = Math.round((now - new Date(story.detected_at).getTime()) / 60000);
+  return mins < 60 ? `${mins}m ago` : `${Math.round(mins / 60)}h ago`;
+}
 
-        return (
-          <a key={i} href={`/breaking/${toSlug(story.topic || '')}`} className="live-item" style={{
-            flex: '1 1 calc(33.333% - 7px)', minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
-            borderRadius: 10, overflow: 'hidden',
-            background: '#1e2d3d',
-            border: '1px solid rgba(220,38,38,0.18)',
-            boxShadow: '0 2px 16px rgba(0,0,0,0.35)',
-            height: 90,
-          }}>
-            <div style={{ position: 'relative', width: 100, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
-              {tile ? (
-                <LiveTile tile={tile} />
-              ) : (
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(127,29,29,0.4) 0%, #111d2b 100%)' }} />
-              )}
-              <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(145deg, rgba(120,160,220,0.12) 0%, rgba(30,42,58,0.04) 40%, rgba(0,0,0,0.18) 100%)' }} />
-              {tile && (
-                <div style={{ position: 'absolute', bottom: 4, left: 6 }}>
-                  <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, fontWeight: 700, color: '#fff', background: tile.badgeColor, padding: '2px 5px', borderRadius: 3, letterSpacing: '0.04em' }}>{tile.badge}</span>
-                </div>
-              )}
-            </div>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '7px 9px', minWidth: 0 }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, marginBottom: 4 }}>
-                <span style={{ width: 5, height: 5, borderRadius: '50%', background: '#ef4444', boxShadow: '0 0 5px #ef4444' }} />
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, letterSpacing: '0.14em', color: '#ef4444', textTransform: 'uppercase' }}>Live</span>
-                <Coverage story={story} size="sm" />
-                <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>{ago}</span>
-              </div>
-              <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 11.5, lineHeight: 1.2, color: 'rgba(255,255,255,0.92)', margin: '0 0 3px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
-                {story.topic}
-              </p>
-              {story.summary && (
-                <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 9, lineHeight: 1.4, color: 'rgba(203,213,225,0.5)', margin: 0, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
-                  {story.summary}
-                </p>
-              )}
-            </div>
-          </a>
-        );
-      })}
-    </div>
+function KindLabel({ story, size = 'md' }: { story: any; size?: 'sm' | 'md' }) {
+  const isBreaking = story._kind === 'breaking';
+  return (
+    <span style={{ flexShrink: 0, fontFamily: "'DM Mono', monospace", fontSize: size === 'sm' ? 7 : 8, letterSpacing: '0.14em', color: '#ef4444', textTransform: 'uppercase' }}>
+      {isBreaking ? 'Breaking' : 'Live'}
+    </span>
+  );
+}
+
+// The most recent story, given the full width of the section.
+function LeadCard({ story, now }: { story: any; now: number }) {
+  const tiles = getStoryTiles(story);
+
+  return (
+    <a href={`/breaking/${toSlug(story.topic || '')}`} className="bk-lead" style={{
+      display: 'flex', flexDirection: 'row', textDecoration: 'none',
+      borderRadius: 10, overflow: 'hidden',
+      background: '#1e2d3d',
+      border: '1px solid rgba(220,38,38,0.3)',
+      boxShadow: '0 2px 22px rgba(0,0,0,0.42)',
+      height: 250,
+    }}>
+      <div className="bk-lead-tile" style={{ position: 'relative', width: 340, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
+        {tiles.length ? (
+          <StoryTile tiles={tiles} badge="md" cycleMs={11000} />
+        ) : (
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(127,29,29,0.4) 0%, #111d2b 100%)' }} />
+        )}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(145deg, rgba(120,160,220,0.12) 0%, rgba(30,42,58,0.04) 40%, rgba(0,0,0,0.18) 100%)', boxShadow: 'inset 1px 1px 1px rgba(255,255,255,0.07), inset -1px -1px 2px rgba(0,0,0,0.25)' }} />
+      </div>
+
+      <div className="bk-lead-content" style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '16px 20px', minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 9 }}>
+          <KindLabel story={story} />
+          <Coverage story={story} />
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'rgba(255,255,255,0.35)', marginLeft: 'auto' }}>{timeAgo(story, now)}</span>
+        </div>
+
+        <p className="bk-lead-title" style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 21, lineHeight: 1.25, color: 'rgba(255,255,255,0.95)', margin: '0 0 9px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const }}>
+          {story.topic}
+        </p>
+
+        {story.summary && (
+          <p className="bk-lead-summary" style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 12, lineHeight: 1.65, color: 'rgba(203,213,225,0.62)', margin: 0, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 7, WebkitBoxOrient: 'vertical' as const }}>
+            {toSentence(story.summary, 430)}
+          </p>
+        )}
+      </div>
+    </a>
+  );
+}
+
+// Everything after the lead. Flex basis of half a row means a lone leftover
+// card stretches to full width instead of leaving a hole.
+function CompactCard({ story, now, cycleMs }: { story: any; now: number; cycleMs: number }) {
+  const tiles = getStoryTiles(story);
+
+  return (
+    <a href={`/breaking/${toSlug(story.topic || '')}`} className="bk-compact" style={{
+      flex: '1 1 calc(50% - 5px)', minWidth: 0, display: 'flex', flexDirection: 'row', textDecoration: 'none',
+      borderRadius: 10, overflow: 'hidden',
+      background: '#1e2d3d',
+      border: '1px solid rgba(220,38,38,0.18)',
+      boxShadow: '0 2px 16px rgba(0,0,0,0.35)',
+      height: 104,
+    }}>
+      <div style={{ position: 'relative', width: 122, flexShrink: 0, background: '#111d2b', overflow: 'hidden' }}>
+        {tiles.length ? (
+          <StoryTile tiles={tiles} badge="sm" cycleMs={cycleMs} />
+        ) : (
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(127,29,29,0.4) 0%, #111d2b 100%)' }} />
+        )}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', background: 'linear-gradient(145deg, rgba(120,160,220,0.12) 0%, rgba(30,42,58,0.04) 40%, rgba(0,0,0,0.18) 100%)' }} />
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '8px 10px', minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 5, marginBottom: 4 }}>
+          <KindLabel story={story} size="sm" />
+          <Coverage story={story} size="sm" />
+          <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, color: 'rgba(255,255,255,0.3)', marginLeft: 'auto' }}>{timeAgo(story, now)}</span>
+        </div>
+        <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 12.5, lineHeight: 1.25, color: 'rgba(255,255,255,0.92)', margin: '0 0 3px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
+          {story.topic}
+        </p>
+        {story.summary && (
+          <p style={{ fontFamily: "'DM Sans', system-ui, sans-serif", fontSize: 9.5, lineHeight: 1.45, color: 'rgba(203,213,225,0.5)', margin: 0, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>
+            {toSentence(story.summary, 65)}
+          </p>
+        )}
+      </div>
+    </a>
   );
 }
 
@@ -209,25 +198,40 @@ export function BreakingCard({ breakingItems, liveItems, vertical }: { breakingI
 
   if (breaking.length === 0 && live.length === 0) return null;
 
-  // Vertical mode: if 3+ breaking and 2+ live, stack breaking normally + live in horizontal row
-  const stackLiveHorizontal = vertical && live.length >= 2;
+  // Vertical mode: newest story leads at full width, the rest fill the row
+  // beneath it. Works down to a single story, which just renders the lead.
+  if (vertical) {
+    const byRecency = (a: any, b: any) =>
+      new Date(b.detected_at).getTime() - new Date(a.detected_at).getTime();
+    // Live items only take the lead when there is no true breaking story.
+    const lead = [...(breaking.length ? breaking : live)].sort(byRecency)[0];
+    const rest = [...breaking, ...live].filter(s => s !== lead).sort(byRecency);
 
-  if (stackLiveHorizontal) {
     return (
       <>
         <style>{`
           @keyframes breakingThumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
+          @media (max-width: 900px) {
+            .bk-lead-tile { width: 250px !important; }
+            .bk-lead-summary { -webkit-line-clamp: 4 !important; }
+          }
           @media (max-width: 600px) {
-            .bk-card { height: 120px !important; }
-            .bk-tile { width: 140px !important; }
-            .live-item { flex: 1 1 100% !important; max-width: 100% !important; }
+            .bk-lead { flex-direction: column !important; height: auto !important; }
+            .bk-lead-tile { width: 100% !important; height: 190px !important; }
+            .bk-lead-title { font-size: 17px !important; }
+            .bk-lead-summary { -webkit-line-clamp: 3 !important; }
+            .bk-compact { flex: 1 1 100% !important; }
           }
         `}</style>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {breaking.map((story, i) => (
-            <StoryCard key={i} story={story} now={now} />
-          ))}
-          <LiveRow stories={live} now={now} />
+          <LeadCard story={lead} now={now} />
+          {rest.length > 0 && (
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+              {rest.map((story, i) => (
+                <CompactCard key={i} story={story} now={now} cycleMs={12000 + i * 2300} />
+              ))}
+            </div>
+          )}
         </div>
       </>
     );

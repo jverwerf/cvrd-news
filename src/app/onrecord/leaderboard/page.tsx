@@ -176,7 +176,7 @@ export default function LeaderboardPage() {
     .sort((a, b) => b.overall_score - a.overall_score);
 
   return (
-    <div className="min-h-screen" style={{ background: '#1e2a3a' }}>
+    <div className="min-h-screen" style={{ background: '#3f5a80' }}>
 
       <SiteNav isBreaking={isBreaking} />
 

@@ -75,6 +75,8 @@ export function Dashboard({
   compact,
   heroPlayer,
   tilesOnly,
+  tilesColumn,
+  tilesCount,
   onEnd,
   startEmbedId,
   orientation,
@@ -89,6 +91,10 @@ export function Dashboard({
    *  so the wall shares the row with the Divide and Timeline cards. */
   heroPlayer?: boolean;
   tilesOnly?: boolean;
+  /** Stack the tiles in one column instead of a row. */
+  tilesColumn?: boolean;
+  /** How many tiles to render (1-4). Defaults to 3 stacked, 4 in a row. */
+  tilesCount?: number;
   onEnd?: () => void;
   startEmbedId?: string;
   orientation?: 'landscape' | 'portrait';
@@ -514,10 +520,18 @@ export function Dashboard({
   const effectiveOrientation = orientation ?? (showOrientationToggle ? userOrientation : null) ?? 'landscape';
 
   if (tilesOnly) {
+    // Caller decides how many tiles fit; the pool cycles through whatever it has.
+    const count = Math.max(1, Math.min(4, tilesCount ?? (tilesColumn ? 3 : 4)));
+    const tileSlots = Array.from({ length: count }, (_, i) => i);
     return (
       <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
-        <div className="h-full grid grid-cols-4 gap-1">
-          {[0, 1, 2, 3].map(i => (
+        <div
+          className="h-full grid gap-1"
+          style={tilesColumn
+            ? { gridTemplateColumns: '1fr', gridTemplateRows: `repeat(${tileSlots.length}, minmax(0, 1fr))` }
+            : { gridTemplateColumns: `repeat(${tileSlots.length}, minmax(0, 1fr))` }}
+        >
+          {tileSlots.map(i => (
             <PoolTile key={i} slot={i} registry={tileRegistryRef.current} pool={pool} startOffset={tileOffsets[i]} delay={[0, 2, 4, 1][i]} frozen={tileIsFrozen[i]} skipEmbedId={undefined} onPlayInCenter={undefined} showAd={adPosition === i} adKey={adKey} tvMode={true} />
           ))}
         </div>

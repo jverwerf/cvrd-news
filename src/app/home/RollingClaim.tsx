@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { toSentence } from '@/lib/text';
 
 const mono = `'DM Mono', monospace`;
 const serif = `'Instrument Serif', Georgia, serif`;
@@ -53,7 +54,7 @@ export function RollingClaim({ tweets, topic }: { tweets: { claim: string; verdi
           opacity: visible ? 1 : 0, transition: 'opacity 0.35s ease',
           willChange: 'opacity',
         }}>
-          "{claim.claim?.slice(0, 160)}{(claim.claim?.length ?? 0) > 160 ? '...' : ''}"
+          "{toSentence(claim.claim, 160)}"
         </div>
         <span style={{
           flexShrink: 0, display: 'inline-block', padding: '4px 10px', borderRadius: 4,
