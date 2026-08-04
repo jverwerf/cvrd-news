@@ -12,6 +12,9 @@ const C = {
   // sits on the page field, not on a panel — needs to be lighter than `dimmer`
   dimmerOnField: '#a3b4c9',
 };
+/** One in this many cards runs as a tall feature, to break up the column. */
+const FEATURE_EVERY = 4;
+
 const serif = `'Instrument Serif', Georgia, serif`;
 const mono  = `'DM Mono', monospace`;
 
@@ -98,6 +101,9 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
           const vids = story.youtube_videos ?? [];
           const firstVid = vids[0];
           const tiles = getStoryTiles(story);
+          // Every fourth story runs as a tall feature: video across the top and
+          // a fuller read underneath. Breaks up a column of identical rows.
+          const feature = idx % FEATURE_EVERY === FEATURE_EVERY - 1;
           return (
             <Fragment key={story.topic}>
               {dividerAfter !== undefined && idx === dividerAfter && (
@@ -109,11 +115,15 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
               )}
               <a key={story.topic} href={`/story/${slug}`} style={{
                 textDecoration: 'none', flexShrink: 0,
-                display: 'flex', flexDirection: 'row', minHeight: 152,
+                display: 'flex', flexDirection: feature ? 'column' : 'row',
+                minHeight: feature ? 0 : 152,
                 background: C.panel, borderRadius: 8, overflow: 'hidden',
                 border: `1px solid ${C.border}`,
               }} className="story-card">
-                <div style={{ width: 240, flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark }}>
+                <div style={{
+                  ...(feature ? { width: '100%', height: 230 } : { width: 240 }),
+                  flexShrink: 0, position: 'relative', overflow: 'hidden', background: C.panelDark,
+                }}>
                   {tiles.length
                     ? <StoryTile tiles={tiles} badge="sm" cycleMs={12500 + (idx % 5) * 1900} />
                     : (imgUrl || firstVid)
@@ -122,13 +132,13 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                       : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                   }
                 </div>
-                <div style={{ padding: '14px 18px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0 }}>
-                  <h3 style={{ fontFamily: serif, fontSize: 17, lineHeight: 1.25, color: C.text, fontWeight: 400, margin: 0 }}>
+                <div style={{ padding: feature ? '16px 20px 18px' : '14px 18px', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0 }}>
+                  <h3 style={{ fontFamily: serif, fontSize: feature ? 21 : 17, lineHeight: 1.22, color: C.text, fontWeight: 400, margin: 0 }}>
                     {story.topic}
                   </h3>
                   {story.summary && (
-                    <p style={{ fontFamily: mono, fontSize: 11, lineHeight: 1.5, color: C.dim, margin: '6px 0 0', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                      {toSentence(story.summary, 132)}
+                    <p style={{ fontFamily: mono, fontSize: 11, lineHeight: 1.5, color: C.dim, margin: '6px 0 0', display: '-webkit-box', WebkitLineClamp: feature ? 5 : 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                      {toSentence(story.summary, feature ? 320 : 132)}
                     </p>
                   )}
                   <CoverageStrip story={story} />

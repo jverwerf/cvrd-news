@@ -56,7 +56,7 @@ export function BalancedFill({ stories, blobBase, side }: {
   if (mine.length === 0) return null;
 
   return (
-    <div style={{ marginTop: side === 'right' ? 20 : 0 }}>
+    <div style={{ marginTop: side === 'right' ? 10 : 0 }}>
       <StoryScroll stories={mine} blobBase={blobBase} vertical />
     </div>
   );

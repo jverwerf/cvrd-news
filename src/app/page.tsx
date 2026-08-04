@@ -175,7 +175,7 @@ function StoryCard({ story }: { story: NarrativeGap }) {
 // the accessible name for the region rather than being drawn on the page.
 function SectionHeader({ label, blurb, href, hrefText }: { label: string; blurb?: string; href: string; hrefText: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, marginBottom: 10 }}>
+    <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: 12, marginBottom: 6 }}>
       <h2 className="sr-only">{label}</h2>
       {blurb
         ? <p style={{ fontFamily: mono, fontSize: 9.5, letterSpacing: '0.06em', color: C.dimOnField, margin: 0, minWidth: 0 }}>{blurb}</p>
@@ -450,7 +450,7 @@ export default async function Home() {
           {stories.length > 0 && (
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
               {/* Left: Breaking (when live) + On Record + Timeline stacked */}
-              <div data-col="left" style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <div data-col="left" style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 10 }}>
                 {isBreaking && (
                   <div>
                     <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
@@ -500,7 +500,7 @@ export default async function Home() {
                   {/* On Record — between Today's Pick and Watch; marginTop
                       clears Today's Pick's down-scroll arrow */}
                   {onRecordData && (
-                    <div style={{ marginTop: 28 }}>
+                    <div style={{ marginTop: 14 }}>
                       <SectionHeader
                         label="On Record"
                         blurb={`Today: ${onRecordData.story_topic}`}
@@ -510,7 +510,7 @@ export default async function Home() {
                       <OnRecordStrip data={onRecordData} />
                     </div>
                   )}
-                  <div style={{ marginTop: 28 }}>
+                  <div style={{ marginTop: 14 }}>
                     <SectionHeader label="Watch" blurb="Stream every story's video coverage in one non-stop loop" href="/tv" hrefText="Open CVRD TV" />
                     <div style={{ background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, padding: '20px 24px' }}>
                       <p style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.65, color: C.text, margin: '0 0 8px', fontWeight: 400 }}>
