@@ -246,7 +246,18 @@ function buildRide(opts: any): () => void {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(INK);
   scene.fog = new THREE.FogExp2(INK, 0.0075);
-  const camera = new THREE.PerspectiveCamera(60, stage.clientWidth / stage.clientHeight, 0.1, 1400);
+  // ?frame=tight — how the recorder films this page for the YouTube shows.
+  //
+  // It used to get there with `canvas{transform:scale(1.35)}`, which only
+  // touches the WebGL layer. The clips are CSS3D, a separate renderer on a
+  // separate element, so the timeline and the cards grew and the video, the
+  // one thing worth filling the frame, stayed exactly the same size and came
+  // off its card. Narrowing the lens instead moves both layers together,
+  // because both render through this camera: the shot tightens, nothing is
+  // upscaled, and the chyrons stay as sharp as the source.
+  const TIGHT = typeof window !== "undefined" && /(?:\?|&)frame=tight(?:&|$)/.test(window.location.search);
+  const BASE_FOV = TIGHT ? 46 : 60;
+  const camera = new THREE.PerspectiveCamera(BASE_FOV, stage.clientWidth / stage.clientHeight, 0.1, 1400);
 
   const composer = new PP.EffectComposer(renderer, { frameBufferType: THREE.HalfFloatType });
   composer.addPass(new PP.RenderPass(scene, camera));
@@ -790,7 +801,7 @@ function buildRide(opts: any): () => void {
     bank += ((ahead.x - tan.x) * 1.6 - bank) * 0.04;
     camera.rotation.z += bank * (1 - settle * 0.7) + Math.sin(time * 0.0004) * 0.01;
     const rush = Math.min(1, Math.abs(gap) * 900);
-    camera.fov += ((60 + rush * 7) - camera.fov) * 0.06;
+    camera.fov += ((BASE_FOV + rush * 7) - camera.fov) * 0.06;
     camera.updateProjectionMatrix();
 
     key.position.set(posTmp.x, posTmp.y + 4, posTmp.z);
