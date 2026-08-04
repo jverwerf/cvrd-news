@@ -6,7 +6,7 @@ import { Tweet } from 'react-tweet';
 import TweetFactCheck, { type FactCheckData } from "./TweetFactCheck";
 
 type VideoItem = {
-  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit' | 'telegram';
+  type: 'youtube' | 'tiktok' | 'reels' | 'x' | 'reddit' | 'telegram' | 'dailymotion' | 'rumble';
   embed_id: string;
   url: string;
   label: string;
@@ -47,6 +47,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
       allItems.push({ type: 'x', embed_id: c.embed_id, url: c.url, label: c.title || `𝕏 @${(c as any).author || ''}`.trim(), thumbnail: `/api/x-video?id=${c.embed_id}&thumb=1`, duration: (c as any).duration, relevance: (c as any).relevance, fact_check: (c as any).fact_check });
     } else if (c.platform === 'telegram' && c.embed_id && (c as any).duration) {
       allItems.push({ type: 'telegram', embed_id: c.embed_id, url: c.url, label: c.title || `Telegram @${(c as any).author || ''}`.trim(), thumbnail: c.embed_id ? `/api/tg-video?post=${c.embed_id}&thumb=1` : storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
+    } else if (c.platform === 'dailymotion' && c.embed_id) {
+      allItems.push({ type: 'dailymotion', embed_id: c.embed_id, url: c.url, label: c.title || `${(c as any).author || 'Dailymotion'}`, thumbnail: (c as any).thumbnail || `https://www.dailymotion.com/thumbnail/video/${c.embed_id}`, duration: (c as any).duration, relevance: (c as any).relevance });
+    } else if (c.platform === 'rumble' && c.embed_id) {
+      allItems.push({ type: 'rumble', embed_id: c.embed_id, url: c.url, label: c.title || `${(c as any).author || 'Rumble'}`, thumbnail: (c as any).thumbnail || storyImage, duration: (c as any).duration, relevance: (c as any).relevance });
     }
   }
 
@@ -311,7 +315,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
   };
 
   const platformColor = (type: string) =>
-    type === 'youtube' ? '#ff0000' : type === 'tiktok' ? '#fe2c55' : type === 'x' ? '#1d9bf0' : type === 'telegram' ? '#0088cc' : '#c026d3';
+    type === 'youtube' ? '#ff0000' : type === 'tiktok' ? '#fe2c55' : type === 'x' ? '#1d9bf0' : type === 'telegram' ? '#0088cc' :
+    type === 'dailymotion' ? '#0066dc' : type === 'rumble' ? '#85c742' : '#c026d3';
 
   const closePlayer = () => { setActiveIdx(-1); setPlaying(false); setCurrentTime(0); setDuration(0); stopPolling(); stopTimer(); };
 
@@ -361,6 +366,18 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                       <TweetFactCheck fc={active.fact_check} compact />
                     </div>
                   </div>
+                )}
+                {active.type === 'dailymotion' && (
+                  <iframe key={active.embed_id}
+                    src={`https://www.dailymotion.com/embed/video/${active.embed_id}?autoplay=1&mute=${muted ? 1 : 0}&queue-enable=false`}
+                    className="w-full h-full" allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+                )}
+                {active.type === 'rumble' && (
+                  <iframe key={active.embed_id}
+                    src={`https://rumble.com/embed/${active.embed_id}/?rel=0`}
+                    className="w-full h-full" allowFullScreen
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
                 )}
                 {active.type === 'telegram' && (
                   <div className="w-full h-full relative overflow-hidden" style={{ background: '#111', cursor: 'pointer' }}
