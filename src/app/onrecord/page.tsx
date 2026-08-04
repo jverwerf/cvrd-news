@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { TileAdBanner } from "@/components/AdBanners";
 import { SiteNav } from "@/components/SiteNav";
 import { editorialSlug } from "@/lib/onrecord-slug";
@@ -88,13 +89,13 @@ function AdSlot({ adKey }: { adKey: number }) {
   return <TileAdBanner key={adKey} />;
 }
 
-function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adKey, isSearching }: {
+function PoliticianTile({ tileIdx, politician, isSelected, onSelect, onOpen, showAd, adKey, isSearching }: {
   tileIdx: number; politician: PoliticianScore | undefined; isSelected: boolean;
-  onSelect: () => void; showAd: boolean; adKey: number; isSearching: boolean;
+  onSelect: () => void; onOpen: () => void; showAd: boolean; adKey: number; isSearching: boolean;
 }) {
   const p = politician;
   return (
-    <button onClick={() => p && onSelect()}
+    <button onClick={() => p && onSelect()} onDoubleClick={() => p && onOpen()}
       className="relative rounded-lg overflow-hidden transition-all duration-700 cursor-pointer group"
       style={{
         background: '#1e2d3d',
@@ -106,7 +107,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
           <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${p.handle}.png`} alt={p.name}
             title={p.photo_credit ? `Photo: ${p.photo_credit} / ${p.photo_license}` : undefined}
             className="absolute inset-0 w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-            style={{ opacity: 0.6 }}
+            style={{ opacity: 0.6, objectPosition: '50% 20%' }}
             onLoad={(e) => { (e.target as HTMLImageElement).parentElement!.style.opacity = '1'; (e.target as HTMLImageElement).parentElement!.style.transition = 'opacity 0.5s ease'; }}
             onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; (e.target as HTMLImageElement).parentElement!.style.opacity = '1'; }} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%)' }} />
@@ -136,6 +137,7 @@ function PoliticianTile({ tileIdx, politician, isSelected, onSelect, showAd, adK
 }
 
 export default function PoliticiansPage() {
+  const router = useRouter();
   const [scores, setScores] = useState<PoliticianScore[]>([]);
   const [selected, setSelected] = useState<number>(0);
   const [search, setSearch] = useState('');
@@ -279,6 +281,12 @@ export default function PoliticiansPage() {
     ? (search ? filteredScores[frozenTile] : scores[tileOffsets[frozenTile] % scores.length])
     : scores[0];
 
+  const tilePolitician = (tileIdx: number) =>
+    search ? filteredScores[tileIdx] : scores[tileOffsets[tileIdx] % scores.length];
+  const openPolitician = (p: PoliticianScore | undefined) => {
+    if (p) router.push(`/onrecord/${p.name ? nameToSlug(p.name) : p.handle}`);
+  };
+
   return (
     <div className="min-h-screen" style={{ background: '#3f5a80' }}>
 
@@ -365,21 +373,23 @@ export default function PoliticiansPage() {
       </div>
 
       {/* DASHBOARD GRID */}
-      <section style={{ height: 'calc(100vh - 220px)', overflow: 'hidden', borderBottom: '1px solid #2a3a4a' }}>
+      <section style={{ height: 'calc(100vh - 220px)', minHeight: 620, overflow: 'hidden', borderBottom: '1px solid #2a3a4a' }}>
         <div className="h-full grid grid-rows-3 grid-cols-4 gap-1 p-1">
 
           {/* ROW 1 — tiles 0-3 */}
           {[0, 1, 2, 3].map(tileIdx => (
             <PoliticianTile key={tileIdx} tileIdx={tileIdx}
-              politician={search ? filteredScores[tileIdx] : scores[tileOffsets[tileIdx] % scores.length]}
+              politician={tilePolitician(tileIdx)}
               isSelected={frozenTile === tileIdx} onSelect={() => { setSelected(tileIdx); setFrozenTile(tileIdx); }}
+              onOpen={() => openPolitician(tilePolitician(tileIdx))}
               showAd={adPosition === tileIdx} adKey={adKey} isSearching={!!search} />
           ))}
 
           {/* ROW 2 — tile 4, CENTER, tile 5 */}
           <PoliticianTile tileIdx={4}
-            politician={search ? filteredScores[4] : scores[tileOffsets[4] % scores.length]}
+            politician={tilePolitician(4)}
             isSelected={frozenTile === 4} onSelect={() => { setSelected(4); setFrozenTile(4); }}
+            onOpen={() => openPolitician(tilePolitician(4))}
             showAd={adPosition === 4} adKey={adKey} isSearching={!!search} />
 
           {/* CENTER — selected politician hero */}
@@ -388,7 +398,7 @@ export default function PoliticiansPage() {
               <>
                 <img src={`${process.env.NEXT_PUBLIC_BLOB_BASE_URL}/politicians/photo_${current.handle}.png`} alt={current.name}
                   title={current.photo_credit ? `Photo: ${current.photo_credit} / ${current.photo_license}` : undefined}
-                  className="h-full object-cover or-center-img" style={{ width: '40%' }}
+                  className="h-full object-cover or-center-img" style={{ width: '40%', objectPosition: '50% 20%' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
                 <div className="flex-1 p-5 flex flex-col justify-center or-center-content" style={{ borderLeft: '1px solid #2a3a4a' }}>
                   <h2 className="text-[20px] text-white mb-3 or-center-name" style={serif}>{current.name}</h2>
@@ -417,15 +427,17 @@ export default function PoliticiansPage() {
           </div>
 
           <PoliticianTile tileIdx={5}
-            politician={search ? filteredScores[5] : scores[tileOffsets[5] % scores.length]}
+            politician={tilePolitician(5)}
             isSelected={frozenTile === 5} onSelect={() => { setSelected(5); setFrozenTile(5); }}
+            onOpen={() => openPolitician(tilePolitician(5))}
             showAd={adPosition === 5} adKey={adKey} isSearching={!!search} />
 
           {/* ROW 3 — tiles 6-9 */}
           {[6, 7, 8, 9].map(tileIdx => (
             <PoliticianTile key={tileIdx} tileIdx={tileIdx}
-              politician={search ? filteredScores[tileIdx] : scores[tileOffsets[tileIdx] % scores.length]}
+              politician={tilePolitician(tileIdx)}
               isSelected={frozenTile === tileIdx} onSelect={() => { setSelected(tileIdx); setFrozenTile(tileIdx); }}
+              onOpen={() => openPolitician(tilePolitician(tileIdx))}
               showAd={adPosition === tileIdx} adKey={adKey} isSearching={!!search} />
           ))}
         </div>
