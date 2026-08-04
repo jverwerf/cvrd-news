@@ -185,10 +185,10 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   // The top band holds three things: the video wall, the Divide and the
   // Timeline. Collapsed they share one row; opening any one of them gives it a
   // full-width row of its own and shrinks the other two to header bars.
-  // breaking pages open on the full wall: the footage IS the story there
-  const [bandView, setBandView] = useState<'collapsed' | 'dash' | 'timeline'>(
-    slugBase === '/breaking' ? 'dash' : 'collapsed'
-  );
+  // Every page opens collapsed, breaking included: the band leads with the
+  // wall sharing the row with the Divide and Timeline, and Expand Dashboard
+  // gives the wall the full row.
+  const [bandView, setBandView] = useState<'collapsed' | 'dash' | 'timeline'>('collapsed');
   const dashExpanded = bandView === 'dash';
   const [tweetsExpanded, setTweetsExpanded] = useState(false);
   const [tiktoksExpanded, setTiktoksExpanded] = useState(false);
@@ -219,6 +219,10 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   const leftSources = sources.filter(s => s.lean === 'left');
   const rightSources = sources.filter(s => s.lean === 'right');
   const centerSources = sources.filter(s => !s.lean || s.lean === 'center');
+  // Both band cards render null when they have nothing (breaking stories rarely
+  // have embedded posts or a timeline yet), so drop the whole side column then
+  // and let the collapsed wall have the full row instead of a blank gap.
+  const hasBandCards = xClips.some(c => !c.duration && c.embed_id) || (matchedTimelines?.length || 0) > 0;
   const sentences = story.what_they_arent_telling_you
     ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
     .filter(s => s.trim().length > 20) || [];
@@ -467,7 +471,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                 )}
               </div>
             </div>
-            {!dashExpanded && (
+            {!dashExpanded && hasBandCards && (
               <div className="w-full lg:w-[560px] shrink-0 flex flex-col gap-2" style={{ height: BAND_H, minHeight: BAND_MIN }}>
                 <DivideCard story={story} xClips={xClips}
                   onOpen={() => document.querySelector('[data-section="divide"]')?.scrollIntoView({ behavior: 'smooth', block: 'start' })} />
@@ -485,8 +489,7 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
           </div>
         )}
 
-        {/* breaking has no collapsed state to go back to */}
-        {bandView !== 'collapsed' && slugBase !== '/breaking' && (
+        {bandView !== 'collapsed' && (
           <button onClick={() => setBandView('collapsed')}
             className="w-full mt-2 py-2 text-[11px] font-semibold text-[#999] rounded-md hover:text-white transition-colors"
             style={{ background: '#253545', border: '1px solid #2a3a4a', cursor: 'pointer' }}>
