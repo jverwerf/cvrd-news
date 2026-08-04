@@ -133,12 +133,31 @@ export function RideInline({ slug, title, count, active, onPlay, height = 300, i
               position: 'absolute', left: 12, bottom: 10, display: 'flex', alignItems: 'center', gap: 8,
               fontFamily: 'ui-monospace, monospace', fontSize: 10.5, letterSpacing: '0.16em',
               textTransform: 'uppercase', color: '#F6D9A0',
-            }}>▶ Play the story</span>
+            }}>▶ Play recap</span>
             <span style={{
               position: 'absolute', right: 12, bottom: 11, fontSize: 9,
               color: 'rgba(230,236,239,0.5)', fontFamily: 'ui-monospace, monospace',
             }}>narrated · {Math.max(1, Math.round(count / 22))} min</span>
           </button>
+          )}
+
+          {/* The recap stops at the turning points; this plays every single
+              development. Same player, the ?mode=full payload. */}
+          {canPlay && (
+          <a href={`/timeline/${slug}/ride?mode=full`}
+             className="group relative overflow-hidden flex items-center justify-between shrink-0"
+             style={{
+               border: '1px solid rgba(224,169,78,0.28)', background: 'rgba(224,169,78,0.04)',
+               textDecoration: 'none', padding: '10px 12px', height: 46,
+             }}>
+            <span style={{
+              fontFamily: 'ui-monospace, monospace', fontSize: 10, letterSpacing: '0.16em',
+              textTransform: 'uppercase', color: '#F6D9A0',
+            }}>▶ Play the entire history</span>
+            <span style={{
+              fontSize: 9, color: 'rgba(230,236,239,0.5)', fontFamily: 'ui-monospace, monospace',
+            }}>all {count}</span>
+          </a>
           )}
 
           <a href={`/timeline/${slug}`}
