@@ -13,7 +13,7 @@ const C = {
   dimmerOnField: '#a3b4c9',
 };
 /** One in this many cards runs as a tall feature, to break up the column. */
-const FEATURE_EVERY = 4;
+const FEATURE_EVERY = 3;
 
 const serif = `'Instrument Serif', Georgia, serif`;
 const mono  = `'DM Mono', monospace`;
@@ -83,8 +83,24 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
       ref.current.scrollBy({ top: dir === 'down' ? 300 : -300, behavior: 'smooth' });
   }
 
+  // A tall feature every FEATURE_EVERY eligible cards, counted over the cards
+  // that qualify rather than raw position — gating on position alone left whole
+  // columns with none. Only stories with a real player qualify: a tweet embed
+  // blown up to full width overflows its box and wrecks the layout.
+  let eligible = 0;
+  const prepared = stories.map(story => {
+    const tiles = getStoryTiles(story);
+    const canFeature = tiles.some(t => t.mode === 'player');
+    if (canFeature) eligible++;
+    const feature = canFeature && eligible % FEATURE_EVERY === 0;
+    // The tile rotates through everything a story has, so a feature card would
+    // eventually land on a tweet and blow it up across the full width. Keep
+    // tweets out of that rotation.
+    return { story, tiles: feature ? tiles.filter(t => t.mode !== 'tweet') : tiles, feature };
+  });
+
   if (vertical) return (
-    <div style={{ position: 'relative', ...(cappedHeight ? {} : { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }) }}>
+    <div style={{ position: 'relative' }}>
       {/* Without a cap the rail simply runs its full length — no inner scroll,
           so the column reads as one continuous list. */}
       <div ref={ref} style={{
@@ -94,19 +110,12 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
           ? { maxHeight: cappedHeight, overflowY: 'auto', flex: 1, minHeight: 0 }
           : {}),
       }} className="hide-scroll pick-scroll">
-        {stories.map((story, idx) => {
+        {prepared.map(({ story, tiles, feature }, idx) => {
           const slug = toSlug(story.topic);
           const img = story.image_file;
           const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
           const vids = story.youtube_videos ?? [];
           const firstVid = vids[0];
-          const tiles = getStoryTiles(story);
-          // Every fourth story runs as a tall feature: video across the top and
-          // a fuller read underneath, to break up a column of identical rows.
-          // Only stories with a real player qualify — a tweet embed blown up to
-          // full width overflows its box and wrecks the layout.
-          const canFeature = tiles.some(t => t.mode === 'player');
-          const feature = canFeature && idx % FEATURE_EVERY === FEATURE_EVERY - 1;
           return (
             <Fragment key={story.topic}>
               {dividerAfter !== undefined && idx === dividerAfter && (
