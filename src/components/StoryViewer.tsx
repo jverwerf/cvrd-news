@@ -66,7 +66,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
 
   // Build curated Daily Brief story — best picks from all stories
   const bestYT: { url: string; embed_id: string; channel?: string; duration?: number }[] = [];
-  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'telegram'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
+  const bestSocial: { platform: 'x' | 'tiktok' | 'reels' | 'telegram' | 'dailymotion' | 'rumble'; url: string; embed_id?: string; title?: string; author?: string; duration?: number }[] = [];
 
   // For sports/trending: include TikTok and prioritize it. For other categories: exclude TikTok.
   const isFanCategory = stories.some(s => s.category === 'sports' || s.category === 'trending');

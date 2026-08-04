@@ -7,7 +7,7 @@ import type { NarrativeGap } from "../lib/data";
 import { useElementSize } from "../lib/measure";
 
 type PlaylistItem = {
-  type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x' | 'telegram';
+  type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x' | 'telegram' | 'dailymotion' | 'rumble';
   url?: string;
   embed_id?: string;
   channel?: string;
@@ -32,7 +32,7 @@ type TileContent = {
   channel?: string;
   videoLean?: 'left' | 'right' | 'center';
   // Social clip info
-  platform?: 'x' | 'tiktok' | 'reels' | 'telegram';
+  platform?: 'x' | 'tiktok' | 'reels' | 'telegram' | 'dailymotion' | 'rumble';
   embedId?: string;
   clipLabel?: string;
   videoTitle?: string;
@@ -184,10 +184,17 @@ export function Dashboard({
   for (const [i, story] of stories.entries()) {
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      if ((c.platform === 'x' || c.platform === 'telegram') && c.duration) {
+      // Telegram stays out of the dashboard wall (Jordy, 2026-08-04) — its
+      // "player" is only a zooming thumbnail, which reads as broken next to
+      // real embeds. Telegram clips still show in the story cards below.
+      if (c.platform === 'x' && c.duration) {
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || c.platform, isSocial: true });
       } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
         playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail, isSocial: true });
+      } else if (c.platform === 'dailymotion' || c.platform === 'rumble') {
+        // Real duration is known for these; cap the slot so a long commentary
+        // segment doesn't stall the wall loop.
+        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, lean: (c as any).lean, storyTopic: story.topic, storyIndex: i + 1, duration: Math.min((c as any).duration || 60, 90), videoTitle: c.title || c.author || c.platform, thumbnail: (c as any).thumbnail, isSocial: true });
       }
     }
   }
@@ -380,7 +387,8 @@ export function Dashboard({
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed) continue;
       // Only video clips in tiles — X and Telegram need duration (= has video), TikTok/Reels always have video
-      const isVideo = c.platform === 'tiktok' || c.platform === 'reels' || ((c.platform === 'x' || c.platform === 'telegram') && c.duration);
+      const isVideo = c.platform === 'tiktok' || c.platform === 'reels' || c.platform === 'dailymotion' || c.platform === 'rumble'
+        || (c.platform === 'x' && c.duration);
       if (c.embed_id && isVideo) {
         // Telegram thumbnails must go through proxy (direct CDN URLs blocked by referrer)
         const thumbImg = c.platform === 'telegram'
@@ -389,13 +397,16 @@ export function Dashboard({
           ? `/api/x-video?id=${c.embed_id}&thumb=1`
           : c.platform === 'tiktok' && /^\d+$/.test(c.embed_id)
           ? `/api/tt-video?id=${c.embed_id}&thumb=1`
+          : c.platform === 'dailymotion'
+          ? (c as any).thumbnail || `https://www.dailymotion.com/thumbnail/video/${c.embed_id}`
           : (c as any).thumbnail || story.image_file || '';
         linked.push({
           type: 'social',
           image: thumbImg,
           topic: story.topic, index: i + 1, sources: story.sources || [],
-          platform: c.platform as 'x' | 'tiktok' | 'reels' | 'telegram',
+          platform: c.platform as TileContent['platform'],
           embedId: c.embed_id,
+          url: c.url,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
           duration: c.duration,
@@ -661,6 +672,18 @@ export function Dashboard({
                     className="w-full h-full absolute inset-0" allowFullScreen allow="encrypted-media" style={{ border: 'none' }} />
                 </CenteredEmbed>
               )}
+              {overrideVideo.type === 'dailymotion' && (
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://geo.dailymotion.com/player.html?video=${overrideVideo.embed_id}&autoplay=true&mute=true`}
+                  className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+              )}
+              {overrideVideo.type === 'rumble' && (
+                <iframe key={`override-${overrideVideo.embed_id}`}
+                  src={`https://rumble.com/embed/${overrideVideo.embed_id}/?rel=0&autoplay=2`}
+                  className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+              )}
               {/* X button to exit override */}
               <button onClick={() => setOverrideVideo(null)}
                 className="absolute top-2 right-2 z-20 w-8 h-8 rounded-full flex items-center justify-center hover:scale-110 transition-transform"
@@ -726,6 +749,20 @@ export function Dashboard({
                 src={`https://platform.twitter.com/embed/Tweet.html?id=${current.embed_id}&theme=dark&dnt=true`}
                 className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }} />
             </CenteredEmbed>
+          )}
+          {!overrideVideo && current?.type === 'dailymotion' && current.embed_id && (
+            <iframe key={current.embed_id}
+              src={`https://geo.dailymotion.com/player.html?video=${current.embed_id}&autoplay=${noAutoPlay ? 'false' : 'true'}&mute=${unmuted ? 'false' : 'true'}`}
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+          )}
+          {!overrideVideo && current?.type === 'rumble' && current.embed_id && (
+            // autoplay=2 is Rumble's muted-autoplay mode, the only kind
+            // browsers allow without interaction
+            <iframe key={current.embed_id}
+              src={`https://rumble.com/embed/${current.embed_id}/?rel=0${noAutoPlay ? '' : '&autoplay=2'}`}
+              className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
           {!overrideVideo && current?.type === 'telegram' && current.embed_id && (
             <CenteredEmbed type="telegram"><VideoThumb
@@ -816,8 +853,8 @@ export function Dashboard({
               : clip.type === 'telegram' && clip.embed_id
               ? `/api/tg-video?post=${clip.embed_id}&thumb=1`
               : clip.thumbnail;
-            const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#ee1d52', anchor: '#22c55e' };
-            const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', anchor: 'CVRD' };
+            const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#ee1d52', anchor: '#22c55e', dailymotion: '#0066dc', rumble: '#85c742' };
+            const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', anchor: 'CVRD', dailymotion: 'DM', rumble: 'RUM' };
             const isFirstSocial = clip.isSocial && !playlist[idx - 1]?.isSocial;
             const storyBoundary = storyBoundaries.find(b => idx >= b.start && idx <= b.end);
             const isFirstInStory = !clip.isSocial && storyBoundary?.start === idx;
@@ -1025,7 +1062,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   const prev = prevIdx >= 0 ? pool[prevIdx % pool.length] : null;
   const isVideo = current.type === 'video';
   const isSocial = current.type === 'social';
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', dailymotion: '#0066dc', rumble: '#85c742' };
   const platformIcons: Record<string, string> = { x: '𝕏', tiktok: '♪', reels: '◎' };
 
   return (
@@ -1127,6 +1164,12 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
           } else if (current.platform === 'telegram') {
             url = `https://t.me/${embedId}`;
             label = 'Telegram';
+          } else if (current.platform === 'dailymotion') {
+            url = current.url || `https://www.dailymotion.com/video/${embedId}`;
+            label = 'Dailymotion';
+          } else if (current.platform === 'rumble') {
+            url = current.url || `https://rumble.com/embed/${embedId}/`;
+            label = 'Rumble';
           }
           if (!url) return null;
           return (
@@ -1149,7 +1192,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
             <div className="absolute top-2 right-2">
               <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded"
                 style={{ background: platformColors[current.platform] }}>
-                {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : current.platform === 'telegram' ? 'Telegram' : 'Reels'}
+                {current.platform === 'x' ? '𝕏' : current.platform === 'tiktok' ? 'TikTok' : current.platform === 'telegram' ? 'Telegram' : current.platform === 'dailymotion' ? 'DM' : current.platform === 'rumble' ? 'Rumble' : 'Reels'}
               </span>
             </div>
           )}
@@ -1213,7 +1256,7 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label, onFail }: {
 
 /** Renders tile content — shared between PoolTile and AdTile */
 function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMediaFail?: () => void }) {
-  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc' };
+  const platformColors: Record<string, string> = { x: '#1d9bf0', tiktok: '#fe2c55', reels: '#c026d3', telegram: '#0088cc', dailymotion: '#0066dc', rumble: '#85c742' };
 
   if (item.type === 'video') {
     const videoId = item.image.match(/\/vi\/([^/]+)/)?.[1] || '';
@@ -1313,13 +1356,35 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
       />
     );
   }
+  if (item.type === 'social' && item.platform === 'dailymotion' && item.embedId) {
+    return (
+      <VideoThumb
+        thumbSrc={item.image || `https://www.dailymotion.com/thumbnail/video/${item.embedId}`}
+        url={item.url || `https://www.dailymotion.com/video/${item.embedId}`}
+        badge="DM" badgeColor="#0066dc"
+        label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
+      />
+    );
+  }
+  if (item.type === 'social' && item.platform === 'rumble' && item.embedId) {
+    return (
+      <VideoThumb
+        thumbSrc={item.image || ''}
+        url={item.url || `https://rumble.com/embed/${item.embedId}/`}
+        badge="Rumble" badgeColor="#85c742"
+        label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
+      />
+    );
+  }
   if (item.type === 'social') {
     return (
       <div className="w-full h-full relative flex flex-col justify-between p-3" style={{ background: '#1e2a3a' }}>
         <div>
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded inline-block mb-2"
             style={{ background: platformColors[item.platform || 'x'] }}>
-            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : 'Reels'}
+            {item.platform === 'x' ? '𝕏' : item.platform === 'tiktok' ? 'TikTok' : item.platform === 'telegram' ? 'Telegram' : item.platform === 'dailymotion' ? 'DM' : item.platform === 'rumble' ? 'Rumble' : 'Reels'}
           </span>
           <p className="text-[11px] text-white/90 leading-[1.5] line-clamp-3">{item.clipLabel}</p>
         </div>
