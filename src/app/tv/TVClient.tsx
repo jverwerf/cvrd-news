@@ -10,13 +10,34 @@ import { SiteNav } from "@/components/SiteNav";
 interface QueuedClip {
   id: string;
   embed_id: string;
-  platform: 'youtube' | 'x' | 'telegram' | 'tiktok' | 'reels';
+  platform: 'youtube' | 'x' | 'telegram' | 'tiktok' | 'reels' | 'dailymotion' | 'rumble';
   storyTopic: string;
   url: string;
   title?: string;
   channel?: string;
   duration?: number;
   thumbnail?: string;
+  /** direct MP4 (Rumble) — required for rumble in the queue; without it the
+   *  clip can't autoplay and doesn't earn a rotation slot */
+  video_src?: string;
+}
+
+/** DM always autoplays; Rumble only via its resolved MP4 — those are the only
+ *  alt-platform clips allowed into a TV rotation. */
+function altQueueClips(story: { topic: string; social_clips?: any[] }): QueuedClip[] {
+  const out: QueuedClip[] = [];
+  for (const c of (story.social_clips || [])) {
+    if (!c.embed_id) continue;
+    if (c.platform === 'dailymotion' || (c.platform === 'rumble' && c.video_src)) {
+      out.push({
+        id: `${story.topic}::${c.platform}::${c.embed_id}`,
+        embed_id: c.embed_id, platform: c.platform, storyTopic: story.topic,
+        url: c.url || '', title: c.title || c.author || '', channel: c.author,
+        duration: c.duration, thumbnail: c.thumbnail, video_src: c.video_src,
+      });
+    }
+  }
+  return out;
 }
 
 const CHANNELS = [
@@ -387,6 +408,7 @@ function ChannelTV({ stories, channel, onBack }: {
       if (!v.embed_id) continue;
       clips.push({ id: `${story.topic}::yt::${v.embed_id}`, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: (v as any).title || v.channel || '', channel: v.channel, duration: v.duration });
     }
+    clips.push(...altQueueClips(story));
   }
 
   // survive page reloads: played + dead clip ids persist per channel/day.
@@ -666,6 +688,12 @@ function BreakingTV({ onBack }: { onBack: () => void }) {
             newClips.push({ id, embed_id: v.embed_id, platform: 'youtube', storyTopic: story.topic, url: v.url || '', title: v.title || v.channel || '', channel: v.channel, duration: v.duration });
           }
         }
+        for (const clip of altQueueClips(story)) {
+          if (!knownIdsRef.current.has(clip.id)) {
+            knownIdsRef.current.add(clip.id);
+            newClips.push(clip);
+          }
+        }
       }
 
       setTvState(s => {
@@ -765,10 +793,12 @@ function ClipTile({ clip, state, played, index, onClick }: {
 }) {
   const thumb = clip.platform === 'youtube'
     ? `https://img.youtube.com/vi/${clip.embed_id}/mqdefault.jpg`
+    : clip.platform === 'dailymotion'
+    ? (clip.thumbnail || `https://www.dailymotion.com/thumbnail/video/${clip.embed_id}`)
     : clip.thumbnail;
 
-  const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#000', reels: '#e1306c' };
-  const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', reels: 'IG' };
+  const PLATFORM_COLOR: Record<string, string> = { youtube: '#ff0000', x: '#1d9bf0', telegram: '#0088cc', tiktok: '#000', reels: '#e1306c', dailymotion: '#0066dc', rumble: '#85c742' };
+  const PLATFORM_LABEL: Record<string, string> = { youtube: 'YT', x: 'X', telegram: 'TG', tiktok: 'TT', reels: 'IG', dailymotion: 'DM', rumble: 'RUM' };
 
   return (
     <button onClick={onClick} style={{
