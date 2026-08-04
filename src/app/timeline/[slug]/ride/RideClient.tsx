@@ -919,14 +919,19 @@ function buildRide(opts: any): () => void {
       } else {
         // Pinned to the camera rather than to the thread, so they hold the same
         // two spots on screen while the camera flies between stops.
+        // Far enough out to be off the edge of the frame. They have to stay in
+        // the DOM and stay "visible" or the embed never finishes loading, but
+        // nothing says they have to sit next to the story: at 10.6 they flanked
+        // the chapter card, and until each one loaded it read as a black box
+        // parked either side of the picture.
         const side = parked++ === 0 ? -1 : 1;
         parkFwd.set(0, 0, -1).applyQuaternion(camera.quaternion);
         parkRight.set(1, 0, 0).applyQuaternion(camera.quaternion);
         parkUp.set(0, 1, 0).applyQuaternion(camera.quaternion);
         pl.obj.position.copy(camera.position)
           .addScaledVector(parkFwd, 26)
-          .addScaledVector(parkRight, side * 10.6)
-          .addScaledVector(parkUp, -1.6);
+          .addScaledVector(parkRight, side * 22)
+          .addScaledVector(parkUp, -7.2);
         pl.obj.quaternion.copy(camera.quaternion);
         pl.obj.scale.set(0.0165 * 0.58, 0.0165 * 0.58, 0.0165 * 0.58);
       }
@@ -946,7 +951,13 @@ function buildRide(opts: any): () => void {
         pl.posterId = owned;
       }
       pl.poster.style.opacity = pl.player?.getPlayerState?.() === 1 && !pl.badVideo && !pl.stalled ? "0" : "1";
-      pl.obj.visible = hasVideo && !(stillChapter && !mine && settle > 0.55);
+      // A parked player only needs to be on screen until its clip is in. It
+      // cannot be hidden BEFORE that — a hidden CSS3D element leaves the DOM
+      // and the load never resolves — but once the clip it was told to fetch
+      // is the clip it holds, it has nothing left to do out here, and two
+      // unrelated clips hanging beside the story is exactly what they read as.
+      const parkedAndLoaded = !mine && pl.ready && pl.stop >= 0 && pl.loaded === pl.stop;
+      pl.obj.visible = hasVideo && !parkedAndLoaded && !(stillChapter && !mine && settle > 0.55);
       host.mesh.visible = !hasVideo;                      // still holds it until a clip is loaded
       host.edge.visible = !hasVideo;
     });

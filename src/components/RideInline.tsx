@@ -141,42 +141,51 @@ export function RideInline({ slug, title, count, active, onPlay, height = 300, i
           </button>
           )}
 
-          {/* The recap stops at the turning points; this plays every single
-              development. Same player, the ?mode=full payload. */}
-          {canPlay && (
-          <a href={`/timeline/${slug}/ride?mode=full`}
-             className="group relative overflow-hidden flex items-center justify-between shrink-0"
-             style={{
-               border: '1px solid rgba(224,169,78,0.28)', background: 'rgba(224,169,78,0.04)',
-               textDecoration: 'none', padding: '10px 12px', height: 46,
-             }}>
-            <span style={{
-              fontFamily: 'ui-monospace, monospace', fontSize: 10, letterSpacing: '0.16em',
-              textTransform: 'uppercase', color: '#F6D9A0',
-            }}>▶ Play the entire history</span>
-            <span style={{
-              fontSize: 9, color: 'rgba(230,236,239,0.5)', fontFamily: 'ui-monospace, monospace',
-            }}>all {count}</span>
-          </a>
-          )}
+          {/* Two ways past the recap, sharing one row. Stacking them would cost
+              the player its height on the tighter cards (the story dashboard
+              gives this whole block 212px) and the recap button would flatten
+              to a strip. */}
+          <div className="flex gap-2 shrink-0" style={{ height: canPlay ? 46 : undefined, flex: canPlay ? undefined : 1 }}>
+            {canPlay && (
+              // The recap stops at the turning points; this plays every single
+              // development. Same player, the ?mode=full payload.
+              <a href={`/timeline/${slug}/ride?mode=full`}
+                 className="group relative overflow-hidden flex items-center justify-between gap-2 min-w-0 flex-1"
+                 style={{
+                   border: '1px solid rgba(224,169,78,0.28)', background: 'rgba(224,169,78,0.04)',
+                   textDecoration: 'none', padding: '10px 12px',
+                 }}>
+                <span style={{
+                  fontFamily: 'ui-monospace, monospace', fontSize: 10, letterSpacing: '0.14em',
+                  textTransform: 'uppercase', color: '#F6D9A0', whiteSpace: 'nowrap',
+                  overflow: 'hidden', textOverflow: 'ellipsis',
+                }}>▶ Entire history</span>
+                <span style={{
+                  fontSize: 9, color: 'rgba(230,236,239,0.5)', fontFamily: 'ui-monospace, monospace', whiteSpace: 'nowrap',
+                }}>all {count}</span>
+              </a>
+            )}
 
-          <a href={`/timeline/${slug}`}
-             className="group relative overflow-hidden flex items-center justify-between shrink-0"
-             style={{
-               border: '1px solid rgba(230,236,239,0.13)', background: 'rgba(230,236,239,0.03)',
-               textDecoration: 'none', padding: '10px 12px',
-               height: canPlay ? 46 : undefined, flex: canPlay ? undefined : 1,
-             }}>
-            <span style={{
-              fontFamily: 'ui-monospace, monospace', fontSize: 10, letterSpacing: '0.16em',
-              textTransform: 'uppercase', color: 'rgba(230,236,239,0.8)',
-            }}>{canPlay ? 'Read it day by day' : 'Open the thread'}</span>
-            <span style={{ display: 'flex', gap: 3 }}>
-              {[0.9, 0.6, 0.75].map((w, i) => (
-                <span key={i} style={{ width: 22 * w, height: 1.5, background: 'rgba(230,236,239,0.25)' }} />
-              ))}
-            </span>
-          </a>
+            <a href={`/timeline/${slug}`}
+               className="group relative overflow-hidden flex items-center justify-between gap-2 min-w-0 flex-1"
+               style={{
+                 border: '1px solid rgba(230,236,239,0.13)', background: 'rgba(230,236,239,0.03)',
+                 textDecoration: 'none', padding: '10px 12px',
+               }}>
+              <span style={{
+                fontFamily: 'ui-monospace, monospace', fontSize: 10, letterSpacing: '0.14em',
+                textTransform: 'uppercase', color: 'rgba(230,236,239,0.8)', whiteSpace: 'nowrap',
+                overflow: 'hidden', textOverflow: 'ellipsis',
+              }}>{canPlay ? 'Read it day by day' : 'Open the thread'}</span>
+              {!canPlay && (
+                <span style={{ display: 'flex', gap: 3 }}>
+                  {[0.9, 0.6, 0.75].map((w, i) => (
+                    <span key={i} style={{ width: 22 * w, height: 1.5, background: 'rgba(230,236,239,0.25)' }} />
+                  ))}
+                </span>
+              )}
+            </a>
+          </div>
         </div>
       </div>
     </div>
