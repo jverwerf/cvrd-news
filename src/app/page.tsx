@@ -7,6 +7,7 @@ import { getTimelineThreads } from '@/lib/timeline-data';
 import type { NarrativeGap } from '@/lib/data';
 import type { TimelineThread, ThreadEntry } from '@/lib/timeline-data';
 import { StoryScroll } from './home/StoryScroll';
+import { BalancedFill } from './home/BalancedFill';
 import { HeroCarousel } from './home/HeroCarousel';
 import { BreakingCard } from './home/BreakingCard';
 import { TimelineHomeCard } from '@/components/TimelineHomeCard';
@@ -337,18 +338,6 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
 }
 
 
-// ── Remaining-stories rail ────────────────────────────────────────
-// Fills out the bottom of a column. Carries the stories Today's Pick has no
-// room for, so nothing is repeated between the two.
-function StoryRail({ stories }: { stories: NarrativeGap[] }) {
-  if (stories.length === 0) return null;
-  return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
-      {stories.map(story => <StoryCard key={story.topic} story={story} />)}
-    </div>
-  );
-}
-
 // ── PAGE ──────────────────────────────────────────────────────────
 export default async function Home() {
   const [data, threadData, onRecordData, breakingStories, liveStories] = await Promise.all([
@@ -391,12 +380,9 @@ export default async function Home() {
     });
     return { ...t, entries, gap_days: [] } as TimelineThread;
   });
-  // Today's Pick shows this many; the rest are split between the two columns
-  // to fill them out. The left column is the wider of the two, so it takes more.
+  // Today's Pick shows this many; BalancedFill spreads the rest across the two
+  // columns so they end at roughly the same height.
   const railStories = allStories.slice(1 + HOME_PICK_COUNT);
-  const leftShare = Math.ceil(railStories.length * 0.6);
-  const railLeft = railStories.slice(0, leftShare);
-  const railRight = railStories.slice(leftShare);
   const homeRideSlugs = await getRideSlugs();
   const videoUrl   = data?.video_url;
 
@@ -464,7 +450,7 @@ export default async function Home() {
           {stories.length > 0 && (
             <div style={{ display: 'flex', gap: 16, marginBottom: 20, alignItems: 'stretch' }} className="home-cols">
               {/* Left: Breaking (when live) + On Record + Timeline stacked */}
-              <div style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
+              <div data-col="left" style={{ flex: 6, minWidth: 0, display: 'flex', flexDirection: 'column', gap: 20 }}>
                 {isBreaking && (
                   <div>
                     <SectionHeader label="Breaking" blurb="" href="/breaking" hrefText="Open live" />
@@ -498,13 +484,13 @@ export default async function Home() {
                   </div>
                 )}
                 {/* Remaining stories fill out this column rather than running
-                    as a band under the page. */}
-                {railLeft.length > 0 && <StoryRail stories={railLeft} />}
+                    as a band under the page — same card as Today's Pick. */}
+                <BalancedFill stories={railStories} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} side="left" />
               </div>
 
               {/* Right: Today's Pick + On Record + Watch */}
               {stories.length > 1 && (
-                <div style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+                <div data-col="right" style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                   <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
                   <StoryScroll
                     stories={allStories.slice(1, 1 + HOME_PICK_COUNT)}
@@ -565,11 +551,7 @@ export default async function Home() {
                       <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
                     </div>
                   </div>
-                  {railRight.length > 0 && (
-                    <div style={{ marginTop: 20 }}>
-                      <StoryRail stories={railRight} />
-                    </div>
-                  )}
+                  <BalancedFill stories={railStories} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} side="right" />
                 </div>
               )}
             </div>

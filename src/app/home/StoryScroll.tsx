@@ -137,12 +137,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
             </Fragment>
           );
         })}
-        <a href="/brief" style={{ textDecoration: 'none', flexShrink: 0 }}>
-          <div style={{ height: 44, display: 'flex', alignItems: 'center', justifyContent: 'center', background: C.panel, borderRadius: 8, border: `1px solid ${C.border}`, gap: 6 }} className="story-card">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke={C.gold} strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-            <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: C.gold }}>All stories</span>
-          </div>
-        </a>
       </div>
     </div>
   );
