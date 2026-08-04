@@ -322,6 +322,7 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
 
   return (
     <div className="mb-6 w-full max-w-full overflow-hidden">
+      <style>{`@keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }`}</style>
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
         <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px] mx-auto">
@@ -368,8 +369,10 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
                   </div>
                 )}
                 {active.type === 'dailymotion' && (
+                  // geo.dailymotion.com/player.html is the canonical embed; the
+                  // old /embed/video/ path 301s there and loses query params.
                   <iframe key={active.embed_id}
-                    src={`https://www.dailymotion.com/embed/video/${active.embed_id}?autoplay=1&mute=${muted ? 1 : 0}&queue-enable=false`}
+                    src={`https://geo.dailymotion.com/player.html?video=${active.embed_id}&mute=${muted ? 'true' : 'false'}`}
                     className="w-full h-full" allowFullScreen
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
                 )}
