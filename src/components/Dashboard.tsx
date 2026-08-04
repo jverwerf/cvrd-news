@@ -18,6 +18,9 @@ type PlaylistItem = {
   thumbnail?: string;
   isSocial?: boolean;
   lean?: 'left' | 'right' | 'center';
+  /** direct MP4 (Rumble) — played in a native <video> because the platform's
+   *  own embed refuses to autoplay */
+  video_src?: string;
 };
 
 const LEAN_COLOR: Record<string, string> = { left: '#1d4ed8', right: '#b91c1c', center: '#a3a3a3' };
@@ -37,6 +40,7 @@ type TileContent = {
   clipLabel?: string;
   videoTitle?: string;
   url?: string;
+  videoSrc?: string; // direct MP4 (Rumble) — enables native autoplaying preview
   isFresh?: boolean; // < 15 min old — tile should freeze
   duration?: number; // has video if set
 };
@@ -160,7 +164,7 @@ export function Dashboard({
   }, []);
 
   // Drag-to-center: override video from tile drag
-  const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string; url?: string } | null>(null);
+  const [overrideVideo, setOverrideVideo] = useState<{ type: string; embed_id: string; title: string; url?: string; video_src?: string } | null>(null);
   const [dropHighlight, setDropHighlight] = useState(false);
 
   // Build playlist — anchor first, then ALL videos from all stories
@@ -181,10 +185,14 @@ export function Dashboard({
     }
     // Dailymotion/Rumble are outlet news clips, peers of the YouTube videos —
     // they list with the story's videos, not under MORE with the social chatter.
+    // Membership rule (Jordy): only clips that genuinely AUTOPLAY belong in the
+    // rotation. DM's player honors autoplay; Rumble's doesn't, so Rumble
+    // qualifies only via its direct MP4 (played in a native <video>). A Rumble
+    // clip with no MP4 drops to the social bucket below, like X.
     for (const c of (story.social_clips || [])) {
       if ((c as any).download_failed || !c.embed_id) continue;
-      if (c.platform === 'dailymotion' || c.platform === 'rumble') {
-        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, lean: (c as any).lean, storyTopic: story.topic, storyIndex: i + 1, duration: Math.min((c as any).duration || 60, 90), videoTitle: c.title || c.author || c.platform, thumbnail: (c as any).thumbnail });
+      if (c.platform === 'dailymotion' || (c.platform === 'rumble' && (c as any).video_src)) {
+        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, lean: (c as any).lean, storyTopic: story.topic, storyIndex: i + 1, duration: ((c as any).duration || 60) + 5, videoTitle: c.title || c.author || c.platform, thumbnail: (c as any).thumbnail, video_src: (c as any).video_src });
       }
     }
   }
@@ -199,6 +207,9 @@ export function Dashboard({
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || c.platform, isSocial: true });
       } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
         playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail, isSocial: true });
+      } else if (c.platform === 'rumble' && !(c as any).video_src) {
+        // No MP4 resolved → can't autoplay → same standing as X clips
+        playlist.push({ type: 'rumble', embed_id: c.embed_id, url: c.url, channel: c.author || 'Rumble', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'Rumble', thumbnail: (c as any).thumbnail, isSocial: true });
       }
     }
   }
@@ -411,6 +422,7 @@ export function Dashboard({
           platform: c.platform as TileContent['platform'],
           embedId: c.embed_id,
           url: c.url,
+          videoSrc: (c as any).video_src,
           clipLabel: c.title || (c as any).author || c.platform,
           isFresh: !!(c as any)._breaking,
           duration: c.duration,
@@ -682,9 +694,15 @@ export function Dashboard({
                   className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
-              {overrideVideo.type === 'rumble' && (
+              {overrideVideo.type === 'rumble' && overrideVideo.video_src && (
+                <video key={`override-${overrideVideo.video_src}`} src={overrideVideo.video_src}
+                  className="w-full h-full absolute inset-0 object-contain bg-black"
+                  autoPlay playsInline controls
+                  ref={(el: HTMLVideoElement | null) => { if (el) { el.volume = volume; } }} />
+              )}
+              {overrideVideo.type === 'rumble' && !overrideVideo.video_src && (
                 <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://rumble.com/embed/${overrideVideo.embed_id}/?rel=0&autoplay=2`}
+                  src={`https://rumble.com/embed/${overrideVideo.embed_id}/?rel=0`}
                   className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
@@ -760,11 +778,19 @@ export function Dashboard({
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
-          {!overrideVideo && current?.type === 'rumble' && current.embed_id && (
-            // autoplay=2 is Rumble's muted-autoplay mode, the only kind
-            // browsers allow without interaction
+          {!overrideVideo && current?.type === 'rumble' && current.video_src && (
+            // Native playback from Rumble's CDN MP4 — their embed refuses to
+            // autoplay, the MP4 doesn't. Sound follows the dashboard's own
+            // mute state, end advances the rotation like YouTube's end event.
+            <video key={current.video_src} src={current.video_src}
+              className="w-full h-full absolute inset-0 object-contain bg-black"
+              autoPlay={!noAutoPlay} playsInline muted={!unmuted} onEnded={next}
+              ref={el => { if (el) { el.muted = !unmuted; el.volume = volume; } }}
+              poster={current.thumbnail} />
+          )}
+          {!overrideVideo && current?.type === 'rumble' && !current.video_src && current.embed_id && (
             <iframe key={current.embed_id}
-              src={`https://rumble.com/embed/${current.embed_id}/?rel=0${noAutoPlay ? '' : '&autoplay=2'}`}
+              src={`https://rumble.com/embed/${current.embed_id}/?rel=0`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -930,7 +956,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
   showAd?: boolean;
   adKey?: number;
   skipEmbedId?: string;
-  onPlayInCenter?: (video: { type: string; embed_id: string; title: string }) => void;
+  onPlayInCenter?: (video: { type: string; embed_id: string; title: string; video_src?: string }) => void;
   tvMode?: boolean;
   className?: string;
   slot: number;
@@ -1122,7 +1148,7 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
               e.stopPropagation();
               const embedId = current.embedId || current.image?.match(/\/vi\/([^/]+)/)?.[1] || '';
               const type = current.type === 'video' ? 'youtube' : current.platform || 'youtube';
-              onPlayInCenter?.({ type, embed_id: embedId, title: current.clipLabel || current.videoTitle || current.topic });
+              onPlayInCenter?.({ type, embed_id: embedId, title: current.clipLabel || current.videoTitle || current.topic, video_src: current.videoSrc });
             }} className="px-2 py-1 rounded text-[8px] text-white font-medium" style={{ background: 'rgba(37,99,235,0.8)', border: 'none', cursor: 'pointer' }}>
               ▶ Play in center
             </button>
@@ -1389,8 +1415,24 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
     );
   }
   // Rumble's embed ignores autoplay flags (tested: video stays paused with
-  // autoplay=1 and =2), so a live preview isn't possible — a real thumbnail
-  // beats a dead player showing its own play button.
+  // autoplay=1 and =2), so the live preview plays the clip's direct CDN MP4
+  // in a native muted <video> — same look as the YouTube tiles. Without an
+  // MP4, a real thumbnail beats a dead player showing its own play button.
+  if (item.type === 'social' && item.platform === 'rumble' && item.videoSrc) {
+    return (
+      <div className="w-full h-full relative overflow-hidden">
+        <video src={item.videoSrc} className="absolute inset-0 w-full h-full object-cover"
+          autoPlay muted loop playsInline poster={item.image || undefined}
+          style={{ pointerEvents: 'none' }} />
+        <div className="absolute top-2 left-2 z-10">
+          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#85c742' }}>Rumble</span>
+        </div>
+        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
+          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
+        </div>
+      </div>
+    );
+  }
   if (item.type === 'social' && item.platform === 'rumble' && item.embedId) {
     return (
       <VideoThumb
