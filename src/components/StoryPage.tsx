@@ -74,7 +74,20 @@ function DivideCard({ story, xClips, onOpen }: { story: NarrativeGap; xClips: Na
     ...(story.category === 'trending' ? [] : [{ key: 'center' as const, label: fan ? 'Analysts' : 'From the center', color: fan ? '#c084fc' : '#a3a3a3' }]),
     { key: 'right' as const, label: fan ? 'Fans ▶' : 'From the right ▶', color: fan ? '#34d399' : '#f87171' },
   ];
-  if (byLean.left.length === 0 && byLean.right.length === 0) return null;
+
+  // A story an hour old is mostly straight reporting, so every post honestly
+  // scores center and there is no divide to draw yet. Rather than hide the
+  // posts, the same card runs as a plain feed: no side labels, posts dealt
+  // across the columns in order.
+  const split = byLean.left.length > 0 || byLean.right.length > 0;
+  const columns = split
+    ? sides.map(s => ({ key: s.key, label: s.label, color: s.color, posts: byLean[s.key] }))
+    : Array.from({ length: Math.min(sides.length, tweets.length) }, (_, i) => ({
+        key: `feed-${i}`,
+        label: '',
+        color: '#3a4a5a',
+        posts: tweets.filter((_, n) => n % Math.min(sides.length, tweets.length) === i),
+      }));
 
   return (
     <div className="rounded-lg p-3 flex flex-col min-h-0 flex-1"
@@ -84,26 +97,32 @@ function DivideCard({ story, xClips, onOpen }: { story: NarrativeGap; xClips: Na
         .divide-col-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
       `}</style>
       <div className="flex items-baseline gap-2 mb-2 shrink-0">
-        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>The Divide</span>
-        <span className="text-[10px] text-[#667]">the same story, opposite feeds</span>
+        <span className="text-[11px] font-bold uppercase tracking-[0.12em]" style={{ color: '#daa520' }}>
+          {split ? 'The Divide' : 'The Feed'}
+        </span>
+        <span className="text-[10px] text-[#667]">
+          {split ? 'the same story, opposite feeds' : 'what people are saying'}
+        </span>
         <button onClick={onOpen} className="text-[10px] font-semibold ml-auto hover:opacity-80 transition-opacity"
           style={{ color: '#daa520', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>Open ›</button>
       </div>
       <div className="flex gap-2 min-h-0 flex-1">
-        {sides.map(side => (
+        {columns.map(side => (
           <div key={side.key} className="flex-1 min-w-0 flex flex-col rounded-md overflow-hidden"
             style={{ background: '#1e2a3a', border: `1px solid ${side.color}33` }}>
-            <div className="px-1.5 py-1 text-[8px] font-bold uppercase tracking-[0.1em] shrink-0 truncate flex items-center justify-between gap-1"
-              style={{ color: side.color, background: `${side.color}14` }}>
-              <span className="truncate">{side.label}</span>
-              {byLean[side.key].length > 1 && <span style={{ opacity: 0.7 }}>{byLean[side.key].length}</span>}
-            </div>
+            {split && (
+              <div className="px-1.5 py-1 text-[8px] font-bold uppercase tracking-[0.1em] shrink-0 truncate flex items-center justify-between gap-1"
+                style={{ color: side.color, background: `${side.color}14` }}>
+                <span className="truncate">{side.label}</span>
+                {side.posts.length > 1 && <span style={{ opacity: 0.7 }}>{side.posts.length}</span>}
+              </div>
+            )}
             {/* every post on this side, scrolled rather than truncated */}
             <div className="flex-1 min-h-0 overflow-y-auto divide-col-scroll">
-              {byLean[side.key].length === 0 && (
+              {split && side.posts.length === 0 && (
                 <p className="text-[9px] italic p-2" style={{ color: '#667' }}>No posts from this side yet.</p>
               )}
-              {byLean[side.key].map(c => (
+              {side.posts.map(c => (
                 <div key={c.embed_id} style={{ borderBottom: '1px solid #2a3a4a' }}>
                   <TweetFactCheck fc={c.fact_check} compact />
                   {/* the embed needs ~285px to lay out its own header, so it is
