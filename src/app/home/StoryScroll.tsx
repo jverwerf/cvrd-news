@@ -82,11 +82,14 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
 
   if (vertical) return (
     <div style={{ position: 'relative', ...(cappedHeight ? {} : { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }) }}>
+      {/* Without a cap the rail simply runs its full length — no inner scroll,
+          so the column reads as one continuous list. */}
       <div ref={ref} style={{
-        display: 'flex', flexDirection: 'column', gap: 10,
-        overflowY: 'auto', flex: 1, minHeight: 0, paddingRight: 2,
+        display: 'flex', flexDirection: 'column', gap: 10, paddingRight: 2,
         scrollbarWidth: 'none',
-        ...(cappedHeight ? { maxHeight: cappedHeight } : {}),
+        ...(cappedHeight
+          ? { maxHeight: cappedHeight, overflowY: 'auto', flex: 1, minHeight: 0 }
+          : {}),
       }} className="hide-scroll pick-scroll">
         {stories.map((story, idx) => {
           const slug = toSlug(story.topic);

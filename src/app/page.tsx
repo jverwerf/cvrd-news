@@ -338,13 +338,12 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
 
 
 // ── Remaining-stories rail ────────────────────────────────────────
-// The foot of the page, which sat empty once the two columns ended at
-// different heights. Carries the stories Today's Pick doesn't have room for,
-// so nothing is repeated between the two.
+// Fills out the bottom of a column. Carries the stories Today's Pick has no
+// room for, so nothing is repeated between the two.
 function StoryRail({ stories }: { stories: NarrativeGap[] }) {
   if (stories.length === 0) return null;
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: 12 }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
       {stories.map(story => <StoryCard key={story.topic} story={story} />)}
     </div>
   );
@@ -392,8 +391,12 @@ export default async function Home() {
     });
     return { ...t, entries, gap_days: [] } as TimelineThread;
   });
-  // Today's Pick shows this many; the foot of the page carries the remainder.
+  // Today's Pick shows this many; the rest are split between the two columns
+  // to fill them out. The left column is the wider of the two, so it takes more.
   const railStories = allStories.slice(1 + HOME_PICK_COUNT);
+  const leftShare = Math.ceil(railStories.length * 0.6);
+  const railLeft = railStories.slice(0, leftShare);
+  const railRight = railStories.slice(leftShare);
   const homeRideSlugs = await getRideSlugs();
   const videoUrl   = data?.video_url;
 
@@ -494,6 +497,9 @@ export default async function Home() {
                     <TimelineHomeCard threads={homeThreads} rideSlugs={homeRideSlugs} />
                   </div>
                 )}
+                {/* Remaining stories fill out this column rather than running
+                    as a band under the page. */}
+                {railLeft.length > 0 && <StoryRail stories={railLeft} />}
               </div>
 
               {/* Right: Today's Pick + On Record + Watch */}
@@ -504,8 +510,6 @@ export default async function Home() {
                     stories={allStories.slice(1, 1 + HOME_PICK_COUNT)}
                     blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
                     vertical
-                    dividerAfter={stories.length - 1}
-                    cappedHeight={780}
                   />
                   {/* On Record — between Today's Pick and Watch; marginTop
                       clears Today's Pick's down-scroll arrow */}
@@ -561,16 +565,13 @@ export default async function Home() {
                       <style>{`.tv-set:hover > div:first-child { border-color: rgba(218,165,32,0.4) !important; }`}</style>
                     </div>
                   </div>
+                  {railRight.length > 0 && (
+                    <div style={{ marginTop: 20 }}>
+                      <StoryRail stories={railRight} />
+                    </div>
+                  )}
                 </div>
               )}
-            </div>
-          )}
-
-          {/* The rest of today's stories — fills the foot of the page */}
-          {railStories.length > 0 && (
-            <div style={{ marginBottom: 20 }}>
-              <SectionHeader label="More stories" href="/brief" hrefText="All stories" />
-              <StoryRail stories={railStories} />
             </div>
           )}
 
