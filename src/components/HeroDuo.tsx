@@ -1,18 +1,23 @@
 'use client';
 
-import React from 'react';
-import { Dashboard } from '@/components/Dashboard';
+import React, { useCallback, useRef, useState } from 'react';
+import { Dashboard, TILE_GAP } from '@/components/Dashboard';
 import type { NarrativeGap } from '@/lib/data';
 import { toParagraphs } from '@/lib/text';
+import { useElementSize, useIsomorphicLayoutEffect } from '@/lib/measure';
 
 /**
  * The two-story hero shared by the video landing pages.
  *
  * The lead story takes two thirds of the row with its clips in a tall column
  * beside it; the second takes one third and stacks its clips underneath, since
- * a side-by-side split at that width leaves the copy too narrow to read. The
- * row is a fixed height and each panel scrolls its own copy, so the block never
- * grows with the length of the write-up.
+ * a side-by-side split at that width leaves the copy too narrow to read.
+ *
+ * Nothing here is a fixed size. The row is as tall as the lead story's copy
+ * needs, between a floor and a ceiling, so a short write-up doesn't leave a
+ * hole under the text. Both tile boxes are then sized off the space that
+ * leaves, and the wall chooses its own tile count to match — which is what
+ * keeps every clip at 16:9 instead of stretched to fill a slot it never fitted.
  */
 
 const serif = "'Instrument Serif', Georgia, serif";
@@ -32,13 +37,16 @@ export const BODY: React.CSSProperties = {
   textAlign: 'justify', hyphens: 'auto', WebkitHyphens: 'auto',
 } as React.CSSProperties;
 
+/** The row never grows past this, however long the write-up runs. */
 export const HERO_MAX_H = 460;
-/** Height of the tile strip beneath the narrow unit. */
-const STACK_TILE_H = 150;
-/** Target height of one tile in the lead unit's column. */
-const TILE_SLOT_H = 185;
-const TILE_MIN = 2;
-const TILE_MAX = 4;
+/** …and never collapses below it, however short. */
+const HERO_MIN_H = 300;
+/** A tile strip reads as a strip between these heights. */
+const STRIP_MIN_H = 104;
+const STRIP_MAX_H = 190;
+/** Width a tile wants in a horizontal strip, before 16:9 sets its height. */
+const STRIP_TILE_W = 230;
+const TILE_AR = 16 / 9;
 
 // Sports and trending have no political left/right — they run the Media,
 // Analysts and Fans framing, the same slots and colours the story pages and
@@ -92,11 +100,19 @@ const BLOCK_BUDGET = { lead: 6, narrow: 4 };
 
 // Scrolls, so everything selected can actually be read, with a fade on the
 // bottom edge to signal there is more below.
-function CopyColumn({ blocks }: { blocks: { key: string; node: React.ReactNode }[] }) {
+function CopyColumn({ blocks, boxRef, contentRef }: {
+  blocks: { key: string; node: React.ReactNode }[];
+  /** The scrolling viewport — how much room the copy has been given. */
+  boxRef?: React.Ref<HTMLDivElement>;
+  /** The copy itself — how much room it wants, slack included. */
+  contentRef?: React.Ref<HTMLDivElement>;
+}) {
   return (
     <div style={{ position: 'relative', flex: 1, minHeight: 0 }}>
-      <div className="hero-hide-scroll" style={{ height: '100%', overflowY: 'auto' }}>
-        {blocks.map(b => <div key={b.key}>{b.node}</div>)}
+      <div ref={boxRef} className="hero-hide-scroll" style={{ height: '100%', overflowY: 'auto' }}>
+        <div ref={contentRef}>
+          {blocks.map(b => <div key={b.key}>{b.node}</div>)}
+        </div>
       </div>
       <div style={{
         position: 'absolute', left: 0, right: 0, bottom: 0, height: 34,
@@ -106,8 +122,36 @@ function CopyColumn({ blocks }: { blocks: { key: string; node: React.ReactNode }
   );
 }
 
-function HeroPanel({ item, lead }: { item: HeroItem; lead: boolean }) {
+function HeroPanel({ item, lead, onNeedHeight }: {
+  item: HeroItem;
+  lead: boolean;
+  /** Reports the height this panel's copy wants, so the row can size to it. */
+  onNeedHeight?: (px: number) => void;
+}) {
   const { story } = item;
+  const boxRef = useRef<HTMLDivElement>(null);
+  const copyBoxRef = useRef<HTMLDivElement>(null);
+  const copyContentRef = useRef<HTMLDivElement>(null);
+
+  // What the panel wants = its furniture (meta row, headline, padding) plus the
+  // natural height of the copy. Measuring the copy's own element rather than
+  // the viewport's scrollHeight is what makes slack visible: scrollHeight never
+  // reports less than the box it sits in, so a short write-up would look like a
+  // perfect fit and the hole under it would never close.
+  //
+  // Both terms are fixed by the panel's width, not its height, so feeding this
+  // back into the row height settles in one pass instead of oscillating.
+  useIsomorphicLayoutEffect(() => {
+    const box = boxRef.current;
+    const viewport = copyBoxRef.current;
+    const content = copyContentRef.current;
+    if (!box || !viewport || !content || !onNeedHeight) return;
+    onNeedHeight(box.offsetHeight - viewport.clientHeight + content.offsetHeight);
+  });
+  // A window resize reflows the copy without React re-rendering, so watch the
+  // copy itself for the render that re-runs the measurement above.
+  useElementSize(copyContentRef);
+
   const blocks: { key: string; node: React.ReactNode }[] = [];
 
   // The write-up is the opener, never the whole panel: one paragraph of it, so
@@ -162,7 +206,7 @@ function HeroPanel({ item, lead }: { item: HeroItem; lead: boolean }) {
     // minHeight 0 matters: as a column flex item this would otherwise refuse to
     // shrink below its content and push the tiles out of the capped row.
     <a href={item.href} style={{ flex: '2 1 0%', minWidth: 0, minHeight: 0, textDecoration: 'none', display: 'block' }}>
-      <div style={{
+      <div ref={boxRef} style={{
         height: '100%', overflow: 'hidden',
         display: 'flex', flexDirection: 'column',
         background: C.panel,
@@ -193,16 +237,38 @@ function HeroPanel({ item, lead }: { item: HeroItem; lead: boolean }) {
 
         {/* Priority order: the story, then how each side is covering it, then
             the social read — trimmed to this panel's budget. */}
-        <CopyColumn blocks={blocks.slice(0, lead ? BLOCK_BUDGET.lead : BLOCK_BUDGET.narrow)} />
+        <CopyColumn
+          boxRef={copyBoxRef}
+          contentRef={copyContentRef}
+          blocks={blocks.slice(0, lead ? BLOCK_BUDGET.lead : BLOCK_BUDGET.narrow)}
+        />
       </div>
     </a>
   );
 }
 
 export function HeroDuo({ items, bgThumb }: { items: HeroItem[]; bgThumb?: string | null }) {
-  // Tiles in the lead column are sized to a target height rather than a fixed
-  // count, so the column stays sensible if HERO_MAX_H is ever retuned.
-  const leadTiles = Math.max(TILE_MIN, Math.min(TILE_MAX, Math.round(HERO_MAX_H / TILE_SLOT_H)));
+  // The lead story's copy sets the row height: it is the panel given the room
+  // to be read in full, so when it runs short the whole row comes up with it
+  // rather than leaving dead space under the text.
+  const [leadNeed, setLeadNeed] = useState<number | null>(null);
+  const onLeadNeedHeight = useCallback((px: number) => {
+    setLeadNeed(prev => (prev !== null && Math.abs(prev - px) < 2 ? prev : px));
+  }, []);
+  const rowH = leadNeed === null
+    ? HERO_MAX_H
+    : Math.round(Math.max(HERO_MIN_H, Math.min(HERO_MAX_H, leadNeed)));
+
+  // The narrow unit's strip is as tall as its tiles are, not the other way
+  // round: pick the count its width carries, then let 16:9 give the height.
+  const stripRef = useRef<HTMLDivElement>(null);
+  const stripW = useElementSize(stripRef)?.width ?? 0;
+  const stripTiles = stripW > 0 ? Math.max(1, Math.min(4, Math.round(stripW / STRIP_TILE_W))) : 3;
+  const stripH = stripW > 0
+    ? Math.round(Math.max(STRIP_MIN_H, Math.min(STRIP_MAX_H,
+        ((stripW - (stripTiles - 1) * TILE_GAP) / stripTiles) / TILE_AR)))
+    : STRIP_MIN_H;
+
   if (items.length === 0) return null;
 
   return (
@@ -213,7 +279,9 @@ export function HeroDuo({ items, bgThumb }: { items: HeroItem[]; bgThumb?: strin
         @media (max-width: 700px) {
           .hero-duo-row { flex-direction: column !important; height: auto !important; }
           .hero-duo-unit { flex-direction: column !important; }
-          .hero-duo-tiles { flex: none !important; width: 100% !important; height: 300px !important; }
+          /* Stacked, the tile box takes the full width, so let 16:9 give it its
+             height rather than a fixed one the tiles then have to stretch to. */
+          .hero-duo-tiles { flex: none !important; width: 100% !important; height: auto !important; aspect-ratio: 16 / 9 !important; }
         }
       `}</style>
 
@@ -229,7 +297,7 @@ export function HeroDuo({ items, bgThumb }: { items: HeroItem[]; bgThumb?: strin
       )}
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(63,90,128,1) 0%, rgba(63,90,128,0.45) 55%, rgba(63,90,128,0.1) 100%)' }} />
 
-      <div className="hero-duo-row" style={{ position: 'relative', display: 'flex', alignItems: 'stretch', gap: 12, height: HERO_MAX_H }}>
+      <div className="hero-duo-row" style={{ position: 'relative', display: 'flex', alignItems: 'stretch', gap: 12, height: rowH }}>
         {items.slice(0, 2).map((item, i) => {
           const lead = i === 0;
           const clips = clipCount(item.story);
@@ -243,20 +311,23 @@ export function HeroDuo({ items, bgThumb }: { items: HeroItem[]; bgThumb?: strin
                 flexDirection: lead ? 'row' : 'column',
               }}
             >
-              <HeroPanel item={item} lead={lead} />
+              <HeroPanel item={item} lead={lead} onNeedHeight={lead ? onLeadNeedHeight : undefined} />
               {clips > 0 && (
                 <div
+                  ref={lead ? undefined : stripRef}
                   className="hero-duo-tiles"
                   style={lead
                     ? { flex: '1 1 0%', minWidth: 0, borderRadius: 10, overflow: 'hidden' }
-                    : { flex: 'none', width: '100%', height: STACK_TILE_H, borderRadius: 10, overflow: 'hidden' }}
+                    : { flex: 'none', width: '100%', height: stripH, borderRadius: 10, overflow: 'hidden' }}
                 >
+                  {/* The count passed is the ceiling — how many clips there are.
+                      The wall measures its box and takes as many as fit. */}
                   <Dashboard
                     stories={[item.story]}
                     videoUrl={lead ? item.videoUrl : undefined}
                     tilesOnly={true}
                     tilesColumn={lead}
-                    tilesCount={lead ? leadTiles : 3}
+                    tilesCount={Math.min(4, clips)}
                   />
                 </div>
               )}

@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { TileAdBanner } from "./AdBanners";
 import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
+import { useElementSize } from "../lib/measure";
 
 type PlaylistItem = {
   type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x' | 'telegram';
@@ -66,6 +67,37 @@ function CenteredEmbed({ type, children }: { type: string; children: React.React
 }
 
 
+/** Gap between tiles in the tiles-only wall (Tailwind gap-1). */
+export const TILE_GAP = 4;
+const TILE_AR = 16 / 9;
+
+/**
+ * How many tiles a box should carry.
+ *
+ * Clips are 16:9, so the count is whatever divides the box into slots closest
+ * to that shape rather than a number picked in advance: a tall column takes
+ * more, a short strip takes fewer, and a box with room for one gets one. The
+ * error is measured on the log of the ratio so a slot twice too tall and one
+ * twice too wide count as equally wrong.
+ */
+export function fitTileCount(
+  { width, height, column, max }: { width: number; height: number; column?: boolean; max: number },
+) {
+  const cap = Math.max(1, Math.min(4, max));
+  if (!(width > 0) || !(height > 0)) return cap;
+  let best = 1;
+  let bestErr = Infinity;
+  for (let n = 1; n <= cap; n++) {
+    const span = (n - 1) * TILE_GAP;
+    const slotW = column ? width : (width - span) / n;
+    const slotH = column ? (height - span) / n : height;
+    if (slotW <= 0 || slotH <= 0) continue;
+    const err = Math.abs(Math.log(slotW / slotH / TILE_AR));
+    if (err < bestErr) { bestErr = err; best = n; }
+  }
+  return best;
+}
+
 export function Dashboard({
   stories,
   videoUrl,
@@ -93,7 +125,8 @@ export function Dashboard({
   tilesOnly?: boolean;
   /** Stack the tiles in one column instead of a row. */
   tilesColumn?: boolean;
-  /** How many tiles to render (1-4). Defaults to 3 stacked, 4 in a row. */
+  /** Ceiling on the tile count (1-4) — how many clips the story can fill.
+   *  The wall measures itself and may render fewer so the slots stay 16:9. */
   tilesCount?: number;
   onEnd?: () => void;
   startEmbedId?: string;
@@ -111,6 +144,11 @@ export function Dashboard({
   const [currentTime, setCurrentTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // The tiles-only wall picks its own tile count from the box it lands in, so
+  // the caller only has to say how many clips it has, not how many fit.
+  const tilesBoxRef = useRef<HTMLElement>(null);
+  const tilesBox = useElementSize(tilesBoxRef);
 
   // Pause tiles when Dashboard is not in view
   useEffect(() => {
@@ -520,11 +558,16 @@ export function Dashboard({
   const effectiveOrientation = orientation ?? (showOrientationToggle ? userOrientation : null) ?? 'landscape';
 
   if (tilesOnly) {
-    // Caller decides how many tiles fit; the pool cycles through whatever it has.
-    const count = Math.max(1, Math.min(4, tilesCount ?? (tilesColumn ? 3 : 4)));
+    // The caller's count is a ceiling — how many clips it has. How many are
+    // actually shown comes from the measured box, so the slots stay 16:9 and
+    // a box with room for one gets one instead of a stretched pair.
+    const max = Math.max(1, Math.min(4, tilesCount ?? (tilesColumn ? 3 : 4)));
+    const count = tilesBox
+      ? fitTileCount({ ...tilesBox, column: tilesColumn, max })
+      : max;
     const tileSlots = Array.from({ length: count }, (_, i) => i);
     return (
-      <section style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
+      <section ref={tilesBoxRef} style={{ background: '#1e2a3a', height: '100%', overflow: 'hidden' }}>
         <div
           className="h-full grid gap-1"
           style={tilesColumn
