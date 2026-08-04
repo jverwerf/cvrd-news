@@ -179,6 +179,14 @@ export function Dashboard({
       if ((v as any).download_failed) continue;
       playlist.push({ type: 'youtube', embed_id: v.embed_id, channel: v.channel, lean: v.lean, storyTopic: story.topic, storyIndex: i + 1, duration: v.duration, videoTitle: (v as any).title || v.channel || '' });
     }
+    // Dailymotion/Rumble are outlet news clips, peers of the YouTube videos —
+    // they list with the story's videos, not under MORE with the social chatter.
+    for (const c of (story.social_clips || [])) {
+      if ((c as any).download_failed || !c.embed_id) continue;
+      if (c.platform === 'dailymotion' || c.platform === 'rumble') {
+        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, lean: (c as any).lean, storyTopic: story.topic, storyIndex: i + 1, duration: Math.min((c as any).duration || 60, 90), videoTitle: c.title || c.author || c.platform, thumbnail: (c as any).thumbnail });
+      }
+    }
   }
   // Social clips below YT — auto-advance after 60s
   for (const [i, story] of stories.entries()) {
@@ -191,10 +199,6 @@ export function Dashboard({
         playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || c.platform, isSocial: true });
       } else if (c.platform === 'tiktok' && c.embed_id && /^\d+$/.test(c.embed_id)) {
         playlist.push({ type: 'tiktok', embed_id: c.embed_id, url: c.url, channel: c.author || 'TikTok', storyTopic: story.topic, storyIndex: i + 1, duration: 60, videoTitle: c.title || c.author || 'TikTok', thumbnail: (c as any).thumbnail, isSocial: true });
-      } else if (c.platform === 'dailymotion' || c.platform === 'rumble') {
-        // Real duration is known for these; cap the slot so a long commentary
-        // segment doesn't stall the wall loop.
-        playlist.push({ type: c.platform as any, embed_id: c.embed_id, url: c.url, channel: c.author || c.platform, lean: (c as any).lean, storyTopic: story.topic, storyIndex: i + 1, duration: Math.min((c as any).duration || 60, 90), videoTitle: c.title || c.author || c.platform, thumbnail: (c as any).thumbnail, isSocial: true });
       }
     }
   }
@@ -1384,31 +1388,18 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
       </div>
     );
   }
+  // Rumble's embed ignores autoplay flags (tested: video stays paused with
+  // autoplay=1 and =2), so a live preview isn't possible — a real thumbnail
+  // beats a dead player showing its own play button.
   if (item.type === 'social' && item.platform === 'rumble' && item.embedId) {
     return (
-      <div className="w-full h-full relative overflow-hidden">
-        {item.image && (
-          <img
-            src={item.image}
-            className="absolute inset-0 w-full h-full object-cover"
-            onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
-            alt=""
-          />
-        )}
-        <iframe
-          src={`https://rumble.com/embed/${item.embedId}/?autoplay=2`}
-          className="absolute"
-          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
-          allow="autoplay"
-          loading="lazy"
-        />
-        <div className="absolute top-2 left-2 z-10">
-          <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#85c742' }}>Rumble</span>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 p-2 z-10 bg-gradient-to-t from-black/70 to-transparent">
-          <p className="text-[10px] text-white/90 leading-snug line-clamp-1">{item.clipLabel || item.topic}</p>
-        </div>
-      </div>
+      <VideoThumb
+        thumbSrc={item.image || ''}
+        url={item.url || `https://rumble.com/embed/${item.embedId}/`}
+        badge="Rumble" badgeColor="#85c742"
+        label={item.clipLabel || item.topic}
+        onFail={onMediaFail}
+      />
     );
   }
   if (item.type === 'social') {
