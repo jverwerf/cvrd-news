@@ -40,11 +40,22 @@ const TILE_SLOT_H = 185;
 const TILE_MIN = 2;
 const TILE_MAX = 4;
 
+// Sports and trending have no political left/right — they run the Media,
+// Analysts and Fans framing, the same slots and colours the story pages and
+// The Divide use for those categories.
 const LEANS = [
   { key: 'left_narrative', label: 'From the left', color: '#60a5fa' },
   { key: 'center_narrative', label: 'From the center', color: '#a3a3a3' },
   { key: 'right_narrative', label: 'From the right', color: '#f87171' },
 ] as const;
+
+const FAN_LEANS = [
+  { key: 'left_narrative', label: 'Media', color: '#f59e0b' },
+  { key: 'center_narrative', label: 'Analysts', color: '#c084fc' },
+  { key: 'right_narrative', label: 'Fans', color: '#34d399' },
+] as const;
+
+const isFanCategory = (c?: string) => c === 'sports' || c === 'trending';
 
 /**
  * A section only earns its place if there is real coverage behind it. The
@@ -110,7 +121,11 @@ function HeroPanel({ item, lead }: { item: HeroItem; lead: boolean }) {
   }
   // How each side is covering it — the comparison is the point of the site, and
   // it gives the panel real body copy.
-  for (const side of LEANS) {
+  const sides = isFanCategory(story.category) ? FAN_LEANS : LEANS;
+  for (const side of sides) {
+    // Trending runs Media vs Fans only — there is no analyst middle ground,
+    // same rule The Divide applies to that category.
+    if (story.category === 'trending' && side.key === 'center_narrative') continue;
     const text = (story as any)[side.key] as string | undefined;
     if (isThin(text)) continue;
     blocks.push({

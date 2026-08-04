@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { NarrativeGap } from '../lib/data';
 import TweetFactCheck from './TweetFactCheck';
 
@@ -42,13 +42,63 @@ function pickSides(story: NarrativeGap): { left: Clip[]; center?: Clip[]; right:
   };
 }
 
+/**
+ * A tweet sized to its own content. Cross-origin frames can't be measured, but
+ * Twitter's embed broadcasts its rendered height, so listen for that and size
+ * the box to match. Without it every tweet gets one fixed height and anything
+ * with a photo or a long thread is clipped. Falls back to the fixed height if
+ * the message never arrives.
+ */
+function TweetEmbed({ id, scale, fallbackHeight }: { id: string; scale: number; fallbackHeight: number }) {
+  const frameRef = useRef<HTMLIFrameElement>(null);
+  const [natural, setNatural] = useState<number | null>(null);
+
+  useEffect(() => {
+    function onMessage(e: MessageEvent) {
+      const frame = frameRef.current;
+      if (!frame || e.source !== frame.contentWindow) return;
+      let data: any = e.data;
+      if (typeof data === 'string') {
+        try { data = JSON.parse(data); } catch { return; }
+      }
+      const embed = data?.['twttr.embed'];
+      if (!embed || embed.method !== 'twttr.private.resize') return;
+      const p = embed.params?.[0];
+      const h = typeof p?.height === 'number' ? p.height : p?.data?.height;
+      if (typeof h === 'number' && h > 0) setNatural(h);
+    }
+    window.addEventListener('message', onMessage);
+    return () => window.removeEventListener('message', onMessage);
+  }, []);
+
+  const inv = `${(100 / scale).toFixed(2)}%`;
+  const boxHeight = natural ? Math.round(natural * scale) : fallbackHeight;
+
+  return (
+    <div className="relative overflow-hidden" style={{ height: boxHeight }}>
+      <iframe
+        ref={frameRef}
+        src={`https://platform.twitter.com/embed/Tweet.html?id=${id}&theme=dark&dnt=true`}
+        scrolling="no" tabIndex={-1} loading="lazy"
+        style={{
+          border: 'none', pointerEvents: 'none',
+          position: 'absolute', top: 0, left: 0,
+          width: inv, height: natural ? natural : fallbackHeight / scale,
+          transform: `scale(${scale})`, transformOrigin: 'top left',
+        }}
+      />
+      {/* only meaningful while we're still on the fallback height */}
+      {!natural && (
+        <div className="absolute inset-x-0 bottom-0 h-6" style={{ background: 'linear-gradient(transparent, #1e2a3a)', pointerEvents: 'none' }} />
+      )}
+    </div>
+  );
+}
+
 function SidePanel({ clips, side, fan, height, tweetHeight = 230, scale = 1 }: {
   clips: Clip[]; side: 'left' | 'center' | 'right'; fan?: boolean;
   height: number; tweetHeight?: number; scale?: number;
 }) {
-  // Twitter's embed has a hard minimum width, so in a narrow column it is laid
-  // out oversized and scaled back down — same trick as the story pages.
-  const inv = `${(100 / scale).toFixed(2)}%`;
   // Fan categories (sports/trending) use the Media/Analysts/Fans framing —
   // same slots, same colors as the story-page coverage panel.
   const color = fan
@@ -71,17 +121,7 @@ function SidePanel({ clips, side, fan, height, tweetHeight = 230, scale = 1 }: {
             <div onClick={e => { e.preventDefault(); e.stopPropagation(); }}>
               <TweetFactCheck fc={(clip as any).fact_check} compact />
             </div>
-            <div className="relative overflow-hidden" style={{ height: tweetHeight }}>
-              <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${clip.embed_id}&theme=dark&dnt=true`}
-                scrolling="no" tabIndex={-1} loading="lazy"
-                style={{
-                  border: 'none', pointerEvents: 'none',
-                  position: 'absolute', top: 0, left: 0,
-                  width: inv, height: inv,
-                  transform: `scale(${scale})`, transformOrigin: 'top left',
-                }} />
-              <div className="absolute inset-x-0 bottom-0 h-6" style={{ background: 'linear-gradient(transparent, #1e2a3a)', pointerEvents: 'none' }} />
-            </div>
+            <TweetEmbed id={clip.embed_id!} scale={scale} fallbackHeight={tweetHeight} />
           </div>
         ))}
       </div>
