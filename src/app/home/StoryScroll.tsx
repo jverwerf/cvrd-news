@@ -102,8 +102,11 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
           const firstVid = vids[0];
           const tiles = getStoryTiles(story);
           // Every fourth story runs as a tall feature: video across the top and
-          // a fuller read underneath. Breaks up a column of identical rows.
-          const feature = idx % FEATURE_EVERY === FEATURE_EVERY - 1;
+          // a fuller read underneath, to break up a column of identical rows.
+          // Only stories with a real player qualify — a tweet embed blown up to
+          // full width overflows its box and wrecks the layout.
+          const canFeature = tiles.some(t => t.mode === 'player');
+          const feature = canFeature && idx % FEATURE_EVERY === FEATURE_EVERY - 1;
           return (
             <Fragment key={story.topic}>
               {dividerAfter !== undefined && idx === dividerAfter && (

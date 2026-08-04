@@ -107,6 +107,7 @@ export function StoryTile({ tiles, cycleMs = DEFAULT_CYCLE_MS, badge }: {
         <iframe
           key={`tweet-${tile.embedId}`}
           src={`https://platform.twitter.com/embed/Tweet.html?id=${tile.embedId}&theme=dark&hideCard=false&hideThread=true&dnt=true`}
+          scrolling="no" tabIndex={-1}
           style={{
             position: 'absolute', border: 'none', pointerEvents: 'none',
             left: '-8px', width: 'calc(100% + 16px)', height: '200%', top: 0,
