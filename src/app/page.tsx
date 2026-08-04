@@ -333,6 +333,47 @@ function TimelineStrip({ thread }: { thread: TimelineThread }) {
   );
 }
 
+
+// ── Developing-stories rail ───────────────────────────────────────
+// Fills the foot of the page, which sat empty once the columns ended at
+// different heights. Uses the threads the Timeline card isn't currently on.
+function ThreadRail({ threads, blobBase }: { threads: TimelineThread[]; blobBase: string }) {
+  if (threads.length === 0) return null;
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 12 }}>
+      {threads.map(thread => {
+        const img = thread.image_file ?? thread.entries.find(e => e.image_file)?.image_file;
+        const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
+        const dates = thread.entries.map(e => e.date).filter(Boolean).sort();
+        return (
+          <a key={thread.id} href={`/timeline#${thread.id}`} className="story-card" style={{
+            textDecoration: 'none', display: 'flex', flexDirection: 'column',
+            background: C.panel, border: `1px solid ${C.border}`, borderRadius: 8, overflow: 'hidden',
+          }}>
+            <div style={{ height: 110, position: 'relative', flexShrink: 0, background: C.panelDark, overflow: 'hidden' }}>
+              {imgUrl && <img src={imgUrl} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.8 }} />}
+            </div>
+            <div style={{ padding: '11px 14px', display: 'flex', flexDirection: 'column', gap: 5 }}>
+              <span style={{ fontFamily: mono, fontSize: 8.5, letterSpacing: '0.12em', textTransform: 'uppercase', color: C.dim }}>
+                {thread.entries.length} developments
+                {dates.length > 1 ? ` · ${dates[0]} → ${dates[dates.length - 1]}` : ''}
+              </span>
+              <h3 style={{ fontFamily: serif, fontSize: 15, lineHeight: 1.25, color: C.text, fontWeight: 400, margin: 0 }}>
+                {thread.title}
+              </h3>
+              {thread.summary && (
+                <p style={{ fontFamily: mono, fontSize: 10, lineHeight: 1.5, color: C.dim, margin: 0 }}>
+                  {toSentence(thread.summary, 120)}
+                </p>
+              )}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  );
+}
+
 // ── PAGE ──────────────────────────────────────────────────────────
 export default async function Home() {
   const [data, threadData, onRecordData, breakingStories, liveStories] = await Promise.all([
@@ -544,6 +585,19 @@ export default async function Home() {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Developing stories — fills the foot of the page */}
+          {sortedThreads.length > 1 && (
+            <div style={{ marginBottom: 20 }}>
+              <SectionHeader
+                label="Developing stories"
+                blurb={`Following ${threadCount} threads`}
+                href="/timeline"
+                hrefText={`All ${threadCount} threads`}
+              />
+              <ThreadRail threads={homeThreads.slice(1)} blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''} />
             </div>
           )}
 

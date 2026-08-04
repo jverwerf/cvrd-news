@@ -82,16 +82,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
 
   if (vertical) return (
     <div style={{ position: 'relative', ...(cappedHeight ? {} : { flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }) }}>
-      <button onClick={() => scroll('up')} aria-label="Scroll up" style={{
-        position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)',
-        zIndex: 10, width: 32, height: 32, borderRadius: '50%',
-        background: C.panel, border: `1px solid rgba(255,255,255,0.12)`,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        cursor: 'pointer', color: C.dim,
-      }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="18 15 12 9 6 15" /></svg>
-      </button>
-
       <div ref={ref} style={{
         display: 'flex', flexDirection: 'column', gap: 10,
         overflowY: 'auto', flex: 1, minHeight: 0, paddingRight: 2,
@@ -151,16 +141,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
           </div>
         </a>
       </div>
-
-      <button onClick={() => scroll('down')} aria-label="Scroll down" style={{
-        position: 'absolute', bottom: -16, left: '50%', transform: 'translateX(-50%)',
-        zIndex: 10, width: 32, height: 32, borderRadius: '50%',
-        background: C.panel, border: `1px solid rgba(255,255,255,0.12)`,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        cursor: 'pointer', color: C.dim,
-      }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="6 9 12 15 18 9" /></svg>
-      </button>
     </div>
   );
 
