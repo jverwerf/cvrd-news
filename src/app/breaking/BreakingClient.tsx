@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
 import { HeroDuo, BODY } from "@/components/HeroDuo";
+import { StoryFiller, clipCount } from "@/components/StoryFiller";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
@@ -115,10 +116,12 @@ function StoryCard({ story, raw, type, tall }: {
         <div style={{ position: 'relative', height: tall ? 200 : 160, flexShrink: 0, overflow: 'hidden' }}>
           {totalClips > 0 ? (
             <ErrorBoundary>
-              <Dashboard stories={[story]} tilesOnly={true} />
+              <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, totalClips)} />
             </ErrorBoundary>
           ) : firstThumb ? (
             <img src={firstThumb} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }} />
+          ) : story.summary ? (
+            <StoryFiller story={story} compact />
           ) : (
             <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${type === 'breaking' ? '#7f1d1d' : '#1d4ed8'}25, ${C.panelDark})` }} />
           )}
@@ -207,11 +210,16 @@ function StoryStrip({ story, raw, type, reverse }: {
           </div>
         </div>
 
-        {/* Tiles side */}
+        {/* Tiles side. No clips means the wall would just repeat the one still
+            image, so show the reporting instead. */}
         <div style={{ flex: 6, minWidth: 0, position: 'relative', overflow: 'hidden' }} className="strip-tiles">
-          <ErrorBoundary>
-            <Dashboard stories={[story]} tilesOnly={true} />
-          </ErrorBoundary>
+          {clipCount(story) > 0 ? (
+            <ErrorBoundary>
+              <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, clipCount(story))} />
+            </ErrorBoundary>
+          ) : (
+            <StoryFiller story={story} />
+          )}
         </div>
       </div>
     </a>

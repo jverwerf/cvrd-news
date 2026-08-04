@@ -2,6 +2,7 @@
 
 import { Dashboard } from "@/components/Dashboard";
 import { HeroDuo } from "@/components/HeroDuo";
+import { StoryFiller, clipCount } from "@/components/StoryFiller";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
@@ -112,10 +113,12 @@ function StoryCard({ story, tall }: { story: NarrativeGap; tall?: boolean }) {
         <div style={{ position: "relative", height: tall ? 200 : 160, flexShrink: 0, overflow: "hidden" }}>
           {totalClips > 0 ? (
             <ErrorBoundary>
-              <Dashboard stories={[story]} tilesOnly={true} />
+              <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, totalClips)} />
             </ErrorBoundary>
           ) : firstThumb ? (
             <img src={firstThumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
+          ) : story.summary ? (
+            <StoryFiller story={story} compact />
           ) : (
             <div
               style={{
@@ -252,9 +255,15 @@ function StoryStrip({ story, reverse }: { story: NarrativeGap; reverse?: boolean
         </div>
 
         <div style={{ flex: 6, minWidth: 0, position: "relative", overflow: "hidden" }} className="strip-tiles">
-          <ErrorBoundary>
-            <Dashboard stories={[story]} tilesOnly={true} />
-          </ErrorBoundary>
+          {/* No clips means the tile wall would just repeat the one still image,
+              so show the reporting instead. */}
+          {clipCount(story) > 0 ? (
+            <ErrorBoundary>
+              <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, clipCount(story))} />
+            </ErrorBoundary>
+          ) : (
+            <StoryFiller story={story} />
+          )}
         </div>
       </div>
     </a>
