@@ -92,7 +92,10 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
     const tiles = getStoryTiles(story);
     const canFeature = tiles.some(t => t.mode === 'player');
     if (canFeature) eligible++;
-    const feature = canFeature && eligible % FEATURE_EVERY === 0;
+    // Counted from the first eligible card, not the FEATURE_EVERY-th: each rail
+    // counts independently, so a short one would otherwise never reach the
+    // threshold and would show no feature at all.
+    const feature = canFeature && eligible % FEATURE_EVERY === 1;
     // The tile rotates through everything a story has, so a feature card would
     // eventually land on a tweet and blow it up across the full width. Keep
     // tweets out of that rotation.
