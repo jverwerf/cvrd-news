@@ -690,14 +690,16 @@ export function Dashboard({
               )}
               {overrideVideo.type === 'dailymotion' && (
                 <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={`https://geo.dailymotion.com/player.html?video=${overrideVideo.embed_id}&autoplay=true&mute=true`}
+                  src={`https://geo.dailymotion.com/player.html?video=${overrideVideo.embed_id}&autoplay=true&mute=true&controls=false`}
                   className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
               {overrideVideo.type === 'rumble' && overrideVideo.video_src && (
+                // no controls: the dashboard's own volume overlay drives this
+                // element via toggleSound, a second control bar is clutter
                 <video key={`override-${overrideVideo.video_src}`} src={overrideVideo.video_src}
                   className="w-full h-full absolute inset-0 object-contain bg-black"
-                  autoPlay playsInline controls
+                  autoPlay playsInline
                   ref={(el: HTMLVideoElement | null) => { if (el) { el.volume = volume; } }} />
               )}
               {overrideVideo.type === 'rumble' && !overrideVideo.video_src && (
@@ -773,8 +775,10 @@ export function Dashboard({
             </CenteredEmbed>
           )}
           {!overrideVideo && current?.type === 'dailymotion' && current.embed_id && (
+            // controls=false: the dashboard has its own mute/volume overlay;
+            // DM's player chrome would add a second unmute button on top of it
             <iframe key={current.embed_id}
-              src={`https://geo.dailymotion.com/player.html?video=${current.embed_id}&autoplay=${noAutoPlay ? 'false' : 'true'}&mute=${unmuted ? 'false' : 'true'}`}
+              src={`https://geo.dailymotion.com/player.html?video=${current.embed_id}&autoplay=${noAutoPlay ? 'false' : 'true'}&mute=${unmuted ? 'false' : 'true'}&controls=false`}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -1214,8 +1218,10 @@ function PoolTile({ pool, startOffset, delay, frozen, onTileClick, showAd, adKey
         </div>
       </div>}
 
-      {/* Overlays for image/text tiles */}
-      {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x' || current.platform === 'telegram'))) && (
+      {/* Overlays for image/text tiles — every platform whose tile content
+          already carries its own badge and caption must be listed here, or
+          the tile gets a second badge and a doubled title. */}
+      {!(isVideo || (isSocial && current.embedId && (current.platform === 'tiktok' || current.platform === 'x' || current.platform === 'telegram' || current.platform === 'dailymotion' || current.platform === 'rumble'))) && (
         <>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
           {isSocial && current.platform && (
