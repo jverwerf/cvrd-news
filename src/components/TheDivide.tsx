@@ -95,7 +95,7 @@ function TweetEmbed({ id, scale, fallbackHeight }: { id: string; scale: number; 
   );
 }
 
-function SidePanel({ clips, side, fan, height, tweetHeight = 230, scale = 1 }: {
+export function SidePanel({ clips, side, fan, height, tweetHeight = 230, scale = 1 }: {
   clips: Clip[]; side: 'left' | 'center' | 'right'; fan?: boolean;
   height: number; tweetHeight?: number; scale?: number;
 }) {

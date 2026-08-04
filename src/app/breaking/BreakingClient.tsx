@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Dashboard } from "@/components/Dashboard";
+import { SidePanel } from "@/components/TheDivide";
 import { HeroDuo, BODY } from "@/components/HeroDuo";
 import { StoryFiller, clipCount } from "@/components/StoryFiller";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -353,7 +354,11 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
         .hover-panel:hover { border-color: rgba(218,165,32,0.25) !important; }
         .hide-scroll { scrollbar-width: none; -ms-overflow-style: none; }
         .hide-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
+        .divide-col-scroll { scrollbar-width: none; -ms-overflow-style: none; }
+        .divide-col-scroll::-webkit-scrollbar { width: 0; height: 0; display: none; }
         @media (max-width: 700px) {
+          .xreact-row { flex-direction: column !important; }
+          .xreact-vs { display: none !important; }
           .card-row { flex-direction: column !important; }
           .strip-row { flex-direction: column !important; }
           .strip-text { padding: 16px 18px !important; }
@@ -386,23 +391,38 @@ export default function BreakingClient({ initialData, initialLiveNow }: { initia
             />
           </div>
 
-          {/* X text tweets below hero */}
+          {/* X text tweets below hero, in The Divide's lean columns */}
           {(() => {
             const xText = (heroStory.social_clips ?? []).filter((c: any) => c.platform === 'x' && !c.duration && c.embed_id);
             if (xText.length === 0) return null;
+            const byLean: Record<'left' | 'center' | 'right', any[]> = { left: [], center: [], right: [] };
+            for (const c of xText) byLean[c.lean === 'left' || c.lean === 'right' ? c.lean : 'center'].push(c);
+            const leans = (['left', 'center', 'right'] as const).filter(l => byLean[l].length > 0);
+            // Mixed leans → one column per lean with the VS framing. A single
+            // lean (common on breaking, where most reactions are wire accounts)
+            // still fills the row: its posts split across columns instead.
+            let columns: { side: 'left' | 'center' | 'right'; clips: any[] }[];
+            const vs = leans.length > 1;
+            if (vs) {
+              columns = leans.map(l => ({ side: l, clips: byLean[l] }));
+            } else {
+              const clips = byLean[leans[0]];
+              const n = Math.min(3, Math.max(1, Math.ceil(clips.length / 2)));
+              columns = Array.from({ length: n }, (_, i) => ({ side: leans[0], clips: clips.filter((_: any, j: number) => j % n === i) }));
+            }
             return (
               <div style={{ maxWidth: CONTENT_MAX, margin: '0 auto', padding: `4px ${CONTENT_GUTTER}px 4px` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
                   <span style={{ fontFamily: mono, fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: C.dim }}>𝕏 REACTIONS</span>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 8 }}>
-                  {xText.slice(0, 8).map((c: any, i: number) => (
-                    <div key={i} style={{ borderRadius: 8, overflow: 'hidden', position: 'relative', background: C.panelDark, height: 90 }}>
-                      <div style={{ position: 'absolute', top: 0, left: 0, width: '125%', height: '125%', transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-                        <iframe src={`https://platform.twitter.com/embed/Tweet.html?id=${c.embed_id}&theme=dark&dnt=true`}
-                          style={{ border: 'none', width: '100%', height: '100%' }} loading="lazy" />
-                      </div>
-                    </div>
+                <div className="xreact-row" style={{ display: 'flex', gap: 8 }}>
+                  {columns.map((col, i) => (
+                    <Fragment key={i}>
+                      {vs && i > 0 && (
+                        <div className="xreact-vs" style={{ display: 'flex', alignItems: 'center', alignSelf: 'center', flexShrink: 0, fontSize: 13, fontWeight: 900, color: C.gold }}>VS</div>
+                      )}
+                      <SidePanel clips={col.clips} side={col.side} height={340} />
+                    </Fragment>
                   ))}
                 </div>
               </div>
