@@ -2,7 +2,8 @@
 
 import { Dashboard } from "@/components/Dashboard";
 import { HeroDuo } from "@/components/HeroDuo";
-import { StoryFiller, clipCount } from "@/components/StoryFiller";
+import { StoryFiller, hasFillerContent } from "@/components/StoryFiller";
+import { clipCount } from "@/lib/story";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
 import type { NarrativeGap } from "@/lib/data";
@@ -92,7 +93,6 @@ function Badge({ label, pulse }: { label: string; pulse?: boolean }) {
 function StoryCard({ story, tall }: { story: NarrativeGap; tall?: boolean }) {
   const slug = toSlug(story.topic);
   const ytVids = story.youtube_videos ?? [];
-  const firstThumb = story.image_file || (ytVids[0] ? ytThumb(ytVids[0].embed_id) : null);
   const totalClips = ytVids.length + (story.social_clips ?? []).filter((c) => c.duration).length;
 
   return (
@@ -110,25 +110,21 @@ function StoryCard({ story, tall }: { story: NarrativeGap; tall?: boolean }) {
           transition: "border-color 0.2s",
         }}
       >
-        <div style={{ position: "relative", height: tall ? 200 : 160, flexShrink: 0, overflow: "hidden" }}>
-          {totalClips > 0 ? (
+        {/* Never the generated still: a story with no clips shows its
+            reporting, not an illustration of it. The fixed height belongs to
+            the tile wall only — a filler is as tall as its text, and a story
+            with neither gets no media area at all rather than an empty band. */}
+        {totalClips > 0 ? (
+          <div style={{ position: "relative", height: tall ? 200 : 160, flexShrink: 0, overflow: "hidden" }}>
             <ErrorBoundary>
               <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, totalClips)} />
             </ErrorBoundary>
-          ) : firstThumb ? (
-            <img src={firstThumb} alt="" style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.8 }} />
-          ) : story.summary ? (
+          </div>
+        ) : hasFillerContent(story) ? (
+          <div style={{ position: "relative", flexShrink: 0, overflow: "hidden" }}>
             <StoryFiller story={story} compact />
-          ) : (
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                background: `linear-gradient(135deg, ${C.gold}20, ${C.panelDark})`,
-              }}
-            />
-          )}
-        </div>
+          </div>
+        ) : null}
 
         <div style={{ padding: "14px 16px", flex: 1, display: "flex", flexDirection: "column" }}>
           <h3
@@ -184,6 +180,7 @@ function StoryStrip({ story, reverse }: { story: NarrativeGap; reverse?: boolean
   const slug = toSlug(story.topic);
   const totalClips =
     (story.youtube_videos ?? []).length + (story.social_clips ?? []).filter((c) => c.duration).length;
+  const hasSide = totalClips > 0 || hasFillerContent(story);
 
   return (
     <a href={`/story/${slug}`} style={{ textDecoration: "none", display: "block" }}>
@@ -196,7 +193,10 @@ function StoryStrip({ story, reverse }: { story: NarrativeGap; reverse?: boolean
           border: `1px solid ${C.border}`,
           display: "flex",
           flexDirection: reverse ? "row-reverse" : "row",
-          minHeight: 200,
+          // Only a media column justifies a floor height. With nothing beside
+          // the copy the row is as tall as the copy, instead of padding itself
+          // out to 200px of nothing.
+          minHeight: hasSide ? 200 : undefined,
           transition: "border-color 0.2s",
         }}
       >
@@ -254,17 +254,20 @@ function StoryStrip({ story, reverse }: { story: NarrativeGap; reverse?: boolean
           </div>
         </div>
 
-        <div style={{ flex: 6, minWidth: 0, position: "relative", overflow: "hidden" }} className="strip-tiles">
-          {/* No clips means the tile wall would just repeat the one still image,
-              so show the reporting instead. */}
-          {clipCount(story) > 0 ? (
-            <ErrorBoundary>
-              <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, clipCount(story))} />
-            </ErrorBoundary>
-          ) : (
-            <StoryFiller story={story} />
-          )}
-        </div>
+        {/* No clips means the tile wall would just repeat the one still image,
+            so show the reporting instead — and if there is no reporting to
+            show either, the copy simply runs the full width. */}
+        {hasSide && (
+          <div style={{ flex: 6, minWidth: 0, position: "relative", overflow: "hidden" }} className="strip-tiles">
+            {clipCount(story) > 0 ? (
+              <ErrorBoundary>
+                <Dashboard stories={[story]} tilesOnly={true} tilesCount={Math.min(4, clipCount(story))} />
+              </ErrorBoundary>
+            ) : (
+              <StoryFiller story={story} />
+            )}
+          </div>
+        )}
       </div>
     </a>
   );
@@ -319,7 +322,9 @@ export default function BriefLayout({
 
   const heroStory = stories[0];
   const heroYtVids = heroStory.youtube_videos ?? [];
-  const heroFirstThumb = heroStory.image_file || (heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null);
+  // The hero's backdrop comes off its own footage; the generated still is never
+  // used, so a clipless lead simply runs on the flat page field.
+  const heroFirstThumb = heroYtVids[0] ? ytThumb(heroYtVids[0].embed_id) : null;
   const heroSlug = toSlug(heroStory.topic);
   const heroTotalClips = heroYtVids.length + (heroStory.social_clips ?? []).filter((c) => c.duration).length;
   const heroTotalSources = (heroStory.sources ?? []).length;

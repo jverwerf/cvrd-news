@@ -2,7 +2,7 @@
 
 import React from 'react';
 import type { NarrativeGap } from '@/lib/data';
-import { toSentence } from '@/lib/text';
+import { toSentence, isPlaceholderProse } from '@/lib/text';
 
 /**
  * What a story shows where its video tiles would go when it has no playable
@@ -44,12 +44,7 @@ const FAN_LEANS = [
 
 const isFanCategory = (c?: string) => c === 'sports' || c === 'trending';
 /** The pipeline writes a placeholder rather than omitting an uncovered side. */
-const isThin = (t?: string) => !t || /^\s*no coverage/i.test(t) || t.trim().length < 80;
-
-export function clipCount(story: NarrativeGap) {
-  return (story.youtube_videos ?? []).length
-    + (story.social_clips ?? []).filter(c => c.duration).length;
-}
+const isThin = (t?: string) => !t || t.trim().length < 80 || isPlaceholderProse(t);
 
 function hash(s: string) {
   let h = 0;
@@ -87,30 +82,13 @@ function CoverageFiller({ story, max }: { story: NarrativeGap; max: number }) {
   );
 }
 
-/** The headlines actually running at each outlet. */
-function OutletsFiller({ story, max }: { story: NarrativeGap; max: number }) {
-  const sources = (story.sources ?? []).filter(s => s.title).slice(0, max);
-  if (sources.length === 0) return null;
-  const dot = (lean?: string) => lean === 'left' ? '#60a5fa' : lean === 'right' ? '#f87171' : '#a3a3a3';
-  return (
-    <div>
-      <Label color={C.dim}>Across outlets</Label>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
-        {sources.map((src, i) => (
-          <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'baseline' }}>
-            <span style={{ width: 5, height: 5, borderRadius: '50%', flexShrink: 0, background: dot(src.lean), transform: 'translateY(-1px)' }} />
-            <span style={{ flexShrink: 0, width: 92, fontFamily: mono, fontSize: 9, color: C.dim, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {src.name}
-            </span>
-            <span style={{ fontFamily: sans, fontSize: 11.5, lineHeight: 1.45, color: 'rgba(226,232,240,0.8)' }}>
-              {src.title}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
+/*
+ * There was an "Across outlets" filler here listing each source's headline. It
+ * is gone: only sources the analyser managed to attach a `title` to can be
+ * listed, which on 15 of today's 46 stories is a single outlet out of four, so
+ * the panel contradicted the lean counts printed on the same card (one line
+ * under a 2-1-1 strip) and read as a bug rather than as reporting.
+ */
 
 /** What the feeds are saying. */
 function SocialFiller({ story }: { story: NarrativeGap }) {
@@ -125,37 +103,50 @@ function SocialFiller({ story }: { story: NarrativeGap }) {
   );
 }
 
+function hasCoverageBlocks(story: NarrativeGap) {
+  return (isFanCategory(story.category) ? FAN_LEANS : LEANS)
+    .some(side => !(story.category === 'trending' && side.key === 'center_narrative')
+      && !isThin((story as any)[side.key]));
+}
+
+/**
+ * Whether this story has anything worth putting in a filler panel at all.
+ *
+ * Callers need to know before they lay out: a panel that would render nothing
+ * should not be given a slot, otherwise the card reserves space for it and
+ * shows a hole. There is deliberately no summary fallback — the summary is
+ * already printed beside the panel, so falling back to it filled the box by
+ * saying the same thing twice.
+ */
+export function hasFillerContent(story: NarrativeGap) {
+  return hasCoverageBlocks(story) || !isThin(story.social_summary);
+}
+
 export function StoryFiller({ story, compact }: { story: NarrativeGap; compact?: boolean }) {
   const max = compact ? 1 : 3;
 
-  const hasCoverage = (isFanCategory(story.category) ? FAN_LEANS : LEANS)
-    .some(side => !(story.category === 'trending' && side.key === 'center_narrative')
-      && !isThin((story as any)[side.key]));
-  const hasOutlets = (story.sources ?? []).some(src => src.title);
-  const hasSocial = !isThin(story.social_summary);
-
   const available = [
-    hasCoverage && <CoverageFiller key="coverage" story={story} max={max} />,
-    hasOutlets && <OutletsFiller key="outlets" story={story} max={compact ? 3 : 6} />,
-    hasSocial && <SocialFiller key="social" story={story} />,
+    hasCoverageBlocks(story) && <CoverageFiller key="coverage" story={story} max={max} />,
+    !isThin(story.social_summary) && <SocialFiller key="social" story={story} />,
   ].filter(Boolean) as React.ReactElement[];
+
+  if (available.length === 0) return null;
 
   // Rotate which one this story gets, so the page doesn't show the same filler
   // over and over, while staying stable between server and client render.
-  const chosen = available.length > 0
-    ? available[hash(story.topic) % available.length]
-    : null;
+  const chosen = available[hash(story.topic) % available.length];
 
   return (
     <div style={{
       height: '100%', width: '100%', overflow: 'hidden',
       background: C.panelDark,
-      display: 'flex', flexDirection: 'column', gap: 12,
+      // Centred rather than top-aligned: where the panel sits in a box taller
+      // than its text, the leftover space reads as a gap under the copy unless
+      // it is split evenly above and below.
+      display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 12,
       padding: compact ? '12px 14px' : '16px 20px',
     }}>
-      {chosen ?? (
-        <p style={{ ...BODY, color: C.dim, margin: 0 }}>{toSentence(story.summary, 260)}</p>
-      )}
+      {chosen}
     </div>
   );
 }

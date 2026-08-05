@@ -73,7 +73,9 @@ function CoverageStrip({ story }: { story: StoryItem }) {
   );
 }
 
-export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedHeight }: { stories: StoryItem[]; blobBase: string; vertical?: boolean; dividerAfter?: number; cappedHeight?: number }) {
+// `blobBase` is still accepted so callers need not change, but nothing here
+// resolves a blob path any more: cards show YouTube frames or nothing.
+export function StoryScroll({ stories, vertical, dividerAfter, cappedHeight }: { stories: StoryItem[]; blobBase?: string; vertical?: boolean; dividerAfter?: number; cappedHeight?: number }) {
   const ref = useRef<HTMLDivElement>(null);
 
   function scroll(dir: 'left' | 'right' | 'up' | 'down') {
@@ -116,8 +118,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
       }} className="hide-scroll pick-scroll">
         {prepared.map(({ story, tiles, feature }, idx) => {
           const slug = toSlug(story.topic);
-          const img = story.image_file;
-          const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
           const vids = story.youtube_videos ?? [];
           const firstVid = vids[0];
           return (
@@ -142,8 +142,8 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                 }}>
                   {tiles.length
                     ? <StoryTile tiles={tiles} badge="sm" cycleMs={12500 + (idx % 5) * 1900} />
-                    : (imgUrl || firstVid)
-                      ? <img src={imgUrl ?? ytThumb(firstVid.embed_id)} alt=""
+                    : firstVid
+                      ? <img src={ytThumb(firstVid.embed_id)} alt=""
                           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: THUMB_FOCUS, opacity: 0.75 }} />
                       : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                   }
@@ -187,8 +187,6 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
       }} className="hide-scroll">
         {stories.map((story) => {
           const slug = toSlug(story.topic);
-          const img = story.image_file;
-          const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
           const vids = story.youtube_videos ?? [];
           const firstVid = vids[0];
 
@@ -201,8 +199,8 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
             }} className="story-card">
               {/* thumb */}
               <div style={{ height: 120, position: 'relative', flexShrink: 0, overflow: 'hidden' }}>
-                {(imgUrl || firstVid)
-                  ? <img src={imgUrl ?? ytThumb(firstVid.embed_id)} alt=""
+                {firstVid
+                  ? <img src={ytThumb(firstVid.embed_id)} alt=""
                       style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.75 }} />
                   : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                 }

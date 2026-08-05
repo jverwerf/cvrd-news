@@ -3,7 +3,7 @@
 import React, { useCallback, useRef, useState } from 'react';
 import { Dashboard, TILE_GAP } from '@/components/Dashboard';
 import type { NarrativeGap } from '@/lib/data';
-import { toParagraphs } from '@/lib/text';
+import { toParagraphs, isPlaceholderProse } from '@/lib/text';
 import { useElementSize, useIsomorphicLayoutEffect } from '@/lib/measure';
 
 /**
@@ -73,7 +73,7 @@ const isFanCategory = (c?: string) => c === 'sports' || c === 'trending';
  */
 const MIN_SECTION_CHARS = 120;
 const isThin = (t?: string) =>
-  !t || /^\s*no coverage/i.test(t) || t.trim().length < MIN_SECTION_CHARS;
+  !t || t.trim().length < MIN_SECTION_CHARS || isPlaceholderProse(t);
 
 export type HeroItem = {
   story: NarrativeGap;

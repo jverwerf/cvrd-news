@@ -19,6 +19,7 @@ import { SiteNav, SiteFooter } from '@/components/SiteNav';
 import { editorialSlug } from '@/lib/onrecord-slug';
 import { HorizontalAdBanner } from '@/components/AdBanners';
 import { toSentence } from '@/lib/text';
+import { clipCount } from '@/lib/story';
 import { CONTENT_MAX, CONTENT_GUTTER } from '@/lib/layout';
 
 export const metadata = { alternates: { canonical: "/" } };
@@ -131,19 +132,16 @@ function PlayIcon({ size = 10 }: { size?: number }) {
 // ── Story card ────────────────────────────────────────────────────
 function StoryCard({ story }: { story: NarrativeGap }) {
   const slug = toSlug(story.topic);
-  const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
-  const img = story.image_file;
-  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
   const vids = story.youtube_videos ?? [];
   const firstVid = vids[0];
 
   return (
     <a href={`/story/${slug}`} style={{ display: 'flex', flexDirection: 'column', textDecoration: 'none', background: C.panel, borderRadius: 8, overflow: 'hidden', border: `1px solid ${C.border}` }} className="story-card">
-      {/* thumb: prefer story image, fall back to yt thumb */}
+      {/* thumb: a frame of the story's own footage, never the generated still */}
       <div style={{ height: 110, position: 'relative', flexShrink: 0, overflow: 'hidden' }}>
-        {(imgUrl || firstVid)
+        {firstVid
           ? <img
-              src={imgUrl ?? ytThumb(firstVid.embed_id)}
+              src={ytThumb(firstVid.embed_id)}
               alt=""
               style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7 }}
             />
@@ -353,9 +351,15 @@ export default async function Home() {
     (breakingStories ?? []).some(hasClips) || (liveStories ?? []).some(hasClips);
 
   const allStories = data?.top_narratives ?? [];
-  const stories = allStories.filter(s => s.is_top_story).length >= 5
-    ? allStories.filter(s => s.is_top_story)
-    : allStories.slice(0, 10);
+  // The front page is the video product: a story that got no footage has
+  // nothing to play, so it runs on its category page and in the brief rather
+  // than leading here. Roughly half a day's stories are filled rather than
+  // shot, and they were the ones carrying a generated still where a clip
+  // belongs.
+  const shownStories = allStories.filter(s => clipCount(s) > 0);
+  const stories = shownStories.filter(s => s.is_top_story).length >= 5
+    ? shownStories.filter(s => s.is_top_story)
+    : shownStories.slice(0, 10);
 
   const gridStories = stories.slice(1, 5);
   const allThreads   = threadData?.threads ?? [];
@@ -382,7 +386,7 @@ export default async function Home() {
   });
   // Today's Pick shows this many; BalancedFill spreads the rest across the two
   // columns so they end at roughly the same height.
-  const railStories = allStories.slice(1 + HOME_PICK_COUNT);
+  const railStories = shownStories.slice(1 + HOME_PICK_COUNT);
   const homeRideSlugs = await getRideSlugs();
   const videoUrl   = data?.video_url;
 
@@ -493,7 +497,7 @@ export default async function Home() {
                 <div data-col="right" style={{ flex: 4, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
                   <SectionHeader label="Today's Pick" href="/brief" hrefText="All stories" />
                   <StoryScroll
-                    stories={allStories.slice(1, 1 + HOME_PICK_COUNT)}
+                    stories={shownStories.slice(1, 1 + HOME_PICK_COUNT)}
                     blobBase={process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? ''}
                     vertical
                   />
@@ -520,14 +524,14 @@ export default async function Home() {
                         Clips from YouTube, TikTok, Instagram Reels, X, and Telegram — all in one place.
                       </p>
                       {(() => {
-                        const blobBase = process.env.NEXT_PUBLIC_BLOB_BASE_URL ?? '';
-                        const thumb = (s: any) => {
-                          if (s.image_file) return s.image_file.startsWith('http') ? s.image_file : `${blobBase}${s.image_file}`;
-                          if (s.youtube_videos?.[0]) return `https://img.youtube.com/vi/${s.youtube_videos[0].embed_id}/mqdefault.jpg`;
-                          return null;
-                        };
+                        // These tiles preview what the channel actually plays,
+                        // so they can only be frames of real footage.
+                        const thumb = (s: any) =>
+                          s.youtube_videos?.[0]
+                            ? `https://img.youtube.com/vi/${s.youtube_videos[0].embed_id}/mqdefault.jpg`
+                            : null;
                         const thumbsFor = (cat: string | null) => {
-                          const src = cat ? allStories.filter(s => s.category === cat) : allStories.slice(0, 10);
+                          const src = cat ? shownStories.filter(s => s.category === cat) : shownStories.slice(0, 10);
                           return src.map(thumb).filter(Boolean) as string[];
                         };
                         const breakingThumbs = (breakingStories ?? []).map(thumb).filter(Boolean) as string[];

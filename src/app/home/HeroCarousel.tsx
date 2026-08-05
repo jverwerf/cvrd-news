@@ -43,7 +43,7 @@ const PAD_BOTTOM = 12;
 const HERO_BLUR_MASK =
   'radial-gradient(135% 115% at 0% 18%, #000 0%, #000 32%, rgba(0,0,0,0.55) 52%, transparent 74%)';
 
-export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; blobBase: string }) {
+export function HeroCarousel({ stories }: { stories: NarrativeGap[]; blobBase?: string }) {
   const [idx, setIdx] = useState(0);
   const [visible, setVisible] = useState(true);
 
@@ -63,9 +63,13 @@ export function HeroCarousel({ stories, blobBase }: { stories: NarrativeGap[]; b
   if (!story) return null;
 
   const slug = toSlug(story.topic);
-  const img = story.image_file;
-  const imgUrl = img ? (img.startsWith('http') ? img : `${blobBase}${img}`) : null;
   const vids = story.youtube_videos ?? [];
+  // The band behind the headline is a frame of the story's own coverage. The
+  // generated still is never used: an illustration blown up to full width is
+  // the most emphatic possible way to show art where footage should be.
+  const imgUrl = vids[0]
+    ? `https://img.youtube.com/vi/${vids[0].embed_id}/maxresdefault.jpg`
+    : null;
   const totalSources = vids.length + (story.social_clips?.length ?? 0);
   const articleSources = story.sources ?? [];
   const leftCount = articleSources.filter(s => s.lean === 'left').length;
