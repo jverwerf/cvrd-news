@@ -242,6 +242,19 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
   // have embedded posts or a timeline yet), so drop the whole side column then
   // and let the collapsed wall have the full row instead of a blank gap.
   const hasBandCards = xClips.some(c => !c.duration && c.embed_id) || (matchedTimelines?.length || 0) > 0;
+  // The wall only earns its band with a real rotation behind it. Count what the
+  // Dashboard playlist actually accepts (Telegram stays out; Rumble lists with
+  // or without its MP4): under four playable videos the whole band goes — Feed
+  // card included — with clips and tweets still showing in the video grid and
+  // the Divide further down.
+  const playableVideos = ytVids.filter(v => !(v as { download_failed?: boolean }).download_failed).length
+    + clips.filter(c => !(c as { download_failed?: boolean }).download_failed && c.embed_id && (
+        c.platform === 'dailymotion'
+        || c.platform === 'rumble'
+        || (c.platform === 'x' && c.duration)
+        || (c.platform === 'tiktok' && /^\d+$/.test(c.embed_id))
+      )).length;
+  const showBand = !(story as { no_footage?: boolean }).no_footage && playableVideos > 3;
   const sentences = story.what_they_arent_telling_you
     ?.split(/(?<=[.!?])\s+(?=[A-Z])/)
     .filter(s => s.trim().length > 20) || [];
@@ -464,10 +477,11 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
       )}
 
       {/* 2. COMPACT DASHBOARD — skipped for stories that made the section on
-             reporting alone. With no footage the dashboard is an empty wall, so
-             the page goes straight to the article and whatever clips exist show
-             in the video grid further down. */}
-      {!(story as { no_footage?: boolean }).no_footage && (
+             reporting alone or arrived with a thin rotation. A wall with a
+             handful of videos reads as broken, so the page goes straight to the
+             article and whatever clips exist show in the video grid further
+             down. */}
+      {showBand && (
       <div className="px-6 md:px-12 pt-4 pb-4" style={{ background: '#1e2a3a', borderTop: '1px solid #2a3a4a', borderBottom: '1px solid #2a3a4a' }}>
 
         {/* DASHBOARD — full-width row when it owns the band, otherwise it shares
