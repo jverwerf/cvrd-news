@@ -5,6 +5,7 @@ import { TileAdBanner } from "./AdBanners";
 import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
 import { useElementSize } from "../lib/measure";
+import { TILE_TOP, THUMB_FOCUS } from "../lib/tileFocus";
 
 type PlaylistItem = {
   type: 'anchor' | 'youtube' | 'tiktok' | 'reels' | 'x' | 'telegram' | 'dailymotion' | 'rumble';
@@ -1274,7 +1275,7 @@ function VideoThumb({ thumbSrc, url, badge, badgeColor, label, onFail }: {
       onClick={() => url && window.open(url, '_blank', 'noopener,noreferrer')}>
       {!failed && (
         <img src={thumbSrc} className="absolute inset-0 w-full h-full object-cover"
-          style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
+          style={{ objectPosition: THUMB_FOCUS, animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
           onError={() => { setFailed(true); onFail?.(); }} />
       )}
       <div className="absolute inset-0" style={{ background: 'rgba(0,0,0,0.2)' }} />
@@ -1301,14 +1302,14 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
         <img
           src={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
+          style={{ objectPosition: THUMB_FOCUS, animation: 'thumbZoom 8s ease-in-out infinite alternate', transformOrigin: 'center' }}
           onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; onMediaFail?.(); }}
           alt=""
         />
         <iframe
           src={`/api/yt-tile?v=${videoId}`}
           className="absolute"
-          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
+          style={{ border: 'none', pointerEvents: 'none', top: TILE_TOP, left: '-50%', width: '200%', height: '200%' }}
           allow="autoplay"
           loading="lazy"
         />
@@ -1401,13 +1402,14 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
         <img
           src={item.image || `https://www.dailymotion.com/thumbnail/video/${item.embedId}`}
           className="absolute inset-0 w-full h-full object-cover"
+          style={{ objectPosition: THUMB_FOCUS }}
           onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
           alt=""
         />
         <iframe
           src={`https://geo.dailymotion.com/player.html?video=${item.embedId}&autoplay=true&mute=true&controls=false`}
           className="absolute"
-          style={{ border: 'none', pointerEvents: 'none', top: '-50%', left: '-50%', width: '200%', height: '200%' }}
+          style={{ border: 'none', pointerEvents: 'none', top: TILE_TOP, left: '-50%', width: '200%', height: '200%' }}
           allow="autoplay"
           loading="lazy"
         />
@@ -1429,7 +1431,7 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
       <div className="w-full h-full relative overflow-hidden">
         <video src={item.videoSrc} className="absolute inset-0 w-full h-full object-cover"
           autoPlay muted loop playsInline poster={item.image || undefined}
-          style={{ pointerEvents: 'none' }} />
+          style={{ objectPosition: THUMB_FOCUS, pointerEvents: 'none' }} />
         <div className="absolute top-2 left-2 z-10">
           <span className="text-[8px] font-bold text-white px-1.5 py-0.5 rounded" style={{ background: '#85c742' }}>Rumble</span>
         </div>

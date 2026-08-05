@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Fragment } from 'react';
 import { getStoryTiles, StoryTile } from './StoryTile';
 import { toSentence } from '@/lib/text';
+import { THUMB_FOCUS } from '@/lib/tileFocus';
 
 const C = {
   panel: '#1e2d3d', panelDark: '#1a2535',
@@ -143,7 +144,7 @@ export function StoryScroll({ stories, blobBase, vertical, dividerAfter, cappedH
                     ? <StoryTile tiles={tiles} badge="sm" cycleMs={12500 + (idx % 5) * 1900} />
                     : (imgUrl || firstVid)
                       ? <img src={imgUrl ?? ytThumb(firstVid.embed_id)} alt=""
-                          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 30%', opacity: 0.75 }} />
+                          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: THUMB_FOCUS, opacity: 0.75 }} />
                       : <div style={{ width: '100%', height: '100%', background: `linear-gradient(135deg, ${catColor(story.category)}30, ${C.panelDark})` }} />
                   }
                 </div>

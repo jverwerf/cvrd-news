@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { TILE_TOP, THUMB_FOCUS } from '@/lib/tileFocus';
 
 /**
  * How a clip is displayed:
@@ -56,15 +57,6 @@ export function getStoryTiles(story: any): TileInfo[] {
 export function getFirstTile(story: any): TileInfo | null {
   return getStoryTiles(story)[0] ?? null;
 }
-
-// The tile iframe is 200% tall so the YouTube player's own chrome falls outside
-// the box, and /api/yt-tile applies the same trick again inside — so the two
-// crops compound and we only ever see a narrow horizontal slice of the frame.
-// Centring that slice (top: -50%) lands it on chins and torsos, so bias it
-// upward to where faces actually sit.
-const TILE_TOP = '-18%';
-// Same correction for still thumbnails, which crop with object-fit instead.
-const THUMB_FOCUS = 'center 30%';
 
 const DEFAULT_CYCLE_MS = 13000;
 
