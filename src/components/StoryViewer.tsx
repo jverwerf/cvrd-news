@@ -1182,7 +1182,7 @@ export function StoryViewer({ stories, videoUrl, videoDate, dailyBrief }: {
         <div className="mt-6">
           <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
           <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
-            <HorizontalAdBanner />
+            <HorizontalAdBanner category={story.category} />
           </div>
         </div>
       </div>

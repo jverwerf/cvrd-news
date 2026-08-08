@@ -68,6 +68,7 @@ const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 const SPONSORED_BY_CATEGORY: Partial<Record<string, Brand[]>> = {
   politics: ['isoqar'],
   world: ['isoqar'],
+  markets: ['isoqar'],
 };
 
 function useCyclingBrand(ms = 60000, category: string | null = null) {
@@ -626,9 +627,16 @@ function IsoqarTile() {
 
 // ─── Public components ───────────────────────────────────────────────────────
 
-/** Wide horizontal banner (~90px tall) */
-export function HorizontalAdBanner() {
-  const { topic, category } = useTopStory();
+/** Wide horizontal banner (~90px tall)
+ * Pass `category` when the surrounding page already knows it (a specific
+ * story or a /world, /politics, /markets… listing) — that's the real
+ * context for gating sponsored placements. Falls back to the sitewide
+ * top-story flag only on mixed-content pages (home) that have no single
+ * category of their own.
+ */
+export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
+  const { topic, category: topStoryCategory } = useTopStory();
+  const category = categoryProp ?? topStoryCategory;
   const { brand, visible } = useCyclingBrand(60000, category);
   const [src, setSrc] = useState(() => MM_LANDSCAPE[Math.floor(Math.random() * MM_LANDSCAPE.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_LANDSCAPE, prev)), []);
@@ -667,9 +675,10 @@ export function HorizontalAdBanner() {
   );
 }
 
-/** Square tile — Dashboard, On Record grid */
-export function TileAdBanner() {
-  const { topic, category } = useTopStory();
+/** Square tile — Dashboard, On Record grid. See HorizontalAdBanner re: category prop. */
+export function TileAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
+  const { topic, category: topStoryCategory } = useTopStory();
+  const category = categoryProp ?? topStoryCategory;
   const { brand, visible } = useCyclingBrand(60000, category);
   const [showVideo] = useState(() => Math.random() < 0.67);
   const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
