@@ -2,10 +2,35 @@ export const revalidate = 86400; // 24 hours — timeline content is static
 
 import type { Metadata } from "next";
 import { getDailyGaps } from "@/lib/data";
-import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo } from "@/lib/timeline-data";
+import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo, type TimelineThread, type ThreadEntry } from "@/lib/timeline-data";
 import { SiteNav } from "@/components/SiteNav";
 import { getRideSlugs } from "@/lib/ride-data";
 import { TimelineContent } from "./TimelineClient";
+
+/** The index draws a title, a summary, a thumbnail, a date strip and three video
+ *  stills. It never touches social_clips, sources, narratives or entry summaries
+ *  — only ThreadCard does, and that is /timeline/[slug]. Handing the client the
+ *  whole thread put all 59 threads, 1,300 entries and 20,000 clips into the RSC
+ *  payload: a 28MB page, past the 15MB Googlebot stops reading at. Projecting to
+ *  what is actually rendered is the same pixels for ~1% of the bytes. */
+function slimForIndex(threads: TimelineThread[]): TimelineThread[] {
+  return threads.map(t => {
+    let clipsKept = 0;
+    const last = t.entries.length - 1;
+    const entries = t.entries.map((e, i) => {
+      // topic is needed on every entry: the search box filters on it
+      const slim: Partial<ThreadEntry> = { date: e.date, topic: e.topic };
+      if (i === last) slim.image_file = e.image_file;
+      if (clipsKept < 3 && e.youtube_videos?.length) {
+        const keep = e.youtube_videos.slice(0, 3 - clipsKept);
+        slim.youtube_videos = keep.map(v => ({ url: v.url, embed_id: v.embed_id, channel: v.channel }));
+        clipsKept += keep.length;
+      }
+      return slim as ThreadEntry;
+    });
+    return { ...t, entries, gap_days: [] };
+  });
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const threadData = await getTimelineThreads();
@@ -108,7 +133,7 @@ export default async function TimelinePage() {
         </div>
       ) : (
         <>
-          <TimelineContent threads={threadData.threads} generatedAt={threadData.generated_at} lastYear={lastYearData} tenYearsAgo={tenYearsData} rideSlugs={rideSlugs} />
+          <TimelineContent threads={slimForIndex(threadData.threads)} generatedAt={threadData.generated_at} lastYear={lastYearData} tenYearsAgo={tenYearsData} rideSlugs={rideSlugs} />
 
           {/* Server-rendered content for SEO — visually hidden, crawlable */}
           <div className="sr-only" aria-hidden="false">
@@ -119,17 +144,17 @@ export default async function TimelinePage() {
                 <h2>{thread.title}</h2>
                 <p>Category: {thread.category} | {thread.first_seen} to {thread.last_seen} | {thread.days_covered} days covered</p>
                 <p>{thread.summary}</p>
-                {thread.entries.map((entry, i) => (
+                {/* The most recent days only. Printing all 1,300 entries here put
+                    ~2MB of prose on the index and pushed the page past the 15MB
+                    Googlebot stops reading at, so the tail was never indexed
+                    anyway. Every entry stays crawlable on the thread's own page,
+                    which is linked right above. */}
+                {thread.entries.slice(-3).map((entry, i) => (
                   <section key={i}>
                     <h3>{entry.date}: {entry.topic}</h3>
-                    <p>{entry.summary}</p>
-                    {entry.youtube_videos?.map((v, j) => (
-                      <a key={j} href={v.url || `https://youtube.com/watch?v=${v.embed_id}`}>
-                        Watch: {v.channel} coverage
-                      </a>
-                    ))}
                   </section>
                 ))}
+                <a href={`/timeline/${thread.id}`}>All {thread.entries.length} updates in {thread.title}</a>
               </article>
             ))}
             {lastYearData && (
