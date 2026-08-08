@@ -67,6 +67,7 @@ const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 // shows up alongside 'politics' coverage, never as a blanket sitewide ad.
 const SPONSORED_BY_CATEGORY: Partial<Record<string, Brand[]>> = {
   politics: ['isoqar'],
+  world: ['isoqar'],
 };
 
 function useCyclingBrand(ms = 60000, category: string | null = null) {
