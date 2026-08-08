@@ -18,9 +18,14 @@ const CHIP: React.CSSProperties = {
 };
 
 function useTopStory() {
-  const [state, setState] = useState<{ topic: string | null; category: string | null }>({ topic: null, category: null });
+  const [state, setState] = useState<{ topic: string | null; category: string | null; country: string | null }>(
+    { topic: null, category: null, country: null }
+  );
   useEffect(() => {
-    fetch('/api/top-story').then(r => r.json()).then(d => setState({ topic: d.topic ?? null, category: d.category ?? null })).catch(() => {});
+    fetch('/api/top-story')
+      .then(r => r.json())
+      .then(d => setState({ topic: d.topic ?? null, category: d.category ?? null, country: d.country ?? null }))
+      .catch(() => {});
   }, []);
   return state;
 }
@@ -62,17 +67,38 @@ function pickNext<T>(arr: T[], current: T): T {
 type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar';
 const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 
-// Sponsored placements only enter the rotation on days whose top story
-// matches their category — e.g. ISOQAR (compliance/auditor training) only
-// shows up alongside 'politics' coverage, never as a blanket sitewide ad.
-const SPONSORED_BY_CATEGORY: Partial<Record<string, Brand[]>> = {
-  politics: ['isoqar'],
-  world: ['isoqar'],
-  markets: ['isoqar'],
+/** A paid placement. It only enters the rotation when BOTH match:
+ *  - `categories`: the story on screen is one this advertiser is relevant to
+ *  - `countries`: the reader is somewhere the advertiser can actually sell to
+ *
+ * The country half matters as much as the category half — a Spain-only sports
+ * retailer or a UK training provider priced in GBP is wasted on a US reader,
+ * and CVRD's audience is majority US. `'all'` is for advertisers that ship
+ * or sell worldwide. Unknown country (local dev, bot, missing edge header)
+ * matches nothing geo-restricted, so those readers just get house ads.
+ */
+type Sponsored = {
+  brand: Brand;
+  categories: string[];
+  countries: string[] | 'all';
 };
 
-function useCyclingBrand(ms = 60000, category: string | null = null) {
-  const pool = [...BRAND_ORDER, ...(category ? SPONSORED_BY_CATEGORY[category] ?? [] : [])];
+const SPONSORED: Sponsored[] = [
+  // ISOQAR Academy — UKAS-accredited, GBP pricing, training venues in
+  // Manchester/London/Bristol/Leamington Spa. UK/IE only.
+  { brand: 'isoqar', categories: ['politics', 'world', 'markets'], countries: ['GB', 'IE'] },
+];
+
+function sponsorsFor(category: string | null, country: string | null): Brand[] {
+  if (!category) return [];
+  return SPONSORED.filter(s =>
+    s.categories.includes(category) &&
+    (s.countries === 'all' || (country ? s.countries.includes(country) : false))
+  ).map(s => s.brand);
+}
+
+function useCyclingBrand(ms = 60000, category: string | null = null, country: string | null = null) {
+  const pool = [...BRAND_ORDER, ...sponsorsFor(category, country)];
   const [idx, setIdx] = useState(() => Math.floor(Math.random() * pool.length));
   const [visible, setVisible] = useState(true);
   useEffect(() => {
@@ -635,9 +661,9 @@ function IsoqarTile() {
  * category of their own.
  */
 export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, category: topStoryCategory } = useTopStory();
+  const { topic, category: topStoryCategory, country } = useTopStory();
   const category = categoryProp ?? topStoryCategory;
-  const { brand, visible } = useCyclingBrand(60000, category);
+  const { brand, visible } = useCyclingBrand(60000, category, country);
   const [src, setSrc] = useState(() => MM_LANDSCAPE[Math.floor(Math.random() * MM_LANDSCAPE.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_LANDSCAPE, prev)), []);
 
@@ -677,9 +703,9 @@ export function HorizontalAdBanner({ category: categoryProp }: { category?: stri
 
 /** Square tile — Dashboard, On Record grid. See HorizontalAdBanner re: category prop. */
 export function TileAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, category: topStoryCategory } = useTopStory();
+  const { topic, category: topStoryCategory, country } = useTopStory();
   const category = categoryProp ?? topStoryCategory;
-  const { brand, visible } = useCyclingBrand(60000, category);
+  const { brand, visible } = useCyclingBrand(60000, category, country);
   const [showVideo] = useState(() => Math.random() < 0.67);
   const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_PORTRAIT, prev)), []);
