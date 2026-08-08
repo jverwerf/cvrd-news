@@ -776,6 +776,8 @@ export function OnRecordDetail({ score, verified, allPoliticians, slug }: {
           <a href="/terms" className="text-[11px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
           <span className="text-[#555]">&middot;</span>
           <a href="/privacy" className="text-[11px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
+          <span className="text-[#555]">·</span>
+          <a href="/affiliate-disclosure" className="text-[11px] text-[#888] hover:text-white transition-colors">Affiliate Disclosure</a>
         </div>
       </footer>
     </div>

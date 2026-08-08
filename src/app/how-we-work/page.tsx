@@ -77,6 +77,8 @@ export default function HowWeWork() {
             <a href="/privacy" className="text-[12px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
             <span className="text-[#555]">·</span>
             <a href="/contact" className="text-[12px] text-[#888] hover:text-white transition-colors">Contact</a>
+            <span className="text-[#555]">·</span>
+            <a href="/affiliate-disclosure" className="text-[12px] text-[#888] hover:text-white transition-colors">Affiliate Disclosure</a>
           </div>
         </div>
 

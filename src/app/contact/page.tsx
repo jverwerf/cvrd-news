@@ -75,6 +75,8 @@ export default function Contact() {
             <a href="/privacy" className="text-[12px] text-[#888] hover:text-white transition-colors">Privacy Policy</a>
             <span className="text-[#555]">·</span>
             <a href="/terms" className="text-[12px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
+            <span className="text-[#555]">·</span>
+            <a href="/affiliate-disclosure" className="text-[12px] text-[#888] hover:text-white transition-colors">Affiliate Disclosure</a>
           </div>
         </div>
 

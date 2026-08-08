@@ -113,6 +113,8 @@ export default function About() {
             <span className="text-[#555]">·</span>
             <a href="/terms" className="text-[12px] text-[#888] hover:text-white transition-colors">Terms of Service</a>
             <span className="text-[#555]">·</span>
+            <a href="/affiliate-disclosure" className="text-[12px] text-[#888] hover:text-white transition-colors">Affiliate Disclosure</a>
+            <span className="text-[#555]">·</span>
             <a href="/contact" className="text-[12px] text-[#888] hover:text-white transition-colors">Contact</a>
           </div>
         </div>
