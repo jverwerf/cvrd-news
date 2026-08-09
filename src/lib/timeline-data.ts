@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { cache } from 'react';
 
 // ── Types ──
 
@@ -69,21 +70,23 @@ export type TodayLastYearData = {
 
 const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
-/** Load a JSON file: try engine output first, then Blob, then public/data fallback */
-async function loadTimelineFile(filename: string): Promise<TimelineThreadsOutput | null> {
+/** Load a JSON file: try engine output first, then Blob, then public/data fallback.
+ *  Tagged 'timeline' so the engine can flush it on publish instead of waiting out
+ *  the revalidate window. */
+async function loadTimelineFile<T>(filename: string): Promise<T | null> {
   // 1. Local engine output (for dev / pipeline runs)
   const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/${filename}`);
   if (fs.existsSync(enginePath)) {
     try {
-      return JSON.parse(fs.readFileSync(enginePath, 'utf8')) as TimelineThreadsOutput;
+      return JSON.parse(fs.readFileSync(enginePath, 'utf8')) as T;
     } catch { /* fall through */ }
   }
 
   // 2. Blob (production)
   if (BLOB_BASE) {
     try {
-      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { next: { revalidate: 86400 } });
-      if (resp.ok) return await resp.json() as TimelineThreadsOutput;
+      const resp = await fetch(`${BLOB_BASE}/data/${filename}`, { next: { revalidate: 86400, tags: ['timeline'] } });
+      if (resp.ok) return await resp.json() as T;
     } catch { /* fall through */ }
   }
 
@@ -91,16 +94,27 @@ async function loadTimelineFile(filename: string): Promise<TimelineThreadsOutput
   const publicPath = path.resolve(process.cwd(), `public/data/${filename}`);
   if (fs.existsSync(publicPath)) {
     try {
-      return JSON.parse(fs.readFileSync(publicPath, 'utf8')) as TimelineThreadsOutput;
+      return JSON.parse(fs.readFileSync(publicPath, 'utf8')) as T;
     } catch { /* fall through */ }
   }
 
   return null;
 }
 
-export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null> {
-  // Thread detector now merges archive into timeline_threads.json — single source of truth
-  const data = await loadTimelineFile('timeline_threads.json');
+/** List views read the slim index, not the 20MB monolith.
+ *
+ *  The monolith is over Vercel's 2MB Data Cache ceiling, so Next silently
+ *  declined to cache it and refetched plus reparsed all 20MB on every render of
+ *  the home page, /timeline, and every story and breaking page. The index is
+ *  ~220KB and caches normally.
+ *
+ *  Falls back to the monolith when the index is absent, which keeps the site
+ *  working against an engine that has not published the split files yet.
+ *  cache() dedupes within a request: /timeline asks twice, once in
+ *  generateMetadata and once in the page. */
+export const getTimelineThreads = cache(async (): Promise<TimelineThreadsOutput | null> => {
+  const data = (await loadTimelineFile<TimelineThreadsOutput>('timeline_index.json'))
+    ?? (await loadTimelineFile<TimelineThreadsOutput>('timeline_threads.json'));
   if (!data) return null;
 
   // Filter out threads with no entries
@@ -110,13 +124,19 @@ export async function getTimelineThreads(): Promise<TimelineThreadsOutput | null
     generated_at: data.generated_at,
     threads,
   };
-}
+});
 
-export async function getTimelineThread(slug: string): Promise<TimelineThread | null> {
-  const data = await getTimelineThreads();
-  if (!data) return null;
-  return data.threads.find(t => t.id === slug) || null;
-}
+/** Detail view: one thread's own file, with everything on it. Falls back to
+ *  scanning the monolith if the per-thread file has not been published. */
+export const getTimelineThread = cache(async (slug: string): Promise<TimelineThread | null> => {
+  // guard the path segment: slug comes from the URL
+  if (/^[a-z0-9][a-z0-9-]*$/.test(slug)) {
+    const one = await loadTimelineFile<TimelineThread>(`timeline/${slug}.json`);
+    if (one?.entries?.length) return one;
+  }
+  const data = await loadTimelineFile<TimelineThreadsOutput>('timeline_threads.json');
+  return data?.threads.find(t => t.id === slug) || null;
+});
 
 async function loadLastYearFile(filename: string): Promise<TodayLastYearData | null> {
   const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/${filename}`);
