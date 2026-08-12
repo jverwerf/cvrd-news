@@ -64,7 +64,7 @@ function pickNext<T>(arr: T[], current: T): T {
   return arr[(idx + 1) % arr.length];
 }
 
-type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar';
+type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar' | 'grc';
 const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 
 /** A paid placement. It only enters the rotation when BOTH match:
@@ -87,6 +87,11 @@ const SPONSORED: Sponsored[] = [
   // ISOQAR Academy — UKAS-accredited, GBP pricing, training venues in
   // Manchester/London/Bristol/Leamington Spa. UK/IE only.
   { brand: 'isoqar', categories: ['politics', 'world', 'markets'], countries: ['GB', 'IE'] },
+  // GRC Solutions — IT governance / cyber certification, GBP, UK only.
+  // Deliberately capped to 'markets' alone: Awin rates them Exposure Level 4
+  // ("exceeded both credit limit and settlement terms", ~53 day payment), so we
+  // spend the least inventory on them until commissions are seen to clear.
+  { brand: 'grc', categories: ['markets'], countries: ['GB'] },
 ];
 
 function sponsorsFor(category: string | null, country: string | null): Brand[] {
@@ -660,6 +665,37 @@ function IsoqarTile() {
  * top-story flag only on mixed-content pages (home) that have no single
  * category of their own.
  */
+// GRC Solutions (Awin advertiser 6072). Their own creative rather than a
+// hand-built card, served from Awin's CDN so they can refresh it their end.
+// Both chosen creatives are evergreen — the CISSP25 set is dated "starts 8
+// April 2026" and is already expired, so do not swap to it.
+const GRC_LINK = 'https://www.awin1.com/cread.php?awinmid=6072&awinaffid=3026993&ued=https%3A%2F%2Fuk.grcsolutions.io%2F';
+const GRC_728 = 'https://a1.awin1.com/ads/awin/6072/imgdarkbluebanner728x90px20-1772448642544.png';
+const GRC_300 = 'https://a1.awin1.com/ads/awin/6072/imgbanner441-1772448077687.png';
+
+function GrcHorizontal() {
+  return (
+    <a href={GRC_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: '#0d1b2a', border: '1px solid rgba(255,255,255,0.07)' }}>
+      <img src={GRC_728} alt="GRC Solutions — free ISO 27001 guide with the ISO 27001 Toolkit"
+        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center', display: 'block' }} />
+    </a>
+  );
+}
+
+function GrcTile() {
+  return (
+    <a href={GRC_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#0d1b2a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={GRC_300} alt="GRC Solutions — Cyber Essentials certification with free phishing staff awareness training"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      <span style={{ position: 'absolute', top: 8, left: 8, fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.75)', background: 'rgba(10,20,32,0.55)', padding: '3px 6px', borderRadius: 3 }}>
+        Sponsored
+      </span>
+    </a>
+  );
+}
+
 export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
   const { topic, category: topStoryCategory, country } = useTopStory();
   const category = categoryProp ?? topStoryCategory;
@@ -696,6 +732,7 @@ export function HorizontalAdBanner({ category: categoryProp }: { category?: stri
         {brand === 'newsletter'  && <NewsletterHorizontal topic={topic} />}
         {brand === 'kofi'        && <KofiHorizontal />}
         {brand === 'isoqar'      && <IsoqarHorizontal />}
+        {brand === 'grc'         && <GrcHorizontal />}
       </div>
     </div>
   );
@@ -720,6 +757,7 @@ export function TileAdBanner({ category: categoryProp }: { category?: string | n
         {brand === 'newsletter' && <NewsletterTile topic={topic} />}
         {brand === 'kofi'       && <KofiTile />}
         {brand === 'isoqar'     && <IsoqarTile />}
+        {brand === 'grc'        && <GrcTile />}
         {brand === 'migraineme' && (showVideo ? (
           <a href="https://migraineme.app" target="_blank" rel="noreferrer"
             className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
