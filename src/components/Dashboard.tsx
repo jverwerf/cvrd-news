@@ -533,10 +533,22 @@ export function Dashboard({
   );
   const tileIsFrozen = tileOffsets.map(offset => !inView || (shouldFreeze && (pool[offset]?.isFresh || false)));
 
-  // Roaming ad: randomly picks a tile position, shows ad for 30s, hides for 90s, moves to new position
-  const TILE_POSITIONS = Array.from({ length: 12 }, (_, i) => i); // all tile indices
+  // Roaming ad: shows on one tile for 30s, hides for 90s, moves on.
   const [adPosition, setAdPosition] = useState(-1); // -1 = no ad showing
   const [adKey, setAdKey] = useState(0); // force fresh ad mount
+
+  // Pick from the tiles ACTUALLY on screen.
+  //
+  // The wall renders a different set of slots depending on layout: the full
+  // grid is twelve, a story page in heroLayout is three, compact drops rows 3
+  // and 4 entirely. This used to pick blind from a fixed 0..11, so most cycles
+  // chose a slot that was not mounted and no ad rendered at all — tile ads were
+  // effectively dead everywhere except the full wall. The registry already
+  // tracks which slots are live, because the dedupe logic needs it.
+  const pickAdSlot = () => {
+    const live = [...tileRegistryRef.current.claims.keys()];
+    return live.length ? live[Math.floor(Math.random() * live.length)] : -1;
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -545,8 +557,7 @@ export function Dashboard({
       // Wait 90s before showing ad
       setTimeout(() => {
         if (cancelled) return;
-        // Pick random tile position
-        const pos = TILE_POSITIONS[Math.floor(Math.random() * TILE_POSITIONS.length)];
+        const pos = pickAdSlot();
         setAdPosition(pos);
         setAdKey(k => k + 1);
 
@@ -562,7 +573,7 @@ export function Dashboard({
     // First ad immediately (5s delay for page load)
     const initial = setTimeout(() => {
       if (cancelled) return;
-      const pos = TILE_POSITIONS[Math.floor(Math.random() * TILE_POSITIONS.length)];
+      const pos = pickAdSlot();
       setAdPosition(pos);
       setAdKey(k => k + 1);
 
