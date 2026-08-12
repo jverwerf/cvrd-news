@@ -103,6 +103,17 @@ export function fitTileCount(
   return best;
 }
 
+// Only ONE roaming ad may be on screen at a time, across every Dashboard on
+// the page.
+//
+// A feed mounts a Dashboard per story, so several run at once, and each was
+// running its own independent timer. While the ad usually landed on a dead slot
+// that went unnoticed; once it started landing reliably the page filled up with
+// three and four ads at the same moment, sometimes the same advertiser twice.
+// An instance must claim this before showing, and releases it when it hides or
+// unmounts. A cycle that cannot claim it simply waits for the next one.
+let _adClaim: object | null = null;
+
 export function Dashboard({
   stories,
   videoUrl,
@@ -550,6 +561,9 @@ export function Dashboard({
     return live.length ? live[Math.floor(Math.random() * live.length)] : -1;
   };
 
+  // Identity for this Dashboard instance, used to claim the one ad slot.
+  const adTokenRef = useRef({});
+
   useEffect(() => {
     let cancelled = false;
 
@@ -557,12 +571,16 @@ export function Dashboard({
       // Wait 90s before showing ad
       setTimeout(() => {
         if (cancelled) return;
+        if (_adClaim && _adClaim !== adTokenRef.current) { cycle(); return; }
         const pos = pickAdSlot();
+        if (pos < 0) { cycle(); return; }
+        _adClaim = adTokenRef.current;
         setAdPosition(pos);
         setAdKey(k => k + 1);
 
         // Show ad for 30s, then hide
         setTimeout(() => {
+          if (_adClaim === adTokenRef.current) _adClaim = null;
           if (cancelled) return;
           setAdPosition(-1);
           cycle();
@@ -573,18 +591,26 @@ export function Dashboard({
     // First ad immediately (5s delay for page load)
     const initial = setTimeout(() => {
       if (cancelled) return;
+      if (_adClaim && _adClaim !== adTokenRef.current) { cycle(); return; }
       const pos = pickAdSlot();
+      if (pos < 0) { cycle(); return; }
+      _adClaim = adTokenRef.current;
       setAdPosition(pos);
       setAdKey(k => k + 1);
 
       setTimeout(() => {
+        if (_adClaim === adTokenRef.current) _adClaim = null;
         if (cancelled) return;
         setAdPosition(-1);
         cycle();
       }, 30000);
     }, 5000);
 
-    return () => { cancelled = true; clearTimeout(initial); };
+    return () => {
+      cancelled = true;
+      clearTimeout(initial);
+      if (_adClaim === adTokenRef.current) _adClaim = null;
+    };
   }, []);
 
   const activeType = overrideVideo?.type || current?.type;
