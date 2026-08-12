@@ -18,13 +18,17 @@ const CHIP: React.CSSProperties = {
 };
 
 function useTopStory() {
-  const [state, setState] = useState<{ topic: string | null; category: string | null; country: string | null }>(
-    { topic: null, category: null, country: null }
+  const [state, setState] = useState<{ topic: string | null; categories: string[]; country: string | null }>(
+    { topic: null, categories: [], country: null }
   );
   useEffect(() => {
     fetch('/api/top-story')
       .then(r => r.json())
-      .then(d => setState({ topic: d.topic ?? null, category: d.category ?? null, country: d.country ?? null }))
+      .then(d => setState({
+        topic: d.topic ?? null,
+        categories: Array.isArray(d.categories) ? d.categories : (d.category ? [d.category] : []),
+        country: d.country ?? null,
+      }))
       .catch(() => {});
   }, []);
   return state;
@@ -64,62 +68,163 @@ function pickNext<T>(arr: T[], current: T): T {
   return arr[(idx + 1) % arr.length];
 }
 
-type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar' | 'grc' | 'engagebay' | 'warden9';
-const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
+// ─── Targeting ───────────────────────────────────────────────────────────────
 
-/** A paid placement. It only enters the rotation when BOTH match:
- *  - `categories`: the story on screen is one this advertiser is relevant to
- *  - `countries`: the reader is somewhere the advertiser can actually sell to
+/** The categories the engine actually emits. Typed, so a placement can never
+ *  be written against a category that does not exist — an advertiser bought
+ *  against `sport` when every story is tagged `sports` would silently serve
+ *  nothing, and nothing in the UI would say so. */
+const CATEGORIES = ['world', 'politics', 'markets', 'sports', 'trending'] as const;
+type Category = typeof CATEGORIES[number];
+
+type Placement = 'horizontal' | 'tile';
+
+type Brand =
+  | 'migraineme' | 'newsletter' | 'kofi'
+  | 'isoqar' | 'grc' | 'engagebay' | 'warden9' | 'dazn' | 'zenind' | 'inffni';
+
+/** CVRD's own products. They fill whatever paid demand does not. */
+const HOUSE: Brand[] = ['migraineme', 'newsletter', 'kofi'];
+
+/** Market assumed when the edge hands us no country: local dev, bots, a
+ *  missing header. This used to resolve to "match no advertiser at all", so
+ *  every such reader saw house ads and nothing else. */
+const FALLBACK_COUNTRY = 'US';
+
+/** Share of the rotation held back for CVRD's own products whenever at least
+ *  one advertiser is eligible. With none eligible the house takes all of it. */
+const HOUSE_SHARE = 1 / 3;
+
+/** Multiplier applied when the page's categories overlap an advertiser's
+ *  affinity.
  *
- * The country half matters as much as the category half — a Spain-only sports
- * retailer or a UK training provider priced in GBP is wasted on a US reader,
- * and CVRD's audience is majority US. `'all'` is for advertisers that ship
- * or sell worldwide. Unknown country (local dev, bot, missing edge header)
- * matches nothing geo-restricted, so those readers just get house ads.
- */
+ *  Affinity is a preference, never a gate, and that is the whole point. The
+ *  previous version gated on an exact category match against the *top story*,
+ *  which has been `world` on 103 of the last 104 days — so GRC, EngageBay and
+ *  Warden9, all bought against `markets`, served precisely zero impressions
+ *  from the day they were added. Boosting instead of gating means an
+ *  advertiser is always able to earn, and simply earns more where it fits. */
+const AFFINITY_BOOST = 3;
+
 type Sponsored = {
   brand: Brand;
-  categories: string[];
+  /** Pages this advertiser reads best next to. A boost, not a gate. */
+  affinity: Category[];
+  /** Hard gate: the reader has to be somewhere this advertiser can actually
+   *  sell. A UK training course priced in GBP is wasted on a US reader.
+   *  `'all'` is for advertisers that sell worldwide. */
   countries: string[] | 'all';
+  /** Relative share of paid inventory — roughly what one click is worth to
+   *  us, blending commission against how likely the audience is to convert. */
+  weight: number;
 };
 
 const SPONSORED: Sponsored[] = [
+  // DAZN UK — £19.19-£29.99 per sale, and sports is the single biggest thing
+  // CVRD covers (411 narratives against 241 for markets). Highest weight we
+  // have. The DAZN *UK* programme, so GB only.
+  { brand: 'dazn', affinity: ['sports'], countries: ['GB'], weight: 10 },
+  // EngageBay CRM — 30% RECURRING, Awin payment Level 1. Best-paying partner
+  // on the account. Buyer is small business owners.
+  { brand: 'engagebay', affinity: ['markets', 'trending'], countries: ['GB', 'US'], weight: 8 },
+  // Warden9 — secure runtime for AI agents. 30%, 90 day cookie, Level 1.
+  { brand: 'warden9', affinity: ['markets', 'trending'], countries: ['GB', 'US'], weight: 6 },
+  // Zenind — US LLC / C-Corp formation and registered agent. 10-30%. US only:
+  // the whole product is a US company, and the buyer is a founder abroad
+  // reading US coverage.
+  { brand: 'zenind', affinity: ['markets', 'politics'], countries: ['US'], weight: 5 },
   // ISOQAR Academy — UKAS-accredited, GBP pricing, training venues in
   // Manchester/London/Bristol/Leamington Spa. UK/IE only.
-  { brand: 'isoqar', categories: ['politics', 'world', 'markets'], countries: ['GB', 'IE'] },
+  { brand: 'isoqar', affinity: ['politics', 'world', 'markets'], countries: ['GB', 'IE'], weight: 4 },
+  // INFFNI — US smart robotics. Unproven for us, so a small share. Square
+  // creative only, which the renderer map handles: it just never enters a
+  // horizontal rotation.
+  { brand: 'inffni', affinity: ['trending'], countries: ['US'], weight: 3 },
   // GRC Solutions — IT governance / cyber certification, GBP, UK only.
-  // Deliberately capped to 'markets' alone: Awin rates them Exposure Level 4
-  // ("exceeded both credit limit and settlement terms", ~53 day payment), so we
-  // spend the least inventory on them until commissions are seen to clear.
-  { brand: 'grc', categories: ['markets'], countries: ['GB'] },
-  // EngageBay CRM — 30% RECURRING, Awin payment Level 1. Best-paying partner we
-  // have, so it gets normal inventory. Buyer is small business owners, hence markets.
-  { brand: 'engagebay', categories: ['markets'], countries: ['GB', 'US'] },
-  // Warden9 — secure runtime for AI agents. 30%, 90 day cookie, Level 1.
-  { brand: 'warden9', categories: ['markets', 'trending'], countries: ['GB', 'US'] },
+  // Deliberately the lowest weight on the account: Awin rates them Exposure
+  // Level 4 ("exceeded both credit limit and settlement terms", ~53 day
+  // payment). Capping exposure by weight rather than by category means they
+  // still earn something, where the old category cap meant they earned
+  // nothing at all. Raise it once commissions are seen to clear.
+  { brand: 'grc', affinity: ['markets'], countries: ['GB'], weight: 1 },
 ];
 
-function sponsorsFor(category: string | null, country: string | null): Brand[] {
-  if (!category) return [];
-  return SPONSORED.filter(s =>
-    s.categories.includes(category) &&
-    (s.countries === 'all' || (country ? s.countries.includes(country) : false))
-  ).map(s => s.brand);
+/** Roughly how many ticks one full rotation lasts. Weights are rounded into
+ *  this many slots, which bounds the sequence however lopsided they get. */
+const ROTATION_SLOTS = 24;
+
+/** Deal weighted counts out so the same brand never lands twice in a row:
+ *  always take from whichever brand has the most left that is not the one
+ *  just placed. */
+function deal(counts: Array<{ brand: Brand; n: number }>): Brand[] {
+  const left = counts.map(c => ({ ...c }));
+  const out: Brand[] = [];
+  let prev: Brand | null = null;
+  while (left.some(c => c.n > 0)) {
+    const avail = left.filter(c => c.n > 0);
+    const pick = avail.filter(c => c.brand !== prev).sort((a, b) => b.n - a.n)[0] ?? avail[0];
+    out.push(pick.brand);
+    pick.n -= 1;
+    prev = pick.brand;
+  }
+  return out;
 }
 
-function useCyclingBrand(ms = 60000, category: string | null = null, country: string | null = null) {
-  const pool = [...BRAND_ORDER, ...sponsorsFor(category, country)];
-  const [idx, setIdx] = useState(() => Math.floor(Math.random() * pool.length));
+function buildRotation(placement: Placement, categories: string[], country: string | null): Brand[] {
+  const market = country ?? FALLBACK_COUNTRY;
+  // A brand with no artwork at this size is not eligible for it. This is what
+  // stops a sponsor with only a square creative from rendering an empty slot.
+  const canFill = (b: Brand) => RENDERERS[b][placement] !== undefined;
+
+  const paid = SPONSORED
+    .filter(s => canFill(s.brand))
+    .filter(s => s.countries === 'all' || s.countries.includes(market))
+    .map(s => ({
+      brand: s.brand,
+      weight: s.weight * (s.affinity.some(c => categories.includes(c)) ? AFFINITY_BOOST : 1),
+    }));
+
+  const house = HOUSE.filter(canFill);
+  const paidTotal = paid.reduce((n, p) => n + p.weight, 0);
+  const houseTotal = paidTotal > 0 ? (paidTotal * HOUSE_SHARE) / (1 - HOUSE_SHARE) : 1;
+
+  const entries = [
+    ...paid,
+    ...house.map(brand => ({ brand, weight: houseTotal / Math.max(1, house.length) })),
+  ];
+  const total = entries.reduce((n, e) => n + e.weight, 0) || 1;
+
+  const rotation = deal(entries.map(e => ({
+    brand: e.brand,
+    n: Math.max(1, Math.round((e.weight / total) * ROTATION_SLOTS)),
+  })));
+
+  return rotation.length > 0 ? rotation : ['newsletter'];
+}
+
+function useCyclingBrand(placement: Placement, ms: number, categories: string[], country: string | null) {
+  const rotation = buildRotation(placement, categories, country);
+  // A primitive key, so the effects below don't restart on every render just
+  // because buildRotation handed back a fresh array.
+  const key = rotation.join('|');
+
+  const [idx, setIdx] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  // Start at a random point, so two ad slots on the same page don't march in
+  // lockstep showing the same brand as each other all day.
+  useEffect(() => { setIdx(Math.floor(Math.random() * rotation.length)); }, [key, rotation.length]);
+
   useEffect(() => {
     const t = setInterval(() => {
       if (_pauseCycling) return;
       setVisible(false);
-      setTimeout(() => { setIdx(i => (i + 1) % pool.length); setVisible(true); }, 400);
+      setTimeout(() => { setIdx(i => (i + 1) % rotation.length); setVisible(true); }, 400);
     }, ms);
     return () => clearInterval(t);
-  }, [ms, pool.length]);
-  return { brand: pool[idx % pool.length], visible };
+  }, [ms, key, rotation.length]);
+
+  return { brand: rotation[idx % rotation.length], visible };
 }
 
 // ─── Hooks ──────────────────────────────────────────────────────────────────
@@ -780,88 +885,224 @@ function Warden9Tile() {
   );
 }
 
-export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, category: topStoryCategory, country } = useTopStory();
-  const category = categoryProp ?? topStoryCategory;
-  const { brand, visible } = useCyclingBrand(60000, category, country);
+// DAZN UK (Awin 126251). Their own creative. Their library is mostly dated
+// fight cards — "Joshua x Prenga 2", "Spence Jr vs Tszyu" — which go stale the
+// moment the fight happens. These two are the evergreen generic pair, so do
+// not swap to a fight banner without a plan for taking it down again.
+// Framed `contain` on black rather than `cover`: the artwork runs logo-to-CTA
+// top to bottom, so cropping it decapitates the ad. Black matches the creative.
+const DAZN_LINK = 'https://www.awin1.com/cread.php?awinmid=126251&awinaffid=3026993&ued=https%3A%2F%2Fwww.dazn.com%2Fen-GB%2Fwelcome';
+const DAZN_728 = 'https://a1.awin1.com/ads/awin/126251/imgimgbanner_728x90-1779999857455-1782721458966.jpg';
+const DAZN_300 = 'https://a1.awin1.com/ads/awin/126251/imgimgbanner_300x250-1779999572263-1782721426603.jpg';
+
+function DaznHorizontal() {
+  return (
+    <a href={DAZN_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.07)' }}>
+      <img src={DAZN_728} alt="DAZN — the global home of boxing"
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
+    </a>
+  );
+}
+
+function DaznTile() {
+  return (
+    <a href={DAZN_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      {/* No "Sponsored" pill of our own here. The creative is letterboxed rather
+          than cropped, so a corner badge lands on DAZN's own logo, and all three
+          hosts of this tile — the hero rail, the dashboard wall and On Record —
+          already print their own Sponsored label beside the slot. */}
+      <img src={DAZN_300} alt="DAZN — the global home of boxing. Watch on DAZN."
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
+    </a>
+  );
+}
+
+// Zenind (Awin 129003) — US LLC / C-Corp formation. Their own creative, white
+// backgrounded, so the frame is white for the same reason EngageBay's is cream.
+const ZEN_LINK = 'https://www.awin1.com/cread.php?awinmid=129003&awinaffid=3026993&ued=https%3A%2F%2Fwww.zenind.com%2F';
+const ZEN_1460 = 'https://a1.awin1.com/ads/awin/129003/img1460x180-1784330744274.jpg';
+const ZEN_300 = 'https://a1.awin1.com/ads/awin/129003/img300x250-1784330648087.jpg';
+const ZEN_WHITE = '#ffffff';
+
+function ZenindHorizontal() {
+  return (
+    <a href={ZEN_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: ZEN_WHITE, border: '1px solid rgba(255,255,255,0.07)' }}>
+      <img src={ZEN_1460} alt="Zenind — launch your U.S. company. Build without borders."
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
+    </a>
+  );
+}
+
+function ZenindTile() {
+  return (
+    <a href={ZEN_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: ZEN_WHITE, border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      {/* Badge omitted for the same reason as DAZN's — see above. On Zenind's
+          creative it landed straight on their wordmark. */}
+      <img src={ZEN_300} alt="Zenind — launch your U.S. company. Build without borders."
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
+    </a>
+  );
+}
+
+// INFFNI (Awin 126973) — US smart robotics. ⚠️ Their whole Awin library is
+// unbranded lifestyle photography: no logo, no wordmark, no copy, and nothing
+// wider than 250x250. So this is the photo used as a bed with our own type
+// over it, and there is deliberately NO horizontal component — the rotation
+// reads the renderer map and simply never offers INFFNI a wide slot. Give it
+// one if they ever upload a real banner.
+const INF_LINK = 'https://www.awin1.com/cread.php?awinmid=126973&awinaffid=3026993&ued=https%3A%2F%2Fwww.inffnitech.com%2F';
+const INF_250 = 'https://a1.awin1.com/ads/awin/126973/img250x250-1779414634129.png';
+
+function InffniTile() {
+  return (
+    <a href={INF_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#0d1b2a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={INF_250} alt=""
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,12,20,0.92) 0%, rgba(6,12,20,0.35) 45%, rgba(6,12,20,0.15) 100%)' }} />
+      <span style={{ position: 'absolute', top: 8, left: 8, fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.75)', background: 'rgba(6,12,20,0.5)', padding: '3px 6px', borderRadius: 3 }}>
+        Sponsored
+      </span>
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 12, display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-start' }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.5)' }}>
+          INFFNI
+        </div>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#fff', lineHeight: 1.2 }}>
+          Robotics that keep up with you.
+        </div>
+        <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9, fontWeight: 500, padding: '5px 11px', borderRadius: 4, background: '#fff', color: '#0b1220' }}>
+          Shop INFFNI
+        </span>
+      </div>
+    </a>
+  );
+}
+
+// ─── MigraineMe placements ───────────────────────────────────────────────────
+
+function MigraineHorizontal() {
   const [src, setSrc] = useState(() => MM_LANDSCAPE[Math.floor(Math.random() * MM_LANDSCAPE.length)]);
   const onEnded = useCallback(() => setSrc(prev => pickNext(MM_LANDSCAPE, prev)), []);
+  return (
+    <a href="https://migraineme.app" target="_blank" rel="noreferrer"
+      style={{ display: 'block', width: '100%', height: 90, position: 'relative', overflow: 'hidden', borderRadius: 8, textDecoration: 'none' }}>
+      <video key={src} src={src} autoPlay muted playsInline onEnded={onEnded}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
+        <div className="flex items-center gap-3">
+          <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/migraineme_logo-O5wAPkK8shHu9KXtDeUvCyWbwpvRTW.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
+          <div>
+            <p className="text-white font-bold text-[13px] leading-tight">MigraineMe</p>
+            <p className="text-white/60 text-[11px]">AI-powered migraine tracking</p>
+          </div>
+        </div>
+        <span className="shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold text-white" style={{ background: '#E879A0' }}>
+          Free Download
+        </span>
+      </div>
+    </a>
+  );
+}
+
+function MigraineTile() {
+  const [showVideo] = useState(() => Math.random() < 0.67);
+  const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
+  const onEnded = useCallback(() => setSrc(prev => pickNext(MM_PORTRAIT, prev)), []);
+  if (!showVideo) return <MigraineStaticTile />;
+  return (
+    <a href="https://migraineme.app" target="_blank" rel="noreferrer"
+      className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
+      <video key={src} src={src} autoPlay muted playsInline onEnded={onEnded}
+        className="w-full h-full object-cover" />
+      <div className="absolute inset-0 flex flex-col justify-end pointer-events-none"
+        style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)' }}>
+        <div className="p-2 flex items-end justify-between">
+          <p className="text-white font-semibold text-[9px] leading-tight">MigraineMe</p>
+          <span className="px-2 py-0.5 rounded-full text-[8px] font-semibold text-white" style={{ background: '#E879A0' }}>Download</span>
+        </div>
+      </div>
+    </a>
+  );
+}
+
+// ─── Renderer map ────────────────────────────────────────────────────────────
+
+type AdProps = { topic: string | null };
+type Renderer = (props: AdProps) => React.ReactElement;
+
+/** Every brand's artwork, by placement.
+ *
+ *  Typed `Record<Brand, ...>`, so adding a brand to the union without giving
+ *  it something to render is a compile error rather than an ad slot that
+ *  quietly paints nothing. A brand may legitimately omit a placement it has
+ *  no creative for (INFFNI has no wide banner); `buildRotation` reads this map
+ *  and never offers it a slot it cannot fill. */
+const RENDERERS: Record<Brand, Partial<Record<Placement, Renderer>>> = {
+  migraineme: { horizontal: () => <MigraineHorizontal />, tile: () => <MigraineTile /> },
+  newsletter: { horizontal: ({ topic }) => <NewsletterHorizontal topic={topic} />, tile: ({ topic }) => <NewsletterTile topic={topic} /> },
+  kofi:       { horizontal: () => <KofiHorizontal />,      tile: () => <KofiTile /> },
+  isoqar:     { horizontal: () => <IsoqarHorizontal />,    tile: () => <IsoqarTile /> },
+  grc:        { horizontal: () => <GrcHorizontal />,       tile: () => <GrcTile /> },
+  engagebay:  { horizontal: () => <EngagebayHorizontal />, tile: () => <EngagebayTile /> },
+  warden9:    { horizontal: () => <Warden9Horizontal />,   tile: () => <Warden9Tile /> },
+  dazn:       { horizontal: () => <DaznHorizontal />,      tile: () => <DaznTile /> },
+  zenind:     { horizontal: () => <ZenindHorizontal />,    tile: () => <ZenindTile /> },
+  inffni:     {                                            tile: () => <InffniTile /> },
+};
+
+/** Wide banner (~90px tall).
+ *
+ * `category` is the one thing a slot can tell the ad rotation about where it
+ * is sitting. Pass it when the page has a single real category — a story page
+ * knows exactly what it is about. Leave it off on mixed pages (home, the
+ * dashboard wall, video rails) and the rotation targets every category
+ * running today instead, which is the honest description of those slots.
+ *
+ * It deliberately no longer falls back to the *top story's* category. That
+ * fallback made every mixed page target `world` and nothing else, on 103 of
+ * the last 104 days.
+ */
+export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
+  const { topic, categories: todaysCategories, country } = useTopStory();
+  const categories = categoryProp ? [categoryProp] : todaysCategories;
+  const { brand, visible } = useCyclingBrand('horizontal', 60000, categories, country);
 
   useEffect(() => {
     if (visible) track('ad_impression', { brand, placement: 'horizontal' });
   }, [brand, visible]);
 
+  const Render = RENDERERS[brand].horizontal;
+
   return (
     <div style={{ width: '100%', height: 90 }} onClick={() => track('ad_click', { brand, placement: 'horizontal' })}>
       <div style={{ width: '100%', height: '100%', opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
-        {brand === 'migraineme' && (
-          <a href="https://migraineme.app" target="_blank" rel="noreferrer"
-            style={{ display: 'block', width: '100%', height: 90, position: 'relative', overflow: 'hidden', borderRadius: 8, textDecoration: 'none' }}>
-            <video key={src} src={src} autoPlay muted playsInline onEnded={onEnded}
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: 'translateY(-25%) scale(1.35)', transformOrigin: 'top center' }} />
-            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', background: 'linear-gradient(to right, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0.6) 100%)' }}>
-              <div className="flex items-center gap-3">
-                <img src="https://r6pqmlpcblwm51w8.public.blob.vercel-storage.com/ads/migraineme_logo-O5wAPkK8shHu9KXtDeUvCyWbwpvRTW.png" alt="MigraineMe" className="w-9 h-9 object-contain" />
-                <div>
-                  <p className="text-white font-bold text-[13px] leading-tight">MigraineMe</p>
-                  <p className="text-white/60 text-[11px]">AI-powered migraine tracking</p>
-                </div>
-              </div>
-              <span className="shrink-0 px-3 py-1.5 rounded-full text-[11px] font-semibold text-white" style={{ background: '#E879A0' }}>
-                Free Download
-              </span>
-            </div>
-          </a>
-        )}
-        {brand === 'newsletter'  && <NewsletterHorizontal topic={topic} />}
-        {brand === 'kofi'        && <KofiHorizontal />}
-        {brand === 'isoqar'      && <IsoqarHorizontal />}
-        {brand === 'grc'         && <GrcHorizontal />}
-        {brand === 'engagebay'   && <EngagebayHorizontal />}
-        {brand === 'warden9'     && <Warden9Horizontal />}
+        {Render ? <Render topic={topic} /> : null}
       </div>
     </div>
   );
 }
 
-/** Square tile — Dashboard, On Record grid. See HorizontalAdBanner re: category prop. */
+/** Square tile — Dashboard, On Record grid, hero video rail.
+ *  See HorizontalAdBanner re: the category prop. */
 export function TileAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, category: topStoryCategory, country } = useTopStory();
-  const category = categoryProp ?? topStoryCategory;
-  const { brand, visible } = useCyclingBrand(60000, category, country);
-  const [showVideo] = useState(() => Math.random() < 0.67);
-  const [src, setSrc] = useState(() => MM_PORTRAIT[Math.floor(Math.random() * MM_PORTRAIT.length)]);
-  const onEnded = useCallback(() => setSrc(prev => pickNext(MM_PORTRAIT, prev)), []);
+  const { topic, categories: todaysCategories, country } = useTopStory();
+  const categories = categoryProp ? [categoryProp] : todaysCategories;
+  const { brand, visible } = useCyclingBrand('tile', 60000, categories, country);
 
   useEffect(() => {
     if (visible) track('ad_impression', { brand, placement: 'tile' });
   }, [brand, visible]);
 
+  const Render = RENDERERS[brand].tile;
+
   return (
     <div className="w-full h-full" onClick={() => track('ad_click', { brand, placement: 'tile' })}>
       <div className="w-full h-full" style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.4s ease' }}>
-        {brand === 'newsletter' && <NewsletterTile topic={topic} />}
-        {brand === 'kofi'       && <KofiTile />}
-        {brand === 'isoqar'     && <IsoqarTile />}
-        {brand === 'grc'        && <GrcTile />}
-        {brand === 'engagebay'  && <EngagebayTile />}
-        {brand === 'warden9'    && <Warden9Tile />}
-        {brand === 'migraineme' && (showVideo ? (
-          <a href="https://migraineme.app" target="_blank" rel="noreferrer"
-            className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
-            <video key={src} src={src} autoPlay muted playsInline onEnded={onEnded}
-              className="w-full h-full object-cover" />
-            <div className="absolute inset-0 flex flex-col justify-end pointer-events-none"
-              style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%)' }}>
-              <div className="p-2 flex items-end justify-between">
-                <p className="text-white font-semibold text-[9px] leading-tight">MigraineMe</p>
-                <span className="px-2 py-0.5 rounded-full text-[8px] font-semibold text-white" style={{ background: '#E879A0' }}>Download</span>
-              </div>
-            </div>
-          </a>
-        ) : (
-          <MigraineStaticTile />
-        ))}
+        {Render ? <Render topic={topic} /> : null}
       </div>
     </div>
   );
