@@ -783,58 +783,64 @@ const GRC_LINK = 'https://www.awin1.com/cread.php?awinmid=6072&awinaffid=3026993
 const GRC_728 = 'https://a1.awin1.com/ads/awin/6072/imgdarkbluebanner728x90px20-1772448642544.png';
 const GRC_300 = 'https://a1.awin1.com/ads/awin/6072/imgbanner441-1772448077687.png';
 
-function GrcHorizontal() {
+/** Advertiser-supplied artwork, wide slot.
+ *
+ * ⚠️ NEVER `objectFit: cover` here. Every one of these is a fixed-size banner
+ * (728x90, 468x60, 1460x180) and the slot is the full page width, so cover
+ * scales the artwork up until it overflows 90px and crops the top and bottom
+ * lines clean off. GRC shipped like that and lost both its headline and its
+ * discount code.
+ *
+ * Instead the creative sits at its own size, centred, on the page's own
+ * background — no coloured slab behind it. A 728px banner on a 1500px page is
+ * a banner; a 728px banner centred in a full-width black box is a hole in the
+ * layout.
+ */
+function RasterBanner({ href, src, alt }: { href: string; src: string; alt: string }) {
   return (
-    <a href={GRC_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'block', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: '#0d1b2a', border: '1px solid rgba(255,255,255,0.07)' }}>
-      <img src={GRC_728} alt="GRC Solutions — free ISO 27001 guide with the ISO 27001 Toolkit"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center', display: 'block' }} />
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
+      <a href={href} target="_blank" rel="sponsored noopener noreferrer"
+        style={{ display: 'block', maxWidth: '100%', maxHeight: '100%', lineHeight: 0 }}>
+        <img src={src} alt={alt}
+          style={{ maxWidth: '100%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', borderRadius: 6, border: '1px solid rgba(255,255,255,0.07)' }} />
+      </a>
+    </div>
+  );
+}
+
+/** Advertiser-supplied artwork, square-ish tile. Same rule: contain, never
+ *  cover. The tile is a card, so it keeps a background — the site's own card
+ *  navy rather than a colour borrowed from the creative, which is what made
+ *  these read as foreign objects dropped into the grid. */
+function RasterTile({ href, src, alt }: { href: string; src: string; alt: string }) {
+  return (
+    <a href={href} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', padding: 6, borderRadius: 8, overflow: 'hidden', background: '#1e2a3a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={src} alt={alt}
+        style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', display: 'block', borderRadius: 4 }} />
     </a>
   );
+}
+
+function GrcHorizontal() {
+  return <RasterBanner href={GRC_LINK} src={GRC_728} alt="GRC Solutions — free ISO 27001 guide with the ISO 27001 Toolkit" />;
 }
 
 function GrcTile() {
-  return (
-    <a href={GRC_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#0d1b2a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
-      <img src={GRC_300} alt="GRC Solutions — Cyber Essentials certification with free phishing staff awareness training"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-      <span style={{ position: 'absolute', top: 8, left: 8, fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.75)', background: 'rgba(10,20,32,0.55)', padding: '3px 6px', borderRadius: 3 }}>
-        Sponsored
-      </span>
-    </a>
-  );
+  return <RasterTile href={GRC_LINK} src={GRC_300} alt="GRC Solutions — Cyber Essentials certification with free phishing staff awareness training" />;
 }
 
-// EngageBay CRM (Awin 127075). Their own banners from Awin's CDN. Their creative
-// is cream-backgrounded, so the frame uses that cream rather than our navy —
-// letterboxing an advertiser's artwork on the wrong colour looks broken.
+// EngageBay CRM (Awin 127075). Their own banners from Awin's CDN.
 const EB_LINK = 'https://www.awin1.com/cread.php?awinmid=127075&awinaffid=3026993&ued=https%3A%2F%2Fwww.engagebay.com%2F';
 const EB_468 = 'https://a1.awin1.com/ads/awin/127075/img468x60-1785337768610.png';
 const EB_336 = 'https://a1.awin1.com/ads/awin/127075/img336x280-1785335573467.png';
-const EB_CREAM = '#fdf5ef';
 
 function EngagebayHorizontal() {
-  return (
-    <a href={EB_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: EB_CREAM, border: '1px solid rgba(255,255,255,0.07)' }}>
-      <img src={EB_468} alt="EngageBay — switch from HubSpot and save big"
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-    </a>
-  );
+  return <RasterBanner href={EB_LINK} src={EB_468} alt="EngageBay — switch from HubSpot and save big" />;
 }
 
 function EngagebayTile() {
-  return (
-    <a href={EB_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: EB_CREAM, border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
-      <img src={EB_336} alt="EngageBay — the smarter HubSpot alternative"
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-      <span style={{ position: 'absolute', top: 8, left: 8, fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(20,20,20,0.55)', background: 'rgba(255,255,255,0.6)', padding: '3px 6px', borderRadius: 3 }}>
-        Sponsored
-      </span>
-    </a>
-  );
+  return <RasterTile href={EB_LINK} src={EB_336} alt="EngageBay — the smarter HubSpot alternative" />;
 }
 
 // Warden9 (Awin 129561). ⚠️ Their Awin library has NO banners, only logo marks
@@ -896,27 +902,11 @@ const DAZN_728 = 'https://a1.awin1.com/ads/awin/126251/imgimgbanner_728x90-17799
 const DAZN_300 = 'https://a1.awin1.com/ads/awin/126251/imgimgbanner_300x250-1779999572263-1782721426603.jpg';
 
 function DaznHorizontal() {
-  return (
-    <a href={DAZN_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.07)' }}>
-      <img src={DAZN_728} alt="DAZN — the global home of boxing"
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-    </a>
-  );
+  return <RasterBanner href={DAZN_LINK} src={DAZN_728} alt="DAZN — the global home of boxing" />;
 }
 
 function DaznTile() {
-  return (
-    <a href={DAZN_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
-      {/* No "Sponsored" pill of our own here. The creative is letterboxed rather
-          than cropped, so a corner badge lands on DAZN's own logo, and all three
-          hosts of this tile — the hero rail, the dashboard wall and On Record —
-          already print their own Sponsored label beside the slot. */}
-      <img src={DAZN_300} alt="DAZN — the global home of boxing. Watch on DAZN."
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-    </a>
-  );
+  return <RasterTile href={DAZN_LINK} src={DAZN_300} alt="DAZN — the global home of boxing. Watch on DAZN." />;
 }
 
 // Zenind (Awin 129003) — US LLC / C-Corp formation. Their own creative, white
@@ -924,28 +914,13 @@ function DaznTile() {
 const ZEN_LINK = 'https://www.awin1.com/cread.php?awinmid=129003&awinaffid=3026993&ued=https%3A%2F%2Fwww.zenind.com%2F';
 const ZEN_1460 = 'https://a1.awin1.com/ads/awin/129003/img1460x180-1784330744274.jpg';
 const ZEN_300 = 'https://a1.awin1.com/ads/awin/129003/img300x250-1784330648087.jpg';
-const ZEN_WHITE = '#ffffff';
 
 function ZenindHorizontal() {
-  return (
-    <a href={ZEN_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: ZEN_WHITE, border: '1px solid rgba(255,255,255,0.07)' }}>
-      <img src={ZEN_1460} alt="Zenind — launch your U.S. company. Build without borders."
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-    </a>
-  );
+  return <RasterBanner href={ZEN_LINK} src={ZEN_1460} alt="Zenind — launch your U.S. company. Build without borders." />;
 }
 
 function ZenindTile() {
-  return (
-    <a href={ZEN_LINK} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: ZEN_WHITE, border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
-      {/* Badge omitted for the same reason as DAZN's — see above. On Zenind's
-          creative it landed straight on their wordmark. */}
-      <img src={ZEN_300} alt="Zenind — launch your U.S. company. Build without borders."
-        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
-    </a>
-  );
+  return <RasterTile href={ZEN_LINK} src={ZEN_300} alt="Zenind — launch your U.S. company. Build without borders." />;
 }
 
 // INFFNI (Awin 126973) — US smart robotics. ⚠️ Their whole Awin library is
