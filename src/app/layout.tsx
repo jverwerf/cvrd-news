@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "G-594H3DW6ZD",
+    // Awin publisher 3026993 site verification. Awin expects a bare
+    // <meta name="verification"> tag, NOT name="awin-verification".
+    other: { verification: "44800858a3a26ff61de0452093ba34c4" },
   },
 };
 
