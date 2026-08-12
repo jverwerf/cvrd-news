@@ -798,9 +798,19 @@ const GRC_300 = 'https://a1.awin1.com/ads/awin/6072/imgbanner441-1772448077687.p
  */
 function RasterBanner({ href, src, alt }: { href: string; src: string; alt: string }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, width: '100%', height: '100%' }}>
+      {/* The disclosure travels WITH the creative.
+          Pages that host this slot used to print their own "Sponsored" against
+          the far left of a full-width container. Once the creative stopped being
+          full-bleed and started sitting centred, that label ended up hundreds of
+          pixels from the thing it was labelling and read as unrelated page
+          furniture. A disclosure a reader cannot connect to the ad is not a
+          disclosure, so it lives here now and the host labels were removed. */}
+      <span style={{ fontFamily: "'DM Mono', monospace", fontSize: 7, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', flexShrink: 0, writingMode: 'vertical-rl', transform: 'rotate(180deg)', maxHeight: 90 }}>
+        Sponsored
+      </span>
       <a href={href} target="_blank" rel="sponsored noopener noreferrer"
-        style={{ display: 'block', maxWidth: '100%', maxHeight: '100%', lineHeight: 0 }}>
+        style={{ display: 'block', minWidth: 0, maxHeight: '100%', lineHeight: 0 }}>
         <img src={src} alt={alt}
           style={{ maxWidth: '100%', maxHeight: 90, width: 'auto', height: 'auto', display: 'block', borderRadius: 6, border: '1px solid rgba(255,255,255,0.07)' }} />
       </a>
@@ -808,16 +818,21 @@ function RasterBanner({ href, src, alt }: { href: string; src: string; alt: stri
   );
 }
 
-/** Advertiser-supplied artwork, square-ish tile. Same rule: contain, never
- *  cover. The tile is a card, so it keeps a background — the site's own card
- *  navy rather than a colour borrowed from the creative, which is what made
- *  these read as foreign objects dropped into the grid. */
-function RasterTile({ href, src, alt }: { href: string; src: string; alt: string }) {
+/** Advertiser-supplied artwork, square-ish tile. Same rule as the banner:
+ *  contain, never cover.
+ *
+ *  `bg` is the creative's OWN background colour, and it matters. Tiles come in
+ *  several aspect ratios and no advertiser creative matches all of them, so
+ *  there is always some letterbox. Painted the site's card navy, that letterbox
+ *  reads as a black-bordered picture dropped into a blue box. Painted the
+ *  creative's own colour, it disappears and the whole tile reads as the ad.
+ *  Sample it from the artwork's edge, not from the site palette. */
+function RasterTile({ href, src, alt, bg }: { href: string; src: string; alt: string; bg: string }) {
   return (
     <a href={href} target="_blank" rel="sponsored noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', padding: 6, borderRadius: 8, overflow: 'hidden', background: '#1e2a3a', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: bg, border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
       <img src={src} alt={alt}
-        style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', display: 'block', borderRadius: 4 }} />
+        style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain', display: 'block' }} />
     </a>
   );
 }
@@ -827,7 +842,7 @@ function GrcHorizontal() {
 }
 
 function GrcTile() {
-  return <RasterTile href={GRC_LINK} src={GRC_300} alt="GRC Solutions — Cyber Essentials certification with free phishing staff awareness training" />;
+  return <RasterTile href={GRC_LINK} src={GRC_300} alt="GRC Solutions — Cyber Essentials certification with free phishing staff awareness training" bg="#0d1b2a" />;
 }
 
 // EngageBay CRM (Awin 127075). Their own banners from Awin's CDN.
@@ -840,12 +855,16 @@ function EngagebayHorizontal() {
 }
 
 function EngagebayTile() {
-  return <RasterTile href={EB_LINK} src={EB_336} alt="EngageBay — the smarter HubSpot alternative" />;
+  return <RasterTile href={EB_LINK} src={EB_336} alt="EngageBay — the smarter HubSpot alternative" bg="#fdf5ef" />;
 }
 
 // Warden9 (Awin 129561). ⚠️ Their Awin library has NO banners, only logo marks
-// and wordmarks, so this is assembled from their official white/blue wordmark
-// plus their own site tagline. Swap to a real banner if they ever upload one.
+// and wordmarks, so this is assembled from their official white/blue wordmark.
+// The headline and the button are LIFTED VERBATIM from warden9.com. Do not
+// write your own: this card shipped reading 'Powerful agents. Protected
+// execution.' over a 'Try free' button, and neither phrase appears anywhere in
+// Warden9's marketing. Invented words beside an advertiser's logo is how a
+// programme gets pulled. Re-check against their site if you touch it.
 const W9_LINK = 'https://www.awin1.com/cread.php?awinmid=129561&awinaffid=3026993&ued=https%3A%2F%2Fwarden9.com%2F';
 const W9_WORDMARK = 'https://a1.awin1.com/ads/awin/129561/imgwarden9-wordmark-white-blue-transparent-2400-1786212262552.png';
 
@@ -860,12 +879,12 @@ function Warden9Horizontal() {
             Sponsored
           </div>
           <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#fff', lineHeight: 1.2 }}>
-            Powerful agents. Protected execution.
+            Run agents that can actually do the work
           </div>
         </div>
       </div>
       <span className="shrink-0" style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontWeight: 500, padding: '9px 16px', borderRadius: 5, background: '#1f6feb', color: '#fff', letterSpacing: '0.02em' }}>
-        Try free
+        Start Building
       </span>
     </a>
   );
@@ -881,10 +900,10 @@ function Warden9Tile() {
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 12, minHeight: 0 }}>
         <img src={W9_WORDMARK} alt="Warden9" style={{ height: 22, width: 'auto', display: 'block' }} />
         <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 17, color: '#fff', lineHeight: 1.25 }}>
-          Powerful agents. Protected execution.
+          Run agents that can actually do the work
         </div>
         <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9.5, fontWeight: 500, padding: '6px 12px', borderRadius: 4, background: '#1f6feb', color: '#fff' }}>
-          Try free
+          Start Building
         </span>
       </div>
     </a>
@@ -906,7 +925,7 @@ function DaznHorizontal() {
 }
 
 function DaznTile() {
-  return <RasterTile href={DAZN_LINK} src={DAZN_300} alt="DAZN — the global home of boxing. Watch on DAZN." />;
+  return <RasterTile href={DAZN_LINK} src={DAZN_300} alt="DAZN — the global home of boxing. Watch on DAZN." bg="#0a0a0a" />;
 }
 
 // Zenind (Awin 129003) — US LLC / C-Corp formation. Their own creative, white
@@ -920,10 +939,13 @@ function ZenindHorizontal() {
 }
 
 function ZenindTile() {
-  return <RasterTile href={ZEN_LINK} src={ZEN_300} alt="Zenind — launch your U.S. company. Build without borders." />;
+  return <RasterTile href={ZEN_LINK} src={ZEN_300} alt="Zenind — launch your U.S. company. Build without borders." bg="#ffffff" />;
 }
 
-// INFFNI (Awin 126973) — US smart robotics. ⚠️ Their whole Awin library is
+// INFFNI (Awin 126973) — US smart robotics. Headline, subline and button are
+// INFFNI's own words from inffnitech.com, and they describe this exact photo:
+// the product is the Rover X1 robot dog and the creative is a robot dog
+// following a runner. ⚠️ Their whole Awin library is
 // unbranded lifestyle photography: no logo, no wordmark, no copy, and nothing
 // wider than 250x250. So this is the photo used as a bed with our own type
 // over it, and there is deliberately NO horizontal component — the rotation
@@ -947,10 +969,13 @@ function InffniTile() {
           INFFNI
         </div>
         <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#fff', lineHeight: 1.2 }}>
-          Robotics that keep up with you.
+          Your First Robot Dog
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, color: 'rgba(255,255,255,0.6)', lineHeight: 1.4 }}>
+          Follows you. Carries your stuff. Dances at your party.
         </div>
         <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9, fontWeight: 500, padding: '5px 11px', borderRadius: 4, background: '#fff', color: '#0b1220' }}>
-          Shop INFFNI
+          Meet Rover X1
         </span>
       </div>
     </a>

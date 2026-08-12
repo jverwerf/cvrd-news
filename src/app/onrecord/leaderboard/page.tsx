@@ -314,8 +314,7 @@ export default function LeaderboardPage() {
 
         {/* AD */}
         <div className="mt-4">
-          <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
-          <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
+                    <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
             <HorizontalAdBanner />
           </div>
         </div>
