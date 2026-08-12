@@ -64,7 +64,7 @@ function pickNext<T>(arr: T[], current: T): T {
   return arr[(idx + 1) % arr.length];
 }
 
-type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar' | 'grc';
+type Brand = 'migraineme' | 'newsletter' | 'kofi' | 'isoqar' | 'grc' | 'engagebay' | 'warden9';
 const BRAND_ORDER: Brand[] = ['migraineme', 'newsletter', 'kofi'];
 
 /** A paid placement. It only enters the rotation when BOTH match:
@@ -92,6 +92,11 @@ const SPONSORED: Sponsored[] = [
   // ("exceeded both credit limit and settlement terms", ~53 day payment), so we
   // spend the least inventory on them until commissions are seen to clear.
   { brand: 'grc', categories: ['markets'], countries: ['GB'] },
+  // EngageBay CRM — 30% RECURRING, Awin payment Level 1. Best-paying partner we
+  // have, so it gets normal inventory. Buyer is small business owners, hence markets.
+  { brand: 'engagebay', categories: ['markets'], countries: ['GB', 'US'] },
+  // Warden9 — secure runtime for AI agents. 30%, 90 day cookie, Level 1.
+  { brand: 'warden9', categories: ['markets', 'trending'], countries: ['GB', 'US'] },
 ];
 
 function sponsorsFor(category: string | null, country: string | null): Brand[] {
@@ -696,6 +701,85 @@ function GrcTile() {
   );
 }
 
+// EngageBay CRM (Awin 127075). Their own banners from Awin's CDN. Their creative
+// is cream-backgrounded, so the frame uses that cream rather than our navy —
+// letterboxing an advertiser's artwork on the wrong colour looks broken.
+const EB_LINK = 'https://www.awin1.com/cread.php?awinmid=127075&awinaffid=3026993&ued=https%3A%2F%2Fwww.engagebay.com%2F';
+const EB_468 = 'https://a1.awin1.com/ads/awin/127075/img468x60-1785337768610.png';
+const EB_336 = 'https://a1.awin1.com/ads/awin/127075/img336x280-1785335573467.png';
+const EB_CREAM = '#fdf5ef';
+
+function EngagebayHorizontal() {
+  return (
+    <a href={EB_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: EB_CREAM, border: '1px solid rgba(255,255,255,0.07)' }}>
+      <img src={EB_468} alt="EngageBay — switch from HubSpot and save big"
+        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain', display: 'block' }} />
+    </a>
+  );
+}
+
+function EngagebayTile() {
+  return (
+    <a href={EB_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: EB_CREAM, border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={EB_336} alt="EngageBay — the smarter HubSpot alternative"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      <span style={{ position: 'absolute', top: 8, left: 8, fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(20,20,20,0.55)', background: 'rgba(255,255,255,0.6)', padding: '3px 6px', borderRadius: 3 }}>
+        Sponsored
+      </span>
+    </a>
+  );
+}
+
+// Warden9 (Awin 129561). ⚠️ Their Awin library has NO banners, only logo marks
+// and wordmarks, so this is assembled from their official white/blue wordmark
+// plus their own site tagline. Swap to a real banner if they ever upload one.
+const W9_LINK = 'https://www.awin1.com/cread.php?awinmid=129561&awinaffid=3026993&ued=https%3A%2F%2Fwarden9.com%2F';
+const W9_WORDMARK = 'https://a1.awin1.com/ads/awin/129561/imgwarden9-wordmark-white-blue-transparent-2400-1786212262552.png';
+
+function Warden9Horizontal() {
+  return (
+    <a href={W9_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 20px', borderRadius: 8, background: '#0b1220', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div className="flex items-center" style={{ gap: 16, minWidth: 0 }}>
+        <img src={W9_WORDMARK} alt="Warden9" style={{ height: 22, width: 'auto', flexShrink: 0 }} />
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.35)', marginBottom: 3 }}>
+            Sponsored
+          </div>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#fff', lineHeight: 1.2 }}>
+            Powerful agents. Protected execution.
+          </div>
+        </div>
+      </div>
+      <span className="shrink-0" style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontWeight: 500, padding: '9px 16px', borderRadius: 5, background: '#1f6feb', color: '#fff', letterSpacing: '0.02em' }}>
+        Try free
+      </span>
+    </a>
+  );
+}
+
+function Warden9Tile() {
+  return (
+    <a href={W9_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', padding: 14, borderRadius: 8, background: '#0b1220', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.35)' }}>
+        Sponsored
+      </div>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 12, minHeight: 0 }}>
+        <img src={W9_WORDMARK} alt="Warden9" style={{ height: 22, width: 'auto', display: 'block' }} />
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 17, color: '#fff', lineHeight: 1.25 }}>
+          Powerful agents. Protected execution.
+        </div>
+        <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9.5, fontWeight: 500, padding: '6px 12px', borderRadius: 4, background: '#1f6feb', color: '#fff' }}>
+          Try free
+        </span>
+      </div>
+    </a>
+  );
+}
+
 export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
   const { topic, category: topStoryCategory, country } = useTopStory();
   const category = categoryProp ?? topStoryCategory;
@@ -733,6 +817,8 @@ export function HorizontalAdBanner({ category: categoryProp }: { category?: stri
         {brand === 'kofi'        && <KofiHorizontal />}
         {brand === 'isoqar'      && <IsoqarHorizontal />}
         {brand === 'grc'         && <GrcHorizontal />}
+        {brand === 'engagebay'   && <EngagebayHorizontal />}
+        {brand === 'warden9'     && <Warden9Horizontal />}
       </div>
     </div>
   );
@@ -758,6 +844,8 @@ export function TileAdBanner({ category: categoryProp }: { category?: string | n
         {brand === 'kofi'       && <KofiTile />}
         {brand === 'isoqar'     && <IsoqarTile />}
         {brand === 'grc'        && <GrcTile />}
+        {brand === 'engagebay'  && <EngagebayTile />}
+        {brand === 'warden9'    && <Warden9Tile />}
         {brand === 'migraineme' && (showVideo ? (
           <a href="https://migraineme.app" target="_blank" rel="noreferrer"
             className="w-full h-full block relative overflow-hidden rounded-lg no-underline">
