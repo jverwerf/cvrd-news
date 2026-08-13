@@ -115,7 +115,7 @@ export function HeroCarousel({ stories }: { stories: NarrativeGap[]; blobBase?: 
 
       <div style={{ position: 'relative', padding: `18px ${CONTENT_GUTTER}px ${PAD_BOTTOM}px`, maxWidth: CONTENT_MAX, margin: '0 auto' }}>
         {/* category + source count + read more */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+        <div style={{ display: 'flex', alignItems: 'flex-start', gap: 10, marginBottom: 8 }}>
           {totalSources > 0 && (
             <span style={{ fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: 'rgba(226,232,240,0.8)', textShadow: '0 1px 2px rgba(0,0,0,0.7)' }}>
               {totalSources} sources covering this
@@ -128,10 +128,27 @@ export function HeroCarousel({ stories }: { stories: NarrativeGap[]; blobBase?: 
               {rightCount > 0 && <span style={{ display: 'flex', alignItems: 'center', gap: 3 }}><span style={{ width: 5, height: 5, borderRadius: '50%', background: '#b91c1c' }} /><span style={{ color: '#f87171' }}>{rightCount}</span></span>}
             </div>
           )}
-          <a href={`/story/${slug}`} style={{ marginLeft: 'auto', display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
-            Read the full story
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
-          </a>
+          {/* Right-hand CTA stack: the gold story link stays the primary action,
+              the Telegram prompt sits directly under it. Right-aligned so both
+              share an edge with the carousel dots below. */}
+          <div style={{ marginLeft: 'auto', display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 5 }}>
+            <a href={`/story/${slug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 10, letterSpacing: '0.1em', color: C.gold, textDecoration: 'none' }}>
+              Read the full story
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+            </a>
+            <a
+              href="https://t.me/cvrdnews"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Join CVRD News on Telegram"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: 5, fontFamily: mono, fontSize: 9, letterSpacing: '0.1em', color: 'rgba(226,232,240,0.85)', textDecoration: 'none', border: '1px solid rgba(226,232,240,0.28)', borderRadius: 999, padding: '3px 9px', background: 'rgba(10,14,20,0.35)', textShadow: '0 1px 2px rgba(0,0,0,0.7)', whiteSpace: 'nowrap' }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21.8 4.2 2.9 11.5c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.8 1.3 1 1.9.4l2.6-2.5 4.6 3.4c.7.5 1.7.1 1.9-.7l3-15.6c.2-1-.8-1.8-1.7-1.2ZM9.6 15.1l-.4 3.7-1.2-3.8 9-6.1-7.4 6.2Z" />
+              </svg>
+              JOIN TELEGRAM
+            </a>
+          </div>
         </div>
 
         {/* headline */}

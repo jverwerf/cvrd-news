@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { VideoGridAdBanner } from "./AdBanners";
+import { VideoGridAdBanner, HorizontalAdBanner } from "./AdBanners";
 import { Tweet } from 'react-tweet';
 import TweetFactCheck, { type FactCheckData } from "./TweetFactCheck";
 
@@ -16,11 +16,18 @@ type VideoItem = {
   fact_check?: FactCheckData;
 };
 
-export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }: {
+export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, adCategory, adTopic }: {
   youtubeVideos: { url: string; embed_id: string; channel?: string; duration?: number }[];
   socialClips: { platform: string; url: string; embed_id?: string; title?: string }[];
   storyImage?: string;
   storyIndex?: number;
+  /** The story this grid sits inside, for the ad slot below it. `adCategory`
+   *  targets the rotation; `adTopic` is what the day's ad plan checks its
+   *  suppression list against. Leave both off on a mixed page and the slot
+   *  falls back to every category running today and to the top story's topic,
+   *  which is exactly what HorizontalAdBanner already documents. */
+  adCategory?: string | null;
+  adTopic?: string | null;
 }) {
   // Merge all videos into one list, preserving relevance order from the pipeline
   // Pipeline already sorted each array by relevance (highest first)
@@ -533,6 +540,23 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex }
           <span className="text-[10px] text-[#666]">{items.length} clips</span>
         </div>
       )}
+
+      {/* AD — under the whole video section, below the filmstrip.
+          Deliberately routed through HorizontalAdBanner rather than rendering a
+          creative directly, because that component is what consults the day's
+          ad plan: the planner's channel order, and its suppress list. A story
+          the planner judged too grim to sell against gets house-only here, the
+          same as every other slot on the site. Rendering a banner by hand would
+          have quietly opted this placement out of that rule.
+          Fixed 90px like every other horizontal slot, inside the grid's own
+          max-w-full/overflow-hidden wrapper, so it cannot widen the page or
+          push the filmstrip around on mobile. */}
+      <div className="mt-4">
+        <p className="text-[7px] text-white/25 uppercase tracking-widest mb-1.5">Sponsored</p>
+        <div style={{ height: 90, borderRadius: 8, overflow: 'hidden' }}>
+          <HorizontalAdBanner category={adCategory} topic={adTopic} />
+        </div>
+      </div>
     </div>
   );
 }

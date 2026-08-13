@@ -459,6 +459,22 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
               style={{ color: '#1e2a3a', textDecoration: 'none', background: '#ffffff', borderRadius: 999, width: PILL_W, height: 28 }}>
               ♥ Buy us a coffee
             </a>
+            {/* Telegram join, directly under the coffee pill and built to the
+                same pill spec — same width, same height, same type scale — so it
+                reads as its sibling rather than a foreign element. It differs
+                in one thing only: it is filled in Telegram's blue where the
+                coffee pill is white. The coffee button has never converted
+                once, so the CTA with an actual goal behind it is the one that
+                carries the colour. The coffee pill itself is untouched. */}
+            <a href="https://t.me/cvrdnews" target="_blank" rel="noopener noreferrer"
+              aria-label="Join CVRD News on Telegram"
+              className="flex items-center justify-center gap-1.5 text-[10px] font-semibold shrink-0 hover:opacity-80 transition-opacity"
+              style={{ color: '#ffffff', textDecoration: 'none', background: '#229ED9', borderRadius: 999, width: PILL_W, height: 28 }}>
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21.8 4.2 2.9 11.5c-1 .4-1 1.8.1 2.1l4.7 1.4 1.8 5.4c.3.8 1.3 1 1.9.4l2.6-2.5 4.6 3.4c.7.5 1.7.1 1.9-.7l3-15.6c.2-1-.8-1.8-1.7-1.2ZM9.6 15.1l-.4 3.7-1.2-3.8 9-6.1-7.4 6.2Z" />
+              </svg>
+              Join our Telegram
+            </a>
           </div>
           {/* story arrows, bottom right */}
           <div className="absolute bottom-0 left-0 right-0 px-6 md:px-12 py-2 flex items-end justify-end gap-2">
@@ -770,7 +786,8 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                 })()}
                 {(ytVids.length > 0 || clips.filter(c => c.embed_id).length > 0) && (
                   <div className="w-full max-w-full overflow-hidden mb-6" data-section="videogrid">
-                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1} />
+                    <VideoGrid youtubeVideos={ytVids} socialClips={clips} storyImage={story.image_file} storyIndex={1}
+                      adCategory={story.category} adTopic={story.topic} />
                   </div>
                 )}
 
