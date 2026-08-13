@@ -140,6 +140,40 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, 
 
   const active = activeIdx >= 0 && items.length > 0 ? items[activeIdx] : null;
 
+  // --- YouTube reveal gate ---------------------------------------------------
+  // YouTube paints its own chrome -- the big prev / pause / next buttons and the
+  // branding -- for a beat before the player has a frame to show. Because the
+  // iframe carries key={embed_id} it fully remounts on every clip change, so the
+  // flash recurred on every switch, not just first load. The iframe now mounts
+  // (and loads, and plays) at opacity 0 behind the clip's own thumbnail and
+  // cross-fades in only once the player is genuinely up.
+  //
+  // Three INDEPENDENT triggers, any one of which reveals it. This is deliberate:
+  // a reveal that hung off the postMessage listener alone would black out the
+  // video wall for anyone whose embed is blocked, consent-walled or just slow.
+  //   1. onReady / initialDelivery / infoDelivery from THIS iframe over
+  //      postMessage (see the message listener further down) -- the real signal.
+  //   2. the iframe's own load event, plus REVEAL_GRACE_MS.
+  //   3. REVEAL_MAX_MS after the clip changes, unconditionally, no events needed.
+  // (3) alone guarantees the player is visible within REVEAL_MAX_MS of any mount.
+  const REVEAL_GRACE_MS = 350;
+  const REVEAL_MAX_MS = 2000;
+  const [ytReady, setYtReady] = useState(false);
+  const revealTimersRef = useRef<NodeJS.Timeout[]>([]);
+
+  useEffect(() => {
+    revealTimersRef.current.forEach(clearTimeout);
+    revealTimersRef.current = [];
+    setYtReady(false);
+    if (!playing || active?.type !== 'youtube') return;
+    // Unconditional backstop -- fires even if the embed never says a word.
+    revealTimersRef.current.push(setTimeout(() => setYtReady(true), REVEAL_MAX_MS));
+    return () => {
+      revealTimersRef.current.forEach(clearTimeout);
+      revealTimersRef.current = [];
+    };
+  }, [playing, active?.type, active?.embed_id]);
+
   // Poll YouTube iframe for current time via postMessage
   const startPolling = useCallback(() => {
     if (pollRef.current) clearInterval(pollRef.current);
@@ -230,6 +264,16 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, 
     const handler = (e: MessageEvent) => {
       try {
         const data = typeof e.data === 'string' ? JSON.parse(e.data) : e.data;
+        // Reveal gate (trigger 1). Only messages from the CURRENTLY mounted
+        // iframe count -- an in-flight message from the clip we just switched
+        // away from would otherwise reveal the new player early and put the
+        // flash straight back. onReady is the honest signal; initialDelivery /
+        // infoDelivery are what YouTube actually sends back to the getCurrentTime
+        // polling below, and either one proves the player is live.
+        if (iframeRef.current && e.source === iframeRef.current.contentWindow &&
+            (data.event === 'onReady' || data.event === 'initialDelivery' || data.event === 'infoDelivery')) {
+          setYtReady(true);
+        }
         if (data.event === 'infoDelivery' && data.info) {
           if (typeof data.info.currentTime === 'number') {
             setCurrentTime(data.info.currentTime);
@@ -329,7 +373,9 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, 
 
   return (
     <div className="mb-6 w-full max-w-full overflow-hidden">
-      <style>{`@keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }`}</style>
+      <style>{`@keyframes thumbZoom { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
+        .vg-reveal { transition: opacity 220ms ease; }
+        @media (prefers-reduced-motion: reduce) { .vg-reveal { transition: none; } }`}</style>
       {/* PLAYER — only visible when a thumbnail is clicked */}
       {active && (
         <div className="rounded-md overflow-hidden border border-[#2a3a4a] mb-3 max-w-[800px] mx-auto">
@@ -348,10 +394,34 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, 
             ) : playing ? (
               <>
                 {active.type === 'youtube' && (
-                  <iframe ref={iframeRef} key={active.embed_id}
-                    src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=0&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
-                    className="w-full h-full" allowFullScreen
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+                  <div className="w-full h-full relative">
+                    {/* Poster while the player boots: the clip's own thumbnail,
+                        not an empty black box. Sits under the iframe and fades
+                        out as the iframe fades in. pointer-events off so it can
+                        never intercept a click meant for the player. */}
+                    {active.thumbnail && (
+                      <img src={active.thumbnail} alt="" aria-hidden="true"
+                        className="vg-reveal absolute inset-0 w-full h-full object-cover"
+                        style={{ opacity: ytReady ? 0 : 1, pointerEvents: 'none' }} />
+                    )}
+                    <iframe ref={iframeRef} key={active.embed_id}
+                      src={`https://www.youtube.com/embed/${active.embed_id}?autoplay=0&mute=${muted ? 1 : 0}&enablejsapi=1&rel=0&disablekb=1`}
+                      className="vg-reveal absolute inset-0 w-full h-full" allowFullScreen
+                      style={{ opacity: ytReady ? 1 : 0 }}
+                      onLoad={() => {
+                        // Ask the player to start reporting events (the IFrame
+                        // API's own handshake), then arm trigger 2. The
+                        // handshake is never load-bearing on its own -- if it is
+                        // ignored, this timer reveals anyway.
+                        try {
+                          iframeRef.current?.contentWindow?.postMessage(JSON.stringify({
+                            event: 'listening', id: 1, channel: 'widget',
+                          }), '*');
+                        } catch {}
+                        revealTimersRef.current.push(setTimeout(() => setYtReady(true), REVEAL_GRACE_MS));
+                      }}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
+                  </div>
                 )}
                 {active.type === 'tiktok' && (
                   <div className="w-full h-full flex items-center justify-center" style={{ background: '#ffffff' }}>
