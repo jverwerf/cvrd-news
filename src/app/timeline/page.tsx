@@ -1,7 +1,7 @@
 export const revalidate = 86400; // 24 hours — timeline content is static
 
 import type { Metadata } from "next";
-import { getDailyGaps } from "@/lib/data";
+import { getDailyGaps, toIsoTimestamp } from "@/lib/data";
 import { getTimelineThreads, getTodayLastYear, getTodayTenYearsAgo, type TimelineThread, type ThreadEntry } from "@/lib/timeline-data";
 import { SiteNav } from "@/components/SiteNav";
 import { getRideSlugs } from "@/lib/ride-data";
@@ -98,7 +98,7 @@ export default async function TimelinePage() {
           description: `Follow ${threadData.threads.length} developing stories as they unfold day by day.`,
           url: 'https://cvrdnews.com/timeline',
           publisher: { '@type': 'NewsMediaOrganization', name: 'CVRD News', url: 'https://cvrdnews.com' },
-          dateModified: threadData.generated_at,
+          dateModified: toIsoTimestamp(threadData.generated_at),
           mainEntity: {
             '@type': 'ItemList',
             numberOfItems: threadData.threads.length,
@@ -109,8 +109,9 @@ export default async function TimelinePage() {
                 '@type': 'NewsArticle',
                 headline: t.title,
                 description: t.summary,
-                datePublished: t.first_seen,
-                dateModified: t.last_seen,
+                // thread bounds are day-granular; anchor them at midnight UTC
+                datePublished: toIsoTimestamp(t.first_seen),
+                dateModified: toIsoTimestamp(t.last_seen),
                 articleSection: t.category,
                 publisher: { '@type': 'NewsMediaOrganization', name: 'CVRD News' },
               },

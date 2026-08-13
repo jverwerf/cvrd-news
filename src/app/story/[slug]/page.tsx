@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { StoryPage } from "@/components/StoryPage";
 import { SiteNav, SiteFooter } from "@/components/SiteNav";
-import { getDailyGaps } from "@/lib/data";
+import { getDailyGaps, toIsoTimestamp } from "@/lib/data";
 import { getTimelineThreads } from "@/lib/timeline-data";
 
 export const revalidate = 300; // engine pings /api/revalidate on publish; this is just the fallback
@@ -35,7 +35,7 @@ async function getStory(slug: string) {
           const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
           const allStories = all.slice(0, 10);
           const dailyPickImage = data.daily_brief?.image_file || '';
-          return { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
+          return { story, date, generatedAt: data.generated_at as string | undefined, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
         }
       } catch {}
     }
@@ -62,7 +62,7 @@ async function getStory(slug: string) {
             const nextStory = idx < all.length - 1 ? all[idx + 1] : all[0];
             const allStories = all.slice(0, 10);
             const dailyPickImage = data.daily_brief?.image_file || '';
-            return { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
+            return { story, date, generatedAt: data.generated_at as string | undefined, allStories, dailyPickImage, prevStory, nextStory, storyIndex: idx, storyCount: all.length };
           }
         } catch {}
       }
@@ -105,7 +105,7 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
   const result = await getStory(slug);
   if (!result) notFound();
 
-  const { story, date, allStories, dailyPickImage, prevStory, nextStory, storyIndex, storyCount } = result;
+  const { story, date, generatedAt, allStories, dailyPickImage, prevStory, nextStory, storyIndex, storyCount } = result;
   const today = new Date().toISOString().split('T')[0];
   const isToday = date === today;
 
@@ -155,14 +155,18 @@ export default async function StoryRoute({ params }: { params: Promise<{ slug: s
 
   const isBreaking = await import('@/lib/breaking-store').then(m => m.hasBreakingData()).catch(() => false);
 
+  // The run that published this edition is the real publish instant; the
+  // filename date is only a fallback for older reports without generated_at.
+  const publishedAt = toIsoTimestamp(generatedAt) || toIsoTimestamp(date);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'NewsArticle',
     headline: story.topic,
     description: (story.summary || '').slice(0, 200),
     image: story.image_file ? [story.image_file.startsWith('http') ? story.image_file : `https://cvrdnews.com${story.image_file}`] : [],
-    datePublished: date,
-    dateModified: date,
+    datePublished: publishedAt,
+    dateModified: publishedAt,
     author: { '@type': 'Organization', name: 'CVRD News', url: 'https://cvrdnews.com' },
     publisher: { '@type': 'Organization', name: 'CVRD News', logo: { '@type': 'ImageObject', url: 'https://cvrdnews.com/logo3.png' } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://cvrdnews.com/story/${slug}` },

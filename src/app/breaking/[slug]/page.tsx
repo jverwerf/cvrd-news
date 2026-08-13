@@ -5,7 +5,7 @@ import { getLiveNowData } from '@/lib/live-now-store';
 import { StoryPage } from '@/components/StoryPage';
 import { SiteNav, SiteFooter } from '@/components/SiteNav';
 import { getTimelineThreads } from '@/lib/timeline-data';
-import type { NarrativeGap } from '@/lib/data';
+import { toIsoTimestamp, type NarrativeGap } from '@/lib/data';
 
 export const dynamic = 'force-dynamic';
 
@@ -83,8 +83,12 @@ async function loadStory(slug: string) {
   }
 
   const date = (raw.detected_at || '').split('T')[0] || new Date().toISOString().split('T')[0];
+  // Breaking records carry real instants: detected_at is first publish,
+  // last_updated moves every time the engine re-writes the story.
+  const publishedAt = toIsoTimestamp(raw.detected_at) || toIsoTimestamp(date);
+  const updatedAt = toIsoTimestamp(raw.last_updated) || publishedAt;
 
-  return { story, raw, date, allStories: navStories, prevStory, nextStory };
+  return { story, raw, date, publishedAt, updatedAt, allStories: navStories, prevStory, nextStory };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -120,7 +124,7 @@ export default async function BreakingStoryPage({ params }: { params: Promise<{ 
   const result = await loadStory(slug);
   if (!result) redirect('/breaking');
 
-  const { story, date, allStories, prevStory, nextStory } = result;
+  const { story, date, publishedAt, updatedAt, allStories, prevStory, nextStory } = result;
   const isBreaking = await hasBreakingData().catch(() => false);
 
   const threadId = (story as any).thread_id;
@@ -137,8 +141,8 @@ export default async function BreakingStoryPage({ params }: { params: Promise<{ 
     headline: story.topic,
     description: (story.summary || '').slice(0, 200),
     image: story.image_file ? [story.image_file.startsWith('http') ? story.image_file : `https://cvrdnews.com${story.image_file}`] : [],
-    datePublished: date,
-    dateModified: date,
+    datePublished: publishedAt,
+    dateModified: updatedAt,
     author: { '@type': 'Organization', name: 'CVRD News', url: 'https://cvrdnews.com' },
     publisher: { '@type': 'Organization', name: 'CVRD News', logo: { '@type': 'ImageObject', url: 'https://cvrdnews.com/logo3.png' } },
     mainEntityOfPage: { '@type': 'WebPage', '@id': `https://cvrdnews.com/breaking/${slug}` },

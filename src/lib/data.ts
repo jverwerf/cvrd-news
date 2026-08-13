@@ -3,6 +3,18 @@ import path from 'path';
 
 const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
+/** Google News and Discover want a full ISO 8601 instant with a timezone on
+ *  datePublished/dateModified; a bare "2026-08-12" costs freshness ranking, and
+ *  Twitter's legacy "Mon Mar 31 17:56:38 +0000 2025" is not a valid schema.org
+ *  Date at all. Everything upstream is written in UTC, so normalising to a Z
+ *  instant is lossless. Returns undefined for anything unparseable so the field
+ *  is omitted rather than emitted broken. */
+export function toIsoTimestamp(value?: string | null): string | undefined {
+  if (!value) return undefined;
+  const d = new Date(value);
+  return isNaN(d.getTime()) ? undefined : d.toISOString();
+}
+
 export type FactCheck = {
   claim?: string;
   verdict: 'TRUE' | 'SOMEWHAT MISLEADING' | 'MISLEADING' | 'FALSE' | 'UNSURE' | 'NO CLAIM';
