@@ -85,7 +85,7 @@ type Placement = 'horizontal' | 'tile';
 type Brand =
   | 'migraineme' | 'newsletter' | 'kofi'
   | 'isoqar' | 'grc' | 'engagebay' | 'warden9' | 'dazn' | 'zenind' | 'inffni'
-  | 'fiverr' | 'everblog' | 'oscal';
+  | 'fiverr' | 'everblog' | 'oscal' | 'gilbert' | 'magicjohn';
 
 /** CVRD's own products. They fill whatever paid demand does not. */
 const HOUSE: Brand[] = ['migraineme', 'newsletter', 'kofi'];
@@ -207,6 +207,16 @@ const SPONSORED: Sponsored[] = [
   // still earn something, where the old category cap meant they earned
   // nothing at all. Raise it once commissions are seen to clear.
   { brand: 'grc', affinity: ['markets'], countries: ['GB', 'IE'], weight: 1 },
+  // Magic John — tempered-glass screen protectors. 12% of a low-ticket
+  // impulse buy, no Awin KPIs published at all, so thin inventory until it
+  // proves itself. Tile only; they have no wide creative.
+  { brand: 'magicjohn', affinity: ['trending', 'sports'], countries: 'all', weight: 3 },
+  // Gilbert Rugby — the licensed rugby-kit maker, and the second sports
+  // advertiser on an account where sport is the biggest content category and
+  // DAZN UK was the only buyer. 5% of a GBP 15-40 basket is the thinnest rate
+  // we run, hence the low weight; the affinity boost is what makes it earn.
+  // Sells worldwide but prices in GBP, so it reads best to a UK reader.
+  { brand: 'gilbert', affinity: ['sports'], countries: 'all', weight: 2 },
 ];
 
 /** Roughly how many ticks one full rotation lasts. Weights are rounded into
@@ -1215,6 +1225,9 @@ function OscalHorizontal() {
       <div className="flex items-center" style={{ gap: 18, minWidth: 0 }}>
         <OscalWordmark h={16} />
         <div style={{ minWidth: 0 }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(17,17,17,0.4)', marginBottom: 3 }}>
+            Sponsored
+          </div>
           <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 16, color: '#111', lineHeight: 1.2 }}>
             Power When You Need It Most
           </div>
@@ -1248,6 +1261,88 @@ function OscalTile() {
       </div>
     </a>
   );
+}
+
+// Gilbert Rugby (Awin 118479). ⚠️ Their entire Awin creative library is one
+// 168x168 logo and a text link, so this is hand-composed from that mark.
+// Headline, subline and button label are all LIFTED VERBATIM from
+// gilbertrugby.com — "The best balls in World Rugby" is the heading on the
+// rugby-balls collection this deeplinks to, the four ball types are their own
+// category names on that page, and "View All" is their own button label. Do
+// not write your own copy here; see the Warden9 note above for why.
+//
+// The logo file is 168x168 with the mark 158x104 inside it, so unlike OSCAL's
+// there is no need to scale-and-crop: it only carries a little vertical
+// padding, and the padding is white on a white card, so it disappears.
+const GIL_LINK = 'https://www.awin1.com/cread.php?awinmid=118479&awinaffid=3026993&ued=https%3A%2F%2Fwww.gilbertrugby.com%2Fcollections%2Frugby-balls';
+const GIL_LOGO = 'https://a1.awin1.com/ads/awin/118479/imggilbert-1755521786046.png';
+const GIL_INK = '#111';
+
+function GilbertHorizontal() {
+  return (
+    <a href={GIL_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 20px', borderRadius: 8, background: '#fff', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div className="flex items-center" style={{ gap: 16, minWidth: 0 }}>
+        <img src={GIL_LOGO} alt="Gilbert Rugby" style={{ height: 40, width: 40, flexShrink: 0 }} />
+        <div style={{ minWidth: 0 }}>
+          {/* Wide slots carry their own disclosure: the hosts' own "Sponsored"
+              labels were removed when creative stopped being full-bleed. */}
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.1em', textTransform: 'uppercase' as const, color: 'rgba(17,17,17,0.4)', marginBottom: 3 }}>
+            Sponsored
+          </div>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 16, color: '#111', lineHeight: 1.2 }}>
+            The best balls in World Rugby
+          </div>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9.5, color: 'rgba(17,17,17,0.55)', marginTop: 3 }}>
+            Match, training, replica and international balls.
+          </div>
+        </div>
+      </div>
+      <span className="shrink-0" style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontWeight: 500, padding: '9px 16px', borderRadius: 5, background: GIL_INK, color: '#fff', letterSpacing: '0.02em' }}>
+        View All
+      </span>
+    </a>
+  );
+}
+
+function GilbertTile() {
+  return (
+    <a href={GIL_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', padding: 14, borderRadius: 8, background: '#fff', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 8, minHeight: 0 }}>
+        <img src={GIL_LOGO} alt="Gilbert Rugby" style={{ height: 38, width: 38, display: 'block' }} />
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 17, color: '#111', lineHeight: 1.25 }}>
+          The best balls in World Rugby
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'rgba(17,17,17,0.55)', lineHeight: 1.4 }}>
+          Match, training, replica and international balls.
+        </div>
+        <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9.5, fontWeight: 500, padding: '6px 12px', borderRadius: 4, background: GIL_INK, color: '#fff' }}>
+          View All
+        </span>
+      </div>
+    </a>
+  );
+}
+
+// Magic John (Awin 128687) — tempered-glass screen protectors. Their own
+// creative, and note the src host: unlike every other advertiser here they
+// serve their Awin creative straight off their Shopify CDN rather than
+// a1.awin1.com. All six files are 1200x1200 product shots on white, so there
+// is deliberately NO horizontal component — same as INFFNI, the rotation reads
+// RENDERERS and simply never offers them a wide slot.
+//
+// ⚠️ Nothing this brand says about itself may appear on the card. Their
+// homepage claims "Trusted Worldwide By 100M+ Users", their About page says
+// founded 2021 while third-party listings say 2010, and no legal entity or
+// address is published anywhere. The photo sells the product; the claims stay
+// off a fact-checking site. The creative names a specific handset, so it will
+// date — swap it when the next iPhone lands.
+const MJ_LINK = 'https://www.awin1.com/cread.php?awinmid=128687&awinaffid=3026993&ued=https%3A%2F%2Fmagicjohn.com%2Fcollections%2Fscreen-protectors';
+const MJ_1200 = 'https://magicjohn.com/cdn/shop/files/iPhone_17_Pro_Max_6.9inch_HD_ddbccae2-a16c-4a31-8112-fd943a82bd0b.jpg';
+
+function MagicJohnTile() {
+  return <RasterTile href={MJ_LINK} src={MJ_1200} alt="Magic John Gen 3 screen protector for iPhone 17 Pro Max, two pack with a dust-free applicator" bg="#ffffff" />;
 }
 
 // ─── MigraineMe placements ───────────────────────────────────────────────────
@@ -1323,6 +1418,8 @@ const RENDERERS: Record<Brand, Partial<Record<Placement, Renderer>>> = {
   fiverr:     { horizontal: () => <FiverrHorizontal />,     tile: () => <FiverrTile /> },
   everblog:   { horizontal: () => <EverblogHorizontal />,   tile: () => <EverblogTile /> },
   oscal:      { horizontal: () => <OscalHorizontal />,      tile: () => <OscalTile /> },
+  gilbert:    { horizontal: () => <GilbertHorizontal />,    tile: () => <GilbertTile /> },
+  magicjohn:  {                                            tile: () => <MagicJohnTile /> },
 };
 
 /** Wide banner (~90px tall).
