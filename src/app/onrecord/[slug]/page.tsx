@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { OnRecordDetail } from './OnRecordDetail';
+import { toIsoTimestamp } from '@/lib/data';
 
 const BLOB_BASE = process.env.NEXT_PUBLIC_BLOB_BASE_URL || '';
 
@@ -21,10 +22,22 @@ async function getAllScores(): Promise<any[]> {
   return results.filter(Boolean);
 }
 
+function toSlug(name: string): string {
+  return (name || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+}
+
 function findBySlugInScores(scores: any[], slug: string): { score: any } | null {
+  // Exact handle or current name first — a live name must always beat another
+  // profile's former name, or a rename could hijack someone else's URL.
   for (const score of scores) {
-    const nameSlug = (score.name || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
-    if (nameSlug === slug || score.handle === slug) return { score };
+    if (score.handle === slug || toSlug(score.name) === slug) return { score };
+  }
+  // Then former names, so a profile renamed by refresh-roles.ts (e.g. a minister
+  // relabelled when they leave office) keeps its old links working.
+  for (const score of scores) {
+    for (const former of score.former_names || []) {
+      if (toSlug(former) === slug) return { score };
+    }
   }
   return null;
 }
@@ -77,6 +90,8 @@ export default async function OnRecordPage({ params }: { params: Promise<{ slug:
   const claimReviews = (verified?.scored_claims || []).slice(0, 10).map((c: any) => ({
     '@type': 'ClaimReview',
     url: `https://cvrdnews.com/onrecord/${slug}`,
+    // when CVRD published the verdict, not when the claim was made
+    datePublished: toIsoTimestamp(c.verified_at),
     claimReviewed: c.claim,
     author: { '@type': 'Organization', name: 'CVRD News', url: 'https://cvrdnews.com' },
     reviewRating: {
@@ -89,7 +104,9 @@ export default async function OnRecordPage({ params }: { params: Promise<{ slug:
     itemReviewed: {
       '@type': 'CreativeWork',
       author: { '@type': 'Person', name: score.name },
-      datePublished: c.tweet_date,
+      // tweet_date arrives either as ISO or as Twitter's legacy
+      // "Mon Mar 31 17:56:38 +0000 2025", which is not a valid schema.org Date
+      datePublished: toIsoTimestamp(c.tweet_date),
     },
   }));
 
