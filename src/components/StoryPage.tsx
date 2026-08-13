@@ -705,7 +705,6 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
       {(() => {
         const tgClips = telegramClips.filter(c => c.embed_id && !c.duration);
 
-        if (tgClips.length === 0) return null;
 
         type TextItem = { kind: 'telegram'; url: string; title: string; meta: string };
         const mixed: TextItem[] = [];
@@ -749,6 +748,31 @@ export function StoryPage({ story, date, allStories, dailyPickImage, prevStory, 
                   {telegramExpanded ? 'Show less' : `Show ${mixed.length - previewCount} more`}
                 </button>
               )}
+
+              {/* CVRD's own channel. Deliberately set apart from the rows above
+                  by a rule and an OUR CHANNEL label: those are sourced third
+                  party posts, this is us. Styling it identically would read as
+                  a source, which it is not. */}
+              <a
+                href="https://t.me/cvrdnews"
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-lg mt-3 pt-3 hover:opacity-80 transition-opacity"
+                style={{ borderTop: '1px solid #2a3a4a' }}
+              >
+                <div className="flex items-start gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#229ED9" className="mt-0.5 shrink-0"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 5.2l-2.84 13.4c-.2.95-.77 1.18-1.56.73l-4.3-3.17-2.08 2c-.23.23-.42.42-.87.42l.31-4.39 7.98-7.21c.35-.31-.07-.48-.54-.19L7.76 13.2l-4.24-1.33c-.92-.29-.94-.92.19-1.37l16.58-6.39c.77-.28 1.44.19 1.19 1.37l-.53-.28z"/></svg>
+                  <div className="min-w-0">
+                    <p className="text-[12px] text-[#ccc] leading-snug">
+                      Every story, both sides, on Telegram as it lands.
+                    </p>
+                    <span className="text-[10px] mt-1 block" style={{ color: '#229ED9' }}>
+                      @cvrdnews
+                      <span className="ml-2 text-[9px] font-bold uppercase tracking-[0.1em]" style={{ color: '#daa520' }}>Our channel</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         );
