@@ -17,9 +17,11 @@ const CHIP: React.CSSProperties = {
   letterSpacing: '0.04em',
 };
 
+type AdPlan = { channels: Record<string, string[]>; suppress: string[] };
+
 function useTopStory() {
-  const [state, setState] = useState<{ topic: string | null; categories: string[]; country: string | null }>(
-    { topic: null, categories: [], country: null }
+  const [state, setState] = useState<{ topic: string | null; categories: string[]; country: string | null; adPlan: AdPlan | null }>(
+    { topic: null, categories: [], country: null, adPlan: null }
   );
   useEffect(() => {
     fetch('/api/top-story')
@@ -28,6 +30,7 @@ function useTopStory() {
         topic: d.topic ?? null,
         categories: Array.isArray(d.categories) ? d.categories : (d.category ? [d.category] : []),
         country: d.country ?? null,
+        adPlan: d.adPlan && d.adPlan.channels ? { channels: d.adPlan.channels, suppress: d.adPlan.suppress || [] } : null,
       }))
       .catch(() => {});
   }, []);
@@ -107,10 +110,28 @@ const HOUSE_SHARE = 1 / 3;
  *  advertiser is always able to earn, and simply earns more where it fits. */
 const AFFINITY_BOOST = 3;
 
+/** How hard the day's ad plan pushes its pick. The planner returns an ordered
+ *  list per channel; whoever it puts first gets this, and it decays to 1 down
+ *  the list. Anyone the planner did not mention keeps their own weight rather
+ *  than dropping to zero — the plan is an opinion about what a reader would
+ *  find interesting, not a permission list, and it must never be able to empty
+ *  a slot. */
+const PLANNER_BOOST = [3, 2.2, 1.7, 1.3];
+
 type Sponsored = {
   brand: Brand;
   /** Pages this advertiser reads best next to. A boost, not a gate. */
   affinity: Category[];
+  /** The one hard content rule: pages this advertiser must NEVER appear on,
+   *  because the pairing itself is the problem rather than a weak match.
+   *
+   *  This is for brand safety, not for performance. A cheerful family kitchen
+   *  under a mass-casualty story, or a phone marketed on military-grade
+   *  certification beside a war, is the kind of thing a reader screenshots.
+   *  Everything else stays a weighting decision, so keep this list short —
+   *  gating on category is what made three advertisers serve zero impressions
+   *  for a week. */
+  avoid?: Category[];
   /** Hard gate: the reader has to be somewhere this advertiser can actually
    *  sell. A UK training course priced in GBP is wasted on a US reader.
    *  `'all'` is for advertisers that sell worldwide. */
@@ -124,22 +145,23 @@ const SPONSORED: Sponsored[] = [
   // DAZN UK — £19.19-£29.99 per sale, and sports is the single biggest thing
   // CVRD covers (411 narratives against 241 for markets). Highest weight we
   // have. The DAZN *UK* programme, so GB only.
-  { brand: 'dazn', affinity: ['sports'], countries: ['GB'], weight: 10 },
+  { brand: 'dazn', affinity: ['sports'], avoid: ['world'], countries: ['GB'], weight: 10 },
   // EngageBay CRM — 30% RECURRING, Awin payment Level 1. Best-paying partner
   // on the account. Buyer is small business owners.
-  { brand: 'engagebay', affinity: ['markets', 'trending'], countries: ['GB', 'US'], weight: 8 },
+  { brand: 'engagebay', affinity: ['markets', 'trending'], countries: 'all', weight: 8 },
   // Warden9 — secure runtime for AI agents. 30%, 90 day cookie, Level 1.
-  { brand: 'warden9', affinity: ['markets', 'trending'], countries: ['GB', 'US'], weight: 6 },
-  // Zenind — US LLC / C-Corp formation and registered agent. 10-30%. US only:
-  // the whole product is a US company, and the buyer is a founder abroad
-  // reading US coverage.
-  { brand: 'zenind', affinity: ['markets', 'politics'], countries: ['US'], weight: 5 },
+  { brand: 'warden9', affinity: ['markets', 'trending'], countries: 'all', weight: 6 },
+  // Zenind — US LLC / C-Corp formation and registered agent. 10-30%. NOT US
+  // only, despite the product being a US company: the entire pitch is helping
+  // founders OUTSIDE the United States open one, so gating this to US readers
+  // was aimed at the one audience least likely to need it.
+  { brand: 'zenind', affinity: ['markets', 'politics'], countries: 'all', weight: 5 },
   // Everblog — AI family calendars that mount on a fridge, 249-319 dollars at
   // 10%, so roughly 25-32 dollars an order. Best per-order value here after
   // DAZN, but a brand new programme with no Awin payment level, hence a middling
   // weight until commissions are seen to clear. Ships US, CA, Europe, AU and NZ
   // off one storefront with no geo-redirect, so there is nothing to gate on.
-  { brand: 'everblog', affinity: ['trending', 'markets'], countries: 'all', weight: 5 },
+  { brand: 'everblog', affinity: ['trending', 'markets'], avoid: ['world', 'politics'], countries: 'all', weight: 5 },
   // Fiverr — flat CPA per FIRST-TIME buyer only, no revenue share on repeats.
   // Our creative and deeplink are both the logo-design category, which pays 30
   // rather than the 20 dollar default: the payout is set by the page the click
@@ -155,6 +177,7 @@ const SPONSORED: Sponsored[] = [
   {
     brand: 'oscal',
     affinity: ['trending', 'sports', 'markets'],
+    avoid: ['world', 'politics'],
     countries: [
       'US', 'GB', 'JP',
       'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
@@ -166,17 +189,18 @@ const SPONSORED: Sponsored[] = [
   // ISOQAR Academy — UKAS-accredited, GBP pricing, training venues in
   // Manchester/London/Bristol/Leamington Spa. UK/IE only.
   { brand: 'isoqar', affinity: ['politics', 'world', 'markets'], countries: ['GB', 'IE'], weight: 4 },
-  // INFFNI — US smart robotics. Unproven for us, so a small share. Square
+  // INFFNI — smart robotics. Unproven for us, so a small share. Square
   // creative only, which the renderer map handles: it just never enters a
-  // horizontal rotation.
-  { brand: 'inffni', affinity: ['trending'], countries: ['US'], weight: 3 },
+  // horizontal rotation. Sells worldwide; the old US gate was copied from
+  // Awin's billing region, which says nothing about who may buy.
+  { brand: 'inffni', affinity: ['trending'], avoid: ['world'], countries: 'all', weight: 3 },
   // GRC Solutions — IT governance / cyber certification, GBP, UK only.
   // Deliberately the lowest weight on the account: Awin rates them Exposure
   // Level 4 ("exceeded both credit limit and settlement terms", ~53 day
   // payment). Capping exposure by weight rather than by category means they
   // still earn something, where the old category cap meant they earned
   // nothing at all. Raise it once commissions are seen to clear.
-  { brand: 'grc', affinity: ['markets'], countries: ['GB'], weight: 1 },
+  { brand: 'grc', affinity: ['markets'], countries: ['GB', 'IE'], weight: 1 },
 ];
 
 /** Roughly how many ticks one full rotation lasts. Weights are rounded into
@@ -200,19 +224,63 @@ function deal(counts: Array<{ brand: Brand; n: number }>): Brand[] {
   return out;
 }
 
-function buildRotation(placement: Placement, categories: string[], country: string | null): Brand[] {
+/** Stories the planner judged too grim to carry advertising. Matched on the
+ *  topic string the plan was written from, loosely, because the topic a page
+ *  renders is not always byte-identical to the one in the day's report.
+ *
+ *  A suppressed page still shows CVRD's own products. The point is not to
+ *  leave a hole, it is not to sell a robot dog under an earthquake. */
+function isSuppressed(plan: AdPlan | null, topic: string | null): boolean {
+  if (!plan || !topic) return false;
+  const needle = topic.trim().toLowerCase();
+  if (!needle) return false;
+  return plan.suppress.some(s => {
+    const t = s.trim().toLowerCase();
+    return t.length > 0 && (t === needle || t.includes(needle) || needle.includes(t));
+  });
+}
+
+/** Where the day's plan ranks this brand, best rank across the categories on
+ *  the page. -1 when the planner did not mention it anywhere relevant. */
+function plannerRank(plan: AdPlan | null, brand: Brand, categories: string[]): number {
+  if (!plan) return -1;
+  let best = -1;
+  for (const category of categories) {
+    const order = plan.channels[category];
+    if (!order) continue;
+    const rank = order.indexOf(brand);
+    if (rank >= 0 && (best < 0 || rank < best)) best = rank;
+  }
+  return best;
+}
+
+function buildRotation(
+  placement: Placement,
+  categories: string[],
+  country: string | null,
+  plan: AdPlan | null,
+): Brand[] {
   const market = country ?? FALLBACK_COUNTRY;
   // A brand with no artwork at this size is not eligible for it. This is what
   // stops a sponsor with only a square creative from rendering an empty slot.
   const canFill = (b: Brand) => RENDERERS[b][placement] !== undefined;
 
+  // `avoid` only bites when the page IS one article. A mixed page carries
+  // every category running today, so testing it there would exclude a brand
+  // from the home page for a story it is not next to — which is precisely the
+  // over-gating that starved three advertisers for a week.
+  const isSingleStory = categories.length === 1;
+
   const paid = SPONSORED
     .filter(s => canFill(s.brand))
     .filter(s => s.countries === 'all' || s.countries.includes(market))
-    .map(s => ({
-      brand: s.brand,
-      weight: s.weight * (s.affinity.some(c => categories.includes(c)) ? AFFINITY_BOOST : 1),
-    }));
+    .filter(s => !(isSingleStory && s.avoid?.includes(categories[0] as Category)))
+    .map(s => {
+      const rank = plannerRank(plan, s.brand, categories);
+      const planned = rank >= 0 ? (PLANNER_BOOST[rank] ?? 1) : 1;
+      const affinity = s.affinity.some(c => categories.includes(c)) ? AFFINITY_BOOST : 1;
+      return { brand: s.brand, weight: s.weight * affinity * planned };
+    });
 
   const house = HOUSE.filter(canFill);
   const paidTotal = paid.reduce((n, p) => n + p.weight, 0);
@@ -232,8 +300,8 @@ function buildRotation(placement: Placement, categories: string[], country: stri
   return rotation.length > 0 ? rotation : ['newsletter'];
 }
 
-function useCyclingBrand(placement: Placement, ms: number, categories: string[], country: string | null) {
-  const rotation = buildRotation(placement, categories, country);
+function useCyclingBrand(placement: Placement, ms: number, categories: string[], country: string | null, plan: AdPlan | null, houseOnly: boolean) {
+  const rotation = houseOnly ? HOUSE.filter(b => RENDERERS[b][placement]) : buildRotation(placement, categories, country, plan);
   // A primitive key, so the effects below don't restart on every render just
   // because buildRotation handed back a fresh array.
   const key = rotation.join('|');
@@ -1263,10 +1331,11 @@ const RENDERERS: Record<Brand, Partial<Record<Placement, Renderer>>> = {
  * fallback made every mixed page target `world` and nothing else, on 103 of
  * the last 104 days.
  */
-export function HorizontalAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, categories: todaysCategories, country } = useTopStory();
+export function HorizontalAdBanner({ category: categoryProp, topic: topicProp }: { category?: string | null; topic?: string | null } = {}) {
+  const { topic: todaysTopic, categories: todaysCategories, country, adPlan } = useTopStory();
   const categories = categoryProp ? [categoryProp] : todaysCategories;
-  const { brand, visible } = useCyclingBrand('horizontal', 60000, categories, country);
+  const topic = topicProp ?? todaysTopic;
+  const { brand, visible } = useCyclingBrand('horizontal', 60000, categories, country, adPlan, isSuppressed(adPlan, topic));
 
   useEffect(() => {
     if (visible) track('ad_impression', { brand, placement: 'horizontal' });
@@ -1285,10 +1354,11 @@ export function HorizontalAdBanner({ category: categoryProp }: { category?: stri
 
 /** Square tile — Dashboard, On Record grid, hero video rail.
  *  See HorizontalAdBanner re: the category prop. */
-export function TileAdBanner({ category: categoryProp }: { category?: string | null } = {}) {
-  const { topic, categories: todaysCategories, country } = useTopStory();
+export function TileAdBanner({ category: categoryProp, topic: topicProp }: { category?: string | null; topic?: string | null } = {}) {
+  const { topic: todaysTopic, categories: todaysCategories, country, adPlan } = useTopStory();
   const categories = categoryProp ? [categoryProp] : todaysCategories;
-  const { brand, visible } = useCyclingBrand('tile', 60000, categories, country);
+  const topic = topicProp ?? todaysTopic;
+  const { brand, visible } = useCyclingBrand('tile', 60000, categories, country, adPlan, isSuppressed(adPlan, topic));
 
   useEffect(() => {
     if (visible) track('ad_impression', { brand, placement: 'tile' });

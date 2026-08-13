@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { getDailyGaps } from '@/lib/data';
+import { getDailyGaps, getAdPlan } from '@/lib/data';
 import type { NarrativeGap } from '@/lib/data';
 
 // Vercel sets x-vercel-ip-country on every edge request; Cloudflare sets
@@ -12,7 +12,10 @@ function visitorCountry(request: NextRequest): string | null {
 }
 
 export async function GET(request: NextRequest) {
-  const data = await getDailyGaps();
+  // Both in one request: every ad slot on the page already calls this route
+  // once for its targeting, and the plan is the other half of that same
+  // decision. A second route would double the round trips for no gain.
+  const [data, adPlan] = await Promise.all([getDailyGaps(), getAdPlan()]);
   const stories = data?.top_narratives || [];
   const top = stories.find((s: NarrativeGap) => s.is_top_story) || stories[0];
 
@@ -31,5 +34,6 @@ export async function GET(request: NextRequest) {
     category: top?.category ?? null,
     categories,
     country: visitorCountry(request),
+    adPlan,
   });
 }

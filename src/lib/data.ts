@@ -225,3 +225,78 @@ async function postProcess(report: DailyReport): Promise<DailyReport | null> {
     return null;
   }
 }
+
+/** The day's ad plan, written by the engine's `ad-planner.ts`.
+ *
+ *  Claude is handed the advertiser roster and the day's real stories once a
+ *  day and returns, per channel, an ordered list of who should lead — its
+ *  judgement about who is actually on that page and what they would want,
+ *  rather than a static table matching a category string. This file was being
+ *  produced and uploaded every day and read by nothing at all; the website
+ *  held its own hard-coded weights and never saw it.
+ *
+ *  Deliberately soft everywhere it touches the rotation. If the plan is
+ *  missing, stale or malformed the site falls back to its own weights, because
+ *  an ad plan is not worth an empty ad slot. */
+export type AdPlan = {
+  date: string;
+  model?: string;
+  /** Channel -> advertiser keys, best first. */
+  channels: Record<string, string[]>;
+  /** Story topics judged too grim to carry any advertising at all. */
+  suppress: string[];
+};
+
+type RawAdPlan = {
+  date?: string;
+  model?: string;
+  channels?: Record<string, { order?: unknown } | undefined>;
+  suppress?: unknown;
+};
+
+function normaliseAdPlan(raw: RawAdPlan): AdPlan | null {
+  if (!raw || typeof raw !== 'object' || !raw.channels) return null;
+  const channels: Record<string, string[]> = {};
+  for (const [channel, body] of Object.entries(raw.channels)) {
+    const order = body?.order;
+    if (Array.isArray(order)) channels[channel] = order.filter((k): k is string => typeof k === 'string');
+  }
+  if (Object.keys(channels).length === 0) return null;
+  return {
+    date: typeof raw.date === 'string' ? raw.date : '',
+    model: typeof raw.model === 'string' ? raw.model : undefined,
+    channels,
+    suppress: Array.isArray(raw.suppress) ? raw.suppress.filter((s): s is string => typeof s === 'string') : [],
+  };
+}
+
+export async function getAdPlan(): Promise<AdPlan | null> {
+  const dateStr = new Date().toISOString().split('T')[0];
+  const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+  // Yesterday is an acceptable fallback: the plan is built from the day's
+  // stories, and at 00:30 UTC yesterday's read on the newsroom is a far better
+  // guide than no plan at all. Anything older is ignored rather than trusted.
+  for (const date of [dateStr, yesterdayStr]) {
+    const enginePath = path.resolve(process.cwd(), `../intelligence-engine/output/ad_plan_${date}.json`);
+    if (fs.existsSync(enginePath)) {
+      try {
+        const plan = normaliseAdPlan(JSON.parse(fs.readFileSync(enginePath, 'utf8')));
+        if (plan) return plan;
+      } catch { /* fall through */ }
+    }
+  }
+
+  if (BLOB_BASE) {
+    for (const date of [dateStr, yesterdayStr]) {
+      try {
+        const resp = await fetch(`${BLOB_BASE}/data/ad_plan_${date}.json`, { next: { revalidate: 1800 } });
+        if (!resp.ok) continue;
+        const plan = normaliseAdPlan(await resp.json());
+        if (plan) return plan;
+      } catch { /* fall through */ }
+    }
+  }
+
+  return null;
+}
