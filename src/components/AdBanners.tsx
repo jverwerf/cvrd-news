@@ -81,7 +81,8 @@ type Placement = 'horizontal' | 'tile';
 
 type Brand =
   | 'migraineme' | 'newsletter' | 'kofi'
-  | 'isoqar' | 'grc' | 'engagebay' | 'warden9' | 'dazn' | 'zenind' | 'inffni';
+  | 'isoqar' | 'grc' | 'engagebay' | 'warden9' | 'dazn' | 'zenind' | 'inffni'
+  | 'fiverr' | 'everblog' | 'oscal';
 
 /** CVRD's own products. They fill whatever paid demand does not. */
 const HOUSE: Brand[] = ['migraineme', 'newsletter', 'kofi'];
@@ -133,6 +134,35 @@ const SPONSORED: Sponsored[] = [
   // the whole product is a US company, and the buyer is a founder abroad
   // reading US coverage.
   { brand: 'zenind', affinity: ['markets', 'politics'], countries: ['US'], weight: 5 },
+  // Everblog — AI family calendars that mount on a fridge, 249-319 dollars at
+  // 10%, so roughly 25-32 dollars an order. Best per-order value here after
+  // DAZN, but a brand new programme with no Awin payment level, hence a middling
+  // weight until commissions are seen to clear. Ships US, CA, Europe, AU and NZ
+  // off one storefront with no geo-redirect, so there is nothing to gate on.
+  { brand: 'everblog', affinity: ['trending', 'markets'], countries: 'all', weight: 5 },
+  // Fiverr — flat CPA per FIRST-TIME buyer only, no revenue share on repeats.
+  // Our creative and deeplink are both the logo-design category, which pays 30
+  // rather than the 20 dollar default: the payout is set by the page the click
+  // LANDS on, so the destination is worth as much as the placement. Weighted
+  // below its headline numbers because Awin reports an EPC of 0.14 — Fiverr is
+  // famous enough that much of the traffic already has an account and can never
+  // qualify.
+  { brand: 'fiverr', affinity: ['markets', 'trending'], countries: 'all', weight: 4 },
+  // OSCAL — rugged phones and PowerMax portable power stations, Blackview's
+  // consumer sub-brand. 4-10%, unproven, no Awin payment level, so thin
+  // inventory for now. Country list is a real shipping limit, not a guess: EU27
+  // plus US, UK and Japan is exactly where store.oscal.hk will deliver.
+  {
+    brand: 'oscal',
+    affinity: ['trending', 'sports', 'markets'],
+    countries: [
+      'US', 'GB', 'JP',
+      'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+      'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
+      'SI', 'ES', 'SE',
+    ],
+    weight: 3,
+  },
   // ISOQAR Academy — UKAS-accredited, GBP pricing, training venues in
   // Manchester/London/Bristol/Leamington Spa. UK/IE only.
   { brand: 'isoqar', affinity: ['politics', 'world', 'markets'], countries: ['GB', 'IE'], weight: 4 },
@@ -982,6 +1012,170 @@ function InffniTile() {
   );
 }
 
+// Fiverr (Awin 6288). Their own creative, the "Logo Design" set, which is the
+// one pair in their library that ships at 2x (1456x180 and 600x500) — the other
+// category sets are 1x and go soft the moment the slot is wider than 500px.
+//
+// The link is deliberately NOT fiverr.com. Fiverr's Awin payout is a flat CPA
+// set by the category the click LANDS on: 20 dollars for the homepage, 30 for
+// logo design. Same click, half again the money, so the destination matches the
+// artwork. If you ever swap the creative, swap the deeplink to match it or we
+// advertise one thing and get paid for another. Verified 2026-08-13: this URL
+// 302s through track.fiverr.com carrying afp2=3026993, so it attributes.
+const FVR_LINK = 'https://www.awin1.com/cread.php?awinmid=6288&awinaffid=3026993&ued=https%3A%2F%2Fwww.fiverr.com%2Fcategories%2Fgraphics-design%2Fcreative-logo-design';
+const FVR_1456 = 'https://a1.awin1.com/ads/awin/6288/img729x90-1746038806296.png';
+const FVR_600 = 'https://a1.awin1.com/ads/awin/6288/img300x250-1746038806573.png';
+
+function FiverrHorizontal() {
+  return <RasterBanner href={FVR_LINK} src={FVR_1456} alt="Fiverr — get the perfect logo. Find a designer." />;
+}
+
+function FiverrTile() {
+  return <RasterTile href={FVR_LINK} src={FVR_600} alt="Fiverr — get the perfect logo. Find a designer." bg="#013e1d" />;
+}
+
+// Everblog (Awin 128579) — AI family calendars that mount on a fridge door.
+//
+// ⚠️ Every finished banner in their Awin library is the same Back-to-School
+// campaign, burnt in with a price (224.10 dollars) and a code (Ever10). Running
+// a hard-coded price on a fact-checking site and forgetting to take it down is
+// the GRC/CISSP25 mistake waiting to happen, so those are deliberately not used.
+// What IS used is their evergreen "Themed assets" photography, which carries no
+// copy at all, with Everblog's OWN words over it — the headline and the button
+// are lifted verbatim from everblog.com and re-verified on 2026-08-13. Do not
+// paraphrase them.
+//
+// `cover` is correct here and does not contradict the never-crop rule: that rule
+// exists because cropping a finished banner cuts the advertiser's headline off.
+// These are raw photographs with nothing to cut, same as INFFNI's tile.
+const EVB_LINK = 'https://www.awin1.com/cread.php?awinmid=128579&awinaffid=3026993&ued=https%3A%2F%2Feverblog.com%2F';
+const EVB_WIDE = 'https://a1.awin1.com/ads/awin/128579/imgbanner3-1783667193973.jpg';
+const EVB_SQUARE = 'https://a1.awin1.com/ads/awin/128579/imgbanner1-1783666940059.jpg';
+const EVB_YELLOW = '#ffdd00';
+
+function EverblogHorizontal() {
+  return (
+    <a href={EVB_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', position: 'relative', width: '100%', height: 90, borderRadius: 8, overflow: 'hidden', background: '#f8eee5', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={EVB_WIDE} alt=""
+        // 35% is not arbitrary: the slot shows a 412px band of a 2700px tall
+        // photo, and this is the one band that keeps the tablet's calendar UI —
+        // the actual product — in frame alongside a face rather than cropping
+        // to a torso. Re-check it against the artwork if you change the height.
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%', display: 'block' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(252,248,244,0.97) 0%, rgba(252,248,244,0.9) 40%, rgba(252,248,244,0) 66%)' }} />
+      <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', gap: 16 }}>
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'rgba(17,17,17,0.42)', marginBottom: 3 }}>
+            Everblog
+          </div>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#111', lineHeight: 1.2 }}>
+            Shared family calendar built for your all-in-one Family Command Center.
+          </div>
+        </div>
+        <span className="shrink-0" style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontWeight: 500, padding: '9px 16px', borderRadius: 5, background: EVB_YELLOW, color: '#111', letterSpacing: '0.02em' }}>
+          Shop FridgeCal™
+        </span>
+      </div>
+    </a>
+  );
+}
+
+function EverblogTile() {
+  return (
+    <a href={EVB_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'block', position: 'relative', width: '100%', height: '100%', borderRadius: 8, overflow: 'hidden', background: '#f8eee5', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <img src={EVB_SQUARE} alt=""
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(252,248,244,0.97) 0%, rgba(252,248,244,0.86) 34%, rgba(252,248,244,0) 62%)' }} />
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: 12, display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-start' }}>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 8, letterSpacing: '0.16em', textTransform: 'uppercase' as const, color: 'rgba(17,17,17,0.45)' }}>
+          Everblog
+        </div>
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 15, color: '#111', lineHeight: 1.2 }}>
+          Stop buying food you already have.
+        </div>
+        <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9, fontWeight: 500, padding: '5px 11px', borderRadius: 4, background: EVB_YELLOW, color: '#111' }}>
+          Shop FridgeCal™
+        </span>
+      </div>
+    </a>
+  );
+}
+
+// OSCAL (Awin 128931) — Blackview's rugged-phone and portable-power sub-brand.
+//
+// ⚠️ Their entire Awin library is four assets: three banners for a "Summer Power
+// Sale" dated Aug 17-31 on the face of the artwork, and a logo. A banner that
+// prints its own expiry date is not something to hard-code, so this is built the
+// Warden9 way — their own wordmark, and copy lifted VERBATIM from the top of
+// store.oscal.hk, re-verified 2026-08-13. If you want the sale creative during
+// its window, swap it in and diary taking it down again on 1 September.
+//
+// The card sells the PowerMax power stations rather than the phones on purpose.
+// The rugged line is named Marine and TANK and photographs as tactical kit; this
+// is the INFFNI robot-dog problem with the volume up, and it is why the roster
+// keeps OSCAL off world and politics entirely.
+//
+// The wordmark PNG is 168x168 with the mark only 28px tall in the middle of it,
+// so rendering it at any sane height leaves a tiny logo in a sea of white. The
+// clipping wrapper scales it 6x and crops back to the mark. Re-measure if they
+// ever re-upload the file.
+const OSC_LINK = 'https://www.awin1.com/cread.php?awinmid=128931&awinaffid=3026993&ued=https%3A%2F%2Fstore.oscal.hk%2F';
+const OSC_WORDMARK = 'https://a1.awin1.com/ads/awin/128931/imgoscal-1785260956688.png';
+const OSC_ORANGE = '#fe5200';
+
+function OscalWordmark({ h }: { h: number }) {
+  return (
+    <div style={{ height: h, width: h * 6, overflow: 'hidden', position: 'relative', flexShrink: 0 }}>
+      <img src={OSC_WORDMARK} alt="OSCAL"
+        style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', height: h * 6, width: h * 6, display: 'block' }} />
+    </div>
+  );
+}
+
+function OscalHorizontal() {
+  return (
+    <a href={OSC_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 90, padding: '0 20px', borderRadius: 8, background: '#fff', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div className="flex items-center" style={{ gap: 18, minWidth: 0 }}>
+        <OscalWordmark h={16} />
+        <div style={{ minWidth: 0 }}>
+          <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 16, color: '#111', lineHeight: 1.2 }}>
+            Power When You Need It Most
+          </div>
+          <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9.5, color: 'rgba(17,17,17,0.55)', marginTop: 3 }}>
+            Reliable backup for storms, adventures, and everyday life.
+          </div>
+        </div>
+      </div>
+      <span className="shrink-0" style={{ fontFamily: "'DM Mono', monospace", fontSize: 11, fontWeight: 500, padding: '9px 16px', borderRadius: 5, background: OSC_ORANGE, color: '#fff', letterSpacing: '0.02em' }}>
+        Shop Now
+      </span>
+    </a>
+  );
+}
+
+function OscalTile() {
+  return (
+    <a href={OSC_LINK} target="_blank" rel="sponsored noopener noreferrer"
+      style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', padding: 14, borderRadius: 8, background: '#fff', border: '1px solid rgba(255,255,255,0.07)', textDecoration: 'none' }}>
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start', gap: 10, minHeight: 0 }}>
+        <OscalWordmark h={15} />
+        <div style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontSize: 17, color: '#111', lineHeight: 1.25 }}>
+          Power When You Need It Most
+        </div>
+        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: 9, color: 'rgba(17,17,17,0.55)', lineHeight: 1.4 }}>
+          Reliable backup for storms, adventures, and everyday life.
+        </div>
+        <span style={{ display: 'inline-block', fontFamily: "'DM Mono', monospace", fontSize: 9.5, fontWeight: 500, padding: '6px 12px', borderRadius: 4, background: OSC_ORANGE, color: '#fff' }}>
+          Shop Now
+        </span>
+      </div>
+    </a>
+  );
+}
+
 // ─── MigraineMe placements ───────────────────────────────────────────────────
 
 function MigraineHorizontal() {
@@ -1052,6 +1246,9 @@ const RENDERERS: Record<Brand, Partial<Record<Placement, Renderer>>> = {
   dazn:       { horizontal: () => <DaznHorizontal />,      tile: () => <DaznTile /> },
   zenind:     { horizontal: () => <ZenindHorizontal />,    tile: () => <ZenindTile /> },
   inffni:     {                                            tile: () => <InffniTile /> },
+  fiverr:     { horizontal: () => <FiverrHorizontal />,     tile: () => <FiverrTile /> },
+  everblog:   { horizontal: () => <EverblogHorizontal />,   tile: () => <EverblogTile /> },
+  oscal:      { horizontal: () => <OscalHorizontal />,      tile: () => <OscalTile /> },
 };
 
 /** Wide banner (~90px tall).
