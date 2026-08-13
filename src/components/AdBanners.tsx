@@ -145,7 +145,13 @@ const SPONSORED: Sponsored[] = [
   // DAZN UK — £19.19-£29.99 per sale, and sports is the single biggest thing
   // CVRD covers (411 narratives against 241 for markets). Highest weight we
   // have. The DAZN *UK* programme, so GB only.
-  { brand: 'dazn', affinity: ['sports'], avoid: ['world'], countries: ['GB'], weight: 10 },
+  // No `avoid`: DAZN is a mainstream broadcaster and mainstream broadcasters
+  // advertise beside hard news every day of the week. `avoid` is for placements
+  // that would read as tone-deaf on their face — tactical-looking hardware, a
+  // cheerful family kitchen — not for any brand whose creative happens to be
+  // loud. It still leads on sports through affinity; it is simply allowed
+  // everywhere else too.
+  { brand: 'dazn', affinity: ['sports'], countries: ['GB'], weight: 10 },
   // EngageBay CRM — 30% RECURRING, Awin payment Level 1. Best-paying partner
   // on the account. Buyer is small business owners.
   { brand: 'engagebay', affinity: ['markets', 'trending'], countries: 'all', weight: 8 },
