@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { dmPlayerSrc, dmIframeName } from '@/lib/dailymotion';
+import { DmFrame } from '@/components/DmFrame';
 import { VideoGridAdBanner, HorizontalAdBanner } from "./AdBanners";
 import { Tweet } from 'react-tweet';
 import TweetFactCheck, { type FactCheckData } from "./TweetFactCheck";
@@ -450,10 +450,8 @@ export function VideoGrid({ youtubeVideos, socialClips, storyImage, storyIndex, 
                   // geo.dailymotion.com/player.html is the canonical embed; the
                   // old /embed/video/ path 301s there and loses query params.
                   // Mute rides in the iframe name (see lib/dailymotion) and is
-                  // read once at load, so the key remounts on toggle.
-                  <iframe key={`${active.embed_id}-${muted ? 'muted' : 'sound'}`}
-                    src={dmPlayerSrc(active.embed_id, true)}
-                    name={dmIframeName(active.embed_id, { muted, controls: true })}
+                  // read once at load, so DmFrame remounts on toggle.
+                  <DmFrame videoId={active.embed_id} autoplay muted={muted} controls
                     className="w-full h-full" allowFullScreen
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
                 )}

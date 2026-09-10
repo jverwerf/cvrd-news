@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { dmPlayerSrc, dmIframeName } from '@/lib/dailymotion';
+import { DmFrame } from '@/components/DmFrame';
 import { TileAdBanner } from "./AdBanners";
 import Image from "next/image";
 import type { NarrativeGap } from "../lib/data";
@@ -728,9 +728,7 @@ export function Dashboard({
                 </CenteredEmbed>
               )}
               {overrideVideo.type === 'dailymotion' && (
-                <iframe key={`override-${overrideVideo.embed_id}`}
-                  src={dmPlayerSrc(overrideVideo.embed_id, true)}
-                  name={dmIframeName(overrideVideo.embed_id, { muted: true, controls: false })}
+                <DmFrame videoId={overrideVideo.embed_id} autoplay muted controls={false}
                   className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
               )}
@@ -818,10 +816,8 @@ export function Dashboard({
             // No player chrome: the dashboard has its own mute/volume overlay;
             // DM's would add a second unmute button on top of it. Mute lives in
             // the iframe name (see lib/dailymotion), which the player reads once
-            // at load, so the key remounts it when the toggle flips.
-            <iframe key={`${current.embed_id}-${unmuted ? 'sound' : 'muted'}`}
-              src={dmPlayerSrc(current.embed_id, !noAutoPlay)}
-              name={dmIframeName(current.embed_id, { muted: !unmuted, controls: false })}
+            // at load, so DmFrame remounts it when the toggle flips.
+            <DmFrame videoId={current.embed_id} autoplay={!noAutoPlay} muted={!unmuted} controls={false}
               className="w-full h-full absolute inset-0" allowFullScreen style={{ border: 'none' }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" />
           )}
@@ -1448,9 +1444,7 @@ function TileContentRenderer({ item, onMediaFail }: { item: TileContent; onMedia
           onError={(e) => { (e.target as HTMLImageElement).style.opacity = '0'; }}
           alt=""
         />
-        <iframe
-          src={dmPlayerSrc(item.embedId, true)}
-          name={dmIframeName(item.embedId, { muted: true, controls: false })}
+        <DmFrame videoId={item.embedId} autoplay muted controls={false}
           className="absolute"
           style={{ border: 'none', pointerEvents: 'none', top: TILE_TOP, left: '-50%', width: '200%', height: '200%' }}
           allow="autoplay"

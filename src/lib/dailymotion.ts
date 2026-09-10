@@ -13,6 +13,12 @@
 //
 // Passing iframeId also switches the player's postMessage API on, so the
 // iframe posts JSON events ({event:'volumechange', muted, id}) to the parent.
+//
+// Chrome reads the name ONCE, when the iframe's browsing context is created:
+// setting name on an iframe that already exists is ignored, and the player
+// then starts with sound and its own controls. Render through
+// components/DmFrame, never a bare <iframe>, so every change gets a new
+// element.
 
 export function dmPlayerSrc(videoId: string, autoplay: boolean): string {
   return `https://geo.dailymotion.com/player.html?video=${encodeURIComponent(videoId)}&autoplay=${autoplay ? 'true' : 'false'}`;
